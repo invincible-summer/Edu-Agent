@@ -174,7 +174,8 @@ _KNOWLEDGE_GRAPH_BUILD = """你是课程知识体系设计专家。请为主题�
 2. 严禁把教材名、卷名、原始文件名、扩展名、作者、版本、出版社、网址或下载站信息写入章节名。
 3. 每章提取 3-12 个核心概念，总数不超过 {max_concepts}；概念名精炼，不带“掌握/理解”等动作词。
 4. 每个概念输出 difficulty(1-5)、description、aliases、prerequisites、definition、example。
-5. prerequisites 只能引用本谱系中的概念名；只输出 JSON，不要 markdown 或解释：
+5. prerequisites 是学习本概念**之前**必须先掌握的基础概念（更简单、更靠前），不是本概念的后续应用、推广或特例；只能引用本谱系中的概念名。
+6. 只输出 JSON，不要 markdown 或解释：
 {{"subject":"学科/领域","chapters":[{{"name":"第一章 章节标题","concepts":[{{"name":"概念","difficulty":3,"description":"一句话说明","aliases":[],"prerequisites":[],"definition":"一句话定义","example":"简短例子"}}]}}]}}
 """
 
@@ -204,7 +205,7 @@ _TEXTBOOK_CHAPTER_CONCEPTS = """你是知识体系设计专家。从教材章节
 规则：
 - 概念必须出自本章节原文实际讲述的内容；禁止引入本章节未出现的课外术语、应试套路或与章节无关的常识概念。
 - 概念名 ≤12 字，具体可学习；文体、手法、意象、实验、史料等知识点算概念（人文/实验教材），但**不要输出课文/篇目标题本身**——篇目由目录的节层单独承载，概念只答「这篇课文讲什么知识点」。
-- prerequisites 只填本章节已列出的概念名（或教材明确提到的基础概念）；跨章节前置一律留空，由知识图谱统一归并。
+- prerequisites 是学习本概念**之前**必须先掌握的基础概念（更简单、更基础），不是本概念的后续应用、推广或特例；只填本章节已列出的概念名（或教材明确提到的基础概念）；跨章节前置一律留空，由知识图谱统一归并。
 - 不要输出教材名、文件名或 markdown。
 <material_excerpt>
 {text}
@@ -215,7 +216,7 @@ _TEXTBOOK_GRAPH_DESIGN = """你是教材知识图谱设计专家。下面是已�
 规则：
 - chapter_labels：统一该教材章节标题风格——保留教学编号（「第一单元 青春的价值」「第1章 函数的概念与性质」），修正 OCR 噪声与冗余（出版社、书名、页码、下载站、文件名等一律去除），标题 ≤20 字；某章实为目录/封面/版权/前言内容时 name 置空字符串表示应剔除（不输出该条也行）。
 - concept_merges：只合并**名称完全同义**的概念（如「电荷量子化」与「电荷的量子化」），保留更规范的那个；其余情况不要合并。
-- cross_prereq：跨章节前置依赖（如第2章概念依赖第1章概念），只输出确定性强的关系；from/to 必须是清单中已存在的概念名；同对只输出一次。
+- cross_prereq：跨章节前置依赖。方向必须写成 **from=前置基础概念（先学，一般在前面章节），to=依赖该前置的概念（后学，一般在后面章节）**——即「学 to 之前要先会 from」；如第2章的「导数」依赖第1章的「极限」，应写 {{"from":"极限","to":"导数"}}。严禁反向（把后面章节的复杂概念作为 from 指向前面章节的基础概念）。from/to 必须是清单中已存在的概念名；同对只输出一次。
 - 不要新增清单外概念、不要改名清单外概念；无法判断的字段输出空数组。
 <material>
 主题：{topic}　学科：{subject}　学段：{level}
@@ -289,11 +290,11 @@ _register(PromptDef(id="understand_system", version="1.1.0", text=_UNDERSTAND_SY
 _register(PromptDef(id="planner_system", version="1.1.0", text=_PLANNER_SYSTEM))
 _register(PromptDef(id="compact_system", version="1.0.0", text=_COMPACT_SYSTEM))
 _register(PromptDef(id="workspace_memory_system", version="1.0.0", text=_WS_MEMORY_SYSTEM))
-_register(PromptDef(id="knowledge_graph_build", version="2.0.0", text=_KNOWLEDGE_GRAPH_BUILD))
+_register(PromptDef(id="knowledge_graph_build", version="2.1.0", text=_KNOWLEDGE_GRAPH_BUILD))
 _register(PromptDef(id="textbook_toc_extract", version="2.2.0", text=_TEXTBOOK_TOC_EXTRACT))
 _register(PromptDef(id="textbook_skeleton", version="2.0.0", text=_TEXTBOOK_SKELETON))
-_register(PromptDef(id="textbook_chapter_concepts", version="2.2.0", text=_TEXTBOOK_CHAPTER_CONCEPTS))
-_register(PromptDef(id="textbook_graph_design", version="1.0.0", text=_TEXTBOOK_GRAPH_DESIGN))
+_register(PromptDef(id="textbook_chapter_concepts", version="2.3.0", text=_TEXTBOOK_CHAPTER_CONCEPTS))
+_register(PromptDef(id="textbook_graph_design", version="1.1.0", text=_TEXTBOOK_GRAPH_DESIGN))
 _register(PromptDef(id="prompt_memory_compact", version="1.0.0", text=_PROMPT_MEMORY_COMPACT))
 _register(PromptDef(id="redline_tail", version="1.0.0", text=_REDLINE_TAIL))
 _register(PromptDef(id="notes_assistant_system", version="1.2.0", text=_NOTES_ASSISTANT_SYSTEM))

@@ -1,0 +1,2360 @@
+{
+  "file_id": "250a47dab333",
+  "text_sha256": "36cca055e96a33e17d13303379c258af2be9dc4b716f0b997f480949b8dcf02d",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "英语",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "UNIT 1 ART",
+        "concepts": [
+          {
+            "name": "中世纪艺术",
+            "difficulty": 2,
+            "description": "以宗教主题为主的西方艺术时期。",
+            "aliases": [
+              "The Middle Ages"
+            ],
+            "prerequisites": [],
+            "definition": "中世纪艺术主要通过宗教主题向人们传授基督教。",
+            "example": "宗教主题是中世纪艺术的重要特征。"
+          },
+          {
+            "name": "文艺复兴艺术",
+            "difficulty": 2,
+            "description": "教材列举的西方艺术发展时期之一。",
+            "aliases": [
+              "The Renaissance"
+            ],
+            "prerequisites": [],
+            "definition": "文艺复兴艺术是西方艺术发展中的一个重要历史时期。",
+            "example": "教材将相关画作归入文艺复兴时期。"
+          },
+          {
+            "name": "摄影影响艺术",
+            "difficulty": 3,
+            "description": "摄影发明后改变了绘画保存现实的功能。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "摄影发明使绘画不再主要承担记录人物和世界外貌的任务。",
+            "example": "摄影出现后，画家开始寻找新的艺术表达方式。"
+          },
+          {
+            "name": "印象主义",
+            "difficulty": 3,
+            "description": "着重表现光线、运动和主观印象的艺术运动。",
+            "aliases": [
+              "Impressionism"
+            ],
+            "prerequisites": [
+              "摄影影响艺术"
+            ],
+            "definition": "印象主义是19世纪末在法国兴起、强调瞬间感受而非细节记录的艺术运动。",
+            "example": "莫奈用画作表现场景带给他的主观印象。"
+          },
+          {
+            "name": "主观印象",
+            "difficulty": 3,
+            "description": "艺术家对所见场景产生的个人感受。",
+            "aliases": [
+              "subjective impression"
+            ],
+            "prerequisites": [
+              "印象主义"
+            ],
+            "definition": "主观印象是艺术家依据个人感受表现对象，而非客观细致记录对象。",
+            "example": "画家表现阳光和运动带来的主观印象。"
+          },
+          {
+            "name": "光影色彩",
+            "difficulty": 2,
+            "description": "印象主义绘画中表现光线、阴影与生命感的要素。",
+            "aliases": [
+              "light, shadow and colour"
+            ],
+            "prerequisites": [
+              "印象主义"
+            ],
+            "definition": "光影色彩是绘画表现光线变化、阴影效果和视觉生命感的重要手段。",
+            "example": "雷诺阿的画作充满光、影和色彩。"
+          },
+          {
+            "name": "现代艺术",
+            "difficulty": 3,
+            "description": "不再只展示现实并探索艺术本质的艺术阶段。",
+            "aliases": [
+              "Modern Art"
+            ],
+            "prerequisites": [
+              "印象主义"
+            ],
+            "definition": "现代艺术是20世纪以来通过多种方式重新思考现实与艺术问题的艺术阶段。",
+            "example": "现代艺术提出了“什么是艺术”的问题。"
+          },
+          {
+            "name": "立体主义",
+            "difficulty": 3,
+            "description": "以新的方式分析自然界形状的现代艺术流派。",
+            "aliases": [
+              "Cubism"
+            ],
+            "prerequisites": [
+              "现代艺术"
+            ],
+            "definition": "立体主义通过新的方式分析和表现自然世界中存在的形状。",
+            "example": "毕加索尝试用立体主义重新分析自然形状。"
+          },
+          {
+            "name": "抽象艺术",
+            "difficulty": 3,
+            "description": "不以展示现实为主要目标的现代艺术形式。",
+            "aliases": [
+              "abstract art"
+            ],
+            "prerequisites": [
+              "现代艺术"
+            ],
+            "definition": "抽象艺术是不再直接展示现实、转而探索艺术表达的艺术形式。",
+            "example": "一些现代艺术家转向抽象艺术。"
+          },
+          {
+            "name": "艺术主题",
+            "difficulty": 2,
+            "description": "艺术作品集中表现的对象或内容。",
+            "aliases": [
+              "theme"
+            ],
+            "prerequisites": [],
+            "definition": "艺术主题是作品主要描绘或表达的内容。",
+            "example": "印象主义者常以自然和日常生活为主题。"
+          },
+          {
+            "name": "中国水墨画",
+            "difficulty": 2,
+            "description": "单元中介绍的中国传统绘画形式。",
+            "aliases": [
+              "ink wash painting"
+            ],
+            "prerequisites": [],
+            "definition": "中国水墨画是使用水墨表现形象与意境的传统绘画形式。",
+            "example": "展览中陈列了中国水墨画作品。",
+            "section": "Ancient Chinese Art on Show"
+          },
+          {
+            "name": "水墨动画",
+            "difficulty": 3,
+            "description": "以水墨画风格制作的动画电影形式。",
+            "aliases": [
+              "ink wash animation film"
+            ],
+            "prerequisites": [
+              "中国水墨画"
+            ],
+            "definition": "水墨动画是将中国水墨画的视觉风格运用于动画电影的艺术形式。",
+            "example": "《小蝌蚪找妈妈》属于水墨动画电影。"
+          },
+          {
+            "name": "中国古代艺术",
+            "difficulty": 2,
+            "description": "涵盖商至清三千多年艺术发展的内容。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国古代艺术包括青铜器、陶瓷、玉雕、水墨画和雕塑等艺术形式。",
+            "example": "展览展示了从商代到清代的中国艺术。"
+          },
+          {
+            "name": "佛教雕塑",
+            "difficulty": 3,
+            "description": "受佛教传播影响并用于弘扬佛教的雕塑。",
+            "aliases": [
+              "Buddhist sculpture"
+            ],
+            "prerequisites": [
+              "中国古代艺术"
+            ],
+            "definition": "佛教雕塑是以佛教为来源、受到佛教艺术影响并传播佛教的雕塑作品。",
+            "example": "唐代许多雕塑具有佛教来源。"
+          },
+          {
+            "name": "雕塑三维性",
+            "difficulty": 2,
+            "description": "雕塑在三个维度上展开的艺术特征。",
+            "aliases": [
+              "three dimensions"
+            ],
+            "prerequisites": [],
+            "definition": "雕塑三维性指雕塑作品在长度、宽度和高度三个维度中呈现形体。",
+            "example": "与其他视觉艺术不同，雕塑在三个维度中展开。"
+          },
+          {
+            "name": "不定式作表语",
+            "difficulty": 3,
+            "description": "用to do结构说明主语的目的、愿望或内容。",
+            "aliases": [
+              "infinitive as predicative"
+            ],
+            "prerequisites": [],
+            "definition": "不定式作表语是用动词不定式补充说明主语所指目的、计划或具体内容的结构。",
+            "example": "My plan is to visit the exhibition."
+          },
+          {
+            "name": "演讲路标词",
+            "difficulty": 3,
+            "description": "提示演讲内容推进、举例和总结的表达。",
+            "aliases": [
+              "signpost markers"
+            ],
+            "prerequisites": [],
+            "definition": "演讲路标词是帮助听众了解话题转换、分点、举例和总结的词语或短语。",
+            "example": "First, let me tell you about the artist."
+          },
+          {
+            "name": "艺术展览公告",
+            "difficulty": 3,
+            "description": "介绍展览内容、时间、地点和参观规则的应用文。",
+            "aliases": [
+              "art exhibition announcement"
+            ],
+            "prerequisites": [],
+            "definition": "艺术展览公告是面向观众说明展览亮点、开放时间、票价及参观要求的文本。",
+            "example": "公告写明展览持续至11月25日。",
+            "section": "Ancient Chinese Art on Show"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Ancient Chinese Art on Show",
+            "page_range": [
+              15,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 2 HEALTHY LIFESTYLE",
+        "concepts": [
+          {
+            "name": "健康生活方式",
+            "difficulty": 2,
+            "description": "在生活各方面保持平衡并作出明智选择",
+            "aliases": [
+              "healthy lifestyle"
+            ],
+            "prerequisites": [],
+            "definition": "健康生活方式是由平衡生活要素和良好选择构成的生活状态。",
+            "example": "合理安排学习、娱乐、饮食和运动。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "不良习惯",
+            "difficulty": 2,
+            "description": "可能损害身心健康并逐渐加重的生活习惯",
+            "aliases": [
+              "bad habits",
+              "harmful habits"
+            ],
+            "prerequisites": [],
+            "definition": "不良习惯是反复进行且可能导致健康问题的行为模式。",
+            "example": "经常熬夜或沉迷电脑游戏。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "习惯形成",
+            "difficulty": 3,
+            "description": "选择经过反复重复后变成自动化行为的过程",
+            "aliases": [
+              "habit formation"
+            ],
+            "prerequisites": [],
+            "definition": "习惯形成是个人选择被持续重复并最终变得自动化的过程。",
+            "example": "反复吃零食后形成依赖零食的习惯。"
+          },
+          {
+            "name": "习惯循环",
+            "difficulty": 3,
+            "description": "由提示、惯例和奖励构成的习惯运行模式",
+            "aliases": [
+              "habit cycle"
+            ],
+            "prerequisites": [
+              "习惯形成"
+            ],
+            "definition": "习惯循环是提示引发惯例并由奖励强化的三阶段模式。",
+            "example": "感到不开心后吃零食并因快乐而继续。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "提示",
+            "difficulty": 2,
+            "description": "促使人开始某种行为的行动、事件或情境",
+            "aliases": [
+              "cue"
+            ],
+            "prerequisites": [
+              "习惯循环"
+            ],
+            "definition": "提示是向人发出执行某种行为信号的因素。",
+            "example": "感到不开心是吃零食的提示。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "惯例",
+            "difficulty": 2,
+            "description": "人回应提示时通常采取的规律性行动",
+            "aliases": [
+              "routine"
+            ],
+            "prerequisites": [
+              "习惯循环"
+            ],
+            "definition": "惯例是人在提示出现后反复采取的常规行为。",
+            "example": "出现不开心情绪后吃零食。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "奖励",
+            "difficulty": 2,
+            "description": "惯例带来的愉快感受或积极结果",
+            "aliases": [
+              "reward"
+            ],
+            "prerequisites": [
+              "习惯循环"
+            ],
+            "definition": "奖励是执行惯例后获得的满足感或有益结果。",
+            "example": "吃零食后感到快乐。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "改变坏习惯",
+            "difficulty": 3,
+            "description": "分析习惯循环并逐步调整原有行为模式",
+            "aliases": [
+              "change a habit"
+            ],
+            "prerequisites": [
+              "习惯循环",
+              "不良习惯"
+            ],
+            "definition": "改变坏习惯是识别其循环并用更积极的行为替代原惯例。",
+            "example": "不开心时用听音乐替代吃零食。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "替代消极惯例",
+            "difficulty": 3,
+            "description": "用更积极的行为替换原有的不良行为",
+            "aliases": [
+              "replace a negative routine"
+            ],
+            "prerequisites": [
+              "惯例",
+              "改变坏习惯"
+            ],
+            "definition": "替代消极惯例是保留提示和目标奖励而更换不良行动。",
+            "example": "把乘扶梯改为走楼梯。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "渐进式改变",
+            "difficulty": 3,
+            "description": "通过持续采取许多小步骤实现习惯改变",
+            "aliases": [
+              "step-by-step change"
+            ],
+            "prerequisites": [
+              "改变坏习惯"
+            ],
+            "definition": "渐进式改变是经过一段时间逐步而非突然改变习惯。",
+            "example": "每天作出一点生活方式调整。"
+          },
+          {
+            "name": "自律",
+            "difficulty": 3,
+            "description": "为达到改变目标而持续约束并坚持行动",
+            "aliases": [
+              "discipline"
+            ],
+            "prerequisites": [
+              "渐进式改变"
+            ],
+            "definition": "自律是为了实现目标而坚持采取必要行动的能力。",
+            "example": "持续坚持每天运动而不轻易放弃。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "健康生活平衡",
+            "difficulty": 2,
+            "description": "在家庭、学习、工作和娱乐等方面保持适当比例",
+            "aliases": [
+              "balance in life"
+            ],
+            "prerequisites": [
+              "健康生活方式"
+            ],
+            "definition": "健康生活平衡是生活各要素协调发展而不过多或过少。",
+            "example": "不过度沉迷娱乐，也不忽视学习和健康。"
+          },
+          {
+            "name": "压力管理",
+            "difficulty": 3,
+            "description": "通过积极活动转移注意力并缓解压力的方法",
+            "aliases": [
+              "stress management"
+            ],
+            "prerequisites": [
+              "健康生活方式"
+            ],
+            "definition": "压力管理是运用适当方式减轻压力并恢复身心状态。",
+            "example": "散步、培养爱好或观看喜剧来放松。"
+          },
+          {
+            "name": "寻求和提供建议",
+            "difficulty": 2,
+            "description": "围绕生活问题请求、提出解决办法的交际功能",
+            "aliases": [
+              "asking for and giving advice"
+            ],
+            "prerequisites": [],
+            "definition": "寻求和提供建议是针对问题请求帮助或提出解决意见。",
+            "example": "Could you give me some advice? Why don’t you walk more?",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "接受和拒绝建议",
+            "difficulty": 2,
+            "description": "用恰当表达同意或婉拒他人建议的交际功能",
+            "aliases": [
+              "accepting and refusing advice"
+            ],
+            "prerequisites": [
+              "寻求和提供建议"
+            ],
+            "definition": "接受和拒绝建议是对他人意见作出同意或婉拒回应。",
+            "example": "That’s a good idea! 或 That’s a good idea, but…",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "不定式作主语",
+            "difficulty": 3,
+            "description": "用to do结构在句首充当句子主语",
+            "aliases": [
+              "infinitive as subject"
+            ],
+            "prerequisites": [],
+            "definition": "不定式作主语是以动词不定式短语表示主语的语法结构。",
+            "example": "To change bad habits is never easy."
+          },
+          {
+            "name": "编辑来信结构",
+            "difficulty": 3,
+            "description": "按问题、决定、行动和结果组织生活方式书信",
+            "aliases": [
+              "letter organisation"
+            ],
+            "prerequisites": [],
+            "definition": "编辑来信结构是围绕生活问题及其改变过程安排内容的写作框架。",
+            "example": "说明熬夜问题、改变决定、采取行动及最终结果。"
+          },
+          {
+            "name": "笑声与健康",
+            "difficulty": 2,
+            "description": "笑声对缓解疼痛和促进身心健康的作用",
+            "aliases": [
+              "laughter and health"
+            ],
+            "prerequisites": [
+              "健康生活方式"
+            ],
+            "definition": "笑声被介绍为有助于缓解疼痛并维护身心健康的自然方式。",
+            "example": "笑声能让人感觉良好并帮助放松。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Habits for a Healthy Lifestyle",
+            "page_range": [
+              21,
+              35
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 3 ENVIRONMENTAL PROTECTION",
+        "concepts": [
+          {
+            "name": "直接引语",
+            "difficulty": 1,
+            "description": "直接引用说话人的原话，通常用引号标示。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "直接引语是逐字引用他人话语的表达方式。",
+            "example": "The expert said, “Smog is harmful.”"
+          },
+          {
+            "name": "间接引语",
+            "difficulty": 2,
+            "description": "转述他人的陈述、请求或问题，不直接引用原话。",
+            "aliases": [],
+            "prerequisites": [
+              "直接引语"
+            ],
+            "definition": "间接引语是用自己的语言转述他人话语的表达方式。",
+            "example": "The expert said that smog was harmful."
+          },
+          {
+            "name": "间接陈述句",
+            "difficulty": 2,
+            "description": "用间接引语转述他人的事实、观点或愿望。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接陈述句把直接陈述内容置于转述结构中表达。",
+            "example": "She said that she wanted to help the world."
+          },
+          {
+            "name": "间接一般疑问句",
+            "difficulty": 3,
+            "description": "转述以whether或if引导的一般疑问句。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接一般疑问句将一般疑问内容改为陈述语序的从句。",
+            "example": "He asked whether polar bears would die out."
+          },
+          {
+            "name": "间接特殊疑问句",
+            "difficulty": 3,
+            "description": "转述以疑问词引导的特殊疑问句。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接特殊疑问句保留疑问词并使用陈述语序转述问题。",
+            "example": "She asked how we could save polar bears."
+          },
+          {
+            "name": "间接建议句",
+            "difficulty": 3,
+            "description": "用advise等结构转述建议或劝告。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接建议句把建议内容转化为转述者表达的劝告。",
+            "example": "The expert advised us to work together."
+          },
+          {
+            "name": "空气污染",
+            "difficulty": 1,
+            "description": "空气质量受到烟雾等污染物影响的环境问题。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "空气污染是空气中存在有害物质并影响人类生活的现象。",
+            "example": "The interview discusses air pollution and smog."
+          },
+          {
+            "name": "烟雾污染",
+            "difficulty": 2,
+            "description": "smog由烟和雾结合而成，会严重影响空气质量。",
+            "aliases": [
+              "smog"
+            ],
+            "prerequisites": [
+              "空气污染"
+            ],
+            "definition": "烟雾污染是烟雾混合形成并危害环境与健康的空气污染现象。",
+            "example": "London experienced heavy smog in 1952."
+          },
+          {
+            "name": "化石燃料",
+            "difficulty": 2,
+            "description": "燃烧化石燃料会产生烟雾并加重空气污染。",
+            "aliases": [
+              "fossil fuels"
+            ],
+            "prerequisites": [
+              "烟雾污染"
+            ],
+            "definition": "化石燃料是教材中导致英国烟雾污染加重的燃料来源。",
+            "example": "People burnt lots of fossil fuels."
+          },
+          {
+            "name": "水污染",
+            "difficulty": 1,
+            "description": "垃圾、油、生活废物和化学品导致水质恶化。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水污染是有害物质进入水体并造成水质下降的环境问题。",
+            "example": "Tourism increased water pollution in the Li River."
+          },
+          {
+            "name": "废水处理设施",
+            "difficulty": 2,
+            "description": "通过处理废水改善水质并促进水资源保护的设施。",
+            "aliases": [
+              "waste water treatment facilities"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "废水处理设施是用于处理污水、改善水质的环境治理设施。",
+            "example": "The facilities improved the river’s water quality.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "河长制",
+            "difficulty": 3,
+            "description": "让高级官员负责减少水污染的治理制度。",
+            "aliases": [
+              "River Chief System"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "河长制是由高级官员承担水污染治理责任的制度。",
+            "example": "The River Chief System holds officials responsible.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "环境意识",
+            "difficulty": 2,
+            "description": "人们认识环境问题并主动采取保护环境的意识。",
+            "aliases": [
+              "environmental awareness"
+            ],
+            "prerequisites": [],
+            "definition": "环境意识是关注环境影响并愿意采取保护行动的认识。",
+            "example": "The media spread environmental awareness.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "清洁能源",
+            "difficulty": 2,
+            "description": "用于减少环境污染的能源，教材提到应加以推广。",
+            "aliases": [
+              "clean energy"
+            ],
+            "prerequisites": [],
+            "definition": "清洁能源是相较污染性能源能够减少环境影响的能源。",
+            "example": "The authorities encouraged greater use of clean energy.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "水资源保护",
+            "difficulty": 2,
+            "description": "通过治理污染和节约用水改善水环境。",
+            "aliases": [
+              "water conservation"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "水资源保护是维护水质并合理利用水资源的环境行动。",
+            "example": "The project improved water quality and water conservation.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "环境问题报告",
+            "difficulty": 3,
+            "description": "介绍环境问题、成因、影响及治理措施的书面报告。",
+            "aliases": [
+              "environmental issue report"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "环境问题报告是围绕具体环境问题进行说明和评估的文章。",
+            "example": "The report examines pollution in the Li River."
+          },
+          {
+            "name": "报告组织结构",
+            "difficulty": 3,
+            "description": "报告依次介绍主题、现状、已采取措施和进一步措施。",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题报告"
+            ],
+            "definition": "报告组织结构是环境报告安排信息和段落的基本方式。",
+            "example": "The four paragraphs introduce, describe, and present measures."
+          },
+          {
+            "name": "信息摘要",
+            "difficulty": 2,
+            "description": "记录关键信息并用自己的话简洁概括说话内容。",
+            "aliases": [
+              "summarising information"
+            ],
+            "prerequisites": [],
+            "definition": "信息摘要是提取要点并简明重述主要信息的表达活动。",
+            "example": "Summarise the expert’s interview in your own words."
+          },
+          {
+            "name": "能源节约",
+            "difficulty": 1,
+            "description": "通过日常小改变减少能源消耗并节约费用。",
+            "aliases": [
+              "energy conservation"
+            ],
+            "prerequisites": [],
+            "definition": "能源节约是减少不必要能源消耗的生活和环境行动。",
+            "example": "Turn off lights when leaving a room.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "垃圾回收再利用",
+            "difficulty": 2,
+            "description": "收集并重新利用垃圾制作物品或支持环保生活。",
+            "aliases": [
+              "reuse and recycle trash"
+            ],
+            "prerequisites": [],
+            "definition": "垃圾回收再利用是将废弃物回收并转化为可用资源的做法。",
+            "example": "The school was built from recycled materials.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "太阳能板",
+            "difficulty": 1,
+            "description": "绿色学校使用太阳能板提供能源并减少废物产生。",
+            "aliases": [
+              "solar panels"
+            ],
+            "prerequisites": [
+              "清洁能源"
+            ],
+            "definition": "太阳能板是利用太阳能为设施提供电力的装置。",
+            "example": "The school is powered by solar panels.",
+            "section": "Reducing Water Pollution in the Li River"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Reducing Water Pollution in the Li River",
+            "page_range": [
+              39,
+              45
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 4 ADVERSITY AND COURAGE",
+        "concepts": [
+          {
+            "name": "逆境与勇气",
+            "difficulty": 2,
+            "description": "围绕困难处境中的勇气与应对展开学习",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "逆境与勇气指人在艰难环境中保持勇敢并采取行动。",
+            "example": "Shackleton sailed to South Georgia for help."
+          },
+          {
+            "name": "人物品质推断",
+            "difficulty": 3,
+            "description": "依据人物言语和行动推断品质与情感",
+            "aliases": [
+              "人物特征推断"
+            ],
+            "prerequisites": [],
+            "definition": "人物品质推断是根据故事中人物的言语和行动判断其性格品质与情感。",
+            "example": "Wild’s concern shows that he is kind."
+          },
+          {
+            "name": "南极探险救援",
+            "difficulty": 3,
+            "description": "学习Endurance船员受困及Shackleton组织救援的过程",
+            "aliases": [],
+            "prerequisites": [
+              "逆境与勇气"
+            ],
+            "definition": "南极探险救援讲述探险队受困后前往南乔治亚岛求援并最终获救。",
+            "example": "Shackleton left Elephant Island to find help."
+          },
+          {
+            "name": "南极生存方法",
+            "difficulty": 3,
+            "description": "掌握船员在象岛解决饮水、燃料和食物问题的方法",
+            "aliases": [],
+            "prerequisites": [
+              "南极探险救援"
+            ],
+            "definition": "南极生存方法是利用海冰、动物脂肪和海洋动物维持生存。",
+            "example": "They melted ocean ice for drinking water."
+          },
+          {
+            "name": "乐观与毅力",
+            "difficulty": 3,
+            "description": "理解船员在长期等待和困境中保持希望并坚持",
+            "aliases": [
+              "坚持与乐观"
+            ],
+            "prerequisites": [
+              "逆境与勇气"
+            ],
+            "definition": "乐观与毅力指在困难和不确定中保持希望并持续努力。",
+            "example": "Their optimism helped them persevere."
+          },
+          {
+            "name": "团队纪律与精神",
+            "difficulty": 3,
+            "description": "理解纪律、合作和团队精神对集体生存的作用",
+            "aliases": [
+              "团队精神"
+            ],
+            "prerequisites": [
+              "乐观与毅力"
+            ],
+            "definition": "团队纪律与精神是成员遵守秩序、互相支持并共同应对困难。",
+            "example": "Discipline and team spirit kept them optimistic."
+          },
+          {
+            "name": "现在完成进行时",
+            "difficulty": 3,
+            "description": "表示从过去开始持续到现在或刚结束的动作",
+            "aliases": [
+              "present perfect continuous tense"
+            ],
+            "prerequisites": [],
+            "definition": "现在完成进行时由have或has been加现在分词构成，强调动作的持续性。",
+            "example": "I have been learning English for five years."
+          },
+          {
+            "name": "因果关系识别",
+            "difficulty": 2,
+            "description": "识别演讲或叙述中的原因、结果及其连接表达",
+            "aliases": [
+              "cause and effect"
+            ],
+            "prerequisites": [],
+            "definition": "因果关系识别是判断事件发生的原因及其产生的结果。",
+            "example": "Due to rough seas, the journey was difficult.",
+            "section": "The rescue"
+          },
+          {
+            "name": "方案讨论表达",
+            "difficulty": 3,
+            "description": "使用提议、比较和选择等表达讨论救援队人选",
+            "aliases": [
+              "探索选项表达"
+            ],
+            "prerequisites": [],
+            "definition": "方案讨论表达是用提议、询问替代方案和推进讨论的语言交流观点。",
+            "example": "What do you think about Frank Worsley?"
+          },
+          {
+            "name": "探险故事写作",
+            "difficulty": 3,
+            "description": "概述探险经历并用事例分析人物和表达总体感受",
+            "aliases": [
+              "故事概要写作"
+            ],
+            "prerequisites": [
+              "人物品质推断",
+              "南极探险救援"
+            ],
+            "definition": "探险故事写作是围绕人物、事件、地点、时间、原因和方式组织故事并表达评价。",
+            "example": "The essay explains why the crew survived."
+          },
+          {
+            "name": "人物 persevera",
+            "difficulty": 4,
+            "description": "研究经历逆境并坚持克服困难的人物并作报告",
+            "aliases": [
+              "人物坚持报告"
+            ],
+            "prerequisites": [
+              "探险故事写作"
+            ],
+            "definition": "人物坚持报告是介绍人物背景、挑战、克服方式、成就及他人评价的报告。",
+            "example": "The report describes Beethoven’s challenges and achievements."
+          }
+        ],
+        "sections": [
+          {
+            "name": "The rescue",
+            "page_range": [
+              49,
+              50
+            ]
+          },
+          {
+            "name": "The Reward for Perseverance",
+            "page_range": [
+              51,
+              57
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 5 POEMS",
+        "concepts": [
+          {
+            "name": "诗歌画面",
+            "difficulty": 3,
+            "description": "诗歌用词语描绘画面，读者需在脑海中想象。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "诗歌画面是诗歌通过语言使读者想象出的视觉形象。",
+            "example": "A fallen blossom描绘花朵与蝴蝶的画面。"
+          },
+          {
+            "name": "押韵",
+            "difficulty": 3,
+            "description": "诗行末尾使用读音相近的词，形成韵律感。",
+            "aliases": [
+              "rhyme"
+            ],
+            "prerequisites": [],
+            "definition": "押韵是诗歌中相关词语的读音相近或相同的现象。",
+            "example": "mockingbird、word和heard押韵。"
+          },
+          {
+            "name": "重复",
+            "difficulty": 2,
+            "description": "有意重复词语或句式，增强节奏和表达效果。",
+            "aliases": [
+              "repetition"
+            ],
+            "prerequisites": [],
+            "definition": "重复是诗歌反复使用相同词语或结构的表达方式。",
+            "example": "儿歌中可通过重复形成鲜明节奏。",
+            "section": "Exploring Poetry in China"
+          },
+          {
+            "name": "节奏韵律",
+            "difficulty": 3,
+            "description": "诗歌声音有规律的强弱、长短和停顿。",
+            "aliases": [
+              "rhythm"
+            ],
+            "prerequisites": [],
+            "definition": "节奏韵律是诗歌语言在声音组织上形成的规律感。",
+            "example": "自然英语口语的节奏可体现在无韵诗中。"
+          },
+          {
+            "name": "音节",
+            "difficulty": 2,
+            "description": "构成词语发音的语音单位，俳句按音节安排诗行。",
+            "aliases": [
+              "syllable"
+            ],
+            "prerequisites": [],
+            "definition": "音节是语音中能独立感知的发音单位。",
+            "example": "俳句三行分别含5、7、5个音节。",
+            "section": "Exploring Poetry in China"
+          },
+          {
+            "name": "五行诗",
+            "difficulty": 3,
+            "description": "由五行组成，能用少量词语传达画面或情绪。",
+            "aliases": [
+              "cinquain"
+            ],
+            "prerequisites": [],
+            "definition": "五行诗是一种由五行构成的简短诗歌形式。",
+            "example": "Brother用五行简洁表现兄弟关系。"
+          },
+          {
+            "name": "俳句",
+            "difficulty": 3,
+            "description": "日本诗歌形式，共17个音节，三行按5、7、5排列。",
+            "aliases": [
+              "haiku"
+            ],
+            "prerequisites": [
+              "音节"
+            ],
+            "definition": "俳句是由三行组成且音节数依次为5、7、5的诗歌形式。",
+            "example": "D落花回到枝头并写到蝴蝶。"
+          },
+          {
+            "name": "儿歌",
+            "difficulty": 3,
+            "description": "语言具体而富有创造性，常使用押韵和重复。",
+            "aliases": [
+              "nursery rhyme"
+            ],
+            "prerequisites": [
+              "押韵",
+              "重复"
+            ],
+            "definition": "儿歌是面向儿童的诗歌形式，具有具体语言及押韵、重复等特点。",
+            "example": "儿歌可表现父亲与婴儿之间的爱。"
+          },
+          {
+            "name": "列表诗",
+            "difficulty": 3,
+            "description": "以列举事物或相关内容的方式组织诗歌。",
+            "aliases": [
+              "list poem"
+            ],
+            "prerequisites": [],
+            "definition": "列表诗是通过连续列举内容来构成诗歌的形式。",
+            "example": "诗中可依次列出人物的动作或特征。",
+            "section": "Wind on the Hill / Dream / A Match"
+          },
+          {
+            "name": "唐诗英译",
+            "difficulty": 3,
+            "description": "唐代诗歌被翻译成英语，供英语读者欣赏。",
+            "aliases": [
+              "Tang poetry"
+            ],
+            "prerequisites": [],
+            "definition": "唐诗英译是将唐代诗歌转换为英语版本的文学实践。",
+            "example": "教材介绍了王建唐诗的英语译文。",
+            "section": "Exploring Poetry in China"
+          },
+          {
+            "name": "比喻修辞",
+            "difficulty": 4,
+            "description": "借助比喻等修辞和隐喻增强诗歌的画面与表达。",
+            "aliases": [
+              "figures of speech",
+              "metaphors"
+            ],
+            "prerequisites": [
+              "诗歌画面"
+            ],
+            "definition": "比喻修辞是借助相关形象或意义联系表达诗意的语言手法。",
+            "example": "诗歌通过石头等意象寄托等待之情。"
+          },
+          {
+            "name": "诗歌音乐性",
+            "difficulty": 3,
+            "description": "诗歌的声音、节奏和押韵共同形成音乐般的效果。",
+            "aliases": [
+              "musical quality"
+            ],
+            "prerequisites": [
+              "节奏韵律",
+              "押韵"
+            ],
+            "definition": "诗歌音乐性是诗歌在声音组织上产生的听觉美感。",
+            "example": "诗歌常需大声朗读才能充分感受其音乐性。"
+          },
+          {
+            "name": "感情朗读",
+            "difficulty": 2,
+            "description": "朗读诗歌时融入感情，以更好地理解和欣赏诗意。",
+            "aliases": [
+              "read aloud with feeling"
+            ],
+            "prerequisites": [
+              "诗歌音乐性"
+            ],
+            "definition": "感情朗读是带着恰当情感和声音表现朗读诗歌的方法。",
+            "example": "朗读诗歌时应读出其中的悲伤或喜悦。"
+          },
+          {
+            "name": "关系从句",
+            "difficulty": 4,
+            "description": "用关系代词或关系副词连接从句，补充说明名词。",
+            "aliases": [
+              "relative clauses"
+            ],
+            "prerequisites": [],
+            "definition": "关系从句是由关系代词或关系副词引导并修饰名词的从句。",
+            "example": "The poems which Tagore wrote show children’s feelings。"
+          },
+          {
+            "name": "听前知识预测",
+            "difficulty": 2,
+            "description": "听熟悉话题前调动已有知识，预测可能听到的内容。",
+            "aliases": [
+              "use your prior knowledge"
+            ],
+            "prerequisites": [],
+            "definition": "听前知识预测是利用已有相关知识推测听力内容的策略。",
+            "example": "听诗歌比赛对话前先回忆写诗经历。",
+            "section": "Attending a poetry contest"
+          },
+          {
+            "name": "赞扬与鼓励",
+            "difficulty": 2,
+            "description": "用积极表达肯定他人想法、努力并鼓励其继续尝试。",
+            "aliases": [
+              "praising and encouraging"
+            ],
+            "prerequisites": [],
+            "definition": "赞扬与鼓励是对他人的想法或表现给予肯定和支持的交际表达。",
+            "example": "Keep up the good work。",
+            "section": "Attending a poetry contest"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Attending a poetry contest",
+            "page_range": [
+              61,
+              64
+            ]
+          },
+          {
+            "name": "Wind on the Hill / Dream / A Match",
+            "page_range": [
+              64,
+              99
+            ]
+          },
+          {
+            "name": "Exploring Poetry in China",
+            "page_range": [
+              99,
+              130
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "英语",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "UNIT 1 ART",
+        "concepts": [
+          {
+            "name": "中世纪艺术",
+            "difficulty": 2,
+            "description": "以宗教主题为主的西方艺术时期。",
+            "aliases": [
+              "The Middle Ages"
+            ],
+            "prerequisites": [],
+            "definition": "中世纪艺术主要通过宗教主题向人们传授基督教。",
+            "example": "宗教主题是中世纪艺术的重要特征。"
+          },
+          {
+            "name": "文艺复兴艺术",
+            "difficulty": 2,
+            "description": "教材列举的西方艺术发展时期之一。",
+            "aliases": [
+              "The Renaissance"
+            ],
+            "prerequisites": [],
+            "definition": "文艺复兴艺术是西方艺术发展中的一个重要历史时期。",
+            "example": "教材将相关画作归入文艺复兴时期。"
+          },
+          {
+            "name": "摄影影响艺术",
+            "difficulty": 3,
+            "description": "摄影发明后改变了绘画保存现实的功能。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "摄影发明使绘画不再主要承担记录人物和世界外貌的任务。",
+            "example": "摄影出现后，画家开始寻找新的艺术表达方式。"
+          },
+          {
+            "name": "印象主义",
+            "difficulty": 3,
+            "description": "着重表现光线、运动和主观印象的艺术运动。",
+            "aliases": [
+              "Impressionism"
+            ],
+            "prerequisites": [
+              "摄影影响艺术"
+            ],
+            "definition": "印象主义是19世纪末在法国兴起、强调瞬间感受而非细节记录的艺术运动。",
+            "example": "莫奈用画作表现场景带给他的主观印象。"
+          },
+          {
+            "name": "主观印象",
+            "difficulty": 3,
+            "description": "艺术家对所见场景产生的个人感受。",
+            "aliases": [
+              "subjective impression"
+            ],
+            "prerequisites": [
+              "印象主义"
+            ],
+            "definition": "主观印象是艺术家依据个人感受表现对象，而非客观细致记录对象。",
+            "example": "画家表现阳光和运动带来的主观印象。"
+          },
+          {
+            "name": "光影色彩",
+            "difficulty": 2,
+            "description": "印象主义绘画中表现光线、阴影与生命感的要素。",
+            "aliases": [
+              "light, shadow and colour"
+            ],
+            "prerequisites": [
+              "印象主义"
+            ],
+            "definition": "光影色彩是绘画表现光线变化、阴影效果和视觉生命感的重要手段。",
+            "example": "雷诺阿的画作充满光、影和色彩。"
+          },
+          {
+            "name": "现代艺术",
+            "difficulty": 3,
+            "description": "不再只展示现实并探索艺术本质的艺术阶段。",
+            "aliases": [
+              "Modern Art"
+            ],
+            "prerequisites": [
+              "印象主义"
+            ],
+            "definition": "现代艺术是20世纪以来通过多种方式重新思考现实与艺术问题的艺术阶段。",
+            "example": "现代艺术提出了“什么是艺术”的问题。"
+          },
+          {
+            "name": "立体主义",
+            "difficulty": 3,
+            "description": "以新的方式分析自然界形状的现代艺术流派。",
+            "aliases": [
+              "Cubism"
+            ],
+            "prerequisites": [
+              "现代艺术"
+            ],
+            "definition": "立体主义通过新的方式分析和表现自然世界中存在的形状。",
+            "example": "毕加索尝试用立体主义重新分析自然形状。"
+          },
+          {
+            "name": "抽象艺术",
+            "difficulty": 3,
+            "description": "不以展示现实为主要目标的现代艺术形式。",
+            "aliases": [
+              "abstract art"
+            ],
+            "prerequisites": [
+              "现代艺术"
+            ],
+            "definition": "抽象艺术是不再直接展示现实、转而探索艺术表达的艺术形式。",
+            "example": "一些现代艺术家转向抽象艺术。"
+          },
+          {
+            "name": "艺术主题",
+            "difficulty": 2,
+            "description": "艺术作品集中表现的对象或内容。",
+            "aliases": [
+              "theme"
+            ],
+            "prerequisites": [],
+            "definition": "艺术主题是作品主要描绘或表达的内容。",
+            "example": "印象主义者常以自然和日常生活为主题。"
+          },
+          {
+            "name": "中国水墨画",
+            "difficulty": 2,
+            "description": "单元中介绍的中国传统绘画形式。",
+            "aliases": [
+              "ink wash painting"
+            ],
+            "prerequisites": [],
+            "definition": "中国水墨画是使用水墨表现形象与意境的传统绘画形式。",
+            "example": "展览中陈列了中国水墨画作品。",
+            "section": "Ancient Chinese Art on Show"
+          },
+          {
+            "name": "水墨动画",
+            "difficulty": 3,
+            "description": "以水墨画风格制作的动画电影形式。",
+            "aliases": [
+              "ink wash animation film"
+            ],
+            "prerequisites": [
+              "中国水墨画"
+            ],
+            "definition": "水墨动画是将中国水墨画的视觉风格运用于动画电影的艺术形式。",
+            "example": "《小蝌蚪找妈妈》属于水墨动画电影。"
+          },
+          {
+            "name": "中国古代艺术",
+            "difficulty": 2,
+            "description": "涵盖商至清三千多年艺术发展的内容。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国古代艺术包括青铜器、陶瓷、玉雕、水墨画和雕塑等艺术形式。",
+            "example": "展览展示了从商代到清代的中国艺术。"
+          },
+          {
+            "name": "佛教雕塑",
+            "difficulty": 3,
+            "description": "受佛教传播影响并用于弘扬佛教的雕塑。",
+            "aliases": [
+              "Buddhist sculpture"
+            ],
+            "prerequisites": [
+              "中国古代艺术"
+            ],
+            "definition": "佛教雕塑是以佛教为来源、受到佛教艺术影响并传播佛教的雕塑作品。",
+            "example": "唐代许多雕塑具有佛教来源。"
+          },
+          {
+            "name": "雕塑三维性",
+            "difficulty": 2,
+            "description": "雕塑在三个维度上展开的艺术特征。",
+            "aliases": [
+              "three dimensions"
+            ],
+            "prerequisites": [],
+            "definition": "雕塑三维性指雕塑作品在长度、宽度和高度三个维度中呈现形体。",
+            "example": "与其他视觉艺术不同，雕塑在三个维度中展开。"
+          },
+          {
+            "name": "不定式作表语",
+            "difficulty": 3,
+            "description": "用to do结构说明主语的目的、愿望或内容。",
+            "aliases": [
+              "infinitive as predicative"
+            ],
+            "prerequisites": [],
+            "definition": "不定式作表语是用动词不定式补充说明主语所指目的、计划或具体内容的结构。",
+            "example": "My plan is to visit the exhibition."
+          },
+          {
+            "name": "演讲路标词",
+            "difficulty": 3,
+            "description": "提示演讲内容推进、举例和总结的表达。",
+            "aliases": [
+              "signpost markers"
+            ],
+            "prerequisites": [],
+            "definition": "演讲路标词是帮助听众了解话题转换、分点、举例和总结的词语或短语。",
+            "example": "First, let me tell you about the artist."
+          },
+          {
+            "name": "艺术展览公告",
+            "difficulty": 3,
+            "description": "介绍展览内容、时间、地点和参观规则的应用文。",
+            "aliases": [
+              "art exhibition announcement"
+            ],
+            "prerequisites": [],
+            "definition": "艺术展览公告是面向观众说明展览亮点、开放时间、票价及参观要求的文本。",
+            "example": "公告写明展览持续至11月25日。",
+            "section": "Ancient Chinese Art on Show"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Ancient Chinese Art on Show",
+            "section_key": "582a7f5234",
+            "page_range": [
+              15,
+              21
+            ]
+          }
+        ],
+        "chapter_key": "7cb064b146",
+        "metadata": {
+          "volume_id": "250a47dab333",
+          "file_id": "250a47dab333",
+          "volume_title": "英语选择性必修第3册",
+          "chapter_order": 1,
+          "raw_heading": "UNIT 1 ART"
+        }
+      },
+      {
+        "name": "UNIT 2 HEALTHY LIFESTYLE",
+        "concepts": [
+          {
+            "name": "健康生活方式",
+            "difficulty": 2,
+            "description": "在生活各方面保持平衡并作出明智选择",
+            "aliases": [
+              "healthy lifestyle"
+            ],
+            "prerequisites": [],
+            "definition": "健康生活方式是由平衡生活要素和良好选择构成的生活状态。",
+            "example": "合理安排学习、娱乐、饮食和运动。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "不良习惯",
+            "difficulty": 2,
+            "description": "可能损害身心健康并逐渐加重的生活习惯",
+            "aliases": [
+              "bad habits",
+              "harmful habits"
+            ],
+            "prerequisites": [],
+            "definition": "不良习惯是反复进行且可能导致健康问题的行为模式。",
+            "example": "经常熬夜或沉迷电脑游戏。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "习惯形成",
+            "difficulty": 3,
+            "description": "选择经过反复重复后变成自动化行为的过程",
+            "aliases": [
+              "habit formation"
+            ],
+            "prerequisites": [],
+            "definition": "习惯形成是个人选择被持续重复并最终变得自动化的过程。",
+            "example": "反复吃零食后形成依赖零食的习惯。"
+          },
+          {
+            "name": "习惯循环",
+            "difficulty": 3,
+            "description": "由提示、惯例和奖励构成的习惯运行模式",
+            "aliases": [
+              "habit cycle"
+            ],
+            "prerequisites": [
+              "习惯形成"
+            ],
+            "definition": "习惯循环是提示引发惯例并由奖励强化的三阶段模式。",
+            "example": "感到不开心后吃零食并因快乐而继续。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "提示",
+            "difficulty": 2,
+            "description": "促使人开始某种行为的行动、事件或情境",
+            "aliases": [
+              "cue"
+            ],
+            "prerequisites": [
+              "习惯循环"
+            ],
+            "definition": "提示是向人发出执行某种行为信号的因素。",
+            "example": "感到不开心是吃零食的提示。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "惯例",
+            "difficulty": 2,
+            "description": "人回应提示时通常采取的规律性行动",
+            "aliases": [
+              "routine"
+            ],
+            "prerequisites": [
+              "习惯循环"
+            ],
+            "definition": "惯例是人在提示出现后反复采取的常规行为。",
+            "example": "出现不开心情绪后吃零食。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "奖励",
+            "difficulty": 2,
+            "description": "惯例带来的愉快感受或积极结果",
+            "aliases": [
+              "reward"
+            ],
+            "prerequisites": [
+              "习惯循环"
+            ],
+            "definition": "奖励是执行惯例后获得的满足感或有益结果。",
+            "example": "吃零食后感到快乐。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "改变坏习惯",
+            "difficulty": 3,
+            "description": "分析习惯循环并逐步调整原有行为模式",
+            "aliases": [
+              "change a habit"
+            ],
+            "prerequisites": [
+              "习惯循环",
+              "不良习惯"
+            ],
+            "definition": "改变坏习惯是识别其循环并用更积极的行为替代原惯例。",
+            "example": "不开心时用听音乐替代吃零食。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "替代消极惯例",
+            "difficulty": 3,
+            "description": "用更积极的行为替换原有的不良行为",
+            "aliases": [
+              "replace a negative routine"
+            ],
+            "prerequisites": [
+              "惯例",
+              "改变坏习惯"
+            ],
+            "definition": "替代消极惯例是保留提示和目标奖励而更换不良行动。",
+            "example": "把乘扶梯改为走楼梯。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "渐进式改变",
+            "difficulty": 3,
+            "description": "通过持续采取许多小步骤实现习惯改变",
+            "aliases": [
+              "step-by-step change"
+            ],
+            "prerequisites": [
+              "改变坏习惯"
+            ],
+            "definition": "渐进式改变是经过一段时间逐步而非突然改变习惯。",
+            "example": "每天作出一点生活方式调整。"
+          },
+          {
+            "name": "自律",
+            "difficulty": 3,
+            "description": "为达到改变目标而持续约束并坚持行动",
+            "aliases": [
+              "discipline"
+            ],
+            "prerequisites": [
+              "渐进式改变"
+            ],
+            "definition": "自律是为了实现目标而坚持采取必要行动的能力。",
+            "example": "持续坚持每天运动而不轻易放弃。",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "健康生活平衡",
+            "difficulty": 2,
+            "description": "在家庭、学习、工作和娱乐等方面保持适当比例",
+            "aliases": [
+              "balance in life"
+            ],
+            "prerequisites": [
+              "健康生活方式"
+            ],
+            "definition": "健康生活平衡是生活各要素协调发展而不过多或过少。",
+            "example": "不过度沉迷娱乐，也不忽视学习和健康。"
+          },
+          {
+            "name": "压力管理",
+            "difficulty": 3,
+            "description": "通过积极活动转移注意力并缓解压力的方法",
+            "aliases": [
+              "stress management"
+            ],
+            "prerequisites": [
+              "健康生活方式"
+            ],
+            "definition": "压力管理是运用适当方式减轻压力并恢复身心状态。",
+            "example": "散步、培养爱好或观看喜剧来放松。"
+          },
+          {
+            "name": "寻求和提供建议",
+            "difficulty": 2,
+            "description": "围绕生活问题请求、提出解决办法的交际功能",
+            "aliases": [
+              "asking for and giving advice"
+            ],
+            "prerequisites": [],
+            "definition": "寻求和提供建议是针对问题请求帮助或提出解决意见。",
+            "example": "Could you give me some advice? Why don’t you walk more?",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "接受和拒绝建议",
+            "difficulty": 2,
+            "description": "用恰当表达同意或婉拒他人建议的交际功能",
+            "aliases": [
+              "accepting and refusing advice"
+            ],
+            "prerequisites": [
+              "寻求和提供建议"
+            ],
+            "definition": "接受和拒绝建议是对他人意见作出同意或婉拒回应。",
+            "example": "That’s a good idea! 或 That’s a good idea, but…",
+            "section": "Habits for a Healthy Lifestyle"
+          },
+          {
+            "name": "不定式作主语",
+            "difficulty": 3,
+            "description": "用to do结构在句首充当句子主语",
+            "aliases": [
+              "infinitive as subject"
+            ],
+            "prerequisites": [],
+            "definition": "不定式作主语是以动词不定式短语表示主语的语法结构。",
+            "example": "To change bad habits is never easy."
+          },
+          {
+            "name": "编辑来信结构",
+            "difficulty": 3,
+            "description": "按问题、决定、行动和结果组织生活方式书信",
+            "aliases": [
+              "letter organisation"
+            ],
+            "prerequisites": [],
+            "definition": "编辑来信结构是围绕生活问题及其改变过程安排内容的写作框架。",
+            "example": "说明熬夜问题、改变决定、采取行动及最终结果。"
+          },
+          {
+            "name": "笑声与健康",
+            "difficulty": 2,
+            "description": "笑声对缓解疼痛和促进身心健康的作用",
+            "aliases": [
+              "laughter and health"
+            ],
+            "prerequisites": [
+              "健康生活方式"
+            ],
+            "definition": "笑声被介绍为有助于缓解疼痛并维护身心健康的自然方式。",
+            "example": "笑声能让人感觉良好并帮助放松。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Habits for a Healthy Lifestyle",
+            "section_key": "2142ab19bc",
+            "page_range": [
+              21,
+              35
+            ]
+          }
+        ],
+        "chapter_key": "563051a29f",
+        "metadata": {
+          "volume_id": "250a47dab333",
+          "file_id": "250a47dab333",
+          "volume_title": "英语选择性必修第3册",
+          "chapter_order": 2,
+          "raw_heading": "UNIT 2 HEALTHY LIFESTYLE"
+        }
+      },
+      {
+        "name": "UNIT 3 ENVIRONMENTAL PROTECTION",
+        "concepts": [
+          {
+            "name": "直接引语",
+            "difficulty": 1,
+            "description": "直接引用说话人的原话，通常用引号标示。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "直接引语是逐字引用他人话语的表达方式。",
+            "example": "The expert said, “Smog is harmful.”"
+          },
+          {
+            "name": "间接引语",
+            "difficulty": 2,
+            "description": "转述他人的陈述、请求或问题，不直接引用原话。",
+            "aliases": [],
+            "prerequisites": [
+              "直接引语"
+            ],
+            "definition": "间接引语是用自己的语言转述他人话语的表达方式。",
+            "example": "The expert said that smog was harmful."
+          },
+          {
+            "name": "间接陈述句",
+            "difficulty": 2,
+            "description": "用间接引语转述他人的事实、观点或愿望。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接陈述句把直接陈述内容置于转述结构中表达。",
+            "example": "She said that she wanted to help the world."
+          },
+          {
+            "name": "间接一般疑问句",
+            "difficulty": 3,
+            "description": "转述以whether或if引导的一般疑问句。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接一般疑问句将一般疑问内容改为陈述语序的从句。",
+            "example": "He asked whether polar bears would die out."
+          },
+          {
+            "name": "间接特殊疑问句",
+            "difficulty": 3,
+            "description": "转述以疑问词引导的特殊疑问句。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接特殊疑问句保留疑问词并使用陈述语序转述问题。",
+            "example": "She asked how we could save polar bears."
+          },
+          {
+            "name": "间接建议句",
+            "difficulty": 3,
+            "description": "用advise等结构转述建议或劝告。",
+            "aliases": [],
+            "prerequisites": [
+              "间接引语"
+            ],
+            "definition": "间接建议句把建议内容转化为转述者表达的劝告。",
+            "example": "The expert advised us to work together."
+          },
+          {
+            "name": "空气污染",
+            "difficulty": 1,
+            "description": "空气质量受到烟雾等污染物影响的环境问题。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "空气污染是空气中存在有害物质并影响人类生活的现象。",
+            "example": "The interview discusses air pollution and smog."
+          },
+          {
+            "name": "烟雾污染",
+            "difficulty": 2,
+            "description": "smog由烟和雾结合而成，会严重影响空气质量。",
+            "aliases": [
+              "smog"
+            ],
+            "prerequisites": [
+              "空气污染"
+            ],
+            "definition": "烟雾污染是烟雾混合形成并危害环境与健康的空气污染现象。",
+            "example": "London experienced heavy smog in 1952."
+          },
+          {
+            "name": "化石燃料",
+            "difficulty": 2,
+            "description": "燃烧化石燃料会产生烟雾并加重空气污染。",
+            "aliases": [
+              "fossil fuels"
+            ],
+            "prerequisites": [
+              "烟雾污染"
+            ],
+            "definition": "化石燃料是教材中导致英国烟雾污染加重的燃料来源。",
+            "example": "People burnt lots of fossil fuels."
+          },
+          {
+            "name": "水污染",
+            "difficulty": 1,
+            "description": "垃圾、油、生活废物和化学品导致水质恶化。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水污染是有害物质进入水体并造成水质下降的环境问题。",
+            "example": "Tourism increased water pollution in the Li River."
+          },
+          {
+            "name": "废水处理设施",
+            "difficulty": 2,
+            "description": "通过处理废水改善水质并促进水资源保护的设施。",
+            "aliases": [
+              "waste water treatment facilities"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "废水处理设施是用于处理污水、改善水质的环境治理设施。",
+            "example": "The facilities improved the river’s water quality.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "河长制",
+            "difficulty": 3,
+            "description": "让高级官员负责减少水污染的治理制度。",
+            "aliases": [
+              "River Chief System"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "河长制是由高级官员承担水污染治理责任的制度。",
+            "example": "The River Chief System holds officials responsible.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "环境意识",
+            "difficulty": 2,
+            "description": "人们认识环境问题并主动采取保护环境的意识。",
+            "aliases": [
+              "environmental awareness"
+            ],
+            "prerequisites": [],
+            "definition": "环境意识是关注环境影响并愿意采取保护行动的认识。",
+            "example": "The media spread environmental awareness.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "清洁能源",
+            "difficulty": 2,
+            "description": "用于减少环境污染的能源，教材提到应加以推广。",
+            "aliases": [
+              "clean energy"
+            ],
+            "prerequisites": [],
+            "definition": "清洁能源是相较污染性能源能够减少环境影响的能源。",
+            "example": "The authorities encouraged greater use of clean energy.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "水资源保护",
+            "difficulty": 2,
+            "description": "通过治理污染和节约用水改善水环境。",
+            "aliases": [
+              "water conservation"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "水资源保护是维护水质并合理利用水资源的环境行动。",
+            "example": "The project improved water quality and water conservation.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "环境问题报告",
+            "difficulty": 3,
+            "description": "介绍环境问题、成因、影响及治理措施的书面报告。",
+            "aliases": [
+              "environmental issue report"
+            ],
+            "prerequisites": [
+              "水污染"
+            ],
+            "definition": "环境问题报告是围绕具体环境问题进行说明和评估的文章。",
+            "example": "The report examines pollution in the Li River."
+          },
+          {
+            "name": "报告组织结构",
+            "difficulty": 3,
+            "description": "报告依次介绍主题、现状、已采取措施和进一步措施。",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题报告"
+            ],
+            "definition": "报告组织结构是环境报告安排信息和段落的基本方式。",
+            "example": "The four paragraphs introduce, describe, and present measures."
+          },
+          {
+            "name": "信息摘要",
+            "difficulty": 2,
+            "description": "记录关键信息并用自己的话简洁概括说话内容。",
+            "aliases": [
+              "summarising information"
+            ],
+            "prerequisites": [],
+            "definition": "信息摘要是提取要点并简明重述主要信息的表达活动。",
+            "example": "Summarise the expert’s interview in your own words."
+          },
+          {
+            "name": "能源节约",
+            "difficulty": 1,
+            "description": "通过日常小改变减少能源消耗并节约费用。",
+            "aliases": [
+              "energy conservation"
+            ],
+            "prerequisites": [],
+            "definition": "能源节约是减少不必要能源消耗的生活和环境行动。",
+            "example": "Turn off lights when leaving a room.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "垃圾回收再利用",
+            "difficulty": 2,
+            "description": "收集并重新利用垃圾制作物品或支持环保生活。",
+            "aliases": [
+              "reuse and recycle trash"
+            ],
+            "prerequisites": [],
+            "definition": "垃圾回收再利用是将废弃物回收并转化为可用资源的做法。",
+            "example": "The school was built from recycled materials.",
+            "section": "Reducing Water Pollution in the Li River"
+          },
+          {
+            "name": "太阳能板",
+            "difficulty": 1,
+            "description": "绿色学校使用太阳能板提供能源并减少废物产生。",
+            "aliases": [
+              "solar panels"
+            ],
+            "prerequisites": [
+              "清洁能源"
+            ],
+            "definition": "太阳能板是利用太阳能为设施提供电力的装置。",
+            "example": "The school is powered by solar panels.",
+            "section": "Reducing Water Pollution in the Li River"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Reducing Water Pollution in the Li River",
+            "section_key": "4a8661b1f6",
+            "page_range": [
+              39,
+              45
+            ]
+          }
+        ],
+        "chapter_key": "26c20218ca",
+        "metadata": {
+          "volume_id": "250a47dab333",
+          "file_id": "250a47dab333",
+          "volume_title": "英语选择性必修第3册",
+          "chapter_order": 3,
+          "raw_heading": "UNIT 3 ENVIRONMENTAL PROTECTION"
+        }
+      },
+      {
+        "name": "UNIT 4 ADVERSITY AND COURAGE",
+        "concepts": [
+          {
+            "name": "逆境与勇气",
+            "difficulty": 2,
+            "description": "围绕困难处境中的勇气与应对展开学习",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "逆境与勇气指人在艰难环境中保持勇敢并采取行动。",
+            "example": "Shackleton sailed to South Georgia for help."
+          },
+          {
+            "name": "人物品质推断",
+            "difficulty": 3,
+            "description": "依据人物言语和行动推断品质与情感",
+            "aliases": [
+              "人物特征推断"
+            ],
+            "prerequisites": [],
+            "definition": "人物品质推断是根据故事中人物的言语和行动判断其性格品质与情感。",
+            "example": "Wild’s concern shows that he is kind."
+          },
+          {
+            "name": "南极探险救援",
+            "difficulty": 3,
+            "description": "学习Endurance船员受困及Shackleton组织救援的过程",
+            "aliases": [],
+            "prerequisites": [
+              "逆境与勇气"
+            ],
+            "definition": "南极探险救援讲述探险队受困后前往南乔治亚岛求援并最终获救。",
+            "example": "Shackleton left Elephant Island to find help."
+          },
+          {
+            "name": "南极生存方法",
+            "difficulty": 3,
+            "description": "掌握船员在象岛解决饮水、燃料和食物问题的方法",
+            "aliases": [],
+            "prerequisites": [
+              "南极探险救援"
+            ],
+            "definition": "南极生存方法是利用海冰、动物脂肪和海洋动物维持生存。",
+            "example": "They melted ocean ice for drinking water."
+          },
+          {
+            "name": "乐观与毅力",
+            "difficulty": 3,
+            "description": "理解船员在长期等待和困境中保持希望并坚持",
+            "aliases": [
+              "坚持与乐观"
+            ],
+            "prerequisites": [
+              "逆境与勇气"
+            ],
+            "definition": "乐观与毅力指在困难和不确定中保持希望并持续努力。",
+            "example": "Their optimism helped them persevere."
+          },
+          {
+            "name": "团队纪律与精神",
+            "difficulty": 3,
+            "description": "理解纪律、合作和团队精神对集体生存的作用",
+            "aliases": [
+              "团队精神"
+            ],
+            "prerequisites": [
+              "乐观与毅力"
+            ],
+            "definition": "团队纪律与精神是成员遵守秩序、互相支持并共同应对困难。",
+            "example": "Discipline and team spirit kept them optimistic."
+          },
+          {
+            "name": "现在完成进行时",
+            "difficulty": 3,
+            "description": "表示从过去开始持续到现在或刚结束的动作",
+            "aliases": [
+              "present perfect continuous tense"
+            ],
+            "prerequisites": [],
+            "definition": "现在完成进行时由have或has been加现在分词构成，强调动作的持续性。",
+            "example": "I have been learning English for five years."
+          },
+          {
+            "name": "因果关系识别",
+            "difficulty": 2,
+            "description": "识别演讲或叙述中的原因、结果及其连接表达",
+            "aliases": [
+              "cause and effect"
+            ],
+            "prerequisites": [],
+            "definition": "因果关系识别是判断事件发生的原因及其产生的结果。",
+            "example": "Due to rough seas, the journey was difficult.",
+            "section": "The rescue"
+          },
+          {
+            "name": "方案讨论表达",
+            "difficulty": 3,
+            "description": "使用提议、比较和选择等表达讨论救援队人选",
+            "aliases": [
+              "探索选项表达"
+            ],
+            "prerequisites": [],
+            "definition": "方案讨论表达是用提议、询问替代方案和推进讨论的语言交流观点。",
+            "example": "What do you think about Frank Worsley?"
+          },
+          {
+            "name": "探险故事写作",
+            "difficulty": 3,
+            "description": "概述探险经历并用事例分析人物和表达总体感受",
+            "aliases": [
+              "故事概要写作"
+            ],
+            "prerequisites": [
+              "人物品质推断",
+              "南极探险救援"
+            ],
+            "definition": "探险故事写作是围绕人物、事件、地点、时间、原因和方式组织故事并表达评价。",
+            "example": "The essay explains why the crew survived."
+          },
+          {
+            "name": "人物 persevera",
+            "difficulty": 4,
+            "description": "研究经历逆境并坚持克服困难的人物并作报告",
+            "aliases": [
+              "人物坚持报告"
+            ],
+            "prerequisites": [
+              "探险故事写作"
+            ],
+            "definition": "人物坚持报告是介绍人物背景、挑战、克服方式、成就及他人评价的报告。",
+            "example": "The report describes Beethoven’s challenges and achievements."
+          }
+        ],
+        "sections": [
+          {
+            "name": "The rescue",
+            "section_key": "1faa200298",
+            "page_range": [
+              49,
+              50
+            ]
+          },
+          {
+            "name": "The Reward for Perseverance",
+            "section_key": "eaa8abb773",
+            "page_range": [
+              51,
+              57
+            ]
+          }
+        ],
+        "chapter_key": "4814378c6f",
+        "metadata": {
+          "volume_id": "250a47dab333",
+          "file_id": "250a47dab333",
+          "volume_title": "英语选择性必修第3册",
+          "chapter_order": 4,
+          "raw_heading": "UNIT 4 ADVERSITY AND COURAGE"
+        }
+      },
+      {
+        "name": "UNIT 5 POEMS",
+        "concepts": [
+          {
+            "name": "诗歌画面",
+            "difficulty": 3,
+            "description": "诗歌用词语描绘画面，读者需在脑海中想象。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "诗歌画面是诗歌通过语言使读者想象出的视觉形象。",
+            "example": "A fallen blossom描绘花朵与蝴蝶的画面。"
+          },
+          {
+            "name": "押韵",
+            "difficulty": 3,
+            "description": "诗行末尾使用读音相近的词，形成韵律感。",
+            "aliases": [
+              "rhyme"
+            ],
+            "prerequisites": [],
+            "definition": "押韵是诗歌中相关词语的读音相近或相同的现象。",
+            "example": "mockingbird、word和heard押韵。"
+          },
+          {
+            "name": "重复",
+            "difficulty": 2,
+            "description": "有意重复词语或句式，增强节奏和表达效果。",
+            "aliases": [
+              "repetition"
+            ],
+            "prerequisites": [],
+            "definition": "重复是诗歌反复使用相同词语或结构的表达方式。",
+            "example": "儿歌中可通过重复形成鲜明节奏。",
+            "section": "Exploring Poetry in China"
+          },
+          {
+            "name": "节奏韵律",
+            "difficulty": 3,
+            "description": "诗歌声音有规律的强弱、长短和停顿。",
+            "aliases": [
+              "rhythm"
+            ],
+            "prerequisites": [],
+            "definition": "节奏韵律是诗歌语言在声音组织上形成的规律感。",
+            "example": "自然英语口语的节奏可体现在无韵诗中。"
+          },
+          {
+            "name": "音节",
+            "difficulty": 2,
+            "description": "构成词语发音的语音单位，俳句按音节安排诗行。",
+            "aliases": [
+              "syllable"
+            ],
+            "prerequisites": [],
+            "definition": "音节是语音中能独立感知的发音单位。",
+            "example": "俳句三行分别含5、7、5个音节。",
+            "section": "Exploring Poetry in China"
+          },
+          {
+            "name": "五行诗",
+            "difficulty": 3,
+            "description": "由五行组成，能用少量词语传达画面或情绪。",
+            "aliases": [
+              "cinquain"
+            ],
+            "prerequisites": [],
+            "definition": "五行诗是一种由五行构成的简短诗歌形式。",
+            "example": "Brother用五行简洁表现兄弟关系。"
+          },
+          {
+            "name": "俳句",
+            "difficulty": 3,
+            "description": "日本诗歌形式，共17个音节，三行按5、7、5排列。",
+            "aliases": [
+              "haiku"
+            ],
+            "prerequisites": [
+              "音节"
+            ],
+            "definition": "俳句是由三行组成且音节数依次为5、7、5的诗歌形式。",
+            "example": "D落花回到枝头并写到蝴蝶。"
+          },
+          {
+            "name": "儿歌",
+            "difficulty": 3,
+            "description": "语言具体而富有创造性，常使用押韵和重复。",
+            "aliases": [
+              "nursery rhyme"
+            ],
+            "prerequisites": [
+              "押韵",
+              "重复"
+            ],
+            "definition": "儿歌是面向儿童的诗歌形式，具有具体语言及押韵、重复等特点。",
+            "example": "儿歌可表现父亲与婴儿之间的爱。"
+          },
+          {
+            "name": "列表诗",
+            "difficulty": 3,
+            "description": "以列举事物或相关内容的方式组织诗歌。",
+            "aliases": [
+              "list poem"
+            ],
+            "prerequisites": [],
+            "definition": "列表诗是通过连续列举内容来构成诗歌的形式。",
+            "example": "诗中可依次列出人物的动作或特征。",
+            "section": "Wind on the Hill / Dream / A Match"
+          },
+          {
+            "name": "唐诗英译",
+            "difficulty": 3,
+            "description": "唐代诗歌被翻译成英语，供英语读者欣赏。",
+            "aliases": [
+              "Tang poetry"
+            ],
+            "prerequisites": [],
+            "definition": "唐诗英译是将唐代诗歌转换为英语版本的文学实践。",
+            "example": "教材介绍了王建唐诗的英语译文。",
+            "section": "Exploring Poetry in China"
+          },
+          {
+            "name": "比喻修辞",
+            "difficulty": 4,
+            "description": "借助比喻等修辞和隐喻增强诗歌的画面与表达。",
+            "aliases": [
+              "figures of speech",
+              "metaphors"
+            ],
+            "prerequisites": [
+              "诗歌画面"
+            ],
+            "definition": "比喻修辞是借助相关形象或意义联系表达诗意的语言手法。",
+            "example": "诗歌通过石头等意象寄托等待之情。"
+          },
+          {
+            "name": "诗歌音乐性",
+            "difficulty": 3,
+            "description": "诗歌的声音、节奏和押韵共同形成音乐般的效果。",
+            "aliases": [
+              "musical quality"
+            ],
+            "prerequisites": [
+              "节奏韵律",
+              "押韵"
+            ],
+            "definition": "诗歌音乐性是诗歌在声音组织上产生的听觉美感。",
+            "example": "诗歌常需大声朗读才能充分感受其音乐性。"
+          },
+          {
+            "name": "感情朗读",
+            "difficulty": 2,
+            "description": "朗读诗歌时融入感情，以更好地理解和欣赏诗意。",
+            "aliases": [
+              "read aloud with feeling"
+            ],
+            "prerequisites": [
+              "诗歌音乐性"
+            ],
+            "definition": "感情朗读是带着恰当情感和声音表现朗读诗歌的方法。",
+            "example": "朗读诗歌时应读出其中的悲伤或喜悦。"
+          },
+          {
+            "name": "关系从句",
+            "difficulty": 4,
+            "description": "用关系代词或关系副词连接从句，补充说明名词。",
+            "aliases": [
+              "relative clauses"
+            ],
+            "prerequisites": [],
+            "definition": "关系从句是由关系代词或关系副词引导并修饰名词的从句。",
+            "example": "The poems which Tagore wrote show children’s feelings。"
+          },
+          {
+            "name": "听前知识预测",
+            "difficulty": 2,
+            "description": "听熟悉话题前调动已有知识，预测可能听到的内容。",
+            "aliases": [
+              "use your prior knowledge"
+            ],
+            "prerequisites": [],
+            "definition": "听前知识预测是利用已有相关知识推测听力内容的策略。",
+            "example": "听诗歌比赛对话前先回忆写诗经历。",
+            "section": "Attending a poetry contest"
+          },
+          {
+            "name": "赞扬与鼓励",
+            "difficulty": 2,
+            "description": "用积极表达肯定他人想法、努力并鼓励其继续尝试。",
+            "aliases": [
+              "praising and encouraging"
+            ],
+            "prerequisites": [],
+            "definition": "赞扬与鼓励是对他人的想法或表现给予肯定和支持的交际表达。",
+            "example": "Keep up the good work。",
+            "section": "Attending a poetry contest"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Attending a poetry contest",
+            "section_key": "41dfbd3207",
+            "page_range": [
+              61,
+              64
+            ]
+          },
+          {
+            "name": "Wind on the Hill / Dream / A Match",
+            "section_key": "8643d87cdd",
+            "page_range": [
+              64,
+              99
+            ]
+          },
+          {
+            "name": "Exploring Poetry in China",
+            "section_key": "146f5cb989",
+            "page_range": [
+              99,
+              130
+            ]
+          }
+        ],
+        "chapter_key": "917fdf910e",
+        "metadata": {
+          "volume_id": "250a47dab333",
+          "file_id": "250a47dab333",
+          "volume_title": "英语选择性必修第3册",
+          "chapter_order": 5,
+          "raw_heading": "UNIT 5 POEMS"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "582a7f5234": [
+        15,
+        21
+      ],
+      "Ancient Chinese Art on Show": [
+        15,
+        21
+      ],
+      "2142ab19bc": [
+        21,
+        35
+      ],
+      "Habits for a Healthy Lifestyle": [
+        21,
+        35
+      ],
+      "4a8661b1f6": [
+        39,
+        45
+      ],
+      "Reducing Water Pollution in the Li River": [
+        39,
+        45
+      ],
+      "1faa200298": [
+        49,
+        50
+      ],
+      "The rescue": [
+        49,
+        50
+      ],
+      "eaa8abb773": [
+        51,
+        57
+      ],
+      "The Reward for Perseverance": [
+        51,
+        57
+      ],
+      "41dfbd3207": [
+        61,
+        64
+      ],
+      "Attending a poetry contest": [
+        61,
+        64
+      ],
+      "8643d87cdd": [
+        64,
+        99
+      ],
+      "Wind on the Hill / Dream / A Match": [
+        64,
+        99
+      ],
+      "146f5cb989": [
+        99,
+        130
+      ],
+      "Exploring Poetry in China": [
+        99,
+        130
+      ]
+    }
+  }
+}

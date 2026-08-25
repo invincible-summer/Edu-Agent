@@ -1,0 +1,4863 @@
+{
+  "file_id": "2a3ea42701e8",
+  "text_sha256": "c286367048c405bdab057188c340b123f594eb1d45a0b4f68877a9aeeae54777",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "语文",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元",
+        "concepts": [
+          {
+            "name": "儒家思想特征",
+            "difficulty": 3,
+            "description": "孔子、孟子思想中重视礼治、仁政与社会理想",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "儒家思想强调以礼规范社会，并以仁政实现理想社会。",
+            "example": "为国以礼，保民而王。"
+          },
+          {
+            "name": "道家思想特征",
+            "difficulty": 3,
+            "description": "道家重视顺应自然规律和保全天性",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "道家主张顺应事物本然规律，减少人为强求。",
+            "example": "依乎天理，因其固然。"
+          },
+          {
+            "name": "语录体",
+            "difficulty": 2,
+            "description": "以人物言论为主要内容的文章体式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "语录体以记录人物谈话或言论来表现思想。",
+            "example": "孔子与弟子的问答。",
+            "section": "庖丁解牛"
+          },
+          {
+            "name": "对话论说",
+            "difficulty": 3,
+            "description": "通过人物问答逐步阐明观点的论说方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "对话论说借助问答和应答推进论述并表达主张。",
+            "example": "孟子与齐宣王反复问答。"
+          },
+          {
+            "name": "寓言表达",
+            "difficulty": 3,
+            "description": "借故事和形象情节寄托抽象思想",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "寓言表达通过虚构故事或人物行为含蓄阐释道理。",
+            "example": "厨师解牛寄托养生之道。"
+          },
+          {
+            "name": "仁政王道",
+            "difficulty": 3,
+            "description": "以爱护百姓、施行仁政来实现王天下",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "仁政王道主张通过安民养民和施行仁政治理天下。",
+            "example": "保民而王，莫之能御也。",
+            "section": "* 齐桓晋文之事"
+          },
+          {
+            "name": "推恩保民",
+            "difficulty": 3,
+            "description": "把爱护亲人的心推广到百姓和天下",
+            "aliases": [],
+            "prerequisites": [
+              "仁政王道"
+            ],
+            "definition": "推恩保民是将自身已有的仁爱之心推广到百姓。",
+            "example": "老吾老，以及人之老。"
+          },
+          {
+            "name": "礼治思想",
+            "difficulty": 3,
+            "description": "以礼规范治国行为和个人言行",
+            "aliases": [],
+            "prerequisites": [
+              "儒家思想特征"
+            ],
+            "definition": "礼治思想认为治理国家应遵循礼的规范并保持谦让。",
+            "example": "为国以礼，其言不让。"
+          },
+          {
+            "name": "顺应自然",
+            "difficulty": 3,
+            "description": "依据事物自身规律行动而不强行妄为",
+            "aliases": [],
+            "prerequisites": [
+              "道家思想特征"
+            ],
+            "definition": "顺应自然强调按照事物固有结构和规律处理问题。",
+            "example": "因其固然，游刃有余。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "编年体史书",
+            "difficulty": 2,
+            "description": "按时间顺序记载历史事件的史书体裁",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "编年体以时间为经、历史事件为纬来叙述历史。",
+            "example": "按年份叙述诸侯围郑事件。",
+            "section": "2 烛之武退秦师"
+          },
+          {
+            "name": "纪传体史书",
+            "difficulty": 2,
+            "description": "以人物为中心叙述历史的史书体裁",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "纪传体通过本纪、世家、列传等篇章记录历史人物和事件。",
+            "example": "围绕刘邦、项羽叙述鸿门宴。",
+            "section": "3 * 鸿门宴"
+          },
+          {
+            "name": "史传叙事",
+            "difficulty": 3,
+            "description": "在记述史实中展现人物、事件及思想观念",
+            "aliases": [],
+            "prerequisites": [
+              "编年体史书",
+              "纪传体史书"
+            ],
+            "definition": "史传叙事以历史事实为基础并兼顾情节、人物和史识。",
+            "example": "通过宴会细节表现人物性格。"
+          },
+          {
+            "name": "辞令艺术",
+            "difficulty": 3,
+            "description": "借外交说辞分析利害以达到劝说目的",
+            "aliases": [],
+            "prerequisites": [
+              "对话论说"
+            ],
+            "definition": "辞令艺术通过有层次的言语陈说利害并影响对方决策。",
+            "example": "从秦国利益出发劝秦退兵。"
+          },
+          {
+            "name": "人物描写",
+            "difficulty": 3,
+            "description": "通过言行、神态和细节塑造鲜明人物形象",
+            "aliases": [],
+            "prerequisites": [
+              "史传叙事"
+            ],
+            "definition": "人物描写运用人物的语言、行动和细节表现其性格。",
+            "example": "范增数目项王而项王默然不应。",
+            "section": "3 * 鸿门宴"
+          },
+          {
+            "name": "语气助词",
+            "difficulty": 2,
+            "description": "表达判断、陈述、疑问、感叹等语气的词",
+            "aliases": [
+              "也",
+              "乎",
+              "矣",
+              "哉",
+              "焉"
+            ],
+            "prerequisites": [],
+            "definition": "语气助词用于句首、句中或句末，表达特定语气。",
+            "example": "何伤乎？表达反问语气。"
+          },
+          {
+            "name": "一词多义",
+            "difficulty": 3,
+            "description": "同一文言实词在不同语境中具有不同意义",
+            "aliases": [
+              "文言实词卡片"
+            ],
+            "prerequisites": [],
+            "definition": "一词多义指一个文言实词随语境变化而产生多个义项。",
+            "example": "“道”可指说、规律、道路、取道。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "阐述观点",
+            "difficulty": 2,
+            "description": "围绕明确主张解释、论证并说服读者",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "阐述观点是清楚表达主张并用充分理由使人信服。",
+            "example": "围绕推恩保民发表看法。"
+          },
+          {
+            "name": "写作意图",
+            "difficulty": 2,
+            "description": "作者提出观点并写作文章所要达到的目的",
+            "aliases": [],
+            "prerequisites": [
+              "阐述观点"
+            ],
+            "definition": "写作意图说明文章针对的问题及作者希望实现的目的。",
+            "example": "通过论述纠正片面看法。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "观点论证",
+            "difficulty": 3,
+            "description": "依据观点逻辑选择材料并逐步推导结论",
+            "aliases": [],
+            "prerequisites": [
+              "阐述观点"
+            ],
+            "definition": "观点论证是运用论据和推理充分解释、证明观点。",
+            "example": "以牛羊之喻说明仁心可推及百姓。"
+          },
+          {
+            "name": "并列式结构",
+            "difficulty": 2,
+            "description": "从多个并列方面共同阐述一个观点",
+            "aliases": [],
+            "prerequisites": [
+              "阐述观点"
+            ],
+            "definition": "并列式结构将相互关联但地位平行的内容分别展开。",
+            "example": "从不同方面说明观点意义。"
+          },
+          {
+            "name": "层进式结构",
+            "difficulty": 3,
+            "description": "按照层次由浅入深地解释和论证观点",
+            "aliases": [],
+            "prerequisites": [
+              "观点论证"
+            ],
+            "definition": "层进式结构先提出观点，再逐层深入解释并得出结论。",
+            "example": "先指出问题，再分析原因，最后提出办法。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "1 子路、曾皙、冉有、公西华侍坐",
+            "page_range": [
+              9,
+              11
+            ]
+          },
+          {
+            "name": "* 齐桓晋文之事",
+            "page_range": [
+              11,
+              15
+            ]
+          },
+          {
+            "name": "庖丁解牛",
+            "page_range": [
+              15,
+              17
+            ]
+          },
+          {
+            "name": "2 烛之武退秦师",
+            "page_range": [
+              17,
+              20
+            ]
+          },
+          {
+            "name": "3 * 鸿门宴",
+            "page_range": [
+              20,
+              25
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "page_range": [
+              25,
+              28
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二单元",
+        "concepts": [
+          {
+            "name": "传统戏曲",
+            "difficulty": 2,
+            "description": "中国戏曲历史悠久，具有独特的演出形式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "传统戏曲是融合故事、角色、唱念做打等形式的综合舞台艺术。",
+            "example": "从故事、角色和演出形式认识戏曲。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "元杂剧",
+            "difficulty": 3,
+            "description": "元代形成并成熟的戏曲剧种",
+            "aliases": [],
+            "prerequisites": [
+              "传统戏曲"
+            ],
+            "definition": "元杂剧是元代兴盛的戏曲形式，一剧通常分为若干折。",
+            "example": "一折由同一宫调的曲牌联成套曲。"
+          },
+          {
+            "name": "宫调",
+            "difficulty": 3,
+            "description": "杂剧一折所使用的音乐调式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "宫调是以某一声为主构成的古代音乐调式。",
+            "example": "正宫是杂剧使用的宫调之一。"
+          },
+          {
+            "name": "曲牌",
+            "difficulty": 3,
+            "description": "戏曲唱词所依据的曲调名称",
+            "aliases": [],
+            "prerequisites": [
+              "宫调"
+            ],
+            "definition": "曲牌是戏曲中规定曲调和句式的曲调名称。",
+            "example": "端正好、滚绣球都是曲牌名。"
+          },
+          {
+            "name": "戏曲角色行当",
+            "difficulty": 2,
+            "description": "传统戏曲中按身份和性别划分的角色类型",
+            "aliases": [],
+            "prerequisites": [
+              "传统戏曲"
+            ],
+            "definition": "戏曲角色行当是对剧中人物类型及表演职能的分类。",
+            "example": "正旦通常扮演女主角，卜儿扮演老年妇女。"
+          },
+          {
+            "name": "本色派",
+            "difficulty": 3,
+            "description": "元杂剧中语言质朴自然的创作流派",
+            "aliases": [],
+            "prerequisites": [
+              "元杂剧"
+            ],
+            "definition": "本色派作品以说白凝练流畅、唱词优美而节奏鲜明见长。",
+            "example": "唱词节奏鲜明，能深入展示人物内心。"
+          },
+          {
+            "name": "悲剧",
+            "difficulty": 3,
+            "description": "表现有价值事物遭受毁灭的戏剧类型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "悲剧是将人生中有价值的东西毁灭给人看的戏剧类型。",
+            "example": "善良、真情和理想遭到现实摧残。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "戏剧冲突",
+            "difficulty": 3,
+            "description": "人物、愿望与环境之间的尖锐矛盾",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "戏剧冲突是推动剧情发展并展现人物性格的矛盾对立。",
+            "example": "鲁大海与周朴园围绕罢工发生对峙。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "舞台说明",
+            "difficulty": 2,
+            "description": "剧本中提示环境、动作和表情的文字",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "舞台说明是剧本中交代舞台环境及人物动作表情的说明文字。",
+            "example": "“天气更阴沉，更郁热”交代了舞台气氛。"
+          },
+          {
+            "name": "潜台词",
+            "difficulty": 3,
+            "description": "台词表面话语背后隐藏的真实意味",
+            "aliases": [
+              "言外之意"
+            ],
+            "prerequisites": [
+              "戏剧冲突"
+            ],
+            "definition": "潜台词是人物台词未直接说出却蕴含的真实思想和情感。",
+            "example": "“你是萍”中的停顿包含复杂情绪。"
+          },
+          {
+            "name": "戏剧独白",
+            "difficulty": 3,
+            "description": "人物独自抒发思想和情感的台词",
+            "aliases": [
+              "独白"
+            ],
+            "prerequisites": [],
+            "definition": "戏剧独白是人物脱离对话、直接展现内心世界的长段台词。",
+            "example": "“生存还是毁灭”表现人物的内心冲突。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "重场戏",
+            "difficulty": 3,
+            "description": "集中展现人物内心并推进剧情的关键场面",
+            "aliases": [],
+            "prerequisites": [
+              "戏剧冲突"
+            ],
+            "definition": "重场戏是戏剧中冲突尖锐、意蕴丰富且能突出人物的关键场面。",
+            "example": "周朴园与鲁侍萍相认是重场戏。"
+          },
+          {
+            "name": "台本",
+            "difficulty": 2,
+            "description": "经过处理并供演出使用的剧本",
+            "aliases": [
+              "演出本"
+            ],
+            "prerequisites": [
+              "舞台说明"
+            ],
+            "definition": "台本是补充适当内容后作为排演和正式演出依据的剧本。",
+            "example": "演出本需补充灯光、服装和舞台布置。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "三桩誓愿",
+            "difficulty": 3,
+            "description": "人物临刑前为证明冤屈发出的三个誓愿",
+            "aliases": [],
+            "prerequisites": [
+              "悲剧"
+            ],
+            "definition": "三桩誓愿是人物以异常天象昭示冤情的三项临刑誓愿。",
+            "example": "血飞白练、六月降雪、楚州亢旱三年。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "单元学习任务",
+            "page_range": [
+              50,
+              51
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三单元",
+        "concepts": [
+          {
+            "name": "知识性读物阅读",
+            "difficulty": 3,
+            "description": "阅读介绍科学成果、研究问题的文章",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "知识性读物阅读要把握概念术语、文章思路和阐释推理方法。",
+            "example": "阅读文章时梳理科学发现的过程。"
+          },
+          {
+            "name": "关键概念术语",
+            "difficulty": 2,
+            "description": "知识性文章中承载核心意义的词语",
+            "aliases": [],
+            "prerequisites": [
+              "知识性读物阅读"
+            ],
+            "definition": "关键概念和术语是理解知识性文章内容与思路的重要支点。",
+            "example": "抓住“暗示性”“文法”等词语。"
+          },
+          {
+            "name": "科学发现过程",
+            "difficulty": 3,
+            "description": "科学成果从探索到应用的发展历程",
+            "aliases": [],
+            "prerequisites": [
+              "知识性读物阅读"
+            ],
+            "definition": "科学发现过程包括提出问题、实验探索、取得突破和推广应用等环节。",
+            "example": "从提取青蒿素到开发抗疟药物。"
+          },
+          {
+            "name": "中医药学贡献",
+            "difficulty": 2,
+            "description": "中医药学在疾病治疗和健康维护中的作用",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中医药学贡献指传统医药经验经过研究转化后对人类健康产生的作用。",
+            "example": "青蒿素用于治疗疟疾。"
+          },
+          {
+            "name": "低温提取",
+            "difficulty": 3,
+            "description": "用较低温度提取青蒿有效成分的方法",
+            "aliases": [],
+            "prerequisites": [
+              "科学发现过程"
+            ],
+            "definition": "低温提取是为保存青蒿抗疟活性成分而改变的提取方式。",
+            "example": "改用低温提取后抗疟效果大幅提升。",
+            "section": "7 青蒿素:人类征服疾病的一小步"
+          },
+          {
+            "name": "青蒿素",
+            "difficulty": 3,
+            "description": "从青蒿中发现并提取的抗疟有效成分",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学贡献",
+              "低温提取"
+            ],
+            "definition": "青蒿素是从青蒿中分离提纯得到的抗疟药物有效成分。",
+            "example": "青蒿素联合疗法广泛用于治疗疟疾。"
+          },
+          {
+            "name": "联合疗法",
+            "difficulty": 3,
+            "description": "联合使用青蒿素类药物治疗疟疾的方法",
+            "aliases": [
+              "ACT"
+            ],
+            "prerequisites": [
+              "青蒿素"
+            ],
+            "definition": "联合疗法是以青蒿素类药物组合使用的一线抗疟治疗方案。",
+            "example": "世界卫生组织推荐青蒿素联合疗法。",
+            "section": "7 青蒿素:人类征服疾病的一小步"
+          },
+          {
+            "name": "高维世界",
+            "difficulty": 4,
+            "description": "超出通常空间维度理解的理论世界",
+            "aliases": [
+              "多维空间"
+            ],
+            "prerequisites": [],
+            "definition": "高维世界是空间维数超过通常理解范围的理论物理学设想。",
+            "example": "高维世界可能有助于解释统一场论。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "统一场论",
+            "difficulty": 4,
+            "description": "试图统一自然界各种相互作用的理论",
+            "aliases": [],
+            "prerequisites": [
+              "高维世界"
+            ],
+            "definition": "统一场论试图把电磁、引力、弱、强等相互作用统一起来。",
+            "example": "爱因斯坦后半生研究统一场论。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "反物质",
+            "difficulty": 4,
+            "description": "由反粒子组成、性质异于普通物质的物质",
+            "aliases": [],
+            "prerequisites": [
+              "统一场论"
+            ],
+            "definition": "反物质是由反粒子组成的物质，接触普通物质后会发生湮没。",
+            "example": "正电子是电子的反物质。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "电子感应加速器",
+            "difficulty": 4,
+            "description": "利用磁场加速电子的实验装置",
+            "aliases": [],
+            "prerequisites": [
+              "反物质"
+            ],
+            "definition": "电子感应加速器是能够把电子加速到高能量的实验仪器。",
+            "example": "用它产生反电子并观察粒子踪迹。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "中国建筑基本特征",
+            "difficulty": 3,
+            "description": "中国传统建筑体系的九项主要特点",
+            "aliases": [],
+            "prerequisites": [
+              "知识性读物阅读"
+            ],
+            "definition": "中国建筑基本特征是中国传统建筑在布局、结构、构件和装饰方面的共同特点。",
+            "example": "木材结构、斗拱和曲面屋顶。"
+          },
+          {
+            "name": "木构架结构",
+            "difficulty": 3,
+            "description": "以立柱和横梁组成梁架承重的结构",
+            "aliases": [
+              "框架结构"
+            ],
+            "prerequisites": [
+              "中国建筑基本特征"
+            ],
+            "definition": "木构架结构以柱和梁组成框架承托重量，墙壁主要用于分隔空间。",
+            "example": "房顶重量由柱承担而非墙壁承担。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "斗拱",
+            "difficulty": 3,
+            "description": "由拱和斗组合而成的中国建筑构件",
+            "aliases": [],
+            "prerequisites": [
+              "木构架结构"
+            ],
+            "definition": "斗拱是位于柱梁交接处、兼具承托、加固和装饰作用的构件。",
+            "example": "斗拱可承托屋檐并减少剪力。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "举架",
+            "difficulty": 3,
+            "description": "通过梁层变化形成屋顶坡度的做法",
+            "aliases": [
+              "举折"
+            ],
+            "prerequisites": [
+              "木构架结构"
+            ],
+            "definition": "举架是使梁层逐渐变化，从而形成屋顶曲面和坡度的结构方法。",
+            "example": "屋顶坡度由檐部向屋脊逐步增高。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "建筑文法",
+            "difficulty": 3,
+            "description": "中国建筑长期形成并遵循的建造法式",
+            "aliases": [],
+            "prerequisites": [
+              "中国建筑基本特征"
+            ],
+            "definition": "建筑文法是中国建筑构件组织、比例处理和装饰安排的惯例规则。",
+            "example": "庭院布局和屋顶处理遵循一定法式。"
+          },
+          {
+            "name": "建筑词汇",
+            "difficulty": 3,
+            "description": "构成建筑的具体构件和组成因素",
+            "aliases": [],
+            "prerequisites": [
+              "建筑文法"
+            ],
+            "definition": "建筑词汇是梁柱、门窗、斗拱、庭院等构成建筑的具体要素。",
+            "example": "梁、柱、瓦和栏杆都是建筑词汇。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "建筑可译性",
+            "difficulty": 4,
+            "description": "不同民族建筑用各自形式表达相同功能",
+            "aliases": [],
+            "prerequisites": [
+              "建筑文法",
+              "建筑词汇"
+            ],
+            "definition": "建筑可译性指不同民族可以用各自的建筑规则和形式解决相同问题。",
+            "example": "不同民族用不同形式建造台基和栏杆。"
+          },
+          {
+            "name": "说明事理",
+            "difficulty": 3,
+            "description": "清晰阐释事物规律、因果和联系",
+            "aliases": [],
+            "prerequisites": [
+              "关键概念术语"
+            ],
+            "definition": "说明事理是围绕关键概念、因果关系和发展规律解释抽象道理。",
+            "example": "说明中国建筑文法的形成和作用。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "说明顺序",
+            "difficulty": 3,
+            "description": "安排说明内容层次的具体思路",
+            "aliases": [],
+            "prerequisites": [
+              "说明事理"
+            ],
+            "definition": "说明顺序是根据认识规律和对象特点组织说明内容的先后次序。",
+            "example": "从诗句现象逐步分析木叶的暗示性。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "诗歌语言暗示性",
+            "difficulty": 4,
+            "description": "词语概念之外潜藏的形象和情感意味",
+            "aliases": [
+              "语言暗示性"
+            ],
+            "prerequisites": [
+              "诗歌意象"
+            ],
+            "definition": "诗歌语言暗示性指词语除概念意义外还会引发特定形象、色彩和情感联想。",
+            "example": "“木”暗示疏朗、干燥和清秋气息。"
+          },
+          {
+            "name": "诗歌意象",
+            "difficulty": 3,
+            "description": "融入特定情意的物象形象",
+            "aliases": [
+              "意象"
+            ],
+            "prerequisites": [],
+            "definition": "诗歌意象是物象与诗人情意结合后形成的具有感染力的艺术形象。",
+            "example": "“孤云”寄托孤高之感。",
+            "section": "9 说“木叶”"
+          },
+          {
+            "name": "木叶意象",
+            "difficulty": 4,
+            "description": "古诗中具有清秋意味的典型形象",
+            "aliases": [
+              "落木意象"
+            ],
+            "prerequisites": [
+              "诗歌意象",
+              "诗歌语言暗示性"
+            ],
+            "definition": "木叶意象由“木”与“叶”的组合形成疏朗、微黄、干燥而含情的秋景形象。",
+            "example": "“袅袅兮秋风，洞庭波兮木叶下”。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "7 青蒿素：人类征服疾病的一小步",
+            "page_range": [
+              53,
+              57
+            ]
+          },
+          {
+            "name": "* 一名物理学家的教育历程",
+            "page_range": [
+              57,
+              62
+            ]
+          },
+          {
+            "name": "8 * 中国建筑的特征",
+            "page_range": [
+              62,
+              68
+            ]
+          },
+          {
+            "name": "9 说“木叶”",
+            "page_range": [
+              68,
+              74
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "page_range": [
+              74,
+              75
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四单元 信息时代的语文生活",
+        "concepts": [
+          {
+            "name": "传播媒介",
+            "difficulty": 1,
+            "description": "传播信息、沟通交流并连接社会的媒介形式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "传播媒介是人们获取、传递和交流信息的工具与渠道。",
+            "example": "报刊、广播、电视和网络都是传播媒介。"
+          },
+          {
+            "name": "语言媒介物",
+            "difficulty": 2,
+            "description": "承载和传递语言信息的声波、光波或电波",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "语言媒介物是语言得以传递和呈现所依托的物理载体。",
+            "example": "口语主要利用声波传递。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "多媒介",
+            "difficulty": 2,
+            "description": "报刊、广播、电视、网络等媒介并存的传播状态",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "多媒介是多种传播媒介共同参与信息传播的形态。",
+            "example": "同一新闻可通过电视和网络获取。"
+          },
+          {
+            "name": "媒介融合",
+            "difficulty": 3,
+            "description": "不同传播媒介相互补充并逐渐融合的发展趋势",
+            "aliases": [],
+            "prerequisites": [
+              "多媒介"
+            ],
+            "definition": "媒介融合是多种媒介在功能、内容和传播方式上的互补与融合。",
+            "example": "网络平台同时呈现文字、图片、音视频。"
+          },
+          {
+            "name": "媒介传播特点",
+            "difficulty": 2,
+            "description": "不同媒介在传播速度、范围和形式等方面的特征",
+            "aliases": [
+              "传播特点"
+            ],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "媒介传播特点是某种媒介区别于其他媒介的传播优势与限制。",
+            "example": "网络传播迅速，校报具有较强权威性。",
+            "section": "一 认识多媒介"
+          },
+          {
+            "name": "媒介语言特征",
+            "difficulty": 3,
+            "description": "语言在不同传播媒介中的内容、表达和呈现特点",
+            "aliases": [
+              "语言特征"
+            ],
+            "prerequisites": [
+              "媒介传播特点"
+            ],
+            "definition": "媒介语言特征是语言根据媒介性质进行调整后形成的表达特点。",
+            "example": "网络公众号文章要重视标题吸引力。"
+          },
+          {
+            "name": "口语时代",
+            "difficulty": 2,
+            "description": "文字产生以前以声波和口语进行交流的语言发展阶段",
+            "aliases": [],
+            "prerequisites": [
+              "语言媒介物"
+            ],
+            "definition": "口语时代是人类尚未创造文字、主要使用有声语言交流的时期。",
+            "example": "古代史诗最初以口头形式流传。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "书面语",
+            "difficulty": 2,
+            "description": "借助文字和光波突破时间、空间限制的语言形式",
+            "aliases": [],
+            "prerequisites": [
+              "口语时代"
+            ],
+            "definition": "书面语是以文字为媒介、能够被记录和传播的语言形式。",
+            "example": "报纸文章属于书面语材料。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "书面文化",
+            "difficulty": 3,
+            "description": "以文字记录、传播和积累经验形成的文化形态",
+            "aliases": [],
+            "prerequisites": [
+              "书面语"
+            ],
+            "definition": "书面文化是以书面语为基础传承人类知识、历史和经验的文化。",
+            "example": "印刷书籍推动了知识的广泛传播。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "有声媒体",
+            "difficulty": 2,
+            "description": "主要借助电波传播声音或声音与画面的媒体形式",
+            "aliases": [
+              "有声媒体时代"
+            ],
+            "prerequisites": [
+              "书面语"
+            ],
+            "definition": "有声媒体是利用电波传送声音，电视还传送画面的传播媒介。",
+            "example": "广播和电视属于有声媒体。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "网络媒体",
+            "difficulty": 2,
+            "description": "依托互联网传播信息并具有全媒体性质的新型媒介",
+            "aliases": [],
+            "prerequisites": [
+              "有声媒体"
+            ],
+            "definition": "网络媒体是以互联网为基础、融合多种信息呈现方式的媒体。",
+            "example": "网络新闻、博客和微信属于网络媒体。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "网络语言",
+            "difficulty": 3,
+            "description": "网络交际中形成并使用的语言及其表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "网络媒体",
+              "媒介语言特征"
+            ],
+            "definition": "网络语言是伴随网络媒体和网络交际发展形成的语言使用形态。",
+            "example": "网络交流常使用键盘输入和屏幕阅读。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "信息失真",
+            "difficulty": 3,
+            "description": "信息在传播中发生损耗、扭曲、夸大或篡改的现象",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "信息失真是信息传播后与原事实不完全相符的现象。",
+            "example": "真实消息被传播者剪裁后造成误导。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "辨识媒介信息",
+            "difficulty": 3,
+            "description": "判断媒介信息真伪、导向和格调并作出恰当应对",
+            "aliases": [],
+            "prerequisites": [
+              "媒介素养",
+              "信息失真"
+            ],
+            "definition": "辨识媒介信息是对媒介信息的真实性和价值取向进行判断。",
+            "example": "对网络消息多方核实后再转发。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "真实信息源",
+            "difficulty": 2,
+            "description": "能够提供真实可靠信息的正式渠道和权威来源",
+            "aliases": [
+              "可靠信息源"
+            ],
+            "prerequisites": [
+              "辨识媒介信息"
+            ],
+            "definition": "真实信息源是获取准确、可靠媒介信息的渠道。",
+            "example": "了解公共政策可优先查看政府官网。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "媒介素养",
+            "difficulty": 3,
+            "description": "理解、辨析、评判和恰当使用媒介信息的能力",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "媒介素养是适应信息时代并理性获取、判断和使用媒介信息的素质。",
+            "example": "面对海量信息主动筛选并独立判断。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "自媒体",
+            "difficulty": 2,
+            "description": "个人或普通用户自主发布、传播信息的媒介形态",
+            "aliases": [],
+            "prerequisites": [
+              "网络媒体"
+            ],
+            "definition": "自媒体是信息生产者能够自主发布和传播内容的媒介形态。",
+            "example": "个人通过微博发布原创内容。"
+          },
+          {
+            "name": "信息边缘化",
+            "difficulty": 3,
+            "description": "因信息获取不公平而被排除在信息社会之外的状态",
+            "aliases": [],
+            "prerequisites": [
+              "网络媒体"
+            ],
+            "definition": "信息边缘化是个人或群体因获取信息不足而处于社会传播边缘。",
+            "example": "较少上网的群体可能难以及时获得公共信息。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "网络交流规则",
+            "difficulty": 2,
+            "description": "网络公共交流中应遵守的尊重、理性和责任规范",
+            "aliases": [],
+            "prerequisites": [
+              "媒介素养"
+            ],
+            "definition": "网络交流规则是维护网络公共秩序、规范表达和讨论的行为准则。",
+            "example": "讨论问题时不造谣、不辱骂、不进行语言暴力。"
+          },
+          {
+            "name": "公共理性",
+            "difficulty": 3,
+            "description": "在公共空间尊重他人、遵守秩序并承担表达责任",
+            "aliases": [],
+            "prerequisites": [
+              "网络交流规则"
+            ],
+            "definition": "公共理性是在公共交流中以责任和规则约束个人表达。",
+            "example": "表达观点时兼顾他人权利和公共秩序。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "主体意识",
+            "difficulty": 3,
+            "description": "认识到表达自由伴随责任并主动维护公共生活",
+            "aliases": [],
+            "prerequisites": [
+              "公共理性"
+            ],
+            "definition": "主体意识是传播者自觉承担表达责任并参与公共生活的意识。",
+            "example": "转发信息前确认内容并考虑可能影响。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "传播媒介社会影响",
+            "difficulty": 4,
+            "description": "传播媒介对社会结构、信息共享和行为规则的影响",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "传播媒介社会影响是媒介形态变化对社会关系和生活方式产生的作用。",
+            "example": "网络传播扩大了信息共享并带来新的道德问题。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "学习活动",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "一 认识多媒介",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "二 善用多媒介",
+            "page_range": [
+              77,
+              78
+            ]
+          },
+          {
+            "name": "三 辨识媒介信息",
+            "page_range": [
+              78,
+              85
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第五单元",
+        "concepts": [
+          {
+            "name": "抱负与使命",
+            "difficulty": 2,
+            "description": "个人理想与时代责任相结合的精神追求",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "抱负与使命指个人将自身理想同国家、社会和时代需要结合起来。",
+            "example": "为天下人谋永福，不惜牺牲个人幸福。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "实用性文本",
+            "difficulty": 2,
+            "description": "具有明确目的并服务现实交流的文本",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "实用性文本是为沟通、劝说、动员或安慰等现实目的而写作的文本。",
+            "example": "奏疏意在劝说君王收回成命。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "演讲词",
+            "difficulty": 2,
+            "description": "在特定场合面向听众发表观点的文体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "演讲词是在特定情境中面向听众阐述观点、表达情感或进行动员的文体。",
+            "example": "在庄严场合总结逝者的成就与贡献。",
+            "section": "在马克思墓前的讲话"
+          },
+          {
+            "name": "演讲针对性",
+            "difficulty": 3,
+            "description": "根据目的、场合和对象组织演讲内容",
+            "aliases": [],
+            "prerequisites": [
+              "演讲词"
+            ],
+            "definition": "演讲针对性指演讲内容和表达方式要适合特定目的、场合及听众。",
+            "example": "面对英国听众化用莎士比亚典故。"
+          },
+          {
+            "name": "演讲结构",
+            "difficulty": 3,
+            "description": "演讲围绕主题展开的层次与思路",
+            "aliases": [],
+            "prerequisites": [
+              "演讲词"
+            ],
+            "definition": "演讲结构是演讲内容按照一定逻辑由提出问题、分析问题到得出结论的组织方式。",
+            "example": "先揭示矛盾，再分析原因，最后预言革命使命。"
+          },
+          {
+            "name": "演讲语言技巧",
+            "difficulty": 3,
+            "description": "增强演讲感染力和说服力的语言方法",
+            "aliases": [],
+            "prerequisites": [
+              "演讲词"
+            ],
+            "definition": "演讲语言技巧包括简洁通俗、多用短句和适当运用排比等表达方法。",
+            "example": "适当使用排比调动听众情绪。"
+          },
+          {
+            "name": "比喻与典故",
+            "difficulty": 3,
+            "description": "借形象事物或经典故事阐发抽象思想",
+            "aliases": [],
+            "prerequisites": [
+              "演讲语言技巧"
+            ],
+            "definition": "比喻与典故是借助具体形象或既有故事表达思想、增强表达效果的手法。",
+            "example": "用“老田鼠”“工兵”比喻革命。"
+          },
+          {
+            "name": "历史唯物主义",
+            "difficulty": 4,
+            "description": "从物质生活和经济基础解释历史发展的观点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "历史唯物主义认为物质生活资料的生产及经济发展构成社会发展的基础。",
+            "example": "由经济基础解释国家设施、艺术和宗教观念。",
+            "section": "在马克思墓前的讲话"
+          },
+          {
+            "name": "社会深层矛盾",
+            "difficulty": 4,
+            "description": "生产力发展与社会关系之间的根本对抗",
+            "aliases": [],
+            "prerequisites": [
+              "历史唯物主义"
+            ],
+            "definition": "社会深层矛盾指现代工业和科学发展同现代贫困、衰颓及社会关系之间的对抗。",
+            "example": "机器提高效率，却引起饥饿和过度疲劳。"
+          },
+          {
+            "name": "无产阶级使命",
+            "difficulty": 4,
+            "description": "工人阶级解放自身并推动社会革命的责任",
+            "aliases": [],
+            "prerequisites": [
+              "社会深层矛盾"
+            ],
+            "definition": "无产阶级使命指工人阶级掌握现代生产力量并实现自身及全世界解放。",
+            "example": "无产阶级被称为资本主义灭亡的“执刑者”。"
+          },
+          {
+            "name": "奏疏",
+            "difficulty": 2,
+            "description": "臣下针对政务向君主进言的公文文体",
+            "aliases": [],
+            "prerequisites": [
+              "实用性文本"
+            ],
+            "definition": "奏疏是臣下针对具体政事向君主陈述意见、劝谏施政的公文。",
+            "example": "围绕驱逐客卿的政令向秦王进谏。",
+            "section": "* 与妻书"
+          },
+          {
+            "name": "劝谏策略",
+            "difficulty": 4,
+            "description": "通过史实、利弊和立场劝说统治者纳谏",
+            "aliases": [],
+            "prerequisites": [
+              "奏疏"
+            ],
+            "definition": "劝谏策略是立足对方立场，综合运用事实、利弊分析和恰切措辞实现劝说的方法。",
+            "example": "列举秦国任用客卿而强大的历史事实。"
+          },
+          {
+            "name": "书信文体特质",
+            "difficulty": 2,
+            "description": "注重交流沟通并能够自由抒写心声的文体特点",
+            "aliases": [],
+            "prerequisites": [
+              "实用性文本"
+            ],
+            "definition": "书信文体特质是面向特定亲友交流，表达较为自由并重视真挚情感。",
+            "example": "写信与亲人诀别并倾诉衷肠。"
+          },
+          {
+            "name": "书信抒情",
+            "difficulty": 3,
+            "description": "在书信中直抒胸臆、追忆往事和安慰亲人",
+            "aliases": [],
+            "prerequisites": [
+              "书信文体特质"
+            ],
+            "definition": "书信抒情是借助直接倾诉、往事追忆和情感劝慰表达复杂心情的方式。",
+            "example": "回忆夫妻相处的生活片段，表达不舍之情。"
+          },
+          {
+            "name": "长句表达",
+            "difficulty": 3,
+            "description": "用复杂句式承载深刻含义和复杂情感",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长句表达是通过多层分句和严密关联展现复杂思想、逻辑关系或情感。",
+            "example": "连续铺陈物质生活与社会观念的因果关系。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "演讲稿写作",
+            "difficulty": 3,
+            "description": "围绕鲜明主题面向听众组织材料和语言",
+            "aliases": [],
+            "prerequisites": [
+              "演讲针对性",
+              "演讲结构",
+              "演讲语言技巧"
+            ],
+            "definition": "演讲稿写作要求分析听众、明确主题、选择典型材料并运用有感染力的语言。",
+            "example": "以“我们的使命”为题写演讲稿。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "10 在《人民报》创刊纪念会上的演说",
+            "page_range": [
+              87,
+              89
+            ]
+          },
+          {
+            "name": "在马克思墓前的讲话",
+            "page_range": [
+              89,
+              92
+            ]
+          },
+          {
+            "name": "11 谏逐客书",
+            "page_range": [
+              92,
+              94
+            ]
+          },
+          {
+            "name": "* 与妻书",
+            "page_range": [
+              94,
+              98
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "page_range": [
+              98,
+              99
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第六单元",
+        "concepts": [
+          {
+            "name": "小说",
+            "difficulty": 1,
+            "description": "通过虚构人物与情节反映社会生活的文学体裁",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "小说是通过虚构的人物形象与故事情节反映社会生活的文学体裁。",
+            "example": "作品借人物命运描摹人情世态。"
+          },
+          {
+            "name": "社会环境",
+            "difficulty": 2,
+            "description": "作品中影响人物命运的社会生活背景",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "社会环境是人物生存、性格形成和命运发展的社会生活背景。",
+            "example": "鲁镇风俗影响祥林嫂的命运。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "知人论世",
+            "difficulty": 2,
+            "description": "联系人物处境和社会环境理解人物",
+            "aliases": [],
+            "prerequisites": [
+              "社会环境"
+            ],
+            "definition": "知人论世是把人物放在其生活的社会环境中认识和分析。",
+            "example": "结合时代处境理解林冲的反抗。"
+          },
+          {
+            "name": "人物形象",
+            "difficulty": 2,
+            "description": "小说中具有性格特征和命运经历的人物",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "人物形象是小说通过情节、语言和行动塑造的具体人物。",
+            "example": "别里科夫是保守畏惧的典型形象。"
+          },
+          {
+            "name": "人物性格",
+            "difficulty": 2,
+            "description": "人物在作品中表现出的稳定心理与行为特征",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象"
+            ],
+            "definition": "人物性格是人物在思想、情感和行为中呈现出的特征。",
+            "example": "林冲由隐忍逐步转向反抗。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "情节",
+            "difficulty": 2,
+            "description": "小说中人物行动和事件发展的过程",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "情节是小说围绕人物展开的事件发展过程。",
+            "example": "草料场失火推动林冲发现阴谋。"
+          },
+          {
+            "name": "情节曲折",
+            "difficulty": 3,
+            "description": "情节发展呈现起伏变化并持续制造冲突",
+            "aliases": [
+              "情节跌宕起伏"
+            ],
+            "prerequisites": [
+              "情节"
+            ],
+            "definition": "情节曲折是故事发展一波三折、张弛有致并不断推进的特点。",
+            "example": "林冲的遭遇经历多次转折。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "突发事件",
+            "difficulty": 3,
+            "description": "突然发生并推动小说情节发展的事件",
+            "aliases": [],
+            "prerequisites": [
+              "情节"
+            ],
+            "definition": "突发事件是意外出现并成为情节运行动力的事件。",
+            "example": "祥林嫂丈夫和儿子的意外死亡改变了她的命运。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "自然环境描写",
+            "difficulty": 3,
+            "description": "对风雪等自然景物及其氛围的描写",
+            "aliases": [
+              "环境描写"
+            ],
+            "prerequisites": [
+              "社会环境"
+            ],
+            "definition": "自然环境描写是小说对自然景物、天气和相关氛围的描写。",
+            "example": "风雪描写渲染气氛并推动林冲投宿山神庙。"
+          },
+          {
+            "name": "细节描写",
+            "difficulty": 3,
+            "description": "对人物动作、物件或场景细部的具体描写",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象",
+              "情节"
+            ],
+            "definition": "细节描写是对具有表现力的细微之处作具体刻画。",
+            "example": "林冲用大石头抵住庙门。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "人物语言",
+            "difficulty": 3,
+            "description": "通过个性化语言表现人物性格的写法",
+            "aliases": [
+              "个性化的人物语言"
+            ],
+            "prerequisites": [
+              "人物性格"
+            ],
+            "definition": "人物语言是通过人物说话内容和方式塑造性格的表达手段。",
+            "example": "“千万别闹出什么乱子”表现别里科夫的畏惧。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "叙述视角",
+            "difficulty": 3,
+            "description": "叙述者观察和讲述故事的立足点",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "叙述视角是叙述者置身故事内外并观察讲述故事的位置。",
+            "example": "“我”作为人物讲述祥林嫂的故事。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "社会批判意义",
+            "difficulty": 4,
+            "description": "作品通过人物命运揭示并批评社会现实",
+            "aliases": [
+              "社会批判性"
+            ],
+            "prerequisites": [
+              "社会环境",
+              "人物命运"
+            ],
+            "definition": "社会批判意义是作品借人物和故事对现实社会进行揭示与反思的价值。",
+            "example": "人物的悲剧揭示社会环境的压迫。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "套中人",
+            "difficulty": 3,
+            "description": "被保守秩序束缚思想和行为的人物形象",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象",
+              "人物性格"
+            ],
+            "definition": "套中人是被各种“套子”箍住手脚和思想的保守、僵化人物。",
+            "example": "别里科夫把生活和思想都装进套子。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "幽默讽刺",
+            "difficulty": 3,
+            "description": "以幽默叙述和夸张情境揭露现实的风格",
+            "aliases": [
+              "讽刺"
+            ],
+            "prerequisites": [
+              "社会批判意义"
+            ],
+            "definition": "幽默讽刺是以诙谐、夸张的方式表现人物可笑并批判现实的风格。",
+            "example": "对别里科夫言行的描写既可笑又有批判性。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "幻想与现实交融",
+            "difficulty": 4,
+            "description": "将神秘幻想情节与现实主题结合的写法",
+            "aliases": [],
+            "prerequisites": [
+              "情节",
+              "社会批判意义"
+            ],
+            "definition": "幻想与现实交融是把神秘、离奇的想象和现实生活主题结合起来。",
+            "example": "求神问卜、魂化促织寄寓现实批判。"
+          },
+          {
+            "name": "变形",
+            "difficulty": 3,
+            "description": "人物发生非现实形态变化并由此展开故事",
+            "aliases": [
+              "化虫"
+            ],
+            "prerequisites": [
+              "小说",
+              "幻想与现实交融"
+            ],
+            "definition": "变形是人物以荒诞方式改变形态并引发情节和社会寓意的写法。",
+            "example": "主人公醒来后发现自己变成甲虫。",
+            "section": "14 促织"
+          },
+          {
+            "name": "反语",
+            "difficulty": 3,
+            "description": "表面肯定而实际表达否定意味的语言",
+            "aliases": [],
+            "prerequisites": [
+              "人物语言"
+            ],
+            "definition": "反语是使用与本意相反的表面说法来强化表达效果。",
+            "example": "说祥林嫂死去“对人对己，也还都不错”。",
+            "section": "12 祝福"
+          },
+          {
+            "name": "悬念",
+            "difficulty": 3,
+            "description": "设置疑问或未知信息以吸引读者继续阅读",
+            "aliases": [],
+            "prerequisites": [
+              "情节"
+            ],
+            "definition": "悬念是暂不揭示关键情况，使读者产生期待和疑问的叙事技巧。",
+            "example": "先写人物异常，再逐步揭示事件真相。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "意外反转",
+            "difficulty": 3,
+            "description": "故事结果突然改变读者原有预期的写法",
+            "aliases": [
+              "意外",
+              "反转"
+            ],
+            "prerequisites": [
+              "情节曲折"
+            ],
+            "definition": "意外反转是情节在读者预期之外发生突变并形成新的走向。",
+            "example": "看似平静的生活因突发事件骤然改变。",
+            "section": "单元学习任务"
+          }
+        ],
+        "sections": [
+          {
+            "name": "12 祝福",
+            "page_range": [
+              101,
+              114
+            ]
+          },
+          {
+            "name": "13 林教头风雪山神庙",
+            "page_range": [
+              114,
+              120
+            ]
+          },
+          {
+            "name": "* 装在套子里的人",
+            "page_range": [
+              120,
+              126
+            ]
+          },
+          {
+            "name": "14 促织",
+            "page_range": [
+              126,
+              142
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "page_range": [
+              142,
+              143
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第七单元 整本书阅读",
+        "concepts": [
+          {
+            "name": "长篇小说",
+            "difficulty": 1,
+            "description": "篇幅较长、人物众多、情节复杂的小说类型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长篇小说适宜反映广阔社会生活和人物成长历程。",
+            "example": "通过多年生活展现人物命运变化。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "章回体小说",
+            "difficulty": 2,
+            "description": "中国古典长篇小说特有的体式",
+            "aliases": [],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "章回体小说以分回形式组织较长篇幅的故事。",
+            "example": "小说按回目展开叙事。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "前五回纲领作用",
+            "difficulty": 3,
+            "description": "开篇部分为全书情节和背景作总体铺垫",
+            "aliases": [],
+            "prerequisites": [
+              "章回体小说"
+            ],
+            "definition": "前五回通过铺叙背景、人物和预示，为后文发展奠定基础。",
+            "example": "前五回预示贾府由盛转衰。"
+          },
+          {
+            "name": "情节主线",
+            "difficulty": 3,
+            "description": "贯穿小说并推动故事发展的核心线索",
+            "aliases": [],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "情节主线是组织小说主要事件和人物命运的核心线索。",
+            "example": "家门败落与人物聚散构成两条主线。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "网状结构",
+            "difficulty": 4,
+            "description": "多条情节线索纵横交错形成的结构",
+            "aliases": [],
+            "prerequisites": [
+              "情节主线"
+            ],
+            "definition": "网状结构由多条主线交织推进，共同构成复杂叙事。",
+            "example": "家族兴衰线与爱情悲剧线相互交错。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "人物关系梳理",
+            "difficulty": 2,
+            "description": "理清主要人物之间的身份、亲缘和情感联系",
+            "aliases": [],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "人物关系梳理是借助情节和互动建立人物关系网络。",
+            "example": "绘制主要人物关系图并标注相关情节。"
+          },
+          {
+            "name": "人物形象塑造",
+            "difficulty": 3,
+            "description": "通过描写人物表现其性格和内心世界",
+            "aliases": [],
+            "prerequisites": [
+              "人物关系梳理"
+            ],
+            "definition": "人物形象塑造通过细腻描写呈现人物的性格特征与精神世界。",
+            "example": "从人物言行和互动中把握其性情。"
+          },
+          {
+            "name": "人物性格复杂性",
+            "difficulty": 4,
+            "description": "人物同时具有多种甚至相互矛盾的性格特征",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象塑造"
+            ],
+            "definition": "人物性格复杂性指人物并非单一的好人或坏人，而具有多面性。",
+            "example": "王熙凤奸险却聪明能干、诙谐。"
+          },
+          {
+            "name": "日常生活细节",
+            "difficulty": 3,
+            "description": "对家庭闺阁琐事等平常生活的细腻描写",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象塑造"
+            ],
+            "definition": "日常生活细节以平常小事表现人物关系、社会生活和人生真相。",
+            "example": "一个眼色写出宝黛之间的心灵契合。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "以小见大",
+            "difficulty": 3,
+            "description": "从生活细节表现更深广的社会和人生内涵",
+            "aliases": [],
+            "prerequisites": [
+              "日常生活细节"
+            ],
+            "definition": "以小见大是通过具体细节揭示宏观社会现实或深层人生意义。",
+            "example": "中秋笛声暗示贾家日暮途穷。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "社会关系与习俗",
+            "difficulty": 3,
+            "description": "小说反映的社会关系网络和日常生活习俗",
+            "aliases": [
+              "社会生活"
+            ],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "社会关系与习俗包括身份交往、官场经济、社会分工和生活风俗等内容。",
+            "example": "作品展现帝王贵胄与佃户庄头等多类人物。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "小说语言鉴赏",
+            "difficulty": 3,
+            "description": "品味小说叙述、人物语言及诗词韵文的表达效果",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象塑造"
+            ],
+            "definition": "小说语言鉴赏是分析语言如何表现人物性格并服务于叙事。",
+            "example": "从三言两语中体会人物鲜明个性。"
+          },
+          {
+            "name": "人物诗词鉴赏",
+            "difficulty": 3,
+            "description": "通过小说人物创作的诗词理解其个性和情趣",
+            "aliases": [],
+            "prerequisites": [
+              "小说语言鉴赏"
+            ],
+            "definition": "人物诗词鉴赏是结合诗词内容和风格把握人物的思想情感。",
+            "example": "品味白海棠诗以理解人物性格。"
+          },
+          {
+            "name": "小说主题",
+            "difficulty": 4,
+            "description": "作品通过人物命运和家族兴衰表达的思想内容",
+            "aliases": [],
+            "prerequisites": [
+              "情节主线",
+              "人物性格复杂性"
+            ],
+            "definition": "小说主题是作品对婚姻爱情、女性命运、家族盛衰和社会人生的总体思考。",
+            "example": "从宝黛钗悲剧和贾府衰败理解主题。"
+          },
+          {
+            "name": "综述",
+            "difficulty": 2,
+            "description": "围绕某类情况或问题综合梳理材料并概括成果的文章",
+            "aliases": [
+              "研究综述",
+              "文献综述"
+            ],
+            "prerequisites": [],
+            "definition": "综述是全面、准确、客观、清晰地反映情况或研究成果的文章。",
+            "example": "梳理关于小说主题的研究论述。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "综述全面性",
+            "difficulty": 2,
+            "description": "充分搜集材料并完整反映相关情况",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述全面性要求围绕问题尽可能掌握并呈现相关材料和研究现状。",
+            "example": "写会议综述时掌握议题、议程和主要发言。"
+          },
+          {
+            "name": "综述准确性",
+            "difficulty": 2,
+            "description": "如实概括事实、观点和引用内容",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述准确性要求忠实概括材料，避免歪曲、遗漏和以偏概全。",
+            "example": "引用文字时标明出处并忠实呈现原意。"
+          },
+          {
+            "name": "综述客观性",
+            "difficulty": 3,
+            "description": "平衡呈现不同观点并依据标准筛选材料",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述客观性要求不偏向单一观点，并根据代表性等标准选择材料。",
+            "example": "同时介绍某问题的不同研究观点。"
+          },
+          {
+            "name": "综述清晰性",
+            "difficulty": 3,
+            "description": "通过明确主旨和合理结构使材料易于理解",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述清晰性要求开头概括主旨，主体按合适顺序组织材料。",
+            "example": "按时间顺序介绍活动经过。"
+          },
+          {
+            "name": "综述结构",
+            "difficulty": 3,
+            "description": "综述开头、主体及材料组织方式的安排",
+            "aliases": [],
+            "prerequisites": [
+              "综述清晰性"
+            ],
+            "definition": "综述结构包括开头概括主旨、主体分类展开和合理安排顺序。",
+            "example": "按逻辑顺序介绍多个研究方向。"
+          },
+          {
+            "name": "综述语言",
+            "difficulty": 2,
+            "description": "综述中简明扼要且具有概括性的表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述语言应简洁概括，并可适当运用数字和图表帮助理解。",
+            "example": "用表格概括不同研究观点。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "《红楼梦》",
+            "page_range": [
+              144,
+              149
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第八单元",
+        "concepts": [
+          {
+            "name": "奏疏",
+            "difficulty": 2,
+            "description": "直言进谏、警示君主的文体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "奏疏是臣下向君主陈述政见、提出劝谏的文书。",
+            "example": "以奏章劝君居安思危。"
+          },
+          {
+            "name": "书信",
+            "difficulty": 1,
+            "description": "通过书信往来陈述主张、剖白心迹",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "书信是借私人往来书面表达意见和心迹的文体。",
+            "example": "回信逐一回应对方指责。",
+            "section": "* 答司马谏议书"
+          },
+          {
+            "name": "辞赋",
+            "difficulty": 2,
+            "description": "立足现实、铺陈描写并评说盛衰的文体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "辞赋是兼具铺陈描写与议论抒情、用于评说事理的文体。",
+            "example": "铺写宫室之盛以揭示奢亡之因。"
+          },
+          {
+            "name": "史论",
+            "difficulty": 2,
+            "description": "借历史事实阐发观点、评论兴亡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "史论是以历史事件为依据分析成败并发表议论的文体。",
+            "example": "从六国灭亡分析赂秦之弊。",
+            "section": "* 六国论"
+          },
+          {
+            "name": "居安思危",
+            "difficulty": 2,
+            "description": "处于安定时预先想到危险并采取防范",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "居安思危是安定时不忘潜在危机、主动防患的思想。",
+            "example": "国力上升时仍戒奢行俭。"
+          },
+          {
+            "name": "十思",
+            "difficulty": 3,
+            "description": "针对君主欲望、政务提出的十条劝诫",
+            "aliases": [],
+            "prerequisites": [
+              "居安思危"
+            ],
+            "definition": "十思是围绕知足、谦虚、纳谏、慎刑等提出的君主自戒原则。",
+            "example": "见可欲则思知足自戒。"
+          },
+          {
+            "name": "载舟覆舟",
+            "difficulty": 2,
+            "description": "以水喻民，说明人民能拥戴也能推翻统治",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "载舟覆舟比喻人民既能支持统治者也能使其失去统治。",
+            "example": "统治者应深切慎重民众怨恨。",
+            "section": "15 谏太宗十思疏"
+          },
+          {
+            "name": "名实之辨",
+            "difficulty": 3,
+            "description": "通过辨析名称与实际是否相符来明理",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "名实之辨是考察事物名义与实际是否一致的论理方式。",
+            "example": "先辨明变法是否属于侵官生事。"
+          },
+          {
+            "name": "变法除弊",
+            "difficulty": 2,
+            "description": "施行法度改革以兴利除弊、治理国事",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "变法除弊是通过修订和施行法度改变积弊、谋求国家治理。",
+            "example": "议订法令并交给有司执行。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "骈散结合",
+            "difficulty": 3,
+            "description": "骈偶句式与散句交错使用的行文特点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "骈散结合是整齐对偶的骈句与自由灵活的散句相互配合。",
+            "example": "对偶铺陈后接散句议论。",
+            "section": "* 答司马谏议书"
+          },
+          {
+            "name": "赋的铺排",
+            "difficulty": 3,
+            "description": "对事物进行层层铺陈、细密描写",
+            "aliases": [],
+            "prerequisites": [
+              "辞赋"
+            ],
+            "definition": "赋的铺排是围绕对象展开连续、全面而有层次的描写。",
+            "example": "铺写楼阁、歌舞和宫人生活。"
+          },
+          {
+            "name": "赋的夸张",
+            "difficulty": 3,
+            "description": "以夸大描写增强感染力和批判力量",
+            "aliases": [],
+            "prerequisites": [
+              "辞赋"
+            ],
+            "definition": "赋的夸张是有意扩大事物特征以形成震撼效果的表达方式。",
+            "example": "“五步一楼，十步一阁”极写宫室密集。"
+          },
+          {
+            "name": "借古鉴今",
+            "difficulty": 2,
+            "description": "借历史兴亡反思现实并针砭时弊",
+            "aliases": [],
+            "prerequisites": [
+              "史论"
+            ],
+            "definition": "借古鉴今是通过评论历史事件为现实治理提供警示。",
+            "example": "借秦亡告诫当朝不可重蹈覆辙。",
+            "section": "* 六国论"
+          },
+          {
+            "name": "论点",
+            "difficulty": 1,
+            "description": "文章所持的观点，即论证要证明的对象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "论点是作者针对问题提出并试图证明的明确主张。",
+            "example": "六国破灭的弊端在于赂秦。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论据类型",
+            "difficulty": 2,
+            "description": "支撑论点的事例、数据、意见等材料类型",
+            "aliases": [],
+            "prerequisites": [
+              "论点"
+            ],
+            "definition": "论据类型是用于支撑论点的不同材料类别。",
+            "example": "事例、数据、权威意见和个人经验。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论证",
+            "difficulty": 2,
+            "description": "解说分析论据并建立其与论点的联系",
+            "aliases": [],
+            "prerequisites": [
+              "论点",
+              "论据类型"
+            ],
+            "definition": "论证是运用论据证明论点、使读者信服的思考过程。",
+            "example": "分析割地赂秦为何导致国力亏损。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论证方法",
+            "difficulty": 3,
+            "description": "类比、对比、演绎、归纳等说理论证方式",
+            "aliases": [],
+            "prerequisites": [
+              "论证"
+            ],
+            "definition": "论证方法是组织和分析论据以证明论点的具体方式。",
+            "example": "用“抱薪救火”类比割地求和。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论证逻辑",
+            "difficulty": 3,
+            "description": "论证中观点、材料和推理之间的严密关系",
+            "aliases": [],
+            "prerequisites": [
+              "论证"
+            ],
+            "definition": "论证逻辑是论据支持论点时体现出的清晰、严密的推理关系。",
+            "example": "由赂秦力亏推至六国破灭。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "理性表达",
+            "difficulty": 2,
+            "description": "观点鲜明、言必有据并运用合适论证方法",
+            "aliases": [],
+            "prerequisites": [
+              "论点",
+              "论据类型",
+              "论证方法"
+            ],
+            "definition": "理性表达是以明确观点、充分依据和合理推理进行说服性表达。",
+            "example": "围绕阅读方式提出观点并分析论据。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "批判性思维",
+            "difficulty": 3,
+            "description": "在质疑、辩证分析和合理推理中形成判断",
+            "aliases": [],
+            "prerequisites": [
+              "论证逻辑"
+            ],
+            "definition": "批判性思维是敢于质疑并依据缜密推理作出理性判断的思维方式。",
+            "example": "比较两种历史论证并辨析其针对性。"
+          },
+          {
+            "name": "责任与担当",
+            "difficulty": 2,
+            "description": "忧国忧民、心怀天下并主动承担济世责任",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "责任与担当是仁人志士面对国家社会问题主动建言、改革和救世的精神。",
+            "example": "不避众议，坚持变法除弊。",
+            "section": "单元学习任务"
+          }
+        ],
+        "sections": [
+          {
+            "name": "15 谏太宗十思疏",
+            "page_range": [
+              151,
+              153
+            ]
+          },
+          {
+            "name": "* 答司马谏议书",
+            "page_range": [
+              153,
+              155
+            ]
+          },
+          {
+            "name": "16 阿房宫赋",
+            "page_range": [
+              155,
+              157
+            ]
+          },
+          {
+            "name": "* 六国论",
+            "page_range": [
+              157,
+              159
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "page_range": [
+              159,
+              161
+            ]
+          }
+        ]
+      },
+      {
+        "name": "古诗词诵读",
+        "concepts": [
+          {
+            "name": "今昔对比",
+            "difficulty": 2,
+            "description": "通过今昔情境对照表达复杂感受",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "今昔对比是将过去与现在的情境并置以突出情感变化的表现方式。",
+            "example": "“昔闻洞庭水，今上岳阳楼”形成今昔对照。",
+            "section": "登岳阳楼"
+          },
+          {
+            "name": "洞庭意象",
+            "difficulty": 2,
+            "description": "作品中承载开阔气象与精神胸怀的湖泊形象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "洞庭意象是诗词借洞庭湖的广阔澄澈表现自然气象和精神境界的形象。",
+            "example": "“玉鉴琼田三万顷”展现洞庭的浩瀚澄澈。"
+          },
+          {
+            "name": "忧国忧时",
+            "difficulty": 3,
+            "description": "由个人困顿联想到国家安危与时局动荡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "忧国忧时是作品在抒写个人处境时寄寓对国家命运和社会时局的忧思。",
+            "example": "“戎马关山北”寄托了对战事和国事的忧虑。"
+          },
+          {
+            "name": "登高怀古",
+            "difficulty": 2,
+            "description": "登临高处观景并追怀历史兴亡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "登高怀古是登临高处描写眼前景物并由此追忆历史、感慨兴亡的写法。",
+            "example": "登临金陵后追叹六朝繁华与覆亡。",
+            "section": "桂枝香·金陵怀古"
+          },
+          {
+            "name": "清空意趣",
+            "difficulty": 4,
+            "description": "景象清疏空灵而含有深层历史感慨",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "清空意趣是词作以清澄空灵的景物营造含蓄深远的审美意味。",
+            "example": "澄江、翠峰、残阳等景物构成清空意趣。"
+          },
+          {
+            "name": "兴亡荣辱",
+            "difficulty": 3,
+            "description": "对王朝盛衰及个人荣辱的历史感叹",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "兴亡荣辱是作品围绕国家或王朝盛衰以及荣耀耻辱展开的感慨。",
+            "example": "“谩嗟荣辱”指出徒然感叹兴亡荣辱。",
+            "section": "桂枝香·金陵怀古"
+          },
+          {
+            "name": "融情于景",
+            "difficulty": 3,
+            "description": "把人物情感自然融入景物描写之中",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "融情于景是通过景物描写含蓄表现人物情感和心理状态的写法。",
+            "example": "春日园景的绚丽寄托少女的青春萌动。",
+            "section": "念奴娇·过洞庭"
+          },
+          {
+            "name": "情绪流转",
+            "difficulty": 2,
+            "description": "诵读时把握情感随景物和情境的变化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "情绪流转是作品中人物情感随着景物、事件和联想不断变化的过程。",
+            "example": "由赏春的惊喜转入对青春被辜负的感慨。",
+            "section": "念奴娇·过洞庭"
+          },
+          {
+            "name": "青春意识",
+            "difficulty": 3,
+            "description": "少女在春景触动下产生的青春觉醒意识",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "青春意识是人物受到春光和情感触动后产生的生命觉醒与自我感受。",
+            "example": "杜丽娘因春花春光而走出深闺游赏。",
+            "section": "念奴娇·过洞庭"
+          },
+          {
+            "name": "高洁人格",
+            "difficulty": 3,
+            "description": "以澄澈胸怀超越世俗宠辱得失的精神品格",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "高洁人格是保持内心明洁并超越世俗得失的精神境界。",
+            "example": "“肝肺皆冰雪”表现词人内心的明洁。"
+          },
+          {
+            "name": "恢宏意境",
+            "difficulty": 3,
+            "description": "由开阔景象和丰富想象营造的宏大境界",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "恢宏意境是作品借浩阔自然和开阔想象形成的壮阔审美境界。",
+            "example": "一叶扁舟融入三万顷洞庭与天地万象。"
+          },
+          {
+            "name": "词牌名",
+            "difficulty": 1,
+            "description": "词作在格律形式上的固定名称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "词牌名是规定词的句式、字数和韵律等形式的名称。",
+            "example": "“桂枝香”是词牌名。",
+            "section": "桂枝香·金陵怀古"
+          }
+        ],
+        "sections": [
+          {
+            "name": "登岳阳楼",
+            "page_range": [
+              162,
+              163
+            ]
+          },
+          {
+            "name": "桂枝香·金陵怀古",
+            "page_range": [
+              163,
+              164
+            ]
+          },
+          {
+            "name": "念奴娇·过洞庭",
+            "page_range": [
+              164,
+              170
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "语文",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元",
+        "concepts": [
+          {
+            "name": "儒家思想特征",
+            "difficulty": 3,
+            "description": "孔子、孟子思想中重视礼治、仁政与社会理想",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "儒家思想强调以礼规范社会，并以仁政实现理想社会。",
+            "example": "为国以礼，保民而王。"
+          },
+          {
+            "name": "道家思想特征",
+            "difficulty": 3,
+            "description": "道家重视顺应自然规律和保全天性",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "道家主张顺应事物本然规律，减少人为强求。",
+            "example": "依乎天理，因其固然。"
+          },
+          {
+            "name": "语录体",
+            "difficulty": 2,
+            "description": "以人物言论为主要内容的文章体式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "语录体以记录人物谈话或言论来表现思想。",
+            "example": "孔子与弟子的问答。",
+            "section": "庖丁解牛"
+          },
+          {
+            "name": "对话论说",
+            "difficulty": 3,
+            "description": "通过人物问答逐步阐明观点的论说方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "对话论说借助问答和应答推进论述并表达主张。",
+            "example": "孟子与齐宣王反复问答。"
+          },
+          {
+            "name": "寓言表达",
+            "difficulty": 3,
+            "description": "借故事和形象情节寄托抽象思想",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "寓言表达通过虚构故事或人物行为含蓄阐释道理。",
+            "example": "厨师解牛寄托养生之道。"
+          },
+          {
+            "name": "仁政王道",
+            "difficulty": 3,
+            "description": "以爱护百姓、施行仁政来实现王天下",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "仁政王道主张通过安民养民和施行仁政治理天下。",
+            "example": "保民而王，莫之能御也。",
+            "section": "* 齐桓晋文之事"
+          },
+          {
+            "name": "推恩保民",
+            "difficulty": 3,
+            "description": "把爱护亲人的心推广到百姓和天下",
+            "aliases": [],
+            "prerequisites": [
+              "仁政王道"
+            ],
+            "definition": "推恩保民是将自身已有的仁爱之心推广到百姓。",
+            "example": "老吾老，以及人之老。"
+          },
+          {
+            "name": "礼治思想",
+            "difficulty": 3,
+            "description": "以礼规范治国行为和个人言行",
+            "aliases": [],
+            "prerequisites": [
+              "儒家思想特征"
+            ],
+            "definition": "礼治思想认为治理国家应遵循礼的规范并保持谦让。",
+            "example": "为国以礼，其言不让。"
+          },
+          {
+            "name": "顺应自然",
+            "difficulty": 3,
+            "description": "依据事物自身规律行动而不强行妄为",
+            "aliases": [],
+            "prerequisites": [
+              "道家思想特征"
+            ],
+            "definition": "顺应自然强调按照事物固有结构和规律处理问题。",
+            "example": "因其固然，游刃有余。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "编年体史书",
+            "difficulty": 2,
+            "description": "按时间顺序记载历史事件的史书体裁",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "编年体以时间为经、历史事件为纬来叙述历史。",
+            "example": "按年份叙述诸侯围郑事件。",
+            "section": "2 烛之武退秦师"
+          },
+          {
+            "name": "纪传体史书",
+            "difficulty": 2,
+            "description": "以人物为中心叙述历史的史书体裁",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "纪传体通过本纪、世家、列传等篇章记录历史人物和事件。",
+            "example": "围绕刘邦、项羽叙述鸿门宴。",
+            "section": "3 * 鸿门宴"
+          },
+          {
+            "name": "史传叙事",
+            "difficulty": 3,
+            "description": "在记述史实中展现人物、事件及思想观念",
+            "aliases": [],
+            "prerequisites": [
+              "编年体史书",
+              "纪传体史书"
+            ],
+            "definition": "史传叙事以历史事实为基础并兼顾情节、人物和史识。",
+            "example": "通过宴会细节表现人物性格。"
+          },
+          {
+            "name": "辞令艺术",
+            "difficulty": 3,
+            "description": "借外交说辞分析利害以达到劝说目的",
+            "aliases": [],
+            "prerequisites": [
+              "对话论说"
+            ],
+            "definition": "辞令艺术通过有层次的言语陈说利害并影响对方决策。",
+            "example": "从秦国利益出发劝秦退兵。"
+          },
+          {
+            "name": "人物描写",
+            "difficulty": 3,
+            "description": "通过言行、神态和细节塑造鲜明人物形象",
+            "aliases": [],
+            "prerequisites": [
+              "史传叙事"
+            ],
+            "definition": "人物描写运用人物的语言、行动和细节表现其性格。",
+            "example": "范增数目项王而项王默然不应。",
+            "section": "3 * 鸿门宴"
+          },
+          {
+            "name": "语气助词",
+            "difficulty": 2,
+            "description": "表达判断、陈述、疑问、感叹等语气的词",
+            "aliases": [
+              "也",
+              "乎",
+              "矣",
+              "哉",
+              "焉"
+            ],
+            "prerequisites": [],
+            "definition": "语气助词用于句首、句中或句末，表达特定语气。",
+            "example": "何伤乎？表达反问语气。"
+          },
+          {
+            "name": "一词多义",
+            "difficulty": 3,
+            "description": "同一文言实词在不同语境中具有不同意义",
+            "aliases": [
+              "文言实词卡片"
+            ],
+            "prerequisites": [],
+            "definition": "一词多义指一个文言实词随语境变化而产生多个义项。",
+            "example": "“道”可指说、规律、道路、取道。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "阐述观点",
+            "difficulty": 2,
+            "description": "围绕明确主张解释、论证并说服读者",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "阐述观点是清楚表达主张并用充分理由使人信服。",
+            "example": "围绕推恩保民发表看法。"
+          },
+          {
+            "name": "写作意图",
+            "difficulty": 2,
+            "description": "作者提出观点并写作文章所要达到的目的",
+            "aliases": [],
+            "prerequisites": [
+              "阐述观点"
+            ],
+            "definition": "写作意图说明文章针对的问题及作者希望实现的目的。",
+            "example": "通过论述纠正片面看法。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "观点论证",
+            "difficulty": 3,
+            "description": "依据观点逻辑选择材料并逐步推导结论",
+            "aliases": [],
+            "prerequisites": [
+              "阐述观点"
+            ],
+            "definition": "观点论证是运用论据和推理充分解释、证明观点。",
+            "example": "以牛羊之喻说明仁心可推及百姓。"
+          },
+          {
+            "name": "并列式结构",
+            "difficulty": 2,
+            "description": "从多个并列方面共同阐述一个观点",
+            "aliases": [],
+            "prerequisites": [
+              "阐述观点"
+            ],
+            "definition": "并列式结构将相互关联但地位平行的内容分别展开。",
+            "example": "从不同方面说明观点意义。"
+          },
+          {
+            "name": "层进式结构",
+            "difficulty": 3,
+            "description": "按照层次由浅入深地解释和论证观点",
+            "aliases": [],
+            "prerequisites": [
+              "观点论证"
+            ],
+            "definition": "层进式结构先提出观点，再逐层深入解释并得出结论。",
+            "example": "先指出问题，再分析原因，最后提出办法。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "1 子路、曾皙、冉有、公西华侍坐",
+            "section_key": "f09e5c9f35",
+            "page_range": [
+              9,
+              11
+            ]
+          },
+          {
+            "name": "* 齐桓晋文之事",
+            "section_key": "0b25dfef36",
+            "page_range": [
+              11,
+              15
+            ]
+          },
+          {
+            "name": "庖丁解牛",
+            "section_key": "a93534f034",
+            "page_range": [
+              15,
+              17
+            ]
+          },
+          {
+            "name": "2 烛之武退秦师",
+            "section_key": "3e8ad218b1",
+            "page_range": [
+              17,
+              20
+            ]
+          },
+          {
+            "name": "3 * 鸿门宴",
+            "section_key": "75ccb3474e",
+            "page_range": [
+              20,
+              25
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "section_key": "d2a9b80240",
+            "page_range": [
+              25,
+              28
+            ]
+          }
+        ],
+        "chapter_key": "53fb15320d",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 1,
+          "raw_heading": "第一单元"
+        }
+      },
+      {
+        "name": "第二单元",
+        "concepts": [
+          {
+            "name": "传统戏曲",
+            "difficulty": 2,
+            "description": "中国戏曲历史悠久，具有独特的演出形式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "传统戏曲是融合故事、角色、唱念做打等形式的综合舞台艺术。",
+            "example": "从故事、角色和演出形式认识戏曲。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "元杂剧",
+            "difficulty": 3,
+            "description": "元代形成并成熟的戏曲剧种",
+            "aliases": [],
+            "prerequisites": [
+              "传统戏曲"
+            ],
+            "definition": "元杂剧是元代兴盛的戏曲形式，一剧通常分为若干折。",
+            "example": "一折由同一宫调的曲牌联成套曲。"
+          },
+          {
+            "name": "宫调",
+            "difficulty": 3,
+            "description": "杂剧一折所使用的音乐调式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "宫调是以某一声为主构成的古代音乐调式。",
+            "example": "正宫是杂剧使用的宫调之一。"
+          },
+          {
+            "name": "曲牌",
+            "difficulty": 3,
+            "description": "戏曲唱词所依据的曲调名称",
+            "aliases": [],
+            "prerequisites": [
+              "宫调"
+            ],
+            "definition": "曲牌是戏曲中规定曲调和句式的曲调名称。",
+            "example": "端正好、滚绣球都是曲牌名。"
+          },
+          {
+            "name": "戏曲角色行当",
+            "difficulty": 2,
+            "description": "传统戏曲中按身份和性别划分的角色类型",
+            "aliases": [],
+            "prerequisites": [
+              "传统戏曲"
+            ],
+            "definition": "戏曲角色行当是对剧中人物类型及表演职能的分类。",
+            "example": "正旦通常扮演女主角，卜儿扮演老年妇女。"
+          },
+          {
+            "name": "本色派",
+            "difficulty": 3,
+            "description": "元杂剧中语言质朴自然的创作流派",
+            "aliases": [],
+            "prerequisites": [
+              "元杂剧"
+            ],
+            "definition": "本色派作品以说白凝练流畅、唱词优美而节奏鲜明见长。",
+            "example": "唱词节奏鲜明，能深入展示人物内心。"
+          },
+          {
+            "name": "悲剧",
+            "difficulty": 3,
+            "description": "表现有价值事物遭受毁灭的戏剧类型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "悲剧是将人生中有价值的东西毁灭给人看的戏剧类型。",
+            "example": "善良、真情和理想遭到现实摧残。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "戏剧冲突",
+            "difficulty": 3,
+            "description": "人物、愿望与环境之间的尖锐矛盾",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "戏剧冲突是推动剧情发展并展现人物性格的矛盾对立。",
+            "example": "鲁大海与周朴园围绕罢工发生对峙。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "舞台说明",
+            "difficulty": 2,
+            "description": "剧本中提示环境、动作和表情的文字",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "舞台说明是剧本中交代舞台环境及人物动作表情的说明文字。",
+            "example": "“天气更阴沉，更郁热”交代了舞台气氛。"
+          },
+          {
+            "name": "潜台词",
+            "difficulty": 3,
+            "description": "台词表面话语背后隐藏的真实意味",
+            "aliases": [
+              "言外之意"
+            ],
+            "prerequisites": [
+              "戏剧冲突"
+            ],
+            "definition": "潜台词是人物台词未直接说出却蕴含的真实思想和情感。",
+            "example": "“你是萍”中的停顿包含复杂情绪。"
+          },
+          {
+            "name": "戏剧独白",
+            "difficulty": 3,
+            "description": "人物独自抒发思想和情感的台词",
+            "aliases": [
+              "独白"
+            ],
+            "prerequisites": [],
+            "definition": "戏剧独白是人物脱离对话、直接展现内心世界的长段台词。",
+            "example": "“生存还是毁灭”表现人物的内心冲突。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "重场戏",
+            "difficulty": 3,
+            "description": "集中展现人物内心并推进剧情的关键场面",
+            "aliases": [],
+            "prerequisites": [
+              "戏剧冲突"
+            ],
+            "definition": "重场戏是戏剧中冲突尖锐、意蕴丰富且能突出人物的关键场面。",
+            "example": "周朴园与鲁侍萍相认是重场戏。"
+          },
+          {
+            "name": "台本",
+            "difficulty": 2,
+            "description": "经过处理并供演出使用的剧本",
+            "aliases": [
+              "演出本"
+            ],
+            "prerequisites": [
+              "舞台说明"
+            ],
+            "definition": "台本是补充适当内容后作为排演和正式演出依据的剧本。",
+            "example": "演出本需补充灯光、服装和舞台布置。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "三桩誓愿",
+            "difficulty": 3,
+            "description": "人物临刑前为证明冤屈发出的三个誓愿",
+            "aliases": [],
+            "prerequisites": [
+              "悲剧"
+            ],
+            "definition": "三桩誓愿是人物以异常天象昭示冤情的三项临刑誓愿。",
+            "example": "血飞白练、六月降雪、楚州亢旱三年。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "单元学习任务",
+            "section_key": "02e2bb3b86",
+            "page_range": [
+              50,
+              51
+            ]
+          }
+        ],
+        "chapter_key": "6a7175dc53",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 2,
+          "raw_heading": "第二单元"
+        }
+      },
+      {
+        "name": "第三单元",
+        "concepts": [
+          {
+            "name": "知识性读物阅读",
+            "difficulty": 3,
+            "description": "阅读介绍科学成果、研究问题的文章",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "知识性读物阅读要把握概念术语、文章思路和阐释推理方法。",
+            "example": "阅读文章时梳理科学发现的过程。"
+          },
+          {
+            "name": "关键概念术语",
+            "difficulty": 2,
+            "description": "知识性文章中承载核心意义的词语",
+            "aliases": [],
+            "prerequisites": [
+              "知识性读物阅读"
+            ],
+            "definition": "关键概念和术语是理解知识性文章内容与思路的重要支点。",
+            "example": "抓住“暗示性”“文法”等词语。"
+          },
+          {
+            "name": "科学发现过程",
+            "difficulty": 3,
+            "description": "科学成果从探索到应用的发展历程",
+            "aliases": [],
+            "prerequisites": [
+              "知识性读物阅读"
+            ],
+            "definition": "科学发现过程包括提出问题、实验探索、取得突破和推广应用等环节。",
+            "example": "从提取青蒿素到开发抗疟药物。"
+          },
+          {
+            "name": "中医药学贡献",
+            "difficulty": 2,
+            "description": "中医药学在疾病治疗和健康维护中的作用",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中医药学贡献指传统医药经验经过研究转化后对人类健康产生的作用。",
+            "example": "青蒿素用于治疗疟疾。"
+          },
+          {
+            "name": "低温提取",
+            "difficulty": 3,
+            "description": "用较低温度提取青蒿有效成分的方法",
+            "aliases": [],
+            "prerequisites": [
+              "科学发现过程"
+            ],
+            "definition": "低温提取是为保存青蒿抗疟活性成分而改变的提取方式。",
+            "example": "改用低温提取后抗疟效果大幅提升。",
+            "section": "7 青蒿素:人类征服疾病的一小步"
+          },
+          {
+            "name": "青蒿素",
+            "difficulty": 3,
+            "description": "从青蒿中发现并提取的抗疟有效成分",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学贡献",
+              "低温提取"
+            ],
+            "definition": "青蒿素是从青蒿中分离提纯得到的抗疟药物有效成分。",
+            "example": "青蒿素联合疗法广泛用于治疗疟疾。"
+          },
+          {
+            "name": "联合疗法",
+            "difficulty": 3,
+            "description": "联合使用青蒿素类药物治疗疟疾的方法",
+            "aliases": [
+              "ACT"
+            ],
+            "prerequisites": [
+              "青蒿素"
+            ],
+            "definition": "联合疗法是以青蒿素类药物组合使用的一线抗疟治疗方案。",
+            "example": "世界卫生组织推荐青蒿素联合疗法。",
+            "section": "7 青蒿素:人类征服疾病的一小步"
+          },
+          {
+            "name": "高维世界",
+            "difficulty": 4,
+            "description": "超出通常空间维度理解的理论世界",
+            "aliases": [
+              "多维空间"
+            ],
+            "prerequisites": [],
+            "definition": "高维世界是空间维数超过通常理解范围的理论物理学设想。",
+            "example": "高维世界可能有助于解释统一场论。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "统一场论",
+            "difficulty": 4,
+            "description": "试图统一自然界各种相互作用的理论",
+            "aliases": [],
+            "prerequisites": [
+              "高维世界"
+            ],
+            "definition": "统一场论试图把电磁、引力、弱、强等相互作用统一起来。",
+            "example": "爱因斯坦后半生研究统一场论。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "反物质",
+            "difficulty": 4,
+            "description": "由反粒子组成、性质异于普通物质的物质",
+            "aliases": [],
+            "prerequisites": [
+              "统一场论"
+            ],
+            "definition": "反物质是由反粒子组成的物质，接触普通物质后会发生湮没。",
+            "example": "正电子是电子的反物质。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "电子感应加速器",
+            "difficulty": 4,
+            "description": "利用磁场加速电子的实验装置",
+            "aliases": [],
+            "prerequisites": [
+              "反物质"
+            ],
+            "definition": "电子感应加速器是能够把电子加速到高能量的实验仪器。",
+            "example": "用它产生反电子并观察粒子踪迹。",
+            "section": "* 一名物理学家的教育历程"
+          },
+          {
+            "name": "中国建筑基本特征",
+            "difficulty": 3,
+            "description": "中国传统建筑体系的九项主要特点",
+            "aliases": [],
+            "prerequisites": [
+              "知识性读物阅读"
+            ],
+            "definition": "中国建筑基本特征是中国传统建筑在布局、结构、构件和装饰方面的共同特点。",
+            "example": "木材结构、斗拱和曲面屋顶。"
+          },
+          {
+            "name": "木构架结构",
+            "difficulty": 3,
+            "description": "以立柱和横梁组成梁架承重的结构",
+            "aliases": [
+              "框架结构"
+            ],
+            "prerequisites": [
+              "中国建筑基本特征"
+            ],
+            "definition": "木构架结构以柱和梁组成框架承托重量，墙壁主要用于分隔空间。",
+            "example": "房顶重量由柱承担而非墙壁承担。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "斗拱",
+            "difficulty": 3,
+            "description": "由拱和斗组合而成的中国建筑构件",
+            "aliases": [],
+            "prerequisites": [
+              "木构架结构"
+            ],
+            "definition": "斗拱是位于柱梁交接处、兼具承托、加固和装饰作用的构件。",
+            "example": "斗拱可承托屋檐并减少剪力。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "举架",
+            "difficulty": 3,
+            "description": "通过梁层变化形成屋顶坡度的做法",
+            "aliases": [
+              "举折"
+            ],
+            "prerequisites": [
+              "木构架结构"
+            ],
+            "definition": "举架是使梁层逐渐变化，从而形成屋顶曲面和坡度的结构方法。",
+            "example": "屋顶坡度由檐部向屋脊逐步增高。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "建筑文法",
+            "difficulty": 3,
+            "description": "中国建筑长期形成并遵循的建造法式",
+            "aliases": [],
+            "prerequisites": [
+              "中国建筑基本特征"
+            ],
+            "definition": "建筑文法是中国建筑构件组织、比例处理和装饰安排的惯例规则。",
+            "example": "庭院布局和屋顶处理遵循一定法式。"
+          },
+          {
+            "name": "建筑词汇",
+            "difficulty": 3,
+            "description": "构成建筑的具体构件和组成因素",
+            "aliases": [],
+            "prerequisites": [
+              "建筑文法"
+            ],
+            "definition": "建筑词汇是梁柱、门窗、斗拱、庭院等构成建筑的具体要素。",
+            "example": "梁、柱、瓦和栏杆都是建筑词汇。",
+            "section": "8 * 中国建筑的特征"
+          },
+          {
+            "name": "建筑可译性",
+            "difficulty": 4,
+            "description": "不同民族建筑用各自形式表达相同功能",
+            "aliases": [],
+            "prerequisites": [
+              "建筑文法",
+              "建筑词汇"
+            ],
+            "definition": "建筑可译性指不同民族可以用各自的建筑规则和形式解决相同问题。",
+            "example": "不同民族用不同形式建造台基和栏杆。"
+          },
+          {
+            "name": "说明事理",
+            "difficulty": 3,
+            "description": "清晰阐释事物规律、因果和联系",
+            "aliases": [],
+            "prerequisites": [
+              "关键概念术语"
+            ],
+            "definition": "说明事理是围绕关键概念、因果关系和发展规律解释抽象道理。",
+            "example": "说明中国建筑文法的形成和作用。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "说明顺序",
+            "difficulty": 3,
+            "description": "安排说明内容层次的具体思路",
+            "aliases": [],
+            "prerequisites": [
+              "说明事理"
+            ],
+            "definition": "说明顺序是根据认识规律和对象特点组织说明内容的先后次序。",
+            "example": "从诗句现象逐步分析木叶的暗示性。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "诗歌语言暗示性",
+            "difficulty": 4,
+            "description": "词语概念之外潜藏的形象和情感意味",
+            "aliases": [
+              "语言暗示性"
+            ],
+            "prerequisites": [
+              "诗歌意象"
+            ],
+            "definition": "诗歌语言暗示性指词语除概念意义外还会引发特定形象、色彩和情感联想。",
+            "example": "“木”暗示疏朗、干燥和清秋气息。"
+          },
+          {
+            "name": "诗歌意象",
+            "difficulty": 3,
+            "description": "融入特定情意的物象形象",
+            "aliases": [
+              "意象"
+            ],
+            "prerequisites": [],
+            "definition": "诗歌意象是物象与诗人情意结合后形成的具有感染力的艺术形象。",
+            "example": "“孤云”寄托孤高之感。",
+            "section": "9 说“木叶”"
+          },
+          {
+            "name": "木叶意象",
+            "difficulty": 4,
+            "description": "古诗中具有清秋意味的典型形象",
+            "aliases": [
+              "落木意象"
+            ],
+            "prerequisites": [
+              "诗歌意象",
+              "诗歌语言暗示性"
+            ],
+            "definition": "木叶意象由“木”与“叶”的组合形成疏朗、微黄、干燥而含情的秋景形象。",
+            "example": "“袅袅兮秋风，洞庭波兮木叶下”。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "7 青蒿素:人类征服疾病的一小步",
+            "section_key": "42fdf952ed",
+            "page_range": [
+              53,
+              57
+            ]
+          },
+          {
+            "name": "* 一名物理学家的教育历程",
+            "section_key": "e896d0aea3",
+            "page_range": [
+              57,
+              62
+            ]
+          },
+          {
+            "name": "8 * 中国建筑的特征",
+            "section_key": "ab911c39e5",
+            "page_range": [
+              62,
+              68
+            ]
+          },
+          {
+            "name": "9 说“木叶”",
+            "section_key": "e9ebcd88c8",
+            "page_range": [
+              68,
+              74
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "section_key": "b0263b1e45",
+            "page_range": [
+              74,
+              75
+            ]
+          }
+        ],
+        "chapter_key": "8ac16c1e1b",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 3,
+          "raw_heading": "第三单元"
+        }
+      },
+      {
+        "name": "第四单元 信息时代的语文生活",
+        "concepts": [
+          {
+            "name": "传播媒介",
+            "difficulty": 1,
+            "description": "传播信息、沟通交流并连接社会的媒介形式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "传播媒介是人们获取、传递和交流信息的工具与渠道。",
+            "example": "报刊、广播、电视和网络都是传播媒介。"
+          },
+          {
+            "name": "语言媒介物",
+            "difficulty": 2,
+            "description": "承载和传递语言信息的声波、光波或电波",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "语言媒介物是语言得以传递和呈现所依托的物理载体。",
+            "example": "口语主要利用声波传递。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "多媒介",
+            "difficulty": 2,
+            "description": "报刊、广播、电视、网络等媒介并存的传播状态",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "多媒介是多种传播媒介共同参与信息传播的形态。",
+            "example": "同一新闻可通过电视和网络获取。"
+          },
+          {
+            "name": "媒介融合",
+            "difficulty": 3,
+            "description": "不同传播媒介相互补充并逐渐融合的发展趋势",
+            "aliases": [],
+            "prerequisites": [
+              "多媒介"
+            ],
+            "definition": "媒介融合是多种媒介在功能、内容和传播方式上的互补与融合。",
+            "example": "网络平台同时呈现文字、图片、音视频。"
+          },
+          {
+            "name": "媒介传播特点",
+            "difficulty": 2,
+            "description": "不同媒介在传播速度、范围和形式等方面的特征",
+            "aliases": [
+              "传播特点"
+            ],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "媒介传播特点是某种媒介区别于其他媒介的传播优势与限制。",
+            "example": "网络传播迅速，校报具有较强权威性。",
+            "section": "一 认识多媒介"
+          },
+          {
+            "name": "媒介语言特征",
+            "difficulty": 3,
+            "description": "语言在不同传播媒介中的内容、表达和呈现特点",
+            "aliases": [
+              "语言特征"
+            ],
+            "prerequisites": [
+              "媒介传播特点"
+            ],
+            "definition": "媒介语言特征是语言根据媒介性质进行调整后形成的表达特点。",
+            "example": "网络公众号文章要重视标题吸引力。"
+          },
+          {
+            "name": "口语时代",
+            "difficulty": 2,
+            "description": "文字产生以前以声波和口语进行交流的语言发展阶段",
+            "aliases": [],
+            "prerequisites": [
+              "语言媒介物"
+            ],
+            "definition": "口语时代是人类尚未创造文字、主要使用有声语言交流的时期。",
+            "example": "古代史诗最初以口头形式流传。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "书面语",
+            "difficulty": 2,
+            "description": "借助文字和光波突破时间、空间限制的语言形式",
+            "aliases": [],
+            "prerequisites": [
+              "口语时代"
+            ],
+            "definition": "书面语是以文字为媒介、能够被记录和传播的语言形式。",
+            "example": "报纸文章属于书面语材料。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "书面文化",
+            "difficulty": 3,
+            "description": "以文字记录、传播和积累经验形成的文化形态",
+            "aliases": [],
+            "prerequisites": [
+              "书面语"
+            ],
+            "definition": "书面文化是以书面语为基础传承人类知识、历史和经验的文化。",
+            "example": "印刷书籍推动了知识的广泛传播。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "有声媒体",
+            "difficulty": 2,
+            "description": "主要借助电波传播声音或声音与画面的媒体形式",
+            "aliases": [
+              "有声媒体时代"
+            ],
+            "prerequisites": [
+              "书面语"
+            ],
+            "definition": "有声媒体是利用电波传送声音，电视还传送画面的传播媒介。",
+            "example": "广播和电视属于有声媒体。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "网络媒体",
+            "difficulty": 2,
+            "description": "依托互联网传播信息并具有全媒体性质的新型媒介",
+            "aliases": [],
+            "prerequisites": [
+              "有声媒体"
+            ],
+            "definition": "网络媒体是以互联网为基础、融合多种信息呈现方式的媒体。",
+            "example": "网络新闻、博客和微信属于网络媒体。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "网络语言",
+            "difficulty": 3,
+            "description": "网络交际中形成并使用的语言及其表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "网络媒体",
+              "媒介语言特征"
+            ],
+            "definition": "网络语言是伴随网络媒体和网络交际发展形成的语言使用形态。",
+            "example": "网络交流常使用键盘输入和屏幕阅读。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "信息失真",
+            "difficulty": 3,
+            "description": "信息在传播中发生损耗、扭曲、夸大或篡改的现象",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "信息失真是信息传播后与原事实不完全相符的现象。",
+            "example": "真实消息被传播者剪裁后造成误导。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "辨识媒介信息",
+            "difficulty": 3,
+            "description": "判断媒介信息真伪、导向和格调并作出恰当应对",
+            "aliases": [],
+            "prerequisites": [
+              "媒介素养",
+              "信息失真"
+            ],
+            "definition": "辨识媒介信息是对媒介信息的真实性和价值取向进行判断。",
+            "example": "对网络消息多方核实后再转发。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "真实信息源",
+            "difficulty": 2,
+            "description": "能够提供真实可靠信息的正式渠道和权威来源",
+            "aliases": [
+              "可靠信息源"
+            ],
+            "prerequisites": [
+              "辨识媒介信息"
+            ],
+            "definition": "真实信息源是获取准确、可靠媒介信息的渠道。",
+            "example": "了解公共政策可优先查看政府官网。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "媒介素养",
+            "difficulty": 3,
+            "description": "理解、辨析、评判和恰当使用媒介信息的能力",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "媒介素养是适应信息时代并理性获取、判断和使用媒介信息的素质。",
+            "example": "面对海量信息主动筛选并独立判断。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "自媒体",
+            "difficulty": 2,
+            "description": "个人或普通用户自主发布、传播信息的媒介形态",
+            "aliases": [],
+            "prerequisites": [
+              "网络媒体"
+            ],
+            "definition": "自媒体是信息生产者能够自主发布和传播内容的媒介形态。",
+            "example": "个人通过微博发布原创内容。"
+          },
+          {
+            "name": "信息边缘化",
+            "difficulty": 3,
+            "description": "因信息获取不公平而被排除在信息社会之外的状态",
+            "aliases": [],
+            "prerequisites": [
+              "网络媒体"
+            ],
+            "definition": "信息边缘化是个人或群体因获取信息不足而处于社会传播边缘。",
+            "example": "较少上网的群体可能难以及时获得公共信息。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "网络交流规则",
+            "difficulty": 2,
+            "description": "网络公共交流中应遵守的尊重、理性和责任规范",
+            "aliases": [],
+            "prerequisites": [
+              "媒介素养"
+            ],
+            "definition": "网络交流规则是维护网络公共秩序、规范表达和讨论的行为准则。",
+            "example": "讨论问题时不造谣、不辱骂、不进行语言暴力。"
+          },
+          {
+            "name": "公共理性",
+            "difficulty": 3,
+            "description": "在公共空间尊重他人、遵守秩序并承担表达责任",
+            "aliases": [],
+            "prerequisites": [
+              "网络交流规则"
+            ],
+            "definition": "公共理性是在公共交流中以责任和规则约束个人表达。",
+            "example": "表达观点时兼顾他人权利和公共秩序。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "主体意识",
+            "difficulty": 3,
+            "description": "认识到表达自由伴随责任并主动维护公共生活",
+            "aliases": [],
+            "prerequisites": [
+              "公共理性"
+            ],
+            "definition": "主体意识是传播者自觉承担表达责任并参与公共生活的意识。",
+            "example": "转发信息前确认内容并考虑可能影响。",
+            "section": "三 辨识媒介信息"
+          },
+          {
+            "name": "传播媒介社会影响",
+            "difficulty": 4,
+            "description": "传播媒介对社会结构、信息共享和行为规则的影响",
+            "aliases": [],
+            "prerequisites": [
+              "传播媒介"
+            ],
+            "definition": "传播媒介社会影响是媒介形态变化对社会关系和生活方式产生的作用。",
+            "example": "网络传播扩大了信息共享并带来新的道德问题。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "学习活动",
+            "section_key": "8cfc3a6926",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "一 认识多媒介",
+            "section_key": "61bc8d7626",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "二 善用多媒介",
+            "section_key": "b3b0205907",
+            "page_range": [
+              77,
+              78
+            ]
+          },
+          {
+            "name": "三 辨识媒介信息",
+            "section_key": "9e81f68a9e",
+            "page_range": [
+              78,
+              85
+            ]
+          }
+        ],
+        "chapter_key": "b76b39277f",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 4,
+          "raw_heading": "第四单元 信息时代的语文生活"
+        }
+      },
+      {
+        "name": "第五单元",
+        "concepts": [
+          {
+            "name": "抱负与使命",
+            "difficulty": 2,
+            "description": "个人理想与时代责任相结合的精神追求",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "抱负与使命指个人将自身理想同国家、社会和时代需要结合起来。",
+            "example": "为天下人谋永福，不惜牺牲个人幸福。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "实用性文本",
+            "difficulty": 2,
+            "description": "具有明确目的并服务现实交流的文本",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "实用性文本是为沟通、劝说、动员或安慰等现实目的而写作的文本。",
+            "example": "奏疏意在劝说君王收回成命。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "演讲词",
+            "difficulty": 2,
+            "description": "在特定场合面向听众发表观点的文体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "演讲词是在特定情境中面向听众阐述观点、表达情感或进行动员的文体。",
+            "example": "在庄严场合总结逝者的成就与贡献。",
+            "section": "在马克思墓前的讲话"
+          },
+          {
+            "name": "演讲针对性",
+            "difficulty": 3,
+            "description": "根据目的、场合和对象组织演讲内容",
+            "aliases": [],
+            "prerequisites": [
+              "演讲词"
+            ],
+            "definition": "演讲针对性指演讲内容和表达方式要适合特定目的、场合及听众。",
+            "example": "面对英国听众化用莎士比亚典故。"
+          },
+          {
+            "name": "演讲结构",
+            "difficulty": 3,
+            "description": "演讲围绕主题展开的层次与思路",
+            "aliases": [],
+            "prerequisites": [
+              "演讲词"
+            ],
+            "definition": "演讲结构是演讲内容按照一定逻辑由提出问题、分析问题到得出结论的组织方式。",
+            "example": "先揭示矛盾，再分析原因，最后预言革命使命。"
+          },
+          {
+            "name": "演讲语言技巧",
+            "difficulty": 3,
+            "description": "增强演讲感染力和说服力的语言方法",
+            "aliases": [],
+            "prerequisites": [
+              "演讲词"
+            ],
+            "definition": "演讲语言技巧包括简洁通俗、多用短句和适当运用排比等表达方法。",
+            "example": "适当使用排比调动听众情绪。"
+          },
+          {
+            "name": "比喻与典故",
+            "difficulty": 3,
+            "description": "借形象事物或经典故事阐发抽象思想",
+            "aliases": [],
+            "prerequisites": [
+              "演讲语言技巧"
+            ],
+            "definition": "比喻与典故是借助具体形象或既有故事表达思想、增强表达效果的手法。",
+            "example": "用“老田鼠”“工兵”比喻革命。"
+          },
+          {
+            "name": "历史唯物主义",
+            "difficulty": 4,
+            "description": "从物质生活和经济基础解释历史发展的观点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "历史唯物主义认为物质生活资料的生产及经济发展构成社会发展的基础。",
+            "example": "由经济基础解释国家设施、艺术和宗教观念。",
+            "section": "在马克思墓前的讲话"
+          },
+          {
+            "name": "社会深层矛盾",
+            "difficulty": 4,
+            "description": "生产力发展与社会关系之间的根本对抗",
+            "aliases": [],
+            "prerequisites": [
+              "历史唯物主义"
+            ],
+            "definition": "社会深层矛盾指现代工业和科学发展同现代贫困、衰颓及社会关系之间的对抗。",
+            "example": "机器提高效率，却引起饥饿和过度疲劳。"
+          },
+          {
+            "name": "无产阶级使命",
+            "difficulty": 4,
+            "description": "工人阶级解放自身并推动社会革命的责任",
+            "aliases": [],
+            "prerequisites": [
+              "社会深层矛盾"
+            ],
+            "definition": "无产阶级使命指工人阶级掌握现代生产力量并实现自身及全世界解放。",
+            "example": "无产阶级被称为资本主义灭亡的“执刑者”。"
+          },
+          {
+            "name": "奏疏",
+            "difficulty": 2,
+            "description": "臣下针对政务向君主进言的公文文体",
+            "aliases": [],
+            "prerequisites": [
+              "实用性文本"
+            ],
+            "definition": "奏疏是臣下针对具体政事向君主陈述意见、劝谏施政的公文。",
+            "example": "围绕驱逐客卿的政令向秦王进谏。",
+            "section": "* 与妻书"
+          },
+          {
+            "name": "劝谏策略",
+            "difficulty": 4,
+            "description": "通过史实、利弊和立场劝说统治者纳谏",
+            "aliases": [],
+            "prerequisites": [
+              "奏疏"
+            ],
+            "definition": "劝谏策略是立足对方立场，综合运用事实、利弊分析和恰切措辞实现劝说的方法。",
+            "example": "列举秦国任用客卿而强大的历史事实。"
+          },
+          {
+            "name": "书信文体特质",
+            "difficulty": 2,
+            "description": "注重交流沟通并能够自由抒写心声的文体特点",
+            "aliases": [],
+            "prerequisites": [
+              "实用性文本"
+            ],
+            "definition": "书信文体特质是面向特定亲友交流，表达较为自由并重视真挚情感。",
+            "example": "写信与亲人诀别并倾诉衷肠。"
+          },
+          {
+            "name": "书信抒情",
+            "difficulty": 3,
+            "description": "在书信中直抒胸臆、追忆往事和安慰亲人",
+            "aliases": [],
+            "prerequisites": [
+              "书信文体特质"
+            ],
+            "definition": "书信抒情是借助直接倾诉、往事追忆和情感劝慰表达复杂心情的方式。",
+            "example": "回忆夫妻相处的生活片段，表达不舍之情。"
+          },
+          {
+            "name": "长句表达",
+            "difficulty": 3,
+            "description": "用复杂句式承载深刻含义和复杂情感",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长句表达是通过多层分句和严密关联展现复杂思想、逻辑关系或情感。",
+            "example": "连续铺陈物质生活与社会观念的因果关系。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "演讲稿写作",
+            "difficulty": 3,
+            "description": "围绕鲜明主题面向听众组织材料和语言",
+            "aliases": [],
+            "prerequisites": [
+              "演讲针对性",
+              "演讲结构",
+              "演讲语言技巧"
+            ],
+            "definition": "演讲稿写作要求分析听众、明确主题、选择典型材料并运用有感染力的语言。",
+            "example": "以“我们的使命”为题写演讲稿。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "10 在《人民报》创刊纪念会上的演说",
+            "section_key": "1ec1b835e8",
+            "page_range": [
+              87,
+              89
+            ]
+          },
+          {
+            "name": "在马克思墓前的讲话",
+            "section_key": "16148be1b1",
+            "page_range": [
+              89,
+              92
+            ]
+          },
+          {
+            "name": "11 谏逐客书",
+            "section_key": "7f900170d5",
+            "page_range": [
+              92,
+              94
+            ]
+          },
+          {
+            "name": "* 与妻书",
+            "section_key": "984884553e",
+            "page_range": [
+              94,
+              98
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "section_key": "ead319b295",
+            "page_range": [
+              98,
+              99
+            ]
+          }
+        ],
+        "chapter_key": "b1d7f5f579",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 5,
+          "raw_heading": "第五单元"
+        }
+      },
+      {
+        "name": "第六单元",
+        "concepts": [
+          {
+            "name": "小说",
+            "difficulty": 1,
+            "description": "通过虚构人物与情节反映社会生活的文学体裁",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "小说是通过虚构的人物形象与故事情节反映社会生活的文学体裁。",
+            "example": "作品借人物命运描摹人情世态。"
+          },
+          {
+            "name": "社会环境",
+            "difficulty": 2,
+            "description": "作品中影响人物命运的社会生活背景",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "社会环境是人物生存、性格形成和命运发展的社会生活背景。",
+            "example": "鲁镇风俗影响祥林嫂的命运。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "知人论世",
+            "difficulty": 2,
+            "description": "联系人物处境和社会环境理解人物",
+            "aliases": [],
+            "prerequisites": [
+              "社会环境"
+            ],
+            "definition": "知人论世是把人物放在其生活的社会环境中认识和分析。",
+            "example": "结合时代处境理解林冲的反抗。"
+          },
+          {
+            "name": "人物形象",
+            "difficulty": 2,
+            "description": "小说中具有性格特征和命运经历的人物",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "人物形象是小说通过情节、语言和行动塑造的具体人物。",
+            "example": "别里科夫是保守畏惧的典型形象。"
+          },
+          {
+            "name": "人物性格",
+            "difficulty": 2,
+            "description": "人物在作品中表现出的稳定心理与行为特征",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象"
+            ],
+            "definition": "人物性格是人物在思想、情感和行为中呈现出的特征。",
+            "example": "林冲由隐忍逐步转向反抗。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "情节",
+            "difficulty": 2,
+            "description": "小说中人物行动和事件发展的过程",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "情节是小说围绕人物展开的事件发展过程。",
+            "example": "草料场失火推动林冲发现阴谋。"
+          },
+          {
+            "name": "情节曲折",
+            "difficulty": 3,
+            "description": "情节发展呈现起伏变化并持续制造冲突",
+            "aliases": [
+              "情节跌宕起伏"
+            ],
+            "prerequisites": [
+              "情节"
+            ],
+            "definition": "情节曲折是故事发展一波三折、张弛有致并不断推进的特点。",
+            "example": "林冲的遭遇经历多次转折。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "突发事件",
+            "difficulty": 3,
+            "description": "突然发生并推动小说情节发展的事件",
+            "aliases": [],
+            "prerequisites": [
+              "情节"
+            ],
+            "definition": "突发事件是意外出现并成为情节运行动力的事件。",
+            "example": "祥林嫂丈夫和儿子的意外死亡改变了她的命运。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "自然环境描写",
+            "difficulty": 3,
+            "description": "对风雪等自然景物及其氛围的描写",
+            "aliases": [
+              "环境描写"
+            ],
+            "prerequisites": [
+              "社会环境"
+            ],
+            "definition": "自然环境描写是小说对自然景物、天气和相关氛围的描写。",
+            "example": "风雪描写渲染气氛并推动林冲投宿山神庙。"
+          },
+          {
+            "name": "细节描写",
+            "difficulty": 3,
+            "description": "对人物动作、物件或场景细部的具体描写",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象",
+              "情节"
+            ],
+            "definition": "细节描写是对具有表现力的细微之处作具体刻画。",
+            "example": "林冲用大石头抵住庙门。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "人物语言",
+            "difficulty": 3,
+            "description": "通过个性化语言表现人物性格的写法",
+            "aliases": [
+              "个性化的人物语言"
+            ],
+            "prerequisites": [
+              "人物性格"
+            ],
+            "definition": "人物语言是通过人物说话内容和方式塑造性格的表达手段。",
+            "example": "“千万别闹出什么乱子”表现别里科夫的畏惧。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "叙述视角",
+            "difficulty": 3,
+            "description": "叙述者观察和讲述故事的立足点",
+            "aliases": [],
+            "prerequisites": [
+              "小说"
+            ],
+            "definition": "叙述视角是叙述者置身故事内外并观察讲述故事的位置。",
+            "example": "“我”作为人物讲述祥林嫂的故事。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "社会批判意义",
+            "difficulty": 4,
+            "description": "作品通过人物命运揭示并批评社会现实",
+            "aliases": [
+              "社会批判性"
+            ],
+            "prerequisites": [
+              "社会环境",
+              "人物命运"
+            ],
+            "definition": "社会批判意义是作品借人物和故事对现实社会进行揭示与反思的价值。",
+            "example": "人物的悲剧揭示社会环境的压迫。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "套中人",
+            "difficulty": 3,
+            "description": "被保守秩序束缚思想和行为的人物形象",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象",
+              "人物性格"
+            ],
+            "definition": "套中人是被各种“套子”箍住手脚和思想的保守、僵化人物。",
+            "example": "别里科夫把生活和思想都装进套子。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "幽默讽刺",
+            "difficulty": 3,
+            "description": "以幽默叙述和夸张情境揭露现实的风格",
+            "aliases": [
+              "讽刺"
+            ],
+            "prerequisites": [
+              "社会批判意义"
+            ],
+            "definition": "幽默讽刺是以诙谐、夸张的方式表现人物可笑并批判现实的风格。",
+            "example": "对别里科夫言行的描写既可笑又有批判性。",
+            "section": "* 装在套子里的人"
+          },
+          {
+            "name": "幻想与现实交融",
+            "difficulty": 4,
+            "description": "将神秘幻想情节与现实主题结合的写法",
+            "aliases": [],
+            "prerequisites": [
+              "情节",
+              "社会批判意义"
+            ],
+            "definition": "幻想与现实交融是把神秘、离奇的想象和现实生活主题结合起来。",
+            "example": "求神问卜、魂化促织寄寓现实批判。"
+          },
+          {
+            "name": "变形",
+            "difficulty": 3,
+            "description": "人物发生非现实形态变化并由此展开故事",
+            "aliases": [
+              "化虫"
+            ],
+            "prerequisites": [
+              "小说",
+              "幻想与现实交融"
+            ],
+            "definition": "变形是人物以荒诞方式改变形态并引发情节和社会寓意的写法。",
+            "example": "主人公醒来后发现自己变成甲虫。",
+            "section": "14 促织"
+          },
+          {
+            "name": "反语",
+            "difficulty": 3,
+            "description": "表面肯定而实际表达否定意味的语言",
+            "aliases": [],
+            "prerequisites": [
+              "人物语言"
+            ],
+            "definition": "反语是使用与本意相反的表面说法来强化表达效果。",
+            "example": "说祥林嫂死去“对人对己，也还都不错”。",
+            "section": "12 祝福"
+          },
+          {
+            "name": "悬念",
+            "difficulty": 3,
+            "description": "设置疑问或未知信息以吸引读者继续阅读",
+            "aliases": [],
+            "prerequisites": [
+              "情节"
+            ],
+            "definition": "悬念是暂不揭示关键情况，使读者产生期待和疑问的叙事技巧。",
+            "example": "先写人物异常，再逐步揭示事件真相。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "意外反转",
+            "difficulty": 3,
+            "description": "故事结果突然改变读者原有预期的写法",
+            "aliases": [
+              "意外",
+              "反转"
+            ],
+            "prerequisites": [
+              "情节曲折"
+            ],
+            "definition": "意外反转是情节在读者预期之外发生突变并形成新的走向。",
+            "example": "看似平静的生活因突发事件骤然改变。",
+            "section": "单元学习任务"
+          }
+        ],
+        "sections": [
+          {
+            "name": "12 祝福",
+            "section_key": "f4c5f2896d",
+            "page_range": [
+              101,
+              114
+            ]
+          },
+          {
+            "name": "13 林教头风雪山神庙",
+            "section_key": "6a20a16b2d",
+            "page_range": [
+              114,
+              120
+            ]
+          },
+          {
+            "name": "* 装在套子里的人",
+            "section_key": "f69c736ea8",
+            "page_range": [
+              120,
+              126
+            ]
+          },
+          {
+            "name": "14 促织",
+            "section_key": "e42bd5c2b9",
+            "page_range": [
+              126,
+              142
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "section_key": "d14385b7aa",
+            "page_range": [
+              142,
+              143
+            ]
+          }
+        ],
+        "chapter_key": "2badc2dd4c",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 6,
+          "raw_heading": "第六单元"
+        }
+      },
+      {
+        "name": "第七单元 整本书阅读",
+        "concepts": [
+          {
+            "name": "长篇小说",
+            "difficulty": 1,
+            "description": "篇幅较长、人物众多、情节复杂的小说类型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长篇小说适宜反映广阔社会生活和人物成长历程。",
+            "example": "通过多年生活展现人物命运变化。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "章回体小说",
+            "difficulty": 2,
+            "description": "中国古典长篇小说特有的体式",
+            "aliases": [],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "章回体小说以分回形式组织较长篇幅的故事。",
+            "example": "小说按回目展开叙事。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "前五回纲领作用",
+            "difficulty": 3,
+            "description": "开篇部分为全书情节和背景作总体铺垫",
+            "aliases": [],
+            "prerequisites": [
+              "章回体小说"
+            ],
+            "definition": "前五回通过铺叙背景、人物和预示，为后文发展奠定基础。",
+            "example": "前五回预示贾府由盛转衰。"
+          },
+          {
+            "name": "情节主线",
+            "difficulty": 3,
+            "description": "贯穿小说并推动故事发展的核心线索",
+            "aliases": [],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "情节主线是组织小说主要事件和人物命运的核心线索。",
+            "example": "家门败落与人物聚散构成两条主线。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "网状结构",
+            "difficulty": 4,
+            "description": "多条情节线索纵横交错形成的结构",
+            "aliases": [],
+            "prerequisites": [
+              "情节主线"
+            ],
+            "definition": "网状结构由多条主线交织推进，共同构成复杂叙事。",
+            "example": "家族兴衰线与爱情悲剧线相互交错。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "人物关系梳理",
+            "difficulty": 2,
+            "description": "理清主要人物之间的身份、亲缘和情感联系",
+            "aliases": [],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "人物关系梳理是借助情节和互动建立人物关系网络。",
+            "example": "绘制主要人物关系图并标注相关情节。"
+          },
+          {
+            "name": "人物形象塑造",
+            "difficulty": 3,
+            "description": "通过描写人物表现其性格和内心世界",
+            "aliases": [],
+            "prerequisites": [
+              "人物关系梳理"
+            ],
+            "definition": "人物形象塑造通过细腻描写呈现人物的性格特征与精神世界。",
+            "example": "从人物言行和互动中把握其性情。"
+          },
+          {
+            "name": "人物性格复杂性",
+            "difficulty": 4,
+            "description": "人物同时具有多种甚至相互矛盾的性格特征",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象塑造"
+            ],
+            "definition": "人物性格复杂性指人物并非单一的好人或坏人，而具有多面性。",
+            "example": "王熙凤奸险却聪明能干、诙谐。"
+          },
+          {
+            "name": "日常生活细节",
+            "difficulty": 3,
+            "description": "对家庭闺阁琐事等平常生活的细腻描写",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象塑造"
+            ],
+            "definition": "日常生活细节以平常小事表现人物关系、社会生活和人生真相。",
+            "example": "一个眼色写出宝黛之间的心灵契合。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "以小见大",
+            "difficulty": 3,
+            "description": "从生活细节表现更深广的社会和人生内涵",
+            "aliases": [],
+            "prerequisites": [
+              "日常生活细节"
+            ],
+            "definition": "以小见大是通过具体细节揭示宏观社会现实或深层人生意义。",
+            "example": "中秋笛声暗示贾家日暮途穷。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "社会关系与习俗",
+            "difficulty": 3,
+            "description": "小说反映的社会关系网络和日常生活习俗",
+            "aliases": [
+              "社会生活"
+            ],
+            "prerequisites": [
+              "长篇小说"
+            ],
+            "definition": "社会关系与习俗包括身份交往、官场经济、社会分工和生活风俗等内容。",
+            "example": "作品展现帝王贵胄与佃户庄头等多类人物。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "小说语言鉴赏",
+            "difficulty": 3,
+            "description": "品味小说叙述、人物语言及诗词韵文的表达效果",
+            "aliases": [],
+            "prerequisites": [
+              "人物形象塑造"
+            ],
+            "definition": "小说语言鉴赏是分析语言如何表现人物性格并服务于叙事。",
+            "example": "从三言两语中体会人物鲜明个性。"
+          },
+          {
+            "name": "人物诗词鉴赏",
+            "difficulty": 3,
+            "description": "通过小说人物创作的诗词理解其个性和情趣",
+            "aliases": [],
+            "prerequisites": [
+              "小说语言鉴赏"
+            ],
+            "definition": "人物诗词鉴赏是结合诗词内容和风格把握人物的思想情感。",
+            "example": "品味白海棠诗以理解人物性格。"
+          },
+          {
+            "name": "小说主题",
+            "difficulty": 4,
+            "description": "作品通过人物命运和家族兴衰表达的思想内容",
+            "aliases": [],
+            "prerequisites": [
+              "情节主线",
+              "人物性格复杂性"
+            ],
+            "definition": "小说主题是作品对婚姻爱情、女性命运、家族盛衰和社会人生的总体思考。",
+            "example": "从宝黛钗悲剧和贾府衰败理解主题。"
+          },
+          {
+            "name": "综述",
+            "difficulty": 2,
+            "description": "围绕某类情况或问题综合梳理材料并概括成果的文章",
+            "aliases": [
+              "研究综述",
+              "文献综述"
+            ],
+            "prerequisites": [],
+            "definition": "综述是全面、准确、客观、清晰地反映情况或研究成果的文章。",
+            "example": "梳理关于小说主题的研究论述。",
+            "section": "《红楼梦》"
+          },
+          {
+            "name": "综述全面性",
+            "difficulty": 2,
+            "description": "充分搜集材料并完整反映相关情况",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述全面性要求围绕问题尽可能掌握并呈现相关材料和研究现状。",
+            "example": "写会议综述时掌握议题、议程和主要发言。"
+          },
+          {
+            "name": "综述准确性",
+            "difficulty": 2,
+            "description": "如实概括事实、观点和引用内容",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述准确性要求忠实概括材料，避免歪曲、遗漏和以偏概全。",
+            "example": "引用文字时标明出处并忠实呈现原意。"
+          },
+          {
+            "name": "综述客观性",
+            "difficulty": 3,
+            "description": "平衡呈现不同观点并依据标准筛选材料",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述客观性要求不偏向单一观点，并根据代表性等标准选择材料。",
+            "example": "同时介绍某问题的不同研究观点。"
+          },
+          {
+            "name": "综述清晰性",
+            "difficulty": 3,
+            "description": "通过明确主旨和合理结构使材料易于理解",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述清晰性要求开头概括主旨，主体按合适顺序组织材料。",
+            "example": "按时间顺序介绍活动经过。"
+          },
+          {
+            "name": "综述结构",
+            "difficulty": 3,
+            "description": "综述开头、主体及材料组织方式的安排",
+            "aliases": [],
+            "prerequisites": [
+              "综述清晰性"
+            ],
+            "definition": "综述结构包括开头概括主旨、主体分类展开和合理安排顺序。",
+            "example": "按逻辑顺序介绍多个研究方向。"
+          },
+          {
+            "name": "综述语言",
+            "difficulty": 2,
+            "description": "综述中简明扼要且具有概括性的表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "综述"
+            ],
+            "definition": "综述语言应简洁概括，并可适当运用数字和图表帮助理解。",
+            "example": "用表格概括不同研究观点。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "《红楼梦》",
+            "section_key": "9dd2c990fa",
+            "page_range": [
+              144,
+              149
+            ]
+          }
+        ],
+        "chapter_key": "ec60e56fa0",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 7,
+          "raw_heading": "第七单元 整本书阅读"
+        }
+      },
+      {
+        "name": "第八单元",
+        "concepts": [
+          {
+            "name": "奏疏",
+            "difficulty": 2,
+            "description": "直言进谏、警示君主的文体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "奏疏是臣下向君主陈述政见、提出劝谏的文书。",
+            "example": "以奏章劝君居安思危。"
+          },
+          {
+            "name": "书信",
+            "difficulty": 1,
+            "description": "通过书信往来陈述主张、剖白心迹",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "书信是借私人往来书面表达意见和心迹的文体。",
+            "example": "回信逐一回应对方指责。",
+            "section": "* 答司马谏议书"
+          },
+          {
+            "name": "辞赋",
+            "difficulty": 2,
+            "description": "立足现实、铺陈描写并评说盛衰的文体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "辞赋是兼具铺陈描写与议论抒情、用于评说事理的文体。",
+            "example": "铺写宫室之盛以揭示奢亡之因。"
+          },
+          {
+            "name": "史论",
+            "difficulty": 2,
+            "description": "借历史事实阐发观点、评论兴亡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "史论是以历史事件为依据分析成败并发表议论的文体。",
+            "example": "从六国灭亡分析赂秦之弊。",
+            "section": "* 六国论"
+          },
+          {
+            "name": "居安思危",
+            "difficulty": 2,
+            "description": "处于安定时预先想到危险并采取防范",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "居安思危是安定时不忘潜在危机、主动防患的思想。",
+            "example": "国力上升时仍戒奢行俭。"
+          },
+          {
+            "name": "十思",
+            "difficulty": 3,
+            "description": "针对君主欲望、政务提出的十条劝诫",
+            "aliases": [],
+            "prerequisites": [
+              "居安思危"
+            ],
+            "definition": "十思是围绕知足、谦虚、纳谏、慎刑等提出的君主自戒原则。",
+            "example": "见可欲则思知足自戒。"
+          },
+          {
+            "name": "载舟覆舟",
+            "difficulty": 2,
+            "description": "以水喻民，说明人民能拥戴也能推翻统治",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "载舟覆舟比喻人民既能支持统治者也能使其失去统治。",
+            "example": "统治者应深切慎重民众怨恨。",
+            "section": "15 谏太宗十思疏"
+          },
+          {
+            "name": "名实之辨",
+            "difficulty": 3,
+            "description": "通过辨析名称与实际是否相符来明理",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "名实之辨是考察事物名义与实际是否一致的论理方式。",
+            "example": "先辨明变法是否属于侵官生事。"
+          },
+          {
+            "name": "变法除弊",
+            "difficulty": 2,
+            "description": "施行法度改革以兴利除弊、治理国事",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "变法除弊是通过修订和施行法度改变积弊、谋求国家治理。",
+            "example": "议订法令并交给有司执行。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "骈散结合",
+            "difficulty": 3,
+            "description": "骈偶句式与散句交错使用的行文特点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "骈散结合是整齐对偶的骈句与自由灵活的散句相互配合。",
+            "example": "对偶铺陈后接散句议论。",
+            "section": "* 答司马谏议书"
+          },
+          {
+            "name": "赋的铺排",
+            "difficulty": 3,
+            "description": "对事物进行层层铺陈、细密描写",
+            "aliases": [],
+            "prerequisites": [
+              "辞赋"
+            ],
+            "definition": "赋的铺排是围绕对象展开连续、全面而有层次的描写。",
+            "example": "铺写楼阁、歌舞和宫人生活。"
+          },
+          {
+            "name": "赋的夸张",
+            "difficulty": 3,
+            "description": "以夸大描写增强感染力和批判力量",
+            "aliases": [],
+            "prerequisites": [
+              "辞赋"
+            ],
+            "definition": "赋的夸张是有意扩大事物特征以形成震撼效果的表达方式。",
+            "example": "“五步一楼，十步一阁”极写宫室密集。"
+          },
+          {
+            "name": "借古鉴今",
+            "difficulty": 2,
+            "description": "借历史兴亡反思现实并针砭时弊",
+            "aliases": [],
+            "prerequisites": [
+              "史论"
+            ],
+            "definition": "借古鉴今是通过评论历史事件为现实治理提供警示。",
+            "example": "借秦亡告诫当朝不可重蹈覆辙。",
+            "section": "* 六国论"
+          },
+          {
+            "name": "论点",
+            "difficulty": 1,
+            "description": "文章所持的观点，即论证要证明的对象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "论点是作者针对问题提出并试图证明的明确主张。",
+            "example": "六国破灭的弊端在于赂秦。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论据类型",
+            "difficulty": 2,
+            "description": "支撑论点的事例、数据、意见等材料类型",
+            "aliases": [],
+            "prerequisites": [
+              "论点"
+            ],
+            "definition": "论据类型是用于支撑论点的不同材料类别。",
+            "example": "事例、数据、权威意见和个人经验。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论证",
+            "difficulty": 2,
+            "description": "解说分析论据并建立其与论点的联系",
+            "aliases": [],
+            "prerequisites": [
+              "论点",
+              "论据类型"
+            ],
+            "definition": "论证是运用论据证明论点、使读者信服的思考过程。",
+            "example": "分析割地赂秦为何导致国力亏损。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论证方法",
+            "difficulty": 3,
+            "description": "类比、对比、演绎、归纳等说理论证方式",
+            "aliases": [],
+            "prerequisites": [
+              "论证"
+            ],
+            "definition": "论证方法是组织和分析论据以证明论点的具体方式。",
+            "example": "用“抱薪救火”类比割地求和。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "论证逻辑",
+            "difficulty": 3,
+            "description": "论证中观点、材料和推理之间的严密关系",
+            "aliases": [],
+            "prerequisites": [
+              "论证"
+            ],
+            "definition": "论证逻辑是论据支持论点时体现出的清晰、严密的推理关系。",
+            "example": "由赂秦力亏推至六国破灭。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "理性表达",
+            "difficulty": 2,
+            "description": "观点鲜明、言必有据并运用合适论证方法",
+            "aliases": [],
+            "prerequisites": [
+              "论点",
+              "论据类型",
+              "论证方法"
+            ],
+            "definition": "理性表达是以明确观点、充分依据和合理推理进行说服性表达。",
+            "example": "围绕阅读方式提出观点并分析论据。",
+            "section": "单元学习任务"
+          },
+          {
+            "name": "批判性思维",
+            "difficulty": 3,
+            "description": "在质疑、辩证分析和合理推理中形成判断",
+            "aliases": [],
+            "prerequisites": [
+              "论证逻辑"
+            ],
+            "definition": "批判性思维是敢于质疑并依据缜密推理作出理性判断的思维方式。",
+            "example": "比较两种历史论证并辨析其针对性。"
+          },
+          {
+            "name": "责任与担当",
+            "difficulty": 2,
+            "description": "忧国忧民、心怀天下并主动承担济世责任",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "责任与担当是仁人志士面对国家社会问题主动建言、改革和救世的精神。",
+            "example": "不避众议，坚持变法除弊。",
+            "section": "单元学习任务"
+          }
+        ],
+        "sections": [
+          {
+            "name": "15 谏太宗十思疏",
+            "section_key": "99210fdb18",
+            "page_range": [
+              151,
+              153
+            ]
+          },
+          {
+            "name": "* 答司马谏议书",
+            "section_key": "c03362b259",
+            "page_range": [
+              153,
+              155
+            ]
+          },
+          {
+            "name": "16 阿房宫赋",
+            "section_key": "4ef90398f1",
+            "page_range": [
+              155,
+              157
+            ]
+          },
+          {
+            "name": "* 六国论",
+            "section_key": "8986082fe8",
+            "page_range": [
+              157,
+              159
+            ]
+          },
+          {
+            "name": "单元学习任务",
+            "section_key": "de87096a51",
+            "page_range": [
+              159,
+              161
+            ]
+          }
+        ],
+        "chapter_key": "47d6b5de91",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 8,
+          "raw_heading": "第八单元"
+        }
+      },
+      {
+        "name": "古诗词诵读",
+        "concepts": [
+          {
+            "name": "今昔对比",
+            "difficulty": 2,
+            "description": "通过今昔情境对照表达复杂感受",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "今昔对比是将过去与现在的情境并置以突出情感变化的表现方式。",
+            "example": "“昔闻洞庭水，今上岳阳楼”形成今昔对照。",
+            "section": "登岳阳楼"
+          },
+          {
+            "name": "洞庭意象",
+            "difficulty": 2,
+            "description": "作品中承载开阔气象与精神胸怀的湖泊形象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "洞庭意象是诗词借洞庭湖的广阔澄澈表现自然气象和精神境界的形象。",
+            "example": "“玉鉴琼田三万顷”展现洞庭的浩瀚澄澈。"
+          },
+          {
+            "name": "忧国忧时",
+            "difficulty": 3,
+            "description": "由个人困顿联想到国家安危与时局动荡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "忧国忧时是作品在抒写个人处境时寄寓对国家命运和社会时局的忧思。",
+            "example": "“戎马关山北”寄托了对战事和国事的忧虑。"
+          },
+          {
+            "name": "登高怀古",
+            "difficulty": 2,
+            "description": "登临高处观景并追怀历史兴亡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "登高怀古是登临高处描写眼前景物并由此追忆历史、感慨兴亡的写法。",
+            "example": "登临金陵后追叹六朝繁华与覆亡。",
+            "section": "桂枝香·金陵怀古"
+          },
+          {
+            "name": "清空意趣",
+            "difficulty": 4,
+            "description": "景象清疏空灵而含有深层历史感慨",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "清空意趣是词作以清澄空灵的景物营造含蓄深远的审美意味。",
+            "example": "澄江、翠峰、残阳等景物构成清空意趣。"
+          },
+          {
+            "name": "兴亡荣辱",
+            "difficulty": 3,
+            "description": "对王朝盛衰及个人荣辱的历史感叹",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "兴亡荣辱是作品围绕国家或王朝盛衰以及荣耀耻辱展开的感慨。",
+            "example": "“谩嗟荣辱”指出徒然感叹兴亡荣辱。",
+            "section": "桂枝香·金陵怀古"
+          },
+          {
+            "name": "融情于景",
+            "difficulty": 3,
+            "description": "把人物情感自然融入景物描写之中",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "融情于景是通过景物描写含蓄表现人物情感和心理状态的写法。",
+            "example": "春日园景的绚丽寄托少女的青春萌动。",
+            "section": "念奴娇·过洞庭"
+          },
+          {
+            "name": "情绪流转",
+            "difficulty": 2,
+            "description": "诵读时把握情感随景物和情境的变化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "情绪流转是作品中人物情感随着景物、事件和联想不断变化的过程。",
+            "example": "由赏春的惊喜转入对青春被辜负的感慨。",
+            "section": "念奴娇·过洞庭"
+          },
+          {
+            "name": "青春意识",
+            "difficulty": 3,
+            "description": "少女在春景触动下产生的青春觉醒意识",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "青春意识是人物受到春光和情感触动后产生的生命觉醒与自我感受。",
+            "example": "杜丽娘因春花春光而走出深闺游赏。",
+            "section": "念奴娇·过洞庭"
+          },
+          {
+            "name": "高洁人格",
+            "difficulty": 3,
+            "description": "以澄澈胸怀超越世俗宠辱得失的精神品格",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "高洁人格是保持内心明洁并超越世俗得失的精神境界。",
+            "example": "“肝肺皆冰雪”表现词人内心的明洁。"
+          },
+          {
+            "name": "恢宏意境",
+            "difficulty": 3,
+            "description": "由开阔景象和丰富想象营造的宏大境界",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "恢宏意境是作品借浩阔自然和开阔想象形成的壮阔审美境界。",
+            "example": "一叶扁舟融入三万顷洞庭与天地万象。"
+          },
+          {
+            "name": "词牌名",
+            "difficulty": 1,
+            "description": "词作在格律形式上的固定名称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "词牌名是规定词的句式、字数和韵律等形式的名称。",
+            "example": "“桂枝香”是词牌名。",
+            "section": "桂枝香·金陵怀古"
+          }
+        ],
+        "sections": [
+          {
+            "name": "登岳阳楼",
+            "section_key": "8287f0ee23",
+            "page_range": [
+              162,
+              163
+            ]
+          },
+          {
+            "name": "桂枝香·金陵怀古",
+            "section_key": "46fa2da1f3",
+            "page_range": [
+              163,
+              164
+            ]
+          },
+          {
+            "name": "念奴娇·过洞庭",
+            "section_key": "77ec269cdd",
+            "page_range": [
+              164,
+              170
+            ]
+          }
+        ],
+        "chapter_key": "c9e60d04c8",
+        "metadata": {
+          "volume_id": "2a3ea42701e8",
+          "file_id": "2a3ea42701e8",
+          "volume_title": "普通高中教科书语文必修下册",
+          "chapter_order": 9,
+          "raw_heading": "古诗词诵读"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "f09e5c9f35": [
+        9,
+        11
+      ],
+      "1 子路、曾皙、冉有、公西华侍坐": [
+        9,
+        11
+      ],
+      "0b25dfef36": [
+        11,
+        15
+      ],
+      "* 齐桓晋文之事": [
+        11,
+        15
+      ],
+      "a93534f034": [
+        15,
+        17
+      ],
+      "庖丁解牛": [
+        15,
+        17
+      ],
+      "3e8ad218b1": [
+        17,
+        20
+      ],
+      "2 烛之武退秦师": [
+        17,
+        20
+      ],
+      "75ccb3474e": [
+        20,
+        25
+      ],
+      "3 * 鸿门宴": [
+        20,
+        25
+      ],
+      "d2a9b80240": [
+        25,
+        28
+      ],
+      "单元学习任务": [
+        25,
+        28
+      ],
+      "02e2bb3b86": [
+        50,
+        51
+      ],
+      "42fdf952ed": [
+        53,
+        57
+      ],
+      "7 青蒿素:人类征服疾病的一小步": [
+        53,
+        57
+      ],
+      "e896d0aea3": [
+        57,
+        62
+      ],
+      "* 一名物理学家的教育历程": [
+        57,
+        62
+      ],
+      "ab911c39e5": [
+        62,
+        68
+      ],
+      "8 * 中国建筑的特征": [
+        62,
+        68
+      ],
+      "e9ebcd88c8": [
+        68,
+        74
+      ],
+      "9 说“木叶”": [
+        68,
+        74
+      ],
+      "b0263b1e45": [
+        74,
+        75
+      ],
+      "8cfc3a6926": [
+        77,
+        77
+      ],
+      "学习活动": [
+        77,
+        77
+      ],
+      "61bc8d7626": [
+        77,
+        77
+      ],
+      "一 认识多媒介": [
+        77,
+        77
+      ],
+      "b3b0205907": [
+        77,
+        78
+      ],
+      "二 善用多媒介": [
+        77,
+        78
+      ],
+      "9e81f68a9e": [
+        78,
+        85
+      ],
+      "三 辨识媒介信息": [
+        78,
+        85
+      ],
+      "1ec1b835e8": [
+        87,
+        89
+      ],
+      "10 在《人民报》创刊纪念会上的演说": [
+        87,
+        89
+      ],
+      "16148be1b1": [
+        89,
+        92
+      ],
+      "在马克思墓前的讲话": [
+        89,
+        92
+      ],
+      "7f900170d5": [
+        92,
+        94
+      ],
+      "11 谏逐客书": [
+        92,
+        94
+      ],
+      "984884553e": [
+        94,
+        98
+      ],
+      "* 与妻书": [
+        94,
+        98
+      ],
+      "ead319b295": [
+        98,
+        99
+      ],
+      "f4c5f2896d": [
+        101,
+        114
+      ],
+      "12 祝福": [
+        101,
+        114
+      ],
+      "6a20a16b2d": [
+        114,
+        120
+      ],
+      "13 林教头风雪山神庙": [
+        114,
+        120
+      ],
+      "f69c736ea8": [
+        120,
+        126
+      ],
+      "* 装在套子里的人": [
+        120,
+        126
+      ],
+      "e42bd5c2b9": [
+        126,
+        142
+      ],
+      "14 促织": [
+        126,
+        142
+      ],
+      "d14385b7aa": [
+        142,
+        143
+      ],
+      "9dd2c990fa": [
+        144,
+        149
+      ],
+      "《红楼梦》": [
+        144,
+        149
+      ],
+      "99210fdb18": [
+        151,
+        153
+      ],
+      "15 谏太宗十思疏": [
+        151,
+        153
+      ],
+      "c03362b259": [
+        153,
+        155
+      ],
+      "* 答司马谏议书": [
+        153,
+        155
+      ],
+      "4ef90398f1": [
+        155,
+        157
+      ],
+      "16 阿房宫赋": [
+        155,
+        157
+      ],
+      "8986082fe8": [
+        157,
+        159
+      ],
+      "* 六国论": [
+        157,
+        159
+      ],
+      "de87096a51": [
+        159,
+        161
+      ],
+      "8287f0ee23": [
+        162,
+        163
+      ],
+      "登岳阳楼": [
+        162,
+        163
+      ],
+      "46fa2da1f3": [
+        163,
+        164
+      ],
+      "桂枝香·金陵怀古": [
+        163,
+        164
+      ],
+      "77ec269cdd": [
+        164,
+        170
+      ],
+      "念奴娇·过洞庭": [
+        164,
+        170
+      ]
+    }
+  }
+}

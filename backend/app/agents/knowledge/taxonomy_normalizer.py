@@ -22,6 +22,33 @@ _FRONT_MATTER = {
     "封面", "扉页", "版权页", "版权信息", "前言", "序言", "序", "目录", "contents",
     "出版说明", "编者的话", "参考文献", "索引", "附录索引",
 }
+#: 章位的后置事项（back matter）：不是教学单元，整章剔除（实测公共教材里
+#: 「本章小结/习题/参考答案/今日物理趣闻G/标题」等被切成章，污染章序信号
+#: 与图面）。构侧 Tier1 书签质检与归一化层的 is_teaching_chapter 共用。
+_BACK_MATTER = {
+    "小结", "本章小结", "习题", "习题参考答案", "参考答案", "答案", "书名", "书名页",
+    "标题", "正文", "结语", "后记", "附录", "附录A", "附录B",
+}
+_BACK_MATTER_RE = re.compile(r"趣闻|习题答案")
+
+
+def is_back_matter(name: str) -> bool:
+    """True = 该标题是章位的后置事项（小结/习题/答案/趣闻等），非教学单元。
+
+    锚定匹配防误伤：完全匹配后置事项名、短「习题N/xx小结」编号变体、或
+    含「趣闻/习题答案」的专栏名。真实教学章名（第1章 函数/第一单元 …）
+    不会命中。
+    """
+    value = _SPACE_RE.sub(" ", str(name or "")).strip()
+    if not value:
+        return False
+    if value in _BACK_MATTER or _BACK_MATTER_RE.search(value):
+        return True
+    if value.startswith("习题") and len(value) <= 6:
+        return True
+    if value.endswith("小结") and len(value) <= 8:
+        return True
+    return False
 _BAD_FRAGMENT_RE = re.compile(r"(?:pdf|docx?|pptx?|https?://|www\.|\.com|\.cn|\.net|\.org)", re.I)
 _SPACE_RE = re.compile(r"\s+")
 _SEP_RE = re.compile(r"^[\s·•|｜:：_—–-]+|[\s·•|｜:：_—–-]+$")
@@ -66,6 +93,8 @@ def is_teaching_chapter(name: str) -> bool:
     if not value or value.lower() in _FRONT_MATTER:
         return False
     if _BAD_FRAGMENT_RE.search(value):
+        return False
+    if is_back_matter(value):
         return False
     return True
 
@@ -224,6 +253,7 @@ def graph_quality(payload: dict[str, Any], *, textbook_title: str = "") -> dict[
         target = e.get("target")
         membership.add(section_chapter.get(target, target))
     source_stem = _plain_stem(textbook_title).lower()
+    empty_concept_chapters = 0
     for node in chapters:
         name = str(node.get("name") or "").strip()
         if not is_teaching_chapter(name):
@@ -231,7 +261,9 @@ def graph_quality(payload: dict[str, Any], *, textbook_title: str = "") -> dict[
         if source_stem and _plain_stem(name).lower() == source_stem:
             errors.append(f"章节名不能等于教材名：{name}")
         if node.get("id") not in membership:
-            errors.append(f"章节没有有效概念：{name}")
+            # 章结构保留但概念抽取失败（覆盖优先）：计数不阻塞发布；
+            # 只有全书一个概念都没有才在下方按致命错误处理。
+            empty_concept_chapters += 1
     if not chapters:
         errors.append("没有有效章节")
     if not concept_ids:
@@ -242,4 +274,5 @@ def graph_quality(payload: dict[str, Any], *, textbook_title: str = "") -> dict[
     if orphan_sections:
         errors.append("存在指向不存在小节的归属关系")
     return {"ok": not errors, "errors": errors[:30], "chapter_count": len(chapters),
-            "concept_count": len(concept_ids), "section_count": len(section_ids)}
+            "concept_count": len(concept_ids), "section_count": len(section_ids),
+            "empty_concept_chapters": empty_concept_chapters}

@@ -1,0 +1,2336 @@
+{
+  "file_id": "58e08f7c2f81",
+  "text_sha256": "994dfd15c5aad05607c7570383c51fef06ddad805bfb541746fb271f78c8a01e",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "英语",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "UNIT 1 SCIENCE FICTION",
+        "concepts": [
+          {
+            "name": "比较与对比",
+            "difficulty": 2,
+            "description": "通过相似点和不同点理解两个事物。",
+            "aliases": [
+              "compare and contrast"
+            ],
+            "prerequisites": [],
+            "definition": "比较强调事物的相似之处，对比强调其差异。",
+            "example": "Tony的表情不变，而人的表情常变化。"
+          },
+          {
+            "name": "比较对比词语",
+            "difficulty": 2,
+            "description": "用于表达相似、差异和转折关系的词语。",
+            "aliases": [
+              "comparison and contrast expressions"
+            ],
+            "prerequisites": [
+              "比较与对比"
+            ],
+            "definition": "比较对比词语用于组织信息并说明事物之间的关系。",
+            "example": "Tony is different from a human being."
+          },
+          {
+            "name": "科幻小说",
+            "difficulty": 2,
+            "description": "以科学幻想为基础想象未来的文学类型。",
+            "aliases": [
+              "science fiction",
+              "sci-fi"
+            ],
+            "prerequisites": [],
+            "definition": "科幻小说借助科学技术设想未来世界、生命或社会。",
+            "example": "小说描写机器人与人类的关系。"
+          },
+          {
+            "name": "人工智能",
+            "difficulty": 3,
+            "description": "能够执行类似人类智能活动的技术或系统。",
+            "aliases": [
+              "AI"
+            ],
+            "prerequisites": [],
+            "definition": "人工智能是能进行感知、交流、计算或决策等活动的技术。",
+            "example": "AI在多种游戏中击败了人类。"
+          },
+          {
+            "name": "机器人特征设计",
+            "difficulty": 3,
+            "description": "围绕外形、功能、个性和独特性设计机器人。",
+            "aliases": [
+              "robot design"
+            ],
+            "prerequisites": [
+              "人工智能"
+            ],
+            "definition": "机器人特征设计要求说明机器人的名称、外观、能力和独特品质。",
+            "example": "设计一个会取书并能表达情绪的机器人。"
+          },
+          {
+            "name": "机器人三定律",
+            "difficulty": 3,
+            "description": "规定机器人不得伤害人类并应服从和保护人类。",
+            "aliases": [
+              "Three Laws of Robotics"
+            ],
+            "prerequisites": [
+              "人工智能"
+            ],
+            "definition": "机器人三定律依次强调保护人类、服从命令和保护自身。",
+            "example": "机器人不能执行会伤害人类的命令。",
+            "section": "Robots and AI"
+          },
+          {
+            "name": "被动语态",
+            "difficulty": 3,
+            "description": "强调动作承受者或动作本身，而非执行者。",
+            "aliases": [
+              "passive voice"
+            ],
+            "prerequisites": [],
+            "definition": "被动语态用助动词和过去分词突出主语受到的动作。",
+            "example": "The book was translated into English.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "话语标记",
+            "difficulty": 2,
+            "description": "标示顺序、转折、观点和目的的表达。",
+            "aliases": [
+              "discourse markers"
+            ],
+            "prerequisites": [],
+            "definition": "话语标记用于组织语篇并帮助听者理解信息关系。",
+            "example": "First表示顺序，however表示转折。"
+          },
+          {
+            "name": "修辞手法",
+            "difficulty": 3,
+            "description": "使故事描写更生动形象的语言表达方式。",
+            "aliases": [
+              "rhetorical devices"
+            ],
+            "prerequisites": [],
+            "definition": "修辞手法通过特殊表达增强语言的形象性和感染力。",
+            "example": "用修辞描写时间旅行的奇异感受。",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "明喻",
+            "difficulty": 3,
+            "description": "用like或as等词把一物比作另一物。",
+            "aliases": [
+              "simile"
+            ],
+            "prerequisites": [
+              "修辞手法"
+            ],
+            "definition": "明喻借助明确的比喻词说明两个事物的相似之处。",
+            "example": "She moved like a rocket.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "隐喻",
+            "difficulty": 3,
+            "description": "不使用明确比喻词而直接进行比喻。",
+            "aliases": [
+              "metaphor"
+            ],
+            "prerequisites": [
+              "修辞手法"
+            ],
+            "definition": "隐喻把某事物直接说成另一事物以形成形象表达。",
+            "example": "Science fiction is a mirror of the future.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "夸张",
+            "difficulty": 3,
+            "description": "有意超出事实程度以突出感受或特征。",
+            "aliases": [
+              "overstatement"
+            ],
+            "prerequisites": [
+              "修辞手法"
+            ],
+            "definition": "夸张通过明显放大或缩小事实来增强表达效果。",
+            "example": "I travelled thousands of years to be here.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "时间旅行",
+            "difficulty": 3,
+            "description": "借助装置在不同时间之间移动的科幻设想。",
+            "aliases": [
+              "time travelling"
+            ],
+            "prerequisites": [
+              "科幻小说"
+            ],
+            "definition": "时间旅行是人物通过特殊机器或方式到达其他时代。",
+            "example": "旅行者看到树木瞬间生长、扩展并消失。",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "麦田圈现象",
+            "difficulty": 2,
+            "description": "英国乡村麦田中不时出现的神秘图案现象。",
+            "aliases": [
+              "crop circles"
+            ],
+            "prerequisites": [],
+            "definition": "麦田圈现象指农田作物倒伏后形成的各种图案。",
+            "example": "人们争论麦田圈是人类还是外星人制造的。",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "收入相关词汇",
+            "difficulty": 2,
+            "description": "区分工资、薪金、费用、车费和奖金等词义。",
+            "aliases": [
+              "income-related words"
+            ],
+            "prerequisites": [],
+            "definition": "收入相关词汇表示工作报酬、服务费用或储蓄等金钱概念。",
+            "example": "salary表示通常按月领取的薪金。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Robots and AI",
+            "page_range": [
+              13,
+              15
+            ]
+          },
+          {
+            "name": "The Time Machine",
+            "page_range": [
+              15,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 2 ICONIC ATTRACTIONS",
+        "concepts": [
+          {
+            "name": "标志性景点",
+            "difficulty": 2,
+            "description": "最能代表某地特色并吸引游客的地点或事物",
+            "aliases": [
+              "iconic attractions"
+            ],
+            "prerequisites": [],
+            "definition": "标志性景点是能够突出体现一个地方特征的著名景观或事物。",
+            "example": "悉尼歌剧院是澳大利亚的标志性景点。"
+          },
+          {
+            "name": "澳大利亚位置",
+            "difficulty": 1,
+            "description": "澳大利亚位于赤道以南，常被称为“down under”",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "澳大利亚位于南半球赤道以南，因此常被非正式称为“down under”。",
+            "example": "Australia is often referred to as “down under”."
+          },
+          {
+            "name": "澳洲饮食融合",
+            "difficulty": 2,
+            "description": "澳大利亚饮食受到英国和亚洲文化的共同影响",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "澳大利亚饮食文化融合了英国传统与亚洲移民带来的食物和调味品。",
+            "example": "豆腐和亚洲香草体现了亚洲影响。"
+          },
+          {
+            "name": "澳大利亚原住民",
+            "difficulty": 2,
+            "description": "澳大利亚本土居民及其文化传统",
+            "aliases": [
+              "Aborigines"
+            ],
+            "prerequisites": [],
+            "definition": "澳大利亚原住民是澳大利亚的本土居民，拥有独特的生活习俗和文化。",
+            "example": "游客在北领地了解原住民的生活习俗。",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "原住民音乐主题",
+            "difficulty": 3,
+            "description": "原住民音乐歌颂自然世界和周围的精神世界",
+            "aliases": [],
+            "prerequisites": [
+              "澳大利亚原住民"
+            ],
+            "definition": "原住民音乐以自然世界及其周围的精神世界为主要表现主题。",
+            "example": "Their music celebrates the natural world."
+          },
+          {
+            "name": "迪吉里杜管",
+            "difficulty": 3,
+            "description": "一种由中空树枝制成的原住民吹奏乐器",
+            "aliases": [
+              "didgeridoo"
+            ],
+            "prerequisites": [
+              "澳大利亚原住民"
+            ],
+            "definition": "迪吉里杜管是原住民使用中空树枝制作并通过吹气发声的乐器。",
+            "example": "The player changes pitch by changing mouth shape."
+          },
+          {
+            "name": "澳大利亚多元文化",
+            "difficulty": 3,
+            "description": "澳大利亚文化由西方文化和多种移民文化共同形成",
+            "aliases": [
+              "multiculturalism"
+            ],
+            "prerequisites": [],
+            "definition": "澳大利亚多元文化是不同民族和移民文化共同塑造的独特国家文化。",
+            "example": "Immigrants have contributed new cultural influences."
+          },
+          {
+            "name": "旅行笔记技巧",
+            "difficulty": 2,
+            "description": "用关键词、缩写和符号记录重要事实",
+            "aliases": [
+              "take notes"
+            ],
+            "prerequisites": [],
+            "definition": "旅行笔记技巧是通过关键词、缩写和符号帮助记忆和理解信息的方法。",
+            "example": "用“Aus”代表“Australia”。",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "过去分词作状语",
+            "difficulty": 4,
+            "description": "过去分词短语在句中补充说明主句情境",
+            "aliases": [
+              "past participles as adverbials"
+            ],
+            "prerequisites": [],
+            "definition": "过去分词作状语是用过去分词短语说明时间、原因或状态等背景信息。",
+            "example": "Located south of the equator, Australia is called “down under”."
+          },
+          {
+            "name": "地点特色描述",
+            "difficulty": 3,
+            "description": "围绕地点的代表性特征和游览体验进行介绍",
+            "aliases": [
+              "describing special features of a place"
+            ],
+            "prerequisites": [
+              "标志性景点"
+            ],
+            "definition": "地点特色描述是说明某地代表性景观、功能、活动及体验的表达方式。",
+            "example": "It is famous for its clear blue water."
+          },
+          {
+            "name": "观点总结表达",
+            "difficulty": 2,
+            "description": "用总结性短语归纳谈话或表达的主要观点",
+            "aliases": [
+              "sum up"
+            ],
+            "prerequisites": [],
+            "definition": "观点总结表达是使用总结短语在谈话结尾概括核心观点的语言方式。",
+            "example": "In summary, the Bay of Islands represents New Zealand."
+          },
+          {
+            "name": "袋鼠象征意义",
+            "difficulty": 3,
+            "description": "袋鼠象征澳大利亚人的力量、决心和不断前进",
+            "aliases": [
+              "kangaroo"
+            ],
+            "prerequisites": [
+              "标志性景点"
+            ],
+            "definition": "袋鼠因分布广、适应艰难环境且不能后退而象征澳大利亚人的力量和决心。",
+            "example": "The kangaroo expresses strength and resolve."
+          },
+          {
+            "name": "考拉保护规则",
+            "difficulty": 3,
+            "description": "野生考拉不能随意触摸，接触须在许可动物园进行",
+            "aliases": [
+              "koala protection"
+            ],
+            "prerequisites": [],
+            "definition": "考拉保护规则要求人们避免触摸野生考拉，合法接触须受专业人员管理。",
+            "example": "It is against the law to touch wild koalas."
+          },
+          {
+            "name": "塔斯马尼亚恶魔",
+            "difficulty": 3,
+            "description": "夜间活动、叫声响亮、主要以死亡动物为食的动物",
+            "aliases": [
+              "Tasmanian devil"
+            ],
+            "prerequisites": [],
+            "definition": "塔斯马尼亚恶魔是主要夜间捕食和食腐、但通常不攻击人的动物。",
+            "example": "Its loud cries can wake the dead.",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "鸭嘴兽特征",
+            "difficulty": 4,
+            "description": "鸭嘴兽产卵、哺乳，并用喙部电感受器寻找食物",
+            "aliases": [
+              "duck-billed platypus"
+            ],
+            "prerequisites": [],
+            "definition": "鸭嘴兽兼具产卵哺乳特征，并利用喙中的电感受器在水中寻找食物。",
+            "example": "It finds food by using electrical sensors in its bill.",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "动物描写修辞",
+            "difficulty": 4,
+            "description": "运用生动修辞激发读者兴趣并突出动物特征",
+            "aliases": [
+              "rhetorical devices"
+            ],
+            "prerequisites": [],
+            "definition": "动物描写修辞是借助夸张、设问等表达使动物介绍更生动有趣的方法。",
+            "example": "The noise could wake the dead.",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "原住民节庆文化",
+            "difficulty": 3,
+            "description": "通过仪式、音乐、戏剧和艺术传承原住民文化",
+            "aliases": [
+              "Mbantua Festival"
+            ],
+            "prerequisites": [
+              "澳大利亚原住民"
+            ],
+            "definition": "原住民节庆文化通过多种活动展示并延续原住民的仪式、历史和音乐。",
+            "example": "The festival celebrates ceremonies, culture, and music.",
+            "section": "The Amazing Animals of Australia"
+          }
+        ],
+        "sections": [
+          {
+            "name": "What best represents New Zealand",
+            "page_range": [
+              26,
+              26
+            ]
+          },
+          {
+            "name": "The Amazing Animals of Australia",
+            "page_range": [
+              26,
+              34
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 3 SEA EXPLORATION",
+        "concepts": [
+          {
+            "name": "不定式功能",
+            "difficulty": 3,
+            "description": "掌握不定式在句中充当的多种成分",
+            "aliases": [
+              "动词不定式用法"
+            ],
+            "prerequisites": [],
+            "definition": "不定式可在句中作主语、表语、宾语、宾补、定语或状语。",
+            "example": "It is fun to visit an aquarium."
+          },
+          {
+            "name": "时间顺序表达",
+            "difficulty": 2,
+            "description": "用连接词说明动作或事件发生的先后",
+            "aliases": [
+              "顺序表达"
+            ],
+            "prerequisites": [],
+            "definition": "first、then、after that、finally等词语用于组织连续事件。",
+            "example": "First, we followed the whales. Finally, we shared the information."
+          },
+          {
+            "name": "鲸类个体识别",
+            "difficulty": 2,
+            "description": "依据鲸鱼鳍和身体标记区分不同个体",
+            "aliases": [
+              "鲸鱼识别"
+            ],
+            "prerequisites": [],
+            "definition": "鲸鱼略有不同的鳍和标记，可帮助研究者辨认个体。",
+            "example": "Their fins help us tell them apart."
+          },
+          {
+            "name": "鲸类迁徙追踪",
+            "difficulty": 3,
+            "description": "记录鲸鱼位置以追踪其移动和迁徙路线",
+            "aliases": [
+              "鲸鱼迁徙研究"
+            ],
+            "prerequisites": [
+              "鲸类个体识别"
+            ],
+            "definition": "研究者通过记录鲸鱼位置来绘制其迁徙路径。",
+            "example": "We noted their location and plotted their migration path."
+          },
+          {
+            "name": "鲸类研究信息共享",
+            "difficulty": 2,
+            "description": "与世界各地研究团队交流鲸类观察资料",
+            "aliases": [
+              "研究资料共享"
+            ],
+            "prerequisites": [
+              "鲸类个体识别"
+            ],
+            "definition": "鲸类研究者通过联系其他团队共享个体和位置等信息。",
+            "example": "They contacted other whale research groups."
+          },
+          {
+            "name": "海洋污染",
+            "difficulty": 2,
+            "description": "石油泄漏和塑料污染会伤害海洋生物",
+            "aliases": [
+              "海洋环境污染"
+            ],
+            "prerequisites": [],
+            "definition": "海洋污染是海上活动产生有害物质并破坏海洋生态的现象。",
+            "example": "Plastic pollution kills many birds and fish."
+          },
+          {
+            "name": "过度捕捞",
+            "difficulty": 2,
+            "description": "过度捕捞会威胁鲸鱼、海豚等海洋生物",
+            "aliases": [
+              "过度捕鱼"
+            ],
+            "prerequisites": [],
+            "definition": "过度捕捞是对海洋生物进行超过其恢复能力的捕捞。",
+            "example": "Overfishing is another problem."
+          },
+          {
+            "name": "海洋资源开发",
+            "difficulty": 3,
+            "description": "探索海洋以获取化石燃料、矿物等资源",
+            "aliases": [
+              "海洋资源利用"
+            ],
+            "prerequisites": [],
+            "definition": "海洋资源开发是对海底及海冰下资源进行探索和利用。",
+            "example": "There are resources under the sea and ice."
+          },
+          {
+            "name": "海洋探索价值",
+            "difficulty": 3,
+            "description": "海洋探索有助于气候研究、资源管理和科学发现",
+            "aliases": [
+              "海洋探索意义"
+            ],
+            "prerequisites": [],
+            "definition": "海洋探索能够增进对地球的认识并服务未来发展。",
+            "example": "Research ships can help address climate change."
+          },
+          {
+            "name": "海洋探索风险",
+            "difficulty": 3,
+            "description": "海洋探索可能带来污染、采矿破坏和生态危害",
+            "aliases": [
+              "海洋探索危害"
+            ],
+            "prerequisites": [
+              "海洋资源开发",
+              "海洋污染"
+            ],
+            "definition": "海洋探索风险是探索和开发活动对海洋环境造成的潜在损害。",
+            "example": "More exploration may cause more pollution."
+          },
+          {
+            "name": "海洋保护与开发",
+            "difficulty": 4,
+            "description": "在环境保护与经济需求之间寻求合理平衡",
+            "aliases": [
+              "保护与利用平衡"
+            ],
+            "prerequisites": [
+              "海洋探索价值",
+              "海洋探索风险"
+            ],
+            "definition": "海洋治理需要兼顾生态保护和资源开发带来的经济需求。",
+            "example": "Environmental risks should be balanced with economic needs."
+          },
+          {
+            "name": "论点与证据",
+            "difficulty": 3,
+            "description": "用事实和例子支持关于海洋探索的观点",
+            "aliases": [
+              "观点与事实"
+            ],
+            "prerequisites": [
+              "海洋探索价值",
+              "海洋探索风险"
+            ],
+            "definition": "论证应提出明确观点，并用可靠事实或例子加以支持。",
+            "example": "The oil spill is evidence of exploration risks."
+          },
+          {
+            "name": "PEEL论证结构",
+            "difficulty": 4,
+            "description": "按观点、证据、解释和联系组织论证",
+            "aliases": [
+              "PEEL写作法"
+            ],
+            "prerequisites": [
+              "论点与证据"
+            ],
+            "definition": "PEEL结构由Point、Evidence、Explanation和Link四部分组成。",
+            "example": "State a point, give evidence, explain it, and link onward."
+          },
+          {
+            "name": "海洋科研船",
+            "difficulty": 2,
+            "description": "用于开展海洋科学研究和多种调查任务的船只",
+            "aliases": [
+              "海洋研究船"
+            ],
+            "prerequisites": [],
+            "definition": "海洋科研船是配备设备以执行海洋研究任务的船舶。",
+            "example": "Kexue is a moving laboratory at sea."
+          },
+          {
+            "name": "海洋生物多样性",
+            "difficulty": 2,
+            "description": "关注海洋中不同动物、植物及其生态价值",
+            "aliases": [
+              "海洋生物多样性保护"
+            ],
+            "prerequisites": [],
+            "definition": "海洋生物多样性指海洋中丰富多样的生物及其生态系统。",
+            "example": "The poster focuses on protecting biodiversity."
+          },
+          {
+            "name": "世界海洋日",
+            "difficulty": 2,
+            "description": "通过活动和倡议促进海洋保护与教育的纪念日",
+            "aliases": [
+              "World Oceans Day"
+            ],
+            "prerequisites": [
+              "海洋保护与开发"
+            ],
+            "definition": "世界海洋日是每年6月8日开展海洋保护和教育活动的日子。",
+            "example": "World Oceans Day takes place on 8 June.",
+            "section": "Opinions on Sea Exploration"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Whale watching camp",
+            "page_range": [
+              37,
+              39
+            ]
+          },
+          {
+            "name": "Opinions on Sea Exploration",
+            "page_range": [
+              39,
+              45
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 4 SHARING",
+        "concepts": [
+          {
+            "name": "志愿服务",
+            "difficulty": 1,
+            "description": "为帮助他人或社会而无偿提供时间和行动",
+            "aliases": [
+              "volunteer work"
+            ],
+            "prerequisites": [],
+            "definition": "志愿服务是个人或团体自愿帮助有需要的人或社区的活动。",
+            "example": "Students visit a children’s hospital.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "志愿教学经历",
+            "difficulty": 3,
+            "description": "志愿教师在偏远地区学校教学和生活的经历",
+            "aliases": [
+              "volunteer teaching"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "志愿教学经历描述志愿教师在资源有限的学校开展教学并适应当地生活。",
+            "example": "Jo teaches science in a bush school."
+          },
+          {
+            "name": "跨文化理解",
+            "difficulty": 3,
+            "description": "通过交流了解不同地区的生活、语言和信念",
+            "aliases": [
+              "cultural understanding"
+            ],
+            "prerequisites": [],
+            "definition": "跨文化理解是对不同文化背景下生活方式和观念的认识与尊重。",
+            "example": "Tombe interprets for the visitors.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "志愿者技能品质",
+            "difficulty": 2,
+            "description": "志愿服务需要的能力和个人品质",
+            "aliases": [
+              "skills and qualities"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "志愿者技能品质是完成志愿工作所需的能力、态度和责任感。",
+            "example": "A volunteer may offer medical skills."
+          },
+          {
+            "name": "帮助方式",
+            "difficulty": 2,
+            "description": "通过物品、时间或金钱等方式帮助他人",
+            "aliases": [
+              "ways to help"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "帮助方式指志愿者向有需要者提供支持的不同途径。",
+            "example": "We can give people time or money."
+          },
+          {
+            "name": "举例说明",
+            "difficulty": 2,
+            "description": "用具体事例解释或说明所谈内容的方法",
+            "aliases": [
+              "example"
+            ],
+            "prerequisites": [],
+            "definition": "举例说明是用具体的人、事或情况使观点更清楚。",
+            "example": "For example, Chinese workers build roads.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "名词短语",
+            "difficulty": 2,
+            "description": "以名词为中心、在句中充当名词功能的短语",
+            "aliases": [
+              "noun phrase",
+              "NP"
+            ],
+            "prerequisites": [],
+            "definition": "名词短语是由名词或以名词为中心构成的短语。",
+            "example": "my secondary school",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "动词短语",
+            "difficulty": 2,
+            "description": "以动词为中心、表示动作或状态的短语",
+            "aliases": [
+              "verb phrase",
+              "VP"
+            ],
+            "prerequisites": [],
+            "definition": "动词短语是由动词及其相关成分构成的短语。",
+            "example": "have been working"
+          },
+          {
+            "name": "副词短语",
+            "difficulty": 2,
+            "description": "在句中作状语、修饰动作或状态的短语",
+            "aliases": [
+              "adverbial phrase",
+              "AdvP"
+            ],
+            "prerequisites": [],
+            "definition": "副词短语是在句中说明动作发生时间、地点、方式等的短语。",
+            "example": "with great care"
+          },
+          {
+            "name": "形容词短语",
+            "difficulty": 2,
+            "description": "以形容词为中心、描述人或事物特征的短语",
+            "aliases": [
+              "adjective phrase",
+              "AdjP"
+            ],
+            "prerequisites": [],
+            "definition": "形容词短语是由形容词及其修饰成分构成的短语。",
+            "example": "very challenging"
+          },
+          {
+            "name": "介词短语",
+            "difficulty": 2,
+            "description": "由介词及其宾语构成、表达关系或位置的短语",
+            "aliases": [
+              "prepositional phrase",
+              "PrepP"
+            ],
+            "prerequisites": [],
+            "definition": "介词短语由介词和宾语组成，可在句中充当修饰或补充成分。",
+            "example": "over the fire"
+          },
+          {
+            "name": "提出建议",
+            "difficulty": 2,
+            "description": "用礼貌表达提出志愿项目或行动方案",
+            "aliases": [
+              "making suggestions"
+            ],
+            "prerequisites": [],
+            "definition": "提出建议是向他人表达可供考虑的计划或做法。",
+            "example": "Perhaps we could visit the hospital."
+          },
+          {
+            "name": "重读强调",
+            "difficulty": 3,
+            "description": "通过重读表达情感、重点、纠正或对比",
+            "aliases": [
+              "word stress"
+            ],
+            "prerequisites": [],
+            "definition": "重读强调是通过突出某些词来传达特定语用意义。",
+            "example": "I said Sundays, not Saturdays."
+          },
+          {
+            "name": "修辞疑问句",
+            "difficulty": 3,
+            "description": "以问句形式引发思考并突出演讲观点",
+            "aliases": [
+              "rhetorical question"
+            ],
+            "prerequisites": [],
+            "definition": "修辞疑问句是并非期待直接回答而用来强化观点的问句。",
+            "example": "Is it worth it?",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "个人故事论证",
+            "difficulty": 3,
+            "description": "用亲身经历传达观点并增强演讲感染力",
+            "aliases": [
+              "personal story"
+            ],
+            "prerequisites": [],
+            "definition": "个人故事论证是借助个人经历说明立场和观点的表达方式。",
+            "example": "Bingbing tells her mother’s story.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "中国对外援助",
+            "difficulty": 2,
+            "description": "中国人员和团队在海外提供建设、医疗等帮助",
+            "aliases": [
+              "China’s aid to other countries"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "中国对外援助是中国向其他国家提供建设、医疗和发展支持的行动。",
+            "example": "Chinese doctors provide medical treatment in Tanzania.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "志愿活动海报",
+            "difficulty": 2,
+            "description": "介绍帮助对象、活动内容和参与方式的宣传材料",
+            "aliases": [
+              "poster for volunteer work"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "志愿活动海报是用于说明志愿项目并号召他人参与的图文材料。",
+            "example": "Buy shoes to donate a pair.",
+            "section": "China’s Aid to Other Countries"
+          }
+        ],
+        "sections": [
+          {
+            "name": "China’s Aid to Other Countries",
+            "page_range": [
+              51,
+              57
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 5 LAUNCHING YOUR CAREER",
+        "concepts": [
+          {
+            "name": "职业能力测试",
+            "difficulty": 3,
+            "description": "通过测试帮助判断适合自己的职业方向。",
+            "aliases": [
+              "career aptitude test"
+            ],
+            "prerequisites": [],
+            "definition": "职业能力测试是用于指导个人选择未来职业的测试工具。",
+            "example": "Take a career aptitude test to explore suitable careers.",
+            "section": "Does Practice Really Make Perfect?"
+          },
+          {
+            "name": "工作人格类型",
+            "difficulty": 3,
+            "description": "依据工作倾向将人格分为六种类型。",
+            "aliases": [
+              "work personality types"
+            ],
+            "prerequisites": [],
+            "definition": "工作人格类型是根据个人特点和工作倾向划分的类别。",
+            "example": "The test identifies your work personality type."
+          },
+          {
+            "name": "现实型人格",
+            "difficulty": 2,
+            "description": "喜欢动手实践、积极行动和技术工作。",
+            "aliases": [
+              "Realistic"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "现实型人格指偏好动手、积极和技术性工作的特点。",
+            "example": "An engineer may be realistic."
+          },
+          {
+            "name": "研究型人格",
+            "difficulty": 2,
+            "description": "具有观察力，喜欢智力性和探究性工作。",
+            "aliases": [
+              "Investigative"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "研究型人格指善于观察并偏好智力探究工作的特点。",
+            "example": "A biologist may be investigative."
+          },
+          {
+            "name": "艺术型人格",
+            "difficulty": 2,
+            "description": "富有创造力、想象力并追求独创性。",
+            "aliases": [
+              "Artistic"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "艺术型人格指重视创造、想象和独创表达的特点。",
+            "example": "A graphic designer may be artistic."
+          },
+          {
+            "name": "社会型人格",
+            "difficulty": 2,
+            "description": "乐于助人，以人为本并富有责任感。",
+            "aliases": [
+              "Social"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "社会型人格指喜欢帮助他人并重视人际服务的特点。",
+            "example": "A nurse may be social."
+          },
+          {
+            "name": "企业型人格",
+            "difficulty": 2,
+            "description": "善于说服他人，表现自信并具有行动力。",
+            "aliases": [
+              "Enterprising"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "企业型人格指擅长说服、充满自信并愿意推动他人的特点。",
+            "example": "A restaurant manager may be enterprising."
+          },
+          {
+            "name": "常规型人格",
+            "difficulty": 2,
+            "description": "做事有组织，关注细节并遵循规范。",
+            "aliases": [
+              "Conventional"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "常规型人格指重视组织性、细节和规则的工作特点。",
+            "example": "An accountant may be conventional."
+          },
+          {
+            "name": "工作人格代码",
+            "difficulty": 4,
+            "description": "由测试结果组成并用于生成职业建议的代码。",
+            "aliases": [
+              "work personality code"
+            ],
+            "prerequisites": [
+              "职业能力测试",
+              "工作人格类型"
+            ],
+            "definition": "工作人格代码是概括参与者整体工作人格并匹配职业的代码。",
+            "example": "Her work personality code is A-I-R."
+          },
+          {
+            "name": "职业建议",
+            "difficulty": 3,
+            "description": "依据人格代码、教育和经验推荐的职业方向。",
+            "aliases": [
+              "career suggestions"
+            ],
+            "prerequisites": [
+              "工作人格代码"
+            ],
+            "definition": "职业建议是测试根据个人工作人格及背景提出的职业选择。",
+            "example": "The test suggests careers in design and research."
+          },
+          {
+            "name": "职业规划",
+            "difficulty": 3,
+            "description": "明确未来职业方向及实现目标所需的技能和培训。",
+            "aliases": [
+              "career plan"
+            ],
+            "prerequisites": [
+              "职业建议"
+            ],
+            "definition": "职业规划是围绕理想职业和实现路径制定的未来计划。",
+            "example": "A career plan identifies needed skills and training."
+          },
+          {
+            "name": "简历",
+            "difficulty": 2,
+            "description": "展示个人技能和经历并面向潜在雇主的文件。",
+            "aliases": [
+              "CV"
+            ],
+            "prerequisites": [
+              "职业规划"
+            ],
+            "definition": "简历是向潜在雇主说明个人技能与经历的重要材料。",
+            "example": "Her CV shows her skills and experience."
+          },
+          {
+            "name": "并列句",
+            "difficulty": 3,
+            "description": "由并列连接成分连接两个或多个独立分句。",
+            "aliases": [
+              "compound sentence"
+            ],
+            "prerequisites": [],
+            "definition": "并列句由两个或多个具有独立意义的分句组成。",
+            "example": "I plan my career, and my school offers guidance.",
+            "section": "Does Practice Really Make Perfect?"
+          },
+          {
+            "name": "复合句",
+            "difficulty": 3,
+            "description": "由主句和至少一个从句构成的句子。",
+            "aliases": [
+              "complex sentence"
+            ],
+            "prerequisites": [],
+            "definition": "复合句包含一个主句和至少一个从属分句。",
+            "example": "I study hard because I want to reach my goal.",
+            "section": "Does Practice Really Make Perfect?"
+          },
+          {
+            "name": "并列复合句",
+            "difficulty": 4,
+            "description": "同时包含并列关系和从属关系的复杂句子。",
+            "aliases": [
+              "compound-complex sentence"
+            ],
+            "prerequisites": [
+              "并列句",
+              "复合句"
+            ],
+            "definition": "并列复合句同时含有至少两个主句和一个从句。",
+            "example": "I study hard because I have a goal, and I practise daily.",
+            "section": "Does Practice Really Make Perfect?"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Choose a university major",
+            "page_range": [
+              61,
+              62
+            ]
+          },
+          {
+            "name": "Summer Camp Helpers Wanted",
+            "page_range": [
+              62,
+              99
+            ]
+          },
+          {
+            "name": "Does Practice Really Make Perfect?",
+            "page_range": [
+              99,
+              130
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "英语",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "UNIT 1 SCIENCE FICTION",
+        "concepts": [
+          {
+            "name": "比较与对比",
+            "difficulty": 2,
+            "description": "通过相似点和不同点理解两个事物。",
+            "aliases": [
+              "compare and contrast"
+            ],
+            "prerequisites": [],
+            "definition": "比较强调事物的相似之处，对比强调其差异。",
+            "example": "Tony的表情不变，而人的表情常变化。"
+          },
+          {
+            "name": "比较对比词语",
+            "difficulty": 2,
+            "description": "用于表达相似、差异和转折关系的词语。",
+            "aliases": [
+              "comparison and contrast expressions"
+            ],
+            "prerequisites": [
+              "比较与对比"
+            ],
+            "definition": "比较对比词语用于组织信息并说明事物之间的关系。",
+            "example": "Tony is different from a human being."
+          },
+          {
+            "name": "科幻小说",
+            "difficulty": 2,
+            "description": "以科学幻想为基础想象未来的文学类型。",
+            "aliases": [
+              "science fiction",
+              "sci-fi"
+            ],
+            "prerequisites": [],
+            "definition": "科幻小说借助科学技术设想未来世界、生命或社会。",
+            "example": "小说描写机器人与人类的关系。"
+          },
+          {
+            "name": "人工智能",
+            "difficulty": 3,
+            "description": "能够执行类似人类智能活动的技术或系统。",
+            "aliases": [
+              "AI"
+            ],
+            "prerequisites": [],
+            "definition": "人工智能是能进行感知、交流、计算或决策等活动的技术。",
+            "example": "AI在多种游戏中击败了人类。"
+          },
+          {
+            "name": "机器人特征设计",
+            "difficulty": 3,
+            "description": "围绕外形、功能、个性和独特性设计机器人。",
+            "aliases": [
+              "robot design"
+            ],
+            "prerequisites": [
+              "人工智能"
+            ],
+            "definition": "机器人特征设计要求说明机器人的名称、外观、能力和独特品质。",
+            "example": "设计一个会取书并能表达情绪的机器人。"
+          },
+          {
+            "name": "机器人三定律",
+            "difficulty": 3,
+            "description": "规定机器人不得伤害人类并应服从和保护人类。",
+            "aliases": [
+              "Three Laws of Robotics"
+            ],
+            "prerequisites": [
+              "人工智能"
+            ],
+            "definition": "机器人三定律依次强调保护人类、服从命令和保护自身。",
+            "example": "机器人不能执行会伤害人类的命令。",
+            "section": "Robots and AI"
+          },
+          {
+            "name": "被动语态",
+            "difficulty": 3,
+            "description": "强调动作承受者或动作本身，而非执行者。",
+            "aliases": [
+              "passive voice"
+            ],
+            "prerequisites": [],
+            "definition": "被动语态用助动词和过去分词突出主语受到的动作。",
+            "example": "The book was translated into English.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "话语标记",
+            "difficulty": 2,
+            "description": "标示顺序、转折、观点和目的的表达。",
+            "aliases": [
+              "discourse markers"
+            ],
+            "prerequisites": [],
+            "definition": "话语标记用于组织语篇并帮助听者理解信息关系。",
+            "example": "First表示顺序，however表示转折。"
+          },
+          {
+            "name": "修辞手法",
+            "difficulty": 3,
+            "description": "使故事描写更生动形象的语言表达方式。",
+            "aliases": [
+              "rhetorical devices"
+            ],
+            "prerequisites": [],
+            "definition": "修辞手法通过特殊表达增强语言的形象性和感染力。",
+            "example": "用修辞描写时间旅行的奇异感受。",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "明喻",
+            "difficulty": 3,
+            "description": "用like或as等词把一物比作另一物。",
+            "aliases": [
+              "simile"
+            ],
+            "prerequisites": [
+              "修辞手法"
+            ],
+            "definition": "明喻借助明确的比喻词说明两个事物的相似之处。",
+            "example": "She moved like a rocket.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "隐喻",
+            "difficulty": 3,
+            "description": "不使用明确比喻词而直接进行比喻。",
+            "aliases": [
+              "metaphor"
+            ],
+            "prerequisites": [
+              "修辞手法"
+            ],
+            "definition": "隐喻把某事物直接说成另一事物以形成形象表达。",
+            "example": "Science fiction is a mirror of the future.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "夸张",
+            "difficulty": 3,
+            "description": "有意超出事实程度以突出感受或特征。",
+            "aliases": [
+              "overstatement"
+            ],
+            "prerequisites": [
+              "修辞手法"
+            ],
+            "definition": "夸张通过明显放大或缩小事实来增强表达效果。",
+            "example": "I travelled thousands of years to be here.",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "时间旅行",
+            "difficulty": 3,
+            "description": "借助装置在不同时间之间移动的科幻设想。",
+            "aliases": [
+              "time travelling"
+            ],
+            "prerequisites": [
+              "科幻小说"
+            ],
+            "definition": "时间旅行是人物通过特殊机器或方式到达其他时代。",
+            "example": "旅行者看到树木瞬间生长、扩展并消失。",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "麦田圈现象",
+            "difficulty": 2,
+            "description": "英国乡村麦田中不时出现的神秘图案现象。",
+            "aliases": [
+              "crop circles"
+            ],
+            "prerequisites": [],
+            "definition": "麦田圈现象指农田作物倒伏后形成的各种图案。",
+            "example": "人们争论麦田圈是人类还是外星人制造的。",
+            "section": "The Time Machine"
+          },
+          {
+            "name": "收入相关词汇",
+            "difficulty": 2,
+            "description": "区分工资、薪金、费用、车费和奖金等词义。",
+            "aliases": [
+              "income-related words"
+            ],
+            "prerequisites": [],
+            "definition": "收入相关词汇表示工作报酬、服务费用或储蓄等金钱概念。",
+            "example": "salary表示通常按月领取的薪金。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Robots and AI",
+            "section_key": "3e8caf3167",
+            "page_range": [
+              13,
+              15
+            ]
+          },
+          {
+            "name": "The Time Machine",
+            "section_key": "5e5dd869f4",
+            "page_range": [
+              15,
+              21
+            ]
+          }
+        ],
+        "chapter_key": "2837cc658c",
+        "metadata": {
+          "volume_id": "58e08f7c2f81",
+          "file_id": "58e08f7c2f81",
+          "volume_title": "英语选择性必修第4册",
+          "chapter_order": 1,
+          "raw_heading": "UNIT 1 SCIENCE FICTION"
+        }
+      },
+      {
+        "name": "UNIT 2 ICONIC ATTRACTIONS",
+        "concepts": [
+          {
+            "name": "标志性景点",
+            "difficulty": 2,
+            "description": "最能代表某地特色并吸引游客的地点或事物",
+            "aliases": [
+              "iconic attractions"
+            ],
+            "prerequisites": [],
+            "definition": "标志性景点是能够突出体现一个地方特征的著名景观或事物。",
+            "example": "悉尼歌剧院是澳大利亚的标志性景点。"
+          },
+          {
+            "name": "澳大利亚位置",
+            "difficulty": 1,
+            "description": "澳大利亚位于赤道以南，常被称为“down under”",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "澳大利亚位于南半球赤道以南，因此常被非正式称为“down under”。",
+            "example": "Australia is often referred to as “down under”."
+          },
+          {
+            "name": "澳洲饮食融合",
+            "difficulty": 2,
+            "description": "澳大利亚饮食受到英国和亚洲文化的共同影响",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "澳大利亚饮食文化融合了英国传统与亚洲移民带来的食物和调味品。",
+            "example": "豆腐和亚洲香草体现了亚洲影响。"
+          },
+          {
+            "name": "澳大利亚原住民",
+            "difficulty": 2,
+            "description": "澳大利亚本土居民及其文化传统",
+            "aliases": [
+              "Aborigines"
+            ],
+            "prerequisites": [],
+            "definition": "澳大利亚原住民是澳大利亚的本土居民，拥有独特的生活习俗和文化。",
+            "example": "游客在北领地了解原住民的生活习俗。",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "原住民音乐主题",
+            "difficulty": 3,
+            "description": "原住民音乐歌颂自然世界和周围的精神世界",
+            "aliases": [],
+            "prerequisites": [
+              "澳大利亚原住民"
+            ],
+            "definition": "原住民音乐以自然世界及其周围的精神世界为主要表现主题。",
+            "example": "Their music celebrates the natural world."
+          },
+          {
+            "name": "迪吉里杜管",
+            "difficulty": 3,
+            "description": "一种由中空树枝制成的原住民吹奏乐器",
+            "aliases": [
+              "didgeridoo"
+            ],
+            "prerequisites": [
+              "澳大利亚原住民"
+            ],
+            "definition": "迪吉里杜管是原住民使用中空树枝制作并通过吹气发声的乐器。",
+            "example": "The player changes pitch by changing mouth shape."
+          },
+          {
+            "name": "澳大利亚多元文化",
+            "difficulty": 3,
+            "description": "澳大利亚文化由西方文化和多种移民文化共同形成",
+            "aliases": [
+              "multiculturalism"
+            ],
+            "prerequisites": [],
+            "definition": "澳大利亚多元文化是不同民族和移民文化共同塑造的独特国家文化。",
+            "example": "Immigrants have contributed new cultural influences."
+          },
+          {
+            "name": "旅行笔记技巧",
+            "difficulty": 2,
+            "description": "用关键词、缩写和符号记录重要事实",
+            "aliases": [
+              "take notes"
+            ],
+            "prerequisites": [],
+            "definition": "旅行笔记技巧是通过关键词、缩写和符号帮助记忆和理解信息的方法。",
+            "example": "用“Aus”代表“Australia”。",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "过去分词作状语",
+            "difficulty": 4,
+            "description": "过去分词短语在句中补充说明主句情境",
+            "aliases": [
+              "past participles as adverbials"
+            ],
+            "prerequisites": [],
+            "definition": "过去分词作状语是用过去分词短语说明时间、原因或状态等背景信息。",
+            "example": "Located south of the equator, Australia is called “down under”."
+          },
+          {
+            "name": "地点特色描述",
+            "difficulty": 3,
+            "description": "围绕地点的代表性特征和游览体验进行介绍",
+            "aliases": [
+              "describing special features of a place"
+            ],
+            "prerequisites": [
+              "标志性景点"
+            ],
+            "definition": "地点特色描述是说明某地代表性景观、功能、活动及体验的表达方式。",
+            "example": "It is famous for its clear blue water."
+          },
+          {
+            "name": "观点总结表达",
+            "difficulty": 2,
+            "description": "用总结性短语归纳谈话或表达的主要观点",
+            "aliases": [
+              "sum up"
+            ],
+            "prerequisites": [],
+            "definition": "观点总结表达是使用总结短语在谈话结尾概括核心观点的语言方式。",
+            "example": "In summary, the Bay of Islands represents New Zealand."
+          },
+          {
+            "name": "袋鼠象征意义",
+            "difficulty": 3,
+            "description": "袋鼠象征澳大利亚人的力量、决心和不断前进",
+            "aliases": [
+              "kangaroo"
+            ],
+            "prerequisites": [
+              "标志性景点"
+            ],
+            "definition": "袋鼠因分布广、适应艰难环境且不能后退而象征澳大利亚人的力量和决心。",
+            "example": "The kangaroo expresses strength and resolve."
+          },
+          {
+            "name": "考拉保护规则",
+            "difficulty": 3,
+            "description": "野生考拉不能随意触摸，接触须在许可动物园进行",
+            "aliases": [
+              "koala protection"
+            ],
+            "prerequisites": [],
+            "definition": "考拉保护规则要求人们避免触摸野生考拉，合法接触须受专业人员管理。",
+            "example": "It is against the law to touch wild koalas."
+          },
+          {
+            "name": "塔斯马尼亚恶魔",
+            "difficulty": 3,
+            "description": "夜间活动、叫声响亮、主要以死亡动物为食的动物",
+            "aliases": [
+              "Tasmanian devil"
+            ],
+            "prerequisites": [],
+            "definition": "塔斯马尼亚恶魔是主要夜间捕食和食腐、但通常不攻击人的动物。",
+            "example": "Its loud cries can wake the dead.",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "鸭嘴兽特征",
+            "difficulty": 4,
+            "description": "鸭嘴兽产卵、哺乳，并用喙部电感受器寻找食物",
+            "aliases": [
+              "duck-billed platypus"
+            ],
+            "prerequisites": [],
+            "definition": "鸭嘴兽兼具产卵哺乳特征，并利用喙中的电感受器在水中寻找食物。",
+            "example": "It finds food by using electrical sensors in its bill.",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "动物描写修辞",
+            "difficulty": 4,
+            "description": "运用生动修辞激发读者兴趣并突出动物特征",
+            "aliases": [
+              "rhetorical devices"
+            ],
+            "prerequisites": [],
+            "definition": "动物描写修辞是借助夸张、设问等表达使动物介绍更生动有趣的方法。",
+            "example": "The noise could wake the dead.",
+            "section": "The Amazing Animals of Australia"
+          },
+          {
+            "name": "原住民节庆文化",
+            "difficulty": 3,
+            "description": "通过仪式、音乐、戏剧和艺术传承原住民文化",
+            "aliases": [
+              "Mbantua Festival"
+            ],
+            "prerequisites": [
+              "澳大利亚原住民"
+            ],
+            "definition": "原住民节庆文化通过多种活动展示并延续原住民的仪式、历史和音乐。",
+            "example": "The festival celebrates ceremonies, culture, and music.",
+            "section": "The Amazing Animals of Australia"
+          }
+        ],
+        "sections": [
+          {
+            "name": "What best represents New Zealand",
+            "section_key": "d7f38e31c4",
+            "page_range": [
+              26,
+              26
+            ]
+          },
+          {
+            "name": "The Amazing Animals of Australia",
+            "section_key": "2c51c7b96f",
+            "page_range": [
+              26,
+              34
+            ]
+          }
+        ],
+        "chapter_key": "279bb5be4b",
+        "metadata": {
+          "volume_id": "58e08f7c2f81",
+          "file_id": "58e08f7c2f81",
+          "volume_title": "英语选择性必修第4册",
+          "chapter_order": 2,
+          "raw_heading": "UNIT 2 ICONIC ATTRACTIONS"
+        }
+      },
+      {
+        "name": "UNIT 3 SEA EXPLORATION",
+        "concepts": [
+          {
+            "name": "不定式功能",
+            "difficulty": 3,
+            "description": "掌握不定式在句中充当的多种成分",
+            "aliases": [
+              "动词不定式用法"
+            ],
+            "prerequisites": [],
+            "definition": "不定式可在句中作主语、表语、宾语、宾补、定语或状语。",
+            "example": "It is fun to visit an aquarium."
+          },
+          {
+            "name": "时间顺序表达",
+            "difficulty": 2,
+            "description": "用连接词说明动作或事件发生的先后",
+            "aliases": [
+              "顺序表达"
+            ],
+            "prerequisites": [],
+            "definition": "first、then、after that、finally等词语用于组织连续事件。",
+            "example": "First, we followed the whales. Finally, we shared the information."
+          },
+          {
+            "name": "鲸类个体识别",
+            "difficulty": 2,
+            "description": "依据鲸鱼鳍和身体标记区分不同个体",
+            "aliases": [
+              "鲸鱼识别"
+            ],
+            "prerequisites": [],
+            "definition": "鲸鱼略有不同的鳍和标记，可帮助研究者辨认个体。",
+            "example": "Their fins help us tell them apart."
+          },
+          {
+            "name": "鲸类迁徙追踪",
+            "difficulty": 3,
+            "description": "记录鲸鱼位置以追踪其移动和迁徙路线",
+            "aliases": [
+              "鲸鱼迁徙研究"
+            ],
+            "prerequisites": [
+              "鲸类个体识别"
+            ],
+            "definition": "研究者通过记录鲸鱼位置来绘制其迁徙路径。",
+            "example": "We noted their location and plotted their migration path."
+          },
+          {
+            "name": "鲸类研究信息共享",
+            "difficulty": 2,
+            "description": "与世界各地研究团队交流鲸类观察资料",
+            "aliases": [
+              "研究资料共享"
+            ],
+            "prerequisites": [
+              "鲸类个体识别"
+            ],
+            "definition": "鲸类研究者通过联系其他团队共享个体和位置等信息。",
+            "example": "They contacted other whale research groups."
+          },
+          {
+            "name": "海洋污染",
+            "difficulty": 2,
+            "description": "石油泄漏和塑料污染会伤害海洋生物",
+            "aliases": [
+              "海洋环境污染"
+            ],
+            "prerequisites": [],
+            "definition": "海洋污染是海上活动产生有害物质并破坏海洋生态的现象。",
+            "example": "Plastic pollution kills many birds and fish."
+          },
+          {
+            "name": "过度捕捞",
+            "difficulty": 2,
+            "description": "过度捕捞会威胁鲸鱼、海豚等海洋生物",
+            "aliases": [
+              "过度捕鱼"
+            ],
+            "prerequisites": [],
+            "definition": "过度捕捞是对海洋生物进行超过其恢复能力的捕捞。",
+            "example": "Overfishing is another problem."
+          },
+          {
+            "name": "海洋资源开发",
+            "difficulty": 3,
+            "description": "探索海洋以获取化石燃料、矿物等资源",
+            "aliases": [
+              "海洋资源利用"
+            ],
+            "prerequisites": [],
+            "definition": "海洋资源开发是对海底及海冰下资源进行探索和利用。",
+            "example": "There are resources under the sea and ice."
+          },
+          {
+            "name": "海洋探索价值",
+            "difficulty": 3,
+            "description": "海洋探索有助于气候研究、资源管理和科学发现",
+            "aliases": [
+              "海洋探索意义"
+            ],
+            "prerequisites": [],
+            "definition": "海洋探索能够增进对地球的认识并服务未来发展。",
+            "example": "Research ships can help address climate change."
+          },
+          {
+            "name": "海洋探索风险",
+            "difficulty": 3,
+            "description": "海洋探索可能带来污染、采矿破坏和生态危害",
+            "aliases": [
+              "海洋探索危害"
+            ],
+            "prerequisites": [
+              "海洋资源开发",
+              "海洋污染"
+            ],
+            "definition": "海洋探索风险是探索和开发活动对海洋环境造成的潜在损害。",
+            "example": "More exploration may cause more pollution."
+          },
+          {
+            "name": "海洋保护与开发",
+            "difficulty": 4,
+            "description": "在环境保护与经济需求之间寻求合理平衡",
+            "aliases": [
+              "保护与利用平衡"
+            ],
+            "prerequisites": [
+              "海洋探索价值",
+              "海洋探索风险"
+            ],
+            "definition": "海洋治理需要兼顾生态保护和资源开发带来的经济需求。",
+            "example": "Environmental risks should be balanced with economic needs."
+          },
+          {
+            "name": "论点与证据",
+            "difficulty": 3,
+            "description": "用事实和例子支持关于海洋探索的观点",
+            "aliases": [
+              "观点与事实"
+            ],
+            "prerequisites": [
+              "海洋探索价值",
+              "海洋探索风险"
+            ],
+            "definition": "论证应提出明确观点，并用可靠事实或例子加以支持。",
+            "example": "The oil spill is evidence of exploration risks."
+          },
+          {
+            "name": "PEEL论证结构",
+            "difficulty": 4,
+            "description": "按观点、证据、解释和联系组织论证",
+            "aliases": [
+              "PEEL写作法"
+            ],
+            "prerequisites": [
+              "论点与证据"
+            ],
+            "definition": "PEEL结构由Point、Evidence、Explanation和Link四部分组成。",
+            "example": "State a point, give evidence, explain it, and link onward."
+          },
+          {
+            "name": "海洋科研船",
+            "difficulty": 2,
+            "description": "用于开展海洋科学研究和多种调查任务的船只",
+            "aliases": [
+              "海洋研究船"
+            ],
+            "prerequisites": [],
+            "definition": "海洋科研船是配备设备以执行海洋研究任务的船舶。",
+            "example": "Kexue is a moving laboratory at sea."
+          },
+          {
+            "name": "海洋生物多样性",
+            "difficulty": 2,
+            "description": "关注海洋中不同动物、植物及其生态价值",
+            "aliases": [
+              "海洋生物多样性保护"
+            ],
+            "prerequisites": [],
+            "definition": "海洋生物多样性指海洋中丰富多样的生物及其生态系统。",
+            "example": "The poster focuses on protecting biodiversity."
+          },
+          {
+            "name": "世界海洋日",
+            "difficulty": 2,
+            "description": "通过活动和倡议促进海洋保护与教育的纪念日",
+            "aliases": [
+              "World Oceans Day"
+            ],
+            "prerequisites": [
+              "海洋保护与开发"
+            ],
+            "definition": "世界海洋日是每年6月8日开展海洋保护和教育活动的日子。",
+            "example": "World Oceans Day takes place on 8 June.",
+            "section": "Opinions on Sea Exploration"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Whale watching camp",
+            "section_key": "6b76ccf373",
+            "page_range": [
+              37,
+              39
+            ]
+          },
+          {
+            "name": "Opinions on Sea Exploration",
+            "section_key": "0fe6cf7e87",
+            "page_range": [
+              39,
+              45
+            ]
+          }
+        ],
+        "chapter_key": "89ce9f855f",
+        "metadata": {
+          "volume_id": "58e08f7c2f81",
+          "file_id": "58e08f7c2f81",
+          "volume_title": "英语选择性必修第4册",
+          "chapter_order": 3,
+          "raw_heading": "UNIT 3 SEA EXPLORATION"
+        }
+      },
+      {
+        "name": "UNIT 4 SHARING",
+        "concepts": [
+          {
+            "name": "志愿服务",
+            "difficulty": 1,
+            "description": "为帮助他人或社会而无偿提供时间和行动",
+            "aliases": [
+              "volunteer work"
+            ],
+            "prerequisites": [],
+            "definition": "志愿服务是个人或团体自愿帮助有需要的人或社区的活动。",
+            "example": "Students visit a children’s hospital.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "志愿教学经历",
+            "difficulty": 3,
+            "description": "志愿教师在偏远地区学校教学和生活的经历",
+            "aliases": [
+              "volunteer teaching"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "志愿教学经历描述志愿教师在资源有限的学校开展教学并适应当地生活。",
+            "example": "Jo teaches science in a bush school."
+          },
+          {
+            "name": "跨文化理解",
+            "difficulty": 3,
+            "description": "通过交流了解不同地区的生活、语言和信念",
+            "aliases": [
+              "cultural understanding"
+            ],
+            "prerequisites": [],
+            "definition": "跨文化理解是对不同文化背景下生活方式和观念的认识与尊重。",
+            "example": "Tombe interprets for the visitors.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "志愿者技能品质",
+            "difficulty": 2,
+            "description": "志愿服务需要的能力和个人品质",
+            "aliases": [
+              "skills and qualities"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "志愿者技能品质是完成志愿工作所需的能力、态度和责任感。",
+            "example": "A volunteer may offer medical skills."
+          },
+          {
+            "name": "帮助方式",
+            "difficulty": 2,
+            "description": "通过物品、时间或金钱等方式帮助他人",
+            "aliases": [
+              "ways to help"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "帮助方式指志愿者向有需要者提供支持的不同途径。",
+            "example": "We can give people time or money."
+          },
+          {
+            "name": "举例说明",
+            "difficulty": 2,
+            "description": "用具体事例解释或说明所谈内容的方法",
+            "aliases": [
+              "example"
+            ],
+            "prerequisites": [],
+            "definition": "举例说明是用具体的人、事或情况使观点更清楚。",
+            "example": "For example, Chinese workers build roads.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "名词短语",
+            "difficulty": 2,
+            "description": "以名词为中心、在句中充当名词功能的短语",
+            "aliases": [
+              "noun phrase",
+              "NP"
+            ],
+            "prerequisites": [],
+            "definition": "名词短语是由名词或以名词为中心构成的短语。",
+            "example": "my secondary school",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "动词短语",
+            "difficulty": 2,
+            "description": "以动词为中心、表示动作或状态的短语",
+            "aliases": [
+              "verb phrase",
+              "VP"
+            ],
+            "prerequisites": [],
+            "definition": "动词短语是由动词及其相关成分构成的短语。",
+            "example": "have been working"
+          },
+          {
+            "name": "副词短语",
+            "difficulty": 2,
+            "description": "在句中作状语、修饰动作或状态的短语",
+            "aliases": [
+              "adverbial phrase",
+              "AdvP"
+            ],
+            "prerequisites": [],
+            "definition": "副词短语是在句中说明动作发生时间、地点、方式等的短语。",
+            "example": "with great care"
+          },
+          {
+            "name": "形容词短语",
+            "difficulty": 2,
+            "description": "以形容词为中心、描述人或事物特征的短语",
+            "aliases": [
+              "adjective phrase",
+              "AdjP"
+            ],
+            "prerequisites": [],
+            "definition": "形容词短语是由形容词及其修饰成分构成的短语。",
+            "example": "very challenging"
+          },
+          {
+            "name": "介词短语",
+            "difficulty": 2,
+            "description": "由介词及其宾语构成、表达关系或位置的短语",
+            "aliases": [
+              "prepositional phrase",
+              "PrepP"
+            ],
+            "prerequisites": [],
+            "definition": "介词短语由介词和宾语组成，可在句中充当修饰或补充成分。",
+            "example": "over the fire"
+          },
+          {
+            "name": "提出建议",
+            "difficulty": 2,
+            "description": "用礼貌表达提出志愿项目或行动方案",
+            "aliases": [
+              "making suggestions"
+            ],
+            "prerequisites": [],
+            "definition": "提出建议是向他人表达可供考虑的计划或做法。",
+            "example": "Perhaps we could visit the hospital."
+          },
+          {
+            "name": "重读强调",
+            "difficulty": 3,
+            "description": "通过重读表达情感、重点、纠正或对比",
+            "aliases": [
+              "word stress"
+            ],
+            "prerequisites": [],
+            "definition": "重读强调是通过突出某些词来传达特定语用意义。",
+            "example": "I said Sundays, not Saturdays."
+          },
+          {
+            "name": "修辞疑问句",
+            "difficulty": 3,
+            "description": "以问句形式引发思考并突出演讲观点",
+            "aliases": [
+              "rhetorical question"
+            ],
+            "prerequisites": [],
+            "definition": "修辞疑问句是并非期待直接回答而用来强化观点的问句。",
+            "example": "Is it worth it?",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "个人故事论证",
+            "difficulty": 3,
+            "description": "用亲身经历传达观点并增强演讲感染力",
+            "aliases": [
+              "personal story"
+            ],
+            "prerequisites": [],
+            "definition": "个人故事论证是借助个人经历说明立场和观点的表达方式。",
+            "example": "Bingbing tells her mother’s story.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "中国对外援助",
+            "difficulty": 2,
+            "description": "中国人员和团队在海外提供建设、医疗等帮助",
+            "aliases": [
+              "China’s aid to other countries"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "中国对外援助是中国向其他国家提供建设、医疗和发展支持的行动。",
+            "example": "Chinese doctors provide medical treatment in Tanzania.",
+            "section": "China’s Aid to Other Countries"
+          },
+          {
+            "name": "志愿活动海报",
+            "difficulty": 2,
+            "description": "介绍帮助对象、活动内容和参与方式的宣传材料",
+            "aliases": [
+              "poster for volunteer work"
+            ],
+            "prerequisites": [
+              "志愿服务"
+            ],
+            "definition": "志愿活动海报是用于说明志愿项目并号召他人参与的图文材料。",
+            "example": "Buy shoes to donate a pair.",
+            "section": "China’s Aid to Other Countries"
+          }
+        ],
+        "sections": [
+          {
+            "name": "China’s Aid to Other Countries",
+            "section_key": "e6b0e3d87d",
+            "page_range": [
+              51,
+              57
+            ]
+          }
+        ],
+        "chapter_key": "35f81a5c55",
+        "metadata": {
+          "volume_id": "58e08f7c2f81",
+          "file_id": "58e08f7c2f81",
+          "volume_title": "英语选择性必修第4册",
+          "chapter_order": 4,
+          "raw_heading": "UNIT 4 SHARING"
+        }
+      },
+      {
+        "name": "UNIT 5 LAUNCHING YOUR CAREER",
+        "concepts": [
+          {
+            "name": "职业能力测试",
+            "difficulty": 3,
+            "description": "通过测试帮助判断适合自己的职业方向。",
+            "aliases": [
+              "career aptitude test"
+            ],
+            "prerequisites": [],
+            "definition": "职业能力测试是用于指导个人选择未来职业的测试工具。",
+            "example": "Take a career aptitude test to explore suitable careers.",
+            "section": "Does Practice Really Make Perfect?"
+          },
+          {
+            "name": "工作人格类型",
+            "difficulty": 3,
+            "description": "依据工作倾向将人格分为六种类型。",
+            "aliases": [
+              "work personality types"
+            ],
+            "prerequisites": [],
+            "definition": "工作人格类型是根据个人特点和工作倾向划分的类别。",
+            "example": "The test identifies your work personality type."
+          },
+          {
+            "name": "现实型人格",
+            "difficulty": 2,
+            "description": "喜欢动手实践、积极行动和技术工作。",
+            "aliases": [
+              "Realistic"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "现实型人格指偏好动手、积极和技术性工作的特点。",
+            "example": "An engineer may be realistic."
+          },
+          {
+            "name": "研究型人格",
+            "difficulty": 2,
+            "description": "具有观察力，喜欢智力性和探究性工作。",
+            "aliases": [
+              "Investigative"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "研究型人格指善于观察并偏好智力探究工作的特点。",
+            "example": "A biologist may be investigative."
+          },
+          {
+            "name": "艺术型人格",
+            "difficulty": 2,
+            "description": "富有创造力、想象力并追求独创性。",
+            "aliases": [
+              "Artistic"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "艺术型人格指重视创造、想象和独创表达的特点。",
+            "example": "A graphic designer may be artistic."
+          },
+          {
+            "name": "社会型人格",
+            "difficulty": 2,
+            "description": "乐于助人，以人为本并富有责任感。",
+            "aliases": [
+              "Social"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "社会型人格指喜欢帮助他人并重视人际服务的特点。",
+            "example": "A nurse may be social."
+          },
+          {
+            "name": "企业型人格",
+            "difficulty": 2,
+            "description": "善于说服他人，表现自信并具有行动力。",
+            "aliases": [
+              "Enterprising"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "企业型人格指擅长说服、充满自信并愿意推动他人的特点。",
+            "example": "A restaurant manager may be enterprising."
+          },
+          {
+            "name": "常规型人格",
+            "difficulty": 2,
+            "description": "做事有组织，关注细节并遵循规范。",
+            "aliases": [
+              "Conventional"
+            ],
+            "prerequisites": [
+              "工作人格类型"
+            ],
+            "definition": "常规型人格指重视组织性、细节和规则的工作特点。",
+            "example": "An accountant may be conventional."
+          },
+          {
+            "name": "工作人格代码",
+            "difficulty": 4,
+            "description": "由测试结果组成并用于生成职业建议的代码。",
+            "aliases": [
+              "work personality code"
+            ],
+            "prerequisites": [
+              "职业能力测试",
+              "工作人格类型"
+            ],
+            "definition": "工作人格代码是概括参与者整体工作人格并匹配职业的代码。",
+            "example": "Her work personality code is A-I-R."
+          },
+          {
+            "name": "职业建议",
+            "difficulty": 3,
+            "description": "依据人格代码、教育和经验推荐的职业方向。",
+            "aliases": [
+              "career suggestions"
+            ],
+            "prerequisites": [
+              "工作人格代码"
+            ],
+            "definition": "职业建议是测试根据个人工作人格及背景提出的职业选择。",
+            "example": "The test suggests careers in design and research."
+          },
+          {
+            "name": "职业规划",
+            "difficulty": 3,
+            "description": "明确未来职业方向及实现目标所需的技能和培训。",
+            "aliases": [
+              "career plan"
+            ],
+            "prerequisites": [
+              "职业建议"
+            ],
+            "definition": "职业规划是围绕理想职业和实现路径制定的未来计划。",
+            "example": "A career plan identifies needed skills and training."
+          },
+          {
+            "name": "简历",
+            "difficulty": 2,
+            "description": "展示个人技能和经历并面向潜在雇主的文件。",
+            "aliases": [
+              "CV"
+            ],
+            "prerequisites": [
+              "职业规划"
+            ],
+            "definition": "简历是向潜在雇主说明个人技能与经历的重要材料。",
+            "example": "Her CV shows her skills and experience."
+          },
+          {
+            "name": "并列句",
+            "difficulty": 3,
+            "description": "由并列连接成分连接两个或多个独立分句。",
+            "aliases": [
+              "compound sentence"
+            ],
+            "prerequisites": [],
+            "definition": "并列句由两个或多个具有独立意义的分句组成。",
+            "example": "I plan my career, and my school offers guidance.",
+            "section": "Does Practice Really Make Perfect?"
+          },
+          {
+            "name": "复合句",
+            "difficulty": 3,
+            "description": "由主句和至少一个从句构成的句子。",
+            "aliases": [
+              "complex sentence"
+            ],
+            "prerequisites": [],
+            "definition": "复合句包含一个主句和至少一个从属分句。",
+            "example": "I study hard because I want to reach my goal.",
+            "section": "Does Practice Really Make Perfect?"
+          },
+          {
+            "name": "并列复合句",
+            "difficulty": 4,
+            "description": "同时包含并列关系和从属关系的复杂句子。",
+            "aliases": [
+              "compound-complex sentence"
+            ],
+            "prerequisites": [
+              "并列句",
+              "复合句"
+            ],
+            "definition": "并列复合句同时含有至少两个主句和一个从句。",
+            "example": "I study hard because I have a goal, and I practise daily.",
+            "section": "Does Practice Really Make Perfect?"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Choose a university major",
+            "section_key": "ceb01c74dc",
+            "page_range": [
+              61,
+              62
+            ]
+          },
+          {
+            "name": "Summer Camp Helpers Wanted",
+            "section_key": "81b862cdac",
+            "page_range": [
+              62,
+              99
+            ]
+          },
+          {
+            "name": "Does Practice Really Make Perfect?",
+            "section_key": "abc2b9bccf",
+            "page_range": [
+              99,
+              130
+            ]
+          }
+        ],
+        "chapter_key": "069e813fcc",
+        "metadata": {
+          "volume_id": "58e08f7c2f81",
+          "file_id": "58e08f7c2f81",
+          "volume_title": "英语选择性必修第4册",
+          "chapter_order": 5,
+          "raw_heading": "UNIT 5 LAUNCHING YOUR CAREER"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "3e8caf3167": [
+        13,
+        15
+      ],
+      "Robots and AI": [
+        13,
+        15
+      ],
+      "5e5dd869f4": [
+        15,
+        21
+      ],
+      "The Time Machine": [
+        15,
+        21
+      ],
+      "d7f38e31c4": [
+        26,
+        26
+      ],
+      "What best represents New Zealand": [
+        26,
+        26
+      ],
+      "2c51c7b96f": [
+        26,
+        34
+      ],
+      "The Amazing Animals of Australia": [
+        26,
+        34
+      ],
+      "6b76ccf373": [
+        37,
+        39
+      ],
+      "Whale watching camp": [
+        37,
+        39
+      ],
+      "0fe6cf7e87": [
+        39,
+        45
+      ],
+      "Opinions on Sea Exploration": [
+        39,
+        45
+      ],
+      "e6b0e3d87d": [
+        51,
+        57
+      ],
+      "China’s Aid to Other Countries": [
+        51,
+        57
+      ],
+      "ceb01c74dc": [
+        61,
+        62
+      ],
+      "Choose a university major": [
+        61,
+        62
+      ],
+      "81b862cdac": [
+        62,
+        99
+      ],
+      "Summer Camp Helpers Wanted": [
+        62,
+        99
+      ],
+      "abc2b9bccf": [
+        99,
+        130
+      ],
+      "Does Practice Really Make Perfect?": [
+        99,
+        130
+      ]
+    }
+  }
+}

@@ -210,6 +210,26 @@ class KnowledgeGraph:
             edge.target, []).append(edge.source)
         return True
 
+    def _remove_edge(self, edge: KnowledgeEdge) -> bool:
+        """Remove an existing edge object, keeping indices consistent.
+
+        Inverse of add_edge for the direction-repair pass only: removes the
+        edge from the list plus the (source,target,type) key set and both
+        adjacency maps. Returns True when the edge was found and removed.
+        """
+        try:
+            self.edges.remove(edge)
+        except ValueError:
+            return False
+        self._edge_keys.discard((edge.source, edge.target, edge.type))
+        out = self._adj_out.get(edge.type, {}).get(edge.source)
+        if out and edge.target in out:
+            out.remove(edge.target)
+        inc = self._adj_in.get(edge.type, {}).get(edge.target)
+        if inc and edge.source in inc:
+            inc.remove(edge.source)
+        return True
+
     def _reaches(self, src: str, dst: str, edge_type: EdgeType) -> bool:
         """Can `src` reach `dst` following edges of `edge_type` (src->...->dst)?"""
         adj = self._adj_out.get(edge_type) or {}

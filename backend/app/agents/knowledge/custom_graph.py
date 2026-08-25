@@ -30,6 +30,7 @@ import hashlib
 import json
 import re
 import unicodedata
+from dataclasses import replace
 from typing import Any
 
 from .graph import KnowledgeGraph
@@ -387,6 +388,13 @@ def spec_to_graph(spec: dict[str, Any], *, topic_key: str, source: str,
                         source=cid, target=anchor.id, type=EdgeType.RELATED,
                         weight=round(score, 4), provenance="custom"))
 
+    # pass 4: 方向守卫——LLM 写反的前置边（更难且更靠后的概念指向更简单、
+    # 更靠前的概念）就地反转/移除，不再让「复杂章节指向基础章节」进入 DAG。
+    chapter_pos: dict[str, int] = {}
+    for ci, (ch_id, *_rest) in enumerate(ch_ids):
+        chapter_pos.setdefault(ch_id, ci)
+    _repair_prereq_directions(tmp, chapter_pos, warnings)
+
     concept_nodes = [n for n in tmp.nodes.values() if n.kind == "concept"]
     section_nodes = [n for n in tmp.nodes.values() if n.kind == "section"]
     data = {
@@ -399,6 +407,44 @@ def spec_to_graph(spec: dict[str, Any], *, topic_key: str, source: str,
         "section_count": len(section_nodes),
     }
     return data, warnings
+
+
+def _repair_prereq_directions(graph: KnowledgeGraph, chapter_pos: dict[str, int],
+                              warnings: list[str]) -> None:
+    """前置边方向守卫：双信号可疑边反转，反转会成环则移除。
+
+    可疑 = source 比 target **更难**（difficulty 严格更大）**且** source 的
+    章位置比 target **更靠后**。两个信号同时命中才处理：同章边、同难度边、
+    缺位置信息的边一律不动——「用难工具定义简单概念」的合法边（同章或跨章
+    但 source 在前）不受影响。章位置取概念 chapter_ids 中最靠前的章；列表
+    顺序即教学序（单卷 spec 按目录序，组构建合并 spec 已按卷序全局排序）。
+    """
+    def _pos(node_id: str) -> int | None:
+        cids = ((graph.nodes[node_id].metadata or {}).get("chapter_ids")
+                if node_id in graph.nodes else None) or []
+        vals = [chapter_pos[c] for c in cids if c in chapter_pos]
+        return min(vals) if vals else None
+
+    for edge in [e for e in graph.edges
+                 if e.type == EdgeType.PREREQUISITE
+                 and e.source in graph.nodes and e.target in graph.nodes
+                 and graph.nodes[e.source].kind == "concept"
+                 and graph.nodes[e.target].kind == "concept"]:
+        src = graph.nodes[edge.source]
+        dst = graph.nodes[edge.target]
+        spos, dpos = _pos(edge.source), _pos(edge.target)
+        if spos is None or dpos is None or spos <= dpos \
+                or not src.difficulty > dst.difficulty:
+            continue
+        graph._remove_edge(edge)
+        flipped = replace(edge, source=edge.target, target=edge.source)
+        if graph.add_edge(flipped):
+            warnings.append(
+                f"前置边 {src.name}→{dst.name} 疑似方向颠倒（更难且更靠后），"
+                f"已反转为 {dst.name}→{src.name}")
+        else:
+            warnings.append(
+                f"前置边 {src.name}→{dst.name} 疑似方向颠倒且反转会成环，已移除")
 
 
 def graph_meta(payload: dict[str, Any]) -> dict[str, Any]:

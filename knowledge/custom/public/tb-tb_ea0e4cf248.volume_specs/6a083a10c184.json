@@ -1,0 +1,1033 @@
+{
+  "file_id": "6a083a10c184",
+  "text_sha256": "5a98557ac624d36720efdcf72156c404d4d15150a88d6afb36d98064776ef622",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "数学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第四章 数列 ........................................................ 1",
+        "concepts": [
+          {
+            "name": "数列的概念",
+            "difficulty": 1,
+            "description": "按一定顺序排列的一列数。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数列是按照一定顺序排列的一列数。",
+            "example": "1，3，5，7，…"
+          },
+          {
+            "name": "斐波那契数列",
+            "difficulty": 2,
+            "description": "相邻两项之和构成后一项的数列。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "斐波那契数列通常从1，1开始，后一项等于前两项之和。",
+            "example": "1，1，2，3，5，8，…"
+          },
+          {
+            "name": "等差数列",
+            "difficulty": 2,
+            "description": "相邻两项的差为同一个常数的数列。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "等差数列是从第二项起每一项与前一项的差都等于同一个常数的数列。",
+            "example": "2，5，8，11，…"
+          },
+          {
+            "name": "等比数列",
+            "difficulty": 2,
+            "description": "相邻两项的比为同一个常数的数列。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "等比数列是从第二项起每一项与前一项的比都等于同一个常数的数列。",
+            "example": "2，6，18，54，…"
+          },
+          {
+            "name": "数列求和",
+            "difficulty": 3,
+            "description": "研究数列前若干项之和的求法。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "数列求和是按照数列的规律计算其前若干项和的方法。",
+            "example": "计算1+2+3+…+100"
+          },
+          {
+            "name": "数学归纳法",
+            "difficulty": 4,
+            "description": "证明关于正整数命题的一种方法。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数学归纳法通过证明初始情形并证明递推步骤来证明命题对所有正整数成立。",
+            "example": "证明1+2+…+n=n(n+1)/2"
+          }
+        ]
+      },
+      {
+        "name": "第五章 一元函数的导数及其应用 ...................................... 58",
+        "concepts": [
+          {
+            "name": "导数概念",
+            "difficulty": 3,
+            "description": "刻画函数在某点附近变化快慢的数学量",
+            "aliases": [
+              "导数"
+            ],
+            "prerequisites": [],
+            "definition": "函数在某点的导数是其平均变化率在该点处的极限。",
+            "example": "若f(x)=x²，则f'(x)=2x。"
+          },
+          {
+            "name": "导数意义",
+            "difficulty": 3,
+            "description": "导数表示函数的瞬时变化率及切线斜率",
+            "aliases": [
+              "导数的意义"
+            ],
+            "prerequisites": [
+              "导数概念"
+            ],
+            "definition": "函数在一点的导数等于该点处曲线切线的斜率，也表示瞬时变化率。",
+            "example": "位移函数的导数表示瞬时速度。"
+          },
+          {
+            "name": "导数运算",
+            "difficulty": 3,
+            "description": "利用运算法则和公式求函数的导数",
+            "aliases": [
+              "导数的运算"
+            ],
+            "prerequisites": [
+              "导数概念"
+            ],
+            "definition": "导数运算是依据导数法则和基本公式求函数导数的过程。",
+            "example": "(x³)'=3x²。"
+          },
+          {
+            "name": "牛顿法",
+            "difficulty": 4,
+            "description": "利用导数方法求方程近似解的方法",
+            "aliases": [
+              "牛顿法求近似解"
+            ],
+            "prerequisites": [
+              "导数运算"
+            ],
+            "definition": "牛顿法通过函数切线与坐标轴交点逐步逼近方程的根。",
+            "example": "用切线迭代求方程f(x)=0的近似根。"
+          },
+          {
+            "name": "函数性质研究",
+            "difficulty": 4,
+            "description": "运用导数研究函数的单调性和极值等性质",
+            "aliases": [
+              "导数在研究函数中的应用"
+            ],
+            "prerequisites": [
+              "导数概念",
+              "导数运算"
+            ],
+            "definition": "函数性质研究是利用导数分析函数变化趋势及局部特征的过程。",
+            "example": "由f'(x)>0判断函数在区间上单调递增。"
+          },
+          {
+            "name": "图形技术",
+            "difficulty": 2,
+            "description": "借助图形技术分析函数图象及其性质",
+            "aliases": [
+              "图形技术与函数性质"
+            ],
+            "prerequisites": [
+              "函数性质研究"
+            ],
+            "definition": "图形技术是利用图形工具呈现并辅助分析函数性质的方法。",
+            "example": "利用函数图象观察函数的增减变化。"
+          },
+          {
+            "name": "微积分发展",
+            "difficulty": 2,
+            "description": "了解微积分的创立与发展过程",
+            "aliases": [
+              "微积分的创立与发展"
+            ],
+            "prerequisites": [],
+            "definition": "微积分发展是关于微积分创立背景、形成及演进过程的知识。",
+            "example": "阅读资料了解微积分的创立与发展。"
+          }
+        ]
+      },
+      {
+        "name": "第四章",
+        "concepts": [
+          {
+            "name": "数列",
+            "difficulty": 1,
+            "description": "按确定顺序排列的一列数",
+            "aliases": [
+              "sequence of number"
+            ],
+            "prerequisites": [],
+            "definition": "数列是按照确定顺序排列的一列数，可看作定义在正整数集上的离散函数。",
+            "example": "1，4，9，16，…构成一个数列。"
+          },
+          {
+            "name": "数列的项",
+            "difficulty": 1,
+            "description": "数列中按序排列的每一个数",
+            "aliases": [],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "数列中的每一个数叫做这个数列的项，第n个位置上的数记为an。",
+            "example": "数列1，4，9中，4是第二项。"
+          },
+          {
+            "name": "有穷数列",
+            "difficulty": 1,
+            "description": "项数有限的数列",
+            "aliases": [],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "项数有限的数列叫做有穷数列。",
+            "example": "1，2，3，4是有穷数列。"
+          },
+          {
+            "name": "无穷数列",
+            "difficulty": 1,
+            "description": "项数无限的数列",
+            "aliases": [],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "项数无限的数列叫做无穷数列。",
+            "example": "1，2，3，…是无穷数列。"
+          },
+          {
+            "name": "数列的函数表示",
+            "difficulty": 2,
+            "description": "把数列看作正整数上的函数",
+            "aliases": [],
+            "prerequisites": [
+              "数列",
+              "数列的项"
+            ],
+            "definition": "数列是从正整数集或其有限子集到实数集的函数。",
+            "example": "an=f(n)，其中n取1，2，3，…"
+          },
+          {
+            "name": "数列表格表示",
+            "difficulty": 1,
+            "description": "用表格列出序号及对应项",
+            "aliases": [],
+            "prerequisites": [
+              "数列的函数表示"
+            ],
+            "definition": "数列表格表示是用表格对应展示序号n与项an。",
+            "example": "列出n=1，2，3及对应的an值。"
+          },
+          {
+            "name": "数列图象表示",
+            "difficulty": 2,
+            "description": "在坐标系中描出各项对应的点",
+            "aliases": [],
+            "prerequisites": [
+              "数列的函数表示"
+            ],
+            "definition": "数列图象表示是以序号为横坐标、对应项为纵坐标描出的离散点集。",
+            "example": "数列an=n²的图象含点(1,1)、(2,4)。"
+          },
+          {
+            "name": "递增数列",
+            "difficulty": 1,
+            "description": "各项从第二项起均大于前一项",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项都大于它的前一项的数列叫做递增数列。",
+            "example": "1，2，4，7，…是递增数列。"
+          },
+          {
+            "name": "递减数列",
+            "difficulty": 1,
+            "description": "各项从第二项起均小于前一项",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项都小于它的前一项的数列叫做递减数列。",
+            "example": "5，4，2，1，…是递减数列。"
+          },
+          {
+            "name": "常数列",
+            "difficulty": 1,
+            "description": "各项都相等的数列",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "各项都相等的数列叫做常数列。",
+            "example": "3，3，3，3，…是常数列。"
+          },
+          {
+            "name": "通项公式",
+            "difficulty": 2,
+            "description": "表示第n项与序号关系的式子",
+            "aliases": [],
+            "prerequisites": [
+              "数列的函数表示"
+            ],
+            "definition": "表示数列第n项an与序号n之间对应关系的式子叫做通项公式。",
+            "example": "an=(-1/2)n是相应数列的通项公式。"
+          },
+          {
+            "name": "递推公式",
+            "difficulty": 2,
+            "description": "表示数列项之间关系的式子",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "表示数列相邻两项或多项之间关系的式子叫做递推公式。",
+            "example": "a1=1，an=3an-1（n≥2）。"
+          },
+          {
+            "name": "前n项和",
+            "difficulty": 2,
+            "description": "数列从首项到第n项的各项之和",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "数列从第1项到第n项止的各项之和称为前n项和，记作Sn。",
+            "example": "S3=a1+a2+a3。"
+          },
+          {
+            "name": "前n项和公式",
+            "difficulty": 2,
+            "description": "表示Sn与序号n关系的式子",
+            "aliases": [],
+            "prerequisites": [
+              "前n项和"
+            ],
+            "definition": "表示数列前n项和Sn与序号n之间对应关系的式子叫做前n项和公式。",
+            "example": "等差数列有Sn=n(a1+an)/2。"
+          },
+          {
+            "name": "等差数列",
+            "difficulty": 2,
+            "description": "相邻两项的差为同一个常数",
+            "aliases": [
+              "arithmetic progression"
+            ],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项与前一项的差等于同一个常数的数列叫做等差数列。",
+            "example": "2，5，8，11，…是等差数列。"
+          },
+          {
+            "name": "公差",
+            "difficulty": 2,
+            "description": "等差数列相邻两项的公共差",
+            "aliases": [
+              "common difference"
+            ],
+            "prerequisites": [
+              "等差数列"
+            ],
+            "definition": "等差数列中后一项与前一项的差叫做公差，通常记为d。",
+            "example": "2，5，8，…的公差为3。"
+          },
+          {
+            "name": "等差中项",
+            "difficulty": 2,
+            "description": "等差数列中间项的平均数关系",
+            "aliases": [
+              "arithmetic mean"
+            ],
+            "prerequisites": [
+              "等差数列",
+              "公差"
+            ],
+            "definition": "若a、A、b成等差数列，则A称为a与b的等差中项，且2A=a+b。",
+            "example": "3，5，7中，5是3与7的等差中项。"
+          },
+          {
+            "name": "等差数列通项",
+            "difficulty": 2,
+            "description": "等差数列第n项的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等差数列",
+              "公差"
+            ],
+            "definition": "等差数列的第n项满足an=a1+(n-1)d。",
+            "example": "a1=2，d=3时，a5=14。"
+          },
+          {
+            "name": "等差数列求和",
+            "difficulty": 3,
+            "description": "等差数列前n项和的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等差数列通项",
+              "前n项和"
+            ],
+            "definition": "等差数列前n项和满足Sn=n(a1+an)/2。",
+            "example": "1，3，5，…，19的和为100。"
+          },
+          {
+            "name": "等比数列",
+            "difficulty": 2,
+            "description": "相邻两项的商为同一个非零常数",
+            "aliases": [
+              "geometric progression"
+            ],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项与前一项的比等于同一个非零常数的数列叫做等比数列。",
+            "example": "2，6，18，54，…是等比数列。"
+          },
+          {
+            "name": "公比",
+            "difficulty": 2,
+            "description": "等比数列相邻两项的公共比",
+            "aliases": [
+              "common ratio"
+            ],
+            "prerequisites": [
+              "等比数列"
+            ],
+            "definition": "等比数列中后一项与前一项的比叫做公比，通常记为q。",
+            "example": "2，6，18，…的公比为3。"
+          },
+          {
+            "name": "等比中项",
+            "difficulty": 2,
+            "description": "等比数列中间项的平方关系",
+            "aliases": [
+              "geometric mean"
+            ],
+            "prerequisites": [
+              "等比数列",
+              "公比"
+            ],
+            "definition": "若a、G、b成等比数列，则G称为a与b的等比中项，且G²=ab。",
+            "example": "2，4，8中，4是2与8的等比中项。"
+          },
+          {
+            "name": "等比数列通项",
+            "difficulty": 2,
+            "description": "等比数列第n项的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等比数列",
+              "公比"
+            ],
+            "definition": "等比数列的第n项满足an=a1q^(n-1)。",
+            "example": "a1=2，q=3时，a4=54。"
+          },
+          {
+            "name": "等比数列求和",
+            "difficulty": 3,
+            "description": "等比数列前n项和的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等比数列通项",
+              "前n项和"
+            ],
+            "definition": "当q≠1时，等比数列前n项和满足Sn=a1(1-q^n)/(1-q)。",
+            "example": "1，2，4，8的和为15。"
+          },
+          {
+            "name": "数学归纳法",
+            "difficulty": 3,
+            "description": "证明正整数命题的一种特殊方法",
+            "aliases": [
+              "mathematical induction"
+            ],
+            "prerequisites": [
+              "数列",
+              "正整数"
+            ],
+            "definition": "数学归纳法通过验证初始情形并完成归纳递推，证明命题对所有正整数成立。",
+            "example": "先证n=1，再由n=k推出n=k+1。"
+          },
+          {
+            "name": "归纳基础",
+            "difficulty": 2,
+            "description": "数学归纳法中验证起始情形的步骤",
+            "aliases": [
+              "归纳奠基"
+            ],
+            "prerequisites": [
+              "数学归纳法"
+            ],
+            "definition": "归纳基础是验证命题在指定起始正整数处成立。",
+            "example": "证明等式时先验证n=1成立。"
+          },
+          {
+            "name": "归纳递推",
+            "difficulty": 3,
+            "description": "由第k步成立推出下一步成立",
+            "aliases": [
+              "归纳步骤"
+            ],
+            "prerequisites": [
+              "归纳基础",
+              "数学归纳法"
+            ],
+            "definition": "归纳递推是以命题对n=k成立为条件推出其对n=k+1也成立。",
+            "example": "假设Sk成立，推导Sk+1成立。"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "数学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第四章 数列 ........................................................ 1",
+        "concepts": [
+          {
+            "name": "数列的概念",
+            "difficulty": 1,
+            "description": "按一定顺序排列的一列数。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数列是按照一定顺序排列的一列数。",
+            "example": "1，3，5，7，…"
+          },
+          {
+            "name": "斐波那契数列",
+            "difficulty": 2,
+            "description": "相邻两项之和构成后一项的数列。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "斐波那契数列通常从1，1开始，后一项等于前两项之和。",
+            "example": "1，1，2，3，5，8，…"
+          },
+          {
+            "name": "等差数列",
+            "difficulty": 2,
+            "description": "相邻两项的差为同一个常数的数列。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "等差数列是从第二项起每一项与前一项的差都等于同一个常数的数列。",
+            "example": "2，5，8，11，…"
+          },
+          {
+            "name": "等比数列",
+            "difficulty": 2,
+            "description": "相邻两项的比为同一个常数的数列。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "等比数列是从第二项起每一项与前一项的比都等于同一个常数的数列。",
+            "example": "2，6，18，54，…"
+          },
+          {
+            "name": "数列求和",
+            "difficulty": 3,
+            "description": "研究数列前若干项之和的求法。",
+            "aliases": [],
+            "prerequisites": [
+              "数列的概念"
+            ],
+            "definition": "数列求和是按照数列的规律计算其前若干项和的方法。",
+            "example": "计算1+2+3+…+100"
+          },
+          {
+            "name": "数学归纳法",
+            "difficulty": 4,
+            "description": "证明关于正整数命题的一种方法。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数学归纳法通过证明初始情形并证明递推步骤来证明命题对所有正整数成立。",
+            "example": "证明1+2+…+n=n(n+1)/2"
+          }
+        ],
+        "chapter_key": "a1e5d8df8d",
+        "metadata": {
+          "volume_id": "6a083a10c184",
+          "file_id": "6a083a10c184",
+          "volume_title": "A版 选必第2册",
+          "chapter_order": 1,
+          "raw_heading": "第四章 数列 ........................................................ 1"
+        }
+      },
+      {
+        "name": "第五章 一元函数的导数及其应用 ...................................... 58",
+        "concepts": [
+          {
+            "name": "导数概念",
+            "difficulty": 3,
+            "description": "刻画函数在某点附近变化快慢的数学量",
+            "aliases": [
+              "导数"
+            ],
+            "prerequisites": [],
+            "definition": "函数在某点的导数是其平均变化率在该点处的极限。",
+            "example": "若f(x)=x²，则f'(x)=2x。"
+          },
+          {
+            "name": "导数意义",
+            "difficulty": 3,
+            "description": "导数表示函数的瞬时变化率及切线斜率",
+            "aliases": [
+              "导数的意义"
+            ],
+            "prerequisites": [
+              "导数概念"
+            ],
+            "definition": "函数在一点的导数等于该点处曲线切线的斜率，也表示瞬时变化率。",
+            "example": "位移函数的导数表示瞬时速度。"
+          },
+          {
+            "name": "导数运算",
+            "difficulty": 3,
+            "description": "利用运算法则和公式求函数的导数",
+            "aliases": [
+              "导数的运算"
+            ],
+            "prerequisites": [
+              "导数概念"
+            ],
+            "definition": "导数运算是依据导数法则和基本公式求函数导数的过程。",
+            "example": "(x³)'=3x²。"
+          },
+          {
+            "name": "牛顿法",
+            "difficulty": 4,
+            "description": "利用导数方法求方程近似解的方法",
+            "aliases": [
+              "牛顿法求近似解"
+            ],
+            "prerequisites": [
+              "导数运算"
+            ],
+            "definition": "牛顿法通过函数切线与坐标轴交点逐步逼近方程的根。",
+            "example": "用切线迭代求方程f(x)=0的近似根。"
+          },
+          {
+            "name": "函数性质研究",
+            "difficulty": 4,
+            "description": "运用导数研究函数的单调性和极值等性质",
+            "aliases": [
+              "导数在研究函数中的应用"
+            ],
+            "prerequisites": [
+              "导数概念",
+              "导数运算"
+            ],
+            "definition": "函数性质研究是利用导数分析函数变化趋势及局部特征的过程。",
+            "example": "由f'(x)>0判断函数在区间上单调递增。"
+          },
+          {
+            "name": "图形技术",
+            "difficulty": 2,
+            "description": "借助图形技术分析函数图象及其性质",
+            "aliases": [
+              "图形技术与函数性质"
+            ],
+            "prerequisites": [
+              "函数性质研究"
+            ],
+            "definition": "图形技术是利用图形工具呈现并辅助分析函数性质的方法。",
+            "example": "利用函数图象观察函数的增减变化。"
+          },
+          {
+            "name": "微积分发展",
+            "difficulty": 2,
+            "description": "了解微积分的创立与发展过程",
+            "aliases": [
+              "微积分的创立与发展"
+            ],
+            "prerequisites": [],
+            "definition": "微积分发展是关于微积分创立背景、形成及演进过程的知识。",
+            "example": "阅读资料了解微积分的创立与发展。"
+          }
+        ],
+        "chapter_key": "a59eef7ec9",
+        "metadata": {
+          "volume_id": "6a083a10c184",
+          "file_id": "6a083a10c184",
+          "volume_title": "A版 选必第2册",
+          "chapter_order": 2,
+          "raw_heading": "第五章 一元函数的导数及其应用 ...................................... 58"
+        }
+      },
+      {
+        "name": "第四章",
+        "concepts": [
+          {
+            "name": "数列",
+            "difficulty": 1,
+            "description": "按确定顺序排列的一列数",
+            "aliases": [
+              "sequence of number"
+            ],
+            "prerequisites": [],
+            "definition": "数列是按照确定顺序排列的一列数，可看作定义在正整数集上的离散函数。",
+            "example": "1，4，9，16，…构成一个数列。"
+          },
+          {
+            "name": "数列的项",
+            "difficulty": 1,
+            "description": "数列中按序排列的每一个数",
+            "aliases": [],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "数列中的每一个数叫做这个数列的项，第n个位置上的数记为an。",
+            "example": "数列1，4，9中，4是第二项。"
+          },
+          {
+            "name": "有穷数列",
+            "difficulty": 1,
+            "description": "项数有限的数列",
+            "aliases": [],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "项数有限的数列叫做有穷数列。",
+            "example": "1，2，3，4是有穷数列。"
+          },
+          {
+            "name": "无穷数列",
+            "difficulty": 1,
+            "description": "项数无限的数列",
+            "aliases": [],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "项数无限的数列叫做无穷数列。",
+            "example": "1，2，3，…是无穷数列。"
+          },
+          {
+            "name": "数列的函数表示",
+            "difficulty": 2,
+            "description": "把数列看作正整数上的函数",
+            "aliases": [],
+            "prerequisites": [
+              "数列",
+              "数列的项"
+            ],
+            "definition": "数列是从正整数集或其有限子集到实数集的函数。",
+            "example": "an=f(n)，其中n取1，2，3，…"
+          },
+          {
+            "name": "数列表格表示",
+            "difficulty": 1,
+            "description": "用表格列出序号及对应项",
+            "aliases": [],
+            "prerequisites": [
+              "数列的函数表示"
+            ],
+            "definition": "数列表格表示是用表格对应展示序号n与项an。",
+            "example": "列出n=1，2，3及对应的an值。"
+          },
+          {
+            "name": "数列图象表示",
+            "difficulty": 2,
+            "description": "在坐标系中描出各项对应的点",
+            "aliases": [],
+            "prerequisites": [
+              "数列的函数表示"
+            ],
+            "definition": "数列图象表示是以序号为横坐标、对应项为纵坐标描出的离散点集。",
+            "example": "数列an=n²的图象含点(1,1)、(2,4)。"
+          },
+          {
+            "name": "递增数列",
+            "difficulty": 1,
+            "description": "各项从第二项起均大于前一项",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项都大于它的前一项的数列叫做递增数列。",
+            "example": "1，2，4，7，…是递增数列。"
+          },
+          {
+            "name": "递减数列",
+            "difficulty": 1,
+            "description": "各项从第二项起均小于前一项",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项都小于它的前一项的数列叫做递减数列。",
+            "example": "5，4，2，1，…是递减数列。"
+          },
+          {
+            "name": "常数列",
+            "difficulty": 1,
+            "description": "各项都相等的数列",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "各项都相等的数列叫做常数列。",
+            "example": "3，3，3，3，…是常数列。"
+          },
+          {
+            "name": "通项公式",
+            "difficulty": 2,
+            "description": "表示第n项与序号关系的式子",
+            "aliases": [],
+            "prerequisites": [
+              "数列的函数表示"
+            ],
+            "definition": "表示数列第n项an与序号n之间对应关系的式子叫做通项公式。",
+            "example": "an=(-1/2)n是相应数列的通项公式。"
+          },
+          {
+            "name": "递推公式",
+            "difficulty": 2,
+            "description": "表示数列项之间关系的式子",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "表示数列相邻两项或多项之间关系的式子叫做递推公式。",
+            "example": "a1=1，an=3an-1（n≥2）。"
+          },
+          {
+            "name": "前n项和",
+            "difficulty": 2,
+            "description": "数列从首项到第n项的各项之和",
+            "aliases": [],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "数列从第1项到第n项止的各项之和称为前n项和，记作Sn。",
+            "example": "S3=a1+a2+a3。"
+          },
+          {
+            "name": "前n项和公式",
+            "difficulty": 2,
+            "description": "表示Sn与序号n关系的式子",
+            "aliases": [],
+            "prerequisites": [
+              "前n项和"
+            ],
+            "definition": "表示数列前n项和Sn与序号n之间对应关系的式子叫做前n项和公式。",
+            "example": "等差数列有Sn=n(a1+an)/2。"
+          },
+          {
+            "name": "等差数列",
+            "difficulty": 2,
+            "description": "相邻两项的差为同一个常数",
+            "aliases": [
+              "arithmetic progression"
+            ],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项与前一项的差等于同一个常数的数列叫做等差数列。",
+            "example": "2，5，8，11，…是等差数列。"
+          },
+          {
+            "name": "公差",
+            "difficulty": 2,
+            "description": "等差数列相邻两项的公共差",
+            "aliases": [
+              "common difference"
+            ],
+            "prerequisites": [
+              "等差数列"
+            ],
+            "definition": "等差数列中后一项与前一项的差叫做公差，通常记为d。",
+            "example": "2，5，8，…的公差为3。"
+          },
+          {
+            "name": "等差中项",
+            "difficulty": 2,
+            "description": "等差数列中间项的平均数关系",
+            "aliases": [
+              "arithmetic mean"
+            ],
+            "prerequisites": [
+              "等差数列",
+              "公差"
+            ],
+            "definition": "若a、A、b成等差数列，则A称为a与b的等差中项，且2A=a+b。",
+            "example": "3，5，7中，5是3与7的等差中项。"
+          },
+          {
+            "name": "等差数列通项",
+            "difficulty": 2,
+            "description": "等差数列第n项的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等差数列",
+              "公差"
+            ],
+            "definition": "等差数列的第n项满足an=a1+(n-1)d。",
+            "example": "a1=2，d=3时，a5=14。"
+          },
+          {
+            "name": "等差数列求和",
+            "difficulty": 3,
+            "description": "等差数列前n项和的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等差数列通项",
+              "前n项和"
+            ],
+            "definition": "等差数列前n项和满足Sn=n(a1+an)/2。",
+            "example": "1，3，5，…，19的和为100。"
+          },
+          {
+            "name": "等比数列",
+            "difficulty": 2,
+            "description": "相邻两项的商为同一个非零常数",
+            "aliases": [
+              "geometric progression"
+            ],
+            "prerequisites": [
+              "数列的项"
+            ],
+            "definition": "从第2项起，每一项与前一项的比等于同一个非零常数的数列叫做等比数列。",
+            "example": "2，6，18，54，…是等比数列。"
+          },
+          {
+            "name": "公比",
+            "difficulty": 2,
+            "description": "等比数列相邻两项的公共比",
+            "aliases": [
+              "common ratio"
+            ],
+            "prerequisites": [
+              "等比数列"
+            ],
+            "definition": "等比数列中后一项与前一项的比叫做公比，通常记为q。",
+            "example": "2，6，18，…的公比为3。"
+          },
+          {
+            "name": "等比中项",
+            "difficulty": 2,
+            "description": "等比数列中间项的平方关系",
+            "aliases": [
+              "geometric mean"
+            ],
+            "prerequisites": [
+              "等比数列",
+              "公比"
+            ],
+            "definition": "若a、G、b成等比数列，则G称为a与b的等比中项，且G²=ab。",
+            "example": "2，4，8中，4是2与8的等比中项。"
+          },
+          {
+            "name": "等比数列通项",
+            "difficulty": 2,
+            "description": "等比数列第n项的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等比数列",
+              "公比"
+            ],
+            "definition": "等比数列的第n项满足an=a1q^(n-1)。",
+            "example": "a1=2，q=3时，a4=54。"
+          },
+          {
+            "name": "等比数列求和",
+            "difficulty": 3,
+            "description": "等比数列前n项和的计算公式",
+            "aliases": [],
+            "prerequisites": [
+              "等比数列通项",
+              "前n项和"
+            ],
+            "definition": "当q≠1时，等比数列前n项和满足Sn=a1(1-q^n)/(1-q)。",
+            "example": "1，2，4，8的和为15。"
+          },
+          {
+            "name": "数学归纳法",
+            "difficulty": 3,
+            "description": "证明正整数命题的一种特殊方法",
+            "aliases": [
+              "mathematical induction"
+            ],
+            "prerequisites": [
+              "数列",
+              "正整数"
+            ],
+            "definition": "数学归纳法通过验证初始情形并完成归纳递推，证明命题对所有正整数成立。",
+            "example": "先证n=1，再由n=k推出n=k+1。"
+          },
+          {
+            "name": "归纳基础",
+            "difficulty": 2,
+            "description": "数学归纳法中验证起始情形的步骤",
+            "aliases": [
+              "归纳奠基"
+            ],
+            "prerequisites": [
+              "数学归纳法"
+            ],
+            "definition": "归纳基础是验证命题在指定起始正整数处成立。",
+            "example": "证明等式时先验证n=1成立。"
+          },
+          {
+            "name": "归纳递推",
+            "difficulty": 3,
+            "description": "由第k步成立推出下一步成立",
+            "aliases": [
+              "归纳步骤"
+            ],
+            "prerequisites": [
+              "归纳基础",
+              "数学归纳法"
+            ],
+            "definition": "归纳递推是以命题对n=k成立为条件推出其对n=k+1也成立。",
+            "example": "假设Sk成立，推导Sk+1成立。"
+          }
+        ],
+        "chapter_key": "35988ab636",
+        "metadata": {
+          "volume_id": "6a083a10c184",
+          "file_id": "6a083a10c184",
+          "volume_title": "A版 选必第2册",
+          "chapter_order": 3,
+          "raw_heading": "第四章"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

@@ -1,0 +1,2023 @@
+{
+  "file_id": "269d4aa5e8c2",
+  "text_sha256": "e52e29efecd372bf14b46b343da330ac422056b0e79e534c1ee5dbeee20ab48e",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "数学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第六章　计数原理",
+        "concepts": [
+          {
+            "name": "计数",
+            "difficulty": 1,
+            "description": "统计一个问题中所有可能结果的数量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "计数是数出某种方案下所有可能结果数量的过程。",
+            "example": "统计汽车号牌序号的所有可能数。"
+          },
+          {
+            "name": "分类加法计数原理",
+            "difficulty": 2,
+            "description": "按互不重叠的类别分别计数后求和",
+            "aliases": [
+              "分类加法原理"
+            ],
+            "prerequisites": [
+              "计数"
+            ],
+            "definition": "若一件事有若干类互不重叠的方案，各类方法数相加即得总数。",
+            "example": "选一个专业：5+4=9种。"
+          },
+          {
+            "name": "分步乘法计数原理",
+            "difficulty": 2,
+            "description": "分若干步骤完成任务并将各步方法数相乘",
+            "aliases": [
+              "分步乘法原理"
+            ],
+            "prerequisites": [
+              "计数"
+            ],
+            "definition": "若一件事需依次完成若干步骤，各步方法数相乘即得总数。",
+            "example": "选男生和女生各1名：30×24种。"
+          },
+          {
+            "name": "树状图",
+            "difficulty": 1,
+            "description": "用分支图列出计数问题的所有可能结果",
+            "aliases": [],
+            "prerequisites": [
+              "计数"
+            ],
+            "definition": "树状图是按步骤逐层展开并表示所有可能结果的图示方法。",
+            "example": "列出字母与数字组成的座位号。",
+            "section": "6.1 分类加法计数原理与分步乘法计数原理"
+          },
+          {
+            "name": "排列",
+            "difficulty": 2,
+            "description": "从不同元素中取出若干元素并考虑顺序",
+            "aliases": [],
+            "prerequisites": [
+              "分步乘法计数原理"
+            ],
+            "definition": "排列是从不同元素中取出若干元素按一定顺序排成一列。",
+            "example": "甲乙与乙甲是不同排列。"
+          },
+          {
+            "name": "排列数",
+            "difficulty": 2,
+            "description": "从若干不同元素取出指定元素的排列总数",
+            "aliases": [
+              "A_m^n"
+            ],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "排列数是从n个不同元素中取出m个元素的所有不同排列的个数。",
+            "example": "A₃⁴表示从4个元素取3个的排列数。"
+          },
+          {
+            "name": "排列数公式",
+            "difficulty": 3,
+            "description": "计算排列数的连乘积公式",
+            "aliases": [
+              "A_m^n公式"
+            ],
+            "prerequisites": [
+              "排列数",
+              "分步乘法计数原理"
+            ],
+            "definition": "排列数公式为A_m^n=n(n−1)…(n−m+1)。",
+            "example": "A₃⁸=8×7×6=336。"
+          },
+          {
+            "name": "全排列",
+            "difficulty": 2,
+            "description": "取出全部不同元素并按顺序排列",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "全排列是将n个不同元素全部取出的一个排列。",
+            "example": "甲乙丙的全排列共有6种。",
+            "section": "6.2 排列与组合"
+          },
+          {
+            "name": "阶乘",
+            "difficulty": 2,
+            "description": "正整数从1到自身的连乘积",
+            "aliases": [
+              "n!"
+            ],
+            "prerequisites": [
+              "全排列"
+            ],
+            "definition": "n的阶乘是正整数1到n的连乘积，记作n!。",
+            "example": "5!=5×4×3×2×1=120。",
+            "section": "6.2 排列与组合"
+          },
+          {
+            "name": "排列组合关系",
+            "difficulty": 3,
+            "description": "排列与组合按元素相同建立对应关系",
+            "aliases": [],
+            "prerequisites": [
+              "排列",
+              "组合"
+            ],
+            "definition": "取出相同元素时，一个组合的所有全排列对应多个排列。",
+            "example": "甲乙这一组合对应甲乙、乙甲两个排列。"
+          },
+          {
+            "name": "组合",
+            "difficulty": 2,
+            "description": "从不同元素中取出若干元素且不考虑顺序",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "组合是从n个不同元素中取出m个元素作为一组。",
+            "example": "甲乙与乙甲表示同一个组合。"
+          },
+          {
+            "name": "组合数",
+            "difficulty": 2,
+            "description": "从不同元素中取出指定元素的组合总数",
+            "aliases": [
+              "C_m^n"
+            ],
+            "prerequisites": [
+              "组合"
+            ],
+            "definition": "组合数是从n个不同元素中取出m个元素的所有不同组合的个数。",
+            "example": "C₂³=3。"
+          },
+          {
+            "name": "组合数公式",
+            "difficulty": 3,
+            "description": "利用排列数计算组合数的公式",
+            "aliases": [
+              "C_m^n公式"
+            ],
+            "prerequisites": [
+              "组合数",
+              "排列数公式",
+              "排列组合关系"
+            ],
+            "definition": "组合数公式为C_m^n=n!/[m!(n−m)!]。",
+            "example": "C₃¹⁰=10!/(3!7!)=120。"
+          },
+          {
+            "name": "二项式定理",
+            "difficulty": 3,
+            "description": "给出二项式任意正整数次幂的展开式",
+            "aliases": [],
+            "prerequisites": [
+              "组合数",
+              "分步乘法计数原理"
+            ],
+            "definition": "二项式定理将(a+b)^n展开为各项含组合数系数的和。",
+            "example": "(a+b)²=a²+2ab+b²。",
+            "section": "6.3 二项式定理"
+          },
+          {
+            "name": "二项式系数",
+            "difficulty": 3,
+            "description": "二项式展开式中各项对应的组合数系数",
+            "aliases": [
+              "C_k^n"
+            ],
+            "prerequisites": [
+              "组合数",
+              "二项式定理"
+            ],
+            "definition": "二项式系数是(a+b)^n展开式中各项的组合数系数C_k^n。",
+            "example": "(a+b)³中ab²的系数为C₂³=3。",
+            "section": "6.3 二项式定理"
+          },
+          {
+            "name": "二项式系数性质",
+            "difficulty": 4,
+            "description": "二项式系数具有对称、增减和求和性质",
+            "aliases": [],
+            "prerequisites": [
+              "二项式系数"
+            ],
+            "definition": "二项式系数具有对称性、增减性与各系数和为2^n等性质。",
+            "example": "C_k^n=C_{n−k}^n。",
+            "section": "6.3 二项式定理"
+          },
+          {
+            "name": "杨辉三角",
+            "difficulty": 3,
+            "description": "按行排列二项式系数形成的三角形数表",
+            "aliases": [
+              "帕斯卡三角"
+            ],
+            "prerequisites": [
+              "二项式系数",
+              "二项式系数性质"
+            ],
+            "definition": "杨辉三角是由各行二项式系数依次排列形成的数表。",
+            "example": "第5行数为1，4，6，4，1。",
+            "section": "6.3 二项式定理"
+          }
+        ],
+        "sections": [
+          {
+            "name": "６．１　分类加法计数原理与分步乘法计数原理",
+            "page_range": [
+              7,
+              19
+            ]
+          },
+          {
+            "name": "６．２　排列与组合",
+            "page_range": [
+              19,
+              34
+            ]
+          },
+          {
+            "name": "６．３　二项式定理",
+            "page_range": [
+              34,
+              47
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第七章　随机变量及其分布",
+        "concepts": [
+          {
+            "name": "随机事件",
+            "difficulty": 1,
+            "description": "随机试验中可能发生或不发生的结果集合",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "随机事件是随机试验结果的集合。",
+            "example": "掷骰子点数为偶数"
+          },
+          {
+            "name": "条件概率",
+            "difficulty": 2,
+            "description": "已知一个事件发生时另一个事件发生的概率",
+            "aliases": [
+              "条件概率公式"
+            ],
+            "prerequisites": [
+              "随机事件"
+            ],
+            "definition": "若P(A)>0，则P(B|A)=P(AB)/P(A)。",
+            "example": "已知抽到团员，求抽到男生的概率"
+          },
+          {
+            "name": "事件独立性",
+            "difficulty": 2,
+            "description": "一个事件发生与否不影响另一个事件概率",
+            "aliases": [
+              "相互独立事件"
+            ],
+            "prerequisites": [
+              "随机事件",
+              "条件概率"
+            ],
+            "definition": "事件A与B独立当且仅当P(AB)=P(A)P(B)。",
+            "example": "连续两次独立抛硬币",
+            "section": "7.4 二项分布与超几何分布"
+          },
+          {
+            "name": "概率乘法公式",
+            "difficulty": 2,
+            "description": "利用条件概率计算积事件概率的公式",
+            "aliases": [
+              "乘法公式"
+            ],
+            "prerequisites": [
+              "条件概率"
+            ],
+            "definition": "若P(A)>0，则P(AB)=P(A)P(B|A)。",
+            "example": "不放回抽题先代数后几何"
+          },
+          {
+            "name": "全概率公式",
+            "difficulty": 3,
+            "description": "按互斥完备事件分解并计算复杂事件概率",
+            "aliases": [
+              "全概率定理"
+            ],
+            "prerequisites": [
+              "条件概率",
+              "概率乘法公式"
+            ],
+            "definition": "若A₁至Aₙ互斥且并为Ω，则P(B)=ΣP(Aᵢ)P(B|Aᵢ)。",
+            "example": "按不同车床来源计算次品率"
+          },
+          {
+            "name": "贝叶斯公式",
+            "difficulty": 4,
+            "description": "由结果概率反推原因条件概率的公式",
+            "aliases": [
+              "Bayes公式"
+            ],
+            "prerequisites": [
+              "条件概率",
+              "全概率公式"
+            ],
+            "definition": "P(Aᵢ|B)=P(Aᵢ)P(B|Aᵢ)/P(B)。",
+            "example": "已知次品，判断其来自哪台车床",
+            "section": "7.1 条件概率与全概率公式"
+          },
+          {
+            "name": "随机变量",
+            "difficulty": 2,
+            "description": "把随机试验结果数量化的变量",
+            "aliases": [
+              "X"
+            ],
+            "prerequisites": [
+              "随机事件"
+            ],
+            "definition": "随机变量是样本空间到实数集的对应关系。",
+            "example": "掷骰子的点数X"
+          },
+          {
+            "name": "离散型随机变量",
+            "difficulty": 2,
+            "description": "取值为有限个或可列个数的随机变量",
+            "aliases": [
+              "离散随机变量"
+            ],
+            "prerequisites": [
+              "随机变量"
+            ],
+            "definition": "离散型随机变量的可能取值是有限个或可列个。",
+            "example": "三次射击的中靶次数"
+          },
+          {
+            "name": "连续型随机变量",
+            "difficulty": 3,
+            "description": "取值充满区间且取一点概率为零的随机变量",
+            "aliases": [
+              "连续随机变量"
+            ],
+            "prerequisites": [
+              "随机变量"
+            ],
+            "definition": "连续型随机变量的取值充满某个区间或整个实轴，取一点的概率为零。",
+            "example": "食盐质量误差",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "分布列",
+            "difficulty": 2,
+            "description": "列出离散型随机变量取值及其概率",
+            "aliases": [
+              "概率分布列"
+            ],
+            "prerequisites": [
+              "离散型随机变量"
+            ],
+            "definition": "分布列建立随机变量各取值与其概率之间的对应关系。",
+            "example": "骰子点数及各自的六分之一概率"
+          },
+          {
+            "name": "数学期望",
+            "difficulty": 3,
+            "description": "随机变量取值关于概率的加权平均数",
+            "aliases": [
+              "期望",
+              "均值"
+            ],
+            "prerequisites": [
+              "分布列"
+            ],
+            "definition": "离散型随机变量X的数学期望为E(X)=Σxᵢpᵢ。",
+            "example": "均匀骰子点数的期望为3.5"
+          },
+          {
+            "name": "期望线性性质",
+            "difficulty": 3,
+            "description": "线性变换后的期望满足线性关系",
+            "aliases": [
+              "均值线性性质"
+            ],
+            "prerequisites": [
+              "数学期望"
+            ],
+            "definition": "对常数a、b，有E(aX+b)=aE(X)+b。",
+            "example": "由E(X)求E(3X+2)"
+          },
+          {
+            "name": "方差",
+            "difficulty": 3,
+            "description": "度量随机变量取值离散程度的数字特征",
+            "aliases": [
+              "D(X)",
+              "Var(X)"
+            ],
+            "prerequisites": [
+              "数学期望",
+              "分布列"
+            ],
+            "definition": "方差是各取值与均值偏差平方按概率加权的平均数。",
+            "example": "比较两名射击者成绩稳定性"
+          },
+          {
+            "name": "标准差",
+            "difficulty": 3,
+            "description": "方差的算术平方根，反映取值波动程度",
+            "aliases": [
+              "σ(X)"
+            ],
+            "prerequisites": [
+              "方差"
+            ],
+            "definition": "随机变量的标准差等于其方差的算术平方根。",
+            "example": "骰子点数标准差为√(35/12)"
+          },
+          {
+            "name": "方差性质",
+            "difficulty": 3,
+            "description": "线性变换下方差的变化规律",
+            "aliases": [],
+            "prerequisites": [
+              "方差"
+            ],
+            "definition": "对常数a、b，有D(aX+b)=a²D(X)。",
+            "example": "D(2X+3)=4D(X)"
+          },
+          {
+            "name": "伯努利试验",
+            "difficulty": 2,
+            "description": "只包含两个可能结果的试验",
+            "aliases": [
+              "Bernoulli试验"
+            ],
+            "prerequisites": [
+              "随机试验"
+            ],
+            "definition": "伯努利试验是只包含两个可能结果的随机试验。",
+            "example": "产品合格或不合格",
+            "section": "7.4 二项分布与超几何分布"
+          },
+          {
+            "name": "n重伯努利试验",
+            "difficulty": 3,
+            "description": "独立重复进行同一伯努利试验n次",
+            "aliases": [
+              "重复伯努利试验"
+            ],
+            "prerequisites": [
+              "伯努利试验",
+              "事件独立性"
+            ],
+            "definition": "n重伯努利试验是将一个伯努利试验独立重复进行n次。",
+            "example": "连续射击三次且各次独立"
+          },
+          {
+            "name": "二项分布",
+            "difficulty": 3,
+            "description": "n重伯努利试验中成功次数的分布",
+            "aliases": [
+              "B(n,p)"
+            ],
+            "prerequisites": [
+              "n重伯努利试验",
+              "离散型随机变量",
+              "分布列"
+            ],
+            "definition": "二项分布是n重伯努利试验中事件A发生次数的概率分布。",
+            "example": "三次射击中靶次数服从二项分布"
+          },
+          {
+            "name": "超几何分布",
+            "difficulty": 4,
+            "description": "不放回抽样中成功次数的概率分布",
+            "aliases": [
+              "H分布"
+            ],
+            "prerequisites": [
+              "离散型随机变量",
+              "分布列"
+            ],
+            "definition": "超几何分布描述有限总体中不放回抽样所得成功次数的分布。",
+            "example": "不放回抽取产品中的次品数"
+          },
+          {
+            "name": "正态密度函数",
+            "difficulty": 4,
+            "description": "描述正态随机变量概率分布的密度函数",
+            "aliases": [
+              "高斯密度函数"
+            ],
+            "prerequisites": [
+              "连续型随机变量"
+            ],
+            "definition": "正态密度函数为f(x)=1/(σ√(2π))e^{-(x-μ)²/(2σ²)}。",
+            "example": "用曲线面积表示误差落入区间的概率",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "正态分布",
+            "difficulty": 3,
+            "description": "具有钟形密度曲线的连续型概率分布",
+            "aliases": [
+              "高斯分布",
+              "N(μ,σ²)"
+            ],
+            "prerequisites": [
+              "连续型随机变量",
+              "正态密度函数"
+            ],
+            "definition": "若随机变量的概率密度为正态密度函数，则称其服从正态分布。",
+            "example": "食盐质量误差近似服从正态分布",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "标准正态分布",
+            "difficulty": 3,
+            "description": "均值为0、标准差为1的正态分布",
+            "aliases": [
+              "N(0,1)"
+            ],
+            "prerequisites": [
+              "正态分布"
+            ],
+            "definition": "参数μ=0、σ=1的正态分布称为标准正态分布。",
+            "example": "X服从N(0,1)",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "正态曲线特点",
+            "difficulty": 3,
+            "description": "正态曲线单峰、对称并趋近于横轴",
+            "aliases": [],
+            "prerequisites": [
+              "正态分布"
+            ],
+            "definition": "正态曲线关于x=μ对称，在μ处达到峰值并向两端趋近横轴。",
+            "example": "均值位置是曲线最高点"
+          },
+          {
+            "name": "3σ原则",
+            "difficulty": 3,
+            "description": "正态变量通常落在均值三倍标准差范围内",
+            "aliases": [
+              "三西格玛原则"
+            ],
+            "prerequisites": [
+              "正态分布",
+              "标准差"
+            ],
+            "definition": "正态变量取值落在[μ-3σ,μ+3σ]内的概率约为0.9973。",
+            "example": "用三倍标准差范围估计合格率"
+          }
+        ],
+        "sections": [
+          {
+            "name": "７．１　条件概率与全概率公式",
+            "page_range": [
+              49,
+              61
+            ]
+          },
+          {
+            "name": "７．２　离散型随机变量及其分布列",
+            "page_range": [
+              61,
+              67
+            ]
+          },
+          {
+            "name": "７．３　离散型随机变量的数字特征",
+            "page_range": [
+              67,
+              77
+            ]
+          },
+          {
+            "name": "７．４　二项分布与超几何分布",
+            "page_range": [
+              77,
+              88
+            ]
+          },
+          {
+            "name": "７．５　正态分布",
+            "page_range": [
+              88,
+              96
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第八章　成对数据的统计分析",
+        "concepts": [
+          {
+            "name": "成对数据",
+            "difficulty": 2,
+            "description": "同一观测对象的两个变量观测值组成的数据对",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "成对数据是同一对象两个变量的观测值所组成的数据对。",
+            "example": "同一学生的身高和体重数据。"
+          },
+          {
+            "name": "相关关系",
+            "difficulty": 2,
+            "description": "两个变量有关联但不能由一个唯一确定另一个",
+            "aliases": [
+              "correlation"
+            ],
+            "prerequisites": [
+              "成对数据"
+            ],
+            "definition": "相关关系是两个变量有关系但不能由一个变量精确决定另一个变量的关系。",
+            "example": "身高与体重之间的关系。"
+          },
+          {
+            "name": "散点图",
+            "difficulty": 2,
+            "description": "用坐标点展示成对数据分布特征的统计图",
+            "aliases": [
+              "scatter plot"
+            ],
+            "prerequisites": [
+              "成对数据"
+            ],
+            "definition": "散点图是将成对样本数据表示为直角坐标系中点的统计图。",
+            "example": "用横轴表示年龄、纵轴表示脂肪含量。"
+          },
+          {
+            "name": "正相关",
+            "difficulty": 2,
+            "description": "一个变量增加时另一个变量总体也呈增加趋势",
+            "aliases": [
+              "positive correlation"
+            ],
+            "prerequisites": [
+              "相关关系"
+            ],
+            "definition": "正相关是一个变量值增加时另一个变量相应值也呈增加趋势的关系。",
+            "example": "广告支出与商品销售收入。"
+          },
+          {
+            "name": "负相关",
+            "difficulty": 2,
+            "description": "一个变量增加时另一个变量总体呈减小趋势",
+            "aliases": [
+              "negative correlation"
+            ],
+            "prerequisites": [
+              "相关关系"
+            ],
+            "definition": "负相关是一个变量值增加时另一个变量相应值呈减小趋势的关系。",
+            "example": "汽车行驶里程与轮胎凹槽深度。"
+          },
+          {
+            "name": "线性相关",
+            "difficulty": 3,
+            "description": "散点大致沿某条直线分布的相关关系",
+            "aliases": [],
+            "prerequisites": [
+              "相关关系",
+              "散点图"
+            ],
+            "definition": "线性相关是变量正相关或负相关且散点落在一条直线附近的关系。",
+            "example": "年龄与人体脂肪含量呈线性相关。"
+          },
+          {
+            "name": "非线性相关",
+            "difficulty": 3,
+            "description": "具有相关性但散点不沿直线而沿曲线分布",
+            "aliases": [
+              "曲线相关"
+            ],
+            "prerequisites": [
+              "相关关系",
+              "散点图"
+            ],
+            "definition": "非线性相关是两个变量具有相关性但不是线性相关的关系。",
+            "example": "散点大致落在某条曲线附近。"
+          },
+          {
+            "name": "样本相关系数",
+            "difficulty": 4,
+            "description": "刻画成对样本数据线性相关程度的数字特征",
+            "aliases": [
+              "样本线性相关系数"
+            ],
+            "prerequisites": [
+              "成对数据"
+            ],
+            "definition": "样本相关系数是由成对样本数据计算得到、反映线性相关程度的数字特征。",
+            "example": "年龄与脂肪含量的样本相关系数约为0.97。"
+          },
+          {
+            "name": "相关系数范围",
+            "difficulty": 3,
+            "description": "样本相关系数的取值范围为闭区间[-1,1]",
+            "aliases": [],
+            "prerequisites": [
+              "样本相关系数"
+            ],
+            "definition": "样本相关系数的取值范围是[-1,1]。",
+            "example": "相关系数0.97在该范围内。"
+          },
+          {
+            "name": "一元线性回归模型",
+            "difficulty": 4,
+            "description": "用一个解释变量线性描述响应变量的随机模型",
+            "aliases": [
+              "simple linear regression model"
+            ],
+            "prerequisites": [
+              "成对数据",
+              "线性相关"
+            ],
+            "definition": "一元线性回归模型用一个解释变量的线性变化描述响应变量，并包含随机误差。",
+            "example": "Y=bx+a+e，且误差均值为0、方差为常数。"
+          },
+          {
+            "name": "解释变量",
+            "difficulty": 3,
+            "description": "在回归模型中用来解释或预测响应变量的变量",
+            "aliases": [],
+            "prerequisites": [
+              "一元线性回归模型"
+            ],
+            "definition": "解释变量是回归分析中用于解释或预测另一个变量变化的变量。",
+            "example": "用汽车流量预测PM2.5浓度时汽车流量是解释变量。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "响应变量",
+            "difficulty": 3,
+            "description": "在回归模型中受到解释变量影响的变量",
+            "aliases": [],
+            "prerequisites": [
+              "一元线性回归模型"
+            ],
+            "definition": "响应变量是回归分析中需要解释、估计或预测的变量。",
+            "example": "PM2.5浓度是汽车流量的响应变量。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "最小二乘估计",
+            "difficulty": 4,
+            "description": "使残差平方和达到最小的参数估计方法",
+            "aliases": [
+              "最小二乘法"
+            ],
+            "prerequisites": [
+              "一元线性回归模型"
+            ],
+            "definition": "最小二乘估计通过使观测值与模型预测值的残差平方和最小来估计参数。",
+            "example": "估计回归直线的斜率和截距。"
+          },
+          {
+            "name": "经验回归方程",
+            "difficulty": 4,
+            "description": "利用样本估计回归模型参数得到的方程",
+            "aliases": [],
+            "prerequisites": [
+              "一元线性回归模型",
+              "最小二乘估计"
+            ],
+            "definition": "经验回归方程是根据样本数据估计模型参数后得到的预测方程。",
+            "example": "PM2.5浓度关于汽车流量的方程。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "残差",
+            "difficulty": 3,
+            "description": "观测值与经验回归方程预测值之差",
+            "aliases": [],
+            "prerequisites": [
+              "经验回归方程"
+            ],
+            "definition": "残差是响应变量观测值与相应预测值之间的差。",
+            "example": "实际成绩减去回归方程给出的成绩。"
+          },
+          {
+            "name": "残差平方和",
+            "difficulty": 4,
+            "description": "各个残差平方之和，用于评价模型效果",
+            "aliases": [],
+            "prerequisites": [
+              "残差"
+            ],
+            "definition": "残差平方和是所有样本残差平方的总和。",
+            "example": "比较两个回归模型的拟合效果。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "决定系数",
+            "difficulty": 4,
+            "description": "反映回归关系解释因变量总变异比例的统计量",
+            "aliases": [
+              "R²"
+            ],
+            "prerequisites": [
+              "残差平方和"
+            ],
+            "definition": "决定系数是回归关系能够解释响应变量总变异的比例。",
+            "example": "R²=0.6725表示模型解释约67.25%的变异。"
+          },
+          {
+            "name": "非线性回归模型",
+            "difficulty": 4,
+            "description": "用非线性函数刻画变量变化趋势的回归模型",
+            "aliases": [
+              "非线性经验回归函数"
+            ],
+            "prerequisites": [
+              "非线性相关",
+              "经验回归方程"
+            ],
+            "definition": "非线性回归模型用非线性函数描述解释变量与响应变量之间的关系。",
+            "example": "用对数函数拟合短跑世界纪录数据。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "分类变量",
+            "difficulty": 2,
+            "description": "取值表示不同现象或性质类别的随机变量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "分类变量的取值用于区分类别，通常不具有数值大小和运算意义。",
+            "example": "性别取值为0或1。",
+            "section": "8.3 列联表与独立性检验"
+          },
+          {
+            "name": "列联表",
+            "difficulty": 3,
+            "description": "列出两个分类变量各类别频数及合计的表格",
+            "aliases": [
+              "contingency table"
+            ],
+            "prerequisites": [
+              "分类变量"
+            ],
+            "definition": "列联表是按两个分类变量的类别交叉整理成对数据频数的表格。",
+            "example": "药物服用与是否患病的四格表。",
+            "section": "8.3 列联表与独立性检验"
+          },
+          {
+            "name": "零假设",
+            "difficulty": 4,
+            "description": "独立性检验中关于两个分类变量相互独立的假设",
+            "aliases": [
+              "null hypothesis"
+            ],
+            "prerequisites": [
+              "分类变量",
+              "列联表"
+            ],
+            "definition": "零假设是在独立性检验中假定两个分类变量相互独立的命题。",
+            "example": "假设吸烟与患肺癌相互独立。",
+            "section": "8.3 列联表与独立性检验"
+          },
+          {
+            "name": "卡方统计量",
+            "difficulty": 4,
+            "description": "依据观察频数与期望频数差异构造的检验统计量",
+            "aliases": [
+              "χ²统计量"
+            ],
+            "prerequisites": [
+              "列联表",
+              "零假设"
+            ],
+            "definition": "卡方统计量用于衡量列联表观察频数与独立性假设下期望频数的差异。",
+            "example": "由列联表计算得到χ²=2.974。"
+          },
+          {
+            "name": "独立性检验",
+            "difficulty": 4,
+            "description": "利用列联表判断两个分类变量是否相互独立",
+            "aliases": [
+              "test of independence"
+            ],
+            "prerequisites": [
+              "列联表",
+              "零假设",
+              "卡方统计量"
+            ],
+            "definition": "独立性检验是依据样本数据检验两个分类变量是否相互独立的方法。",
+            "example": "检验药物是否与疾病发生有关联。",
+            "section": "8.3 列联表与独立性检验"
+          }
+        ],
+        "sections": [
+          {
+            "name": "８．１　成对数据的统计相关性",
+            "page_range": [
+              98,
+              110
+            ]
+          },
+          {
+            "name": "８．２　一元线性回归模型及其应用",
+            "page_range": [
+              110,
+              129
+            ]
+          },
+          {
+            "name": "８．３　列联表与独立性检验",
+            "page_range": [
+              129,
+              154
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "数学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第六章 计数原理",
+        "concepts": [
+          {
+            "name": "计数",
+            "difficulty": 1,
+            "description": "统计一个问题中所有可能结果的数量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "计数是数出某种方案下所有可能结果数量的过程。",
+            "example": "统计汽车号牌序号的所有可能数。"
+          },
+          {
+            "name": "分类加法计数原理",
+            "difficulty": 2,
+            "description": "按互不重叠的类别分别计数后求和",
+            "aliases": [
+              "分类加法原理"
+            ],
+            "prerequisites": [
+              "计数"
+            ],
+            "definition": "若一件事有若干类互不重叠的方案，各类方法数相加即得总数。",
+            "example": "选一个专业：5+4=9种。"
+          },
+          {
+            "name": "分步乘法计数原理",
+            "difficulty": 2,
+            "description": "分若干步骤完成任务并将各步方法数相乘",
+            "aliases": [
+              "分步乘法原理"
+            ],
+            "prerequisites": [
+              "计数"
+            ],
+            "definition": "若一件事需依次完成若干步骤，各步方法数相乘即得总数。",
+            "example": "选男生和女生各1名：30×24种。"
+          },
+          {
+            "name": "树状图",
+            "difficulty": 1,
+            "description": "用分支图列出计数问题的所有可能结果",
+            "aliases": [],
+            "prerequisites": [
+              "计数"
+            ],
+            "definition": "树状图是按步骤逐层展开并表示所有可能结果的图示方法。",
+            "example": "列出字母与数字组成的座位号。",
+            "section": "6.1 分类加法计数原理与分步乘法计数原理"
+          },
+          {
+            "name": "排列",
+            "difficulty": 2,
+            "description": "从不同元素中取出若干元素并考虑顺序",
+            "aliases": [],
+            "prerequisites": [
+              "分步乘法计数原理"
+            ],
+            "definition": "排列是从不同元素中取出若干元素按一定顺序排成一列。",
+            "example": "甲乙与乙甲是不同排列。"
+          },
+          {
+            "name": "排列数",
+            "difficulty": 2,
+            "description": "从若干不同元素取出指定元素的排列总数",
+            "aliases": [
+              "A_m^n"
+            ],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "排列数是从n个不同元素中取出m个元素的所有不同排列的个数。",
+            "example": "A₃⁴表示从4个元素取3个的排列数。"
+          },
+          {
+            "name": "排列数公式",
+            "difficulty": 3,
+            "description": "计算排列数的连乘积公式",
+            "aliases": [
+              "A_m^n公式"
+            ],
+            "prerequisites": [
+              "排列数",
+              "分步乘法计数原理"
+            ],
+            "definition": "排列数公式为A_m^n=n(n−1)…(n−m+1)。",
+            "example": "A₃⁸=8×7×6=336。"
+          },
+          {
+            "name": "全排列",
+            "difficulty": 2,
+            "description": "取出全部不同元素并按顺序排列",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "全排列是将n个不同元素全部取出的一个排列。",
+            "example": "甲乙丙的全排列共有6种。",
+            "section": "6.2 排列与组合"
+          },
+          {
+            "name": "阶乘",
+            "difficulty": 2,
+            "description": "正整数从1到自身的连乘积",
+            "aliases": [
+              "n!"
+            ],
+            "prerequisites": [
+              "全排列"
+            ],
+            "definition": "n的阶乘是正整数1到n的连乘积，记作n!。",
+            "example": "5!=5×4×3×2×1=120。",
+            "section": "6.2 排列与组合"
+          },
+          {
+            "name": "排列组合关系",
+            "difficulty": 3,
+            "description": "排列与组合按元素相同建立对应关系",
+            "aliases": [],
+            "prerequisites": [
+              "排列",
+              "组合"
+            ],
+            "definition": "取出相同元素时，一个组合的所有全排列对应多个排列。",
+            "example": "甲乙这一组合对应甲乙、乙甲两个排列。"
+          },
+          {
+            "name": "组合",
+            "difficulty": 2,
+            "description": "从不同元素中取出若干元素且不考虑顺序",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "组合是从n个不同元素中取出m个元素作为一组。",
+            "example": "甲乙与乙甲表示同一个组合。"
+          },
+          {
+            "name": "组合数",
+            "difficulty": 2,
+            "description": "从不同元素中取出指定元素的组合总数",
+            "aliases": [
+              "C_m^n"
+            ],
+            "prerequisites": [
+              "组合"
+            ],
+            "definition": "组合数是从n个不同元素中取出m个元素的所有不同组合的个数。",
+            "example": "C₂³=3。"
+          },
+          {
+            "name": "组合数公式",
+            "difficulty": 3,
+            "description": "利用排列数计算组合数的公式",
+            "aliases": [
+              "C_m^n公式"
+            ],
+            "prerequisites": [
+              "组合数",
+              "排列数公式",
+              "排列组合关系"
+            ],
+            "definition": "组合数公式为C_m^n=n!/[m!(n−m)!]。",
+            "example": "C₃¹⁰=10!/(3!7!)=120。"
+          },
+          {
+            "name": "二项式定理",
+            "difficulty": 3,
+            "description": "给出二项式任意正整数次幂的展开式",
+            "aliases": [],
+            "prerequisites": [
+              "组合数",
+              "分步乘法计数原理"
+            ],
+            "definition": "二项式定理将(a+b)^n展开为各项含组合数系数的和。",
+            "example": "(a+b)²=a²+2ab+b²。",
+            "section": "6.3 二项式定理"
+          },
+          {
+            "name": "二项式系数",
+            "difficulty": 3,
+            "description": "二项式展开式中各项对应的组合数系数",
+            "aliases": [
+              "C_k^n"
+            ],
+            "prerequisites": [
+              "组合数",
+              "二项式定理"
+            ],
+            "definition": "二项式系数是(a+b)^n展开式中各项的组合数系数C_k^n。",
+            "example": "(a+b)³中ab²的系数为C₂³=3。",
+            "section": "6.3 二项式定理"
+          },
+          {
+            "name": "二项式系数性质",
+            "difficulty": 4,
+            "description": "二项式系数具有对称、增减和求和性质",
+            "aliases": [],
+            "prerequisites": [
+              "二项式系数"
+            ],
+            "definition": "二项式系数具有对称性、增减性与各系数和为2^n等性质。",
+            "example": "C_k^n=C_{n−k}^n。",
+            "section": "6.3 二项式定理"
+          },
+          {
+            "name": "杨辉三角",
+            "difficulty": 3,
+            "description": "按行排列二项式系数形成的三角形数表",
+            "aliases": [
+              "帕斯卡三角"
+            ],
+            "prerequisites": [
+              "二项式系数",
+              "二项式系数性质"
+            ],
+            "definition": "杨辉三角是由各行二项式系数依次排列形成的数表。",
+            "example": "第5行数为1，4，6，4，1。",
+            "section": "6.3 二项式定理"
+          }
+        ],
+        "sections": [
+          {
+            "name": "6.1 分类加法计数原理与分步乘法计数原理",
+            "section_key": "db1f7e0cf8",
+            "page_range": [
+              7,
+              19
+            ]
+          },
+          {
+            "name": "6.2 排列与组合",
+            "section_key": "fb9cbf30f3",
+            "page_range": [
+              19,
+              34
+            ]
+          },
+          {
+            "name": "6.3 二项式定理",
+            "section_key": "66adcb5cce",
+            "page_range": [
+              34,
+              47
+            ]
+          }
+        ],
+        "chapter_key": "5d273d7c11",
+        "metadata": {
+          "volume_id": "269d4aa5e8c2",
+          "file_id": "269d4aa5e8c2",
+          "volume_title": "A版 选必第3册",
+          "chapter_order": 1,
+          "raw_heading": "第六章　计数原理"
+        }
+      },
+      {
+        "name": "第七章 随机变量及其分布",
+        "concepts": [
+          {
+            "name": "随机事件",
+            "difficulty": 1,
+            "description": "随机试验中可能发生或不发生的结果集合",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "随机事件是随机试验结果的集合。",
+            "example": "掷骰子点数为偶数"
+          },
+          {
+            "name": "条件概率",
+            "difficulty": 2,
+            "description": "已知一个事件发生时另一个事件发生的概率",
+            "aliases": [
+              "条件概率公式"
+            ],
+            "prerequisites": [
+              "随机事件"
+            ],
+            "definition": "若P(A)>0，则P(B|A)=P(AB)/P(A)。",
+            "example": "已知抽到团员，求抽到男生的概率"
+          },
+          {
+            "name": "事件独立性",
+            "difficulty": 2,
+            "description": "一个事件发生与否不影响另一个事件概率",
+            "aliases": [
+              "相互独立事件"
+            ],
+            "prerequisites": [
+              "随机事件",
+              "条件概率"
+            ],
+            "definition": "事件A与B独立当且仅当P(AB)=P(A)P(B)。",
+            "example": "连续两次独立抛硬币",
+            "section": "7.4 二项分布与超几何分布"
+          },
+          {
+            "name": "概率乘法公式",
+            "difficulty": 2,
+            "description": "利用条件概率计算积事件概率的公式",
+            "aliases": [
+              "乘法公式"
+            ],
+            "prerequisites": [
+              "条件概率"
+            ],
+            "definition": "若P(A)>0，则P(AB)=P(A)P(B|A)。",
+            "example": "不放回抽题先代数后几何"
+          },
+          {
+            "name": "全概率公式",
+            "difficulty": 3,
+            "description": "按互斥完备事件分解并计算复杂事件概率",
+            "aliases": [
+              "全概率定理"
+            ],
+            "prerequisites": [
+              "条件概率",
+              "概率乘法公式"
+            ],
+            "definition": "若A₁至Aₙ互斥且并为Ω，则P(B)=ΣP(Aᵢ)P(B|Aᵢ)。",
+            "example": "按不同车床来源计算次品率"
+          },
+          {
+            "name": "贝叶斯公式",
+            "difficulty": 4,
+            "description": "由结果概率反推原因条件概率的公式",
+            "aliases": [
+              "Bayes公式"
+            ],
+            "prerequisites": [
+              "条件概率",
+              "全概率公式"
+            ],
+            "definition": "P(Aᵢ|B)=P(Aᵢ)P(B|Aᵢ)/P(B)。",
+            "example": "已知次品，判断其来自哪台车床",
+            "section": "7.1 条件概率与全概率公式"
+          },
+          {
+            "name": "随机变量",
+            "difficulty": 2,
+            "description": "把随机试验结果数量化的变量",
+            "aliases": [
+              "X"
+            ],
+            "prerequisites": [
+              "随机事件"
+            ],
+            "definition": "随机变量是样本空间到实数集的对应关系。",
+            "example": "掷骰子的点数X"
+          },
+          {
+            "name": "离散型随机变量",
+            "difficulty": 2,
+            "description": "取值为有限个或可列个数的随机变量",
+            "aliases": [
+              "离散随机变量"
+            ],
+            "prerequisites": [
+              "随机变量"
+            ],
+            "definition": "离散型随机变量的可能取值是有限个或可列个。",
+            "example": "三次射击的中靶次数"
+          },
+          {
+            "name": "连续型随机变量",
+            "difficulty": 3,
+            "description": "取值充满区间且取一点概率为零的随机变量",
+            "aliases": [
+              "连续随机变量"
+            ],
+            "prerequisites": [
+              "随机变量"
+            ],
+            "definition": "连续型随机变量的取值充满某个区间或整个实轴，取一点的概率为零。",
+            "example": "食盐质量误差",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "分布列",
+            "difficulty": 2,
+            "description": "列出离散型随机变量取值及其概率",
+            "aliases": [
+              "概率分布列"
+            ],
+            "prerequisites": [
+              "离散型随机变量"
+            ],
+            "definition": "分布列建立随机变量各取值与其概率之间的对应关系。",
+            "example": "骰子点数及各自的六分之一概率"
+          },
+          {
+            "name": "数学期望",
+            "difficulty": 3,
+            "description": "随机变量取值关于概率的加权平均数",
+            "aliases": [
+              "期望",
+              "均值"
+            ],
+            "prerequisites": [
+              "分布列"
+            ],
+            "definition": "离散型随机变量X的数学期望为E(X)=Σxᵢpᵢ。",
+            "example": "均匀骰子点数的期望为3.5"
+          },
+          {
+            "name": "期望线性性质",
+            "difficulty": 3,
+            "description": "线性变换后的期望满足线性关系",
+            "aliases": [
+              "均值线性性质"
+            ],
+            "prerequisites": [
+              "数学期望"
+            ],
+            "definition": "对常数a、b，有E(aX+b)=aE(X)+b。",
+            "example": "由E(X)求E(3X+2)"
+          },
+          {
+            "name": "方差",
+            "difficulty": 3,
+            "description": "度量随机变量取值离散程度的数字特征",
+            "aliases": [
+              "D(X)",
+              "Var(X)"
+            ],
+            "prerequisites": [
+              "数学期望",
+              "分布列"
+            ],
+            "definition": "方差是各取值与均值偏差平方按概率加权的平均数。",
+            "example": "比较两名射击者成绩稳定性"
+          },
+          {
+            "name": "标准差",
+            "difficulty": 3,
+            "description": "方差的算术平方根，反映取值波动程度",
+            "aliases": [
+              "σ(X)"
+            ],
+            "prerequisites": [
+              "方差"
+            ],
+            "definition": "随机变量的标准差等于其方差的算术平方根。",
+            "example": "骰子点数标准差为√(35/12)"
+          },
+          {
+            "name": "方差性质",
+            "difficulty": 3,
+            "description": "线性变换下方差的变化规律",
+            "aliases": [],
+            "prerequisites": [
+              "方差"
+            ],
+            "definition": "对常数a、b，有D(aX+b)=a²D(X)。",
+            "example": "D(2X+3)=4D(X)"
+          },
+          {
+            "name": "伯努利试验",
+            "difficulty": 2,
+            "description": "只包含两个可能结果的试验",
+            "aliases": [
+              "Bernoulli试验"
+            ],
+            "prerequisites": [
+              "随机试验"
+            ],
+            "definition": "伯努利试验是只包含两个可能结果的随机试验。",
+            "example": "产品合格或不合格",
+            "section": "7.4 二项分布与超几何分布"
+          },
+          {
+            "name": "n重伯努利试验",
+            "difficulty": 3,
+            "description": "独立重复进行同一伯努利试验n次",
+            "aliases": [
+              "重复伯努利试验"
+            ],
+            "prerequisites": [
+              "伯努利试验",
+              "事件独立性"
+            ],
+            "definition": "n重伯努利试验是将一个伯努利试验独立重复进行n次。",
+            "example": "连续射击三次且各次独立"
+          },
+          {
+            "name": "二项分布",
+            "difficulty": 3,
+            "description": "n重伯努利试验中成功次数的分布",
+            "aliases": [
+              "B(n,p)"
+            ],
+            "prerequisites": [
+              "n重伯努利试验",
+              "离散型随机变量",
+              "分布列"
+            ],
+            "definition": "二项分布是n重伯努利试验中事件A发生次数的概率分布。",
+            "example": "三次射击中靶次数服从二项分布"
+          },
+          {
+            "name": "超几何分布",
+            "difficulty": 4,
+            "description": "不放回抽样中成功次数的概率分布",
+            "aliases": [
+              "H分布"
+            ],
+            "prerequisites": [
+              "离散型随机变量",
+              "分布列"
+            ],
+            "definition": "超几何分布描述有限总体中不放回抽样所得成功次数的分布。",
+            "example": "不放回抽取产品中的次品数"
+          },
+          {
+            "name": "正态密度函数",
+            "difficulty": 4,
+            "description": "描述正态随机变量概率分布的密度函数",
+            "aliases": [
+              "高斯密度函数"
+            ],
+            "prerequisites": [
+              "连续型随机变量"
+            ],
+            "definition": "正态密度函数为f(x)=1/(σ√(2π))e^{-(x-μ)²/(2σ²)}。",
+            "example": "用曲线面积表示误差落入区间的概率",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "正态分布",
+            "difficulty": 3,
+            "description": "具有钟形密度曲线的连续型概率分布",
+            "aliases": [
+              "高斯分布",
+              "N(μ,σ²)"
+            ],
+            "prerequisites": [
+              "连续型随机变量",
+              "正态密度函数"
+            ],
+            "definition": "若随机变量的概率密度为正态密度函数，则称其服从正态分布。",
+            "example": "食盐质量误差近似服从正态分布",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "标准正态分布",
+            "difficulty": 3,
+            "description": "均值为0、标准差为1的正态分布",
+            "aliases": [
+              "N(0,1)"
+            ],
+            "prerequisites": [
+              "正态分布"
+            ],
+            "definition": "参数μ=0、σ=1的正态分布称为标准正态分布。",
+            "example": "X服从N(0,1)",
+            "section": "7.5 正态分布"
+          },
+          {
+            "name": "正态曲线特点",
+            "difficulty": 3,
+            "description": "正态曲线单峰、对称并趋近于横轴",
+            "aliases": [],
+            "prerequisites": [
+              "正态分布"
+            ],
+            "definition": "正态曲线关于x=μ对称，在μ处达到峰值并向两端趋近横轴。",
+            "example": "均值位置是曲线最高点"
+          },
+          {
+            "name": "3σ原则",
+            "difficulty": 3,
+            "description": "正态变量通常落在均值三倍标准差范围内",
+            "aliases": [
+              "三西格玛原则"
+            ],
+            "prerequisites": [
+              "正态分布",
+              "标准差"
+            ],
+            "definition": "正态变量取值落在[μ-3σ,μ+3σ]内的概率约为0.9973。",
+            "example": "用三倍标准差范围估计合格率"
+          }
+        ],
+        "sections": [
+          {
+            "name": "7.1 条件概率与全概率公式",
+            "section_key": "a5bdf03e17",
+            "page_range": [
+              49,
+              61
+            ]
+          },
+          {
+            "name": "7.2 离散型随机变量及其分布列",
+            "section_key": "74ed2c725f",
+            "page_range": [
+              61,
+              67
+            ]
+          },
+          {
+            "name": "7.3 离散型随机变量的数字特征",
+            "section_key": "baadaaaa24",
+            "page_range": [
+              67,
+              77
+            ]
+          },
+          {
+            "name": "7.4 二项分布与超几何分布",
+            "section_key": "b7f7b238d6",
+            "page_range": [
+              77,
+              88
+            ]
+          },
+          {
+            "name": "7.5 正态分布",
+            "section_key": "de00ead563",
+            "page_range": [
+              88,
+              96
+            ]
+          }
+        ],
+        "chapter_key": "7195452897",
+        "metadata": {
+          "volume_id": "269d4aa5e8c2",
+          "file_id": "269d4aa5e8c2",
+          "volume_title": "A版 选必第3册",
+          "chapter_order": 2,
+          "raw_heading": "第七章　随机变量及其分布"
+        }
+      },
+      {
+        "name": "第八章 成对数据的统计分析",
+        "concepts": [
+          {
+            "name": "成对数据",
+            "difficulty": 2,
+            "description": "同一观测对象的两个变量观测值组成的数据对",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "成对数据是同一对象两个变量的观测值所组成的数据对。",
+            "example": "同一学生的身高和体重数据。"
+          },
+          {
+            "name": "相关关系",
+            "difficulty": 2,
+            "description": "两个变量有关联但不能由一个唯一确定另一个",
+            "aliases": [
+              "correlation"
+            ],
+            "prerequisites": [
+              "成对数据"
+            ],
+            "definition": "相关关系是两个变量有关系但不能由一个变量精确决定另一个变量的关系。",
+            "example": "身高与体重之间的关系。"
+          },
+          {
+            "name": "散点图",
+            "difficulty": 2,
+            "description": "用坐标点展示成对数据分布特征的统计图",
+            "aliases": [
+              "scatter plot"
+            ],
+            "prerequisites": [
+              "成对数据"
+            ],
+            "definition": "散点图是将成对样本数据表示为直角坐标系中点的统计图。",
+            "example": "用横轴表示年龄、纵轴表示脂肪含量。"
+          },
+          {
+            "name": "正相关",
+            "difficulty": 2,
+            "description": "一个变量增加时另一个变量总体也呈增加趋势",
+            "aliases": [
+              "positive correlation"
+            ],
+            "prerequisites": [
+              "相关关系"
+            ],
+            "definition": "正相关是一个变量值增加时另一个变量相应值也呈增加趋势的关系。",
+            "example": "广告支出与商品销售收入。"
+          },
+          {
+            "name": "负相关",
+            "difficulty": 2,
+            "description": "一个变量增加时另一个变量总体呈减小趋势",
+            "aliases": [
+              "negative correlation"
+            ],
+            "prerequisites": [
+              "相关关系"
+            ],
+            "definition": "负相关是一个变量值增加时另一个变量相应值呈减小趋势的关系。",
+            "example": "汽车行驶里程与轮胎凹槽深度。"
+          },
+          {
+            "name": "线性相关",
+            "difficulty": 3,
+            "description": "散点大致沿某条直线分布的相关关系",
+            "aliases": [],
+            "prerequisites": [
+              "相关关系",
+              "散点图"
+            ],
+            "definition": "线性相关是变量正相关或负相关且散点落在一条直线附近的关系。",
+            "example": "年龄与人体脂肪含量呈线性相关。"
+          },
+          {
+            "name": "非线性相关",
+            "difficulty": 3,
+            "description": "具有相关性但散点不沿直线而沿曲线分布",
+            "aliases": [
+              "曲线相关"
+            ],
+            "prerequisites": [
+              "相关关系",
+              "散点图"
+            ],
+            "definition": "非线性相关是两个变量具有相关性但不是线性相关的关系。",
+            "example": "散点大致落在某条曲线附近。"
+          },
+          {
+            "name": "样本相关系数",
+            "difficulty": 4,
+            "description": "刻画成对样本数据线性相关程度的数字特征",
+            "aliases": [
+              "样本线性相关系数"
+            ],
+            "prerequisites": [
+              "成对数据"
+            ],
+            "definition": "样本相关系数是由成对样本数据计算得到、反映线性相关程度的数字特征。",
+            "example": "年龄与脂肪含量的样本相关系数约为0.97。"
+          },
+          {
+            "name": "相关系数范围",
+            "difficulty": 3,
+            "description": "样本相关系数的取值范围为闭区间[-1,1]",
+            "aliases": [],
+            "prerequisites": [
+              "样本相关系数"
+            ],
+            "definition": "样本相关系数的取值范围是[-1,1]。",
+            "example": "相关系数0.97在该范围内。"
+          },
+          {
+            "name": "一元线性回归模型",
+            "difficulty": 4,
+            "description": "用一个解释变量线性描述响应变量的随机模型",
+            "aliases": [
+              "simple linear regression model"
+            ],
+            "prerequisites": [
+              "成对数据",
+              "线性相关"
+            ],
+            "definition": "一元线性回归模型用一个解释变量的线性变化描述响应变量，并包含随机误差。",
+            "example": "Y=bx+a+e，且误差均值为0、方差为常数。"
+          },
+          {
+            "name": "解释变量",
+            "difficulty": 3,
+            "description": "在回归模型中用来解释或预测响应变量的变量",
+            "aliases": [],
+            "prerequisites": [
+              "一元线性回归模型"
+            ],
+            "definition": "解释变量是回归分析中用于解释或预测另一个变量变化的变量。",
+            "example": "用汽车流量预测PM2.5浓度时汽车流量是解释变量。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "响应变量",
+            "difficulty": 3,
+            "description": "在回归模型中受到解释变量影响的变量",
+            "aliases": [],
+            "prerequisites": [
+              "一元线性回归模型"
+            ],
+            "definition": "响应变量是回归分析中需要解释、估计或预测的变量。",
+            "example": "PM2.5浓度是汽车流量的响应变量。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "最小二乘估计",
+            "difficulty": 4,
+            "description": "使残差平方和达到最小的参数估计方法",
+            "aliases": [
+              "最小二乘法"
+            ],
+            "prerequisites": [
+              "一元线性回归模型"
+            ],
+            "definition": "最小二乘估计通过使观测值与模型预测值的残差平方和最小来估计参数。",
+            "example": "估计回归直线的斜率和截距。"
+          },
+          {
+            "name": "经验回归方程",
+            "difficulty": 4,
+            "description": "利用样本估计回归模型参数得到的方程",
+            "aliases": [],
+            "prerequisites": [
+              "一元线性回归模型",
+              "最小二乘估计"
+            ],
+            "definition": "经验回归方程是根据样本数据估计模型参数后得到的预测方程。",
+            "example": "PM2.5浓度关于汽车流量的方程。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "残差",
+            "difficulty": 3,
+            "description": "观测值与经验回归方程预测值之差",
+            "aliases": [],
+            "prerequisites": [
+              "经验回归方程"
+            ],
+            "definition": "残差是响应变量观测值与相应预测值之间的差。",
+            "example": "实际成绩减去回归方程给出的成绩。"
+          },
+          {
+            "name": "残差平方和",
+            "difficulty": 4,
+            "description": "各个残差平方之和，用于评价模型效果",
+            "aliases": [],
+            "prerequisites": [
+              "残差"
+            ],
+            "definition": "残差平方和是所有样本残差平方的总和。",
+            "example": "比较两个回归模型的拟合效果。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "决定系数",
+            "difficulty": 4,
+            "description": "反映回归关系解释因变量总变异比例的统计量",
+            "aliases": [
+              "R²"
+            ],
+            "prerequisites": [
+              "残差平方和"
+            ],
+            "definition": "决定系数是回归关系能够解释响应变量总变异的比例。",
+            "example": "R²=0.6725表示模型解释约67.25%的变异。"
+          },
+          {
+            "name": "非线性回归模型",
+            "difficulty": 4,
+            "description": "用非线性函数刻画变量变化趋势的回归模型",
+            "aliases": [
+              "非线性经验回归函数"
+            ],
+            "prerequisites": [
+              "非线性相关",
+              "经验回归方程"
+            ],
+            "definition": "非线性回归模型用非线性函数描述解释变量与响应变量之间的关系。",
+            "example": "用对数函数拟合短跑世界纪录数据。",
+            "section": "8.2 一元线性回归模型及其应用"
+          },
+          {
+            "name": "分类变量",
+            "difficulty": 2,
+            "description": "取值表示不同现象或性质类别的随机变量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "分类变量的取值用于区分类别，通常不具有数值大小和运算意义。",
+            "example": "性别取值为0或1。",
+            "section": "8.3 列联表与独立性检验"
+          },
+          {
+            "name": "列联表",
+            "difficulty": 3,
+            "description": "列出两个分类变量各类别频数及合计的表格",
+            "aliases": [
+              "contingency table"
+            ],
+            "prerequisites": [
+              "分类变量"
+            ],
+            "definition": "列联表是按两个分类变量的类别交叉整理成对数据频数的表格。",
+            "example": "药物服用与是否患病的四格表。",
+            "section": "8.3 列联表与独立性检验"
+          },
+          {
+            "name": "零假设",
+            "difficulty": 4,
+            "description": "独立性检验中关于两个分类变量相互独立的假设",
+            "aliases": [
+              "null hypothesis"
+            ],
+            "prerequisites": [
+              "分类变量",
+              "列联表"
+            ],
+            "definition": "零假设是在独立性检验中假定两个分类变量相互独立的命题。",
+            "example": "假设吸烟与患肺癌相互独立。",
+            "section": "8.3 列联表与独立性检验"
+          },
+          {
+            "name": "卡方统计量",
+            "difficulty": 4,
+            "description": "依据观察频数与期望频数差异构造的检验统计量",
+            "aliases": [
+              "χ²统计量"
+            ],
+            "prerequisites": [
+              "列联表",
+              "零假设"
+            ],
+            "definition": "卡方统计量用于衡量列联表观察频数与独立性假设下期望频数的差异。",
+            "example": "由列联表计算得到χ²=2.974。"
+          },
+          {
+            "name": "独立性检验",
+            "difficulty": 4,
+            "description": "利用列联表判断两个分类变量是否相互独立",
+            "aliases": [
+              "test of independence"
+            ],
+            "prerequisites": [
+              "列联表",
+              "零假设",
+              "卡方统计量"
+            ],
+            "definition": "独立性检验是依据样本数据检验两个分类变量是否相互独立的方法。",
+            "example": "检验药物是否与疾病发生有关联。",
+            "section": "8.3 列联表与独立性检验"
+          }
+        ],
+        "sections": [
+          {
+            "name": "8.1 成对数据的统计相关性",
+            "section_key": "ca028595a8",
+            "page_range": [
+              98,
+              110
+            ]
+          },
+          {
+            "name": "8.2 一元线性回归模型及其应用",
+            "section_key": "c5a90f7dcd",
+            "page_range": [
+              110,
+              129
+            ]
+          },
+          {
+            "name": "8.3 列联表与独立性检验",
+            "section_key": "600f9cb6b5",
+            "page_range": [
+              129,
+              154
+            ]
+          }
+        ],
+        "chapter_key": "ef72b78272",
+        "metadata": {
+          "volume_id": "269d4aa5e8c2",
+          "file_id": "269d4aa5e8c2",
+          "volume_title": "A版 选必第3册",
+          "chapter_order": 3,
+          "raw_heading": "第八章　成对数据的统计分析"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "db1f7e0cf8": [
+        7,
+        19
+      ],
+      "6.1 分类加法计数原理与分步乘法计数原理": [
+        7,
+        19
+      ],
+      "fb9cbf30f3": [
+        19,
+        34
+      ],
+      "6.2 排列与组合": [
+        19,
+        34
+      ],
+      "66adcb5cce": [
+        34,
+        47
+      ],
+      "6.3 二项式定理": [
+        34,
+        47
+      ],
+      "a5bdf03e17": [
+        49,
+        61
+      ],
+      "7.1 条件概率与全概率公式": [
+        49,
+        61
+      ],
+      "74ed2c725f": [
+        61,
+        67
+      ],
+      "7.2 离散型随机变量及其分布列": [
+        61,
+        67
+      ],
+      "baadaaaa24": [
+        67,
+        77
+      ],
+      "7.3 离散型随机变量的数字特征": [
+        67,
+        77
+      ],
+      "b7f7b238d6": [
+        77,
+        88
+      ],
+      "7.4 二项分布与超几何分布": [
+        77,
+        88
+      ],
+      "de00ead563": [
+        88,
+        96
+      ],
+      "7.5 正态分布": [
+        88,
+        96
+      ],
+      "ca028595a8": [
+        98,
+        110
+      ],
+      "8.1 成对数据的统计相关性": [
+        98,
+        110
+      ],
+      "c5a90f7dcd": [
+        110,
+        129
+      ],
+      "8.2 一元线性回归模型及其应用": [
+        110,
+        129
+      ],
+      "600f9cb6b5": [
+        129,
+        154
+      ],
+      "8.3 列联表与独立性检验": [
+        129,
+        154
+      ]
+    }
+  }
+}

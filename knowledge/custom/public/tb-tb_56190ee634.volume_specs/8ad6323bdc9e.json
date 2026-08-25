@@ -1,7 +1,7 @@
 {
   "file_id": "8ad6323bdc9e",
   "text_sha256": "2c90bf39da481f66db97c2f0938949af503a39f1c55400b0ce794ab2b47ae691",
-  "prompt_version": "knowledge_graph_build@2.0.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.2.0+textbook_graph_design@1.0.0",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
   "schema_version": "3",
   "chapter_locator_version": "5",
   "chapter_excerpt_version": "2",
@@ -19,38 +19,35 @@
             "aliases": [
               "积分"
             ],
-            "prerequisites": [
-              "导数",
-              "微分"
-            ],
-            "definition": "在区间上若F'(x)=f(x)，则F(x)称为f(x)的原函数。",
-            "example": "f(x)=x²时，F(x)=x³/3是其原函数。"
+            "prerequisites": [],
+            "definition": "若在给定区间上F'(x)=f(x)，则F(x)叫作f(x)的原函数。",
+            "example": "x²的原函数是x³/3+C"
           },
           {
             "name": "不定积分",
             "difficulty": 2,
             "description": "给定函数全部原函数的一般表示。",
             "aliases": [
-              "积分表达式"
+              "积分"
             ],
             "prerequisites": [
               "原函数"
             ],
-            "definition": "f(x)的所有原函数可表示为∫f(x)dx=F(x)+C。",
-            "example": "∫x²dx=x³/3+C。"
+            "definition": "函数f(x)的不定积分是其全部原函数F(x)+C，记作∫f(x)dx。",
+            "example": "∫x²dx=x³/3+C"
           },
           {
             "name": "积分常数",
             "difficulty": 1,
-            "description": "原函数之间任意的常数差。",
+            "description": "原函数族中可任意取值的常数项。",
             "aliases": [
               "任意常数C"
             ],
             "prerequisites": [
               "原函数"
             ],
-            "definition": "同一区间内同一函数的任意两个原函数只相差一个常数。",
-            "example": "∫1dx=x+C。",
+            "definition": "同一区间内同一函数的不同原函数之间相差的任意常数叫积分常数。",
+            "example": "∫dx=x+C",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
@@ -62,56 +59,60 @@
               "不定积分"
             ],
             "definition": "在∫f(x)dx中，函数f(x)称为被积函数。",
-            "example": "∫sinx dx中被积函数是sinx。"
+            "example": "∫sinx dx中被积函数是sinx"
           },
           {
             "name": "被积表达式",
             "difficulty": 1,
-            "description": "积分号后包含微分的表达式。",
+            "description": "不定积分记号中的微分表达式f(x)dx。",
             "aliases": [],
             "prerequisites": [
               "不定积分"
             ],
             "definition": "在∫f(x)dx中，乘积f(x)dx称为被积表达式。",
-            "example": "∫x²dx的被积表达式是x²dx。"
+            "example": "∫x²dx的被积表达式是x²dx"
           },
           {
-            "name": "积分区间",
-            "difficulty": 2,
-            "description": "原函数定义和积分成立的指定区间。",
+            "name": "原函数唯一性",
+            "difficulty": 3,
+            "description": "同一区间内原函数彼此只差一个常数。",
             "aliases": [
-              "所给区间"
+              "原函数族定理"
             ],
             "prerequisites": [
-              "原函数"
+              "原函数",
+              "积分常数"
             ],
-            "definition": "原函数及积分公式通常是在给定区间上讨论的。",
-            "example": "∫dx/x=ln|x|+C须在不含零的区间上使用。"
+            "definition": "若F和Φ都是f在同一区间上的原函数，则Φ(x)=F(x)+C。",
+            "example": "x³/3与x³/3+5均为x²的原函数"
           },
           {
             "name": "初始条件",
             "difficulty": 2,
-            "description": "用已知时刻的函数值确定积分常数。",
+            "description": "用一点上的函数值确定积分常数的条件。",
             "aliases": [
-              "初始值条件"
+              "初始值"
             ],
             "prerequisites": [
+              "不定积分",
               "积分常数"
             ],
-            "definition": "给定某点的函数值可确定原函数表达式中的任意常数。",
-            "example": "v(t₀)=v₀确定v=gt+C中的C。",
+            "definition": "给定某点的函数值，可代入原函数表达式确定其中的任意常数。",
+            "example": "v(t₀)=v₀确定v=gt+C中的C",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
-            "name": "曲边梯形",
-            "difficulty": 2,
-            "description": "曲线、坐标轴和两条纵线围成的图形。",
-            "aliases": [],
-            "prerequisites": [
-              "连续函数"
+            "name": "曲边梯形面积",
+            "difficulty": 3,
+            "description": "连续函数图像与坐标线围成的面积。",
+            "aliases": [
+              "变动面积"
             ],
-            "definition": "连续函数图像、x轴及两条纵坐标线围成的区域称为曲边梯形。",
-            "example": "y=f(x)在[a,b]下方围成曲边梯形。",
+            "prerequisites": [
+              "原函数"
+            ],
+            "definition": "曲线、横轴及两条纵坐标线围成的图形称为曲边梯形，其面积可视为横坐标的函数。",
+            "example": "y=ax²下从0到x的面积为ax³/3",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
@@ -122,183 +123,158 @@
               "面积原函数定理"
             ],
             "prerequisites": [
-              "原函数",
-              "曲边梯形"
+              "曲边梯形面积",
+              "原函数"
             ],
-            "definition": "曲边梯形从起点到x的变动面积P(x)满足P'(x)=f(x)。",
-            "example": "P(x)=F(x)-F(a)，且P=F(b)-F(a)。",
+            "definition": "连续函数曲线下的变动面积P(x)满足P'(x)=f(x)。",
+            "example": "P(x)=∫ₐˣf(t)dt时P'(x)=f(x)",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
-            "name": "连续函数原函数存在性",
+            "name": "定积分面积公式",
             "difficulty": 3,
-            "description": "连续函数在区间上必有原函数。",
-            "aliases": [],
-            "prerequisites": [
-              "连续函数",
-              "原函数"
+            "description": "用原函数端点值计算曲边梯形面积。",
+            "aliases": [
+              "牛顿-莱布尼茨公式"
             ],
-            "definition": "给定区间上的每个连续函数都存在该区间上的原函数。",
-            "example": "连续函数f(x)在[a,b]上必有F'(x)=f(x)。"
+            "prerequisites": [
+              "原函数",
+              "曲边梯形面积"
+            ],
+            "definition": "若F'(x)=f(x)，则曲边梯形面积为F(b)-F(a)。",
+            "example": "∫ₐᵇf(x)dx=F(b)-F(a)"
           },
           {
             "name": "基本积分表",
             "difficulty": 2,
-            "description": "由基本求导公式直接得到的积分公式集合。",
+            "description": "由基本求导公式得到的常用积分公式表。",
             "aliases": [],
             "prerequisites": [
-              "不定积分",
-              "导数"
+              "不定积分"
             ],
-            "definition": "把已知导数公式反向书写所得的常用不定积分公式表。",
-            "example": "∫cosx dx=sinx+C。",
+            "definition": "把已知导数公式反向使用所得的常用不定积分公式集合。",
+            "example": "∫cosx dx=sinx+C",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
             "name": "常数因子法则",
             "difficulty": 2,
-            "description": "常数因子可移到积分号外。",
-            "aliases": [],
+            "description": "积分中的常数因子可移到积分号外。",
+            "aliases": [
+              "积分提常数法则"
+            ],
             "prerequisites": [
               "不定积分"
             ],
-            "definition": "常数a满足∫a f(x)dx=a∫f(x)dx。",
-            "example": "∫3x²dx=3∫x²dx。"
+            "definition": "常数a满足∫af(x)dx=a∫f(x)dx。",
+            "example": "∫3x²dx=3∫x²dx"
           },
           {
             "name": "和差积分法则",
             "difficulty": 2,
             "description": "和或差的积分等于各项积分的和或差。",
-            "aliases": [],
+            "aliases": [
+              "积分线性法则"
+            ],
             "prerequisites": [
               "不定积分"
             ],
             "definition": "∫[f(x)±g(x)]dx=∫f(x)dx±∫g(x)dx。",
-            "example": "∫(x+cosx)dx=x²/2+sinx+C。"
-          },
-          {
-            "name": "有理微分式积分",
-            "difficulty": 3,
-            "description": "对有理函数乘微分所得表达式求积分。",
-            "aliases": [
-              "有理函数积分"
-            ],
-            "prerequisites": [
-              "不定积分",
-              "基本积分表"
-            ],
-            "definition": "通过代数分解等方法把有理微分式积分化为基本积分。",
-            "example": "将1/(x²−1)分解为部分分式后积分。"
-          },
-          {
-            "name": "部分分式分解",
-            "difficulty": 3,
-            "description": "把有理函数拆成较简单分式之和。",
-            "aliases": [],
-            "prerequisites": [
-              "有理微分式积分"
-            ],
-            "definition": "将有理函数的真分式部分分解为若干基本分式的和。",
-            "example": "1/(x²−1)=1/[2(x−1)]−1/[2(x+1)]。"
+            "example": "∫(x+cosx)dx=x²/2+sinx+C"
           },
           {
             "name": "有理化被积表达式法",
             "difficulty": 4,
-            "description": "通过替换把含根式积分化为有理函数积分。",
+            "description": "通过替换把被积表达式化为有理函数。",
             "aliases": [
-              "有理化积分法"
+              "有理化法"
             ],
             "prerequisites": [
-              "有理微分式积分"
+              "不定积分"
             ],
-            "definition": "选择适当替换，使被积表达式变成有理函数的形式。",
-            "example": "令t=√(x+1)，将根式积分化为t的有理积分。",
+            "definition": "选择适当替换t=ω(x)，使被积表达式转化为有理函数形式。",
+            "example": "令t=√(x+1)化简含根式积分",
             "section": "§3. 某些含有根式的函数的积分"
           },
           {
             "name": "二项式微分",
             "difficulty": 3,
-            "description": "形如x^m(a+bx^n)^p dx的微分式。",
+            "description": "形如xᵐ(a+bxⁿ)ᵖdx的微分式。",
             "aliases": [],
             "prerequisites": [
-              "有理化被积表达式法"
+              "被积表达式"
             ],
-            "definition": "x^m(a+bx^n)^p dx称为二项式微分，其中指数为有理数。",
-            "example": "x^(-1/2)(1+x^(1/4))^(1/3)dx。",
+            "definition": "xᵐ(a+bxⁿ)ᵖdx且指数为有理数时，称为二项式微分。",
+            "example": "x⁻¹/²(1+x¹/⁴)¹/³dx",
             "section": "§3. 某些含有根式的函数的积分"
           },
           {
-            "name": "二项式可积条件",
-            "difficulty": 4,
-            "description": "二项式微分可有限形式积分的判定条件。",
+            "name": "二项式积分条件",
+            "difficulty": 5,
+            "description": "二项式微分可有限表示积分的判定条件。",
             "aliases": [
               "切比雪夫条件"
             ],
             "prerequisites": [
               "二项式微分"
             ],
-            "definition": "当p、q或p+q中至少一个为整数时可化为有理形状积分。",
-            "example": "q=(m+1)/n−1为整数时可积。"
+            "definition": "当p、(m+1)/n或(m+1)/n+p中至少一个为整数时可作有理化积分。",
+            "example": "∫dx/(1+x⁴)¹/⁴满足第三种条件"
           },
           {
             "name": "递推公式",
             "difficulty": 4,
-            "description": "把J(p,q)化为参数相邻积分的关系式。",
+            "description": "把参数不同的积分相互联系的公式。",
             "aliases": [
-              "积分递推关系"
+              "递推关系式"
             ],
             "prerequisites": [
-              "二项式微分"
+              "二项式微分",
+              "不定积分"
             ],
-            "definition": "利用恒等式和求导建立J(p,q)与相邻参数积分的关系。",
-            "example": "J(p,q)可递推为J(p+1,q)或J(p,q+1)。"
+            "definition": "通过恒等式或求导，将Jₚ,ᵩ表示为参数相差整数的同类积分。",
+            "example": "Jₚ,ᵩ可化为Jₚ₊₁,ᵩ或Jₚ,ᵩ₊₁"
+          },
+          {
+            "name": "椭圆积分",
+            "difficulty": 5,
+            "description": "通常不能用初等函数有限表示的积分。",
+            "aliases": [],
+            "prerequisites": [
+              "不定积分",
+              "标准形式"
+            ],
+            "definition": "可化为含√((1-z²)(1-k²z²))形式且一般不能有限初等表示的积分。",
+            "example": "∫dz/√((1-z²)(1-k²z²))",
+            "section": "§5. 椭圆积分"
           },
           {
             "name": "椭圆积分标准形式",
             "difficulty": 5,
-            "description": "含两个二次因子根式的规范积分形式。",
+            "description": "含双二次根式的规范化椭圆积分形式。",
             "aliases": [
               "标准形式"
             ],
             "prerequisites": [
-              "有理化被积表达式法"
+              "椭圆积分"
             ],
-            "definition": "∫R(z²)dz/√[(1−z²)(1−k²z²)]称为椭圆积分标准形式。",
-            "example": "∫dz/√[(1−z²)(1−k²z²)]。",
+            "definition": "形如∫R(z²)dz/√((1-z²)(1-k²z²))的积分形式称为标准形式。",
+            "example": "k=1/2时∫dz/√((1-z²)(1-z²/4))",
             "section": "§5. 椭圆积分"
           },
           {
-            "name": "第一类椭圆积分",
+            "name": "三类椭圆积分",
             "difficulty": 5,
-            "description": "标准椭圆积分中分子为1的基本类型。",
-            "aliases": [],
+            "description": "第一、第二、第三类椭圆积分的标准积分。",
+            "aliases": [
+              "勒让德形式"
+            ],
             "prerequisites": [
+              "椭圆积分",
               "椭圆积分标准形式"
             ],
-            "definition": "∫dz/√[(1−z²)(1−k²z²)]称为第一类椭圆积分。",
-            "example": "令z=sinφ后为∫dφ/√(1−k²sin²φ)。"
-          },
-          {
-            "name": "第二类椭圆积分",
-            "difficulty": 5,
-            "description": "标准椭圆积分中含z²分子的基本类型。",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆积分标准形式"
-            ],
-            "definition": "∫z²dz/√[(1−z²)(1−k²z²)]称为第二类椭圆积分。",
-            "example": "其勒让德形式含∫√(1−k²sin²φ)dφ。"
-          },
-          {
-            "name": "第三类椭圆积分",
-            "difficulty": 5,
-            "description": "标准椭圆积分中含额外二次因子分母的类型。",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆积分标准形式"
-            ],
-            "definition": "∫dz/[(1+hz²)√((1−z²)(1−k²z²))]称为第三类椭圆积分。",
-            "example": "其勒让德形式为∫dφ/[(1+h sin²φ)√(1−k²sin²φ)]。",
+            "definition": "经z=sinφ化换后，分别得到第一、第二和第三类椭圆积分。",
+            "example": "第一类为∫dφ/√(1-k²sin²φ)",
             "section": "§5. 椭圆积分"
           }
         ],
@@ -344,359 +320,290 @@
         "name": "第九章　定积分",
         "concepts": [
           {
-            "name": "定积分",
-            "difficulty": 3,
-            "description": "由积分和在分割变细时的极限定义的数",
-            "aliases": [],
-            "prerequisites": [
-              "积分和"
-            ],
-            "definition": "若积分和在最大小区间长度趋于零时对任意取点都趋于有限极限，该极限称为定积分。",
-            "example": "∫₀¹x dx=1/2"
-          },
-          {
             "name": "区间分割",
-            "difficulty": 2,
-            "description": "在积分区间内插入分点形成若干小区间",
+            "difficulty": 1,
+            "description": "在区间两端之间插入分点，将区间分成若干部分",
             "aliases": [
-              "区间划分",
               "分划"
             ],
             "prerequisites": [],
-            "definition": "由a=x₀<x₁<…<xₙ=b组成的分点集合把[a,b]分成若干部分。",
-            "example": "0=x₀<x₁<x₂=1"
+            "definition": "区间分割是由有序分点将[a,b]划分为若干部分区间的过程。",
+            "example": "a=x₀<x₁<…<xₙ=b。"
+          },
+          {
+            "name": "分割宽度",
+            "difficulty": 1,
+            "description": "各部分区间长度中的最大者",
+            "aliases": [
+              "λ"
+            ],
+            "prerequisites": [
+              "区间分割"
+            ],
+            "definition": "分割宽度λ是各部分长度Δxᵢ中的最大值。",
+            "example": "若各段长为0.2，则λ=0.2。"
           },
           {
             "name": "积分和",
-            "difficulty": 3,
-            "description": "各小区间函数值与区间长度乘积的总和",
+            "difficulty": 2,
+            "description": "函数值与对应小区间长度乘积的总和",
             "aliases": [
               "黎曼和"
             ],
             "prerequisites": [
-              "区间分割"
+              "区间分割",
+              "分割宽度"
             ],
-            "definition": "从每个小区间取点ξᵢ并作Σf(ξᵢ)Δxᵢ所得的和称为积分和。",
-            "example": "Σf(ξᵢ)Δxᵢ"
+            "definition": "积分和是从各部分区间取点后所得Σf(ξᵢ)Δxᵢ。",
+            "example": "Σf(ξᵢ)Δxᵢ。"
           },
           {
-            "name": "分割范数",
+            "name": "基本分割序列",
             "difficulty": 2,
-            "description": "区间分割中各小区间长度的最大值",
+            "description": "分割宽度趋于零的区间分割序列",
             "aliases": [
-              "最大分割长度"
+              "基本区间分割序列"
             ],
-            "prerequisites": [
-              "区间分割"
-            ],
-            "definition": "记λ为所有Δxᵢ=xᵢ₊₁−xᵢ中最大的一个。",
-            "example": "λ=maxΔxᵢ"
-          },
-          {
-            "name": "基本区间分割序列",
-            "difficulty": 3,
-            "description": "分割范数依次收敛到零的分割序列",
-            "aliases": [],
             "prerequisites": [
               "区间分割",
-              "分割范数"
+              "分割宽度"
             ],
-            "definition": "若一列区间分割对应的范数λ₁,λ₂,…收敛到零，则称其为基本区间分割序列。",
-            "example": "等分数不断增加的分割",
+            "definition": "基本分割序列是其分割宽度λ逐项收敛于零的分割序列。",
+            "example": "λ₁,λ₂,…→0。",
             "section": "§1.定积分的定义与存在条件"
+          },
+          {
+            "name": "定积分",
+            "difficulty": 3,
+            "description": "积分和在分割宽度趋零时的有限极限",
+            "aliases": [
+              "黎曼定积分"
+            ],
+            "prerequisites": [
+              "积分和",
+              "分割宽度"
+            ],
+            "definition": "定积分是积分和在λ趋于零且取点任意时存在的有限极限。",
+            "example": "∫₀¹x dx=1/2。"
           },
           {
             "name": "可积函数",
-            "difficulty": 3,
-            "description": "在给定区间上存在定积分的函数",
+            "difficulty": 2,
+            "description": "在给定区间上定积分存在的函数",
             "aliases": [],
             "prerequisites": [
               "定积分"
             ],
-            "definition": "函数在区间[a,b]上的积分和具有有限极限时，称该函数在此区间上可积。",
-            "example": "连续函数在闭区间上可积"
+            "definition": "若函数在区间上的定积分存在，则称该函数在此区间上可积。",
+            "example": "连续函数在闭区间上可积。"
           },
           {
-            "name": "积分上下限",
+            "name": "有界函数",
             "difficulty": 1,
-            "description": "定积分区间的起点与终点",
-            "aliases": [
-              "下限与上限"
-            ],
-            "prerequisites": [
-              "定积分"
-            ],
-            "definition": "定积分符号中a称为下限，b称为上限。",
-            "example": "∫ₐᵇf(x)dx中a、b为上下限",
+            "description": "函数值始终被两个有限常数夹住的函数",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "有界函数是在区间上满足m≤f(x)≤M的函数。",
+            "example": "f(x)=x在[0,1]上有界。",
             "section": "§1.定积分的定义与存在条件"
           },
           {
+            "name": "函数振幅",
+            "difficulty": 2,
+            "description": "函数在区间上确界与下确界之差",
+            "aliases": [
+              "振幅",
+              "ωᵢ"
+            ],
+            "prerequisites": [
+              "有界函数"
+            ],
+            "definition": "函数振幅是函数上确界M与下确界m之差。",
+            "example": "区间上界为3、下界为1时振幅为2。"
+          },
+          {
             "name": "达布下和",
-            "difficulty": 3,
-            "description": "各小区间下确界乘长度后求得的和",
+            "difficulty": 2,
+            "description": "各段下确界乘段长后求得的和",
             "aliases": [
               "下积分和"
             ],
             "prerequisites": [
-              "区间分割"
+              "区间分割",
+              "有界函数"
             ],
-            "definition": "以每个小区间上函数的下确界mᵢ作ΣmᵢΔxᵢ所得的和称为达布下和。",
-            "example": "s=ΣmᵢΔxᵢ",
+            "definition": "达布下和是ΣmᵢΔxᵢ，其中mᵢ为各段函数的下确界。",
+            "example": "下确界分别为1、2，段长均为0.5时下和为1.5。",
             "section": "§1.定积分的定义与存在条件"
           },
           {
             "name": "达布上和",
-            "difficulty": 3,
-            "description": "各小区间上确界乘长度后求得的和",
+            "difficulty": 2,
+            "description": "各段上确界乘段长后求得的和",
             "aliases": [
               "上积分和"
             ],
             "prerequisites": [
-              "区间分割"
+              "区间分割",
+              "有界函数"
             ],
-            "definition": "以每个小区间上函数的上确界Mᵢ作ΣMᵢΔxᵢ所得的和称为达布上和。",
-            "example": "S=ΣMᵢΔxᵢ"
+            "definition": "达布上和是ΣMᵢΔxᵢ，其中Mᵢ为各段函数的上确界。",
+            "example": "上确界分别为2、3，段长均为0.5时上和为2.5。"
           },
           {
-            "name": "达布下积分",
-            "difficulty": 4,
-            "description": "所有达布下和集合的上确界",
+            "name": "达布积分",
+            "difficulty": 3,
+            "description": "达布下和的上确界与上和的下确界",
             "aliases": [
-              "下积分"
+              "达布下积分与上积分"
             ],
             "prerequisites": [
-              "达布下和"
+              "达布下和",
+              "达布上和"
             ],
-            "definition": "所有区间分割的达布下和组成集合的上确界称为达布下积分。",
-            "example": "I*=sup{s}",
+            "definition": "达布积分由所有下和的上确界和所有上和的下确界构成。",
+            "example": "记下积分为I_*，上积分为I^*。",
             "section": "§1.定积分的定义与存在条件"
           },
           {
-            "name": "达布上积分",
+            "name": "定积分存在条件",
             "difficulty": 4,
-            "description": "所有达布上和集合的下确界",
-            "aliases": [
-              "上积分"
-            ],
-            "prerequisites": [
-              "达布上和"
-            ],
-            "definition": "所有区间分割的达布上和组成集合的下确界称为达布上积分。",
-            "example": "I*=inf{S}"
-          },
-          {
-            "name": "达布和单调性",
-            "difficulty": 3,
-            "description": "加分点使下和增大、上和减小",
+            "description": "分割变细时达布上和与下和之差趋于零",
             "aliases": [],
             "prerequisites": [
               "达布下和",
               "达布上和",
-              "区间分割"
+              "分割宽度"
             ],
-            "definition": "在原分割中加入新分点时，达布下和只增不减而达布上和只减不增。",
-            "example": "细分后s′≥s且S′≤S"
+            "definition": "定积分存在当且仅当λ趋于零时S−s趋于零。",
+            "example": "若S−s<ε，则积分和被确定到ε内。"
           },
           {
-            "name": "达布和不等式",
-            "difficulty": 3,
-            "description": "任意分割的下和不超过任意分割的上和",
+            "name": "连续函数",
+            "difficulty": 1,
+            "description": "在区间上连续变化、无间断点的函数",
             "aliases": [],
-            "prerequisites": [
-              "达布下和",
-              "达布上和"
-            ],
-            "definition": "对同一区间的任意两个分割，总有一个分割的下和不超过另一个分割的上和。",
-            "example": "s₁≤S₂"
-          },
-          {
-            "name": "函数振幅",
-            "difficulty": 3,
-            "description": "函数在小区间上确界与下确界之差",
-            "aliases": [
-              "区间振幅"
-            ],
-            "prerequisites": [
-              "达布下和",
-              "达布上和"
-            ],
-            "definition": "第i个小区间上的振幅定义为ωᵢ=Mᵢ−mᵢ。",
-            "example": "S−s=ΣωᵢΔxᵢ"
-          },
-          {
-            "name": "积分存在条件",
-            "difficulty": 4,
-            "description": "达布上和与下和之差趋于零",
-            "aliases": [
-              "黎曼可积判别"
-            ],
-            "prerequisites": [
-              "达布上和",
-              "达布下和",
-              "分割范数"
-            ],
-            "definition": "定积分存在的充要条件是λ趋于零时S−s趋于零。",
-            "example": "lim(S−s)=0"
-          },
-          {
-            "name": "可积函数有界性",
-            "difficulty": 3,
-            "description": "可积函数在积分区间上必为有界函数",
-            "aliases": [],
-            "prerequisites": [
-              "可积函数"
-            ],
-            "definition": "若函数在区间上无界，则积分和不能具有有限极限，因此可积函数必有界。",
-            "example": "可积函数满足m≤f(x)≤M"
+            "prerequisites": [],
+            "definition": "连续函数是在区间每一点都连续的函数。",
+            "example": "f(x)=x²在[a,b]上连续。"
           },
           {
             "name": "连续函数可积性",
-            "difficulty": 2,
-            "description": "闭区间上的连续函数一定可积",
+            "difficulty": 3,
+            "description": "闭区间上的连续函数必定可积",
             "aliases": [],
             "prerequisites": [
-              "积分存在条件",
-              "可积函数"
+              "连续函数",
+              "定积分",
+              "定积分存在条件"
             ],
-            "definition": "函数在[a,b]上连续时，其在该区间上的定积分必然存在。",
-            "example": "f(x)=x²在[0,1]上可积"
+            "definition": "函数在闭区间上连续是其定积分存在的充分条件。",
+            "example": "∫₀¹x²dx存在。"
           },
           {
             "name": "有限间断可积性",
             "difficulty": 3,
-            "description": "有界且仅有有限间断点的函数可积",
+            "description": "有界且仅有有限个间断点的函数可积",
             "aliases": [],
             "prerequisites": [
-              "积分存在条件",
-              "可积函数有界性"
+              "有界函数",
+              "定积分存在条件"
             ],
-            "definition": "有界函数在闭区间上只有有限多个间断点时，它在该区间上可积。",
-            "example": "分段常值函数可积"
+            "definition": "有界函数在闭区间上只有有限个间断点时必定可积。",
+            "example": "分段常函数在有限个跳点处仍可积。"
           },
           {
             "name": "定积分换元",
-            "difficulty": 4,
-            "description": "通过变量替换改变被积函数和积分区间",
-            "aliases": [
-              "换元公式"
-            ],
-            "prerequisites": [
-              "定积分"
-            ],
-            "definition": "若x=φ(t)满足连续性、端点对应及连续导数条件，则∫ₐᵇf(x)dx=∫αᵝf(φ(t))φ′(t)dt。",
-            "example": "x=a sin t",
-            "section": "§3.定积分的计算与变换"
-          },
-          {
-            "name": "定积分分部积分",
-            "difficulty": 4,
-            "description": "利用乘积求导将积分转化为另一积分",
-            "aliases": [
-              "分部积分法"
-            ],
-            "prerequisites": [
-              "定积分"
-            ],
-            "definition": "由乘积微分公式建立定积分中函数乘积的积分变换关系。",
-            "example": "∫u dv=uv|ₐᵇ−∫v du",
-            "section": "§3.定积分的计算与变换"
-          },
-          {
-            "name": "积分对称性",
             "difficulty": 3,
-            "description": "利用函数奇偶性化简对称区间上的积分",
+            "description": "通过变量替换将定积分化为另一变量的积分",
             "aliases": [
-              "奇偶函数积分"
+              "定积分换元公式"
             ],
             "prerequisites": [
-              "定积分"
+              "定积分",
+              "连续函数"
             ],
-            "definition": "偶函数在[-a,a]上的积分为两倍半区间积分，奇函数积分为零。",
-            "example": "∫₋ₐᵃf(x)dx=0（奇函数）"
+            "definition": "若x=φ(t)满足区间端点和连续导数条件，则∫ₐᵇf(x)dx=∫ᵅᵝf(φ(t))φ′(t)dt。",
+            "example": "令x=a sin t计算∫₀ᵃ√(a²−x²)dx。"
           },
           {
-            "name": "周期函数积分",
-            "difficulty": 3,
-            "description": "周期函数在任一周期区间上的积分相同",
+            "name": "对称区间积分",
+            "difficulty": 2,
+            "description": "奇偶函数在对称区间上的积分规律",
             "aliases": [],
             "prerequisites": [
               "定积分"
             ],
-            "definition": "连续周期函数在长度等于其周期的任意区间上的积分具有相同值。",
-            "example": "∫ₐᵃ⁺ωf=∫₀ᵝf"
+            "definition": "连续偶函数在[-a,a]上的积分为两倍右半段，奇函数积分为零。",
+            "example": "∫₋₁¹x³dx=0。"
+          },
+          {
+            "name": "周期函数积分",
+            "difficulty": 2,
+            "description": "连续周期函数在任一周期区间上的积分相同",
+            "aliases": [],
+            "prerequisites": [
+              "定积分",
+              "连续函数"
+            ],
+            "definition": "连续周期函数在长度等于其周期的任一区间上积分值相同。",
+            "example": "∫ₐ^{a+ω}f(x)dx=∫₀^ωf(x)dx。"
           },
           {
             "name": "矩形公式",
             "difficulty": 3,
-            "description": "用小区间中点函数值近似定积分",
-            "aliases": [
-              "中点矩形公式"
-            ],
+            "description": "用等分区间中点函数值近似定积分",
+            "aliases": [],
             "prerequisites": [
-              "积分和",
-              "定积分"
+              "定积分",
+              "等分区间"
             ],
-            "definition": "将区间等分并用各小区间中点的函数值构成积分近似值的公式。",
-            "example": "∫ₐᵇf≈hΣf(xᵢ₋₁⁄₂)",
+            "definition": "矩形公式以各小区间中点函数值乘宽度的和近似定积分。",
+            "example": "∫₁²f(x)dx≈(1/n)Σf(x_{i−1/2})。",
             "section": "§5.积分的近似计算"
           },
           {
             "name": "梯形公式",
             "difficulty": 3,
-            "description": "用相邻端点函数值的平均值近似积分",
+            "description": "用各小区间端点函数值构成梯形近似积分",
+            "aliases": [],
+            "prerequisites": [
+              "定积分",
+              "等分区间"
+            ],
+            "definition": "梯形公式用相邻端点函数值的平均值乘区间宽度求积分近似值。",
+            "example": "∫ₐᵇf≈h[(f₀+fₙ)/2+Σfᵢ]。",
+            "section": "§5.积分的近似计算"
+          },
+          {
+            "name": "辛普森公式",
+            "difficulty": 4,
+            "description": "结合端点、中点函数值的高精度积分公式",
             "aliases": [
-              "梯形法则"
+              "抛物线公式"
             ],
             "prerequisites": [
               "定积分",
-              "区间分割"
+              "等分区间"
             ],
-            "definition": "以每个小区间端点函数值平均数乘区间长度并求和来近似定积分。",
-            "example": "Tₙ=h[(y₀+yₙ)/2+Σyᵢ]",
-            "section": "§5.积分的近似计算"
+            "definition": "辛普森公式用奇偶分点加权函数值近似定积分。",
+            "example": "∫₀¹e^(−x²)dx可用辛普森公式计算。"
           },
           {
-            "name": "辛卜森公式",
+            "name": "积分误差余项",
             "difficulty": 4,
-            "description": "结合端点、中点及内点值近似定积分",
+            "description": "积分近似值与真实值之差及其估计式",
             "aliases": [
-              "辛普森公式"
-            ],
-            "prerequisites": [
-              "梯形公式",
-              "定积分"
-            ],
-            "definition": "在等分区间上按奇偶节点加权求和以近似定积分的公式。",
-            "example": "Sₙ=h/3[y₀+y₂ₙ+4Σy₂ᵢ₋₁+2Σy₂ᵢ]",
-            "section": "§5.积分的近似计算"
-          },
-          {
-            "name": "积分余项",
-            "difficulty": 4,
-            "description": "数值积分公式近似值与准确值的差",
-            "aliases": [
+              "余项",
               "误差项"
             ],
             "prerequisites": [
               "矩形公式",
               "梯形公式",
-              "辛卜森公式"
+              "辛普森公式"
             ],
-            "definition": "定积分准确值与数值积分公式所得近似值之差称为余项。",
-            "example": "Rₙ=积分值−近似值"
-          },
-          {
-            "name": "递推积分公式",
-            "difficulty": 3,
-            "description": "用低阶积分表示高阶积分的关系式",
-            "aliases": [
-              "积分递推式"
-            ],
-            "prerequisites": [
-              "定积分分部积分"
-            ],
-            "definition": "通过分部积分等方法建立不同阶数或参数积分之间的递推关系。",
-            "example": "Kₙ=(1/n+Kₙ₋₁)/2"
+            "definition": "积分误差余项是数值积分公式所得近似值与定积分真实值的差。",
+            "example": "辛普森余项量级约按1/n⁴减小。"
           }
         ],
         "sections": [
@@ -741,257 +648,277 @@
         "name": "第十章　积分学在几何学、力学与物理学中的应用",
         "concepts": [
           {
+            "name": "定积分",
+            "difficulty": 2,
+            "description": "用极限定义的积分，用于累加连续变化量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "定积分是函数在区间上累积变化量的极限。",
+            "example": "用定积分计算曲线弧长。"
+          },
+          {
+            "name": "参数方程",
+            "difficulty": 2,
+            "description": "用参数表示平面曲线坐标的方程组。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "参数方程以同一参数分别表示曲线上点的坐标。",
+            "example": "x=φ(t)，y=ψ(t)。"
+          },
+          {
             "name": "曲线长度",
             "difficulty": 2,
-            "description": "曲线内接折线周长的上确界或极限。",
+            "description": "曲线内接折线周长上确界所定义的长度。",
             "aliases": [
               "弧长"
             ],
-            "prerequisites": [],
-            "definition": "曲线长度是内接折线周长集合的上确界。",
-            "example": "参数曲线弧长为∫√(x'²+y'²)dt。"
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "曲线长度是内接于曲线的折线周长集合的上确界。",
+            "example": "计算悬链线从顶点到点M的弧长。"
           },
           {
             "name": "参数弧长公式",
-            "difficulty": 2,
-            "description": "用参数方程计算平面曲线弧长的积分公式。",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "参数曲线长度等于速度模长的定积分。",
+            "aliases": [
+              "参数曲线弧长公式"
+            ],
             "prerequisites": [
+              "参数方程",
+              "定积分",
               "曲线长度"
             ],
-            "definition": "参数曲线的弧长等于速度模长在参数区间上的积分。",
-            "example": "x=φ(t),y=ψ(t)时用公式(4)求长。"
+            "definition": "参数曲线的弧长为∫√(x′²+y′²)dt。",
+            "example": "星形线四分之一弧长为3a/2。"
           },
           {
-            "name": "显式弧长公式",
-            "difficulty": 2,
-            "description": "由显式方程计算曲线弧长的公式。",
+            "name": "显式曲线弧长",
+            "difficulty": 3,
+            "description": "显式曲线弧长公式为∫√(1+y′²)dx。",
             "aliases": [],
             "prerequisites": [
-              "曲线长度"
+              "曲线长度",
+              "定积分"
             ],
-            "definition": "曲线y=f(x)的弧长是∫√(1+f'(x)²)dx。",
-            "example": "求抛物线一段弧长。"
+            "definition": "曲线y=f(x)的长度由横坐标积分表达。",
+            "example": "求抛物线从顶点到点M的弧长。"
           },
           {
             "name": "极坐标弧长",
             "difficulty": 3,
-            "description": "由极坐标方程计算曲线弧长的方法。",
-            "aliases": [],
-            "prerequisites": [
-              "曲线长度"
+            "description": "极坐标曲线弧长由∫√(r²+r′²)dθ计算。",
+            "aliases": [
+              "极坐标曲线弧长"
             ],
-            "definition": "极坐标曲线的弧长是∫√(r²+(dr/dθ)²)dθ。",
-            "example": "用公式求阿基米德螺线弧长。"
+            "prerequisites": [
+              "曲线长度",
+              "参数方程",
+              "定积分"
+            ],
+            "definition": "极坐标曲线的弧长是极径与其导数平方和开方的积分。",
+            "example": "计算阿基米德螺线的弧长。"
           },
           {
-            "name": "弧长极限定义",
-            "difficulty": 3,
-            "description": "以折线最大边长趋零时的周长极限定义弧长。",
+            "name": "折线极限定义",
+            "difficulty": 4,
+            "description": "折线最大边趋零时，周长极限等于曲线长。",
             "aliases": [],
             "prerequisites": [
               "曲线长度"
             ],
-            "definition": "非闭曲线弧长等于内接折线最大边趋零时周长的极限。",
+            "definition": "非闭曲线长度可定义为内接折线周长在分割加细时的极限。",
             "example": "S=limλ→0 p。"
           },
           {
+            "name": "截面面积法",
+            "difficulty": 3,
+            "description": "以平行截面面积的积分求立体体积。",
+            "aliases": [
+              "平行截面法"
+            ],
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "立体体积等于其截面面积沿截面方向的定积分。",
+            "example": "椭球体积由椭圆截面面积积分得到。"
+          },
+          {
             "name": "旋转体体积",
-            "difficulty": 2,
-            "description": "通过垂直截面面积积分计算旋转体体积。",
+            "difficulty": 3,
+            "description": "平面图形绕轴旋转形成的立体体积。",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "旋转体体积等于其截面面积沿轴向的积分。",
-            "example": "绕x轴时V=π∫y²dx。",
+            "prerequisites": [
+              "截面面积法",
+              "定积分"
+            ],
+            "definition": "旋转体体积是旋转区域所包围立体的体积。",
+            "example": "抛物面与球面的公共部分体积。",
             "section": "§3.力学与物理学的数量的计算"
           },
           {
-            "name": "截面面积积分",
-            "difficulty": 2,
-            "description": "用连续截面面积的定积分求立体体积。",
-            "aliases": [],
-            "prerequisites": [
-              "旋转体体积"
-            ],
-            "definition": "立体体积等于截面面积函数在范围内的定积分。",
-            "example": "椭球体由椭圆截面面积积分求体积。"
-          },
-          {
-            "name": "旋转曲面面积",
+            "name": "圆盘法",
             "difficulty": 3,
-            "description": "由平面曲线旋转所得曲面的面积计算。",
-            "aliases": [],
-            "prerequisites": [
-              "曲线长度"
+            "description": "用垂直旋转轴的圆盘截面积积分求体积。",
+            "aliases": [
+              "圆盘截面法"
             ],
-            "definition": "旋转曲面面积是内接折线旋转面积在分段趋细时的极限。",
-            "example": "曲线绕x轴旋转可用2π∫y ds。"
+            "prerequisites": [
+              "旋转体体积",
+              "截面面积法"
+            ],
+            "definition": "圆盘法将旋转体体积表示为圆盘面积的定积分。",
+            "example": "V=π∫y²dx。"
           },
           {
-            "name": "圆台侧面积逼近",
-            "difficulty": 2,
-            "description": "以折线旋转形成圆台侧面并取面积极限。",
-            "aliases": [],
-            "prerequisites": [
+            "name": "旋转面面积",
+            "difficulty": 4,
+            "description": "曲线绕轴旋转形成曲面的面积。",
+            "aliases": [
               "旋转曲面面积"
             ],
-            "definition": "折线各段旋转形成圆台侧面，其面积和逼近旋转曲面面积。",
-            "example": "单段面积为2π(y_i+y_{i+1})l_i/2。"
-          },
-          {
-            "name": "椭圆积分",
-            "difficulty": 4,
-            "description": "由含根式积分表示的一类特殊积分。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "椭圆积分是摆运动和不同半径圆柱体积中出现的特殊定积分。",
-            "example": "∫dφ/√(1-k²sin²φ)是椭圆积分。"
-          },
-          {
-            "name": "第一类椭圆积分",
-            "difficulty": 4,
-            "description": "被积函数含√(1-k²sin²φ)倒数的椭圆积分。",
-            "aliases": [],
             "prerequisites": [
-              "椭圆积分"
+              "曲线长度",
+              "定积分"
             ],
-            "definition": "第一类椭圆积分定义为∫dφ/√(1-k²sin²φ)。",
-            "example": "单摆时间公式化为F(φ,k)。",
-            "section": "§4.最简单的微分方程"
+            "definition": "旋转面面积是内接折线旋转所得圆台侧面积在分割加细时的极限。",
+            "example": "曲线绕x轴旋转得到旋转面。"
           },
           {
-            "name": "完全椭圆积分",
-            "difficulty": 4,
-            "description": "上限取π/2的椭圆积分。",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆积分"
-            ],
-            "definition": "完全椭圆积分是椭圆积分上限为π/2时的特殊形式。",
-            "example": "单摆周期含K(k)。"
-          },
-          {
-            "name": "雅可比椭圆函数",
-            "difficulty": 5,
-            "description": "由第一类椭圆积分反演得到的函数。",
-            "aliases": [
-              "椭圆正弦",
-              "sn函数"
-            ],
-            "prerequisites": [
-              "第一类椭圆积分"
-            ],
-            "definition": "雅可比椭圆函数sn是椭圆积分反函数的正弦表示。",
-            "example": "单摆满足sin(θ/2)=sin(α/2)sn(√(g/l)t)。",
-            "section": "§4.最简单的微分方程"
-          },
-          {
-            "name": "单摆运动方程",
-            "difficulty": 4,
-            "description": "由重力切向分力和能量关系建立的摆运动方程。",
-            "aliases": [],
-            "prerequisites": [
-              "力的功",
-              "活力定律"
-            ],
-            "definition": "单摆运动方程描述摆角随时间变化的微分关系。",
-            "example": "dθ/dt=-√(g/l)√(2(cosθ-cosα))。"
-          },
-          {
-            "name": "单摆周期",
-            "difficulty": 4,
-            "description": "单摆完成一次振动所需的时间。",
-            "aliases": [],
-            "prerequisites": [
-              "单摆运动方程",
-              "完全椭圆积分"
-            ],
-            "definition": "单摆周期由摆长、重力加速度和振幅共同决定。",
-            "example": "T=2√(l/g)K(k)。"
-          },
-          {
-            "name": "力的功",
+            "name": "圆台侧面积和",
             "difficulty": 3,
-            "description": "力沿位移方向分量对位移的积分。",
-            "aliases": [
-              "功"
+            "description": "折线绕轴旋转所得圆台侧面积的总和。",
+            "aliases": [],
+            "prerequisites": [
+              "旋转面面积",
+              "曲线长度"
             ],
-            "prerequisites": [],
-            "definition": "变力沿路径所作的功等于力的切向分量对路程的积分。",
-            "example": "摆运动中A=-∫mg sinθ ds。",
-            "section": "§3.力学与物理学的数量的计算"
+            "definition": "折线各边旋转形成的圆台侧面积之和近似旋转面面积。",
+            "example": "Q=2πΣ((yi+yi+1)/2)li。"
+          },
+          {
+            "name": "功的积分",
+            "difficulty": 3,
+            "description": "变力沿路径做功由力的切向分量积分得到。",
+            "aliases": [
+              "变力做功"
+            ],
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "变力沿路径的功是力在位移方向分量对路程的积分。",
+            "example": "摆上升过程的重力功为−∫mg sinθ ds。"
           },
           {
             "name": "活力定律",
             "difficulty": 3,
-            "description": "用功联系物体动能变化的力学定律。",
-            "aliases": [],
-            "prerequisites": [
-              "力的功"
+            "description": "力所做的功等于动能的变化量。",
+            "aliases": [
+              "动能定理"
             ],
-            "definition": "合力所作的功等于物体动能的增加量。",
-            "example": "摆上升时功等于动能损失。"
+            "prerequisites": [
+              "功的积分"
+            ],
+            "definition": "物体所受合力做功等于其动能的增量。",
+            "example": "用重力功求摆在位置M的速度。"
+          },
+          {
+            "name": "摆的运动方程",
+            "difficulty": 4,
+            "description": "单摆角位移与时间关系由能量积分确定。",
+            "aliases": [
+              "单摆运动"
+            ],
+            "prerequisites": [
+              "活力定律",
+              "功的积分"
+            ],
+            "definition": "摆的运动方程描述摆角θ随时间t的变化关系。",
+            "example": "dθ/dt=−√(g/l)√(2(cosθ−cosα))。"
+          },
+          {
+            "name": "椭圆积分",
+            "difficulty": 4,
+            "description": "含√(1−k²sin²φ)等因子的特殊积分。",
+            "aliases": [
+              "椭圆积分"
+            ],
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "椭圆积分是一类通常不能化为初等函数的定积分。",
+            "example": "摆的周期用第一类椭圆积分表示。"
+          },
+          {
+            "name": "第一类椭圆积分",
+            "difficulty": 4,
+            "description": "F(φ,k)=∫₀φ(1−k²sin²u)^−1/2du。",
+            "aliases": [
+              "F(φ,k)"
+            ],
+            "prerequisites": [
+              "椭圆积分",
+              "定积分"
+            ],
+            "definition": "第一类椭圆积分是被积函数为倒数平方根的椭圆积分。",
+            "example": "摆时间t=√(l/g)F(φ,k)。",
+            "section": "§4.最简单的微分方程"
+          },
+          {
+            "name": "全椭圆积分",
+            "difficulty": 4,
+            "description": "积分上限为π/2的椭圆积分，如K(k)、E(k)。",
+            "aliases": [
+              "完全椭圆积分"
+            ],
+            "prerequisites": [
+              "椭圆积分",
+              "定积分"
+            ],
+            "definition": "全椭圆积分是椭圆积分在四分之一周期区间上的取值。",
+            "example": "K(k)=∫₀^{π/2}dφ/√(1−k²sin²φ)。"
           },
           {
             "name": "气压公式",
             "difficulty": 3,
-            "description": "描述气压随海拔高度变化的指数公式。",
+            "description": "气压随海拔高度按指数规律衰减。",
             "aliases": [
               "气压高度公式"
             ],
             "prerequisites": [
               "微分方程"
             ],
-            "definition": "在模型假设下气压满足p=p₀e^{-kh}。",
+            "definition": "在温度条件下，气压满足p=p₀e^(−kh)。",
             "example": "由气压表读数估计海拔高度。",
             "section": "§4.最简单的微分方程"
           },
           {
             "name": "绳带摩擦公式",
-            "difficulty": 3,
-            "description": "给出绕鼓轮绳两端张力关系的公式。",
+            "difficulty": 4,
+            "description": "绕轮绳两端张力满足S₁=S₀e^(μω)。",
             "aliases": [
               "欧拉摩擦公式"
             ],
             "prerequisites": [
               "微分方程"
             ],
-            "definition": "绳带临界滑动时两端张力满足S₁=S₀e^{μω}。",
-            "example": "抱角增大可提高可承受张力比。"
-          },
-          {
-            "name": "绝热过程",
-            "difficulty": 3,
-            "description": "气体与环境没有热交换的过程。",
-            "aliases": [],
-            "prerequisites": [
-              "微分方程"
-            ],
-            "definition": "绝热过程中气体与周围环境之间的热交换量为零。",
-            "example": "气体绝热膨胀满足泊松公式。"
+            "definition": "绳与圆柱接触并将要滑动时，张力比随摩擦系数和抱角指数变化。",
+            "example": "S₁/S₀=e^(μω)。"
           },
           {
             "name": "泊松公式",
             "difficulty": 4,
-            "description": "理想气体绝热过程中的压力体积关系。",
+            "description": "理想气体绝热过程中满足pV^k=C。",
             "aliases": [
-              "绝热方程"
+              "绝热过程公式"
             ],
             "prerequisites": [
-              "绝热过程"
+              "微分方程"
             ],
-            "definition": "单位质量理想气体绝热变化满足pV^k=C。",
-            "example": "k=c_p/c_V>1时由微分方程积分得到。",
+            "definition": "理想气体绝热变化时压力与体积的幂关系为pV^k为常量。",
+            "example": "由cV Vdp+cp p dV=0积分得到。",
             "section": "§4.最简单的微分方程"
-          },
-          {
-            "name": "微分方程构成",
-            "difficulty": 4,
-            "description": "由无穷小量关系建立物理量变化方程的方法。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "微分方程构成是从无穷小元素关系推导量间依赖关系的过程。",
-            "example": "由-dp=s dh建立气压方程。"
           }
         ],
         "sections": [
@@ -1031,41 +958,37 @@
           {
             "name": "无穷级数",
             "difficulty": 1,
-            "description": "由无穷序列各项相加形成的符号表达式",
-            "aliases": [
-              "无穷和"
-            ],
+            "description": "由无穷序列各项依次相加形成的符号表达式",
+            "aliases": [],
             "prerequisites": [
-              "数列"
+              "数列极限"
             ],
-            "definition": "给定数列后按顺序写出的无穷项相加式称为无穷级数。",
-            "example": "∑ₙ₌₁^∞1/n"
+            "definition": "形如∑a_n的无穷项相加式称为无穷级数。",
+            "example": "1+1/2+1/3+⋯"
           },
           {
-            "name": "级数的项",
+            "name": "级数项",
             "difficulty": 1,
             "description": "构成无穷级数的各个数",
             "aliases": [],
-            "prerequisites": [
-              "无穷级数"
-            ],
-            "definition": "无穷级数中被逐项相加的数称为级数的项。",
-            "example": "级数∑aₙ的项为a₁、a₂等"
+            "prerequisites": [],
+            "definition": "无穷级数中被相加的每个数称为级数的项。",
+            "example": "级数∑a_n的项为a_n",
+            "section": "§5.累级数与二重级数"
           },
           {
             "name": "部分和",
             "difficulty": 1,
             "description": "级数前若干项的有限和",
             "aliases": [
-              "段",
-              "部分和序列"
+              "部分和序列",
+              "级数的段"
             ],
             "prerequisites": [
-              "无穷级数",
-              "级数的项"
+              "无穷级数"
             ],
-            "definition": "级数前n项之和Aₙ=a₁+⋯+aₙ称为第n个部分和。",
-            "example": "1+1/2+1/3是调和级数的第三个部分和"
+            "definition": "级数前n项之和A_n=a_1+⋯+a_n称为第n个部分和。",
+            "example": "1+1/2+1/3的部分和为11/6"
           },
           {
             "name": "级数的和",
@@ -1075,8 +998,8 @@
             "prerequisites": [
               "部分和"
             ],
-            "definition": "级数部分和Aₙ在n趋于无穷时的确定极限称为级数的和。",
-            "example": "∑ₙ₌₁^∞(1/2)ⁿ=1"
+            "definition": "部分和A_n当n趋于无穷时的确定极限称为级数的和。",
+            "example": "∑(1/2)^n=1"
           },
           {
             "name": "收敛级数",
@@ -1086,8 +1009,8 @@
             "prerequisites": [
               "级数的和"
             ],
-            "definition": "具有有限和的级数称为收敛级数。",
-            "example": "∑ₙ₌₁^∞1/2ⁿ收敛"
+            "definition": "具有有限级数和的级数称为收敛级数。",
+            "example": "∑_{n=1}∞1/2^n收敛"
           },
           {
             "name": "发散级数",
@@ -1097,20 +1020,21 @@
             "prerequisites": [
               "级数的和"
             ],
-            "definition": "和等于正负无穷或根本不存在的级数称为发散级数。",
-            "example": "∑ₙ₌₁^∞1/√n发散"
+            "definition": "级数和为正负无穷或不存在时称为发散级数。",
+            "example": "1-1+1-1+⋯发散"
           },
           {
             "name": "几何级数",
             "difficulty": 2,
-            "description": "相邻两项比值恒为公比的级数",
-            "aliases": [],
-            "prerequisites": [
-              "无穷级数",
-              "部分和"
+            "description": "相邻项比值恒定的无穷级数",
+            "aliases": [
+              "等比级数"
             ],
-            "definition": "形如a+aq+aq²+⋯的级数称为几何级数。",
-            "example": "∑ₙ₌₀^∞aqⁿ"
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "形如∑_{n=0}∞aq^n的级数称为几何级数。",
+            "example": "1+1/2+1/4+⋯"
           },
           {
             "name": "几何级数收敛性",
@@ -1119,129 +1043,171 @@
             "aliases": [],
             "prerequisites": [
               "几何级数",
-              "收敛级数",
-              "发散级数"
-            ],
-            "definition": "几何级数当|q|<1时收敛且和为a/(1-q)，当|q|≥1时发散。",
-            "example": "∑ₙ₌₀^∞(1/2)ⁿ=2"
-          },
-          {
-            "name": "余式",
-            "difficulty": 2,
-            "description": "弃去级数前m项后得到的级数",
-            "aliases": [
-              "余项级数"
-            ],
-            "prerequisites": [
-              "无穷级数",
               "收敛级数"
             ],
-            "definition": "从原级数第m项之后开始的级数称为该级数的余式。",
-            "example": "∑ₙ₌ₘ₊₁^∞aₙ是第m项后的余式"
+            "definition": "几何级数当且仅当|q|<1时收敛，和为a/(1-q)。",
+            "example": "∑(1/3)^n=3/2"
+          },
+          {
+            "name": "余式级数",
+            "difficulty": 2,
+            "description": "删去级数前有限项后得到的级数",
+            "aliases": [
+              "级数余式"
+            ],
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "弃去原级数前m项后所得的级数称为第m项后的余式。",
+            "example": "∑a_n的余式为∑_{n=m+1}∞a_n"
           },
           {
             "name": "余式和",
             "difficulty": 2,
-            "description": "余式的和并随截取位置趋于零",
+            "description": "余式级数的和，等于总和减部分和",
             "aliases": [],
             "prerequisites": [
-              "余式",
-              "级数的和"
+              "余式级数",
+              "部分和"
             ],
-            "definition": "收敛级数第m项后余式的和αₘ等于A−Aₘ并趋于零。",
-            "example": "几何级数余式和随m增大趋于0"
+            "definition": "收敛级数第m项后余式的和为α_m=A-A_m。",
+            "example": "若A=1，A_m=3/4，则α_m=1/4"
           },
           {
-            "name": "级数线性运算",
+            "name": "收敛必要条件",
             "difficulty": 2,
-            "description": "收敛级数可数乘并逐项相加减",
+            "description": "收敛级数的通项必须趋于零",
             "aliases": [],
             "prerequisites": [
               "收敛级数",
-              "部分和"
+              "数列极限"
             ],
-            "definition": "收敛级数数乘及逐项加减后仍收敛，和作相应线性运算。",
-            "example": "∑(aₙ+bₙ)=∑aₙ+∑bₙ"
-          },
-          {
-            "name": "通项趋零",
-            "difficulty": 2,
-            "description": "级数收敛时其通项必须趋于零",
-            "aliases": [
-              "收敛必要条件"
-            ],
-            "prerequisites": [
-              "收敛级数",
-              "部分和"
-            ],
-            "definition": "若级数收敛，则其通项aₙ必满足aₙ趋于零。",
-            "example": "∑1/√n的通项趋零但级数仍发散"
+            "definition": "若∑a_n收敛，则其通项a_n必满足a_n→0。",
+            "example": "∑1/n发散但1/n→0"
           },
           {
             "name": "正项级数",
             "difficulty": 2,
-            "description": "各项均为非负数的无穷级数",
+            "description": "各项均为非负数的级数",
             "aliases": [],
             "prerequisites": [
-              "无穷级数",
-              "级数的项"
+              "无穷级数"
             ],
-            "definition": "满足aₙ≥0的无穷级数称为正项级数。",
-            "example": "∑ₙ₌₁^∞1/n²是正项级数"
+            "definition": "满足a_n≥0的无穷级数称为正项级数。",
+            "example": "∑1/n^2是正项级数"
           },
           {
-            "name": "正项级数判据",
+            "name": "正项级数判定",
             "difficulty": 3,
-            "description": "部分和有界决定正项级数有限收敛",
-            "aliases": [
-              "正项级数收敛条件"
-            ],
+            "description": "部分和有界则收敛，无界则发散",
+            "aliases": [],
             "prerequisites": [
               "正项级数",
               "部分和"
             ],
-            "definition": "正项级数部分和递增，部分和有界当且仅当级数收敛。",
-            "example": "∑1/n²的部分和有界，故收敛"
+            "definition": "正项级数的部分和递增，部分和有界当且仅当级数收敛。",
+            "example": "∑1/n^2的部分和有界，故收敛"
           },
           {
             "name": "调和级数",
             "difficulty": 2,
-            "description": "各项为自然数倒数的正项级数",
+            "description": "各项为自然数倒数的级数",
             "aliases": [],
             "prerequisites": [
-              "正项级数",
-              "部分和"
+              "正项级数"
             ],
-            "definition": "级数∑ₙ₌₁^∞1/n称为调和级数。",
-            "example": "1+1/2+1/3+⋯发散"
+            "definition": "级数∑_{n=1}∞1/n称为调和级数。",
+            "example": "1+1/2+1/3+⋯"
           },
           {
-            "name": "ζ级数",
+            "name": "调和级数发散",
             "difficulty": 3,
-            "description": "通项为自然数s次方倒数的级数",
+            "description": "调和级数部分和无上界而发散",
+            "aliases": [],
+            "prerequisites": [
+              "调和级数",
+              "正项级数判定"
+            ],
+            "definition": "调和级数的部分和无上界，因此其和为无穷。",
+            "example": "H_{2^k}>k/2"
+          },
+          {
+            "name": "p级数",
+            "difficulty": 2,
+            "description": "通项为自然数负实次幂的级数",
             "aliases": [
-              "调和级数的推广"
+              "ζ级数"
+            ],
+            "prerequisites": [
+              "正项级数"
+            ],
+            "definition": "形如∑_{n=1}∞1/n^s的级数称为p级数或调和型级数。",
+            "example": "∑1/n^2"
+          },
+          {
+            "name": "p级数收敛性",
+            "difficulty": 3,
+            "description": "p级数在指数大于一时收敛",
+            "aliases": [],
+            "prerequisites": [
+              "p级数",
+              "正项级数判定"
+            ],
+            "definition": "∑1/n^s在s>1时收敛，在s≤1时发散。",
+            "example": "∑1/n^{3/2}收敛"
+          },
+          {
+            "name": "比较判别法",
+            "difficulty": 3,
+            "description": "通过项的大小比较判断正项级数收敛性",
+            "aliases": [
+              "比较法"
             ],
             "prerequisites": [
               "正项级数",
-              "调和级数"
+              "正项级数判定"
             ],
-            "definition": "级数ζ(s)=∑ₙ₌₁^∞1/nˢ是调和级数的推广。",
-            "example": "∑1/n²收敛，∑1/n发散"
+            "definition": "用已知收敛或发散级数比较正项大小以判定所给级数性质的方法。",
+            "example": "0≤a_n≤1/n^2则∑a_n收敛",
+            "section": "§2.正项级数的收敛性"
           },
           {
             "name": "绝对收敛",
             "difficulty": 3,
-            "description": "各项取绝对值后仍然收敛",
+            "description": "各项绝对值构成的级数收敛",
             "aliases": [
               "绝对收敛级数"
             ],
             "prerequisites": [
-              "收敛级数",
-              "正项级数"
+              "收敛级数"
             ],
-            "definition": "级数各项取绝对值后所得级数收敛，称原级数绝对收敛。",
-            "example": "∑(-1)ⁿ/n²绝对收敛"
+            "definition": "若∑|a_n|收敛，则称∑a_n绝对收敛。",
+            "example": "∑(-1)^n/n^2绝对收敛"
+          },
+          {
+            "name": "变号级数",
+            "difficulty": 2,
+            "description": "级数项正负号交替或发生变化",
+            "aliases": [],
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "项中正负号交替变化的级数称为变号级数。",
+            "example": "1-1/2+1/3-⋯",
+            "section": "§9. 发散级数的求和法"
+          },
+          {
+            "name": "重排级数",
+            "difficulty": 3,
+            "description": "改变原级数项的排列顺序形成的级数",
+            "aliases": [
+              "级数重排"
+            ],
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "将级数各项按新的顺序排列后所得的级数称为重排级数。",
+            "example": "重新排列∑a_n的项"
           },
           {
             "name": "二重级数",
@@ -1249,85 +1215,110 @@
             "description": "按两个指标排列并求和的级数",
             "aliases": [],
             "prerequisites": [
-              "无穷级数",
-              "正项级数"
+              "无穷级数"
             ],
-            "definition": "含有两个指标并对矩阵中各项求和的级数称为二重级数。",
-            "example": "∑ᵢ₌₁^∞∑ₖ₌₁^∞1/(iᵅkᵝ)"
+            "definition": "形如∑_{i,k}a_i^{(k)}的双指标级数称为二重级数。",
+            "example": "∑_{i,k≥1}1/(i^αk^β)"
           },
           {
             "name": "累级数",
             "difficulty": 3,
-            "description": "先对矩阵逐行或逐列求和形成的级数",
+            "description": "先按行或列求和后再求和的级数",
+            "aliases": [
+              "累次级数"
+            ],
+            "prerequisites": [
+              "二重级数"
+            ],
+            "definition": "对二重级数先固定一个指标求和，再对所得级数求和所得的级数称为累级数。",
+            "example": "∑_k(∑_ia_i^{(k)})",
+            "section": "§5.累级数与二重级数"
+          },
+          {
+            "name": "绝对收敛重排",
+            "difficulty": 4,
+            "description": "绝对收敛保证多重求和次序可交换",
             "aliases": [],
             "prerequisites": [
+              "绝对收敛",
               "二重级数",
-              "无穷级数"
+              "累级数"
             ],
-            "definition": "将二重级数按行或按列分别求和所得的级数称为累级数。",
-            "example": "先求各行和再把行和相加",
-            "section": "§5.累级数与二重级数"
+            "definition": "若项的绝对值构成的相关级数收敛，则行列累加及简单级数均收敛且和相同。",
+            "example": "∑_{i,k}|a_i^{(k)}|<∞时可交换次序"
           },
           {
             "name": "兰伯特级数",
             "difficulty": 3,
-            "description": "形如∑aₖxᵏ/(1−xᵏ)的级数",
-            "aliases": [],
-            "prerequisites": [
-              "无穷级数",
-              "绝对收敛"
+            "description": "通项含x^k/(1-x^k)的级数",
+            "aliases": [
+              "Lambert级数"
             ],
-            "definition": "级数φ(x)=∑ₖ₌₁^∞aₖxᵏ/(1−xᵏ)称为兰伯特级数。",
-            "example": "∑ₖ₌₁^∞xᵏ/(1−xᵏ)"
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "形如∑_{k=1}∞a_kx^k/(1-x^k)的级数称为兰伯特级数。",
+            "example": "∑x^k/(1-x^k)"
           },
           {
-            "name": "切萨罗法",
+            "name": "幂级数展开",
             "difficulty": 3,
-            "description": "以部分和的算术平均值定义广义和",
+            "description": "将兰伯特级数按x的幂次重新组合",
+            "aliases": [],
+            "prerequisites": [
+              "兰伯特级数",
+              "绝对收敛"
+            ],
+            "definition": "在收敛条件下将兰伯特级数写成∑α_nx^n的形式。",
+            "example": "α_n=∑_{k∣n}a_k",
+            "section": "§5.累级数与二重级数"
+          },
+          {
+            "name": "切萨罗求和",
+            "difficulty": 4,
+            "description": "以部分和的算术平均极限定义广义和",
             "aliases": [
-              "切萨罗求和"
+              "Cesàro求和"
+            ],
+            "prerequisites": [
+              "部分和",
+              "数列极限"
+            ],
+            "definition": "当部分和的算术平均值趋于某极限时，以该极限作为级数的广义和。",
+            "example": "1-1+1-⋯的切萨罗和为1/2",
+            "section": "§9. 发散级数的求和法"
+          },
+          {
+            "name": "博雷尔求和",
+            "difficulty": 4,
+            "description": "通过指数加权变换求取发散级数广义和",
+            "aliases": [
+              "Borel求和"
             ],
             "prerequisites": [
               "部分和",
               "发散级数"
             ],
-            "definition": "取级数部分和的算术平均值并考察其极限的求和方法称为切萨罗法。",
-            "example": "1−1+1−1+⋯的切萨罗和为1/2",
-            "section": "§9. 发散级数的求和法"
+            "definition": "将级数转化为指数权重形式并取相应极限的广义求和方法。",
+            "example": "1-1+1-⋯的博雷尔和为1/2"
           },
           {
-            "name": "欧拉变换",
+            "name": "欧拉求和法",
             "difficulty": 4,
-            "description": "将交错级数转化为差分级数的求和方法",
+            "description": "利用差分变换求发散级数的广义和",
             "aliases": [
-              "欧拉求和法"
+              "欧拉变换"
             ],
             "prerequisites": [
-              "发散级数",
-              "切萨罗法"
+              "发散级数"
             ],
-            "definition": "用各阶差分及权重2的负幂表示交错级数的求和方法称为欧拉变换。",
-            "example": "1−1+1−1+⋯按欧拉法和为1/2"
-          },
-          {
-            "name": "博雷尔法",
-            "difficulty": 4,
-            "description": "借助指数权重极限求取广义和",
-            "aliases": [
-              "博雷尔求和"
-            ],
-            "prerequisites": [
-              "发散级数",
-              "部分和"
-            ],
-            "definition": "利用e的负幂与阶乘权重构造极限来赋予级数广义和的方法称为博雷尔法。",
-            "example": "1−1+1−1+⋯按博雷尔法和为1/2",
-            "section": "§9. 发散级数的求和法"
+            "definition": "用级数项的高阶差分构造新级数并以其和定义广义和的方法。",
+            "example": "1-1+1-⋯的欧拉和为1/2"
           },
           {
             "name": "正则求和法",
             "difficulty": 4,
-            "description": "对收敛级数给出原普通和的求和法",
+            "description": "对收敛级数所得广义和与通常和一致",
             "aliases": [
               "正则性"
             ],
@@ -1335,23 +1326,22 @@
               "收敛级数",
               "广义和"
             ],
-            "definition": "一个求和法若在普通收敛时所得广义和等于普通和，则称其具有正则性。",
-            "example": "收敛级数经正则方法求和仍得原和",
+            "definition": "一种求和法若对普通收敛级数给出其通常和，则称其具有正则性。",
+            "example": "切萨罗法对收敛级数保持原和",
             "section": "§9. 发散级数的求和法"
           },
           {
-            "name": "广义和",
-            "difficulty": 3,
-            "description": "由特殊求和法赋予发散级数的值",
+            "name": "线性求和法",
+            "difficulty": 4,
+            "description": "广义和对级数线性组合保持线性",
             "aliases": [
-              "广义求和"
+              "线性正则求和法"
             ],
             "prerequisites": [
-              "发散级数",
-              "切萨罗法"
+              "正则求和法"
             ],
-            "definition": "发散级数经某种求和方法所得的极限值称为广义和。",
-            "example": "1−1+1−1+⋯的广义和可取1/2",
+            "definition": "满足S(αa_n+βb_n)=αS(a_n)+βS(b_n)的求和法称为线性求和法。",
+            "example": "可逐项处理两个可求和级数的和差",
             "section": "§9. 发散级数的求和法"
           }
         ],
@@ -1427,60 +1417,60 @@
           {
             "name": "函数序列",
             "difficulty": 1,
-            "description": "由同一变量函数组成的无穷序列。",
+            "description": "以同一变量函数为元素的无穷序列",
             "aliases": [],
             "prerequisites": [],
-            "definition": "函数序列是定义在同一变化区域上的函数列f₁(x),f₂(x),… 。",
-            "example": "f_n(x)=x^n（0≤x≤1）。"
+            "definition": "函数序列是由定义在同一区域上的函数按序排列形成的序列。",
+            "example": "f_n(x)=x^n"
           },
           {
             "name": "极限函数",
             "difficulty": 2,
-            "description": "函数序列逐点取极限所得的函数。",
+            "description": "函数序列逐点取极限所得的函数",
             "aliases": [],
             "prerequisites": [
               "函数序列"
             ],
-            "definition": "若对区域中每个x都有极限，则f(x)=lim_{n→∞}f_n(x)称为极限函数。",
-            "example": "f_n(x)=x^n在[0,1]上的极限函数为f(x)=0（x<1），f(1)=1。"
+            "definition": "若对区域中每个x都有极限，则f(x)=lim f_n(x)称为极限函数。",
+            "example": "x^n在[0,1]上的极限函数"
           },
           {
             "name": "函数级数",
             "difficulty": 1,
-            "description": "各项为同一变量函数的无穷级数。",
+            "description": "各项为同一变量函数的无穷级数",
             "aliases": [],
             "prerequisites": [],
-            "definition": "函数级数是形如∑u_r(x)的级数，其每一项都是定义在同一区域上的函数。",
-            "example": "∑_{r=1}^∞x^{r-1}。"
+            "definition": "函数级数是形如Σu_n(x)的、项依赖于变量x的无穷级数。",
+            "example": "Σx^{n-1}"
           },
           {
             "name": "部分和",
-            "difficulty": 2,
-            "description": "函数级数前n项相加得到的函数。",
+            "difficulty": 1,
+            "description": "函数级数前若干项的和",
             "aliases": [],
             "prerequisites": [
               "函数级数"
             ],
-            "definition": "函数级数∑u_r(x)的前n项和f_n(x)=u₁(x)+…+u_n(x)称为部分和。",
-            "example": "∑x^{r-1}的第n个部分和为1+x+…+x^{n-1}。"
+            "definition": "函数级数前n项之和f_n(x)=u_1(x)+…+u_n(x)称为部分和。",
+            "example": "f_n(x)=Σ_{r=1}^n x^{r-1}"
           },
           {
             "name": "级数余式",
             "difficulty": 2,
-            "description": "函数级数从第n项以后剩余各项的和。",
+            "description": "函数级数和减去部分和的尾项",
             "aliases": [],
             "prerequisites": [
               "函数级数",
               "部分和"
             ],
-            "definition": "级数余式是φ_n(x)=∑_{k=n+1}^∞u_k(x)=f(x)-f_n(x)。",
-            "example": "∑x^{r-1}的余式为φ_n(x)=x^n/(1-x)。",
+            "definition": "级数余式是φ_n(x)=f(x)-f_n(x)=Σ_{k=n+1}^∞u_k(x)。",
+            "example": "Σx^{n-1}的余式为x^n/(1-x)",
             "section": "§1. 一致收敛性"
           },
           {
             "name": "一致收敛",
             "difficulty": 3,
-            "description": "同一N对区域内所有x同时满足误差要求。",
+            "description": "同一N同时控制区域内所有点的收敛",
             "aliases": [
               "一致趋向"
             ],
@@ -1488,13 +1478,13 @@
               "函数序列",
               "极限函数"
             ],
-            "definition": "对每个ε>0存在与x无关的N，使n>N时所有x均有|f_n(x)-f(x)|<ε。",
-            "example": "f_n(x)=x/(1+n²x²)在[0,1]上一致收敛于0。"
+            "definition": "对任意ε>0存在与x无关的N，使n>N时所有x均有|f_n(x)-f(x)|<ε。",
+            "example": "x/(1+n^2x^2)在[0,1]上一致收敛于0"
           },
           {
             "name": "非一致收敛",
-            "difficulty": 3,
-            "description": "不存在适用于所有x的统一收敛指标N。",
+            "difficulty": 2,
+            "description": "收敛所需的N依赖于区域中的点",
             "aliases": [
               "不一致收敛"
             ],
@@ -1502,48 +1492,136 @@
               "函数序列",
               "极限函数"
             ],
-            "definition": "函数序列虽对每个固定x收敛，但不存在与x无关的N使误差同时小于ε。",
-            "example": "f_n(x)=nx/(1+n²x²)在[0,1]上非一致收敛于0。"
+            "definition": "虽逐点收敛但不存在对区域内所有x同时适用的统一N的收敛。",
+            "example": "nx/(1+n^2x^2)在[0,1]上非一致收敛"
           },
           {
             "name": "函数级数一致收敛",
             "difficulty": 3,
-            "description": "部分和一致趋于级数和，等价于余式一致趋于零。",
-            "aliases": [
-              "级数的一致收敛"
-            ],
+            "description": "函数级数部分和一致趋向于级数和",
+            "aliases": [],
             "prerequisites": [
               "函数级数",
               "部分和",
               "级数余式"
             ],
-            "definition": "函数级数一致收敛是指其部分和一致趋于级数和，或余式一致趋于0。",
-            "example": "∑_{n=1}^∞(-1)^{n-1}/(x²+n)在全实轴上一致收敛。"
+            "definition": "函数级数一致收敛是指其部分和一致收敛于级数的和函数。",
+            "example": "Σ(-1)^{n-1}/(x^2+n)在全实轴上一致收敛"
           },
           {
-            "name": "一致收敛性条件",
+            "name": "一致收敛柯西准则",
             "difficulty": 4,
-            "description": "函数序列满足统一的柯西型误差条件。",
+            "description": "用函数序列的统一柯西条件判定一致收敛",
             "aliases": [
-              "一致收敛的柯西条件"
+              "一致收敛性条件"
             ],
             "prerequisites": [
-              "函数序列",
-              "一致收敛"
+              "函数序列"
             ],
-            "definition": "对每个ε>0存在与x无关的N，使n>N、任意m及所有x均有|f_{n+m}(x)-f_n(x)|<ε。",
-            "example": "若该条件成立，则函数序列在区域上存在极限函数并一致收敛。"
+            "definition": "对任意ε存在与x无关的N，使n>N时任意m和所有x均有|f_{n+m}(x)-f_n(x)|<ε。",
+            "example": "统一估计函数序列的尾差"
           },
           {
-            "name": "非一致性点",
+            "name": "优级数",
             "difficulty": 3,
-            "description": "函数序列在该点附近集中表现出非一致收敛。",
+            "description": "用收敛的常数级数统一控制函数级数",
+            "aliases": [
+              "主控级数"
+            ],
+            "prerequisites": [
+              "函数级数"
+            ],
+            "definition": "若存在收敛常数级数ΣM_n且|u_n(x)|≤M_n对所有x成立，则ΣM_n为优级数。",
+            "example": "|u_n(x)|≤1/n^2且Σ1/n^2收敛"
+          },
+          {
+            "name": "魏尔斯特拉斯判别法",
+            "difficulty": 4,
+            "description": "通过优级数判定函数级数一致收敛",
+            "aliases": [
+              "M判别法"
+            ],
+            "prerequisites": [
+              "函数级数",
+              "优级数"
+            ],
+            "definition": "若函数级数各项绝对值被收敛的常数级数统一控制，则该函数级数一致收敛。",
+            "example": "|u_n(x)|≤M_n且ΣM_n收敛"
+          },
+          {
+            "name": "阿贝尔判别法",
+            "difficulty": 4,
+            "description": "利用单调因子与一致有界性判定一致收敛",
             "aliases": [],
             "prerequisites": [
-              "非一致收敛"
+              "函数级数一致收敛"
             ],
-            "definition": "非一致性点是其周围区域积集着函数序列非一致收敛性质的点。",
-            "example": "f_n(x)=nx/(1+n²x²)在x=0处是非一致性点。"
+            "definition": "函数级数满足阿贝尔型单调性和一致收敛条件时，可判定其一致收敛。",
+            "example": "对含单调参数因子的函数级数使用判别"
+          },
+          {
+            "name": "狄利克雷判别法",
+            "difficulty": 4,
+            "description": "利用部分和一致有界与因子趋零判定收敛",
+            "aliases": [],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "若一类函数级数部分和一致有界且另一因子单调趋于零，则乘积级数一致收敛。",
+            "example": "Σ(-1)^{n-1}/(x^2+n)"
+          },
+          {
+            "name": "极限函数连续性",
+            "difficulty": 3,
+            "description": "研究连续函数序列极限是否保持连续",
+            "aliases": [
+              "级数和的连续性"
+            ],
+            "prerequisites": [
+              "一致收敛",
+              "极限函数"
+            ],
+            "definition": "连续函数序列在一致收敛条件下，其极限函数保持连续性。",
+            "example": "连续函数一致收敛于零函数"
+          },
+          {
+            "name": "函数级数逐项积分",
+            "difficulty": 4,
+            "description": "将函数级数的积分转化为各项积分之和",
+            "aliases": [
+              "逐项积分"
+            ],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "在相应一致收敛条件下，函数级数的和函数可按项逐项积分。",
+            "example": "∫Σu_n(x)dx=Σ∫u_n(x)dx",
+            "section": "§2. 级数和的函数性质"
+          },
+          {
+            "name": "函数级数逐项微分",
+            "difficulty": 4,
+            "description": "将函数级数的导数转化为各项导数之和",
+            "aliases": [
+              "逐项微分"
+            ],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "在相应一致收敛条件下，函数级数的和函数可按项逐项微分。",
+            "example": "(Σu_n(x))'=Σu_n'(x)",
+            "section": "§2. 级数和的函数性质"
+          },
+          {
+            "name": "幂级数一致收敛",
+            "difficulty": 3,
+            "description": "幂级数在适当区间或闭区间上的一致收敛性",
+            "aliases": [],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "幂级数在其收敛区间内部的适当闭区间上一致收敛。",
+            "example": "Σx^n在[-r,r]上对r<1一致收敛"
           }
         ],
         "sections": [
@@ -1584,38 +1662,35 @@
             "aliases": [
               "积分"
             ],
-            "prerequisites": [
-              "导数",
-              "微分"
-            ],
-            "definition": "在区间上若F'(x)=f(x)，则F(x)称为f(x)的原函数。",
-            "example": "f(x)=x²时，F(x)=x³/3是其原函数。"
+            "prerequisites": [],
+            "definition": "若在给定区间上F'(x)=f(x)，则F(x)叫作f(x)的原函数。",
+            "example": "x²的原函数是x³/3+C"
           },
           {
             "name": "不定积分",
             "difficulty": 2,
             "description": "给定函数全部原函数的一般表示。",
             "aliases": [
-              "积分表达式"
+              "积分"
             ],
             "prerequisites": [
               "原函数"
             ],
-            "definition": "f(x)的所有原函数可表示为∫f(x)dx=F(x)+C。",
-            "example": "∫x²dx=x³/3+C。"
+            "definition": "函数f(x)的不定积分是其全部原函数F(x)+C，记作∫f(x)dx。",
+            "example": "∫x²dx=x³/3+C"
           },
           {
             "name": "积分常数",
             "difficulty": 1,
-            "description": "原函数之间任意的常数差。",
+            "description": "原函数族中可任意取值的常数项。",
             "aliases": [
               "任意常数C"
             ],
             "prerequisites": [
               "原函数"
             ],
-            "definition": "同一区间内同一函数的任意两个原函数只相差一个常数。",
-            "example": "∫1dx=x+C。",
+            "definition": "同一区间内同一函数的不同原函数之间相差的任意常数叫积分常数。",
+            "example": "∫dx=x+C",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
@@ -1627,56 +1702,60 @@
               "不定积分"
             ],
             "definition": "在∫f(x)dx中，函数f(x)称为被积函数。",
-            "example": "∫sinx dx中被积函数是sinx。"
+            "example": "∫sinx dx中被积函数是sinx"
           },
           {
             "name": "被积表达式",
             "difficulty": 1,
-            "description": "积分号后包含微分的表达式。",
+            "description": "不定积分记号中的微分表达式f(x)dx。",
             "aliases": [],
             "prerequisites": [
               "不定积分"
             ],
             "definition": "在∫f(x)dx中，乘积f(x)dx称为被积表达式。",
-            "example": "∫x²dx的被积表达式是x²dx。"
+            "example": "∫x²dx的被积表达式是x²dx"
           },
           {
-            "name": "积分区间",
-            "difficulty": 2,
-            "description": "原函数定义和积分成立的指定区间。",
+            "name": "原函数唯一性",
+            "difficulty": 3,
+            "description": "同一区间内原函数彼此只差一个常数。",
             "aliases": [
-              "所给区间"
+              "原函数族定理"
             ],
             "prerequisites": [
-              "原函数"
+              "原函数",
+              "积分常数"
             ],
-            "definition": "原函数及积分公式通常是在给定区间上讨论的。",
-            "example": "∫dx/x=ln|x|+C须在不含零的区间上使用。"
+            "definition": "若F和Φ都是f在同一区间上的原函数，则Φ(x)=F(x)+C。",
+            "example": "x³/3与x³/3+5均为x²的原函数"
           },
           {
             "name": "初始条件",
             "difficulty": 2,
-            "description": "用已知时刻的函数值确定积分常数。",
+            "description": "用一点上的函数值确定积分常数的条件。",
             "aliases": [
-              "初始值条件"
+              "初始值"
             ],
             "prerequisites": [
+              "不定积分",
               "积分常数"
             ],
-            "definition": "给定某点的函数值可确定原函数表达式中的任意常数。",
-            "example": "v(t₀)=v₀确定v=gt+C中的C。",
+            "definition": "给定某点的函数值，可代入原函数表达式确定其中的任意常数。",
+            "example": "v(t₀)=v₀确定v=gt+C中的C",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
-            "name": "曲边梯形",
-            "difficulty": 2,
-            "description": "曲线、坐标轴和两条纵线围成的图形。",
-            "aliases": [],
-            "prerequisites": [
-              "连续函数"
+            "name": "曲边梯形面积",
+            "difficulty": 3,
+            "description": "连续函数图像与坐标线围成的面积。",
+            "aliases": [
+              "变动面积"
             ],
-            "definition": "连续函数图像、x轴及两条纵坐标线围成的区域称为曲边梯形。",
-            "example": "y=f(x)在[a,b]下方围成曲边梯形。",
+            "prerequisites": [
+              "原函数"
+            ],
+            "definition": "曲线、横轴及两条纵坐标线围成的图形称为曲边梯形，其面积可视为横坐标的函数。",
+            "example": "y=ax²下从0到x的面积为ax³/3",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
@@ -1687,183 +1766,158 @@
               "面积原函数定理"
             ],
             "prerequisites": [
-              "原函数",
-              "曲边梯形"
+              "曲边梯形面积",
+              "原函数"
             ],
-            "definition": "曲边梯形从起点到x的变动面积P(x)满足P'(x)=f(x)。",
-            "example": "P(x)=F(x)-F(a)，且P=F(b)-F(a)。",
+            "definition": "连续函数曲线下的变动面积P(x)满足P'(x)=f(x)。",
+            "example": "P(x)=∫ₐˣf(t)dt时P'(x)=f(x)",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
-            "name": "连续函数原函数存在性",
+            "name": "定积分面积公式",
             "difficulty": 3,
-            "description": "连续函数在区间上必有原函数。",
-            "aliases": [],
-            "prerequisites": [
-              "连续函数",
-              "原函数"
+            "description": "用原函数端点值计算曲边梯形面积。",
+            "aliases": [
+              "牛顿-莱布尼茨公式"
             ],
-            "definition": "给定区间上的每个连续函数都存在该区间上的原函数。",
-            "example": "连续函数f(x)在[a,b]上必有F'(x)=f(x)。"
+            "prerequisites": [
+              "原函数",
+              "曲边梯形面积"
+            ],
+            "definition": "若F'(x)=f(x)，则曲边梯形面积为F(b)-F(a)。",
+            "example": "∫ₐᵇf(x)dx=F(b)-F(a)"
           },
           {
             "name": "基本积分表",
             "difficulty": 2,
-            "description": "由基本求导公式直接得到的积分公式集合。",
+            "description": "由基本求导公式得到的常用积分公式表。",
             "aliases": [],
             "prerequisites": [
-              "不定积分",
-              "导数"
+              "不定积分"
             ],
-            "definition": "把已知导数公式反向书写所得的常用不定积分公式表。",
-            "example": "∫cosx dx=sinx+C。",
+            "definition": "把已知导数公式反向使用所得的常用不定积分公式集合。",
+            "example": "∫cosx dx=sinx+C",
             "section": "§1. 不定积分与它的计算的最简单方法"
           },
           {
             "name": "常数因子法则",
             "difficulty": 2,
-            "description": "常数因子可移到积分号外。",
-            "aliases": [],
+            "description": "积分中的常数因子可移到积分号外。",
+            "aliases": [
+              "积分提常数法则"
+            ],
             "prerequisites": [
               "不定积分"
             ],
-            "definition": "常数a满足∫a f(x)dx=a∫f(x)dx。",
-            "example": "∫3x²dx=3∫x²dx。"
+            "definition": "常数a满足∫af(x)dx=a∫f(x)dx。",
+            "example": "∫3x²dx=3∫x²dx"
           },
           {
             "name": "和差积分法则",
             "difficulty": 2,
             "description": "和或差的积分等于各项积分的和或差。",
-            "aliases": [],
+            "aliases": [
+              "积分线性法则"
+            ],
             "prerequisites": [
               "不定积分"
             ],
             "definition": "∫[f(x)±g(x)]dx=∫f(x)dx±∫g(x)dx。",
-            "example": "∫(x+cosx)dx=x²/2+sinx+C。"
-          },
-          {
-            "name": "有理微分式积分",
-            "difficulty": 3,
-            "description": "对有理函数乘微分所得表达式求积分。",
-            "aliases": [
-              "有理函数积分"
-            ],
-            "prerequisites": [
-              "不定积分",
-              "基本积分表"
-            ],
-            "definition": "通过代数分解等方法把有理微分式积分化为基本积分。",
-            "example": "将1/(x²−1)分解为部分分式后积分。"
-          },
-          {
-            "name": "部分分式分解",
-            "difficulty": 3,
-            "description": "把有理函数拆成较简单分式之和。",
-            "aliases": [],
-            "prerequisites": [
-              "有理微分式积分"
-            ],
-            "definition": "将有理函数的真分式部分分解为若干基本分式的和。",
-            "example": "1/(x²−1)=1/[2(x−1)]−1/[2(x+1)]。"
+            "example": "∫(x+cosx)dx=x²/2+sinx+C"
           },
           {
             "name": "有理化被积表达式法",
             "difficulty": 4,
-            "description": "通过替换把含根式积分化为有理函数积分。",
+            "description": "通过替换把被积表达式化为有理函数。",
             "aliases": [
-              "有理化积分法"
+              "有理化法"
             ],
             "prerequisites": [
-              "有理微分式积分"
+              "不定积分"
             ],
-            "definition": "选择适当替换，使被积表达式变成有理函数的形式。",
-            "example": "令t=√(x+1)，将根式积分化为t的有理积分。",
+            "definition": "选择适当替换t=ω(x)，使被积表达式转化为有理函数形式。",
+            "example": "令t=√(x+1)化简含根式积分",
             "section": "§3. 某些含有根式的函数的积分"
           },
           {
             "name": "二项式微分",
             "difficulty": 3,
-            "description": "形如x^m(a+bx^n)^p dx的微分式。",
+            "description": "形如xᵐ(a+bxⁿ)ᵖdx的微分式。",
             "aliases": [],
             "prerequisites": [
-              "有理化被积表达式法"
+              "被积表达式"
             ],
-            "definition": "x^m(a+bx^n)^p dx称为二项式微分，其中指数为有理数。",
-            "example": "x^(-1/2)(1+x^(1/4))^(1/3)dx。",
+            "definition": "xᵐ(a+bxⁿ)ᵖdx且指数为有理数时，称为二项式微分。",
+            "example": "x⁻¹/²(1+x¹/⁴)¹/³dx",
             "section": "§3. 某些含有根式的函数的积分"
           },
           {
-            "name": "二项式可积条件",
-            "difficulty": 4,
-            "description": "二项式微分可有限形式积分的判定条件。",
+            "name": "二项式积分条件",
+            "difficulty": 5,
+            "description": "二项式微分可有限表示积分的判定条件。",
             "aliases": [
               "切比雪夫条件"
             ],
             "prerequisites": [
               "二项式微分"
             ],
-            "definition": "当p、q或p+q中至少一个为整数时可化为有理形状积分。",
-            "example": "q=(m+1)/n−1为整数时可积。"
+            "definition": "当p、(m+1)/n或(m+1)/n+p中至少一个为整数时可作有理化积分。",
+            "example": "∫dx/(1+x⁴)¹/⁴满足第三种条件"
           },
           {
             "name": "递推公式",
             "difficulty": 4,
-            "description": "把J(p,q)化为参数相邻积分的关系式。",
+            "description": "把参数不同的积分相互联系的公式。",
             "aliases": [
-              "积分递推关系"
+              "递推关系式"
             ],
             "prerequisites": [
-              "二项式微分"
+              "二项式微分",
+              "不定积分"
             ],
-            "definition": "利用恒等式和求导建立J(p,q)与相邻参数积分的关系。",
-            "example": "J(p,q)可递推为J(p+1,q)或J(p,q+1)。"
+            "definition": "通过恒等式或求导，将Jₚ,ᵩ表示为参数相差整数的同类积分。",
+            "example": "Jₚ,ᵩ可化为Jₚ₊₁,ᵩ或Jₚ,ᵩ₊₁"
+          },
+          {
+            "name": "椭圆积分",
+            "difficulty": 5,
+            "description": "通常不能用初等函数有限表示的积分。",
+            "aliases": [],
+            "prerequisites": [
+              "不定积分",
+              "标准形式"
+            ],
+            "definition": "可化为含√((1-z²)(1-k²z²))形式且一般不能有限初等表示的积分。",
+            "example": "∫dz/√((1-z²)(1-k²z²))",
+            "section": "§5. 椭圆积分"
           },
           {
             "name": "椭圆积分标准形式",
             "difficulty": 5,
-            "description": "含两个二次因子根式的规范积分形式。",
+            "description": "含双二次根式的规范化椭圆积分形式。",
             "aliases": [
               "标准形式"
             ],
             "prerequisites": [
-              "有理化被积表达式法"
+              "椭圆积分"
             ],
-            "definition": "∫R(z²)dz/√[(1−z²)(1−k²z²)]称为椭圆积分标准形式。",
-            "example": "∫dz/√[(1−z²)(1−k²z²)]。",
+            "definition": "形如∫R(z²)dz/√((1-z²)(1-k²z²))的积分形式称为标准形式。",
+            "example": "k=1/2时∫dz/√((1-z²)(1-z²/4))",
             "section": "§5. 椭圆积分"
           },
           {
-            "name": "第一类椭圆积分",
+            "name": "三类椭圆积分",
             "difficulty": 5,
-            "description": "标准椭圆积分中分子为1的基本类型。",
-            "aliases": [],
+            "description": "第一、第二、第三类椭圆积分的标准积分。",
+            "aliases": [
+              "勒让德形式"
+            ],
             "prerequisites": [
+              "椭圆积分",
               "椭圆积分标准形式"
             ],
-            "definition": "∫dz/√[(1−z²)(1−k²z²)]称为第一类椭圆积分。",
-            "example": "令z=sinφ后为∫dφ/√(1−k²sin²φ)。"
-          },
-          {
-            "name": "第二类椭圆积分",
-            "difficulty": 5,
-            "description": "标准椭圆积分中含z²分子的基本类型。",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆积分标准形式"
-            ],
-            "definition": "∫z²dz/√[(1−z²)(1−k²z²)]称为第二类椭圆积分。",
-            "example": "其勒让德形式含∫√(1−k²sin²φ)dφ。"
-          },
-          {
-            "name": "第三类椭圆积分",
-            "difficulty": 5,
-            "description": "标准椭圆积分中含额外二次因子分母的类型。",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆积分标准形式"
-            ],
-            "definition": "∫dz/[(1+hz²)√((1−z²)(1−k²z²))]称为第三类椭圆积分。",
-            "example": "其勒让德形式为∫dφ/[(1+h sin²φ)√(1−k²sin²φ)]。",
+            "definition": "经z=sinφ化换后，分别得到第一、第二和第三类椭圆积分。",
+            "example": "第一类为∫dφ/√(1-k²sin²φ)",
             "section": "§5. 椭圆积分"
           }
         ],
@@ -1922,359 +1976,290 @@
         "name": "第九章 定积分",
         "concepts": [
           {
-            "name": "定积分",
-            "difficulty": 3,
-            "description": "由积分和在分割变细时的极限定义的数",
-            "aliases": [],
-            "prerequisites": [
-              "积分和"
-            ],
-            "definition": "若积分和在最大小区间长度趋于零时对任意取点都趋于有限极限，该极限称为定积分。",
-            "example": "∫₀¹x dx=1/2"
-          },
-          {
             "name": "区间分割",
-            "difficulty": 2,
-            "description": "在积分区间内插入分点形成若干小区间",
+            "difficulty": 1,
+            "description": "在区间两端之间插入分点，将区间分成若干部分",
             "aliases": [
-              "区间划分",
               "分划"
             ],
             "prerequisites": [],
-            "definition": "由a=x₀<x₁<…<xₙ=b组成的分点集合把[a,b]分成若干部分。",
-            "example": "0=x₀<x₁<x₂=1"
+            "definition": "区间分割是由有序分点将[a,b]划分为若干部分区间的过程。",
+            "example": "a=x₀<x₁<…<xₙ=b。"
+          },
+          {
+            "name": "分割宽度",
+            "difficulty": 1,
+            "description": "各部分区间长度中的最大者",
+            "aliases": [
+              "λ"
+            ],
+            "prerequisites": [
+              "区间分割"
+            ],
+            "definition": "分割宽度λ是各部分长度Δxᵢ中的最大值。",
+            "example": "若各段长为0.2，则λ=0.2。"
           },
           {
             "name": "积分和",
-            "difficulty": 3,
-            "description": "各小区间函数值与区间长度乘积的总和",
+            "difficulty": 2,
+            "description": "函数值与对应小区间长度乘积的总和",
             "aliases": [
               "黎曼和"
             ],
             "prerequisites": [
-              "区间分割"
+              "区间分割",
+              "分割宽度"
             ],
-            "definition": "从每个小区间取点ξᵢ并作Σf(ξᵢ)Δxᵢ所得的和称为积分和。",
-            "example": "Σf(ξᵢ)Δxᵢ"
+            "definition": "积分和是从各部分区间取点后所得Σf(ξᵢ)Δxᵢ。",
+            "example": "Σf(ξᵢ)Δxᵢ。"
           },
           {
-            "name": "分割范数",
+            "name": "基本分割序列",
             "difficulty": 2,
-            "description": "区间分割中各小区间长度的最大值",
+            "description": "分割宽度趋于零的区间分割序列",
             "aliases": [
-              "最大分割长度"
+              "基本区间分割序列"
             ],
-            "prerequisites": [
-              "区间分割"
-            ],
-            "definition": "记λ为所有Δxᵢ=xᵢ₊₁−xᵢ中最大的一个。",
-            "example": "λ=maxΔxᵢ"
-          },
-          {
-            "name": "基本区间分割序列",
-            "difficulty": 3,
-            "description": "分割范数依次收敛到零的分割序列",
-            "aliases": [],
             "prerequisites": [
               "区间分割",
-              "分割范数"
+              "分割宽度"
             ],
-            "definition": "若一列区间分割对应的范数λ₁,λ₂,…收敛到零，则称其为基本区间分割序列。",
-            "example": "等分数不断增加的分割",
+            "definition": "基本分割序列是其分割宽度λ逐项收敛于零的分割序列。",
+            "example": "λ₁,λ₂,…→0。",
             "section": "§1.定积分的定义与存在条件"
+          },
+          {
+            "name": "定积分",
+            "difficulty": 3,
+            "description": "积分和在分割宽度趋零时的有限极限",
+            "aliases": [
+              "黎曼定积分"
+            ],
+            "prerequisites": [
+              "积分和",
+              "分割宽度"
+            ],
+            "definition": "定积分是积分和在λ趋于零且取点任意时存在的有限极限。",
+            "example": "∫₀¹x dx=1/2。"
           },
           {
             "name": "可积函数",
-            "difficulty": 3,
-            "description": "在给定区间上存在定积分的函数",
+            "difficulty": 2,
+            "description": "在给定区间上定积分存在的函数",
             "aliases": [],
             "prerequisites": [
               "定积分"
             ],
-            "definition": "函数在区间[a,b]上的积分和具有有限极限时，称该函数在此区间上可积。",
-            "example": "连续函数在闭区间上可积"
+            "definition": "若函数在区间上的定积分存在，则称该函数在此区间上可积。",
+            "example": "连续函数在闭区间上可积。"
           },
           {
-            "name": "积分上下限",
+            "name": "有界函数",
             "difficulty": 1,
-            "description": "定积分区间的起点与终点",
-            "aliases": [
-              "下限与上限"
-            ],
-            "prerequisites": [
-              "定积分"
-            ],
-            "definition": "定积分符号中a称为下限，b称为上限。",
-            "example": "∫ₐᵇf(x)dx中a、b为上下限",
+            "description": "函数值始终被两个有限常数夹住的函数",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "有界函数是在区间上满足m≤f(x)≤M的函数。",
+            "example": "f(x)=x在[0,1]上有界。",
             "section": "§1.定积分的定义与存在条件"
           },
           {
+            "name": "函数振幅",
+            "difficulty": 2,
+            "description": "函数在区间上确界与下确界之差",
+            "aliases": [
+              "振幅",
+              "ωᵢ"
+            ],
+            "prerequisites": [
+              "有界函数"
+            ],
+            "definition": "函数振幅是函数上确界M与下确界m之差。",
+            "example": "区间上界为3、下界为1时振幅为2。"
+          },
+          {
             "name": "达布下和",
-            "difficulty": 3,
-            "description": "各小区间下确界乘长度后求得的和",
+            "difficulty": 2,
+            "description": "各段下确界乘段长后求得的和",
             "aliases": [
               "下积分和"
             ],
             "prerequisites": [
-              "区间分割"
+              "区间分割",
+              "有界函数"
             ],
-            "definition": "以每个小区间上函数的下确界mᵢ作ΣmᵢΔxᵢ所得的和称为达布下和。",
-            "example": "s=ΣmᵢΔxᵢ",
+            "definition": "达布下和是ΣmᵢΔxᵢ，其中mᵢ为各段函数的下确界。",
+            "example": "下确界分别为1、2，段长均为0.5时下和为1.5。",
             "section": "§1.定积分的定义与存在条件"
           },
           {
             "name": "达布上和",
-            "difficulty": 3,
-            "description": "各小区间上确界乘长度后求得的和",
+            "difficulty": 2,
+            "description": "各段上确界乘段长后求得的和",
             "aliases": [
               "上积分和"
             ],
             "prerequisites": [
-              "区间分割"
+              "区间分割",
+              "有界函数"
             ],
-            "definition": "以每个小区间上函数的上确界Mᵢ作ΣMᵢΔxᵢ所得的和称为达布上和。",
-            "example": "S=ΣMᵢΔxᵢ"
+            "definition": "达布上和是ΣMᵢΔxᵢ，其中Mᵢ为各段函数的上确界。",
+            "example": "上确界分别为2、3，段长均为0.5时上和为2.5。"
           },
           {
-            "name": "达布下积分",
-            "difficulty": 4,
-            "description": "所有达布下和集合的上确界",
+            "name": "达布积分",
+            "difficulty": 3,
+            "description": "达布下和的上确界与上和的下确界",
             "aliases": [
-              "下积分"
+              "达布下积分与上积分"
             ],
             "prerequisites": [
-              "达布下和"
+              "达布下和",
+              "达布上和"
             ],
-            "definition": "所有区间分割的达布下和组成集合的上确界称为达布下积分。",
-            "example": "I*=sup{s}",
+            "definition": "达布积分由所有下和的上确界和所有上和的下确界构成。",
+            "example": "记下积分为I_*，上积分为I^*。",
             "section": "§1.定积分的定义与存在条件"
           },
           {
-            "name": "达布上积分",
+            "name": "定积分存在条件",
             "difficulty": 4,
-            "description": "所有达布上和集合的下确界",
-            "aliases": [
-              "上积分"
-            ],
-            "prerequisites": [
-              "达布上和"
-            ],
-            "definition": "所有区间分割的达布上和组成集合的下确界称为达布上积分。",
-            "example": "I*=inf{S}"
-          },
-          {
-            "name": "达布和单调性",
-            "difficulty": 3,
-            "description": "加分点使下和增大、上和减小",
+            "description": "分割变细时达布上和与下和之差趋于零",
             "aliases": [],
             "prerequisites": [
               "达布下和",
               "达布上和",
-              "区间分割"
+              "分割宽度"
             ],
-            "definition": "在原分割中加入新分点时，达布下和只增不减而达布上和只减不增。",
-            "example": "细分后s′≥s且S′≤S"
+            "definition": "定积分存在当且仅当λ趋于零时S−s趋于零。",
+            "example": "若S−s<ε，则积分和被确定到ε内。"
           },
           {
-            "name": "达布和不等式",
-            "difficulty": 3,
-            "description": "任意分割的下和不超过任意分割的上和",
+            "name": "连续函数",
+            "difficulty": 1,
+            "description": "在区间上连续变化、无间断点的函数",
             "aliases": [],
-            "prerequisites": [
-              "达布下和",
-              "达布上和"
-            ],
-            "definition": "对同一区间的任意两个分割，总有一个分割的下和不超过另一个分割的上和。",
-            "example": "s₁≤S₂"
-          },
-          {
-            "name": "函数振幅",
-            "difficulty": 3,
-            "description": "函数在小区间上确界与下确界之差",
-            "aliases": [
-              "区间振幅"
-            ],
-            "prerequisites": [
-              "达布下和",
-              "达布上和"
-            ],
-            "definition": "第i个小区间上的振幅定义为ωᵢ=Mᵢ−mᵢ。",
-            "example": "S−s=ΣωᵢΔxᵢ"
-          },
-          {
-            "name": "积分存在条件",
-            "difficulty": 4,
-            "description": "达布上和与下和之差趋于零",
-            "aliases": [
-              "黎曼可积判别"
-            ],
-            "prerequisites": [
-              "达布上和",
-              "达布下和",
-              "分割范数"
-            ],
-            "definition": "定积分存在的充要条件是λ趋于零时S−s趋于零。",
-            "example": "lim(S−s)=0"
-          },
-          {
-            "name": "可积函数有界性",
-            "difficulty": 3,
-            "description": "可积函数在积分区间上必为有界函数",
-            "aliases": [],
-            "prerequisites": [
-              "可积函数"
-            ],
-            "definition": "若函数在区间上无界，则积分和不能具有有限极限，因此可积函数必有界。",
-            "example": "可积函数满足m≤f(x)≤M"
+            "prerequisites": [],
+            "definition": "连续函数是在区间每一点都连续的函数。",
+            "example": "f(x)=x²在[a,b]上连续。"
           },
           {
             "name": "连续函数可积性",
-            "difficulty": 2,
-            "description": "闭区间上的连续函数一定可积",
+            "difficulty": 3,
+            "description": "闭区间上的连续函数必定可积",
             "aliases": [],
             "prerequisites": [
-              "积分存在条件",
-              "可积函数"
+              "连续函数",
+              "定积分",
+              "定积分存在条件"
             ],
-            "definition": "函数在[a,b]上连续时，其在该区间上的定积分必然存在。",
-            "example": "f(x)=x²在[0,1]上可积"
+            "definition": "函数在闭区间上连续是其定积分存在的充分条件。",
+            "example": "∫₀¹x²dx存在。"
           },
           {
             "name": "有限间断可积性",
             "difficulty": 3,
-            "description": "有界且仅有有限间断点的函数可积",
+            "description": "有界且仅有有限个间断点的函数可积",
             "aliases": [],
             "prerequisites": [
-              "积分存在条件",
-              "可积函数有界性"
+              "有界函数",
+              "定积分存在条件"
             ],
-            "definition": "有界函数在闭区间上只有有限多个间断点时，它在该区间上可积。",
-            "example": "分段常值函数可积"
+            "definition": "有界函数在闭区间上只有有限个间断点时必定可积。",
+            "example": "分段常函数在有限个跳点处仍可积。"
           },
           {
             "name": "定积分换元",
-            "difficulty": 4,
-            "description": "通过变量替换改变被积函数和积分区间",
-            "aliases": [
-              "换元公式"
-            ],
-            "prerequisites": [
-              "定积分"
-            ],
-            "definition": "若x=φ(t)满足连续性、端点对应及连续导数条件，则∫ₐᵇf(x)dx=∫αᵝf(φ(t))φ′(t)dt。",
-            "example": "x=a sin t",
-            "section": "§3.定积分的计算与变换"
-          },
-          {
-            "name": "定积分分部积分",
-            "difficulty": 4,
-            "description": "利用乘积求导将积分转化为另一积分",
-            "aliases": [
-              "分部积分法"
-            ],
-            "prerequisites": [
-              "定积分"
-            ],
-            "definition": "由乘积微分公式建立定积分中函数乘积的积分变换关系。",
-            "example": "∫u dv=uv|ₐᵇ−∫v du",
-            "section": "§3.定积分的计算与变换"
-          },
-          {
-            "name": "积分对称性",
             "difficulty": 3,
-            "description": "利用函数奇偶性化简对称区间上的积分",
+            "description": "通过变量替换将定积分化为另一变量的积分",
             "aliases": [
-              "奇偶函数积分"
+              "定积分换元公式"
             ],
             "prerequisites": [
-              "定积分"
+              "定积分",
+              "连续函数"
             ],
-            "definition": "偶函数在[-a,a]上的积分为两倍半区间积分，奇函数积分为零。",
-            "example": "∫₋ₐᵃf(x)dx=0（奇函数）"
+            "definition": "若x=φ(t)满足区间端点和连续导数条件，则∫ₐᵇf(x)dx=∫ᵅᵝf(φ(t))φ′(t)dt。",
+            "example": "令x=a sin t计算∫₀ᵃ√(a²−x²)dx。"
           },
           {
-            "name": "周期函数积分",
-            "difficulty": 3,
-            "description": "周期函数在任一周期区间上的积分相同",
+            "name": "对称区间积分",
+            "difficulty": 2,
+            "description": "奇偶函数在对称区间上的积分规律",
             "aliases": [],
             "prerequisites": [
               "定积分"
             ],
-            "definition": "连续周期函数在长度等于其周期的任意区间上的积分具有相同值。",
-            "example": "∫ₐᵃ⁺ωf=∫₀ᵝf"
+            "definition": "连续偶函数在[-a,a]上的积分为两倍右半段，奇函数积分为零。",
+            "example": "∫₋₁¹x³dx=0。"
+          },
+          {
+            "name": "周期函数积分",
+            "difficulty": 2,
+            "description": "连续周期函数在任一周期区间上的积分相同",
+            "aliases": [],
+            "prerequisites": [
+              "定积分",
+              "连续函数"
+            ],
+            "definition": "连续周期函数在长度等于其周期的任一区间上积分值相同。",
+            "example": "∫ₐ^{a+ω}f(x)dx=∫₀^ωf(x)dx。"
           },
           {
             "name": "矩形公式",
             "difficulty": 3,
-            "description": "用小区间中点函数值近似定积分",
-            "aliases": [
-              "中点矩形公式"
-            ],
+            "description": "用等分区间中点函数值近似定积分",
+            "aliases": [],
             "prerequisites": [
-              "积分和",
-              "定积分"
+              "定积分",
+              "等分区间"
             ],
-            "definition": "将区间等分并用各小区间中点的函数值构成积分近似值的公式。",
-            "example": "∫ₐᵇf≈hΣf(xᵢ₋₁⁄₂)",
+            "definition": "矩形公式以各小区间中点函数值乘宽度的和近似定积分。",
+            "example": "∫₁²f(x)dx≈(1/n)Σf(x_{i−1/2})。",
             "section": "§5.积分的近似计算"
           },
           {
             "name": "梯形公式",
             "difficulty": 3,
-            "description": "用相邻端点函数值的平均值近似积分",
+            "description": "用各小区间端点函数值构成梯形近似积分",
+            "aliases": [],
+            "prerequisites": [
+              "定积分",
+              "等分区间"
+            ],
+            "definition": "梯形公式用相邻端点函数值的平均值乘区间宽度求积分近似值。",
+            "example": "∫ₐᵇf≈h[(f₀+fₙ)/2+Σfᵢ]。",
+            "section": "§5.积分的近似计算"
+          },
+          {
+            "name": "辛普森公式",
+            "difficulty": 4,
+            "description": "结合端点、中点函数值的高精度积分公式",
             "aliases": [
-              "梯形法则"
+              "抛物线公式"
             ],
             "prerequisites": [
               "定积分",
-              "区间分割"
+              "等分区间"
             ],
-            "definition": "以每个小区间端点函数值平均数乘区间长度并求和来近似定积分。",
-            "example": "Tₙ=h[(y₀+yₙ)/2+Σyᵢ]",
-            "section": "§5.积分的近似计算"
+            "definition": "辛普森公式用奇偶分点加权函数值近似定积分。",
+            "example": "∫₀¹e^(−x²)dx可用辛普森公式计算。"
           },
           {
-            "name": "辛卜森公式",
+            "name": "积分误差余项",
             "difficulty": 4,
-            "description": "结合端点、中点及内点值近似定积分",
+            "description": "积分近似值与真实值之差及其估计式",
             "aliases": [
-              "辛普森公式"
-            ],
-            "prerequisites": [
-              "梯形公式",
-              "定积分"
-            ],
-            "definition": "在等分区间上按奇偶节点加权求和以近似定积分的公式。",
-            "example": "Sₙ=h/3[y₀+y₂ₙ+4Σy₂ᵢ₋₁+2Σy₂ᵢ]",
-            "section": "§5.积分的近似计算"
-          },
-          {
-            "name": "积分余项",
-            "difficulty": 4,
-            "description": "数值积分公式近似值与准确值的差",
-            "aliases": [
+              "余项",
               "误差项"
             ],
             "prerequisites": [
               "矩形公式",
               "梯形公式",
-              "辛卜森公式"
+              "辛普森公式"
             ],
-            "definition": "定积分准确值与数值积分公式所得近似值之差称为余项。",
-            "example": "Rₙ=积分值−近似值"
-          },
-          {
-            "name": "递推积分公式",
-            "difficulty": 3,
-            "description": "用低阶积分表示高阶积分的关系式",
-            "aliases": [
-              "积分递推式"
-            ],
-            "prerequisites": [
-              "定积分分部积分"
-            ],
-            "definition": "通过分部积分等方法建立不同阶数或参数积分之间的递推关系。",
-            "example": "Kₙ=(1/n+Kₙ₋₁)/2"
+            "definition": "积分误差余项是数值积分公式所得近似值与定积分真实值的差。",
+            "example": "辛普森余项量级约按1/n⁴减小。"
           }
         ],
         "sections": [
@@ -2332,257 +2317,277 @@
         "name": "第十章 积分学在几何学、力学与物理学中的应用",
         "concepts": [
           {
+            "name": "定积分",
+            "difficulty": 2,
+            "description": "用极限定义的积分，用于累加连续变化量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "定积分是函数在区间上累积变化量的极限。",
+            "example": "用定积分计算曲线弧长。"
+          },
+          {
+            "name": "参数方程",
+            "difficulty": 2,
+            "description": "用参数表示平面曲线坐标的方程组。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "参数方程以同一参数分别表示曲线上点的坐标。",
+            "example": "x=φ(t)，y=ψ(t)。"
+          },
+          {
             "name": "曲线长度",
             "difficulty": 2,
-            "description": "曲线内接折线周长的上确界或极限。",
+            "description": "曲线内接折线周长上确界所定义的长度。",
             "aliases": [
               "弧长"
             ],
-            "prerequisites": [],
-            "definition": "曲线长度是内接折线周长集合的上确界。",
-            "example": "参数曲线弧长为∫√(x'²+y'²)dt。"
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "曲线长度是内接于曲线的折线周长集合的上确界。",
+            "example": "计算悬链线从顶点到点M的弧长。"
           },
           {
             "name": "参数弧长公式",
-            "difficulty": 2,
-            "description": "用参数方程计算平面曲线弧长的积分公式。",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "参数曲线长度等于速度模长的定积分。",
+            "aliases": [
+              "参数曲线弧长公式"
+            ],
             "prerequisites": [
+              "参数方程",
+              "定积分",
               "曲线长度"
             ],
-            "definition": "参数曲线的弧长等于速度模长在参数区间上的积分。",
-            "example": "x=φ(t),y=ψ(t)时用公式(4)求长。"
+            "definition": "参数曲线的弧长为∫√(x′²+y′²)dt。",
+            "example": "星形线四分之一弧长为3a/2。"
           },
           {
-            "name": "显式弧长公式",
-            "difficulty": 2,
-            "description": "由显式方程计算曲线弧长的公式。",
+            "name": "显式曲线弧长",
+            "difficulty": 3,
+            "description": "显式曲线弧长公式为∫√(1+y′²)dx。",
             "aliases": [],
             "prerequisites": [
-              "曲线长度"
+              "曲线长度",
+              "定积分"
             ],
-            "definition": "曲线y=f(x)的弧长是∫√(1+f'(x)²)dx。",
-            "example": "求抛物线一段弧长。"
+            "definition": "曲线y=f(x)的长度由横坐标积分表达。",
+            "example": "求抛物线从顶点到点M的弧长。"
           },
           {
             "name": "极坐标弧长",
             "difficulty": 3,
-            "description": "由极坐标方程计算曲线弧长的方法。",
-            "aliases": [],
-            "prerequisites": [
-              "曲线长度"
+            "description": "极坐标曲线弧长由∫√(r²+r′²)dθ计算。",
+            "aliases": [
+              "极坐标曲线弧长"
             ],
-            "definition": "极坐标曲线的弧长是∫√(r²+(dr/dθ)²)dθ。",
-            "example": "用公式求阿基米德螺线弧长。"
+            "prerequisites": [
+              "曲线长度",
+              "参数方程",
+              "定积分"
+            ],
+            "definition": "极坐标曲线的弧长是极径与其导数平方和开方的积分。",
+            "example": "计算阿基米德螺线的弧长。"
           },
           {
-            "name": "弧长极限定义",
-            "difficulty": 3,
-            "description": "以折线最大边长趋零时的周长极限定义弧长。",
+            "name": "折线极限定义",
+            "difficulty": 4,
+            "description": "折线最大边趋零时，周长极限等于曲线长。",
             "aliases": [],
             "prerequisites": [
               "曲线长度"
             ],
-            "definition": "非闭曲线弧长等于内接折线最大边趋零时周长的极限。",
+            "definition": "非闭曲线长度可定义为内接折线周长在分割加细时的极限。",
             "example": "S=limλ→0 p。"
           },
           {
+            "name": "截面面积法",
+            "difficulty": 3,
+            "description": "以平行截面面积的积分求立体体积。",
+            "aliases": [
+              "平行截面法"
+            ],
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "立体体积等于其截面面积沿截面方向的定积分。",
+            "example": "椭球体积由椭圆截面面积积分得到。"
+          },
+          {
             "name": "旋转体体积",
-            "difficulty": 2,
-            "description": "通过垂直截面面积积分计算旋转体体积。",
+            "difficulty": 3,
+            "description": "平面图形绕轴旋转形成的立体体积。",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "旋转体体积等于其截面面积沿轴向的积分。",
-            "example": "绕x轴时V=π∫y²dx。",
+            "prerequisites": [
+              "截面面积法",
+              "定积分"
+            ],
+            "definition": "旋转体体积是旋转区域所包围立体的体积。",
+            "example": "抛物面与球面的公共部分体积。",
             "section": "§3.力学与物理学的数量的计算"
           },
           {
-            "name": "截面面积积分",
-            "difficulty": 2,
-            "description": "用连续截面面积的定积分求立体体积。",
-            "aliases": [],
-            "prerequisites": [
-              "旋转体体积"
-            ],
-            "definition": "立体体积等于截面面积函数在范围内的定积分。",
-            "example": "椭球体由椭圆截面面积积分求体积。"
-          },
-          {
-            "name": "旋转曲面面积",
+            "name": "圆盘法",
             "difficulty": 3,
-            "description": "由平面曲线旋转所得曲面的面积计算。",
-            "aliases": [],
-            "prerequisites": [
-              "曲线长度"
+            "description": "用垂直旋转轴的圆盘截面积积分求体积。",
+            "aliases": [
+              "圆盘截面法"
             ],
-            "definition": "旋转曲面面积是内接折线旋转面积在分段趋细时的极限。",
-            "example": "曲线绕x轴旋转可用2π∫y ds。"
+            "prerequisites": [
+              "旋转体体积",
+              "截面面积法"
+            ],
+            "definition": "圆盘法将旋转体体积表示为圆盘面积的定积分。",
+            "example": "V=π∫y²dx。"
           },
           {
-            "name": "圆台侧面积逼近",
-            "difficulty": 2,
-            "description": "以折线旋转形成圆台侧面并取面积极限。",
-            "aliases": [],
-            "prerequisites": [
+            "name": "旋转面面积",
+            "difficulty": 4,
+            "description": "曲线绕轴旋转形成曲面的面积。",
+            "aliases": [
               "旋转曲面面积"
             ],
-            "definition": "折线各段旋转形成圆台侧面，其面积和逼近旋转曲面面积。",
-            "example": "单段面积为2π(y_i+y_{i+1})l_i/2。"
-          },
-          {
-            "name": "椭圆积分",
-            "difficulty": 4,
-            "description": "由含根式积分表示的一类特殊积分。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "椭圆积分是摆运动和不同半径圆柱体积中出现的特殊定积分。",
-            "example": "∫dφ/√(1-k²sin²φ)是椭圆积分。"
-          },
-          {
-            "name": "第一类椭圆积分",
-            "difficulty": 4,
-            "description": "被积函数含√(1-k²sin²φ)倒数的椭圆积分。",
-            "aliases": [],
             "prerequisites": [
-              "椭圆积分"
+              "曲线长度",
+              "定积分"
             ],
-            "definition": "第一类椭圆积分定义为∫dφ/√(1-k²sin²φ)。",
-            "example": "单摆时间公式化为F(φ,k)。",
-            "section": "§4.最简单的微分方程"
+            "definition": "旋转面面积是内接折线旋转所得圆台侧面积在分割加细时的极限。",
+            "example": "曲线绕x轴旋转得到旋转面。"
           },
           {
-            "name": "完全椭圆积分",
-            "difficulty": 4,
-            "description": "上限取π/2的椭圆积分。",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆积分"
-            ],
-            "definition": "完全椭圆积分是椭圆积分上限为π/2时的特殊形式。",
-            "example": "单摆周期含K(k)。"
-          },
-          {
-            "name": "雅可比椭圆函数",
-            "difficulty": 5,
-            "description": "由第一类椭圆积分反演得到的函数。",
-            "aliases": [
-              "椭圆正弦",
-              "sn函数"
-            ],
-            "prerequisites": [
-              "第一类椭圆积分"
-            ],
-            "definition": "雅可比椭圆函数sn是椭圆积分反函数的正弦表示。",
-            "example": "单摆满足sin(θ/2)=sin(α/2)sn(√(g/l)t)。",
-            "section": "§4.最简单的微分方程"
-          },
-          {
-            "name": "单摆运动方程",
-            "difficulty": 4,
-            "description": "由重力切向分力和能量关系建立的摆运动方程。",
-            "aliases": [],
-            "prerequisites": [
-              "力的功",
-              "活力定律"
-            ],
-            "definition": "单摆运动方程描述摆角随时间变化的微分关系。",
-            "example": "dθ/dt=-√(g/l)√(2(cosθ-cosα))。"
-          },
-          {
-            "name": "单摆周期",
-            "difficulty": 4,
-            "description": "单摆完成一次振动所需的时间。",
-            "aliases": [],
-            "prerequisites": [
-              "单摆运动方程",
-              "完全椭圆积分"
-            ],
-            "definition": "单摆周期由摆长、重力加速度和振幅共同决定。",
-            "example": "T=2√(l/g)K(k)。"
-          },
-          {
-            "name": "力的功",
+            "name": "圆台侧面积和",
             "difficulty": 3,
-            "description": "力沿位移方向分量对位移的积分。",
-            "aliases": [
-              "功"
+            "description": "折线绕轴旋转所得圆台侧面积的总和。",
+            "aliases": [],
+            "prerequisites": [
+              "旋转面面积",
+              "曲线长度"
             ],
-            "prerequisites": [],
-            "definition": "变力沿路径所作的功等于力的切向分量对路程的积分。",
-            "example": "摆运动中A=-∫mg sinθ ds。",
-            "section": "§3.力学与物理学的数量的计算"
+            "definition": "折线各边旋转形成的圆台侧面积之和近似旋转面面积。",
+            "example": "Q=2πΣ((yi+yi+1)/2)li。"
+          },
+          {
+            "name": "功的积分",
+            "difficulty": 3,
+            "description": "变力沿路径做功由力的切向分量积分得到。",
+            "aliases": [
+              "变力做功"
+            ],
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "变力沿路径的功是力在位移方向分量对路程的积分。",
+            "example": "摆上升过程的重力功为−∫mg sinθ ds。"
           },
           {
             "name": "活力定律",
             "difficulty": 3,
-            "description": "用功联系物体动能变化的力学定律。",
-            "aliases": [],
-            "prerequisites": [
-              "力的功"
+            "description": "力所做的功等于动能的变化量。",
+            "aliases": [
+              "动能定理"
             ],
-            "definition": "合力所作的功等于物体动能的增加量。",
-            "example": "摆上升时功等于动能损失。"
+            "prerequisites": [
+              "功的积分"
+            ],
+            "definition": "物体所受合力做功等于其动能的增量。",
+            "example": "用重力功求摆在位置M的速度。"
+          },
+          {
+            "name": "摆的运动方程",
+            "difficulty": 4,
+            "description": "单摆角位移与时间关系由能量积分确定。",
+            "aliases": [
+              "单摆运动"
+            ],
+            "prerequisites": [
+              "活力定律",
+              "功的积分"
+            ],
+            "definition": "摆的运动方程描述摆角θ随时间t的变化关系。",
+            "example": "dθ/dt=−√(g/l)√(2(cosθ−cosα))。"
+          },
+          {
+            "name": "椭圆积分",
+            "difficulty": 4,
+            "description": "含√(1−k²sin²φ)等因子的特殊积分。",
+            "aliases": [
+              "椭圆积分"
+            ],
+            "prerequisites": [
+              "定积分"
+            ],
+            "definition": "椭圆积分是一类通常不能化为初等函数的定积分。",
+            "example": "摆的周期用第一类椭圆积分表示。"
+          },
+          {
+            "name": "第一类椭圆积分",
+            "difficulty": 4,
+            "description": "F(φ,k)=∫₀φ(1−k²sin²u)^−1/2du。",
+            "aliases": [
+              "F(φ,k)"
+            ],
+            "prerequisites": [
+              "椭圆积分",
+              "定积分"
+            ],
+            "definition": "第一类椭圆积分是被积函数为倒数平方根的椭圆积分。",
+            "example": "摆时间t=√(l/g)F(φ,k)。",
+            "section": "§4.最简单的微分方程"
+          },
+          {
+            "name": "全椭圆积分",
+            "difficulty": 4,
+            "description": "积分上限为π/2的椭圆积分，如K(k)、E(k)。",
+            "aliases": [
+              "完全椭圆积分"
+            ],
+            "prerequisites": [
+              "椭圆积分",
+              "定积分"
+            ],
+            "definition": "全椭圆积分是椭圆积分在四分之一周期区间上的取值。",
+            "example": "K(k)=∫₀^{π/2}dφ/√(1−k²sin²φ)。"
           },
           {
             "name": "气压公式",
             "difficulty": 3,
-            "description": "描述气压随海拔高度变化的指数公式。",
+            "description": "气压随海拔高度按指数规律衰减。",
             "aliases": [
               "气压高度公式"
             ],
             "prerequisites": [
               "微分方程"
             ],
-            "definition": "在模型假设下气压满足p=p₀e^{-kh}。",
+            "definition": "在温度条件下，气压满足p=p₀e^(−kh)。",
             "example": "由气压表读数估计海拔高度。",
             "section": "§4.最简单的微分方程"
           },
           {
             "name": "绳带摩擦公式",
-            "difficulty": 3,
-            "description": "给出绕鼓轮绳两端张力关系的公式。",
+            "difficulty": 4,
+            "description": "绕轮绳两端张力满足S₁=S₀e^(μω)。",
             "aliases": [
               "欧拉摩擦公式"
             ],
             "prerequisites": [
               "微分方程"
             ],
-            "definition": "绳带临界滑动时两端张力满足S₁=S₀e^{μω}。",
-            "example": "抱角增大可提高可承受张力比。"
-          },
-          {
-            "name": "绝热过程",
-            "difficulty": 3,
-            "description": "气体与环境没有热交换的过程。",
-            "aliases": [],
-            "prerequisites": [
-              "微分方程"
-            ],
-            "definition": "绝热过程中气体与周围环境之间的热交换量为零。",
-            "example": "气体绝热膨胀满足泊松公式。"
+            "definition": "绳与圆柱接触并将要滑动时，张力比随摩擦系数和抱角指数变化。",
+            "example": "S₁/S₀=e^(μω)。"
           },
           {
             "name": "泊松公式",
             "difficulty": 4,
-            "description": "理想气体绝热过程中的压力体积关系。",
+            "description": "理想气体绝热过程中满足pV^k=C。",
             "aliases": [
-              "绝热方程"
+              "绝热过程公式"
             ],
             "prerequisites": [
-              "绝热过程"
+              "微分方程"
             ],
-            "definition": "单位质量理想气体绝热变化满足pV^k=C。",
-            "example": "k=c_p/c_V>1时由微分方程积分得到。",
+            "definition": "理想气体绝热变化时压力与体积的幂关系为pV^k为常量。",
+            "example": "由cV Vdp+cp p dV=0积分得到。",
             "section": "§4.最简单的微分方程"
-          },
-          {
-            "name": "微分方程构成",
-            "difficulty": 4,
-            "description": "由无穷小量关系建立物理量变化方程的方法。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "微分方程构成是从无穷小元素关系推导量间依赖关系的过程。",
-            "example": "由-dp=s dh建立气压方程。"
           }
         ],
         "sections": [
@@ -2634,41 +2639,37 @@
           {
             "name": "无穷级数",
             "difficulty": 1,
-            "description": "由无穷序列各项相加形成的符号表达式",
-            "aliases": [
-              "无穷和"
-            ],
+            "description": "由无穷序列各项依次相加形成的符号表达式",
+            "aliases": [],
             "prerequisites": [
-              "数列"
+              "数列极限"
             ],
-            "definition": "给定数列后按顺序写出的无穷项相加式称为无穷级数。",
-            "example": "∑ₙ₌₁^∞1/n"
+            "definition": "形如∑a_n的无穷项相加式称为无穷级数。",
+            "example": "1+1/2+1/3+⋯"
           },
           {
-            "name": "级数的项",
+            "name": "级数项",
             "difficulty": 1,
             "description": "构成无穷级数的各个数",
             "aliases": [],
-            "prerequisites": [
-              "无穷级数"
-            ],
-            "definition": "无穷级数中被逐项相加的数称为级数的项。",
-            "example": "级数∑aₙ的项为a₁、a₂等"
+            "prerequisites": [],
+            "definition": "无穷级数中被相加的每个数称为级数的项。",
+            "example": "级数∑a_n的项为a_n",
+            "section": "§5.累级数与二重级数"
           },
           {
             "name": "部分和",
             "difficulty": 1,
             "description": "级数前若干项的有限和",
             "aliases": [
-              "段",
-              "部分和序列"
+              "部分和序列",
+              "级数的段"
             ],
             "prerequisites": [
-              "无穷级数",
-              "级数的项"
+              "无穷级数"
             ],
-            "definition": "级数前n项之和Aₙ=a₁+⋯+aₙ称为第n个部分和。",
-            "example": "1+1/2+1/3是调和级数的第三个部分和"
+            "definition": "级数前n项之和A_n=a_1+⋯+a_n称为第n个部分和。",
+            "example": "1+1/2+1/3的部分和为11/6"
           },
           {
             "name": "级数的和",
@@ -2678,8 +2679,8 @@
             "prerequisites": [
               "部分和"
             ],
-            "definition": "级数部分和Aₙ在n趋于无穷时的确定极限称为级数的和。",
-            "example": "∑ₙ₌₁^∞(1/2)ⁿ=1"
+            "definition": "部分和A_n当n趋于无穷时的确定极限称为级数的和。",
+            "example": "∑(1/2)^n=1"
           },
           {
             "name": "收敛级数",
@@ -2689,8 +2690,8 @@
             "prerequisites": [
               "级数的和"
             ],
-            "definition": "具有有限和的级数称为收敛级数。",
-            "example": "∑ₙ₌₁^∞1/2ⁿ收敛"
+            "definition": "具有有限级数和的级数称为收敛级数。",
+            "example": "∑_{n=1}∞1/2^n收敛"
           },
           {
             "name": "发散级数",
@@ -2700,20 +2701,21 @@
             "prerequisites": [
               "级数的和"
             ],
-            "definition": "和等于正负无穷或根本不存在的级数称为发散级数。",
-            "example": "∑ₙ₌₁^∞1/√n发散"
+            "definition": "级数和为正负无穷或不存在时称为发散级数。",
+            "example": "1-1+1-1+⋯发散"
           },
           {
             "name": "几何级数",
             "difficulty": 2,
-            "description": "相邻两项比值恒为公比的级数",
-            "aliases": [],
-            "prerequisites": [
-              "无穷级数",
-              "部分和"
+            "description": "相邻项比值恒定的无穷级数",
+            "aliases": [
+              "等比级数"
             ],
-            "definition": "形如a+aq+aq²+⋯的级数称为几何级数。",
-            "example": "∑ₙ₌₀^∞aqⁿ"
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "形如∑_{n=0}∞aq^n的级数称为几何级数。",
+            "example": "1+1/2+1/4+⋯"
           },
           {
             "name": "几何级数收敛性",
@@ -2722,129 +2724,171 @@
             "aliases": [],
             "prerequisites": [
               "几何级数",
-              "收敛级数",
-              "发散级数"
-            ],
-            "definition": "几何级数当|q|<1时收敛且和为a/(1-q)，当|q|≥1时发散。",
-            "example": "∑ₙ₌₀^∞(1/2)ⁿ=2"
-          },
-          {
-            "name": "余式",
-            "difficulty": 2,
-            "description": "弃去级数前m项后得到的级数",
-            "aliases": [
-              "余项级数"
-            ],
-            "prerequisites": [
-              "无穷级数",
               "收敛级数"
             ],
-            "definition": "从原级数第m项之后开始的级数称为该级数的余式。",
-            "example": "∑ₙ₌ₘ₊₁^∞aₙ是第m项后的余式"
+            "definition": "几何级数当且仅当|q|<1时收敛，和为a/(1-q)。",
+            "example": "∑(1/3)^n=3/2"
+          },
+          {
+            "name": "余式级数",
+            "difficulty": 2,
+            "description": "删去级数前有限项后得到的级数",
+            "aliases": [
+              "级数余式"
+            ],
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "弃去原级数前m项后所得的级数称为第m项后的余式。",
+            "example": "∑a_n的余式为∑_{n=m+1}∞a_n"
           },
           {
             "name": "余式和",
             "difficulty": 2,
-            "description": "余式的和并随截取位置趋于零",
+            "description": "余式级数的和，等于总和减部分和",
             "aliases": [],
             "prerequisites": [
-              "余式",
-              "级数的和"
+              "余式级数",
+              "部分和"
             ],
-            "definition": "收敛级数第m项后余式的和αₘ等于A−Aₘ并趋于零。",
-            "example": "几何级数余式和随m增大趋于0"
+            "definition": "收敛级数第m项后余式的和为α_m=A-A_m。",
+            "example": "若A=1，A_m=3/4，则α_m=1/4"
           },
           {
-            "name": "级数线性运算",
+            "name": "收敛必要条件",
             "difficulty": 2,
-            "description": "收敛级数可数乘并逐项相加减",
+            "description": "收敛级数的通项必须趋于零",
             "aliases": [],
             "prerequisites": [
               "收敛级数",
-              "部分和"
+              "数列极限"
             ],
-            "definition": "收敛级数数乘及逐项加减后仍收敛，和作相应线性运算。",
-            "example": "∑(aₙ+bₙ)=∑aₙ+∑bₙ"
-          },
-          {
-            "name": "通项趋零",
-            "difficulty": 2,
-            "description": "级数收敛时其通项必须趋于零",
-            "aliases": [
-              "收敛必要条件"
-            ],
-            "prerequisites": [
-              "收敛级数",
-              "部分和"
-            ],
-            "definition": "若级数收敛，则其通项aₙ必满足aₙ趋于零。",
-            "example": "∑1/√n的通项趋零但级数仍发散"
+            "definition": "若∑a_n收敛，则其通项a_n必满足a_n→0。",
+            "example": "∑1/n发散但1/n→0"
           },
           {
             "name": "正项级数",
             "difficulty": 2,
-            "description": "各项均为非负数的无穷级数",
+            "description": "各项均为非负数的级数",
             "aliases": [],
             "prerequisites": [
-              "无穷级数",
-              "级数的项"
+              "无穷级数"
             ],
-            "definition": "满足aₙ≥0的无穷级数称为正项级数。",
-            "example": "∑ₙ₌₁^∞1/n²是正项级数"
+            "definition": "满足a_n≥0的无穷级数称为正项级数。",
+            "example": "∑1/n^2是正项级数"
           },
           {
-            "name": "正项级数判据",
+            "name": "正项级数判定",
             "difficulty": 3,
-            "description": "部分和有界决定正项级数有限收敛",
-            "aliases": [
-              "正项级数收敛条件"
-            ],
+            "description": "部分和有界则收敛，无界则发散",
+            "aliases": [],
             "prerequisites": [
               "正项级数",
               "部分和"
             ],
-            "definition": "正项级数部分和递增，部分和有界当且仅当级数收敛。",
-            "example": "∑1/n²的部分和有界，故收敛"
+            "definition": "正项级数的部分和递增，部分和有界当且仅当级数收敛。",
+            "example": "∑1/n^2的部分和有界，故收敛"
           },
           {
             "name": "调和级数",
             "difficulty": 2,
-            "description": "各项为自然数倒数的正项级数",
+            "description": "各项为自然数倒数的级数",
             "aliases": [],
             "prerequisites": [
-              "正项级数",
-              "部分和"
+              "正项级数"
             ],
-            "definition": "级数∑ₙ₌₁^∞1/n称为调和级数。",
-            "example": "1+1/2+1/3+⋯发散"
+            "definition": "级数∑_{n=1}∞1/n称为调和级数。",
+            "example": "1+1/2+1/3+⋯"
           },
           {
-            "name": "ζ级数",
+            "name": "调和级数发散",
             "difficulty": 3,
-            "description": "通项为自然数s次方倒数的级数",
+            "description": "调和级数部分和无上界而发散",
+            "aliases": [],
+            "prerequisites": [
+              "调和级数",
+              "正项级数判定"
+            ],
+            "definition": "调和级数的部分和无上界，因此其和为无穷。",
+            "example": "H_{2^k}>k/2"
+          },
+          {
+            "name": "p级数",
+            "difficulty": 2,
+            "description": "通项为自然数负实次幂的级数",
             "aliases": [
-              "调和级数的推广"
+              "ζ级数"
+            ],
+            "prerequisites": [
+              "正项级数"
+            ],
+            "definition": "形如∑_{n=1}∞1/n^s的级数称为p级数或调和型级数。",
+            "example": "∑1/n^2"
+          },
+          {
+            "name": "p级数收敛性",
+            "difficulty": 3,
+            "description": "p级数在指数大于一时收敛",
+            "aliases": [],
+            "prerequisites": [
+              "p级数",
+              "正项级数判定"
+            ],
+            "definition": "∑1/n^s在s>1时收敛，在s≤1时发散。",
+            "example": "∑1/n^{3/2}收敛"
+          },
+          {
+            "name": "比较判别法",
+            "difficulty": 3,
+            "description": "通过项的大小比较判断正项级数收敛性",
+            "aliases": [
+              "比较法"
             ],
             "prerequisites": [
               "正项级数",
-              "调和级数"
+              "正项级数判定"
             ],
-            "definition": "级数ζ(s)=∑ₙ₌₁^∞1/nˢ是调和级数的推广。",
-            "example": "∑1/n²收敛，∑1/n发散"
+            "definition": "用已知收敛或发散级数比较正项大小以判定所给级数性质的方法。",
+            "example": "0≤a_n≤1/n^2则∑a_n收敛",
+            "section": "§2.正项级数的收敛性"
           },
           {
             "name": "绝对收敛",
             "difficulty": 3,
-            "description": "各项取绝对值后仍然收敛",
+            "description": "各项绝对值构成的级数收敛",
             "aliases": [
               "绝对收敛级数"
             ],
             "prerequisites": [
-              "收敛级数",
-              "正项级数"
+              "收敛级数"
             ],
-            "definition": "级数各项取绝对值后所得级数收敛，称原级数绝对收敛。",
-            "example": "∑(-1)ⁿ/n²绝对收敛"
+            "definition": "若∑|a_n|收敛，则称∑a_n绝对收敛。",
+            "example": "∑(-1)^n/n^2绝对收敛"
+          },
+          {
+            "name": "变号级数",
+            "difficulty": 2,
+            "description": "级数项正负号交替或发生变化",
+            "aliases": [],
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "项中正负号交替变化的级数称为变号级数。",
+            "example": "1-1/2+1/3-⋯",
+            "section": "§9. 发散级数的求和法"
+          },
+          {
+            "name": "重排级数",
+            "difficulty": 3,
+            "description": "改变原级数项的排列顺序形成的级数",
+            "aliases": [
+              "级数重排"
+            ],
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "将级数各项按新的顺序排列后所得的级数称为重排级数。",
+            "example": "重新排列∑a_n的项"
           },
           {
             "name": "二重级数",
@@ -2852,85 +2896,110 @@
             "description": "按两个指标排列并求和的级数",
             "aliases": [],
             "prerequisites": [
-              "无穷级数",
-              "正项级数"
+              "无穷级数"
             ],
-            "definition": "含有两个指标并对矩阵中各项求和的级数称为二重级数。",
-            "example": "∑ᵢ₌₁^∞∑ₖ₌₁^∞1/(iᵅkᵝ)"
+            "definition": "形如∑_{i,k}a_i^{(k)}的双指标级数称为二重级数。",
+            "example": "∑_{i,k≥1}1/(i^αk^β)"
           },
           {
             "name": "累级数",
             "difficulty": 3,
-            "description": "先对矩阵逐行或逐列求和形成的级数",
+            "description": "先按行或列求和后再求和的级数",
+            "aliases": [
+              "累次级数"
+            ],
+            "prerequisites": [
+              "二重级数"
+            ],
+            "definition": "对二重级数先固定一个指标求和，再对所得级数求和所得的级数称为累级数。",
+            "example": "∑_k(∑_ia_i^{(k)})",
+            "section": "§5.累级数与二重级数"
+          },
+          {
+            "name": "绝对收敛重排",
+            "difficulty": 4,
+            "description": "绝对收敛保证多重求和次序可交换",
             "aliases": [],
             "prerequisites": [
+              "绝对收敛",
               "二重级数",
-              "无穷级数"
+              "累级数"
             ],
-            "definition": "将二重级数按行或按列分别求和所得的级数称为累级数。",
-            "example": "先求各行和再把行和相加",
-            "section": "§5.累级数与二重级数"
+            "definition": "若项的绝对值构成的相关级数收敛，则行列累加及简单级数均收敛且和相同。",
+            "example": "∑_{i,k}|a_i^{(k)}|<∞时可交换次序"
           },
           {
             "name": "兰伯特级数",
             "difficulty": 3,
-            "description": "形如∑aₖxᵏ/(1−xᵏ)的级数",
-            "aliases": [],
-            "prerequisites": [
-              "无穷级数",
-              "绝对收敛"
+            "description": "通项含x^k/(1-x^k)的级数",
+            "aliases": [
+              "Lambert级数"
             ],
-            "definition": "级数φ(x)=∑ₖ₌₁^∞aₖxᵏ/(1−xᵏ)称为兰伯特级数。",
-            "example": "∑ₖ₌₁^∞xᵏ/(1−xᵏ)"
+            "prerequisites": [
+              "无穷级数"
+            ],
+            "definition": "形如∑_{k=1}∞a_kx^k/(1-x^k)的级数称为兰伯特级数。",
+            "example": "∑x^k/(1-x^k)"
           },
           {
-            "name": "切萨罗法",
+            "name": "幂级数展开",
             "difficulty": 3,
-            "description": "以部分和的算术平均值定义广义和",
+            "description": "将兰伯特级数按x的幂次重新组合",
+            "aliases": [],
+            "prerequisites": [
+              "兰伯特级数",
+              "绝对收敛"
+            ],
+            "definition": "在收敛条件下将兰伯特级数写成∑α_nx^n的形式。",
+            "example": "α_n=∑_{k∣n}a_k",
+            "section": "§5.累级数与二重级数"
+          },
+          {
+            "name": "切萨罗求和",
+            "difficulty": 4,
+            "description": "以部分和的算术平均极限定义广义和",
             "aliases": [
-              "切萨罗求和"
+              "Cesàro求和"
+            ],
+            "prerequisites": [
+              "部分和",
+              "数列极限"
+            ],
+            "definition": "当部分和的算术平均值趋于某极限时，以该极限作为级数的广义和。",
+            "example": "1-1+1-⋯的切萨罗和为1/2",
+            "section": "§9. 发散级数的求和法"
+          },
+          {
+            "name": "博雷尔求和",
+            "difficulty": 4,
+            "description": "通过指数加权变换求取发散级数广义和",
+            "aliases": [
+              "Borel求和"
             ],
             "prerequisites": [
               "部分和",
               "发散级数"
             ],
-            "definition": "取级数部分和的算术平均值并考察其极限的求和方法称为切萨罗法。",
-            "example": "1−1+1−1+⋯的切萨罗和为1/2",
-            "section": "§9. 发散级数的求和法"
+            "definition": "将级数转化为指数权重形式并取相应极限的广义求和方法。",
+            "example": "1-1+1-⋯的博雷尔和为1/2"
           },
           {
-            "name": "欧拉变换",
+            "name": "欧拉求和法",
             "difficulty": 4,
-            "description": "将交错级数转化为差分级数的求和方法",
+            "description": "利用差分变换求发散级数的广义和",
             "aliases": [
-              "欧拉求和法"
+              "欧拉变换"
             ],
             "prerequisites": [
-              "发散级数",
-              "切萨罗法"
+              "发散级数"
             ],
-            "definition": "用各阶差分及权重2的负幂表示交错级数的求和方法称为欧拉变换。",
-            "example": "1−1+1−1+⋯按欧拉法和为1/2"
-          },
-          {
-            "name": "博雷尔法",
-            "difficulty": 4,
-            "description": "借助指数权重极限求取广义和",
-            "aliases": [
-              "博雷尔求和"
-            ],
-            "prerequisites": [
-              "发散级数",
-              "部分和"
-            ],
-            "definition": "利用e的负幂与阶乘权重构造极限来赋予级数广义和的方法称为博雷尔法。",
-            "example": "1−1+1−1+⋯按博雷尔法和为1/2",
-            "section": "§9. 发散级数的求和法"
+            "definition": "用级数项的高阶差分构造新级数并以其和定义广义和的方法。",
+            "example": "1-1+1-⋯的欧拉和为1/2"
           },
           {
             "name": "正则求和法",
             "difficulty": 4,
-            "description": "对收敛级数给出原普通和的求和法",
+            "description": "对收敛级数所得广义和与通常和一致",
             "aliases": [
               "正则性"
             ],
@@ -2938,23 +3007,22 @@
               "收敛级数",
               "广义和"
             ],
-            "definition": "一个求和法若在普通收敛时所得广义和等于普通和，则称其具有正则性。",
-            "example": "收敛级数经正则方法求和仍得原和",
+            "definition": "一种求和法若对普通收敛级数给出其通常和，则称其具有正则性。",
+            "example": "切萨罗法对收敛级数保持原和",
             "section": "§9. 发散级数的求和法"
           },
           {
-            "name": "广义和",
-            "difficulty": 3,
-            "description": "由特殊求和法赋予发散级数的值",
+            "name": "线性求和法",
+            "difficulty": 4,
+            "description": "广义和对级数线性组合保持线性",
             "aliases": [
-              "广义求和"
+              "线性正则求和法"
             ],
             "prerequisites": [
-              "发散级数",
-              "切萨罗法"
+              "正则求和法"
             ],
-            "definition": "发散级数经某种求和方法所得的极限值称为广义和。",
-            "example": "1−1+1−1+⋯的广义和可取1/2",
+            "definition": "满足S(αa_n+βb_n)=αS(a_n)+βS(b_n)的求和法称为线性求和法。",
+            "example": "可逐项处理两个可求和级数的和差",
             "section": "§9. 发散级数的求和法"
           }
         ],
@@ -3047,60 +3115,60 @@
           {
             "name": "函数序列",
             "difficulty": 1,
-            "description": "由同一变量函数组成的无穷序列。",
+            "description": "以同一变量函数为元素的无穷序列",
             "aliases": [],
             "prerequisites": [],
-            "definition": "函数序列是定义在同一变化区域上的函数列f₁(x),f₂(x),… 。",
-            "example": "f_n(x)=x^n（0≤x≤1）。"
+            "definition": "函数序列是由定义在同一区域上的函数按序排列形成的序列。",
+            "example": "f_n(x)=x^n"
           },
           {
             "name": "极限函数",
             "difficulty": 2,
-            "description": "函数序列逐点取极限所得的函数。",
+            "description": "函数序列逐点取极限所得的函数",
             "aliases": [],
             "prerequisites": [
               "函数序列"
             ],
-            "definition": "若对区域中每个x都有极限，则f(x)=lim_{n→∞}f_n(x)称为极限函数。",
-            "example": "f_n(x)=x^n在[0,1]上的极限函数为f(x)=0（x<1），f(1)=1。"
+            "definition": "若对区域中每个x都有极限，则f(x)=lim f_n(x)称为极限函数。",
+            "example": "x^n在[0,1]上的极限函数"
           },
           {
             "name": "函数级数",
             "difficulty": 1,
-            "description": "各项为同一变量函数的无穷级数。",
+            "description": "各项为同一变量函数的无穷级数",
             "aliases": [],
             "prerequisites": [],
-            "definition": "函数级数是形如∑u_r(x)的级数，其每一项都是定义在同一区域上的函数。",
-            "example": "∑_{r=1}^∞x^{r-1}。"
+            "definition": "函数级数是形如Σu_n(x)的、项依赖于变量x的无穷级数。",
+            "example": "Σx^{n-1}"
           },
           {
             "name": "部分和",
-            "difficulty": 2,
-            "description": "函数级数前n项相加得到的函数。",
+            "difficulty": 1,
+            "description": "函数级数前若干项的和",
             "aliases": [],
             "prerequisites": [
               "函数级数"
             ],
-            "definition": "函数级数∑u_r(x)的前n项和f_n(x)=u₁(x)+…+u_n(x)称为部分和。",
-            "example": "∑x^{r-1}的第n个部分和为1+x+…+x^{n-1}。"
+            "definition": "函数级数前n项之和f_n(x)=u_1(x)+…+u_n(x)称为部分和。",
+            "example": "f_n(x)=Σ_{r=1}^n x^{r-1}"
           },
           {
             "name": "级数余式",
             "difficulty": 2,
-            "description": "函数级数从第n项以后剩余各项的和。",
+            "description": "函数级数和减去部分和的尾项",
             "aliases": [],
             "prerequisites": [
               "函数级数",
               "部分和"
             ],
-            "definition": "级数余式是φ_n(x)=∑_{k=n+1}^∞u_k(x)=f(x)-f_n(x)。",
-            "example": "∑x^{r-1}的余式为φ_n(x)=x^n/(1-x)。",
+            "definition": "级数余式是φ_n(x)=f(x)-f_n(x)=Σ_{k=n+1}^∞u_k(x)。",
+            "example": "Σx^{n-1}的余式为x^n/(1-x)",
             "section": "§1. 一致收敛性"
           },
           {
             "name": "一致收敛",
             "difficulty": 3,
-            "description": "同一N对区域内所有x同时满足误差要求。",
+            "description": "同一N同时控制区域内所有点的收敛",
             "aliases": [
               "一致趋向"
             ],
@@ -3108,13 +3176,13 @@
               "函数序列",
               "极限函数"
             ],
-            "definition": "对每个ε>0存在与x无关的N，使n>N时所有x均有|f_n(x)-f(x)|<ε。",
-            "example": "f_n(x)=x/(1+n²x²)在[0,1]上一致收敛于0。"
+            "definition": "对任意ε>0存在与x无关的N，使n>N时所有x均有|f_n(x)-f(x)|<ε。",
+            "example": "x/(1+n^2x^2)在[0,1]上一致收敛于0"
           },
           {
             "name": "非一致收敛",
-            "difficulty": 3,
-            "description": "不存在适用于所有x的统一收敛指标N。",
+            "difficulty": 2,
+            "description": "收敛所需的N依赖于区域中的点",
             "aliases": [
               "不一致收敛"
             ],
@@ -3122,48 +3190,136 @@
               "函数序列",
               "极限函数"
             ],
-            "definition": "函数序列虽对每个固定x收敛，但不存在与x无关的N使误差同时小于ε。",
-            "example": "f_n(x)=nx/(1+n²x²)在[0,1]上非一致收敛于0。"
+            "definition": "虽逐点收敛但不存在对区域内所有x同时适用的统一N的收敛。",
+            "example": "nx/(1+n^2x^2)在[0,1]上非一致收敛"
           },
           {
             "name": "函数级数一致收敛",
             "difficulty": 3,
-            "description": "部分和一致趋于级数和，等价于余式一致趋于零。",
-            "aliases": [
-              "级数的一致收敛"
-            ],
+            "description": "函数级数部分和一致趋向于级数和",
+            "aliases": [],
             "prerequisites": [
               "函数级数",
               "部分和",
               "级数余式"
             ],
-            "definition": "函数级数一致收敛是指其部分和一致趋于级数和，或余式一致趋于0。",
-            "example": "∑_{n=1}^∞(-1)^{n-1}/(x²+n)在全实轴上一致收敛。"
+            "definition": "函数级数一致收敛是指其部分和一致收敛于级数的和函数。",
+            "example": "Σ(-1)^{n-1}/(x^2+n)在全实轴上一致收敛"
           },
           {
-            "name": "一致收敛性条件",
+            "name": "一致收敛柯西准则",
             "difficulty": 4,
-            "description": "函数序列满足统一的柯西型误差条件。",
+            "description": "用函数序列的统一柯西条件判定一致收敛",
             "aliases": [
-              "一致收敛的柯西条件"
+              "一致收敛性条件"
             ],
             "prerequisites": [
-              "函数序列",
-              "一致收敛"
+              "函数序列"
             ],
-            "definition": "对每个ε>0存在与x无关的N，使n>N、任意m及所有x均有|f_{n+m}(x)-f_n(x)|<ε。",
-            "example": "若该条件成立，则函数序列在区域上存在极限函数并一致收敛。"
+            "definition": "对任意ε存在与x无关的N，使n>N时任意m和所有x均有|f_{n+m}(x)-f_n(x)|<ε。",
+            "example": "统一估计函数序列的尾差"
           },
           {
-            "name": "非一致性点",
+            "name": "优级数",
             "difficulty": 3,
-            "description": "函数序列在该点附近集中表现出非一致收敛。",
+            "description": "用收敛的常数级数统一控制函数级数",
+            "aliases": [
+              "主控级数"
+            ],
+            "prerequisites": [
+              "函数级数"
+            ],
+            "definition": "若存在收敛常数级数ΣM_n且|u_n(x)|≤M_n对所有x成立，则ΣM_n为优级数。",
+            "example": "|u_n(x)|≤1/n^2且Σ1/n^2收敛"
+          },
+          {
+            "name": "魏尔斯特拉斯判别法",
+            "difficulty": 4,
+            "description": "通过优级数判定函数级数一致收敛",
+            "aliases": [
+              "M判别法"
+            ],
+            "prerequisites": [
+              "函数级数",
+              "优级数"
+            ],
+            "definition": "若函数级数各项绝对值被收敛的常数级数统一控制，则该函数级数一致收敛。",
+            "example": "|u_n(x)|≤M_n且ΣM_n收敛"
+          },
+          {
+            "name": "阿贝尔判别法",
+            "difficulty": 4,
+            "description": "利用单调因子与一致有界性判定一致收敛",
             "aliases": [],
             "prerequisites": [
-              "非一致收敛"
+              "函数级数一致收敛"
             ],
-            "definition": "非一致性点是其周围区域积集着函数序列非一致收敛性质的点。",
-            "example": "f_n(x)=nx/(1+n²x²)在x=0处是非一致性点。"
+            "definition": "函数级数满足阿贝尔型单调性和一致收敛条件时，可判定其一致收敛。",
+            "example": "对含单调参数因子的函数级数使用判别"
+          },
+          {
+            "name": "狄利克雷判别法",
+            "difficulty": 4,
+            "description": "利用部分和一致有界与因子趋零判定收敛",
+            "aliases": [],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "若一类函数级数部分和一致有界且另一因子单调趋于零，则乘积级数一致收敛。",
+            "example": "Σ(-1)^{n-1}/(x^2+n)"
+          },
+          {
+            "name": "极限函数连续性",
+            "difficulty": 3,
+            "description": "研究连续函数序列极限是否保持连续",
+            "aliases": [
+              "级数和的连续性"
+            ],
+            "prerequisites": [
+              "一致收敛",
+              "极限函数"
+            ],
+            "definition": "连续函数序列在一致收敛条件下，其极限函数保持连续性。",
+            "example": "连续函数一致收敛于零函数"
+          },
+          {
+            "name": "函数级数逐项积分",
+            "difficulty": 4,
+            "description": "将函数级数的积分转化为各项积分之和",
+            "aliases": [
+              "逐项积分"
+            ],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "在相应一致收敛条件下，函数级数的和函数可按项逐项积分。",
+            "example": "∫Σu_n(x)dx=Σ∫u_n(x)dx",
+            "section": "§2. 级数和的函数性质"
+          },
+          {
+            "name": "函数级数逐项微分",
+            "difficulty": 4,
+            "description": "将函数级数的导数转化为各项导数之和",
+            "aliases": [
+              "逐项微分"
+            ],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "在相应一致收敛条件下，函数级数的和函数可按项逐项微分。",
+            "example": "(Σu_n(x))'=Σu_n'(x)",
+            "section": "§2. 级数和的函数性质"
+          },
+          {
+            "name": "幂级数一致收敛",
+            "difficulty": 3,
+            "description": "幂级数在适当区间或闭区间上的一致收敛性",
+            "aliases": [],
+            "prerequisites": [
+              "函数级数一致收敛"
+            ],
+            "definition": "幂级数在其收敛区间内部的适当闭区间上一致收敛。",
+            "example": "Σx^n在[-r,r]上对r<1一致收敛"
           }
         ],
         "sections": [

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "topic": "线性代数",
   "topic_key": "tb-tb_86485f0144",
   "subject": "数学",
@@ -14,7 +14,7 @@
     }
   ],
   "created_at": "2026-08-25T09:58:28.158137+00:00",
-  "updated_at": "2026-08-25T09:58:28.158137+00:00",
+  "updated_at": "2026-08-25T15:59:21.625664+00:00",
   "nodes": [
     {
       "id": "custom.tb-tb_86485f0144.ch.bf590db50c",
@@ -162,8 +162,10 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "由一次方程组成的方程组",
-      "aliases": [],
+      "description": "由一次方程组成的含若干未知量的方程组",
+      "aliases": [
+        "一次方程组"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -175,7 +177,8 @@
           "c0440890b06c"
         ],
         "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c"
+          "custom.tb-tb_86485f0144.ch.bf590db50c",
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
         ]
       }
     },
@@ -208,81 +211,10 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "矩阵中指定位置的数",
+      "description": "矩阵中位于特定行列位置的数",
       "aliases": [
-        "元素"
+        "(i,j)元素"
       ],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
-      "name": "增广矩阵",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "表示方程组系数与常数项的矩阵",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c",
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
-      "name": "系数矩阵",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "由方程组系数组成的矩阵",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c",
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
-      "name": "同型矩阵",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "行数和列数都相同的矩阵",
-      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -302,12 +234,59 @@
       }
     },
     {
+      "id": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
+      "name": "增广矩阵",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "由系数和常数项组成的方程组数表",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.bf590db50c"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
+      "name": "系数矩阵",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "线性方程组中只含系数的矩阵",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.bf590db50c",
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ]
+      }
+    },
+    {
       "id": "custom.tb-tb_86485f0144.c.62fedade7c682aa5",
       "name": "行矩阵",
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "只有一行的矩阵",
+      "description": "只有一行的矩阵，也称行向量",
       "aliases": [
         "行向量"
       ],
@@ -332,7 +311,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "只有一列的矩阵",
+      "description": "只有一列的矩阵，也称列向量",
       "aliases": [
         "列向量"
       ],
@@ -358,7 +337,9 @@
       "level": "本科",
       "difficulty": 1,
       "description": "所有元素均为零的矩阵",
-      "aliases": [],
+      "aliases": [
+        "零阵"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -398,12 +379,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.487a4fca09615a6f",
-      "name": "主对角线",
+      "id": "custom.tb-tb_86485f0144.c.3517e4c855a01c16",
+      "name": "下三角矩阵",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "方阵中行列标相同的元素位置",
+      "difficulty": 2,
+      "description": "主对角线上方元素全为零的方阵",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -421,12 +402,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.a5938a9a56ffedec",
-      "name": "三角矩阵",
+      "id": "custom.tb-tb_86485f0144.c.0a9f0dfc07c3b619",
+      "name": "上三角矩阵",
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "主对角线一侧元素全为零的方阵",
+      "description": "主对角线下方元素全为零的方阵",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -440,6 +421,9 @@
         ],
         "chapter_ids": [
           "custom.tb-tb_86485f0144.ch.bf590db50c"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4"
         ]
       }
     },
@@ -500,7 +484,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "对角线为1且其余为零的方阵",
+      "description": "主对角线为1、其余元素为零的方阵",
       "aliases": [
         "单位阵"
       ],
@@ -520,15 +504,65 @@
       }
     },
     {
+      "id": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
+      "name": "同型矩阵",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 1,
+      "description": "行数相等且列数相等的两个矩阵",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.bf590db50c"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.1d83e0e540e3cf4e",
+      "name": "矩阵相等",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "同型矩阵对应元素全部相等",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.bf590db50c"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4"
+        ]
+      }
+    },
+    {
       "id": "custom.tb-tb_86485f0144.c.a1083a73abdb52d7",
       "name": "矩阵加法",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "同型矩阵对应元素相加",
-      "aliases": [
-        "加法"
-      ],
+      "difficulty": 2,
+      "description": "同型矩阵对应元素相加的运算",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -549,8 +583,8 @@
       "name": "矩阵数乘",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "数乘矩阵的所有元素",
+      "difficulty": 2,
+      "description": "数乘矩阵的每个元素所得的运算",
       "aliases": [
         "数乘"
       ],
@@ -575,8 +609,10 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "矩阵加法与数乘的统称",
-      "aliases": [],
+      "description": "矩阵加法与矩阵数乘的统称",
+      "aliases": [
+        "线性运算"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -597,8 +633,8 @@
       "name": "矩阵乘法",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "按行与列对应相乘并求和",
+      "difficulty": 3,
+      "description": "按行与列对应元素乘积求和的运算",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -620,8 +656,8 @@
       "name": "方阵的方幂",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "方阵自身重复相乘",
+      "difficulty": 3,
+      "description": "方阵自身重复相乘所得的幂",
       "aliases": [
         "方幂"
       ],
@@ -649,7 +685,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "将矩阵的行列互换所得矩阵",
+      "description": "将矩阵的行列互换所得的矩阵",
       "aliases": [
         "转置"
       ],
@@ -674,7 +710,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "转置等于自身的方阵",
+      "description": "转置矩阵等于自身的方阵",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -697,7 +733,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "转置等于负自身的方阵",
+      "description": "转置矩阵等于负自身的方阵",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -720,54 +756,10 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "以子块为元素表示的矩阵",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
-      "name": "初等行变换",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "矩阵的三种基本行变换",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.c0290d07c3cf941c",
-      "name": "初等列变换",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "矩阵的三种基本列变换",
-      "aliases": [],
+      "description": "以子块作为元素形式表示的矩阵",
+      "aliases": [
+        "矩阵分块"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -788,9 +780,11 @@
       "name": "初等变换",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "初等行变换和列变换的统称",
-      "aliases": [],
+      "difficulty": 2,
+      "description": "矩阵的初等行变换和初等列变换",
+      "aliases": [
+        "矩阵初等变换"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -808,12 +802,35 @@
       }
     },
     {
+      "id": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
+      "name": "初等行变换",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "交换、倍乘或倍加矩阵行的三类变换",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.bf590db50c"
+        ]
+      }
+    },
+    {
       "id": "custom.tb-tb_86485f0144.c.c02ce6c0f4082fb9",
       "name": "行阶梯形矩阵",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "非零行首元逐行右移的矩阵",
+      "difficulty": 3,
+      "description": "非零行首元逐行右移且下方为零的矩阵",
       "aliases": [
         "阶梯形矩阵"
       ],
@@ -861,7 +878,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "由单位阵和零块组成的规范形式",
+      "description": "由初等变换化得的单位块与零块组成的矩阵",
       "aliases": [
         "标准形"
       ],
@@ -886,9 +903,9 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "可由有限次初等变换互相得到",
+      "description": "可由有限次初等变换互相化得的矩阵关系",
       "aliases": [
-        "等价关系"
+        "等价"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -906,35 +923,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.3300107bf1619fb9",
-      "name": "非齐次方程组",
+      "id": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
+      "name": "齐次线性方程组",
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "常数项不全为零的线性方程组",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.78ff9470abd47674",
-      "name": "齐次方程组",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "常数项全为零的线性方程组",
+      "description": "所有常数项均为零的线性方程组",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -949,41 +943,21 @@
         "chapter_ids": [
           "custom.tb-tb_86485f0144.ch.bf590db50c",
           "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.b8b2f5ccc1e8fea4"
         ]
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.e467865efd5c1b96",
-      "name": "零解",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "齐次方程组的全零解",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.bf590db50c"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.203db26fb0f85e2a",
-      "name": "线性方程组求解",
+      "id": "custom.tb-tb_86485f0144.c.3300107bf1619fb9",
+      "name": "非齐次方程组",
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "用行变换化增广矩阵求方程组解",
+      "description": "常数项不全为零的线性方程组",
       "aliases": [
-        "消元法"
+        "非齐次线性方程组"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -1009,7 +983,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "由单位阵一次初等变换得到的矩阵",
+      "description": "单位矩阵施行一次初等变换所得的矩阵",
       "aliases": [
         "初等方阵"
       ],
@@ -1037,7 +1011,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "存在矩阵使乘积为单位阵的方阵",
+      "description": "存在矩阵使其左右乘积均为单位阵的方阵",
       "aliases": [
         "可逆阵"
       ],
@@ -1065,7 +1039,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "与原矩阵乘积为单位阵的矩阵",
+      "description": "与原矩阵相乘得到单位矩阵的矩阵",
       "aliases": [
         "逆阵"
       ],
@@ -1092,8 +1066,8 @@
       "name": "矩阵方程",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "含未知矩阵的矩阵等式",
+      "difficulty": 3,
+      "description": "含有未知矩阵的矩阵等式",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -1260,7 +1234,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "从1至n中选取不同数排成一列。",
+      "description": "从1至n中选取若干不同数排成一列。",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -1283,8 +1257,10 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "将1至n的全部数排成一列。",
-      "aliases": [],
+      "description": "把全部元素按某种顺序排成一列。",
+      "aliases": [
+        "n阶全排列"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -1300,55 +1276,6 @@
         ],
         "section_ids": [
           "custom.tb-tb_86485f0144.s.8a7de259b62772dc"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.b943dc6fa1b0f18b",
-      "name": "标准排列",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "元素按从小到大自然顺序排列。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ],
-        "section_ids": [
-          "custom.tb-tb_86485f0144.s.8a7de259b62772dc"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.94310581af116669",
-      "name": "逆序",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "排列中一对次序与自然顺序相反的数。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
         ]
       }
     },
@@ -1358,9 +1285,9 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "一个排列中逆序的总数。",
+      "description": "排列中逆序对的总数。",
       "aliases": [
-        "τ"
+        "排列的逆序数"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -1378,12 +1305,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.9aef3652c38d07f7",
-      "name": "奇排列与偶排列",
+      "id": "custom.tb-tb_86485f0144.c.c3d6636de65c5ebe",
+      "name": "奇偶排列",
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "按逆序数奇偶性划分排列。",
+      "description": "按逆序数奇偶性划分的排列。",
       "aliases": [
         "奇排列",
         "偶排列"
@@ -1408,58 +1335,11 @@
       "name": "对换",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
+      "difficulty": 2,
       "description": "交换排列中任意两个数的位置。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.8cdd676e6a0a74e0",
-      "name": "相邻对换",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "交换排列中相邻位置的两个元素。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ],
-        "section_ids": [
-          "custom.tb-tb_86485f0144.s.8a7de259b62772dc"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.0ee9cdb7ff198391",
-      "name": "对换改变奇偶性",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 3,
-      "description": "任意一次对换都会改变排列奇偶性。",
-      "aliases": [],
+      "aliases": [
+        "相邻对换"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -1481,7 +1361,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "由n²个元素按全排列加权求和确定的数。",
+      "description": "按全排列及逆序数符号求和构成的数。",
       "aliases": [
         "方阵的行列式",
         "det"
@@ -1502,41 +1382,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.126aef30868256d3",
-      "name": "行标与列标",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "行列式元素下标中的行、列位置标记。",
-      "aliases": [
-        "行标",
-        "列标"
-      ],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ],
-        "section_ids": [
-          "custom.tb-tb_86485f0144.s.8a7de259b62772dc"
-        ]
-      }
-    },
-    {
       "id": "custom.tb-tb_86485f0144.c.5e28f962587a970a",
       "name": "二阶行列式",
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "二阶行列式等于主对角线积减副对角线积。",
+      "description": "主对角线乘积减副对角线乘积。",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -1559,7 +1410,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "由六项三元素乘积的代数和表示。",
+      "description": "含六项代数和的三阶行列式。",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -1581,8 +1432,8 @@
       "name": "对角线法则",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "用于计算二阶和三阶行列式的展开规则。",
+      "difficulty": 2,
+      "description": "用于计算二阶、三阶行列式的展开规则。",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -1600,36 +1451,16 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.917936c74e2c5fc4",
-      "name": "下三角行列式",
+      "id": "custom.tb-tb_86485f0144.c.f46be5653aa3a066",
+      "name": "三角行列式",
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "主对角线上方元素全为零的行列式。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.67d5561b29d2570b",
-      "name": "上三角行列式",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "主对角线下方元素全为零的行列式。",
-      "aliases": [],
+      "description": "上三角或下三角方阵对应的行列式。",
+      "aliases": [
+        "上三角行列式",
+        "下三角行列式"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -1651,8 +1482,10 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "由对角矩阵确定的行列式。",
-      "aliases": [],
+      "description": "非主对角线元素全为零的行列式。",
+      "aliases": [
+        "对角矩阵的行列式"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -1672,130 +1505,41 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.03a61e84a3754938",
-      "name": "斜下三角行列式",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 3,
-      "description": "非零项集中在反向对角线及其下方的行列式。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
       "id": "custom.tb-tb_86485f0144.c.5883cc977eb798a7",
       "name": "转置行列式",
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "将行列式各行换为同序号列所得的行列式。",
+      "description": "将行元素换成同序号列元素所得的行列式。",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.569bde481b"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.d2b6f06349ad4854"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.af8cbace53a4f0f9",
+      "name": "行列式基本性质",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 3,
+      "description": "行列式关于转置、换行、倍乘和拆分的规律。",
       "aliases": [
-        "转置"
+        "行列式的性质"
       ],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.2362d068ecfad5cd",
-      "name": "行列式转置性质",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "行列式与其转置行列式相等。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.7bee2866e3490c1f",
-      "name": "行列互换变号",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "互换两行或两列，行列式变号。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.2611a2a63511606b",
-      "name": "行列式为零条件",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "相同行、零行或成比例行会使行列式为零。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.ff40ab9d302a16ea",
-      "name": "行列式提公因子",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "某行或列的公因子可提到行列式外。",
-      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -1816,8 +1560,8 @@
       "name": "行列式拆分定理",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "某行或列元素和可拆成两个行列式之和。",
+      "difficulty": 3,
+      "description": "某一行或列的和可拆成两个行列式之和。",
       "aliases": [
         "拆分定理"
       ],
@@ -1840,57 +1584,11 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
-      "name": "行列式初等变换",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 3,
-      "description": "用行列式性质进行交换、倍乘和倍加变换。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
-      "name": "分块行列式",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 3,
-      "description": "按矩阵子块排列形成的行列式。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.569bde481b"
-        ]
-      }
-    },
-    {
       "id": "custom.tb-tb_86485f0144.c.bc5f53ad460758f8",
       "name": "方阵可逆条件",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
+      "difficulty": 3,
       "description": "方阵可逆当且仅当其行列式非零。",
       "aliases": [
         "可逆充要条件"
@@ -1941,7 +1639,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "余子式乘以位置符号因子所得的量。",
+      "description": "带有位置符号的余子式。",
       "aliases": [
         "Aij"
       ],
@@ -1966,9 +1664,9 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "用某行或某列元素与代数余子式乘积求和。",
+      "description": "行列式等于某行或某列元素与代数余子式乘积之和。",
       "aliases": [
-        "拉普拉斯展开"
+        "行列式展开定理"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -1990,10 +1688,10 @@
       "name": "范德蒙德行列式",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "元素为变量幂次排列的特殊行列式。",
+      "difficulty": 4,
+      "description": "各行或列含变量连续幂次的特殊行列式。",
       "aliases": [
-        "Vandermonde行列式"
+        "范德蒙德型行列式"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -2019,7 +1717,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "由代数余子式按转置位置组成的矩阵。",
+      "description": "由原矩阵代数余子式转置排列成的矩阵。",
       "aliases": [
         "A*"
       ],
@@ -2047,8 +1745,10 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "用行列式和伴随矩阵表示逆矩阵。",
-      "aliases": [],
+      "description": "利用伴随矩阵和行列式求逆矩阵的公式。",
+      "aliases": [
+        "伴随矩阵求逆公式"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2073,7 +1773,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "用替换列行列式求线性方程组唯一解。",
+      "description": "用替换列所得行列式求线性方程组的解。",
       "aliases": [
         "Cramer法则"
       ],
@@ -2096,12 +1796,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.4799a1fe2561f212",
-      "name": "齐次方程组非零解",
+      "id": "custom.tb-tb_86485f0144.c.53da873c34928bcd",
+      "name": "齐次方程组判定",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "齐次方程组有非零解时系数行列式为零。",
+      "difficulty": 3,
+      "description": "用系数行列式判断齐次组是否有非零解。",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2123,9 +1823,39 @@
       "name": "行列式乘法定理",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "方阵乘积的行列式等于两个行列式之积。",
-      "aliases": [],
+      "difficulty": 4,
+      "description": "两个同阶方阵乘积的行列式等于行列式之积。",
+      "aliases": [
+        "乘法定理"
+      ],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.569bde481b"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.648b079dc552c2d0"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
+      "name": "分块行列式",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 4,
+      "description": "含零块的分块三角行列式可化为块行列式之积。",
+      "aliases": [
+        "分块三角行列式"
+      ],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2317,30 +2047,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "由n个数构成的有序数组。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.e9da0b34fd9c36a1",
-      "name": "行向量与列向量",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "向量按行或按列排列的两种形式。",
+      "description": "由n个数构成的有序数组，分为行向量和列向量",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2363,7 +2070,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "所有分量均为零的向量。",
+      "description": "所有分量都为零的向量",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2381,15 +2088,13 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.9a3910cb8df6457b",
-      "name": "向量线性运算",
+      "id": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
+      "name": "向量运算",
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "向量的加法与数乘运算。",
-      "aliases": [
-        "向量运算"
-      ],
+      "description": "向量的加法、数乘及行列向量乘法运算",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2411,7 +2116,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 1,
-      "description": "若干个维数相同的向量组成的集合。",
+      "description": "由若干个维数相同的向量组成的集合",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2433,8 +2138,8 @@
       "name": "线性组合",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "向量组中向量的数乘和。",
+      "difficulty": 1,
+      "description": "向量组中各向量经数乘后相加所得的表达式",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2457,10 +2162,8 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "目标向量可写成向量组的线性组合。",
-      "aliases": [
-        "可由向量组线性表示"
-      ],
+      "description": "目标向量可写成给定向量组的线性组合",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2472,8 +2175,30 @@
           "c0440890b06c"
         ],
         "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889",
-          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.7a5b564cb8d0af42",
+      "name": "线性表示判定",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "通过相应线性方程组是否有解判断线性表示",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
         ]
       }
     },
@@ -2483,10 +2208,31 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "两个向量组能够相互线性表示。",
-      "aliases": [
-        "等价向量组"
-      ],
+      "description": "两个向量组能够相互线性表示",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.882b18638a652c12",
+      "name": "矩阵方程可解性",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 3,
+      "description": "用矩阵方程有解刻画向量组间的线性表示",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2508,7 +2254,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "存在不全为零的系数使向量组合为零。",
+      "description": "存在不全为零的系数使向量线性组合为零",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2521,8 +2267,7 @@
           "c0440890b06c"
         ],
         "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889",
-          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
         ]
       }
     },
@@ -2532,7 +2277,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "只有全零系数才能使线性组合为零。",
+      "description": "只有所有系数均为零时线性组合才为零",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2545,8 +2290,7 @@
           "c0440890b06c"
         ],
         "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889",
-          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
         ]
       }
     },
@@ -2556,7 +2300,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "向量组中包含向量最多的无关组。",
+      "description": "向量组中包含向量最多的线性无关组",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2578,11 +2322,9 @@
       "name": "向量组的秩",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "向量组极大无关组所含向量的个数。",
-      "aliases": [
-        "向量组秩"
-      ],
+      "difficulty": 3,
+      "description": "向量组极大无关组所含向量的个数",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2603,11 +2345,32 @@
       "name": "矩阵的秩",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "矩阵中最高阶非零子式的阶数。",
-      "aliases": [
-        "矩阵秩"
-      ],
+      "difficulty": 3,
+      "description": "矩阵中非零子式的最高阶数",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.aadb1afde57c0cca",
+      "name": "秩不变性",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 3,
+      "description": "矩阵经初等变换后秩保持不变",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2629,7 +2392,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "矩阵行向量组秩与列向量组秩相等。",
+      "description": "矩阵行向量组秩、列向量组秩和矩阵秩相等",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2647,12 +2410,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.616e823b67560608",
-      "name": "矩阵方程有解判定",
+      "id": "custom.tb-tb_86485f0144.c.9682a77a17a03654",
+      "name": "有解判定定理",
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "利用系数矩阵与增广矩阵秩判断有解性。",
+      "description": "利用系数矩阵与增广矩阵的秩判定方程组有解性",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2670,12 +2433,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.8faf1bafc29f66ce",
-      "name": "线性方程组有解判定",
+      "id": "custom.tb-tb_86485f0144.c.40adffe16dbd00ae",
+      "name": "解向量",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "用系数矩阵和增广矩阵的秩判定解的存在。",
+      "difficulty": 2,
+      "description": "满足线性方程组的未知量组成的向量",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2698,7 +2461,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "齐次方程组解空间的一组基。",
+      "description": "齐次方程组解空间的一组线性无关生成解向量",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2716,15 +2479,59 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.1f0b0eb0c4f70e99",
-      "name": "齐次解空间",
+      "id": "custom.tb-tb_86485f0144.c.978a7701b178cbb8",
+      "name": "齐次解的结构",
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "齐次方程组全部解向量构成的集合。",
-      "aliases": [
-        "解空间"
-      ],
+      "description": "齐次方程组全部解由基础解系线性表示",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.20ed998592cf8ff5",
+      "name": "非齐次解的结构",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 3,
+      "description": "非齐次方程组通解由特解和齐次通解组成",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.a2289a9a5612654e",
+      "name": "解空间",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 3,
+      "description": "齐次方程组全部解向量构成的向量空间",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2744,58 +2551,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.d420b4c511f8188a",
-      "name": "齐次方程组解结构",
+      "id": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
+      "name": "向量空间",
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "齐次方程组的解由基础解系线性生成。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.9f80ae546a875529",
-      "name": "非齐次方程组解结构",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 3,
-      "description": "非齐次解等于特解与齐次通解之和。",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.d4ba2fa889"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "name": "线性空间",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "对加法和数乘运算封闭的向量集合。",
+      "description": "对加法和数乘封闭并满足相关运算律的向量集合",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -2818,11 +2579,9 @@
       "name": "生成向量空间",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "由向量组全部线性组合构成的空间。",
-      "aliases": [
-        "向量组生成空间"
-      ],
+      "difficulty": 3,
+      "description": "由向量组全部线性组合构成的向量空间",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2844,10 +2603,8 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "既线性无关又生成该空间的向量组。",
-      "aliases": [
-        "基"
-      ],
+      "description": "既线性无关又能生成整个空间的向量组",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2867,15 +2624,13 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.8e181e3602ebf887",
-      "name": "向量空间维数",
+      "id": "custom.tb-tb_86485f0144.c.1173d85c658b2851",
+      "name": "向量空间的维数",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "向量空间任一组基所含向量的个数。",
-      "aliases": [
-        "维数"
-      ],
+      "difficulty": 3,
+      "description": "向量空间任一组基所含向量的个数",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2888,6 +2643,9 @@
         ],
         "chapter_ids": [
           "custom.tb-tb_86485f0144.ch.d4ba2fa889"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.2ac4d839749b75c6"
         ]
       }
     },
@@ -2897,10 +2655,8 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "向量在给定基下线性表示的系数。",
-      "aliases": [
-        "向量坐标"
-      ],
+      "description": "向量在给定基下唯一线性表示的系数",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2921,11 +2677,9 @@
       "name": "过渡矩阵",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "联系同一空间两组基的可逆矩阵。",
-      "aliases": [
-        "基过渡矩阵"
-      ],
+      "difficulty": 4,
+      "description": "连接同一向量空间两组基的可逆矩阵",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -2950,11 +2704,9 @@
       "name": "坐标变换",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "同一向量在两组基下坐标之间的变换。",
-      "aliases": [
-        "坐标变换公式"
-      ],
+      "difficulty": 4,
+      "description": "同一向量在两组基下坐标之间的转换关系",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -3180,36 +2932,10 @@
       "name": "向量内积",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "用分量乘积之和定义的向量数量积",
-      "aliases": [
-        "内积",
-        "数量积"
-      ],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.51b0b341fb1cfd70",
-      "name": "柯西施瓦茨不等式",
-      "subject": "数学",
-      "level": "本科",
       "difficulty": 2,
-      "description": "内积平方不超过两个向量自内积之积",
+      "description": "将两个n维向量对应分量乘积之和作为内积",
       "aliases": [
-        "施瓦茨不等式"
+        "数量积"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -3234,64 +2960,10 @@
       "name": "向量长度",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "由内积定义的向量长度或范数",
-      "aliases": [
-        "范数"
-      ],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
-        ],
-        "section_ids": [
-          "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.9ac9bdb9b993079f",
-      "name": "单位向量",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 1,
-      "description": "长度等于1的向量",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
-        ],
-        "section_ids": [
-          "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.b28641f76ea1d6c4",
-      "name": "向量单位化",
-      "subject": "数学",
-      "level": "本科",
       "difficulty": 2,
-      "description": "将非零向量化为单位向量的过程",
+      "description": "由向量与自身内积的平方根定义的范数",
       "aliases": [
-        "单位化"
+        "向量范数"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -3314,10 +2986,31 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "由内积和长度定义的两个向量间角度",
-      "aliases": [
-        "夹角"
-      ],
+      "description": "利用内积和长度定义两个非零向量的夹角",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.711d39efca38f21e",
+      "name": "正交向量",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "内积为零的两个向量互相正交",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -3337,14 +3030,15 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.f108ebd10f466c08",
-      "name": "向量正交",
+      "id": "custom.tb-tb_86485f0144.c.1908a71aa3933025",
+      "name": "施瓦茨不等式",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "内积为零的向量关系",
+      "difficulty": 3,
+      "description": "内积平方不超过两个向量自内积的乘积",
       "aliases": [
-        "正交"
+        "柯西－施瓦茨不等式",
+        "施瓦茨不等式"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -3358,6 +3052,9 @@
         ],
         "chapter_ids": [
           "custom.tb-tb_86485f0144.ch.80ce1b4d86"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08"
         ]
       }
     },
@@ -3388,38 +3085,14 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.1fec4db86add78aa",
-      "name": "正交向量组线性无关",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "正交向量组必然具有线性无关性",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
-        ]
-      }
-    },
-    {
       "id": "custom.tb-tb_86485f0144.c.8cc3f32c6d3c2bea",
       "name": "规范正交基",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "两两正交且均为单位向量的基",
+      "difficulty": 3,
+      "description": "由两两正交单位向量组成的向量空间基",
       "aliases": [
-        "标准正交基",
-        "正交规范基"
+        "标准正交基"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -3442,10 +3115,9 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "将一组基转化为等价正交组的方法",
+      "description": "将线性无关向量组转化为等价正交向量组的方法",
       "aliases": [
-        "施密特法",
-        "正交化过程"
+        "施密特法"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -3467,8 +3139,8 @@
       "name": "正交矩阵",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "转置与自身乘积为单位阵的方阵",
+      "difficulty": 3,
+      "description": "转置矩阵与自身乘积为单位矩阵的方阵",
       "aliases": [
         "正交阵"
       ],
@@ -3492,8 +3164,8 @@
       "name": "正交变换",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "由正交矩阵给出的线性变换",
+      "difficulty": 3,
+      "description": "由正交矩阵确定且保持向量长度的线性变换",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3515,8 +3187,8 @@
       "name": "特征值",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "使矩阵作用等同于数乘的标量",
+      "difficulty": 3,
+      "description": "使矩阵作用于非零向量后只产生数倍变化的数",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3538,8 +3210,8 @@
       "name": "特征向量",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "对应特征值且被矩阵保持方向的非零向量",
+      "difficulty": 3,
+      "description": "对应特征值且经矩阵作用后方向不变的非零向量",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3561,8 +3233,8 @@
       "name": "特征多项式",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "由|A-λE|得到的关于λ的多项式",
+      "difficulty": 3,
+      "description": "矩阵A−λE的行列式所确定的λ的n次多项式",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3585,7 +3257,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "令特征多项式为零得到的方程",
+      "description": "由特征多项式等于零得到的关于特征值的方程",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3607,11 +3279,9 @@
       "name": "相似矩阵",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "通过可逆矩阵相似变换相联系的矩阵",
-      "aliases": [
-        "矩阵相似"
-      ],
+      "difficulty": 3,
+      "description": "通过可逆矩阵相似变换相互得到的同阶矩阵",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -3632,8 +3302,8 @@
       "name": "相似变换",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "对矩阵实施P⁻¹AP形式的变换",
+      "difficulty": 3,
+      "description": "以P⁻¹AP形式对矩阵进行的变换",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3646,12 +3316,10 @@
           "c0440890b06c"
         ],
         "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.80ce1b4d86",
-          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
+          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
         ],
         "section_ids": [
-          "custom.tb-tb_86485f0144.s.0c7f6a707bfe40cc",
-          "custom.tb-tb_86485f0144.s.c10e96c09d916ca4"
+          "custom.tb-tb_86485f0144.s.0c7f6a707bfe40cc"
         ]
       }
     },
@@ -3660,8 +3328,8 @@
       "name": "相似对角化",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "通过相似变换把矩阵化为对角阵",
+      "difficulty": 4,
+      "description": "通过相似变换将方阵化为对角阵的过程",
       "aliases": [
         "矩阵对角化"
       ],
@@ -3681,12 +3349,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.85977ecafebbf65b",
-      "name": "对角化判定",
+      "id": "custom.tb-tb_86485f0144.c.b4a185423c8cb20a",
+      "name": "对角化条件",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "矩阵可对角化当且仅有足够特征向量",
+      "difficulty": 4,
+      "description": "方阵可对角化当且仅当有足够多线性无关特征向量",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3708,8 +3376,8 @@
       "name": "实对称矩阵",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "实矩阵且转置等于自身的矩阵",
+      "difficulty": 2,
+      "description": "元素为实数且等于自身转置的矩阵",
       "aliases": [
         "对称阵"
       ],
@@ -3729,15 +3397,13 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.60fa15f84ce5d160",
-      "name": "实对称矩阵正交对角化",
+      "id": "custom.tb-tb_86485f0144.c.a7db392be38c3819",
+      "name": "正交相似对角化",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "实对称矩阵可由正交变换化为实对角阵",
-      "aliases": [
-        "谱分解"
-      ],
+      "difficulty": 4,
+      "description": "用正交矩阵将实对称矩阵化为实对角阵",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -3758,8 +3424,8 @@
       "name": "二次型",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 1,
-      "description": "变量平方项与两两乘积项组成的齐次二次式",
+      "difficulty": 2,
+      "description": "变量的二次齐次多项式及其矩阵表达形式",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3781,8 +3447,8 @@
       "name": "二次型矩阵表示",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "用对称矩阵表示二次型的形式",
+      "difficulty": 3,
+      "description": "用对称矩阵将二次型表示为xᵀAx",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3804,8 +3470,8 @@
       "name": "二次型的秩",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "二次型对应矩阵的秩",
+      "difficulty": 3,
+      "description": "二次型对应矩阵的秩称为二次型的秩",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3827,8 +3493,8 @@
       "name": "二次型标准形",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "只含变量平方项的二次型形式",
+      "difficulty": 3,
+      "description": "经可逆线性变换后仅含变量平方项的形式",
       "aliases": [
         "标准形"
       ],
@@ -3852,34 +3518,11 @@
       "name": "二次型规范形",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "平方项系数仅为1、-1或0的标准形",
+      "difficulty": 3,
+      "description": "平方项系数为1、−1或0的二次型形式",
       "aliases": [
         "规范形"
       ],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.806b9a8ec913a3c9",
-      "name": "正交变换化标准形",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 3,
-      "description": "利用正交变换消去二次型交叉项",
-      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -3900,8 +3543,8 @@
       "name": "配方法",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "通过逐步配平方化二次型的方法",
+      "difficulty": 3,
+      "description": "通过逐步配平方将二次型化为标准形的方法",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3923,34 +3566,8 @@
       "name": "惯性定理",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "不同标准形的正负系数个数保持不变",
-      "aliases": [],
-      "common_errors": [],
-      "origin": "llm",
-      "kind": "concept",
-      "metadata": {
-        "file_ids": [
-          "c0440890b06c"
-        ],
-        "volume_ids": [
-          "c0440890b06c"
-        ],
-        "chapter_ids": [
-          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
-        ],
-        "section_ids": [
-          "custom.tb-tb_86485f0144.s.67bdce5268bf09e8"
-        ]
-      }
-    },
-    {
-      "id": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
-      "name": "正惯性指数",
-      "subject": "数学",
-      "level": "本科",
-      "difficulty": 2,
-      "description": "二次型标准形中正系数的个数",
+      "difficulty": 4,
+      "description": "不同标准形中正负系数个数分别保持不变",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -3975,7 +3592,7 @@
       "name": "正定二次型",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
+      "difficulty": 3,
       "description": "除零向量外取值始终为正的二次型",
       "aliases": [],
       "common_errors": [],
@@ -4001,11 +3618,9 @@
       "name": "正定矩阵",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 2,
-      "description": "对应二次型为正定的对称矩阵",
-      "aliases": [
-        "正定阵"
-      ],
+      "difficulty": 3,
+      "description": "其对应二次型为正定的对称矩阵",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -4029,11 +3644,63 @@
       "name": "赫尔维茨定理",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "用顺序主子式判定对称矩阵正定性",
+      "difficulty": 4,
+      "description": "用各阶顺序主子式判定对称矩阵正定性",
       "aliases": [
-        "顺序主子式判别法"
+        "正定判别法"
       ],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.67bdce5268bf09e8"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
+      "name": "正惯性指数",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 3,
+      "description": "二次型标准形中正系数的个数",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.80ce1b4d86"
+        ],
+        "section_ids": [
+          "custom.tb-tb_86485f0144.s.67bdce5268bf09e8"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.50961065b15d3e87",
+      "name": "负惯性指数",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 3,
+      "description": "二次型标准形中负系数的个数",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -4187,12 +3854,37 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.3f167554418c16e8",
-      "name": "线性空间性质",
+      "id": "custom.tb-tb_86485f0144.c.3b94cdcf31fb7a36",
+      "name": "运算封闭性",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 3,
-      "description": "零元素、负元素及数乘运算满足的基本结论",
+      "difficulty": 2,
+      "description": "集合运算后的结果仍属于该集合",
+      "aliases": [
+        "封闭性"
+      ],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.9f9c9d5fe6dfd1d9",
+      "name": "零元素唯一性",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "线性空间中的零元素只有一个",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -4210,12 +3902,58 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.b6380c558f953eee",
-      "name": "封闭性",
+      "id": "custom.tb-tb_86485f0144.c.abf900c0abecd409",
+      "name": "负元素唯一性",
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "运算结果仍属于原集合的性质",
+      "description": "每个向量的负元素只有一个",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.859129d0d2e0b6d7",
+      "name": "数乘零性质",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "零向量和零数参与数乘的基本性质",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.0aaf1dfe2b75a2c2",
+      "name": "数乘消去性质",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 2,
+      "description": "数乘结果为零时因子至少一个为零",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -4238,7 +3976,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "在线性空间中自身构成线性空间的非空子集",
+      "description": "线性空间中对加法和数乘封闭的非空子集",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -4261,10 +3999,8 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "既线性无关又能表示空间任意元素的向量组",
-      "aliases": [
-        "空间的一组基"
-      ],
+      "description": "线性无关且能表示空间任意元素的向量组",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -4286,10 +4022,8 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "线性空间任一组基所含向量的个数",
-      "aliases": [
-        "空间维数"
-      ],
+      "description": "线性空间任一基所含向量的个数",
+      "aliases": [],
       "common_errors": [],
       "origin": "llm",
       "kind": "concept",
@@ -4311,7 +4045,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 2,
-      "description": "只含一个零元素的线性空间",
+      "description": "只含零元素的线性空间",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -4332,12 +4066,12 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.354f8471df667a39",
-      "name": "坐标",
+      "id": "custom.tb-tb_86485f0144.c.8ea6d81893c9eff0",
+      "name": "向量坐标",
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "向量在指定基下唯一对应的有序数组",
+      "description": "向量在给定基下唯一的有序数组表示",
       "aliases": [
         "基下坐标"
       ],
@@ -4361,8 +4095,8 @@
       "name": "基变换",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 4,
-      "description": "同一线性空间中从一组基换到另一组基",
+      "difficulty": 3,
+      "description": "由一组基转换到另一组基的表示公式",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -4385,7 +4119,7 @@
       "subject": "数学",
       "level": "本科",
       "difficulty": 3,
-      "description": "保持向量加法和数乘运算的映射",
+      "description": "保持向量加法和数乘的映射",
       "aliases": [],
       "common_errors": [],
       "origin": "llm",
@@ -4407,10 +4141,10 @@
       "name": "像空间",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 4,
+      "difficulty": 3,
       "description": "线性变换所有像组成的线性空间",
       "aliases": [
-        "变换的像集"
+        "线性变换的像"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -4431,14 +4165,14 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.e90ae9b53b207da3",
-      "name": "核",
+      "id": "custom.tb-tb_86485f0144.c.4e90485561fa7201",
+      "name": "线性变换的核",
       "subject": "数学",
       "level": "本科",
-      "difficulty": 4,
-      "description": "被线性变换映为零向量的全部向量",
+      "difficulty": 3,
+      "description": "被线性变换映为零向量的向量全体",
       "aliases": [
-        "变换的核空间"
+        "核"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -4456,14 +4190,14 @@
       }
     },
     {
-      "id": "custom.tb-tb_86485f0144.c.dd31ec04dac551e0",
-      "name": "线性变换矩阵",
+      "id": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
+      "name": "变换矩阵",
       "subject": "数学",
       "level": "本科",
       "difficulty": 4,
-      "description": "线性变换在指定基下对应的方阵",
+      "description": "线性变换在给定基下对应的方阵",
       "aliases": [
-        "变换矩阵"
+        "线性变换的矩阵"
       ],
       "common_errors": [],
       "origin": "llm",
@@ -4480,6 +4214,29 @@
         ],
         "section_ids": [
           "custom.tb-tb_86485f0144.s.c10e96c09d916ca4"
+        ]
+      }
+    },
+    {
+      "id": "custom.tb-tb_86485f0144.c.6f850bfa0f7d98c4",
+      "name": "相似变换公式",
+      "subject": "数学",
+      "level": "本科",
+      "difficulty": 4,
+      "description": "同一线性变换在两组基下矩阵的关系",
+      "aliases": [],
+      "common_errors": [],
+      "origin": "llm",
+      "kind": "concept",
+      "metadata": {
+        "file_ids": [
+          "c0440890b06c"
+        ],
+        "volume_ids": [
+          "c0440890b06c"
+        ],
+        "chapter_ids": [
+          "custom.tb-tb_86485f0144.ch.eea4a5a0c9"
         ]
       }
     },
@@ -4557,7 +4314,7 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
-      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
+      "target": "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -4572,13 +4329,6 @@
     {
       "source": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
       "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
-      "target": "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -4612,15 +4362,15 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.487a4fca09615a6f",
+      "source": "custom.tb-tb_86485f0144.c.3517e4c855a01c16",
       "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.a5938a9a56ffedec",
-      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
+      "source": "custom.tb-tb_86485f0144.c.0a9f0dfc07c3b619",
+      "target": "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -4642,6 +4392,20 @@
     {
       "source": "custom.tb-tb_86485f0144.c.56cb3c26419d3113",
       "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
+      "target": "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.1d83e0e540e3cf4e",
+      "target": "custom.tb-tb_86485f0144.s.bf89d7d516adc8a4",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -4710,21 +4474,14 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
-      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.c0290d07c3cf941c",
-      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
+      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
       "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
       "type": "part_of",
       "weight": 1.0,
@@ -4759,28 +4516,14 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
+      "target": "custom.tb-tb_86485f0144.s.b8b2f5ccc1e8fea4",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.3300107bf1619fb9",
-      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.78ff9470abd47674",
-      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.e467865efd5c1b96",
-      "target": "custom.tb-tb_86485f0144.ch.bf590db50c",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.203db26fb0f85e2a",
       "target": "custom.tb-tb_86485f0144.s.b8b2f5ccc1e8fea4",
       "type": "part_of",
       "weight": 1.0,
@@ -4857,20 +4600,6 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.b943dc6fa1b0f18b",
-      "target": "custom.tb-tb_86485f0144.s.8a7de259b62772dc",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.94310581af116669",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.9592cef8edd249eb",
       "target": "custom.tb-tb_86485f0144.ch.569bde481b",
       "type": "part_of",
@@ -4878,7 +4607,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.9aef3652c38d07f7",
+      "source": "custom.tb-tb_86485f0144.c.c3d6636de65c5ebe",
       "target": "custom.tb-tb_86485f0144.ch.569bde481b",
       "type": "part_of",
       "weight": 1.0,
@@ -4892,29 +4621,8 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.8cdd676e6a0a74e0",
-      "target": "custom.tb-tb_86485f0144.s.8a7de259b62772dc",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.0ee9cdb7ff198391",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
       "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.126aef30868256d3",
-      "target": "custom.tb-tb_86485f0144.s.8a7de259b62772dc",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -4941,14 +4649,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.917936c74e2c5fc4",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.67d5561b29d2570b",
+      "source": "custom.tb-tb_86485f0144.c.f46be5653aa3a066",
       "target": "custom.tb-tb_86485f0144.ch.569bde481b",
       "type": "part_of",
       "weight": 1.0,
@@ -4962,42 +4663,14 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.03a61e84a3754938",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.5883cc977eb798a7",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
+      "target": "custom.tb-tb_86485f0144.s.d2b6f06349ad4854",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2362d068ecfad5cd",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.7bee2866e3490c1f",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2611a2a63511606b",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.ff40ab9d302a16ea",
+      "source": "custom.tb-tb_86485f0144.c.af8cbace53a4f0f9",
       "target": "custom.tb-tb_86485f0144.ch.569bde481b",
       "type": "part_of",
       "weight": 1.0,
@@ -5006,20 +4679,6 @@
     {
       "source": "custom.tb-tb_86485f0144.c.cd69cc9697497be8",
       "target": "custom.tb-tb_86485f0144.s.d2b6f06349ad4854",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
-      "target": "custom.tb-tb_86485f0144.ch.569bde481b",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -5081,7 +4740,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.4799a1fe2561f212",
+      "source": "custom.tb-tb_86485f0144.c.53da873c34928bcd",
       "target": "custom.tb-tb_86485f0144.ch.569bde481b",
       "type": "part_of",
       "weight": 1.0,
@@ -5089,6 +4748,13 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.581cf5d32658a38b",
+      "target": "custom.tb-tb_86485f0144.s.648b079dc552c2d0",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
       "target": "custom.tb-tb_86485f0144.ch.569bde481b",
       "type": "part_of",
       "weight": 1.0,
@@ -5137,13 +4803,6 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.e9da0b34fd9c36a1",
-      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.d36cc8868cb833bc",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
@@ -5151,7 +4810,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.9a3910cb8df6457b",
+      "source": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
       "weight": 1.0,
@@ -5179,7 +4838,28 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.7a5b564cb8d0af42",
+      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.7e16070517aaa148",
+      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
+      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.882b18638a652c12",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
       "weight": 1.0,
@@ -5228,6 +4908,13 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.aadb1afde57c0cca",
+      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.f7bbac11a0562d3a",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
@@ -5235,35 +4922,28 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
+      "source": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
+      "source": "custom.tb-tb_86485f0144.c.9682a77a17a03654",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.616e823b67560608",
+      "source": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.8faf1bafc29f66ce",
-      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.78ff9470abd47674",
+      "source": "custom.tb-tb_86485f0144.c.40adffe16dbd00ae",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
       "weight": 1.0,
@@ -5277,28 +4957,28 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.1f0b0eb0c4f70e99",
+      "source": "custom.tb-tb_86485f0144.c.978a7701b178cbb8",
+      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.20ed998592cf8ff5",
+      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.a2289a9a5612654e",
       "target": "custom.tb-tb_86485f0144.s.2ac4d839749b75c6",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.d420b4c511f8188a",
-      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.9f80ae546a875529",
-      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
+      "source": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
       "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
       "type": "part_of",
       "weight": 1.0,
@@ -5319,8 +4999,8 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.8e181e3602ebf887",
-      "target": "custom.tb-tb_86485f0144.ch.d4ba2fa889",
+      "source": "custom.tb-tb_86485f0144.c.1173d85c658b2851",
+      "target": "custom.tb-tb_86485f0144.s.2ac4d839749b75c6",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -5390,13 +5070,6 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.3e31c959b09490ca",
-      "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.51b0b341fb1cfd70",
       "target": "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08",
       "type": "part_of",
       "weight": 1.0,
@@ -5404,20 +5077,6 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.e8be8cf941bc99de",
-      "target": "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.9ac9bdb9b993079f",
-      "target": "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.b28641f76ea1d6c4",
       "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
       "type": "part_of",
       "weight": 1.0,
@@ -5425,14 +5084,21 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.af381e6aa7d441ea",
+      "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.711d39efca38f21e",
       "target": "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.f108ebd10f466c08",
-      "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
+      "source": "custom.tb-tb_86485f0144.c.1908a71aa3933025",
+      "target": "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -5440,13 +5106,6 @@
     {
       "source": "custom.tb-tb_86485f0144.c.87afc764d97b60bf",
       "target": "custom.tb-tb_86485f0144.s.5873e3da8dc9dc08",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.1fec4db86add78aa",
-      "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -5529,7 +5188,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.85977ecafebbf65b",
+      "source": "custom.tb-tb_86485f0144.c.b4a185423c8cb20a",
       "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
       "type": "part_of",
       "weight": 1.0,
@@ -5543,7 +5202,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.60fa15f84ce5d160",
+      "source": "custom.tb-tb_86485f0144.c.a7db392be38c3819",
       "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
       "type": "part_of",
       "weight": 1.0,
@@ -5585,13 +5244,6 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.806b9a8ec913a3c9",
-      "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.07a13f2ced1fd649",
       "target": "custom.tb-tb_86485f0144.ch.80ce1b4d86",
       "type": "part_of",
@@ -5600,13 +5252,6 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.bf84e323e616b30f",
-      "target": "custom.tb-tb_86485f0144.s.67bdce5268bf09e8",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
       "target": "custom.tb-tb_86485f0144.s.67bdce5268bf09e8",
       "type": "part_of",
       "weight": 1.0,
@@ -5634,6 +5279,20 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
+      "target": "custom.tb-tb_86485f0144.s.67bdce5268bf09e8",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.50961065b15d3e87",
+      "target": "custom.tb-tb_86485f0144.s.67bdce5268bf09e8",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.s.2e6b7e2c2ccf16b1",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
@@ -5655,7 +5314,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
+      "source": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
@@ -5669,14 +5328,35 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.3f167554418c16e8",
+      "source": "custom.tb-tb_86485f0144.c.3b94cdcf31fb7a36",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.b6380c558f953eee",
+      "source": "custom.tb-tb_86485f0144.c.9f9c9d5fe6dfd1d9",
+      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.abf900c0abecd409",
+      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.859129d0d2e0b6d7",
+      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.0aaf1dfe2b75a2c2",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
@@ -5684,27 +5364,6 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.bd1c33dc7f9d9ee1",
-      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.684f53547142540b",
-      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.979cc2500da3f114",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
@@ -5732,14 +5391,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.354f8471df667a39",
-      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
-      "type": "part_of",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
+      "source": "custom.tb-tb_86485f0144.c.8ea6d81893c9eff0",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
@@ -5747,6 +5399,13 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.5d83949d8b3684f9",
+      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
+      "type": "part_of",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
@@ -5774,22 +5433,22 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.e90ae9b53b207da3",
+      "source": "custom.tb-tb_86485f0144.c.4e90485561fa7201",
       "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.dd31ec04dac551e0",
+      "source": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
       "target": "custom.tb-tb_86485f0144.s.c10e96c09d916ca4",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.aa5d44736eebec2b",
-      "target": "custom.tb-tb_86485f0144.s.c10e96c09d916ca4",
+      "source": "custom.tb-tb_86485f0144.c.6f850bfa0f7d98c4",
+      "target": "custom.tb-tb_86485f0144.ch.eea4a5a0c9",
       "type": "part_of",
       "weight": 1.0,
       "provenance": "custom"
@@ -5838,13 +5497,6 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
-      "target": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
       "target": "custom.tb-tb_86485f0144.c.62fedade7c682aa5",
       "type": "prerequisite",
       "weight": 1.0,
@@ -5873,41 +5525,20 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
-      "target": "custom.tb-tb_86485f0144.c.487a4fca09615a6f",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
-      "target": "custom.tb-tb_86485f0144.c.487a4fca09615a6f",
+      "target": "custom.tb-tb_86485f0144.c.3517e4c855a01c16",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
-      "target": "custom.tb-tb_86485f0144.c.a5938a9a56ffedec",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.487a4fca09615a6f",
-      "target": "custom.tb-tb_86485f0144.c.a5938a9a56ffedec",
+      "target": "custom.tb-tb_86485f0144.c.0a9f0dfc07c3b619",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
-      "target": "custom.tb-tb_86485f0144.c.2296decc4f64556a",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.487a4fca09615a6f",
       "target": "custom.tb-tb_86485f0144.c.2296decc4f64556a",
       "type": "prerequisite",
       "weight": 1.0,
@@ -5921,8 +5552,29 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.0d35003b52c40089",
+      "source": "custom.tb-tb_86485f0144.c.2296decc4f64556a",
       "target": "custom.tb-tb_86485f0144.c.56cb3c26419d3113",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
+      "target": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
+      "target": "custom.tb-tb_86485f0144.c.1d83e0e540e3cf4e",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
+      "target": "custom.tb-tb_86485f0144.c.1d83e0e540e3cf4e",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -5935,7 +5587,21 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
+      "target": "custom.tb-tb_86485f0144.c.a1083a73abdb52d7",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
+      "target": "custom.tb-tb_86485f0144.c.407ca7c76cf7c8d5",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
       "target": "custom.tb-tb_86485f0144.c.407ca7c76cf7c8d5",
       "type": "prerequisite",
       "weight": 1.0,
@@ -5963,14 +5629,21 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
-      "target": "custom.tb-tb_86485f0144.c.198f60635b524600",
+      "source": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
+      "target": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
+      "target": "custom.tb-tb_86485f0144.c.198f60635b524600",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
       "target": "custom.tb-tb_86485f0144.c.198f60635b524600",
       "type": "prerequisite",
       "weight": 1.0,
@@ -5991,13 +5664,6 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.831d752ce6ab8aaf",
-      "target": "custom.tb-tb_86485f0144.c.c009b3d05fc00033",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
       "target": "custom.tb-tb_86485f0144.c.c009b3d05fc00033",
       "type": "prerequisite",
@@ -6006,13 +5672,20 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.831d752ce6ab8aaf",
+      "target": "custom.tb-tb_86485f0144.c.c009b3d05fc00033",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
       "target": "custom.tb-tb_86485f0144.c.c2278fa55e452fac",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
+      "source": "custom.tb-tb_86485f0144.c.831d752ce6ab8aaf",
       "target": "custom.tb-tb_86485f0144.c.c2278fa55e452fac",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6027,34 +5700,27 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
-      "target": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
+      "target": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
-      "target": "custom.tb-tb_86485f0144.c.c0290d07c3cf941c",
+      "target": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
-      "target": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
+      "target": "custom.tb-tb_86485f0144.c.c02ce6c0f4082fb9",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.c0290d07c3cf941c",
-      "target": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
+      "source": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
       "target": "custom.tb-tb_86485f0144.c.c02ce6c0f4082fb9",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6069,13 +5735,6 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
-      "target": "custom.tb-tb_86485f0144.c.84e91a91ef1feec4",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.56cb3c26419d3113",
       "target": "custom.tb-tb_86485f0144.c.84e91a91ef1feec4",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6097,42 +5756,14 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
-      "target": "custom.tb-tb_86485f0144.c.3300107bf1619fb9",
+      "target": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
-      "target": "custom.tb-tb_86485f0144.c.78ff9470abd47674",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.78ff9470abd47674",
-      "target": "custom.tb-tb_86485f0144.c.e467865efd5c1b96",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
-      "target": "custom.tb-tb_86485f0144.c.203db26fb0f85e2a",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
-      "target": "custom.tb-tb_86485f0144.c.203db26fb0f85e2a",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.0995e15c445a308c",
-      "target": "custom.tb-tb_86485f0144.c.203db26fb0f85e2a",
+      "target": "custom.tb-tb_86485f0144.c.3300107bf1619fb9",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6166,6 +5797,13 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
+      "target": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
       "target": "custom.tb-tb_86485f0144.c.5dfe5591ba34311b",
       "type": "prerequisite",
@@ -6181,13 +5819,20 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
+      "target": "custom.tb-tb_86485f0144.c.5dfe5591ba34311b",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
       "target": "custom.tb-tb_86485f0144.c.e045bbbfcdd39819",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
+      "source": "custom.tb-tb_86485f0144.c.5dfe5591ba34311b",
       "target": "custom.tb-tb_86485f0144.c.e045bbbfcdd39819",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6201,21 +5846,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.a29abf24b1aabef2",
-      "target": "custom.tb-tb_86485f0144.c.b943dc6fa1b0f18b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.70473d8ed97e0503",
-      "target": "custom.tb-tb_86485f0144.c.94310581af116669",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.94310581af116669",
       "target": "custom.tb-tb_86485f0144.c.9592cef8edd249eb",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6223,7 +5854,7 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.9592cef8edd249eb",
-      "target": "custom.tb-tb_86485f0144.c.9aef3652c38d07f7",
+      "target": "custom.tb-tb_86485f0144.c.c3d6636de65c5ebe",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6231,27 +5862,6 @@
     {
       "source": "custom.tb-tb_86485f0144.c.70473d8ed97e0503",
       "target": "custom.tb-tb_86485f0144.c.2334f70326465fa0",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2334f70326465fa0",
-      "target": "custom.tb-tb_86485f0144.c.8cdd676e6a0a74e0",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.9aef3652c38d07f7",
-      "target": "custom.tb-tb_86485f0144.c.0ee9cdb7ff198391",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2334f70326465fa0",
-      "target": "custom.tb-tb_86485f0144.c.0ee9cdb7ff198391",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6273,13 +5883,6 @@
     {
       "source": "custom.tb-tb_86485f0144.c.aceac7c3a1fc44d8",
       "target": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.126aef30868256d3",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6314,42 +5917,14 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.917936c74e2c5fc4",
+      "target": "custom.tb-tb_86485f0144.c.f46be5653aa3a066",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.67d5561b29d2570b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.67d5561b29d2570b",
+      "source": "custom.tb-tb_86485f0144.c.f46be5653aa3a066",
       "target": "custom.tb-tb_86485f0144.c.b88de6613db5390d",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.917936c74e2c5fc4",
-      "target": "custom.tb-tb_86485f0144.c.b88de6613db5390d",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.03a61e84a3754938",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.9592cef8edd249eb",
-      "target": "custom.tb-tb_86485f0144.c.03a61e84a3754938",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6362,85 +5937,22 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.5883cc977eb798a7",
-      "target": "custom.tb-tb_86485f0144.c.2362d068ecfad5cd",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.7bee2866e3490c1f",
+      "target": "custom.tb-tb_86485f0144.c.af8cbace53a4f0f9",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.7bee2866e3490c1f",
-      "target": "custom.tb-tb_86485f0144.c.2611a2a63511606b",
+      "source": "custom.tb-tb_86485f0144.c.2334f70326465fa0",
+      "target": "custom.tb-tb_86485f0144.c.af8cbace53a4f0f9",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2362d068ecfad5cd",
-      "target": "custom.tb-tb_86485f0144.c.2611a2a63511606b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.ff40ab9d302a16ea",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
+      "source": "custom.tb-tb_86485f0144.c.af8cbace53a4f0f9",
       "target": "custom.tb-tb_86485f0144.c.cd69cc9697497be8",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.ff40ab9d302a16ea",
-      "target": "custom.tb-tb_86485f0144.c.cd69cc9697497be8",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.7bee2866e3490c1f",
-      "target": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.ff40ab9d302a16ea",
-      "target": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.cd69cc9697497be8",
-      "target": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.67d5561b29d2570b",
-      "target": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6453,7 +5965,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
+      "source": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
       "target": "custom.tb-tb_86485f0144.c.bc5f53ad460758f8",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6481,21 +5993,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.cd69cc9697497be8",
-      "target": "custom.tb-tb_86485f0144.c.67f11946179adca6",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.67f11946179adca6",
-      "target": "custom.tb-tb_86485f0144.c.50b285ccda01f6bb",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
       "target": "custom.tb-tb_86485f0144.c.50b285ccda01f6bb",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6523,6 +6021,13 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.5dfe5591ba34311b",
+      "target": "custom.tb-tb_86485f0144.c.1aa1e859822126a1",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.1aa1e859822126a1",
       "target": "custom.tb-tb_86485f0144.c.0b55af2c37412275",
       "type": "prerequisite",
@@ -6537,29 +6042,15 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.67f11946179adca6",
-      "target": "custom.tb-tb_86485f0144.c.0b55af2c37412275",
+      "source": "custom.tb-tb_86485f0144.c.bc5f53ad460758f8",
+      "target": "custom.tb-tb_86485f0144.c.53da873c34928bcd",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.0b55af2c37412275",
-      "target": "custom.tb-tb_86485f0144.c.4799a1fe2561f212",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.bc5f53ad460758f8",
-      "target": "custom.tb-tb_86485f0144.c.4799a1fe2561f212",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.bc5f53ad460758f8",
-      "target": "custom.tb-tb_86485f0144.c.581cf5d32658a38b",
+      "target": "custom.tb-tb_86485f0144.c.53da873c34928bcd",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6572,8 +6063,22 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.4f3a937cc166624c",
-      "target": "custom.tb-tb_86485f0144.c.e9da0b34fd9c36a1",
+      "source": "custom.tb-tb_86485f0144.c.bc5f53ad460758f8",
+      "target": "custom.tb-tb_86485f0144.c.581cf5d32658a38b",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.f46be5653aa3a066",
+      "target": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.581cf5d32658a38b",
+      "target": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6587,7 +6092,7 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.4f3a937cc166624c",
-      "target": "custom.tb-tb_86485f0144.c.9a3910cb8df6457b",
+      "target": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6607,7 +6112,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.9a3910cb8df6457b",
+      "source": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
       "target": "custom.tb-tb_86485f0144.c.826ff886f4c9ffbc",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6622,12 +6127,54 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
+      "target": "custom.tb-tb_86485f0144.c.7a5b564cb8d0af42",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.826ff886f4c9ffbc",
+      "target": "custom.tb-tb_86485f0144.c.7a5b564cb8d0af42",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
       "target": "custom.tb-tb_86485f0144.c.7e16070517aaa148",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
+      "target": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.0963a8b6afd0c40f",
+      "target": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.7e16070517aaa148",
+      "target": "custom.tb-tb_86485f0144.c.882b18638a652c12",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
+      "target": "custom.tb-tb_86485f0144.c.882b18638a652c12",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.826ff886f4c9ffbc",
       "target": "custom.tb-tb_86485f0144.c.979cc2500da3f114",
       "type": "prerequisite",
@@ -6642,14 +6189,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.826ff886f4c9ffbc",
-      "target": "custom.tb-tb_86485f0144.c.684f53547142540b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.d36cc8868cb833bc",
+      "source": "custom.tb-tb_86485f0144.c.979cc2500da3f114",
       "target": "custom.tb-tb_86485f0144.c.684f53547142540b",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6663,7 +6203,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.0963a8b6afd0c40f",
+      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
       "target": "custom.tb-tb_86485f0144.c.dcac6939127cc692",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6677,15 +6217,15 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
-      "target": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
+      "source": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
+      "target": "custom.tb-tb_86485f0144.c.aadb1afde57c0cca",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
-      "target": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
+      "target": "custom.tb-tb_86485f0144.c.aadb1afde57c0cca",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6705,50 +6245,50 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.0963a8b6afd0c40f",
-      "target": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
-      "target": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
+      "source": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
+      "target": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
-      "target": "custom.tb-tb_86485f0144.c.616e823b67560608",
+      "target": "custom.tb-tb_86485f0144.c.9682a77a17a03654",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
-      "target": "custom.tb-tb_86485f0144.c.616e823b67560608",
+      "source": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
+      "target": "custom.tb-tb_86485f0144.c.9682a77a17a03654",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
-      "target": "custom.tb-tb_86485f0144.c.8faf1bafc29f66ce",
+      "source": "custom.tb-tb_86485f0144.c.d36cc8868cb833bc",
+      "target": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
-      "target": "custom.tb-tb_86485f0144.c.8faf1bafc29f66ce",
+      "source": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
+      "target": "custom.tb-tb_86485f0144.c.40adffe16dbd00ae",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
-      "target": "custom.tb-tb_86485f0144.c.8faf1bafc29f66ce",
+      "source": "custom.tb-tb_86485f0144.c.4f3a937cc166624c",
+      "target": "custom.tb-tb_86485f0144.c.40adffe16dbd00ae",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
+      "target": "custom.tb-tb_86485f0144.c.5fabb1c7007e6f43",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6762,35 +6302,49 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.5fabb1c7007e6f43",
-      "target": "custom.tb-tb_86485f0144.c.1f0b0eb0c4f70e99",
+      "target": "custom.tb-tb_86485f0144.c.978a7701b178cbb8",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.5fabb1c7007e6f43",
-      "target": "custom.tb-tb_86485f0144.c.d420b4c511f8188a",
+      "source": "custom.tb-tb_86485f0144.c.826ff886f4c9ffbc",
+      "target": "custom.tb-tb_86485f0144.c.978a7701b178cbb8",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.1f0b0eb0c4f70e99",
-      "target": "custom.tb-tb_86485f0144.c.d420b4c511f8188a",
+      "source": "custom.tb-tb_86485f0144.c.978a7701b178cbb8",
+      "target": "custom.tb-tb_86485f0144.c.20ed998592cf8ff5",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.d420b4c511f8188a",
-      "target": "custom.tb-tb_86485f0144.c.9f80ae546a875529",
+      "source": "custom.tb-tb_86485f0144.c.40adffe16dbd00ae",
+      "target": "custom.tb-tb_86485f0144.c.20ed998592cf8ff5",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.9a3910cb8df6457b",
-      "target": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
+      "source": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
+      "target": "custom.tb-tb_86485f0144.c.a2289a9a5612654e",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
+      "target": "custom.tb-tb_86485f0144.c.a2289a9a5612654e",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
+      "target": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6798,6 +6352,20 @@
     {
       "source": "custom.tb-tb_86485f0144.c.826ff886f4c9ffbc",
       "target": "custom.tb-tb_86485f0144.c.342821a9f04155c3",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
+      "target": "custom.tb-tb_86485f0144.c.342821a9f04155c3",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
+      "target": "custom.tb-tb_86485f0144.c.51ff6dbc89f1ddac",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6818,7 +6386,7 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.51ff6dbc89f1ddac",
-      "target": "custom.tb-tb_86485f0144.c.8e181e3602ebf887",
+      "target": "custom.tb-tb_86485f0144.c.1173d85c658b2851",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6845,8 +6413,15 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2d513084b1dc1c52",
+      "source": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
       "target": "custom.tb-tb_86485f0144.c.5d83949d8b3684f9",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2d513084b1dc1c52",
+      "target": "custom.tb-tb_86485f0144.c.bf7fb10c0f59713c",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6859,15 +6434,8 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2d513084b1dc1c52",
-      "target": "custom.tb-tb_86485f0144.c.bf7fb10c0f59713c",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.3e31c959b09490ca",
-      "target": "custom.tb-tb_86485f0144.c.51b0b341fb1cfd70",
+      "source": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
+      "target": "custom.tb-tb_86485f0144.c.3e31c959b09490ca",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -6880,27 +6448,6 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.e8be8cf941bc99de",
-      "target": "custom.tb-tb_86485f0144.c.9ac9bdb9b993079f",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.e8be8cf941bc99de",
-      "target": "custom.tb-tb_86485f0144.c.b28641f76ea1d6c4",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.9ac9bdb9b993079f",
-      "target": "custom.tb-tb_86485f0144.c.b28641f76ea1d6c4",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.3e31c959b09490ca",
       "target": "custom.tb-tb_86485f0144.c.af381e6aa7d441ea",
       "type": "prerequisite",
@@ -6916,13 +6463,20 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.3e31c959b09490ca",
-      "target": "custom.tb-tb_86485f0144.c.f108ebd10f466c08",
+      "target": "custom.tb-tb_86485f0144.c.711d39efca38f21e",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.f108ebd10f466c08",
+      "source": "custom.tb-tb_86485f0144.c.3e31c959b09490ca",
+      "target": "custom.tb-tb_86485f0144.c.1908a71aa3933025",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.711d39efca38f21e",
       "target": "custom.tb-tb_86485f0144.c.87afc764d97b60bf",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6930,20 +6484,13 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.87afc764d97b60bf",
-      "target": "custom.tb-tb_86485f0144.c.1fec4db86add78aa",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.87afc764d97b60bf",
       "target": "custom.tb-tb_86485f0144.c.8cc3f32c6d3c2bea",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.9ac9bdb9b993079f",
+      "source": "custom.tb-tb_86485f0144.c.e8be8cf941bc99de",
       "target": "custom.tb-tb_86485f0144.c.8cc3f32c6d3c2bea",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6958,13 +6505,6 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.87afc764d97b60bf",
-      "target": "custom.tb-tb_86485f0144.c.2e92fe855bcee232",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.8cc3f32c6d3c2bea",
       "target": "custom.tb-tb_86485f0144.c.2e92fe855bcee232",
       "type": "prerequisite",
       "weight": 1.0,
@@ -6985,7 +6525,14 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
+      "source": "custom.tb-tb_86485f0144.c.e8be8cf941bc99de",
+      "target": "custom.tb-tb_86485f0144.c.3cd20a61198e51a2",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
       "target": "custom.tb-tb_86485f0144.c.243914f2d9648767",
       "type": "prerequisite",
       "weight": 1.0,
@@ -7006,13 +6553,6 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "target": "custom.tb-tb_86485f0144.c.5506c6c7e8e7795f",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.5506c6c7e8e7795f",
       "target": "custom.tb-tb_86485f0144.c.c4b60a7f4f2941b8",
       "type": "prerequisite",
@@ -7020,7 +6560,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.243914f2d9648767",
+      "source": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
       "target": "custom.tb-tb_86485f0144.c.0c7f6a707bfe40cc",
       "type": "prerequisite",
       "weight": 1.0,
@@ -7034,20 +6574,6 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
-      "target": "custom.tb-tb_86485f0144.c.aa5d44736eebec2b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
-      "target": "custom.tb-tb_86485f0144.c.aa5d44736eebec2b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.0c7f6a707bfe40cc",
       "target": "custom.tb-tb_86485f0144.c.faf4ebe8d34c5de9",
       "type": "prerequisite",
@@ -7062,49 +6588,49 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.faf4ebe8d34c5de9",
-      "target": "custom.tb-tb_86485f0144.c.85977ecafebbf65b",
+      "source": "custom.tb-tb_86485f0144.c.51ff6dbc89f1ddac",
+      "target": "custom.tb-tb_86485f0144.c.faf4ebe8d34c5de9",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.47be0139d7cd278a",
-      "target": "custom.tb-tb_86485f0144.c.85977ecafebbf65b",
+      "source": "custom.tb-tb_86485f0144.c.faf4ebe8d34c5de9",
+      "target": "custom.tb-tb_86485f0144.c.b4a185423c8cb20a",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.684f53547142540b",
+      "target": "custom.tb-tb_86485f0144.c.b4a185423c8cb20a",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.aa4046db37165de3",
-      "target": "custom.tb-tb_86485f0144.c.60fa15f84ce5d160",
+      "target": "custom.tb-tb_86485f0144.c.a7db392be38c3819",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.60438d8dfd44bfda",
-      "target": "custom.tb-tb_86485f0144.c.60fa15f84ce5d160",
+      "target": "custom.tb-tb_86485f0144.c.a7db392be38c3819",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.faf4ebe8d34c5de9",
-      "target": "custom.tb-tb_86485f0144.c.60fa15f84ce5d160",
+      "source": "custom.tb-tb_86485f0144.c.3d3a96e7ef49213e",
+      "target": "custom.tb-tb_86485f0144.c.194144d7cae98113",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.194144d7cae98113",
-      "target": "custom.tb-tb_86485f0144.c.2a19745ae87e4448",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.aa4046db37165de3",
       "target": "custom.tb-tb_86485f0144.c.2a19745ae87e4448",
       "type": "prerequisite",
       "weight": 1.0,
@@ -7118,6 +6644,13 @@
       "provenance": "custom"
     },
     {
+      "source": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
+      "target": "custom.tb-tb_86485f0144.c.4404f92b14020a85",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
       "source": "custom.tb-tb_86485f0144.c.194144d7cae98113",
       "target": "custom.tb-tb_86485f0144.c.f7ab54212212c7c1",
       "type": "prerequisite",
@@ -7125,7 +6658,7 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2a19745ae87e4448",
+      "source": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
       "target": "custom.tb-tb_86485f0144.c.f7ab54212212c7c1",
       "type": "prerequisite",
       "weight": 1.0,
@@ -7139,22 +6672,8 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2a19745ae87e4448",
-      "target": "custom.tb-tb_86485f0144.c.806b9a8ec913a3c9",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.60fa15f84ce5d160",
-      "target": "custom.tb-tb_86485f0144.c.806b9a8ec913a3c9",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.3cd20a61198e51a2",
-      "target": "custom.tb-tb_86485f0144.c.806b9a8ec913a3c9",
+      "source": "custom.tb-tb_86485f0144.c.194144d7cae98113",
+      "target": "custom.tb-tb_86485f0144.c.07a13f2ced1fd649",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -7176,20 +6695,6 @@
     {
       "source": "custom.tb-tb_86485f0144.c.4404f92b14020a85",
       "target": "custom.tb-tb_86485f0144.c.bf84e323e616b30f",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.f7ab54212212c7c1",
-      "target": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.bf84e323e616b30f",
-      "target": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -7230,85 +6735,36 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "target": "custom.tb-tb_86485f0144.c.2334a49de098c4b4",
+      "source": "custom.tb-tb_86485f0144.c.f7ab54212212c7c1",
+      "target": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "target": "custom.tb-tb_86485f0144.c.3f167554418c16e8",
+      "source": "custom.tb-tb_86485f0144.c.bf84e323e616b30f",
+      "target": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "target": "custom.tb-tb_86485f0144.c.b6380c558f953eee",
+      "source": "custom.tb-tb_86485f0144.c.f7ab54212212c7c1",
+      "target": "custom.tb-tb_86485f0144.c.50961065b15d3e87",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.2334a49de098c4b4",
-      "target": "custom.tb-tb_86485f0144.c.b6380c558f953eee",
+      "source": "custom.tb-tb_86485f0144.c.bf84e323e616b30f",
+      "target": "custom.tb-tb_86485f0144.c.50961065b15d3e87",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
+      "source": "custom.tb-tb_86485f0144.c.3b94cdcf31fb7a36",
       "target": "custom.tb-tb_86485f0144.c.bd1c33dc7f9d9ee1",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.b6380c558f953eee",
-      "target": "custom.tb-tb_86485f0144.c.bd1c33dc7f9d9ee1",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "target": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "target": "custom.tb-tb_86485f0144.c.684f53547142540b",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "target": "custom.tb-tb_86485f0144.c.979cc2500da3f114",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "target": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.684f53547142540b",
-      "target": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "target": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -7321,50 +6777,8 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "target": "custom.tb-tb_86485f0144.c.1899cdf01f3e2ab5",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
       "source": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
-      "target": "custom.tb-tb_86485f0144.c.354f8471df667a39",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "target": "custom.tb-tb_86485f0144.c.354f8471df667a39",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.2d513084b1dc1c52",
-      "target": "custom.tb-tb_86485f0144.c.354f8471df667a39",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
-      "target": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.5d83949d8b3684f9",
-      "target": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
-      "type": "prerequisite",
-      "weight": 1.0,
-      "provenance": "custom"
-    },
-    {
-      "source": "custom.tb-tb_86485f0144.c.51ff6dbc89f1ddac",
-      "target": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
+      "target": "custom.tb-tb_86485f0144.c.8ea6d81893c9eff0",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -7377,14 +6791,35 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.354f8471df667a39",
+      "source": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
+      "target": "custom.tb-tb_86485f0144.c.5d83949d8b3684f9",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
+      "target": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.2d513084b1dc1c52",
+      "target": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.8ea6d81893c9eff0",
       "target": "custom.tb-tb_86485f0144.c.bf7fb10c0f59713c",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
+      "source": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
       "target": "custom.tb-tb_86485f0144.c.c10e96c09d916ca4",
       "type": "prerequisite",
       "weight": 1.0,
@@ -7406,49 +6841,56 @@
     },
     {
       "source": "custom.tb-tb_86485f0144.c.c10e96c09d916ca4",
-      "target": "custom.tb-tb_86485f0144.c.e90ae9b53b207da3",
+      "target": "custom.tb-tb_86485f0144.c.4e90485561fa7201",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.bd1c33dc7f9d9ee1",
-      "target": "custom.tb-tb_86485f0144.c.e90ae9b53b207da3",
+      "target": "custom.tb-tb_86485f0144.c.4e90485561fa7201",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.c10e96c09d916ca4",
-      "target": "custom.tb-tb_86485f0144.c.dd31ec04dac551e0",
+      "target": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
-      "target": "custom.tb-tb_86485f0144.c.dd31ec04dac551e0",
+      "target": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.354f8471df667a39",
-      "target": "custom.tb-tb_86485f0144.c.dd31ec04dac551e0",
+      "source": "custom.tb-tb_86485f0144.c.8ea6d81893c9eff0",
+      "target": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.dd31ec04dac551e0",
-      "target": "custom.tb-tb_86485f0144.c.aa5d44736eebec2b",
+      "source": "custom.tb-tb_86485f0144.c.51ff6dbc89f1ddac",
+      "target": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
+      "type": "prerequisite",
+      "weight": 1.0,
+      "provenance": "custom"
+    },
+    {
+      "source": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
+      "target": "custom.tb-tb_86485f0144.c.6f850bfa0f7d98c4",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
     },
     {
       "source": "custom.tb-tb_86485f0144.c.5d83949d8b3684f9",
-      "target": "custom.tb-tb_86485f0144.c.aa5d44736eebec2b",
+      "target": "custom.tb-tb_86485f0144.c.6f850bfa0f7d98c4",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -7468,8 +6910,8 @@
       "provenance": "custom"
     },
     {
-      "source": "custom.tb-tb_86485f0144.c.c10e96c09d916ca4",
-      "target": "custom.tb-tb_86485f0144.c.56588a2094bba54c",
+      "source": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
+      "target": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
       "type": "prerequisite",
       "weight": 1.0,
       "provenance": "custom"
@@ -7478,7 +6920,7 @@
   "contents": [
     {
       "concept_id": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
-      "definition": "由多个一次方程共同构成的方程组称为线性方程组。",
+      "definition": "未知量的最高次数均为一次的方程组称为线性方程组。",
       "formula": "",
       "example": "x+y=2，2x-y=1",
       "exercise_hint": "",
@@ -7486,7 +6928,7 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.d8b27dee3e23907a",
-      "definition": "数按规定的行数和列数排成的数表称为矩阵。",
+      "definition": "数按矩形排列成的数表称为矩阵。",
       "formula": "",
       "example": "A=(1 2;3 4)",
       "exercise_hint": "",
@@ -7494,39 +6936,31 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.8b1cf628c593a765",
-      "definition": "矩阵第i行第j列的数称为其(i,j)元素。",
+      "definition": "矩阵第i行第j列位置上的数称为(i,j)元素。",
       "formula": "",
-      "example": "a23表示第二行第三列元素",
+      "example": "矩阵中a12是第1行第2列元素",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
-      "definition": "由线性方程组的系数和常数项共同组成的矩阵称为增广矩阵。",
+      "definition": "将线性方程组的系数与常数项按行排列所得的矩阵称为增广矩阵。",
       "formula": "",
-      "example": "x+y=2对应(1 1 2)",
+      "example": "x+y=1，2x-y=3对应(1 1 1;2 -1 3)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
-      "definition": "线性方程组中仅由未知量系数组成的矩阵称为系数矩阵。",
+      "definition": "由线性方程组各未知量系数排列成的矩阵称为系数矩阵。",
       "formula": "",
-      "example": "x+y=2，2x-y=1的系数矩阵为(1 1;2 -1)",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
-      "definition": "行数相等且列数也相等的两个矩阵称为同型矩阵。",
-      "formula": "",
-      "example": "2×3矩阵A与B同型",
+      "example": "x+y=1，2x-y=3的系数矩阵为(1 1;2 -1)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.62fedade7c682aa5",
-      "definition": "只有一行的矩阵称为行矩阵，也称行向量。",
+      "definition": "只有一行的矩阵称为行矩阵。",
       "formula": "",
       "example": "(1,2,3)",
       "exercise_hint": "",
@@ -7534,7 +6968,7 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.51c4622e1f97eb7d",
-      "definition": "只有一列的矩阵称为列矩阵，也称列向量。",
+      "definition": "只有一列的矩阵称为列矩阵。",
       "formula": "",
       "example": "(1;2;3)",
       "exercise_hint": "",
@@ -7557,18 +6991,18 @@
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.487a4fca09615a6f",
-      "definition": "方阵中元素aii所在的位置构成主对角线。",
+      "concept_id": "custom.tb-tb_86485f0144.c.3517e4c855a01c16",
+      "definition": "主对角线上方所有元素为零的方阵称为下三角矩阵。",
       "formula": "",
-      "example": "二阶方阵的a11与a22",
+      "example": "(1 0 0;2 3 0;4 5 6)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.a5938a9a56ffedec",
-      "definition": "主对角线一侧元素全为零的方阵称为三角矩阵。",
+      "concept_id": "custom.tb-tb_86485f0144.c.0a9f0dfc07c3b619",
+      "definition": "主对角线下方所有元素为零的方阵称为上三角矩阵。",
       "formula": "",
-      "example": "(1 0;2 3)是下三角矩阵",
+      "example": "(1 2 3;0 4 5;0 0 6)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -7576,29 +7010,45 @@
       "concept_id": "custom.tb-tb_86485f0144.c.2296decc4f64556a",
       "definition": "主对角线以外的元素全为零的方阵称为对角矩阵。",
       "formula": "",
-      "example": "diag(2,3,4)",
+      "example": "diag(1,2,3)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.0d35003b52c40089",
-      "definition": "对角矩阵的主对角线元素全相等时称为数量矩阵。",
+      "definition": "对角矩阵的对角线元素全部相等时称为数量矩阵。",
       "formula": "",
-      "example": "diag(3,3,3)",
+      "example": "2E3=diag(2,2,2)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.56cb3c26419d3113",
-      "definition": "主对角线元素全为1的数量矩阵称为单位矩阵。",
+      "definition": "对角线元素全为1且其他元素为零的方阵称为单位矩阵。",
       "formula": "",
       "example": "E2=(1 0;0 1)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
+      "concept_id": "custom.tb-tb_86485f0144.c.fa3b052bdc98733b",
+      "definition": "两个矩阵的行数和列数分别相等时称为同型矩阵。",
+      "formula": "",
+      "example": "两个2×3矩阵同型",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.1d83e0e540e3cf4e",
+      "definition": "同型矩阵对应位置的元素全部相等时两个矩阵相等。",
+      "formula": "",
+      "example": "(1 2)=(1 2)",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
       "concept_id": "custom.tb-tb_86485f0144.c.a1083a73abdb52d7",
-      "definition": "同型矩阵的和由对应位置元素相加得到。",
+      "definition": "两个同型矩阵的和由对应位置元素相加得到。",
       "formula": "",
       "example": "(1 2)+(3 4)=(4 6)",
       "exercise_hint": "",
@@ -7616,7 +7066,7 @@
       "concept_id": "custom.tb-tb_86485f0144.c.a6a610eaff949d7d",
       "definition": "矩阵的加法和数乘统称为矩阵的线性运算。",
       "formula": "",
-      "example": "2A+B",
+      "example": "2A-B是矩阵线性运算",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -7630,7 +7080,7 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.198f60635b524600",
-      "definition": "方阵连续自乘k次所得的乘积称为其k次方幂。",
+      "definition": "方阵连续自乘若干次所得的乘积称为方阵的方幂。",
       "formula": "",
       "example": "A2=AA，A0=E",
       "exercise_hint": "",
@@ -7662,9 +7112,17 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.5d7bc333a96d1d4b",
-      "definition": "将矩阵分划为若干子块并以子块为元素所得的形式称为分块矩阵。",
+      "definition": "将矩阵划分为若干子块并以子块为元素所得的形式称为分块矩阵。",
       "formula": "",
-      "example": "(A O;O B)",
+      "example": "(A O;O B)是分块矩阵",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
+      "definition": "交换、倍乘或倍加矩阵的行或列所作的变换称为初等变换。",
+      "formula": "",
+      "example": "r1↔r2，或r2+3r1",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -7672,29 +7130,13 @@
       "concept_id": "custom.tb-tb_86485f0144.c.2ef7728a86da233a",
       "definition": "交换两行、某行乘非零数或倍加到另一行称为初等行变换。",
       "formula": "",
-      "example": "r2←r2-2r1",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.c0290d07c3cf941c",
-      "definition": "将初等行变换中的行改为列所得的变换称为初等列变换。",
-      "formula": "",
-      "example": "c2←c2+c1",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
-      "definition": "矩阵的初等行变换和初等列变换统称为初等变换。",
-      "formula": "",
-      "example": "先交换两行再倍加一列",
+      "example": "r2→r2-2r1",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.c02ce6c0f4082fb9",
-      "definition": "非零行首个非零元逐行右移且其下方为零的矩阵称为行阶梯形矩阵。",
+      "definition": "非零行首个非零元逐行右移且阶梯线下方全为零的矩阵称为行阶梯形矩阵。",
       "formula": "",
       "example": "(1 2 0;0 1 3;0 0 0)",
       "exercise_hint": "",
@@ -7702,7 +7144,7 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.0995e15c445a308c",
-      "definition": "首元全为1且首元所在列其余元素全为零的行阶梯形矩阵称为行最简形矩阵。",
+      "definition": "首元全为1且首元所在列其他元素全为零的行阶梯形矩阵称为行最简形矩阵。",
       "formula": "",
       "example": "(1 0 2;0 1 3;0 0 0)",
       "exercise_hint": "",
@@ -7710,9 +7152,9 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.84e91a91ef1feec4",
-      "definition": "矩阵经初等变换可化成由Er和零块组成的标准形式。",
+      "definition": "矩阵经初等变换可化为含单位块和零块的标准形。",
       "formula": "",
-      "example": "F=(E3 O;O O)",
+      "example": "F=(Er O;O O)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -7720,7 +7162,15 @@
       "concept_id": "custom.tb-tb_86485f0144.c.400b7a58a92abc84",
       "definition": "一个矩阵经过有限次初等变换化为另一个矩阵时称二者等价。",
       "formula": "",
-      "example": "A~B",
+      "example": "A经行变换化为B，则A~B",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
+      "definition": "线性方程组的所有常数项都为零时称为齐次线性方程组。",
+      "formula": "",
+      "example": "x+y=0，2x-y=0",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -7728,37 +7178,13 @@
       "concept_id": "custom.tb-tb_86485f0144.c.3300107bf1619fb9",
       "definition": "线性方程组的常数项不全为零时称为非齐次线性方程组。",
       "formula": "",
-      "example": "x+y=1",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.78ff9470abd47674",
-      "definition": "线性方程组的所有常数项均为零时称为齐次线性方程组。",
-      "formula": "",
-      "example": "x+y=0",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.e467865efd5c1b96",
-      "definition": "齐次线性方程组中所有未知量均为零的解称为零解。",
-      "formula": "",
-      "example": "x1=x2=0",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.203db26fb0f85e2a",
-      "definition": "对增广矩阵施行初等行变换并根据行最简形求解的方法称为线性方程组求解。",
-      "formula": "",
-      "example": "增广矩阵化为单位阵形式",
+      "example": "x+y=1，2x-y=3",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.300eb0dd38465fda",
-      "definition": "对单位矩阵施行一次初等变换所得的矩阵称为初等矩阵。",
+      "definition": "单位矩阵经过一次初等变换所得的矩阵称为初等矩阵。",
       "formula": "",
       "example": "交换E的两行所得矩阵",
       "exercise_hint": "",
@@ -7766,7 +7192,7 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.4ae83907c4077eb2",
-      "definition": "存在同阶矩阵B使AB=BA=E的方阵A称为可逆矩阵。",
+      "definition": "存在矩阵B使AB=BA=E的方阵A称为可逆矩阵。",
       "formula": "",
       "example": "A=(1 0;0 2)可逆",
       "exercise_hint": "",
@@ -7774,65 +7200,49 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.5dfe5591ba34311b",
-      "definition": "满足AA^-1=A^-1A=E的矩阵称为A的逆矩阵。",
+      "definition": "若AB=BA=E，则B称为可逆矩阵A的逆矩阵。",
       "formula": "",
-      "example": "diag(2,3)^-1=diag(1/2,1/3)",
+      "example": "diag(1,2)的逆矩阵为diag(1,1/2)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.e045bbbfcdd39819",
-      "definition": "以未知矩阵为对象并满足矩阵运算等式的方程称为矩阵方程。",
+      "definition": "以矩阵为未知量并由矩阵运算构成的等式称为矩阵方程。",
       "formula": "",
-      "example": "AX=B的解为X=A^-1B",
+      "example": "AX=B的解为X=A-1B",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.70473d8ed97e0503",
-      "definition": "从1、2、…、n中任意选取r个不同的数排成一列，称为排列。",
+      "definition": "从1，2，…，n中任意选取r个不同的数排成一列，称为排列。",
       "formula": "",
-      "example": "312是1、2、3的一个全排列。",
+      "example": "314是5个元素的一个排列",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.a29abf24b1aabef2",
-      "definition": "将1、2、…、n这n个不同的数排成一列，称为n阶全排列。",
+      "definition": "将1，2，…，n这n个不同的数排成一列，称为n阶全排列。",
       "formula": "",
-      "example": "123是3阶全排列。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.b943dc6fa1b0f18b",
-      "definition": "元素按从小到大的自然顺序排列的全排列称为标准排列。",
-      "formula": "",
-      "example": "12345是标准排列。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.94310581af116669",
-      "definition": "排列中左边的数大于右边的数时，这两个数构成一个逆序。",
-      "formula": "",
-      "example": "排列421中，42、41、21都是逆序。",
+      "example": "123是3阶全排列",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.9592cef8edd249eb",
-      "definition": "一个排列中逆序的总数称为该排列的逆序数。",
+      "definition": "排列中所有逆序的总数称为该排列的逆序数。",
       "formula": "",
-      "example": "τ(42153)=5。",
+      "example": "42153的逆序数为5",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.9aef3652c38d07f7",
-      "definition": "逆序数为奇数的排列是奇排列，为偶数的排列是偶排列。",
+      "concept_id": "custom.tb-tb_86485f0144.c.c3d6636de65c5ebe",
+      "definition": "逆序数为偶数的排列是偶排列，为奇数的排列是奇排列。",
       "formula": "",
-      "example": "213为奇排列，312为偶排列。",
+      "example": "213是奇排列",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -7840,95 +7250,55 @@
       "concept_id": "custom.tb-tb_86485f0144.c.2334f70326465fa0",
       "definition": "只交换排列中某两个数的位置而得到新排列的变换称为对换。",
       "formula": "",
-      "example": "42153交换2和5得45123。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.8cdd676e6a0a74e0",
-      "definition": "交换排列中相邻位置两个元素的对换称为相邻对换。",
-      "formula": "",
-      "example": "42153交换4和2不是相邻对换。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.0ee9cdb7ff198391",
-      "definition": "对换排列中任意两个数的位置会改变该排列的奇偶性。",
-      "formula": "",
-      "example": "奇排列经一次对换变为偶排列。",
+      "example": "交换21得到12",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.2c97d044ec453738",
-      "definition": "n阶行列式是所有全排列对应乘积按逆序数符号加权求和得到的数。",
+      "definition": "由n²个元素组成的方阵按全排列展开并赋予符号后所得的数称为n阶行列式。",
       "formula": "",
-      "example": "二阶行列式等于a11a22−a12a21。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.126aef30868256d3",
-      "definition": "元素aij的第一个下标i称为行标，第二个下标j称为列标。",
-      "formula": "",
-      "example": "a23的行标为2，列标为3。",
+      "example": "二阶行列式为a11a22−a12a21",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.5e28f962587a970a",
-      "definition": "二阶行列式的值为a11a22−a12a21。",
+      "definition": "二阶行列式等于主对角线上元素之积减去副对角线上元素之积。",
       "formula": "",
-      "example": "|1 2;3 4|=−2。",
+      "example": "|1 2;3 4|=−2",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.1c3cfb70d552e562",
-      "definition": "三阶行列式按定义展开为六项乘积的代数和。",
+      "definition": "三阶行列式由三个正号项和三个负号项组成的六项代数和表示。",
       "formula": "",
-      "example": "|1 0 0;0 2 0;0 0 3|=6。",
+      "example": "|1 0 0;0 2 0;0 0 3|=6",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.f7b52787ff74b983",
-      "definition": "对角线法则按指定实、虚对角线乘积的正负号计算行列式。",
+      "definition": "按规定的实线和虚线乘积分别取正号和负号来展开行列式。",
       "formula": "",
-      "example": "三阶行列式可按六条对角线展开。",
+      "example": "三阶行列式展开为六项",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.917936c74e2c5fc4",
-      "definition": "主对角线上方元素全为零的方阵所确定的行列式称为下三角行列式。",
+      "concept_id": "custom.tb-tb_86485f0144.c.f46be5653aa3a066",
+      "definition": "主对角线一侧元素全为零的行列式称为三角行列式。",
       "formula": "",
-      "example": "其值为a11a22…ann。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.67d5561b29d2570b",
-      "definition": "主对角线下方元素全为零的方阵所确定的行列式称为上三角行列式。",
-      "formula": "",
-      "example": "其值为主对角线元素之积。",
+      "example": "上三角行列式等于对角线乘积",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.b88de6613db5390d",
-      "definition": "对角矩阵的行列式称为对角行列式。",
+      "definition": "由对角矩阵确定的行列式称为对角行列式。",
       "formula": "",
-      "example": "diag(2,3,4)的行列式为24。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.03a61e84a3754938",
-      "definition": "教材中由反向对角线结构确定并按反序排列符号计算的特殊行列式称为斜下三角行列式。",
-      "formula": "",
-      "example": "其值含因子(−1)^{n(n−1)/2}。",
+      "example": "diag(2,3,4)的行列式为24",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -7936,63 +7306,23 @@
       "concept_id": "custom.tb-tb_86485f0144.c.5883cc977eb798a7",
       "definition": "把行列式各行元素换为同序号列元素所得的行列式称为转置行列式。",
       "formula": "",
-      "example": "D与DT的值相等。",
+      "example": "D与其转置行列式相等",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.2362d068ecfad5cd",
-      "definition": "任意行列式都等于它的转置行列式。",
+      "concept_id": "custom.tb-tb_86485f0144.c.af8cbace53a4f0f9",
+      "definition": "行列式满足转置不变、交换两行变号、数乘可提取及按行线性拆分等性质。",
       "formula": "",
-      "example": "det(A)=det(AT)。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.7bee2866e3490c1f",
-      "definition": "互换行列式的两行或两列后，所得行列式等于原行列式的相反数。",
-      "formula": "",
-      "example": "交换两行使D变为−D。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.2611a2a63511606b",
-      "definition": "行列式有两行或两列相同、某行或列全零、或两行列对应成比例时值为零。",
-      "formula": "",
-      "example": "两行相同的行列式等于0。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.ff40ab9d302a16ea",
-      "definition": "行列式某行或某列的公因子可以提取到行列式记号外。",
-      "formula": "",
-      "example": "某行乘k后，行列式也乘k。",
+      "example": "两行相同的行列式等于0",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.cd69cc9697497be8",
-      "definition": "行列式某一行或列由两组元素对应相加组成时，可拆为两个行列式之和。",
+      "definition": "行列式某一行或列元素为两组元素之和时，可拆为两个行列式之和。",
       "formula": "",
-      "example": "含bk+ck的行可拆为含bk与含ck的两式。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.437f8912f0ba3718",
-      "definition": "利用行列式性质对行或列进行变换以化简其计算的操作称为行列式初等变换。",
-      "formula": "",
-      "example": "ri加k倍的rj不改变行列式值。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
-      "definition": "将方阵按若干矩阵子块排列后形成的行列式称为分块行列式。",
-      "formula": "",
-      "example": "块上三角行列式的值为对角块行列式之积。",
+      "example": "det(...,b+c,...)=det(...,b,...)+det(...,c,...)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8000,95 +7330,95 @@
       "concept_id": "custom.tb-tb_86485f0144.c.bc5f53ad460758f8",
       "definition": "n阶方阵A可逆的充分必要条件是其行列式A不等于零。",
       "formula": "",
-      "example": "det(A)=0时，A不可逆。",
+      "example": "A≠0时方阵A可逆",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.8d85624c40a09a44",
-      "definition": "在行列式中划去第i行和第j列后剩下的n−1阶行列式称为aij的余子式。",
+      "definition": "在行列式中划去第i行和第j列后剩下的n−1阶行列式称为余子式。",
       "formula": "",
-      "example": "M12由划去第1行第2列所得。",
+      "example": "M12由划去第1行第2列得到",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.9401784b3fcac1df",
-      "definition": "元素aij的代数余子式定义为Aij=(−1)^{i+j}Mij。",
+      "definition": "元素aij的代数余子式定义为Aij=(−1)^(i+j)Mij。",
       "formula": "",
-      "example": "A13=M13，A32=−M32。",
+      "example": "A13=M13",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.67f11946179adca6",
-      "definition": "行列式等于任一行或列各元素与对应代数余子式乘积之和。",
+      "definition": "行列式可按任一行或任一列展开为元素与其代数余子式乘积之和。",
       "formula": "",
-      "example": "按第i行展开为ΣaikAik。",
+      "example": "D=a11A11+a12A12+…+a1nA1n",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.50b285ccda01f6bb",
-      "definition": "各列由同一变量的连续幂次构成的行列式称为范德蒙德行列式。",
+      "definition": "由变量的连续幂次排列构成的行列式，其值为变量差的乘积。",
       "formula": "",
-      "example": "Vn=∏(xj−xi)，i<j。",
+      "example": "Vn=∏(xj−xi)，i<j",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.2d6e256c5049f831",
-      "definition": "将方阵各元素的代数余子式构成矩阵后再转置所得矩阵称为伴随矩阵。",
+      "definition": "将方阵各元素的代数余子式按转置方式排列所得矩阵称为伴随矩阵。",
       "formula": "",
-      "example": "二阶矩阵[a b;c d]的伴随矩阵为[d −b;−c a]。",
+      "example": "二阶矩阵的伴随矩阵为[[d,−b],[−c,a]]",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.1aa1e859822126a1",
-      "definition": "可逆方阵A的逆矩阵满足A⁻¹=(1/|A|)A*。",
+      "definition": "可逆方阵A的逆矩阵满足A⁻¹=(1/A)A*。",
       "formula": "",
-      "example": "二阶矩阵逆矩阵为伴随矩阵除以ad−bc。",
+      "example": "二阶矩阵A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]]",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.0b55af2c37412275",
-      "definition": "系数行列式非零时，线性方程组的解为xj=Dj/|A|。",
+      "definition": "当系数行列式非零时，未知数等于相应替换列行列式与系数行列式之比。",
       "formula": "",
-      "example": "将系数行列式第j列替换为常数列得Dj。",
+      "example": "xj=Dj/A",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.4799a1fe2561f212",
-      "definition": "齐次线性方程组有非零解的必要条件是其系数行列式等于零。",
+      "concept_id": "custom.tb-tb_86485f0144.c.53da873c34928bcd",
+      "definition": "齐次方程组系数行列式非零时只有零解，有非零解时系数行列式必为零。",
       "formula": "",
-      "example": "Ax=0有非零解，则|A|=0。",
+      "example": "A≠0时Ax=0只有零解",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.581cf5d32658a38b",
-      "definition": "任意同阶方阵A、B满足|AB|=|A||B|。",
+      "definition": "同阶方阵A、B满足AB=A·B。",
       "formula": "",
-      "example": "|A²|=|A|²。",
+      "example": "A=2，B=3时，AB=6",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.b7cda3103f28ef6f",
+      "definition": "主对角线上为方阵块且一侧零块的分块行列式等于对角块行列式之积。",
+      "formula": "",
+      "example": "det([[A,C],[O,B]])=A·B",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.4f3a937cc166624c",
-      "definition": "由n个数a₁至aₙ组成的有序数组称为n维向量。",
+      "definition": "由n个数按一定顺序组成的数组称为n维向量。",
       "formula": "",
-      "example": "(1,2,3)是一个三维向量。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.e9da0b34fd9c36a1",
-      "definition": "横向排列的向量称为行向量，纵向排列的向量称为列向量。",
-      "formula": "",
-      "example": "(1,2)是行向量，(1,2)ᵀ是列向量。",
+      "example": "(1,2,3)是三维行向量",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8096,15 +7426,15 @@
       "concept_id": "custom.tb-tb_86485f0144.c.d36cc8868cb833bc",
       "definition": "分量全部为零的向量称为零向量。",
       "formula": "",
-      "example": "(0,0,0)是三维零向量。",
+      "example": "(0,0,0)^T是三维零向量",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.9a3910cb8df6457b",
-      "definition": "向量按分量进行加法和数乘的运算称为向量线性运算。",
+      "concept_id": "custom.tb-tb_86485f0144.c.c1896ae85396d467",
+      "definition": "按照矩阵运算法则定义的向量加法、数乘和乘法称为向量运算。",
       "formula": "",
-      "example": "(1,2)+(3,4)=(4,6)。",
+      "example": "(1,2)^T+(3,4)^T=(4,6)^T",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8112,23 +7442,31 @@
       "concept_id": "custom.tb-tb_86485f0144.c.0963a8b6afd0c40f",
       "definition": "由若干个维数相同的向量构成的集合称为向量组。",
       "formula": "",
-      "example": "(1,0)与(0,1)构成一个向量组。",
+      "example": "(α1,α2,α3)构成一个向量组",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.826ff886f4c9ffbc",
-      "definition": "向量组中各向量分别乘以任意数后再相加所得的表达式称为线性组合。",
+      "definition": "向量组各向量与任意数的乘积之和称为该向量组的线性组合。",
       "formula": "",
-      "example": "2α₁−α₂是α₁、α₂的线性组合。",
+      "example": "2α1-α2+3α3是线性组合",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "definition": "若向量等于某向量组的一个线性组合，则称该向量可由该向量组线性表示。",
+      "definition": "若向量能表示为给定向量组的线性组合，则称其可由该向量组线性表示。",
       "formula": "",
-      "example": "(1,1)可由(1,0)、(0,1)表示为两者之和。",
+      "example": "β=2α1-α2表示β可由α1、α2表示",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.7a5b564cb8d0af42",
+      "definition": "向量可由向量组线性表示当且仅当对应线性方程组有解。",
+      "formula": "",
+      "example": "方程组x1α1+x2α2=β有解即表示成立",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8136,39 +7474,55 @@
       "concept_id": "custom.tb-tb_86485f0144.c.7e16070517aaa148",
       "definition": "两个向量组可以相互线性表示时，称它们等价。",
       "formula": "",
-      "example": "{e₁,e₂}与{e₁,e₁+e₂}等价。",
+      "example": "A可表示B且B可表示A，则A与B等价",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
+      "definition": "将各线性表示式的系数按列组成的矩阵称为系数矩阵。",
+      "formula": "",
+      "example": "B=AK中的K是系数矩阵",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.882b18638a652c12",
+      "definition": "向量组B可由向量组A表示当且仅当矩阵方程AX=B有解。",
+      "formula": "",
+      "example": "AX=B有解说明B可由A表示",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.979cc2500da3f114",
-      "definition": "若向量组存在不全为零的系数使其线性组合等于零向量，则称其线性相关。",
+      "definition": "存在不全为零的数使向量组的线性组合等于零向量时，称其线性相关。",
       "formula": "",
-      "example": "(1,0)、(2,0)线性相关。",
+      "example": "α2=2α1时两向量线性相关",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.684f53547142540b",
-      "definition": "只有所有系数均为零时线性组合才为零向量的向量组称为线性无关。",
+      "definition": "向量组的线性组合等于零向量仅有全零系数解时，称其线性无关。",
       "formula": "",
-      "example": "(1,0)、(0,1)线性无关。",
+      "example": "标准基e1、e2、e3线性无关",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.dcac6939127cc692",
-      "definition": "向量组中线性无关且不能再增加原组向量的组称为极大无关组。",
+      "definition": "向量组中线性无关且不能再增加原组向量的子组称为极大无关组。",
       "formula": "",
-      "example": "{e₁,e₂}是{e₁,e₂,e₁+e₂}的极大无关组。",
+      "example": "α1、α2无关且α3可由它们表示",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.f98cee34df358744",
-      "definition": "向量组的秩定义为其任一极大无关组所含向量的个数。",
+      "definition": "向量组中极大无关组所含向量的个数称为向量组的秩。",
       "formula": "",
-      "example": "{e₁,e₂,e₁+e₂}的秩为2。",
+      "example": "极大无关组含3个向量，则秩为3",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8176,63 +7530,63 @@
       "concept_id": "custom.tb-tb_86485f0144.c.adffd0983c5edcbc",
       "definition": "矩阵中非零子式的最高阶数称为矩阵的秩。",
       "formula": "",
-      "example": "单位矩阵I₃的秩为3。",
+      "example": "矩阵最大非零子式为三阶，则秩为3",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.10afbe7b886a08e7",
-      "definition": "交换两行、某行乘非零数或一行加另一行倍数称为初等变换。",
+      "definition": "对矩阵进行行或列的交换、数乘及倍加操作称为初等变换。",
       "formula": "",
-      "example": "将第二行加上第一行是一次初等行变换。",
+      "example": "将某行加到另一行是初等变换",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.aadb1afde57c0cca",
+      "definition": "矩阵经过有限次初等变换后，其秩保持不变。",
+      "formula": "",
+      "example": "A经过行变换为B，则R(A)=R(B)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.f7bbac11a0562d3a",
-      "definition": "矩阵的行向量组秩、列向量组秩都等于矩阵的秩。",
+      "definition": "矩阵的行向量组秩和列向量组秩都等于矩阵的秩。",
       "formula": "",
-      "example": "秩为2的矩阵，其行列向量组秩均为2。",
+      "example": "若R(A)=3，则行列向量组秩均为3",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.7d62f6e9052fdd55",
-      "definition": "线性方程组中未知量的系数按原位置排列成的矩阵称为系数矩阵。",
+      "concept_id": "custom.tb-tb_86485f0144.c.5efaf5e6ba0b3e8f",
+      "definition": "未知量只以一次幂并作线性组合出现的方程组称为线性方程组。",
       "formula": "",
-      "example": "x+y=1的系数矩阵为(1,1)。",
+      "example": "x1+2x2=3是线性方程",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.f4c5fdf776e22ed6",
-      "definition": "将线性方程组的常数列附加到系数矩阵右侧所得的矩阵称为增广矩阵。",
-      "formula": "",
-      "example": "x+y=1的增广矩阵为(1 1｜1)。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.616e823b67560608",
-      "definition": "矩阵方程AX=B有解当且仅当R(A)=R(A,B)。",
-      "formula": "",
-      "example": "若R(A)=R(A,B)，则AX=B有解。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.8faf1bafc29f66ce",
+      "concept_id": "custom.tb-tb_86485f0144.c.9682a77a17a03654",
       "definition": "非齐次线性方程组有解当且仅当系数矩阵与增广矩阵秩相等。",
       "formula": "",
-      "example": "R(A)<R(Ā)时方程组无解。",
+      "example": "R(A)=R(A|β)时方程组有解",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.78ff9470abd47674",
+      "concept_id": "custom.tb-tb_86485f0144.c.2962f9801e50be91",
       "definition": "常数项全部为零的线性方程组称为齐次线性方程组。",
       "formula": "",
-      "example": "x+y=0是齐次线性方程组。",
+      "example": "Ax=0是齐次线性方程组",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.40adffe16dbd00ae",
+      "definition": "由线性方程组一组解的分量组成的向量称为解向量。",
+      "formula": "",
+      "example": "x=(1,0,2)^T是某方程组的解向量",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8240,39 +7594,39 @@
       "concept_id": "custom.tb-tb_86485f0144.c.5fabb1c7007e6f43",
       "definition": "齐次线性方程组解向量组的一个极大无关组称为基础解系。",
       "formula": "",
-      "example": "Ax=0的基础解系可生成其全部解。",
+      "example": "ξ1、ξ2生成齐次方程组全部解",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.1f0b0eb0c4f70e99",
-      "definition": "齐次线性方程组的全部解向量组成的集合称为解空间。",
+      "concept_id": "custom.tb-tb_86485f0144.c.978a7701b178cbb8",
+      "definition": "齐次线性方程组的任意解都可由基础解系线性表示。",
       "formula": "",
-      "example": "Ax=0的解集合S={x|Ax=0}。",
+      "example": "x=c1ξ1+c2ξ2是通解形式",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.d420b4c511f8188a",
-      "definition": "齐次方程组的任意解都可由基础解系唯一线性表示。",
+      "concept_id": "custom.tb-tb_86485f0144.c.20ed998592cf8ff5",
+      "definition": "非齐次线性方程组的全部解等于一个特解与对应齐次方程组通解之和。",
       "formula": "",
-      "example": "x=c₁ξ₁+c₂ξ₂是齐次方程组的通解。",
+      "example": "x=x0+c1ξ1+c2ξ2",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.9f80ae546a875529",
-      "definition": "非齐次方程组的全部解由一个特解加上对应齐次方程组的全部解构成。",
+      "concept_id": "custom.tb-tb_86485f0144.c.a2289a9a5612654e",
+      "definition": "齐次线性方程组全部解向量组成的集合称为解空间。",
       "formula": "",
-      "example": "x=x₀+c₁ξ₁是非齐次方程组的通解。",
+      "example": "S={x|Ax=0}是解空间",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "definition": "对通常向量加法和数乘运算构成向量空间的集合称为向量空间。",
+      "concept_id": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
+      "definition": "对向量加法和数乘构成封闭运算并满足相应公理的集合称为向量空间。",
       "formula": "",
-      "example": "ℝⁿ是一个向量空间。",
+      "example": "R^n在通常运算下是向量空间",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8280,100 +7634,76 @@
       "concept_id": "custom.tb-tb_86485f0144.c.342821a9f04155c3",
       "definition": "向量组所有线性组合组成的集合称为该向量组生成的向量空间。",
       "formula": "",
-      "example": "L(e₁,e₂)=ℝ²。",
+      "example": "L(α1,α2)={k1α1+k2α2}",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.51ff6dbc89f1ddac",
-      "definition": "既线性无关又能生成向量空间的向量组称为该空间的一组基。",
+      "definition": "能够生成向量空间且线性无关的向量组称为该空间的一组基。",
       "formula": "",
-      "example": "e₁、e₂是ℝ²的一组基。",
+      "example": "e1、e2、e3是R^3的一组基",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.8e181e3602ebf887",
+      "concept_id": "custom.tb-tb_86485f0144.c.1173d85c658b2851",
       "definition": "向量空间一组基中向量的个数称为该空间的维数。",
       "formula": "",
-      "example": "ℝ³的维数为3。",
+      "example": "R^3的维数为3",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.2d513084b1dc1c52",
-      "definition": "向量在某组基下唯一线性表示式中的系数称为其在该基下的坐标。",
+      "definition": "向量关于一组基的唯一线性表示中的系数称为其在该基下的坐标。",
       "formula": "",
-      "example": "α=2e₁+3e₂的坐标为(2,3)ᵀ。",
+      "example": "β=7α1-2α2+α3的坐标为(7,-2,1)^T",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.5d83949d8b3684f9",
-      "definition": "将一组基的向量表示为另一组基线性组合所得的系数矩阵称为过渡矩阵。",
+      "definition": "将一组基表示为另一组基线性组合的系数矩阵称为过渡矩阵。",
       "formula": "",
-      "example": "若B=AP，则P是从基A到基B的过渡矩阵。",
+      "example": "(β1,β2)=(α1,α2)P",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.bf7fb10c0f59713c",
-      "definition": "利用过渡矩阵将向量在一组基下的坐标转换为另一组基下坐标的过程称为坐标变换。",
+      "definition": "利用过渡矩阵实现向量在两组基下坐标转换的公式称为坐标变换。",
       "formula": "",
-      "example": "若x=Py，则P实现两组基间的坐标变换。",
+      "example": "x=Py或y=P^{-1}x",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.3e31c959b09490ca",
-      "definition": "向量x与y的内积定义为[x,y]=xᵀy。",
+      "definition": "n维向量x与y的内积定义为[x,y]=xᵀy。",
       "formula": "",
       "example": "x=(1,2)，y=(3,4)时，[x,y]=11",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.51b0b341fb1cfd70",
-      "definition": "任意向量x、y满足[x,y]²≤[x,x][y,y]。",
-      "formula": "",
-      "example": "x=(1,0)，y=(1,1)满足1≤2",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
       "concept_id": "custom.tb-tb_86485f0144.c.e8be8cf941bc99de",
-      "definition": "向量x的长度定义为‖x‖=√[x,x]。",
+      "definition": "向量x的长度定义为||x||=√[x,x]。",
       "formula": "",
-      "example": "x=(3,4)时，‖x‖=5",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.9ac9bdb9b993079f",
-      "definition": "长度满足‖x‖=1的向量称为单位向量。",
-      "formula": "",
-      "example": "(1,0)是二维单位向量",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.b28641f76ea1d6c4",
-      "definition": "非零向量α除以其长度得到单位向量的过程称为单位化。",
-      "formula": "",
-      "example": "(3,4)单位化为(3/5,4/5)",
+      "example": "x=(3,4)时，||x||=5",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.af381e6aa7d441ea",
-      "definition": "非零向量x、y的夹角为arccos([x,y]/(‖x‖‖y‖))。",
+      "definition": "非零向量x,y的夹角为arccos([x,y]/(||x||||y||))。",
       "formula": "",
-      "example": "(1,0)与(0,1)夹角为π/2",
+      "example": "(1,0)与(0,1)的夹角为π/2",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.f108ebd10f466c08",
+      "concept_id": "custom.tb-tb_86485f0144.c.711d39efca38f21e",
       "definition": "当[x,y]=0时，称向量x与y正交。",
       "formula": "",
       "example": "(1,0)与(0,1)正交",
@@ -8381,34 +7711,34 @@
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.87afc764d97b60bf",
-      "definition": "一组两两正交的非零向量称为正交向量组。",
+      "concept_id": "custom.tb-tb_86485f0144.c.1908a71aa3933025",
+      "definition": "任意向量x,y满足[x,y]²≤[x,x][y,y]。",
       "formula": "",
-      "example": "标准坐标向量组是正交向量组",
+      "example": "x=(1,2)，y=(2,1)时不等式成立",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.1fec4db86add78aa",
-      "definition": "正交向量组中的向量必定线性无关。",
+      "concept_id": "custom.tb-tb_86485f0144.c.87afc764d97b60bf",
+      "definition": "一组两两正交的非零向量称为正交向量组。",
       "formula": "",
-      "example": "三个两两正交的非零向量线性无关",
+      "example": "(1,0),(0,2)构成正交向量组",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.8cc3f32c6d3c2bea",
-      "definition": "向量空间中两两正交且都是单位向量的基称为规范正交基。",
+      "definition": "向量空间的一组两两正交且均为单位向量的基称为规范正交基。",
       "formula": "",
-      "example": "e₁,e₂,e₃是ℝ³的规范正交基",
+      "example": "e1,e2,e3是R³的规范正交基",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.2e92fe855bcee232",
-      "definition": "从线性无关向量组逐步减去投影分量以构造正交组的过程。",
+      "definition": "从一组基出发构造等价正交向量组并单位化的过程称为施密特正交化。",
       "formula": "",
-      "example": "由α₁,α₂构造β₂=α₂-([β₁,α₂]/[β₁,β₁])β₁",
+      "example": "将(1,1),(1,0)正交化",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8422,9 +7752,9 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.3cd20a61198e51a2",
-      "definition": "形如y=Px且P为正交矩阵的线性变换称为正交变换。",
+      "definition": "若P为正交矩阵，则y=Px称为正交变换。",
       "formula": "",
-      "example": "y=Px保持向量长度不变",
+      "example": "y=Px且PᵀP=E时，||y||=||x||",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8440,15 +7770,15 @@
       "concept_id": "custom.tb-tb_86485f0144.c.47be0139d7cd278a",
       "definition": "满足Aα=λα的非零向量α称为A对应于λ的特征向量。",
       "formula": "",
-      "example": "单位坐标向量是对角矩阵的特征向量",
+      "example": "A=diag(1,2)时，(1,0)是特征向量",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.5506c6c7e8e7795f",
-      "definition": "f(λ)=|A-λE|称为矩阵A的特征多项式。",
+      "definition": "f(λ)=|A−λE|称为矩阵A的特征多项式。",
       "formula": "",
-      "example": "diag(1,2)的特征多项式为(1-λ)(2-λ)",
+      "example": "diag(1,2)的特征多项式为(1−λ)(2−λ)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8456,13 +7786,13 @@
       "concept_id": "custom.tb-tb_86485f0144.c.c4b60a7f4f2941b8",
       "definition": "方程f(λ)=0称为矩阵A的特征方程。",
       "formula": "",
-      "example": "diag(1,2)的特征方程为(1-λ)(2-λ)=0",
+      "example": "diag(1,2)的特征方程为(1−λ)(2−λ)=0",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.0c7f6a707bfe40cc",
-      "definition": "若存在可逆矩阵P使P⁻¹AP=B，则称A与B相似。",
+      "definition": "若存在可逆P使P⁻¹AP=B，则称A与B相似。",
       "formula": "",
       "example": "B=P⁻¹AP时，A与B相似",
       "exercise_hint": "",
@@ -8470,25 +7800,25 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.aa5d44736eebec2b",
-      "definition": "对矩阵A进行P⁻¹AP运算的过程称为相似变换。",
+      "definition": "对矩阵A作P⁻¹AP的运算称为相似变换。",
       "formula": "",
-      "example": "P⁻¹AP=Λ将A变为对角阵",
+      "example": "用P⁻¹AP将矩阵化为对角阵",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.faf4ebe8d34c5de9",
-      "definition": "存在可逆P使P⁻¹AP为对角阵，称A可相似对角化。",
+      "definition": "求可逆P使P⁻¹AP为对角阵称为相似对角化。",
       "formula": "",
-      "example": "有三个线性无关特征向量的三阶矩阵可对角化",
+      "example": "A有三个线性无关特征向量即可对角化",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.85977ecafebbf65b",
-      "definition": "n阶矩阵可相似对角化当且仅当有n个线性无关的特征向量。",
+      "concept_id": "custom.tb-tb_86485f0144.c.b4a185423c8cb20a",
+      "definition": "n阶矩阵能相似对角化当且仅当有n个线性无关的特征向量。",
       "formula": "",
-      "example": "特征值两两不等时必可对角化",
+      "example": "三个互异特征值的三阶矩阵可对角化",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8501,18 +7831,18 @@
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.60fa15f84ce5d160",
-      "definition": "任意实对称矩阵都存在正交矩阵P使PᵀAP为实对角阵。",
+      "concept_id": "custom.tb-tb_86485f0144.c.a7db392be38c3819",
+      "definition": "存在正交P使PᵀAP为对角阵，称为正交相似对角化。",
       "formula": "",
-      "example": "对称矩阵可取单位正交特征向量作P的列",
+      "example": "实对称矩阵均可正交相似对角化",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.194144d7cae98113",
-      "definition": "含变量二次项及交叉项的齐次二次多项式称为二次型。",
+      "definition": "含变量二次项且各项次数均为二次的齐次多项式称为二次型。",
       "formula": "",
-      "example": "x₁²+2x₁x₂+3x₂²是二次型",
+      "example": "f=x1²+2x1x2+x2²是二次型",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8520,63 +7850,47 @@
       "concept_id": "custom.tb-tb_86485f0144.c.2a19745ae87e4448",
       "definition": "二次型可表示为f=xᵀAx，其中A为对称矩阵。",
       "formula": "",
-      "example": "x₁²+2x₁x₂+x₂²=xᵀ[[1,1],[1,1]]x",
+      "example": "x1²+2x1x2+x2²=(x1,x2)[[1,1],[1,1]](x1,x2)ᵀ",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.4404f92b14020a85",
-      "definition": "二次型的秩定义为其矩阵表示中对称矩阵A的秩。",
+      "definition": "二次型对应矩阵A的秩R(A)称为该二次型的秩。",
       "formula": "",
-      "example": "diag(1,2,0)表示的二次型秩为2",
+      "example": "矩阵diag(1,1,0)对应二次型的秩为2",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.f7ab54212212c7c1",
-      "definition": "经可逆线性变换化为平方项线性组合的形式称为标准形。",
+      "definition": "二次型经可逆线性变换化为平方项之和的形式称为标准形。",
       "formula": "",
-      "example": "f=4y₁²+y₂²+y₃²是标准形",
+      "example": "f=2y1²−y2²是二次型标准形",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.7ce51b7323333438",
-      "definition": "标准形中非零系数均化为1或−1的形式称为规范形。",
+      "definition": "二次型化为系数仅为1、−1或0的形式称为规范形。",
       "formula": "",
-      "example": "f=z₁²−z₂²是规范形",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.806b9a8ec913a3c9",
-      "definition": "利用实对称矩阵的正交对角化将二次型化为标准形的方法。",
-      "formula": "",
-      "example": "若PᵀAP=Λ，则x=Py使f=yᵀΛy",
+      "example": "f=z1²−z2²是规范形",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.07a13f2ced1fd649",
-      "definition": "利用平方项逐步配方并作可逆变量替换化二次型的方法称为配方法。",
+      "definition": "利用平方配方和可逆变量替换化二次型的方法称为配方法。",
       "formula": "",
-      "example": "x₁²+2x₁x₂+x₂²=(x₁+x₂)²",
+      "example": "x1²+2x1x2+x2²配为(x1+x2)²",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.bf84e323e616b30f",
-      "definition": "同一二次型在可逆变换下标准形中正、负系数的个数分别相等。",
+      "definition": "同一二次型不同标准形的正系数个数和负系数个数分别相等。",
       "formula": "",
-      "example": "不同变换所得正惯性指数相同",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
-      "definition": "二次型标准形中正系数的个数称为正惯性指数。",
-      "formula": "",
-      "example": "y₁²+y₂²−y₃²的正惯性指数为2",
+      "example": "不同可逆变换所得正惯性指数相同",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8584,13 +7898,13 @@
       "concept_id": "custom.tb-tb_86485f0144.c.554b9f78044c5355",
       "definition": "对任意x≠0均有xᵀAx>0的二次型称为正定二次型。",
       "formula": "",
-      "example": "x₁²+x₂²是正定二次型",
+      "example": "x1²+x2²是正定二次型",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.13f9b387dac8e045",
-      "definition": "使xᵀAx对任意非零x均为正的对称矩阵称为正定矩阵。",
+      "definition": "若对任意非零x都有xᵀAx>0，则称对称矩阵A为正定矩阵。",
       "formula": "",
       "example": "单位矩阵E是正定矩阵",
       "exercise_hint": "",
@@ -8598,89 +7912,105 @@
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.574e75a1e606793f",
-      "definition": "对称矩阵正定当且仅当各阶顺序主子式都为正。",
+      "definition": "对称矩阵正定当且仅当各阶顺序主子式均为正。",
       "formula": "",
       "example": "diag(1,2)的顺序主子式均为正",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.15b2be30f2a494e1",
-      "definition": "集合及其加法、数乘运算满足八条运算规律时称为线性空间。",
+      "concept_id": "custom.tb-tb_86485f0144.c.f3f22f8e7d05f1eb",
+      "definition": "二次型标准形中正系数的个数称为正惯性指数。",
       "formula": "",
-      "example": "次数不超过n的多项式全体构成线性空间。",
+      "example": "y1²+y2²−y3²的正惯性指数为2",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.50961065b15d3e87",
+      "definition": "二次型标准形中负系数的个数称为负惯性指数。",
+      "formula": "",
+      "example": "y1²−y2²−y3²的负惯性指数为2",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.2ac4d839749b75c6",
+      "definition": "实数域上的线性空间是关于加法和数乘满足八条运算规律的非空集合。",
+      "formula": "",
+      "example": "次数不超过n的多项式全体构成线性空间",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.2334a49de098c4b4",
-      "definition": "线性空间中满足八条运算规律的加法和数乘运算统称为线性运算。",
+      "definition": "线性运算是线性空间中满足八条运算规律的加法和数量乘积。",
       "formula": "",
-      "example": "多项式的通常加法和数乘是线性运算。",
+      "example": "多项式的通常加法与数乘",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.3f167554418c16e8",
-      "definition": "线性空间中零元素和负元素具有唯一性，并满足零向量数乘等性质。",
+      "concept_id": "custom.tb-tb_86485f0144.c.3b94cdcf31fb7a36",
+      "definition": "运算封闭性是指集合中元素进行规定运算后结果仍在该集合中。",
       "formula": "",
-      "example": "任意α满足0α=0且(−1)α=−α。",
+      "example": "次数不超过n的多项式对加法封闭",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.b6380c558f953eee",
-      "definition": "集合对所定义的加法和数乘封闭，是构成线性空间或子空间的重要条件。",
+      "concept_id": "custom.tb-tb_86485f0144.c.9f9c9d5fe6dfd1d9",
+      "definition": "线性空间中的零元素是唯一的。",
       "formula": "",
-      "example": "次数不超过n的多项式对加法封闭。",
+      "example": "若0₁、0₂都是零元素，则0₁=0₂",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.abf900c0abecd409",
+      "definition": "线性空间中任一元素的负元素是唯一的。",
+      "formula": "",
+      "example": "若α+β=0且α+γ=0，则β=γ",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.859129d0d2e0b6d7",
+      "definition": "在线性空间中有0α=0、(−1)α=−α和λ0=0。",
+      "formula": "",
+      "example": "3·0=0，(−1)α=−α",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.0aaf1dfe2b75a2c2",
+      "definition": "若λα=0，则λ=0或α=0。",
+      "formula": "",
+      "example": "若2α=0，则α=0",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.bd1c33dc7f9d9ee1",
-      "definition": "线性空间V的非空子集W若继承运算后构成线性空间，则称W为V的子空间。",
+      "definition": "子空间是线性空间的非空子集且关于原空间的加法和数乘封闭。",
       "formula": "",
-      "example": "齐次方程组Ax=0的解空间是ℝⁿ的子空间。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.88e3606fc074416b",
-      "definition": "向量α可写成若干向量的线性组合时，称α可由这些向量线性表示。",
-      "formula": "",
-      "example": "p=a₀+a₁x可表示为a₀·1+a₁·x。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.684f53547142540b",
-      "definition": "向量组的线性组合等于零向量时所有系数均为零，则该向量组线性无关。",
-      "formula": "",
-      "example": "多项式组1,x,x²线性无关。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.979cc2500da3f114",
-      "definition": "向量组存在一组不全为零的系数使其线性组合等于零向量，则称线性相关。",
-      "formula": "",
-      "example": "向量v与2v组成的向量组线性相关。",
+      "example": "齐次方程组Ax=0的解空间是ℝⁿ的子空间",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.20fa58fb56854822",
-      "definition": "线性空间中线性无关且能表示任意元素的有限向量组称为该空间的一组基。",
+      "definition": "基是线性空间中线性无关且能线性表示任意空间元素的一组向量。",
       "formula": "",
-      "example": "P[x]₄的一组基是1,x,x²,x³,x⁴。",
+      "example": "P[x]₄的基为1、x、x²、x³、x⁴",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.b398115c79fb12cb",
-      "definition": "线性空间一组基中向量的个数称为该空间的维数。",
+      "definition": "线性空间的维数是其任一基中向量的个数。",
       "formula": "",
-      "example": "P[x]₄的维数为5。",
+      "example": "P[x]₄的维数为5",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
@@ -8688,87 +8018,87 @@
       "concept_id": "custom.tb-tb_86485f0144.c.1899cdf01f3e2ab5",
       "definition": "只含一个零元素的线性空间称为零空间，其维数规定为0。",
       "formula": "",
-      "example": "仅含零向量的集合是零空间。",
+      "example": "{0}是零空间",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.354f8471df667a39",
-      "definition": "向量在一组基下线性表示式中的系数组成的有序数组称为其坐标。",
+      "concept_id": "custom.tb-tb_86485f0144.c.8ea6d81893c9eff0",
+      "definition": "向量在给定基下的坐标是其由该基唯一线性表示时的系数组成的有序数组。",
       "formula": "",
-      "example": "p=a₀+a₁x在基1,x下坐标为(a₀,a₁)ᵀ。",
-      "exercise_hint": "",
-      "source": "textbook:tb_86485f0144"
-    },
-    {
-      "concept_id": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
-      "definition": "用一组基表示另一组基的过程称为基变换。",
-      "formula": "",
-      "example": "将基1,x换为基1,1+x。",
+      "example": "p=a₀+a₁x在基(1,x)下坐标为(a₀,a₁)ᵀ",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.5d83949d8b3684f9",
-      "definition": "将新基向量用旧基表示所得的矩阵称为两组基之间的过渡矩阵。",
+      "definition": "过渡矩阵是将一组基的向量表示为另一组基线性组合的矩阵。",
       "formula": "",
-      "example": "(β₁,…,βₙ)=(α₁,…,αₙ)P。",
+      "example": "(β₁,…,βₙ)=(α₁,…,αₙ)P",
+      "exercise_hint": "",
+      "source": "textbook:tb_86485f0144"
+    },
+    {
+      "concept_id": "custom.tb-tb_86485f0144.c.87da413f56f956e4",
+      "definition": "基变换是利用过渡矩阵将一组基转换为另一组基的过程。",
+      "formula": "",
+      "example": "由α基到β基使用公式(β)=(α)P",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.bf7fb10c0f59713c",
-      "definition": "利用过渡矩阵将向量在一组基下的坐标变为另一组基下坐标的过程称为坐标变换。",
+      "definition": "坐标变换是利用过渡矩阵将向量在一组基下的坐标转换为另一组基下的坐标。",
       "formula": "",
-      "example": "x=Py，或y=P⁻¹x。",
+      "example": "若x=Py，则y=P⁻¹x",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.c10e96c09d916ca4",
-      "definition": "满足T(α+β)=T(α)+T(β)且T(λα)=λT(α)的映射称为线性变换。",
+      "definition": "线性变换是满足T(α+β)=Tα+Tβ且T(λα)=λTα的映射。",
       "formula": "",
-      "example": "矩阵变换T(x)=Ax是线性变换。",
+      "example": "T(x)=Ax是ℝⁿ上的线性变换",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.3bf87b25369b2ab2",
-      "definition": "线性变换T的所有像构成的集合T(V)称为T的像空间。",
+      "definition": "线性变换的像空间是其所有向量像的集合。",
       "formula": "",
-      "example": "T(x)=Ax的像空间由A的列向量生成。",
+      "example": "T(x)=Ax的像空间为Ax的全体",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.e90ae9b53b207da3",
-      "definition": "满足Tα=0的所有α组成的子空间称为线性变换T的核。",
+      "concept_id": "custom.tb-tb_86485f0144.c.4e90485561fa7201",
+      "definition": "线性变换的核是满足Tα=0的所有向量组成的子空间。",
       "formula": "",
-      "example": "T(x)=Ax的核是齐次方程组Ax=0的解空间。",
+      "example": "T(x)=Ax的核是齐次方程Ax=0的解空间",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.dd31ec04dac551e0",
-      "definition": "将基向量的像用该基表示所得的矩阵称为线性变换在此基下的矩阵。",
+      "concept_id": "custom.tb-tb_86485f0144.c.57960eacc1911d26",
+      "definition": "变换矩阵是线性变换作用于给定基后各像向量坐标组成的矩阵。",
       "formula": "",
-      "example": "微分运算在基1,x,x²,x³下有对应矩阵。",
+      "example": "微分运算在基(1,x,x²,x³)下有对应矩阵",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
-      "concept_id": "custom.tb-tb_86485f0144.c.aa5d44736eebec2b",
-      "definition": "若两个矩阵满足B=P⁻¹AP，则称B由A经过相似变换得到。",
+      "concept_id": "custom.tb-tb_86485f0144.c.6f850bfa0f7d98c4",
+      "definition": "若两组基过渡矩阵为P，变换矩阵分别为A、B，则B=P⁻¹AP。",
       "formula": "",
-      "example": "换基时线性变换矩阵满足B=P⁻¹AP。",
+      "example": "换基后矩阵由B=P⁻¹AP得到",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     },
     {
       "concept_id": "custom.tb-tb_86485f0144.c.56588a2094bba54c",
-      "definition": "线性变换像空间T(V)的维数称为该线性变换的秩。",
+      "definition": "线性变换的秩是其像空间的维数。",
       "formula": "",
-      "example": "若矩阵A的秩为r，则对应变换的秩为r。",
+      "example": "若矩阵A表示T，则T的秩等于R(A)",
       "exercise_hint": "",
       "source": "textbook:tb_86485f0144"
     }
@@ -8777,15 +8107,17 @@
     "ok": true,
     "errors": [],
     "chapter_count": 5,
-    "concept_count": 151,
-    "section_count": 22
+    "concept_count": 141,
+    "section_count": 22,
+    "empty_concept_chapters": 0
   },
   "coverage": [
     {
       "extracted_chapter_count": 5,
-      "extracted_concept_count": 153,
+      "extracted_concept_count": 142,
       "included_chapter_count": 5,
-      "included_concept_count": 153,
+      "included_concept_count": 142,
+      "empty_concept_chapters": 0,
       "truncated": false,
       "effective_limits": {
         "max_chapters": null,

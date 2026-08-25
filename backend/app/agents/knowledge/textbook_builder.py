@@ -31,7 +31,7 @@ from ...core.config import settings
 from . import custom_graph as cg
 from . import store as kg_store
 from .manager import get_knowledge_service
-from .taxonomy_normalizer import normalize_textbook_spec, graph_quality
+from .taxonomy_normalizer import normalize_textbook_spec, graph_quality, is_back_matter
 from ...prompts.registry import get as get_prompt
 
 # 每章概念抽取喂给 LLM 的文本上限。 dense 教材一章 20-30 页可达 3 万字符，
@@ -397,6 +397,8 @@ def _garbage_outline_title(title: str, volume_hint: str = "") -> bool:
     if _OUTLINE_NOISE_RE.search(t):
         return True
     if _OUTLINE_GARBAGE_RE.search(t):
+        return True
+    if is_back_matter(t):
         return True
     if (_ASCII_ONLY_TITLE_RE.match(t) and not _TEACHING_KEYWORD_RE.search(t)
             and (re.search(r"\d{2,}", t) or len(t) >= 32)):
@@ -1745,8 +1747,8 @@ def _apply_volume_policy(spec: dict[str, Any], limits: dict[str, int | None]) \
             item["sections"] = sections
         else:
             item.pop("sections", None)
-        if concepts:
-            kept.append(item)
+        # 无概念的章也保留（覆盖每一章每一节）；只有概念才计入概念预算。
+        kept.append(item)
     out = dict(spec)
     out["chapters"] = kept
     keys = {str(c.get("chapter_key") or c.get("name") or "") for c in kept}
@@ -1770,6 +1772,8 @@ def _apply_volume_policy(spec: dict[str, Any], limits: dict[str, int | None]) \
         "extracted_concept_count": len(extracted_names),
         "included_chapter_count": len(kept),
         "included_concept_count": len(included_names),
+        "empty_concept_chapters": sum(1 for c in kept
+                                      if not (c.get("concepts") or [])),
         "truncated": truncated or len(included_names) < len(extracted_names),
         "effective_limits": dict(limits),
     }
@@ -2116,19 +2120,24 @@ async def _full_path_spec(student_id: str, tb_id: str, text: str, raw: bytes | N
         for i, ((ch_name, ch_text, ch_range, sections), task) in enumerate(
                 zip(slices, chapter_tasks), 1):
             concepts = await task
+            if not concepts:
+                # 单次失败先重试一次（LLM 偶发空回包/解析失败很常见），
+                # 重试仍失败也保留章结构——覆盖每一章每一节，绝不整章丢弃。
+                concepts = await _extract_chapter_concepts(
+                    ch_name, ch_text, eff_subject, eff_level, llm)
+            clean_sections = [{"name": str(s.get("name") or ""),
+                                "page_range": list(s.get("page_range") or [])}
+                              for s in sections if str(s.get("name") or "").strip()]
+            chapter_entry: dict[str, Any] = {"name": ch_name, "concepts": concepts}
+            if clean_sections:
+                chapter_entry["sections"] = clean_sections[:40]
             if concepts:
                 _attach_concepts_to_sections(concepts, ch_text, sections)
-                chapter_entry: dict[str, Any] = {"name": ch_name, "concepts": concepts}
-                clean_sections = [{"name": str(s.get("name") or ""),
-                                    "page_range": list(s.get("page_range") or [])}
-                                  for s in sections if str(s.get("name") or "").strip()]
-                if clean_sections:
-                    chapter_entry["sections"] = clean_sections[:40]
-                chapters_out.append(chapter_entry)
-                if ch_range:
-                    page_ranges[ch_name] = [ch_range[0], ch_range[1]]
             else:
-                warnings.append(f"第 {i} 章「{ch_name[:20]}」概念抽取失败，已跳过")
+                warnings.append(f"第 {i} 章「{ch_name[:20]}」概念抽取失败，已保留章节结构")
+            chapters_out.append(chapter_entry)
+            if ch_range:
+                page_ranges[ch_name] = [ch_range[0], ch_range[1]]
             updated = tb_store.update_textbook(
                 student_id, tb_id,
                 progress={"stage": "chapters", "done": i, "total": len(slices)})

@@ -1,0 +1,2713 @@
+{
+  "file_id": "5bc1702febb4",
+  "text_sha256": "bd51fd1d540d57a2be89519ff9f8bdd312699ab9ca00608d5d95a12e9b09b39c",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "英语",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "UNIT 1 SCIENCE AND SCIENTISTS",
+        "concepts": [
+          {
+            "name": "科学探究过程",
+            "difficulty": 3,
+            "description": "通过观察、提问、取证、分析和交流认识世界。",
+            "aliases": [
+              "scientific method"
+            ],
+            "prerequisites": [],
+            "definition": "科学探究是以问题为起点，运用证据和数据得出并交流结论的过程。",
+            "example": "科学家测量数据后分析并公布研究结果。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "证据与数据",
+            "difficulty": 2,
+            "description": "科学家用证据或数据回答问题并支持结论。",
+            "aliases": [
+              "evidence",
+              "data"
+            ],
+            "prerequisites": [],
+            "definition": "证据与数据是科学研究中用于检验观点和形成结论的依据。",
+            "example": "病例分布数据支持水源传播霍乱的判断。"
+          },
+          {
+            "name": "科学理论",
+            "difficulty": 3,
+            "description": "解释科学现象并可由证据检验的系统观点。",
+            "aliases": [
+              "theory"
+            ],
+            "prerequisites": [
+              "证据与数据"
+            ],
+            "definition": "科学理论是对自然现象及其规律作出的系统解释。",
+            "example": "大爆炸理论解释宇宙起源。"
+          },
+          {
+            "name": "霍乱传播调查",
+            "difficulty": 3,
+            "description": "约翰·斯诺用地图和统计研究霍乱传播原因。",
+            "aliases": [
+              "John Snow’s cholera investigation"
+            ],
+            "prerequisites": [
+              "证据与数据"
+            ],
+            "definition": "霍乱传播调查是通过病例分布和饮水情况追踪霍乱传播源的研究。",
+            "example": "斯诺标记病例地点并移除水泵把手。"
+          },
+          {
+            "name": "流行病学",
+            "difficulty": 4,
+            "description": "研究疾病传播及其影响因素的科学领域。",
+            "aliases": [
+              "epidemiology"
+            ],
+            "prerequisites": [
+              "霍乱传播调查"
+            ],
+            "definition": "流行病学是研究疾病在人群中分布、传播及防治的学科。",
+            "example": "斯诺被称为现代流行病学之父。"
+          },
+          {
+            "name": "疾病传播证据",
+            "difficulty": 3,
+            "description": "病例位置和饮水差异揭示霍乱与污染水源的联系。",
+            "aliases": [
+              "link between cholera and water"
+            ],
+            "prerequisites": [
+              "证据与数据",
+              "霍乱传播调查"
+            ],
+            "definition": "疾病传播证据是能够说明疾病来源或传播途径的观察和数据。",
+            "example": "饮用污染水的人更容易感染霍乱。"
+          },
+          {
+            "name": "科学精神",
+            "difficulty": 3,
+            "description": "科学家追求真理、勇于质疑并坚持探索的品质。",
+            "aliases": [
+              "scientific spirit"
+            ],
+            "prerequisites": [],
+            "definition": "科学精神是在求知过程中表现出的好奇、创造、勇敢和坚持。",
+            "example": "霍金坚持研究并勇于指出错误。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "科学家品质",
+            "difficulty": 3,
+            "description": "好奇、创造、勇敢、坚定和承认错误等品质。",
+            "aliases": [
+              "qualities of scientists"
+            ],
+            "prerequisites": [
+              "科学精神"
+            ],
+            "definition": "科学家品质是推动科学家发现问题、创新思考和坚持研究的个人特征。",
+            "example": "钱学森爱国、坚定并富有科学创造力。"
+          },
+          {
+            "name": "宇宙起源理论",
+            "difficulty": 4,
+            "description": "比较稳恒态理论与大爆炸理论对宇宙起源的解释。",
+            "aliases": [
+              "steady state theory",
+              "big bang theory"
+            ],
+            "prerequisites": [
+              "科学理论",
+              "证据与数据"
+            ],
+            "definition": "宇宙起源理论解释宇宙是否有起点及其形成过程。",
+            "example": "天文学家的观测证明大爆炸理论正确。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "创造性思维",
+            "difficulty": 3,
+            "description": "从不同角度看问题并提出他人未想到的新观点。",
+            "aliases": [
+              "creative thinking",
+              "think outside the box"
+            ],
+            "prerequisites": [
+              "科学精神"
+            ],
+            "definition": "创造性思维是突破惯常方式、提出新想法或新解决方案的思维能力。",
+            "example": "科学家从不同方向处理统计与直觉的冲突。",
+            "section": "Think outside the box"
+          },
+          {
+            "name": "非牛顿流体",
+            "difficulty": 3,
+            "description": "受力时变硬、撤力后恢复流动的特殊流体。",
+            "aliases": [
+              "non-Newtonian fluid"
+            ],
+            "prerequisites": [],
+            "definition": "非牛顿流体的流动状态会随所受压力变化而改变。",
+            "example": "水和玉米粉混合物受压时会变硬。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "表语从句",
+            "difficulty": 3,
+            "description": "位于系动词后作表语的名词性从句。",
+            "aliases": [
+              "predicative clause"
+            ],
+            "prerequisites": [],
+            "definition": "表语从句是在系动词后说明主语内容或身份的从句。",
+            "example": "The fact was that the water was infected."
+          },
+          {
+            "name": "提问阅读策略",
+            "difficulty": 2,
+            "description": "通过围绕文章内容提问来理解并深入思考。",
+            "aliases": [
+              "asking questions"
+            ],
+            "prerequisites": [],
+            "definition": "提问阅读策略是用问题引导信息理解和深层思考的方法。",
+            "example": "阅读时追问斯诺发现了什么。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "图片预测听力",
+            "difficulty": 2,
+            "description": "利用听力前图片和已有知识预测听力内容。",
+            "aliases": [
+              "predict by using pictures"
+            ],
+            "prerequisites": [],
+            "definition": "图片预测听力是根据视觉线索推测将听到的信息并集中注意的方法。",
+            "example": "根据博物馆照片预测对话活动。",
+            "section": "Predicative clauses"
+          },
+          {
+            "name": "衔接词功能",
+            "difficulty": 3,
+            "description": "用连接词和短语组织句间逻辑，使文章连贯。",
+            "aliases": [
+              "linking words and phrases"
+            ],
+            "prerequisites": [],
+            "definition": "衔接词功能是借助连接表达时间、因果、转折等逻辑关系。",
+            "example": "However表示转折，Furthermore表示递进。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "科学交流",
+            "difficulty": 2,
+            "description": "通过口头或书面方式分享科学发现及其意义。",
+            "aliases": [
+              "communicate scientific results"
+            ],
+            "prerequisites": [
+              "科学探究过程"
+            ],
+            "definition": "科学交流是向他人清晰传达研究过程、证据、结论和意义。",
+            "example": "向全班介绍非牛顿流体实验。"
+          },
+          {
+            "name": "探索的科学价值",
+            "difficulty": 2,
+            "description": "通过探索发现新事物并加深对世界的理解。",
+            "aliases": [
+              "importance of exploration"
+            ],
+            "prerequisites": [
+              "科学探究过程"
+            ],
+            "definition": "探索的科学价值在于发现未知、提出新问题并增进对世界的认识。",
+            "example": "探索可能发现新物种和难以到达的地方。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Predicative clauses",
+            "page_range": [
+              12,
+              14
+            ]
+          },
+          {
+            "name": "Talking about scientific phenomena",
+            "page_range": [
+              14,
+              17
+            ]
+          },
+          {
+            "name": "Think outside the box",
+            "page_range": [
+              17,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 2 BRIDGING CULTURES",
+        "concepts": [
+          {
+            "name": "留学经历",
+            "difficulty": 2,
+            "description": "介绍谢蕾参加英国交换项目的学习与生活经历",
+            "aliases": [
+              "海外学习经历"
+            ],
+            "prerequisites": [],
+            "definition": "留学经历是学生在国外学习并适应当地生活与文化的过程。",
+            "example": "谢蕾赴英国参加为期一年的交换项目。"
+          },
+          {
+            "name": "文化交流",
+            "difficulty": 2,
+            "description": "通过学习、生活和社交促进不同文化相互了解",
+            "aliases": [
+              "跨文化交流"
+            ],
+            "prerequisites": [],
+            "definition": "文化交流是不同文化背景的人之间进行理解、分享与互动。",
+            "example": "谢蕾向英国人介绍中国文化。"
+          },
+          {
+            "name": "文化适应",
+            "difficulty": 3,
+            "description": "学习适应异国生活方式、语言环境和社会习惯",
+            "aliases": [
+              "跨文化适应"
+            ],
+            "prerequisites": [],
+            "definition": "文化适应是个体逐渐习惯并融入新文化环境的过程。",
+            "example": "谢蕾学会使用公共交通并适应英国生活。"
+          },
+          {
+            "name": "文化冲击",
+            "difficulty": 3,
+            "description": "因环境、语言和行为方式差异产生的不适与压力",
+            "aliases": [
+              "文化震荡"
+            ],
+            "prerequisites": [
+              "文化适应"
+            ],
+            "definition": "文化冲击是人在陌生文化环境中因差异而产生的困惑、压力或不适。",
+            "example": "学生可能因不熟悉新环境而感到孤独和困惑。"
+          },
+          {
+            "name": "寄宿家庭",
+            "difficulty": 2,
+            "description": "留学生居住并生活在当地家庭中的住宿方式",
+            "aliases": [
+              "寄宿家庭生活"
+            ],
+            "prerequisites": [
+              "文化适应"
+            ],
+            "definition": "寄宿家庭是留学生与当地家庭共同居住并相互了解的生活安排。",
+            "example": "谢蕾选择和寄宿家庭一起生活。"
+          },
+          {
+            "name": "学术要求",
+            "difficulty": 3,
+            "description": "国外课程对论文、课堂参与和展示提出的学习要求",
+            "aliases": [
+              "学业要求"
+            ],
+            "prerequisites": [],
+            "definition": "学术要求是学校对学生研究、写作、参与和表达能力的规范。",
+            "example": "课程要求学生写论文并参与课堂讨论。"
+          },
+          {
+            "name": "学术引用",
+            "difficulty": 3,
+            "description": "引用他人观点时承认并注明观点来源",
+            "aliases": [
+              "引用来源"
+            ],
+            "prerequisites": [
+              "学术要求"
+            ],
+            "definition": "学术引用是在使用他人观点或思想时明确承认其来源。",
+            "example": "论文引用他人观点时必须注明来源。"
+          },
+          {
+            "name": "课堂参与",
+            "difficulty": 2,
+            "description": "在课堂中生成观点、举例、提问并进行展示",
+            "aliases": [
+              "课堂互动"
+            ],
+            "prerequisites": [
+              "学术要求"
+            ],
+            "definition": "课堂参与是学生通过发言、提问、举例和展示投入课堂学习。",
+            "example": "谢蕾逐渐能够在课堂上主动发言。"
+          },
+          {
+            "name": "文化使者",
+            "difficulty": 2,
+            "description": "在不同文化之间传递信息、促进理解的人",
+            "aliases": [
+              "文化传播者"
+            ],
+            "prerequisites": [
+              "文化交流"
+            ],
+            "definition": "文化使者是主动介绍本国文化并帮助不同群体相互理解的人。",
+            "example": "谢蕾把自己看作连接中英文化的使者。"
+          },
+          {
+            "name": "长句分析",
+            "difficulty": 3,
+            "description": "通过判断句型、找主句和识别修饰语理解长句",
+            "aliases": [
+              "长难句理解"
+            ],
+            "prerequisites": [
+              "复合句与复杂句"
+            ],
+            "definition": "长句分析是分辨句子结构并逐层确定其意义的方法。",
+            "example": "先判断句子是并列句还是复合句。"
+          },
+          {
+            "name": "复合句与复杂句",
+            "difficulty": 3,
+            "description": "区分含并列连词的句子和含从句的句子",
+            "aliases": [
+              "句子类型辨析"
+            ],
+            "prerequisites": [],
+            "definition": "复合句由并列分句构成，复杂句含有主句和从句。",
+            "example": "and常提示并列结构，who常提示从句。"
+          },
+          {
+            "name": "名词性从句",
+            "difficulty": 4,
+            "description": "在句中充当名词成分的从句结构",
+            "aliases": [
+              "名词从句"
+            ],
+            "prerequisites": [
+              "复合句与复杂句"
+            ],
+            "definition": "名词性从句是在句中充当主语、宾语或表语的从句。",
+            "example": "What seemed strange before now appears normal."
+          },
+          {
+            "name": "论证结构",
+            "difficulty": 3,
+            "description": "按照提出观点、提供理由证据和总结组织文章",
+            "aliases": [
+              "议论文结构"
+            ],
+            "prerequisites": [],
+            "definition": "论证结构是用观点、理由证据和结论展开说服性表达的组织方式。",
+            "example": "文章先提出留学利弊观点，再列举理由并总结。"
+          },
+          {
+            "name": "逻辑连接词",
+            "difficulty": 2,
+            "description": "连接观点、理由、例证和结论的表达语",
+            "aliases": [
+              "衔接词"
+            ],
+            "prerequisites": [
+              "论证结构"
+            ],
+            "definition": "逻辑连接词是帮助读者理解论证关系和行文顺序的词语或短语。",
+            "example": "to begin with用于列举第一点理由。"
+          },
+          {
+            "name": "表达观点",
+            "difficulty": 2,
+            "description": "使用特定短语清楚说明个人立场和看法",
+            "aliases": [
+              "观点表达"
+            ],
+            "prerequisites": [
+              "逻辑连接词"
+            ],
+            "definition": "表达观点是明确陈述自己对某一问题的立场或判断。",
+            "example": "In my opinion, the advantages are greater."
+          },
+          {
+            "name": "英语弱读",
+            "difficulty": 3,
+            "description": "非重读的功能词在口语中采用较弱的发音形式",
+            "aliases": [
+              "弱形式"
+            ],
+            "prerequisites": [
+              "英语重音"
+            ],
+            "definition": "英语弱读是代词、冠词和介词等非重读词在语流中的弱化发音。",
+            "example": "Are you中的are和you可分别弱读为/ə/和/jə/。"
+          },
+          {
+            "name": "英语重音",
+            "difficulty": 3,
+            "description": "英语通过突出部分词语来组织口语节奏和意义",
+            "aliases": [
+              "句子重音"
+            ],
+            "prerequisites": [],
+            "definition": "英语重音是说话时对某些词或音节给予更强突出的一种语音现象。",
+            "example": "英语是以重音为基础的语言。"
+          },
+          {
+            "name": "听力语境",
+            "difficulty": 2,
+            "description": "通过判断地点、人物和话题理解听力内容",
+            "aliases": [
+              "听力场景"
+            ],
+            "prerequisites": [],
+            "definition": "听力语境是交际发生的地点、参与者及谈论主题构成的背景。",
+            "example": "听前先判断对话发生在哪里。"
+          },
+          {
+            "name": "采访表达",
+            "difficulty": 2,
+            "description": "用于欢迎、提问、追问和结束采访的常用表达",
+            "aliases": [
+              "采访用语"
+            ],
+            "prerequisites": [
+              "表达观点"
+            ],
+            "definition": "采访表达是采访者与受访者进行问候、提问和回应时使用的语言。",
+            "example": "What was your biggest challenge?"
+          },
+          {
+            "name": "文化桥梁",
+            "difficulty": 2,
+            "description": "连接不同国家和文化、促进相互理解的作用",
+            "aliases": [
+              "沟通桥梁"
+            ],
+            "prerequisites": [
+              "文化交流"
+            ],
+            "definition": "文化桥梁是个人或活动在不同文化之间建立理解与联系的作用。",
+            "example": "谢蕾努力在中英文化之间搭建桥梁。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Interviewing someone",
+            "page_range": [
+              25,
+              30
+            ]
+          },
+          {
+            "name": "Tell visiting students about your school",
+            "page_range": [
+              30,
+              33
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 3 FOOD AND CULTURE",
+        "concepts": [
+          {
+            "name": "饮食与文化",
+            "difficulty": 2,
+            "description": "食物能够反映人们的性格、生活和文化。",
+            "aliases": [
+              "文化与饮食关系"
+            ],
+            "prerequisites": [],
+            "definition": "饮食与文化相互联系，通过食物可以了解一个群体的文化。",
+            "example": "饺子体现了中国北方的家庭文化。"
+          },
+          {
+            "name": "地域饮食特色",
+            "difficulty": 2,
+            "description": "不同地区因环境和生活方式形成不同饮食。",
+            "aliases": [
+              "地方饮食特色"
+            ],
+            "prerequisites": [
+              "饮食与文化"
+            ],
+            "definition": "地域饮食特色是某地自然环境、生活方式和传统共同形成的食物特点。",
+            "example": "新疆传统食物多为篝火上煮或烤的肉。"
+          },
+          {
+            "name": "饮食表达友善",
+            "difficulty": 2,
+            "description": "中国各地常通过食物表达友谊和善意。",
+            "aliases": [
+              "食物传递友谊"
+            ],
+            "prerequisites": [
+              "饮食与文化"
+            ],
+            "definition": "饮食表达友善指人们借助准备和分享食物来表现友谊与善意。",
+            "example": "厨师为客人不断端上最好的食物。"
+          },
+          {
+            "name": "因果关系",
+            "difficulty": 2,
+            "description": "说明一个事物导致另一个事物发生的关系。",
+            "aliases": [
+              "因果"
+            ],
+            "prerequisites": [],
+            "definition": "因果关系是原因与结果之间的逻辑联系。",
+            "example": "不会点菜，所以厨师替我们上菜。"
+          },
+          {
+            "name": "过去完成时",
+            "difficulty": 3,
+            "description": "表示过去某一时间或动作之前已完成的动作。",
+            "aliases": [
+              "past perfect tense"
+            ],
+            "prerequisites": [],
+            "definition": "过去完成时用来表示过去某个时间以前已经完成的动作。",
+            "example": "They had finished dinner before Sam arrived."
+          },
+          {
+            "name": "过去完成时被动语态",
+            "difficulty": 4,
+            "description": "表示过去之前已被完成或处理的动作。",
+            "aliases": [
+              "past perfect passive voice"
+            ],
+            "prerequisites": [
+              "过去完成时"
+            ],
+            "definition": "过去完成时被动语态表示过去某时以前某事已经被完成。",
+            "example": "The windows had been closed."
+          },
+          {
+            "name": "听前预览",
+            "difficulty": 2,
+            "description": "听力前先观察图片或文字以帮助理解内容。",
+            "aliases": [
+              "preview"
+            ],
+            "prerequisites": [],
+            "definition": "听前预览是听录音前利用相关图片或文字预测听力内容的方法。",
+            "example": "先看菜单，再听餐馆对话。"
+          },
+          {
+            "name": "点餐与结账表达",
+            "difficulty": 2,
+            "description": "在餐馆点菜、推荐食物和支付账单的常用表达。",
+            "aliases": [
+              "餐馆交际表达"
+            ],
+            "prerequisites": [],
+            "definition": "点餐与结账表达是餐馆中询问、推荐、点菜和付款时使用的语言。",
+            "example": "What would you suggest? I’ll have it."
+          },
+          {
+            "name": "食物习语",
+            "difficulty": 3,
+            "description": "含有食物词语并具有特殊含义的固定表达。",
+            "aliases": [
+              "food idioms"
+            ],
+            "prerequisites": [],
+            "definition": "食物习语是由食物相关词语构成且整体意义不同于字面意义的固定表达。",
+            "example": "It’s going to be a piece of cake."
+          },
+          {
+            "name": "健康饮食原则",
+            "difficulty": 2,
+            "description": "强调少糖、吃新鲜食物、适量和规律饮食。",
+            "aliases": [
+              "健康饮食"
+            ],
+            "prerequisites": [],
+            "definition": "健康饮食原则包括限制糖分、选择新鲜食物、保持均衡并规律进食。",
+            "example": "少吃甜点，完全停止饮用含糖饮料。"
+          },
+          {
+            "name": "平衡饮食",
+            "difficulty": 2,
+            "description": "不同类别食物搭配适量，避免过多或过少。",
+            "aliases": [
+              "balanced diet"
+            ],
+            "prerequisites": [
+              "健康饮食原则"
+            ],
+            "definition": "平衡饮食是适量摄入多类食物而不偏食的饮食方式。",
+            "example": "饮食中搭配水果、蔬菜、肉类和乳制品。"
+          },
+          {
+            "name": "慢食习惯",
+            "difficulty": 2,
+            "description": "细嚼慢咽并保持规律、适量的进餐习惯。",
+            "aliases": [
+              "slow eating"
+            ],
+            "prerequisites": [
+              "健康饮食原则"
+            ],
+            "definition": "慢食习惯是通过放慢进食速度和保持规律适量来促进健康。",
+            "example": "每餐慢慢咀嚼，不一次吃得过多。",
+            "section": "Paying the bill"
+          },
+          {
+            "name": "健康饮食说明文",
+            "difficulty": 3,
+            "description": "围绕健康饮食提出观点并用细节支持的文章。",
+            "aliases": [
+              "healthy diet essay"
+            ],
+            "prerequisites": [
+              "健康饮食原则"
+            ],
+            "definition": "健康饮食说明文是介绍饮食建议并用事实和细节支撑观点的文章。",
+            "example": "说明糖分危害，并提出减少甜饮料的建议。"
+          },
+          {
+            "name": "语篇连接词",
+            "difficulty": 3,
+            "description": "用于衔接句子并表达补充、转折等关系的词语。",
+            "aliases": [
+              "linking words",
+              "discourse markers"
+            ],
+            "prerequisites": [
+              "因果关系"
+            ],
+            "definition": "语篇连接词用于清晰展示句子和段落之间的逻辑关系。",
+            "example": "however表示转折，as a result表示结果。"
+          },
+          {
+            "name": "餐馆设计项目",
+            "difficulty": 2,
+            "description": "规划餐馆类型、菜品、菜单、环境和宣传。",
+            "aliases": [
+              "设计自己的餐馆"
+            ],
+            "prerequisites": [
+              "点餐与结账表达"
+            ],
+            "definition": "餐馆设计项目是合作制定新餐馆方案并向全班展示的任务。",
+            "example": "设计中英文菜单并介绍餐馆特色。"
+          },
+          {
+            "name": "昆虫饮食",
+            "difficulty": 2,
+            "description": "介绍昆虫作为食物的营养、价格和可持续性。",
+            "aliases": [
+              "食用昆虫"
+            ],
+            "prerequisites": [
+              "饮食与文化"
+            ],
+            "definition": "昆虫饮食是将昆虫作为食物并讨论其营养和环境价值的饮食现象。",
+            "example": "昆虫蛋白质含量高，价格低且更可持续。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Ordering food",
+            "page_range": [
+              38,
+              38
+            ]
+          },
+          {
+            "name": "Paying the bill",
+            "page_range": [
+              38,
+              42
+            ]
+          },
+          {
+            "name": "Design your own restaurant",
+            "page_range": [
+              42,
+              43
+            ]
+          },
+          {
+            "name": "What Are You Eating in Australia?",
+            "page_range": [
+              43,
+              45
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 4 JOURNEY ACROSS A VAST LAND",
+        "concepts": [
+          {
+            "name": "话语标记语",
+            "difficulty": 2,
+            "description": "用连接词表达转折、原因、时间和顺序等关系",
+            "aliases": [
+              "discourse markers"
+            ],
+            "prerequisites": [],
+            "definition": "话语标记语是帮助读者理解句子或段落逻辑关系的词语。",
+            "example": "However表示转折，later表示事件顺序。",
+            "section": "Talking about space and position"
+          },
+          {
+            "name": "过去分词形容词",
+            "difficulty": 3,
+            "description": "过去分词作表语或定语，常表示人的感受或状态",
+            "aliases": [
+              "-ed形容词"
+            ],
+            "prerequisites": [],
+            "definition": "过去分词形容词通常描述人受到某事影响后的感受或状态。",
+            "example": "The girls were amazed by the scenery."
+          },
+          {
+            "name": "现在分词形容词",
+            "difficulty": 3,
+            "description": "现在分词作表语或定语，常表示事物的特征",
+            "aliases": [
+              "-ing形容词"
+            ],
+            "prerequisites": [],
+            "definition": "现在分词形容词通常描述事物具有的性质或产生的感觉。",
+            "example": "The farms were amazing."
+          },
+          {
+            "name": "分词作状语",
+            "difficulty": 4,
+            "description": "用分词短语简化句子并补充时间、原因或伴随信息",
+            "aliases": [],
+            "prerequisites": [
+              "过去分词形容词",
+              "现在分词形容词"
+            ],
+            "definition": "分词作状语是用现在分词或过去分词短语修饰主句动作的结构。",
+            "example": "Standing in the distance, they saw the falls."
+          },
+          {
+            "name": "状语从句省略",
+            "difficulty": 4,
+            "description": "主从句主语一致时，可省略从句主语和be动词",
+            "aliases": [],
+            "prerequisites": [
+              "分词作状语"
+            ],
+            "definition": "状语从句省略是将从句中的主语和be动词省去并保留分词形式。",
+            "example": "When asked, he said it was a lifetime experience."
+          },
+          {
+            "name": "旅行地点描写",
+            "difficulty": 3,
+            "description": "从天气、地貌、城市和景观等方面介绍旅行地点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "旅行地点描写是围绕自然环境和城市特色呈现旅途所见的表达方式。",
+            "example": "Ontario is a land of forests, lakes, and rolling hills."
+          },
+          {
+            "name": "空间方位表达",
+            "difficulty": 2,
+            "description": "用方位和距离短语说明地点之间的位置关系",
+            "aliases": [
+              "talking about space and position"
+            ],
+            "prerequisites": [],
+            "definition": "空间方位表达用于说明地点的方向、距离、邻近关系和延伸路线。",
+            "example": "Toronto is northeast of the lake.",
+            "section": "Talking about space and position"
+          },
+          {
+            "name": "铁路旅行叙述",
+            "difficulty": 3,
+            "description": "按时间和路线顺序记录乘火车跨越加拿大的旅程",
+            "aliases": [],
+            "prerequisites": [
+              "话语标记语",
+              "空间方位表达"
+            ],
+            "definition": "铁路旅行叙述是按照出发、途经和抵达顺序描写火车旅程的文本内容。",
+            "example": "The train headed southeast across the Canadian Prairie."
+          },
+          {
+            "name": "加拿大自然景观",
+            "difficulty": 2,
+            "description": "课文介绍加拿大草原、森林、湖泊和山地景观",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "加拿大自然景观是旅途中呈现的辽阔草原、森林湖泊及山地风貌。",
+            "example": "The Canadian Prairie covered a very large area."
+          },
+          {
+            "name": "加拿大城市文化",
+            "difficulty": 3,
+            "description": "课文呈现多伦多和蒙特利尔的城市特色与文化差异",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "加拿大城市文化包括城市景观、语言环境、饮食和魁北克传统等内容。",
+            "example": "Many people in Montreal spoke French and English."
+          },
+          {
+            "name": "加拿大华人文化",
+            "difficulty": 2,
+            "description": "通过多伦多唐人街介绍加拿大华人历史与饮食文化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "加拿大华人文化是华人移居加拿大后形成的社区、饮食和文化现象。",
+            "example": "Toronto has several Chinatowns and food from all over China."
+          },
+          {
+            "name": "习语与明喻",
+            "difficulty": 3,
+            "description": "理解英语固定表达及as...as结构的比喻意义",
+            "aliases": [
+              "idioms and similes"
+            ],
+            "prerequisites": [],
+            "definition": "习语与明喻是用固定搭配或相似性形象表达特定含义的语言形式。",
+            "example": "The prairie was as flat as a pancake."
+          },
+          {
+            "name": "表达惊讶好奇",
+            "difficulty": 2,
+            "description": "用固定句式表达惊讶、疑问和对经历的兴趣",
+            "aliases": [
+              "expressing surprise and curiosity"
+            ],
+            "prerequisites": [],
+            "definition": "表达惊讶好奇是通过疑问句和感叹句回应意外信息并询问经历。",
+            "example": "What a surprise! What was it like?",
+            "section": "Expressing surprise and curiosity"
+          },
+          {
+            "name": "自然结束对话",
+            "difficulty": 2,
+            "description": "用礼貌表达说明离开原因并结束交谈",
+            "aliases": [
+              "ending a conversation naturally"
+            ],
+            "prerequisites": [],
+            "definition": "自然结束对话是以道别、说明安排或表达感谢等方式礼貌收束交谈。",
+            "example": "It was nice meeting you. I’ll talk to you later.",
+            "section": "Ending a conversation naturally"
+          },
+          {
+            "name": "旅行邮件写作",
+            "difficulty": 3,
+            "description": "以邮件形式有条理地分享旅途路线、见闻和感受",
+            "aliases": [],
+            "prerequisites": [
+              "话语标记语",
+              "旅行地点描写"
+            ],
+            "definition": "旅行邮件写作是按照邮件格式向亲友介绍旅行经历的写作活动。",
+            "example": "Dear Mum and Dad, I’m having a wonderful trip across Canada."
+          },
+          {
+            "name": "长途旅行规划",
+            "difficulty": 3,
+            "description": "规划路线、交通、时间、装备、活动和可能遇到的困难",
+            "aliases": [],
+            "prerequisites": [
+              "空间方位表达"
+            ],
+            "definition": "长途旅行规划是综合安排旅程路线、资源、活动及风险应对的过程。",
+            "example": "Choose a safe route and prepare enough food and water."
+          }
+        ],
+        "sections": [
+          {
+            "name": "Expressing surprise and curiosity",
+            "page_range": [
+              50,
+              50
+            ]
+          },
+          {
+            "name": "Ending a conversation naturally",
+            "page_range": [
+              50,
+              50
+            ]
+          },
+          {
+            "name": "Talking about space and position",
+            "page_range": [
+              50,
+              54
+            ]
+          },
+          {
+            "name": "Prepare for a journey across a vast land",
+            "page_range": [
+              54,
+              55
+            ]
+          },
+          {
+            "name": "Exploring Quebec",
+            "page_range": [
+              55,
+              57
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UNIT 5 FIRST AID",
+        "concepts": [
+          {
+            "name": "急救",
+            "difficulty": 2,
+            "description": "对受伤或突发疾病者进行的紧急处理。",
+            "aliases": [
+              "first aid"
+            ],
+            "prerequisites": [],
+            "definition": "急救是在专业医疗救助到达前采取的紧急救护措施。",
+            "example": "先为烧伤者提供急救。"
+          },
+          {
+            "name": "皮肤保护功能",
+            "difficulty": 2,
+            "description": "皮肤能够保护人体免受许多危险因素伤害。",
+            "aliases": [
+              "skin protection"
+            ],
+            "prerequisites": [],
+            "definition": "皮肤是人体抵御外界危险因素的重要保护层。",
+            "example": "皮肤可保护人体免受危险物伤害。"
+          },
+          {
+            "name": "烧伤分级",
+            "difficulty": 3,
+            "description": "依据烧伤深度和皮肤损伤程度划分烧伤类型。",
+            "aliases": [
+              "degrees of burns"
+            ],
+            "prerequisites": [
+              "皮肤保护功能"
+            ],
+            "definition": "烧伤通常按损伤皮肤的深度分为一度、二度和三度。",
+            "example": "医生先判断烧伤分级。"
+          },
+          {
+            "name": "一度烧伤",
+            "difficulty": 3,
+            "description": "仅伤及皮肤表层，通常表现为干燥、发红和轻微疼痛。",
+            "aliases": [
+              "first-degree burn"
+            ],
+            "prerequisites": [
+              "烧伤分级"
+            ],
+            "definition": "一度烧伤是只损伤皮肤表层的轻度烧伤。",
+            "example": "轻微晒伤可能是一度烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "二度烧伤",
+            "difficulty": 3,
+            "description": "损伤较深，皮肤红肿并出现水疱，疼痛通常明显。",
+            "aliases": [
+              "second-degree burn"
+            ],
+            "prerequisites": [
+              "烧伤分级"
+            ],
+            "definition": "二度烧伤会损伤较深的皮肤并常伴有水疱。",
+            "example": "热水烫伤后出现水疱，可能是二度烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "三度烧伤",
+            "difficulty": 4,
+            "description": "烧伤贯穿皮肤各层，有时损伤皮下组织。",
+            "aliases": [
+              "third-degree burn"
+            ],
+            "prerequisites": [
+              "烧伤分级"
+            ],
+            "definition": "三度烧伤是深度最重并可能伤及皮下组织的烧伤。",
+            "example": "皮肤黑白相间且可见组织，可能是三度烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "冷水降温",
+            "difficulty": 2,
+            "description": "用流动冷水冲洗烧伤处，减缓灼烧并减轻疼痛肿胀。",
+            "aliases": [
+              "cool running water"
+            ],
+            "prerequisites": [
+              "急救",
+              "烧伤分级"
+            ],
+            "definition": "冷水降温是烧伤后用流动冷水及时降低伤口热量的处理方法。",
+            "example": "烧伤后应尽快用冷水冲洗。"
+          },
+          {
+            "name": "烧伤覆盖",
+            "difficulty": 2,
+            "description": "用松散、干净的布覆盖烧伤部位，避免继续污染。",
+            "aliases": [
+              "cover the burn"
+            ],
+            "prerequisites": [
+              "急救"
+            ],
+            "definition": "烧伤覆盖是用松散的干净布保护受伤部位。",
+            "example": "冲洗后用干净布松散覆盖伤口。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "烧伤禁涂油",
+            "difficulty": 3,
+            "description": "烧伤处不应涂油，因为油会使热量留在伤口内并可能引发感染。",
+            "aliases": [
+              "avoid applying oil"
+            ],
+            "prerequisites": [
+              "烧伤急救处理"
+            ],
+            "definition": "烧伤禁涂油是指不能用油覆盖烧伤部位以免滞热和感染。",
+            "example": "不要在烧伤处涂黄油或食用油。"
+          },
+          {
+            "name": "烧伤急救处理",
+            "difficulty": 4,
+            "description": "包括冷水冲洗、轻柔擦干、正确去衣和干净覆盖等步骤。",
+            "aliases": [
+              "first-aid treatment for burns"
+            ],
+            "prerequisites": [
+              "烧伤分级",
+              "冷水降温"
+            ],
+            "definition": "烧伤急救处理是针对烧伤程度采取的规范现场救护步骤。",
+            "example": "先冲洗，再擦干并覆盖烧伤处。"
+          },
+          {
+            "name": "化学烧伤",
+            "difficulty": 3,
+            "description": "皮肤或眼睛接触酸等化学物质后造成的烧伤。",
+            "aliases": [
+              "chemical burn"
+            ],
+            "prerequisites": [
+              "皮肤保护功能"
+            ],
+            "definition": "化学烧伤是皮肤或眼睛接触酸或其他化学物质造成的损伤。",
+            "example": "酸液接触皮肤可能造成化学烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "化学烧伤急救",
+            "difficulty": 4,
+            "description": "化学烧伤须立即处理，严重时应马上将伤者送往医院。",
+            "aliases": [
+              "first aid for chemical burns"
+            ],
+            "prerequisites": [
+              "化学烧伤",
+              "急救"
+            ],
+            "definition": "化学烧伤急救是对化学物质造成的烧伤立即采取的救护措施。",
+            "example": "严重化学烧伤者应立即送医。"
+          },
+          {
+            "name": "医疗急症",
+            "difficulty": 3,
+            "description": "需要迅速获得医疗救助的严重突发状况。",
+            "aliases": [
+              "medical emergencies"
+            ],
+            "prerequisites": [
+              "急救"
+            ],
+            "definition": "医疗急症是可能危及健康或生命并需要立即处理的突发情况。",
+            "example": "心脏病发作属于医疗急症。"
+          },
+          {
+            "name": "急救电话号码",
+            "difficulty": 2,
+            "description": "不同国家或地区用于联系紧急医疗服务的电话号码。",
+            "aliases": [
+              "emergency numbers"
+            ],
+            "prerequisites": [
+              "医疗急症"
+            ],
+            "definition": "急救电话号码是发生医疗急症时拨打的紧急服务号码。",
+            "example": "在中国可拨打120求助。"
+          },
+          {
+            "name": "呼叫急救服务",
+            "difficulty": 3,
+            "description": "拨打当地急救号码并清楚说明突发情况和伤者状况。",
+            "aliases": [
+              "call emergency services"
+            ],
+            "prerequisites": [
+              "急救电话号码",
+              "医疗急症"
+            ],
+            "definition": "呼叫急救服务是在紧急情况下联系专业救援并报告情况。",
+            "example": "男孩拨打999说明祖父的状况。"
+          },
+          {
+            "name": "动词-ing形式",
+            "difficulty": 4,
+            "description": "动词加-ing构成的形式，可在句中作主语、表语或状语等。",
+            "aliases": [
+              "-ing form"
+            ],
+            "prerequisites": [],
+            "definition": "动词-ing形式既可保留动词特征，也可在句中承担名词或修饰成分的功能。",
+            "example": "Getting burnt can cause serious injuries."
+          }
+        ],
+        "sections": [
+          {
+            "name": "First Aid for Burns",
+            "page_range": [
+              58,
+              62
+            ]
+          },
+          {
+            "name": "Giving first-aid instructions for rescuing a drowning victim",
+            "page_range": [
+              62,
+              66
+            ]
+          },
+          {
+            "name": "Make your own first-aid kit",
+            "page_range": [
+              66,
+              66
+            ]
+          },
+          {
+            "name": "Learn and teach others about first aid",
+            "page_range": [
+              66,
+              67
+            ]
+          },
+          {
+            "name": "Para-Life Rescue",
+            "page_range": [
+              67,
+              112
+            ]
+          },
+          {
+            "name": "The past perfect tense",
+            "page_range": [
+              112,
+              113
+            ]
+          },
+          {
+            "name": "The past perfect passive voice",
+            "page_range": [
+              113,
+              134
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "英语",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "UNIT 1 SCIENCE AND SCIENTISTS",
+        "concepts": [
+          {
+            "name": "科学探究过程",
+            "difficulty": 3,
+            "description": "通过观察、提问、取证、分析和交流认识世界。",
+            "aliases": [
+              "scientific method"
+            ],
+            "prerequisites": [],
+            "definition": "科学探究是以问题为起点，运用证据和数据得出并交流结论的过程。",
+            "example": "科学家测量数据后分析并公布研究结果。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "证据与数据",
+            "difficulty": 2,
+            "description": "科学家用证据或数据回答问题并支持结论。",
+            "aliases": [
+              "evidence",
+              "data"
+            ],
+            "prerequisites": [],
+            "definition": "证据与数据是科学研究中用于检验观点和形成结论的依据。",
+            "example": "病例分布数据支持水源传播霍乱的判断。"
+          },
+          {
+            "name": "科学理论",
+            "difficulty": 3,
+            "description": "解释科学现象并可由证据检验的系统观点。",
+            "aliases": [
+              "theory"
+            ],
+            "prerequisites": [
+              "证据与数据"
+            ],
+            "definition": "科学理论是对自然现象及其规律作出的系统解释。",
+            "example": "大爆炸理论解释宇宙起源。"
+          },
+          {
+            "name": "霍乱传播调查",
+            "difficulty": 3,
+            "description": "约翰·斯诺用地图和统计研究霍乱传播原因。",
+            "aliases": [
+              "John Snow’s cholera investigation"
+            ],
+            "prerequisites": [
+              "证据与数据"
+            ],
+            "definition": "霍乱传播调查是通过病例分布和饮水情况追踪霍乱传播源的研究。",
+            "example": "斯诺标记病例地点并移除水泵把手。"
+          },
+          {
+            "name": "流行病学",
+            "difficulty": 4,
+            "description": "研究疾病传播及其影响因素的科学领域。",
+            "aliases": [
+              "epidemiology"
+            ],
+            "prerequisites": [
+              "霍乱传播调查"
+            ],
+            "definition": "流行病学是研究疾病在人群中分布、传播及防治的学科。",
+            "example": "斯诺被称为现代流行病学之父。"
+          },
+          {
+            "name": "疾病传播证据",
+            "difficulty": 3,
+            "description": "病例位置和饮水差异揭示霍乱与污染水源的联系。",
+            "aliases": [
+              "link between cholera and water"
+            ],
+            "prerequisites": [
+              "证据与数据",
+              "霍乱传播调查"
+            ],
+            "definition": "疾病传播证据是能够说明疾病来源或传播途径的观察和数据。",
+            "example": "饮用污染水的人更容易感染霍乱。"
+          },
+          {
+            "name": "科学精神",
+            "difficulty": 3,
+            "description": "科学家追求真理、勇于质疑并坚持探索的品质。",
+            "aliases": [
+              "scientific spirit"
+            ],
+            "prerequisites": [],
+            "definition": "科学精神是在求知过程中表现出的好奇、创造、勇敢和坚持。",
+            "example": "霍金坚持研究并勇于指出错误。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "科学家品质",
+            "difficulty": 3,
+            "description": "好奇、创造、勇敢、坚定和承认错误等品质。",
+            "aliases": [
+              "qualities of scientists"
+            ],
+            "prerequisites": [
+              "科学精神"
+            ],
+            "definition": "科学家品质是推动科学家发现问题、创新思考和坚持研究的个人特征。",
+            "example": "钱学森爱国、坚定并富有科学创造力。"
+          },
+          {
+            "name": "宇宙起源理论",
+            "difficulty": 4,
+            "description": "比较稳恒态理论与大爆炸理论对宇宙起源的解释。",
+            "aliases": [
+              "steady state theory",
+              "big bang theory"
+            ],
+            "prerequisites": [
+              "科学理论",
+              "证据与数据"
+            ],
+            "definition": "宇宙起源理论解释宇宙是否有起点及其形成过程。",
+            "example": "天文学家的观测证明大爆炸理论正确。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "创造性思维",
+            "difficulty": 3,
+            "description": "从不同角度看问题并提出他人未想到的新观点。",
+            "aliases": [
+              "creative thinking",
+              "think outside the box"
+            ],
+            "prerequisites": [
+              "科学精神"
+            ],
+            "definition": "创造性思维是突破惯常方式、提出新想法或新解决方案的思维能力。",
+            "example": "科学家从不同方向处理统计与直觉的冲突。",
+            "section": "Think outside the box"
+          },
+          {
+            "name": "非牛顿流体",
+            "difficulty": 3,
+            "description": "受力时变硬、撤力后恢复流动的特殊流体。",
+            "aliases": [
+              "non-Newtonian fluid"
+            ],
+            "prerequisites": [],
+            "definition": "非牛顿流体的流动状态会随所受压力变化而改变。",
+            "example": "水和玉米粉混合物受压时会变硬。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "表语从句",
+            "difficulty": 3,
+            "description": "位于系动词后作表语的名词性从句。",
+            "aliases": [
+              "predicative clause"
+            ],
+            "prerequisites": [],
+            "definition": "表语从句是在系动词后说明主语内容或身份的从句。",
+            "example": "The fact was that the water was infected."
+          },
+          {
+            "name": "提问阅读策略",
+            "difficulty": 2,
+            "description": "通过围绕文章内容提问来理解并深入思考。",
+            "aliases": [
+              "asking questions"
+            ],
+            "prerequisites": [],
+            "definition": "提问阅读策略是用问题引导信息理解和深层思考的方法。",
+            "example": "阅读时追问斯诺发现了什么。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "图片预测听力",
+            "difficulty": 2,
+            "description": "利用听力前图片和已有知识预测听力内容。",
+            "aliases": [
+              "predict by using pictures"
+            ],
+            "prerequisites": [],
+            "definition": "图片预测听力是根据视觉线索推测将听到的信息并集中注意的方法。",
+            "example": "根据博物馆照片预测对话活动。",
+            "section": "Predicative clauses"
+          },
+          {
+            "name": "衔接词功能",
+            "difficulty": 3,
+            "description": "用连接词和短语组织句间逻辑，使文章连贯。",
+            "aliases": [
+              "linking words and phrases"
+            ],
+            "prerequisites": [],
+            "definition": "衔接词功能是借助连接表达时间、因果、转折等逻辑关系。",
+            "example": "However表示转折，Furthermore表示递进。",
+            "section": "Talking about scientific phenomena"
+          },
+          {
+            "name": "科学交流",
+            "difficulty": 2,
+            "description": "通过口头或书面方式分享科学发现及其意义。",
+            "aliases": [
+              "communicate scientific results"
+            ],
+            "prerequisites": [
+              "科学探究过程"
+            ],
+            "definition": "科学交流是向他人清晰传达研究过程、证据、结论和意义。",
+            "example": "向全班介绍非牛顿流体实验。"
+          },
+          {
+            "name": "探索的科学价值",
+            "difficulty": 2,
+            "description": "通过探索发现新事物并加深对世界的理解。",
+            "aliases": [
+              "importance of exploration"
+            ],
+            "prerequisites": [
+              "科学探究过程"
+            ],
+            "definition": "探索的科学价值在于发现未知、提出新问题并增进对世界的认识。",
+            "example": "探索可能发现新物种和难以到达的地方。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Predicative clauses",
+            "section_key": "b344613c12",
+            "page_range": [
+              12,
+              14
+            ]
+          },
+          {
+            "name": "Talking about scientific phenomena",
+            "section_key": "a2c4e4d862",
+            "page_range": [
+              14,
+              17
+            ]
+          },
+          {
+            "name": "Think outside the box",
+            "section_key": "18780d9323",
+            "page_range": [
+              17,
+              21
+            ]
+          }
+        ],
+        "chapter_key": "da7c80fa8a",
+        "metadata": {
+          "volume_id": "5bc1702febb4",
+          "file_id": "5bc1702febb4",
+          "volume_title": "英语选择性必修第2册",
+          "chapter_order": 1,
+          "raw_heading": "UNIT 1 SCIENCE AND SCIENTISTS"
+        }
+      },
+      {
+        "name": "UNIT 2 BRIDGING CULTURES",
+        "concepts": [
+          {
+            "name": "留学经历",
+            "difficulty": 2,
+            "description": "介绍谢蕾参加英国交换项目的学习与生活经历",
+            "aliases": [
+              "海外学习经历"
+            ],
+            "prerequisites": [],
+            "definition": "留学经历是学生在国外学习并适应当地生活与文化的过程。",
+            "example": "谢蕾赴英国参加为期一年的交换项目。"
+          },
+          {
+            "name": "文化交流",
+            "difficulty": 2,
+            "description": "通过学习、生活和社交促进不同文化相互了解",
+            "aliases": [
+              "跨文化交流"
+            ],
+            "prerequisites": [],
+            "definition": "文化交流是不同文化背景的人之间进行理解、分享与互动。",
+            "example": "谢蕾向英国人介绍中国文化。"
+          },
+          {
+            "name": "文化适应",
+            "difficulty": 3,
+            "description": "学习适应异国生活方式、语言环境和社会习惯",
+            "aliases": [
+              "跨文化适应"
+            ],
+            "prerequisites": [],
+            "definition": "文化适应是个体逐渐习惯并融入新文化环境的过程。",
+            "example": "谢蕾学会使用公共交通并适应英国生活。"
+          },
+          {
+            "name": "文化冲击",
+            "difficulty": 3,
+            "description": "因环境、语言和行为方式差异产生的不适与压力",
+            "aliases": [
+              "文化震荡"
+            ],
+            "prerequisites": [
+              "文化适应"
+            ],
+            "definition": "文化冲击是人在陌生文化环境中因差异而产生的困惑、压力或不适。",
+            "example": "学生可能因不熟悉新环境而感到孤独和困惑。"
+          },
+          {
+            "name": "寄宿家庭",
+            "difficulty": 2,
+            "description": "留学生居住并生活在当地家庭中的住宿方式",
+            "aliases": [
+              "寄宿家庭生活"
+            ],
+            "prerequisites": [
+              "文化适应"
+            ],
+            "definition": "寄宿家庭是留学生与当地家庭共同居住并相互了解的生活安排。",
+            "example": "谢蕾选择和寄宿家庭一起生活。"
+          },
+          {
+            "name": "学术要求",
+            "difficulty": 3,
+            "description": "国外课程对论文、课堂参与和展示提出的学习要求",
+            "aliases": [
+              "学业要求"
+            ],
+            "prerequisites": [],
+            "definition": "学术要求是学校对学生研究、写作、参与和表达能力的规范。",
+            "example": "课程要求学生写论文并参与课堂讨论。"
+          },
+          {
+            "name": "学术引用",
+            "difficulty": 3,
+            "description": "引用他人观点时承认并注明观点来源",
+            "aliases": [
+              "引用来源"
+            ],
+            "prerequisites": [
+              "学术要求"
+            ],
+            "definition": "学术引用是在使用他人观点或思想时明确承认其来源。",
+            "example": "论文引用他人观点时必须注明来源。"
+          },
+          {
+            "name": "课堂参与",
+            "difficulty": 2,
+            "description": "在课堂中生成观点、举例、提问并进行展示",
+            "aliases": [
+              "课堂互动"
+            ],
+            "prerequisites": [
+              "学术要求"
+            ],
+            "definition": "课堂参与是学生通过发言、提问、举例和展示投入课堂学习。",
+            "example": "谢蕾逐渐能够在课堂上主动发言。"
+          },
+          {
+            "name": "文化使者",
+            "difficulty": 2,
+            "description": "在不同文化之间传递信息、促进理解的人",
+            "aliases": [
+              "文化传播者"
+            ],
+            "prerequisites": [
+              "文化交流"
+            ],
+            "definition": "文化使者是主动介绍本国文化并帮助不同群体相互理解的人。",
+            "example": "谢蕾把自己看作连接中英文化的使者。"
+          },
+          {
+            "name": "长句分析",
+            "difficulty": 3,
+            "description": "通过判断句型、找主句和识别修饰语理解长句",
+            "aliases": [
+              "长难句理解"
+            ],
+            "prerequisites": [
+              "复合句与复杂句"
+            ],
+            "definition": "长句分析是分辨句子结构并逐层确定其意义的方法。",
+            "example": "先判断句子是并列句还是复合句。"
+          },
+          {
+            "name": "复合句与复杂句",
+            "difficulty": 3,
+            "description": "区分含并列连词的句子和含从句的句子",
+            "aliases": [
+              "句子类型辨析"
+            ],
+            "prerequisites": [],
+            "definition": "复合句由并列分句构成，复杂句含有主句和从句。",
+            "example": "and常提示并列结构，who常提示从句。"
+          },
+          {
+            "name": "名词性从句",
+            "difficulty": 4,
+            "description": "在句中充当名词成分的从句结构",
+            "aliases": [
+              "名词从句"
+            ],
+            "prerequisites": [
+              "复合句与复杂句"
+            ],
+            "definition": "名词性从句是在句中充当主语、宾语或表语的从句。",
+            "example": "What seemed strange before now appears normal."
+          },
+          {
+            "name": "论证结构",
+            "difficulty": 3,
+            "description": "按照提出观点、提供理由证据和总结组织文章",
+            "aliases": [
+              "议论文结构"
+            ],
+            "prerequisites": [],
+            "definition": "论证结构是用观点、理由证据和结论展开说服性表达的组织方式。",
+            "example": "文章先提出留学利弊观点，再列举理由并总结。"
+          },
+          {
+            "name": "逻辑连接词",
+            "difficulty": 2,
+            "description": "连接观点、理由、例证和结论的表达语",
+            "aliases": [
+              "衔接词"
+            ],
+            "prerequisites": [
+              "论证结构"
+            ],
+            "definition": "逻辑连接词是帮助读者理解论证关系和行文顺序的词语或短语。",
+            "example": "to begin with用于列举第一点理由。"
+          },
+          {
+            "name": "表达观点",
+            "difficulty": 2,
+            "description": "使用特定短语清楚说明个人立场和看法",
+            "aliases": [
+              "观点表达"
+            ],
+            "prerequisites": [
+              "逻辑连接词"
+            ],
+            "definition": "表达观点是明确陈述自己对某一问题的立场或判断。",
+            "example": "In my opinion, the advantages are greater."
+          },
+          {
+            "name": "英语弱读",
+            "difficulty": 3,
+            "description": "非重读的功能词在口语中采用较弱的发音形式",
+            "aliases": [
+              "弱形式"
+            ],
+            "prerequisites": [
+              "英语重音"
+            ],
+            "definition": "英语弱读是代词、冠词和介词等非重读词在语流中的弱化发音。",
+            "example": "Are you中的are和you可分别弱读为/ə/和/jə/。"
+          },
+          {
+            "name": "英语重音",
+            "difficulty": 3,
+            "description": "英语通过突出部分词语来组织口语节奏和意义",
+            "aliases": [
+              "句子重音"
+            ],
+            "prerequisites": [],
+            "definition": "英语重音是说话时对某些词或音节给予更强突出的一种语音现象。",
+            "example": "英语是以重音为基础的语言。"
+          },
+          {
+            "name": "听力语境",
+            "difficulty": 2,
+            "description": "通过判断地点、人物和话题理解听力内容",
+            "aliases": [
+              "听力场景"
+            ],
+            "prerequisites": [],
+            "definition": "听力语境是交际发生的地点、参与者及谈论主题构成的背景。",
+            "example": "听前先判断对话发生在哪里。"
+          },
+          {
+            "name": "采访表达",
+            "difficulty": 2,
+            "description": "用于欢迎、提问、追问和结束采访的常用表达",
+            "aliases": [
+              "采访用语"
+            ],
+            "prerequisites": [
+              "表达观点"
+            ],
+            "definition": "采访表达是采访者与受访者进行问候、提问和回应时使用的语言。",
+            "example": "What was your biggest challenge?"
+          },
+          {
+            "name": "文化桥梁",
+            "difficulty": 2,
+            "description": "连接不同国家和文化、促进相互理解的作用",
+            "aliases": [
+              "沟通桥梁"
+            ],
+            "prerequisites": [
+              "文化交流"
+            ],
+            "definition": "文化桥梁是个人或活动在不同文化之间建立理解与联系的作用。",
+            "example": "谢蕾努力在中英文化之间搭建桥梁。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Interviewing someone",
+            "section_key": "280bfab8d8",
+            "page_range": [
+              25,
+              30
+            ]
+          },
+          {
+            "name": "Tell visiting students about your school",
+            "section_key": "423fad2c4f",
+            "page_range": [
+              30,
+              33
+            ]
+          }
+        ],
+        "chapter_key": "5e1278f789",
+        "metadata": {
+          "volume_id": "5bc1702febb4",
+          "file_id": "5bc1702febb4",
+          "volume_title": "英语选择性必修第2册",
+          "chapter_order": 2,
+          "raw_heading": "UNIT 2 BRIDGING CULTURES"
+        }
+      },
+      {
+        "name": "UNIT 3 FOOD AND CULTURE",
+        "concepts": [
+          {
+            "name": "饮食与文化",
+            "difficulty": 2,
+            "description": "食物能够反映人们的性格、生活和文化。",
+            "aliases": [
+              "文化与饮食关系"
+            ],
+            "prerequisites": [],
+            "definition": "饮食与文化相互联系，通过食物可以了解一个群体的文化。",
+            "example": "饺子体现了中国北方的家庭文化。"
+          },
+          {
+            "name": "地域饮食特色",
+            "difficulty": 2,
+            "description": "不同地区因环境和生活方式形成不同饮食。",
+            "aliases": [
+              "地方饮食特色"
+            ],
+            "prerequisites": [
+              "饮食与文化"
+            ],
+            "definition": "地域饮食特色是某地自然环境、生活方式和传统共同形成的食物特点。",
+            "example": "新疆传统食物多为篝火上煮或烤的肉。"
+          },
+          {
+            "name": "饮食表达友善",
+            "difficulty": 2,
+            "description": "中国各地常通过食物表达友谊和善意。",
+            "aliases": [
+              "食物传递友谊"
+            ],
+            "prerequisites": [
+              "饮食与文化"
+            ],
+            "definition": "饮食表达友善指人们借助准备和分享食物来表现友谊与善意。",
+            "example": "厨师为客人不断端上最好的食物。"
+          },
+          {
+            "name": "因果关系",
+            "difficulty": 2,
+            "description": "说明一个事物导致另一个事物发生的关系。",
+            "aliases": [
+              "因果"
+            ],
+            "prerequisites": [],
+            "definition": "因果关系是原因与结果之间的逻辑联系。",
+            "example": "不会点菜，所以厨师替我们上菜。"
+          },
+          {
+            "name": "过去完成时",
+            "difficulty": 3,
+            "description": "表示过去某一时间或动作之前已完成的动作。",
+            "aliases": [
+              "past perfect tense"
+            ],
+            "prerequisites": [],
+            "definition": "过去完成时用来表示过去某个时间以前已经完成的动作。",
+            "example": "They had finished dinner before Sam arrived."
+          },
+          {
+            "name": "过去完成时被动语态",
+            "difficulty": 4,
+            "description": "表示过去之前已被完成或处理的动作。",
+            "aliases": [
+              "past perfect passive voice"
+            ],
+            "prerequisites": [
+              "过去完成时"
+            ],
+            "definition": "过去完成时被动语态表示过去某时以前某事已经被完成。",
+            "example": "The windows had been closed."
+          },
+          {
+            "name": "听前预览",
+            "difficulty": 2,
+            "description": "听力前先观察图片或文字以帮助理解内容。",
+            "aliases": [
+              "preview"
+            ],
+            "prerequisites": [],
+            "definition": "听前预览是听录音前利用相关图片或文字预测听力内容的方法。",
+            "example": "先看菜单，再听餐馆对话。"
+          },
+          {
+            "name": "点餐与结账表达",
+            "difficulty": 2,
+            "description": "在餐馆点菜、推荐食物和支付账单的常用表达。",
+            "aliases": [
+              "餐馆交际表达"
+            ],
+            "prerequisites": [],
+            "definition": "点餐与结账表达是餐馆中询问、推荐、点菜和付款时使用的语言。",
+            "example": "What would you suggest? I’ll have it."
+          },
+          {
+            "name": "食物习语",
+            "difficulty": 3,
+            "description": "含有食物词语并具有特殊含义的固定表达。",
+            "aliases": [
+              "food idioms"
+            ],
+            "prerequisites": [],
+            "definition": "食物习语是由食物相关词语构成且整体意义不同于字面意义的固定表达。",
+            "example": "It’s going to be a piece of cake."
+          },
+          {
+            "name": "健康饮食原则",
+            "difficulty": 2,
+            "description": "强调少糖、吃新鲜食物、适量和规律饮食。",
+            "aliases": [
+              "健康饮食"
+            ],
+            "prerequisites": [],
+            "definition": "健康饮食原则包括限制糖分、选择新鲜食物、保持均衡并规律进食。",
+            "example": "少吃甜点，完全停止饮用含糖饮料。"
+          },
+          {
+            "name": "平衡饮食",
+            "difficulty": 2,
+            "description": "不同类别食物搭配适量，避免过多或过少。",
+            "aliases": [
+              "balanced diet"
+            ],
+            "prerequisites": [
+              "健康饮食原则"
+            ],
+            "definition": "平衡饮食是适量摄入多类食物而不偏食的饮食方式。",
+            "example": "饮食中搭配水果、蔬菜、肉类和乳制品。"
+          },
+          {
+            "name": "慢食习惯",
+            "difficulty": 2,
+            "description": "细嚼慢咽并保持规律、适量的进餐习惯。",
+            "aliases": [
+              "slow eating"
+            ],
+            "prerequisites": [
+              "健康饮食原则"
+            ],
+            "definition": "慢食习惯是通过放慢进食速度和保持规律适量来促进健康。",
+            "example": "每餐慢慢咀嚼，不一次吃得过多。",
+            "section": "Paying the bill"
+          },
+          {
+            "name": "健康饮食说明文",
+            "difficulty": 3,
+            "description": "围绕健康饮食提出观点并用细节支持的文章。",
+            "aliases": [
+              "healthy diet essay"
+            ],
+            "prerequisites": [
+              "健康饮食原则"
+            ],
+            "definition": "健康饮食说明文是介绍饮食建议并用事实和细节支撑观点的文章。",
+            "example": "说明糖分危害，并提出减少甜饮料的建议。"
+          },
+          {
+            "name": "语篇连接词",
+            "difficulty": 3,
+            "description": "用于衔接句子并表达补充、转折等关系的词语。",
+            "aliases": [
+              "linking words",
+              "discourse markers"
+            ],
+            "prerequisites": [
+              "因果关系"
+            ],
+            "definition": "语篇连接词用于清晰展示句子和段落之间的逻辑关系。",
+            "example": "however表示转折，as a result表示结果。"
+          },
+          {
+            "name": "餐馆设计项目",
+            "difficulty": 2,
+            "description": "规划餐馆类型、菜品、菜单、环境和宣传。",
+            "aliases": [
+              "设计自己的餐馆"
+            ],
+            "prerequisites": [
+              "点餐与结账表达"
+            ],
+            "definition": "餐馆设计项目是合作制定新餐馆方案并向全班展示的任务。",
+            "example": "设计中英文菜单并介绍餐馆特色。"
+          },
+          {
+            "name": "昆虫饮食",
+            "difficulty": 2,
+            "description": "介绍昆虫作为食物的营养、价格和可持续性。",
+            "aliases": [
+              "食用昆虫"
+            ],
+            "prerequisites": [
+              "饮食与文化"
+            ],
+            "definition": "昆虫饮食是将昆虫作为食物并讨论其营养和环境价值的饮食现象。",
+            "example": "昆虫蛋白质含量高，价格低且更可持续。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Ordering food",
+            "section_key": "e5ac12aed8",
+            "page_range": [
+              38,
+              38
+            ]
+          },
+          {
+            "name": "Paying the bill",
+            "section_key": "749dcb274b",
+            "page_range": [
+              38,
+              42
+            ]
+          },
+          {
+            "name": "Design your own restaurant",
+            "section_key": "5d1d7107dd",
+            "page_range": [
+              42,
+              43
+            ]
+          },
+          {
+            "name": "What Are You Eating in Australia?",
+            "section_key": "52f8ca72c2",
+            "page_range": [
+              43,
+              45
+            ]
+          }
+        ],
+        "chapter_key": "a1d8b2a87a",
+        "metadata": {
+          "volume_id": "5bc1702febb4",
+          "file_id": "5bc1702febb4",
+          "volume_title": "英语选择性必修第2册",
+          "chapter_order": 3,
+          "raw_heading": "UNIT 3 FOOD AND CULTURE"
+        }
+      },
+      {
+        "name": "UNIT 4 JOURNEY ACROSS A VAST LAND",
+        "concepts": [
+          {
+            "name": "话语标记语",
+            "difficulty": 2,
+            "description": "用连接词表达转折、原因、时间和顺序等关系",
+            "aliases": [
+              "discourse markers"
+            ],
+            "prerequisites": [],
+            "definition": "话语标记语是帮助读者理解句子或段落逻辑关系的词语。",
+            "example": "However表示转折，later表示事件顺序。",
+            "section": "Talking about space and position"
+          },
+          {
+            "name": "过去分词形容词",
+            "difficulty": 3,
+            "description": "过去分词作表语或定语，常表示人的感受或状态",
+            "aliases": [
+              "-ed形容词"
+            ],
+            "prerequisites": [],
+            "definition": "过去分词形容词通常描述人受到某事影响后的感受或状态。",
+            "example": "The girls were amazed by the scenery."
+          },
+          {
+            "name": "现在分词形容词",
+            "difficulty": 3,
+            "description": "现在分词作表语或定语，常表示事物的特征",
+            "aliases": [
+              "-ing形容词"
+            ],
+            "prerequisites": [],
+            "definition": "现在分词形容词通常描述事物具有的性质或产生的感觉。",
+            "example": "The farms were amazing."
+          },
+          {
+            "name": "分词作状语",
+            "difficulty": 4,
+            "description": "用分词短语简化句子并补充时间、原因或伴随信息",
+            "aliases": [],
+            "prerequisites": [
+              "过去分词形容词",
+              "现在分词形容词"
+            ],
+            "definition": "分词作状语是用现在分词或过去分词短语修饰主句动作的结构。",
+            "example": "Standing in the distance, they saw the falls."
+          },
+          {
+            "name": "状语从句省略",
+            "difficulty": 4,
+            "description": "主从句主语一致时，可省略从句主语和be动词",
+            "aliases": [],
+            "prerequisites": [
+              "分词作状语"
+            ],
+            "definition": "状语从句省略是将从句中的主语和be动词省去并保留分词形式。",
+            "example": "When asked, he said it was a lifetime experience."
+          },
+          {
+            "name": "旅行地点描写",
+            "difficulty": 3,
+            "description": "从天气、地貌、城市和景观等方面介绍旅行地点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "旅行地点描写是围绕自然环境和城市特色呈现旅途所见的表达方式。",
+            "example": "Ontario is a land of forests, lakes, and rolling hills."
+          },
+          {
+            "name": "空间方位表达",
+            "difficulty": 2,
+            "description": "用方位和距离短语说明地点之间的位置关系",
+            "aliases": [
+              "talking about space and position"
+            ],
+            "prerequisites": [],
+            "definition": "空间方位表达用于说明地点的方向、距离、邻近关系和延伸路线。",
+            "example": "Toronto is northeast of the lake.",
+            "section": "Talking about space and position"
+          },
+          {
+            "name": "铁路旅行叙述",
+            "difficulty": 3,
+            "description": "按时间和路线顺序记录乘火车跨越加拿大的旅程",
+            "aliases": [],
+            "prerequisites": [
+              "话语标记语",
+              "空间方位表达"
+            ],
+            "definition": "铁路旅行叙述是按照出发、途经和抵达顺序描写火车旅程的文本内容。",
+            "example": "The train headed southeast across the Canadian Prairie."
+          },
+          {
+            "name": "加拿大自然景观",
+            "difficulty": 2,
+            "description": "课文介绍加拿大草原、森林、湖泊和山地景观",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "加拿大自然景观是旅途中呈现的辽阔草原、森林湖泊及山地风貌。",
+            "example": "The Canadian Prairie covered a very large area."
+          },
+          {
+            "name": "加拿大城市文化",
+            "difficulty": 3,
+            "description": "课文呈现多伦多和蒙特利尔的城市特色与文化差异",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "加拿大城市文化包括城市景观、语言环境、饮食和魁北克传统等内容。",
+            "example": "Many people in Montreal spoke French and English."
+          },
+          {
+            "name": "加拿大华人文化",
+            "difficulty": 2,
+            "description": "通过多伦多唐人街介绍加拿大华人历史与饮食文化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "加拿大华人文化是华人移居加拿大后形成的社区、饮食和文化现象。",
+            "example": "Toronto has several Chinatowns and food from all over China."
+          },
+          {
+            "name": "习语与明喻",
+            "difficulty": 3,
+            "description": "理解英语固定表达及as...as结构的比喻意义",
+            "aliases": [
+              "idioms and similes"
+            ],
+            "prerequisites": [],
+            "definition": "习语与明喻是用固定搭配或相似性形象表达特定含义的语言形式。",
+            "example": "The prairie was as flat as a pancake."
+          },
+          {
+            "name": "表达惊讶好奇",
+            "difficulty": 2,
+            "description": "用固定句式表达惊讶、疑问和对经历的兴趣",
+            "aliases": [
+              "expressing surprise and curiosity"
+            ],
+            "prerequisites": [],
+            "definition": "表达惊讶好奇是通过疑问句和感叹句回应意外信息并询问经历。",
+            "example": "What a surprise! What was it like?",
+            "section": "Expressing surprise and curiosity"
+          },
+          {
+            "name": "自然结束对话",
+            "difficulty": 2,
+            "description": "用礼貌表达说明离开原因并结束交谈",
+            "aliases": [
+              "ending a conversation naturally"
+            ],
+            "prerequisites": [],
+            "definition": "自然结束对话是以道别、说明安排或表达感谢等方式礼貌收束交谈。",
+            "example": "It was nice meeting you. I’ll talk to you later.",
+            "section": "Ending a conversation naturally"
+          },
+          {
+            "name": "旅行邮件写作",
+            "difficulty": 3,
+            "description": "以邮件形式有条理地分享旅途路线、见闻和感受",
+            "aliases": [],
+            "prerequisites": [
+              "话语标记语",
+              "旅行地点描写"
+            ],
+            "definition": "旅行邮件写作是按照邮件格式向亲友介绍旅行经历的写作活动。",
+            "example": "Dear Mum and Dad, I’m having a wonderful trip across Canada."
+          },
+          {
+            "name": "长途旅行规划",
+            "difficulty": 3,
+            "description": "规划路线、交通、时间、装备、活动和可能遇到的困难",
+            "aliases": [],
+            "prerequisites": [
+              "空间方位表达"
+            ],
+            "definition": "长途旅行规划是综合安排旅程路线、资源、活动及风险应对的过程。",
+            "example": "Choose a safe route and prepare enough food and water."
+          }
+        ],
+        "sections": [
+          {
+            "name": "Expressing surprise and curiosity",
+            "section_key": "000f3e5945",
+            "page_range": [
+              50,
+              50
+            ]
+          },
+          {
+            "name": "Ending a conversation naturally",
+            "section_key": "650ee2cefb",
+            "page_range": [
+              50,
+              50
+            ]
+          },
+          {
+            "name": "Talking about space and position",
+            "section_key": "e4e78bbbf5",
+            "page_range": [
+              50,
+              54
+            ]
+          },
+          {
+            "name": "Prepare for a journey across a vast land",
+            "section_key": "f6465c8d9e",
+            "page_range": [
+              54,
+              55
+            ]
+          },
+          {
+            "name": "Exploring Quebec",
+            "section_key": "e6c89551cf",
+            "page_range": [
+              55,
+              57
+            ]
+          }
+        ],
+        "chapter_key": "9b0de9c44d",
+        "metadata": {
+          "volume_id": "5bc1702febb4",
+          "file_id": "5bc1702febb4",
+          "volume_title": "英语选择性必修第2册",
+          "chapter_order": 4,
+          "raw_heading": "UNIT 4 JOURNEY ACROSS A VAST LAND"
+        }
+      },
+      {
+        "name": "UNIT 5 FIRST AID",
+        "concepts": [
+          {
+            "name": "急救",
+            "difficulty": 2,
+            "description": "对受伤或突发疾病者进行的紧急处理。",
+            "aliases": [
+              "first aid"
+            ],
+            "prerequisites": [],
+            "definition": "急救是在专业医疗救助到达前采取的紧急救护措施。",
+            "example": "先为烧伤者提供急救。"
+          },
+          {
+            "name": "皮肤保护功能",
+            "difficulty": 2,
+            "description": "皮肤能够保护人体免受许多危险因素伤害。",
+            "aliases": [
+              "skin protection"
+            ],
+            "prerequisites": [],
+            "definition": "皮肤是人体抵御外界危险因素的重要保护层。",
+            "example": "皮肤可保护人体免受危险物伤害。"
+          },
+          {
+            "name": "烧伤分级",
+            "difficulty": 3,
+            "description": "依据烧伤深度和皮肤损伤程度划分烧伤类型。",
+            "aliases": [
+              "degrees of burns"
+            ],
+            "prerequisites": [
+              "皮肤保护功能"
+            ],
+            "definition": "烧伤通常按损伤皮肤的深度分为一度、二度和三度。",
+            "example": "医生先判断烧伤分级。"
+          },
+          {
+            "name": "一度烧伤",
+            "difficulty": 3,
+            "description": "仅伤及皮肤表层，通常表现为干燥、发红和轻微疼痛。",
+            "aliases": [
+              "first-degree burn"
+            ],
+            "prerequisites": [
+              "烧伤分级"
+            ],
+            "definition": "一度烧伤是只损伤皮肤表层的轻度烧伤。",
+            "example": "轻微晒伤可能是一度烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "二度烧伤",
+            "difficulty": 3,
+            "description": "损伤较深，皮肤红肿并出现水疱，疼痛通常明显。",
+            "aliases": [
+              "second-degree burn"
+            ],
+            "prerequisites": [
+              "烧伤分级"
+            ],
+            "definition": "二度烧伤会损伤较深的皮肤并常伴有水疱。",
+            "example": "热水烫伤后出现水疱，可能是二度烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "三度烧伤",
+            "difficulty": 4,
+            "description": "烧伤贯穿皮肤各层，有时损伤皮下组织。",
+            "aliases": [
+              "third-degree burn"
+            ],
+            "prerequisites": [
+              "烧伤分级"
+            ],
+            "definition": "三度烧伤是深度最重并可能伤及皮下组织的烧伤。",
+            "example": "皮肤黑白相间且可见组织，可能是三度烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "冷水降温",
+            "difficulty": 2,
+            "description": "用流动冷水冲洗烧伤处，减缓灼烧并减轻疼痛肿胀。",
+            "aliases": [
+              "cool running water"
+            ],
+            "prerequisites": [
+              "急救",
+              "烧伤分级"
+            ],
+            "definition": "冷水降温是烧伤后用流动冷水及时降低伤口热量的处理方法。",
+            "example": "烧伤后应尽快用冷水冲洗。"
+          },
+          {
+            "name": "烧伤覆盖",
+            "difficulty": 2,
+            "description": "用松散、干净的布覆盖烧伤部位，避免继续污染。",
+            "aliases": [
+              "cover the burn"
+            ],
+            "prerequisites": [
+              "急救"
+            ],
+            "definition": "烧伤覆盖是用松散的干净布保护受伤部位。",
+            "example": "冲洗后用干净布松散覆盖伤口。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "烧伤禁涂油",
+            "difficulty": 3,
+            "description": "烧伤处不应涂油，因为油会使热量留在伤口内并可能引发感染。",
+            "aliases": [
+              "avoid applying oil"
+            ],
+            "prerequisites": [
+              "烧伤急救处理"
+            ],
+            "definition": "烧伤禁涂油是指不能用油覆盖烧伤部位以免滞热和感染。",
+            "example": "不要在烧伤处涂黄油或食用油。"
+          },
+          {
+            "name": "烧伤急救处理",
+            "difficulty": 4,
+            "description": "包括冷水冲洗、轻柔擦干、正确去衣和干净覆盖等步骤。",
+            "aliases": [
+              "first-aid treatment for burns"
+            ],
+            "prerequisites": [
+              "烧伤分级",
+              "冷水降温"
+            ],
+            "definition": "烧伤急救处理是针对烧伤程度采取的规范现场救护步骤。",
+            "example": "先冲洗，再擦干并覆盖烧伤处。"
+          },
+          {
+            "name": "化学烧伤",
+            "difficulty": 3,
+            "description": "皮肤或眼睛接触酸等化学物质后造成的烧伤。",
+            "aliases": [
+              "chemical burn"
+            ],
+            "prerequisites": [
+              "皮肤保护功能"
+            ],
+            "definition": "化学烧伤是皮肤或眼睛接触酸或其他化学物质造成的损伤。",
+            "example": "酸液接触皮肤可能造成化学烧伤。",
+            "section": "First Aid for Burns"
+          },
+          {
+            "name": "化学烧伤急救",
+            "difficulty": 4,
+            "description": "化学烧伤须立即处理，严重时应马上将伤者送往医院。",
+            "aliases": [
+              "first aid for chemical burns"
+            ],
+            "prerequisites": [
+              "化学烧伤",
+              "急救"
+            ],
+            "definition": "化学烧伤急救是对化学物质造成的烧伤立即采取的救护措施。",
+            "example": "严重化学烧伤者应立即送医。"
+          },
+          {
+            "name": "医疗急症",
+            "difficulty": 3,
+            "description": "需要迅速获得医疗救助的严重突发状况。",
+            "aliases": [
+              "medical emergencies"
+            ],
+            "prerequisites": [
+              "急救"
+            ],
+            "definition": "医疗急症是可能危及健康或生命并需要立即处理的突发情况。",
+            "example": "心脏病发作属于医疗急症。"
+          },
+          {
+            "name": "急救电话号码",
+            "difficulty": 2,
+            "description": "不同国家或地区用于联系紧急医疗服务的电话号码。",
+            "aliases": [
+              "emergency numbers"
+            ],
+            "prerequisites": [
+              "医疗急症"
+            ],
+            "definition": "急救电话号码是发生医疗急症时拨打的紧急服务号码。",
+            "example": "在中国可拨打120求助。"
+          },
+          {
+            "name": "呼叫急救服务",
+            "difficulty": 3,
+            "description": "拨打当地急救号码并清楚说明突发情况和伤者状况。",
+            "aliases": [
+              "call emergency services"
+            ],
+            "prerequisites": [
+              "急救电话号码",
+              "医疗急症"
+            ],
+            "definition": "呼叫急救服务是在紧急情况下联系专业救援并报告情况。",
+            "example": "男孩拨打999说明祖父的状况。"
+          },
+          {
+            "name": "动词-ing形式",
+            "difficulty": 4,
+            "description": "动词加-ing构成的形式，可在句中作主语、表语或状语等。",
+            "aliases": [
+              "-ing form"
+            ],
+            "prerequisites": [],
+            "definition": "动词-ing形式既可保留动词特征，也可在句中承担名词或修饰成分的功能。",
+            "example": "Getting burnt can cause serious injuries."
+          }
+        ],
+        "sections": [
+          {
+            "name": "First Aid for Burns",
+            "section_key": "1f39c6d09b",
+            "page_range": [
+              58,
+              62
+            ]
+          },
+          {
+            "name": "Giving first-aid instructions for rescuing a drowning victim",
+            "section_key": "9103c9a1fa",
+            "page_range": [
+              62,
+              66
+            ]
+          },
+          {
+            "name": "Make your own first-aid kit",
+            "section_key": "4a4ecfd9b9",
+            "page_range": [
+              66,
+              66
+            ]
+          },
+          {
+            "name": "Learn and teach others about first aid",
+            "section_key": "8231d3cce2",
+            "page_range": [
+              66,
+              67
+            ]
+          },
+          {
+            "name": "Para-Life Rescue",
+            "section_key": "8d6c386d44",
+            "page_range": [
+              67,
+              112
+            ]
+          },
+          {
+            "name": "The past perfect tense",
+            "section_key": "128779277a",
+            "page_range": [
+              112,
+              113
+            ]
+          },
+          {
+            "name": "The past perfect passive voice",
+            "section_key": "ee1e2511b1",
+            "page_range": [
+              113,
+              134
+            ]
+          }
+        ],
+        "chapter_key": "ca6e447615",
+        "metadata": {
+          "volume_id": "5bc1702febb4",
+          "file_id": "5bc1702febb4",
+          "volume_title": "英语选择性必修第2册",
+          "chapter_order": 5,
+          "raw_heading": "UNIT 5 FIRST AID"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "b344613c12": [
+        12,
+        14
+      ],
+      "Predicative clauses": [
+        12,
+        14
+      ],
+      "a2c4e4d862": [
+        14,
+        17
+      ],
+      "Talking about scientific phenomena": [
+        14,
+        17
+      ],
+      "18780d9323": [
+        17,
+        21
+      ],
+      "Think outside the box": [
+        17,
+        21
+      ],
+      "280bfab8d8": [
+        25,
+        30
+      ],
+      "Interviewing someone": [
+        25,
+        30
+      ],
+      "423fad2c4f": [
+        30,
+        33
+      ],
+      "Tell visiting students about your school": [
+        30,
+        33
+      ],
+      "e5ac12aed8": [
+        38,
+        38
+      ],
+      "Ordering food": [
+        38,
+        38
+      ],
+      "749dcb274b": [
+        38,
+        42
+      ],
+      "Paying the bill": [
+        38,
+        42
+      ],
+      "5d1d7107dd": [
+        42,
+        43
+      ],
+      "Design your own restaurant": [
+        42,
+        43
+      ],
+      "52f8ca72c2": [
+        43,
+        45
+      ],
+      "What Are You Eating in Australia?": [
+        43,
+        45
+      ],
+      "000f3e5945": [
+        50,
+        50
+      ],
+      "Expressing surprise and curiosity": [
+        50,
+        50
+      ],
+      "650ee2cefb": [
+        50,
+        50
+      ],
+      "Ending a conversation naturally": [
+        50,
+        50
+      ],
+      "e4e78bbbf5": [
+        50,
+        54
+      ],
+      "Talking about space and position": [
+        50,
+        54
+      ],
+      "f6465c8d9e": [
+        54,
+        55
+      ],
+      "Prepare for a journey across a vast land": [
+        54,
+        55
+      ],
+      "e6c89551cf": [
+        55,
+        57
+      ],
+      "Exploring Quebec": [
+        55,
+        57
+      ],
+      "1f39c6d09b": [
+        58,
+        62
+      ],
+      "First Aid for Burns": [
+        58,
+        62
+      ],
+      "9103c9a1fa": [
+        62,
+        66
+      ],
+      "Giving first-aid instructions for rescuing a drowning victim": [
+        62,
+        66
+      ],
+      "4a4ecfd9b9": [
+        66,
+        66
+      ],
+      "Make your own first-aid kit": [
+        66,
+        66
+      ],
+      "8231d3cce2": [
+        66,
+        67
+      ],
+      "Learn and teach others about first aid": [
+        66,
+        67
+      ],
+      "8d6c386d44": [
+        67,
+        112
+      ],
+      "Para-Life Rescue": [
+        67,
+        112
+      ],
+      "128779277a": [
+        112,
+        113
+      ],
+      "The past perfect tense": [
+        112,
+        113
+      ],
+      "ee1e2511b1": [
+        113,
+        134
+      ],
+      "The past perfect passive voice": [
+        113,
+        134
+      ]
+    }
+  }
+}
