@@ -177,6 +177,31 @@ async def update_ocr_policy(req: OCRPolicyRequest,
     return await set_policy(**req.model_dump())
 
 
+class TextbookPipelineRequest(BaseModel):
+    mode: str = Field("parallel", pattern="^(parallel|legacy)$")
+    build_concurrency: int = Field(2, ge=1, le=4)
+    volume_concurrency: int = Field(2, ge=1, le=4)
+    llm_concurrency: int = Field(4, ge=1, le=8)
+
+
+@router.get("/textbook-pipeline")
+def get_textbook_pipeline_policy(admin: User = Depends(require_admin)) -> dict:
+    """教材解析调度策略（只改执行并发，不改解析方式/产出）。"""
+    from app.core.textbook_pipeline import get_policy
+    return get_policy()
+
+
+@router.put("/textbook-pipeline")
+async def update_textbook_pipeline_policy(
+        req: TextbookPipelineRequest,
+        admin: User = Depends(require_admin)) -> dict:
+    from app.core.textbook_pipeline import set_policy
+    try:
+        return await set_policy(**req.model_dump())
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+
+
 @router.get("/prompt-memory-policy")
 def get_prompt_memory_policy(admin: User = Depends(require_admin)) -> dict:
     from app.agents.memory.prompt_memory import get_policy

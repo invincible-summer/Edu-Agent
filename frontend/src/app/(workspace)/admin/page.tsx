@@ -1,5 +1,5 @@
 "use client";
-// /admin 管理台（P6-B4）：页签分区——账号与数据 / 生命周期与记忆 / OCR 策略 /
+// /admin 管理台（P6-B4）：页签分区——账号与数据 / 生命周期与记忆 / OCR 与解析策略 /
 // 公共库归档 / 数据清理。仅 role=admin 可见（导航入口隐藏；后端 /admin/* 有
 // require_admin 硬门）。各面板自包含加载与操作。
 import { useCallback, useEffect, useState } from "react";
@@ -12,6 +12,7 @@ import { Tabs } from "@/components/ui/Tabs";
 import { AccountsPanel } from "@/components/pages/admin/AccountsPanel";
 import { PolicyPanel } from "@/components/pages/admin/PolicyPanel";
 import { OcrPanel } from "@/components/pages/admin/OcrPanel";
+import { TextbookPipelinePanel } from "@/components/pages/admin/TextbookPipelinePanel";
 import { TrashPanel } from "@/components/pages/admin/TrashPanel";
 import { CleanupPanel } from "@/components/pages/admin/CleanupPanel";
 import { STRINGS } from "./strings";
@@ -67,7 +68,12 @@ export default function AdminPage() {
           loading={loading} error={error} refresh={refresh} />
       )}
       {tab === "policy" && <PolicyPanel tr={tr} />}
-      {tab === "ocr" && <OcrPanel tr={tr} />}
+      {tab === "ocr" && (
+        <div className="flex flex-col gap-4">
+          <OcrPanel tr={tr} />
+          <TextbookPipelinePanel tr={tr} />
+        </div>
+      )}
       {tab === "trash" && <TrashPanel tr={tr} onCount={setTrashCount} />}
       {tab === "cleanup" && <CleanupPanel tr={tr} refresh={refresh} />}
     </div>

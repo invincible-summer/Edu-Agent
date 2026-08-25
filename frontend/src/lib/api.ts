@@ -988,3 +988,42 @@ export async function setAdminOCRPolicy(policy: {
   if (!res.ok) throw new Error(`Set OCR policy failed: ${res.status}`);
   return res.json();
 }
+
+export interface AdminTextbookPipelinePolicy {
+  mode: "parallel" | "legacy";
+  build_concurrency: number;
+  volume_concurrency: number;
+  llm_concurrency: number;
+  effective_limits: { build: number; volume: number; llm: number };
+  gate_active: number;
+  gate_waiting: number;
+  min_build_concurrency: number;
+  max_build_concurrency: number;
+  min_volume_concurrency: number;
+  max_volume_concurrency: number;
+  min_llm_concurrency: number;
+  max_llm_concurrency: number;
+  modes: string[];
+  updated_at: number;
+  scope: string;
+}
+
+export async function getAdminTextbookPipelinePolicy(): Promise<AdminTextbookPipelinePolicy> {
+  const res = await apiFetch(`${BASE}/admin/textbook-pipeline`);
+  if (!res.ok) throw new Error(`Get textbook pipeline policy failed: ${res.status}`);
+  return res.json();
+}
+
+export async function setAdminTextbookPipelinePolicy(policy: {
+  mode: AdminTextbookPipelinePolicy["mode"];
+  build_concurrency: number;
+  volume_concurrency: number;
+  llm_concurrency: number;
+}): Promise<AdminTextbookPipelinePolicy> {
+  const res = await apiFetch(`${BASE}/admin/textbook-pipeline`, {
+    method: "PUT", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(policy),
+  });
+  if (!res.ok) throw new Error(`Set textbook pipeline policy failed: ${res.status}`);
+  return res.json();
+}

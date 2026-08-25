@@ -869,7 +869,7 @@ M5 的知识节点/边与资料中心元数据解耦。资料中心是教材分�
 
 **逐页增量持久化（慢模型断点续传）**：视觉模型单页可达 3 分钟（管理员可将 `request_timeout_seconds` 调至最高 300），轮内每页完成即结算——先轻量原子写 `.txt`（不重切块）再保存 `ocr_state` 与 per-page 进度，进程中途被杀不丢已完成页；重启后 `reap_stale_builds` + `resume_pending_textbook_ocr` 只重试 pending 页，绝不从头开始。单页意外异常只记该页失败，不炸整轮。轮末 `_write_text_and_chunks` 按内容 hash 幂等跳过：零进展的等待轮不再全书重切块与重写 library JSON，崩溃自愈复查也零开销。删除守卫：轮内发现教材记录/库文件已被归档删除即停止一切写回（不复活孤儿 `.txt`）；`textbook_builder` 在图谱/概念索引写入点 re-check 记录存在，构建途中被删除则静默中止，不把已删除 `topic_key` 的图谱写回磁盘。
 
-**per-owner 构建队列（严格串行，2026-08-15）**：构建锁只在单次构建期间持有，一本书 OCR 转入 `ocr_waiting` 等重试时锁即释放——若放任下一本立刻开建，多本书会同时停在「等重试、建一半」。`textbook_builder.enqueue_textbook_build` 为每个 owner 维护 FIFO 队列与单一 worker：队首教材到达终态（ready/partial/graph_failed/failed/ocr_paused/已删除）后才开建下一本；OCR 重试轮仍由 resume 调度驱动，队列 worker 只做门控轮询（并兜底复活死掉的 resume 任务）。上传、启动恢复、删卷重建、容量策略重合并均走队列；`rebuild_graph` 三模式等用户显式刷新旁路队列、仍受构建锁互斥。进程重启后队列随 `resume_pending_textbook_ocr` 按记录顺序重建。默认重试间隔 `_DEFAULT_INTERVAL=10s`（等待响应的 timeout 独立可调至 300s），管理员可按实例覆盖。
+**per-owner 构建队列（有界并发，legacy 可回退，2026-08-25）**：构建锁只在单次构建期间持有且按 **(owner, textbook_id)** 粒度互斥——同一本书绝不并发构建（队列自动构建 vs 手动刷新互斥），不同书可并行。`textbook_builder.enqueue_textbook_build` 为每个 owner 维护 FIFO 队列与单一调度 worker：同时在构建的教材数 ≤ `textbook_pipeline.build_concurrency()`（默认 2；**legacy 模式强制 1**，即 2026-08-15 前的严格「队首到终态再建下一本」契约）；OCR 重试轮仍由队列项内的门控驱动，worker 只做派发与名额回收（并兜底复活死掉的 resume 任务）。上传、启动恢复、删卷重建、容量策略重合并均走队列；`rebuild_graph` 三模式等用户显式刷新旁路队列、仍受 per-book 构建锁互斥。进程重启后队列随 `resume_pending_textbook_ocr` 按记录顺序重建。默认重试间隔 `_DEFAULT_INTERVAL=10s`（等待响应的 timeout 独立可调至 300s），管理员可按实例覆盖。
 
 教材记录的 `ocr_state` 是重启恢复事实源，包含状态版本、force-full 模式、物理/目标/成功/待处理/暂停/空白页、逐页 attempts、next retry、错误码摘要、策略 generation、配置阻塞及 API/本地成功计数，不保存图片、密钥或模型原始响应。归档取消运行任务并把状态收入 bundle；恢复重新调度 waiting 页；彻删删除 bundle 与其中状态。
 
@@ -1064,12 +1064,12 @@ True），若不钳制，稀疏重试中的兄弟卷会命中轮次入口的「�
 `pending_pages`；从头重来仅三种显式重建——full_ocr 刷新清 state、force_full 意图
 对非在途卷翻转、源文本 hash 变化。已判空白页（known-empty）跨重建继承不重烧。
 
-### P7.7.8 单一串行驱动（2026-08-16 修队列契约违反）
+### P7.7.8 单一驱动入口（2026-08-16 修队列契约违反）
 
-构建的唯一驱动是 **per-owner 串行队列**（`_BUILD_QUEUES`）——上传自动构建、手动
-刷新（rebuild 三模式）、失败重试、回收站恢复全部入队，严格「当前书构建完（含重试
-等待）再建下一本」。旧的三驱动并行（队列｜`_TASKS` 直连 resume runner｜刷新直连
-`_safe_build`）会使书 A 等重试期间其他书被并行开建，违反串行契约，已移除。
+构建的唯一驱动是 **per-owner 队列**（`_BUILD_QUEUES`）——上传自动构建、手动
+刷新（rebuild 三模式）、失败重试、回收站恢复全部入队。旧的三驱动并行（队列｜
+`_TASKS` 直连 resume runner｜刷新直连 `_safe_build`）绕开队列与锁的组合，已移除。
+（2026-08-25 起串行契约升级为**有界并发 + legacy 回退**，单驱动不变，见 P7.7.11。）
 
 关键实现点：
 - **门控即重试驱动**：`_wait_book_terminal` 在 ocr_waiting 且各等待卷
@@ -1110,6 +1110,50 @@ PyMuPDF 非线程安全（MuPDF 共享全局上下文）：教材 OCR 并发调�
 `pdf_page_count` / `pdf_page_texts`。覆盖点：`pdf_ocr` 全部函数、
 `textbook_ocr` 轮次探针（`to_thread`）、`file_parser._extract_pdf`、
 `figure_harvest.harvest_native_blocks_sync`、`textbook_builder` 目录/文本层抽取。
+
+### P7.7.11 解析流水线有界并行（2026-08-25，执行调度优化）
+
+目标：**只改执行调度，不改解析方式与产出**——同样的 prompt、同样的逐章/逐卷
+输入、同样的确定性合并与写盘逻辑、同样的 OCR 逐页结算/断点恢复/重试语义；
+相互独立的调用在时间上重叠。管理员经 `GET/PUT /admin/textbook-pipeline`
+在线调整（`core/textbook_pipeline.py`，策略落盘
+`chat_history/settings/textbook_pipeline_policy.json`，env 变量仅作文件缺失
+时的默认值）；**legacy 模式把全部有效并发强制为 1**，FIFO 门下执行顺序与
+历史严格串行实现逐调用一致。
+
+四层并行（互不抢资源：vision OCR 页并发仍由 `ocr_policy` 单独限流）：
+
+1. **逐章概念抽取**（`_full_path_spec`）：章间零依赖（每章 prompt 只依赖
+   章名/章文本/书级 subject/level，后两者循环前已定），任务全部创建后由全局
+   `llm_gate` FIFO 限流；**结算严格按章序**——chapters_out / warnings /
+   progress / 取消检查点逐章语义与串行相同（完成顺序可乱序，产出不变）。
+2. **跨书有界并发**（队列调度器）：同一 owner 同时在构建 ≤
+   `build_concurrency`（默认 2）——书 B 的 OCR 与书 A 的逐章抽取重叠。
+   派发按 FIFO 且同书去重（正在构建的书不重复派发，避免占名额等锁）。
+3. **组内多卷并行**（`_build_group_inner`）：抽取阶段按
+   `volume_concurrency`（默认 2）并行、每卷独立 warnings 缓冲；后处理严格
+   按卷序（subject 首卷优先、`chapter_order=卷序×1000`、coverage 顺序）。
+   卷 OCR 延迟（`TextbookOCRDeferred`）捕获为哨兵：兄弟卷跑完落
+   volume_spec 缓存（重试轮零成本复用），按序后处理时统一抛出。
+4. **图表图述**（`figure_harvest._describe_figures`）：gather 并发，仍经
+   `ocr_policy.run_page` 全局限流，结果保序。
+
+配套并发安全修复（并行化前置条件，legacy 下同样生效）：
+
+- **per-book 构建锁**：`_BUILD_LOCKS` 键从 student 改为 (student, tb_id)——
+  同书互斥保留（自动构建 vs 手动重建），跨书放行由队列名额控制。
+- **ocr_state 新鲜读-合并-写**（`textbook_ocr._settle/_save_state`）：每次
+  结算重新读记录、只覆盖本卷键。旧行为写轮起止快照（root），并行卷交错结算
+  时后写者会用旧快照回滚兄弟卷进度。同步无 await，事件循环内原子。
+- **library RMW 互斥**（`_write_text_and_chunks`）：读改写段加
+  `rag_index._owner_rag_lock` 并在工作线程执行（`asyncio.to_thread`）——
+  与 RAG 重建（to_thread）并发时不再互相丢 chunk 更新，重切块 CPU 同时
+  移出事件循环。
+- **LLM 客户端并发参数**：`AsyncLLMClient(concurrency=1)` 默认不变（全部
+  既有调用方行为不变）；教材构建客户端取上限 8，实际节流统一由动态门
+  `llm_gate()`（Condition 计数器，限额每次准入动态读取策略，在线调整立即
+  生效、在途调用按旧限额跑完）负责——取代原模块级
+  `asyncio.Semaphore(2)`。
 
 ## M-Notes 笔记仓库与笔记智能体（2026-08-19）
 

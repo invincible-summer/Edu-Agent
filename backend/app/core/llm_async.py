@@ -27,6 +27,7 @@ class AsyncLLMClient:
         max_tokens: int | None = None,
         temperature: float | None = None,
         timeout: float = 180.0,
+        concurrency: int = 1,
     ):
         self.model = model or settings.llm_model
         self.max_tokens = max_tokens if max_tokens is not None else settings.llm_max_tokens
@@ -44,8 +45,10 @@ class AsyncLLMClient:
         # R15: transient error retry config
         self._retry_max = 4
         self._retry_base_delay = 2.0
-        # R16: concurrency limiter — prevents 429 by capping concurrent calls
-        self._semaphore = asyncio.Semaphore(1)
+        # R16: concurrency limiter — prevents 429 by capping concurrent calls.
+        # 默认 1 保持全部既有调用方行为不变；教材构建传入更高值并在调用点
+        # 由 textbook_pipeline.llm_gate() 统一动态限流。
+        self._semaphore = asyncio.Semaphore(max(1, int(concurrency)))
 
     async def stream(
         self,

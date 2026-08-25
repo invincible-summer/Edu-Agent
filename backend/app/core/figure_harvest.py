@@ -178,14 +178,11 @@ async def _describe_figures(pngs: list[bytes]) -> list[str]:
 
     try:
         async with ocr_policy.textbook_ocr_job() as job:
-            results = []
-            for png in pngs:
-                try:
-                    text = await ocr_policy.run_page(job, lambda p=png: one(p))
-                except Exception:
-                    text = ""
-                results.append(text or "")
-            return results
+            # 并发图述（ocr_policy.run_page 本就是全局并发治理器，页上限内
+            # 天然限流）；gather 保序，结果与逐图串行完全一致。
+            tasks = [ocr_policy.run_page(job, lambda p=png: one(p)) for png in pngs]
+            results = list(await asyncio.gather(*tasks, return_exceptions=True))
+            return ["" if isinstance(r, BaseException) else (r or "") for r in results]
     except Exception as e:
         log.warning("figure description pass failed: %s", e)
         return ["" for _ in pngs]

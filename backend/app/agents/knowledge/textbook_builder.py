@@ -26,6 +26,7 @@ from typing import Any
 
 from ...core import textbook as tb_store
 from ...core import pdf_ocr
+from ...core import textbook_pipeline
 from ...core.config import settings
 from . import custom_graph as cg
 from . import store as kg_store
@@ -46,32 +47,36 @@ _FAST_PATH_CHARS = cg.MAX_MATERIAL_CHARS  # 20000
 _LONG_TEXTBOOK_CHARS = 50000
 _LONG_TEXTBOOK_PAGES = 40
 
-# per-student 构建锁：同学生同时只构建一本，后到者等待。
-_BUILD_LOCKS: dict[str, asyncio.Lock] = {}
+# per-book 构建锁：同一本书绝不并发构建（队列自动构建 vs 手动重建互斥）。
+# 不同书可并行，本数由 textbook_pipeline.build_concurrency() 控制（legacy
+# 模式 = 1，即原 per-student 一本接一本语义）。
+_BUILD_LOCKS: dict[tuple[str, str], asyncio.Lock] = {}
 _LOCKS_GUARD = asyncio.Lock()
-# 全局并发上限（防 429 风暴；AsyncLLMClient 自身 Semaphore(1) 是更严的串行约束，
-# 这里再设一道，便于将来放宽 client 并发时仍封顶）。
-_LLM_SEMAPHORE = asyncio.Semaphore(2)
 
 
-async def _lock_for(student_id: str) -> asyncio.Lock:
+async def _lock_for(student_id: str, tb_id: str) -> asyncio.Lock:
     async with _LOCKS_GUARD:
-        lock = _BUILD_LOCKS.get(student_id)
+        key = (student_id, tb_id)
+        lock = _BUILD_LOCKS.get(key)
         if lock is None:
             lock = asyncio.Lock()
-            _BUILD_LOCKS[student_id] = lock
+            _BUILD_LOCKS[key] = lock
         return lock
 
 
 # ---------------------------------------------------------------------------
-# per-owner build queue（严格串行流水线）
+# per-owner build queue（有界并发流水线；legacy 模式退化为严格串行）
 #
-# 构建锁只在单次构建期间持有：一本书 OCR 转入 ocr_waiting 等重试时锁即释放，
-# 下一本立刻开建——多本书会同时处于「等重试、建一半」。此队列保证同一 owner
-# 的自动构建（上传/启动恢复/删卷重建/容量策略重合并）严格一本接一本：队首
-# 教材到达终态（ready/partial/graph_failed/failed/ocr_paused/已删除）后才开
-# 建下一本。OCR 重试轮本身仍由 core/textbook_ocr 的 resume 调度驱动，队列只
-# 负责门控。手动刷新（rebuild_graph 三模式）不走队列，仍由构建锁互斥。
+# 构建锁只在单次构建期间持有：一本书 OCR 转入 ocr_waiting 等重试时锁即释放。
+# 此队列保证同一 owner 的自动构建（上传/启动恢复/删卷重建/容量策略重合并）
+# 同时最多 build_concurrency 本在构建（默认 2；legacy=1 即历史严格串行）——
+# 书 B 的 OCR 可与书 A 的逐章概念抽取重叠（LLM 与 vision 是不同资源池，
+# 各自由 textbook_pipeline.llm_gate / ocr_policy 全局限流）。同一本书绝不
+# 并行构建（per-book 锁 + 派发去重）。队首批次到达终态
+# （ready/partial/graph_failed/failed/ocr_paused/已删除）后腾出名额开建
+# 后续教材。OCR 重试轮本身仍由 core/textbook_ocr 的 resume 调度驱动，队列只
+# 负责门控。手动刷新（rebuild_graph 三模式）不走队列，仍由 per-book 构建
+# 锁互斥。
 # ---------------------------------------------------------------------------
 
 _BUILD_QUEUES: dict[str, dict[str, Any]] = {}
@@ -129,9 +134,12 @@ async def run_textbook_build(student_id: str, tb_id: str, *,
 
 
 def _get_llm_cached() -> Any | None:
-    from ...core.llm_async import get_llm
+    from ...core.llm_async import AsyncLLMClient
     try:
-        return get_llm()
+        # 客户端侧并发取策略上限（不再构成约束）；实际节流统一由
+        # textbook_pipeline.llm_gate() 动态门负责，管理员在线调整即刻生效。
+        ceiling = 8
+        return AsyncLLMClient(concurrency=ceiling)
     except Exception:
         return None
 
@@ -158,22 +166,50 @@ def enqueue_textbook_build(student_id: str, tb_id: str, **build_kwargs) \
     return future
 
 
+async def _run_queued_item(student_id: str, item: dict[str, Any]) -> None:
+    """单个队列项的完整生命周期：一次构建 + 到终态的门控等待（含重试驱动）。"""
+    tb_id = str(item["textbook_id"])
+    future: asyncio.Future | None = item.get("future")
+    try:
+        await run_textbook_build(student_id, tb_id, **item["kwargs"])
+        await _wait_book_terminal(student_id, tb_id)
+    except Exception:
+        pass  # run_textbook_build 自带异常网；门控自身永不抛
+    finally:
+        # Future 必须结算（含异常路径），否则等待方（手动刷新）悬挂。
+        if future is not None and not future.done():
+            future.set_result(None)
+
+
 async def _queue_worker(student_id: str, queue: dict[str, Any]) -> None:
     items: deque = queue["items"]
+    running: dict[asyncio.Task, str] = {}  # task -> textbook_id（同书去重用）
     try:
-        while items:
-            item = items.popleft()
-            tb_id = str(item["textbook_id"])
-            future: asyncio.Future | None = item.get("future")
-            try:
-                await run_textbook_build(student_id, tb_id, **item["kwargs"])
-                await _wait_book_terminal(student_id, tb_id)
-            except Exception:
-                pass  # run_textbook_build 自带异常网；门控自身永不抛
-            finally:
-                # Future 必须结算（含异常路径），否则等待方（手动刷新）悬挂。
-                if future is not None and not future.done():
-                    future.set_result(None)
+        while items or running:
+            # 动态读取并发上限：管理员在线调整后对后续派发立即生效。
+            limit = textbook_pipeline.build_concurrency()
+            while items and len(running) < limit:
+                # 同书去重：正在构建的书不重复派发（避免占住名额等 per-book 锁）。
+                item = next((it for it in items
+                             if str(it["textbook_id"]) not in running.values()), None)
+                if item is None:
+                    break
+                items.remove(item)
+                task = asyncio.get_running_loop().create_task(
+                    _run_queued_item(student_id, item))
+                running[task] = str(item["textbook_id"])
+            if not running:
+                # 名额为 0 的防御态（策略异常值被钳制后不会发生）；避免忙等。
+                await asyncio.sleep(QUEUE_POLL_SECONDS)
+                continue
+            done, _pending = await asyncio.wait(
+                set(running), return_when=asyncio.FIRST_COMPLETED)
+            for task in done:
+                running.pop(task, None)
+                try:
+                    task.result()
+                except Exception:
+                    pass  # _run_queued_item 自带异常网
     finally:
         # 先置 None 再检查残留：覆盖「入队方看到 worker 未结束而不再拉起」的
         # 窗口——若此刻队列又非空，自我重启续跑。
@@ -187,11 +223,12 @@ async def _queue_worker(student_id: str, queue: dict[str, Any]) -> None:
 
 
 async def _wait_book_terminal(student_id: str, tb_id: str) -> None:
-    """队列内门控 + 重试驱动：当前书到达终态（或被删除）前不构建下一本。
+    """队列内门控 + 重试驱动：当前书到达终态（或被删除）前本队列项不结束
+    （不腾出并发名额）。
 
     ocr_waiting 是「本书尚未构建完」的合法中间态。到点的重试轮就地在本
-    worker 内执行——这是唯一驱动（旧的直连 resume runner 会绕过队列，在
-    书 A 等重试期间让队列继续建后面的书，破坏串行契约）。重试是轻量的：
+    项内执行——这是唯一驱动（直连 resume runner 会绕过队列自行重建，与
+    per-book 锁组合成不可控的双驱动）。重试是轻量的：
     force_reextract=False（spec 缓存有效即复用，失效条件由 prompt 指纹/文本
     hash 独立保证），重试周期不再被整书 LLM 重抽 gating；重试完成全书 ready
     则就地补 RAG 收尾。无在途等待卷信息的 ocr_waiting 保持被动轮询（防御
@@ -953,7 +990,7 @@ async def _llm_extract_toc(text_head: str, llm: Any) -> list[dict[str, Any]]:
     纯章名数组（prompt 2.1 输出）按无节兼容解析。"""
     prompt = get_prompt("textbook_toc_extract").text.format(text=text_head)
     try:
-        async with _LLM_SEMAPHORE:
+        async with textbook_pipeline.llm_gate():
             raw, _u = await llm.complete(
                 [{"role": "user", "content": prompt}],
                 temperature=0.0, max_tokens=2000, disable_thinking=True)
@@ -1013,7 +1050,7 @@ async def _graph_design_pass(spec: dict[str, Any], llm: Any | None,
         level=str(spec.get("level") or "")[:20],
         chapters="\n".join(lines)[:12000])
     try:
-        async with _LLM_SEMAPHORE:
+        async with textbook_pipeline.llm_gate():
             raw, _u = await llm.complete(
                 [{"role": "user", "content": prompt}],
                 temperature=0.0, max_tokens=4000, disable_thinking=True)
@@ -1140,7 +1177,7 @@ async def _skeleton_call(toc_text: str, filename_hint: str, llm: Any) -> dict[st
     """单次 LLM 调用推断 subject/level；失败时不把文件名写入 taxonomy。"""
     fallback = {"subject": "", "level": ""}
     try:
-        async with _LLM_SEMAPHORE:
+        async with textbook_pipeline.llm_gate():
             raw, _u = await llm.complete(
                 [{"role": "user", "content": _skeleton_prompt(toc_text, filename_hint)}],
                 temperature=0.0, max_tokens=2000, disable_thinking=True)
@@ -1195,7 +1232,7 @@ async def _extract_chapter_concepts(chapter: str, chapter_text: str,
         chapter=chapter[:80],
         text=_chapter_excerpt(chapter_text))
     try:
-        async with _LLM_SEMAPHORE:
+        async with textbook_pipeline.llm_gate():
             raw, _u = await llm.complete(
                 [{"role": "user", "content": prompt}],
                 temperature=0.0, max_tokens=8000, disable_thinking=True)
@@ -1379,8 +1416,8 @@ async def build_textbook_graph(student_id: str, textbook_id: str,
     tb = tb_store.find_textbook(student_id, textbook_id)
     if tb is None:
         return
-    # per-student 构建锁：同学生同时只构建一本。
-    lock = await _lock_for(student_id)
+    # per-book 构建锁：同一本书绝不并发构建（不同书可并行，见队列契约）。
+    lock = await _lock_for(student_id, textbook_id)
     async with lock:
         await _build_inner(student_id, tb, llm, ocr_parallel=ocr_parallel,
                            skip_ocr=skip_ocr, skip_harvest=skip_harvest,
@@ -1617,8 +1654,8 @@ async def build_group_graph(student_id: str, group_id: str,
     grp = tb_store.find_textbook(student_id, group_id)
     if grp is None or grp.get("kind") != "group":
         return
-    # per-student 构建锁：同学生同时只构建一个（与单教材同一把锁）。
-    lock = await _lock_for(student_id)
+    # per-book 构建锁：同一本书绝不并发构建（不同书可并行，见队列契约）。
+    lock = await _lock_for(student_id, group_id)
     async with lock:
         await _build_group_inner(student_id, grp, llm, ocr_parallel=ocr_parallel,
                                  force_reextract=force_reextract, skip_ocr=skip_ocr,
@@ -1798,19 +1835,68 @@ async def _build_group_inner(student_id: str, grp: dict[str, Any],
         coverage: list[dict[str, Any]] = []
         failed_files: list[str] = []
         degraded_files: list[str] = []
-        for done, fid in enumerate(file_ids, 1):
-            if not _record_alive(student_id, gid):
-                return
+        # 逐卷并行抽取（卷间独立：各卷有独立 .txt/OCR 状态/volume_spec 缓存）。
+        # 并发由 textbook_pipeline.volume_concurrency() 控制；legacy=1 时信号量
+        # 串行且任务按卷序创建/FIFO 准入，执行顺序与历史逐卷 for 循环一致。
+        # OCR 延迟（TextbookOCRDeferred）捕获为哨兵：兄弟卷继续完成（spec 落
+        # 缓存，重试轮零成本复用），随后在按序后处理时按原语义统一抛出。
+        from ...core.textbook_ocr import TextbookOCRDeferred
+
+        async def _extract_one(fid: str) -> dict[str, Any]:
             meta = lib.find_file(fid) or {}
             vol_title = (meta.get("filename") or fid)[:40]
-            spec, cache_status = await _load_or_extract_group_volume(
-                student_id, grp, fid, vol_title, llm, warnings,
-                ocr_parallel=ocr_parallel, force_reextract=force_reextract,
-                skip_ocr=skip_ocr, skip_harvest=skip_harvest,
-                force_full_ocr=force_full_ocr)
+            vol_warnings: list[str] = []
+            try:
+                spec, cache_status = await _load_or_extract_group_volume(
+                    student_id, grp, fid, vol_title, llm, vol_warnings,
+                    ocr_parallel=ocr_parallel, force_reextract=force_reextract,
+                    skip_ocr=skip_ocr, skip_harvest=skip_harvest,
+                    force_full_ocr=force_full_ocr)
+            except TextbookOCRDeferred as exc:
+                return {"fid": fid, "vol_title": vol_title,
+                        "warnings": vol_warnings, "spec": None,
+                        "cache_status": "", "deferred": exc}
+            return {"fid": fid, "vol_title": vol_title, "warnings": vol_warnings,
+                    "spec": spec, "cache_status": cache_status, "deferred": None}
+
+        volume_sem = asyncio.Semaphore(textbook_pipeline.volume_concurrency())
+        volumes_done = 0
+
+        async def _volume_task(fid: str) -> dict[str, Any]:
+            nonlocal volumes_done
+            async with volume_sem:
+                result = await _extract_one(fid)
+            volumes_done += 1
             tb_store.update_textbook(
                 student_id, gid,
-                progress={"stage": "chapters", "done": done, "total": len(file_ids)})
+                progress={"stage": "chapters", "done": volumes_done,
+                          "total": len(file_ids)})
+            return result
+
+        if file_ids and not _record_alive(student_id, gid):
+            return
+        volume_tasks = [asyncio.ensure_future(_volume_task(fid))
+                        for fid in file_ids]
+        try:
+            volume_results = list(await asyncio.gather(*volume_tasks))
+        except BaseException:
+            for t in volume_tasks:
+                if not t.done():
+                    t.cancel()
+            try:
+                await asyncio.gather(*volume_tasks, return_exceptions=True)
+            except BaseException:
+                pass  # 回收在途任务结果，避免未取回异常告警
+            raise
+        for done, result in enumerate(volume_results, 1):
+            if not _record_alive(student_id, gid):
+                return
+            fid = result["fid"]
+            vol_title = result["vol_title"]
+            warnings.extend(result["warnings"])
+            if result["deferred"] is not None:
+                raise result["deferred"]
+            spec, cache_status = result["spec"], result["cache_status"]
             if spec is None or not spec.get("chapters"):
                 warnings.append(f"卷「{vol_title[:30]}」文本为空或概念抽取失败，已跳过")
                 failed_files.append(fid)
@@ -2019,27 +2105,41 @@ async def _full_path_spec(student_id: str, tb_id: str, text: str, raw: bytes | N
 
     chapters_out: list[dict[str, Any]] = []
     page_ranges: dict[str, list[int]] = {}
-    for i, (ch_name, ch_text, ch_range, sections) in enumerate(slices, 1):
-        concepts = await _extract_chapter_concepts(ch_name, ch_text, eff_subject, eff_level, llm)
-        if concepts:
-            _attach_concepts_to_sections(concepts, ch_text, sections)
-            chapter_entry: dict[str, Any] = {"name": ch_name, "concepts": concepts}
-            clean_sections = [{"name": str(s.get("name") or ""),
-                                "page_range": list(s.get("page_range") or [])}
-                              for s in sections if str(s.get("name") or "").strip()]
-            if clean_sections:
-                chapter_entry["sections"] = clean_sections[:40]
-            chapters_out.append(chapter_entry)
-            if ch_range:
-                page_ranges[ch_name] = [ch_range[0], ch_range[1]]
-        else:
-            warnings.append(f"第 {i} 章「{ch_name[:20]}」概念抽取失败，已跳过")
-        updated = tb_store.update_textbook(
-            student_id, tb_id,
-            progress={"stage": "chapters", "done": i, "total": len(slices)})
-        if updated is not None and updated.get("parse_cancel_requested"):
-            from ...core.textbook_ocr import TextbookParseCancelled
-            raise TextbookParseCancelled(f"{ch_name[:20]} 抽取中终止")
+    # 逐章并行抽取：章间零依赖（每章 prompt 只依赖章名/章文本/书级
+    # subject/level，后两者在循环前已定）。并发由全局 llm_gate 限流；legacy
+    # 模式（limit=1）下 FIFO 准入顺序与历史串行 for 循环一致。结算严格按
+    # 章序进行：chapters_out/warnings/progress/取消检查点语义与串行逐项相同。
+    chapter_tasks = [asyncio.ensure_future(
+        _extract_chapter_concepts(ch_name, ch_text, eff_subject, eff_level, llm))
+        for (ch_name, ch_text, _rng, _secs) in slices]
+    try:
+        for i, ((ch_name, ch_text, ch_range, sections), task) in enumerate(
+                zip(slices, chapter_tasks), 1):
+            concepts = await task
+            if concepts:
+                _attach_concepts_to_sections(concepts, ch_text, sections)
+                chapter_entry: dict[str, Any] = {"name": ch_name, "concepts": concepts}
+                clean_sections = [{"name": str(s.get("name") or ""),
+                                    "page_range": list(s.get("page_range") or [])}
+                                  for s in sections if str(s.get("name") or "").strip()]
+                if clean_sections:
+                    chapter_entry["sections"] = clean_sections[:40]
+                chapters_out.append(chapter_entry)
+                if ch_range:
+                    page_ranges[ch_name] = [ch_range[0], ch_range[1]]
+            else:
+                warnings.append(f"第 {i} 章「{ch_name[:20]}」概念抽取失败，已跳过")
+            updated = tb_store.update_textbook(
+                student_id, tb_id,
+                progress={"stage": "chapters", "done": i, "total": len(slices)})
+            if updated is not None and updated.get("parse_cancel_requested"):
+                from ...core.textbook_ocr import TextbookParseCancelled
+                raise TextbookParseCancelled(f"{ch_name[:20]} 抽取中终止")
+    finally:
+        # 终止/异常时停掉在途章任务，不再浪费 LLM 调用（正常走完时全部已 done）。
+        for t in chapter_tasks:
+            if not t.done():
+                t.cancel()
     if not chapters_out:
         return None
     return {"subject": eff_subject, "level": eff_level, "chapters": chapters_out,

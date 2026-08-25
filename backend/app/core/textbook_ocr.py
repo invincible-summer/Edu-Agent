@@ -56,15 +56,31 @@ def _state_for(record: dict[str, Any], file_id: str) -> tuple[dict[str, Any], di
     return root, state
 
 
+def _merge_volume_state(owner_id: str, textbook_id: str, file_id: str,
+                        root: dict[str, Any], state: dict[str, Any]) -> dict[str, Any]:
+    """新鲜读-合并-写：把本卷最新 state 合并进记录当前 ocr_state。
+
+    教材组并行建卷时多卷结算并发交错：若直接写轮起止快照（root），后写者
+    会用旧快照回滚兄弟卷进度。这里每次重新读记录、只覆盖本卷键。同步函数
+    且无 await，事件循环内原子；记录已删除时退回快照兜底（写路径自会 no-op）。
+    """
+    from . import textbook as tb_store
+    rec = tb_store.find_textbook(owner_id, textbook_id)
+    fresh = dict((rec or {}).get("ocr_state") or root)
+    volumes = dict(fresh.get("volumes") or {})
+    volumes[file_id] = state
+    fresh["version"] = 1
+    fresh["volumes"] = volumes
+    fresh["updated_at"] = time.time()
+    return fresh
+
+
 def _save_state(owner_id: str, textbook_id: str, file_id: str,
                 root: dict[str, Any], state: dict[str, Any], *, status: str,
                 progress: dict[str, Any], error: str = "") -> None:
     from . import textbook as tb_store
-    volumes = dict(root.get("volumes") or {})
-    volumes[file_id] = state
-    root["volumes"] = volumes
-    root["updated_at"] = time.time()
-    tb_store.update_textbook(owner_id, textbook_id, ocr_state=root, status=status,
+    fresh = _merge_volume_state(owner_id, textbook_id, file_id, root, state)
+    tb_store.update_textbook(owner_id, textbook_id, ocr_state=fresh, status=status,
                              progress=progress, error=error)
 
 
@@ -78,29 +94,34 @@ def _valid_pages(raw: Any, total_pages: int) -> set[int]:
 
 def _write_text_and_chunks(owner_id: str, file_id: str, pages: list[str]) -> str:
     from .library import load_library, save_library, library_data_dir
+    from .rag_index import _owner_rag_lock
     from .structured_chunker import active_chunk_schema, chunk_text_for_rag
     text = "\f".join(pages)
-    lib = load_library(owner_id)
-    meta = lib.find_file(file_id)
-    if meta is None:
-        # 文件已被归档/直删：不写回，避免在磁盘上复活孤儿 .txt。
-        return text
-    if (dict(meta.get("rag_index") or {}).get("content_sha256") == _text_hash(text)):
-        # 文本与已建索引一致（零进展的等待轮/崩溃后自愈复查）：跳过全书重切块。
-        return text
-    data = library_data_dir(owner_id)
-    atomic_write_text(data / f"{file_id}.txt", text)
-    chunks = chunk_text_for_rag(text, source=str(meta.get("filename") or ""), file_id=file_id)
-    schema = active_chunk_schema()
-    meta["chunk_schema"] = schema
-    meta["rag_index"] = {"version": "rag-v2", "content_sha256": _text_hash(text),
-                         "chunk_schema": schema, "status": "bm25_ready",
-                         "chunk_count": len(chunks), "updated_at": time.time()}
-    meta["char_count"] = len(text)
-    meta["chunk_count"] = len(chunks)
-    meta["updated_at"] = time.time()
-    lib.chunks_by_file[file_id] = chunks
-    save_library(lib)
+    # library 读改写须与 RAG 重建（to_thread + _owner_rag_lock）互斥：并发
+    # 构建下两个 load→save 交错会互相丢 chunk 更新。整个 RMW 在工作线程
+    # 执行（调用方 asyncio.to_thread），不阻塞事件循环。
+    with _owner_rag_lock(owner_id):
+        lib = load_library(owner_id)
+        meta = lib.find_file(file_id)
+        if meta is None:
+            # 文件已被归档/直删：不写回，避免在磁盘上复活孤儿 .txt。
+            return text
+        if (dict(meta.get("rag_index") or {}).get("content_sha256") == _text_hash(text)):
+            # 文本与已建索引一致（零进展的等待轮/崩溃后自愈复查）：跳过全书重切块。
+            return text
+        data = library_data_dir(owner_id)
+        atomic_write_text(data / f"{file_id}.txt", text)
+        chunks = chunk_text_for_rag(text, source=str(meta.get("filename") or ""), file_id=file_id)
+        schema = active_chunk_schema()
+        meta["chunk_schema"] = schema
+        meta["rag_index"] = {"version": "rag-v2", "content_sha256": _text_hash(text),
+                             "chunk_schema": schema, "status": "bm25_ready",
+                             "chunk_count": len(chunks), "updated_at": time.time()}
+        meta["char_count"] = len(text)
+        meta["chunk_count"] = len(chunks)
+        meta["updated_at"] = time.time()
+        lib.chunks_by_file[file_id] = chunks
+        save_library(lib)
     return text
 
 
@@ -207,7 +228,7 @@ async def process_textbook_ocr_round(owner_id: str, textbook_id: str, file_id: s
         state["updated_at"] = time.time()
         # 崩溃自愈复查：若 .txt 与已建 chunk 索引不一致（进程死在逐页写之后），
         # 这里补一次重切块；一致则内部按 hash 跳过，零开销。
-        merged = _write_text_and_chunks(owner_id, file_id, page_texts)
+        merged = await asyncio.to_thread(_write_text_and_chunks, owner_id, file_id, page_texts)
         done = len(state.get("successful_pages") or [])
         total = max(1, len(state.get("target_pages") or []))
         _save_state(owner_id, textbook_id, file_id, root, state, status="building",
@@ -248,10 +269,9 @@ async def process_textbook_ocr_round(owner_id: str, textbook_id: str, file_id: s
                 "attempts": dict(attempts),
                 "updated_at": time.time(),
             })
-            root["volumes"][file_id] = state
-            root["updated_at"] = time.time()
+            fresh = _merge_volume_state(owner_id, textbook_id, file_id, root, state)
             updated = tb_store.update_textbook(
-                owner_id, textbook_id, ocr_state=root,
+                owner_id, textbook_id, ocr_state=fresh,
                 progress={"stage": "ocr", "done": len(successful), "total": total})
             alive = updated is not None
             if alive and updated.get("parse_cancel_requested"):
@@ -345,10 +365,11 @@ async def process_textbook_ocr_round(owner_id: str, textbook_id: str, file_id: s
             _save_state(owner_id, textbook_id, file_id, root, state)
             ocr_policy.set_retry_waiting(0, None, metric_key)
             return TextbookOCRRoundResult(
-                "cancelled", _write_text_and_chunks(owner_id, file_id, page_texts),
+                "cancelled",
+                await asyncio.to_thread(_write_text_and_chunks, owner_id, file_id, page_texts),
                 state)
 
-    merged_text = _write_text_and_chunks(owner_id, file_id, page_texts)
+    merged_text = await asyncio.to_thread(_write_text_and_chunks, owner_id, file_id, page_texts)
     state.update({
         "successful_pages": sorted(successful), "pending_pages": sorted(failures),
         "paused_pages": sorted(paused), "empty_pages": sorted(empty_pages),

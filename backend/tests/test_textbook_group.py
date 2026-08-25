@@ -229,6 +229,93 @@ class TestGroupBuild(unittest.TestCase):
         self.assertEqual(kgs_mod.load_custom_graph("stu1", grp["topic_key"])["version"], 2)
 
 
+class TestGroupParallelVolumes(unittest.TestCase):
+    """组内多卷并行：卷间重叠抽取 + 按卷序后处理（chapter_order / subject
+    首卷优先），OCR 延迟卷不阻断兄弟卷（其 spec 落缓存，重试轮复用）。"""
+
+    def setUp(self):
+        self._s = _TmpStore()
+        self._s.setUp()
+        from app.core import textbook_pipeline
+        self._pipeline = textbook_pipeline
+        self._old_policy = textbook_pipeline._RUNTIME.policy
+        textbook_pipeline._RUNTIME.policy = {
+            "mode": "parallel", "build_concurrency": 2, "volume_concurrency": 2,
+            "llm_concurrency": 4, "updated_at": 0.0, "version": 1}
+
+    def tearDown(self):
+        self._pipeline._RUNTIME.policy = self._old_policy
+        self._s.tearDown()
+
+    def test_volumes_overlap_and_merge_in_order(self):
+        from app.agents.knowledge import textbook_builder
+        _seed_volume("stu1", "f1", "力学.pdf", "速度内容。" * 10)
+        _seed_volume("stu1", "f2", "电磁.pdf", "加速度内容。" * 10)
+        grp = tb_mod.create_group("stu1", file_ids=["f1", "f2"], title="大物")
+        active = 0
+        peak = 0
+
+        async def fake_volume_spec(student_id, rec_id, file_id, title, level,
+                                   llm, warnings, **kw):
+            nonlocal active, peak
+            active += 1
+            peak = max(peak, active)
+            await asyncio.sleep(0.08)
+            active -= 1
+            concepts = ([{"name": "速度", "difficulty": 2}] if file_id == "f1" else
+                        [{"name": "加速度", "difficulty": 3, "prerequisites": ["速度"]}])
+            return ("正文", {"subject": "物理甲" if file_id == "f1" else "物理乙",
+                            "level": "本科",
+                            "chapters": [{"name": "第一章", "concepts": concepts}]})
+
+        async def drive():
+            with patch.object(textbook_builder, "_volume_spec",
+                              side_effect=fake_volume_spec):
+                await textbook_builder.build_group_graph("stu1", grp["id"], object())
+        asyncio.run(drive())
+        out = tb_mod.find_textbook("stu1", grp["id"])
+        self.assertEqual(out["status"], "ready")
+        self.assertEqual(peak, 2)  # 两卷确实同时抽取
+        self.assertEqual(out["subject"], "物理甲")  # 首卷 subject 优先（按序后处理）
+        payload = kgs_mod.load_custom_graph("stu1", grp["topic_key"])
+        by_vol = {c.get("metadata", {}).get("volume_id"):
+                  c.get("metadata", {}).get("chapter_order")
+                  for c in payload["nodes"] if c.get("kind") == "chapter"}
+        # 卷序排序键不受并行影响
+        self.assertEqual(by_vol, {"f1": 1001, "f2": 2001})
+
+    def test_deferred_volume_lets_siblings_finish(self):
+        from app.agents.knowledge import textbook_builder
+        from app.core.textbook_ocr import TextbookOCRDeferred
+        _seed_volume("stu1", "f1", "力学.pdf", "速度内容。" * 10)
+        _seed_volume("stu1", "f2", "电磁.pdf", "加速度内容。" * 10)
+        grp = tb_mod.create_group("stu1", file_ids=["f1", "f2"], title="大物")
+        seen: list[str] = []
+
+        async def fake_volume_spec(student_id, rec_id, file_id, title, level,
+                                   llm, warnings, **kw):
+            seen.append(file_id)
+            await asyncio.sleep(0.02)
+            if file_id == "f2":
+                raise TextbookOCRDeferred("waiting")
+            return ("正文", {"subject": "物理", "level": "本科",
+                            "chapters": [{"name": "第一章",
+                                          "concepts": [{"name": "速度", "difficulty": 2}]}]})
+
+        async def drive():
+            with patch.object(textbook_builder, "_volume_spec",
+                              side_effect=fake_volume_spec):
+                await textbook_builder.build_group_graph("stu1", grp["id"], object())
+        asyncio.run(drive())
+        # 两卷都被抽取（延迟不阻断兄弟卷）；f1 spec 落缓存供重试轮复用。
+        self.assertEqual(sorted(seen), ["f1", "f2"])
+        self.assertIsNotNone(kgs_mod.load_volume_spec("stu1", grp["topic_key"], "f1"))
+        self.assertIsNone(kgs_mod.load_volume_spec("stu1", grp["topic_key"], "f2"))
+        out = tb_mod.find_textbook("stu1", grp["id"])
+        # 延迟 ≠ 失败：不落 graph_failed（真实流程中状态由 OCR 轮置 ocr_waiting）。
+        self.assertNotEqual(out["status"], "graph_failed")
+
+
 class TestHarvestModeContract(unittest.TestCase):
     """刷新模式清理契约：graph_only 不得经原生收割改写 .txt（RAG 事实源与
     索引完全不动）；rag_graph/full_ocr 才允许收割并入表格/插图标记。"""

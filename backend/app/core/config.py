@@ -171,6 +171,18 @@ class Settings:
     # 1 = 串行（旧行为）；用户可在账户资料 prefs.ocr_parallel 逐人覆盖开关。
     pdf_ocr_concurrency: int = int(os.getenv("PDF_OCR_CONCURRENCY", "20"))
 
+    # 教材解析流水线调度（仅改执行顺序，不改解析方式/产出）。策略文件
+    # chat_history/settings/textbook_pipeline_policy.json 优先生效，此处为
+    # 文件缺失时的默认值；管理员可经 /admin/textbook-pipeline 在线调整。
+    #   legacy = 原有严格串行（所有有效并发强制 1，与历史行为完全一致）。
+    textbook_parse_mode: str = os.getenv("TEXTBOOK_PARSE_MODE", "parallel").strip().lower()
+    # 同一 owner（学生/公共命名空间）同时在构建的教材数。
+    textbook_build_concurrency: int = int(os.getenv("TEXTBOOK_BUILD_CONCURRENCY", "2"))
+    # 教材组内并行处理的卷数。
+    textbook_volume_concurrency: int = int(os.getenv("TEXTBOOK_VOLUME_CONCURRENCY", "2"))
+    # 图谱 LLM 调用（目录/骨架/逐章概念/图谱设计）全局并发上限。
+    textbook_llm_concurrency: int = int(os.getenv("TEXTBOOK_LLM_CONCURRENCY", "4"))
+
     # Traces
     trace_dir: str = _resolve_trace_dir()
 

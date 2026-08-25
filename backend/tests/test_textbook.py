@@ -591,6 +591,90 @@ class TestBuildPipeline(unittest.TestCase):
         self.assertEqual(kgs.load_custom_graph("stu1", rec["topic_key"])["version"], 2)
 
 
+class TestParallelChapterExtraction(unittest.TestCase):
+    """逐章并行抽取：结算严格按章序（chapters_out 与串行一致），并发由
+    textbook_pipeline.llm_gate 限流；legacy 模式峰值=1 且准入顺序即章序。"""
+
+    def setUp(self):
+        self._s = _TmpStore()
+        self._s.setUp()
+        from app.core import textbook_pipeline
+        self._pipeline = textbook_pipeline
+        self._old_policy = textbook_pipeline._RUNTIME.policy
+
+    def tearDown(self):
+        self._pipeline._RUNTIME.policy = self._old_policy
+        self._s.tearDown()
+
+    def _build(self, mode: str, llm_limit: int):
+        """跑一次 _full_path_spec；返回 (spec, 峰值并发, 章调用准入序, 章名顺序)。"""
+        from app.core import textbook as tb
+        from app.agents.knowledge import textbook_builder
+
+        self._pipeline._RUNTIME.policy = {
+            "mode": mode, "build_concurrency": 2, "volume_concurrency": 2,
+            "llm_concurrency": llm_limit, "updated_at": 0.0, "version": 1}
+        rec = tb.create_textbook("stu1", file_id="f1", title="大教材")
+        n = 10
+        slices = [(f"第{i}章", f"第{i}章的正文知识点内容。" * 40, (i, i + 1), [])
+                  for i in range(1, n + 1)]
+
+        class TrackLLM:
+            def __init__(self):
+                self.active = 0
+                self.peak = 0
+                self.admitted: list[int] = []
+
+            async def complete(self, messages, **kw):
+                prompt = messages[0]["content"]
+                if "核心知识点" not in prompt:
+                    if "subject" in prompt and "level" in prompt:
+                        return ('{"subject": "数学", "level": "本科"}', {})
+                    return ("{}", {})
+                idx = next(i for i in range(1, n + 1)
+                           if f"第{i}章的正文知识点内容" in prompt)
+                llm.active += 1
+                llm.peak = max(llm.peak, llm.active)
+                llm.admitted.append(idx)
+                # 反序延迟：后面的章先完成，检验结算仍按章序。
+                await asyncio.sleep((n - idx) * 0.008)
+                llm.active -= 1
+                return ('{"concepts": [{"name": "C%02d", "difficulty": 2}]}' % idx, {})
+
+        llm = TrackLLM()
+
+        async def fake_extract_chapters(text, raw, llm_arg, volume_hint=""):
+            return slices, "目录文本"
+
+        async def drive():
+            with patch.object(textbook_builder, "extract_chapters",
+                              side_effect=fake_extract_chapters):
+                return await textbook_builder._full_path_spec(
+                    "stu1", rec["id"], "x" * 30, None, "书.pdf", llm, [])
+        spec = asyncio.run(drive())
+        return spec, llm.peak, llm.admitted
+
+    def test_parallel_mode_preserves_order_and_overlaps(self):
+        spec, peak, admitted = self._build("parallel", 4)
+        self.assertIsNotNone(spec)
+        # 结算严格按章序：概念与章一一对应（完成顺序被人为打乱仍不乱序）。
+        self.assertEqual([c["name"] for c in spec["chapters"]],
+                         [f"第{i}章" for i in range(1, 11)])
+        self.assertEqual([c["concepts"][0]["name"] for c in spec["chapters"]],
+                         [f"C{i:02d}" for i in range(1, 11)])
+        self.assertGreaterEqual(peak, 2)   # 确实并行
+        self.assertLessEqual(peak, 4)      # 门限生效
+
+    def test_legacy_mode_is_strictly_serial(self):
+        spec, peak, admitted = self._build("legacy", 4)
+        self.assertIsNotNone(spec)
+        self.assertEqual([c["concepts"][0]["name"] for c in spec["chapters"]],
+                         [f"C{i:02d}" for i in range(1, 11)])
+        self.assertEqual(peak, 1)
+        # FIFO 准入顺序 == 任务创建顺序 == 章序（与历史串行 for 循环一致）。
+        self.assertEqual(admitted, list(range(1, 11)))
+
+
 class TestTextbookOutline(unittest.TestCase):
     def setUp(self):
         self._s = _TmpStore()
