@@ -1,0 +1,6321 @@
+{
+  "file_id": "09cad87bbe15",
+  "text_sha256": "8a8624db6b4e531a817d5861e588f3319e77cadb0714f5601cbf0f7bfce0ee98",
+  "prompt_version": "knowledge_graph_build@2.0.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.2.0+textbook_graph_design@1.0.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "物理",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "标题",
+        "concepts": [
+          {
+            "name": "电子伏特",
+            "difficulty": 1,
+            "description": "表示微观粒子能量的常用单位",
+            "aliases": [
+              "eV"
+            ],
+            "prerequisites": [],
+            "definition": "电子伏特是电子通过一伏特电势差获得的能量。",
+            "example": "1 eV等于1.602189×10^-19 J"
+          },
+          {
+            "name": "直角坐标系",
+            "difficulty": 1,
+            "description": "以x、y、z为坐标轴的坐标系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "直角坐标系用三个相互垂直的坐标轴描述空间位置。",
+            "example": "用(x,y,z)表示空间点"
+          },
+          {
+            "name": "柱坐标系",
+            "difficulty": 2,
+            "description": "以ρ、φ、z描述空间位置的坐标系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "柱坐标系用径向距离、方位角和高度描述空间位置。",
+            "example": "用(ρ,φ,z)表示圆柱内一点"
+          },
+          {
+            "name": "球坐标系",
+            "difficulty": 2,
+            "description": "以r、θ、φ描述空间位置的坐标系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "球坐标系用径向距离和两个角度描述空间位置。",
+            "example": "用(r,θ,φ)表示球内一点"
+          },
+          {
+            "name": "标量场",
+            "difficulty": 2,
+            "description": "空间各点对应一个标量的场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "标量场是由空间坐标决定的标量函数。",
+            "example": "U=U(x,y,z)"
+          },
+          {
+            "name": "矢量场",
+            "difficulty": 2,
+            "description": "空间各点对应一个矢量的场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "矢量场是由空间坐标决定的矢量函数。",
+            "example": "A=A_xe_x+A_ye_y+A_ze_z"
+          },
+          {
+            "name": "梯度",
+            "difficulty": 2,
+            "description": "描述标量场空间变化率的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "标量场"
+            ],
+            "definition": "梯度是标量场对空间坐标各方向偏导数组成的矢量。",
+            "example": "∇U给出U增长最快方向"
+          },
+          {
+            "name": "拉普拉斯算子",
+            "difficulty": 3,
+            "description": "由二阶空间导数组成的微分算子",
+            "aliases": [
+              "Δ"
+            ],
+            "prerequisites": [
+              "标量场",
+              "梯度"
+            ],
+            "definition": "拉普拉斯算子是标量场各坐标方向二阶导数之和。",
+            "example": "ΔU=∂²U/∂x²+∂²U/∂y²+∂²U/∂z²"
+          },
+          {
+            "name": "散度",
+            "difficulty": 3,
+            "description": "描述矢量场源汇性质的标量",
+            "aliases": [
+              "∇·A"
+            ],
+            "prerequisites": [
+              "矢量场"
+            ],
+            "definition": "散度是矢量场各分量沿对应坐标方向偏导数之和。",
+            "example": "∇·A表示单位体积净流出"
+          },
+          {
+            "name": "旋度",
+            "difficulty": 3,
+            "description": "描述矢量场局部旋转性质的矢量",
+            "aliases": [
+              "∇×A"
+            ],
+            "prerequisites": [
+              "矢量场"
+            ],
+            "definition": "旋度是矢量场局部旋转程度和旋转轴方向的矢量量。",
+            "example": "∇×A表示场的局部旋转"
+          },
+          {
+            "name": "矢量微积分恒等式",
+            "difficulty": 3,
+            "description": "梯度、散度和旋度间的运算关系",
+            "aliases": [],
+            "prerequisites": [
+              "梯度",
+              "散度",
+              "旋度",
+              "拉普拉斯算子"
+            ],
+            "definition": "矢量微积分恒等式给出多种微分运算的恒定关系。",
+            "example": "∇×(∇U)=0"
+          },
+          {
+            "name": "轨道角动量",
+            "difficulty": 4,
+            "description": "由位置矢量和梯度算子定义的量",
+            "aliases": [
+              "L"
+            ],
+            "prerequisites": [
+              "矢量微积分恒等式"
+            ],
+            "definition": "轨道角动量由L=(ℏ/i)r×∇定义。",
+            "example": "L=(ℏ/i)r×∇"
+          },
+          {
+            "name": "球坐标拉普拉斯式",
+            "difficulty": 4,
+            "description": "拉普拉斯算子在球坐标中的表达式",
+            "aliases": [],
+            "prerequisites": [
+              "球坐标系",
+              "拉普拉斯算子"
+            ],
+            "definition": "球坐标拉普拉斯式将拉普拉斯算子写成r、θ、φ的偏导形式。",
+            "example": "含径向、极角和方位角三部分"
+          },
+          {
+            "name": "玻尔半径",
+            "difficulty": 2,
+            "description": "原子尺度的重要长度常数",
+            "aliases": [
+              "a₀"
+            ],
+            "prerequisites": [
+              "精细结构常数"
+            ],
+            "definition": "玻尔半径定义为电子康普顿波长除以精细结构常数。",
+            "example": "a₀≈0.529 Å"
+          },
+          {
+            "name": "精细结构常数",
+            "difficulty": 3,
+            "description": "表征电磁相互作用强度的无量纲常数",
+            "aliases": [
+              "α"
+            ],
+            "prerequisites": [
+              "普朗克常量"
+            ],
+            "definition": "精细结构常数定义为q²/(4πε₀ℏc)。",
+            "example": "α≈1/137.036"
+          },
+          {
+            "name": "玻尔磁子",
+            "difficulty": 3,
+            "description": "电子磁矩的常用磁矩单位",
+            "aliases": [
+              "μ_B"
+            ],
+            "prerequisites": [
+              "普朗克常量"
+            ],
+            "definition": "玻尔磁子定义为qℏ/(2m_e)。",
+            "example": "μ_B≈−9.27408×10^-24 J/T"
+          },
+          {
+            "name": "普朗克常量",
+            "difficulty": 1,
+            "description": "联系能量与频率的基本物理常量",
+            "aliases": [
+              "h",
+              "ℏ"
+            ],
+            "prerequisites": [],
+            "definition": "普朗克常量通过E=hν联系量子能量与频率。",
+            "example": "ℏ=h/(2π)"
+          }
+        ]
+      },
+      {
+        "name": "使用说明",
+        "concepts": [
+          {
+            "name": "正文",
+            "difficulty": 2,
+            "description": "本书讲述物理学基本概念的主体部分",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "正文是全书中系统讲述物理学基本概念的部分。",
+            "example": "读者可脱离补充材料单独学习十四章正文"
+          },
+          {
+            "name": "补充材料",
+            "difficulty": 2,
+            "description": "正文之后编排的辅助、应用与练习材料",
+            "aliases": [],
+            "prerequisites": [
+              "正文"
+            ],
+            "definition": "补充材料是用于理解正文、深化问题、介绍应用或提供练习的内容。",
+            "example": "某篇材料专门简述一个具体物理应用"
+          },
+          {
+            "name": "补充材料目录",
+            "difficulty": 2,
+            "description": "列出各章补充材料并附有评述的目录",
+            "aliases": [],
+            "prerequisites": [
+              "补充材料"
+            ],
+            "definition": "补充材料目录按字母和章号标记材料，并通过评述提供阅读参考。",
+            "example": "第V章材料可标记为A_V、B_V"
+          },
+          {
+            "name": "选读原则",
+            "difficulty": 3,
+            "description": "根据需要和兴趣少量选择补充材料阅读",
+            "aliases": [],
+            "prerequisites": [
+              "补充材料"
+            ],
+            "definition": "选读原则是不必按顺序读完补充材料，而应按需要和兴趣选读。",
+            "example": "先选两三篇材料并完成几个练习"
+          },
+          {
+            "name": "补充材料分层",
+            "difficulty": 3,
+            "description": "补充材料在难度和用途上具有不同层次",
+            "aliases": [],
+            "prerequisites": [
+              "补充材料"
+            ],
+            "definition": "补充材料既有简单应用或推广，也有较困难甚至研究生水平的内容。",
+            "example": "学完正文后再尝试较困难的材料"
+          },
+          {
+            "name": "小字段落",
+            "difficulty": 1,
+            "description": "初学阶段可以暂时跳过的正文或补充段落",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "小字排印的段落表示初学时可以暂不阅读的内容。",
+            "example": "第一次学习时可先跳过小字段落"
+          }
+        ]
+      },
+      {
+        "name": "作者简介",
+        "concepts": [
+          {
+            "name": "光抽运",
+            "difficulty": 3,
+            "description": "利用光照射改变原子或离子内部状态的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光抽运是通过光与原子或离子相互作用改变其状态分布的方法。",
+            "example": "卡斯特勒因发展光抽运方法获得诺贝尔物理学奖。"
+          },
+          {
+            "name": "物质与辐射相互作用",
+            "difficulty": 3,
+            "description": "研究物质与辐射之间相互影响的物理方向",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质与辐射相互作用是研究辐射影响物质及物质响应辐射的物理过程。",
+            "example": "科昂-塔努季的研究方向包括物质与辐射的相互作用。"
+          },
+          {
+            "name": "强相互作用",
+            "difficulty": 3,
+            "description": "研究粒子之间强相互作用的理论领域",
+            "aliases": [
+              "粒子间强相互作用"
+            ],
+            "prerequisites": [],
+            "definition": "强相互作用是理论高能物理中研究粒子间相互作用的研究对象。",
+            "example": "迪吕主要从事粒子间强相互作用的理论研究。"
+          },
+          {
+            "name": "激光冷却",
+            "difficulty": 3,
+            "description": "利用激光作用降低原子运动状态的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "激光冷却是利用激光与原子相互作用来降低原子运动状态的方法。",
+            "example": "科昂-塔努季因发展激光冷却方法获诺贝尔奖。"
+          },
+          {
+            "name": "原子陷俘",
+            "difficulty": 3,
+            "description": "利用物理方法限制并保持原子运动的方法",
+            "aliases": [
+              "陷俘原子"
+            ],
+            "prerequisites": [],
+            "definition": "原子陷俘是利用相关物理方法将原子限制在一定区域内的技术。",
+            "example": "科昂-塔努季的获奖工作包括陷俘原子的方法。"
+          },
+          {
+            "name": "稀有气体光抽运",
+            "difficulty": 3,
+            "description": "稀有气体原子和离子的光抽运研究",
+            "aliases": [],
+            "prerequisites": [
+              "光抽运"
+            ],
+            "definition": "稀有气体光抽运是针对稀有气体原子和离子开展的光抽运研究。",
+            "example": "拉卢的研究贡献主要是稀有气体原子和离子的光抽运。"
+          }
+        ]
+      },
+      {
+        "name": "译者序",
+        "concepts": [
+          {
+            "name": "学生读者定位",
+            "difficulty": 1,
+            "description": "教材面向学生，重视详细叙述与完整推演",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "学生读者定位是以学生理解和学习需要为中心组织教材内容。",
+            "example": "教材尽量不省略推演步骤，并提出学习方法建议"
+          },
+          {
+            "name": "内容分层编排",
+            "difficulty": 2,
+            "description": "将基本内容与补充材料分开安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "内容分层编排是把核心知识和扩展材料分别组织，以适应不同学习需求。",
+            "example": "初学者先掌握基本内容，其他读者可选学补充材料"
+          },
+          {
+            "name": "态空间",
+            "difficulty": 3,
+            "description": "量子力学引论后优先讲授的数学工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "态空间是教材在量子力学引论之后引入的核心数学表述工具。",
+            "example": "学习量子力学时先掌握态空间的表述"
+          },
+          {
+            "name": "狄拉克符号",
+            "difficulty": 3,
+            "description": "量子力学中尽早掌握的符号工具",
+            "aliases": [
+              "狄拉克记号"
+            ],
+            "prerequisites": [],
+            "definition": "狄拉克符号是教材用于表达量子力学状态及相关关系的符号体系。",
+            "example": "在基础内容学习初期使用狄拉克符号表示状态"
+          }
+        ]
+      },
+      {
+        "name": "第二版序言",
+        "concepts": [
+          {
+            "name": "第二版修订",
+            "difficulty": 1,
+            "description": "第二版对原文、段落和印刷错误进行了修订",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "第二版修订是对第一版内容和编排进行更正与改写。",
+            "example": "改正印刷错误并重写部分段落"
+          },
+          {
+            "name": "英法文本同步出版",
+            "difficulty": 1,
+            "description": "第二版英文和法文文本同时出版",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "英法文本同步出版是指同一版次的英文与法文文本同时发行。",
+            "example": "第二版英、法文本同时出版"
+          },
+          {
+            "name": "参考书目",
+            "difficulty": 1,
+            "description": "各卷末附有较为详尽的相关书目",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "参考书目是按照主题或内容整理的相关著作清单。",
+            "example": "每卷末附上详细参考书目"
+          },
+          {
+            "name": "阅读建议",
+            "difficulty": 1,
+            "description": "引导读者查阅相关参考著作",
+            "aliases": [
+              "阅读指南"
+            ],
+            "prerequisites": [
+              "参考书目"
+            ],
+            "definition": "阅读建议是针对参考书目提出的查阅和阅读指引。",
+            "example": "各章末建议读者阅读相关著作"
+          },
+          {
+            "name": "读者反馈",
+            "difficulty": 1,
+            "description": "作者从读者评论和纠错中获得教益",
+            "aliases": [
+              "读者评论"
+            ],
+            "prerequisites": [],
+            "definition": "读者反馈是读者对教材内容提出的评论、意见或错误指正。",
+            "example": "读者指出第一版中的错误"
+          },
+          {
+            "name": "编辑协助",
+            "difficulty": 1,
+            "description": "相关人员协助英文版编辑和参考书目编制",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "编辑协助是他人参与文本编辑或资料整理等出版工作的支持。",
+            "example": "图书管理员协助编制参考书目"
+          }
+        ]
+      },
+      {
+        "name": "第八章 势场中的散射的初等量子理论",
+        "concepts": [
+          {
+            "name": "弹性散射",
+            "difficulty": 1,
+            "description": "碰撞后粒子种类和内部状态均不变的散射",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "弹性散射是碰撞后入射粒子与靶粒子的内部状态均未发生变化的散射。",
+            "example": "无内部激发的粒子势场散射"
+          },
+          {
+            "name": "约化质量",
+            "difficulty": 2,
+            "description": "将两粒子相互作用化为相对粒子质量",
+            "aliases": [
+              "相对质量"
+            ],
+            "prerequisites": [],
+            "definition": "约化质量是两粒子质量满足倒数相加关系的等效质量。",
+            "example": "1/μ=1/m₁+1/m₂"
+          },
+          {
+            "name": "中心势场",
+            "difficulty": 2,
+            "description": "只依赖粒子与散射中心距离的势场",
+            "aliases": [
+              "中心场"
+            ],
+            "prerequisites": [],
+            "definition": "中心势场是势能仅依赖径向距离r而与方向无关的势场。",
+            "example": "V(r)形式的散射势"
+          },
+          {
+            "name": "有效截面",
+            "difficulty": 2,
+            "description": "表征粒子被散射到指定方向概率的面积量",
+            "aliases": [
+              "散射截面"
+            ],
+            "prerequisites": [
+              "弹性散射"
+            ],
+            "definition": "有效截面是散射粒子数与入射通量和立体角之比。",
+            "example": "dn=Fiσ(θ,φ)dΩ"
+          },
+          {
+            "name": "微分散射截面",
+            "difficulty": 2,
+            "description": "单位立体角方向上的散射有效截面",
+            "aliases": [
+              "微分有效截面"
+            ],
+            "prerequisites": [
+              "有效截面"
+            ],
+            "definition": "微分散射截面是特定方向单位立体角对应的有效截面。",
+            "example": "σ(θ,φ)=dn/(Fi dΩ)"
+          },
+          {
+            "name": "总散射截面",
+            "difficulty": 2,
+            "description": "对所有散射方向积分得到的有效截面",
+            "aliases": [
+              "总有效截面"
+            ],
+            "prerequisites": [
+              "微分散射截面"
+            ],
+            "definition": "总散射截面是微分散射截面对全部立体角的积分。",
+            "example": "σ=∫σ(θ,φ)dΩ"
+          },
+          {
+            "name": "散射定态",
+            "difficulty": 3,
+            "description": "满足入射波与出射散射波边界条件的定态",
+            "aliases": [
+              "散射稳态"
+            ],
+            "prerequisites": [
+              "中心势场"
+            ],
+            "definition": "散射定态是哈密顿算符本征态中具有规定入射和出射渐近行为的解。",
+            "example": "ψ≈e^{ikz}+f(θ,φ)e^{ikr}/r"
+          },
+          {
+            "name": "散射振幅",
+            "difficulty": 3,
+            "description": "描述散射波方向依赖性的复振幅",
+            "aliases": [
+              "振幅f"
+            ],
+            "prerequisites": [
+              "散射定态"
+            ],
+            "definition": "散射振幅是散射定态渐近形式中出射波的方向依赖系数。",
+            "example": "f_k(θ,φ)决定散射角分布"
+          },
+          {
+            "name": "概率流",
+            "difficulty": 3,
+            "description": "描述量子概率输运方向和强度的物理量",
+            "aliases": [
+              "概率流密度"
+            ],
+            "prerequisites": [
+              "散射定态"
+            ],
+            "definition": "概率流是与波函数相联系、用于计算入射和散射通量的量。",
+            "example": "比较入射流与散射流求截面"
+          },
+          {
+            "name": "散射渐近形式",
+            "difficulty": 3,
+            "description": "远离势场时定态波函数的入射出射表达式",
+            "aliases": [
+              "渐近行为"
+            ],
+            "prerequisites": [
+              "散射定态",
+              "散射振幅"
+            ],
+            "definition": "散射渐近形式是在远离势场处将波函数写成平面波与出射球面波之和。",
+            "example": "e^{ikz}+f(θ)e^{ikr}/r"
+          },
+          {
+            "name": "散射积分方程",
+            "difficulty": 4,
+            "description": "由自由传播和势场作用表示散射态的方程",
+            "aliases": [
+              "积分方程"
+            ],
+            "prerequisites": [
+              "散射定态"
+            ],
+            "definition": "散射积分方程用自由粒子传播核和势函数积分表示散射定态。",
+            "example": "由格林函数构造散射波"
+          },
+          {
+            "name": "玻恩近似",
+            "difficulty": 3,
+            "description": "弱势场下用未扰动平面波近似散射态",
+            "aliases": [
+              "Born近似"
+            ],
+            "prerequisites": [
+              "散射积分方程",
+              "散射振幅"
+            ],
+            "definition": "玻恩近似是在势场较弱时用积分方程的一阶近似求散射振幅。",
+            "example": "汤川势弱作用下计算散射截面"
+          },
+          {
+            "name": "平面波",
+            "difficulty": 2,
+            "description": "动量完全确定的自由粒子定态",
+            "aliases": [
+              "自由平面波"
+            ],
+            "prerequisites": [],
+            "definition": "平面波是自由粒子动量确定时具有空间均匀相位梯度的定态波函数。",
+            "example": "e^{ikz}表示沿z轴入射"
+          },
+          {
+            "name": "自由球面波",
+            "difficulty": 3,
+            "description": "角动量完全确定的自由粒子定态波",
+            "aliases": [
+              "球面波"
+            ],
+            "prerequisites": [
+              "平面波"
+            ],
+            "definition": "自由球面波是自由粒子角动量量子数确定时的球坐标定态波。",
+            "example": "径向函数与球谐函数的乘积"
+          },
+          {
+            "name": "分波",
+            "difficulty": 3,
+            "description": "中心势中角动量确定的定态波",
+            "aliases": [
+              "部分波"
+            ],
+            "prerequisites": [
+              "中心势场",
+              "自由球面波"
+            ],
+            "definition": "分波是中心势场中具有确定角动量量子数的定态。",
+            "example": "s波对应l=0，p波对应l=1"
+          },
+          {
+            "name": "分波法",
+            "difficulty": 4,
+            "description": "按角动量分解散射态并逐波求相移的方法",
+            "aliases": [
+              "部分波法"
+            ],
+            "prerequisites": [
+              "分波",
+              "相移"
+            ],
+            "definition": "分波法是将散射定态展开为不同角动量分波并用其相移计算截面的方法。",
+            "example": "中心场散射中逐个求解径向方程"
+          },
+          {
+            "name": "径向方程",
+            "difficulty": 4,
+            "description": "中心势中描述分波径向运动的微分方程",
+            "aliases": [
+              "分波径向方程"
+            ],
+            "prerequisites": [
+              "分波",
+              "中心势场"
+            ],
+            "definition": "径向方程是分离角变量后决定各角动量分波径向函数的方程。",
+            "example": "由径向方程求δ_l"
+          },
+          {
+            "name": "相移",
+            "difficulty": 4,
+            "description": "势场使分波相对自由球面波产生的相位差",
+            "aliases": [
+              "相位移",
+              "δ_l"
+            ],
+            "prerequisites": [
+              "分波",
+              "自由球面波",
+              "径向方程"
+            ],
+            "definition": "相移是势场中分波相对于同角动量自由球面波的渐近相位改变。",
+            "example": "u_l≈sin(kr-lπ/2+δ_l)"
+          },
+          {
+            "name": "分波截面公式",
+            "difficulty": 4,
+            "description": "用各角动量分波相移表示散射截面的公式",
+            "aliases": [
+              "相移截面公式"
+            ],
+            "prerequisites": [
+              "相移",
+              "有效截面"
+            ],
+            "definition": "分波截面公式将微分和总散射截面表示为各分波相移的函数。",
+            "example": "σ=4π/k²∑(2l+1)sin²δ_l"
+          },
+          {
+            "name": "散射共振",
+            "difficulty": 4,
+            "description": "相移接近π/2时有效截面出现尖锐极大",
+            "aliases": [
+              "共振"
+            ],
+            "prerequisites": [
+              "相移",
+              "总散射截面"
+            ],
+            "definition": "散射共振是某分波相移随能量变化并经过π/2时截面显著增强的现象。",
+            "example": "势阱中低能s波共振"
+          },
+          {
+            "name": "光学定理",
+            "difficulty": 4,
+            "description": "总截面与正前方振幅虚部的普遍关系",
+            "aliases": [
+              "总截面定理"
+            ],
+            "prerequisites": [
+              "总散射截面",
+              "散射振幅"
+            ],
+            "definition": "光学定理表明总有效截面等于正前方散射振幅虚部乘以4π/k。",
+            "example": "σ_tot=(4π/k)Im f_k(0)"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第八章提纲",
+            "page_range": [
+              21,
+              21
+            ]
+          },
+          {
+            "name": "A.引言",
+            "page_range": [
+              22,
+              25
+            ]
+          },
+          {
+            "name": "B.散射定态；有效载面的计算",
+            "page_range": [
+              26,
+              38
+            ]
+          },
+          {
+            "name": "C.中心场中的散射；分波法",
+            "page_range": [
+              39,
+              52
+            ]
+          },
+          {
+            "name": "第八章补充材料",
+            "page_range": [
+              53,
+              79
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第九章 电子的自旋",
+        "concepts": [
+          {
+            "name": "电子自旋",
+            "difficulty": 2,
+            "description": "电子具有的内禀角动量自由度。",
+            "aliases": [
+              "自旋"
+            ],
+            "prerequisites": [
+              "角动量"
+            ],
+            "definition": "电子自旋是电子固有的角动量，不由位置或动量变量导出。",
+            "example": "电子的自旋量子数为1/2。"
+          },
+          {
+            "name": "谱线精细结构",
+            "difficulty": 2,
+            "description": "一条谱线分裂为多个近邻组分。",
+            "aliases": [
+              "精细结构"
+            ],
+            "prerequisites": [
+              "原子能级"
+            ],
+            "definition": "谱线精细结构是原子谱线包含频率非常接近的多个组分。",
+            "example": "氢原子共振线表现为双线。"
+          },
+          {
+            "name": "反常塞曼效应",
+            "difficulty": 3,
+            "description": "磁场中谱线出现不能由轨道角动量解释的分裂。",
+            "aliases": [
+              "反常塞曼效应"
+            ],
+            "prerequisites": [
+              "塞曼效应",
+              "轨道角动量"
+            ],
+            "definition": "反常塞曼效应是原子谱线在磁场中的分裂数目和间隔无法由轨道角动量理论定量解释的现象。",
+            "example": "奇数原子的能级可分裂为偶数个次能级。"
+          },
+          {
+            "name": "半整数角动量",
+            "difficulty": 3,
+            "description": "角动量量子数取半整数值的现象。",
+            "aliases": [
+              "半整数自旋"
+            ],
+            "prerequisites": [
+              "角动量"
+            ],
+            "definition": "半整数角动量是角动量量子数取1/2、3/2等半整数值的角动量。",
+            "example": "银原子束分裂为两个对称斑点。"
+          },
+          {
+            "name": "施特恩格拉赫实验",
+            "difficulty": 2,
+            "description": "利用非均匀磁场观察原子束分裂的实验。",
+            "aliases": [
+              "施特恩—格拉赫实验"
+            ],
+            "prerequisites": [
+              "磁矩",
+              "角动量"
+            ],
+            "definition": "施特恩—格拉赫实验通过磁矩与非均匀磁场的相互作用观察粒子束分裂。",
+            "example": "银原子束分成两个斑点。"
+          },
+          {
+            "name": "内禀磁矩",
+            "difficulty": 3,
+            "description": "与粒子自旋相联系的固有磁矩。",
+            "aliases": [
+              "自旋磁矩"
+            ],
+            "prerequisites": [
+              "电子自旋",
+              "旋磁比"
+            ],
+            "definition": "内禀磁矩是由粒子自旋产生并与其自旋角动量相联系的磁矩。",
+            "example": "电子自旋磁矩满足M_S=2μ_BS/ℏ。"
+          },
+          {
+            "name": "泡利理论",
+            "difficulty": 3,
+            "description": "在非相对论量子力学中描述自旋的理论。",
+            "aliases": [
+              "泡利自旋理论"
+            ],
+            "prerequisites": [
+              "电子自旋",
+              "量子态"
+            ],
+            "definition": "泡利理论通过补充自旋变量及其量子化假定描述电子的自旋。",
+            "example": "它解释了原子光谱的精细结构。"
+          },
+          {
+            "name": "自旋角动量",
+            "difficulty": 3,
+            "description": "满足角动量对易关系的自旋算符。",
+            "aliases": [
+              "自旋算符"
+            ],
+            "prerequisites": [
+              "电子自旋",
+              "角动量"
+            ],
+            "definition": "自旋角动量是三个分量满足角动量对易关系的观察算符。",
+            "example": "[S_x,S_y]=iℏS_z。"
+          },
+          {
+            "name": "自旋量子数",
+            "difficulty": 2,
+            "description": "表征粒子自旋大小的量子数s。",
+            "aliases": [
+              "s量子数"
+            ],
+            "prerequisites": [
+              "自旋角动量"
+            ],
+            "definition": "自旋量子数s由S²本征值s(s+1)ℏ²确定，并取整数或半整数。",
+            "example": "电子的s=1/2。"
+          },
+          {
+            "name": "自旋态空间",
+            "difficulty": 3,
+            "description": "自旋算符作用的有限维量子态空间。",
+            "aliases": [
+              "E_s空间"
+            ],
+            "prerequisites": [
+              "自旋角动量",
+              "自旋量子数"
+            ],
+            "definition": "自旋态空间是自旋算符作用的空间，其维数为2s+1。",
+            "example": "电子自旋态空间是二维的。"
+          },
+          {
+            "name": "轨道态空间",
+            "difficulty": 2,
+            "description": "位置和动量等轨道变量组成的态空间。",
+            "aliases": [
+              "E_r空间"
+            ],
+            "prerequisites": [
+              "位置算符",
+              "动量算符"
+            ],
+            "definition": "轨道态空间是位置、动量等轨道变量对应观察算符作用的量子空间。",
+            "example": "波函数ψ(x,y,z)属于轨道态空间。"
+          },
+          {
+            "name": "张量积态空间",
+            "difficulty": 3,
+            "description": "粒子总态空间由轨道与自旋空间张量积构成。",
+            "aliases": [
+              "总态空间"
+            ],
+            "prerequisites": [
+              "轨道态空间",
+              "自旋态空间"
+            ],
+            "definition": "自旋粒子的态空间满足E=E_r⊗E_s。",
+            "example": "轨道态与自旋态的张量积描述粒子态。"
+          },
+          {
+            "name": "自旋1/2",
+            "difficulty": 2,
+            "description": "自旋量子数为1/2的粒子类型。",
+            "aliases": [
+              "二分之一自旋"
+            ],
+            "prerequisites": [
+              "自旋量子数",
+              "自旋态空间"
+            ],
+            "definition": "自旋1/2粒子的自旋量子数s等于1/2，具有两个独立自旋态。",
+            "example": "电子和质子都是自旋1/2粒子。"
+          },
+          {
+            "name": "泡利矩阵",
+            "difficulty": 3,
+            "description": "表示自旋1/2分量算符的三个二维矩阵。",
+            "aliases": [
+              "σ矩阵"
+            ],
+            "prerequisites": [
+              "自旋1/2",
+              "自旋算符"
+            ],
+            "definition": "泡利矩阵σ_x、σ_y、σ_z是表示自旋1/2算符的2×2矩阵集合。",
+            "example": "S=(ℏ/2)σ。"
+          },
+          {
+            "name": "二分量旋量",
+            "difficulty": 3,
+            "description": "用两个复函数表示自旋1/2粒子态的对象。",
+            "aliases": [
+              "旋量",
+              "二分量自旋波函数"
+            ],
+            "prerequisites": [
+              "自旋1/2",
+              "自旋态空间",
+              "张量积态空间"
+            ],
+            "definition": "二分量旋量是自旋1/2粒子在位置表象中由两个分量组成的态函数。",
+            "example": "[ψ](r)=(ψ_+(r),ψ_-(r))^T。"
+          },
+          {
+            "name": "旋量表象",
+            "difficulty": 4,
+            "description": "同时用位置和自旋基矢表示粒子态的表象。",
+            "aliases": [
+              "{|r,ε⟩}表象"
+            ],
+            "prerequisites": [
+              "二分量旋量",
+              "张量积态空间"
+            ],
+            "definition": "旋量表象以位置与自旋共同本征态|r,ε⟩为基表示自旋粒子的态和算符。",
+            "example": "算符在该表象中表示为2×2微分算符矩阵。"
+          },
+          {
+            "name": "自旋测量概率",
+            "difficulty": 3,
+            "description": "由旋量分量模平方给出自旋测量结果概率。",
+            "aliases": [
+              "自旋概率解释"
+            ],
+            "prerequisites": [
+              "二分量旋量",
+              "量子测量"
+            ],
+            "definition": "测量自旋沿某轴的分量时，结果概率由相应自旋概率幅的模平方决定。",
+            "example": "P_+=∫|ψ_+(r)|²d³r。"
+          },
+          {
+            "name": "总角动量",
+            "difficulty": 2,
+            "description": "粒子轨道角动量与自旋角动量之和。",
+            "aliases": [
+              "J"
+            ],
+            "prerequisites": [
+              "轨道角动量",
+              "自旋角动量"
+            ],
+            "definition": "总角动量定义为J=L+S。",
+            "example": "自旋1/2粒子的旋转由J生成。"
+          },
+          {
+            "name": "旋转算符",
+            "difficulty": 3,
+            "description": "描述量子态绕指定轴旋转的算符。",
+            "aliases": [
+              "量子旋转算符"
+            ],
+            "prerequisites": [
+              "总角动量",
+              "自旋角动量"
+            ],
+            "definition": "绕单位矢u转角α的旋转算符为R_u(α)=exp[-iαJ·u/ℏ]。",
+            "example": "总旋转算符可分解为轨道与自旋旋转的张量积。"
+          },
+          {
+            "name": "泡利哈密顿量",
+            "difficulty": 4,
+            "description": "包含电磁场和自旋磁场相互作用的非相对论哈密顿量。",
+            "aliases": [
+              "泡利的哈密顿算符"
+            ],
+            "prerequisites": [
+              "泡利矩阵",
+              "内禀磁矩",
+              "动量算符"
+            ],
+            "definition": "泡利哈密顿量是描述带电自旋1/2粒子在电磁场中运动的哈密顿算符。",
+            "example": "H={σ·[P−qA]}²/(2m)+qU。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第九章提纲",
+            "page_range": [
+              81,
+              82
+            ]
+          },
+          {
+            "name": "A.电子自旋的引入",
+            "page_range": [
+              83,
+              85
+            ]
+          },
+          {
+            "name": "B.1／2角动量的特殊性质",
+            "page_range": [
+              86,
+              87
+            ]
+          },
+          {
+            "name": "C.对自旋1／2的粒子的非相对论描述",
+            "page_range": [
+              88,
+              95
+            ]
+          },
+          {
+            "name": "第九章补充材料",
+            "page_range": [
+              96,
+              111
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十章 角动量的耦合",
+        "concepts": [
+          {
+            "name": "经典总角动量",
+            "difficulty": 2,
+            "description": "多粒子体系各粒子角动量的矢量和",
+            "aliases": [
+              "𝓛"
+            ],
+            "prerequisites": [],
+            "definition": "经典总角动量是体系中所有粒子对于同一点角动量的矢量和。",
+            "example": "两粒子体系满足𝓛=𝓛₁+𝓛₂。"
+          },
+          {
+            "name": "量子总角动量",
+            "difficulty": 3,
+            "description": "量子体系中各部分角动量算符的和",
+            "aliases": [
+              "J"
+            ],
+            "prerequisites": [],
+            "definition": "量子总角动量是组成体系的各部分角动量算符之和。",
+            "example": "自旋粒子的总角动量为J=L+S。"
+          },
+          {
+            "name": "总角动量守恒",
+            "difficulty": 3,
+            "description": "相互作用下总角动量可保持为运动常量",
+            "aliases": [],
+            "prerequisites": [
+              "经典总角动量",
+              "量子总角动量"
+            ],
+            "definition": "当总角动量算符与哈密顿算符对易时，其分量为运动常量。",
+            "example": "中心相互作用下[L,H]=0。"
+          },
+          {
+            "name": "角动量耦合",
+            "difficulty": 3,
+            "description": "将两个部分角动量合成为总角动量",
+            "aliases": [
+              "角动量相加"
+            ],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "角动量耦合是由两个部分角动量构造总角动量本征基的问题。",
+            "example": "由J₁、J₂构造J=J₁+J₂的共同本征矢。"
+          },
+          {
+            "name": "态空间张量积",
+            "difficulty": 3,
+            "description": "复合体系态空间由各子空间张量积组成",
+            "aliases": [
+              "张量积空间"
+            ],
+            "prerequisites": [],
+            "definition": "复合体系的态空间是各组成体系态空间的张量积。",
+            "example": "两个自旋1/2的态空间是四维张量积空间。"
+          },
+          {
+            "name": "总自旋",
+            "difficulty": 2,
+            "description": "两个或多个自旋算符的矢量和",
+            "aliases": [
+              "S"
+            ],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "总自旋是各粒子自旋算符的矢量和并满足角动量对易关系。",
+            "example": "两个自旋的总自旋为S=S₁+S₂。"
+          },
+          {
+            "name": "两个自旋1/2耦合",
+            "difficulty": 3,
+            "description": "两个自旋1/2体系的总自旋分解",
+            "aliases": [
+              "自旋1/2耦合"
+            ],
+            "prerequisites": [
+              "总自旋",
+              "态空间张量积"
+            ],
+            "definition": "两个自旋1/2耦合后总自旋可取1或0。",
+            "example": "四维空间分解为三重态和单态。"
+          },
+          {
+            "name": "三重态",
+            "difficulty": 3,
+            "description": "两个自旋1/2耦合得到的S=1态",
+            "aliases": [
+              "S=1态"
+            ],
+            "prerequisites": [
+              "两个自旋1/2耦合"
+            ],
+            "definition": "三重态是两个自旋1/2耦合后总自旋量子数为1的三维态空间。",
+            "example": "|+,+⟩属于三重态。"
+          },
+          {
+            "name": "单态",
+            "difficulty": 3,
+            "description": "两个自旋1/2耦合得到的S=0态",
+            "aliases": [
+              "S=0态"
+            ],
+            "prerequisites": [
+              "两个自旋1/2耦合"
+            ],
+            "definition": "单态是两个自旋1/2耦合后总自旋量子数为0的单维态空间。",
+            "example": "(|+,−⟩−|−,+⟩)/√2为单态。"
+          },
+          {
+            "name": "E.C.O.C.",
+            "difficulty": 4,
+            "description": "可唯一标记共同本征态的完备对易算符集",
+            "aliases": [
+              "完全集合",
+              "完备对易观察量集"
+            ],
+            "prerequisites": [],
+            "definition": "E.C.O.C.是彼此对易且共同本征值能唯一确定态的观察算符集合。",
+            "example": "{S₁²,S₂²,S²,S_z}构成E.C.O.C.。"
+          },
+          {
+            "name": "任意角动量耦合",
+            "difficulty": 4,
+            "description": "两个任意量子数角动量的普遍耦合方法",
+            "aliases": [
+              "普遍耦合"
+            ],
+            "prerequisites": [
+              "角动量耦合",
+              "E.C.O.C."
+            ],
+            "definition": "任意角动量耦合研究量子数j₁和j₂任意时总角动量本征态的构造。",
+            "example": "耦合j₁与j₂得到J=|j₁−j₂|至j₁+j₂。"
+          },
+          {
+            "name": "角动量加法规则",
+            "difficulty": 3,
+            "description": "耦合后总角动量量子数的允许取值规则",
+            "aliases": [
+              "三角形规则"
+            ],
+            "prerequisites": [
+              "任意角动量耦合"
+            ],
+            "definition": "两个角动量耦合时总量子数J取|j₁−j₂|到j₁+j₂的整数步进值。",
+            "example": "两个自旋1/2时J=0或1。"
+          },
+          {
+            "name": "耦合基",
+            "difficulty": 4,
+            "description": "由J²和Jz共同本征矢组成的新基",
+            "aliases": [
+              "总角动量基"
+            ],
+            "prerequisites": [
+              "角动量耦合",
+              "E.C.O.C."
+            ],
+            "definition": "耦合基是以总角动量平方和其z分量为标记的共同本征态基。",
+            "example": "用|J,M⟩替代|j₁,m₁⟩|j₂,m₂⟩。"
+          },
+          {
+            "name": "克莱布希高登系数",
+            "difficulty": 4,
+            "description": "展开耦合态与未耦合态的变换系数",
+            "aliases": [
+              "CG系数",
+              "Clebsch-Gordan系数"
+            ],
+            "prerequisites": [
+              "任意角动量耦合",
+              "耦合基"
+            ],
+            "definition": "克莱布希高登系数是耦合基与各部分角动量乘积基之间的展开系数。",
+            "example": "⟨j₁,j₂;m₁,m₂|J,M⟩出现在耦合态展开中。"
+          },
+          {
+            "name": "自旋轨道耦合",
+            "difficulty": 3,
+            "description": "轨道角动量与自旋之间的耦合项",
+            "aliases": [
+              "L·S耦合"
+            ],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "自旋轨道耦合是哈密顿量中形如ξ(r)L·S的相互作用项。",
+            "example": "加入该项后L和S通常不再分别守恒。"
+          },
+          {
+            "name": "标量算符",
+            "difficulty": 4,
+            "description": "与体系总角动量对易的算符",
+            "aliases": [],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "标量算符是与体系总角动量的各分量对易的算符。",
+            "example": "其标准基矩阵元满足j=j′且m=m′。"
+          },
+          {
+            "name": "不可约张量算符",
+            "difficulty": 5,
+            "description": "满足角动量对易递推关系的算符分量组",
+            "aliases": [
+              "球张量算符"
+            ],
+            "prerequisites": [
+              "标量算符",
+              "克莱布希高登系数"
+            ],
+            "definition": "不可约张量算符由满足规定对易关系的2K+1个分量组成。",
+            "example": "电多极矩算符Q_l^m是l阶不可约张量算符。"
+          },
+          {
+            "name": "张量算符耦合",
+            "difficulty": 5,
+            "description": "按克莱布希高登系数组合两个张量算符",
+            "aliases": [
+              "不可约张量积"
+            ],
+            "prerequisites": [
+              "不可约张量算符",
+              "克莱布希高登系数"
+            ],
+            "definition": "张量算符耦合是用克莱布希高登系数将两个张量算符组合成新张量算符。",
+            "example": "C_Q^(K)=Σ⟨K₁,K₂;Q₁,Q₂|K,Q⟩A_Q₁B_Q₂。"
+          },
+          {
+            "name": "选择定则",
+            "difficulty": 4,
+            "description": "规定张量算符非零矩阵元的量子数条件",
+            "aliases": [],
+            "prerequisites": [
+              "不可约张量算符",
+              "克莱布希高登系数"
+            ],
+            "definition": "选择定则是由张量算符对称性确定其矩阵元可能非零的量子数条件。",
+            "example": "不可约张量算符矩阵元要求M=Q+M′。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十章提纲",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "A.引言",
+            "page_range": [
+              114,
+              117
+            ]
+          },
+          {
+            "name": "B.两个自旋1／2的耦合；初等方法",
+            "page_range": [
+              118,
+              122
+            ]
+          },
+          {
+            "name": "C.两个任意角动量的耦合；普遍方法",
+            "page_range": [
+              123,
+              139
+            ]
+          },
+          {
+            "name": "第十章补充材料",
+            "page_range": [
+              140,
+              207
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十一章 定态微扰理论",
+        "concepts": [
+          {
+            "name": "定态微扰理论",
+            "difficulty": 2,
+            "description": "用小的定常微扰近似求解能级和定态",
+            "aliases": [
+              "定态微扰"
+            ],
+            "prerequisites": [
+              "哈密顿算符"
+            ],
+            "definition": "定态微扰理论是在已知体系基础哈密顿算符可解时求取微扰修正的近似方法。",
+            "example": "用微扰计算氢原子的相对论能量修正"
+          },
+          {
+            "name": "未微扰哈密顿算符",
+            "difficulty": 2,
+            "description": "微扰加入前且本征态已知的哈密顿算符",
+            "aliases": [
+              "未微扰算符",
+              "H₀"
+            ],
+            "prerequisites": [
+              "哈密顿算符"
+            ],
+            "definition": "未微扰哈密顿算符是分解式中本征值和本征态均已知的算符H₀。",
+            "example": "谐振子的可解哈密顿算符可作为H₀"
+          },
+          {
+            "name": "微扰",
+            "difficulty": 2,
+            "description": "相对于未微扰哈密顿算符较小的附加算符",
+            "aliases": [
+              "微扰算符",
+              "W"
+            ],
+            "prerequisites": [
+              "未微扰哈密顿算符"
+            ],
+            "definition": "微扰是加入未微扰哈密顿算符的较小附加算符W。",
+            "example": "在氢原子哈密顿算符中加入相对论校正"
+          },
+          {
+            "name": "微扰参数",
+            "difficulty": 2,
+            "description": "表征微扰强度且远小于一的无量纲参数",
+            "aliases": [
+              "λ参数"
+            ],
+            "prerequisites": [
+              "微扰"
+            ],
+            "definition": "微扰参数λ是将微扰写为W=λŴ并控制近似阶数的小参数。",
+            "example": "取λ≪1以展开H(λ)=H₀+λŴ"
+          },
+          {
+            "name": "本征值幂级数展开",
+            "difficulty": 3,
+            "description": "将能量按微扰参数的幂次逐项展开",
+            "aliases": [
+              "能量展开"
+            ],
+            "prerequisites": [
+              "微扰参数",
+              "本征值"
+            ],
+            "definition": "本征值幂级数展开将E(λ)表示为各阶λ幂次修正之和。",
+            "example": "E(λ)=ε₀+λε₁+λ²ε₂+⋯"
+          },
+          {
+            "name": "本征态幂级数展开",
+            "difficulty": 3,
+            "description": "将微扰体系本征态按参数幂次逐项展开",
+            "aliases": [
+              "波函数展开"
+            ],
+            "prerequisites": [
+              "微扰参数",
+              "本征态"
+            ],
+            "definition": "本征态幂级数展开将|ψ(λ)⟩表示为各阶λ幂次态矢之和。",
+            "example": "|ψ⟩=|0⟩+λ|1⟩+λ²|2⟩+⋯"
+          },
+          {
+            "name": "微扰方程",
+            "difficulty": 4,
+            "description": "比较参数各阶系数得到的递推方程组",
+            "aliases": [
+              "逐阶微扰方程"
+            ],
+            "prerequisites": [
+              "本征值幂级数展开",
+              "本征态幂级数展开"
+            ],
+            "definition": "微扰方程是将展开式代入本征值方程后按λ各次幂比较所得的方程。",
+            "example": "零阶方程给出H₀|0⟩=ε₀|0⟩"
+          },
+          {
+            "name": "非简并能级",
+            "difficulty": 2,
+            "description": "未微扰能级对应唯一独立本征态的能级",
+            "aliases": [
+              "非简并本征值"
+            ],
+            "prerequisites": [
+              "未微扰哈密顿算符",
+              "简并能级"
+            ],
+            "definition": "非简并能级是其本征值除相位因子外仅对应一个本征矢的能级。",
+            "example": "非简并能级可直接使用普通微扰展开"
+          },
+          {
+            "name": "一级能量修正",
+            "difficulty": 3,
+            "description": "能量对微扰参数的一阶修正项",
+            "aliases": [
+              "一阶能量修正",
+              "ε₁"
+            ],
+            "prerequisites": [
+              "非简并能级",
+              "微扰方程"
+            ],
+            "definition": "一级能量修正是能量展开中与λ一次幂相乘的系数。",
+            "example": "ε₁=⟨φₙ|Ŵ|φₙ⟩"
+          },
+          {
+            "name": "一级本征态修正",
+            "difficulty": 4,
+            "description": "本征态对微扰参数的一阶修正项",
+            "aliases": [
+              "一阶波函数修正",
+              "|1⟩"
+            ],
+            "prerequisites": [
+              "非简并能级",
+              "微扰方程"
+            ],
+            "definition": "一级本征态修正是本征态展开中与λ一次幂相乘的态矢项。",
+            "example": "一级修正包含其他未微扰本征态的叠加"
+          },
+          {
+            "name": "二级能量修正",
+            "difficulty": 4,
+            "description": "能量对微扰参数的二阶修正项",
+            "aliases": [
+              "二阶能量修正",
+              "ε₂"
+            ],
+            "prerequisites": [
+              "一级能量修正",
+              "非简并能级"
+            ],
+            "definition": "二级能量修正是能量展开中与λ平方相乘的系数。",
+            "example": "无限深势阱电场中的基态二级能量偏移"
+          },
+          {
+            "name": "二级本征态修正",
+            "difficulty": 4,
+            "description": "本征态对微扰参数的二阶修正项",
+            "aliases": [
+              "二阶波函数修正",
+              "|2⟩"
+            ],
+            "prerequisites": [
+              "一级本征态修正",
+              "二级能量修正"
+            ],
+            "definition": "二级本征态修正是本征态展开中与λ平方相乘的态矢项。",
+            "example": "计算乙烷转动基态波函数的二阶修正"
+          },
+          {
+            "name": "归一化条件",
+            "difficulty": 3,
+            "description": "通过模和相位选择确定微扰态展开的规范",
+            "aliases": [
+              "微扰态归一化"
+            ],
+            "prerequisites": [
+              "本征态幂级数展开"
+            ],
+            "definition": "归一化条件要求微扰展开态保持归一，并规定展开系数间的内积关系。",
+            "example": "一级展开满足⟨0|1⟩=0"
+          },
+          {
+            "name": "简并能级",
+            "difficulty": 2,
+            "description": "同一本征值对应多个线性无关本征态的能级",
+            "aliases": [
+              "简并本征值"
+            ],
+            "prerequisites": [
+              "未微扰哈密顿算符"
+            ],
+            "definition": "简并能级是同一未微扰能量对应多个正交归一本征态的能级。",
+            "example": "二重简并能级可由两个基矢标记"
+          },
+          {
+            "name": "简并能级微扰",
+            "difficulty": 4,
+            "description": "处理多个态趋向同一未微扰能量的微扰方法",
+            "aliases": [
+              "简并微扰理论"
+            ],
+            "prerequisites": [
+              "简并能级",
+              "微扰"
+            ],
+            "definition": "简并能级微扰通过简并子空间内的微扰作用确定正确的零级态。",
+            "example": "微扰可消除原有二重简并"
+          },
+          {
+            "name": "简并消除",
+            "difficulty": 3,
+            "description": "微扰使原本相同的能量分裂为不同能级",
+            "aliases": [
+              "能级分裂"
+            ],
+            "prerequisites": [
+              "简并能级微扰",
+              "简并能级"
+            ],
+            "definition": "简并消除是微扰作用后原简并能量分裂成多个不同本征值的现象。",
+            "example": "图示中E₃⁰的简并被微扰消除"
+          },
+          {
+            "name": "二级修正上限",
+            "difficulty": 4,
+            "description": "对二级能量修正大小进行的上界估计",
+            "aliases": [
+              "ε₂上限"
+            ],
+            "prerequisites": [
+              "二级能量修正",
+              "微扰矩阵元"
+            ],
+            "definition": "二级修正上限是利用微扰矩阵元和能级差估计ε₂最大大小的方法。",
+            "example": "估计无限深势阱基态二级能量修正"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十一章提纲",
+            "page_range": [
+              209,
+              209
+            ]
+          },
+          {
+            "name": "A.方法概述",
+            "page_range": [
+              210,
+              213
+            ]
+          },
+          {
+            "name": "B.非简并能级的微扰",
+            "page_range": [
+              214,
+              218
+            ]
+          },
+          {
+            "name": "C.简并能级的微扰",
+            "page_range": [
+              219,
+              222
+            ]
+          },
+          {
+            "name": "第十一章补充材料",
+            "page_range": [
+              223,
+              317
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十二章 微扰理论的应用：氢原子的精细和超精细结构",
+        "concepts": [
+          {
+            "name": "微扰哈密顿量",
+            "difficulty": 2,
+            "description": "氢原子中被忽略的小修正项总和",
+            "aliases": [
+              "W"
+            ],
+            "prerequisites": [
+              "微扰理论"
+            ],
+            "definition": "微扰哈密顿量是相对于非相对论哈密顿量很小的附加项。",
+            "example": "用W修正氢原子未扰动能级。"
+          },
+          {
+            "name": "精细结构",
+            "difficulty": 2,
+            "description": "相对论和电子自旋效应造成的能级细分",
+            "aliases": [],
+            "prerequisites": [
+              "微扰哈密顿量"
+            ],
+            "definition": "精细结构是电子相对论修正及自旋磁效应引起的能级分裂。",
+            "example": "2p能级分裂为2p₁/₂和2p₃/₂。"
+          },
+          {
+            "name": "精细结构哈密顿量",
+            "difficulty": 3,
+            "description": "描述氢原子精细结构的相对论修正算符",
+            "aliases": [
+              "W_f"
+            ],
+            "prerequisites": [
+              "微扰哈密顿量"
+            ],
+            "definition": "精细结构哈密顿量由质量随速度变化项、自旋轨道项和达尔文项组成。",
+            "example": "计算n=2能级的精细结构偏移。"
+          },
+          {
+            "name": "狄拉克方程",
+            "difficulty": 3,
+            "description": "兼容狭义相对论与量子力学的电子方程",
+            "aliases": [],
+            "prerequisites": [
+              "精细结构"
+            ],
+            "definition": "狄拉克方程是描述相对论性电子并自然引入自旋的量子方程。",
+            "example": "由其弱相对论展开得到精细结构项。"
+          },
+          {
+            "name": "质量速度项",
+            "difficulty": 3,
+            "description": "由相对论动能展开产生的能量修正项",
+            "aliases": [
+              "W_mv"
+            ],
+            "prerequisites": [
+              "精细结构哈密顿量"
+            ],
+            "definition": "质量速度项是相对论动能展开中的负四次动量修正。",
+            "example": "其形式为−P⁴/(8mₑ³c²)。"
+          },
+          {
+            "name": "自旋轨道耦合",
+            "difficulty": 3,
+            "description": "电子自旋与轨道运动产生的角动量耦合",
+            "aliases": [
+              "W_SO"
+            ],
+            "prerequisites": [
+              "精细结构哈密顿量",
+              "电子自旋"
+            ],
+            "definition": "自旋轨道耦合是电子自旋磁矩与运动所感磁场之间的相互作用。",
+            "example": "耦合能量正比于L·S。"
+          },
+          {
+            "name": "达尔文项",
+            "difficulty": 3,
+            "description": "电子与库仑场非当地相互作用的相对论修正",
+            "aliases": [
+              "W_D"
+            ],
+            "prerequisites": [
+              "精细结构哈密顿量"
+            ],
+            "definition": "达尔文项描述电子康普顿波长尺度非当地效应导致的势能修正。",
+            "example": "库仑势下达尔文项与δ(R)成正比。"
+          },
+          {
+            "name": "接触项",
+            "difficulty": 4,
+            "description": "超精细相互作用中只影响s态的局域项",
+            "aliases": [],
+            "prerequisites": [
+              "超精细结构哈密顿量"
+            ],
+            "definition": "接触项是电子自旋与质子磁矩相互作用中在原点局域集中的项。",
+            "example": "1s态波函数原点不为零，受到接触项影响。"
+          },
+          {
+            "name": "超精细结构",
+            "difficulty": 2,
+            "description": "质子自旋磁相互作用造成的更细能级分裂",
+            "aliases": [],
+            "prerequisites": [
+              "精细结构",
+              "质子自旋"
+            ],
+            "definition": "超精细结构是电子与质子自旋及磁矩相互作用引起的能级分裂。",
+            "example": "氢原子1s能级分成F=1和F=0。"
+          },
+          {
+            "name": "超精细结构哈密顿量",
+            "difficulty": 4,
+            "description": "描述电子与质子磁相互作用的微扰算符",
+            "aliases": [
+              "W_hf"
+            ],
+            "prerequisites": [
+              "超精细结构",
+              "质子磁矩"
+            ],
+            "definition": "超精细结构哈密顿量包含质子磁矩与电子轨道磁矩、自旋的耦合项。",
+            "example": "在1s简并子空间内对W_hf矩阵对角化。"
+          },
+          {
+            "name": "质子自旋",
+            "difficulty": 2,
+            "description": "质子具有的内禀角动量",
+            "aliases": [
+              "I"
+            ],
+            "prerequisites": [],
+            "definition": "质子自旋是质子的内禀角动量，并对应质子磁矩。",
+            "example": "氢原子中质子自旋量子数为1/2。"
+          },
+          {
+            "name": "质子磁矩",
+            "difficulty": 3,
+            "description": "由质子自旋产生的磁偶极矩",
+            "aliases": [
+              "M_I"
+            ],
+            "prerequisites": [
+              "质子自旋"
+            ],
+            "definition": "质子磁矩是质子自旋所对应的磁偶极矩。",
+            "example": "它与电子自旋磁矩产生超精细耦合。"
+          },
+          {
+            "name": "总角动量F",
+            "difficulty": 3,
+            "description": "电子总角动量与质子自旋的合成角动量",
+            "aliases": [
+              "F"
+            ],
+            "prerequisites": [
+              "质子自旋",
+              "电子自旋"
+            ],
+            "definition": "总角动量F是电子总角动量J与质子自旋I耦合形成的角动量。",
+            "example": "1s态可取F=1或F=0。"
+          },
+          {
+            "name": "精细结构简并",
+            "difficulty": 3,
+            "description": "同一主量子数内未扰动能级的简并状态",
+            "aliases": [],
+            "prerequisites": [
+              "精细结构哈密顿量"
+            ],
+            "definition": "精细结构简并是未加入精细结构微扰时同一n能级中的多重简并。",
+            "example": "n=2包含2s和2p等简并态。"
+          },
+          {
+            "name": "光谱学符号",
+            "difficulty": 2,
+            "description": "标记原子态角动量和总角动量的符号",
+            "aliases": [],
+            "prerequisites": [
+              "总角动量F"
+            ],
+            "definition": "光谱学符号用如2p₃/₂的形式表示原子能级状态。",
+            "example": "精细结构能级写作2s₁/₂、2p₁/₂和2p₃/₂。"
+          },
+          {
+            "name": "1s超精细结构",
+            "difficulty": 3,
+            "description": "氢原子基态由电子质子自旋耦合产生的分裂",
+            "aliases": [],
+            "prerequisites": [
+              "超精细结构哈密顿量",
+              "总角动量F"
+            ],
+            "definition": "1s超精细结构是氢原子基态因电子与质子自旋耦合形成的能级分裂。",
+            "example": "F=1与F=0之间存在基态超精细间隔。"
+          },
+          {
+            "name": "塞曼哈密顿量",
+            "difficulty": 3,
+            "description": "外加静磁场与原子磁矩相互作用的算符",
+            "aliases": [
+              "W_Z"
+            ],
+            "prerequisites": [
+              "超精细结构"
+            ],
+            "definition": "塞曼哈密顿量描述氢原子在外加静磁场中的磁相互作用。",
+            "example": "用W_Z研究1s超精细能级随磁场变化。"
+          },
+          {
+            "name": "弱磁场塞曼效应",
+            "difficulty": 3,
+            "description": "外场远小于超精细耦合时的能级分裂",
+            "aliases": [],
+            "prerequisites": [
+              "塞曼哈密顿量",
+              "总角动量F"
+            ],
+            "definition": "弱磁场塞曼效应中超精细耦合保持主导，态由|F,m_F⟩标记。",
+            "example": "能级按m_F产生近似线性分裂。"
+          },
+          {
+            "name": "强磁场塞曼效应",
+            "difficulty": 3,
+            "description": "外场远大于超精细耦合时的能级分裂",
+            "aliases": [],
+            "prerequisites": [
+              "塞曼哈密顿量",
+              "电子自旋",
+              "质子自旋"
+            ],
+            "definition": "强磁场塞曼效应中电子自旋与质子自旋近似脱耦合。",
+            "example": "本征态用|m_S,m_I⟩表示。"
+          },
+          {
+            "name": "中等磁场塞曼效应",
+            "difficulty": 4,
+            "description": "外场与超精细耦合相当时的能级变化",
+            "aliases": [],
+            "prerequisites": [
+              "弱磁场塞曼效应",
+              "强磁场塞曼效应"
+            ],
+            "definition": "中等磁场下总微扰矩阵需在耦合态基中直接对角化。",
+            "example": "m_F=0的两个态形成2×2矩阵并产生双曲线能级。"
+          },
+          {
+            "name": "部分超精细耦合",
+            "difficulty": 4,
+            "description": "自旋间耦合介于完全耦合和脱耦合之间",
+            "aliases": [],
+            "prerequisites": [
+              "中等磁场塞曼效应"
+            ],
+            "definition": "部分超精细耦合是中等磁场下由耦合基连续过渡到非耦合基的状态。",
+            "example": "中等磁场本征态是两种基态的中间态。"
+          },
+          {
+            "name": "斯塔克哈密顿量",
+            "difficulty": 3,
+            "description": "外加静电场与原子电偶极矩的相互作用算符",
+            "aliases": [
+              "W_s"
+            ],
+            "prerequisites": [
+              "微扰哈密顿量"
+            ],
+            "definition": "斯塔克哈密顿量表示原子电偶极矩与外加静电场之间的相互作用能。",
+            "example": "均匀电场中W_s=−q𝓔Z。"
+          },
+          {
+            "name": "线性斯塔克效应",
+            "difficulty": 3,
+            "description": "简并相反宇称能级产生的一阶电场能级偏移",
+            "aliases": [],
+            "prerequisites": [
+              "斯塔克哈密顿量",
+              "精细结构简并"
+            ],
+            "definition": "线性斯塔克效应是能级偏移与外电场强度成正比的现象。",
+            "example": "氢原子n=2中2s与2p混合产生线性偏移。"
+          },
+          {
+            "name": "二次斯塔克效应",
+            "difficulty": 3,
+            "description": "非简并基态能级随电场平方发生的偏移",
+            "aliases": [],
+            "prerequisites": [
+              "斯塔克哈密顿量"
+            ],
+            "definition": "二次斯塔克效应是基态能级最低阶按外电场平方偏移的现象。",
+            "example": "氢原子1s能级偏移正比于𝓔²。"
+          },
+          {
+            "name": "线性电极化率",
+            "difficulty": 3,
+            "description": "感生偶极矩与外电场的比例系数",
+            "aliases": [
+              "χ"
+            ],
+            "prerequisites": [
+              "二次斯塔克效应"
+            ],
+            "definition": "线性电极化率是感生电偶极矩对外电场的线性响应系数。",
+            "example": "1s态感生偶极矩可写为χ₁s𝓔。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十二章提纲",
+            "page_range": [
+              319,
+              320
+            ]
+          },
+          {
+            "name": "A.引言",
+            "page_range": [
+              321,
+              321
+            ]
+          },
+          {
+            "name": "B.哈密顿算符中的附加项",
+            "page_range": [
+              322,
+              327
+            ]
+          },
+          {
+            "name": "C.能级n=2的精细结构",
+            "page_range": [
+              328,
+              334
+            ]
+          },
+          {
+            "name": "D.能级n=1的超精细结构",
+            "page_range": [
+              335,
+              339
+            ]
+          },
+          {
+            "name": "E.基态能级1s的超精细结构的塞曼效应",
+            "page_range": [
+              340,
+              353
+            ]
+          },
+          {
+            "name": "第十二章补充材料",
+            "page_range": [
+              354,
+              389
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十三章 依赖于时间的问题的近似解法",
+        "concepts": [
+          {
+            "name": "未微扰哈密顿量",
+            "difficulty": 2,
+            "description": "描述施加微扰前体系的能量与定态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "未微扰哈密顿量是外加微扰作用前决定体系定态和能级的哈密顿算符。",
+            "example": "H₀|φₙ⟩=Eₙ|φₙ⟩"
+          },
+          {
+            "name": "时间微扰",
+            "difficulty": 2,
+            "description": "随时间施加且强度相对较小的附加作用",
+            "aliases": [],
+            "prerequisites": [
+              "未微扰哈密顿量"
+            ],
+            "definition": "时间微扰是加入未微扰哈密顿量且可显含时间的弱作用项。",
+            "example": "H(t)=H₀+W(t)"
+          },
+          {
+            "name": "微扰参数",
+            "difficulty": 2,
+            "description": "表征微扰强弱并用于展开的无量纲量",
+            "aliases": [],
+            "prerequisites": [
+              "时间微扰"
+            ],
+            "definition": "微扰参数是乘在微扰算符前且远小于1的无量纲实参数。",
+            "example": "W(t)=λŴ(t)，λ≪1"
+          },
+          {
+            "name": "表象展开",
+            "difficulty": 3,
+            "description": "在未微扰本征态基中展开体系态",
+            "aliases": [],
+            "prerequisites": [
+              "未微扰哈密顿量"
+            ],
+            "definition": "表象展开是将体系态表示为未微扰哈密顿量本征态线性组合的方法。",
+            "example": "|ψ(t)⟩=Σₙcₙ(t)|φₙ⟩"
+          },
+          {
+            "name": "系数微分方程",
+            "difficulty": 3,
+            "description": "态矢分量满足的联立一阶线性方程组",
+            "aliases": [],
+            "prerequisites": [
+              "表象展开",
+              "时间微扰"
+            ],
+            "definition": "系数微分方程是薛定谔方程投影到未微扰本征态基后得到的分量方程组。",
+            "example": "iℏċₙ=Eₙcₙ+λΣₖŴₙₖcₖ"
+          },
+          {
+            "name": "函数变换",
+            "difficulty": 3,
+            "description": "分离未微扰能级相位以获得缓变系数",
+            "aliases": [],
+            "prerequisites": [
+              "系数微分方程"
+            ],
+            "definition": "函数变换是把系数写成缓变函数与未微扰相位因子乘积的变换。",
+            "example": "cₙ(t)=bₙ(t)e^{-iEₙt/ℏ}"
+          },
+          {
+            "name": "玻尔角频率",
+            "difficulty": 2,
+            "description": "由两个未微扰能级差确定的角频率",
+            "aliases": [],
+            "prerequisites": [
+              "未微扰哈密顿量"
+            ],
+            "definition": "玻尔角频率是两个能级差除以约化普朗克常数得到的角频率。",
+            "example": "ωₙₖ=(Eₙ−Eₖ)/ℏ"
+          },
+          {
+            "name": "微扰级数",
+            "difficulty": 3,
+            "description": "按微扰参数幂次逐级展开体系解",
+            "aliases": [],
+            "prerequisites": [
+              "微扰参数",
+              "函数变换"
+            ],
+            "definition": "微扰级数是将变换后的系数表示为微扰参数各次幂之和的展开。",
+            "example": "bₙ=bₙ⁽⁰⁾+λbₙ⁽¹⁾+λ²bₙ⁽²⁾+…"
+          },
+          {
+            "name": "微扰递推方程",
+            "difficulty": 4,
+            "description": "由低阶解逐步确定高阶解的方程",
+            "aliases": [],
+            "prerequisites": [
+              "微扰级数"
+            ],
+            "definition": "微扰递推方程规定第r阶解由第r−1阶解决定的微分关系。",
+            "example": "用bₖ⁽ʳ⁻¹⁾求bₙ⁽ʳ⁾"
+          },
+          {
+            "name": "跃迁概率",
+            "difficulty": 3,
+            "description": "测得体系处于另一未微扰定态的概率",
+            "aliases": [],
+            "prerequisites": [
+              "表象展开",
+              "微扰级数"
+            ],
+            "definition": "跃迁概率是体系由初态跃迁到指定末态的概率，等于相应态分量模平方。",
+            "example": "Pᵢf(t)=|⟨φ_f|ψ(t)⟩|²"
+          },
+          {
+            "name": "跃迁概率公式",
+            "difficulty": 4,
+            "description": "一级微扰下由微扰矩阵元积分给出的概率",
+            "aliases": [],
+            "prerequisites": [
+              "跃迁概率",
+              "玻尔角频率"
+            ],
+            "definition": "跃迁概率公式给出一级计算中跃迁概率与时间截断微扰矩阵元积分的关系。",
+            "example": "Pᵢf=ℏ⁻²|∫₀ᵗe^{iω_fᵢt′}W_fᵢ(t′)dt′|²"
+          },
+          {
+            "name": "傅里叶变换",
+            "difficulty": 3,
+            "description": "将时间微扰分解为不同角频率成分",
+            "aliases": [],
+            "prerequisites": [
+              "跃迁概率公式"
+            ],
+            "definition": "傅里叶变换是把时间函数表示为角频率成分的积分变换。",
+            "example": "跃迁概率正比于微扰矩阵元傅里叶变换的模平方"
+          },
+          {
+            "name": "正弦型微扰",
+            "difficulty": 2,
+            "description": "按正弦或余弦规律随时间变化的微扰",
+            "aliases": [],
+            "prerequisites": [
+              "时间微扰"
+            ],
+            "definition": "正弦型微扰是时间依赖形式为正弦函数或余弦函数的微扰。",
+            "example": "Ŵ(t)=Ŵ sinωt"
+          },
+          {
+            "name": "共振现象",
+            "difficulty": 3,
+            "description": "微扰频率接近跃迁角频率时跃迁增强",
+            "aliases": [],
+            "prerequisites": [
+              "正弦型微扰",
+              "跃迁概率公式",
+              "玻尔角频率"
+            ],
+            "definition": "共振现象是外界微扰频率与体系跃迁角频率接近时跃迁概率显著增强的现象。",
+            "example": "ω≈ω_fᵢ时跃迁概率出现峰值"
+          },
+          {
+            "name": "费米黄金规则",
+            "difficulty": 4,
+            "description": "连续末态下给出恒定跃迁率的近似公式",
+            "aliases": [],
+            "prerequisites": [
+              "连续谱耦合",
+              "态密度",
+              "跃迁概率"
+            ],
+            "definition": "费米黄金规则是弱微扰和连续末态条件下计算单位时间跃迁概率的公式。",
+            "example": "跃迁率与|W_fᵢ|²及末态态密度成正比"
+          },
+          {
+            "name": "连续谱耦合",
+            "difficulty": 4,
+            "description": "初态与连续分布末态之间的微扰跃迁",
+            "aliases": [],
+            "prerequisites": [
+              "跃迁概率",
+              "态密度"
+            ],
+            "definition": "连续谱耦合是初态通过微扰跃迁到能量连续分布的末态统。",
+            "example": "电子跃迁到连续能级"
+          },
+          {
+            "name": "态密度",
+            "difficulty": 3,
+            "description": "单位能量区间内可用量子态的数目",
+            "aliases": [],
+            "prerequisites": [
+              "连续谱耦合"
+            ],
+            "definition": "态密度表示连续谱中单位能量区间包含的末态数目。",
+            "example": "用态密度把末态求和改写为能量积分"
+          },
+          {
+            "name": "共振宽度",
+            "difficulty": 3,
+            "description": "共振峰显著范围对应的频率宽度",
+            "aliases": [],
+            "prerequisites": [
+              "共振现象"
+            ],
+            "definition": "共振宽度是跃迁概率随微扰频率变化时共振峰所覆盖的特征频率范围。",
+            "example": "有限作用时间导致共振峰具有宽度"
+          },
+          {
+            "name": "布洛赫方程",
+            "difficulty": 4,
+            "description": "描述抽运、驰豫和磁化进动的方程组",
+            "aliases": [],
+            "prerequisites": [
+              "时间微扰",
+              "微扰级数"
+            ],
+            "definition": "布洛赫方程是描述磁化强度在静磁场、射频场和驰豫作用下演变的方程组。",
+            "example": "dM_z/dt=nμ₀−M_z/T_R+进动项"
+          },
+          {
+            "name": "相关函数",
+            "difficulty": 4,
+            "description": "描述随机微扰在不同时刻关联程度的函数",
+            "aliases": [],
+            "prerequisites": [
+              "随机微扰"
+            ],
+            "definition": "相关函数是随机微扰矩阵元在两个时刻乘积的统计平均。",
+            "example": "g_fᵢ(τ)= overline{W_fᵢ(t)W_fᵢ*(t−τ)}"
+          },
+          {
+            "name": "相关时间",
+            "difficulty": 3,
+            "description": "随机微扰记忆效应持续的特征时间",
+            "aliases": [],
+            "prerequisites": [
+              "相关函数"
+            ],
+            "definition": "相关时间是相关函数衰减至近零所对应的特征时间尺度。",
+            "example": "τ≫τ_c时相关函数近似为零"
+          },
+          {
+            "name": "驰豫时间",
+            "difficulty": 3,
+            "description": "磁化强度衰减或恢复的特征时间",
+            "aliases": [],
+            "prerequisites": [
+              "布洛赫方程"
+            ],
+            "definition": "驰豫时间是体系通过驰豫过程恢复或衰减到平衡状态的特征时间。",
+            "example": "dM_z/dt=−M_z/T₁"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十三章提纲",
+            "page_range": [
+              391,
+              391
+            ]
+          },
+          {
+            "name": "A.问题的梗概",
+            "page_range": [
+              392,
+              392
+            ]
+          },
+          {
+            "name": "B.薛定谔方程的近似解",
+            "page_range": [
+              393,
+              396
+            ]
+          },
+          {
+            "name": "C.重要特例：正弦型微扰或恒定微扰",
+            "page_range": [
+              397,
+              408
+            ]
+          },
+          {
+            "name": "第十三章补充材料",
+            "page_range": [
+              409,
+              471
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十四章 全同粒子体系",
+        "concepts": [
+          {
+            "name": "全同粒子",
+            "difficulty": 1,
+            "description": "一切固有性质完全相同、不可被实验区分的粒子",
+            "aliases": [
+              "相同粒子"
+            ],
+            "prerequisites": [],
+            "definition": "若两个粒子的质量、自旋、电荷等一切固有性质完全相同，则称它们为全同粒子。",
+            "example": "宇宙中的所有电子彼此全同。"
+          },
+          {
+            "name": "交换简并",
+            "difficulty": 3,
+            "description": "多个数学右矢对应同一物理态的含混情形",
+            "aliases": [],
+            "prerequisites": [
+              "全同粒子"
+            ],
+            "definition": "由于全同粒子编号无物理根据，多个不同数学右矢可能描述同一物理状态。",
+            "example": "两个自旋一上一下可由|+,-⟩或|-,+⟩描述。"
+          },
+          {
+            "name": "置换算符",
+            "difficulty": 3,
+            "description": "交换或重新排列粒子标签的算符",
+            "aliases": [
+              "交换算符"
+            ],
+            "prerequisites": [
+              "全同粒子"
+            ],
+            "definition": "置换算符通过重新排列多粒子态中的粒子标号来表示粒子置换。",
+            "example": "两个粒子的交换由算符P₂₁表示。"
+          },
+          {
+            "name": "对称右矢",
+            "difficulty": 3,
+            "description": "粒子置换后保持不变的多粒子态矢",
+            "aliases": [
+              "对称态"
+            ],
+            "prerequisites": [
+              "置换算符"
+            ],
+            "definition": "对任意粒子置换作用后仍等于自身的右矢称为对称右矢。",
+            "example": "交换两个玻色子的态矢不发生改变。"
+          },
+          {
+            "name": "反对称右矢",
+            "difficulty": 3,
+            "description": "奇置换后变号的多粒子态矢",
+            "aliases": [
+              "反对称态"
+            ],
+            "prerequisites": [
+              "置换算符"
+            ],
+            "definition": "任意奇置换使其变号、偶置换不变的右矢称为反对称右矢。",
+            "example": "交换两个费米子的态矢会产生负号。"
+          },
+          {
+            "name": "对称化算符",
+            "difficulty": 3,
+            "description": "将任意多粒子态投影为对称态的算符",
+            "aliases": [
+              "S算符"
+            ],
+            "prerequisites": [
+              "置换算符",
+              "对称右矢"
+            ],
+            "definition": "对所有粒子置换的结果求规范化对称和所构成的算符称为对称化算符。",
+            "example": "对两个粒子态施加(1+P₂₁)/√2。"
+          },
+          {
+            "name": "反对称化算符",
+            "difficulty": 3,
+            "description": "将任意多粒子态投影为反对称态的算符",
+            "aliases": [
+              "反对称化算符"
+            ],
+            "prerequisites": [
+              "置换算符",
+              "反对称右矢"
+            ],
+            "definition": "对所有置换按奇偶性赋予正负号并求规范化和的算符称为反对称化算符。",
+            "example": "对两个粒子态施加(1-P₂₁)/√2。"
+          },
+          {
+            "name": "观察算符变换",
+            "difficulty": 3,
+            "description": "置换粒子时同步变换相关观察算符",
+            "aliases": [
+              "观测算符变换"
+            ],
+            "prerequisites": [
+              "置换算符"
+            ],
+            "definition": "粒子置换下，与粒子标号关联的观察算符也必须按同一置换重新排列。",
+            "example": "P₂₁将B(1)变为B(2)。"
+          },
+          {
+            "name": "对称化假定",
+            "difficulty": 4,
+            "description": "全同粒子物理态必须具有确定交换对称性",
+            "aliases": [
+              "对称性假设"
+            ],
+            "prerequisites": [
+              "交换简并",
+              "对称右矢",
+              "反对称右矢"
+            ],
+            "definition": "全同粒子体系的物理右矢必须属于完全对称或完全反对称的态空间。",
+            "example": "玻色子取对称态，费米子取反对称态。"
+          },
+          {
+            "name": "物理右矢",
+            "difficulty": 3,
+            "description": "满足对称化假定并代表物理态的右矢",
+            "aliases": [
+              "物理态右矢"
+            ],
+            "prerequisites": [
+              "对称化假定"
+            ],
+            "definition": "经过适当对称化或反对称化、能够无歧义给出物理预言的右矢称为物理右矢。",
+            "example": "两个费米子的物理态取反对称组合。"
+          },
+          {
+            "name": "物理态空间",
+            "difficulty": 4,
+            "description": "由允许物理右矢组成的态空间子空间",
+            "aliases": [
+              "物理右矢空间"
+            ],
+            "prerequisites": [
+              "物理右矢"
+            ],
+            "definition": "全同粒子体系中由完全对称态或完全反对称态构成的子空间称为物理态空间。",
+            "example": "玻色子物理态属于对称子空间。"
+          },
+          {
+            "name": "玻色子",
+            "difficulty": 2,
+            "description": "物理态在粒子交换下保持对称的全同粒子",
+            "aliases": [
+              "玻色粒子"
+            ],
+            "prerequisites": [
+              "对称化假定",
+              "对称右矢"
+            ],
+            "definition": "服从对称化假定、交换任意两个粒子时态矢不变的全同粒子称为玻色子。",
+            "example": "多个玻色子可以占据同一单粒子态。"
+          },
+          {
+            "name": "费米子",
+            "difficulty": 2,
+            "description": "物理态在粒子交换下反对称的全同粒子",
+            "aliases": [
+              "费米粒子"
+            ],
+            "prerequisites": [
+              "对称化假定",
+              "反对称右矢"
+            ],
+            "definition": "服从对称化假定、交换任意两个粒子时态矢变号的全同粒子称为费米子。",
+            "example": "两个电子不能处于完全相同的单粒子态。"
+          },
+          {
+            "name": "泡利不相容原理",
+            "difficulty": 3,
+            "description": "费米子不能占据完全相同的单粒子态",
+            "aliases": [
+              "泡利原理"
+            ],
+            "prerequisites": [
+              "费米子",
+              "反对称右矢"
+            ],
+            "definition": "任何两个费米子不能同时处于完全相同的单粒子态。",
+            "example": "同一轨道中最多容纳自旋相反的两个电子。"
+          },
+          {
+            "name": "量子统计",
+            "difficulty": 4,
+            "description": "由玻色或费米交换对称性决定的统计规律",
+            "aliases": [
+              "玻色统计",
+              "费米统计"
+            ],
+            "prerequisites": [
+              "玻色子",
+              "费米子",
+              "对称化假定"
+            ],
+            "definition": "全同粒子的交换对称性对多粒子态计数和物理预言所产生的统计规律称为量子统计。",
+            "example": "玻色子与费米子的基态占据规律不同。"
+          },
+          {
+            "name": "交换过程干涉",
+            "difficulty": 4,
+            "description": "直接过程与交换过程的概率幅发生干涉",
+            "aliases": [
+              "直接交换干涉"
+            ],
+            "prerequisites": [
+              "对称化假定",
+              "交换简并"
+            ],
+            "definition": "全同粒子散射中不可区分的直接过程和交换过程的概率幅必须相加并产生干涉。",
+            "example": "相同自旋电子散射中出现交换项。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十四章提纲",
+            "page_range": [
+              473,
+              473
+            ]
+          },
+          {
+            "name": "A.问题的梗概",
+            "page_range": [
+              474,
+              479
+            ]
+          },
+          {
+            "name": "B.置换算符",
+            "page_range": [
+              480,
+              488
+            ]
+          },
+          {
+            "name": "C.对称化假定",
+            "page_range": [
+              489,
+              498
+            ]
+          },
+          {
+            "name": "D.讨论",
+            "page_range": [
+              499,
+              511
+            ]
+          },
+          {
+            "name": "第十四章补充材料",
+            "page_range": [
+              512,
+              557
+            ]
+          }
+        ]
+      },
+      {
+        "name": "附录",
+        "concepts": [
+          {
+            "name": "周期函数",
+            "difficulty": 2,
+            "description": "满足平移一定长度后函数值不变的函数",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若存在非零实数L使得对一切x都有f(x+L)=f(x)，则f(x)称为周期函数。",
+            "example": "sin(2πx/L)是周期函数"
+          },
+          {
+            "name": "基本周期",
+            "difficulty": 2,
+            "description": "周期函数的最小正周期",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "周期函数的基本周期定义为它的最小正周期。",
+            "example": "cos(2πx/L)的基本周期为L"
+          },
+          {
+            "name": "周期延拓",
+            "difficulty": 2,
+            "description": "把有限区间函数延展为周期函数",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "将有限区间上的函数按区间长度重复延展为周期函数的构造。",
+            "example": "将[a,b]上的函数按b-a周期重复"
+          },
+          {
+            "name": "傅里叶级数",
+            "difficulty": 3,
+            "description": "用指数或三角函数级数表示周期函数",
+            "aliases": [
+              "Fourier series"
+            ],
+            "prerequisites": [
+              "周期函数",
+              "基本周期"
+            ],
+            "definition": "傅里叶级数是以周期函数基本频率为基底展开函数的级数。",
+            "example": "f(x)=Σcₙe^{ikₙx}"
+          },
+          {
+            "name": "傅里叶系数",
+            "difficulty": 3,
+            "description": "确定傅里叶级数各展开项的系数",
+            "aliases": [
+              "Fourier coefficients"
+            ],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "傅里叶系数是通过一个周期上的积分确定的级数展开系数。",
+            "example": "cₙ=(1/L)∫e^{-ikₙx}f(x)dx"
+          },
+          {
+            "name": "傅里叶谱",
+            "difficulty": 3,
+            "description": "周期函数傅里叶系数模的集合",
+            "aliases": [
+              "Fourier spectrum"
+            ],
+            "prerequisites": [
+              "傅里叶系数"
+            ],
+            "definition": "傅里叶谱定义为周期函数全部傅里叶系数模值的集合。",
+            "example": "由|cₙ|随n的分布表示"
+          },
+          {
+            "name": "正弦余弦级数",
+            "difficulty": 3,
+            "description": "用正弦和余弦函数展开周期函数",
+            "aliases": [
+              "三角级数"
+            ],
+            "prerequisites": [
+              "傅里叶级数",
+              "傅里叶系数"
+            ],
+            "definition": "正弦余弦级数是将周期函数表示为常数项及正余弦项之和的展开。",
+            "example": "f(x)=a₀+Σ(aₙcos kₙx+bₙsin kₙx)"
+          },
+          {
+            "name": "函数宇称",
+            "difficulty": 2,
+            "description": "函数关于原点的偶对称或奇对称性质",
+            "aliases": [
+              "奇偶性"
+            ],
+            "prerequisites": [],
+            "definition": "函数宇称由函数满足f(-x)=f(x)或f(-x)=-f(x)确定。",
+            "example": "偶函数的正弦系数均为零"
+          },
+          {
+            "name": "贝塞尔帕塞瓦关系",
+            "difficulty": 4,
+            "description": "周期函数平均模方与系数模方和相等",
+            "aliases": [
+              "Bessel-Parseval关系式"
+            ],
+            "prerequisites": [
+              "傅里叶级数",
+              "傅里叶系数"
+            ],
+            "definition": "该关系式表明一个周期内函数模方的平均值等于傅里叶系数模方之和。",
+            "example": "(1/L)∫|f|²dx=Σ|cₙ|²"
+          },
+          {
+            "name": "傅里叶变换",
+            "difficulty": 3,
+            "description": "将非周期函数变为连续变量函数的积分变换",
+            "aliases": [
+              "Fourier transform"
+            ],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "傅里叶变换通过无穷区间积分把函数表示为连续波数或动量变量的函数。",
+            "example": "f(x)与f̃(k)互为傅里叶变换"
+          },
+          {
+            "name": "量子傅里叶变换",
+            "difficulty": 4,
+            "description": "以动量为变量表示波函数的傅里叶变换",
+            "aliases": [
+              "动量表象变换"
+            ],
+            "prerequisites": [
+              "傅里叶变换",
+              "波函数"
+            ],
+            "definition": "量子傅里叶变换用含ℏ的积分将位置波函数变换为动量函数。",
+            "example": "ψ̃(p)=(1/√(2πℏ))∫e^{-ipx/ℏ}ψ(x)dx"
+          },
+          {
+            "name": "波函数",
+            "difficulty": 3,
+            "description": "量子力学中描述粒子状态的函数",
+            "aliases": [
+              "ψ(x)"
+            ],
+            "prerequisites": [],
+            "definition": "波函数是量子力学中可进行傅里叶变换以表示状态的函数。",
+            "example": "ψ(x)可变换为ψ̃(p)"
+          },
+          {
+            "name": "傅里叶平移性质",
+            "difficulty": 3,
+            "description": "函数平移对应变换域的相位或变量平移",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "傅里叶变换中，位置平移对应动量域的相位因子，位置域相位因子对应动量平移。",
+            "example": "ψ(x-x₀)对应e^{-ipx₀/ℏ}ψ̃(p)"
+          },
+          {
+            "name": "傅里叶缩放性质",
+            "difficulty": 3,
+            "description": "自变量缩放改变变换函数的尺度与幅度",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "若自变量变为cx，傅里叶变换变为原变换在p/c处的值并乘以1/|c|。",
+            "example": "F[ψ(cx)]=|c|^{-1}ψ̃(p/c)"
+          },
+          {
+            "name": "傅里叶导数性质",
+            "difficulty": 4,
+            "description": "函数求导对应变换域乘以动量因子",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "函数的n阶导数的傅里叶变换等于原变换乘以(ip/ℏ)^n。",
+            "example": "F[ψ′]=(ip/ℏ)ψ̃"
+          },
+          {
+            "name": "卷积定理",
+            "difficulty": 4,
+            "description": "卷积的傅里叶变换等于变换的乘积",
+            "aliases": [
+              "卷积性质"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "两个函数卷积的傅里叶变换正比于它们傅里叶变换的普通乘积。",
+            "example": "F[ψ₁*ψ₂]=√(2πℏ)ψ̃₁ψ̃₂"
+          },
+          {
+            "name": "宽度乘积关系",
+            "difficulty": 3,
+            "description": "函数与其傅里叶变换宽度的乘积受ℏ限制",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "若函数具有宽度Δx的高峰，则其变换宽度满足Δx·Δp≳ℏ。",
+            "example": "波包越窄，动量分布越宽"
+          },
+          {
+            "name": "帕塞瓦普朗克尔公式",
+            "difficulty": 4,
+            "description": "傅里叶变换保持函数模方积分不变",
+            "aliases": [
+              "Parseval-Plancherel公式"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "帕塞瓦—普朗克尔公式表明位置域与动量域的模方积分相等。",
+            "example": "∫|ψ(x)|²dx=∫|ψ̃(p)|²dp"
+          }
+        ],
+        "sections": [
+          {
+            "name": "附录Ⅰ 傅里叶级数和傅里叶变换",
+            "page_range": [
+              559,
+              567
+            ]
+          },
+          {
+            "name": "附录Ⅱ 狄拉克的δ“函数”",
+            "page_range": [
+              568,
+              579
+            ]
+          },
+          {
+            "name": "附录Ⅲ 经典力学中的拉格朗日函数和哈密顿函数",
+            "page_range": [
+              580,
+              637
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {
+      "标题": [
+        3,
+        7
+      ],
+      "使用说明": [
+        8,
+        9
+      ],
+      "作者简介": [
+        10,
+        11
+      ],
+      "译者序": [
+        12,
+        13
+      ],
+      "第二版序言": [
+        14,
+        19
+      ],
+      "第八章 势场中的散射的初等量子理论": [
+        20,
+        79
+      ],
+      "第九章 电子的自旋": [
+        80,
+        111
+      ],
+      "第十章 角动量的耦合": [
+        112,
+        207
+      ],
+      "第十一章 定态微扰理论": [
+        208,
+        317
+      ],
+      "第十二章 微扰理论的应用：氢原子的精细和超精细结构": [
+        318,
+        389
+      ],
+      "第十三章 依赖于时间的问题的近似解法": [
+        390,
+        471
+      ],
+      "第十四章 全同粒子体系": [
+        472,
+        557
+      ],
+      "附录": [
+        558,
+        637
+      ]
+    },
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "物理",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "标题",
+        "concepts": [
+          {
+            "name": "电子伏特",
+            "difficulty": 1,
+            "description": "表示微观粒子能量的常用单位",
+            "aliases": [
+              "eV"
+            ],
+            "prerequisites": [],
+            "definition": "电子伏特是电子通过一伏特电势差获得的能量。",
+            "example": "1 eV等于1.602189×10^-19 J"
+          },
+          {
+            "name": "直角坐标系",
+            "difficulty": 1,
+            "description": "以x、y、z为坐标轴的坐标系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "直角坐标系用三个相互垂直的坐标轴描述空间位置。",
+            "example": "用(x,y,z)表示空间点"
+          },
+          {
+            "name": "柱坐标系",
+            "difficulty": 2,
+            "description": "以ρ、φ、z描述空间位置的坐标系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "柱坐标系用径向距离、方位角和高度描述空间位置。",
+            "example": "用(ρ,φ,z)表示圆柱内一点"
+          },
+          {
+            "name": "球坐标系",
+            "difficulty": 2,
+            "description": "以r、θ、φ描述空间位置的坐标系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "球坐标系用径向距离和两个角度描述空间位置。",
+            "example": "用(r,θ,φ)表示球内一点"
+          },
+          {
+            "name": "标量场",
+            "difficulty": 2,
+            "description": "空间各点对应一个标量的场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "标量场是由空间坐标决定的标量函数。",
+            "example": "U=U(x,y,z)"
+          },
+          {
+            "name": "矢量场",
+            "difficulty": 2,
+            "description": "空间各点对应一个矢量的场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "矢量场是由空间坐标决定的矢量函数。",
+            "example": "A=A_xe_x+A_ye_y+A_ze_z"
+          },
+          {
+            "name": "梯度",
+            "difficulty": 2,
+            "description": "描述标量场空间变化率的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "标量场"
+            ],
+            "definition": "梯度是标量场对空间坐标各方向偏导数组成的矢量。",
+            "example": "∇U给出U增长最快方向"
+          },
+          {
+            "name": "拉普拉斯算子",
+            "difficulty": 3,
+            "description": "由二阶空间导数组成的微分算子",
+            "aliases": [
+              "Δ"
+            ],
+            "prerequisites": [
+              "标量场",
+              "梯度"
+            ],
+            "definition": "拉普拉斯算子是标量场各坐标方向二阶导数之和。",
+            "example": "ΔU=∂²U/∂x²+∂²U/∂y²+∂²U/∂z²"
+          },
+          {
+            "name": "散度",
+            "difficulty": 3,
+            "description": "描述矢量场源汇性质的标量",
+            "aliases": [
+              "∇·A"
+            ],
+            "prerequisites": [
+              "矢量场"
+            ],
+            "definition": "散度是矢量场各分量沿对应坐标方向偏导数之和。",
+            "example": "∇·A表示单位体积净流出"
+          },
+          {
+            "name": "旋度",
+            "difficulty": 3,
+            "description": "描述矢量场局部旋转性质的矢量",
+            "aliases": [
+              "∇×A"
+            ],
+            "prerequisites": [
+              "矢量场"
+            ],
+            "definition": "旋度是矢量场局部旋转程度和旋转轴方向的矢量量。",
+            "example": "∇×A表示场的局部旋转"
+          },
+          {
+            "name": "矢量微积分恒等式",
+            "difficulty": 3,
+            "description": "梯度、散度和旋度间的运算关系",
+            "aliases": [],
+            "prerequisites": [
+              "梯度",
+              "散度",
+              "旋度",
+              "拉普拉斯算子"
+            ],
+            "definition": "矢量微积分恒等式给出多种微分运算的恒定关系。",
+            "example": "∇×(∇U)=0"
+          },
+          {
+            "name": "轨道角动量",
+            "difficulty": 4,
+            "description": "由位置矢量和梯度算子定义的量",
+            "aliases": [
+              "L"
+            ],
+            "prerequisites": [
+              "矢量微积分恒等式"
+            ],
+            "definition": "轨道角动量由L=(ℏ/i)r×∇定义。",
+            "example": "L=(ℏ/i)r×∇"
+          },
+          {
+            "name": "球坐标拉普拉斯式",
+            "difficulty": 4,
+            "description": "拉普拉斯算子在球坐标中的表达式",
+            "aliases": [],
+            "prerequisites": [
+              "球坐标系",
+              "拉普拉斯算子"
+            ],
+            "definition": "球坐标拉普拉斯式将拉普拉斯算子写成r、θ、φ的偏导形式。",
+            "example": "含径向、极角和方位角三部分"
+          },
+          {
+            "name": "玻尔半径",
+            "difficulty": 2,
+            "description": "原子尺度的重要长度常数",
+            "aliases": [
+              "a₀"
+            ],
+            "prerequisites": [
+              "精细结构常数"
+            ],
+            "definition": "玻尔半径定义为电子康普顿波长除以精细结构常数。",
+            "example": "a₀≈0.529 Å"
+          },
+          {
+            "name": "精细结构常数",
+            "difficulty": 3,
+            "description": "表征电磁相互作用强度的无量纲常数",
+            "aliases": [
+              "α"
+            ],
+            "prerequisites": [
+              "普朗克常量"
+            ],
+            "definition": "精细结构常数定义为q²/(4πε₀ℏc)。",
+            "example": "α≈1/137.036"
+          },
+          {
+            "name": "玻尔磁子",
+            "difficulty": 3,
+            "description": "电子磁矩的常用磁矩单位",
+            "aliases": [
+              "μ_B"
+            ],
+            "prerequisites": [
+              "普朗克常量"
+            ],
+            "definition": "玻尔磁子定义为qℏ/(2m_e)。",
+            "example": "μ_B≈−9.27408×10^-24 J/T"
+          },
+          {
+            "name": "普朗克常量",
+            "difficulty": 1,
+            "description": "联系能量与频率的基本物理常量",
+            "aliases": [
+              "h",
+              "ℏ"
+            ],
+            "prerequisites": [],
+            "definition": "普朗克常量通过E=hν联系量子能量与频率。",
+            "example": "ℏ=h/(2π)"
+          }
+        ],
+        "chapter_key": "20213de988",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 1,
+          "raw_heading": "标题",
+          "page_range": [
+            3,
+            7
+          ]
+        }
+      },
+      {
+        "name": "使用说明",
+        "concepts": [
+          {
+            "name": "正文",
+            "difficulty": 2,
+            "description": "本书讲述物理学基本概念的主体部分",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "正文是全书中系统讲述物理学基本概念的部分。",
+            "example": "读者可脱离补充材料单独学习十四章正文"
+          },
+          {
+            "name": "补充材料",
+            "difficulty": 2,
+            "description": "正文之后编排的辅助、应用与练习材料",
+            "aliases": [],
+            "prerequisites": [
+              "正文"
+            ],
+            "definition": "补充材料是用于理解正文、深化问题、介绍应用或提供练习的内容。",
+            "example": "某篇材料专门简述一个具体物理应用"
+          },
+          {
+            "name": "补充材料目录",
+            "difficulty": 2,
+            "description": "列出各章补充材料并附有评述的目录",
+            "aliases": [],
+            "prerequisites": [
+              "补充材料"
+            ],
+            "definition": "补充材料目录按字母和章号标记材料，并通过评述提供阅读参考。",
+            "example": "第V章材料可标记为A_V、B_V"
+          },
+          {
+            "name": "选读原则",
+            "difficulty": 3,
+            "description": "根据需要和兴趣少量选择补充材料阅读",
+            "aliases": [],
+            "prerequisites": [
+              "补充材料"
+            ],
+            "definition": "选读原则是不必按顺序读完补充材料，而应按需要和兴趣选读。",
+            "example": "先选两三篇材料并完成几个练习"
+          },
+          {
+            "name": "补充材料分层",
+            "difficulty": 3,
+            "description": "补充材料在难度和用途上具有不同层次",
+            "aliases": [],
+            "prerequisites": [
+              "补充材料"
+            ],
+            "definition": "补充材料既有简单应用或推广，也有较困难甚至研究生水平的内容。",
+            "example": "学完正文后再尝试较困难的材料"
+          },
+          {
+            "name": "小字段落",
+            "difficulty": 1,
+            "description": "初学阶段可以暂时跳过的正文或补充段落",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "小字排印的段落表示初学时可以暂不阅读的内容。",
+            "example": "第一次学习时可先跳过小字段落"
+          }
+        ],
+        "chapter_key": "53a739d8d7",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 2,
+          "raw_heading": "使用说明",
+          "page_range": [
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "name": "作者简介",
+        "concepts": [
+          {
+            "name": "光抽运",
+            "difficulty": 3,
+            "description": "利用光照射改变原子或离子内部状态的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光抽运是通过光与原子或离子相互作用改变其状态分布的方法。",
+            "example": "卡斯特勒因发展光抽运方法获得诺贝尔物理学奖。"
+          },
+          {
+            "name": "物质与辐射相互作用",
+            "difficulty": 3,
+            "description": "研究物质与辐射之间相互影响的物理方向",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质与辐射相互作用是研究辐射影响物质及物质响应辐射的物理过程。",
+            "example": "科昂-塔努季的研究方向包括物质与辐射的相互作用。"
+          },
+          {
+            "name": "强相互作用",
+            "difficulty": 3,
+            "description": "研究粒子之间强相互作用的理论领域",
+            "aliases": [
+              "粒子间强相互作用"
+            ],
+            "prerequisites": [],
+            "definition": "强相互作用是理论高能物理中研究粒子间相互作用的研究对象。",
+            "example": "迪吕主要从事粒子间强相互作用的理论研究。"
+          },
+          {
+            "name": "激光冷却",
+            "difficulty": 3,
+            "description": "利用激光作用降低原子运动状态的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "激光冷却是利用激光与原子相互作用来降低原子运动状态的方法。",
+            "example": "科昂-塔努季因发展激光冷却方法获诺贝尔奖。"
+          },
+          {
+            "name": "原子陷俘",
+            "difficulty": 3,
+            "description": "利用物理方法限制并保持原子运动的方法",
+            "aliases": [
+              "陷俘原子"
+            ],
+            "prerequisites": [],
+            "definition": "原子陷俘是利用相关物理方法将原子限制在一定区域内的技术。",
+            "example": "科昂-塔努季的获奖工作包括陷俘原子的方法。"
+          },
+          {
+            "name": "稀有气体光抽运",
+            "difficulty": 3,
+            "description": "稀有气体原子和离子的光抽运研究",
+            "aliases": [],
+            "prerequisites": [
+              "光抽运"
+            ],
+            "definition": "稀有气体光抽运是针对稀有气体原子和离子开展的光抽运研究。",
+            "example": "拉卢的研究贡献主要是稀有气体原子和离子的光抽运。"
+          }
+        ],
+        "chapter_key": "e63aa59707",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 3,
+          "raw_heading": "作者简介",
+          "page_range": [
+            10,
+            11
+          ]
+        }
+      },
+      {
+        "name": "译者序",
+        "concepts": [
+          {
+            "name": "学生读者定位",
+            "difficulty": 1,
+            "description": "教材面向学生，重视详细叙述与完整推演",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "学生读者定位是以学生理解和学习需要为中心组织教材内容。",
+            "example": "教材尽量不省略推演步骤，并提出学习方法建议"
+          },
+          {
+            "name": "内容分层编排",
+            "difficulty": 2,
+            "description": "将基本内容与补充材料分开安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "内容分层编排是把核心知识和扩展材料分别组织，以适应不同学习需求。",
+            "example": "初学者先掌握基本内容，其他读者可选学补充材料"
+          },
+          {
+            "name": "态空间",
+            "difficulty": 3,
+            "description": "量子力学引论后优先讲授的数学工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "态空间是教材在量子力学引论之后引入的核心数学表述工具。",
+            "example": "学习量子力学时先掌握态空间的表述"
+          },
+          {
+            "name": "狄拉克符号",
+            "difficulty": 3,
+            "description": "量子力学中尽早掌握的符号工具",
+            "aliases": [
+              "狄拉克记号"
+            ],
+            "prerequisites": [],
+            "definition": "狄拉克符号是教材用于表达量子力学状态及相关关系的符号体系。",
+            "example": "在基础内容学习初期使用狄拉克符号表示状态"
+          }
+        ],
+        "chapter_key": "b116061b4b",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 4,
+          "raw_heading": "译者序",
+          "page_range": [
+            12,
+            13
+          ]
+        }
+      },
+      {
+        "name": "第二版序言",
+        "concepts": [
+          {
+            "name": "第二版修订",
+            "difficulty": 1,
+            "description": "第二版对原文、段落和印刷错误进行了修订",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "第二版修订是对第一版内容和编排进行更正与改写。",
+            "example": "改正印刷错误并重写部分段落"
+          },
+          {
+            "name": "英法文本同步出版",
+            "difficulty": 1,
+            "description": "第二版英文和法文文本同时出版",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "英法文本同步出版是指同一版次的英文与法文文本同时发行。",
+            "example": "第二版英、法文本同时出版"
+          },
+          {
+            "name": "参考书目",
+            "difficulty": 1,
+            "description": "各卷末附有较为详尽的相关书目",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "参考书目是按照主题或内容整理的相关著作清单。",
+            "example": "每卷末附上详细参考书目"
+          },
+          {
+            "name": "阅读建议",
+            "difficulty": 1,
+            "description": "引导读者查阅相关参考著作",
+            "aliases": [
+              "阅读指南"
+            ],
+            "prerequisites": [
+              "参考书目"
+            ],
+            "definition": "阅读建议是针对参考书目提出的查阅和阅读指引。",
+            "example": "各章末建议读者阅读相关著作"
+          },
+          {
+            "name": "读者反馈",
+            "difficulty": 1,
+            "description": "作者从读者评论和纠错中获得教益",
+            "aliases": [
+              "读者评论"
+            ],
+            "prerequisites": [],
+            "definition": "读者反馈是读者对教材内容提出的评论、意见或错误指正。",
+            "example": "读者指出第一版中的错误"
+          },
+          {
+            "name": "编辑协助",
+            "difficulty": 1,
+            "description": "相关人员协助英文版编辑和参考书目编制",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "编辑协助是他人参与文本编辑或资料整理等出版工作的支持。",
+            "example": "图书管理员协助编制参考书目"
+          }
+        ],
+        "chapter_key": "e63bed717e",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 5,
+          "raw_heading": "第二版序言",
+          "page_range": [
+            14,
+            19
+          ]
+        }
+      },
+      {
+        "name": "第八章 势场中的散射的初等量子理论",
+        "concepts": [
+          {
+            "name": "弹性散射",
+            "difficulty": 1,
+            "description": "碰撞后粒子种类和内部状态均不变的散射",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "弹性散射是碰撞后入射粒子与靶粒子的内部状态均未发生变化的散射。",
+            "example": "无内部激发的粒子势场散射"
+          },
+          {
+            "name": "约化质量",
+            "difficulty": 2,
+            "description": "将两粒子相互作用化为相对粒子质量",
+            "aliases": [
+              "相对质量"
+            ],
+            "prerequisites": [],
+            "definition": "约化质量是两粒子质量满足倒数相加关系的等效质量。",
+            "example": "1/μ=1/m₁+1/m₂"
+          },
+          {
+            "name": "中心势场",
+            "difficulty": 2,
+            "description": "只依赖粒子与散射中心距离的势场",
+            "aliases": [
+              "中心场"
+            ],
+            "prerequisites": [],
+            "definition": "中心势场是势能仅依赖径向距离r而与方向无关的势场。",
+            "example": "V(r)形式的散射势"
+          },
+          {
+            "name": "有效截面",
+            "difficulty": 2,
+            "description": "表征粒子被散射到指定方向概率的面积量",
+            "aliases": [
+              "散射截面"
+            ],
+            "prerequisites": [
+              "弹性散射"
+            ],
+            "definition": "有效截面是散射粒子数与入射通量和立体角之比。",
+            "example": "dn=Fiσ(θ,φ)dΩ"
+          },
+          {
+            "name": "微分散射截面",
+            "difficulty": 2,
+            "description": "单位立体角方向上的散射有效截面",
+            "aliases": [
+              "微分有效截面"
+            ],
+            "prerequisites": [
+              "有效截面"
+            ],
+            "definition": "微分散射截面是特定方向单位立体角对应的有效截面。",
+            "example": "σ(θ,φ)=dn/(Fi dΩ)"
+          },
+          {
+            "name": "总散射截面",
+            "difficulty": 2,
+            "description": "对所有散射方向积分得到的有效截面",
+            "aliases": [
+              "总有效截面"
+            ],
+            "prerequisites": [
+              "微分散射截面"
+            ],
+            "definition": "总散射截面是微分散射截面对全部立体角的积分。",
+            "example": "σ=∫σ(θ,φ)dΩ"
+          },
+          {
+            "name": "散射定态",
+            "difficulty": 3,
+            "description": "满足入射波与出射散射波边界条件的定态",
+            "aliases": [
+              "散射稳态"
+            ],
+            "prerequisites": [
+              "中心势场"
+            ],
+            "definition": "散射定态是哈密顿算符本征态中具有规定入射和出射渐近行为的解。",
+            "example": "ψ≈e^{ikz}+f(θ,φ)e^{ikr}/r"
+          },
+          {
+            "name": "散射振幅",
+            "difficulty": 3,
+            "description": "描述散射波方向依赖性的复振幅",
+            "aliases": [
+              "振幅f"
+            ],
+            "prerequisites": [
+              "散射定态"
+            ],
+            "definition": "散射振幅是散射定态渐近形式中出射波的方向依赖系数。",
+            "example": "f_k(θ,φ)决定散射角分布"
+          },
+          {
+            "name": "概率流",
+            "difficulty": 3,
+            "description": "描述量子概率输运方向和强度的物理量",
+            "aliases": [
+              "概率流密度"
+            ],
+            "prerequisites": [
+              "散射定态"
+            ],
+            "definition": "概率流是与波函数相联系、用于计算入射和散射通量的量。",
+            "example": "比较入射流与散射流求截面"
+          },
+          {
+            "name": "散射渐近形式",
+            "difficulty": 3,
+            "description": "远离势场时定态波函数的入射出射表达式",
+            "aliases": [
+              "渐近行为"
+            ],
+            "prerequisites": [
+              "散射定态",
+              "散射振幅"
+            ],
+            "definition": "散射渐近形式是在远离势场处将波函数写成平面波与出射球面波之和。",
+            "example": "e^{ikz}+f(θ)e^{ikr}/r"
+          },
+          {
+            "name": "散射积分方程",
+            "difficulty": 4,
+            "description": "由自由传播和势场作用表示散射态的方程",
+            "aliases": [
+              "积分方程"
+            ],
+            "prerequisites": [
+              "散射定态"
+            ],
+            "definition": "散射积分方程用自由粒子传播核和势函数积分表示散射定态。",
+            "example": "由格林函数构造散射波"
+          },
+          {
+            "name": "玻恩近似",
+            "difficulty": 3,
+            "description": "弱势场下用未扰动平面波近似散射态",
+            "aliases": [
+              "Born近似"
+            ],
+            "prerequisites": [
+              "散射积分方程",
+              "散射振幅"
+            ],
+            "definition": "玻恩近似是在势场较弱时用积分方程的一阶近似求散射振幅。",
+            "example": "汤川势弱作用下计算散射截面"
+          },
+          {
+            "name": "平面波",
+            "difficulty": 2,
+            "description": "动量完全确定的自由粒子定态",
+            "aliases": [
+              "自由平面波"
+            ],
+            "prerequisites": [],
+            "definition": "平面波是自由粒子动量确定时具有空间均匀相位梯度的定态波函数。",
+            "example": "e^{ikz}表示沿z轴入射"
+          },
+          {
+            "name": "自由球面波",
+            "difficulty": 3,
+            "description": "角动量完全确定的自由粒子定态波",
+            "aliases": [
+              "球面波"
+            ],
+            "prerequisites": [
+              "平面波"
+            ],
+            "definition": "自由球面波是自由粒子角动量量子数确定时的球坐标定态波。",
+            "example": "径向函数与球谐函数的乘积"
+          },
+          {
+            "name": "分波",
+            "difficulty": 3,
+            "description": "中心势中角动量确定的定态波",
+            "aliases": [
+              "部分波"
+            ],
+            "prerequisites": [
+              "中心势场",
+              "自由球面波"
+            ],
+            "definition": "分波是中心势场中具有确定角动量量子数的定态。",
+            "example": "s波对应l=0，p波对应l=1"
+          },
+          {
+            "name": "分波法",
+            "difficulty": 4,
+            "description": "按角动量分解散射态并逐波求相移的方法",
+            "aliases": [
+              "部分波法"
+            ],
+            "prerequisites": [
+              "分波",
+              "相移"
+            ],
+            "definition": "分波法是将散射定态展开为不同角动量分波并用其相移计算截面的方法。",
+            "example": "中心场散射中逐个求解径向方程"
+          },
+          {
+            "name": "径向方程",
+            "difficulty": 4,
+            "description": "中心势中描述分波径向运动的微分方程",
+            "aliases": [
+              "分波径向方程"
+            ],
+            "prerequisites": [
+              "分波",
+              "中心势场"
+            ],
+            "definition": "径向方程是分离角变量后决定各角动量分波径向函数的方程。",
+            "example": "由径向方程求δ_l"
+          },
+          {
+            "name": "相移",
+            "difficulty": 4,
+            "description": "势场使分波相对自由球面波产生的相位差",
+            "aliases": [
+              "相位移",
+              "δ_l"
+            ],
+            "prerequisites": [
+              "分波",
+              "自由球面波",
+              "径向方程"
+            ],
+            "definition": "相移是势场中分波相对于同角动量自由球面波的渐近相位改变。",
+            "example": "u_l≈sin(kr-lπ/2+δ_l)"
+          },
+          {
+            "name": "分波截面公式",
+            "difficulty": 4,
+            "description": "用各角动量分波相移表示散射截面的公式",
+            "aliases": [
+              "相移截面公式"
+            ],
+            "prerequisites": [
+              "相移",
+              "有效截面"
+            ],
+            "definition": "分波截面公式将微分和总散射截面表示为各分波相移的函数。",
+            "example": "σ=4π/k²∑(2l+1)sin²δ_l"
+          },
+          {
+            "name": "散射共振",
+            "difficulty": 4,
+            "description": "相移接近π/2时有效截面出现尖锐极大",
+            "aliases": [
+              "共振"
+            ],
+            "prerequisites": [
+              "相移",
+              "总散射截面"
+            ],
+            "definition": "散射共振是某分波相移随能量变化并经过π/2时截面显著增强的现象。",
+            "example": "势阱中低能s波共振"
+          },
+          {
+            "name": "光学定理",
+            "difficulty": 4,
+            "description": "总截面与正前方振幅虚部的普遍关系",
+            "aliases": [
+              "总截面定理"
+            ],
+            "prerequisites": [
+              "总散射截面",
+              "散射振幅"
+            ],
+            "definition": "光学定理表明总有效截面等于正前方散射振幅虚部乘以4π/k。",
+            "example": "σ_tot=(4π/k)Im f_k(0)"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第八章提纲",
+            "section_key": "19557accbb",
+            "page_range": [
+              21,
+              21
+            ]
+          },
+          {
+            "name": "A.引言",
+            "section_key": "3454f3b13d",
+            "page_range": [
+              22,
+              25
+            ]
+          },
+          {
+            "name": "B.散射定态;有效载面的计算",
+            "section_key": "f885834489",
+            "page_range": [
+              26,
+              38
+            ]
+          },
+          {
+            "name": "C.中心场中的散射;分波法",
+            "section_key": "3498cec8ac",
+            "page_range": [
+              39,
+              52
+            ]
+          },
+          {
+            "name": "第八章补充材料",
+            "section_key": "c6d53e104f",
+            "page_range": [
+              53,
+              79
+            ]
+          }
+        ],
+        "chapter_key": "dffef7f85f",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 6,
+          "raw_heading": "第八章 势场中的散射的初等量子理论",
+          "page_range": [
+            20,
+            79
+          ]
+        }
+      },
+      {
+        "name": "第九章 电子的自旋",
+        "concepts": [
+          {
+            "name": "电子自旋",
+            "difficulty": 2,
+            "description": "电子具有的内禀角动量自由度。",
+            "aliases": [
+              "自旋"
+            ],
+            "prerequisites": [
+              "角动量"
+            ],
+            "definition": "电子自旋是电子固有的角动量，不由位置或动量变量导出。",
+            "example": "电子的自旋量子数为1/2。"
+          },
+          {
+            "name": "谱线精细结构",
+            "difficulty": 2,
+            "description": "一条谱线分裂为多个近邻组分。",
+            "aliases": [
+              "精细结构"
+            ],
+            "prerequisites": [
+              "原子能级"
+            ],
+            "definition": "谱线精细结构是原子谱线包含频率非常接近的多个组分。",
+            "example": "氢原子共振线表现为双线。"
+          },
+          {
+            "name": "反常塞曼效应",
+            "difficulty": 3,
+            "description": "磁场中谱线出现不能由轨道角动量解释的分裂。",
+            "aliases": [
+              "反常塞曼效应"
+            ],
+            "prerequisites": [
+              "塞曼效应",
+              "轨道角动量"
+            ],
+            "definition": "反常塞曼效应是原子谱线在磁场中的分裂数目和间隔无法由轨道角动量理论定量解释的现象。",
+            "example": "奇数原子的能级可分裂为偶数个次能级。"
+          },
+          {
+            "name": "半整数角动量",
+            "difficulty": 3,
+            "description": "角动量量子数取半整数值的现象。",
+            "aliases": [
+              "半整数自旋"
+            ],
+            "prerequisites": [
+              "角动量"
+            ],
+            "definition": "半整数角动量是角动量量子数取1/2、3/2等半整数值的角动量。",
+            "example": "银原子束分裂为两个对称斑点。"
+          },
+          {
+            "name": "施特恩格拉赫实验",
+            "difficulty": 2,
+            "description": "利用非均匀磁场观察原子束分裂的实验。",
+            "aliases": [
+              "施特恩—格拉赫实验"
+            ],
+            "prerequisites": [
+              "磁矩",
+              "角动量"
+            ],
+            "definition": "施特恩—格拉赫实验通过磁矩与非均匀磁场的相互作用观察粒子束分裂。",
+            "example": "银原子束分成两个斑点。"
+          },
+          {
+            "name": "内禀磁矩",
+            "difficulty": 3,
+            "description": "与粒子自旋相联系的固有磁矩。",
+            "aliases": [
+              "自旋磁矩"
+            ],
+            "prerequisites": [
+              "电子自旋",
+              "旋磁比"
+            ],
+            "definition": "内禀磁矩是由粒子自旋产生并与其自旋角动量相联系的磁矩。",
+            "example": "电子自旋磁矩满足M_S=2μ_BS/ℏ。"
+          },
+          {
+            "name": "泡利理论",
+            "difficulty": 3,
+            "description": "在非相对论量子力学中描述自旋的理论。",
+            "aliases": [
+              "泡利自旋理论"
+            ],
+            "prerequisites": [
+              "电子自旋",
+              "量子态"
+            ],
+            "definition": "泡利理论通过补充自旋变量及其量子化假定描述电子的自旋。",
+            "example": "它解释了原子光谱的精细结构。"
+          },
+          {
+            "name": "自旋角动量",
+            "difficulty": 3,
+            "description": "满足角动量对易关系的自旋算符。",
+            "aliases": [
+              "自旋算符"
+            ],
+            "prerequisites": [
+              "电子自旋",
+              "角动量"
+            ],
+            "definition": "自旋角动量是三个分量满足角动量对易关系的观察算符。",
+            "example": "[S_x,S_y]=iℏS_z。"
+          },
+          {
+            "name": "自旋量子数",
+            "difficulty": 2,
+            "description": "表征粒子自旋大小的量子数s。",
+            "aliases": [
+              "s量子数"
+            ],
+            "prerequisites": [
+              "自旋角动量"
+            ],
+            "definition": "自旋量子数s由S²本征值s(s+1)ℏ²确定，并取整数或半整数。",
+            "example": "电子的s=1/2。"
+          },
+          {
+            "name": "自旋态空间",
+            "difficulty": 3,
+            "description": "自旋算符作用的有限维量子态空间。",
+            "aliases": [
+              "E_s空间"
+            ],
+            "prerequisites": [
+              "自旋角动量",
+              "自旋量子数"
+            ],
+            "definition": "自旋态空间是自旋算符作用的空间，其维数为2s+1。",
+            "example": "电子自旋态空间是二维的。"
+          },
+          {
+            "name": "轨道态空间",
+            "difficulty": 2,
+            "description": "位置和动量等轨道变量组成的态空间。",
+            "aliases": [
+              "E_r空间"
+            ],
+            "prerequisites": [
+              "位置算符",
+              "动量算符"
+            ],
+            "definition": "轨道态空间是位置、动量等轨道变量对应观察算符作用的量子空间。",
+            "example": "波函数ψ(x,y,z)属于轨道态空间。"
+          },
+          {
+            "name": "张量积态空间",
+            "difficulty": 3,
+            "description": "粒子总态空间由轨道与自旋空间张量积构成。",
+            "aliases": [
+              "总态空间"
+            ],
+            "prerequisites": [
+              "轨道态空间",
+              "自旋态空间"
+            ],
+            "definition": "自旋粒子的态空间满足E=E_r⊗E_s。",
+            "example": "轨道态与自旋态的张量积描述粒子态。"
+          },
+          {
+            "name": "自旋1/2",
+            "difficulty": 2,
+            "description": "自旋量子数为1/2的粒子类型。",
+            "aliases": [
+              "二分之一自旋"
+            ],
+            "prerequisites": [
+              "自旋量子数",
+              "自旋态空间"
+            ],
+            "definition": "自旋1/2粒子的自旋量子数s等于1/2，具有两个独立自旋态。",
+            "example": "电子和质子都是自旋1/2粒子。"
+          },
+          {
+            "name": "泡利矩阵",
+            "difficulty": 3,
+            "description": "表示自旋1/2分量算符的三个二维矩阵。",
+            "aliases": [
+              "σ矩阵"
+            ],
+            "prerequisites": [
+              "自旋1/2",
+              "自旋算符"
+            ],
+            "definition": "泡利矩阵σ_x、σ_y、σ_z是表示自旋1/2算符的2×2矩阵集合。",
+            "example": "S=(ℏ/2)σ。"
+          },
+          {
+            "name": "二分量旋量",
+            "difficulty": 3,
+            "description": "用两个复函数表示自旋1/2粒子态的对象。",
+            "aliases": [
+              "旋量",
+              "二分量自旋波函数"
+            ],
+            "prerequisites": [
+              "自旋1/2",
+              "自旋态空间",
+              "张量积态空间"
+            ],
+            "definition": "二分量旋量是自旋1/2粒子在位置表象中由两个分量组成的态函数。",
+            "example": "[ψ](r)=(ψ_+(r),ψ_-(r))^T。"
+          },
+          {
+            "name": "旋量表象",
+            "difficulty": 4,
+            "description": "同时用位置和自旋基矢表示粒子态的表象。",
+            "aliases": [
+              "{|r,ε⟩}表象"
+            ],
+            "prerequisites": [
+              "二分量旋量",
+              "张量积态空间"
+            ],
+            "definition": "旋量表象以位置与自旋共同本征态|r,ε⟩为基表示自旋粒子的态和算符。",
+            "example": "算符在该表象中表示为2×2微分算符矩阵。"
+          },
+          {
+            "name": "自旋测量概率",
+            "difficulty": 3,
+            "description": "由旋量分量模平方给出自旋测量结果概率。",
+            "aliases": [
+              "自旋概率解释"
+            ],
+            "prerequisites": [
+              "二分量旋量",
+              "量子测量"
+            ],
+            "definition": "测量自旋沿某轴的分量时，结果概率由相应自旋概率幅的模平方决定。",
+            "example": "P_+=∫|ψ_+(r)|²d³r。"
+          },
+          {
+            "name": "总角动量",
+            "difficulty": 2,
+            "description": "粒子轨道角动量与自旋角动量之和。",
+            "aliases": [
+              "J"
+            ],
+            "prerequisites": [
+              "轨道角动量",
+              "自旋角动量"
+            ],
+            "definition": "总角动量定义为J=L+S。",
+            "example": "自旋1/2粒子的旋转由J生成。"
+          },
+          {
+            "name": "旋转算符",
+            "difficulty": 3,
+            "description": "描述量子态绕指定轴旋转的算符。",
+            "aliases": [
+              "量子旋转算符"
+            ],
+            "prerequisites": [
+              "总角动量",
+              "自旋角动量"
+            ],
+            "definition": "绕单位矢u转角α的旋转算符为R_u(α)=exp[-iαJ·u/ℏ]。",
+            "example": "总旋转算符可分解为轨道与自旋旋转的张量积。"
+          },
+          {
+            "name": "泡利哈密顿量",
+            "difficulty": 4,
+            "description": "包含电磁场和自旋磁场相互作用的非相对论哈密顿量。",
+            "aliases": [
+              "泡利的哈密顿算符"
+            ],
+            "prerequisites": [
+              "泡利矩阵",
+              "内禀磁矩",
+              "动量算符"
+            ],
+            "definition": "泡利哈密顿量是描述带电自旋1/2粒子在电磁场中运动的哈密顿算符。",
+            "example": "H={σ·[P−qA]}²/(2m)+qU。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第九章提纲",
+            "section_key": "f0881d62f2",
+            "page_range": [
+              81,
+              82
+            ]
+          },
+          {
+            "name": "A.电子自旋的引入",
+            "section_key": "1000015ea3",
+            "page_range": [
+              83,
+              85
+            ]
+          },
+          {
+            "name": "B.1/2角动量的特殊性质",
+            "section_key": "4a9563e283",
+            "page_range": [
+              86,
+              87
+            ]
+          },
+          {
+            "name": "C.对自旋1/2的粒子的非相对论描述",
+            "section_key": "ef0b419de1",
+            "page_range": [
+              88,
+              95
+            ]
+          },
+          {
+            "name": "第九章补充材料",
+            "section_key": "232b295bfe",
+            "page_range": [
+              96,
+              111
+            ]
+          }
+        ],
+        "chapter_key": "314328cdee",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 7,
+          "raw_heading": "第九章 电子的自旋",
+          "page_range": [
+            80,
+            111
+          ]
+        }
+      },
+      {
+        "name": "第十章 角动量的耦合",
+        "concepts": [
+          {
+            "name": "经典总角动量",
+            "difficulty": 2,
+            "description": "多粒子体系各粒子角动量的矢量和",
+            "aliases": [
+              "𝓛"
+            ],
+            "prerequisites": [],
+            "definition": "经典总角动量是体系中所有粒子对于同一点角动量的矢量和。",
+            "example": "两粒子体系满足𝓛=𝓛₁+𝓛₂。"
+          },
+          {
+            "name": "量子总角动量",
+            "difficulty": 3,
+            "description": "量子体系中各部分角动量算符的和",
+            "aliases": [
+              "J"
+            ],
+            "prerequisites": [],
+            "definition": "量子总角动量是组成体系的各部分角动量算符之和。",
+            "example": "自旋粒子的总角动量为J=L+S。"
+          },
+          {
+            "name": "总角动量守恒",
+            "difficulty": 3,
+            "description": "相互作用下总角动量可保持为运动常量",
+            "aliases": [],
+            "prerequisites": [
+              "经典总角动量",
+              "量子总角动量"
+            ],
+            "definition": "当总角动量算符与哈密顿算符对易时，其分量为运动常量。",
+            "example": "中心相互作用下[L,H]=0。"
+          },
+          {
+            "name": "角动量耦合",
+            "difficulty": 3,
+            "description": "将两个部分角动量合成为总角动量",
+            "aliases": [
+              "角动量相加"
+            ],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "角动量耦合是由两个部分角动量构造总角动量本征基的问题。",
+            "example": "由J₁、J₂构造J=J₁+J₂的共同本征矢。"
+          },
+          {
+            "name": "态空间张量积",
+            "difficulty": 3,
+            "description": "复合体系态空间由各子空间张量积组成",
+            "aliases": [
+              "张量积空间"
+            ],
+            "prerequisites": [],
+            "definition": "复合体系的态空间是各组成体系态空间的张量积。",
+            "example": "两个自旋1/2的态空间是四维张量积空间。"
+          },
+          {
+            "name": "总自旋",
+            "difficulty": 2,
+            "description": "两个或多个自旋算符的矢量和",
+            "aliases": [
+              "S"
+            ],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "总自旋是各粒子自旋算符的矢量和并满足角动量对易关系。",
+            "example": "两个自旋的总自旋为S=S₁+S₂。"
+          },
+          {
+            "name": "两个自旋1/2耦合",
+            "difficulty": 3,
+            "description": "两个自旋1/2体系的总自旋分解",
+            "aliases": [
+              "自旋1/2耦合"
+            ],
+            "prerequisites": [
+              "总自旋",
+              "态空间张量积"
+            ],
+            "definition": "两个自旋1/2耦合后总自旋可取1或0。",
+            "example": "四维空间分解为三重态和单态。"
+          },
+          {
+            "name": "三重态",
+            "difficulty": 3,
+            "description": "两个自旋1/2耦合得到的S=1态",
+            "aliases": [
+              "S=1态"
+            ],
+            "prerequisites": [
+              "两个自旋1/2耦合"
+            ],
+            "definition": "三重态是两个自旋1/2耦合后总自旋量子数为1的三维态空间。",
+            "example": "|+,+⟩属于三重态。"
+          },
+          {
+            "name": "单态",
+            "difficulty": 3,
+            "description": "两个自旋1/2耦合得到的S=0态",
+            "aliases": [
+              "S=0态"
+            ],
+            "prerequisites": [
+              "两个自旋1/2耦合"
+            ],
+            "definition": "单态是两个自旋1/2耦合后总自旋量子数为0的单维态空间。",
+            "example": "(|+,−⟩−|−,+⟩)/√2为单态。"
+          },
+          {
+            "name": "E.C.O.C.",
+            "difficulty": 4,
+            "description": "可唯一标记共同本征态的完备对易算符集",
+            "aliases": [
+              "完全集合",
+              "完备对易观察量集"
+            ],
+            "prerequisites": [],
+            "definition": "E.C.O.C.是彼此对易且共同本征值能唯一确定态的观察算符集合。",
+            "example": "{S₁²,S₂²,S²,S_z}构成E.C.O.C.。"
+          },
+          {
+            "name": "任意角动量耦合",
+            "difficulty": 4,
+            "description": "两个任意量子数角动量的普遍耦合方法",
+            "aliases": [
+              "普遍耦合"
+            ],
+            "prerequisites": [
+              "角动量耦合",
+              "E.C.O.C."
+            ],
+            "definition": "任意角动量耦合研究量子数j₁和j₂任意时总角动量本征态的构造。",
+            "example": "耦合j₁与j₂得到J=|j₁−j₂|至j₁+j₂。"
+          },
+          {
+            "name": "角动量加法规则",
+            "difficulty": 3,
+            "description": "耦合后总角动量量子数的允许取值规则",
+            "aliases": [
+              "三角形规则"
+            ],
+            "prerequisites": [
+              "任意角动量耦合"
+            ],
+            "definition": "两个角动量耦合时总量子数J取|j₁−j₂|到j₁+j₂的整数步进值。",
+            "example": "两个自旋1/2时J=0或1。"
+          },
+          {
+            "name": "耦合基",
+            "difficulty": 4,
+            "description": "由J²和Jz共同本征矢组成的新基",
+            "aliases": [
+              "总角动量基"
+            ],
+            "prerequisites": [
+              "角动量耦合",
+              "E.C.O.C."
+            ],
+            "definition": "耦合基是以总角动量平方和其z分量为标记的共同本征态基。",
+            "example": "用|J,M⟩替代|j₁,m₁⟩|j₂,m₂⟩。"
+          },
+          {
+            "name": "克莱布希高登系数",
+            "difficulty": 4,
+            "description": "展开耦合态与未耦合态的变换系数",
+            "aliases": [
+              "CG系数",
+              "Clebsch-Gordan系数"
+            ],
+            "prerequisites": [
+              "任意角动量耦合",
+              "耦合基"
+            ],
+            "definition": "克莱布希高登系数是耦合基与各部分角动量乘积基之间的展开系数。",
+            "example": "⟨j₁,j₂;m₁,m₂|J,M⟩出现在耦合态展开中。"
+          },
+          {
+            "name": "自旋轨道耦合",
+            "difficulty": 3,
+            "description": "轨道角动量与自旋之间的耦合项",
+            "aliases": [
+              "L·S耦合"
+            ],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "自旋轨道耦合是哈密顿量中形如ξ(r)L·S的相互作用项。",
+            "example": "加入该项后L和S通常不再分别守恒。"
+          },
+          {
+            "name": "标量算符",
+            "difficulty": 4,
+            "description": "与体系总角动量对易的算符",
+            "aliases": [],
+            "prerequisites": [
+              "量子总角动量"
+            ],
+            "definition": "标量算符是与体系总角动量的各分量对易的算符。",
+            "example": "其标准基矩阵元满足j=j′且m=m′。"
+          },
+          {
+            "name": "不可约张量算符",
+            "difficulty": 5,
+            "description": "满足角动量对易递推关系的算符分量组",
+            "aliases": [
+              "球张量算符"
+            ],
+            "prerequisites": [
+              "标量算符",
+              "克莱布希高登系数"
+            ],
+            "definition": "不可约张量算符由满足规定对易关系的2K+1个分量组成。",
+            "example": "电多极矩算符Q_l^m是l阶不可约张量算符。"
+          },
+          {
+            "name": "张量算符耦合",
+            "difficulty": 5,
+            "description": "按克莱布希高登系数组合两个张量算符",
+            "aliases": [
+              "不可约张量积"
+            ],
+            "prerequisites": [
+              "不可约张量算符",
+              "克莱布希高登系数"
+            ],
+            "definition": "张量算符耦合是用克莱布希高登系数将两个张量算符组合成新张量算符。",
+            "example": "C_Q^(K)=Σ⟨K₁,K₂;Q₁,Q₂|K,Q⟩A_Q₁B_Q₂。"
+          },
+          {
+            "name": "选择定则",
+            "difficulty": 4,
+            "description": "规定张量算符非零矩阵元的量子数条件",
+            "aliases": [],
+            "prerequisites": [
+              "不可约张量算符",
+              "克莱布希高登系数"
+            ],
+            "definition": "选择定则是由张量算符对称性确定其矩阵元可能非零的量子数条件。",
+            "example": "不可约张量算符矩阵元要求M=Q+M′。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十章提纲",
+            "section_key": "f2d5e0edc8",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "A.引言",
+            "section_key": "554bb5bf81",
+            "page_range": [
+              114,
+              117
+            ]
+          },
+          {
+            "name": "B.两个自旋1/2的耦合;初等方法",
+            "section_key": "6108765d66",
+            "page_range": [
+              118,
+              122
+            ]
+          },
+          {
+            "name": "C.两个任意角动量的耦合;普遍方法",
+            "section_key": "ce5a740b31",
+            "page_range": [
+              123,
+              139
+            ]
+          },
+          {
+            "name": "第十章补充材料",
+            "section_key": "097fdcd1da",
+            "page_range": [
+              140,
+              207
+            ]
+          }
+        ],
+        "chapter_key": "f936bedcef",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 8,
+          "raw_heading": "第十章 角动量的耦合",
+          "page_range": [
+            112,
+            207
+          ]
+        }
+      },
+      {
+        "name": "第十一章 定态微扰理论",
+        "concepts": [
+          {
+            "name": "定态微扰理论",
+            "difficulty": 2,
+            "description": "用小的定常微扰近似求解能级和定态",
+            "aliases": [
+              "定态微扰"
+            ],
+            "prerequisites": [
+              "哈密顿算符"
+            ],
+            "definition": "定态微扰理论是在已知体系基础哈密顿算符可解时求取微扰修正的近似方法。",
+            "example": "用微扰计算氢原子的相对论能量修正"
+          },
+          {
+            "name": "未微扰哈密顿算符",
+            "difficulty": 2,
+            "description": "微扰加入前且本征态已知的哈密顿算符",
+            "aliases": [
+              "未微扰算符",
+              "H₀"
+            ],
+            "prerequisites": [
+              "哈密顿算符"
+            ],
+            "definition": "未微扰哈密顿算符是分解式中本征值和本征态均已知的算符H₀。",
+            "example": "谐振子的可解哈密顿算符可作为H₀"
+          },
+          {
+            "name": "微扰",
+            "difficulty": 2,
+            "description": "相对于未微扰哈密顿算符较小的附加算符",
+            "aliases": [
+              "微扰算符",
+              "W"
+            ],
+            "prerequisites": [
+              "未微扰哈密顿算符"
+            ],
+            "definition": "微扰是加入未微扰哈密顿算符的较小附加算符W。",
+            "example": "在氢原子哈密顿算符中加入相对论校正"
+          },
+          {
+            "name": "微扰参数",
+            "difficulty": 2,
+            "description": "表征微扰强度且远小于一的无量纲参数",
+            "aliases": [
+              "λ参数"
+            ],
+            "prerequisites": [
+              "微扰"
+            ],
+            "definition": "微扰参数λ是将微扰写为W=λŴ并控制近似阶数的小参数。",
+            "example": "取λ≪1以展开H(λ)=H₀+λŴ"
+          },
+          {
+            "name": "本征值幂级数展开",
+            "difficulty": 3,
+            "description": "将能量按微扰参数的幂次逐项展开",
+            "aliases": [
+              "能量展开"
+            ],
+            "prerequisites": [
+              "微扰参数",
+              "本征值"
+            ],
+            "definition": "本征值幂级数展开将E(λ)表示为各阶λ幂次修正之和。",
+            "example": "E(λ)=ε₀+λε₁+λ²ε₂+⋯"
+          },
+          {
+            "name": "本征态幂级数展开",
+            "difficulty": 3,
+            "description": "将微扰体系本征态按参数幂次逐项展开",
+            "aliases": [
+              "波函数展开"
+            ],
+            "prerequisites": [
+              "微扰参数",
+              "本征态"
+            ],
+            "definition": "本征态幂级数展开将|ψ(λ)⟩表示为各阶λ幂次态矢之和。",
+            "example": "|ψ⟩=|0⟩+λ|1⟩+λ²|2⟩+⋯"
+          },
+          {
+            "name": "微扰方程",
+            "difficulty": 4,
+            "description": "比较参数各阶系数得到的递推方程组",
+            "aliases": [
+              "逐阶微扰方程"
+            ],
+            "prerequisites": [
+              "本征值幂级数展开",
+              "本征态幂级数展开"
+            ],
+            "definition": "微扰方程是将展开式代入本征值方程后按λ各次幂比较所得的方程。",
+            "example": "零阶方程给出H₀|0⟩=ε₀|0⟩"
+          },
+          {
+            "name": "非简并能级",
+            "difficulty": 2,
+            "description": "未微扰能级对应唯一独立本征态的能级",
+            "aliases": [
+              "非简并本征值"
+            ],
+            "prerequisites": [
+              "未微扰哈密顿算符",
+              "简并能级"
+            ],
+            "definition": "非简并能级是其本征值除相位因子外仅对应一个本征矢的能级。",
+            "example": "非简并能级可直接使用普通微扰展开"
+          },
+          {
+            "name": "一级能量修正",
+            "difficulty": 3,
+            "description": "能量对微扰参数的一阶修正项",
+            "aliases": [
+              "一阶能量修正",
+              "ε₁"
+            ],
+            "prerequisites": [
+              "非简并能级",
+              "微扰方程"
+            ],
+            "definition": "一级能量修正是能量展开中与λ一次幂相乘的系数。",
+            "example": "ε₁=⟨φₙ|Ŵ|φₙ⟩"
+          },
+          {
+            "name": "一级本征态修正",
+            "difficulty": 4,
+            "description": "本征态对微扰参数的一阶修正项",
+            "aliases": [
+              "一阶波函数修正",
+              "|1⟩"
+            ],
+            "prerequisites": [
+              "非简并能级",
+              "微扰方程"
+            ],
+            "definition": "一级本征态修正是本征态展开中与λ一次幂相乘的态矢项。",
+            "example": "一级修正包含其他未微扰本征态的叠加"
+          },
+          {
+            "name": "二级能量修正",
+            "difficulty": 4,
+            "description": "能量对微扰参数的二阶修正项",
+            "aliases": [
+              "二阶能量修正",
+              "ε₂"
+            ],
+            "prerequisites": [
+              "一级能量修正",
+              "非简并能级"
+            ],
+            "definition": "二级能量修正是能量展开中与λ平方相乘的系数。",
+            "example": "无限深势阱电场中的基态二级能量偏移"
+          },
+          {
+            "name": "二级本征态修正",
+            "difficulty": 4,
+            "description": "本征态对微扰参数的二阶修正项",
+            "aliases": [
+              "二阶波函数修正",
+              "|2⟩"
+            ],
+            "prerequisites": [
+              "一级本征态修正",
+              "二级能量修正"
+            ],
+            "definition": "二级本征态修正是本征态展开中与λ平方相乘的态矢项。",
+            "example": "计算乙烷转动基态波函数的二阶修正"
+          },
+          {
+            "name": "归一化条件",
+            "difficulty": 3,
+            "description": "通过模和相位选择确定微扰态展开的规范",
+            "aliases": [
+              "微扰态归一化"
+            ],
+            "prerequisites": [
+              "本征态幂级数展开"
+            ],
+            "definition": "归一化条件要求微扰展开态保持归一，并规定展开系数间的内积关系。",
+            "example": "一级展开满足⟨0|1⟩=0"
+          },
+          {
+            "name": "简并能级",
+            "difficulty": 2,
+            "description": "同一本征值对应多个线性无关本征态的能级",
+            "aliases": [
+              "简并本征值"
+            ],
+            "prerequisites": [
+              "未微扰哈密顿算符"
+            ],
+            "definition": "简并能级是同一未微扰能量对应多个正交归一本征态的能级。",
+            "example": "二重简并能级可由两个基矢标记"
+          },
+          {
+            "name": "简并能级微扰",
+            "difficulty": 4,
+            "description": "处理多个态趋向同一未微扰能量的微扰方法",
+            "aliases": [
+              "简并微扰理论"
+            ],
+            "prerequisites": [
+              "简并能级",
+              "微扰"
+            ],
+            "definition": "简并能级微扰通过简并子空间内的微扰作用确定正确的零级态。",
+            "example": "微扰可消除原有二重简并"
+          },
+          {
+            "name": "简并消除",
+            "difficulty": 3,
+            "description": "微扰使原本相同的能量分裂为不同能级",
+            "aliases": [
+              "能级分裂"
+            ],
+            "prerequisites": [
+              "简并能级微扰",
+              "简并能级"
+            ],
+            "definition": "简并消除是微扰作用后原简并能量分裂成多个不同本征值的现象。",
+            "example": "图示中E₃⁰的简并被微扰消除"
+          },
+          {
+            "name": "二级修正上限",
+            "difficulty": 4,
+            "description": "对二级能量修正大小进行的上界估计",
+            "aliases": [
+              "ε₂上限"
+            ],
+            "prerequisites": [
+              "二级能量修正",
+              "微扰矩阵元"
+            ],
+            "definition": "二级修正上限是利用微扰矩阵元和能级差估计ε₂最大大小的方法。",
+            "example": "估计无限深势阱基态二级能量修正"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十一章提纲",
+            "section_key": "370699f4db",
+            "page_range": [
+              209,
+              209
+            ]
+          },
+          {
+            "name": "A.方法概述",
+            "section_key": "ed1b5070ff",
+            "page_range": [
+              210,
+              213
+            ]
+          },
+          {
+            "name": "B.非简并能级的微扰",
+            "section_key": "3dc0b9d008",
+            "page_range": [
+              214,
+              218
+            ]
+          },
+          {
+            "name": "C.简并能级的微扰",
+            "section_key": "7ea936b256",
+            "page_range": [
+              219,
+              222
+            ]
+          },
+          {
+            "name": "第十一章补充材料",
+            "section_key": "76e566d875",
+            "page_range": [
+              223,
+              317
+            ]
+          }
+        ],
+        "chapter_key": "0fffab54f9",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 9,
+          "raw_heading": "第十一章 定态微扰理论",
+          "page_range": [
+            208,
+            317
+          ]
+        }
+      },
+      {
+        "name": "第十二章 微扰理论的应用:氢原子的精细和超精细结构",
+        "concepts": [
+          {
+            "name": "微扰哈密顿量",
+            "difficulty": 2,
+            "description": "氢原子中被忽略的小修正项总和",
+            "aliases": [
+              "W"
+            ],
+            "prerequisites": [
+              "微扰理论"
+            ],
+            "definition": "微扰哈密顿量是相对于非相对论哈密顿量很小的附加项。",
+            "example": "用W修正氢原子未扰动能级。"
+          },
+          {
+            "name": "精细结构",
+            "difficulty": 2,
+            "description": "相对论和电子自旋效应造成的能级细分",
+            "aliases": [],
+            "prerequisites": [
+              "微扰哈密顿量"
+            ],
+            "definition": "精细结构是电子相对论修正及自旋磁效应引起的能级分裂。",
+            "example": "2p能级分裂为2p₁/₂和2p₃/₂。"
+          },
+          {
+            "name": "精细结构哈密顿量",
+            "difficulty": 3,
+            "description": "描述氢原子精细结构的相对论修正算符",
+            "aliases": [
+              "W_f"
+            ],
+            "prerequisites": [
+              "微扰哈密顿量"
+            ],
+            "definition": "精细结构哈密顿量由质量随速度变化项、自旋轨道项和达尔文项组成。",
+            "example": "计算n=2能级的精细结构偏移。"
+          },
+          {
+            "name": "狄拉克方程",
+            "difficulty": 3,
+            "description": "兼容狭义相对论与量子力学的电子方程",
+            "aliases": [],
+            "prerequisites": [
+              "精细结构"
+            ],
+            "definition": "狄拉克方程是描述相对论性电子并自然引入自旋的量子方程。",
+            "example": "由其弱相对论展开得到精细结构项。"
+          },
+          {
+            "name": "质量速度项",
+            "difficulty": 3,
+            "description": "由相对论动能展开产生的能量修正项",
+            "aliases": [
+              "W_mv"
+            ],
+            "prerequisites": [
+              "精细结构哈密顿量"
+            ],
+            "definition": "质量速度项是相对论动能展开中的负四次动量修正。",
+            "example": "其形式为−P⁴/(8mₑ³c²)。"
+          },
+          {
+            "name": "自旋轨道耦合",
+            "difficulty": 3,
+            "description": "电子自旋与轨道运动产生的角动量耦合",
+            "aliases": [
+              "W_SO"
+            ],
+            "prerequisites": [
+              "精细结构哈密顿量",
+              "电子自旋"
+            ],
+            "definition": "自旋轨道耦合是电子自旋磁矩与运动所感磁场之间的相互作用。",
+            "example": "耦合能量正比于L·S。"
+          },
+          {
+            "name": "达尔文项",
+            "difficulty": 3,
+            "description": "电子与库仑场非当地相互作用的相对论修正",
+            "aliases": [
+              "W_D"
+            ],
+            "prerequisites": [
+              "精细结构哈密顿量"
+            ],
+            "definition": "达尔文项描述电子康普顿波长尺度非当地效应导致的势能修正。",
+            "example": "库仑势下达尔文项与δ(R)成正比。"
+          },
+          {
+            "name": "接触项",
+            "difficulty": 4,
+            "description": "超精细相互作用中只影响s态的局域项",
+            "aliases": [],
+            "prerequisites": [
+              "超精细结构哈密顿量"
+            ],
+            "definition": "接触项是电子自旋与质子磁矩相互作用中在原点局域集中的项。",
+            "example": "1s态波函数原点不为零，受到接触项影响。"
+          },
+          {
+            "name": "超精细结构",
+            "difficulty": 2,
+            "description": "质子自旋磁相互作用造成的更细能级分裂",
+            "aliases": [],
+            "prerequisites": [
+              "精细结构",
+              "质子自旋"
+            ],
+            "definition": "超精细结构是电子与质子自旋及磁矩相互作用引起的能级分裂。",
+            "example": "氢原子1s能级分成F=1和F=0。"
+          },
+          {
+            "name": "超精细结构哈密顿量",
+            "difficulty": 4,
+            "description": "描述电子与质子磁相互作用的微扰算符",
+            "aliases": [
+              "W_hf"
+            ],
+            "prerequisites": [
+              "超精细结构",
+              "质子磁矩"
+            ],
+            "definition": "超精细结构哈密顿量包含质子磁矩与电子轨道磁矩、自旋的耦合项。",
+            "example": "在1s简并子空间内对W_hf矩阵对角化。"
+          },
+          {
+            "name": "质子自旋",
+            "difficulty": 2,
+            "description": "质子具有的内禀角动量",
+            "aliases": [
+              "I"
+            ],
+            "prerequisites": [],
+            "definition": "质子自旋是质子的内禀角动量，并对应质子磁矩。",
+            "example": "氢原子中质子自旋量子数为1/2。"
+          },
+          {
+            "name": "质子磁矩",
+            "difficulty": 3,
+            "description": "由质子自旋产生的磁偶极矩",
+            "aliases": [
+              "M_I"
+            ],
+            "prerequisites": [
+              "质子自旋"
+            ],
+            "definition": "质子磁矩是质子自旋所对应的磁偶极矩。",
+            "example": "它与电子自旋磁矩产生超精细耦合。"
+          },
+          {
+            "name": "总角动量F",
+            "difficulty": 3,
+            "description": "电子总角动量与质子自旋的合成角动量",
+            "aliases": [
+              "F"
+            ],
+            "prerequisites": [
+              "质子自旋",
+              "电子自旋"
+            ],
+            "definition": "总角动量F是电子总角动量J与质子自旋I耦合形成的角动量。",
+            "example": "1s态可取F=1或F=0。"
+          },
+          {
+            "name": "精细结构简并",
+            "difficulty": 3,
+            "description": "同一主量子数内未扰动能级的简并状态",
+            "aliases": [],
+            "prerequisites": [
+              "精细结构哈密顿量"
+            ],
+            "definition": "精细结构简并是未加入精细结构微扰时同一n能级中的多重简并。",
+            "example": "n=2包含2s和2p等简并态。"
+          },
+          {
+            "name": "光谱学符号",
+            "difficulty": 2,
+            "description": "标记原子态角动量和总角动量的符号",
+            "aliases": [],
+            "prerequisites": [
+              "总角动量F"
+            ],
+            "definition": "光谱学符号用如2p₃/₂的形式表示原子能级状态。",
+            "example": "精细结构能级写作2s₁/₂、2p₁/₂和2p₃/₂。"
+          },
+          {
+            "name": "1s超精细结构",
+            "difficulty": 3,
+            "description": "氢原子基态由电子质子自旋耦合产生的分裂",
+            "aliases": [],
+            "prerequisites": [
+              "超精细结构哈密顿量",
+              "总角动量F"
+            ],
+            "definition": "1s超精细结构是氢原子基态因电子与质子自旋耦合形成的能级分裂。",
+            "example": "F=1与F=0之间存在基态超精细间隔。"
+          },
+          {
+            "name": "塞曼哈密顿量",
+            "difficulty": 3,
+            "description": "外加静磁场与原子磁矩相互作用的算符",
+            "aliases": [
+              "W_Z"
+            ],
+            "prerequisites": [
+              "超精细结构"
+            ],
+            "definition": "塞曼哈密顿量描述氢原子在外加静磁场中的磁相互作用。",
+            "example": "用W_Z研究1s超精细能级随磁场变化。"
+          },
+          {
+            "name": "弱磁场塞曼效应",
+            "difficulty": 3,
+            "description": "外场远小于超精细耦合时的能级分裂",
+            "aliases": [],
+            "prerequisites": [
+              "塞曼哈密顿量",
+              "总角动量F"
+            ],
+            "definition": "弱磁场塞曼效应中超精细耦合保持主导，态由|F,m_F⟩标记。",
+            "example": "能级按m_F产生近似线性分裂。"
+          },
+          {
+            "name": "强磁场塞曼效应",
+            "difficulty": 3,
+            "description": "外场远大于超精细耦合时的能级分裂",
+            "aliases": [],
+            "prerequisites": [
+              "塞曼哈密顿量",
+              "电子自旋",
+              "质子自旋"
+            ],
+            "definition": "强磁场塞曼效应中电子自旋与质子自旋近似脱耦合。",
+            "example": "本征态用|m_S,m_I⟩表示。"
+          },
+          {
+            "name": "中等磁场塞曼效应",
+            "difficulty": 4,
+            "description": "外场与超精细耦合相当时的能级变化",
+            "aliases": [],
+            "prerequisites": [
+              "弱磁场塞曼效应",
+              "强磁场塞曼效应"
+            ],
+            "definition": "中等磁场下总微扰矩阵需在耦合态基中直接对角化。",
+            "example": "m_F=0的两个态形成2×2矩阵并产生双曲线能级。"
+          },
+          {
+            "name": "部分超精细耦合",
+            "difficulty": 4,
+            "description": "自旋间耦合介于完全耦合和脱耦合之间",
+            "aliases": [],
+            "prerequisites": [
+              "中等磁场塞曼效应"
+            ],
+            "definition": "部分超精细耦合是中等磁场下由耦合基连续过渡到非耦合基的状态。",
+            "example": "中等磁场本征态是两种基态的中间态。"
+          },
+          {
+            "name": "斯塔克哈密顿量",
+            "difficulty": 3,
+            "description": "外加静电场与原子电偶极矩的相互作用算符",
+            "aliases": [
+              "W_s"
+            ],
+            "prerequisites": [
+              "微扰哈密顿量"
+            ],
+            "definition": "斯塔克哈密顿量表示原子电偶极矩与外加静电场之间的相互作用能。",
+            "example": "均匀电场中W_s=−q𝓔Z。"
+          },
+          {
+            "name": "线性斯塔克效应",
+            "difficulty": 3,
+            "description": "简并相反宇称能级产生的一阶电场能级偏移",
+            "aliases": [],
+            "prerequisites": [
+              "斯塔克哈密顿量",
+              "精细结构简并"
+            ],
+            "definition": "线性斯塔克效应是能级偏移与外电场强度成正比的现象。",
+            "example": "氢原子n=2中2s与2p混合产生线性偏移。"
+          },
+          {
+            "name": "二次斯塔克效应",
+            "difficulty": 3,
+            "description": "非简并基态能级随电场平方发生的偏移",
+            "aliases": [],
+            "prerequisites": [
+              "斯塔克哈密顿量"
+            ],
+            "definition": "二次斯塔克效应是基态能级最低阶按外电场平方偏移的现象。",
+            "example": "氢原子1s能级偏移正比于𝓔²。"
+          },
+          {
+            "name": "线性电极化率",
+            "difficulty": 3,
+            "description": "感生偶极矩与外电场的比例系数",
+            "aliases": [
+              "χ"
+            ],
+            "prerequisites": [
+              "二次斯塔克效应"
+            ],
+            "definition": "线性电极化率是感生电偶极矩对外电场的线性响应系数。",
+            "example": "1s态感生偶极矩可写为χ₁s𝓔。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十二章提纲",
+            "section_key": "c268447d4d",
+            "page_range": [
+              319,
+              320
+            ]
+          },
+          {
+            "name": "A.引言",
+            "section_key": "b4e9e20cfd",
+            "page_range": [
+              321,
+              321
+            ]
+          },
+          {
+            "name": "B.哈密顿算符中的附加项",
+            "section_key": "9f15a3c697",
+            "page_range": [
+              322,
+              327
+            ]
+          },
+          {
+            "name": "C.能级n=2的精细结构",
+            "section_key": "41ed7aa604",
+            "page_range": [
+              328,
+              334
+            ]
+          },
+          {
+            "name": "D.能级n=1的超精细结构",
+            "section_key": "64cabe70d6",
+            "page_range": [
+              335,
+              339
+            ]
+          },
+          {
+            "name": "E.基态能级1s的超精细结构的塞曼效应",
+            "section_key": "c3e2ee5710",
+            "page_range": [
+              340,
+              353
+            ]
+          },
+          {
+            "name": "第十二章补充材料",
+            "section_key": "150c87466a",
+            "page_range": [
+              354,
+              389
+            ]
+          }
+        ],
+        "chapter_key": "8375d6b194",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 10,
+          "raw_heading": "第十二章 微扰理论的应用：氢原子的精细和超精细结构",
+          "page_range": [
+            318,
+            389
+          ]
+        }
+      },
+      {
+        "name": "第十三章 依赖于时间的问题的近似解法",
+        "concepts": [
+          {
+            "name": "未微扰哈密顿量",
+            "difficulty": 2,
+            "description": "描述施加微扰前体系的能量与定态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "未微扰哈密顿量是外加微扰作用前决定体系定态和能级的哈密顿算符。",
+            "example": "H₀|φₙ⟩=Eₙ|φₙ⟩"
+          },
+          {
+            "name": "时间微扰",
+            "difficulty": 2,
+            "description": "随时间施加且强度相对较小的附加作用",
+            "aliases": [],
+            "prerequisites": [
+              "未微扰哈密顿量"
+            ],
+            "definition": "时间微扰是加入未微扰哈密顿量且可显含时间的弱作用项。",
+            "example": "H(t)=H₀+W(t)"
+          },
+          {
+            "name": "微扰参数",
+            "difficulty": 2,
+            "description": "表征微扰强弱并用于展开的无量纲量",
+            "aliases": [],
+            "prerequisites": [
+              "时间微扰"
+            ],
+            "definition": "微扰参数是乘在微扰算符前且远小于1的无量纲实参数。",
+            "example": "W(t)=λŴ(t)，λ≪1"
+          },
+          {
+            "name": "表象展开",
+            "difficulty": 3,
+            "description": "在未微扰本征态基中展开体系态",
+            "aliases": [],
+            "prerequisites": [
+              "未微扰哈密顿量"
+            ],
+            "definition": "表象展开是将体系态表示为未微扰哈密顿量本征态线性组合的方法。",
+            "example": "|ψ(t)⟩=Σₙcₙ(t)|φₙ⟩"
+          },
+          {
+            "name": "系数微分方程",
+            "difficulty": 3,
+            "description": "态矢分量满足的联立一阶线性方程组",
+            "aliases": [],
+            "prerequisites": [
+              "表象展开",
+              "时间微扰"
+            ],
+            "definition": "系数微分方程是薛定谔方程投影到未微扰本征态基后得到的分量方程组。",
+            "example": "iℏċₙ=Eₙcₙ+λΣₖŴₙₖcₖ"
+          },
+          {
+            "name": "函数变换",
+            "difficulty": 3,
+            "description": "分离未微扰能级相位以获得缓变系数",
+            "aliases": [],
+            "prerequisites": [
+              "系数微分方程"
+            ],
+            "definition": "函数变换是把系数写成缓变函数与未微扰相位因子乘积的变换。",
+            "example": "cₙ(t)=bₙ(t)e^{-iEₙt/ℏ}"
+          },
+          {
+            "name": "玻尔角频率",
+            "difficulty": 2,
+            "description": "由两个未微扰能级差确定的角频率",
+            "aliases": [],
+            "prerequisites": [
+              "未微扰哈密顿量"
+            ],
+            "definition": "玻尔角频率是两个能级差除以约化普朗克常数得到的角频率。",
+            "example": "ωₙₖ=(Eₙ−Eₖ)/ℏ"
+          },
+          {
+            "name": "微扰级数",
+            "difficulty": 3,
+            "description": "按微扰参数幂次逐级展开体系解",
+            "aliases": [],
+            "prerequisites": [
+              "微扰参数",
+              "函数变换"
+            ],
+            "definition": "微扰级数是将变换后的系数表示为微扰参数各次幂之和的展开。",
+            "example": "bₙ=bₙ⁽⁰⁾+λbₙ⁽¹⁾+λ²bₙ⁽²⁾+…"
+          },
+          {
+            "name": "微扰递推方程",
+            "difficulty": 4,
+            "description": "由低阶解逐步确定高阶解的方程",
+            "aliases": [],
+            "prerequisites": [
+              "微扰级数"
+            ],
+            "definition": "微扰递推方程规定第r阶解由第r−1阶解决定的微分关系。",
+            "example": "用bₖ⁽ʳ⁻¹⁾求bₙ⁽ʳ⁾"
+          },
+          {
+            "name": "跃迁概率",
+            "difficulty": 3,
+            "description": "测得体系处于另一未微扰定态的概率",
+            "aliases": [],
+            "prerequisites": [
+              "表象展开",
+              "微扰级数"
+            ],
+            "definition": "跃迁概率是体系由初态跃迁到指定末态的概率，等于相应态分量模平方。",
+            "example": "Pᵢf(t)=|⟨φ_f|ψ(t)⟩|²"
+          },
+          {
+            "name": "跃迁概率公式",
+            "difficulty": 4,
+            "description": "一级微扰下由微扰矩阵元积分给出的概率",
+            "aliases": [],
+            "prerequisites": [
+              "跃迁概率",
+              "玻尔角频率"
+            ],
+            "definition": "跃迁概率公式给出一级计算中跃迁概率与时间截断微扰矩阵元积分的关系。",
+            "example": "Pᵢf=ℏ⁻²|∫₀ᵗe^{iω_fᵢt′}W_fᵢ(t′)dt′|²"
+          },
+          {
+            "name": "傅里叶变换",
+            "difficulty": 3,
+            "description": "将时间微扰分解为不同角频率成分",
+            "aliases": [],
+            "prerequisites": [
+              "跃迁概率公式"
+            ],
+            "definition": "傅里叶变换是把时间函数表示为角频率成分的积分变换。",
+            "example": "跃迁概率正比于微扰矩阵元傅里叶变换的模平方"
+          },
+          {
+            "name": "正弦型微扰",
+            "difficulty": 2,
+            "description": "按正弦或余弦规律随时间变化的微扰",
+            "aliases": [],
+            "prerequisites": [
+              "时间微扰"
+            ],
+            "definition": "正弦型微扰是时间依赖形式为正弦函数或余弦函数的微扰。",
+            "example": "Ŵ(t)=Ŵ sinωt"
+          },
+          {
+            "name": "共振现象",
+            "difficulty": 3,
+            "description": "微扰频率接近跃迁角频率时跃迁增强",
+            "aliases": [],
+            "prerequisites": [
+              "正弦型微扰",
+              "跃迁概率公式",
+              "玻尔角频率"
+            ],
+            "definition": "共振现象是外界微扰频率与体系跃迁角频率接近时跃迁概率显著增强的现象。",
+            "example": "ω≈ω_fᵢ时跃迁概率出现峰值"
+          },
+          {
+            "name": "费米黄金规则",
+            "difficulty": 4,
+            "description": "连续末态下给出恒定跃迁率的近似公式",
+            "aliases": [],
+            "prerequisites": [
+              "连续谱耦合",
+              "态密度",
+              "跃迁概率"
+            ],
+            "definition": "费米黄金规则是弱微扰和连续末态条件下计算单位时间跃迁概率的公式。",
+            "example": "跃迁率与|W_fᵢ|²及末态态密度成正比"
+          },
+          {
+            "name": "连续谱耦合",
+            "difficulty": 4,
+            "description": "初态与连续分布末态之间的微扰跃迁",
+            "aliases": [],
+            "prerequisites": [
+              "跃迁概率",
+              "态密度"
+            ],
+            "definition": "连续谱耦合是初态通过微扰跃迁到能量连续分布的末态统。",
+            "example": "电子跃迁到连续能级"
+          },
+          {
+            "name": "态密度",
+            "difficulty": 3,
+            "description": "单位能量区间内可用量子态的数目",
+            "aliases": [],
+            "prerequisites": [
+              "连续谱耦合"
+            ],
+            "definition": "态密度表示连续谱中单位能量区间包含的末态数目。",
+            "example": "用态密度把末态求和改写为能量积分"
+          },
+          {
+            "name": "共振宽度",
+            "difficulty": 3,
+            "description": "共振峰显著范围对应的频率宽度",
+            "aliases": [],
+            "prerequisites": [
+              "共振现象"
+            ],
+            "definition": "共振宽度是跃迁概率随微扰频率变化时共振峰所覆盖的特征频率范围。",
+            "example": "有限作用时间导致共振峰具有宽度"
+          },
+          {
+            "name": "布洛赫方程",
+            "difficulty": 4,
+            "description": "描述抽运、驰豫和磁化进动的方程组",
+            "aliases": [],
+            "prerequisites": [
+              "时间微扰",
+              "微扰级数"
+            ],
+            "definition": "布洛赫方程是描述磁化强度在静磁场、射频场和驰豫作用下演变的方程组。",
+            "example": "dM_z/dt=nμ₀−M_z/T_R+进动项"
+          },
+          {
+            "name": "相关函数",
+            "difficulty": 4,
+            "description": "描述随机微扰在不同时刻关联程度的函数",
+            "aliases": [],
+            "prerequisites": [
+              "随机微扰"
+            ],
+            "definition": "相关函数是随机微扰矩阵元在两个时刻乘积的统计平均。",
+            "example": "g_fᵢ(τ)= overline{W_fᵢ(t)W_fᵢ*(t−τ)}"
+          },
+          {
+            "name": "相关时间",
+            "difficulty": 3,
+            "description": "随机微扰记忆效应持续的特征时间",
+            "aliases": [],
+            "prerequisites": [
+              "相关函数"
+            ],
+            "definition": "相关时间是相关函数衰减至近零所对应的特征时间尺度。",
+            "example": "τ≫τ_c时相关函数近似为零"
+          },
+          {
+            "name": "驰豫时间",
+            "difficulty": 3,
+            "description": "磁化强度衰减或恢复的特征时间",
+            "aliases": [],
+            "prerequisites": [
+              "布洛赫方程"
+            ],
+            "definition": "驰豫时间是体系通过驰豫过程恢复或衰减到平衡状态的特征时间。",
+            "example": "dM_z/dt=−M_z/T₁"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十三章提纲",
+            "section_key": "9c7eb53996",
+            "page_range": [
+              391,
+              391
+            ]
+          },
+          {
+            "name": "A.问题的梗概",
+            "section_key": "8d7073dfc9",
+            "page_range": [
+              392,
+              392
+            ]
+          },
+          {
+            "name": "B.薛定谔方程的近似解",
+            "section_key": "ac8519b539",
+            "page_range": [
+              393,
+              396
+            ]
+          },
+          {
+            "name": "C.重要特例:正弦型微扰或恒定微扰",
+            "section_key": "946120d939",
+            "page_range": [
+              397,
+              408
+            ]
+          },
+          {
+            "name": "第十三章补充材料",
+            "section_key": "8cd9cd9d74",
+            "page_range": [
+              409,
+              471
+            ]
+          }
+        ],
+        "chapter_key": "4038eb4b47",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 11,
+          "raw_heading": "第十三章 依赖于时间的问题的近似解法",
+          "page_range": [
+            390,
+            471
+          ]
+        }
+      },
+      {
+        "name": "第十四章 全同粒子体系",
+        "concepts": [
+          {
+            "name": "全同粒子",
+            "difficulty": 1,
+            "description": "一切固有性质完全相同、不可被实验区分的粒子",
+            "aliases": [
+              "相同粒子"
+            ],
+            "prerequisites": [],
+            "definition": "若两个粒子的质量、自旋、电荷等一切固有性质完全相同，则称它们为全同粒子。",
+            "example": "宇宙中的所有电子彼此全同。"
+          },
+          {
+            "name": "交换简并",
+            "difficulty": 3,
+            "description": "多个数学右矢对应同一物理态的含混情形",
+            "aliases": [],
+            "prerequisites": [
+              "全同粒子"
+            ],
+            "definition": "由于全同粒子编号无物理根据，多个不同数学右矢可能描述同一物理状态。",
+            "example": "两个自旋一上一下可由|+,-⟩或|-,+⟩描述。"
+          },
+          {
+            "name": "置换算符",
+            "difficulty": 3,
+            "description": "交换或重新排列粒子标签的算符",
+            "aliases": [
+              "交换算符"
+            ],
+            "prerequisites": [
+              "全同粒子"
+            ],
+            "definition": "置换算符通过重新排列多粒子态中的粒子标号来表示粒子置换。",
+            "example": "两个粒子的交换由算符P₂₁表示。"
+          },
+          {
+            "name": "对称右矢",
+            "difficulty": 3,
+            "description": "粒子置换后保持不变的多粒子态矢",
+            "aliases": [
+              "对称态"
+            ],
+            "prerequisites": [
+              "置换算符"
+            ],
+            "definition": "对任意粒子置换作用后仍等于自身的右矢称为对称右矢。",
+            "example": "交换两个玻色子的态矢不发生改变。"
+          },
+          {
+            "name": "反对称右矢",
+            "difficulty": 3,
+            "description": "奇置换后变号的多粒子态矢",
+            "aliases": [
+              "反对称态"
+            ],
+            "prerequisites": [
+              "置换算符"
+            ],
+            "definition": "任意奇置换使其变号、偶置换不变的右矢称为反对称右矢。",
+            "example": "交换两个费米子的态矢会产生负号。"
+          },
+          {
+            "name": "对称化算符",
+            "difficulty": 3,
+            "description": "将任意多粒子态投影为对称态的算符",
+            "aliases": [
+              "S算符"
+            ],
+            "prerequisites": [
+              "置换算符",
+              "对称右矢"
+            ],
+            "definition": "对所有粒子置换的结果求规范化对称和所构成的算符称为对称化算符。",
+            "example": "对两个粒子态施加(1+P₂₁)/√2。"
+          },
+          {
+            "name": "反对称化算符",
+            "difficulty": 3,
+            "description": "将任意多粒子态投影为反对称态的算符",
+            "aliases": [
+              "反对称化算符"
+            ],
+            "prerequisites": [
+              "置换算符",
+              "反对称右矢"
+            ],
+            "definition": "对所有置换按奇偶性赋予正负号并求规范化和的算符称为反对称化算符。",
+            "example": "对两个粒子态施加(1-P₂₁)/√2。"
+          },
+          {
+            "name": "观察算符变换",
+            "difficulty": 3,
+            "description": "置换粒子时同步变换相关观察算符",
+            "aliases": [
+              "观测算符变换"
+            ],
+            "prerequisites": [
+              "置换算符"
+            ],
+            "definition": "粒子置换下，与粒子标号关联的观察算符也必须按同一置换重新排列。",
+            "example": "P₂₁将B(1)变为B(2)。"
+          },
+          {
+            "name": "对称化假定",
+            "difficulty": 4,
+            "description": "全同粒子物理态必须具有确定交换对称性",
+            "aliases": [
+              "对称性假设"
+            ],
+            "prerequisites": [
+              "交换简并",
+              "对称右矢",
+              "反对称右矢"
+            ],
+            "definition": "全同粒子体系的物理右矢必须属于完全对称或完全反对称的态空间。",
+            "example": "玻色子取对称态，费米子取反对称态。"
+          },
+          {
+            "name": "物理右矢",
+            "difficulty": 3,
+            "description": "满足对称化假定并代表物理态的右矢",
+            "aliases": [
+              "物理态右矢"
+            ],
+            "prerequisites": [
+              "对称化假定"
+            ],
+            "definition": "经过适当对称化或反对称化、能够无歧义给出物理预言的右矢称为物理右矢。",
+            "example": "两个费米子的物理态取反对称组合。"
+          },
+          {
+            "name": "物理态空间",
+            "difficulty": 4,
+            "description": "由允许物理右矢组成的态空间子空间",
+            "aliases": [
+              "物理右矢空间"
+            ],
+            "prerequisites": [
+              "物理右矢"
+            ],
+            "definition": "全同粒子体系中由完全对称态或完全反对称态构成的子空间称为物理态空间。",
+            "example": "玻色子物理态属于对称子空间。"
+          },
+          {
+            "name": "玻色子",
+            "difficulty": 2,
+            "description": "物理态在粒子交换下保持对称的全同粒子",
+            "aliases": [
+              "玻色粒子"
+            ],
+            "prerequisites": [
+              "对称化假定",
+              "对称右矢"
+            ],
+            "definition": "服从对称化假定、交换任意两个粒子时态矢不变的全同粒子称为玻色子。",
+            "example": "多个玻色子可以占据同一单粒子态。"
+          },
+          {
+            "name": "费米子",
+            "difficulty": 2,
+            "description": "物理态在粒子交换下反对称的全同粒子",
+            "aliases": [
+              "费米粒子"
+            ],
+            "prerequisites": [
+              "对称化假定",
+              "反对称右矢"
+            ],
+            "definition": "服从对称化假定、交换任意两个粒子时态矢变号的全同粒子称为费米子。",
+            "example": "两个电子不能处于完全相同的单粒子态。"
+          },
+          {
+            "name": "泡利不相容原理",
+            "difficulty": 3,
+            "description": "费米子不能占据完全相同的单粒子态",
+            "aliases": [
+              "泡利原理"
+            ],
+            "prerequisites": [
+              "费米子",
+              "反对称右矢"
+            ],
+            "definition": "任何两个费米子不能同时处于完全相同的单粒子态。",
+            "example": "同一轨道中最多容纳自旋相反的两个电子。"
+          },
+          {
+            "name": "量子统计",
+            "difficulty": 4,
+            "description": "由玻色或费米交换对称性决定的统计规律",
+            "aliases": [
+              "玻色统计",
+              "费米统计"
+            ],
+            "prerequisites": [
+              "玻色子",
+              "费米子",
+              "对称化假定"
+            ],
+            "definition": "全同粒子的交换对称性对多粒子态计数和物理预言所产生的统计规律称为量子统计。",
+            "example": "玻色子与费米子的基态占据规律不同。"
+          },
+          {
+            "name": "交换过程干涉",
+            "difficulty": 4,
+            "description": "直接过程与交换过程的概率幅发生干涉",
+            "aliases": [
+              "直接交换干涉"
+            ],
+            "prerequisites": [
+              "对称化假定",
+              "交换简并"
+            ],
+            "definition": "全同粒子散射中不可区分的直接过程和交换过程的概率幅必须相加并产生干涉。",
+            "example": "相同自旋电子散射中出现交换项。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十四章提纲",
+            "section_key": "48ca1159ae",
+            "page_range": [
+              473,
+              473
+            ]
+          },
+          {
+            "name": "A.问题的梗概",
+            "section_key": "683e2f6b1f",
+            "page_range": [
+              474,
+              479
+            ]
+          },
+          {
+            "name": "B.置换算符",
+            "section_key": "98da0dee4d",
+            "page_range": [
+              480,
+              488
+            ]
+          },
+          {
+            "name": "C.对称化假定",
+            "section_key": "b10c04318a",
+            "page_range": [
+              489,
+              498
+            ]
+          },
+          {
+            "name": "D.讨论",
+            "section_key": "f6bafb8933",
+            "page_range": [
+              499,
+              511
+            ]
+          },
+          {
+            "name": "第十四章补充材料",
+            "section_key": "b5457774cd",
+            "page_range": [
+              512,
+              557
+            ]
+          }
+        ],
+        "chapter_key": "0b3e7e97e8",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 12,
+          "raw_heading": "第十四章 全同粒子体系",
+          "page_range": [
+            472,
+            557
+          ]
+        }
+      },
+      {
+        "name": "附录",
+        "concepts": [
+          {
+            "name": "周期函数",
+            "difficulty": 2,
+            "description": "满足平移一定长度后函数值不变的函数",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若存在非零实数L使得对一切x都有f(x+L)=f(x)，则f(x)称为周期函数。",
+            "example": "sin(2πx/L)是周期函数"
+          },
+          {
+            "name": "基本周期",
+            "difficulty": 2,
+            "description": "周期函数的最小正周期",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "周期函数的基本周期定义为它的最小正周期。",
+            "example": "cos(2πx/L)的基本周期为L"
+          },
+          {
+            "name": "周期延拓",
+            "difficulty": 2,
+            "description": "把有限区间函数延展为周期函数",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "将有限区间上的函数按区间长度重复延展为周期函数的构造。",
+            "example": "将[a,b]上的函数按b-a周期重复"
+          },
+          {
+            "name": "傅里叶级数",
+            "difficulty": 3,
+            "description": "用指数或三角函数级数表示周期函数",
+            "aliases": [
+              "Fourier series"
+            ],
+            "prerequisites": [
+              "周期函数",
+              "基本周期"
+            ],
+            "definition": "傅里叶级数是以周期函数基本频率为基底展开函数的级数。",
+            "example": "f(x)=Σcₙe^{ikₙx}"
+          },
+          {
+            "name": "傅里叶系数",
+            "difficulty": 3,
+            "description": "确定傅里叶级数各展开项的系数",
+            "aliases": [
+              "Fourier coefficients"
+            ],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "傅里叶系数是通过一个周期上的积分确定的级数展开系数。",
+            "example": "cₙ=(1/L)∫e^{-ikₙx}f(x)dx"
+          },
+          {
+            "name": "傅里叶谱",
+            "difficulty": 3,
+            "description": "周期函数傅里叶系数模的集合",
+            "aliases": [
+              "Fourier spectrum"
+            ],
+            "prerequisites": [
+              "傅里叶系数"
+            ],
+            "definition": "傅里叶谱定义为周期函数全部傅里叶系数模值的集合。",
+            "example": "由|cₙ|随n的分布表示"
+          },
+          {
+            "name": "正弦余弦级数",
+            "difficulty": 3,
+            "description": "用正弦和余弦函数展开周期函数",
+            "aliases": [
+              "三角级数"
+            ],
+            "prerequisites": [
+              "傅里叶级数",
+              "傅里叶系数"
+            ],
+            "definition": "正弦余弦级数是将周期函数表示为常数项及正余弦项之和的展开。",
+            "example": "f(x)=a₀+Σ(aₙcos kₙx+bₙsin kₙx)"
+          },
+          {
+            "name": "函数宇称",
+            "difficulty": 2,
+            "description": "函数关于原点的偶对称或奇对称性质",
+            "aliases": [
+              "奇偶性"
+            ],
+            "prerequisites": [],
+            "definition": "函数宇称由函数满足f(-x)=f(x)或f(-x)=-f(x)确定。",
+            "example": "偶函数的正弦系数均为零"
+          },
+          {
+            "name": "贝塞尔帕塞瓦关系",
+            "difficulty": 4,
+            "description": "周期函数平均模方与系数模方和相等",
+            "aliases": [
+              "Bessel-Parseval关系式"
+            ],
+            "prerequisites": [
+              "傅里叶级数",
+              "傅里叶系数"
+            ],
+            "definition": "该关系式表明一个周期内函数模方的平均值等于傅里叶系数模方之和。",
+            "example": "(1/L)∫|f|²dx=Σ|cₙ|²"
+          },
+          {
+            "name": "傅里叶变换",
+            "difficulty": 3,
+            "description": "将非周期函数变为连续变量函数的积分变换",
+            "aliases": [
+              "Fourier transform"
+            ],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "傅里叶变换通过无穷区间积分把函数表示为连续波数或动量变量的函数。",
+            "example": "f(x)与f̃(k)互为傅里叶变换"
+          },
+          {
+            "name": "量子傅里叶变换",
+            "difficulty": 4,
+            "description": "以动量为变量表示波函数的傅里叶变换",
+            "aliases": [
+              "动量表象变换"
+            ],
+            "prerequisites": [
+              "傅里叶变换",
+              "波函数"
+            ],
+            "definition": "量子傅里叶变换用含ℏ的积分将位置波函数变换为动量函数。",
+            "example": "ψ̃(p)=(1/√(2πℏ))∫e^{-ipx/ℏ}ψ(x)dx"
+          },
+          {
+            "name": "波函数",
+            "difficulty": 3,
+            "description": "量子力学中描述粒子状态的函数",
+            "aliases": [
+              "ψ(x)"
+            ],
+            "prerequisites": [],
+            "definition": "波函数是量子力学中可进行傅里叶变换以表示状态的函数。",
+            "example": "ψ(x)可变换为ψ̃(p)"
+          },
+          {
+            "name": "傅里叶平移性质",
+            "difficulty": 3,
+            "description": "函数平移对应变换域的相位或变量平移",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "傅里叶变换中，位置平移对应动量域的相位因子，位置域相位因子对应动量平移。",
+            "example": "ψ(x-x₀)对应e^{-ipx₀/ℏ}ψ̃(p)"
+          },
+          {
+            "name": "傅里叶缩放性质",
+            "difficulty": 3,
+            "description": "自变量缩放改变变换函数的尺度与幅度",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "若自变量变为cx，傅里叶变换变为原变换在p/c处的值并乘以1/|c|。",
+            "example": "F[ψ(cx)]=|c|^{-1}ψ̃(p/c)"
+          },
+          {
+            "name": "傅里叶导数性质",
+            "difficulty": 4,
+            "description": "函数求导对应变换域乘以动量因子",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "函数的n阶导数的傅里叶变换等于原变换乘以(ip/ℏ)^n。",
+            "example": "F[ψ′]=(ip/ℏ)ψ̃"
+          },
+          {
+            "name": "卷积定理",
+            "difficulty": 4,
+            "description": "卷积的傅里叶变换等于变换的乘积",
+            "aliases": [
+              "卷积性质"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "两个函数卷积的傅里叶变换正比于它们傅里叶变换的普通乘积。",
+            "example": "F[ψ₁*ψ₂]=√(2πℏ)ψ̃₁ψ̃₂"
+          },
+          {
+            "name": "宽度乘积关系",
+            "difficulty": 3,
+            "description": "函数与其傅里叶变换宽度的乘积受ℏ限制",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "若函数具有宽度Δx的高峰，则其变换宽度满足Δx·Δp≳ℏ。",
+            "example": "波包越窄，动量分布越宽"
+          },
+          {
+            "name": "帕塞瓦普朗克尔公式",
+            "difficulty": 4,
+            "description": "傅里叶变换保持函数模方积分不变",
+            "aliases": [
+              "Parseval-Plancherel公式"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "帕塞瓦—普朗克尔公式表明位置域与动量域的模方积分相等。",
+            "example": "∫|ψ(x)|²dx=∫|ψ̃(p)|²dp"
+          }
+        ],
+        "sections": [
+          {
+            "name": "附录I 傅里叶级数和傅里叶变换",
+            "section_key": "35061d6c12",
+            "page_range": [
+              559,
+              567
+            ]
+          },
+          {
+            "name": "附录II 狄拉克的δ“函数”",
+            "section_key": "8a6302aa28",
+            "page_range": [
+              568,
+              579
+            ]
+          },
+          {
+            "name": "附录III 经典力学中的拉格朗日函数和哈密顿函数",
+            "section_key": "3cb84c56ff",
+            "page_range": [
+              580,
+              637
+            ]
+          }
+        ],
+        "chapter_key": "30d5d10545",
+        "metadata": {
+          "volume_id": "09cad87bbe15",
+          "file_id": "09cad87bbe15",
+          "volume_title": "量子力学（第二卷）（Claude Cohen-Tannoudji, Bernar",
+          "chapter_order": 13,
+          "raw_heading": "附录",
+          "page_range": [
+            558,
+            637
+          ]
+        }
+      }
+    ],
+    "page_ranges": {
+      "20213de988": [
+        3,
+        7
+      ],
+      "标题": [
+        3,
+        7
+      ],
+      "53a739d8d7": [
+        8,
+        9
+      ],
+      "使用说明": [
+        8,
+        9
+      ],
+      "e63aa59707": [
+        10,
+        11
+      ],
+      "作者简介": [
+        10,
+        11
+      ],
+      "b116061b4b": [
+        12,
+        13
+      ],
+      "译者序": [
+        12,
+        13
+      ],
+      "e63bed717e": [
+        14,
+        19
+      ],
+      "第二版序言": [
+        14,
+        19
+      ],
+      "dffef7f85f": [
+        20,
+        79
+      ],
+      "第八章 势场中的散射的初等量子理论": [
+        20,
+        79
+      ],
+      "314328cdee": [
+        80,
+        111
+      ],
+      "第九章 电子的自旋": [
+        80,
+        111
+      ],
+      "f936bedcef": [
+        112,
+        207
+      ],
+      "第十章 角动量的耦合": [
+        112,
+        207
+      ],
+      "0fffab54f9": [
+        208,
+        317
+      ],
+      "第十一章 定态微扰理论": [
+        208,
+        317
+      ],
+      "8375d6b194": [
+        318,
+        389
+      ],
+      "第十二章 微扰理论的应用:氢原子的精细和超精细结构": [
+        318,
+        389
+      ],
+      "4038eb4b47": [
+        390,
+        471
+      ],
+      "第十三章 依赖于时间的问题的近似解法": [
+        390,
+        471
+      ],
+      "0b3e7e97e8": [
+        472,
+        557
+      ],
+      "第十四章 全同粒子体系": [
+        472,
+        557
+      ],
+      "30d5d10545": [
+        558,
+        637
+      ],
+      "附录": [
+        558,
+        637
+      ]
+    },
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "19557accbb": [
+        21,
+        21
+      ],
+      "第八章提纲": [
+        21,
+        21
+      ],
+      "3454f3b13d": [
+        22,
+        25
+      ],
+      "A.引言": [
+        22,
+        25
+      ],
+      "f885834489": [
+        26,
+        38
+      ],
+      "B.散射定态;有效载面的计算": [
+        26,
+        38
+      ],
+      "3498cec8ac": [
+        39,
+        52
+      ],
+      "C.中心场中的散射;分波法": [
+        39,
+        52
+      ],
+      "c6d53e104f": [
+        53,
+        79
+      ],
+      "第八章补充材料": [
+        53,
+        79
+      ],
+      "f0881d62f2": [
+        81,
+        82
+      ],
+      "第九章提纲": [
+        81,
+        82
+      ],
+      "1000015ea3": [
+        83,
+        85
+      ],
+      "A.电子自旋的引入": [
+        83,
+        85
+      ],
+      "4a9563e283": [
+        86,
+        87
+      ],
+      "B.1/2角动量的特殊性质": [
+        86,
+        87
+      ],
+      "ef0b419de1": [
+        88,
+        95
+      ],
+      "C.对自旋1/2的粒子的非相对论描述": [
+        88,
+        95
+      ],
+      "232b295bfe": [
+        96,
+        111
+      ],
+      "第九章补充材料": [
+        96,
+        111
+      ],
+      "f2d5e0edc8": [
+        113,
+        113
+      ],
+      "第十章提纲": [
+        113,
+        113
+      ],
+      "554bb5bf81": [
+        114,
+        117
+      ],
+      "6108765d66": [
+        118,
+        122
+      ],
+      "B.两个自旋1/2的耦合;初等方法": [
+        118,
+        122
+      ],
+      "ce5a740b31": [
+        123,
+        139
+      ],
+      "C.两个任意角动量的耦合;普遍方法": [
+        123,
+        139
+      ],
+      "097fdcd1da": [
+        140,
+        207
+      ],
+      "第十章补充材料": [
+        140,
+        207
+      ],
+      "370699f4db": [
+        209,
+        209
+      ],
+      "第十一章提纲": [
+        209,
+        209
+      ],
+      "ed1b5070ff": [
+        210,
+        213
+      ],
+      "A.方法概述": [
+        210,
+        213
+      ],
+      "3dc0b9d008": [
+        214,
+        218
+      ],
+      "B.非简并能级的微扰": [
+        214,
+        218
+      ],
+      "7ea936b256": [
+        219,
+        222
+      ],
+      "C.简并能级的微扰": [
+        219,
+        222
+      ],
+      "76e566d875": [
+        223,
+        317
+      ],
+      "第十一章补充材料": [
+        223,
+        317
+      ],
+      "c268447d4d": [
+        319,
+        320
+      ],
+      "第十二章提纲": [
+        319,
+        320
+      ],
+      "b4e9e20cfd": [
+        321,
+        321
+      ],
+      "9f15a3c697": [
+        322,
+        327
+      ],
+      "B.哈密顿算符中的附加项": [
+        322,
+        327
+      ],
+      "41ed7aa604": [
+        328,
+        334
+      ],
+      "C.能级n=2的精细结构": [
+        328,
+        334
+      ],
+      "64cabe70d6": [
+        335,
+        339
+      ],
+      "D.能级n=1的超精细结构": [
+        335,
+        339
+      ],
+      "c3e2ee5710": [
+        340,
+        353
+      ],
+      "E.基态能级1s的超精细结构的塞曼效应": [
+        340,
+        353
+      ],
+      "150c87466a": [
+        354,
+        389
+      ],
+      "第十二章补充材料": [
+        354,
+        389
+      ],
+      "9c7eb53996": [
+        391,
+        391
+      ],
+      "第十三章提纲": [
+        391,
+        391
+      ],
+      "8d7073dfc9": [
+        392,
+        392
+      ],
+      "A.问题的梗概": [
+        392,
+        392
+      ],
+      "ac8519b539": [
+        393,
+        396
+      ],
+      "B.薛定谔方程的近似解": [
+        393,
+        396
+      ],
+      "946120d939": [
+        397,
+        408
+      ],
+      "C.重要特例:正弦型微扰或恒定微扰": [
+        397,
+        408
+      ],
+      "8cd9cd9d74": [
+        409,
+        471
+      ],
+      "第十三章补充材料": [
+        409,
+        471
+      ],
+      "48ca1159ae": [
+        473,
+        473
+      ],
+      "第十四章提纲": [
+        473,
+        473
+      ],
+      "683e2f6b1f": [
+        474,
+        479
+      ],
+      "98da0dee4d": [
+        480,
+        488
+      ],
+      "B.置换算符": [
+        480,
+        488
+      ],
+      "b10c04318a": [
+        489,
+        498
+      ],
+      "C.对称化假定": [
+        489,
+        498
+      ],
+      "f6bafb8933": [
+        499,
+        511
+      ],
+      "D.讨论": [
+        499,
+        511
+      ],
+      "b5457774cd": [
+        512,
+        557
+      ],
+      "第十四章补充材料": [
+        512,
+        557
+      ],
+      "35061d6c12": [
+        559,
+        567
+      ],
+      "附录I 傅里叶级数和傅里叶变换": [
+        559,
+        567
+      ],
+      "8a6302aa28": [
+        568,
+        579
+      ],
+      "附录II 狄拉克的δ“函数”": [
+        568,
+        579
+      ],
+      "3cb84c56ff": [
+        580,
+        637
+      ],
+      "附录III 经典力学中的拉格朗日函数和哈密顿函数": [
+        580,
+        637
+      ]
+    }
+  }
+}

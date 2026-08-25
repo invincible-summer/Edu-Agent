@@ -1,0 +1,4224 @@
+{
+  "file_id": "199af492b40e",
+  "text_sha256": "8fa834813c6d5a54d52a204850cff297053d49a4835d236937ff33fba789a2e9",
+  "prompt_version": "knowledge_graph_build@2.0.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.2.0+textbook_graph_design@1.0.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "数学",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "绪论　实数",
+        "concepts": [
+          {
+            "name": "有理数域",
+            "difficulty": 1,
+            "description": "由有理数及其算术运算和序关系构成的数域",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "有理数域是全体有理数在加减乘除及序关系下形成的数系。",
+            "example": "整数2可写成有理数2/1。"
+          },
+          {
+            "name": "有理数域的序",
+            "difficulty": 2,
+            "description": "有理数之间由等于、大于和小于构成的关系",
+            "aliases": [
+              "有理数序"
+            ],
+            "prerequisites": [
+              "有理数域"
+            ],
+            "definition": "任意两个有理数之间恰有一种等于、大于或小于的关系。",
+            "example": "对数2和3，有3>2。"
+          },
+          {
+            "name": "阿基米德公理",
+            "difficulty": 3,
+            "description": "自然数可超过任意给定的正实数",
+            "aliases": [
+              "阿基米德性质"
+            ],
+            "prerequisites": [
+              "有理数域的序"
+            ],
+            "definition": "对任意正数，都存在自然数大于它。",
+            "example": "给定1000，存在自然数1001大于它。"
+          },
+          {
+            "name": "无理数",
+            "difficulty": 2,
+            "description": "不能表示为两个整数之比的实数",
+            "aliases": [],
+            "prerequisites": [
+              "有理数域"
+            ],
+            "definition": "无理数是不能写成有理数形式的实数。",
+            "example": "√2是无理数。"
+          },
+          {
+            "name": "有理数域分割",
+            "difficulty": 4,
+            "description": "把有理数分成有序的上下两组",
+            "aliases": [
+              "分划",
+              "戴德金分割"
+            ],
+            "prerequisites": [
+              "有理数域的序"
+            ],
+            "definition": "有理数域分割是将有理数分为下组和上组且下组每数小于上组每数的划分。",
+            "example": "按平方小于2与大于2划分有理数。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实数域",
+            "difficulty": 3,
+            "description": "由有理数和无理数共同构成的数域",
+            "aliases": [
+              "实数系"
+            ],
+            "prerequisites": [
+              "有理数域",
+              "无理数",
+              "有理数域分割"
+            ],
+            "definition": "实数域是通过有理数域分割引入无理数后形成的完整数系。",
+            "example": "√2、−3和0.25都是实数。"
+          },
+          {
+            "name": "实数域的序",
+            "difficulty": 3,
+            "description": "实数之间保持完备的大小关系",
+            "aliases": [
+              "实数序"
+            ],
+            "prerequisites": [
+              "实数域",
+              "有理数域的序"
+            ],
+            "definition": "实数域的序规定任意两个实数恰有等于、大于或小于三种关系之一。",
+            "example": "√2>1。"
+          },
+          {
+            "name": "实数的稠密性",
+            "difficulty": 3,
+            "description": "任意两个不同实数间存在有理数",
+            "aliases": [
+              "稠密性"
+            ],
+            "prerequisites": [
+              "实数域的序",
+              "有理数域"
+            ],
+            "definition": "若两个实数具有大小差异，则它们之间至少存在一个有理数。",
+            "example": "1与√2之间有理数4/3。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "无限小数表示",
+            "difficulty": 3,
+            "description": "用无限十进小数表示任意实数",
+            "aliases": [
+              "十进小数表示"
+            ],
+            "prerequisites": [
+              "实数域",
+              "实数的稠密性"
+            ],
+            "definition": "无限小数表示通过逐次十等分区间确定实数的十进数字序列。",
+            "example": "3.826=3.826000…=3.825999…。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实数域连续性",
+            "difficulty": 4,
+            "description": "实数分割在实数域内总有界数",
+            "aliases": [
+              "完备性",
+              "戴德金定理",
+              "密接性"
+            ],
+            "prerequisites": [
+              "实数域分割",
+              "实数域"
+            ],
+            "definition": "实数域的任一分割都存在一个实数作为其界数。",
+            "example": "按实数分割得到的界数仍是实数。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "数集的上界",
+            "difficulty": 2,
+            "description": "不小于数集中所有元素的数",
+            "aliases": [
+              "上界"
+            ],
+            "prerequisites": [
+              "实数域的序"
+            ],
+            "definition": "若数集每个元素都不超过M，则M称为该集的上界。",
+            "example": "真分数集的上界是1。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "数集的下界",
+            "difficulty": 2,
+            "description": "不大于数集中所有元素的数",
+            "aliases": [
+              "下界"
+            ],
+            "prerequisites": [
+              "实数域的序"
+            ],
+            "definition": "若数集每个元素都不小于m，则m称为该集的下界。",
+            "example": "真分数集的下界是0。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "上确界",
+            "difficulty": 3,
+            "description": "数集所有上界中的最小者",
+            "aliases": [
+              "sup"
+            ],
+            "prerequisites": [
+              "数集的上界",
+              "实数域连续性"
+            ],
+            "definition": "上确界是数集上界中最小的实数。",
+            "example": "真分数集的上确界是1。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "下确界",
+            "difficulty": 3,
+            "description": "数集所有下界中的最大者",
+            "aliases": [
+              "inf"
+            ],
+            "prerequisites": [
+              "数集的下界",
+              "实数域连续性"
+            ],
+            "definition": "下确界是数集下界中最大的实数。",
+            "example": "真分数集的下确界是0。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实数加法",
+            "difficulty": 3,
+            "description": "通过有理近似定义实数的和及其运算性质",
+            "aliases": [
+              "实数的和"
+            ],
+            "prerequisites": [
+              "实数域",
+              "有理数域的序"
+            ],
+            "definition": "实数加法是将实数的有理近似界相加所确定的和。",
+            "example": "√2+√2=2√2。"
+          },
+          {
+            "name": "实数乘法",
+            "difficulty": 3,
+            "description": "通过有理近似定义实数的积及其运算性质",
+            "aliases": [
+              "实数的积"
+            ],
+            "prerequisites": [
+              "实数域",
+              "实数加法"
+            ],
+            "definition": "实数乘法是依靠有理近似和序关系确定实数积的运算。",
+            "example": "√2·√2=2。"
+          },
+          {
+            "name": "绝对值",
+            "difficulty": 2,
+            "description": "实数到零的距离所对应的非负数",
+            "aliases": [
+              "实数的绝对值"
+            ],
+            "prerequisites": [
+              "实数域的序"
+            ],
+            "definition": "实数α的绝对值是α与−α中不小于零的那个数。",
+            "example": "|−3|=3。"
+          },
+          {
+            "name": "根的存在性",
+            "difficulty": 4,
+            "description": "正实数的自然数次算术根存在且唯一",
+            "aliases": [
+              "算术根"
+            ],
+            "prerequisites": [
+              "实数域连续性",
+              "实数乘法"
+            ],
+            "definition": "对正实数α和自然数n，存在唯一正实数ξ满足ξⁿ=α。",
+            "example": "存在唯一正数ξ满足ξ²=2。"
+          },
+          {
+            "name": "有理指数幂",
+            "difficulty": 3,
+            "description": "把幂运算的指数从整数扩展到有理数",
+            "aliases": [
+              "有理数指数幂"
+            ],
+            "prerequisites": [
+              "根的存在性",
+              "实数乘法"
+            ],
+            "definition": "有理指数幂是依据整数幂和根定义的有理数指数幂。",
+            "example": "8^(1/3)=2。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实指数幂",
+            "difficulty": 4,
+            "description": "把正数的幂指数扩展到任意实数",
+            "aliases": [
+              "任意实数指数幂"
+            ],
+            "prerequisites": [
+              "有理指数幂",
+              "上确界",
+              "实数的稠密性"
+            ],
+            "definition": "实指数幂由有理指数逼近实指数时的上下幂界唯一确定。",
+            "example": "2^√2由有理指数幂的界确定。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "对数",
+            "difficulty": 3,
+            "description": "以正数为底求幂等于给定正数的指数",
+            "aliases": [
+              "实对数"
+            ],
+            "prerequisites": [
+              "实指数幂",
+              "实数域连续性"
+            ],
+            "definition": "以α为底的γ的对数是满足α^β=γ的唯一实数β。",
+            "example": "log₂8=3。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "线段的度量",
+            "difficulty": 3,
+            "description": "用正实数唯一表示线段长度并保持可加性",
+            "aliases": [
+              "线段长度"
+            ],
+            "prerequisites": [
+              "实数域",
+              "实数加法"
+            ],
+            "definition": "线段的度量是赋予线段正实数长度且单位、相等和相加关系成立的规则。",
+            "example": "若A=B+C，则l(A)=l(B)+l(C)。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "数轴",
+            "difficulty": 2,
+            "description": "实数与有向直线点之间的一一对应表示",
+            "aliases": [
+              "实数轴"
+            ],
+            "prerequisites": [
+              "线段的度量",
+              "实数域"
+            ],
+            "definition": "数轴是选定原点和单位长后，将每个实数对应到有向直线点的表示。",
+            "example": "数√2对应数轴上原点右侧的一个点。",
+            "section": "§4.实数的其他性质及应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1．有理数域",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "§2．无理数的导入、实数域的序",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "§3．实数的算术运算",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "§4．实数的其他性质及应用",
+            "page_range": [
+              7,
+              38
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第一章　极限论",
+        "concepts": [
+          {
+            "name": "变量",
+            "difficulty": 1,
+            "description": "被赋予数值的符号，可取不同数值",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "变量是被赋予数值的符号。",
+            "example": "字母x表示一个变量"
+          },
+          {
+            "name": "常量",
+            "difficulty": 1,
+            "description": "在考察过程中只取一个固定值的量",
+            "aliases": [],
+            "prerequisites": [
+              "变量"
+            ],
+            "definition": "常量是只取一个固定数值的变量。",
+            "example": "x_n=1是常量数列"
+          },
+          {
+            "name": "数列",
+            "difficulty": 1,
+            "description": "按自然数序号排列的一列实数",
+            "aliases": [
+              "序列"
+            ],
+            "prerequisites": [],
+            "definition": "数列是以自然数为序号并按序号排列的实数列。",
+            "example": "1,1/2,1/3,…"
+          },
+          {
+            "name": "整序变量",
+            "difficulty": 2,
+            "description": "取值按自然数序号依次排列的变量",
+            "aliases": [
+              "整序型变量",
+              "序列"
+            ],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "整序变量是其第n个值由自然数序号确定并依序排列的变量。",
+            "example": "x_n=a+(n-1)d"
+          },
+          {
+            "name": "普通项",
+            "difficulty": 2,
+            "description": "数列中由序号n表示的任意一项",
+            "aliases": [
+              "第n项"
+            ],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "普通项是数列中对应任意自然数序号n的项x_n。",
+            "example": "几何数列的普通项为aq^{n-1}",
+            "section": "§1.整序变量及其极限"
+          },
+          {
+            "name": "整序变量极限",
+            "difficulty": 3,
+            "description": "数列从某项起与常数相差任意小",
+            "aliases": [
+              "数列极限",
+              "收敛"
+            ],
+            "prerequisites": [
+              "整序变量"
+            ],
+            "definition": "若任意ε>0都存在N使n>N时有|x_n-a|<ε，则a是x_n的极限。",
+            "example": "lim(1/n)=0"
+          },
+          {
+            "name": "无穷小",
+            "difficulty": 3,
+            "description": "极限为零的整序变量",
+            "aliases": [],
+            "prerequisites": [
+              "整序变量极限"
+            ],
+            "definition": "极限为零的数列变量称为无穷小。",
+            "example": "x_n=(-1)^n/n"
+          },
+          {
+            "name": "极限的无穷小表示",
+            "difficulty": 3,
+            "description": "用极限与无穷小之和表示数列",
+            "aliases": [],
+            "prerequisites": [
+              "整序变量极限",
+              "无穷小"
+            ],
+            "definition": "x_n趋于a当且仅当x_n=a+α_n且α_n为无穷小。",
+            "example": "1+1/n趋于1"
+          },
+          {
+            "name": "无穷极限",
+            "difficulty": 3,
+            "description": "数列最终超过任意给定界限的极限",
+            "aliases": [
+              "趋于无穷"
+            ],
+            "prerequisites": [
+              "整序变量极限"
+            ],
+            "definition": "数列最终大于任意给定正数时趋于正无穷，最终小于任意负界时趋于负无穷。",
+            "example": "n趋于+∞"
+          },
+          {
+            "name": "不定式",
+            "difficulty": 3,
+            "description": "极限运算中不能直接判定结果的形式",
+            "aliases": [
+              "∞/∞型",
+              "∞·0型",
+              "∞−∞型"
+            ],
+            "prerequisites": [
+              "整序变量极限",
+              "无穷极限"
+            ],
+            "definition": "不定式是由无穷变化组合形成、不能据形式直接确定极限的表达式。",
+            "example": "(n+1)^k−n^k呈∞−∞型",
+            "section": "§2.极限的定理、若干容易求得的极限"
+          },
+          {
+            "name": "斯托尔兹定理",
+            "difficulty": 4,
+            "description": "用相邻项差商求无穷比值极限的定理",
+            "aliases": [],
+            "prerequisites": [
+              "无穷极限",
+              "整序变量极限"
+            ],
+            "definition": "若y_n递增且趋于+∞，则x_n/y_n的极限等于相邻差商的极限。",
+            "example": "求a^n/n的极限"
+          },
+          {
+            "name": "单调变量",
+            "difficulty": 2,
+            "description": "按序号始终向同一方向变化的变量",
+            "aliases": [
+              "单调增大变量",
+              "单调减小变量"
+            ],
+            "prerequisites": [
+              "整序变量"
+            ],
+            "definition": "数值随序号不减或不增的整序变量称为单调变量。",
+            "example": "x_n=1−1/n单调增大",
+            "section": "§2.极限的定理、若干容易求得的极限"
+          },
+          {
+            "name": "单调有界定理",
+            "difficulty": 3,
+            "description": "单调且有界的数列必有有限极限",
+            "aliases": [],
+            "prerequisites": [
+              "单调变量",
+              "整序变量极限"
+            ],
+            "definition": "单调增大且上有界或单调减小且下有界的数列必收敛。",
+            "example": "x_n=1−1/n收敛于1"
+          },
+          {
+            "name": "上确界",
+            "difficulty": 3,
+            "description": "所有上界中最小的一个上界",
+            "aliases": [
+              "sup"
+            ],
+            "prerequisites": [],
+            "definition": "上确界是数集所有上界中最小的上界。",
+            "example": "(0,1)的上确界为1"
+          },
+          {
+            "name": "柯西收敛原理",
+            "difficulty": 4,
+            "description": "项间最终任意接近是收敛的判据",
+            "aliases": [
+              "柯布查诺—柯西定理"
+            ],
+            "prerequisites": [
+              "整序变量极限"
+            ],
+            "definition": "数列收敛当且仅当任意ε>0时其各项从某项起彼此相差小于ε。",
+            "example": "有理数柯西列未必在有理数中收敛",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "子数列",
+            "difficulty": 2,
+            "description": "从原数列按递增序号选出的部分数列",
+            "aliases": [
+              "部分数列"
+            ],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "子数列是按严格递增序号n_k选取的项x_{n_k}组成的数列。",
+            "example": "x_1,x_3,x_5,…",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "部分极限",
+            "difficulty": 3,
+            "description": "某个子数列所具有的极限",
+            "aliases": [],
+            "prerequisites": [
+              "子数列",
+              "整序变量极限"
+            ],
+            "definition": "原数列某一子数列的极限称为原数列的部分极限。",
+            "example": "(-1)^{n+1}的部分极限为±1",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "魏尔斯特拉斯引理",
+            "difficulty": 4,
+            "description": "有界数列必能选出收敛子数列",
+            "aliases": [
+              "布尔查诺—魏尔斯特拉斯引理"
+            ],
+            "prerequisites": [
+              "子数列",
+              "整序变量极限"
+            ],
+            "definition": "任意有界数列都能选出一个收敛于有限极限的子数列。",
+            "example": "有界振荡数列可选出收敛子列",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "上极限",
+            "difficulty": 4,
+            "description": "数列所有部分极限中的最大者",
+            "aliases": [
+              "limsup"
+            ],
+            "prerequisites": [
+              "部分极限",
+              "上确界"
+            ],
+            "definition": "上极限是整序变量全部部分极限中最大的一个。",
+            "example": "(-1)^n的上极限为1",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "下极限",
+            "difficulty": 4,
+            "description": "数列所有部分极限中的最小者",
+            "aliases": [
+              "liminf"
+            ],
+            "prerequisites": [
+              "部分极限"
+            ],
+            "definition": "下极限是整序变量全部部分极限中最小的一个。",
+            "example": "(-1)^n的下极限为−1",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "极限判定定理",
+            "difficulty": 4,
+            "description": "上极限与下极限相等当且仅当收敛",
+            "aliases": [],
+            "prerequisites": [
+              "上极限",
+              "下极限",
+              "整序变量极限"
+            ],
+            "definition": "整序变量有极限的充要条件是其上极限与下极限相等。",
+            "example": "上、下极限同为a则数列趋于a"
+          },
+          {
+            "name": "算术平均定理",
+            "difficulty": 3,
+            "description": "数列前n项平均值与原数列同极限",
+            "aliases": [
+              "柯西命题"
+            ],
+            "prerequisites": [
+              "斯托尔兹定理",
+              "整序变量极限"
+            ],
+            "definition": "若a_n有有限或无穷极限，则其前n项算术平均值有同一极限。",
+            "example": "若√[n]{n}趋于1，则其前n项平均值也趋于1",
+            "section": "§2.极限的定理、若干容易求得的极限"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1．整序变量及其极限",
+            "page_range": [
+              39,
+              51
+            ]
+          },
+          {
+            "name": "§2．极限的定理、若干容易求得的极限",
+            "page_range": [
+              51,
+              77
+            ]
+          },
+          {
+            "name": "§4．收敛原理·部分极限",
+            "page_range": [
+              77,
+              84
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二章　一元函数",
+        "concepts": [
+          {
+            "name": "变动区域",
+            "difficulty": 2,
+            "description": "变量可能取到的全部数值所成的数集",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "变量的变动区域是该变量在所考察问题内可能取到的数值集合。",
+            "example": "自然数变量n的变动区域为自然数集。"
+          },
+          {
+            "name": "数区间",
+            "difficulty": 2,
+            "description": "由端点或无穷端界定的实数集合",
+            "aliases": [
+              "区间"
+            ],
+            "prerequisites": [
+              "变动区域"
+            ],
+            "definition": "数区间是以实数或无穷端为界限确定的变量变动区域。",
+            "example": "[a,b]表示a≤x≤b。"
+          },
+          {
+            "name": "函数关系",
+            "difficulty": 2,
+            "description": "两个变量同时变动时的确定对应关系",
+            "aliases": [],
+            "prerequisites": [
+              "变动区域"
+            ],
+            "definition": "函数关系规定自变量取定数值时因变量对应的确定数值。",
+            "example": "圆面积Q=πR²。"
+          },
+          {
+            "name": "函数",
+            "difficulty": 3,
+            "description": "每个自变量值唯一对应一个函数值",
+            "aliases": [
+              "单值函数"
+            ],
+            "prerequisites": [
+              "变动区域",
+              "函数关系"
+            ],
+            "definition": "若对定义域内每个x按某规律都有唯一确定的y对应，则y是x的函数。",
+            "example": "f(x)=1/(1+x²)。"
+          },
+          {
+            "name": "自变量",
+            "difficulty": 2,
+            "description": "可在定义域内任意取值的变量",
+            "aliases": [
+              "变元"
+            ],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "自变量是在其变动区域内可不受限制地取任意数值的函数变量。",
+            "example": "y=x²中x是自变量。"
+          },
+          {
+            "name": "定义域",
+            "difficulty": 3,
+            "description": "函数自变量所允许取值的集合",
+            "aliases": [],
+            "prerequisites": [
+              "函数",
+              "变动区域"
+            ],
+            "definition": "定义域是函数自变量可以取值的全部数值集合。",
+            "example": "√(1-x²)的定义域为[-1,1]。"
+          },
+          {
+            "name": "函数值",
+            "difficulty": 2,
+            "description": "自变量取定数值时对应的函数数值",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "函数值是函数对应法则作用于某个自变量值所得的确定数值。",
+            "example": "f(x)=1/(1+x²)时，f(1)=1/2。"
+          },
+          {
+            "name": "函数的表示法",
+            "difficulty": 3,
+            "description": "表示函数对应规律的公式、列表或图示",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "函数可以用解析式、数值列表或图像表示其对应关系。",
+            "example": "用实验数据列表给出压力与沸点关系。"
+          },
+          {
+            "name": "自然适用区域",
+            "difficulty": 3,
+            "description": "解析式取得有限实数值的全部自变量集合",
+            "aliases": [
+              "自然定义域"
+            ],
+            "prerequisites": [
+              "解析式表示法",
+              "定义域"
+            ],
+            "definition": "解析式的自然适用区域是使该式有意义并取得有限实数值的所有x组成的集合。",
+            "example": "1/√(1-x²)的自然适用区域为(-1,1)。"
+          },
+          {
+            "name": "解析式表示法",
+            "difficulty": 3,
+            "description": "用公式和演算规则表示函数的方法",
+            "aliases": [
+              "解析表示法"
+            ],
+            "prerequisites": [
+              "函数的表示法"
+            ],
+            "definition": "解析式表示法通过公式规定由自变量求得函数值所需的演算。",
+            "example": "p=c/V表示压力是体积的函数。",
+            "section": "§1.函数概念"
+          },
+          {
+            "name": "分段函数",
+            "difficulty": 3,
+            "description": "在不同自变量范围使用不同公式的函数",
+            "aliases": [],
+            "prerequisites": [
+              "函数",
+              "解析式表示法"
+            ],
+            "definition": "分段函数是在定义域的不同部分分别用不同公式或条件确定函数值的函数。",
+            "example": "|x|>1时取1，|x|<1时取-1。"
+          },
+          {
+            "name": "基本无穷小",
+            "difficulty": 3,
+            "description": "用来比较其他无穷小阶数的标准无穷小",
+            "aliases": [],
+            "prerequisites": [
+              "无穷小量"
+            ],
+            "definition": "基本无穷小是选定用来由其正指数幂衡量其他无穷小的标准量。",
+            "example": "x→0时通常选x为基本无穷小。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "无穷小的阶",
+            "difficulty": 4,
+            "description": "无穷小相对于基本无穷小幂的阶次",
+            "aliases": [
+              "阶数"
+            ],
+            "prerequisites": [
+              "基本无穷小",
+              "无穷小量"
+            ],
+            "definition": "若β/α^k趋于非零有限数，则β是关于α的k阶无穷小。",
+            "example": "1-cos x是关于x的二阶无穷小。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "等价无穷小",
+            "difficulty": 4,
+            "description": "比值趋于1的两个无穷小",
+            "aliases": [
+              "等价关系"
+            ],
+            "prerequisites": [
+              "无穷小的阶"
+            ],
+            "definition": "两个无穷小等价，当且仅当它们的比值极限为1。",
+            "example": "sin x∼x（x→0）。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "主部",
+            "difficulty": 4,
+            "description": "与无穷小等价的最简单主要项",
+            "aliases": [
+              "主项"
+            ],
+            "prerequisites": [
+              "基本无穷小",
+              "无穷小的阶",
+              "等价无穷小"
+            ],
+            "definition": "若β∼cα^k，则cα^k称为β关于α的主部。",
+            "example": "1-cos x的主部为x²/2。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "连续性",
+            "difficulty": 4,
+            "description": "自变量趋近一点时函数值趋近对应值",
+            "aliases": [
+              "函数连续"
+            ],
+            "prerequisites": [
+              "函数值",
+              "极限"
+            ],
+            "definition": "函数在一点连续是指自变量趋近该点时函数值趋近该点的函数值。",
+            "example": "sin(1/x)在其定义域每一点连续。"
+          },
+          {
+            "name": "一致连续性",
+            "difficulty": 4,
+            "description": "同一接近程度统一控制全区间函数值差",
+            "aliases": [
+              "一致连续"
+            ],
+            "prerequisites": [
+              "连续性",
+              "函数的表示法"
+            ],
+            "definition": "函数一致连续是指给定函数值误差后存在对全区间各点统一适用的自变量距离。",
+            "example": "闭区间上的连续函数一致连续。",
+            "section": "§5.连续函数的性质"
+          },
+          {
+            "name": "康托定理",
+            "difficulty": 5,
+            "description": "闭区间连续函数必在其上​​一致连续",
+            "aliases": [],
+            "prerequisites": [
+              "连续性",
+              "一致连续性",
+              "闭区间"
+            ],
+            "definition": "定义在闭区间并连续的函数在该闭区间上一致连续。",
+            "example": "连续函数f在[a,b]上满足一致连续条件。",
+            "section": "§5.连续函数的性质"
+          },
+          {
+            "name": "博雷尔引理",
+            "difficulty": 5,
+            "description": "闭区间的开区间覆盖可取有限子覆盖",
+            "aliases": [],
+            "prerequisites": [
+              "闭区间"
+            ],
+            "definition": "若开区间无穷系覆盖闭区间，则其中必有有限子系仍覆盖该闭区间。",
+            "example": "开区间系覆盖[a,b]时可选有限个覆盖全区间。",
+            "section": "§5.连续函数的性质"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1．函数概念",
+            "page_range": [
+              85,
+              103
+            ]
+          },
+          {
+            "name": "§2．函数的极限",
+            "page_range": [
+              103,
+              121
+            ]
+          },
+          {
+            "name": "§3．无穷小及无穷大的分阶",
+            "page_range": [
+              121,
+              129
+            ]
+          },
+          {
+            "name": "§4．函数的连续性及间断",
+            "page_range": [
+              129,
+              148
+            ]
+          },
+          {
+            "name": "§5．连续函数的性质",
+            "page_range": [
+              148,
+              162
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三章　导数及微分",
+        "concepts": [
+          {
+            "name": "平均速度",
+            "difficulty": 1,
+            "description": "一段时间内路程增量与时间增量之比",
+            "aliases": [
+              "平均运动速度"
+            ],
+            "prerequisites": [],
+            "definition": "平均速度是时间段内路程增量与时间增量的比值。",
+            "example": "自由降落中，平均速度为Δs/Δt。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "瞬时速度",
+            "difficulty": 2,
+            "description": "平均速度在时间间隔趋于零时的极限",
+            "aliases": [
+              "真实速度"
+            ],
+            "prerequisites": [
+              "平均速度",
+              "导数"
+            ],
+            "definition": "瞬时速度是平均速度当时间增量趋于零时的极限。",
+            "example": "s=gt²/2时，v=gt。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "割线",
+            "difficulty": 1,
+            "description": "连接曲线上两点的直线",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "割线是经过曲线上两个不同点的直线。",
+            "example": "连接M与M₁得到割线MM₁。"
+          },
+          {
+            "name": "割线斜率",
+            "difficulty": 2,
+            "description": "曲线上两点纵坐标增量与横坐标增量之比",
+            "aliases": [],
+            "prerequisites": [
+              "割线"
+            ],
+            "definition": "割线斜率等于两点间纵坐标增量与横坐标增量的比值。",
+            "example": "斜率为Δy/Δx。"
+          },
+          {
+            "name": "曲线切线",
+            "difficulty": 2,
+            "description": "割线随一点趋近定点时的极限位置",
+            "aliases": [
+              "切线"
+            ],
+            "prerequisites": [
+              "割线"
+            ],
+            "definition": "曲线在一点处的切线是割线在另一点趋近该点时的极限位置。",
+            "example": "抛物线原点处切线为x轴。"
+          },
+          {
+            "name": "切线斜率",
+            "difficulty": 2,
+            "description": "曲线切线与横轴夹角的正切值",
+            "aliases": [],
+            "prerequisites": [
+              "曲线切线",
+              "导数"
+            ],
+            "definition": "切线斜率等于曲线函数关于横坐标的导数。",
+            "example": "y=ax²在x处斜率为2ax。",
+            "section": "§2.微分"
+          },
+          {
+            "name": "导数",
+            "difficulty": 3,
+            "description": "函数增量与自变量增量之比的极限",
+            "aliases": [
+              "函数在一点处的导数"
+            ],
+            "prerequisites": [
+              "割线斜率"
+            ],
+            "definition": "导数是函数增量与自变量增量之比在自变量增量趋于零时的极限。",
+            "example": "f'(x₀)=limΔx→0[f(x₀+Δx)-f(x₀)]/Δx。"
+          },
+          {
+            "name": "平均变化率",
+            "difficulty": 2,
+            "description": "有限增量下函数增量与自变量增量之比",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "平均变化率是自变量改变一段数量时函数增量与自变量增量的比值。",
+            "example": "y关于x的平均变化率为Δy/Δx。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 2,
+            "description": "速度关于时间的导数",
+            "aliases": [],
+            "prerequisites": [
+              "导数",
+              "平均变化率"
+            ],
+            "definition": "加速度是速度关于时间的导数。",
+            "example": "a=dv/dt。"
+          },
+          {
+            "name": "热容量",
+            "difficulty": 2,
+            "description": "热量关于温度的导数",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "物体在给定温度时的热容量是热量关于温度的导数。",
+            "example": "c=dW/dθ。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "电流强度",
+            "difficulty": 2,
+            "description": "流过电量关于时间的导数",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "电流强度是一定时间内流过导线截面的电量关于时间的导数。",
+            "example": "I=dQ/dt。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "导数记号",
+            "difficulty": 1,
+            "description": "表示导数的多种符号形式",
+            "aliases": [
+              "导函数记号"
+            ],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "导数记号是表示函数导数的符号体系，如y′和dy/dx。",
+            "example": "y′、f′(x)、dy/dx均可表示导数。"
+          },
+          {
+            "name": "常数函数导数",
+            "difficulty": 1,
+            "description": "常数函数的导数恒为零",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "若函数恒等于常数，则其导数处处等于零。",
+            "example": "y=c时，y′=0。"
+          },
+          {
+            "name": "幂函数导数",
+            "difficulty": 2,
+            "description": "自然数幂函数的导数公式",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "对于自然数n，函数xⁿ的导数为nxⁿ⁻¹。",
+            "example": "y=x³时，y′=3x²。"
+          },
+          {
+            "name": "倒数函数导数",
+            "difficulty": 2,
+            "description": "函数1/x的导数公式",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "函数1/x在x≠0处的导数为−1/x²。",
+            "example": "y=1/x时，y′=−1/x²。"
+          },
+          {
+            "name": "费马定理",
+            "difficulty": 3,
+            "description": "内点极值且导数存在时导数必为零",
+            "aliases": [
+              "费马极值定理"
+            ],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "函数在区间内点取得极值且该点存在有限导数时，导数等于零。",
+            "example": "内点c为极大值点，则f′(c)=0。",
+            "section": "§3.微分学的基本定理"
+          },
+          {
+            "name": "达布定理",
+            "difficulty": 4,
+            "description": "导数在两端值之间取得全部中间值",
+            "aliases": [
+              "导数介值定理"
+            ],
+            "prerequisites": [
+              "导数",
+              "费马定理"
+            ],
+            "definition": "函数有有限导数时，其导数至少一次取得端点导数间的每个值。",
+            "example": "若f′(a)>C>f′(b)，则存在c使f′(c)=C。",
+            "section": "§3.微分学的基本定理"
+          },
+          {
+            "name": "罗尔定理",
+            "difficulty": 3,
+            "description": "端点函数值相等时区间内存在零导数点",
+            "aliases": [
+              "Rolle定理"
+            ],
+            "prerequisites": [
+              "连续函数",
+              "费马定理"
+            ],
+            "definition": "函数在闭区间连续、开区间可导且端点值相等时，区间内存在导数为零的点。",
+            "example": "f(a)=f(b)时，存在c∈(a,b)使f′(c)=0。"
+          },
+          {
+            "name": "拉格朗日中值定理",
+            "difficulty": 3,
+            "description": "平均变化率等于某内点导数",
+            "aliases": [
+              "微分学中值定理",
+              "拉格朗日定理"
+            ],
+            "prerequisites": [
+              "罗尔定理",
+              "导数"
+            ],
+            "definition": "函数连续且开区间可导时，存在内点使平均变化率等于该点导数。",
+            "example": "存在c使[f(b)-f(a)]/(b-a)=f′(c)。",
+            "section": "§3.微分学的基本定理"
+          },
+          {
+            "name": "有限增量公式",
+            "difficulty": 3,
+            "description": "用某内点导数准确表示有限函数增量",
+            "aliases": [
+              "拉格朗日公式"
+            ],
+            "prerequisites": [
+              "拉格朗日中值定理"
+            ],
+            "definition": "有限增量公式表示Δf(x₀)=f′(x₀+θΔx)Δx，其中0<θ<1。",
+            "example": "Δf=f′(x₀+θΔx)Δx。"
+          },
+          {
+            "name": "柯西公式",
+            "difficulty": 4,
+            "description": "两个函数增量比等于某点导数比",
+            "aliases": [
+              "柯西中值定理",
+              "柯西定理"
+            ],
+            "prerequisites": [
+              "罗尔定理",
+              "拉格朗日中值定理"
+            ],
+            "definition": "满足条件时，两个函数增量之比等于某内点导数之比。",
+            "example": "[f(b)-f(a)]/[g(b)-g(a)]=f′(c)/g′(c)。"
+          },
+          {
+            "name": "泰勒公式",
+            "difficulty": 4,
+            "description": "用函数各阶导数构造多项式近似",
+            "aliases": [
+              "带余项泰勒公式"
+            ],
+            "prerequisites": [
+              "导数",
+              "有限增量公式"
+            ],
+            "definition": "泰勒公式用函数在一点的各阶导数及余项表示函数值。",
+            "example": "sinx≈x−x³/6+x⁵/120。"
+          },
+          {
+            "name": "拉格朗日插值多项式",
+            "difficulty": 3,
+            "description": "通过给定基点函数值的最低次多项式",
+            "aliases": [
+              "拉格朗日插值公式"
+            ],
+            "prerequisites": [
+              "拉格朗日中值定理"
+            ],
+            "definition": "拉格朗日插值多项式是在各插值基点取函数给定值且次数不高于m的唯一多项式。",
+            "example": "L(x)=Σf(xₖ)lₖ(x)。",
+            "section": "§6.插值法"
+          },
+          {
+            "name": "插值余项",
+            "difficulty": 4,
+            "description": "插值函数值与插值多项式之差的准确表达",
+            "aliases": [
+              "拉格朗日插值余项"
+            ],
+            "prerequisites": [
+              "拉格朗日插值多项式",
+              "罗尔定理"
+            ],
+            "definition": "插值余项为f(x)−L(x)=f⁽ᵐ⁺¹⁾(ξ)ω(x)/(m+1)!。",
+            "example": "误差由高阶导数与ω(x)共同决定。"
+          },
+          {
+            "name": "埃尔米特插值",
+            "difficulty": 4,
+            "description": "同时匹配多个基点处函数及其导数值",
+            "aliases": [
+              "埃尔米特公式"
+            ],
+            "prerequisites": [
+              "拉格朗日插值多项式",
+              "泰勒公式"
+            ],
+            "definition": "埃尔米特插值用多项式同时匹配各基点的函数值及指定阶导数值。",
+            "example": "一个基点重复n+1次时得到泰勒多项式。",
+            "section": "§6.插值法"
+          },
+          {
+            "name": "连续函数",
+            "difficulty": 1,
+            "description": "函数在区间内没有通常的间断",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "连续函数是在所考察区间内满足连续性条件的函数。",
+            "example": "闭区间上的连续函数必有最大值和最小值。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1．导数及其求法",
+            "page_range": [
+              163,
+              185
+            ]
+          },
+          {
+            "name": "§2．微分",
+            "page_range": [
+              185,
+              196
+            ]
+          },
+          {
+            "name": "§3．微分学的基本定理",
+            "page_range": [
+              196,
+              202
+            ]
+          },
+          {
+            "name": "§4．高阶导数及高阶微分",
+            "page_range": [
+              202,
+              216
+            ]
+          },
+          {
+            "name": "§5．泰勒公式",
+            "page_range": [
+              216,
+              232
+            ]
+          },
+          {
+            "name": "§6．插值法",
+            "page_range": [
+              232,
+              236
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四章　利用导数研究函数",
+        "concepts": [
+          {
+            "name": "导数",
+            "difficulty": 1,
+            "description": "描述函数变化快慢并等于曲线切线斜率",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "函数在一点的导数是函数增量与自变量增量之比的极限。",
+            "example": "f(x)=x^2时，f'(x)=2x"
+          },
+          {
+            "name": "函数为常数条件",
+            "difficulty": 2,
+            "description": "函数在区间内为常数当且仅当导数处处为零",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "连续且可导函数在区间内为常数的充要条件是内部各点导数等于零。",
+            "example": "f'(x)=0，则f(x)=C"
+          },
+          {
+            "name": "导数相等定理",
+            "difficulty": 2,
+            "description": "两函数导数相等时两函数只相差一个常数",
+            "aliases": [],
+            "prerequisites": [
+              "函数为常数条件"
+            ],
+            "definition": "同一区间内两函数导数处处相等，则它们的差为常数。",
+            "example": "f'=g'，则f=g+C"
+          },
+          {
+            "name": "广义单调性",
+            "difficulty": 2,
+            "description": "由导数非负或非正判定函数不减或不增",
+            "aliases": [
+              "单调增大",
+              "单调减小"
+            ],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "连续且可导函数在区间内广义单调增大的充要条件是导数处处非负。",
+            "example": "f'(x)≥0，则f(x)不减"
+          },
+          {
+            "name": "狭义单调性",
+            "difficulty": 3,
+            "description": "导数符号与不恒为零共同保证严格单调",
+            "aliases": [
+              "严格单调性"
+            ],
+            "prerequisites": [
+              "广义单调性",
+              "函数为常数条件"
+            ],
+            "definition": "函数严格增大需导数非负且不在任何部分区间内恒为零。",
+            "example": "f(x)=x^3严格递增但f'(0)=0"
+          },
+          {
+            "name": "导数符号判别",
+            "difficulty": 2,
+            "description": "用导数正负判断函数在区间内的增减方向",
+            "aliases": [],
+            "prerequisites": [
+              "导数",
+              "广义单调性"
+            ],
+            "definition": "导数为正时函数增大，导数为负时函数减小。",
+            "example": "f'(x)>0，则f(x)递增"
+          },
+          {
+            "name": "单调性证明不等式",
+            "difficulty": 3,
+            "description": "构造函数并利用单调性证明函数不等式",
+            "aliases": [],
+            "prerequisites": [
+              "导数符号判别"
+            ],
+            "definition": "通过考察辅助函数导数的符号，将不等式转化为函数的单调性。",
+            "example": "由ln x−x在1处最大得ln x≤x−1"
+          },
+          {
+            "name": "凸函数",
+            "difficulty": 3,
+            "description": "函数图像呈向下凸，函数值不超过弦线加权值",
+            "aliases": [
+              "凸性"
+            ],
+            "prerequisites": [
+              "导数符号判别"
+            ],
+            "definition": "函数在两点加权平均处的函数值不超过两端函数值的同样加权平均。",
+            "example": "f(x)=x^2在正数区间为凸函数"
+          },
+          {
+            "name": "凹函数",
+            "difficulty": 3,
+            "description": "函数图像呈向上凹，凸函数不等式方向相反",
+            "aliases": [
+              "凹性"
+            ],
+            "prerequisites": [
+              "凸函数"
+            ],
+            "definition": "函数在两点加权平均处的函数值不小于两端函数值的同样加权平均。",
+            "example": "f(x)=ln x在正数区间为凹函数"
+          },
+          {
+            "name": "二阶导数判凸",
+            "difficulty": 3,
+            "description": "通过二阶导数符号判断函数的凸性或凹性",
+            "aliases": [],
+            "prerequisites": [
+              "凸函数",
+              "导数"
+            ],
+            "definition": "二阶导数非负时函数为凸，二阶导数非正时函数为凹。",
+            "example": "x^4的二阶导数12x^2≥0，故为凸函数"
+          },
+          {
+            "name": "导数判凸性",
+            "difficulty": 4,
+            "description": "函数凸性等价于其一阶导数单调增加",
+            "aliases": [],
+            "prerequisites": [
+              "凸函数",
+              "广义单调性"
+            ],
+            "definition": "在相应条件下，函数为凸函数当且仅当其导数为增函数。",
+            "example": "若f'(x)随x增加，则f为凸函数"
+          },
+          {
+            "name": "詹森不等式",
+            "difficulty": 4,
+            "description": "凸函数的加权平均函数值不超过函数值加权平均",
+            "aliases": [
+              "Jensen不等式"
+            ],
+            "prerequisites": [
+              "凸函数"
+            ],
+            "definition": "凸函数满足f(Σqᵢxᵢ)≤Σqᵢf(xᵢ)，其中权重和为一。",
+            "example": "(Σpᵢxᵢ/Σpᵢ)^k≤Σpᵢxᵢ^k/Σpᵢ",
+            "section": "§2.凸(与凹)函数"
+          },
+          {
+            "name": "拐点",
+            "difficulty": 3,
+            "description": "曲线凸部与凹部相互分界的点",
+            "aliases": [],
+            "prerequisites": [
+              "凸函数",
+              "凹函数"
+            ],
+            "definition": "曲线上把函数的凸部分和凹部分分开的点叫作拐点。",
+            "example": "f(x)=sin x在x=kπ处有拐点"
+          },
+          {
+            "name": "拐点判别",
+            "difficulty": 4,
+            "description": "二阶导数变号是判断拐点的重要规则",
+            "aliases": [],
+            "prerequisites": [
+              "拐点",
+              "二阶导数判凸"
+            ],
+            "definition": "若二阶导数在候选点左右变号，则该点为拐点；不变号则不是。",
+            "example": "sin x的f''在kπ处变号"
+          },
+          {
+            "name": "极值点",
+            "difficulty": 2,
+            "description": "函数图像的峰顶或谷底对应的特殊点",
+            "aliases": [
+              "极大点",
+              "极小点"
+            ],
+            "prerequisites": [
+              "导数符号判别"
+            ],
+            "definition": "函数在局部范围内取得最大值或最小值的点称为极值点。",
+            "example": "f'(x)由正变负处为极大点"
+          },
+          {
+            "name": "函数作图步骤",
+            "difficulty": 3,
+            "description": "利用导数零点、无穷点、拐点和端点作图",
+            "aliases": [
+              "作图步骤"
+            ],
+            "prerequisites": [
+              "极值点",
+              "拐点",
+              "导数"
+            ],
+            "definition": "先确定一阶导数为零或无穷、二阶导数为零的点，再计算函数值并连图。",
+            "example": "作图时标出极值点与拐点"
+          },
+          {
+            "name": "牛顿法则",
+            "difficulty": 4,
+            "description": "用曲线切线与横轴交点迭代求方程的根",
+            "aliases": [
+              "切线法",
+              "牛顿法"
+            ],
+            "prerequisites": [
+              "导数",
+              "极值点"
+            ],
+            "definition": "由当前点切线与横轴交点构造根的逐次近似。",
+            "example": "x_{n+1}=x_n−f(x_n)/f'(x_n)",
+            "section": "§5.方程的近似解"
+          },
+          {
+            "name": "弦线法",
+            "difficulty": 4,
+            "description": "用曲线弦线与横轴交点逐步逼近方程根",
+            "aliases": [
+              "割线法"
+            ],
+            "prerequisites": [
+              "函数作图步骤"
+            ],
+            "definition": "利用含根区间端点确定弦线，并以弦线与横轴交点更新近似根。",
+            "example": "区间端点异号时用弦线逼近根",
+            "section": "§5.方程的近似解"
+          },
+          {
+            "name": "联合法",
+            "difficulty": 4,
+            "description": "同时使用切线法和弦线法从根的两侧逼近",
+            "aliases": [
+              "联合迭代法"
+            ],
+            "prerequisites": [
+              "牛顿法则",
+              "弦线法"
+            ],
+            "definition": "交替或同时采用切线近似与弦线近似，使两个值从根的两侧趋近。",
+            "example": "x_n<ξ<x'_n并同时更新二者",
+            "section": "§5.方程的近似解"
+          },
+          {
+            "name": "根的误差估计",
+            "difficulty": 4,
+            "description": "利用函数值、导数和两侧近似值估计根误差",
+            "aliases": [
+              "误差估计"
+            ],
+            "prerequisites": [
+              "牛顿法则",
+              "联合法"
+            ],
+            "definition": "通过根所在区间宽度或函数值与导数的比值估计近似根与真根的差距。",
+            "example": "|x−ξ|<|f(x)|/m"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1．函数的动态的研究",
+            "page_range": [
+              237,
+              260
+            ]
+          },
+          {
+            "name": "§2．凸（与凹）函数",
+            "page_range": [
+              260,
+              269
+            ]
+          },
+          {
+            "name": "§3．函数的作图",
+            "page_range": [
+              269,
+              277
+            ]
+          },
+          {
+            "name": "§4．不定式的定值法",
+            "page_range": [
+              277,
+              286
+            ]
+          },
+          {
+            "name": "§5．方程的近似解",
+            "page_range": [
+              286,
+              300
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第五章　多元函数",
+        "concepts": [
+          {
+            "name": "多元函数",
+            "difficulty": 2,
+            "description": "由多个自变量共同确定函数值的函数关系",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "多元函数是由多个自变量的共同取值依一定法则唯一确定函数值的对应关系。",
+            "example": "圆柱体体积V=πR²H是R、H的函数",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "函数",
+            "difficulty": 1,
+            "description": "变量间按一定法则建立的对应关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "函数是对定义域中每个自变量值按某一法则对应一个函数值的关系。",
+            "example": "z=x²+y²",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "二元函数",
+            "difficulty": 2,
+            "description": "以两个自变量为变元的多元函数",
+            "aliases": [],
+            "prerequisites": [
+              "多元函数"
+            ],
+            "definition": "二元函数是对定义域中每一数对(x,y)对应一个确定函数值z的函数。",
+            "example": "z=xy",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "定义域",
+            "difficulty": 2,
+            "description": "函数公式或问题允许自变量取值的集合",
+            "aliases": [],
+            "prerequisites": [
+              "二元函数"
+            ],
+            "definition": "定义域是函数有定义时自变量所有允许取值所成的集合。",
+            "example": "√(1−x²−y²)的定义域为x²+y²≤1",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "变动区域",
+            "difficulty": 2,
+            "description": "多个自变量可以同时取值的数值组集合",
+            "aliases": [],
+            "prerequisites": [
+              "定义域"
+            ],
+            "definition": "变动区域是多个自变量在同一时刻可以共同取值的数对或数值组集合。",
+            "example": "0<x<p，0<y<p，x+y>p",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "单值函数",
+            "difficulty": 2,
+            "description": "每个定义域元素只对应一个函数值的函数",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "单值函数要求定义域中的每个自变量取值依规则只对应一个函数值。",
+            "example": "z=x²+y²对每个(x,y)只有一个z",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "点集",
+            "difficulty": 2,
+            "description": "由满足条件的点或数值组构成的集合",
+            "aliases": [
+              "点的集合"
+            ],
+            "prerequisites": [
+              "变动区域"
+            ],
+            "definition": "点集是由平面或算术空间中满足给定条件的点所组成的集合。",
+            "example": "(x−α)²+(y−β)²≤r²构成圆",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "空间图形",
+            "difficulty": 3,
+            "description": "函数值在三维坐标空间中形成的点集轨迹",
+            "aliases": [
+              "曲面图形"
+            ],
+            "prerequisites": [
+              "二元函数"
+            ],
+            "definition": "空间图形是将定义域每点沿z轴取z=f(x,y)所得点的轨迹。",
+            "example": "z=xy的空间图形是双曲抛物面",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "曲面方程",
+            "difficulty": 3,
+            "description": "表达二元函数空间图形的方程",
+            "aliases": [],
+            "prerequisites": [
+              "空间图形"
+            ],
+            "definition": "等式z=f(x,y)称为所表示曲面的曲面方程。",
+            "example": "z=x²+y²是回转抛物面的方程",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "n维算术空间",
+            "difficulty": 3,
+            "description": "由所有n个实数组成的数值组构成的空间",
+            "aliases": [
+              "算术空间"
+            ],
+            "prerequisites": [
+              "点集"
+            ],
+            "definition": "n维算术空间是所有n个实数组成的n维点的集合。",
+            "example": "(x₁,x₂,…,xₙ)是一个n维点",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "n维距离",
+            "difficulty": 3,
+            "description": "用坐标差平方和平方根定义的点间距离",
+            "aliases": [],
+            "prerequisites": [
+              "n维算术空间"
+            ],
+            "definition": "两n维点间距离定义为各坐标差平方和的平方根。",
+            "example": "d(M,M′)=√Σ(xᵢ′−xᵢ)²"
+          },
+          {
+            "name": "连续曲线",
+            "difficulty": 3,
+            "description": "由多个连续参数函数共同表示的点集",
+            "aliases": [
+              "参数曲线"
+            ],
+            "prerequisites": [
+              "n维算术空间"
+            ],
+            "definition": "连续曲线是由n个连续参数函数随参数变化形成的点集。",
+            "example": "xᵢ=φᵢ(t)，t′≤t≤t″",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "直线段",
+            "difficulty": 2,
+            "description": "由两点间直线参数表示得到的有限线段",
+            "aliases": [],
+            "prerequisites": [
+              "连续曲线",
+              "n维距离"
+            ],
+            "definition": "直线段是直线参数t从0变至1时得到的连接两点的部分。",
+            "example": "xᵢ=xᵢ′+t(xᵢ″−xᵢ′)，0≤t≤1",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "折线",
+            "difficulty": 2,
+            "description": "由有限条直线段首尾相接组成的曲线",
+            "aliases": [],
+            "prerequisites": [
+              "直线段"
+            ],
+            "definition": "折线是由有限数目的直线段所组成的曲线。",
+            "example": "三条线段首尾连接形成折线",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "偏导数",
+            "difficulty": 3,
+            "description": "固定其他变元时函数对一个变元的导数",
+            "aliases": [],
+            "prerequisites": [
+              "二元函数"
+            ],
+            "definition": "偏导数是在其他自变量保持不变时函数对指定自变量的导数。",
+            "example": "f(x,y)=x²y时，∂f/∂x=2xy",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "隐函数",
+            "difficulty": 4,
+            "description": "由方程或方程组间接确定的函数",
+            "aliases": [],
+            "prerequisites": [
+              "偏导数"
+            ],
+            "definition": "隐函数是由包含函数变量的方程或方程组间接确定的函数。",
+            "example": "F(x,y)=0在条件满足时确定y为x的函数",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "雅可比式",
+            "difficulty": 4,
+            "description": "函数组偏导数组成的行列式",
+            "aliases": [
+              "函数行列式"
+            ],
+            "prerequisites": [
+              "偏导数"
+            ],
+            "definition": "雅可比式是函数组关于指定变量的偏导数矩阵的行列式。",
+            "example": "D(φ,ψ)/D(u,v)",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "隐函数微分法",
+            "difficulty": 4,
+            "description": "利用隐含方程求隐函数导数的方法",
+            "aliases": [
+              "当作隐函数的微分法"
+            ],
+            "prerequisites": [
+              "隐函数",
+              "雅可比式"
+            ],
+            "definition": "隐函数微分法通过对隐含方程或方程组微分求出隐函数导数。",
+            "example": "由F(x,y)=0求dy/dx",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "相对极值",
+            "difficulty": 4,
+            "description": "在联系方程约束下邻域内取得的极大或极小值",
+            "aliases": [
+              "约束极值"
+            ],
+            "prerequisites": [
+              "隐函数",
+              "偏导数"
+            ],
+            "definition": "相对极值是函数在满足联系方程的点集中邻域内取得的极大值或极小值。",
+            "example": "在xyzt=c⁴条件下求x+y+z+t的极小值",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "拉格朗日不定乘数法",
+            "difficulty": 4,
+            "description": "用乘数把约束条件并入极值方程的方法",
+            "aliases": [
+              "不定乘数法"
+            ],
+            "prerequisites": [
+              "相对极值",
+              "偏导数"
+            ],
+            "definition": "拉格朗日不定乘数法将各联系方程乘以乘数后与目标函数微分相加求必要条件。",
+            "example": "令F=f+λ₁Φ₁+⋯+λₘΦₘ并令各偏导数为零",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "函数扩充",
+            "difficulty": 4,
+            "description": "将局部定义函数延拓到更大区域的构造",
+            "aliases": [
+              "函数推广"
+            ],
+            "prerequisites": [
+              "二元函数",
+              "连续曲线"
+            ],
+            "definition": "函数扩充是在保持原区域内函数值不变的条件下将其定义范围扩大。",
+            "example": "把定义在闭域内的函数扩充到全平面",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "全增量公式",
+            "difficulty": 3,
+            "description": "用偏导数和余项表示二元函数增量的公式",
+            "aliases": [
+              "有限增量公式"
+            ],
+            "prerequisites": [
+              "偏导数",
+              "函数扩充"
+            ],
+            "definition": "全增量公式将函数增量表示为偏导数线性项与趋于零的余项之和。",
+            "example": "Δz=fx′Δx+fy′Δy+αΔx+βΔy",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "复合函数微分",
+            "difficulty": 3,
+            "description": "复合函数沿参数曲线求导的法则",
+            "aliases": [
+              "复合函数的微分"
+            ],
+            "prerequisites": [
+              "偏导数",
+              "全增量公式"
+            ],
+            "definition": "复合函数微分把z=f(φ(t),ψ(t))的导数表示为偏导数与内层导数之和。",
+            "example": "z′t=f′x x′t+f′y y′t",
+            "section": "§1.基本概念"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1．基本概念",
+            "page_range": [
+              301,
+              537
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "数学",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "绪论 实数",
+        "concepts": [
+          {
+            "name": "有理数域",
+            "difficulty": 1,
+            "description": "由有理数及其算术运算和序关系构成的数域",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "有理数域是全体有理数在加减乘除及序关系下形成的数系。",
+            "example": "整数2可写成有理数2/1。"
+          },
+          {
+            "name": "有理数域的序",
+            "difficulty": 2,
+            "description": "有理数之间由等于、大于和小于构成的关系",
+            "aliases": [
+              "有理数序"
+            ],
+            "prerequisites": [
+              "有理数域"
+            ],
+            "definition": "任意两个有理数之间恰有一种等于、大于或小于的关系。",
+            "example": "对数2和3，有3>2。"
+          },
+          {
+            "name": "阿基米德公理",
+            "difficulty": 3,
+            "description": "自然数可超过任意给定的正实数",
+            "aliases": [
+              "阿基米德性质"
+            ],
+            "prerequisites": [
+              "有理数域的序"
+            ],
+            "definition": "对任意正数，都存在自然数大于它。",
+            "example": "给定1000，存在自然数1001大于它。"
+          },
+          {
+            "name": "无理数",
+            "difficulty": 2,
+            "description": "不能表示为两个整数之比的实数",
+            "aliases": [],
+            "prerequisites": [
+              "有理数域"
+            ],
+            "definition": "无理数是不能写成有理数形式的实数。",
+            "example": "√2是无理数。"
+          },
+          {
+            "name": "有理数域分割",
+            "difficulty": 4,
+            "description": "把有理数分成有序的上下两组",
+            "aliases": [
+              "分划",
+              "戴德金分割"
+            ],
+            "prerequisites": [
+              "有理数域的序"
+            ],
+            "definition": "有理数域分割是将有理数分为下组和上组且下组每数小于上组每数的划分。",
+            "example": "按平方小于2与大于2划分有理数。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实数域",
+            "difficulty": 3,
+            "description": "由有理数和无理数共同构成的数域",
+            "aliases": [
+              "实数系"
+            ],
+            "prerequisites": [
+              "有理数域",
+              "无理数",
+              "有理数域分割"
+            ],
+            "definition": "实数域是通过有理数域分割引入无理数后形成的完整数系。",
+            "example": "√2、−3和0.25都是实数。"
+          },
+          {
+            "name": "实数域的序",
+            "difficulty": 3,
+            "description": "实数之间保持完备的大小关系",
+            "aliases": [
+              "实数序"
+            ],
+            "prerequisites": [
+              "实数域",
+              "有理数域的序"
+            ],
+            "definition": "实数域的序规定任意两个实数恰有等于、大于或小于三种关系之一。",
+            "example": "√2>1。"
+          },
+          {
+            "name": "实数的稠密性",
+            "difficulty": 3,
+            "description": "任意两个不同实数间存在有理数",
+            "aliases": [
+              "稠密性"
+            ],
+            "prerequisites": [
+              "实数域的序",
+              "有理数域"
+            ],
+            "definition": "若两个实数具有大小差异，则它们之间至少存在一个有理数。",
+            "example": "1与√2之间有理数4/3。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "无限小数表示",
+            "difficulty": 3,
+            "description": "用无限十进小数表示任意实数",
+            "aliases": [
+              "十进小数表示"
+            ],
+            "prerequisites": [
+              "实数域",
+              "实数的稠密性"
+            ],
+            "definition": "无限小数表示通过逐次十等分区间确定实数的十进数字序列。",
+            "example": "3.826=3.826000…=3.825999…。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实数域连续性",
+            "difficulty": 4,
+            "description": "实数分割在实数域内总有界数",
+            "aliases": [
+              "完备性",
+              "戴德金定理",
+              "密接性"
+            ],
+            "prerequisites": [
+              "实数域分割",
+              "实数域"
+            ],
+            "definition": "实数域的任一分割都存在一个实数作为其界数。",
+            "example": "按实数分割得到的界数仍是实数。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "数集的上界",
+            "difficulty": 2,
+            "description": "不小于数集中所有元素的数",
+            "aliases": [
+              "上界"
+            ],
+            "prerequisites": [
+              "实数域的序"
+            ],
+            "definition": "若数集每个元素都不超过M，则M称为该集的上界。",
+            "example": "真分数集的上界是1。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "数集的下界",
+            "difficulty": 2,
+            "description": "不大于数集中所有元素的数",
+            "aliases": [
+              "下界"
+            ],
+            "prerequisites": [
+              "实数域的序"
+            ],
+            "definition": "若数集每个元素都不小于m，则m称为该集的下界。",
+            "example": "真分数集的下界是0。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "上确界",
+            "difficulty": 3,
+            "description": "数集所有上界中的最小者",
+            "aliases": [
+              "sup"
+            ],
+            "prerequisites": [
+              "数集的上界",
+              "实数域连续性"
+            ],
+            "definition": "上确界是数集上界中最小的实数。",
+            "example": "真分数集的上确界是1。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "下确界",
+            "difficulty": 3,
+            "description": "数集所有下界中的最大者",
+            "aliases": [
+              "inf"
+            ],
+            "prerequisites": [
+              "数集的下界",
+              "实数域连续性"
+            ],
+            "definition": "下确界是数集下界中最大的实数。",
+            "example": "真分数集的下确界是0。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实数加法",
+            "difficulty": 3,
+            "description": "通过有理近似定义实数的和及其运算性质",
+            "aliases": [
+              "实数的和"
+            ],
+            "prerequisites": [
+              "实数域",
+              "有理数域的序"
+            ],
+            "definition": "实数加法是将实数的有理近似界相加所确定的和。",
+            "example": "√2+√2=2√2。"
+          },
+          {
+            "name": "实数乘法",
+            "difficulty": 3,
+            "description": "通过有理近似定义实数的积及其运算性质",
+            "aliases": [
+              "实数的积"
+            ],
+            "prerequisites": [
+              "实数域",
+              "实数加法"
+            ],
+            "definition": "实数乘法是依靠有理近似和序关系确定实数积的运算。",
+            "example": "√2·√2=2。"
+          },
+          {
+            "name": "绝对值",
+            "difficulty": 2,
+            "description": "实数到零的距离所对应的非负数",
+            "aliases": [
+              "实数的绝对值"
+            ],
+            "prerequisites": [
+              "实数域的序"
+            ],
+            "definition": "实数α的绝对值是α与−α中不小于零的那个数。",
+            "example": "|−3|=3。"
+          },
+          {
+            "name": "根的存在性",
+            "difficulty": 4,
+            "description": "正实数的自然数次算术根存在且唯一",
+            "aliases": [
+              "算术根"
+            ],
+            "prerequisites": [
+              "实数域连续性",
+              "实数乘法"
+            ],
+            "definition": "对正实数α和自然数n，存在唯一正实数ξ满足ξⁿ=α。",
+            "example": "存在唯一正数ξ满足ξ²=2。"
+          },
+          {
+            "name": "有理指数幂",
+            "difficulty": 3,
+            "description": "把幂运算的指数从整数扩展到有理数",
+            "aliases": [
+              "有理数指数幂"
+            ],
+            "prerequisites": [
+              "根的存在性",
+              "实数乘法"
+            ],
+            "definition": "有理指数幂是依据整数幂和根定义的有理数指数幂。",
+            "example": "8^(1/3)=2。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "实指数幂",
+            "difficulty": 4,
+            "description": "把正数的幂指数扩展到任意实数",
+            "aliases": [
+              "任意实数指数幂"
+            ],
+            "prerequisites": [
+              "有理指数幂",
+              "上确界",
+              "实数的稠密性"
+            ],
+            "definition": "实指数幂由有理指数逼近实指数时的上下幂界唯一确定。",
+            "example": "2^√2由有理指数幂的界确定。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "对数",
+            "difficulty": 3,
+            "description": "以正数为底求幂等于给定正数的指数",
+            "aliases": [
+              "实对数"
+            ],
+            "prerequisites": [
+              "实指数幂",
+              "实数域连续性"
+            ],
+            "definition": "以α为底的γ的对数是满足α^β=γ的唯一实数β。",
+            "example": "log₂8=3。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "线段的度量",
+            "difficulty": 3,
+            "description": "用正实数唯一表示线段长度并保持可加性",
+            "aliases": [
+              "线段长度"
+            ],
+            "prerequisites": [
+              "实数域",
+              "实数加法"
+            ],
+            "definition": "线段的度量是赋予线段正实数长度且单位、相等和相加关系成立的规则。",
+            "example": "若A=B+C，则l(A)=l(B)+l(C)。",
+            "section": "§4.实数的其他性质及应用"
+          },
+          {
+            "name": "数轴",
+            "difficulty": 2,
+            "description": "实数与有向直线点之间的一一对应表示",
+            "aliases": [
+              "实数轴"
+            ],
+            "prerequisites": [
+              "线段的度量",
+              "实数域"
+            ],
+            "definition": "数轴是选定原点和单位长后，将每个实数对应到有向直线点的表示。",
+            "example": "数√2对应数轴上原点右侧的一个点。",
+            "section": "§4.实数的其他性质及应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1.有理数域",
+            "section_key": "bbf3c28aa8",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "§2.无理数的导入、实数域的序",
+            "section_key": "24f37f338c",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "§3.实数的算术运算",
+            "section_key": "e70aeabe5c",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "§4.实数的其他性质及应用",
+            "section_key": "30debb6962",
+            "page_range": [
+              7,
+              38
+            ]
+          }
+        ],
+        "chapter_key": "1cae24675b",
+        "metadata": {
+          "volume_id": "199af492b40e",
+          "file_id": "199af492b40e",
+          "volume_title": "微积分学教程（第1卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 1,
+          "raw_heading": "绪论　实数"
+        }
+      },
+      {
+        "name": "第一章 极限论",
+        "concepts": [
+          {
+            "name": "变量",
+            "difficulty": 1,
+            "description": "被赋予数值的符号，可取不同数值",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "变量是被赋予数值的符号。",
+            "example": "字母x表示一个变量"
+          },
+          {
+            "name": "常量",
+            "difficulty": 1,
+            "description": "在考察过程中只取一个固定值的量",
+            "aliases": [],
+            "prerequisites": [
+              "变量"
+            ],
+            "definition": "常量是只取一个固定数值的变量。",
+            "example": "x_n=1是常量数列"
+          },
+          {
+            "name": "数列",
+            "difficulty": 1,
+            "description": "按自然数序号排列的一列实数",
+            "aliases": [
+              "序列"
+            ],
+            "prerequisites": [],
+            "definition": "数列是以自然数为序号并按序号排列的实数列。",
+            "example": "1,1/2,1/3,…"
+          },
+          {
+            "name": "整序变量",
+            "difficulty": 2,
+            "description": "取值按自然数序号依次排列的变量",
+            "aliases": [
+              "整序型变量",
+              "序列"
+            ],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "整序变量是其第n个值由自然数序号确定并依序排列的变量。",
+            "example": "x_n=a+(n-1)d"
+          },
+          {
+            "name": "普通项",
+            "difficulty": 2,
+            "description": "数列中由序号n表示的任意一项",
+            "aliases": [
+              "第n项"
+            ],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "普通项是数列中对应任意自然数序号n的项x_n。",
+            "example": "几何数列的普通项为aq^{n-1}",
+            "section": "§1.整序变量及其极限"
+          },
+          {
+            "name": "整序变量极限",
+            "difficulty": 3,
+            "description": "数列从某项起与常数相差任意小",
+            "aliases": [
+              "数列极限",
+              "收敛"
+            ],
+            "prerequisites": [
+              "整序变量"
+            ],
+            "definition": "若任意ε>0都存在N使n>N时有|x_n-a|<ε，则a是x_n的极限。",
+            "example": "lim(1/n)=0"
+          },
+          {
+            "name": "无穷小",
+            "difficulty": 3,
+            "description": "极限为零的整序变量",
+            "aliases": [],
+            "prerequisites": [
+              "整序变量极限"
+            ],
+            "definition": "极限为零的数列变量称为无穷小。",
+            "example": "x_n=(-1)^n/n"
+          },
+          {
+            "name": "极限的无穷小表示",
+            "difficulty": 3,
+            "description": "用极限与无穷小之和表示数列",
+            "aliases": [],
+            "prerequisites": [
+              "整序变量极限",
+              "无穷小"
+            ],
+            "definition": "x_n趋于a当且仅当x_n=a+α_n且α_n为无穷小。",
+            "example": "1+1/n趋于1"
+          },
+          {
+            "name": "无穷极限",
+            "difficulty": 3,
+            "description": "数列最终超过任意给定界限的极限",
+            "aliases": [
+              "趋于无穷"
+            ],
+            "prerequisites": [
+              "整序变量极限"
+            ],
+            "definition": "数列最终大于任意给定正数时趋于正无穷，最终小于任意负界时趋于负无穷。",
+            "example": "n趋于+∞"
+          },
+          {
+            "name": "不定式",
+            "difficulty": 3,
+            "description": "极限运算中不能直接判定结果的形式",
+            "aliases": [
+              "∞/∞型",
+              "∞·0型",
+              "∞−∞型"
+            ],
+            "prerequisites": [
+              "整序变量极限",
+              "无穷极限"
+            ],
+            "definition": "不定式是由无穷变化组合形成、不能据形式直接确定极限的表达式。",
+            "example": "(n+1)^k−n^k呈∞−∞型",
+            "section": "§2.极限的定理、若干容易求得的极限"
+          },
+          {
+            "name": "斯托尔兹定理",
+            "difficulty": 4,
+            "description": "用相邻项差商求无穷比值极限的定理",
+            "aliases": [],
+            "prerequisites": [
+              "无穷极限",
+              "整序变量极限"
+            ],
+            "definition": "若y_n递增且趋于+∞，则x_n/y_n的极限等于相邻差商的极限。",
+            "example": "求a^n/n的极限"
+          },
+          {
+            "name": "单调变量",
+            "difficulty": 2,
+            "description": "按序号始终向同一方向变化的变量",
+            "aliases": [
+              "单调增大变量",
+              "单调减小变量"
+            ],
+            "prerequisites": [
+              "整序变量"
+            ],
+            "definition": "数值随序号不减或不增的整序变量称为单调变量。",
+            "example": "x_n=1−1/n单调增大",
+            "section": "§2.极限的定理、若干容易求得的极限"
+          },
+          {
+            "name": "单调有界定理",
+            "difficulty": 3,
+            "description": "单调且有界的数列必有有限极限",
+            "aliases": [],
+            "prerequisites": [
+              "单调变量",
+              "整序变量极限"
+            ],
+            "definition": "单调增大且上有界或单调减小且下有界的数列必收敛。",
+            "example": "x_n=1−1/n收敛于1"
+          },
+          {
+            "name": "上确界",
+            "difficulty": 3,
+            "description": "所有上界中最小的一个上界",
+            "aliases": [
+              "sup"
+            ],
+            "prerequisites": [],
+            "definition": "上确界是数集所有上界中最小的上界。",
+            "example": "(0,1)的上确界为1"
+          },
+          {
+            "name": "柯西收敛原理",
+            "difficulty": 4,
+            "description": "项间最终任意接近是收敛的判据",
+            "aliases": [
+              "柯布查诺—柯西定理"
+            ],
+            "prerequisites": [
+              "整序变量极限"
+            ],
+            "definition": "数列收敛当且仅当任意ε>0时其各项从某项起彼此相差小于ε。",
+            "example": "有理数柯西列未必在有理数中收敛",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "子数列",
+            "difficulty": 2,
+            "description": "从原数列按递增序号选出的部分数列",
+            "aliases": [
+              "部分数列"
+            ],
+            "prerequisites": [
+              "数列"
+            ],
+            "definition": "子数列是按严格递增序号n_k选取的项x_{n_k}组成的数列。",
+            "example": "x_1,x_3,x_5,…",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "部分极限",
+            "difficulty": 3,
+            "description": "某个子数列所具有的极限",
+            "aliases": [],
+            "prerequisites": [
+              "子数列",
+              "整序变量极限"
+            ],
+            "definition": "原数列某一子数列的极限称为原数列的部分极限。",
+            "example": "(-1)^{n+1}的部分极限为±1",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "魏尔斯特拉斯引理",
+            "difficulty": 4,
+            "description": "有界数列必能选出收敛子数列",
+            "aliases": [
+              "布尔查诺—魏尔斯特拉斯引理"
+            ],
+            "prerequisites": [
+              "子数列",
+              "整序变量极限"
+            ],
+            "definition": "任意有界数列都能选出一个收敛于有限极限的子数列。",
+            "example": "有界振荡数列可选出收敛子列",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "上极限",
+            "difficulty": 4,
+            "description": "数列所有部分极限中的最大者",
+            "aliases": [
+              "limsup"
+            ],
+            "prerequisites": [
+              "部分极限",
+              "上确界"
+            ],
+            "definition": "上极限是整序变量全部部分极限中最大的一个。",
+            "example": "(-1)^n的上极限为1",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "下极限",
+            "difficulty": 4,
+            "description": "数列所有部分极限中的最小者",
+            "aliases": [
+              "liminf"
+            ],
+            "prerequisites": [
+              "部分极限"
+            ],
+            "definition": "下极限是整序变量全部部分极限中最小的一个。",
+            "example": "(-1)^n的下极限为−1",
+            "section": "§4.收敛原理·部分极限"
+          },
+          {
+            "name": "极限判定定理",
+            "difficulty": 4,
+            "description": "上极限与下极限相等当且仅当收敛",
+            "aliases": [],
+            "prerequisites": [
+              "上极限",
+              "下极限",
+              "整序变量极限"
+            ],
+            "definition": "整序变量有极限的充要条件是其上极限与下极限相等。",
+            "example": "上、下极限同为a则数列趋于a"
+          },
+          {
+            "name": "算术平均定理",
+            "difficulty": 3,
+            "description": "数列前n项平均值与原数列同极限",
+            "aliases": [
+              "柯西命题"
+            ],
+            "prerequisites": [
+              "斯托尔兹定理",
+              "整序变量极限"
+            ],
+            "definition": "若a_n有有限或无穷极限，则其前n项算术平均值有同一极限。",
+            "example": "若√[n]{n}趋于1，则其前n项平均值也趋于1",
+            "section": "§2.极限的定理、若干容易求得的极限"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1.整序变量及其极限",
+            "section_key": "25ae5c014e",
+            "page_range": [
+              39,
+              51
+            ]
+          },
+          {
+            "name": "§2.极限的定理、若干容易求得的极限",
+            "section_key": "6d61d85626",
+            "page_range": [
+              51,
+              77
+            ]
+          },
+          {
+            "name": "§4.收敛原理·部分极限",
+            "section_key": "58ec414ae0",
+            "page_range": [
+              77,
+              84
+            ]
+          }
+        ],
+        "chapter_key": "314ce65a41",
+        "metadata": {
+          "volume_id": "199af492b40e",
+          "file_id": "199af492b40e",
+          "volume_title": "微积分学教程（第1卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 2,
+          "raw_heading": "第一章　极限论"
+        }
+      },
+      {
+        "name": "第二章 一元函数",
+        "concepts": [
+          {
+            "name": "变动区域",
+            "difficulty": 2,
+            "description": "变量可能取到的全部数值所成的数集",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "变量的变动区域是该变量在所考察问题内可能取到的数值集合。",
+            "example": "自然数变量n的变动区域为自然数集。"
+          },
+          {
+            "name": "数区间",
+            "difficulty": 2,
+            "description": "由端点或无穷端界定的实数集合",
+            "aliases": [
+              "区间"
+            ],
+            "prerequisites": [
+              "变动区域"
+            ],
+            "definition": "数区间是以实数或无穷端为界限确定的变量变动区域。",
+            "example": "[a,b]表示a≤x≤b。"
+          },
+          {
+            "name": "函数关系",
+            "difficulty": 2,
+            "description": "两个变量同时变动时的确定对应关系",
+            "aliases": [],
+            "prerequisites": [
+              "变动区域"
+            ],
+            "definition": "函数关系规定自变量取定数值时因变量对应的确定数值。",
+            "example": "圆面积Q=πR²。"
+          },
+          {
+            "name": "函数",
+            "difficulty": 3,
+            "description": "每个自变量值唯一对应一个函数值",
+            "aliases": [
+              "单值函数"
+            ],
+            "prerequisites": [
+              "变动区域",
+              "函数关系"
+            ],
+            "definition": "若对定义域内每个x按某规律都有唯一确定的y对应，则y是x的函数。",
+            "example": "f(x)=1/(1+x²)。"
+          },
+          {
+            "name": "自变量",
+            "difficulty": 2,
+            "description": "可在定义域内任意取值的变量",
+            "aliases": [
+              "变元"
+            ],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "自变量是在其变动区域内可不受限制地取任意数值的函数变量。",
+            "example": "y=x²中x是自变量。"
+          },
+          {
+            "name": "定义域",
+            "difficulty": 3,
+            "description": "函数自变量所允许取值的集合",
+            "aliases": [],
+            "prerequisites": [
+              "函数",
+              "变动区域"
+            ],
+            "definition": "定义域是函数自变量可以取值的全部数值集合。",
+            "example": "√(1-x²)的定义域为[-1,1]。"
+          },
+          {
+            "name": "函数值",
+            "difficulty": 2,
+            "description": "自变量取定数值时对应的函数数值",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "函数值是函数对应法则作用于某个自变量值所得的确定数值。",
+            "example": "f(x)=1/(1+x²)时，f(1)=1/2。"
+          },
+          {
+            "name": "函数的表示法",
+            "difficulty": 3,
+            "description": "表示函数对应规律的公式、列表或图示",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "函数可以用解析式、数值列表或图像表示其对应关系。",
+            "example": "用实验数据列表给出压力与沸点关系。"
+          },
+          {
+            "name": "自然适用区域",
+            "difficulty": 3,
+            "description": "解析式取得有限实数值的全部自变量集合",
+            "aliases": [
+              "自然定义域"
+            ],
+            "prerequisites": [
+              "解析式表示法",
+              "定义域"
+            ],
+            "definition": "解析式的自然适用区域是使该式有意义并取得有限实数值的所有x组成的集合。",
+            "example": "1/√(1-x²)的自然适用区域为(-1,1)。"
+          },
+          {
+            "name": "解析式表示法",
+            "difficulty": 3,
+            "description": "用公式和演算规则表示函数的方法",
+            "aliases": [
+              "解析表示法"
+            ],
+            "prerequisites": [
+              "函数的表示法"
+            ],
+            "definition": "解析式表示法通过公式规定由自变量求得函数值所需的演算。",
+            "example": "p=c/V表示压力是体积的函数。",
+            "section": "§1.函数概念"
+          },
+          {
+            "name": "分段函数",
+            "difficulty": 3,
+            "description": "在不同自变量范围使用不同公式的函数",
+            "aliases": [],
+            "prerequisites": [
+              "函数",
+              "解析式表示法"
+            ],
+            "definition": "分段函数是在定义域的不同部分分别用不同公式或条件确定函数值的函数。",
+            "example": "|x|>1时取1，|x|<1时取-1。"
+          },
+          {
+            "name": "基本无穷小",
+            "difficulty": 3,
+            "description": "用来比较其他无穷小阶数的标准无穷小",
+            "aliases": [],
+            "prerequisites": [
+              "无穷小量"
+            ],
+            "definition": "基本无穷小是选定用来由其正指数幂衡量其他无穷小的标准量。",
+            "example": "x→0时通常选x为基本无穷小。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "无穷小的阶",
+            "difficulty": 4,
+            "description": "无穷小相对于基本无穷小幂的阶次",
+            "aliases": [
+              "阶数"
+            ],
+            "prerequisites": [
+              "基本无穷小",
+              "无穷小量"
+            ],
+            "definition": "若β/α^k趋于非零有限数，则β是关于α的k阶无穷小。",
+            "example": "1-cos x是关于x的二阶无穷小。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "等价无穷小",
+            "difficulty": 4,
+            "description": "比值趋于1的两个无穷小",
+            "aliases": [
+              "等价关系"
+            ],
+            "prerequisites": [
+              "无穷小的阶"
+            ],
+            "definition": "两个无穷小等价，当且仅当它们的比值极限为1。",
+            "example": "sin x∼x（x→0）。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "主部",
+            "difficulty": 4,
+            "description": "与无穷小等价的最简单主要项",
+            "aliases": [
+              "主项"
+            ],
+            "prerequisites": [
+              "基本无穷小",
+              "无穷小的阶",
+              "等价无穷小"
+            ],
+            "definition": "若β∼cα^k，则cα^k称为β关于α的主部。",
+            "example": "1-cos x的主部为x²/2。",
+            "section": "§3.无穷小及无穷大的分阶"
+          },
+          {
+            "name": "连续性",
+            "difficulty": 4,
+            "description": "自变量趋近一点时函数值趋近对应值",
+            "aliases": [
+              "函数连续"
+            ],
+            "prerequisites": [
+              "函数值",
+              "极限"
+            ],
+            "definition": "函数在一点连续是指自变量趋近该点时函数值趋近该点的函数值。",
+            "example": "sin(1/x)在其定义域每一点连续。"
+          },
+          {
+            "name": "一致连续性",
+            "difficulty": 4,
+            "description": "同一接近程度统一控制全区间函数值差",
+            "aliases": [
+              "一致连续"
+            ],
+            "prerequisites": [
+              "连续性",
+              "函数的表示法"
+            ],
+            "definition": "函数一致连续是指给定函数值误差后存在对全区间各点统一适用的自变量距离。",
+            "example": "闭区间上的连续函数一致连续。",
+            "section": "§5.连续函数的性质"
+          },
+          {
+            "name": "康托定理",
+            "difficulty": 5,
+            "description": "闭区间连续函数必在其上​​一致连续",
+            "aliases": [],
+            "prerequisites": [
+              "连续性",
+              "一致连续性",
+              "闭区间"
+            ],
+            "definition": "定义在闭区间并连续的函数在该闭区间上一致连续。",
+            "example": "连续函数f在[a,b]上满足一致连续条件。",
+            "section": "§5.连续函数的性质"
+          },
+          {
+            "name": "博雷尔引理",
+            "difficulty": 5,
+            "description": "闭区间的开区间覆盖可取有限子覆盖",
+            "aliases": [],
+            "prerequisites": [
+              "闭区间"
+            ],
+            "definition": "若开区间无穷系覆盖闭区间，则其中必有有限子系仍覆盖该闭区间。",
+            "example": "开区间系覆盖[a,b]时可选有限个覆盖全区间。",
+            "section": "§5.连续函数的性质"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1.函数概念",
+            "section_key": "b0372e1850",
+            "page_range": [
+              85,
+              103
+            ]
+          },
+          {
+            "name": "§2.函数的极限",
+            "section_key": "37d04c8cb2",
+            "page_range": [
+              103,
+              121
+            ]
+          },
+          {
+            "name": "§3.无穷小及无穷大的分阶",
+            "section_key": "1c45bb7c49",
+            "page_range": [
+              121,
+              129
+            ]
+          },
+          {
+            "name": "§4.函数的连续性及间断",
+            "section_key": "862f638cab",
+            "page_range": [
+              129,
+              148
+            ]
+          },
+          {
+            "name": "§5.连续函数的性质",
+            "section_key": "ef399ffa0c",
+            "page_range": [
+              148,
+              162
+            ]
+          }
+        ],
+        "chapter_key": "33265c1738",
+        "metadata": {
+          "volume_id": "199af492b40e",
+          "file_id": "199af492b40e",
+          "volume_title": "微积分学教程（第1卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 3,
+          "raw_heading": "第二章　一元函数"
+        }
+      },
+      {
+        "name": "第三章 导数及微分",
+        "concepts": [
+          {
+            "name": "平均速度",
+            "difficulty": 1,
+            "description": "一段时间内路程增量与时间增量之比",
+            "aliases": [
+              "平均运动速度"
+            ],
+            "prerequisites": [],
+            "definition": "平均速度是时间段内路程增量与时间增量的比值。",
+            "example": "自由降落中，平均速度为Δs/Δt。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "瞬时速度",
+            "difficulty": 2,
+            "description": "平均速度在时间间隔趋于零时的极限",
+            "aliases": [
+              "真实速度"
+            ],
+            "prerequisites": [
+              "平均速度",
+              "导数"
+            ],
+            "definition": "瞬时速度是平均速度当时间增量趋于零时的极限。",
+            "example": "s=gt²/2时，v=gt。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "割线",
+            "difficulty": 1,
+            "description": "连接曲线上两点的直线",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "割线是经过曲线上两个不同点的直线。",
+            "example": "连接M与M₁得到割线MM₁。"
+          },
+          {
+            "name": "割线斜率",
+            "difficulty": 2,
+            "description": "曲线上两点纵坐标增量与横坐标增量之比",
+            "aliases": [],
+            "prerequisites": [
+              "割线"
+            ],
+            "definition": "割线斜率等于两点间纵坐标增量与横坐标增量的比值。",
+            "example": "斜率为Δy/Δx。"
+          },
+          {
+            "name": "曲线切线",
+            "difficulty": 2,
+            "description": "割线随一点趋近定点时的极限位置",
+            "aliases": [
+              "切线"
+            ],
+            "prerequisites": [
+              "割线"
+            ],
+            "definition": "曲线在一点处的切线是割线在另一点趋近该点时的极限位置。",
+            "example": "抛物线原点处切线为x轴。"
+          },
+          {
+            "name": "切线斜率",
+            "difficulty": 2,
+            "description": "曲线切线与横轴夹角的正切值",
+            "aliases": [],
+            "prerequisites": [
+              "曲线切线",
+              "导数"
+            ],
+            "definition": "切线斜率等于曲线函数关于横坐标的导数。",
+            "example": "y=ax²在x处斜率为2ax。",
+            "section": "§2.微分"
+          },
+          {
+            "name": "导数",
+            "difficulty": 3,
+            "description": "函数增量与自变量增量之比的极限",
+            "aliases": [
+              "函数在一点处的导数"
+            ],
+            "prerequisites": [
+              "割线斜率"
+            ],
+            "definition": "导数是函数增量与自变量增量之比在自变量增量趋于零时的极限。",
+            "example": "f'(x₀)=limΔx→0[f(x₀+Δx)-f(x₀)]/Δx。"
+          },
+          {
+            "name": "平均变化率",
+            "difficulty": 2,
+            "description": "有限增量下函数增量与自变量增量之比",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "平均变化率是自变量改变一段数量时函数增量与自变量增量的比值。",
+            "example": "y关于x的平均变化率为Δy/Δx。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 2,
+            "description": "速度关于时间的导数",
+            "aliases": [],
+            "prerequisites": [
+              "导数",
+              "平均变化率"
+            ],
+            "definition": "加速度是速度关于时间的导数。",
+            "example": "a=dv/dt。"
+          },
+          {
+            "name": "热容量",
+            "difficulty": 2,
+            "description": "热量关于温度的导数",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "物体在给定温度时的热容量是热量关于温度的导数。",
+            "example": "c=dW/dθ。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "电流强度",
+            "difficulty": 2,
+            "description": "流过电量关于时间的导数",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "电流强度是一定时间内流过导线截面的电量关于时间的导数。",
+            "example": "I=dQ/dt。",
+            "section": "§1.导数及其求法"
+          },
+          {
+            "name": "导数记号",
+            "difficulty": 1,
+            "description": "表示导数的多种符号形式",
+            "aliases": [
+              "导函数记号"
+            ],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "导数记号是表示函数导数的符号体系，如y′和dy/dx。",
+            "example": "y′、f′(x)、dy/dx均可表示导数。"
+          },
+          {
+            "name": "常数函数导数",
+            "difficulty": 1,
+            "description": "常数函数的导数恒为零",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "若函数恒等于常数，则其导数处处等于零。",
+            "example": "y=c时，y′=0。"
+          },
+          {
+            "name": "幂函数导数",
+            "difficulty": 2,
+            "description": "自然数幂函数的导数公式",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "对于自然数n，函数xⁿ的导数为nxⁿ⁻¹。",
+            "example": "y=x³时，y′=3x²。"
+          },
+          {
+            "name": "倒数函数导数",
+            "difficulty": 2,
+            "description": "函数1/x的导数公式",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "函数1/x在x≠0处的导数为−1/x²。",
+            "example": "y=1/x时，y′=−1/x²。"
+          },
+          {
+            "name": "费马定理",
+            "difficulty": 3,
+            "description": "内点极值且导数存在时导数必为零",
+            "aliases": [
+              "费马极值定理"
+            ],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "函数在区间内点取得极值且该点存在有限导数时，导数等于零。",
+            "example": "内点c为极大值点，则f′(c)=0。",
+            "section": "§3.微分学的基本定理"
+          },
+          {
+            "name": "达布定理",
+            "difficulty": 4,
+            "description": "导数在两端值之间取得全部中间值",
+            "aliases": [
+              "导数介值定理"
+            ],
+            "prerequisites": [
+              "导数",
+              "费马定理"
+            ],
+            "definition": "函数有有限导数时，其导数至少一次取得端点导数间的每个值。",
+            "example": "若f′(a)>C>f′(b)，则存在c使f′(c)=C。",
+            "section": "§3.微分学的基本定理"
+          },
+          {
+            "name": "罗尔定理",
+            "difficulty": 3,
+            "description": "端点函数值相等时区间内存在零导数点",
+            "aliases": [
+              "Rolle定理"
+            ],
+            "prerequisites": [
+              "连续函数",
+              "费马定理"
+            ],
+            "definition": "函数在闭区间连续、开区间可导且端点值相等时，区间内存在导数为零的点。",
+            "example": "f(a)=f(b)时，存在c∈(a,b)使f′(c)=0。"
+          },
+          {
+            "name": "拉格朗日中值定理",
+            "difficulty": 3,
+            "description": "平均变化率等于某内点导数",
+            "aliases": [
+              "微分学中值定理",
+              "拉格朗日定理"
+            ],
+            "prerequisites": [
+              "罗尔定理",
+              "导数"
+            ],
+            "definition": "函数连续且开区间可导时，存在内点使平均变化率等于该点导数。",
+            "example": "存在c使[f(b)-f(a)]/(b-a)=f′(c)。",
+            "section": "§3.微分学的基本定理"
+          },
+          {
+            "name": "有限增量公式",
+            "difficulty": 3,
+            "description": "用某内点导数准确表示有限函数增量",
+            "aliases": [
+              "拉格朗日公式"
+            ],
+            "prerequisites": [
+              "拉格朗日中值定理"
+            ],
+            "definition": "有限增量公式表示Δf(x₀)=f′(x₀+θΔx)Δx，其中0<θ<1。",
+            "example": "Δf=f′(x₀+θΔx)Δx。"
+          },
+          {
+            "name": "柯西公式",
+            "difficulty": 4,
+            "description": "两个函数增量比等于某点导数比",
+            "aliases": [
+              "柯西中值定理",
+              "柯西定理"
+            ],
+            "prerequisites": [
+              "罗尔定理",
+              "拉格朗日中值定理"
+            ],
+            "definition": "满足条件时，两个函数增量之比等于某内点导数之比。",
+            "example": "[f(b)-f(a)]/[g(b)-g(a)]=f′(c)/g′(c)。"
+          },
+          {
+            "name": "泰勒公式",
+            "difficulty": 4,
+            "description": "用函数各阶导数构造多项式近似",
+            "aliases": [
+              "带余项泰勒公式"
+            ],
+            "prerequisites": [
+              "导数",
+              "有限增量公式"
+            ],
+            "definition": "泰勒公式用函数在一点的各阶导数及余项表示函数值。",
+            "example": "sinx≈x−x³/6+x⁵/120。"
+          },
+          {
+            "name": "拉格朗日插值多项式",
+            "difficulty": 3,
+            "description": "通过给定基点函数值的最低次多项式",
+            "aliases": [
+              "拉格朗日插值公式"
+            ],
+            "prerequisites": [
+              "拉格朗日中值定理"
+            ],
+            "definition": "拉格朗日插值多项式是在各插值基点取函数给定值且次数不高于m的唯一多项式。",
+            "example": "L(x)=Σf(xₖ)lₖ(x)。",
+            "section": "§6.插值法"
+          },
+          {
+            "name": "插值余项",
+            "difficulty": 4,
+            "description": "插值函数值与插值多项式之差的准确表达",
+            "aliases": [
+              "拉格朗日插值余项"
+            ],
+            "prerequisites": [
+              "拉格朗日插值多项式",
+              "罗尔定理"
+            ],
+            "definition": "插值余项为f(x)−L(x)=f⁽ᵐ⁺¹⁾(ξ)ω(x)/(m+1)!。",
+            "example": "误差由高阶导数与ω(x)共同决定。"
+          },
+          {
+            "name": "埃尔米特插值",
+            "difficulty": 4,
+            "description": "同时匹配多个基点处函数及其导数值",
+            "aliases": [
+              "埃尔米特公式"
+            ],
+            "prerequisites": [
+              "拉格朗日插值多项式",
+              "泰勒公式"
+            ],
+            "definition": "埃尔米特插值用多项式同时匹配各基点的函数值及指定阶导数值。",
+            "example": "一个基点重复n+1次时得到泰勒多项式。",
+            "section": "§6.插值法"
+          },
+          {
+            "name": "连续函数",
+            "difficulty": 1,
+            "description": "函数在区间内没有通常的间断",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "连续函数是在所考察区间内满足连续性条件的函数。",
+            "example": "闭区间上的连续函数必有最大值和最小值。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1.导数及其求法",
+            "section_key": "47ca67762d",
+            "page_range": [
+              163,
+              185
+            ]
+          },
+          {
+            "name": "§2.微分",
+            "section_key": "fb6fb7c3f0",
+            "page_range": [
+              185,
+              196
+            ]
+          },
+          {
+            "name": "§3.微分学的基本定理",
+            "section_key": "042711a4b5",
+            "page_range": [
+              196,
+              202
+            ]
+          },
+          {
+            "name": "§4.高阶导数及高阶微分",
+            "section_key": "ea70f29d90",
+            "page_range": [
+              202,
+              216
+            ]
+          },
+          {
+            "name": "§5.泰勒公式",
+            "section_key": "b1239cf58d",
+            "page_range": [
+              216,
+              232
+            ]
+          },
+          {
+            "name": "§6.插值法",
+            "section_key": "a63fd3f957",
+            "page_range": [
+              232,
+              236
+            ]
+          }
+        ],
+        "chapter_key": "5aff9188f4",
+        "metadata": {
+          "volume_id": "199af492b40e",
+          "file_id": "199af492b40e",
+          "volume_title": "微积分学教程（第1卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 4,
+          "raw_heading": "第三章　导数及微分"
+        }
+      },
+      {
+        "name": "第四章 利用导数研究函数",
+        "concepts": [
+          {
+            "name": "导数",
+            "difficulty": 1,
+            "description": "描述函数变化快慢并等于曲线切线斜率",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "函数在一点的导数是函数增量与自变量增量之比的极限。",
+            "example": "f(x)=x^2时，f'(x)=2x"
+          },
+          {
+            "name": "函数为常数条件",
+            "difficulty": 2,
+            "description": "函数在区间内为常数当且仅当导数处处为零",
+            "aliases": [],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "连续且可导函数在区间内为常数的充要条件是内部各点导数等于零。",
+            "example": "f'(x)=0，则f(x)=C"
+          },
+          {
+            "name": "导数相等定理",
+            "difficulty": 2,
+            "description": "两函数导数相等时两函数只相差一个常数",
+            "aliases": [],
+            "prerequisites": [
+              "函数为常数条件"
+            ],
+            "definition": "同一区间内两函数导数处处相等，则它们的差为常数。",
+            "example": "f'=g'，则f=g+C"
+          },
+          {
+            "name": "广义单调性",
+            "difficulty": 2,
+            "description": "由导数非负或非正判定函数不减或不增",
+            "aliases": [
+              "单调增大",
+              "单调减小"
+            ],
+            "prerequisites": [
+              "导数"
+            ],
+            "definition": "连续且可导函数在区间内广义单调增大的充要条件是导数处处非负。",
+            "example": "f'(x)≥0，则f(x)不减"
+          },
+          {
+            "name": "狭义单调性",
+            "difficulty": 3,
+            "description": "导数符号与不恒为零共同保证严格单调",
+            "aliases": [
+              "严格单调性"
+            ],
+            "prerequisites": [
+              "广义单调性",
+              "函数为常数条件"
+            ],
+            "definition": "函数严格增大需导数非负且不在任何部分区间内恒为零。",
+            "example": "f(x)=x^3严格递增但f'(0)=0"
+          },
+          {
+            "name": "导数符号判别",
+            "difficulty": 2,
+            "description": "用导数正负判断函数在区间内的增减方向",
+            "aliases": [],
+            "prerequisites": [
+              "导数",
+              "广义单调性"
+            ],
+            "definition": "导数为正时函数增大，导数为负时函数减小。",
+            "example": "f'(x)>0，则f(x)递增"
+          },
+          {
+            "name": "单调性证明不等式",
+            "difficulty": 3,
+            "description": "构造函数并利用单调性证明函数不等式",
+            "aliases": [],
+            "prerequisites": [
+              "导数符号判别"
+            ],
+            "definition": "通过考察辅助函数导数的符号，将不等式转化为函数的单调性。",
+            "example": "由ln x−x在1处最大得ln x≤x−1"
+          },
+          {
+            "name": "凸函数",
+            "difficulty": 3,
+            "description": "函数图像呈向下凸，函数值不超过弦线加权值",
+            "aliases": [
+              "凸性"
+            ],
+            "prerequisites": [
+              "导数符号判别"
+            ],
+            "definition": "函数在两点加权平均处的函数值不超过两端函数值的同样加权平均。",
+            "example": "f(x)=x^2在正数区间为凸函数"
+          },
+          {
+            "name": "凹函数",
+            "difficulty": 3,
+            "description": "函数图像呈向上凹，凸函数不等式方向相反",
+            "aliases": [
+              "凹性"
+            ],
+            "prerequisites": [
+              "凸函数"
+            ],
+            "definition": "函数在两点加权平均处的函数值不小于两端函数值的同样加权平均。",
+            "example": "f(x)=ln x在正数区间为凹函数"
+          },
+          {
+            "name": "二阶导数判凸",
+            "difficulty": 3,
+            "description": "通过二阶导数符号判断函数的凸性或凹性",
+            "aliases": [],
+            "prerequisites": [
+              "凸函数",
+              "导数"
+            ],
+            "definition": "二阶导数非负时函数为凸，二阶导数非正时函数为凹。",
+            "example": "x^4的二阶导数12x^2≥0，故为凸函数"
+          },
+          {
+            "name": "导数判凸性",
+            "difficulty": 4,
+            "description": "函数凸性等价于其一阶导数单调增加",
+            "aliases": [],
+            "prerequisites": [
+              "凸函数",
+              "广义单调性"
+            ],
+            "definition": "在相应条件下，函数为凸函数当且仅当其导数为增函数。",
+            "example": "若f'(x)随x增加，则f为凸函数"
+          },
+          {
+            "name": "詹森不等式",
+            "difficulty": 4,
+            "description": "凸函数的加权平均函数值不超过函数值加权平均",
+            "aliases": [
+              "Jensen不等式"
+            ],
+            "prerequisites": [
+              "凸函数"
+            ],
+            "definition": "凸函数满足f(Σqᵢxᵢ)≤Σqᵢf(xᵢ)，其中权重和为一。",
+            "example": "(Σpᵢxᵢ/Σpᵢ)^k≤Σpᵢxᵢ^k/Σpᵢ",
+            "section": "§2.凸(与凹)函数"
+          },
+          {
+            "name": "拐点",
+            "difficulty": 3,
+            "description": "曲线凸部与凹部相互分界的点",
+            "aliases": [],
+            "prerequisites": [
+              "凸函数",
+              "凹函数"
+            ],
+            "definition": "曲线上把函数的凸部分和凹部分分开的点叫作拐点。",
+            "example": "f(x)=sin x在x=kπ处有拐点"
+          },
+          {
+            "name": "拐点判别",
+            "difficulty": 4,
+            "description": "二阶导数变号是判断拐点的重要规则",
+            "aliases": [],
+            "prerequisites": [
+              "拐点",
+              "二阶导数判凸"
+            ],
+            "definition": "若二阶导数在候选点左右变号，则该点为拐点；不变号则不是。",
+            "example": "sin x的f''在kπ处变号"
+          },
+          {
+            "name": "极值点",
+            "difficulty": 2,
+            "description": "函数图像的峰顶或谷底对应的特殊点",
+            "aliases": [
+              "极大点",
+              "极小点"
+            ],
+            "prerequisites": [
+              "导数符号判别"
+            ],
+            "definition": "函数在局部范围内取得最大值或最小值的点称为极值点。",
+            "example": "f'(x)由正变负处为极大点"
+          },
+          {
+            "name": "函数作图步骤",
+            "difficulty": 3,
+            "description": "利用导数零点、无穷点、拐点和端点作图",
+            "aliases": [
+              "作图步骤"
+            ],
+            "prerequisites": [
+              "极值点",
+              "拐点",
+              "导数"
+            ],
+            "definition": "先确定一阶导数为零或无穷、二阶导数为零的点，再计算函数值并连图。",
+            "example": "作图时标出极值点与拐点"
+          },
+          {
+            "name": "牛顿法则",
+            "difficulty": 4,
+            "description": "用曲线切线与横轴交点迭代求方程的根",
+            "aliases": [
+              "切线法",
+              "牛顿法"
+            ],
+            "prerequisites": [
+              "导数",
+              "极值点"
+            ],
+            "definition": "由当前点切线与横轴交点构造根的逐次近似。",
+            "example": "x_{n+1}=x_n−f(x_n)/f'(x_n)",
+            "section": "§5.方程的近似解"
+          },
+          {
+            "name": "弦线法",
+            "difficulty": 4,
+            "description": "用曲线弦线与横轴交点逐步逼近方程根",
+            "aliases": [
+              "割线法"
+            ],
+            "prerequisites": [
+              "函数作图步骤"
+            ],
+            "definition": "利用含根区间端点确定弦线，并以弦线与横轴交点更新近似根。",
+            "example": "区间端点异号时用弦线逼近根",
+            "section": "§5.方程的近似解"
+          },
+          {
+            "name": "联合法",
+            "difficulty": 4,
+            "description": "同时使用切线法和弦线法从根的两侧逼近",
+            "aliases": [
+              "联合迭代法"
+            ],
+            "prerequisites": [
+              "牛顿法则",
+              "弦线法"
+            ],
+            "definition": "交替或同时采用切线近似与弦线近似，使两个值从根的两侧趋近。",
+            "example": "x_n<ξ<x'_n并同时更新二者",
+            "section": "§5.方程的近似解"
+          },
+          {
+            "name": "根的误差估计",
+            "difficulty": 4,
+            "description": "利用函数值、导数和两侧近似值估计根误差",
+            "aliases": [
+              "误差估计"
+            ],
+            "prerequisites": [
+              "牛顿法则",
+              "联合法"
+            ],
+            "definition": "通过根所在区间宽度或函数值与导数的比值估计近似根与真根的差距。",
+            "example": "|x−ξ|<|f(x)|/m"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1.函数的动态的研究",
+            "section_key": "d26595218d",
+            "page_range": [
+              237,
+              260
+            ]
+          },
+          {
+            "name": "§2.凸(与凹)函数",
+            "section_key": "739977b25b",
+            "page_range": [
+              260,
+              269
+            ]
+          },
+          {
+            "name": "§3.函数的作图",
+            "section_key": "b7bc264fbb",
+            "page_range": [
+              269,
+              277
+            ]
+          },
+          {
+            "name": "§4.不定式的定值法",
+            "section_key": "dc5536ab5d",
+            "page_range": [
+              277,
+              286
+            ]
+          },
+          {
+            "name": "§5.方程的近似解",
+            "section_key": "1a06959411",
+            "page_range": [
+              286,
+              300
+            ]
+          }
+        ],
+        "chapter_key": "e28db32dde",
+        "metadata": {
+          "volume_id": "199af492b40e",
+          "file_id": "199af492b40e",
+          "volume_title": "微积分学教程（第1卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 5,
+          "raw_heading": "第四章　利用导数研究函数"
+        }
+      },
+      {
+        "name": "第五章 多元函数",
+        "concepts": [
+          {
+            "name": "多元函数",
+            "difficulty": 2,
+            "description": "由多个自变量共同确定函数值的函数关系",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "多元函数是由多个自变量的共同取值依一定法则唯一确定函数值的对应关系。",
+            "example": "圆柱体体积V=πR²H是R、H的函数",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "函数",
+            "difficulty": 1,
+            "description": "变量间按一定法则建立的对应关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "函数是对定义域中每个自变量值按某一法则对应一个函数值的关系。",
+            "example": "z=x²+y²",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "二元函数",
+            "difficulty": 2,
+            "description": "以两个自变量为变元的多元函数",
+            "aliases": [],
+            "prerequisites": [
+              "多元函数"
+            ],
+            "definition": "二元函数是对定义域中每一数对(x,y)对应一个确定函数值z的函数。",
+            "example": "z=xy",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "定义域",
+            "difficulty": 2,
+            "description": "函数公式或问题允许自变量取值的集合",
+            "aliases": [],
+            "prerequisites": [
+              "二元函数"
+            ],
+            "definition": "定义域是函数有定义时自变量所有允许取值所成的集合。",
+            "example": "√(1−x²−y²)的定义域为x²+y²≤1",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "变动区域",
+            "difficulty": 2,
+            "description": "多个自变量可以同时取值的数值组集合",
+            "aliases": [],
+            "prerequisites": [
+              "定义域"
+            ],
+            "definition": "变动区域是多个自变量在同一时刻可以共同取值的数对或数值组集合。",
+            "example": "0<x<p，0<y<p，x+y>p",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "单值函数",
+            "difficulty": 2,
+            "description": "每个定义域元素只对应一个函数值的函数",
+            "aliases": [],
+            "prerequisites": [
+              "函数"
+            ],
+            "definition": "单值函数要求定义域中的每个自变量取值依规则只对应一个函数值。",
+            "example": "z=x²+y²对每个(x,y)只有一个z",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "点集",
+            "difficulty": 2,
+            "description": "由满足条件的点或数值组构成的集合",
+            "aliases": [
+              "点的集合"
+            ],
+            "prerequisites": [
+              "变动区域"
+            ],
+            "definition": "点集是由平面或算术空间中满足给定条件的点所组成的集合。",
+            "example": "(x−α)²+(y−β)²≤r²构成圆",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "空间图形",
+            "difficulty": 3,
+            "description": "函数值在三维坐标空间中形成的点集轨迹",
+            "aliases": [
+              "曲面图形"
+            ],
+            "prerequisites": [
+              "二元函数"
+            ],
+            "definition": "空间图形是将定义域每点沿z轴取z=f(x,y)所得点的轨迹。",
+            "example": "z=xy的空间图形是双曲抛物面",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "曲面方程",
+            "difficulty": 3,
+            "description": "表达二元函数空间图形的方程",
+            "aliases": [],
+            "prerequisites": [
+              "空间图形"
+            ],
+            "definition": "等式z=f(x,y)称为所表示曲面的曲面方程。",
+            "example": "z=x²+y²是回转抛物面的方程",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "n维算术空间",
+            "difficulty": 3,
+            "description": "由所有n个实数组成的数值组构成的空间",
+            "aliases": [
+              "算术空间"
+            ],
+            "prerequisites": [
+              "点集"
+            ],
+            "definition": "n维算术空间是所有n个实数组成的n维点的集合。",
+            "example": "(x₁,x₂,…,xₙ)是一个n维点",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "n维距离",
+            "difficulty": 3,
+            "description": "用坐标差平方和平方根定义的点间距离",
+            "aliases": [],
+            "prerequisites": [
+              "n维算术空间"
+            ],
+            "definition": "两n维点间距离定义为各坐标差平方和的平方根。",
+            "example": "d(M,M′)=√Σ(xᵢ′−xᵢ)²"
+          },
+          {
+            "name": "连续曲线",
+            "difficulty": 3,
+            "description": "由多个连续参数函数共同表示的点集",
+            "aliases": [
+              "参数曲线"
+            ],
+            "prerequisites": [
+              "n维算术空间"
+            ],
+            "definition": "连续曲线是由n个连续参数函数随参数变化形成的点集。",
+            "example": "xᵢ=φᵢ(t)，t′≤t≤t″",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "直线段",
+            "difficulty": 2,
+            "description": "由两点间直线参数表示得到的有限线段",
+            "aliases": [],
+            "prerequisites": [
+              "连续曲线",
+              "n维距离"
+            ],
+            "definition": "直线段是直线参数t从0变至1时得到的连接两点的部分。",
+            "example": "xᵢ=xᵢ′+t(xᵢ″−xᵢ′)，0≤t≤1",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "折线",
+            "difficulty": 2,
+            "description": "由有限条直线段首尾相接组成的曲线",
+            "aliases": [],
+            "prerequisites": [
+              "直线段"
+            ],
+            "definition": "折线是由有限数目的直线段所组成的曲线。",
+            "example": "三条线段首尾连接形成折线",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "偏导数",
+            "difficulty": 3,
+            "description": "固定其他变元时函数对一个变元的导数",
+            "aliases": [],
+            "prerequisites": [
+              "二元函数"
+            ],
+            "definition": "偏导数是在其他自变量保持不变时函数对指定自变量的导数。",
+            "example": "f(x,y)=x²y时，∂f/∂x=2xy",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "隐函数",
+            "difficulty": 4,
+            "description": "由方程或方程组间接确定的函数",
+            "aliases": [],
+            "prerequisites": [
+              "偏导数"
+            ],
+            "definition": "隐函数是由包含函数变量的方程或方程组间接确定的函数。",
+            "example": "F(x,y)=0在条件满足时确定y为x的函数",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "雅可比式",
+            "difficulty": 4,
+            "description": "函数组偏导数组成的行列式",
+            "aliases": [
+              "函数行列式"
+            ],
+            "prerequisites": [
+              "偏导数"
+            ],
+            "definition": "雅可比式是函数组关于指定变量的偏导数矩阵的行列式。",
+            "example": "D(φ,ψ)/D(u,v)",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "隐函数微分法",
+            "difficulty": 4,
+            "description": "利用隐含方程求隐函数导数的方法",
+            "aliases": [
+              "当作隐函数的微分法"
+            ],
+            "prerequisites": [
+              "隐函数",
+              "雅可比式"
+            ],
+            "definition": "隐函数微分法通过对隐含方程或方程组微分求出隐函数导数。",
+            "example": "由F(x,y)=0求dy/dx",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "相对极值",
+            "difficulty": 4,
+            "description": "在联系方程约束下邻域内取得的极大或极小值",
+            "aliases": [
+              "约束极值"
+            ],
+            "prerequisites": [
+              "隐函数",
+              "偏导数"
+            ],
+            "definition": "相对极值是函数在满足联系方程的点集中邻域内取得的极大值或极小值。",
+            "example": "在xyzt=c⁴条件下求x+y+z+t的极小值",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "拉格朗日不定乘数法",
+            "difficulty": 4,
+            "description": "用乘数把约束条件并入极值方程的方法",
+            "aliases": [
+              "不定乘数法"
+            ],
+            "prerequisites": [
+              "相对极值",
+              "偏导数"
+            ],
+            "definition": "拉格朗日不定乘数法将各联系方程乘以乘数后与目标函数微分相加求必要条件。",
+            "example": "令F=f+λ₁Φ₁+⋯+λₘΦₘ并令各偏导数为零",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "函数扩充",
+            "difficulty": 4,
+            "description": "将局部定义函数延拓到更大区域的构造",
+            "aliases": [
+              "函数推广"
+            ],
+            "prerequisites": [
+              "二元函数",
+              "连续曲线"
+            ],
+            "definition": "函数扩充是在保持原区域内函数值不变的条件下将其定义范围扩大。",
+            "example": "把定义在闭域内的函数扩充到全平面",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "全增量公式",
+            "difficulty": 3,
+            "description": "用偏导数和余项表示二元函数增量的公式",
+            "aliases": [
+              "有限增量公式"
+            ],
+            "prerequisites": [
+              "偏导数",
+              "函数扩充"
+            ],
+            "definition": "全增量公式将函数增量表示为偏导数线性项与趋于零的余项之和。",
+            "example": "Δz=fx′Δx+fy′Δy+αΔx+βΔy",
+            "section": "§1.基本概念"
+          },
+          {
+            "name": "复合函数微分",
+            "difficulty": 3,
+            "description": "复合函数沿参数曲线求导的法则",
+            "aliases": [
+              "复合函数的微分"
+            ],
+            "prerequisites": [
+              "偏导数",
+              "全增量公式"
+            ],
+            "definition": "复合函数微分把z=f(φ(t),ψ(t))的导数表示为偏导数与内层导数之和。",
+            "example": "z′t=f′x x′t+f′y y′t",
+            "section": "§1.基本概念"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1.基本概念",
+            "section_key": "62a0ab43d7",
+            "page_range": [
+              301,
+              537
+            ]
+          }
+        ],
+        "chapter_key": "4a82e5f432",
+        "metadata": {
+          "volume_id": "199af492b40e",
+          "file_id": "199af492b40e",
+          "volume_title": "微积分学教程（第1卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 6,
+          "raw_heading": "第五章　多元函数"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "bbf3c28aa8": [
+        7,
+        7
+      ],
+      "§1.有理数域": [
+        7,
+        7
+      ],
+      "24f37f338c": [
+        7,
+        7
+      ],
+      "§2.无理数的导入、实数域的序": [
+        7,
+        7
+      ],
+      "e70aeabe5c": [
+        7,
+        7
+      ],
+      "§3.实数的算术运算": [
+        7,
+        7
+      ],
+      "30debb6962": [
+        7,
+        38
+      ],
+      "§4.实数的其他性质及应用": [
+        7,
+        38
+      ],
+      "25ae5c014e": [
+        39,
+        51
+      ],
+      "§1.整序变量及其极限": [
+        39,
+        51
+      ],
+      "6d61d85626": [
+        51,
+        77
+      ],
+      "§2.极限的定理、若干容易求得的极限": [
+        51,
+        77
+      ],
+      "58ec414ae0": [
+        77,
+        84
+      ],
+      "§4.收敛原理·部分极限": [
+        77,
+        84
+      ],
+      "b0372e1850": [
+        85,
+        103
+      ],
+      "§1.函数概念": [
+        85,
+        103
+      ],
+      "37d04c8cb2": [
+        103,
+        121
+      ],
+      "§2.函数的极限": [
+        103,
+        121
+      ],
+      "1c45bb7c49": [
+        121,
+        129
+      ],
+      "§3.无穷小及无穷大的分阶": [
+        121,
+        129
+      ],
+      "862f638cab": [
+        129,
+        148
+      ],
+      "§4.函数的连续性及间断": [
+        129,
+        148
+      ],
+      "ef399ffa0c": [
+        148,
+        162
+      ],
+      "§5.连续函数的性质": [
+        148,
+        162
+      ],
+      "47ca67762d": [
+        163,
+        185
+      ],
+      "§1.导数及其求法": [
+        163,
+        185
+      ],
+      "fb6fb7c3f0": [
+        185,
+        196
+      ],
+      "§2.微分": [
+        185,
+        196
+      ],
+      "042711a4b5": [
+        196,
+        202
+      ],
+      "§3.微分学的基本定理": [
+        196,
+        202
+      ],
+      "ea70f29d90": [
+        202,
+        216
+      ],
+      "§4.高阶导数及高阶微分": [
+        202,
+        216
+      ],
+      "b1239cf58d": [
+        216,
+        232
+      ],
+      "§5.泰勒公式": [
+        216,
+        232
+      ],
+      "a63fd3f957": [
+        232,
+        236
+      ],
+      "§6.插值法": [
+        232,
+        236
+      ],
+      "d26595218d": [
+        237,
+        260
+      ],
+      "§1.函数的动态的研究": [
+        237,
+        260
+      ],
+      "739977b25b": [
+        260,
+        269
+      ],
+      "§2.凸(与凹)函数": [
+        260,
+        269
+      ],
+      "b7bc264fbb": [
+        269,
+        277
+      ],
+      "§3.函数的作图": [
+        269,
+        277
+      ],
+      "dc5536ab5d": [
+        277,
+        286
+      ],
+      "§4.不定式的定值法": [
+        277,
+        286
+      ],
+      "1a06959411": [
+        286,
+        300
+      ],
+      "§5.方程的近似解": [
+        286,
+        300
+      ],
+      "62a0ab43d7": [
+        301,
+        537
+      ],
+      "§1.基本概念": [
+        301,
+        537
+      ]
+    }
+  }
+}

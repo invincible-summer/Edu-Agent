@@ -1,0 +1,2261 @@
+{
+  "file_id": "cf08c4260437",
+  "text_sha256": "1e999b33a8d987f8079c8690a2b6eb8fdd9f49bd5d16f063e9644fc528d43eba",
+  "prompt_version": "knowledge_graph_build@2.0.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.2.0+textbook_graph_design@1.0.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "数学",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "第十五章　曲线积分·斯蒂尔切斯积分",
+        "concepts": [
+          {
+            "name": "第一型曲线积分",
+            "difficulty": 2,
+            "description": "沿曲线按弧长元对点函数积分。",
+            "aliases": [],
+            "prerequisites": [
+              "曲线弧长"
+            ],
+            "definition": "函数沿曲线的积分和在弧段最大长度趋零时的有限极限称为第一型曲线积分。",
+            "example": "曲线质量可表示为m=∫(K)ρ(M)ds。"
+          },
+          {
+            "name": "曲线弧长",
+            "difficulty": 2,
+            "description": "曲线上弧段长度及其微分长度元。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "曲线弧段的长度记为s，其微分ds表示弧长元。",
+            "example": "整段曲线长度S=∫(K)ds。",
+            "section": "§1.第一型曲线积分"
+          },
+          {
+            "name": "弧长参数化",
+            "difficulty": 2,
+            "description": "以从定点量起的弧长作为曲线参数。",
+            "aliases": [],
+            "prerequisites": [
+              "曲线弧长"
+            ],
+            "definition": "选定曲线方向后，用弧长s表示曲线上点的位置。",
+            "example": "曲线可写为x=x(s), y=y(s)。"
+          },
+          {
+            "name": "参数表示公式",
+            "difficulty": 2,
+            "description": "用任意参数表示曲线并计算第一型积分。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分",
+              "曲线弧长"
+            ],
+            "definition": "若x=φ(t),y=ψ(t)，则ds=√(φ′²+ψ′²)dt。",
+            "example": "∫(K)f ds=∫f(φ(t),ψ(t))√(φ′²+ψ′²)dt。"
+          },
+          {
+            "name": "显式曲线公式",
+            "difficulty": 2,
+            "description": "曲线写成y=y(x)时的积分计算公式。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分",
+              "曲线弧长"
+            ],
+            "definition": "当曲线为y=y(x)时，ds=√(1+y′²)dx。",
+            "example": "∫(K)f ds=∫a^b f(x,y(x))√(1+y′²)dx。"
+          },
+          {
+            "name": "空间曲线积分",
+            "difficulty": 2,
+            "description": "将第一型曲线积分推广到空间曲线。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分",
+              "曲线弧长"
+            ],
+            "definition": "在空间曲线上以弧长元ds对f(x,y,z)积分。",
+            "example": "∫(K)f(x,y,z)ds。"
+          },
+          {
+            "name": "第二型曲线积分",
+            "difficulty": 3,
+            "description": "沿有向曲线对dx或dy等微分量积分。",
+            "aliases": [],
+            "prerequisites": [
+              "参数表示公式"
+            ],
+            "definition": "沿有向曲线取形如∫f(x,y)dx或∫f(x,y)dy的积分。",
+            "example": "∫(AB)Pdx+Qdy。"
+          },
+          {
+            "name": "斯蒂尔切斯和",
+            "difficulty": 3,
+            "description": "以函数增量替代区间长度形成的积分和。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分"
+            ],
+            "definition": "分割区间并取样后，和Σf(ξi)[g(xi+1)-g(xi)]称为斯蒂尔切斯和。",
+            "example": "σ=Σf(ξi)[g(xi+1)-g(xi)]。",
+            "section": "§5.斯蒂尔切斯积分"
+          },
+          {
+            "name": "斯蒂尔切斯积分",
+            "difficulty": 3,
+            "description": "斯蒂尔切斯和在网格趋零时的极限。",
+            "aliases": [],
+            "prerequisites": [
+              "斯蒂尔切斯和"
+            ],
+            "definition": "斯蒂尔切斯和与分割及取样无关的有限极限称为斯蒂尔切斯积分。",
+            "example": "(S)∫a^b f(x)dg(x)。"
+          },
+          {
+            "name": "有界变差函数",
+            "difficulty": 3,
+            "description": "在区间上总变差有限的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "斯蒂尔切斯积分"
+            ],
+            "definition": "函数在区间所有分割上的增量绝对值和具有有限上界时称为有界变差函数。",
+            "example": "连续f对有界变差g的斯蒂尔切斯积分存在。"
+          },
+          {
+            "name": "斯蒂尔切斯分部积分",
+            "difficulty": 3,
+            "description": "交换被积函数与积分函数的积分公式。",
+            "aliases": [],
+            "prerequisites": [
+              "斯蒂尔切斯积分"
+            ],
+            "definition": "在相应条件下，∫f dg可化为边界项减去∫g df。",
+            "example": "∫a^b f dg=fg|a^b-∫a^b g df。"
+          },
+          {
+            "name": "恰当微分",
+            "difficulty": 3,
+            "description": "可表示为某个函数全微分的微分式。",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲线积分"
+            ],
+            "definition": "若Pdx+Qdy等于某函数Φ的全微分，则称其为恰当微分。",
+            "example": "xdy+ydx=d(xy)。",
+            "section": "§3.曲线积分与道路无关的条件"
+          },
+          {
+            "name": "道路无关",
+            "difficulty": 3,
+            "description": "曲线积分只由起终点决定而与路径无关。",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲线积分",
+              "恰当微分"
+            ],
+            "definition": "从同一起点到终点的积分值不随积分道路改变的性质。",
+            "example": "恰当微分的积分等于Φ(B)-Φ(A)。"
+          },
+          {
+            "name": "可积条件",
+            "difficulty": 4,
+            "description": "判定二维微分式为恰当微分的偏导条件。",
+            "aliases": [],
+            "prerequisites": [
+              "恰当微分",
+              "道路无关"
+            ],
+            "definition": "在连续偏导条件下，Pdx+Qdy恰当需满足∂P/∂y=∂Q/∂x。",
+            "example": "检验微分式时比较P_y与Q_x。",
+            "section": "§3.曲线积分与道路无关的条件"
+          },
+          {
+            "name": "第二型积分转化",
+            "difficulty": 3,
+            "description": "用参数将第二型曲线积分化为斯蒂尔切斯积分。",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲线积分",
+              "斯蒂尔切斯积分",
+              "参数表示公式"
+            ],
+            "definition": "参数曲线下，∫f(x,y)dx等于∫f(φ(t),ψ(t))dφ(t)。",
+            "example": "∫(AB)f(x,y)dx=(S)∫α^βf(φ,ψ)dφ。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1．第一型曲线积分",
+            "page_range": [
+              12,
+              19
+            ]
+          },
+          {
+            "name": "§2．第二型曲线积分",
+            "page_range": [
+              19,
+              40
+            ]
+          },
+          {
+            "name": "§3．曲线积分与道路无关的条件",
+            "page_range": [
+              40,
+              63
+            ]
+          },
+          {
+            "name": "§4．有界变差函数",
+            "page_range": [
+              63,
+              76
+            ]
+          },
+          {
+            "name": "§5．斯蒂尔切斯积分",
+            "page_range": [
+              76,
+              104
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十六章　二重积分",
+        "concepts": [
+          {
+            "name": "二重积分",
+            "difficulty": 3,
+            "description": "定积分概念在二元函数上的推广",
+            "aliases": [
+              "二重定积分"
+            ],
+            "prerequisites": [
+              "积分和"
+            ],
+            "definition": "函数在区域上积分和的极限称为二重积分。",
+            "example": "∬₍P₎ f(x,y)dP"
+          },
+          {
+            "name": "柱形长条体积",
+            "difficulty": 2,
+            "description": "由曲面、柱面和底面区域围成的体积",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "上界为曲面、侧面为柱面且底面为平面区域的立体称为柱形长条体。",
+            "example": "z=f(x,y)下方、区域P上方的立体",
+            "section": "§1. 二重积分的定义及简单性质"
+          },
+          {
+            "name": "积分和",
+            "difficulty": 2,
+            "description": "函数值与对应小区域面积乘积的总和",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "在各分割区域任取一点并求函数值乘面积所得乘积之和称为积分和。",
+            "example": "σ=Σf(ξᵢ,ηᵢ)Pᵢ"
+          },
+          {
+            "name": "可积函数",
+            "difficulty": 3,
+            "description": "二重积分存在的函数",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "当函数的积分和存在与分割及取点无关的极限时，该函数称为可积函数。",
+            "example": "闭区域上的连续函数是可积的"
+          },
+          {
+            "name": "逐次积分",
+            "difficulty": 3,
+            "description": "先对一个变量积分，再对另一个变量积分",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "把二重积分表示为先后进行的两个单重积分称为逐次积分。",
+            "example": "∫ₐᵇdx∫ᵧ₀(x)ᵞ(x)f(x,y)dy"
+          },
+          {
+            "name": "达布上和",
+            "difficulty": 3,
+            "description": "各小区域上确界乘面积后的总和",
+            "aliases": [],
+            "prerequisites": [
+              "积分和"
+            ],
+            "definition": "以函数在每个分割区域上的上确界乘该区域面积并求和所得量称为达布上和。",
+            "example": "S=ΣMᵢPᵢ",
+            "section": "§1. 二重积分的定义及简单性质"
+          },
+          {
+            "name": "达布下和",
+            "difficulty": 3,
+            "description": "各小区域下确界乘面积后的总和",
+            "aliases": [],
+            "prerequisites": [
+              "积分和"
+            ],
+            "definition": "以函数在每个分割区域上的下确界乘该区域面积并求和所得量称为达布下和。",
+            "example": "s=ΣmᵢPᵢ",
+            "section": "§1. 二重积分的定义及简单性质"
+          },
+          {
+            "name": "函数振动",
+            "difficulty": 3,
+            "description": "函数在小区域上确界与下确界之差",
+            "aliases": [],
+            "prerequisites": [
+              "达布上和",
+              "达布下和"
+            ],
+            "definition": "函数在一个分割区域上的上确界与下确界之差称为函数在该区域上的振动。",
+            "example": "ωᵢ=Mᵢ−mᵢ"
+          },
+          {
+            "name": "二重积分存在条件",
+            "difficulty": 4,
+            "description": "达布上和与下和之差趋于零",
+            "aliases": [],
+            "prerequisites": [
+              "达布上和",
+              "达布下和",
+              "函数振动"
+            ],
+            "definition": "当最大分割直径趋于零时上和与下和之差趋于零，二重积分存在。",
+            "example": "lim λ→0(S−s)=0"
+          },
+          {
+            "name": "面积零曲线",
+            "difficulty": 3,
+            "description": "面积为零且可用于控制不连续区域的曲线",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "平面中面积为零的曲线可使其邻近小区域的面积和任意小。",
+            "example": "分段光滑曲线具有面积零"
+          },
+          {
+            "name": "连续函数可积性",
+            "difficulty": 3,
+            "description": "闭区域上的连续函数必定可积",
+            "aliases": [],
+            "prerequisites": [
+              "可积函数",
+              "二重积分存在条件"
+            ],
+            "definition": "在闭区域上连续的二元函数，其二重积分必然存在。",
+            "example": "f(x,y)=x²+y²在闭区域上可积"
+          },
+          {
+            "name": "曲线不连续可积性",
+            "difficulty": 4,
+            "description": "仅在有限条面积零曲线上不连续的有界函数可积",
+            "aliases": [],
+            "prerequisites": [
+              "面积零曲线",
+              "二重积分存在条件"
+            ],
+            "definition": "有界函数至多在有限条面积为零的曲线上不连续时是可积的。",
+            "example": "仅沿有限条分段光滑曲线不连续的函数"
+          },
+          {
+            "name": "变量变换",
+            "difficulty": 4,
+            "description": "用新坐标表示区域与积分的转换方法",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "通过一对一函数将ξ、η平面区域映射到x、y平面区域的过程称为变量变换。",
+            "example": "x=x(ξ,η)，y=y(ξ,η)"
+          },
+          {
+            "name": "雅可比式",
+            "difficulty": 4,
+            "description": "坐标变换中偏导数组成的行列式",
+            "aliases": [
+              "雅可比行列式"
+            ],
+            "prerequisites": [
+              "变量变换"
+            ],
+            "definition": "变换中x、y对ξ、η的一阶偏导数组成的二阶行列式称为雅可比式。",
+            "example": "D(x,y)/D(ξ,η)=|xξ xη; yξ yη|"
+          },
+          {
+            "name": "曲线坐标",
+            "difficulty": 3,
+            "description": "由坐标曲线确定平面点位置的坐标",
+            "aliases": [],
+            "prerequisites": [
+              "变量变换"
+            ],
+            "definition": "在平面区域中由两族坐标曲线确定点位置的坐标称为曲线坐标。",
+            "example": "极坐标r、θ"
+          },
+          {
+            "name": "极坐标",
+            "difficulty": 3,
+            "description": "以半径和极角表示平面点的坐标",
+            "aliases": [],
+            "prerequisites": [
+              "曲线坐标",
+              "变量变换"
+            ],
+            "definition": "用点到原点的距离r和位径角θ表示平面点的坐标称为极坐标。",
+            "example": "x=r cosθ，y=r sinθ"
+          },
+          {
+            "name": "反演法",
+            "difficulty": 4,
+            "description": "沿同一射线使对应点距离乘积为一的变换",
+            "aliases": [
+              "反演变换"
+            ],
+            "prerequisites": [
+              "变量变换"
+            ],
+            "definition": "保持原点共线且使两对应点到原点距离乘积为一的平面变换称为反演法。",
+            "example": "x=ξ/(ξ²+η²)，y=η/(ξ²+η²)",
+            "section": "§4. 二重积分中的变量变换"
+          },
+          {
+            "name": "调和函数",
+            "difficulty": 4,
+            "description": "满足二维拉普拉斯方程的函数",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "二阶偏导数满足uₓₓ+uᵧᵧ=0的函数称为调和函数。",
+            "example": "u(x,y)=x²−y²",
+            "section": "§3. 格林公式"
+          },
+          {
+            "name": "调和函数平均值公式",
+            "difficulty": 4,
+            "description": "调和函数中心值等于圆周平均值",
+            "aliases": [
+              "平均值公式"
+            ],
+            "prerequisites": [
+              "调和函数"
+            ],
+            "definition": "调和函数在圆心处的值等于其在该圆周上的平均值。",
+            "example": "u(x₀,y₀)=1/(2πR)∮ₖᵣu ds"
+          },
+          {
+            "name": "调和函数极值性质",
+            "difficulty": 4,
+            "description": "非正常数调和函数内点不能取得极大或极小值",
+            "aliases": [
+              "最大最小值性质"
+            ],
+            "prerequisites": [
+              "调和函数平均值公式"
+            ],
+            "definition": "非恒定调和函数在区域内部不能达到最大值或最小值。",
+            "example": "边界值为零时内部函数恒为零"
+          },
+          {
+            "name": "反常二重积分",
+            "difficulty": 4,
+            "description": "在无界区域或奇异情形下定义的二重积分",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "通过区域极限研究无界区域或含奇点函数的二重积分称为反常二重积分。",
+            "example": "∫₀∞∫₀∞e^(−xy)sinx dxdy",
+            "section": "§5. 反常二重积分"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1. 二重积分的定义及简单性质",
+            "page_range": [
+              104,
+              117
+            ]
+          },
+          {
+            "name": "§2. 二重积分的计算",
+            "page_range": [
+              117,
+              148
+            ]
+          },
+          {
+            "name": "§3. 格林公式",
+            "page_range": [
+              148,
+              154
+            ]
+          },
+          {
+            "name": "§4. 二重积分中的变量变换",
+            "page_range": [
+              154,
+              182
+            ]
+          },
+          {
+            "name": "§5. 反常二重积分",
+            "page_range": [
+              182,
+              203
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十七章　曲面面积·曲面积分",
+        "concepts": [
+          {
+            "name": "曲面一侧",
+            "difficulty": 2,
+            "description": "由曲面各点连续选定的法线方向确定的一侧",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "曲面一侧是曲面上各点法线连续选择同一方向所确定的侧面。",
+            "example": "图形曲面可分为上侧和下侧。"
+          },
+          {
+            "name": "单侧曲面",
+            "difficulty": 3,
+            "description": "沿某闭路连续移动法线后会反向的曲面",
+            "aliases": [],
+            "prerequisites": [
+              "曲面一侧"
+            ],
+            "definition": "若法线沿曲面某闭路连续移动一周后返回起点却反向，该曲面叫单侧曲面。",
+            "example": "默比乌斯带是单侧曲面的典型例子。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "双侧曲面",
+            "difficulty": 3,
+            "description": "沿任意闭路移动法线后方向保持不变的曲面",
+            "aliases": [],
+            "prerequisites": [
+              "曲面一侧"
+            ],
+            "definition": "若法线沿曲面内任意闭路连续移动一周后方向均与出发时相同，该曲面叫双侧曲面。",
+            "example": "显方程 z=f(x,y) 的光滑曲面是双侧的。"
+          },
+          {
+            "name": "定侧",
+            "difficulty": 3,
+            "description": "在双侧曲面上连续确定全部法线方向的选择",
+            "aliases": [],
+            "prerequisites": [
+              "双侧曲面",
+              "法线方向余弦"
+            ],
+            "definition": "双侧曲面上选定一点的法线方向后，由连续性唯一确定全曲面法线方向的选择叫定侧。",
+            "example": "显曲面选取法线的正号可确定上侧。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "法线方向余弦",
+            "difficulty": 3,
+            "description": "法线与三个坐标轴夹角余弦组成的方向量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "法线方向余弦是法线与x、y、z轴夹角的余弦，记为cosλ、cosμ、cosν。",
+            "example": "z=f(x,y)时，cosν=±1/√(1+p²+q²)。"
+          },
+          {
+            "name": "参数曲面",
+            "difficulty": 3,
+            "description": "用两个参数表示空间曲面上点的曲面",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "参数曲面是由x=x(u,v)、y=y(u,v)、z=z(u,v)在参数区域内表示的光滑曲面。",
+            "example": "椭球面可取x=a sinφ cosθ等参数式。"
+          },
+          {
+            "name": "参数曲面法线公式",
+            "difficulty": 4,
+            "description": "利用参数偏导行列式确定曲面法线方向",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面",
+              "法线方向余弦"
+            ],
+            "definition": "设A、B、C为参数偏导构成的三个二阶行列式，则法线方向余弦为A、B、C除以±√(A²+B²+C²)。",
+            "example": "取公式中的正号即可确定参数表示产生的一侧。"
+          },
+          {
+            "name": "曲面定向",
+            "difficulty": 3,
+            "description": "依据所选侧确定曲面边界的正负环行方向",
+            "aliases": [],
+            "prerequisites": [
+              "定侧"
+            ],
+            "definition": "曲面定向是按照选定法线方向规定各简单闭路边界正向和负向的过程。",
+            "example": "从选定法线一侧看，边界按反时针方向为正向。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "右手定向",
+            "difficulty": 2,
+            "description": "以反时针旋转为基础的空间定向约定",
+            "aliases": [],
+            "prerequisites": [
+              "曲面定向"
+            ],
+            "definition": "以反时针方向旋转为基础并使xyz循环排列成立的空间定向叫右手定向。",
+            "example": "右手坐标系中从正z轴看，x轴转向y轴为反时针。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "曲面面积",
+            "difficulty": 3,
+            "description": "曲面分割后各小片面积和的极限",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面"
+            ],
+            "definition": "曲面面积是将曲面分割为小片并取各小片面积和在直径趋零时所得的极限。",
+            "example": "平面区域的曲面面积就是通常的平面面积。",
+            "section": "§2. 曲面面积"
+          },
+          {
+            "name": "曲面面积元素",
+            "difficulty": 3,
+            "description": "参数曲面上的微小面积表达式",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面",
+              "曲面面积"
+            ],
+            "definition": "参数曲面的面积元素可表示为dS=√(EG−F²)dudv。",
+            "example": "用参数计算面积时以√(EG−F²)dudv代替dS。"
+          },
+          {
+            "name": "曲面面积参数公式",
+            "difficulty": 4,
+            "description": "用参数偏导行列式计算曲面面积的公式",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面",
+              "曲面面积元素"
+            ],
+            "definition": "若A、B、C由参数偏导行列式给出，则曲面面积为∬√(A²+B²+C²)dudv。",
+            "example": "椭球面参数式代入该公式可计算其面积。"
+          },
+          {
+            "name": "投影面积公式",
+            "difficulty": 3,
+            "description": "通过平面投影把曲面面积化为二重积分",
+            "aliases": [],
+            "prerequisites": [
+              "曲面面积",
+              "法线方向余弦"
+            ],
+            "definition": "显曲面投影到xy平面时，面积可写为S=∬D dxdy/|cosν|。",
+            "example": "球面的上半部可投影到圆盘计算面积。"
+          },
+          {
+            "name": "全曲率",
+            "difficulty": 4,
+            "description": "曲面法线映射立体角与曲面面积之比的极限",
+            "aliases": [],
+            "prerequisites": [
+              "曲面面积",
+              "法线方向余弦"
+            ],
+            "definition": "曲面一点的全曲率是围绕该点的法线在单位球面上截得立体角与曲面面积之比的极限。",
+            "example": "z=f(x,y)时全曲率为|rt−s²|/(1+p²+q²)²。",
+            "section": "§2. 曲面面积"
+          },
+          {
+            "name": "第一型曲面积分",
+            "difficulty": 3,
+            "description": "函数值乘曲面面积微元后求和所得的极限",
+            "aliases": [],
+            "prerequisites": [
+              "曲面面积"
+            ],
+            "definition": "第一型曲面积分是将曲面分割后求和Σf(Mi)Si并令分片直径趋零所得的极限。",
+            "example": "∬S f(x,y,z)dS表示密度函数在曲面上的总量。"
+          },
+          {
+            "name": "第一型参数公式",
+            "difficulty": 4,
+            "description": "把第一型曲面积分化为参数域上的二重积分",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲面积分",
+              "参数曲面面积元素"
+            ],
+            "definition": "第一型曲面积分可表示为∬Δf(x(u,v),y(u,v),z(u,v))√(EG−F²)dudv。",
+            "example": "将曲面参数式代入即可在参数区域积分。"
+          },
+          {
+            "name": "第二型曲面积分",
+            "difficulty": 4,
+            "description": "含定向的dxdy、dydz、dzdx曲面积分",
+            "aliases": [],
+            "prerequisites": [
+              "曲面定向"
+            ],
+            "definition": "第二型曲面积分是沿定向曲面计算P dydz+Q dzdx+R dxdy等微分式的积分。",
+            "example": "∬S(Pdydz+Qdzdx+Rdxdy)随曲面定向改变符号。"
+          },
+          {
+            "name": "斯托克斯公式",
+            "difficulty": 4,
+            "description": "把空间曲线积分转化为边界曲面上的第二型积分",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲面积分",
+              "曲面定向"
+            ],
+            "definition": "斯托克斯公式把闭曲线上的积分等同于其所围曲面上由偏导数组成的第二型曲面积分。",
+            "example": "半球面上的曲面积分等于圆周上的对应曲线积分。",
+            "section": "§4. 第二型曲面积分"
+          },
+          {
+            "name": "空间单连通区域",
+            "difficulty": 4,
+            "description": "区域内每条简单闭路都能张成内部曲面",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若区域内任意简单闭路都能作为完全位于该区域内某曲面的边界，则该区域为空间单连通区域。",
+            "example": "两个同心球面之间的区域具有这种性质。"
+          },
+          {
+            "name": "路径无关条件",
+            "difficulty": 4,
+            "description": "偏导交叉相等时空间曲线积分与路径无关",
+            "aliases": [],
+            "prerequisites": [
+              "空间单连通区域",
+              "斯托克斯公式"
+            ],
+            "definition": "在空间单连通区域内，Pdx+Qdy+Rdz路径无关当且仅当相应三组交叉偏导相等。",
+            "example": "若Qx=Py、Ry=Qz、Pz=Rx，则积分只由端点决定。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1. 双侧曲面",
+            "page_range": [
+              204,
+              210
+            ]
+          },
+          {
+            "name": "§2. 曲面面积",
+            "page_range": [
+              210,
+              233
+            ]
+          },
+          {
+            "name": "§3. 第一型曲面积分",
+            "page_range": [
+              233,
+              242
+            ]
+          },
+          {
+            "name": "§4. 第二型曲面积分",
+            "page_range": [
+              242,
+              260
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第十九章　傅里叶级数",
+        "concepts": [
+          {
+            "name": "周期函数",
+            "difficulty": 1,
+            "description": "满足经过固定周期后函数值恢复原值的函数",
+            "aliases": [
+              "周期量"
+            ],
+            "prerequisites": [],
+            "definition": "若存在正数T使φ(t+T)=φ(t)，则φ称为周期函数。",
+            "example": "交流电压可表示为周期函数"
+          },
+          {
+            "name": "频率与周期",
+            "difficulty": 1,
+            "description": "描述周期现象重复快慢的两个相关量",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "正弦型量的频率ω与周期T满足ω=2π/T。",
+            "example": "周期为T时基本频率为2π/T"
+          },
+          {
+            "name": "正弦型量",
+            "difficulty": 1,
+            "description": "具有固定振幅、频率和相位的正弦函数",
+            "aliases": [],
+            "prerequisites": [
+              "频率与周期"
+            ],
+            "definition": "形如A sin(ωt+α)的函数称为正弦型量。",
+            "example": "sin t是正弦型量",
+            "section": "§1. 导言"
+          },
+          {
+            "name": "三角级数",
+            "difficulty": 2,
+            "description": "由常数及正弦、余弦倍角项组成的级数",
+            "aliases": [],
+            "prerequisites": [
+              "正弦型量"
+            ],
+            "definition": "三角级数是由常数项和不同倍频的正弦型量构成的级数。",
+            "example": "a0+Σ(an cos nx+bn sin nx)"
+          },
+          {
+            "name": "调和成分",
+            "difficulty": 1,
+            "description": "周期函数三角展开中的各个正弦型量",
+            "aliases": [
+              "调和素"
+            ],
+            "prerequisites": [
+              "三角级数"
+            ],
+            "definition": "组成周期函数三角展开式的各正弦型量称为调和成分。",
+            "example": "sin x和半 sin 2x都是调和成分"
+          },
+          {
+            "name": "调和分析",
+            "difficulty": 2,
+            "description": "把周期函数分解为一系列调和成分的过程",
+            "aliases": [],
+            "prerequisites": [
+              "调和成分"
+            ],
+            "definition": "将周期函数分解成调和成分的手续称为调和分析。",
+            "example": "分析复杂振动的各阶谐波"
+          },
+          {
+            "name": "标准周期",
+            "difficulty": 1,
+            "description": "以2π为周期的周期函数表示形式",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "通过x=ωt将周期函数化为周期2π的函数。",
+            "example": "f(x)=φ(x/ω)具有标准周期2π",
+            "section": "§1. 导言"
+          },
+          {
+            "name": "傅里叶级数",
+            "difficulty": 2,
+            "description": "以正弦和余弦倍角函数展开给定函数的级数",
+            "aliases": [],
+            "prerequisites": [
+              "三角级数",
+              "傅里叶系数"
+            ],
+            "definition": "由给定函数的傅里叶系数构成的三角级数称为傅里叶级数。",
+            "example": "f(x)∼a0+Σ(an cos nx+bn sin nx)"
+          },
+          {
+            "name": "欧拉-傅里叶公式",
+            "difficulty": 2,
+            "description": "通过积分确定三角展开系数的公式",
+            "aliases": [
+              "欧拉—傅里叶公式"
+            ],
+            "prerequisites": [
+              "正交函数系"
+            ],
+            "definition": "a0、am、bm分别由函数与常数、余弦、正弦的积分确定。",
+            "example": "a_m=1/π∫f(x)cos mx dx"
+          },
+          {
+            "name": "傅里叶系数",
+            "difficulty": 2,
+            "description": "由欧拉—傅里叶公式算出的展开系数",
+            "aliases": [],
+            "prerequisites": [
+              "欧拉-傅里叶公式"
+            ],
+            "definition": "用欧拉—傅里叶公式算出的a0、an、bn称为傅里叶系数。",
+            "example": "b_m=1/π∫f(x)sin mx dx"
+          },
+          {
+            "name": "正交函数",
+            "difficulty": 2,
+            "description": "在指定区间上乘积积分为零的两个函数",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若两函数乘积在区间上的积分为零，则称它们正交。",
+            "example": "sin nx与cos mx在[-π,π]上正交"
+          },
+          {
+            "name": "正交函数系",
+            "difficulty": 2,
+            "description": "函数两两正交且平方积分为正的函数系",
+            "aliases": [],
+            "prerequisites": [
+              "正交函数"
+            ],
+            "definition": "函数系中任意两个不同函数正交时，该函数系称为正交函数系。",
+            "example": "1、cos nx、sin nx构成正交函数系"
+          },
+          {
+            "name": "规范函数系",
+            "difficulty": 2,
+            "description": "每个函数平方积分都等于1的正交函数系",
+            "aliases": [
+              "规范的函数系"
+            ],
+            "prerequisites": [
+              "正交函数系"
+            ],
+            "definition": "正交函数系中各函数的平方积分均为1时称为规范函数系。",
+            "example": "将三角函数除以相应范数可规范化"
+          },
+          {
+            "name": "一致收敛性",
+            "difficulty": 3,
+            "description": "级数在区间上以统一方式收敛的性质",
+            "aliases": [
+              "一致收敛"
+            ],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "若级数余项可在整个区间上统一趋于零，则称其一致收敛。",
+            "example": "一致收敛时可逐项积分"
+          },
+          {
+            "name": "傅里叶公式",
+            "difficulty": 3,
+            "description": "在适当条件下用积分表示函数的公式",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "傅里叶公式在正则点用双重积分表示原函数的值。",
+            "example": "f(x)=1/π∫₀∞dz∫f(u)cos z(u−x)du"
+          },
+          {
+            "name": "傅里叶变换",
+            "difficulty": 3,
+            "description": "将函数变为复指数积分形式的变换",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶公式"
+            ],
+            "definition": "F(z)=1/√(2π)∫f(u)e^{izu}du称为f的傅里叶变换。",
+            "example": "高斯函数的傅里叶变换仍为高斯函数",
+            "section": "§3. 补充"
+          },
+          {
+            "name": "傅里叶余弦变换",
+            "difficulty": 3,
+            "description": "在半轴上以余弦核定义的傅里叶变换",
+            "aliases": [
+              "余弦变换"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "F_c(z)=√(2/π)∫₀∞f(u)cos zu du称为傅里叶余弦变换。",
+            "example": "e^{-ax}的余弦变换为√(2/π)a/(a²+x²)",
+            "section": "§3. 补充"
+          },
+          {
+            "name": "傅里叶正弦变换",
+            "difficulty": 3,
+            "description": "在半轴上以正弦核定义的傅里叶变换",
+            "aliases": [
+              "正弦变换"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "F_s(z)=√(2/π)∫₀∞f(u)sin zu du称为傅里叶正弦变换。",
+            "example": "e^{-ax}的正弦变换为√(2/π)x/(a²+x²)",
+            "section": "§3. 补充"
+          },
+          {
+            "name": "偶奇延拓",
+            "difficulty": 2,
+            "description": "将半轴函数延拓为偶函数或奇函数的方法",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶余弦变换",
+              "傅里叶正弦变换"
+            ],
+            "definition": "利用f(-x)=f(x)或f(-x)=-f(x)把半轴函数延拓到全轴。",
+            "example": "偶延拓适用于余弦变换"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1. 导言",
+            "page_range": [
+              352,
+              362
+            ]
+          },
+          {
+            "name": "§2. 函数的傅里叶级数展开式",
+            "page_range": [
+              362,
+              392
+            ]
+          },
+          {
+            "name": "§3. 补充",
+            "page_range": [
+              392,
+              559
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "数学",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "斯蒂尔切斯积分",
+        "concepts": [
+          {
+            "name": "第一型曲线积分",
+            "difficulty": 2,
+            "description": "沿曲线按弧长元对点函数积分。",
+            "aliases": [],
+            "prerequisites": [
+              "曲线弧长"
+            ],
+            "definition": "函数沿曲线的积分和在弧段最大长度趋零时的有限极限称为第一型曲线积分。",
+            "example": "曲线质量可表示为m=∫(K)ρ(M)ds。"
+          },
+          {
+            "name": "曲线弧长",
+            "difficulty": 2,
+            "description": "曲线上弧段长度及其微分长度元。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "曲线弧段的长度记为s，其微分ds表示弧长元。",
+            "example": "整段曲线长度S=∫(K)ds。",
+            "section": "§1.第一型曲线积分"
+          },
+          {
+            "name": "弧长参数化",
+            "difficulty": 2,
+            "description": "以从定点量起的弧长作为曲线参数。",
+            "aliases": [],
+            "prerequisites": [
+              "曲线弧长"
+            ],
+            "definition": "选定曲线方向后，用弧长s表示曲线上点的位置。",
+            "example": "曲线可写为x=x(s), y=y(s)。"
+          },
+          {
+            "name": "参数表示公式",
+            "difficulty": 2,
+            "description": "用任意参数表示曲线并计算第一型积分。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分",
+              "曲线弧长"
+            ],
+            "definition": "若x=φ(t),y=ψ(t)，则ds=√(φ′²+ψ′²)dt。",
+            "example": "∫(K)f ds=∫f(φ(t),ψ(t))√(φ′²+ψ′²)dt。"
+          },
+          {
+            "name": "显式曲线公式",
+            "difficulty": 2,
+            "description": "曲线写成y=y(x)时的积分计算公式。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分",
+              "曲线弧长"
+            ],
+            "definition": "当曲线为y=y(x)时，ds=√(1+y′²)dx。",
+            "example": "∫(K)f ds=∫a^b f(x,y(x))√(1+y′²)dx。"
+          },
+          {
+            "name": "空间曲线积分",
+            "difficulty": 2,
+            "description": "将第一型曲线积分推广到空间曲线。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分",
+              "曲线弧长"
+            ],
+            "definition": "在空间曲线上以弧长元ds对f(x,y,z)积分。",
+            "example": "∫(K)f(x,y,z)ds。"
+          },
+          {
+            "name": "第二型曲线积分",
+            "difficulty": 3,
+            "description": "沿有向曲线对dx或dy等微分量积分。",
+            "aliases": [],
+            "prerequisites": [
+              "参数表示公式"
+            ],
+            "definition": "沿有向曲线取形如∫f(x,y)dx或∫f(x,y)dy的积分。",
+            "example": "∫(AB)Pdx+Qdy。"
+          },
+          {
+            "name": "斯蒂尔切斯和",
+            "difficulty": 3,
+            "description": "以函数增量替代区间长度形成的积分和。",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲线积分"
+            ],
+            "definition": "分割区间并取样后，和Σf(ξi)[g(xi+1)-g(xi)]称为斯蒂尔切斯和。",
+            "example": "σ=Σf(ξi)[g(xi+1)-g(xi)]。",
+            "section": "§5.斯蒂尔切斯积分"
+          },
+          {
+            "name": "斯蒂尔切斯积分",
+            "difficulty": 3,
+            "description": "斯蒂尔切斯和在网格趋零时的极限。",
+            "aliases": [],
+            "prerequisites": [
+              "斯蒂尔切斯和"
+            ],
+            "definition": "斯蒂尔切斯和与分割及取样无关的有限极限称为斯蒂尔切斯积分。",
+            "example": "(S)∫a^b f(x)dg(x)。"
+          },
+          {
+            "name": "有界变差函数",
+            "difficulty": 3,
+            "description": "在区间上总变差有限的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "斯蒂尔切斯积分"
+            ],
+            "definition": "函数在区间所有分割上的增量绝对值和具有有限上界时称为有界变差函数。",
+            "example": "连续f对有界变差g的斯蒂尔切斯积分存在。"
+          },
+          {
+            "name": "斯蒂尔切斯分部积分",
+            "difficulty": 3,
+            "description": "交换被积函数与积分函数的积分公式。",
+            "aliases": [],
+            "prerequisites": [
+              "斯蒂尔切斯积分"
+            ],
+            "definition": "在相应条件下，∫f dg可化为边界项减去∫g df。",
+            "example": "∫a^b f dg=fg|a^b-∫a^b g df。"
+          },
+          {
+            "name": "恰当微分",
+            "difficulty": 3,
+            "description": "可表示为某个函数全微分的微分式。",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲线积分"
+            ],
+            "definition": "若Pdx+Qdy等于某函数Φ的全微分，则称其为恰当微分。",
+            "example": "xdy+ydx=d(xy)。",
+            "section": "§3.曲线积分与道路无关的条件"
+          },
+          {
+            "name": "道路无关",
+            "difficulty": 3,
+            "description": "曲线积分只由起终点决定而与路径无关。",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲线积分",
+              "恰当微分"
+            ],
+            "definition": "从同一起点到终点的积分值不随积分道路改变的性质。",
+            "example": "恰当微分的积分等于Φ(B)-Φ(A)。"
+          },
+          {
+            "name": "可积条件",
+            "difficulty": 4,
+            "description": "判定二维微分式为恰当微分的偏导条件。",
+            "aliases": [],
+            "prerequisites": [
+              "恰当微分",
+              "道路无关"
+            ],
+            "definition": "在连续偏导条件下，Pdx+Qdy恰当需满足∂P/∂y=∂Q/∂x。",
+            "example": "检验微分式时比较P_y与Q_x。",
+            "section": "§3.曲线积分与道路无关的条件"
+          },
+          {
+            "name": "第二型积分转化",
+            "difficulty": 3,
+            "description": "用参数将第二型曲线积分化为斯蒂尔切斯积分。",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲线积分",
+              "斯蒂尔切斯积分",
+              "参数表示公式"
+            ],
+            "definition": "参数曲线下，∫f(x,y)dx等于∫f(φ(t),ψ(t))dφ(t)。",
+            "example": "∫(AB)f(x,y)dx=(S)∫α^βf(φ,ψ)dφ。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1.第一型曲线积分",
+            "section_key": "b015a03bc5",
+            "page_range": [
+              12,
+              19
+            ]
+          },
+          {
+            "name": "§2.第二型曲线积分",
+            "section_key": "ba68c8604f",
+            "page_range": [
+              19,
+              40
+            ]
+          },
+          {
+            "name": "§3.曲线积分与道路无关的条件",
+            "section_key": "70f6b1da7e",
+            "page_range": [
+              40,
+              63
+            ]
+          },
+          {
+            "name": "§4.有界变差函数",
+            "section_key": "ab2dfac589",
+            "page_range": [
+              63,
+              76
+            ]
+          },
+          {
+            "name": "§5.斯蒂尔切斯积分",
+            "section_key": "e06f739fe2",
+            "page_range": [
+              76,
+              104
+            ]
+          }
+        ],
+        "chapter_key": "f4bfda60f5",
+        "metadata": {
+          "volume_id": "cf08c4260437",
+          "file_id": "cf08c4260437",
+          "volume_title": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 1,
+          "raw_heading": "第十五章　曲线积分·斯蒂尔切斯积分"
+        }
+      },
+      {
+        "name": "第十六章 二重积分",
+        "concepts": [
+          {
+            "name": "二重积分",
+            "difficulty": 3,
+            "description": "定积分概念在二元函数上的推广",
+            "aliases": [
+              "二重定积分"
+            ],
+            "prerequisites": [
+              "积分和"
+            ],
+            "definition": "函数在区域上积分和的极限称为二重积分。",
+            "example": "∬₍P₎ f(x,y)dP"
+          },
+          {
+            "name": "柱形长条体积",
+            "difficulty": 2,
+            "description": "由曲面、柱面和底面区域围成的体积",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "上界为曲面、侧面为柱面且底面为平面区域的立体称为柱形长条体。",
+            "example": "z=f(x,y)下方、区域P上方的立体",
+            "section": "§1. 二重积分的定义及简单性质"
+          },
+          {
+            "name": "积分和",
+            "difficulty": 2,
+            "description": "函数值与对应小区域面积乘积的总和",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "在各分割区域任取一点并求函数值乘面积所得乘积之和称为积分和。",
+            "example": "σ=Σf(ξᵢ,ηᵢ)Pᵢ"
+          },
+          {
+            "name": "可积函数",
+            "difficulty": 3,
+            "description": "二重积分存在的函数",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "当函数的积分和存在与分割及取点无关的极限时，该函数称为可积函数。",
+            "example": "闭区域上的连续函数是可积的"
+          },
+          {
+            "name": "逐次积分",
+            "difficulty": 3,
+            "description": "先对一个变量积分，再对另一个变量积分",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "把二重积分表示为先后进行的两个单重积分称为逐次积分。",
+            "example": "∫ₐᵇdx∫ᵧ₀(x)ᵞ(x)f(x,y)dy"
+          },
+          {
+            "name": "达布上和",
+            "difficulty": 3,
+            "description": "各小区域上确界乘面积后的总和",
+            "aliases": [],
+            "prerequisites": [
+              "积分和"
+            ],
+            "definition": "以函数在每个分割区域上的上确界乘该区域面积并求和所得量称为达布上和。",
+            "example": "S=ΣMᵢPᵢ",
+            "section": "§1. 二重积分的定义及简单性质"
+          },
+          {
+            "name": "达布下和",
+            "difficulty": 3,
+            "description": "各小区域下确界乘面积后的总和",
+            "aliases": [],
+            "prerequisites": [
+              "积分和"
+            ],
+            "definition": "以函数在每个分割区域上的下确界乘该区域面积并求和所得量称为达布下和。",
+            "example": "s=ΣmᵢPᵢ",
+            "section": "§1. 二重积分的定义及简单性质"
+          },
+          {
+            "name": "函数振动",
+            "difficulty": 3,
+            "description": "函数在小区域上确界与下确界之差",
+            "aliases": [],
+            "prerequisites": [
+              "达布上和",
+              "达布下和"
+            ],
+            "definition": "函数在一个分割区域上的上确界与下确界之差称为函数在该区域上的振动。",
+            "example": "ωᵢ=Mᵢ−mᵢ"
+          },
+          {
+            "name": "二重积分存在条件",
+            "difficulty": 4,
+            "description": "达布上和与下和之差趋于零",
+            "aliases": [],
+            "prerequisites": [
+              "达布上和",
+              "达布下和",
+              "函数振动"
+            ],
+            "definition": "当最大分割直径趋于零时上和与下和之差趋于零，二重积分存在。",
+            "example": "lim λ→0(S−s)=0"
+          },
+          {
+            "name": "面积零曲线",
+            "difficulty": 3,
+            "description": "面积为零且可用于控制不连续区域的曲线",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "平面中面积为零的曲线可使其邻近小区域的面积和任意小。",
+            "example": "分段光滑曲线具有面积零"
+          },
+          {
+            "name": "连续函数可积性",
+            "difficulty": 3,
+            "description": "闭区域上的连续函数必定可积",
+            "aliases": [],
+            "prerequisites": [
+              "可积函数",
+              "二重积分存在条件"
+            ],
+            "definition": "在闭区域上连续的二元函数，其二重积分必然存在。",
+            "example": "f(x,y)=x²+y²在闭区域上可积"
+          },
+          {
+            "name": "曲线不连续可积性",
+            "difficulty": 4,
+            "description": "仅在有限条面积零曲线上不连续的有界函数可积",
+            "aliases": [],
+            "prerequisites": [
+              "面积零曲线",
+              "二重积分存在条件"
+            ],
+            "definition": "有界函数至多在有限条面积为零的曲线上不连续时是可积的。",
+            "example": "仅沿有限条分段光滑曲线不连续的函数"
+          },
+          {
+            "name": "变量变换",
+            "difficulty": 4,
+            "description": "用新坐标表示区域与积分的转换方法",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "通过一对一函数将ξ、η平面区域映射到x、y平面区域的过程称为变量变换。",
+            "example": "x=x(ξ,η)，y=y(ξ,η)"
+          },
+          {
+            "name": "雅可比式",
+            "difficulty": 4,
+            "description": "坐标变换中偏导数组成的行列式",
+            "aliases": [
+              "雅可比行列式"
+            ],
+            "prerequisites": [
+              "变量变换"
+            ],
+            "definition": "变换中x、y对ξ、η的一阶偏导数组成的二阶行列式称为雅可比式。",
+            "example": "D(x,y)/D(ξ,η)=|xξ xη; yξ yη|"
+          },
+          {
+            "name": "曲线坐标",
+            "difficulty": 3,
+            "description": "由坐标曲线确定平面点位置的坐标",
+            "aliases": [],
+            "prerequisites": [
+              "变量变换"
+            ],
+            "definition": "在平面区域中由两族坐标曲线确定点位置的坐标称为曲线坐标。",
+            "example": "极坐标r、θ"
+          },
+          {
+            "name": "极坐标",
+            "difficulty": 3,
+            "description": "以半径和极角表示平面点的坐标",
+            "aliases": [],
+            "prerequisites": [
+              "曲线坐标",
+              "变量变换"
+            ],
+            "definition": "用点到原点的距离r和位径角θ表示平面点的坐标称为极坐标。",
+            "example": "x=r cosθ，y=r sinθ"
+          },
+          {
+            "name": "反演法",
+            "difficulty": 4,
+            "description": "沿同一射线使对应点距离乘积为一的变换",
+            "aliases": [
+              "反演变换"
+            ],
+            "prerequisites": [
+              "变量变换"
+            ],
+            "definition": "保持原点共线且使两对应点到原点距离乘积为一的平面变换称为反演法。",
+            "example": "x=ξ/(ξ²+η²)，y=η/(ξ²+η²)",
+            "section": "§4. 二重积分中的变量变换"
+          },
+          {
+            "name": "调和函数",
+            "difficulty": 4,
+            "description": "满足二维拉普拉斯方程的函数",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "二阶偏导数满足uₓₓ+uᵧᵧ=0的函数称为调和函数。",
+            "example": "u(x,y)=x²−y²",
+            "section": "§3. 格林公式"
+          },
+          {
+            "name": "调和函数平均值公式",
+            "difficulty": 4,
+            "description": "调和函数中心值等于圆周平均值",
+            "aliases": [
+              "平均值公式"
+            ],
+            "prerequisites": [
+              "调和函数"
+            ],
+            "definition": "调和函数在圆心处的值等于其在该圆周上的平均值。",
+            "example": "u(x₀,y₀)=1/(2πR)∮ₖᵣu ds"
+          },
+          {
+            "name": "调和函数极值性质",
+            "difficulty": 4,
+            "description": "非正常数调和函数内点不能取得极大或极小值",
+            "aliases": [
+              "最大最小值性质"
+            ],
+            "prerequisites": [
+              "调和函数平均值公式"
+            ],
+            "definition": "非恒定调和函数在区域内部不能达到最大值或最小值。",
+            "example": "边界值为零时内部函数恒为零"
+          },
+          {
+            "name": "反常二重积分",
+            "difficulty": 4,
+            "description": "在无界区域或奇异情形下定义的二重积分",
+            "aliases": [],
+            "prerequisites": [
+              "二重积分"
+            ],
+            "definition": "通过区域极限研究无界区域或含奇点函数的二重积分称为反常二重积分。",
+            "example": "∫₀∞∫₀∞e^(−xy)sinx dxdy",
+            "section": "§5. 反常二重积分"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1. 二重积分的定义及简单性质",
+            "section_key": "0d27576947",
+            "page_range": [
+              104,
+              117
+            ]
+          },
+          {
+            "name": "§2. 二重积分的计算",
+            "section_key": "8b0e82a85e",
+            "page_range": [
+              117,
+              148
+            ]
+          },
+          {
+            "name": "§3. 格林公式",
+            "section_key": "a1b75a763a",
+            "page_range": [
+              148,
+              154
+            ]
+          },
+          {
+            "name": "§4. 二重积分中的变量变换",
+            "section_key": "fd65e5b754",
+            "page_range": [
+              154,
+              182
+            ]
+          },
+          {
+            "name": "§5. 反常二重积分",
+            "section_key": "8dfc32707f",
+            "page_range": [
+              182,
+              203
+            ]
+          }
+        ],
+        "chapter_key": "deec2d00ea",
+        "metadata": {
+          "volume_id": "cf08c4260437",
+          "file_id": "cf08c4260437",
+          "volume_title": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 2,
+          "raw_heading": "第十六章　二重积分"
+        }
+      },
+      {
+        "name": "曲面积分",
+        "concepts": [
+          {
+            "name": "曲面一侧",
+            "difficulty": 2,
+            "description": "由曲面各点连续选定的法线方向确定的一侧",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "曲面一侧是曲面上各点法线连续选择同一方向所确定的侧面。",
+            "example": "图形曲面可分为上侧和下侧。"
+          },
+          {
+            "name": "单侧曲面",
+            "difficulty": 3,
+            "description": "沿某闭路连续移动法线后会反向的曲面",
+            "aliases": [],
+            "prerequisites": [
+              "曲面一侧"
+            ],
+            "definition": "若法线沿曲面某闭路连续移动一周后返回起点却反向，该曲面叫单侧曲面。",
+            "example": "默比乌斯带是单侧曲面的典型例子。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "双侧曲面",
+            "difficulty": 3,
+            "description": "沿任意闭路移动法线后方向保持不变的曲面",
+            "aliases": [],
+            "prerequisites": [
+              "曲面一侧"
+            ],
+            "definition": "若法线沿曲面内任意闭路连续移动一周后方向均与出发时相同，该曲面叫双侧曲面。",
+            "example": "显方程 z=f(x,y) 的光滑曲面是双侧的。"
+          },
+          {
+            "name": "定侧",
+            "difficulty": 3,
+            "description": "在双侧曲面上连续确定全部法线方向的选择",
+            "aliases": [],
+            "prerequisites": [
+              "双侧曲面",
+              "法线方向余弦"
+            ],
+            "definition": "双侧曲面上选定一点的法线方向后，由连续性唯一确定全曲面法线方向的选择叫定侧。",
+            "example": "显曲面选取法线的正号可确定上侧。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "法线方向余弦",
+            "difficulty": 3,
+            "description": "法线与三个坐标轴夹角余弦组成的方向量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "法线方向余弦是法线与x、y、z轴夹角的余弦，记为cosλ、cosμ、cosν。",
+            "example": "z=f(x,y)时，cosν=±1/√(1+p²+q²)。"
+          },
+          {
+            "name": "参数曲面",
+            "difficulty": 3,
+            "description": "用两个参数表示空间曲面上点的曲面",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "参数曲面是由x=x(u,v)、y=y(u,v)、z=z(u,v)在参数区域内表示的光滑曲面。",
+            "example": "椭球面可取x=a sinφ cosθ等参数式。"
+          },
+          {
+            "name": "参数曲面法线公式",
+            "difficulty": 4,
+            "description": "利用参数偏导行列式确定曲面法线方向",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面",
+              "法线方向余弦"
+            ],
+            "definition": "设A、B、C为参数偏导构成的三个二阶行列式，则法线方向余弦为A、B、C除以±√(A²+B²+C²)。",
+            "example": "取公式中的正号即可确定参数表示产生的一侧。"
+          },
+          {
+            "name": "曲面定向",
+            "difficulty": 3,
+            "description": "依据所选侧确定曲面边界的正负环行方向",
+            "aliases": [],
+            "prerequisites": [
+              "定侧"
+            ],
+            "definition": "曲面定向是按照选定法线方向规定各简单闭路边界正向和负向的过程。",
+            "example": "从选定法线一侧看，边界按反时针方向为正向。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "右手定向",
+            "difficulty": 2,
+            "description": "以反时针旋转为基础的空间定向约定",
+            "aliases": [],
+            "prerequisites": [
+              "曲面定向"
+            ],
+            "definition": "以反时针方向旋转为基础并使xyz循环排列成立的空间定向叫右手定向。",
+            "example": "右手坐标系中从正z轴看，x轴转向y轴为反时针。",
+            "section": "§1. 双侧曲面"
+          },
+          {
+            "name": "曲面面积",
+            "difficulty": 3,
+            "description": "曲面分割后各小片面积和的极限",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面"
+            ],
+            "definition": "曲面面积是将曲面分割为小片并取各小片面积和在直径趋零时所得的极限。",
+            "example": "平面区域的曲面面积就是通常的平面面积。",
+            "section": "§2. 曲面面积"
+          },
+          {
+            "name": "曲面面积元素",
+            "difficulty": 3,
+            "description": "参数曲面上的微小面积表达式",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面",
+              "曲面面积"
+            ],
+            "definition": "参数曲面的面积元素可表示为dS=√(EG−F²)dudv。",
+            "example": "用参数计算面积时以√(EG−F²)dudv代替dS。"
+          },
+          {
+            "name": "曲面面积参数公式",
+            "difficulty": 4,
+            "description": "用参数偏导行列式计算曲面面积的公式",
+            "aliases": [],
+            "prerequisites": [
+              "参数曲面",
+              "曲面面积元素"
+            ],
+            "definition": "若A、B、C由参数偏导行列式给出，则曲面面积为∬√(A²+B²+C²)dudv。",
+            "example": "椭球面参数式代入该公式可计算其面积。"
+          },
+          {
+            "name": "投影面积公式",
+            "difficulty": 3,
+            "description": "通过平面投影把曲面面积化为二重积分",
+            "aliases": [],
+            "prerequisites": [
+              "曲面面积",
+              "法线方向余弦"
+            ],
+            "definition": "显曲面投影到xy平面时，面积可写为S=∬D dxdy/|cosν|。",
+            "example": "球面的上半部可投影到圆盘计算面积。"
+          },
+          {
+            "name": "全曲率",
+            "difficulty": 4,
+            "description": "曲面法线映射立体角与曲面面积之比的极限",
+            "aliases": [],
+            "prerequisites": [
+              "曲面面积",
+              "法线方向余弦"
+            ],
+            "definition": "曲面一点的全曲率是围绕该点的法线在单位球面上截得立体角与曲面面积之比的极限。",
+            "example": "z=f(x,y)时全曲率为|rt−s²|/(1+p²+q²)²。",
+            "section": "§2. 曲面面积"
+          },
+          {
+            "name": "第一型曲面积分",
+            "difficulty": 3,
+            "description": "函数值乘曲面面积微元后求和所得的极限",
+            "aliases": [],
+            "prerequisites": [
+              "曲面面积"
+            ],
+            "definition": "第一型曲面积分是将曲面分割后求和Σf(Mi)Si并令分片直径趋零所得的极限。",
+            "example": "∬S f(x,y,z)dS表示密度函数在曲面上的总量。"
+          },
+          {
+            "name": "第一型参数公式",
+            "difficulty": 4,
+            "description": "把第一型曲面积分化为参数域上的二重积分",
+            "aliases": [],
+            "prerequisites": [
+              "第一型曲面积分",
+              "参数曲面面积元素"
+            ],
+            "definition": "第一型曲面积分可表示为∬Δf(x(u,v),y(u,v),z(u,v))√(EG−F²)dudv。",
+            "example": "将曲面参数式代入即可在参数区域积分。"
+          },
+          {
+            "name": "第二型曲面积分",
+            "difficulty": 4,
+            "description": "含定向的dxdy、dydz、dzdx曲面积分",
+            "aliases": [],
+            "prerequisites": [
+              "曲面定向"
+            ],
+            "definition": "第二型曲面积分是沿定向曲面计算P dydz+Q dzdx+R dxdy等微分式的积分。",
+            "example": "∬S(Pdydz+Qdzdx+Rdxdy)随曲面定向改变符号。"
+          },
+          {
+            "name": "斯托克斯公式",
+            "difficulty": 4,
+            "description": "把空间曲线积分转化为边界曲面上的第二型积分",
+            "aliases": [],
+            "prerequisites": [
+              "第二型曲面积分",
+              "曲面定向"
+            ],
+            "definition": "斯托克斯公式把闭曲线上的积分等同于其所围曲面上由偏导数组成的第二型曲面积分。",
+            "example": "半球面上的曲面积分等于圆周上的对应曲线积分。",
+            "section": "§4. 第二型曲面积分"
+          },
+          {
+            "name": "空间单连通区域",
+            "difficulty": 4,
+            "description": "区域内每条简单闭路都能张成内部曲面",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若区域内任意简单闭路都能作为完全位于该区域内某曲面的边界，则该区域为空间单连通区域。",
+            "example": "两个同心球面之间的区域具有这种性质。"
+          },
+          {
+            "name": "路径无关条件",
+            "difficulty": 4,
+            "description": "偏导交叉相等时空间曲线积分与路径无关",
+            "aliases": [],
+            "prerequisites": [
+              "空间单连通区域",
+              "斯托克斯公式"
+            ],
+            "definition": "在空间单连通区域内，Pdx+Qdy+Rdz路径无关当且仅当相应三组交叉偏导相等。",
+            "example": "若Qx=Py、Ry=Qz、Pz=Rx，则积分只由端点决定。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1. 双侧曲面",
+            "section_key": "09b7fb70f9",
+            "page_range": [
+              204,
+              210
+            ]
+          },
+          {
+            "name": "§2. 曲面面积",
+            "section_key": "f5e47d240c",
+            "page_range": [
+              210,
+              233
+            ]
+          },
+          {
+            "name": "§3. 第一型曲面积分",
+            "section_key": "d292f718a4",
+            "page_range": [
+              233,
+              242
+            ]
+          },
+          {
+            "name": "§4. 第二型曲面积分",
+            "section_key": "e40bcce328",
+            "page_range": [
+              242,
+              260
+            ]
+          }
+        ],
+        "chapter_key": "3e21c64729",
+        "metadata": {
+          "volume_id": "cf08c4260437",
+          "file_id": "cf08c4260437",
+          "volume_title": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 3,
+          "raw_heading": "第十七章　曲面面积·曲面积分"
+        }
+      },
+      {
+        "name": "第十九章 傅里叶级数",
+        "concepts": [
+          {
+            "name": "周期函数",
+            "difficulty": 1,
+            "description": "满足经过固定周期后函数值恢复原值的函数",
+            "aliases": [
+              "周期量"
+            ],
+            "prerequisites": [],
+            "definition": "若存在正数T使φ(t+T)=φ(t)，则φ称为周期函数。",
+            "example": "交流电压可表示为周期函数"
+          },
+          {
+            "name": "频率与周期",
+            "difficulty": 1,
+            "description": "描述周期现象重复快慢的两个相关量",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "正弦型量的频率ω与周期T满足ω=2π/T。",
+            "example": "周期为T时基本频率为2π/T"
+          },
+          {
+            "name": "正弦型量",
+            "difficulty": 1,
+            "description": "具有固定振幅、频率和相位的正弦函数",
+            "aliases": [],
+            "prerequisites": [
+              "频率与周期"
+            ],
+            "definition": "形如A sin(ωt+α)的函数称为正弦型量。",
+            "example": "sin t是正弦型量",
+            "section": "§1. 导言"
+          },
+          {
+            "name": "三角级数",
+            "difficulty": 2,
+            "description": "由常数及正弦、余弦倍角项组成的级数",
+            "aliases": [],
+            "prerequisites": [
+              "正弦型量"
+            ],
+            "definition": "三角级数是由常数项和不同倍频的正弦型量构成的级数。",
+            "example": "a0+Σ(an cos nx+bn sin nx)"
+          },
+          {
+            "name": "调和成分",
+            "difficulty": 1,
+            "description": "周期函数三角展开中的各个正弦型量",
+            "aliases": [
+              "调和素"
+            ],
+            "prerequisites": [
+              "三角级数"
+            ],
+            "definition": "组成周期函数三角展开式的各正弦型量称为调和成分。",
+            "example": "sin x和半 sin 2x都是调和成分"
+          },
+          {
+            "name": "调和分析",
+            "difficulty": 2,
+            "description": "把周期函数分解为一系列调和成分的过程",
+            "aliases": [],
+            "prerequisites": [
+              "调和成分"
+            ],
+            "definition": "将周期函数分解成调和成分的手续称为调和分析。",
+            "example": "分析复杂振动的各阶谐波"
+          },
+          {
+            "name": "标准周期",
+            "difficulty": 1,
+            "description": "以2π为周期的周期函数表示形式",
+            "aliases": [],
+            "prerequisites": [
+              "周期函数"
+            ],
+            "definition": "通过x=ωt将周期函数化为周期2π的函数。",
+            "example": "f(x)=φ(x/ω)具有标准周期2π",
+            "section": "§1. 导言"
+          },
+          {
+            "name": "傅里叶级数",
+            "difficulty": 2,
+            "description": "以正弦和余弦倍角函数展开给定函数的级数",
+            "aliases": [],
+            "prerequisites": [
+              "三角级数",
+              "傅里叶系数"
+            ],
+            "definition": "由给定函数的傅里叶系数构成的三角级数称为傅里叶级数。",
+            "example": "f(x)∼a0+Σ(an cos nx+bn sin nx)"
+          },
+          {
+            "name": "欧拉-傅里叶公式",
+            "difficulty": 2,
+            "description": "通过积分确定三角展开系数的公式",
+            "aliases": [
+              "欧拉—傅里叶公式"
+            ],
+            "prerequisites": [
+              "正交函数系"
+            ],
+            "definition": "a0、am、bm分别由函数与常数、余弦、正弦的积分确定。",
+            "example": "a_m=1/π∫f(x)cos mx dx"
+          },
+          {
+            "name": "傅里叶系数",
+            "difficulty": 2,
+            "description": "由欧拉—傅里叶公式算出的展开系数",
+            "aliases": [],
+            "prerequisites": [
+              "欧拉-傅里叶公式"
+            ],
+            "definition": "用欧拉—傅里叶公式算出的a0、an、bn称为傅里叶系数。",
+            "example": "b_m=1/π∫f(x)sin mx dx"
+          },
+          {
+            "name": "正交函数",
+            "difficulty": 2,
+            "description": "在指定区间上乘积积分为零的两个函数",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若两函数乘积在区间上的积分为零，则称它们正交。",
+            "example": "sin nx与cos mx在[-π,π]上正交"
+          },
+          {
+            "name": "正交函数系",
+            "difficulty": 2,
+            "description": "函数两两正交且平方积分为正的函数系",
+            "aliases": [],
+            "prerequisites": [
+              "正交函数"
+            ],
+            "definition": "函数系中任意两个不同函数正交时，该函数系称为正交函数系。",
+            "example": "1、cos nx、sin nx构成正交函数系"
+          },
+          {
+            "name": "规范函数系",
+            "difficulty": 2,
+            "description": "每个函数平方积分都等于1的正交函数系",
+            "aliases": [
+              "规范的函数系"
+            ],
+            "prerequisites": [
+              "正交函数系"
+            ],
+            "definition": "正交函数系中各函数的平方积分均为1时称为规范函数系。",
+            "example": "将三角函数除以相应范数可规范化"
+          },
+          {
+            "name": "一致收敛性",
+            "difficulty": 3,
+            "description": "级数在区间上以统一方式收敛的性质",
+            "aliases": [
+              "一致收敛"
+            ],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "若级数余项可在整个区间上统一趋于零，则称其一致收敛。",
+            "example": "一致收敛时可逐项积分"
+          },
+          {
+            "name": "傅里叶公式",
+            "difficulty": 3,
+            "description": "在适当条件下用积分表示函数的公式",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶级数"
+            ],
+            "definition": "傅里叶公式在正则点用双重积分表示原函数的值。",
+            "example": "f(x)=1/π∫₀∞dz∫f(u)cos z(u−x)du"
+          },
+          {
+            "name": "傅里叶变换",
+            "difficulty": 3,
+            "description": "将函数变为复指数积分形式的变换",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶公式"
+            ],
+            "definition": "F(z)=1/√(2π)∫f(u)e^{izu}du称为f的傅里叶变换。",
+            "example": "高斯函数的傅里叶变换仍为高斯函数",
+            "section": "§3. 补充"
+          },
+          {
+            "name": "傅里叶余弦变换",
+            "difficulty": 3,
+            "description": "在半轴上以余弦核定义的傅里叶变换",
+            "aliases": [
+              "余弦变换"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "F_c(z)=√(2/π)∫₀∞f(u)cos zu du称为傅里叶余弦变换。",
+            "example": "e^{-ax}的余弦变换为√(2/π)a/(a²+x²)",
+            "section": "§3. 补充"
+          },
+          {
+            "name": "傅里叶正弦变换",
+            "difficulty": 3,
+            "description": "在半轴上以正弦核定义的傅里叶变换",
+            "aliases": [
+              "正弦变换"
+            ],
+            "prerequisites": [
+              "傅里叶变换"
+            ],
+            "definition": "F_s(z)=√(2/π)∫₀∞f(u)sin zu du称为傅里叶正弦变换。",
+            "example": "e^{-ax}的正弦变换为√(2/π)x/(a²+x²)",
+            "section": "§3. 补充"
+          },
+          {
+            "name": "偶奇延拓",
+            "difficulty": 2,
+            "description": "将半轴函数延拓为偶函数或奇函数的方法",
+            "aliases": [],
+            "prerequisites": [
+              "傅里叶余弦变换",
+              "傅里叶正弦变换"
+            ],
+            "definition": "利用f(-x)=f(x)或f(-x)=-f(x)把半轴函数延拓到全轴。",
+            "example": "偶延拓适用于余弦变换"
+          }
+        ],
+        "sections": [
+          {
+            "name": "§1. 导言",
+            "section_key": "e68c133c69",
+            "page_range": [
+              352,
+              362
+            ]
+          },
+          {
+            "name": "§2. 函数的傅里叶级数展开式",
+            "section_key": "a8c80ce7af",
+            "page_range": [
+              362,
+              392
+            ]
+          },
+          {
+            "name": "§3. 补充",
+            "section_key": "1d2f4a0e85",
+            "page_range": [
+              392,
+              559
+            ]
+          }
+        ],
+        "chapter_key": "ca5cffae9c",
+        "metadata": {
+          "volume_id": "cf08c4260437",
+          "file_id": "cf08c4260437",
+          "volume_title": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлови",
+          "chapter_order": 4,
+          "raw_heading": "第十九章　傅里叶级数"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "b015a03bc5": [
+        12,
+        19
+      ],
+      "§1.第一型曲线积分": [
+        12,
+        19
+      ],
+      "ba68c8604f": [
+        19,
+        40
+      ],
+      "§2.第二型曲线积分": [
+        19,
+        40
+      ],
+      "70f6b1da7e": [
+        40,
+        63
+      ],
+      "§3.曲线积分与道路无关的条件": [
+        40,
+        63
+      ],
+      "ab2dfac589": [
+        63,
+        76
+      ],
+      "§4.有界变差函数": [
+        63,
+        76
+      ],
+      "e06f739fe2": [
+        76,
+        104
+      ],
+      "§5.斯蒂尔切斯积分": [
+        76,
+        104
+      ],
+      "0d27576947": [
+        104,
+        117
+      ],
+      "§1. 二重积分的定义及简单性质": [
+        104,
+        117
+      ],
+      "8b0e82a85e": [
+        117,
+        148
+      ],
+      "§2. 二重积分的计算": [
+        117,
+        148
+      ],
+      "a1b75a763a": [
+        148,
+        154
+      ],
+      "§3. 格林公式": [
+        148,
+        154
+      ],
+      "fd65e5b754": [
+        154,
+        182
+      ],
+      "§4. 二重积分中的变量变换": [
+        154,
+        182
+      ],
+      "8dfc32707f": [
+        182,
+        203
+      ],
+      "§5. 反常二重积分": [
+        182,
+        203
+      ],
+      "09b7fb70f9": [
+        204,
+        210
+      ],
+      "§1. 双侧曲面": [
+        204,
+        210
+      ],
+      "f5e47d240c": [
+        210,
+        233
+      ],
+      "§2. 曲面面积": [
+        210,
+        233
+      ],
+      "d292f718a4": [
+        233,
+        242
+      ],
+      "§3. 第一型曲面积分": [
+        233,
+        242
+      ],
+      "e40bcce328": [
+        242,
+        260
+      ],
+      "§4. 第二型曲面积分": [
+        242,
+        260
+      ],
+      "e68c133c69": [
+        352,
+        362
+      ],
+      "§1. 导言": [
+        352,
+        362
+      ],
+      "a8c80ce7af": [
+        362,
+        392
+      ],
+      "§2. 函数的傅里叶级数展开式": [
+        362,
+        392
+      ],
+      "1d2f4a0e85": [
+        392,
+        559
+      ],
+      "§3. 补充": [
+        392,
+        559
+      ]
+    }
+  }
+}

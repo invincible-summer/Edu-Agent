@@ -1,0 +1,4706 @@
+{
+  "file_id": "c0440890b06c",
+  "text_sha256": "03b48bf74be2be92e6c24cce0328de8b325d24c63aba94a9c22c6fe4e0fd65ec",
+  "prompt_version": "knowledge_graph_build@2.0.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.2.0+textbook_graph_design@1.0.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "数学",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "第一章　线性方程组与矩阵",
+        "concepts": [
+          {
+            "name": "线性方程组",
+            "difficulty": 1,
+            "description": "由一次方程组成的方程组",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由多个一次方程共同构成的方程组称为线性方程组。",
+            "example": "x+y=2，2x-y=1"
+          },
+          {
+            "name": "矩阵",
+            "difficulty": 1,
+            "description": "按行列排列的数表",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数按规定的行数和列数排成的数表称为矩阵。",
+            "example": "A=(1 2;3 4)"
+          },
+          {
+            "name": "矩阵元素",
+            "difficulty": 1,
+            "description": "矩阵中指定位置的数",
+            "aliases": [
+              "元素"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "矩阵第i行第j列的数称为其(i,j)元素。",
+            "example": "a23表示第二行第三列元素"
+          },
+          {
+            "name": "增广矩阵",
+            "difficulty": 2,
+            "description": "表示方程组系数与常数项的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组",
+              "矩阵"
+            ],
+            "definition": "由线性方程组的系数和常数项共同组成的矩阵称为增广矩阵。",
+            "example": "x+y=2对应(1 1 2)"
+          },
+          {
+            "name": "系数矩阵",
+            "difficulty": 2,
+            "description": "由方程组系数组成的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组",
+              "矩阵"
+            ],
+            "definition": "线性方程组中仅由未知量系数组成的矩阵称为系数矩阵。",
+            "example": "x+y=2，2x-y=1的系数矩阵为(1 1;2 -1)"
+          },
+          {
+            "name": "同型矩阵",
+            "difficulty": 1,
+            "description": "行数和列数都相同的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "行数相等且列数也相等的两个矩阵称为同型矩阵。",
+            "example": "2×3矩阵A与B同型",
+            "section": "第一节 矩阵的概念及运算"
+          },
+          {
+            "name": "行矩阵",
+            "difficulty": 1,
+            "description": "只有一行的矩阵",
+            "aliases": [
+              "行向量"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "只有一行的矩阵称为行矩阵，也称行向量。",
+            "example": "(1,2,3)"
+          },
+          {
+            "name": "列矩阵",
+            "difficulty": 1,
+            "description": "只有一列的矩阵",
+            "aliases": [
+              "列向量"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "只有一列的矩阵称为列矩阵，也称列向量。",
+            "example": "(1;2;3)"
+          },
+          {
+            "name": "零矩阵",
+            "difficulty": 1,
+            "description": "所有元素均为零的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "所有元素都是零的矩阵称为零矩阵。",
+            "example": "O2×2=(0 0;0 0)"
+          },
+          {
+            "name": "方阵",
+            "difficulty": 1,
+            "description": "行数与列数相等的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "行数和列数相等的矩阵称为方阵。",
+            "example": "(1 2;3 4)是二阶方阵"
+          },
+          {
+            "name": "主对角线",
+            "difficulty": 1,
+            "description": "方阵中行列标相同的元素位置",
+            "aliases": [],
+            "prerequisites": [
+              "方阵",
+              "矩阵元素"
+            ],
+            "definition": "方阵中元素aii所在的位置构成主对角线。",
+            "example": "二阶方阵的a11与a22"
+          },
+          {
+            "name": "三角矩阵",
+            "difficulty": 2,
+            "description": "主对角线一侧元素全为零的方阵",
+            "aliases": [],
+            "prerequisites": [
+              "方阵",
+              "主对角线"
+            ],
+            "definition": "主对角线一侧元素全为零的方阵称为三角矩阵。",
+            "example": "(1 0;2 3)是下三角矩阵"
+          },
+          {
+            "name": "对角矩阵",
+            "difficulty": 1,
+            "description": "主对角线外元素全为零的方阵",
+            "aliases": [
+              "对角阵"
+            ],
+            "prerequisites": [
+              "方阵",
+              "主对角线"
+            ],
+            "definition": "主对角线以外的元素全为零的方阵称为对角矩阵。",
+            "example": "diag(2,3,4)"
+          },
+          {
+            "name": "数量矩阵",
+            "difficulty": 2,
+            "description": "对角线元素全相等的对角矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "对角矩阵"
+            ],
+            "definition": "对角矩阵的主对角线元素全相等时称为数量矩阵。",
+            "example": "diag(3,3,3)",
+            "section": "第一节 矩阵的概念及运算"
+          },
+          {
+            "name": "单位矩阵",
+            "difficulty": 1,
+            "description": "对角线为1且其余为零的方阵",
+            "aliases": [
+              "单位阵"
+            ],
+            "prerequisites": [
+              "数量矩阵"
+            ],
+            "definition": "主对角线元素全为1的数量矩阵称为单位矩阵。",
+            "example": "E2=(1 0;0 1)"
+          },
+          {
+            "name": "矩阵加法",
+            "difficulty": 1,
+            "description": "同型矩阵对应元素相加",
+            "aliases": [
+              "加法"
+            ],
+            "prerequisites": [
+              "同型矩阵"
+            ],
+            "definition": "同型矩阵的和由对应位置元素相加得到。",
+            "example": "(1 2)+(3 4)=(4 6)"
+          },
+          {
+            "name": "矩阵数乘",
+            "difficulty": 1,
+            "description": "数乘矩阵的所有元素",
+            "aliases": [
+              "数乘"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "用一个数乘矩阵的所有元素所得的运算称为矩阵数乘。",
+            "example": "2(1 2;3 4)=(2 4;6 8)"
+          },
+          {
+            "name": "矩阵线性运算",
+            "difficulty": 2,
+            "description": "矩阵加法与数乘的统称",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵加法",
+              "矩阵数乘"
+            ],
+            "definition": "矩阵的加法和数乘统称为矩阵的线性运算。",
+            "example": "2A+B"
+          },
+          {
+            "name": "矩阵乘法",
+            "difficulty": 2,
+            "description": "按行与列对应相乘并求和",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "左矩阵列数等于右矩阵行数时，按行列乘积求和定义矩阵乘法。",
+            "example": "(1 2)(3;4)=11"
+          },
+          {
+            "name": "方阵的方幂",
+            "difficulty": 2,
+            "description": "方阵自身重复相乘",
+            "aliases": [
+              "方幂"
+            ],
+            "prerequisites": [
+              "矩阵乘法",
+              "方阵",
+              "单位矩阵"
+            ],
+            "definition": "方阵连续自乘k次所得的乘积称为其k次方幂。",
+            "example": "A2=AA，A0=E",
+            "section": "第一节 矩阵的概念及运算"
+          },
+          {
+            "name": "转置矩阵",
+            "difficulty": 2,
+            "description": "将矩阵的行列互换所得矩阵",
+            "aliases": [
+              "转置"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "把矩阵的行换成同序数的列所得的矩阵称为转置矩阵。",
+            "example": "(1 2;3 4)T=(1 3;2 4)"
+          },
+          {
+            "name": "对称矩阵",
+            "difficulty": 2,
+            "description": "转置等于自身的方阵",
+            "aliases": [],
+            "prerequisites": [
+              "转置矩阵",
+              "方阵"
+            ],
+            "definition": "满足AT=A的方阵称为对称矩阵。",
+            "example": "(1 2;2 3)"
+          },
+          {
+            "name": "反对称矩阵",
+            "difficulty": 2,
+            "description": "转置等于负自身的方阵",
+            "aliases": [],
+            "prerequisites": [
+              "转置矩阵",
+              "方阵"
+            ],
+            "definition": "满足AT=-A的方阵称为反对称矩阵。",
+            "example": "(0 2;-2 0)"
+          },
+          {
+            "name": "分块矩阵",
+            "difficulty": 2,
+            "description": "以子块为元素表示的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "将矩阵分划为若干子块并以子块为元素所得的形式称为分块矩阵。",
+            "example": "(A O;O B)"
+          },
+          {
+            "name": "初等行变换",
+            "difficulty": 2,
+            "description": "矩阵的三种基本行变换",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "交换两行、某行乘非零数或倍加到另一行称为初等行变换。",
+            "example": "r2←r2-2r1"
+          },
+          {
+            "name": "初等列变换",
+            "difficulty": 2,
+            "description": "矩阵的三种基本列变换",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "将初等行变换中的行改为列所得的变换称为初等列变换。",
+            "example": "c2←c2+c1"
+          },
+          {
+            "name": "初等变换",
+            "difficulty": 1,
+            "description": "初等行变换和列变换的统称",
+            "aliases": [],
+            "prerequisites": [
+              "初等行变换",
+              "初等列变换"
+            ],
+            "definition": "矩阵的初等行变换和初等列变换统称为初等变换。",
+            "example": "先交换两行再倍加一列"
+          },
+          {
+            "name": "行阶梯形矩阵",
+            "difficulty": 2,
+            "description": "非零行首元逐行右移的矩阵",
+            "aliases": [
+              "阶梯形矩阵"
+            ],
+            "prerequisites": [
+              "初等行变换"
+            ],
+            "definition": "非零行首个非零元逐行右移且其下方为零的矩阵称为行阶梯形矩阵。",
+            "example": "(1 2 0;0 1 3;0 0 0)"
+          },
+          {
+            "name": "行最简形矩阵",
+            "difficulty": 3,
+            "description": "首元为1且首元列其余元素为零的阶梯矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "行阶梯形矩阵"
+            ],
+            "definition": "首元全为1且首元所在列其余元素全为零的行阶梯形矩阵称为行最简形矩阵。",
+            "example": "(1 0 2;0 1 3;0 0 0)"
+          },
+          {
+            "name": "矩阵标准形",
+            "difficulty": 3,
+            "description": "由单位阵和零块组成的规范形式",
+            "aliases": [
+              "标准形"
+            ],
+            "prerequisites": [
+              "初等变换",
+              "单位矩阵",
+              "分块矩阵"
+            ],
+            "definition": "矩阵经初等变换可化成由Er和零块组成的标准形式。",
+            "example": "F=(E3 O;O O)"
+          },
+          {
+            "name": "矩阵等价",
+            "difficulty": 2,
+            "description": "可由有限次初等变换互相得到",
+            "aliases": [
+              "等价关系"
+            ],
+            "prerequisites": [
+              "初等变换"
+            ],
+            "definition": "一个矩阵经过有限次初等变换化为另一个矩阵时称二者等价。",
+            "example": "A~B"
+          },
+          {
+            "name": "非齐次方程组",
+            "difficulty": 2,
+            "description": "常数项不全为零的线性方程组",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组"
+            ],
+            "definition": "线性方程组的常数项不全为零时称为非齐次线性方程组。",
+            "example": "x+y=1"
+          },
+          {
+            "name": "齐次方程组",
+            "difficulty": 2,
+            "description": "常数项全为零的线性方程组",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组"
+            ],
+            "definition": "线性方程组的所有常数项均为零时称为齐次线性方程组。",
+            "example": "x+y=0"
+          },
+          {
+            "name": "零解",
+            "difficulty": 1,
+            "description": "齐次方程组的全零解",
+            "aliases": [],
+            "prerequisites": [
+              "齐次方程组"
+            ],
+            "definition": "齐次线性方程组中所有未知量均为零的解称为零解。",
+            "example": "x1=x2=0"
+          },
+          {
+            "name": "线性方程组求解",
+            "difficulty": 2,
+            "description": "用行变换化增广矩阵求方程组解",
+            "aliases": [
+              "消元法"
+            ],
+            "prerequisites": [
+              "增广矩阵",
+              "初等行变换",
+              "行最简形矩阵"
+            ],
+            "definition": "对增广矩阵施行初等行变换并根据行最简形求解的方法称为线性方程组求解。",
+            "example": "增广矩阵化为单位阵形式",
+            "section": "第三节 线性方程组与矩阵的初等变换"
+          },
+          {
+            "name": "初等矩阵",
+            "difficulty": 3,
+            "description": "由单位阵一次初等变换得到的矩阵",
+            "aliases": [
+              "初等方阵"
+            ],
+            "prerequisites": [
+              "单位矩阵",
+              "初等变换"
+            ],
+            "definition": "对单位矩阵施行一次初等变换所得的矩阵称为初等矩阵。",
+            "example": "交换E的两行所得矩阵",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          },
+          {
+            "name": "可逆矩阵",
+            "difficulty": 3,
+            "description": "存在矩阵使乘积为单位阵的方阵",
+            "aliases": [
+              "可逆阵"
+            ],
+            "prerequisites": [
+              "方阵",
+              "单位矩阵"
+            ],
+            "definition": "存在同阶矩阵B使AB=BA=E的方阵A称为可逆矩阵。",
+            "example": "A=(1 0;0 2)可逆",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          },
+          {
+            "name": "逆矩阵",
+            "difficulty": 3,
+            "description": "与原矩阵乘积为单位阵的矩阵",
+            "aliases": [
+              "逆阵"
+            ],
+            "prerequisites": [
+              "可逆矩阵",
+              "单位矩阵"
+            ],
+            "definition": "满足AA^-1=A^-1A=E的矩阵称为A的逆矩阵。",
+            "example": "diag(2,3)^-1=diag(1/2,1/3)",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          },
+          {
+            "name": "矩阵方程",
+            "difficulty": 2,
+            "description": "含未知矩阵的矩阵等式",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵乘法",
+              "可逆矩阵"
+            ],
+            "definition": "以未知矩阵为对象并满足矩阵运算等式的方程称为矩阵方程。",
+            "example": "AX=B的解为X=A^-1B",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节　矩阵的概念及运算",
+            "page_range": [
+              8,
+              15
+            ]
+          },
+          {
+            "name": "第二节　分块矩阵",
+            "page_range": [
+              15,
+              20
+            ]
+          },
+          {
+            "name": "第三节　线性方程组与矩阵的初等变换",
+            "page_range": [
+              21,
+              30
+            ]
+          },
+          {
+            "name": "第四节　初等矩阵与矩阵的逆矩阵",
+            "page_range": [
+              30,
+              41
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二章　方阵的行列式",
+        "concepts": [
+          {
+            "name": "排列",
+            "difficulty": 1,
+            "description": "从1至n中选取不同数排成一列。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "从1、2、…、n中任意选取r个不同的数排成一列，称为排列。",
+            "example": "312是1、2、3的一个全排列。"
+          },
+          {
+            "name": "全排列",
+            "difficulty": 1,
+            "description": "将1至n的全部数排成一列。",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "将1、2、…、n这n个不同的数排成一列，称为n阶全排列。",
+            "example": "123是3阶全排列。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "标准排列",
+            "difficulty": 1,
+            "description": "元素按从小到大自然顺序排列。",
+            "aliases": [],
+            "prerequisites": [
+              "全排列"
+            ],
+            "definition": "元素按从小到大的自然顺序排列的全排列称为标准排列。",
+            "example": "12345是标准排列。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "逆序",
+            "difficulty": 2,
+            "description": "排列中一对次序与自然顺序相反的数。",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "排列中左边的数大于右边的数时，这两个数构成一个逆序。",
+            "example": "排列421中，42、41、21都是逆序。"
+          },
+          {
+            "name": "逆序数",
+            "difficulty": 2,
+            "description": "一个排列中逆序的总数。",
+            "aliases": [
+              "τ"
+            ],
+            "prerequisites": [
+              "逆序"
+            ],
+            "definition": "一个排列中逆序的总数称为该排列的逆序数。",
+            "example": "τ(42153)=5。"
+          },
+          {
+            "name": "奇排列与偶排列",
+            "difficulty": 2,
+            "description": "按逆序数奇偶性划分排列。",
+            "aliases": [
+              "奇排列",
+              "偶排列"
+            ],
+            "prerequisites": [
+              "逆序数"
+            ],
+            "definition": "逆序数为奇数的排列是奇排列，为偶数的排列是偶排列。",
+            "example": "213为奇排列，312为偶排列。"
+          },
+          {
+            "name": "对换",
+            "difficulty": 1,
+            "description": "交换排列中任意两个数的位置。",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "只交换排列中某两个数的位置而得到新排列的变换称为对换。",
+            "example": "42153交换2和5得45123。"
+          },
+          {
+            "name": "相邻对换",
+            "difficulty": 1,
+            "description": "交换排列中相邻位置的两个元素。",
+            "aliases": [],
+            "prerequisites": [
+              "对换"
+            ],
+            "definition": "交换排列中相邻位置两个元素的对换称为相邻对换。",
+            "example": "42153交换4和2不是相邻对换。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "对换改变奇偶性",
+            "difficulty": 3,
+            "description": "任意一次对换都会改变排列奇偶性。",
+            "aliases": [],
+            "prerequisites": [
+              "奇排列与偶排列",
+              "对换"
+            ],
+            "definition": "对换排列中任意两个数的位置会改变该排列的奇偶性。",
+            "example": "奇排列经一次对换变为偶排列。"
+          },
+          {
+            "name": "n阶行列式",
+            "difficulty": 3,
+            "description": "由n²个元素按全排列加权求和确定的数。",
+            "aliases": [
+              "方阵的行列式",
+              "det"
+            ],
+            "prerequisites": [
+              "全排列",
+              "逆序数"
+            ],
+            "definition": "n阶行列式是所有全排列对应乘积按逆序数符号加权求和得到的数。",
+            "example": "二阶行列式等于a11a22−a12a21。"
+          },
+          {
+            "name": "行标与列标",
+            "difficulty": 1,
+            "description": "行列式元素下标中的行、列位置标记。",
+            "aliases": [
+              "行标",
+              "列标"
+            ],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "元素aij的第一个下标i称为行标，第二个下标j称为列标。",
+            "example": "a23的行标为2，列标为3。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "二阶行列式",
+            "difficulty": 1,
+            "description": "二阶行列式等于主对角线积减副对角线积。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "二阶行列式的值为a11a22−a12a21。",
+            "example": "|1 2;3 4|=−2。"
+          },
+          {
+            "name": "三阶行列式",
+            "difficulty": 2,
+            "description": "由六项三元素乘积的代数和表示。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "三阶行列式按定义展开为六项乘积的代数和。",
+            "example": "|1 0 0;0 2 0;0 0 3|=6。"
+          },
+          {
+            "name": "对角线法则",
+            "difficulty": 1,
+            "description": "用于计算二阶和三阶行列式的展开规则。",
+            "aliases": [],
+            "prerequisites": [
+              "二阶行列式",
+              "三阶行列式"
+            ],
+            "definition": "对角线法则按指定实、虚对角线乘积的正负号计算行列式。",
+            "example": "三阶行列式可按六条对角线展开。"
+          },
+          {
+            "name": "下三角行列式",
+            "difficulty": 2,
+            "description": "主对角线上方元素全为零的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "主对角线上方元素全为零的方阵所确定的行列式称为下三角行列式。",
+            "example": "其值为a11a22…ann。"
+          },
+          {
+            "name": "上三角行列式",
+            "difficulty": 2,
+            "description": "主对角线下方元素全为零的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "主对角线下方元素全为零的方阵所确定的行列式称为上三角行列式。",
+            "example": "其值为主对角线元素之积。"
+          },
+          {
+            "name": "对角行列式",
+            "difficulty": 1,
+            "description": "由对角矩阵确定的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "上三角行列式",
+              "下三角行列式"
+            ],
+            "definition": "对角矩阵的行列式称为对角行列式。",
+            "example": "diag(2,3,4)的行列式为24。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "斜下三角行列式",
+            "difficulty": 3,
+            "description": "非零项集中在反向对角线及其下方的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式",
+              "逆序数"
+            ],
+            "definition": "教材中由反向对角线结构确定并按反序排列符号计算的特殊行列式称为斜下三角行列式。",
+            "example": "其值含因子(−1)^{n(n−1)/2}。"
+          },
+          {
+            "name": "转置行列式",
+            "difficulty": 2,
+            "description": "将行列式各行换为同序号列所得的行列式。",
+            "aliases": [
+              "转置"
+            ],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "把行列式各行元素换为同序号列元素所得的行列式称为转置行列式。",
+            "example": "D与DT的值相等。"
+          },
+          {
+            "name": "行列式转置性质",
+            "difficulty": 2,
+            "description": "行列式与其转置行列式相等。",
+            "aliases": [],
+            "prerequisites": [
+              "转置行列式"
+            ],
+            "definition": "任意行列式都等于它的转置行列式。",
+            "example": "det(A)=det(AT)。"
+          },
+          {
+            "name": "行列互换变号",
+            "difficulty": 2,
+            "description": "互换两行或两列，行列式变号。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "互换行列式的两行或两列后，所得行列式等于原行列式的相反数。",
+            "example": "交换两行使D变为−D。"
+          },
+          {
+            "name": "行列式为零条件",
+            "difficulty": 2,
+            "description": "相同行、零行或成比例行会使行列式为零。",
+            "aliases": [],
+            "prerequisites": [
+              "行列互换变号",
+              "行列式转置性质"
+            ],
+            "definition": "行列式有两行或两列相同、某行或列全零、或两行列对应成比例时值为零。",
+            "example": "两行相同的行列式等于0。"
+          },
+          {
+            "name": "行列式提公因子",
+            "difficulty": 1,
+            "description": "某行或列的公因子可提到行列式外。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "行列式某行或某列的公因子可以提取到行列式记号外。",
+            "example": "某行乘k后，行列式也乘k。"
+          },
+          {
+            "name": "行列式拆分定理",
+            "difficulty": 2,
+            "description": "某行或列元素和可拆成两个行列式之和。",
+            "aliases": [
+              "拆分定理"
+            ],
+            "prerequisites": [
+              "n阶行列式",
+              "行列式提公因子"
+            ],
+            "definition": "行列式某一行或列由两组元素对应相加组成时，可拆为两个行列式之和。",
+            "example": "含bk+ck的行可拆为含bk与含ck的两式。",
+            "section": "第二节 行列式的性质"
+          },
+          {
+            "name": "行列式初等变换",
+            "difficulty": 3,
+            "description": "用行列式性质进行交换、倍乘和倍加变换。",
+            "aliases": [],
+            "prerequisites": [
+              "行列互换变号",
+              "行列式提公因子",
+              "行列式拆分定理"
+            ],
+            "definition": "利用行列式性质对行或列进行变换以化简其计算的操作称为行列式初等变换。",
+            "example": "ri加k倍的rj不改变行列式值。"
+          },
+          {
+            "name": "分块行列式",
+            "difficulty": 3,
+            "description": "按矩阵子块排列形成的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "上三角行列式",
+              "n阶行列式"
+            ],
+            "definition": "将方阵按若干矩阵子块排列后形成的行列式称为分块行列式。",
+            "example": "块上三角行列式的值为对角块行列式之积。"
+          },
+          {
+            "name": "方阵可逆条件",
+            "difficulty": 2,
+            "description": "方阵可逆当且仅当其行列式非零。",
+            "aliases": [
+              "可逆充要条件"
+            ],
+            "prerequisites": [
+              "n阶行列式",
+              "行列式初等变换"
+            ],
+            "definition": "n阶方阵A可逆的充分必要条件是其行列式A不等于零。",
+            "example": "det(A)=0时，A不可逆。"
+          },
+          {
+            "name": "余子式",
+            "difficulty": 2,
+            "description": "划去元素所在行列后剩余的低阶行列式。",
+            "aliases": [
+              "Mij"
+            ],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "在行列式中划去第i行和第j列后剩下的n−1阶行列式称为aij的余子式。",
+            "example": "M12由划去第1行第2列所得。"
+          },
+          {
+            "name": "代数余子式",
+            "difficulty": 2,
+            "description": "余子式乘以位置符号因子所得的量。",
+            "aliases": [
+              "Aij"
+            ],
+            "prerequisites": [
+              "余子式"
+            ],
+            "definition": "元素aij的代数余子式定义为Aij=(−1)^{i+j}Mij。",
+            "example": "A13=M13，A32=−M32。"
+          },
+          {
+            "name": "按行列展开",
+            "difficulty": 3,
+            "description": "用某行或某列元素与代数余子式乘积求和。",
+            "aliases": [
+              "拉普拉斯展开"
+            ],
+            "prerequisites": [
+              "代数余子式",
+              "行列式拆分定理"
+            ],
+            "definition": "行列式等于任一行或列各元素与对应代数余子式乘积之和。",
+            "example": "按第i行展开为ΣaikAik。"
+          },
+          {
+            "name": "范德蒙德行列式",
+            "difficulty": 3,
+            "description": "元素为变量幂次排列的特殊行列式。",
+            "aliases": [
+              "Vandermonde行列式"
+            ],
+            "prerequisites": [
+              "按行列展开",
+              "行列式初等变换"
+            ],
+            "definition": "各列由同一变量的连续幂次构成的行列式称为范德蒙德行列式。",
+            "example": "Vn=∏(xj−xi)，i<j。",
+            "section": "第三节 行列式按行(列)展开"
+          },
+          {
+            "name": "伴随矩阵",
+            "difficulty": 3,
+            "description": "由代数余子式按转置位置组成的矩阵。",
+            "aliases": [
+              "A*"
+            ],
+            "prerequisites": [
+              "代数余子式"
+            ],
+            "definition": "将方阵各元素的代数余子式构成矩阵后再转置所得矩阵称为伴随矩阵。",
+            "example": "二阶矩阵[a b;c d]的伴随矩阵为[d −b;−c a]。",
+            "section": "第四节 矩阵求逆公式与克莱默法则"
+          },
+          {
+            "name": "矩阵求逆公式",
+            "difficulty": 3,
+            "description": "用行列式和伴随矩阵表示逆矩阵。",
+            "aliases": [],
+            "prerequisites": [
+              "伴随矩阵",
+              "方阵可逆条件"
+            ],
+            "definition": "可逆方阵A的逆矩阵满足A⁻¹=(1/|A|)A*。",
+            "example": "二阶矩阵逆矩阵为伴随矩阵除以ad−bc。",
+            "section": "第四节 矩阵求逆公式与克莱默法则"
+          },
+          {
+            "name": "克莱默法则",
+            "difficulty": 3,
+            "description": "用替换列行列式求线性方程组唯一解。",
+            "aliases": [
+              "Cramer法则"
+            ],
+            "prerequisites": [
+              "矩阵求逆公式",
+              "方阵可逆条件",
+              "按行列展开"
+            ],
+            "definition": "系数行列式非零时，线性方程组的解为xj=Dj/|A|。",
+            "example": "将系数行列式第j列替换为常数列得Dj。",
+            "section": "第四节 矩阵求逆公式与克莱默法则"
+          },
+          {
+            "name": "齐次方程组非零解",
+            "difficulty": 2,
+            "description": "齐次方程组有非零解时系数行列式为零。",
+            "aliases": [],
+            "prerequisites": [
+              "克莱默法则",
+              "方阵可逆条件"
+            ],
+            "definition": "齐次线性方程组有非零解的必要条件是其系数行列式等于零。",
+            "example": "Ax=0有非零解，则|A|=0。"
+          },
+          {
+            "name": "行列式乘法定理",
+            "difficulty": 3,
+            "description": "方阵乘积的行列式等于两个行列式之积。",
+            "aliases": [],
+            "prerequisites": [
+              "方阵可逆条件",
+              "n阶行列式"
+            ],
+            "definition": "任意同阶方阵A、B满足|AB|=|A||B|。",
+            "example": "|A²|=|A|²。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节　行列式的定义",
+            "page_range": [
+              42,
+              48
+            ]
+          },
+          {
+            "name": "第二节　行列式的性质",
+            "page_range": [
+              48,
+              58
+            ]
+          },
+          {
+            "name": "第三节　行列式按行(列)展开",
+            "page_range": [
+              58,
+              64
+            ]
+          },
+          {
+            "name": "第四节　矩阵求逆公式与克莱默法则",
+            "page_range": [
+              65,
+              73
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三章　向量空间与线性方程组解的结构",
+        "concepts": [
+          {
+            "name": "n维向量",
+            "difficulty": 1,
+            "description": "由n个数构成的有序数组。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由n个数a₁至aₙ组成的有序数组称为n维向量。",
+            "example": "(1,2,3)是一个三维向量。"
+          },
+          {
+            "name": "行向量与列向量",
+            "difficulty": 1,
+            "description": "向量按行或按列排列的两种形式。",
+            "aliases": [],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "横向排列的向量称为行向量，纵向排列的向量称为列向量。",
+            "example": "(1,2)是行向量，(1,2)ᵀ是列向量。"
+          },
+          {
+            "name": "零向量",
+            "difficulty": 1,
+            "description": "所有分量均为零的向量。",
+            "aliases": [],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "分量全部为零的向量称为零向量。",
+            "example": "(0,0,0)是三维零向量。"
+          },
+          {
+            "name": "向量线性运算",
+            "difficulty": 1,
+            "description": "向量的加法与数乘运算。",
+            "aliases": [
+              "向量运算"
+            ],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "向量按分量进行加法和数乘的运算称为向量线性运算。",
+            "example": "(1,2)+(3,4)=(4,6)。"
+          },
+          {
+            "name": "向量组",
+            "difficulty": 1,
+            "description": "若干个维数相同的向量组成的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "由若干个维数相同的向量构成的集合称为向量组。",
+            "example": "(1,0)与(0,1)构成一个向量组。"
+          },
+          {
+            "name": "线性组合",
+            "difficulty": 2,
+            "description": "向量组中向量的数乘和。",
+            "aliases": [],
+            "prerequisites": [
+              "向量组",
+              "向量线性运算"
+            ],
+            "definition": "向量组中各向量分别乘以任意数后再相加所得的表达式称为线性组合。",
+            "example": "2α₁−α₂是α₁、α₂的线性组合。"
+          },
+          {
+            "name": "线性表示",
+            "difficulty": 2,
+            "description": "目标向量可写成向量组的线性组合。",
+            "aliases": [
+              "可由向量组线性表示"
+            ],
+            "prerequisites": [
+              "线性组合"
+            ],
+            "definition": "若向量等于某向量组的一个线性组合，则称该向量可由该向量组线性表示。",
+            "example": "(1,1)可由(1,0)、(0,1)表示为两者之和。"
+          },
+          {
+            "name": "向量组等价",
+            "difficulty": 2,
+            "description": "两个向量组能够相互线性表示。",
+            "aliases": [
+              "等价向量组"
+            ],
+            "prerequisites": [
+              "线性表示"
+            ],
+            "definition": "两个向量组可以相互线性表示时，称它们等价。",
+            "example": "{e₁,e₂}与{e₁,e₁+e₂}等价。"
+          },
+          {
+            "name": "线性相关",
+            "difficulty": 2,
+            "description": "存在不全为零的系数使向量组合为零。",
+            "aliases": [],
+            "prerequisites": [
+              "线性组合",
+              "零向量"
+            ],
+            "definition": "若向量组存在不全为零的系数使其线性组合等于零向量，则称其线性相关。",
+            "example": "(1,0)、(2,0)线性相关。"
+          },
+          {
+            "name": "线性无关",
+            "difficulty": 2,
+            "description": "只有全零系数才能使线性组合为零。",
+            "aliases": [],
+            "prerequisites": [
+              "线性组合",
+              "零向量"
+            ],
+            "definition": "只有所有系数均为零时线性组合才为零向量的向量组称为线性无关。",
+            "example": "(1,0)、(0,1)线性无关。"
+          },
+          {
+            "name": "极大无关组",
+            "difficulty": 3,
+            "description": "向量组中包含向量最多的无关组。",
+            "aliases": [],
+            "prerequisites": [
+              "线性无关",
+              "向量组"
+            ],
+            "definition": "向量组中线性无关且不能再增加原组向量的组称为极大无关组。",
+            "example": "{e₁,e₂}是{e₁,e₂,e₁+e₂}的极大无关组。"
+          },
+          {
+            "name": "向量组的秩",
+            "difficulty": 2,
+            "description": "向量组极大无关组所含向量的个数。",
+            "aliases": [
+              "向量组秩"
+            ],
+            "prerequisites": [
+              "极大无关组"
+            ],
+            "definition": "向量组的秩定义为其任一极大无关组所含向量的个数。",
+            "example": "{e₁,e₂,e₁+e₂}的秩为2。"
+          },
+          {
+            "name": "矩阵的秩",
+            "difficulty": 2,
+            "description": "矩阵中最高阶非零子式的阶数。",
+            "aliases": [
+              "矩阵秩"
+            ],
+            "prerequisites": [],
+            "definition": "矩阵中非零子式的最高阶数称为矩阵的秩。",
+            "example": "单位矩阵I₃的秩为3。"
+          },
+          {
+            "name": "初等变换",
+            "difficulty": 2,
+            "description": "矩阵的换行、倍乘和倍加变换。",
+            "aliases": [
+              "矩阵初等变换"
+            ],
+            "prerequisites": [
+              "矩阵的秩"
+            ],
+            "definition": "交换两行、某行乘非零数或一行加另一行倍数称为初等变换。",
+            "example": "将第二行加上第一行是一次初等行变换。"
+          },
+          {
+            "name": "行列秩关系",
+            "difficulty": 3,
+            "description": "矩阵行向量组秩与列向量组秩相等。",
+            "aliases": [],
+            "prerequisites": [
+              "向量组的秩",
+              "矩阵的秩"
+            ],
+            "definition": "矩阵的行向量组秩、列向量组秩都等于矩阵的秩。",
+            "example": "秩为2的矩阵，其行列向量组秩均为2。"
+          },
+          {
+            "name": "系数矩阵",
+            "difficulty": 1,
+            "description": "由线性方程组未知量系数组成的矩阵。",
+            "aliases": [],
+            "prerequisites": [
+              "向量组"
+            ],
+            "definition": "线性方程组中未知量的系数按原位置排列成的矩阵称为系数矩阵。",
+            "example": "x+y=1的系数矩阵为(1,1)。"
+          },
+          {
+            "name": "增广矩阵",
+            "difficulty": 2,
+            "description": "系数矩阵右侧附加常数列所得的矩阵。",
+            "aliases": [],
+            "prerequisites": [
+              "系数矩阵"
+            ],
+            "definition": "将线性方程组的常数列附加到系数矩阵右侧所得的矩阵称为增广矩阵。",
+            "example": "x+y=1的增广矩阵为(1 1｜1)。"
+          },
+          {
+            "name": "矩阵方程有解判定",
+            "difficulty": 3,
+            "description": "利用系数矩阵与增广矩阵秩判断有解性。",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵的秩",
+              "增广矩阵"
+            ],
+            "definition": "矩阵方程AX=B有解当且仅当R(A)=R(A,B)。",
+            "example": "若R(A)=R(A,B)，则AX=B有解。"
+          },
+          {
+            "name": "线性方程组有解判定",
+            "difficulty": 3,
+            "description": "用系数矩阵和增广矩阵的秩判定解的存在。",
+            "aliases": [],
+            "prerequisites": [
+              "系数矩阵",
+              "增广矩阵",
+              "矩阵的秩"
+            ],
+            "definition": "非齐次线性方程组有解当且仅当系数矩阵与增广矩阵秩相等。",
+            "example": "R(A)<R(Ā)时方程组无解。"
+          },
+          {
+            "name": "齐次线性方程组",
+            "difficulty": 1,
+            "description": "常数项全部为零的线性方程组。",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组"
+            ],
+            "definition": "常数项全部为零的线性方程组称为齐次线性方程组。",
+            "example": "x+y=0是齐次线性方程组。"
+          },
+          {
+            "name": "基础解系",
+            "difficulty": 3,
+            "description": "齐次方程组解空间的一组基。",
+            "aliases": [],
+            "prerequisites": [
+              "齐次线性方程组",
+              "线性无关"
+            ],
+            "definition": "齐次线性方程组解向量组的一个极大无关组称为基础解系。",
+            "example": "Ax=0的基础解系可生成其全部解。"
+          },
+          {
+            "name": "齐次解空间",
+            "difficulty": 3,
+            "description": "齐次方程组全部解向量构成的集合。",
+            "aliases": [
+              "解空间"
+            ],
+            "prerequisites": [
+              "齐次线性方程组",
+              "基础解系"
+            ],
+            "definition": "齐次线性方程组的全部解向量组成的集合称为解空间。",
+            "example": "Ax=0的解集合S={x|Ax=0}。",
+            "section": "第五节 向量空间"
+          },
+          {
+            "name": "齐次方程组解结构",
+            "difficulty": 3,
+            "description": "齐次方程组的解由基础解系线性生成。",
+            "aliases": [],
+            "prerequisites": [
+              "基础解系",
+              "齐次解空间"
+            ],
+            "definition": "齐次方程组的任意解都可由基础解系唯一线性表示。",
+            "example": "x=c₁ξ₁+c₂ξ₂是齐次方程组的通解。"
+          },
+          {
+            "name": "非齐次方程组解结构",
+            "difficulty": 3,
+            "description": "非齐次解等于特解与齐次通解之和。",
+            "aliases": [],
+            "prerequisites": [
+              "齐次方程组解结构"
+            ],
+            "definition": "非齐次方程组的全部解由一个特解加上对应齐次方程组的全部解构成。",
+            "example": "x=x₀+c₁ξ₁是非齐次方程组的通解。"
+          },
+          {
+            "name": "向量空间",
+            "difficulty": 2,
+            "description": "对加法和数乘运算封闭的向量集合。",
+            "aliases": [],
+            "prerequisites": [
+              "向量线性运算"
+            ],
+            "definition": "对通常向量加法和数乘运算构成向量空间的集合称为向量空间。",
+            "example": "ℝⁿ是一个向量空间。"
+          },
+          {
+            "name": "生成向量空间",
+            "difficulty": 2,
+            "description": "由向量组全部线性组合构成的空间。",
+            "aliases": [
+              "向量组生成空间"
+            ],
+            "prerequisites": [
+              "线性组合",
+              "向量空间"
+            ],
+            "definition": "向量组所有线性组合组成的集合称为该向量组生成的向量空间。",
+            "example": "L(e₁,e₂)=ℝ²。"
+          },
+          {
+            "name": "向量空间的基",
+            "difficulty": 3,
+            "description": "既线性无关又生成该空间的向量组。",
+            "aliases": [
+              "基"
+            ],
+            "prerequisites": [
+              "向量空间",
+              "线性无关",
+              "生成向量空间"
+            ],
+            "definition": "既线性无关又能生成向量空间的向量组称为该空间的一组基。",
+            "example": "e₁、e₂是ℝ²的一组基。",
+            "section": "第五节 向量空间"
+          },
+          {
+            "name": "向量空间维数",
+            "difficulty": 2,
+            "description": "向量空间任一组基所含向量的个数。",
+            "aliases": [
+              "维数"
+            ],
+            "prerequisites": [
+              "向量空间的基"
+            ],
+            "definition": "向量空间一组基中向量的个数称为该空间的维数。",
+            "example": "ℝ³的维数为3。"
+          },
+          {
+            "name": "基下坐标",
+            "difficulty": 3,
+            "description": "向量在给定基下线性表示的系数。",
+            "aliases": [
+              "向量坐标"
+            ],
+            "prerequisites": [
+              "向量空间的基",
+              "线性表示"
+            ],
+            "definition": "向量在某组基下唯一线性表示式中的系数称为其在该基下的坐标。",
+            "example": "α=2e₁+3e₂的坐标为(2,3)ᵀ。"
+          },
+          {
+            "name": "过渡矩阵",
+            "difficulty": 3,
+            "description": "联系同一空间两组基的可逆矩阵。",
+            "aliases": [
+              "基过渡矩阵"
+            ],
+            "prerequisites": [
+              "向量空间的基",
+              "基下坐标"
+            ],
+            "definition": "将一组基的向量表示为另一组基线性组合所得的系数矩阵称为过渡矩阵。",
+            "example": "若B=AP，则P是从基A到基B的过渡矩阵。",
+            "section": "第五节 向量空间"
+          },
+          {
+            "name": "坐标变换",
+            "difficulty": 3,
+            "description": "同一向量在两组基下坐标之间的变换。",
+            "aliases": [
+              "坐标变换公式"
+            ],
+            "prerequisites": [
+              "过渡矩阵",
+              "基下坐标"
+            ],
+            "definition": "利用过渡矩阵将向量在一组基下的坐标转换为另一组基下坐标的过程称为坐标变换。",
+            "example": "若x=Py，则P实现两组基间的坐标变换。",
+            "section": "第五节 向量空间"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节　向量组及其线性组合",
+            "page_range": [
+              74,
+              81
+            ]
+          },
+          {
+            "name": "第二节　向量组的线性相关性",
+            "page_range": [
+              81,
+              88
+            ]
+          },
+          {
+            "name": "第三节　向量组的秩与矩阵的秩",
+            "page_range": [
+              88,
+              95
+            ]
+          },
+          {
+            "name": "第四节　线性方程组解的结构",
+            "page_range": [
+              95,
+              104
+            ]
+          },
+          {
+            "name": "第五节　向量空间",
+            "page_range": [
+              104,
+              115
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四章　相似矩阵及二次型",
+        "concepts": [
+          {
+            "name": "向量内积",
+            "difficulty": 1,
+            "description": "用分量乘积之和定义的向量数量积",
+            "aliases": [
+              "内积",
+              "数量积"
+            ],
+            "prerequisites": [],
+            "definition": "向量x与y的内积定义为[x,y]=xᵀy。",
+            "example": "x=(1,2)，y=(3,4)时，[x,y]=11"
+          },
+          {
+            "name": "柯西施瓦茨不等式",
+            "difficulty": 2,
+            "description": "内积平方不超过两个向量自内积之积",
+            "aliases": [
+              "施瓦茨不等式"
+            ],
+            "prerequisites": [
+              "向量内积"
+            ],
+            "definition": "任意向量x、y满足[x,y]²≤[x,x][y,y]。",
+            "example": "x=(1,0)，y=(1,1)满足1≤2",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "向量长度",
+            "difficulty": 1,
+            "description": "由内积定义的向量长度或范数",
+            "aliases": [
+              "范数"
+            ],
+            "prerequisites": [
+              "向量内积"
+            ],
+            "definition": "向量x的长度定义为‖x‖=√[x,x]。",
+            "example": "x=(3,4)时，‖x‖=5",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "单位向量",
+            "difficulty": 1,
+            "description": "长度等于1的向量",
+            "aliases": [],
+            "prerequisites": [
+              "向量长度"
+            ],
+            "definition": "长度满足‖x‖=1的向量称为单位向量。",
+            "example": "(1,0)是二维单位向量",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "向量单位化",
+            "difficulty": 2,
+            "description": "将非零向量化为单位向量的过程",
+            "aliases": [
+              "单位化"
+            ],
+            "prerequisites": [
+              "向量长度",
+              "单位向量"
+            ],
+            "definition": "非零向量α除以其长度得到单位向量的过程称为单位化。",
+            "example": "(3,4)单位化为(3/5,4/5)"
+          },
+          {
+            "name": "向量夹角",
+            "difficulty": 2,
+            "description": "由内积和长度定义的两个向量间角度",
+            "aliases": [
+              "夹角"
+            ],
+            "prerequisites": [
+              "向量内积",
+              "向量长度"
+            ],
+            "definition": "非零向量x、y的夹角为arccos([x,y]/(‖x‖‖y‖))。",
+            "example": "(1,0)与(0,1)夹角为π/2",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "向量正交",
+            "difficulty": 1,
+            "description": "内积为零的向量关系",
+            "aliases": [
+              "正交"
+            ],
+            "prerequisites": [
+              "向量内积"
+            ],
+            "definition": "当[x,y]=0时，称向量x与y正交。",
+            "example": "(1,0)与(0,1)正交"
+          },
+          {
+            "name": "正交向量组",
+            "difficulty": 2,
+            "description": "由两两正交的非零向量组成的向量组",
+            "aliases": [],
+            "prerequisites": [
+              "向量正交"
+            ],
+            "definition": "一组两两正交的非零向量称为正交向量组。",
+            "example": "标准坐标向量组是正交向量组",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "正交向量组线性无关",
+            "difficulty": 2,
+            "description": "正交向量组必然具有线性无关性",
+            "aliases": [],
+            "prerequisites": [
+              "正交向量组"
+            ],
+            "definition": "正交向量组中的向量必定线性无关。",
+            "example": "三个两两正交的非零向量线性无关"
+          },
+          {
+            "name": "规范正交基",
+            "difficulty": 2,
+            "description": "两两正交且均为单位向量的基",
+            "aliases": [
+              "标准正交基",
+              "正交规范基"
+            ],
+            "prerequisites": [
+              "正交向量组",
+              "单位向量"
+            ],
+            "definition": "向量空间中两两正交且都是单位向量的基称为规范正交基。",
+            "example": "e₁,e₂,e₃是ℝ³的规范正交基"
+          },
+          {
+            "name": "施密特正交化",
+            "difficulty": 3,
+            "description": "将一组基转化为等价正交组的方法",
+            "aliases": [
+              "施密特法",
+              "正交化过程"
+            ],
+            "prerequisites": [
+              "向量内积",
+              "正交向量组",
+              "规范正交基"
+            ],
+            "definition": "从线性无关向量组逐步减去投影分量以构造正交组的过程。",
+            "example": "由α₁,α₂构造β₂=α₂-([β₁,α₂]/[β₁,β₁])β₁"
+          },
+          {
+            "name": "正交矩阵",
+            "difficulty": 2,
+            "description": "转置与自身乘积为单位阵的方阵",
+            "aliases": [
+              "正交阵"
+            ],
+            "prerequisites": [
+              "规范正交基"
+            ],
+            "definition": "满足AᵀA=E的方阵称为正交矩阵。",
+            "example": "二维旋转矩阵是正交矩阵"
+          },
+          {
+            "name": "正交变换",
+            "difficulty": 2,
+            "description": "由正交矩阵给出的线性变换",
+            "aliases": [],
+            "prerequisites": [
+              "正交矩阵"
+            ],
+            "definition": "形如y=Px且P为正交矩阵的线性变换称为正交变换。",
+            "example": "y=Px保持向量长度不变"
+          },
+          {
+            "name": "特征值",
+            "difficulty": 2,
+            "description": "使矩阵作用等同于数乘的标量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若存在非零向量α使Aα=λα，则λ称为A的特征值。",
+            "example": "对角矩阵的对角元是其特征值"
+          },
+          {
+            "name": "特征向量",
+            "difficulty": 2,
+            "description": "对应特征值且被矩阵保持方向的非零向量",
+            "aliases": [],
+            "prerequisites": [
+              "特征值"
+            ],
+            "definition": "满足Aα=λα的非零向量α称为A对应于λ的特征向量。",
+            "example": "单位坐标向量是对角矩阵的特征向量"
+          },
+          {
+            "name": "特征多项式",
+            "difficulty": 2,
+            "description": "由|A-λE|得到的关于λ的多项式",
+            "aliases": [],
+            "prerequisites": [
+              "特征值"
+            ],
+            "definition": "f(λ)=|A-λE|称为矩阵A的特征多项式。",
+            "example": "diag(1,2)的特征多项式为(1-λ)(2-λ)"
+          },
+          {
+            "name": "特征方程",
+            "difficulty": 2,
+            "description": "令特征多项式为零得到的方程",
+            "aliases": [],
+            "prerequisites": [
+              "特征多项式"
+            ],
+            "definition": "方程f(λ)=0称为矩阵A的特征方程。",
+            "example": "diag(1,2)的特征方程为(1-λ)(2-λ)=0"
+          },
+          {
+            "name": "相似矩阵",
+            "difficulty": 2,
+            "description": "通过可逆矩阵相似变换相联系的矩阵",
+            "aliases": [
+              "矩阵相似"
+            ],
+            "prerequisites": [
+              "特征值"
+            ],
+            "definition": "若存在可逆矩阵P使P⁻¹AP=B，则称A与B相似。",
+            "example": "B=P⁻¹AP时，A与B相似"
+          },
+          {
+            "name": "相似变换",
+            "difficulty": 2,
+            "description": "对矩阵实施P⁻¹AP形式的变换",
+            "aliases": [],
+            "prerequisites": [
+              "相似矩阵"
+            ],
+            "definition": "对矩阵A进行P⁻¹AP运算的过程称为相似变换。",
+            "example": "P⁻¹AP=Λ将A变为对角阵",
+            "section": "第三节 相似矩阵"
+          },
+          {
+            "name": "相似对角化",
+            "difficulty": 3,
+            "description": "通过相似变换把矩阵化为对角阵",
+            "aliases": [
+              "矩阵对角化"
+            ],
+            "prerequisites": [
+              "相似矩阵",
+              "特征向量"
+            ],
+            "definition": "存在可逆P使P⁻¹AP为对角阵，称A可相似对角化。",
+            "example": "有三个线性无关特征向量的三阶矩阵可对角化"
+          },
+          {
+            "name": "对角化判定",
+            "difficulty": 3,
+            "description": "矩阵可对角化当且仅有足够特征向量",
+            "aliases": [],
+            "prerequisites": [
+              "相似对角化",
+              "特征向量"
+            ],
+            "definition": "n阶矩阵可相似对角化当且仅当有n个线性无关的特征向量。",
+            "example": "特征值两两不等时必可对角化"
+          },
+          {
+            "name": "实对称矩阵",
+            "difficulty": 1,
+            "description": "实矩阵且转置等于自身的矩阵",
+            "aliases": [
+              "对称阵"
+            ],
+            "prerequisites": [],
+            "definition": "满足Aᵀ=A的实矩阵称为实对称矩阵。",
+            "example": "[[1,2],[2,3]]是实对称矩阵"
+          },
+          {
+            "name": "实对称矩阵正交对角化",
+            "difficulty": 3,
+            "description": "实对称矩阵可由正交变换化为实对角阵",
+            "aliases": [
+              "谱分解"
+            ],
+            "prerequisites": [
+              "实对称矩阵",
+              "正交矩阵",
+              "相似对角化"
+            ],
+            "definition": "任意实对称矩阵都存在正交矩阵P使PᵀAP为实对角阵。",
+            "example": "对称矩阵可取单位正交特征向量作P的列"
+          },
+          {
+            "name": "二次型",
+            "difficulty": 1,
+            "description": "变量平方项与两两乘积项组成的齐次二次式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "含变量二次项及交叉项的齐次二次多项式称为二次型。",
+            "example": "x₁²+2x₁x₂+3x₂²是二次型"
+          },
+          {
+            "name": "二次型矩阵表示",
+            "difficulty": 2,
+            "description": "用对称矩阵表示二次型的形式",
+            "aliases": [],
+            "prerequisites": [
+              "二次型",
+              "实对称矩阵"
+            ],
+            "definition": "二次型可表示为f=xᵀAx，其中A为对称矩阵。",
+            "example": "x₁²+2x₁x₂+x₂²=xᵀ[[1,1],[1,1]]x"
+          },
+          {
+            "name": "二次型的秩",
+            "difficulty": 2,
+            "description": "二次型对应矩阵的秩",
+            "aliases": [],
+            "prerequisites": [
+              "二次型矩阵表示"
+            ],
+            "definition": "二次型的秩定义为其矩阵表示中对称矩阵A的秩。",
+            "example": "diag(1,2,0)表示的二次型秩为2"
+          },
+          {
+            "name": "二次型标准形",
+            "difficulty": 2,
+            "description": "只含变量平方项的二次型形式",
+            "aliases": [
+              "标准形"
+            ],
+            "prerequisites": [
+              "二次型",
+              "二次型矩阵表示"
+            ],
+            "definition": "经可逆线性变换化为平方项线性组合的形式称为标准形。",
+            "example": "f=4y₁²+y₂²+y₃²是标准形"
+          },
+          {
+            "name": "二次型规范形",
+            "difficulty": 2,
+            "description": "平方项系数仅为1、-1或0的标准形",
+            "aliases": [
+              "规范形"
+            ],
+            "prerequisites": [
+              "二次型标准形"
+            ],
+            "definition": "标准形中非零系数均化为1或−1的形式称为规范形。",
+            "example": "f=z₁²−z₂²是规范形"
+          },
+          {
+            "name": "正交变换化标准形",
+            "difficulty": 3,
+            "description": "利用正交变换消去二次型交叉项",
+            "aliases": [],
+            "prerequisites": [
+              "二次型矩阵表示",
+              "实对称矩阵正交对角化",
+              "正交变换"
+            ],
+            "definition": "利用实对称矩阵的正交对角化将二次型化为标准形的方法。",
+            "example": "若PᵀAP=Λ，则x=Py使f=yᵀΛy"
+          },
+          {
+            "name": "配方法",
+            "difficulty": 2,
+            "description": "通过逐步配平方化二次型的方法",
+            "aliases": [],
+            "prerequisites": [
+              "二次型标准形"
+            ],
+            "definition": "利用平方项逐步配方并作可逆变量替换化二次型的方法称为配方法。",
+            "example": "x₁²+2x₁x₂+x₂²=(x₁+x₂)²"
+          },
+          {
+            "name": "惯性定理",
+            "difficulty": 3,
+            "description": "不同标准形的正负系数个数保持不变",
+            "aliases": [],
+            "prerequisites": [
+              "二次型标准形",
+              "二次型的秩"
+            ],
+            "definition": "同一二次型在可逆变换下标准形中正、负系数的个数分别相等。",
+            "example": "不同变换所得正惯性指数相同",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "正惯性指数",
+            "difficulty": 2,
+            "description": "二次型标准形中正系数的个数",
+            "aliases": [],
+            "prerequisites": [
+              "二次型标准形",
+              "惯性定理"
+            ],
+            "definition": "二次型标准形中正系数的个数称为正惯性指数。",
+            "example": "y₁²+y₂²−y₃²的正惯性指数为2",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "正定二次型",
+            "difficulty": 2,
+            "description": "除零向量外取值始终为正的二次型",
+            "aliases": [],
+            "prerequisites": [
+              "二次型",
+              "二次型矩阵表示"
+            ],
+            "definition": "对任意x≠0均有xᵀAx>0的二次型称为正定二次型。",
+            "example": "x₁²+x₂²是正定二次型",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "正定矩阵",
+            "difficulty": 2,
+            "description": "对应二次型为正定的对称矩阵",
+            "aliases": [
+              "正定阵"
+            ],
+            "prerequisites": [
+              "正定二次型",
+              "实对称矩阵"
+            ],
+            "definition": "使xᵀAx对任意非零x均为正的对称矩阵称为正定矩阵。",
+            "example": "单位矩阵E是正定矩阵",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "赫尔维茨定理",
+            "difficulty": 3,
+            "description": "用顺序主子式判定对称矩阵正定性",
+            "aliases": [
+              "顺序主子式判别法"
+            ],
+            "prerequisites": [
+              "正定矩阵"
+            ],
+            "definition": "对称矩阵正定当且仅当各阶顺序主子式都为正。",
+            "example": "diag(1,2)的顺序主子式均为正",
+            "section": "第六节 正定二次型与正定矩阵"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节　向量的内积、长度及正交性",
+            "page_range": [
+              116,
+              122
+            ]
+          },
+          {
+            "name": "第二节　方阵的特征值与特征向量",
+            "page_range": [
+              122,
+              129
+            ]
+          },
+          {
+            "name": "第三节　相似矩阵",
+            "page_range": [
+              129,
+              132
+            ]
+          },
+          {
+            "name": "第四节　实对称矩阵的相似对角化",
+            "page_range": [
+              132,
+              136
+            ]
+          },
+          {
+            "name": "第五节　二次型及其标准形",
+            "page_range": [
+              136,
+              143
+            ]
+          },
+          {
+            "name": "第六节　正定二次型与正定矩阵",
+            "page_range": [
+              143,
+              149
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第五章　线性空间与线性变换",
+        "concepts": [
+          {
+            "name": "线性空间",
+            "difficulty": 3,
+            "description": "在指定线性运算下满足八条规律的非空集合",
+            "aliases": [
+              "向量空间"
+            ],
+            "prerequisites": [],
+            "definition": "集合及其加法、数乘运算满足八条运算规律时称为线性空间。",
+            "example": "次数不超过n的多项式全体构成线性空间。"
+          },
+          {
+            "name": "线性运算",
+            "difficulty": 2,
+            "description": "线性空间中满足八条规律的加法与数乘",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "线性空间中满足八条运算规律的加法和数乘运算统称为线性运算。",
+            "example": "多项式的通常加法和数乘是线性运算。"
+          },
+          {
+            "name": "线性空间性质",
+            "difficulty": 3,
+            "description": "零元素、负元素及数乘运算满足的基本结论",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "线性空间中零元素和负元素具有唯一性，并满足零向量数乘等性质。",
+            "example": "任意α满足0α=0且(−1)α=−α。"
+          },
+          {
+            "name": "封闭性",
+            "difficulty": 2,
+            "description": "运算结果仍属于原集合的性质",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间",
+              "线性运算"
+            ],
+            "definition": "集合对所定义的加法和数乘封闭，是构成线性空间或子空间的重要条件。",
+            "example": "次数不超过n的多项式对加法封闭。"
+          },
+          {
+            "name": "子空间",
+            "difficulty": 3,
+            "description": "在线性空间中自身构成线性空间的非空子集",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间",
+              "封闭性"
+            ],
+            "definition": "线性空间V的非空子集W若继承运算后构成线性空间，则称W为V的子空间。",
+            "example": "齐次方程组Ax=0的解空间是ℝⁿ的子空间。"
+          },
+          {
+            "name": "线性表示",
+            "difficulty": 2,
+            "description": "用向量的线性组合表示另一个向量",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "向量α可写成若干向量的线性组合时，称α可由这些向量线性表示。",
+            "example": "p=a₀+a₁x可表示为a₀·1+a₁·x。"
+          },
+          {
+            "name": "线性无关",
+            "difficulty": 3,
+            "description": "只有系数全为零才能得到零向量的向量组",
+            "aliases": [],
+            "prerequisites": [
+              "线性表示"
+            ],
+            "definition": "向量组的线性组合等于零向量时所有系数均为零，则该向量组线性无关。",
+            "example": "多项式组1,x,x²线性无关。"
+          },
+          {
+            "name": "线性相关",
+            "difficulty": 3,
+            "description": "存在不全为零的系数使线性组合为零向量",
+            "aliases": [],
+            "prerequisites": [
+              "线性表示"
+            ],
+            "definition": "向量组存在一组不全为零的系数使其线性组合等于零向量，则称线性相关。",
+            "example": "向量v与2v组成的向量组线性相关。"
+          },
+          {
+            "name": "基",
+            "difficulty": 3,
+            "description": "既线性无关又能表示空间任意元素的向量组",
+            "aliases": [
+              "空间的一组基"
+            ],
+            "prerequisites": [
+              "线性空间",
+              "线性无关",
+              "线性表示"
+            ],
+            "definition": "线性空间中线性无关且能表示任意元素的有限向量组称为该空间的一组基。",
+            "example": "P[x]₄的一组基是1,x,x²,x³,x⁴。"
+          },
+          {
+            "name": "维数",
+            "difficulty": 3,
+            "description": "线性空间任一组基所含向量的个数",
+            "aliases": [
+              "空间维数"
+            ],
+            "prerequisites": [
+              "基"
+            ],
+            "definition": "线性空间一组基中向量的个数称为该空间的维数。",
+            "example": "P[x]₄的维数为5。"
+          },
+          {
+            "name": "零空间",
+            "difficulty": 2,
+            "description": "只含一个零元素的线性空间",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间",
+              "零元素"
+            ],
+            "definition": "只含一个零元素的线性空间称为零空间，其维数规定为0。",
+            "example": "仅含零向量的集合是零空间。",
+            "section": "第二节 维数、基与坐标"
+          },
+          {
+            "name": "坐标",
+            "difficulty": 3,
+            "description": "向量在指定基下唯一对应的有序数组",
+            "aliases": [
+              "基下坐标"
+            ],
+            "prerequisites": [
+              "基",
+              "线性表示"
+            ],
+            "definition": "向量在一组基下线性表示式中的系数组成的有序数组称为其坐标。",
+            "example": "p=a₀+a₁x在基1,x下坐标为(a₀,a₁)ᵀ。"
+          },
+          {
+            "name": "基变换",
+            "difficulty": 4,
+            "description": "同一线性空间中从一组基换到另一组基",
+            "aliases": [],
+            "prerequisites": [
+              "基",
+              "过渡矩阵"
+            ],
+            "definition": "用一组基表示另一组基的过程称为基变换。",
+            "example": "将基1,x换为基1,1+x。"
+          },
+          {
+            "name": "过渡矩阵",
+            "difficulty": 4,
+            "description": "表示两组基之间转换关系的可逆矩阵",
+            "aliases": [
+              "基变换矩阵"
+            ],
+            "prerequisites": [
+              "基变换",
+              "基"
+            ],
+            "definition": "将新基向量用旧基表示所得的矩阵称为两组基之间的过渡矩阵。",
+            "example": "(β₁,…,βₙ)=(α₁,…,αₙ)P。"
+          },
+          {
+            "name": "坐标变换",
+            "difficulty": 4,
+            "description": "同一向量在不同基下坐标之间的转换",
+            "aliases": [],
+            "prerequisites": [
+              "坐标",
+              "过渡矩阵"
+            ],
+            "definition": "利用过渡矩阵将向量在一组基下的坐标变为另一组基下坐标的过程称为坐标变换。",
+            "example": "x=Py，或y=P⁻¹x。"
+          },
+          {
+            "name": "线性变换",
+            "difficulty": 3,
+            "description": "保持向量加法和数乘运算的映射",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "满足T(α+β)=T(α)+T(β)且T(λα)=λT(α)的映射称为线性变换。",
+            "example": "矩阵变换T(x)=Ax是线性变换。"
+          },
+          {
+            "name": "像空间",
+            "difficulty": 4,
+            "description": "线性变换所有像组成的线性空间",
+            "aliases": [
+              "变换的像集"
+            ],
+            "prerequisites": [
+              "线性变换",
+              "子空间"
+            ],
+            "definition": "线性变换T的所有像构成的集合T(V)称为T的像空间。",
+            "example": "T(x)=Ax的像空间由A的列向量生成。",
+            "section": "第三节 线性变换"
+          },
+          {
+            "name": "核",
+            "difficulty": 4,
+            "description": "被线性变换映为零向量的全部向量",
+            "aliases": [
+              "变换的核空间"
+            ],
+            "prerequisites": [
+              "线性变换",
+              "子空间"
+            ],
+            "definition": "满足Tα=0的所有α组成的子空间称为线性变换T的核。",
+            "example": "T(x)=Ax的核是齐次方程组Ax=0的解空间。"
+          },
+          {
+            "name": "线性变换矩阵",
+            "difficulty": 4,
+            "description": "线性变换在指定基下对应的方阵",
+            "aliases": [
+              "变换矩阵"
+            ],
+            "prerequisites": [
+              "线性变换",
+              "基",
+              "坐标"
+            ],
+            "definition": "将基向量的像用该基表示所得的矩阵称为线性变换在此基下的矩阵。",
+            "example": "微分运算在基1,x,x²,x³下有对应矩阵。",
+            "section": "第三节 线性变换"
+          },
+          {
+            "name": "相似变换",
+            "difficulty": 4,
+            "description": "同一线性变换不同基下矩阵间的转换关系",
+            "aliases": [],
+            "prerequisites": [
+              "线性变换矩阵",
+              "过渡矩阵"
+            ],
+            "definition": "若两个矩阵满足B=P⁻¹AP，则称B由A经过相似变换得到。",
+            "example": "换基时线性变换矩阵满足B=P⁻¹AP。",
+            "section": "第三节 线性变换"
+          },
+          {
+            "name": "线性变换的秩",
+            "difficulty": 4,
+            "description": "线性变换像空间的维数",
+            "aliases": [
+              "变换的秩"
+            ],
+            "prerequisites": [
+              "像空间",
+              "维数",
+              "线性变换"
+            ],
+            "definition": "线性变换像空间T(V)的维数称为该线性变换的秩。",
+            "example": "若矩阵A的秩为r，则对应变换的秩为r。",
+            "section": "第三节 线性变换"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节　线性空间的定义与性质",
+            "page_range": [
+              150,
+              154
+            ]
+          },
+          {
+            "name": "第二节　维数、基与坐标",
+            "page_range": [
+              154,
+              158
+            ]
+          },
+          {
+            "name": "第三节　线性变换",
+            "page_range": [
+              158,
+              185
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "数学",
+    "level": "本科",
+    "chapters": [
+      {
+        "name": "第一章 线性方程组与矩阵",
+        "concepts": [
+          {
+            "name": "线性方程组",
+            "difficulty": 1,
+            "description": "由一次方程组成的方程组",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由多个一次方程共同构成的方程组称为线性方程组。",
+            "example": "x+y=2，2x-y=1"
+          },
+          {
+            "name": "矩阵",
+            "difficulty": 1,
+            "description": "按行列排列的数表",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数按规定的行数和列数排成的数表称为矩阵。",
+            "example": "A=(1 2;3 4)"
+          },
+          {
+            "name": "矩阵元素",
+            "difficulty": 1,
+            "description": "矩阵中指定位置的数",
+            "aliases": [
+              "元素"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "矩阵第i行第j列的数称为其(i,j)元素。",
+            "example": "a23表示第二行第三列元素"
+          },
+          {
+            "name": "增广矩阵",
+            "difficulty": 2,
+            "description": "表示方程组系数与常数项的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组",
+              "矩阵"
+            ],
+            "definition": "由线性方程组的系数和常数项共同组成的矩阵称为增广矩阵。",
+            "example": "x+y=2对应(1 1 2)"
+          },
+          {
+            "name": "系数矩阵",
+            "difficulty": 2,
+            "description": "由方程组系数组成的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组",
+              "矩阵"
+            ],
+            "definition": "线性方程组中仅由未知量系数组成的矩阵称为系数矩阵。",
+            "example": "x+y=2，2x-y=1的系数矩阵为(1 1;2 -1)"
+          },
+          {
+            "name": "同型矩阵",
+            "difficulty": 1,
+            "description": "行数和列数都相同的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "行数相等且列数也相等的两个矩阵称为同型矩阵。",
+            "example": "2×3矩阵A与B同型",
+            "section": "第一节 矩阵的概念及运算"
+          },
+          {
+            "name": "行矩阵",
+            "difficulty": 1,
+            "description": "只有一行的矩阵",
+            "aliases": [
+              "行向量"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "只有一行的矩阵称为行矩阵，也称行向量。",
+            "example": "(1,2,3)"
+          },
+          {
+            "name": "列矩阵",
+            "difficulty": 1,
+            "description": "只有一列的矩阵",
+            "aliases": [
+              "列向量"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "只有一列的矩阵称为列矩阵，也称列向量。",
+            "example": "(1;2;3)"
+          },
+          {
+            "name": "零矩阵",
+            "difficulty": 1,
+            "description": "所有元素均为零的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "所有元素都是零的矩阵称为零矩阵。",
+            "example": "O2×2=(0 0;0 0)"
+          },
+          {
+            "name": "方阵",
+            "difficulty": 1,
+            "description": "行数与列数相等的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "行数和列数相等的矩阵称为方阵。",
+            "example": "(1 2;3 4)是二阶方阵"
+          },
+          {
+            "name": "主对角线",
+            "difficulty": 1,
+            "description": "方阵中行列标相同的元素位置",
+            "aliases": [],
+            "prerequisites": [
+              "方阵",
+              "矩阵元素"
+            ],
+            "definition": "方阵中元素aii所在的位置构成主对角线。",
+            "example": "二阶方阵的a11与a22"
+          },
+          {
+            "name": "三角矩阵",
+            "difficulty": 2,
+            "description": "主对角线一侧元素全为零的方阵",
+            "aliases": [],
+            "prerequisites": [
+              "方阵",
+              "主对角线"
+            ],
+            "definition": "主对角线一侧元素全为零的方阵称为三角矩阵。",
+            "example": "(1 0;2 3)是下三角矩阵"
+          },
+          {
+            "name": "对角矩阵",
+            "difficulty": 1,
+            "description": "主对角线外元素全为零的方阵",
+            "aliases": [
+              "对角阵"
+            ],
+            "prerequisites": [
+              "方阵",
+              "主对角线"
+            ],
+            "definition": "主对角线以外的元素全为零的方阵称为对角矩阵。",
+            "example": "diag(2,3,4)"
+          },
+          {
+            "name": "数量矩阵",
+            "difficulty": 2,
+            "description": "对角线元素全相等的对角矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "对角矩阵"
+            ],
+            "definition": "对角矩阵的主对角线元素全相等时称为数量矩阵。",
+            "example": "diag(3,3,3)",
+            "section": "第一节 矩阵的概念及运算"
+          },
+          {
+            "name": "单位矩阵",
+            "difficulty": 1,
+            "description": "对角线为1且其余为零的方阵",
+            "aliases": [
+              "单位阵"
+            ],
+            "prerequisites": [
+              "数量矩阵"
+            ],
+            "definition": "主对角线元素全为1的数量矩阵称为单位矩阵。",
+            "example": "E2=(1 0;0 1)"
+          },
+          {
+            "name": "矩阵加法",
+            "difficulty": 1,
+            "description": "同型矩阵对应元素相加",
+            "aliases": [
+              "加法"
+            ],
+            "prerequisites": [
+              "同型矩阵"
+            ],
+            "definition": "同型矩阵的和由对应位置元素相加得到。",
+            "example": "(1 2)+(3 4)=(4 6)"
+          },
+          {
+            "name": "矩阵数乘",
+            "difficulty": 1,
+            "description": "数乘矩阵的所有元素",
+            "aliases": [
+              "数乘"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "用一个数乘矩阵的所有元素所得的运算称为矩阵数乘。",
+            "example": "2(1 2;3 4)=(2 4;6 8)"
+          },
+          {
+            "name": "矩阵线性运算",
+            "difficulty": 2,
+            "description": "矩阵加法与数乘的统称",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵加法",
+              "矩阵数乘"
+            ],
+            "definition": "矩阵的加法和数乘统称为矩阵的线性运算。",
+            "example": "2A+B"
+          },
+          {
+            "name": "矩阵乘法",
+            "difficulty": 2,
+            "description": "按行与列对应相乘并求和",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "左矩阵列数等于右矩阵行数时，按行列乘积求和定义矩阵乘法。",
+            "example": "(1 2)(3;4)=11"
+          },
+          {
+            "name": "方阵的方幂",
+            "difficulty": 2,
+            "description": "方阵自身重复相乘",
+            "aliases": [
+              "方幂"
+            ],
+            "prerequisites": [
+              "矩阵乘法",
+              "方阵",
+              "单位矩阵"
+            ],
+            "definition": "方阵连续自乘k次所得的乘积称为其k次方幂。",
+            "example": "A2=AA，A0=E",
+            "section": "第一节 矩阵的概念及运算"
+          },
+          {
+            "name": "转置矩阵",
+            "difficulty": 2,
+            "description": "将矩阵的行列互换所得矩阵",
+            "aliases": [
+              "转置"
+            ],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "把矩阵的行换成同序数的列所得的矩阵称为转置矩阵。",
+            "example": "(1 2;3 4)T=(1 3;2 4)"
+          },
+          {
+            "name": "对称矩阵",
+            "difficulty": 2,
+            "description": "转置等于自身的方阵",
+            "aliases": [],
+            "prerequisites": [
+              "转置矩阵",
+              "方阵"
+            ],
+            "definition": "满足AT=A的方阵称为对称矩阵。",
+            "example": "(1 2;2 3)"
+          },
+          {
+            "name": "反对称矩阵",
+            "difficulty": 2,
+            "description": "转置等于负自身的方阵",
+            "aliases": [],
+            "prerequisites": [
+              "转置矩阵",
+              "方阵"
+            ],
+            "definition": "满足AT=-A的方阵称为反对称矩阵。",
+            "example": "(0 2;-2 0)"
+          },
+          {
+            "name": "分块矩阵",
+            "difficulty": 2,
+            "description": "以子块为元素表示的矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "将矩阵分划为若干子块并以子块为元素所得的形式称为分块矩阵。",
+            "example": "(A O;O B)"
+          },
+          {
+            "name": "初等行变换",
+            "difficulty": 2,
+            "description": "矩阵的三种基本行变换",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "交换两行、某行乘非零数或倍加到另一行称为初等行变换。",
+            "example": "r2←r2-2r1"
+          },
+          {
+            "name": "初等列变换",
+            "difficulty": 2,
+            "description": "矩阵的三种基本列变换",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵"
+            ],
+            "definition": "将初等行变换中的行改为列所得的变换称为初等列变换。",
+            "example": "c2←c2+c1"
+          },
+          {
+            "name": "初等变换",
+            "difficulty": 1,
+            "description": "初等行变换和列变换的统称",
+            "aliases": [],
+            "prerequisites": [
+              "初等行变换",
+              "初等列变换"
+            ],
+            "definition": "矩阵的初等行变换和初等列变换统称为初等变换。",
+            "example": "先交换两行再倍加一列"
+          },
+          {
+            "name": "行阶梯形矩阵",
+            "difficulty": 2,
+            "description": "非零行首元逐行右移的矩阵",
+            "aliases": [
+              "阶梯形矩阵"
+            ],
+            "prerequisites": [
+              "初等行变换"
+            ],
+            "definition": "非零行首个非零元逐行右移且其下方为零的矩阵称为行阶梯形矩阵。",
+            "example": "(1 2 0;0 1 3;0 0 0)"
+          },
+          {
+            "name": "行最简形矩阵",
+            "difficulty": 3,
+            "description": "首元为1且首元列其余元素为零的阶梯矩阵",
+            "aliases": [],
+            "prerequisites": [
+              "行阶梯形矩阵"
+            ],
+            "definition": "首元全为1且首元所在列其余元素全为零的行阶梯形矩阵称为行最简形矩阵。",
+            "example": "(1 0 2;0 1 3;0 0 0)"
+          },
+          {
+            "name": "矩阵标准形",
+            "difficulty": 3,
+            "description": "由单位阵和零块组成的规范形式",
+            "aliases": [
+              "标准形"
+            ],
+            "prerequisites": [
+              "初等变换",
+              "单位矩阵",
+              "分块矩阵"
+            ],
+            "definition": "矩阵经初等变换可化成由Er和零块组成的标准形式。",
+            "example": "F=(E3 O;O O)"
+          },
+          {
+            "name": "矩阵等价",
+            "difficulty": 2,
+            "description": "可由有限次初等变换互相得到",
+            "aliases": [
+              "等价关系"
+            ],
+            "prerequisites": [
+              "初等变换"
+            ],
+            "definition": "一个矩阵经过有限次初等变换化为另一个矩阵时称二者等价。",
+            "example": "A~B"
+          },
+          {
+            "name": "非齐次方程组",
+            "difficulty": 2,
+            "description": "常数项不全为零的线性方程组",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组"
+            ],
+            "definition": "线性方程组的常数项不全为零时称为非齐次线性方程组。",
+            "example": "x+y=1"
+          },
+          {
+            "name": "齐次方程组",
+            "difficulty": 2,
+            "description": "常数项全为零的线性方程组",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组"
+            ],
+            "definition": "线性方程组的所有常数项均为零时称为齐次线性方程组。",
+            "example": "x+y=0"
+          },
+          {
+            "name": "零解",
+            "difficulty": 1,
+            "description": "齐次方程组的全零解",
+            "aliases": [],
+            "prerequisites": [
+              "齐次方程组"
+            ],
+            "definition": "齐次线性方程组中所有未知量均为零的解称为零解。",
+            "example": "x1=x2=0"
+          },
+          {
+            "name": "线性方程组求解",
+            "difficulty": 2,
+            "description": "用行变换化增广矩阵求方程组解",
+            "aliases": [
+              "消元法"
+            ],
+            "prerequisites": [
+              "增广矩阵",
+              "初等行变换",
+              "行最简形矩阵"
+            ],
+            "definition": "对增广矩阵施行初等行变换并根据行最简形求解的方法称为线性方程组求解。",
+            "example": "增广矩阵化为单位阵形式",
+            "section": "第三节 线性方程组与矩阵的初等变换"
+          },
+          {
+            "name": "初等矩阵",
+            "difficulty": 3,
+            "description": "由单位阵一次初等变换得到的矩阵",
+            "aliases": [
+              "初等方阵"
+            ],
+            "prerequisites": [
+              "单位矩阵",
+              "初等变换"
+            ],
+            "definition": "对单位矩阵施行一次初等变换所得的矩阵称为初等矩阵。",
+            "example": "交换E的两行所得矩阵",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          },
+          {
+            "name": "可逆矩阵",
+            "difficulty": 3,
+            "description": "存在矩阵使乘积为单位阵的方阵",
+            "aliases": [
+              "可逆阵"
+            ],
+            "prerequisites": [
+              "方阵",
+              "单位矩阵"
+            ],
+            "definition": "存在同阶矩阵B使AB=BA=E的方阵A称为可逆矩阵。",
+            "example": "A=(1 0;0 2)可逆",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          },
+          {
+            "name": "逆矩阵",
+            "difficulty": 3,
+            "description": "与原矩阵乘积为单位阵的矩阵",
+            "aliases": [
+              "逆阵"
+            ],
+            "prerequisites": [
+              "可逆矩阵",
+              "单位矩阵"
+            ],
+            "definition": "满足AA^-1=A^-1A=E的矩阵称为A的逆矩阵。",
+            "example": "diag(2,3)^-1=diag(1/2,1/3)",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          },
+          {
+            "name": "矩阵方程",
+            "difficulty": 2,
+            "description": "含未知矩阵的矩阵等式",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵乘法",
+              "可逆矩阵"
+            ],
+            "definition": "以未知矩阵为对象并满足矩阵运算等式的方程称为矩阵方程。",
+            "example": "AX=B的解为X=A^-1B",
+            "section": "第四节 初等矩阵与矩阵的逆矩阵"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 矩阵的概念及运算",
+            "section_key": "58b26cb94f",
+            "page_range": [
+              8,
+              15
+            ]
+          },
+          {
+            "name": "第二节 分块矩阵",
+            "section_key": "3ab70cbadc",
+            "page_range": [
+              15,
+              20
+            ]
+          },
+          {
+            "name": "第三节 线性方程组与矩阵的初等变换",
+            "section_key": "bba3572a9e",
+            "page_range": [
+              21,
+              30
+            ]
+          },
+          {
+            "name": "第四节 初等矩阵与矩阵的逆矩阵",
+            "section_key": "cd11afad6a",
+            "page_range": [
+              30,
+              41
+            ]
+          }
+        ],
+        "chapter_key": "bf590db50c",
+        "metadata": {
+          "volume_id": "c0440890b06c",
+          "file_id": "c0440890b06c",
+          "volume_title": "线性代数 (同济大学数学系)",
+          "chapter_order": 1,
+          "raw_heading": "第一章　线性方程组与矩阵"
+        }
+      },
+      {
+        "name": "第二章 方阵的行列式",
+        "concepts": [
+          {
+            "name": "排列",
+            "difficulty": 1,
+            "description": "从1至n中选取不同数排成一列。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "从1、2、…、n中任意选取r个不同的数排成一列，称为排列。",
+            "example": "312是1、2、3的一个全排列。"
+          },
+          {
+            "name": "全排列",
+            "difficulty": 1,
+            "description": "将1至n的全部数排成一列。",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "将1、2、…、n这n个不同的数排成一列，称为n阶全排列。",
+            "example": "123是3阶全排列。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "标准排列",
+            "difficulty": 1,
+            "description": "元素按从小到大自然顺序排列。",
+            "aliases": [],
+            "prerequisites": [
+              "全排列"
+            ],
+            "definition": "元素按从小到大的自然顺序排列的全排列称为标准排列。",
+            "example": "12345是标准排列。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "逆序",
+            "difficulty": 2,
+            "description": "排列中一对次序与自然顺序相反的数。",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "排列中左边的数大于右边的数时，这两个数构成一个逆序。",
+            "example": "排列421中，42、41、21都是逆序。"
+          },
+          {
+            "name": "逆序数",
+            "difficulty": 2,
+            "description": "一个排列中逆序的总数。",
+            "aliases": [
+              "τ"
+            ],
+            "prerequisites": [
+              "逆序"
+            ],
+            "definition": "一个排列中逆序的总数称为该排列的逆序数。",
+            "example": "τ(42153)=5。"
+          },
+          {
+            "name": "奇排列与偶排列",
+            "difficulty": 2,
+            "description": "按逆序数奇偶性划分排列。",
+            "aliases": [
+              "奇排列",
+              "偶排列"
+            ],
+            "prerequisites": [
+              "逆序数"
+            ],
+            "definition": "逆序数为奇数的排列是奇排列，为偶数的排列是偶排列。",
+            "example": "213为奇排列，312为偶排列。"
+          },
+          {
+            "name": "对换",
+            "difficulty": 1,
+            "description": "交换排列中任意两个数的位置。",
+            "aliases": [],
+            "prerequisites": [
+              "排列"
+            ],
+            "definition": "只交换排列中某两个数的位置而得到新排列的变换称为对换。",
+            "example": "42153交换2和5得45123。"
+          },
+          {
+            "name": "相邻对换",
+            "difficulty": 1,
+            "description": "交换排列中相邻位置的两个元素。",
+            "aliases": [],
+            "prerequisites": [
+              "对换"
+            ],
+            "definition": "交换排列中相邻位置两个元素的对换称为相邻对换。",
+            "example": "42153交换4和2不是相邻对换。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "对换改变奇偶性",
+            "difficulty": 3,
+            "description": "任意一次对换都会改变排列奇偶性。",
+            "aliases": [],
+            "prerequisites": [
+              "奇排列与偶排列",
+              "对换"
+            ],
+            "definition": "对换排列中任意两个数的位置会改变该排列的奇偶性。",
+            "example": "奇排列经一次对换变为偶排列。"
+          },
+          {
+            "name": "n阶行列式",
+            "difficulty": 3,
+            "description": "由n²个元素按全排列加权求和确定的数。",
+            "aliases": [
+              "方阵的行列式",
+              "det"
+            ],
+            "prerequisites": [
+              "全排列",
+              "逆序数"
+            ],
+            "definition": "n阶行列式是所有全排列对应乘积按逆序数符号加权求和得到的数。",
+            "example": "二阶行列式等于a11a22−a12a21。"
+          },
+          {
+            "name": "行标与列标",
+            "difficulty": 1,
+            "description": "行列式元素下标中的行、列位置标记。",
+            "aliases": [
+              "行标",
+              "列标"
+            ],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "元素aij的第一个下标i称为行标，第二个下标j称为列标。",
+            "example": "a23的行标为2，列标为3。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "二阶行列式",
+            "difficulty": 1,
+            "description": "二阶行列式等于主对角线积减副对角线积。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "二阶行列式的值为a11a22−a12a21。",
+            "example": "|1 2;3 4|=−2。"
+          },
+          {
+            "name": "三阶行列式",
+            "difficulty": 2,
+            "description": "由六项三元素乘积的代数和表示。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "三阶行列式按定义展开为六项乘积的代数和。",
+            "example": "|1 0 0;0 2 0;0 0 3|=6。"
+          },
+          {
+            "name": "对角线法则",
+            "difficulty": 1,
+            "description": "用于计算二阶和三阶行列式的展开规则。",
+            "aliases": [],
+            "prerequisites": [
+              "二阶行列式",
+              "三阶行列式"
+            ],
+            "definition": "对角线法则按指定实、虚对角线乘积的正负号计算行列式。",
+            "example": "三阶行列式可按六条对角线展开。"
+          },
+          {
+            "name": "下三角行列式",
+            "difficulty": 2,
+            "description": "主对角线上方元素全为零的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "主对角线上方元素全为零的方阵所确定的行列式称为下三角行列式。",
+            "example": "其值为a11a22…ann。"
+          },
+          {
+            "name": "上三角行列式",
+            "difficulty": 2,
+            "description": "主对角线下方元素全为零的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "主对角线下方元素全为零的方阵所确定的行列式称为上三角行列式。",
+            "example": "其值为主对角线元素之积。"
+          },
+          {
+            "name": "对角行列式",
+            "difficulty": 1,
+            "description": "由对角矩阵确定的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "上三角行列式",
+              "下三角行列式"
+            ],
+            "definition": "对角矩阵的行列式称为对角行列式。",
+            "example": "diag(2,3,4)的行列式为24。",
+            "section": "第一节 行列式的定义"
+          },
+          {
+            "name": "斜下三角行列式",
+            "difficulty": 3,
+            "description": "非零项集中在反向对角线及其下方的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式",
+              "逆序数"
+            ],
+            "definition": "教材中由反向对角线结构确定并按反序排列符号计算的特殊行列式称为斜下三角行列式。",
+            "example": "其值含因子(−1)^{n(n−1)/2}。"
+          },
+          {
+            "name": "转置行列式",
+            "difficulty": 2,
+            "description": "将行列式各行换为同序号列所得的行列式。",
+            "aliases": [
+              "转置"
+            ],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "把行列式各行元素换为同序号列元素所得的行列式称为转置行列式。",
+            "example": "D与DT的值相等。"
+          },
+          {
+            "name": "行列式转置性质",
+            "difficulty": 2,
+            "description": "行列式与其转置行列式相等。",
+            "aliases": [],
+            "prerequisites": [
+              "转置行列式"
+            ],
+            "definition": "任意行列式都等于它的转置行列式。",
+            "example": "det(A)=det(AT)。"
+          },
+          {
+            "name": "行列互换变号",
+            "difficulty": 2,
+            "description": "互换两行或两列，行列式变号。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "互换行列式的两行或两列后，所得行列式等于原行列式的相反数。",
+            "example": "交换两行使D变为−D。"
+          },
+          {
+            "name": "行列式为零条件",
+            "difficulty": 2,
+            "description": "相同行、零行或成比例行会使行列式为零。",
+            "aliases": [],
+            "prerequisites": [
+              "行列互换变号",
+              "行列式转置性质"
+            ],
+            "definition": "行列式有两行或两列相同、某行或列全零、或两行列对应成比例时值为零。",
+            "example": "两行相同的行列式等于0。"
+          },
+          {
+            "name": "行列式提公因子",
+            "difficulty": 1,
+            "description": "某行或列的公因子可提到行列式外。",
+            "aliases": [],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "行列式某行或某列的公因子可以提取到行列式记号外。",
+            "example": "某行乘k后，行列式也乘k。"
+          },
+          {
+            "name": "行列式拆分定理",
+            "difficulty": 2,
+            "description": "某行或列元素和可拆成两个行列式之和。",
+            "aliases": [
+              "拆分定理"
+            ],
+            "prerequisites": [
+              "n阶行列式",
+              "行列式提公因子"
+            ],
+            "definition": "行列式某一行或列由两组元素对应相加组成时，可拆为两个行列式之和。",
+            "example": "含bk+ck的行可拆为含bk与含ck的两式。",
+            "section": "第二节 行列式的性质"
+          },
+          {
+            "name": "行列式初等变换",
+            "difficulty": 3,
+            "description": "用行列式性质进行交换、倍乘和倍加变换。",
+            "aliases": [],
+            "prerequisites": [
+              "行列互换变号",
+              "行列式提公因子",
+              "行列式拆分定理"
+            ],
+            "definition": "利用行列式性质对行或列进行变换以化简其计算的操作称为行列式初等变换。",
+            "example": "ri加k倍的rj不改变行列式值。"
+          },
+          {
+            "name": "分块行列式",
+            "difficulty": 3,
+            "description": "按矩阵子块排列形成的行列式。",
+            "aliases": [],
+            "prerequisites": [
+              "上三角行列式",
+              "n阶行列式"
+            ],
+            "definition": "将方阵按若干矩阵子块排列后形成的行列式称为分块行列式。",
+            "example": "块上三角行列式的值为对角块行列式之积。"
+          },
+          {
+            "name": "方阵可逆条件",
+            "difficulty": 2,
+            "description": "方阵可逆当且仅当其行列式非零。",
+            "aliases": [
+              "可逆充要条件"
+            ],
+            "prerequisites": [
+              "n阶行列式",
+              "行列式初等变换"
+            ],
+            "definition": "n阶方阵A可逆的充分必要条件是其行列式A不等于零。",
+            "example": "det(A)=0时，A不可逆。"
+          },
+          {
+            "name": "余子式",
+            "difficulty": 2,
+            "description": "划去元素所在行列后剩余的低阶行列式。",
+            "aliases": [
+              "Mij"
+            ],
+            "prerequisites": [
+              "n阶行列式"
+            ],
+            "definition": "在行列式中划去第i行和第j列后剩下的n−1阶行列式称为aij的余子式。",
+            "example": "M12由划去第1行第2列所得。"
+          },
+          {
+            "name": "代数余子式",
+            "difficulty": 2,
+            "description": "余子式乘以位置符号因子所得的量。",
+            "aliases": [
+              "Aij"
+            ],
+            "prerequisites": [
+              "余子式"
+            ],
+            "definition": "元素aij的代数余子式定义为Aij=(−1)^{i+j}Mij。",
+            "example": "A13=M13，A32=−M32。"
+          },
+          {
+            "name": "按行列展开",
+            "difficulty": 3,
+            "description": "用某行或某列元素与代数余子式乘积求和。",
+            "aliases": [
+              "拉普拉斯展开"
+            ],
+            "prerequisites": [
+              "代数余子式",
+              "行列式拆分定理"
+            ],
+            "definition": "行列式等于任一行或列各元素与对应代数余子式乘积之和。",
+            "example": "按第i行展开为ΣaikAik。"
+          },
+          {
+            "name": "范德蒙德行列式",
+            "difficulty": 3,
+            "description": "元素为变量幂次排列的特殊行列式。",
+            "aliases": [
+              "Vandermonde行列式"
+            ],
+            "prerequisites": [
+              "按行列展开",
+              "行列式初等变换"
+            ],
+            "definition": "各列由同一变量的连续幂次构成的行列式称为范德蒙德行列式。",
+            "example": "Vn=∏(xj−xi)，i<j。",
+            "section": "第三节 行列式按行(列)展开"
+          },
+          {
+            "name": "伴随矩阵",
+            "difficulty": 3,
+            "description": "由代数余子式按转置位置组成的矩阵。",
+            "aliases": [
+              "A*"
+            ],
+            "prerequisites": [
+              "代数余子式"
+            ],
+            "definition": "将方阵各元素的代数余子式构成矩阵后再转置所得矩阵称为伴随矩阵。",
+            "example": "二阶矩阵[a b;c d]的伴随矩阵为[d −b;−c a]。",
+            "section": "第四节 矩阵求逆公式与克莱默法则"
+          },
+          {
+            "name": "矩阵求逆公式",
+            "difficulty": 3,
+            "description": "用行列式和伴随矩阵表示逆矩阵。",
+            "aliases": [],
+            "prerequisites": [
+              "伴随矩阵",
+              "方阵可逆条件"
+            ],
+            "definition": "可逆方阵A的逆矩阵满足A⁻¹=(1/|A|)A*。",
+            "example": "二阶矩阵逆矩阵为伴随矩阵除以ad−bc。",
+            "section": "第四节 矩阵求逆公式与克莱默法则"
+          },
+          {
+            "name": "克莱默法则",
+            "difficulty": 3,
+            "description": "用替换列行列式求线性方程组唯一解。",
+            "aliases": [
+              "Cramer法则"
+            ],
+            "prerequisites": [
+              "矩阵求逆公式",
+              "方阵可逆条件",
+              "按行列展开"
+            ],
+            "definition": "系数行列式非零时，线性方程组的解为xj=Dj/|A|。",
+            "example": "将系数行列式第j列替换为常数列得Dj。",
+            "section": "第四节 矩阵求逆公式与克莱默法则"
+          },
+          {
+            "name": "齐次方程组非零解",
+            "difficulty": 2,
+            "description": "齐次方程组有非零解时系数行列式为零。",
+            "aliases": [],
+            "prerequisites": [
+              "克莱默法则",
+              "方阵可逆条件"
+            ],
+            "definition": "齐次线性方程组有非零解的必要条件是其系数行列式等于零。",
+            "example": "Ax=0有非零解，则|A|=0。"
+          },
+          {
+            "name": "行列式乘法定理",
+            "difficulty": 3,
+            "description": "方阵乘积的行列式等于两个行列式之积。",
+            "aliases": [],
+            "prerequisites": [
+              "方阵可逆条件",
+              "n阶行列式"
+            ],
+            "definition": "任意同阶方阵A、B满足|AB|=|A||B|。",
+            "example": "|A²|=|A|²。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 行列式的定义",
+            "section_key": "c0194094ff",
+            "page_range": [
+              42,
+              48
+            ]
+          },
+          {
+            "name": "第二节 行列式的性质",
+            "section_key": "6d2fd39796",
+            "page_range": [
+              48,
+              58
+            ]
+          },
+          {
+            "name": "第三节 行列式按行(列)展开",
+            "section_key": "e8943167dc",
+            "page_range": [
+              58,
+              64
+            ]
+          },
+          {
+            "name": "第四节 矩阵求逆公式与克莱默法则",
+            "section_key": "7840f2ba1c",
+            "page_range": [
+              65,
+              73
+            ]
+          }
+        ],
+        "chapter_key": "569bde481b",
+        "metadata": {
+          "volume_id": "c0440890b06c",
+          "file_id": "c0440890b06c",
+          "volume_title": "线性代数 (同济大学数学系)",
+          "chapter_order": 2,
+          "raw_heading": "第二章　方阵的行列式"
+        }
+      },
+      {
+        "name": "第三章 向量空间与线性方程组解的结构",
+        "concepts": [
+          {
+            "name": "n维向量",
+            "difficulty": 1,
+            "description": "由n个数构成的有序数组。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由n个数a₁至aₙ组成的有序数组称为n维向量。",
+            "example": "(1,2,3)是一个三维向量。"
+          },
+          {
+            "name": "行向量与列向量",
+            "difficulty": 1,
+            "description": "向量按行或按列排列的两种形式。",
+            "aliases": [],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "横向排列的向量称为行向量，纵向排列的向量称为列向量。",
+            "example": "(1,2)是行向量，(1,2)ᵀ是列向量。"
+          },
+          {
+            "name": "零向量",
+            "difficulty": 1,
+            "description": "所有分量均为零的向量。",
+            "aliases": [],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "分量全部为零的向量称为零向量。",
+            "example": "(0,0,0)是三维零向量。"
+          },
+          {
+            "name": "向量线性运算",
+            "difficulty": 1,
+            "description": "向量的加法与数乘运算。",
+            "aliases": [
+              "向量运算"
+            ],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "向量按分量进行加法和数乘的运算称为向量线性运算。",
+            "example": "(1,2)+(3,4)=(4,6)。"
+          },
+          {
+            "name": "向量组",
+            "difficulty": 1,
+            "description": "若干个维数相同的向量组成的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "n维向量"
+            ],
+            "definition": "由若干个维数相同的向量构成的集合称为向量组。",
+            "example": "(1,0)与(0,1)构成一个向量组。"
+          },
+          {
+            "name": "线性组合",
+            "difficulty": 2,
+            "description": "向量组中向量的数乘和。",
+            "aliases": [],
+            "prerequisites": [
+              "向量组",
+              "向量线性运算"
+            ],
+            "definition": "向量组中各向量分别乘以任意数后再相加所得的表达式称为线性组合。",
+            "example": "2α₁−α₂是α₁、α₂的线性组合。"
+          },
+          {
+            "name": "线性表示",
+            "difficulty": 2,
+            "description": "目标向量可写成向量组的线性组合。",
+            "aliases": [
+              "可由向量组线性表示"
+            ],
+            "prerequisites": [
+              "线性组合"
+            ],
+            "definition": "若向量等于某向量组的一个线性组合，则称该向量可由该向量组线性表示。",
+            "example": "(1,1)可由(1,0)、(0,1)表示为两者之和。"
+          },
+          {
+            "name": "向量组等价",
+            "difficulty": 2,
+            "description": "两个向量组能够相互线性表示。",
+            "aliases": [
+              "等价向量组"
+            ],
+            "prerequisites": [
+              "线性表示"
+            ],
+            "definition": "两个向量组可以相互线性表示时，称它们等价。",
+            "example": "{e₁,e₂}与{e₁,e₁+e₂}等价。"
+          },
+          {
+            "name": "线性相关",
+            "difficulty": 2,
+            "description": "存在不全为零的系数使向量组合为零。",
+            "aliases": [],
+            "prerequisites": [
+              "线性组合",
+              "零向量"
+            ],
+            "definition": "若向量组存在不全为零的系数使其线性组合等于零向量，则称其线性相关。",
+            "example": "(1,0)、(2,0)线性相关。"
+          },
+          {
+            "name": "线性无关",
+            "difficulty": 2,
+            "description": "只有全零系数才能使线性组合为零。",
+            "aliases": [],
+            "prerequisites": [
+              "线性组合",
+              "零向量"
+            ],
+            "definition": "只有所有系数均为零时线性组合才为零向量的向量组称为线性无关。",
+            "example": "(1,0)、(0,1)线性无关。"
+          },
+          {
+            "name": "极大无关组",
+            "difficulty": 3,
+            "description": "向量组中包含向量最多的无关组。",
+            "aliases": [],
+            "prerequisites": [
+              "线性无关",
+              "向量组"
+            ],
+            "definition": "向量组中线性无关且不能再增加原组向量的组称为极大无关组。",
+            "example": "{e₁,e₂}是{e₁,e₂,e₁+e₂}的极大无关组。"
+          },
+          {
+            "name": "向量组的秩",
+            "difficulty": 2,
+            "description": "向量组极大无关组所含向量的个数。",
+            "aliases": [
+              "向量组秩"
+            ],
+            "prerequisites": [
+              "极大无关组"
+            ],
+            "definition": "向量组的秩定义为其任一极大无关组所含向量的个数。",
+            "example": "{e₁,e₂,e₁+e₂}的秩为2。"
+          },
+          {
+            "name": "矩阵的秩",
+            "difficulty": 2,
+            "description": "矩阵中最高阶非零子式的阶数。",
+            "aliases": [
+              "矩阵秩"
+            ],
+            "prerequisites": [],
+            "definition": "矩阵中非零子式的最高阶数称为矩阵的秩。",
+            "example": "单位矩阵I₃的秩为3。"
+          },
+          {
+            "name": "初等变换",
+            "difficulty": 2,
+            "description": "矩阵的换行、倍乘和倍加变换。",
+            "aliases": [
+              "矩阵初等变换"
+            ],
+            "prerequisites": [
+              "矩阵的秩"
+            ],
+            "definition": "交换两行、某行乘非零数或一行加另一行倍数称为初等变换。",
+            "example": "将第二行加上第一行是一次初等行变换。"
+          },
+          {
+            "name": "行列秩关系",
+            "difficulty": 3,
+            "description": "矩阵行向量组秩与列向量组秩相等。",
+            "aliases": [],
+            "prerequisites": [
+              "向量组的秩",
+              "矩阵的秩"
+            ],
+            "definition": "矩阵的行向量组秩、列向量组秩都等于矩阵的秩。",
+            "example": "秩为2的矩阵，其行列向量组秩均为2。"
+          },
+          {
+            "name": "系数矩阵",
+            "difficulty": 1,
+            "description": "由线性方程组未知量系数组成的矩阵。",
+            "aliases": [],
+            "prerequisites": [
+              "向量组"
+            ],
+            "definition": "线性方程组中未知量的系数按原位置排列成的矩阵称为系数矩阵。",
+            "example": "x+y=1的系数矩阵为(1,1)。"
+          },
+          {
+            "name": "增广矩阵",
+            "difficulty": 2,
+            "description": "系数矩阵右侧附加常数列所得的矩阵。",
+            "aliases": [],
+            "prerequisites": [
+              "系数矩阵"
+            ],
+            "definition": "将线性方程组的常数列附加到系数矩阵右侧所得的矩阵称为增广矩阵。",
+            "example": "x+y=1的增广矩阵为(1 1｜1)。"
+          },
+          {
+            "name": "矩阵方程有解判定",
+            "difficulty": 3,
+            "description": "利用系数矩阵与增广矩阵秩判断有解性。",
+            "aliases": [],
+            "prerequisites": [
+              "矩阵的秩",
+              "增广矩阵"
+            ],
+            "definition": "矩阵方程AX=B有解当且仅当R(A)=R(A,B)。",
+            "example": "若R(A)=R(A,B)，则AX=B有解。"
+          },
+          {
+            "name": "线性方程组有解判定",
+            "difficulty": 3,
+            "description": "用系数矩阵和增广矩阵的秩判定解的存在。",
+            "aliases": [],
+            "prerequisites": [
+              "系数矩阵",
+              "增广矩阵",
+              "矩阵的秩"
+            ],
+            "definition": "非齐次线性方程组有解当且仅当系数矩阵与增广矩阵秩相等。",
+            "example": "R(A)<R(Ā)时方程组无解。"
+          },
+          {
+            "name": "齐次线性方程组",
+            "difficulty": 1,
+            "description": "常数项全部为零的线性方程组。",
+            "aliases": [],
+            "prerequisites": [
+              "线性方程组"
+            ],
+            "definition": "常数项全部为零的线性方程组称为齐次线性方程组。",
+            "example": "x+y=0是齐次线性方程组。"
+          },
+          {
+            "name": "基础解系",
+            "difficulty": 3,
+            "description": "齐次方程组解空间的一组基。",
+            "aliases": [],
+            "prerequisites": [
+              "齐次线性方程组",
+              "线性无关"
+            ],
+            "definition": "齐次线性方程组解向量组的一个极大无关组称为基础解系。",
+            "example": "Ax=0的基础解系可生成其全部解。"
+          },
+          {
+            "name": "齐次解空间",
+            "difficulty": 3,
+            "description": "齐次方程组全部解向量构成的集合。",
+            "aliases": [
+              "解空间"
+            ],
+            "prerequisites": [
+              "齐次线性方程组",
+              "基础解系"
+            ],
+            "definition": "齐次线性方程组的全部解向量组成的集合称为解空间。",
+            "example": "Ax=0的解集合S={x|Ax=0}。",
+            "section": "第五节 向量空间"
+          },
+          {
+            "name": "齐次方程组解结构",
+            "difficulty": 3,
+            "description": "齐次方程组的解由基础解系线性生成。",
+            "aliases": [],
+            "prerequisites": [
+              "基础解系",
+              "齐次解空间"
+            ],
+            "definition": "齐次方程组的任意解都可由基础解系唯一线性表示。",
+            "example": "x=c₁ξ₁+c₂ξ₂是齐次方程组的通解。"
+          },
+          {
+            "name": "非齐次方程组解结构",
+            "difficulty": 3,
+            "description": "非齐次解等于特解与齐次通解之和。",
+            "aliases": [],
+            "prerequisites": [
+              "齐次方程组解结构"
+            ],
+            "definition": "非齐次方程组的全部解由一个特解加上对应齐次方程组的全部解构成。",
+            "example": "x=x₀+c₁ξ₁是非齐次方程组的通解。"
+          },
+          {
+            "name": "向量空间",
+            "difficulty": 2,
+            "description": "对加法和数乘运算封闭的向量集合。",
+            "aliases": [],
+            "prerequisites": [
+              "向量线性运算"
+            ],
+            "definition": "对通常向量加法和数乘运算构成向量空间的集合称为向量空间。",
+            "example": "ℝⁿ是一个向量空间。"
+          },
+          {
+            "name": "生成向量空间",
+            "difficulty": 2,
+            "description": "由向量组全部线性组合构成的空间。",
+            "aliases": [
+              "向量组生成空间"
+            ],
+            "prerequisites": [
+              "线性组合",
+              "向量空间"
+            ],
+            "definition": "向量组所有线性组合组成的集合称为该向量组生成的向量空间。",
+            "example": "L(e₁,e₂)=ℝ²。"
+          },
+          {
+            "name": "向量空间的基",
+            "difficulty": 3,
+            "description": "既线性无关又生成该空间的向量组。",
+            "aliases": [
+              "基"
+            ],
+            "prerequisites": [
+              "向量空间",
+              "线性无关",
+              "生成向量空间"
+            ],
+            "definition": "既线性无关又能生成向量空间的向量组称为该空间的一组基。",
+            "example": "e₁、e₂是ℝ²的一组基。",
+            "section": "第五节 向量空间"
+          },
+          {
+            "name": "向量空间维数",
+            "difficulty": 2,
+            "description": "向量空间任一组基所含向量的个数。",
+            "aliases": [
+              "维数"
+            ],
+            "prerequisites": [
+              "向量空间的基"
+            ],
+            "definition": "向量空间一组基中向量的个数称为该空间的维数。",
+            "example": "ℝ³的维数为3。"
+          },
+          {
+            "name": "基下坐标",
+            "difficulty": 3,
+            "description": "向量在给定基下线性表示的系数。",
+            "aliases": [
+              "向量坐标"
+            ],
+            "prerequisites": [
+              "向量空间的基",
+              "线性表示"
+            ],
+            "definition": "向量在某组基下唯一线性表示式中的系数称为其在该基下的坐标。",
+            "example": "α=2e₁+3e₂的坐标为(2,3)ᵀ。"
+          },
+          {
+            "name": "过渡矩阵",
+            "difficulty": 3,
+            "description": "联系同一空间两组基的可逆矩阵。",
+            "aliases": [
+              "基过渡矩阵"
+            ],
+            "prerequisites": [
+              "向量空间的基",
+              "基下坐标"
+            ],
+            "definition": "将一组基的向量表示为另一组基线性组合所得的系数矩阵称为过渡矩阵。",
+            "example": "若B=AP，则P是从基A到基B的过渡矩阵。",
+            "section": "第五节 向量空间"
+          },
+          {
+            "name": "坐标变换",
+            "difficulty": 3,
+            "description": "同一向量在两组基下坐标之间的变换。",
+            "aliases": [
+              "坐标变换公式"
+            ],
+            "prerequisites": [
+              "过渡矩阵",
+              "基下坐标"
+            ],
+            "definition": "利用过渡矩阵将向量在一组基下的坐标转换为另一组基下坐标的过程称为坐标变换。",
+            "example": "若x=Py，则P实现两组基间的坐标变换。",
+            "section": "第五节 向量空间"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 向量组及其线性组合",
+            "section_key": "16b43f3d7b",
+            "page_range": [
+              74,
+              81
+            ]
+          },
+          {
+            "name": "第二节 向量组的线性相关性",
+            "section_key": "01b6398533",
+            "page_range": [
+              81,
+              88
+            ]
+          },
+          {
+            "name": "第三节 向量组的秩与矩阵的秩",
+            "section_key": "7e51764d72",
+            "page_range": [
+              88,
+              95
+            ]
+          },
+          {
+            "name": "第四节 线性方程组解的结构",
+            "section_key": "35eb625cf1",
+            "page_range": [
+              95,
+              104
+            ]
+          },
+          {
+            "name": "第五节 向量空间",
+            "section_key": "5777d52b8b",
+            "page_range": [
+              104,
+              115
+            ]
+          }
+        ],
+        "chapter_key": "d4ba2fa889",
+        "metadata": {
+          "volume_id": "c0440890b06c",
+          "file_id": "c0440890b06c",
+          "volume_title": "线性代数 (同济大学数学系)",
+          "chapter_order": 3,
+          "raw_heading": "第三章　向量空间与线性方程组解的结构"
+        }
+      },
+      {
+        "name": "第四章 相似矩阵及二次型",
+        "concepts": [
+          {
+            "name": "向量内积",
+            "difficulty": 1,
+            "description": "用分量乘积之和定义的向量数量积",
+            "aliases": [
+              "内积",
+              "数量积"
+            ],
+            "prerequisites": [],
+            "definition": "向量x与y的内积定义为[x,y]=xᵀy。",
+            "example": "x=(1,2)，y=(3,4)时，[x,y]=11"
+          },
+          {
+            "name": "柯西施瓦茨不等式",
+            "difficulty": 2,
+            "description": "内积平方不超过两个向量自内积之积",
+            "aliases": [
+              "施瓦茨不等式"
+            ],
+            "prerequisites": [
+              "向量内积"
+            ],
+            "definition": "任意向量x、y满足[x,y]²≤[x,x][y,y]。",
+            "example": "x=(1,0)，y=(1,1)满足1≤2",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "向量长度",
+            "difficulty": 1,
+            "description": "由内积定义的向量长度或范数",
+            "aliases": [
+              "范数"
+            ],
+            "prerequisites": [
+              "向量内积"
+            ],
+            "definition": "向量x的长度定义为‖x‖=√[x,x]。",
+            "example": "x=(3,4)时，‖x‖=5",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "单位向量",
+            "difficulty": 1,
+            "description": "长度等于1的向量",
+            "aliases": [],
+            "prerequisites": [
+              "向量长度"
+            ],
+            "definition": "长度满足‖x‖=1的向量称为单位向量。",
+            "example": "(1,0)是二维单位向量",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "向量单位化",
+            "difficulty": 2,
+            "description": "将非零向量化为单位向量的过程",
+            "aliases": [
+              "单位化"
+            ],
+            "prerequisites": [
+              "向量长度",
+              "单位向量"
+            ],
+            "definition": "非零向量α除以其长度得到单位向量的过程称为单位化。",
+            "example": "(3,4)单位化为(3/5,4/5)"
+          },
+          {
+            "name": "向量夹角",
+            "difficulty": 2,
+            "description": "由内积和长度定义的两个向量间角度",
+            "aliases": [
+              "夹角"
+            ],
+            "prerequisites": [
+              "向量内积",
+              "向量长度"
+            ],
+            "definition": "非零向量x、y的夹角为arccos([x,y]/(‖x‖‖y‖))。",
+            "example": "(1,0)与(0,1)夹角为π/2",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "向量正交",
+            "difficulty": 1,
+            "description": "内积为零的向量关系",
+            "aliases": [
+              "正交"
+            ],
+            "prerequisites": [
+              "向量内积"
+            ],
+            "definition": "当[x,y]=0时，称向量x与y正交。",
+            "example": "(1,0)与(0,1)正交"
+          },
+          {
+            "name": "正交向量组",
+            "difficulty": 2,
+            "description": "由两两正交的非零向量组成的向量组",
+            "aliases": [],
+            "prerequisites": [
+              "向量正交"
+            ],
+            "definition": "一组两两正交的非零向量称为正交向量组。",
+            "example": "标准坐标向量组是正交向量组",
+            "section": "第一节 向量的内积、长度及正交性"
+          },
+          {
+            "name": "正交向量组线性无关",
+            "difficulty": 2,
+            "description": "正交向量组必然具有线性无关性",
+            "aliases": [],
+            "prerequisites": [
+              "正交向量组"
+            ],
+            "definition": "正交向量组中的向量必定线性无关。",
+            "example": "三个两两正交的非零向量线性无关"
+          },
+          {
+            "name": "规范正交基",
+            "difficulty": 2,
+            "description": "两两正交且均为单位向量的基",
+            "aliases": [
+              "标准正交基",
+              "正交规范基"
+            ],
+            "prerequisites": [
+              "正交向量组",
+              "单位向量"
+            ],
+            "definition": "向量空间中两两正交且都是单位向量的基称为规范正交基。",
+            "example": "e₁,e₂,e₃是ℝ³的规范正交基"
+          },
+          {
+            "name": "施密特正交化",
+            "difficulty": 3,
+            "description": "将一组基转化为等价正交组的方法",
+            "aliases": [
+              "施密特法",
+              "正交化过程"
+            ],
+            "prerequisites": [
+              "向量内积",
+              "正交向量组",
+              "规范正交基"
+            ],
+            "definition": "从线性无关向量组逐步减去投影分量以构造正交组的过程。",
+            "example": "由α₁,α₂构造β₂=α₂-([β₁,α₂]/[β₁,β₁])β₁"
+          },
+          {
+            "name": "正交矩阵",
+            "difficulty": 2,
+            "description": "转置与自身乘积为单位阵的方阵",
+            "aliases": [
+              "正交阵"
+            ],
+            "prerequisites": [
+              "规范正交基"
+            ],
+            "definition": "满足AᵀA=E的方阵称为正交矩阵。",
+            "example": "二维旋转矩阵是正交矩阵"
+          },
+          {
+            "name": "正交变换",
+            "difficulty": 2,
+            "description": "由正交矩阵给出的线性变换",
+            "aliases": [],
+            "prerequisites": [
+              "正交矩阵"
+            ],
+            "definition": "形如y=Px且P为正交矩阵的线性变换称为正交变换。",
+            "example": "y=Px保持向量长度不变"
+          },
+          {
+            "name": "特征值",
+            "difficulty": 2,
+            "description": "使矩阵作用等同于数乘的标量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若存在非零向量α使Aα=λα，则λ称为A的特征值。",
+            "example": "对角矩阵的对角元是其特征值"
+          },
+          {
+            "name": "特征向量",
+            "difficulty": 2,
+            "description": "对应特征值且被矩阵保持方向的非零向量",
+            "aliases": [],
+            "prerequisites": [
+              "特征值"
+            ],
+            "definition": "满足Aα=λα的非零向量α称为A对应于λ的特征向量。",
+            "example": "单位坐标向量是对角矩阵的特征向量"
+          },
+          {
+            "name": "特征多项式",
+            "difficulty": 2,
+            "description": "由|A-λE|得到的关于λ的多项式",
+            "aliases": [],
+            "prerequisites": [
+              "特征值"
+            ],
+            "definition": "f(λ)=|A-λE|称为矩阵A的特征多项式。",
+            "example": "diag(1,2)的特征多项式为(1-λ)(2-λ)"
+          },
+          {
+            "name": "特征方程",
+            "difficulty": 2,
+            "description": "令特征多项式为零得到的方程",
+            "aliases": [],
+            "prerequisites": [
+              "特征多项式"
+            ],
+            "definition": "方程f(λ)=0称为矩阵A的特征方程。",
+            "example": "diag(1,2)的特征方程为(1-λ)(2-λ)=0"
+          },
+          {
+            "name": "相似矩阵",
+            "difficulty": 2,
+            "description": "通过可逆矩阵相似变换相联系的矩阵",
+            "aliases": [
+              "矩阵相似"
+            ],
+            "prerequisites": [
+              "特征值"
+            ],
+            "definition": "若存在可逆矩阵P使P⁻¹AP=B，则称A与B相似。",
+            "example": "B=P⁻¹AP时，A与B相似"
+          },
+          {
+            "name": "相似变换",
+            "difficulty": 2,
+            "description": "对矩阵实施P⁻¹AP形式的变换",
+            "aliases": [],
+            "prerequisites": [
+              "相似矩阵"
+            ],
+            "definition": "对矩阵A进行P⁻¹AP运算的过程称为相似变换。",
+            "example": "P⁻¹AP=Λ将A变为对角阵",
+            "section": "第三节 相似矩阵"
+          },
+          {
+            "name": "相似对角化",
+            "difficulty": 3,
+            "description": "通过相似变换把矩阵化为对角阵",
+            "aliases": [
+              "矩阵对角化"
+            ],
+            "prerequisites": [
+              "相似矩阵",
+              "特征向量"
+            ],
+            "definition": "存在可逆P使P⁻¹AP为对角阵，称A可相似对角化。",
+            "example": "有三个线性无关特征向量的三阶矩阵可对角化"
+          },
+          {
+            "name": "对角化判定",
+            "difficulty": 3,
+            "description": "矩阵可对角化当且仅有足够特征向量",
+            "aliases": [],
+            "prerequisites": [
+              "相似对角化",
+              "特征向量"
+            ],
+            "definition": "n阶矩阵可相似对角化当且仅当有n个线性无关的特征向量。",
+            "example": "特征值两两不等时必可对角化"
+          },
+          {
+            "name": "实对称矩阵",
+            "difficulty": 1,
+            "description": "实矩阵且转置等于自身的矩阵",
+            "aliases": [
+              "对称阵"
+            ],
+            "prerequisites": [],
+            "definition": "满足Aᵀ=A的实矩阵称为实对称矩阵。",
+            "example": "[[1,2],[2,3]]是实对称矩阵"
+          },
+          {
+            "name": "实对称矩阵正交对角化",
+            "difficulty": 3,
+            "description": "实对称矩阵可由正交变换化为实对角阵",
+            "aliases": [
+              "谱分解"
+            ],
+            "prerequisites": [
+              "实对称矩阵",
+              "正交矩阵",
+              "相似对角化"
+            ],
+            "definition": "任意实对称矩阵都存在正交矩阵P使PᵀAP为实对角阵。",
+            "example": "对称矩阵可取单位正交特征向量作P的列"
+          },
+          {
+            "name": "二次型",
+            "difficulty": 1,
+            "description": "变量平方项与两两乘积项组成的齐次二次式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "含变量二次项及交叉项的齐次二次多项式称为二次型。",
+            "example": "x₁²+2x₁x₂+3x₂²是二次型"
+          },
+          {
+            "name": "二次型矩阵表示",
+            "difficulty": 2,
+            "description": "用对称矩阵表示二次型的形式",
+            "aliases": [],
+            "prerequisites": [
+              "二次型",
+              "实对称矩阵"
+            ],
+            "definition": "二次型可表示为f=xᵀAx，其中A为对称矩阵。",
+            "example": "x₁²+2x₁x₂+x₂²=xᵀ[[1,1],[1,1]]x"
+          },
+          {
+            "name": "二次型的秩",
+            "difficulty": 2,
+            "description": "二次型对应矩阵的秩",
+            "aliases": [],
+            "prerequisites": [
+              "二次型矩阵表示"
+            ],
+            "definition": "二次型的秩定义为其矩阵表示中对称矩阵A的秩。",
+            "example": "diag(1,2,0)表示的二次型秩为2"
+          },
+          {
+            "name": "二次型标准形",
+            "difficulty": 2,
+            "description": "只含变量平方项的二次型形式",
+            "aliases": [
+              "标准形"
+            ],
+            "prerequisites": [
+              "二次型",
+              "二次型矩阵表示"
+            ],
+            "definition": "经可逆线性变换化为平方项线性组合的形式称为标准形。",
+            "example": "f=4y₁²+y₂²+y₃²是标准形"
+          },
+          {
+            "name": "二次型规范形",
+            "difficulty": 2,
+            "description": "平方项系数仅为1、-1或0的标准形",
+            "aliases": [
+              "规范形"
+            ],
+            "prerequisites": [
+              "二次型标准形"
+            ],
+            "definition": "标准形中非零系数均化为1或−1的形式称为规范形。",
+            "example": "f=z₁²−z₂²是规范形"
+          },
+          {
+            "name": "正交变换化标准形",
+            "difficulty": 3,
+            "description": "利用正交变换消去二次型交叉项",
+            "aliases": [],
+            "prerequisites": [
+              "二次型矩阵表示",
+              "实对称矩阵正交对角化",
+              "正交变换"
+            ],
+            "definition": "利用实对称矩阵的正交对角化将二次型化为标准形的方法。",
+            "example": "若PᵀAP=Λ，则x=Py使f=yᵀΛy"
+          },
+          {
+            "name": "配方法",
+            "difficulty": 2,
+            "description": "通过逐步配平方化二次型的方法",
+            "aliases": [],
+            "prerequisites": [
+              "二次型标准形"
+            ],
+            "definition": "利用平方项逐步配方并作可逆变量替换化二次型的方法称为配方法。",
+            "example": "x₁²+2x₁x₂+x₂²=(x₁+x₂)²"
+          },
+          {
+            "name": "惯性定理",
+            "difficulty": 3,
+            "description": "不同标准形的正负系数个数保持不变",
+            "aliases": [],
+            "prerequisites": [
+              "二次型标准形",
+              "二次型的秩"
+            ],
+            "definition": "同一二次型在可逆变换下标准形中正、负系数的个数分别相等。",
+            "example": "不同变换所得正惯性指数相同",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "正惯性指数",
+            "difficulty": 2,
+            "description": "二次型标准形中正系数的个数",
+            "aliases": [],
+            "prerequisites": [
+              "二次型标准形",
+              "惯性定理"
+            ],
+            "definition": "二次型标准形中正系数的个数称为正惯性指数。",
+            "example": "y₁²+y₂²−y₃²的正惯性指数为2",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "正定二次型",
+            "difficulty": 2,
+            "description": "除零向量外取值始终为正的二次型",
+            "aliases": [],
+            "prerequisites": [
+              "二次型",
+              "二次型矩阵表示"
+            ],
+            "definition": "对任意x≠0均有xᵀAx>0的二次型称为正定二次型。",
+            "example": "x₁²+x₂²是正定二次型",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "正定矩阵",
+            "difficulty": 2,
+            "description": "对应二次型为正定的对称矩阵",
+            "aliases": [
+              "正定阵"
+            ],
+            "prerequisites": [
+              "正定二次型",
+              "实对称矩阵"
+            ],
+            "definition": "使xᵀAx对任意非零x均为正的对称矩阵称为正定矩阵。",
+            "example": "单位矩阵E是正定矩阵",
+            "section": "第六节 正定二次型与正定矩阵"
+          },
+          {
+            "name": "赫尔维茨定理",
+            "difficulty": 3,
+            "description": "用顺序主子式判定对称矩阵正定性",
+            "aliases": [
+              "顺序主子式判别法"
+            ],
+            "prerequisites": [
+              "正定矩阵"
+            ],
+            "definition": "对称矩阵正定当且仅当各阶顺序主子式都为正。",
+            "example": "diag(1,2)的顺序主子式均为正",
+            "section": "第六节 正定二次型与正定矩阵"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 向量的内积、长度及正交性",
+            "section_key": "87e5cad662",
+            "page_range": [
+              116,
+              122
+            ]
+          },
+          {
+            "name": "第二节 方阵的特征值与特征向量",
+            "section_key": "e128069594",
+            "page_range": [
+              122,
+              129
+            ]
+          },
+          {
+            "name": "第三节 相似矩阵",
+            "section_key": "1da09c371e",
+            "page_range": [
+              129,
+              132
+            ]
+          },
+          {
+            "name": "第四节 实对称矩阵的相似对角化",
+            "section_key": "c20f32b73a",
+            "page_range": [
+              132,
+              136
+            ]
+          },
+          {
+            "name": "第五节 二次型及其标准形",
+            "section_key": "ed835d9608",
+            "page_range": [
+              136,
+              143
+            ]
+          },
+          {
+            "name": "第六节 正定二次型与正定矩阵",
+            "section_key": "b198843ae8",
+            "page_range": [
+              143,
+              149
+            ]
+          }
+        ],
+        "chapter_key": "80ce1b4d86",
+        "metadata": {
+          "volume_id": "c0440890b06c",
+          "file_id": "c0440890b06c",
+          "volume_title": "线性代数 (同济大学数学系)",
+          "chapter_order": 4,
+          "raw_heading": "第四章　相似矩阵及二次型"
+        }
+      },
+      {
+        "name": "第五章 线性空间与线性变换",
+        "concepts": [
+          {
+            "name": "线性空间",
+            "difficulty": 3,
+            "description": "在指定线性运算下满足八条规律的非空集合",
+            "aliases": [
+              "向量空间"
+            ],
+            "prerequisites": [],
+            "definition": "集合及其加法、数乘运算满足八条运算规律时称为线性空间。",
+            "example": "次数不超过n的多项式全体构成线性空间。"
+          },
+          {
+            "name": "线性运算",
+            "difficulty": 2,
+            "description": "线性空间中满足八条规律的加法与数乘",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "线性空间中满足八条运算规律的加法和数乘运算统称为线性运算。",
+            "example": "多项式的通常加法和数乘是线性运算。"
+          },
+          {
+            "name": "线性空间性质",
+            "difficulty": 3,
+            "description": "零元素、负元素及数乘运算满足的基本结论",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "线性空间中零元素和负元素具有唯一性，并满足零向量数乘等性质。",
+            "example": "任意α满足0α=0且(−1)α=−α。"
+          },
+          {
+            "name": "封闭性",
+            "difficulty": 2,
+            "description": "运算结果仍属于原集合的性质",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间",
+              "线性运算"
+            ],
+            "definition": "集合对所定义的加法和数乘封闭，是构成线性空间或子空间的重要条件。",
+            "example": "次数不超过n的多项式对加法封闭。"
+          },
+          {
+            "name": "子空间",
+            "difficulty": 3,
+            "description": "在线性空间中自身构成线性空间的非空子集",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间",
+              "封闭性"
+            ],
+            "definition": "线性空间V的非空子集W若继承运算后构成线性空间，则称W为V的子空间。",
+            "example": "齐次方程组Ax=0的解空间是ℝⁿ的子空间。"
+          },
+          {
+            "name": "线性表示",
+            "difficulty": 2,
+            "description": "用向量的线性组合表示另一个向量",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "向量α可写成若干向量的线性组合时，称α可由这些向量线性表示。",
+            "example": "p=a₀+a₁x可表示为a₀·1+a₁·x。"
+          },
+          {
+            "name": "线性无关",
+            "difficulty": 3,
+            "description": "只有系数全为零才能得到零向量的向量组",
+            "aliases": [],
+            "prerequisites": [
+              "线性表示"
+            ],
+            "definition": "向量组的线性组合等于零向量时所有系数均为零，则该向量组线性无关。",
+            "example": "多项式组1,x,x²线性无关。"
+          },
+          {
+            "name": "线性相关",
+            "difficulty": 3,
+            "description": "存在不全为零的系数使线性组合为零向量",
+            "aliases": [],
+            "prerequisites": [
+              "线性表示"
+            ],
+            "definition": "向量组存在一组不全为零的系数使其线性组合等于零向量，则称线性相关。",
+            "example": "向量v与2v组成的向量组线性相关。"
+          },
+          {
+            "name": "基",
+            "difficulty": 3,
+            "description": "既线性无关又能表示空间任意元素的向量组",
+            "aliases": [
+              "空间的一组基"
+            ],
+            "prerequisites": [
+              "线性空间",
+              "线性无关",
+              "线性表示"
+            ],
+            "definition": "线性空间中线性无关且能表示任意元素的有限向量组称为该空间的一组基。",
+            "example": "P[x]₄的一组基是1,x,x²,x³,x⁴。"
+          },
+          {
+            "name": "维数",
+            "difficulty": 3,
+            "description": "线性空间任一组基所含向量的个数",
+            "aliases": [
+              "空间维数"
+            ],
+            "prerequisites": [
+              "基"
+            ],
+            "definition": "线性空间一组基中向量的个数称为该空间的维数。",
+            "example": "P[x]₄的维数为5。"
+          },
+          {
+            "name": "零空间",
+            "difficulty": 2,
+            "description": "只含一个零元素的线性空间",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间",
+              "零元素"
+            ],
+            "definition": "只含一个零元素的线性空间称为零空间，其维数规定为0。",
+            "example": "仅含零向量的集合是零空间。",
+            "section": "第二节 维数、基与坐标"
+          },
+          {
+            "name": "坐标",
+            "difficulty": 3,
+            "description": "向量在指定基下唯一对应的有序数组",
+            "aliases": [
+              "基下坐标"
+            ],
+            "prerequisites": [
+              "基",
+              "线性表示"
+            ],
+            "definition": "向量在一组基下线性表示式中的系数组成的有序数组称为其坐标。",
+            "example": "p=a₀+a₁x在基1,x下坐标为(a₀,a₁)ᵀ。"
+          },
+          {
+            "name": "基变换",
+            "difficulty": 4,
+            "description": "同一线性空间中从一组基换到另一组基",
+            "aliases": [],
+            "prerequisites": [
+              "基",
+              "过渡矩阵"
+            ],
+            "definition": "用一组基表示另一组基的过程称为基变换。",
+            "example": "将基1,x换为基1,1+x。"
+          },
+          {
+            "name": "过渡矩阵",
+            "difficulty": 4,
+            "description": "表示两组基之间转换关系的可逆矩阵",
+            "aliases": [
+              "基变换矩阵"
+            ],
+            "prerequisites": [
+              "基变换",
+              "基"
+            ],
+            "definition": "将新基向量用旧基表示所得的矩阵称为两组基之间的过渡矩阵。",
+            "example": "(β₁,…,βₙ)=(α₁,…,αₙ)P。"
+          },
+          {
+            "name": "坐标变换",
+            "difficulty": 4,
+            "description": "同一向量在不同基下坐标之间的转换",
+            "aliases": [],
+            "prerequisites": [
+              "坐标",
+              "过渡矩阵"
+            ],
+            "definition": "利用过渡矩阵将向量在一组基下的坐标变为另一组基下坐标的过程称为坐标变换。",
+            "example": "x=Py，或y=P⁻¹x。"
+          },
+          {
+            "name": "线性变换",
+            "difficulty": 3,
+            "description": "保持向量加法和数乘运算的映射",
+            "aliases": [],
+            "prerequisites": [
+              "线性空间"
+            ],
+            "definition": "满足T(α+β)=T(α)+T(β)且T(λα)=λT(α)的映射称为线性变换。",
+            "example": "矩阵变换T(x)=Ax是线性变换。"
+          },
+          {
+            "name": "像空间",
+            "difficulty": 4,
+            "description": "线性变换所有像组成的线性空间",
+            "aliases": [
+              "变换的像集"
+            ],
+            "prerequisites": [
+              "线性变换",
+              "子空间"
+            ],
+            "definition": "线性变换T的所有像构成的集合T(V)称为T的像空间。",
+            "example": "T(x)=Ax的像空间由A的列向量生成。",
+            "section": "第三节 线性变换"
+          },
+          {
+            "name": "核",
+            "difficulty": 4,
+            "description": "被线性变换映为零向量的全部向量",
+            "aliases": [
+              "变换的核空间"
+            ],
+            "prerequisites": [
+              "线性变换",
+              "子空间"
+            ],
+            "definition": "满足Tα=0的所有α组成的子空间称为线性变换T的核。",
+            "example": "T(x)=Ax的核是齐次方程组Ax=0的解空间。"
+          },
+          {
+            "name": "线性变换矩阵",
+            "difficulty": 4,
+            "description": "线性变换在指定基下对应的方阵",
+            "aliases": [
+              "变换矩阵"
+            ],
+            "prerequisites": [
+              "线性变换",
+              "基",
+              "坐标"
+            ],
+            "definition": "将基向量的像用该基表示所得的矩阵称为线性变换在此基下的矩阵。",
+            "example": "微分运算在基1,x,x²,x³下有对应矩阵。",
+            "section": "第三节 线性变换"
+          },
+          {
+            "name": "相似变换",
+            "difficulty": 4,
+            "description": "同一线性变换不同基下矩阵间的转换关系",
+            "aliases": [],
+            "prerequisites": [
+              "线性变换矩阵",
+              "过渡矩阵"
+            ],
+            "definition": "若两个矩阵满足B=P⁻¹AP，则称B由A经过相似变换得到。",
+            "example": "换基时线性变换矩阵满足B=P⁻¹AP。",
+            "section": "第三节 线性变换"
+          },
+          {
+            "name": "线性变换的秩",
+            "difficulty": 4,
+            "description": "线性变换像空间的维数",
+            "aliases": [
+              "变换的秩"
+            ],
+            "prerequisites": [
+              "像空间",
+              "维数",
+              "线性变换"
+            ],
+            "definition": "线性变换像空间T(V)的维数称为该线性变换的秩。",
+            "example": "若矩阵A的秩为r，则对应变换的秩为r。",
+            "section": "第三节 线性变换"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 线性空间的定义与性质",
+            "section_key": "231e7b0e0c",
+            "page_range": [
+              150,
+              154
+            ]
+          },
+          {
+            "name": "第二节 维数、基与坐标",
+            "section_key": "47780139da",
+            "page_range": [
+              154,
+              158
+            ]
+          },
+          {
+            "name": "第三节 线性变换",
+            "section_key": "a4d393b128",
+            "page_range": [
+              158,
+              185
+            ]
+          }
+        ],
+        "chapter_key": "eea4a5a0c9",
+        "metadata": {
+          "volume_id": "c0440890b06c",
+          "file_id": "c0440890b06c",
+          "volume_title": "线性代数 (同济大学数学系)",
+          "chapter_order": 5,
+          "raw_heading": "第五章　线性空间与线性变换"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "58b26cb94f": [
+        8,
+        15
+      ],
+      "第一节 矩阵的概念及运算": [
+        8,
+        15
+      ],
+      "3ab70cbadc": [
+        15,
+        20
+      ],
+      "第二节 分块矩阵": [
+        15,
+        20
+      ],
+      "bba3572a9e": [
+        21,
+        30
+      ],
+      "第三节 线性方程组与矩阵的初等变换": [
+        21,
+        30
+      ],
+      "cd11afad6a": [
+        30,
+        41
+      ],
+      "第四节 初等矩阵与矩阵的逆矩阵": [
+        30,
+        41
+      ],
+      "c0194094ff": [
+        42,
+        48
+      ],
+      "第一节 行列式的定义": [
+        42,
+        48
+      ],
+      "6d2fd39796": [
+        48,
+        58
+      ],
+      "第二节 行列式的性质": [
+        48,
+        58
+      ],
+      "e8943167dc": [
+        58,
+        64
+      ],
+      "第三节 行列式按行(列)展开": [
+        58,
+        64
+      ],
+      "7840f2ba1c": [
+        65,
+        73
+      ],
+      "第四节 矩阵求逆公式与克莱默法则": [
+        65,
+        73
+      ],
+      "16b43f3d7b": [
+        74,
+        81
+      ],
+      "第一节 向量组及其线性组合": [
+        74,
+        81
+      ],
+      "01b6398533": [
+        81,
+        88
+      ],
+      "第二节 向量组的线性相关性": [
+        81,
+        88
+      ],
+      "7e51764d72": [
+        88,
+        95
+      ],
+      "第三节 向量组的秩与矩阵的秩": [
+        88,
+        95
+      ],
+      "35eb625cf1": [
+        95,
+        104
+      ],
+      "第四节 线性方程组解的结构": [
+        95,
+        104
+      ],
+      "5777d52b8b": [
+        104,
+        115
+      ],
+      "第五节 向量空间": [
+        104,
+        115
+      ],
+      "87e5cad662": [
+        116,
+        122
+      ],
+      "第一节 向量的内积、长度及正交性": [
+        116,
+        122
+      ],
+      "e128069594": [
+        122,
+        129
+      ],
+      "第二节 方阵的特征值与特征向量": [
+        122,
+        129
+      ],
+      "1da09c371e": [
+        129,
+        132
+      ],
+      "第三节 相似矩阵": [
+        129,
+        132
+      ],
+      "c20f32b73a": [
+        132,
+        136
+      ],
+      "第四节 实对称矩阵的相似对角化": [
+        132,
+        136
+      ],
+      "ed835d9608": [
+        136,
+        143
+      ],
+      "第五节 二次型及其标准形": [
+        136,
+        143
+      ],
+      "b198843ae8": [
+        143,
+        149
+      ],
+      "第六节 正定二次型与正定矩阵": [
+        143,
+        149
+      ],
+      "231e7b0e0c": [
+        150,
+        154
+      ],
+      "第一节 线性空间的定义与性质": [
+        150,
+        154
+      ],
+      "47780139da": [
+        154,
+        158
+      ],
+      "第二节 维数、基与坐标": [
+        154,
+        158
+      ],
+      "a4d393b128": [
+        158,
+        185
+      ],
+      "第三节 线性变换": [
+        158,
+        185
+      ]
+    }
+  }
+}

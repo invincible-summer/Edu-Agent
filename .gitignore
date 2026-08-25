@@ -1,0 +1,75 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+secrets.json
+auth.json
+docs/administrator.txt
+
+traces/
+*.log
+tool-output/
+uploads/
+chroma_db/
+# Private conversations, uploaded files, workspaces, and per-user library data
+# are runtime state. Keep only the public textbook namespace below.
+chat_history/*
+!chat_history/library/
+chat_history/library/*
+!chat_history/library/public.json
+!chat_history/library/public.textbooks.json
+!chat_history/library/data/
+chat_history/library/data/*
+!chat_history/library/data/public/
+!chat_history/library/data/public/**
+
+# Only the public textbook graph is versioned. The root graph and vector DB can
+# contain learned/private data and must remain deployment-local and ignored.
+/knowledge/*
+!/knowledge/custom/
+/knowledge/custom/*
+!/knowledge/custom/public/
+!/knowledge/custom/public/**
+
+# Common local research/download scratch directories; public textbooks belong
+# in the public library namespace above instead.
+/downloads/
+/papers/
+/论文下载/
+*:Zone.Identifier
+*.part
+*.crdownload
+*.download
+*.sqlite
+*.sqlite3
+*.db
+students/
+users/
+
+# Per-user notes vaults are runtime state (M-Notes). Anchored to the repo
+# root so frontend source dirs like components/pages/notes/ stay tracked.
+/notes/
+
+node_modules/
+.next/
+out/
+.pnpm-store/
+
+.vscode/
+.idea/
+.DS_Store
+*.swp
