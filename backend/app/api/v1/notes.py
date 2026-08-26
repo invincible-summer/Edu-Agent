@@ -731,7 +731,6 @@ async def notes_upload(files: list[UploadFile] = File(...),
                       "ocr_pages": extracted.ocr_pages})
         # 向量轨道（可选）：按 notes:<sid> scope 入库，失败不影响上传
         try:
-            from app.core import vector_store
             from app.core.embedding import get_embedding_client
             embed = get_embedding_client()
             if embed is not None:
@@ -739,8 +738,10 @@ async def notes_upload(files: list[UploadFile] = File(...),
                 chunks = [c for c in store.chunks
                           if getattr(c, "file_id", "") == file_id]
                 if chunks:
-                    await vector_store.ensure_indexed(
-                        notes_store.uploads_vector_scope(student_id), chunks, embed)
+                    from app.core.vector_jobs import schedule_index
+                    scope = notes_store.uploads_vector_scope(student_id)
+                    schedule_index(scope, chunks, embed,
+                                   key=f"notes:{student_id}:{file_id}")
         except Exception:
             pass
         results.append({"id": file_id, "filename": fname,

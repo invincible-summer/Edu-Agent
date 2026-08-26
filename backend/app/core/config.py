@@ -115,13 +115,22 @@ class Settings:
     # 耗尽才回退 tesseract）。
     multimodal_ocr_retries: int = int(os.getenv("MULTIMODAL_OCR_RETRIES", "3"))
 
-    # Embedding (optional): OpenAI-compatible Embeddings API for the RAG
-    # vector track (Chroma + hybrid retrieval). Mirrors the MULTIMODAL_*
-    # dual-track pattern: empty EMBEDDING_API_KEY = vector track off and
-    # retrieval stays pure BM25, so the system is always usable.
+    # Embedding (optional): explicit provider keeps old deployments off by
+    # default. ``local`` uses an offline sentence-transformers model; ``openai``
+    # keeps the existing OpenAI-compatible endpoint. Any failure degrades to
+    # the deterministic BM25 lane.
+    embedding_provider: str = (os.getenv("EMBEDDING_PROVIDER", "off").strip().lower()
+                               if os.getenv("EMBEDDING_PROVIDER", "off").strip().lower()
+                               in {"off", "local", "openai"} else "off")
     embedding_base_url: str = os.getenv("EMBEDDING_BASE_URL") or ""
     embedding_api_key: str = os.getenv("EMBEDDING_API_KEY") or ""
-    embedding_model: str = os.getenv("EMBEDDING_MODEL") or ""
+    embedding_model: str = (os.getenv("EMBEDDING_MODEL") or
+                            "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+    embedding_model_path: str = os.getenv("EMBEDDING_MODEL_PATH") or ""
+    embedding_cache_dir: str = os.getenv("EMBEDDING_CACHE_DIR") or ""
+    embedding_device: str = os.getenv("EMBEDDING_DEVICE", "cpu").strip().lower() or "cpu"
+    embedding_batch_size: int = max(1, int(os.getenv("EMBEDDING_BATCH_SIZE", "32")))
+    embedding_max_threads: int = max(1, int(os.getenv("EMBEDDING_MAX_THREADS", "2")))
 
     # Chroma persistent dir for the vector index (defaults into the project).
     chroma_dir: str = os.getenv("CHROMA_DIR") or str(_PROJECT_ROOT / "knowledge" / "vector_db")

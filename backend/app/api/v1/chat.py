@@ -474,11 +474,13 @@ async def _post_upload_ingest(scope: str, store, uploaded: list[tuple[str, str, 
         from app.core.embedding import get_embedding_client
         embed = get_embedding_client()
         if embed is not None:
-            from app.core import vector_store
             new_chunks = [c for c in store.chunks
                           if c.file_id in {fid for fid, _n, _t in uploaded}]
             if new_chunks:
-                await vector_store.ensure_indexed(scope, new_chunks, embed)
+                from app.core.vector_jobs import schedule_index
+                schedule_index(scope, new_chunks, embed,
+                               key=f"upload:{scope}:" + ",".join(sorted(
+                                   {c.file_id for c in new_chunks})))
     except Exception:
         pass  # vector track is optional; the upload already succeeded
     for fid, fname, text in uploaded:

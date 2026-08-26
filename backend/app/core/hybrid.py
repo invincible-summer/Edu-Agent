@@ -98,13 +98,26 @@ async def hybrid_search(scoped_stores: list[tuple[str, KnowledgeStore]],
         return _bm25_results(chunks, query, top_k)
 
     try:
-        # Backfill missing vectors (usually a no-op: uploads pre-index).
+        # Small stores may backfill inline. Whole textbooks are queued on the
+        # process-wide single-slot worker so an SSE/request path never embeds a
+        # book synchronously; this query simply uses existing vectors or BM25.
         for scope, store in scoped_stores:
-            if getattr(store, "chunks", None):
-                await vector_store.ensure_indexed(scope, store.chunks, embed_client)
+            scoped_chunks = getattr(store, "chunks", None) or []
+            if not scoped_chunks:
+                continue
+            if len(scoped_chunks) <= 256:
+                await vector_store.ensure_indexed(scope, scoped_chunks, embed_client)
+            else:
+                from .vector_jobs import schedule_index
+                schedule_index(scope, scoped_chunks, embed_client,
+                               key=f"query:{scope}")
         query_vecs = await embed_client.embed([query])
-        vector_hits = vector_store.query(
-            query_vecs[0], [s for s, _ in scoped_stores], top_k * _RECALL_FACTOR)
+        schemas = list(dict.fromkeys(
+            str((chunk.metadata or {}).get("chunk_schema") or "legacy-v1")
+            for chunk in chunks))
+        vector_hits = await vector_store.query(
+            query_vecs[0], [s for s, _ in scoped_stores], top_k * _RECALL_FACTOR,
+            embed_client=embed_client, chunk_schemas=schemas)
         if not vector_hits:
             return _bm25_results(chunks, query, top_k)
 

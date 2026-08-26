@@ -37,7 +37,7 @@
    前端所有 API 调用由 NEXT_PUBLIC_BACKEND_URL 单一决定（见 §21.4）
                                                   │
         后端 ──> LLM（OpenAI 兼容 Chat Completions，必配）
-             ──> Embedding API（可选，RAG 向量轨）
+             ──> 本地 MiniLM / Embedding API（可选，RAG 向量轨）
              ──> 多模态视觉 API（可选，拍照识题；缺省回退本地 tesseract OCR）
 ```
 
@@ -268,7 +268,7 @@ M10 Registry 将 Agent Skill 投影为能力 → 工具子集，收窄 LLM 每�
 ### 6.3 混合检索
 
 - **BM25 轨**（常驻确定性，`core/retriever.py`）：CJK 感知分词（bigram）。
-- **向量轨**（可选）：OpenAI 兼容 Embedding API + Chroma 嵌入式库（`knowledge/vector_db/`，`CHROMA_DIR` 可改）。配置 `EMBEDDING_BASE_URL/API_KEY/MODEL` 即启用；未配置或故障自动回退纯 BM25，系统永远可用。`RAG_HYBRID=0` 强制关闭。
+- **向量轨**（可选）：`EMBEDDING_PROVIDER=off|local|openai`，默认 off。local 使用离线 sentence-transformers MiniLM（CPU、懒加载、单槽 worker、归一化向量），openai 保留兼容 Embedding API；任一故障自动回退 BM25。Chroma collection 按模型/维度/chunk schema/归一化/RAG revision 指纹隔离。公共教材以可校验 NPZ 分片提交 Git，再导入部署本地 Chroma；绝不提交或复制混合私有数据的 `knowledge/vector_db`。`RAG_HYBRID=0` 强制关闭。
 - **融合**：RRF（k=60）。
 - **多查询与跨文件覆盖**：原始问题 + 确定性关键词/中英术语扩展独立召回后 RRF 去重；最终结果先按文件分桶保证相关教材卷覆盖，再按总相关度补齐，避免一个大卷垄断 top-k（不相关卷不会被硬塞）。
 - **小库直通**：chunks ≤ max(top_k, 8) 时跳过打分全量返回——否则小文件（一句话笔记）对任何转述式提问零命中，会诱发「凭文件名编造」。
@@ -1442,12 +1442,13 @@ stats 形状不变（"sparse" 语义 = 本轮目标页数）。`sparse_page_indi
 - schema 升 `structured-v2.2`：`rag_index._stage_file_index` 按 schema 不匹配
   自动重建既有卷的 chunk（免迁移）。
 
-### P8.6.1 向量轨自愈（配置即激活，本次未启用）
+### P8.6.1 独立本地语义向量轨
 
-`.env` 配 `EMBEDDING_BASE_URL/API_KEY/MODEL`（OpenAI 兼容端点，.env.example
-有示例）后 `get_embedding_client()` 非 None：`hybrid_search` 首查自动回填缺失
-向量、构建后 `refresh_textbook_vectors` 落 `vector_revision=ready`、证据门控
-`vector_good` 信号生效——代码路径已就绪，当前实例按用户决策保持 BM25-only。
+`EMBEDDING_PROVIDER=local` 使用离线 CPU MiniLM；`openai` 保留兼容端点，`off`
+（默认）为纯 BM25。教材 BM25 发布后，向量构建进入单槽后台队列并将状态从
+`bm25_ready` 更新为 `ready`；失败维持 BM25。collection 按模型指纹隔离，公共
+教材通过 `knowledge/public_vector_artifacts/` 的校验分片导入部署本地 Chroma。
+完整部署/发布契约见 `docs/LOCAL_SEMANTIC_RAG.md`。
 
 ## P9 检索运行时：查询核、置信度校准、分级证据与上下文重建（2026-08-26）
 

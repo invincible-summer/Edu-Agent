@@ -8,7 +8,7 @@
 - **Supervisor 编排（M1）**：意图理解 → 规划 → Skill 路由 → ReAct 工具执行 → 状态更新；硬性 `max_steps` 防死循环，参数校验 / 反射器 / 熔断器 / 截断落盘全套护栏。
 - **学习能力运行时（M10）**：Agent Skill 与知识图谱中的学习 Skill 分命名空间管理；Manifest/Registry 统一声明版本、前置条件、成功标准、fallback、风险与成本。支持 `shadow` 旁路评估与 `gated` 强制执行；`start.sh` 默认进入 gated 完整模式，执行前检查前置条件、缺参考题时最小澄清、按计划步骤逐个暴露工具，并用学习证据门保护 M4→M2 掌握度写回。动态 Prompt 只注入本轮计划 Skill Card；教学策略要求收尾检测时会把 `generate_quiz` 连同结构化参数加入计划，模型漏调时由执行器按授权计划确定性补执行。SessionLearningCard 把当前目标、教学模式、未完成检测和最近证据投影成有界工作上下文，但不复制 M2 掌握度或 M6 长期记忆。
 - **上下文与推理运行时**：64K 平衡档按 Provider 能力、工具 schema、原生 Tool Message 和安全区逐调用核算输入/输出；历史按完整回合增量压缩，压缩输入注入确定性出题/作答摘要（「练习与错题」不再无米下锅），旧摘要不会在二次压缩时丢失，空摘要不会裁掉原文。工具决策阶段在预算充足时保留模型思考、预算紧张时优先保答案预算；Provider 只有共享 completion envelope 时以答案通道检测 + 自动直答恢复兜底。前端展示模板过程摘要 + 对真实模型推理的二次提炼（real_summary，原始 CoT 不外露）；“一句话 / 简短 / 不要出题 / 表格 / 分步骤”等学生显式格式约束会压过默认教学展开与策略收尾检测。
-- **文件上传 + RAG 混合检索**：PDF / DOCX / PPTX / TXT / MD / 图片自动解析、结构化切块（页边界 + 段落 + 句子吸附），BM25（CJK 分词，常驻）+ 向量（Chroma + 任意 OpenAI 兼容 Embedding，可选）RRF 融合；跨文件结果先做来源覆盖；工具卡片顶部展示文件、页码/章节等结构化来源。上传/引用/明确要求根据资料时由 R10 确定性预检索，未命中禁止编造。图片直接写入当前会话 KnowledgeStore；扫描/混合 PDF、DOCX/PPTX 嵌入图片走视觉 OCR（配置可用时）并回退本地 tesseract，纯文字文件短路不调用 OCR。
+- **文件上传 + RAG 混合检索**：PDF / DOCX / PPTX / TXT / MD / 图片自动解析、结构化切块（页边界 + 段落 + 句子吸附），BM25（CJK 分词，常驻）+ 向量（Chroma + 离线本地 MiniLM 或 OpenAI 兼容 Embedding，可选）RRF 融合；跨文件结果先做来源覆盖；工具卡片顶部展示文件、页码/章节等结构化来源。上传/引用/明确要求根据资料时由 R10 确定性预检索，未命中禁止编造。图片直接写入当前会话 KnowledgeStore；扫描/混合 PDF、DOCX/PPTX 嵌入图片走视觉 OCR（配置可用时）并回退本地 tesseract，纯文字文件短路不调用 OCR。
 - **练习生成 + 交互批改**：可交互答题卡（先答后揭晓），选择题本地判分并回传掌握度闭环，填空/简答 LLM 流式批改（三级评分 + 思路讲解）；拟合出题（fit_quiz）从参考题生成同考点变式。**出题质量门**：所有出题路径先过确定性结构校验，再经 LLM 独立重解审题（critic），错题/错答案/错解析在投递前丢弃并重生成，校验审计随 Trace 可查。
 - **作答全链路可见**：每次作答统一写入会话 quiz_history、transcript【作答记录】与独立 `learning_records` 学习账本；题目、作答、评分、知识点和时间不随来源对话删除。旧 M6 episodic 仅兼容只读，不再新增详细跨聊天事件。
 - **教材库（Textbook）**：上传任意教材（≤256MB 大 PDF，扫描版自动逐页 OCR）→ 自动切块索引 + 后台构建专属知识图谱（书签/LLM/确定性目录切片，Unicode 与全角空白容错 / 长章首中末覆盖 / 逐章概念抽取 / DAG 守卫合并 / 概念→chunks 预索引）；长教材无法可靠分章时会明确标记需重建，但全文 RAG 不受影响。上传必选学段（小学/初中/高中/本科/其他），图谱按学段分组。**教材组**：上下册/分册多 PDF 可编为一组（自定义组名），构建**一个**统一知识谱系（跨卷同名概念合并、跨卷前置边、概念索引跨卷），支持追加卷/删卷自动重建。**公用教材库**：管理员上传的教材全账号可选用；知识谱系与教材绑定（删教材即删谱系）。知识图谱**只来自教材**（考纲内置谱系已移除，手动构建已下线）。
@@ -30,7 +30,7 @@
 | Backend | FastAPI + Python 3.11 + OpenAI SDK（async streaming） |
 | Auth | JWT（PyJWT）+ bcrypt + resolve_student_id 依赖注入（AUTH_MODE 开关） |
 | Agent | 自研轻量框架：Supervisor + M10 Skill Registry/Decision/Runtime + ReAct function-calling + 统一工具协议 + Trace |
-| 检索 | BM25（常驻）+ 向量（Chroma + OpenAI 兼容 Embedding，可选），RRF(k=60) 融合 |
+| 检索 | BM25（常驻）+ 向量（Chroma + 本地 MiniLM/OpenAI 兼容 Embedding，可选），RRF(k=60) 融合 |
 | 持久化 | JSON 文件（原子写 + 文件锁）+ 磁盘上传文本/原件 |
 
 ## 快速开始
@@ -50,7 +50,7 @@ cd frontend && pnpm install
 cp .env.example .env   # 填入 LLM_BASE_URL / LLM_API_KEY / LLM_MODEL，切勿提交 .env
 ```
 
-默认推荐 DeepSeek 官方 API；可改为任意 OpenAI 兼容端点（OpenAI / GLM / 本地 vLLM 等）。可选：`EMBEDDING_*` 启用 RAG 向量轨，`MULTIMODAL_*` 启用视觉识题/OCR（缺省本地 tesseract）。聊天图片上传会先进入当前会话资料库并返回 OCR 预览。
+默认推荐 DeepSeek 官方 API；可改为任意 OpenAI 兼容端点（OpenAI / GLM / 本地 vLLM 等）。可选：`EMBEDDING_PROVIDER=local|openai` 启用 RAG 向量轨（本地部署见 `docs/LOCAL_SEMANTIC_RAG.md`），`MULTIMODAL_*` 启用视觉识题/OCR（缺省本地 tesseract）。聊天图片上传会先进入当前会话资料库并返回 OCR 预览。
 
 ### 运行
 
@@ -112,7 +112,7 @@ cd backend && python cli.py --grade 初中 --once "讲一下惯性"
 | `QUIZ_VERIFY_MODE` | 出题后校验：critic=结构校验+LLM 独立重解审题 / basic=仅结构校验 / off=不校验 | critic |
 | `TOOL_CONTEXT_PROJECTION_MODE` | 工具专用上下文投影 off/shadow/on；SSE 与业务存储始终保留完整结果 | on |
 | `TOOL_MESSAGE_MODE` | legacy/shadow/native；native 使用原生 call/result，Provider 400 自动回退 legacy | native |
-| `EMBEDDING_BASE_URL/API_KEY/MODEL` | 可选 Embedding 端点，启用 RAG 向量轨 | 未配=纯 BM25 |
+| `EMBEDDING_PROVIDER` / `EMBEDDING_*` | off/local/openai；local 为离线 CPU MiniLM，失败回退 BM25 | off |
 | `MULTIMODAL_BASE_URL/API_KEY/MODEL` | 可选视觉模型（图片/扫描页/文档嵌入图片 OCR） | 未配=本地 tesseract |
 | `MULTIMODAL_DISABLE_THINKING` | VLM OCR 默认关闭思考/最低思考强度，网关拒绝自动去参重试 | 1 |
 | `MULTIMODAL_OCR_RETRIES` | 单页 vision 调用重试次数（异常/空 content 退避重试，耗尽回退 tesseract） | 3 |

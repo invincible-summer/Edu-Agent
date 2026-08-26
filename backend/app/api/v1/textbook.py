@@ -283,8 +283,7 @@ async def upload_textbooks(files: list[UploadFile] = File(...),
             results.append({"filename": fname, "status": "building"})
             continue
     save_library(lib)
-    # 向量索引（best-effort）+ 后台图谱构建（扫描 PDF 含 OCR 阶段）。
-    await _ingest_vectors(lib, student_id)
+    # BM25 已持久化；向量在注册教材组后进入单槽后台队列。
     if group_mode:
         grp = target_group
         if grp is not None:
@@ -323,6 +322,7 @@ async def upload_textbooks(files: list[UploadFile] = File(...),
                                          rag_index=summarize_textbook_rag(student_id, grp))
             except Exception:
                 pass
+            await _ingest_vectors(lib, student_id, group_file_ids)
             _spawn_build(student_id, grp["id"],
                          ocr_parallel=_effective_ocr_parallel(user))
         return {"results": results}
@@ -508,33 +508,16 @@ def _spawn_refresh(student_id: str, tb_id: str, mode: str,
         return False
 
 
-async def _ingest_vectors(lib, student_id: str) -> None:
-    """Best-effort vector pre-index for fresh textbook uploads."""
+async def _ingest_vectors(lib, student_id: str, file_ids: list[str]) -> None:
+    """Queue only freshly uploaded textbook vectors; BM25 is already usable."""
+    if not file_ids:
+        return
     try:
-        from app.core.embedding import get_embedding_client
-        embed = get_embedding_client()
-        if embed is None:
-            return
-        from app.core import vector_store
-        from app.core.library import file_scope, save_library
-        changed = False
-        for f in lib.files:
-            if f.get("kind") != "textbook":
-                continue
-            chunks = lib.chunks_for(f["id"])
-            if chunks:
-                indexed = await vector_store.ensure_indexed(file_scope(f), chunks, embed)
-                idx = dict(f.get("rag_index") or {})
-                if idx:
-                    idx["vector_revision"] = idx.get("bm25_revision", "rag-v2") if indexed else "unavailable"
-                    idx["status"] = "ready" if indexed else "bm25_ready"
-                    idx["updated_at"] = time.time()
-                    f["rag_index"] = idx
-                    changed = True
-        if changed:
-            save_library(lib)
+        from app.core.rag_index import refresh_textbook_vectors
+        await refresh_textbook_vectors(
+            student_id, {"id": "", "file_ids": list(file_ids)})
     except Exception:
-        pass  # vector track optional
+        pass
 
 
 @router.get("")

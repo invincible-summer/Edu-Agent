@@ -8,7 +8,7 @@
    in a tmp dir: ensure_indexed idempotency, scope isolation, delete_file /
    delete_scope, vector-lane recall beyond BM25, BM25 fallback on embed
    failure, result-dict shape parity with KnowledgeStore.search.
-4. Config-off behavior: no EMBEDDING_API_KEY -> no client -> pure BM25.
+4. Config-off behavior: EMBEDDING_PROVIDER=off -> no client -> pure BM25.
 5. File-level summaries: fake LLM writes summary/topics into persisted file
    metadata; merged_knowledge_files injection format; LLM failure is silent.
 6. M5 wiring: supervisor's _knowledge_directive_for_turn uses hybrid when the
@@ -205,7 +205,7 @@ class TestHybridSearch(_ChromaTmpMixin, unittest.TestCase):
         embed = FakeEmbed()
         asyncio.run(vector_store.ensure_indexed("session:s1", s1.chunks, embed))
         asyncio.run(vector_store.ensure_indexed("session:s2", s2.chunks, embed))
-        hits = vector_store.query([1.0] + [0.0] * 7, ["session:s2"], 5)
+        hits = asyncio.run(vector_store.query([1.0] + [0.0] * 7, ["session:s2"], 5, embed_client=embed))
         self.assertTrue(hits)
         self.assertTrue(all(cid.startswith("f2#") for cid in hits))
 
@@ -224,12 +224,12 @@ class TestHybridSearch(_ChromaTmpMixin, unittest.TestCase):
         self.assertTrue(ok)
         # s2 旧向量被剪枝
         stale_left = [cid for cid in s2_old_ids
-                      if vector_store.query([1.0] + [0.0] * 7, ["session:s2"], 2000)
+                      if asyncio.run(vector_store.query([1.0] + [0.0] * 7, ["session:s2"], 2000, embed_client=embed))
                       .get(cid)]
         self.assertFalse(stale_left)
         # s1 向量完好（scope 隔离）
         s1_ids = {c.chunk_id for c in s1.chunks}
-        hits = vector_store.query([1.0] + [0.0] * 7, ["session:s1"], 2000)
+        hits = asyncio.run(vector_store.query([1.0] + [0.0] * 7, ["session:s1"], 2000, embed_client=embed))
         self.assertTrue(all(cid in s1_ids for cid in hits))
 
     def test_vector_lane_recalls_paraphrase_bm25_misses(self):
@@ -264,9 +264,9 @@ class TestHybridSearch(_ChromaTmpMixin, unittest.TestCase):
         embed = FakeEmbed()
         asyncio.run(vector_store.ensure_indexed("session:s1", store.chunks, embed))
         vec = (await_not_needed := None) or [1.0] + [0.0] * 7
-        self.assertTrue(vector_store.query(vec, ["session:s1"], 5))
+        self.assertTrue(asyncio.run(vector_store.query(vec, ["session:s1"], 5, embed_client=embed)))
         vector_store.delete_file("f1")
-        self.assertEqual(vector_store.query(vec, ["session:s1"], 5), {})
+        self.assertEqual(asyncio.run(vector_store.query(vec, ["session:s1"], 5, embed_client=embed)), {})
 
     def test_delete_scope_removes_only_that_scope(self):
         s1 = _big_store(self.up / "a", "f1", keyword="浮力")
@@ -276,9 +276,9 @@ class TestHybridSearch(_ChromaTmpMixin, unittest.TestCase):
         asyncio.run(vector_store.ensure_indexed("session:s2", s2.chunks, embed))
         vector_store.delete_scope("session:s1")
         vec = [1.0] + [0.0] * 7
-        self.assertEqual(vector_store.query(vec, ["session:s1"], 5), {})
-        self.assertTrue(vector_store.query([0.0, 1.0] + [0.0] * 6,
-                                           ["session:s2"], 5))
+        self.assertEqual(asyncio.run(vector_store.query(vec, ["session:s1"], 5, embed_client=embed)), {})
+        self.assertTrue(asyncio.run(vector_store.query([0.0, 1.0] + [0.0] * 6,
+                                           ["session:s2"], 5, embed_client=embed)))
 
     def test_small_store_passthrough_preserved(self):
         store = KnowledgeStore(upload_dir=self.up)
@@ -298,12 +298,13 @@ class TestHybridSearch(_ChromaTmpMixin, unittest.TestCase):
 class TestConfigOff(StorageSandboxTestCase):
     def test_no_api_key_means_no_client(self):
         import app.core.embedding as embedding_mod
-        with mock.patch.object(settings, "embedding_api_key", ""):
-            embedding_mod._INSTANCE = None
-            try:
-                self.assertIsNone(embedding_mod.get_embedding_client())
-            finally:
+        with mock.patch.object(settings, "embedding_provider", "off"):
+            with mock.patch.object(settings, "embedding_api_key", ""):
                 embedding_mod._INSTANCE = None
+                try:
+                    self.assertIsNone(embedding_mod.get_embedding_client())
+                finally:
+                    embedding_mod._INSTANCE = None
 
     def test_tool_without_embed_uses_bm25(self):
         from app.tools.knowledge_search import KnowledgeSearchTool

@@ -159,40 +159,77 @@ def file_text_hash(owner_id: str, file_id: str) -> str:
     return _hash_text(path.read_text(encoding="utf-8") if path.exists() else "")
 
 async def refresh_textbook_vectors(owner_id: str, textbook: dict[str, Any]) -> dict[str, bool]:
-    """Delete stale vectors for the textbook files and best-effort re-index V2 chunks."""
+    """Queue textbook vectors on the global single-slot ML worker.
+
+    BM25 metadata is durable before jobs are scheduled. Completion callbacks
+    publish both per-file and textbook-registry status; failures retain
+    ``bm25_ready`` and never make the textbook unusable.
+    """
     from .embedding import get_embedding_client
-    from . import vector_store
     from .library import file_scope
+    from .vector_jobs import schedule_index
     lib = load_library(owner_id)
     embed = get_embedding_client()
     outcomes: dict[str, bool] = {}
-    file_ids = list(textbook.get("file_ids") or []) or ([textbook.get("file_id")] if textbook.get("file_id") else [])
+    file_ids = [str(x) for x in (list(textbook.get("file_ids") or [])
+                or ([textbook.get("file_id")] if textbook.get("file_id") else []))]
+    jobs: list[tuple[str, str, list[Any]]] = []
+
+    def publish(fid: str, ok: bool) -> None:
+        with _owner_rag_lock(owner_id):
+            current_lib = load_library(owner_id)
+            meta = current_lib.find_file(fid)
+            if meta is None:
+                return
+            idx = dict(meta.get("rag_index") or {})
+            idx["vector_revision"] = (idx.get("bm25_revision", RAG_INDEX_VERSION)
+                                      if ok else "unavailable")
+            idx["status"] = "ready" if ok else "bm25_ready"
+            idx["updated_at"] = time.time()
+            meta["rag_index"] = idx
+            save_library(current_lib)
+        # Registry projection is outside the owner lock to avoid nested file
+        # locks. Look up dynamically because an upload may register its textbook
+        # shortly after the vector job was queued.
+        try:
+            from . import textbook as tb_store
+            record = tb_store.textbook_for_file(owner_id, fid)
+            if record is not None:
+                tb_store.update_textbook(
+                    owner_id, record["id"],
+                    rag_index=summarize_textbook_rag(owner_id, record))
+        except Exception:
+            pass
+
+    # Publish pending first, so a fast callback can never be overwritten by a
+    # later stale save of the pre-job snapshot.
+    changed = False
     for fid in file_ids:
-        fid = str(fid)
-        vector_store.delete_file(fid)
         meta = lib.find_file(fid)
         chunks = lib.chunks_for(fid)
-        if embed is None or meta is None or not chunks:
+        if meta is None or not chunks:
             outcomes[fid] = False
             continue
-        outcomes[fid] = bool(await vector_store.ensure_indexed(file_scope(meta), chunks, embed))
-    # Persist vector revision without changing the source text.
-    if outcomes:
-        with _owner_rag_lock(owner_id):
-            lib = load_library(owner_id)
-            changed = False
-            for fid, ok in outcomes.items():
-                meta = lib.find_file(fid)
-                if meta is None:
-                    continue
-                idx = dict(meta.get("rag_index") or {})
-                idx["vector_revision"] = idx.get("bm25_revision", RAG_INDEX_VERSION) if ok else "unavailable"
-                idx["status"] = "ready" if ok else "bm25_ready"
-                idx["updated_at"] = time.time()
-                meta["rag_index"] = idx
-                changed = True
-            if changed:
-                save_library(lib)
+        idx = dict(meta.get("rag_index") or {})
+        idx["vector_revision"] = "pending" if embed is not None else "unavailable"
+        idx["status"] = "bm25_ready"
+        idx["updated_at"] = time.time()
+        meta["rag_index"] = idx
+        jobs.append((fid, file_scope(meta), chunks))
+        changed = True
+    if changed:
+        save_library(lib)
+
+    for fid, scope, chunks in jobs:
+        if embed is None:
+            outcomes[fid] = False
+            publish(fid, False)
+            continue
+        scheduled = schedule_index(
+            scope, chunks, embed, key=f"textbook:{owner_id}:{fid}",
+            callback=lambda ok, file_id=fid: publish(file_id, bool(ok)),
+        )
+        outcomes[fid] = scheduled
     return outcomes
 
 def summarize_textbook_rag(owner_id: str, textbook: dict[str, Any]) -> dict[str, Any]:

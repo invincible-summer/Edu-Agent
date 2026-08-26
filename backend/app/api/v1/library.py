@@ -287,7 +287,6 @@ async def _ingest(lib: Library, uploaded: list[tuple[str, str, str, str]],
         from app.core.embedding import get_embedding_client
         embed = get_embedding_client()
         if embed is not None:
-            from app.core import vector_store
             by_scope: dict[str, list] = {}
             ids = {fid for fid, _n, _t, _s in uploaded}
             chunks = lib.chunks_for_files(list(ids))
@@ -296,7 +295,9 @@ async def _ingest(lib: Library, uploaded: list[tuple[str, str, str, str]],
                 by_scope.setdefault(scope_of.get(c.file_id, ""), []).append(c)
             for scope, scope_chunks in by_scope.items():
                 if scope and scope_chunks:
-                    await vector_store.ensure_indexed(scope, scope_chunks, embed)
+                    from app.core.vector_jobs import schedule_index
+                    schedule_index(scope, scope_chunks, embed,
+                                   key=f"library:{student_id}:{scope}")
     except Exception:
         pass  # vector track is optional; the upload already succeeded
     try:
@@ -317,12 +318,9 @@ def _rescope_vectors(lib: Library, file_id: str, new_scope: str) -> None:
         if embed is not None:
             chunks = lib.chunks_for_files([file_id])
             if chunks:
-                import asyncio
-                try:
-                    loop = asyncio.get_running_loop()
-                    loop.create_task(vector_store.ensure_indexed(new_scope, chunks, embed))
-                except RuntimeError:
-                    pass  # no loop: the hybrid query-time backfill will re-index
+                from app.core.vector_jobs import schedule_index
+                schedule_index(new_scope, chunks, embed,
+                               key=f"rescope:{file_id}:{new_scope}")
     except Exception:
         pass
 
