@@ -100,10 +100,13 @@ async def ensure_indexed(scope: str, chunks: list[Chunk], embed_client: Any) -> 
         for i in range(0, len(ids), _GET_BATCH):
             got = col.get(ids=ids[i:i + _GET_BATCH])
             existing.update(got.get("ids") or [])
-        missing = [c for c in chunks if c.chunk_id not in existing]
+        missing = [c for c in chunks
+                   if c.chunk_id not in existing
+                   and not (c.metadata or {}).get("garble_excluded")]
         for i in range(0, len(missing), _UPSERT_BATCH):
             batch = missing[i:i + _UPSERT_BATCH]
-            vectors = await embed_client.embed([c.text for c in batch])
+            from .retriever import retrievable_text
+            vectors = await embed_client.embed([retrievable_text(c) for c in batch])
             col.upsert(
                 ids=[c.chunk_id for c in batch],
                 embeddings=vectors,

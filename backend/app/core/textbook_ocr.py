@@ -200,7 +200,7 @@ async def process_textbook_ocr_round(owner_id: str, textbook_id: str, file_id: s
         # ocr_state，不受影响。
         force_full = False
     targets = (list(range(total_pages)) if force_full
-               else pdf_ocr.sparse_page_indices(page_texts))[:cap]
+               else pdf_ocr.pages_needing_ocr(page_texts))[:cap]
     source_hash = _text_hash(current_text)
     resumable = _in_flight
     if (not state or bool(state.get("force_full")) != bool(force_full)

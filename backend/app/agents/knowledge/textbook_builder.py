@@ -1456,12 +1456,12 @@ async def _volume_spec(student_id: str, rec_id: str, file_id: str, title: str,
         resume_full = bool(prior.get("force_full")) and prior.get("status") in {"ocr", "waiting"}
         force_full_ocr = bool(force_full_ocr or resume_full)
         page_texts = text.split("\f")
-        sparse = pdf_ocr.sparse_page_indices(page_texts)
+        needs = pdf_ocr.pages_needing_ocr(page_texts)
         cap = settings.pdf_ocr_max_pages
         intended = min(len(page_texts), cap) if text.strip() else cap
-        covered = len(page_texts) - len(sparse)
+        covered = len(page_texts) - len(needs)
         budget = max(0, intended - covered)
-        if force_full_ocr or settings.pdf_ocr_mode == "on" or not text.strip() or (sparse and budget > 0):
+        if force_full_ocr or settings.pdf_ocr_mode == "on" or not text.strip() or (needs and budget > 0):
             ocr_branch_used = True
             from ...core.textbook_ocr import (TextbookOCRDeferred,
                                                process_textbook_ocr_round)

@@ -62,6 +62,8 @@ def _as_result(c: Chunk, score: float, **signals: Any) -> dict[str, Any]:
            "printed_page": c.metadata.get("printed_page"),
            "block_types": list(c.metadata.get("block_types", [])),
            "section_path": list(c.metadata.get("section_path", [])),
+           "lesson": c.metadata.get("lesson"),
+           "is_lesson": bool(c.metadata.get("is_lesson")),
            "noise_flags": list(c.metadata.get("noise_flags", []))}
     out.update(signals)
     return out

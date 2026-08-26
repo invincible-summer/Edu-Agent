@@ -48,22 +48,57 @@ def _page_label_int(page: Any) -> int | None:
     return int(m.group(1)) if m else None
 
 
+def _extract_rows(table: Any) -> list[list[str]]:
+    """Table → 规整化单元格行（extract 失败返回 []，单元格内换行折叠）。"""
+    try:
+        return [[re.sub(r"\s*\n\s*", " ", str(c or "")).strip() for c in row]
+                for row in (table.extract() or [])]
+    except Exception:
+        return []
+
+
+def _rows_look_like_table(rows: list[list[str]]) -> bool:
+    """反伪造门槛（P8）：``find_tables`` 会把普通问题框/边框装饰也圈成"表"。
+
+    取证（选必3，2026-08）：一卷产出 203 张假表——特征是两列内容逐行重复
+    （框内文字被复制进两列）、有效单元格稀疏、伪表头 Col2。真表至少 2 行
+    2 列、多行有 ≥2 个非空单元格，且任意两列的非空内容不会大面积一致。
+    """
+    if len(rows) < 2:
+        return False
+    width = max((len(r) for r in rows), default=0)
+    if width < 2:
+        return False
+    filled = [c for r in rows for c in r if c]
+    if len(filled) < 4:
+        return False
+    if sum(1 for r in rows if sum(1 for c in r if c) >= 2) < 2:
+        return False
+    for a in range(width):
+        for b in range(a + 1, width):
+            both = [(r[a] if a < len(r) else "", r[b] if b < len(r) else "")
+                    for r in rows]
+            both = [(x, y) for x, y in both if x and y]
+            if sum(1 for x, y in both if x == y) >= 2:
+                return False
+    return True
+
+
 def _table_markdown(table: Any) -> str:
-    """Table → markdown 行；to_markdown 不可用时用 extract() 自拼 | 行。"""
+    """Table → markdown 行（先过 ``_rows_look_like_table`` 反伪造门槛）。"""
+    rows = _extract_rows(table)
+    if not _rows_look_like_table(rows):
+        return ""
     try:
         md = str(table.to_markdown()).strip()
         if md:
             return "\n".join(md.splitlines()[:_MAX_TABLE_ROWS])
     except Exception:
         pass
-    try:
-        rows = table.extract() or []
-    except Exception:
-        return ""
     lines = []
     for row in rows[:_MAX_TABLE_ROWS]:
-        cells = [re.sub(r"\s*\n\s*", " ", str(c or "")).strip() for c in row]
-        line = " | ".join(c for c in cells if c)
+        cells = [c for c in row if c]
+        line = " | ".join(cells)
         if line:
             lines.append(f"| {line} |" if not line.startswith("|") else line)
     return "\n".join(lines)

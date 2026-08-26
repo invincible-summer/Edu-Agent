@@ -44,6 +44,21 @@ def sparse_page_indices(page_texts: list[str], *,
             if len((t or "").strip()) < min_chars]
 
 
+def pages_needing_ocr(page_texts: list[str]) -> list[int]:
+    """逐页 OCR 需求判定（P8 路由修复）：稀疏页 ∪ 乱码页。
+
+    仅按字符量判扫描会漏掉「稠密乱码页」——人教/同济定制数学字体无
+    ToUnicode 映射，文本层每页数百个乱码字符（全角公式/PUA 音标/犃犅
+    型替换），字符数远超稀疏阈值却不可用（2026-08 取证：27 卷公共教材
+    中 8 卷因此从未 OCR）。``core/text_quality.classify_page`` 对稠密页
+    做乱码证据判定，本入口取 sparse ∪ corrupt 的页下标；良好文本层页
+    仍绝不 OCR。
+    """
+    from .text_quality import page_verdicts
+    return [i for i, verdict in enumerate(page_verdicts(page_texts or []))
+            if verdict in ("empty", "sparse", "corrupt")]
+
+
 def _pdf_doc(raw: bytes):
     """Open a PDF via fitz; None on any failure (not a PDF / fitz missing)."""
     try:
@@ -253,6 +268,7 @@ async def ocr_pdf_pages_mixed(
     ocr_page_fn: Callable[[bytes], Awaitable[str]],
     *,
     page_texts: list[str] | None = None,
+    ocr_indices: list[int] | None = None,
     max_ocr_pages: int | None = None,
     dpi: int | None = None,
     on_progress: Optional[Callable[[int, int], Any]] = None,
@@ -261,7 +277,7 @@ async def ocr_pdf_pages_mixed(
     global_limit: bool = False,
     _ocr_job: Any | None = None,
 ) -> tuple[list[str], dict[str, int]]:
-    """逐页择优合并（P5a）：文本层达标的页保留文本层，稀疏页才渲染+OCR。
+    """逐页择优合并（P5a）：文本层达标的页保留文本层，稀疏/乱码页才渲染+OCR。
 
     与 ``ocr_pdf_pages`` 的差别：
       - 返回页列表长度 == 输入页数，OCR 失败/空页以 "" 占位——页序与物理页
@@ -271,16 +287,19 @@ async def ocr_pdf_pages_mixed(
       - ``page_texts``：判定稀疏用的**当前最佳文本**（默认 None=取 PDF 文本层）。
         重建场景传入已 OCR 合并的 .txt 分页——稀疏判定基于现状而非原始文本层，
         否则扫描书的 rebuild 会把全部页重 OCR 一遍（实测浪费）。
+      - ``ocr_indices``：外部已判定的目标页下标（P8 质量路由传入稀疏∪乱码
+        页）；默认 None 时内部按 ``pages_needing_ocr``（稀疏 ∪ 稠密乱码）判定。
       - ``concurrency`` > 1 时稀疏页按批并发 OCR（批内串行渲染 pixmap →
         gather 并发），页序对齐/失败隔离/进度语义与串行一致。
-    返回 (pages, stats)，stats = {sparse, ocr_done, ocr_failed}。
+    返回 (pages, stats)，stats = {sparse, ocr_done, ocr_failed}
+    （"sparse" 语义为「本轮判定的目标页数」，含乱码页）。
     永不抛出；非 PDF/打开失败返回 ([], {0,0,0})。
     """
     if global_limit and _ocr_job is None:
         from .ocr_policy import textbook_ocr_job
         async with textbook_ocr_job() as job:
             return await ocr_pdf_pages_mixed(
-                raw, ocr_page_fn, page_texts=page_texts,
+                raw, ocr_page_fn, page_texts=page_texts, ocr_indices=ocr_indices,
                 max_ocr_pages=max_ocr_pages, dpi=dpi, min_chars=min_chars,
                 on_progress=on_progress, concurrency=job.limit,
                 global_limit=False, _ocr_job=job)
@@ -290,7 +309,9 @@ async def ocr_pdf_pages_mixed(
             page_texts = pdf_page_texts(raw)
         if not page_texts:
             return [], dict(empty_stats)
-        sparse = sparse_page_indices(page_texts, min_chars=min_chars)
+        if ocr_indices is None:
+            ocr_indices = pages_needing_ocr(page_texts)
+        sparse = [i for i in ocr_indices if 0 <= i < len(page_texts)]
         cap = max_ocr_pages if max_ocr_pages is not None else settings.pdf_ocr_max_pages
         targets = sparse[:max(0, cap)]
         pages = list(page_texts)
@@ -349,6 +370,8 @@ def ocr_pdf_pages_mixed_sync(
     raw: bytes,
     ocr_page_fn: Callable[[bytes], str],
     *,
+    page_texts: list[str] | None = None,
+    ocr_indices: list[int] | None = None,
     max_ocr_pages: int | None = None,
     dpi: int | None = None,
     min_chars: int = _SCANNED_MIN_CHARS_PER_PAGE,
@@ -356,13 +379,17 @@ def ocr_pdf_pages_mixed_sync(
     """``ocr_pdf_pages_mixed`` 的同步版（对话/资料库上传段，本地 tesseract）。
 
     上限默认取 ``settings.pdf_ocr_sync_max_pages``（限制 OCR 页数，保护同步请求）。
+    目标页判定与异步版一致（``ocr_indices`` 优先，否则稀疏 ∪ 乱码）。
     """
     empty_stats = {"sparse": 0, "ocr_done": 0, "ocr_failed": 0}
     try:
-        page_texts = pdf_page_texts(raw)
+        if page_texts is None:
+            page_texts = pdf_page_texts(raw)
         if not page_texts:
             return [], dict(empty_stats)
-        sparse = sparse_page_indices(page_texts, min_chars=min_chars)
+        if ocr_indices is None:
+            ocr_indices = pages_needing_ocr(page_texts)
+        sparse = [i for i in ocr_indices if 0 <= i < len(page_texts)]
         cap = max_ocr_pages if max_ocr_pages is not None else settings.pdf_ocr_sync_max_pages
         targets = sparse[:max(0, cap)]
         pages = list(page_texts)

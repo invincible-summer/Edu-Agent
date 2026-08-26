@@ -226,6 +226,12 @@ def _classify_intent(message: str, session: TutorSession) -> str:
     if any(kw in msg for kw in _TOOL_TRIGGERS):
         return "react"
 
+    # 书名号里的篇目/课文名（共享触发信号）：「《荷塘月色讲》」类短句必须
+    # 进 ReAct 环，模型才有机会调检索工具。
+    from .material_signals import mentions_title
+    if mentions_title(msg):
+        return "react"
+
     # greetings / acks — exact match
     if msg_lower in _GREETINGS:
         return "direct"
@@ -523,8 +529,10 @@ async def chat_turn(
         else:
             messages.append({"role": "user", "content": (
                 "[系统自动预检索] 已自动检索学生上传的资料，但未命中相关片段。"
-                "你必须如实告诉学生「在已上传的资料中没有找到相关内容」，并建议补充上传"
-                "或检查资料，严禁凭文件名猜测或编造资料内容。")})
+                "你可以先用更精确的篇目名/课文名/概念名调用 knowledge_search 重试一次"
+                "（不得重复同一查询）；重试仍无结果，才如实告诉学生"
+                "「在已上传的资料中没有找到相关内容」，并建议补充上传或检查资料，"
+                "严禁凭文件名猜测或编造资料内容。")})
 
     # --- B4 多模态路由：本轮含图（图片附件 + RAG 图表页快照）→ tutor 切
     # MULTIMODAL 通道并开启思考推理；未配置 MULTIMODAL 时降级纯文本不报错。

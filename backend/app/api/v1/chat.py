@@ -68,6 +68,7 @@ def _build_tools(session: TutorSession):
     """
     from app.core.llm_async import get_llm
     from app.tools.knowledge_search import KnowledgeSearchTool
+    from app.tools.knowledge_read import KnowledgeReadTool
     from app.tools.quiz import GenerateQuizTool
     from app.tools.fit_quiz import FitQuizTool
     from app.tools.recall_history import RecallHistoryTool
@@ -105,6 +106,7 @@ def _build_tools(session: TutorSession):
                 return [
                     KnowledgeSearchTool(overlay, scoped_stores=scoped, embed_client=embed,
                                         student_id=getattr(session, "student_id", "") or ""),
+                    KnowledgeReadTool(overlay, scoped_stores=scoped),
                     GenerateQuizTool(llm, avoid_stems=avoid_stems),
                     FitQuizTool(llm),
                     RecallHistoryTool(session.session_id,
@@ -114,6 +116,7 @@ def _build_tools(session: TutorSession):
     return [
         KnowledgeSearchTool(session.knowledge, scoped_stores=scoped, embed_client=embed,
                             student_id=getattr(session, "student_id", "") or ""),
+        KnowledgeReadTool(session.knowledge, scoped_stores=scoped),
         GenerateQuizTool(llm, avoid_stems=avoid_stems),
         FitQuizTool(llm),
         RecallHistoryTool(session.session_id,

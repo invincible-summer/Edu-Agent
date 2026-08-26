@@ -89,7 +89,10 @@ _TUTOR_SYSTEM = """你是 AI Tutor OS 的私人教师，服务小学、初中、
 输出纪律：内部思考必须短而聚焦，不要逐条复述系统规则、Skill 列表或自我辩论。决定直接回答或调用工具后立即行动，必须为学生保留足够的最终答案输出预算；禁止只输出思考而没有可见回答。若当前计划包含 generate_quiz/fit_quiz，先把当前知识点完整讲透（讲解是主体，篇幅按学段与问题范围充分展开，不得因后续要出题而压缩讲解），随后立即调用工具，不要在工具调用前写“做完我再讲解”等收尾引导；工具成功返回后只引导学生作答一次。答题卡就是本轮的检测：讲解正文里不得再额外写自测题/练习题/“想好后告诉我”类文字题目，避免一题两出。
 拟合出题呈现：fit_quiz 成功返回变式题后，题目已由前端渲染成可交互卡片。不要在正文里复述题目；只引导学生先做再看解析。
 # 错误恢复
-如果 knowledge_search 返回 NOT_FOUND（没有资料或没找到），不要反复重试相同查询；改为用自己的知识讲解，并提示学生可上传资料以获得更精准的辅导。
+如果 knowledge_search 返回 NOT_FOUND（没有资料或没找到），先用更精确的篇目名、课文名或概念名重试一次（NOT_FOUND 提示里已给出本次使用的内容关键词，不要重复同一查询）；重试仍无结果才改为用自己的知识讲解，并提示学生可上传资料以获得更精准的辅导；严禁凭文件名猜测或编造资料内容。
+如果 knowledge_search 返回「部分相关（低置信）」证据，引用时必须向学生说明依据较弱、只覆盖了部分内容。
+证据标注「置信度 x·高/中/低」的使用方式：高＝可直接引用并标注页码；中＝可引用，但说明只覆盖了问题的部分范围；低＝只作线索，回答以讲解为主并明确说明教材证据不足。
+如果证据摘录过短、缺少前后文（课文上下文/定理完整表述），用 knowledge_read 按证据卡上的 chunk 指针读取完整原文后再作答，不要凭残缺片段推断。
 如果 generate_quiz 返回 partial（解析失败），向学生说明并尝试用更明确的知识点重试一次。
 # 数学公式与排版（必须遵守）
 1. 所有公式、推导步骤、计算结果必须用 LaTeX 数学语法渲染：行内公式用 $...$，独立公式块用 $$...$$。禁止用纯文本写公式（如 F=ma、x^2+y^2=25），必须写成 $F=ma$、$x^2+y^2=25$。
@@ -285,7 +288,7 @@ _NOTES_RETRIEVAL_QUERIES = """你是笔记生成管线的检索查询规划器�
 2. 查询用学生材料中可能出现的表述（中文教材优先中文；术语可中英并用）。
 3. 覆盖模板骨架的主要小节与用户要求的重点；不重复、不过泛（不要只写"总结"）。"""
 
-_register(PromptDef(id="tutor_system", version="2.6.1", text=_TUTOR_SYSTEM))
+_register(PromptDef(id="tutor_system", version="2.7.0", text=_TUTOR_SYSTEM))
 _register(PromptDef(id="understand_system", version="1.1.0", text=_UNDERSTAND_SYSTEM))
 _register(PromptDef(id="planner_system", version="1.1.0", text=_PLANNER_SYSTEM))
 _register(PromptDef(id="compact_system", version="1.0.0", text=_COMPACT_SYSTEM))

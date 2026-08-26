@@ -14,6 +14,7 @@ from ..state import StudentSnapshot, TaskUnderstanding
 from .policy import evaluate_preconditions
 from .registry import registry
 from ..preresearch import is_content_question
+from ..material_signals import mentions_title
 
 _VARIANT_RE = re.compile(r"仿照|类似(?:的)?题|变式|拟合|同类型|照着.{0,6}出")
 _MATERIAL_RE = re.compile(r"资料|文件|教材|课件|笔记|PDF|PPT|Word|文档|上传|附件", re.I)
@@ -106,13 +107,15 @@ def build_task_frame(message: str, understanding: TaskUnderstanding,
         has_history=has_history,
         has_reference_question=has_attachments or (asks_variant and explicit_body),
         asks_for_variant=asks_variant,
-        references_materials=bool(_MATERIAL_RE.search(message)) or has_attachments,
+        references_materials=(bool(_MATERIAL_RE.search(message)) or has_attachments
+                              or mentions_title(message)),
         requires_tools=understanding.requires_tools,
         confidence=understanding.confidence,
         has_textbook=has_textbook,
         material_grounding_required=(
             (has_attachments and not asks_variant)
             or bool(_MATERIAL_RE.search(message))
+            or (material_available and mentions_title(message))
             or (material_available and bool(understanding.concept)
                 and is_content_question(message))),
     )

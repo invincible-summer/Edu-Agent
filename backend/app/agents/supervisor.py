@@ -187,6 +187,35 @@ class _PrecomputedSearchStore:
         return self._hits[:top_k]
 
 
+class _GatedSearchStore:
+    """P9：M5 知识指令的检索旁路同样过证据门。
+
+    ContentResolver 此前直接消费未过滤的 BM25 命中（截 240 字符），乱码/
+    无关命中会让指令声称「学生已上传资料提及此知识点」。小池（≤8）沿用
+    query-aware 直通语义（M5 只向指令输出资料名，风险面小）。
+    """
+
+    def __init__(self, inner: Any):
+        self._inner = inner
+
+    def has_knowledge(self) -> bool:
+        try:
+            return bool(self._inner.has_knowledge())
+        except Exception:
+            return False
+
+    def search(self, query: str, top_k: int = 3) -> list[dict[str, Any]]:
+        try:
+            hits = list(self._inner.search(query, top_k=max(top_k * 4, top_k)) or [])
+            if not hits:
+                return []
+            from ..core.evidence_gate import apply_evidence_gate
+            gate = apply_evidence_gate(query, hits, top_k, allow_small_direct=True)
+            return gate.selected
+        except Exception:
+            return []
+
+
 async def _knowledge_directive_for_turn(understanding, session, trace) -> str:
     """M5: build the [知识智能·...] soft-directive block for this turn's concept.
 
@@ -232,13 +261,18 @@ async def _knowledge_directive_for_turn(understanding, session, trace) -> str:
                     hits = await hybrid_search(scoped, concept, top_k=3,
                                                embed_client=embed)
                     if hits:
+                        from ..core.evidence_gate import apply_evidence_gate
+                        gated = apply_evidence_gate(concept, hits, 3,
+                                                    allow_small_direct=True)
+                        hits = gated.selected
+                    if hits:
                         store = _PrecomputedSearchStore(hits)
         except Exception:
             store = None
         if store is None:
             try:
                 from ..core.workspace import merged_knowledge_store
-                store = merged_knowledge_store(session)
+                store = _GatedSearchStore(merged_knowledge_store(session))
             except Exception:
                 store = None
         directive = ks.build_directive(concept=concept, mastery_view=mastery_view,

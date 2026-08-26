@@ -34,12 +34,26 @@ def _gate_observability(gate: Any, candidates: list[dict[str, Any]]) -> dict[str
     return {
         "shadow_selected_count": len(gate.selected),
         "shadow_no_hit": bool(gate.no_hit),
+        "tier": getattr(gate, "tier", "found"),
         "duplicate_drop_count": duplicate_drops,
         "duplicate_rate": round(duplicate_drops / max(1, len(candidates)), 4),
         "candidate_ref_sha256": fingerprint,
         "selected_context_hashes": [str(item.get("context_hash") or "")
                                     for item in gate.selected if item.get("context_hash")],
     }
+
+
+def _confidence_tier(confidence: Any) -> str:
+    """P9 置信度档位：未标定的线性组合分数不当概率展示，给模型可执行的档位语义。"""
+    try:
+        value = float(confidence)
+    except (TypeError, ValueError):
+        return ""
+    if value >= 0.75:
+        return "高"
+    if value >= 0.45:
+        return "中"
+    return "低"
 
 
 class KnowledgeSearchTool(Tool):
@@ -75,6 +89,28 @@ class KnowledgeSearchTool(Tool):
         self._file_meta = {str(f.get("id", "")): f
                            for f in getattr(store, "files", []) if f.get("id")}
         self._labels: dict[str, dict[str, str]] | None = None
+        self._chunk_map: dict[str, Any] | None = None
+
+    def _chunk_lookup(self):
+        """chunk_id → {text, metadata} 视图（实例级缓存，供邻块扩展读取）。"""
+        if self._chunk_map is None:
+            index: dict[str, Any] = {}
+            for c in getattr(self._store, "chunks", []) or []:
+                if getattr(c, "chunk_id", None):
+                    index[c.chunk_id] = c
+            for _scope, s in (self._scoped_stores or []):
+                for c in getattr(s, "chunks", []) or []:
+                    if getattr(c, "chunk_id", None):
+                        index.setdefault(c.chunk_id, c)
+            self._chunk_map = index
+        index = self._chunk_map
+
+        def lookup(chunk_id: str):
+            c = index.get(str(chunk_id or ""))
+            if c is None:
+                return None
+            return {"text": c.text, "metadata": dict(c.metadata or {})}
+        return lookup
 
     def _has_knowledge(self) -> bool:
         if self._scoped_stores:
@@ -156,6 +192,11 @@ class KnowledgeSearchTool(Tool):
         else:
             results = gate.selected
             omitted = gate.omitted
+            if results:
+                # P9 上下文重建：同课题块合并成课文节选、薄摘录补邻块语境。
+                # 只消费 gate 已放行的结果——重建不做任何再召回。
+                from ..core.evidence_context import reconstruct_evidence
+                results = reconstruct_evidence(results, self._chunk_lookup())
         if settings.rag_evidence_gate == "on":
             import hashlib
             for item in results:
@@ -168,6 +209,7 @@ class KnowledgeSearchTool(Tool):
             telemetry = {"gate_mode": settings.rag_evidence_gate,
                          "candidate_count": len(candidates), "selected_count": 0,
                          "omitted_count": len(candidates), "no_hit": True,
+                         "tier": getattr(gate, "tier", "not_found"),
                          "drop_reasons": gate.drop_reasons, "latency_ms": latency_ms,
                          **_gate_observability(gate, candidates)}
             log.info("rag_evidence_gate %s", telemetry)
@@ -176,10 +218,24 @@ class KnowledgeSearchTool(Tool):
             scope_hint = (f"（本次检索范围：{'、'.join(scope_names)}。"
                           "若学生要查的内容不在此范围，请先让学生在对话里引用"
                           "对应教材后重试。）" if scope_names else "")
+            # P9：NOT_FOUND 只表示「没有词面/标题证据」，附上已尝试的内容核，
+            # 允许模型换篇名/概念名重试一次，而不是直接放弃检索。
+            from ..core.evidence_gate import effective_query
+            core_terms = effective_query(query).strip()
+            core_hint = (f"（本次检索使用的内容关键词：「{core_terms}」。"
+                         "可换用篇目名/课文名/概念名再试一次；仍无结果才告知学生未找到。）"
+                         if core_terms and core_terms != query else "")
+            garble_drops = int(gate.drop_reasons.get("garble_text_layer", 0) or 0)
+            garble_hint = ("（注意：命中的片段文本层疑似乱码（定制字体缺 ToUnicode "
+                           "映射），无法作为可靠证据。建议学生在教材管理中检查该书"
+                           "质量报告并重建索引。）"
+                           if garble_drops and garble_drops >= max(2, len(candidates) // 2)
+                           else "")
             return err(self.name, ErrorCode.NOT_FOUND,
                        f"在已上传的资料中没有找到与「{query}」相关的可靠证据。"
                        "禁止凭文件名猜测或编造资料内容——请如实告诉学生检索未命中，"
                        "并建议换关键词重试或检查资料是否包含该主题。"
+                       + core_hint + garble_hint
                        + scope_hint
                        + self._textbooks_building_hint(),
                        data={"query": query, "count": 0,
@@ -189,7 +245,10 @@ class KnowledgeSearchTool(Tool):
         # Card and model context consume the same excerpt and context hash.
         def _locate(r: dict[str, Any]) -> str:
             parts: list[str] = []
-            if r.get("printed_page"):
+            rng = r.get("printed_page_range")
+            if rng and len(rng) == 2:
+                parts.append(f" · 教材第{rng[0]}–{rng[1]}页")
+            elif r.get("printed_page"):
                 parts.append(f" · 教材第{r['printed_page']}页")
                 if r.get("page"):
                     parts.append(f"（PDF第{r['page']}页）")
@@ -201,20 +260,34 @@ class KnowledgeSearchTool(Tool):
                 parts.append(" · [表]")
             return "".join(parts)
 
+        partial = getattr(gate, "tier", "found") == "partial" or any(
+            r.get("partial") for r in results)
+        head_line = (f"从课程资料中找到 {len(results)} 条部分相关证据（低置信，"
+                     f"过滤 {omitted} 条；引用时须向学生说明依据较弱）"
+                     if partial else
+                     f"从课程资料中筛选出 {len(results)} 条可靠证据（过滤 {omitted} 条）")
+
+        def _confidence_note(r: dict[str, Any]) -> str:
+            conf = r.get("confidence", "legacy")
+            tier = _confidence_tier(conf)
+            return f"置信度 {conf}·{tier}" if tier else f"置信度 {conf}"
+
         snippets = "\n\n".join(
             f"[来源：{r.get('source') or r.get('filename', '资料')}"
-            f"{' · ' + str(r['chapter']) if r.get('chapter') else ''}"
-            f"{' · ' + str(r['section']) if r.get('section') and r.get('section') != r.get('chapter') else ''}"
-            f"{_locate(r)}"
-            f" · chunk {r['index']}] (置信度 {r.get('confidence', 'legacy')})\n"
+            + (f" · 课文《{r['lesson_label']}》节选" if r.get("lesson_label") else "")
+            + f"{' · ' + str(r['chapter']) if r.get('chapter') else ''}"
+            + f"{' · ' + str(r['section']) if r.get('section') and r.get('section') != r.get('chapter') else ''}"
+            + f"{_locate(r)}"
+            + f" · chunk {r['index']}]\n({_confidence_note(r)})\n"
             f"<material_excerpt>{r.get('evidence_excerpt') or ''}</material_excerpt>"
             for r in results
-        )
+        ) + "\n（需要更多上下文时，可用 knowledge_read 按上面的 chunk 指针读取完整原文及相邻片段。）"
         latency_ms = round((time.perf_counter() - started_at) * 1000, 2)
         telemetry = {"gate_mode": settings.rag_evidence_gate,
                      "candidate_count": len(candidates),
                      "selected_count": len(results), "omitted_count": omitted,
-                     "no_hit": False, "drop_reasons": gate.drop_reasons,
+                     "no_hit": False, "tier": getattr(gate, "tier", "found"),
+                     "drop_reasons": gate.drop_reasons,
                      "latency_ms": latency_ms,
                      **_gate_observability(gate, candidates)}
         log.info("rag_evidence_gate %s", telemetry)
@@ -224,9 +297,10 @@ class KnowledgeSearchTool(Tool):
         return ok(self.name,
                   data={"query": query, "results": results,
                         "count": len(results), "omitted_count": omitted,
+                        "partial": partial,
                         "evidence_bundle": bundle, "telemetry": telemetry,
                         "file_ids": sorted(file_ids) if file_ids is not None else None},
-                  text=f"从课程资料中筛选出 {len(results)} 条可靠证据（过滤 {omitted} 条）：\n\n{snippets}")
+                  text=f"{head_line}：\n\n{snippets}")
 
     async def _search(self, query: str, top_k: int,
                       *, file_ids: set[str] | None = None) -> list[dict[str, Any]]:

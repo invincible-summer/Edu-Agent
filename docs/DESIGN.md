@@ -1370,3 +1370,171 @@ Anderson 修订版六层级（记忆/理解/应用/分析/评价/创造）只作
 冻结区红线（全程遵守）：教材库/RAG/知识检索/笔记/对话链路（前端 chat 页面组件；backend chat_agent.py / supervisor.py / executor.py / core/session.py / api/v1/chat.py / api/v1/quiz.py）零改动——唯一例外是出题工具 tools/quiz.py、tools/fit_quiz.py 的层级指令（出题功能本体）与 supervisor 既有的 `adapt(ctx, student_id=…)` 调用点（原本就传 student_id，M7 指导消费在其内部完成）。M4 CAT 机制（四停止规则/难度轴/M10 证据门/三级判分→BKT）不动。
 
 **测试基线**：全量 1402 项通过（改造前 ~1371）；每批均过 tsc/eslint/next build --webpack/git diff --check。
+
+## P8 文本层质量分级、保真质检与课文结构（2026-08-26）
+
+背景取证（27 卷公共教材）：仅按「每页 <20 字符」判扫描会漏掉**稠密乱码页**——
+人教/同济定制数学字体无 ToUnicode 映射，文本层每页数百乱码字符（全角公式/
+PUA 音标/犃犅 型斜体替换/ꎬ 彝文区逗号），字符量达标却不可用。结果 8/27 卷
+（线性代数、必修2、选必3、英语词表卷）从未 OCR 即进入 RAG 索引；而同系列
+扫描卷（必修1/选必1/2）全量 OCR 后质量良好——**问题在路由判定，不在管线**。
+
+### P8.1 质量分级器（`core/text_quality.py`）
+
+纯函数、无 LLM：`classify_page(text) -> good/corrupt/sparse/empty`。corrupt 双
+门槛 = 乱码字符数 ≥8 **且** 占比 ≥0.2%（取证坏卷 0.6%+，好卷 ≈0，排版偶用
+全角数字不误判）；辅助信号「孤立短行占比 ≥0.35 且乱码 ≥3」（矩阵逐字炸竖排），
+单独短行（诗歌/LaTeX 定界符）不构成 corrupt。乱码字符集 = PUA + U+FFFD +
+意外文字系统（彝文/埃塞/切罗基/Saurashtra）+ 全角字母数字（标点除外）+ 已知
+字体替换字集（犃犅犿狀…，按需扩充）。存量验证（只读扫描）：线性代数 96.2%
+corrupt、必修2 93.6%、选必3 93.5%、英语词表卷 10-11%（正是词表页）；12 本
+OCR 好卷乱码率全部 0.0000，零误报。
+
+### P8.2 路由接入（OCR 触发 = 稀疏 ∪ 乱码 ∪ 空）
+
+`pdf_ocr.pages_needing_ocr()`（新）取代各处的仅稀疏判定：上传决策
+（`api/v1/textbook.py`）、OCR 调度器目标页（`textbook_ocr.py`）、构建预算
+（`textbook_builder._volume_spec`）、同步回退门槛（`file_parser`）。
+`ocr_pdf_pages_mixed(_sync)` 增加 `ocr_indices` 参数（外部 verdict 路由传入）；
+stats 形状不变（"sparse" 语义 = 本轮目标页数）。`sparse_page_indices` 保留向后
+兼容。**良好文本层页绝不 OCR 降质**的既有契约不变。
+
+### P8.3 质量报告 + quality_ocr 手动重建
+
+- `GET /textbooks/{id}/quality`（只读、零 OCR 成本）：逐卷 verdict 统计 +
+  乱码率 + staging 状态；`recommended_mode = quality_ocr`（corrupt ≥10%）或
+  `rag_graph`。
+- `POST /textbooks/{id}/rebuild_graph mode=quality_ocr`（bulk 同）：清
+  `ocr_state` 后按当前文本 verdict 逐页择优重建——稀疏∪乱码页 OCR，良好页
+  保留；与 full_ocr（整本重试）互补。触发权在用户（不自动烧 OCR API）。
+
+### P8.4 staging 保真质检（`rag_index`）
+
+`_validate_staged_chunks` 增加 `text_quality` 摘要：corrupt 页占非空页 ≥10%
+→ `staging_quality.status="failed_garble"`。**仍发布索引**（降级可检索优于
+不可用），由质量报告显形 + 手动 quality_ocr 兜底。旧行为（只查 token 数，
+乱码全 passed）是 8 坏卷畅通无阻的放大器。
+
+### P8.5 表格收割反伪造门槛（`figure_harvest`）
+
+`_rows_look_like_table`：≥2 行、≥2 列、≥4 个非空单元格、≥2 行有多列内容，
+且任意两列 **≥2 行内容完全一致 → 判伪造丢弃**（取证：选必3 一卷 203 张
+「问题框复制进两列」的假 markdown 表）。
+
+### P8.6 课文结构与上下文注入（chunker `structured-v2.2`）
+
+- **断行修复**（确定性预处理）：孤立小写字母行 = 脚注上标锚点——前行尾 +
+  后行头均 CJK 且后行 ≤2 字符（「橘子洲/b头。」）→ 合并保词；其余锚点行丢弃
+  （大写单字母行不丢：可能是答案键）。跨页重复运行页眉（≥3 页页首/页尾、
+  ≤30 字符）整行剥离（取证：「语文 必修上册」52 处污染）。
+- **注释/词表独立块**：`annotation`（①…：… /〔注〕）、`vocabulary`（音标/
+  词表行）作为 block_types，同种类连续行合块、不被后续正文打包稀释。信号
+  在 NFKC **前**抓取（① 经 NFKC 变 "1" 会与数字标题混淆）。
+- **课题父文档锚点**：课题标题（「1 春」「第10课 背影」，数字无小数点）打
+  `is_lesson`，其后同课文 chunk 带 `lesson` 字段（章级标题重置）——父子
+  chunk 分层的地基（parent_id/prev_id/next_id 既有）。
+- **检索面包屑**（`retriever.retrievable_text`，Anthropic contextual-retrieval
+  的零 LLM 版）：索引 token = 「书名 · 课题 · 章节路径 · 印刷页码」+ 正文，
+  BM25 tokenize 与（未来激活的）embedding 同一入口；展示文本不变。修复
+  「《荷塘月色》讲了什么」类课题查询的词面覆盖缺失（正文 chunk 原先对课题
+  零覆盖 → no_absolute_evidence 假阴性）。`tool_context` 压缩投影补
+  `printed_page`（教材第 N 页优先于 PDF 第 M 页）。
+- schema 升 `structured-v2.2`：`rag_index._stage_file_index` 按 schema 不匹配
+  自动重建既有卷的 chunk（免迁移）。
+
+### P8.6.1 向量轨自愈（配置即激活，本次未启用）
+
+`.env` 配 `EMBEDDING_BASE_URL/API_KEY/MODEL`（OpenAI 兼容端点，.env.example
+有示例）后 `get_embedding_client()` 非 None：`hybrid_search` 首查自动回填缺失
+向量、构建后 `refresh_textbook_vectors` 落 `vector_revision=ready`、证据门控
+`vector_good` 信号生效——代码路径已就绪，当前实例按用户决策保持 BM25-only。
+
+## P9 检索运行时：查询核、置信度校准、分级证据与上下文重建（2026-08-26）
+
+3252512295 账号 8 轮对话取证结论：**BM25 召回侧全部命中正确 chunk**（多变体
++ question_core 归一），问题全在门控与注入——置信度与真实相关性零相关
+（0.901 给《套中人》、0.602 给真命中）、库里有全文却 NOT_FOUND（48 候选
+全灭）、注入的是 250-500 字符句窗孤岛（6 条证据 2000 字符预算只装 3-4 条，
+「式（8.50）」被切成「50)所表示的…」）。P9 修检索运行时，不动解析链路。
+
+### P9.1 查询核提取级联（`evidence_gate.effective_query`）
+
+旧 `_core_query` 正则把「X讲了什么」的内容核吃成「了什」「了》」——垃圾
+词项让含「什么」的任意段落拿 0.9 置信、空词项让全部候选
+no_absolute_evidence。新级联：动词尾捕获（是否讲到X/讲了X吗→X，剥首尾
+虚词）→ 问句内容词核 → 原查询，**每级过 `_has_content` 守卫（≥2 个非停用
+内容字），词项集永不坍缩**。配套：`对/在` 移出 bigram 边缘停用集（对数/
+对称/对应是关键术语，旧规则整个丢弃「对数」导致向量块压过对数块），
+`normalize_query` 空结果兜底折叠 bigram。
+
+### P9.2 置信度重校准 + title_match（`apply_evidence_gate`）
+
+- 新增 **title_match**：查询核（折叠标点）与书名/章/节/课题/section_path
+  的契合度。整串命中 → 独立 0.5 档（课题类查询最强词面证据，词本体正文零
+  命中也靠它进入候选）；bigram 部分命中 → 0.2 档。
+- 公式重标定（纯 BM25 诚实刻度）：`lexical*0.45 + bm25_rel*0.2 +
+  title_signal + vector*0.1 + intent/phrase bonus − penalty`；`bm25_rel`
+  用池内相对分（绝对饱和归一对池规模敏感）。绝对证据测试扩展为
+  `lexical≤0 且 title_match≤0` 才 no_absolute_evidence。
+- `strong_primary` 豁免并入 title 整串命中；紧凑目录行/单行目录项 chunk
+  （v2.1 把目录拆成「N 篇名/作者」单块）补 toc 标记。
+
+### P9.3 分级证据（FOUND/PARTIAL/NOT_FOUND）
+
+`GateResult.tier`：没有达标项但存在弱信号（词项/标题部分命中、置信
+≥0.05）→ **partial**，返回低置信项（`confidence_tier=low`）而非 NOT_FOUND
+——「检索器没找到足够好的证据」≠「知识库里没有」。MMR 淘汰后不足额用弱
+信号池补位。工具输出带档位（高≥0.75/中≥0.45/低）与 partial 前缀；
+NOT_FOUND 文案附已尝试核心词，允许模型换篇名/概念名重试一次（registry
+tutor_system v2.7.0 同步：置信档位使用指引 + knowledge_read 指引）。
+
+### P9.4 上下文重建（反碎片化，`core/evidence_context.py`）
+
+- **摘录 v2**：公式感知切句（ASCII `.!?` 前后均非数字才切——「式（8.50）」
+  「p.280」不再断开）、定义句居中（是指/称为/定理/公式…）、上限 500→900
+  （`RAG_EVIDENCE_EXCERPT_CHARS`）、窗口下限 250→400。
+- **课文合并**：同 (file_id, lesson) 的选中块（或课题标题命中的单块）合并
+  为「课文《X》节选（教材第a–b页）」，上限 1600 字符——消费 v2.2 写入但
+  此前零消费的 lesson 元数据。
+- **邻块扩展**：摘录 <350 字符时按 prev/next_id 取邻块头部 200 字符
+  （消费零消费的链式元数据）。
+- **注入投影**：整包预算 2000→6000（`TOOL_CONTEXT_CURRENT_MAX_CHARS`）；
+  溢出不再静默 break，降为一行指针「另有N条未展开：来源·页码·chunk」。
+
+### P9.5 knowledge_read 工具（按指针取原文）
+
+新工具注册于 `_build_tools`（与 knowledge_search 同一授权 store 构造）：
+按 chunk 序号/PDF 页码读完整原文 + 相邻片段（span=current/prev/next/both，
+chars≤4000），纯读取零 LLM、乱码片段附警示。模型看到证据卡 chunk 指针即可
+深读，解决「只有一个小部分扔进上下文」的读取侧。
+
+### P9.6 触发统一（`agents/material_signals.py`）
+
+三套互不一致的触发词表统一到共享模块；新增书名号信号《…》（≥2 字）：
+「《荷塘月色讲》」7 字短句过不了长度门槛的双重否决（preresearch ≥8 字 +
+skill 剪枝）修复——`is_content_question` 书名号即 True、长度门槛 8→6、
+`decision.material_grounding_required` 书名号（有资料时）强制保留检索技能、
+chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消费未过滤
+命中）经 `_GatedSearchStore` 适配器过同一证据门。
+
+### P9.7 乱码检索期排除 + 索引准入门
+
+- 运行时：`apply_evidence_gate` 对候选跑 `text_garble_ratio` ≥0.05 →
+  drop("garble_text_layer")，绝不让 mojibake 注入上下文；全灭且主因乱码 →
+  NOT_FOUND 附「文本层疑似乱码，建议重建索引」指引。
+- 构建时：structured chunker 对乱码 chunk 置 `garble_excluded` 且不生成
+  BM25 token（chunk 保留在存储供 knowledge_read/审计）；`staging_quality`
+  记 `excluded_by_garble` 计数；vector 侧同样跳过。
+
+### P9.8 验证
+
+- 新增测试：`test_evidence_query_core`（8 取证问句核提取回归）、
+  `test_evidence_gate_tiers`（合成迷你语料校准：套中人 vs 拿来主义、词本体
+  title_match、洛伦兹定义>应用、乱码排除、partial 分级、公式切句）、
+  `test_evidence_context_recon`（课文合并/邻块扩展/溢出指针）、
+  `test_knowledge_read`、`test_material_trigger_signals`（书名号触发）。
+- 真实库只读回放（`backend/scripts/replay_knowledge_queries.py`）：
+  拿来主义 top-1=课文相关块（套中人消失）、荷塘月色 found（不再
+  NOT_FOUND）、我与地坛课文本体 top-1（0.437，旧为活动框 0.602）、
+  乱码卷候选被排除计数。词本体/课题合并的完全生效依赖既有卷按
+  structured-v2.2+ 重建（lesson 元数据在 v2.1 索引中不存在）。

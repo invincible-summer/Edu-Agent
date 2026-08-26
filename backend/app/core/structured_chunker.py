@@ -13,9 +13,9 @@ import unicodedata
 from collections import Counter
 from typing import Any
 
-from .retriever import Chunk, tokenize
+from .retriever import Chunk, retrievable_text, tokenize
 
-CHUNK_SCHEMA_VERSION = "structured-v2.1"
+CHUNK_SCHEMA_VERSION = "structured-v2.2"
 TARGET_TOKEN_MIN = 220
 TARGET_TOKEN_MAX = 480
 TARGET_TOKEN_COUNT = 360
@@ -47,11 +47,27 @@ _TABLE_MARK_RE = re.compile(r"^\s*[\[［【]\s*表")
 # 注意不含裸"图"——"图像/图中…"等正文行不能被并入标记块。
 _SPECIAL_CONT_RE = re.compile(r"^\s*(?:图述|图注|题目转录)")
 _PROTECTED_BLOCKS = {"figure", "formula", "table", "definition", "theorem",
-                     "example", "exercise", "solution"}
+                     "example", "exercise", "solution", "annotation",
+                     "vocabulary"}
 _TOKEN_PIECE_RE = re.compile(
     r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]|"
     r"[A-Za-z]+(?:'[A-Za-z]+)?|\d+(?:\.\d+)?|[^\s]"
 )
+# v2.2 课文结构：语文/英语教材的注释行（① 胜状：…… / 〔注〕……）与词表行
+# （severe /sɪvɪə/ n. 严重的 / hope→alone 制表对）独立成块，不与正文混切。
+_ANNOTATION_RE = re.compile(r"^(?:〔?注(?:释)?〕?|[①-⑳]\s*\S{0,30}[：:])")
+_VOCABULARY_RE = re.compile(r"/[^/\n]{2,60}/")
+_VOCAB_PAIR_RE = re.compile(r"^[A-Za-z][A-Za-z'\- ]{0,24}(?:\t|\s{2,})\S")
+# 课题标题（课文级父文档锚点）：「第N课/讲」或「N 题名」（无小数点——
+# 6.1.1 是小节，1 春 / 12 纪念白求恩 是课题）。检索面包屑与课题分组依赖它。
+_LESSON_TITLE_RE = re.compile(
+    r"^(?:第\s*[0-9０-９一二三四五六七八九十]+\s*(?:课|讲)|"
+    r"[0-9０-９]{1,2}\s*[.、]?\s*)\s*\S{1,28}$")
+# 孤立脚注上标行（语文取证：「橘子洲\nb头」——b 是脚注锚点，拆碎了词）。
+_FOOTNOTE_ANCHOR_RE = re.compile(r"^[a-z]$")
+# 粘连形态：锚点字母打头 + ≤2 个 CJK（可带句读）收尾的短行（「b头。」）。
+_FOOTNOTE_ANCHOR_GLUED_RE = re.compile(
+    r"^([a-z])([\u4e00-\u9fff]{1,2}[。！？；：，、]?)$")
 
 
 def _norm(s: str) -> str:
@@ -104,6 +120,10 @@ def _block_type(text: str, heading: bool = False) -> str:
         return "theorem"
     if re.match(r"(?:习题|练习|exercise)", clean, re.I):
         return "exercise"
+    if _ANNOTATION_RE.match(clean):
+        return "annotation"
+    if _is_vocabulary_line(clean):
+        return "vocabulary"
     if re.match(r"(?:例\s*[题]?|example)", clean, re.I):
         return "example"
     if _FORMULA_RE.search(text) and len(text) < 500:
@@ -160,6 +180,55 @@ def _heading_level(title: str) -> int:
 def _sentence_units(text: str) -> list[str]:
     parts = re.split(r"(?<=[。！？；.!?])\s*|\n+", text)
     return [p.strip() for p in parts if p.strip()]
+
+
+def _is_vocabulary_line(line: str) -> bool:
+    """词表行（英语取证：音标全部乱码的 glossary 行）——独立成块不与正文混切。"""
+    clean = line.lstrip()
+    return bool((_VOCABULARY_RE.search(clean) or _VOCAB_PAIR_RE.match(clean))
+                and re.match(r"^[A-Za-z〔\[]", clean))
+
+
+def _repair_fragmented_lines(lines: list[str],
+                             repeated_headers: set[str]) -> list[str]:
+    """确定性断行修复（v2.2，语文取证：「橘子洲\\nb头」被脚注上标拆碎）。
+
+    三条高精度规则，只动行结构、不改写内容：
+      1. 孤立小写字母行是脚注上标锚点：
+         - 前行尾 + 后行头都是 CJK 且后行 ≤2 字符（词被拦腰截断的尾巴，
+           如「头。」）→ 前后行合并、锚点丢弃（保住「橘子洲头」bigram）；
+         - 其余情况直接丢弃锚点行（标题注/作者注等，不动前后行）。
+         只处理小写：大写单字母行更可能是选择题答案键，宁缺毋滥。
+      2. 跨页重复的运行页眉行（``repeated_headers``，≥3 页页首/页尾出现，
+         ≤30 字符）整行剥离——取证：「语文 必修上册」污染正文 52 处。
+      3. 其余原样返回。合并行在 normalized_page 中 find 不到时自动落
+         source_cursor 兜底（mapping_exact=False），坐标映射不炸。
+    """
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        prev_cjk = bool(out) and bool(re.search(r"[\u4e00-\u9fff]$", out[-1]))
+        if _FOOTNOTE_ANCHOR_RE.match(line):
+            nxt = lines[i + 1] if i + 1 < len(lines) else ""
+            nxt_cjk = bool(re.match(r"^[\u4e00-\u9fff]", nxt or ""))
+            if prev_cjk and nxt_cjk and len(nxt) <= 2:
+                out[-1] = out[-1] + nxt  # 词被锚点拦腰截断：合并保词
+                i += 2
+                continue
+            i += 1  # 锚点行本身丢弃
+            continue
+        glued = _FOOTNOTE_ANCHOR_GLUED_RE.match(line)
+        if glued and prev_cjk:
+            out[-1] = out[-1] + glued.group(2)  # 「橘子洲」+「b头。」→ 橘子洲头。
+            i += 1
+            continue
+        if line in repeated_headers and len(re.sub(r"\s+", "", line)) <= 30:
+            i += 1
+            continue
+        out.append(line)
+        i += 1
+    return out
 
 
 def _prefix_for_budget(text: str, budget: int) -> int:
@@ -270,7 +339,23 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
     printed_by_page: dict[int, int] = {}  # 页号 → 教材印刷页码（[页码=N] 标记）
 
     for page_no, page in enumerate(pages, 1):
-        lines = [_norm(x) for x in page.splitlines() if _norm(x)]
+        # 特殊块种类须在 NFKC 归一化前抓取：① 经 NFKC 变 "1"，与数字标题
+        # 无法区分（取证实测：注释行「① 胜状：…」归一化后被判成 heading）。
+        # 归一化后文本相同的行共享种类——同文本同语义，无歧义。
+        line_kinds: dict[str, str] = {}
+        lines: list[str] = []
+        for raw_line in page.splitlines():
+            norm = _norm(raw_line)
+            if not norm:
+                continue
+            kind = ""
+            if _ANNOTATION_RE.match(raw_line.strip()):
+                kind = "annotation"
+            elif _is_vocabulary_line(raw_line):
+                kind = "vocabulary"
+            if kind:
+                line_kinds[norm] = kind
+            lines.append(norm)
         marker_count = page.count("􀆺") + page.count("……") + page.count("…")
         numeric_lines = sum(1 for line in lines if re.fullmatch(r"[0-9０-９]+", line))
         early_front_matter = page_no <= max(20, int(len(pages) * 0.15))
@@ -312,15 +397,32 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
             stripped_lines.append(line)
         if printed_marker:
             printed_by_page[page_no] = printed_marker[-1]
-        lines = stripped_lines
+        lines = _repair_fragmented_lines(stripped_lines, repeated)
         current: list[str] = []
-        in_special = False  # 处于 [图...]/[表...] 标记块内（图述/表格行从属）
+        in_special = ""  # 标记块内："" / "figtab"（[图|/[表| 从属）/ "annotation" / "vocabulary"
         for line in lines:
-            heading = _is_heading(line)
-            special_start = bool(_FIGURE_MARK_RE.match(line) or _TABLE_MARK_RE.match(line))
-            continues_special = in_special and (
-                _SPECIAL_CONT_RE.match(line) or "|" in line or "｜" in line)
-            if (heading or special_start or (in_special and not continues_special)) and current:
+            special_kind = ""
+            if _FIGURE_MARK_RE.match(line) or _TABLE_MARK_RE.match(line):
+                special_kind = "figtab"
+            elif line_kinds.get(line):
+                special_kind = line_kinds[line]
+            # 注释/词表行绝不被当标题（归一化后「① …」形似「1 …」数字标题）。
+            heading = _is_heading(line) and not special_kind
+            continues_special = False
+            if in_special == "figtab":
+                continues_special = bool(
+                    _SPECIAL_CONT_RE.match(line) or "|" in line or "｜" in line)
+            elif in_special == "annotation":
+                continues_special = line_kinds.get(line) == "annotation"
+            elif in_special == "vocabulary":
+                continues_special = line_kinds.get(line) == "vocabulary"
+            # [图|/[表| 每个标记自成一块；注释/词表同种类连续行合为一块
+            #（①②③… 逐行注释是一组），种类切换才开新块。
+            starts_new_block = (heading
+                                or special_kind == "figtab"
+                                or (special_kind and special_kind != in_special)
+                                or (in_special and not continues_special))
+            if starts_new_block and current:
                 piece = "\n".join(current).strip()
                 flags = _noise_flags(piece, repeated=piece in repeated)
                 if toc_region:
@@ -329,7 +431,7 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
                     flags = list(dict.fromkeys(flags + ["preface"]))
                 blocks.append((piece, "paragraph", flags))
                 current = []
-                in_special = False
+                in_special = ""
             if heading:
                 flags = _noise_flags(line, repeated=line in repeated)
                 if toc_region:
@@ -338,8 +440,8 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
                     flags = list(dict.fromkeys(flags + ["preface"]))
                 blocks.append((line, "heading", flags))
             else:
-                if special_start:
-                    in_special = True
+                if special_kind:
+                    in_special = special_kind
                 current.append(line)
         if current:
             piece = "\n".join(current).strip()
@@ -363,7 +465,9 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
                     item_path = section_stack[-3:]
                 pieces = [(title, "heading", heading_level, not noisy_heading, item_path)]
             else:
-                block_type = _block_type(block_text)
+                first_line = block_text.split("\n", 1)[0].strip()
+                block_kind = line_kinds.get(first_line, "")
+                block_type = block_kind or _block_type(block_text)
                 pieces = [(piece, block_type, None, False, section_stack[-3:])
                           for piece in _split_piece(block_text, block_type)]
 
@@ -391,7 +495,7 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
     chunks: list[Chunk] = []
     starts_new_semantic_block = {"heading", "figure", "definition", "theorem",
                                  "example", "exercise", "solution", "summary",
-                                 "metadata"}
+                                 "metadata", "annotation", "vocabulary"}
     for item in raw:
         piece = item["text"]
         if not piece:
@@ -402,7 +506,8 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
         can_pack = (chunks and chunks[-1].page == item["page"]
                     and item["block_type"] not in starts_new_semantic_block
                     and not item["noise_flags"]
-                    and not prev_types & {"figure", "table"}
+                    and not prev_types & {"figure", "table", "annotation",
+                                          "vocabulary"}
                     and not chunks[-1].metadata.get("hard_boundary"))
         if can_pack:
             candidate = f"{chunks[-1].text}\n{piece}"
@@ -447,19 +552,42 @@ def chunk_text_v2(text: str, source: str, file_id: str = "") -> list[Chunk]:
         chunks.append(chunk)
 
     heading_stack: dict[int, str] = {}
+    current_lesson: str | None = None
     for idx, chunk in enumerate(chunks):
         metadata = chunk.metadata
         if metadata.get("structural_heading"):
             level = int(metadata.get("heading_level") or 3)
+            if level <= 2:
+                current_lesson = None  # 章/单元边界：课文归属重置
+            title = _norm(chunk.text)
+            if current_lesson is None and _LESSON_TITLE_RE.match(title):
+                # 课题标题（1 春 / 第10课 背影）＝课文级父文档锚点：本 chunk
+                # 标 is_lesson，其后同课文的 chunk 都带 lesson 字段，供检索
+                # 面包屑与课文级分组（父子 chunk 地基，parent_id 已有）。
+                current_lesson = title
+                metadata["is_lesson"] = True
             parent_levels = [depth for depth in heading_stack if depth < level]
             metadata["parent_id"] = heading_stack[max(parent_levels)] if parent_levels else None
             heading_stack = {depth: cid for depth, cid in heading_stack.items() if depth < level}
             heading_stack[level] = chunk.chunk_id
         else:
             metadata["parent_id"] = heading_stack[max(heading_stack)] if heading_stack else None
+        metadata["lesson"] = current_lesson
         metadata["prev_id"] = chunks[idx - 1].chunk_id if idx else None
         metadata["next_id"] = chunks[idx + 1].chunk_id if idx + 1 < len(chunks) else None
         metadata["content_sha256"] = hashlib.sha256(chunk.text.encode()).hexdigest()
+    # v2.2：索引 token 带面包屑（书名·课题·章节·页码，见 retriever.retrievable_text）
+    # ——正文 chunk 对课题查询的词面覆盖从零恢复；展示文本 chunk.text 不变。
+    # v2.3 准入门（P9）：乱码文本层的 chunk 不生成索引 token——mojibake 永不
+    # 进入 BM25（检索侧另有同源运行时排除兜底存量索引），chunk 本体保留在
+    # 存储里供 knowledge_read 显式读取与人工审计（staging 从 metadata 计数）。
+    from .text_quality import text_garble_ratio
+    for chunk in chunks:
+        if text_garble_ratio(retrievable_text(chunk)) >= 0.05:
+            chunk.tokens = []
+            chunk.metadata["garble_excluded"] = True
+        else:
+            chunk.tokens = tokenize(retrievable_text(chunk))
     return chunks
 
 

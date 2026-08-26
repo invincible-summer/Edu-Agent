@@ -53,7 +53,7 @@ class TestPromptRegistry(unittest.TestCase):
         for pid, versions in registry.list_versions().items():
             self.assertIn(av[pid], versions)
         # 显式输出约束优先级与结构化理解字段变更必须可追溯。
-        self.assertEqual(av["tutor_system"], "2.6.1")
+        self.assertEqual(av["tutor_system"], "2.7.0")
         self.assertEqual(av["understand_system"], "1.1.0")
 
     def test_get_unknown_raises(self):

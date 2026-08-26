@@ -244,9 +244,11 @@ async def upload_textbooks(files: list[UploadFile] = File(...),
         # （视觉模型优先），同步段只取文本层判定是否需要 OCR，避免重复 OCR。
         # to_thread：大 PDF 的文本提取是 CPU 密集，不阻塞事件循环。
         text = await asyncio.to_thread(extract_text, fname, raw, ocr_fallback=False)
-        # OCR 判定（P5a-A2 逐页）：文本层为空 → 扫描版仍接收（后台 OCR 写回 .txt
-        # 再图谱构建）；文本层非空但存在稀疏页（半文本半扫描的混合书）→ 同样标记，
-        # 后台逐页择优补 OCR（文本层达标页不被降质）。off 或非 PDF 仍按"无法提取文本"拒。
+        # OCR 判定（P5a-A2 逐页 + P8 乱码页）：文本层为空 → 扫描版仍接收（后台
+        # OCR 写回 .txt 再图谱构建）；文本层非空但存在稀疏页（半文本半扫描）或
+        # 稠密乱码页（定制字体无 ToUnicode 映射，取证见 core/text_quality）→ 同样
+        # 标记，后台逐页择优补 OCR（良好文本层页不被降质）。off 或非 PDF 仍按
+        # "无法提取文本"拒。
         needs_ocr = False
         if ext == ".pdf" and settings.pdf_ocr_mode != "off":
             if settings.pdf_ocr_mode == "on":
@@ -254,7 +256,7 @@ async def upload_textbooks(files: list[UploadFile] = File(...),
             elif not text.strip():
                 needs_ocr = await asyncio.to_thread(pdf_ocr.is_scanned_pdf, raw)
             else:
-                needs_ocr = bool(pdf_ocr.sparse_page_indices(text.split("\f")))
+                needs_ocr = bool(pdf_ocr.pages_needing_ocr(text.split("\f")))
         if not text.strip() and not needs_ocr:
             results.append({"filename": fname, "error": "无法提取文本"})
             continue
@@ -440,13 +442,17 @@ async def _safe_refresh_inner(student_id: str, tb_id: str, mode: str,
             await _safe_build(student_id, tb_id, ocr_parallel=ocr_parallel,
                               force_reextract=True, use_llm=True, skip_ocr=True,
                               skip_harvest=True)
-        else:  # full_ocr
+        else:  # full_ocr / quality_ocr
             from app.core.textbook_ocr import cancel_textbook_ocr
             cancel_textbook_ocr(student_id, tb_id)
+            # 两种模式都清 ocr_state（调度器按新意图重建目标页集合）：
+            # full_ocr 整本重试；quality_ocr 只针对当前文本的稀疏∪乱码页
+            # （text_quality verdict），良好页保留——修复定制字体稠密乱码卷
+            # 而不整本烧 OCR。
             tb_store.update_textbook(student_id, tb_id, ocr_state={})
             await _safe_build(student_id, tb_id, ocr_parallel=ocr_parallel,
                               force_reextract=True, use_llm=True,
-                              skip_ocr=False, force_full_ocr=True)
+                              skip_ocr=False, force_full_ocr=(mode == "full_ocr"))
             current = tb_store.find_textbook(student_id, tb_id) or {}
             if current.get("status") == "ready":
                 from app.core.rag_index import (rebuild_textbook_rag,
@@ -587,6 +593,49 @@ def textbook_figure_status(textbook_id: str,
             "volumes": volumes}
 
 
+@router.get("/{textbook_id}/quality")
+def textbook_quality(textbook_id: str, student_id: str = Depends(resolve_student_id)):
+    """逐卷文本层质量报告（只读，零 OCR 成本）：verdict 统计 + 乱码率。
+
+    P8 路由修复的验证入口：稠密乱码卷（定制字体无 ToUnicode 映射，字符量
+    达标但内容不可用）在此显形为 corrupt-heavy；确认为坏卷后可用
+    ``POST /{textbook_id}/rebuild_graph mode=quality_ocr`` 手动重建——按
+    verdict 逐页择优（稀疏∪乱码页 OCR，良好页保留），不整本重试。
+    """
+    tb, owner_sid = _load_owned(student_id, textbook_id)
+    file_ids = ((tb.get("file_ids") or []) if tb.get("kind") == "group"
+                else [tb.get("file_id")] if tb.get("file_id") else [])
+    from app.core.text_quality import summarize_pages
+    lib = load_library(owner_sid)
+    volumes: list[dict] = []
+    totals = {"good": 0, "corrupt": 0, "sparse": 0, "empty": 0}
+    for fid in file_ids:
+        meta = lib.find_file(str(fid)) or {}
+        path = library_data_dir(owner_sid) / f"{fid}.txt"
+        try:
+            text = path.read_text(encoding="utf-8") if path.exists() else ""
+        except OSError:
+            text = ""
+        summary = summarize_pages(text.split("\f")) if text else {
+            "total": 0, "good": 0, "corrupt": 0, "sparse": 0, "empty": 0,
+            "garble_rate": 0.0}
+        for key in totals:
+            totals[key] += int(summary.get(key, 0))
+        staging = dict((meta.get("rag_index") or {}).get("staging_quality") or {})
+        volumes.append({
+            "file_id": str(fid), "filename": meta.get("filename", ""),
+            "chars": len(text), "text_quality": summary,
+            "staging_quality": str(staging.get("status") or ""),
+        })
+    non_empty = totals["good"] + totals["corrupt"] + totals["sparse"]
+    corrupt_ratio = (totals["corrupt"] / non_empty) if non_empty else 0.0
+    return {
+        "textbook_id": textbook_id, "volumes": volumes, "page_verdicts": totals,
+        "corrupt_ratio": round(corrupt_ratio, 4),
+        "recommended_mode": ("quality_ocr" if corrupt_ratio >= 0.10 else "rag_graph"),
+    }
+
+
 @router.get("/{textbook_id}/download")
 def download_textbook(textbook_id: str, student_id: str = Depends(resolve_student_id)):
     """下载教材原件（复用 library 的下载响应，保留原文件名）。公用教材所有账号可下载。"""
@@ -652,11 +701,12 @@ def _start_rebuild(owner_sid: str, tb_id: str, mode: str,
         return {"textbook_id": tb_id, "status": "building", "mode": mode,
                 "idempotent_reuse": True,
                 "uses_existing_text": mode != "full_ocr",
-                "ocr_requested": mode == "full_ocr"}
+                "ocr_requested": mode in ("full_ocr", "quality_ocr")}
     cancel_textbook_ocr(owner_sid, tb_id)
     # 用户主动发起重建 = 新意图：清旧的终止标记（否则上次取消会杀死本次重建）。
+    ocr_mode = mode in ("full_ocr", "quality_ocr")
     tb_store.update_textbook(owner_sid, tb_id, status="building",
-                             progress={"stage": "ocr" if mode == "full_ocr" else "index",
+                             progress={"stage": "ocr" if ocr_mode else "index",
                                        "done": 0, "total": 1},
                              error="", warnings=[],
                              parse_cancel_requested=False)
@@ -664,7 +714,7 @@ def _start_rebuild(owner_sid: str, tb_id: str, mode: str,
     return {"textbook_id": tb_id, "status": "building", "mode": mode,
             "idempotent_reuse": False,
             "uses_existing_text": mode != "full_ocr",
-            "ocr_requested": mode == "full_ocr"}
+            "ocr_requested": ocr_mode}
 
 
 def _cancel_parse_core(owner_sid: str, tb_id: str) -> str:
@@ -694,8 +744,8 @@ async def bulk_rebuild(req: TextbookBulkRebuildRequest | None = None,
     if not ids:
         raise HTTPException(400, "ids 不能为空")
     mode = str((req.mode if req else "rag_graph") or "rag_graph").strip().lower()
-    if mode not in {"rag_graph", "full_ocr", "graph_only"}:
-        raise HTTPException(400, "mode 必须是 rag_graph/full_ocr/graph_only")
+    if mode not in {"rag_graph", "full_ocr", "quality_ocr", "graph_only"}:
+        raise HTTPException(400, "mode 必须是 rag_graph/full_ocr/quality_ocr/graph_only")
     ocr_parallel = _effective_ocr_parallel(user)
     results: list[dict] = []
     for tb_id in ids:
@@ -750,8 +800,8 @@ async def rebuild_graph(textbook_id: str, req: TextbookRebuildRequest | None = N
     _tb, owner_sid = _load_owned(student_id, textbook_id)
     _require_public_write(user, owner_sid)
     mode = str((req.mode if req else "rag_graph") or "rag_graph").strip().lower()
-    if mode not in {"rag_graph", "full_ocr", "graph_only"}:
-        raise HTTPException(400, "mode 必须是 rag_graph/full_ocr/graph_only")
+    if mode not in {"rag_graph", "full_ocr", "quality_ocr", "graph_only"}:
+        raise HTTPException(400, "mode 必须是 rag_graph/full_ocr/quality_ocr/graph_only")
     return _start_rebuild(owner_sid, textbook_id, mode,
                           ocr_parallel=_effective_ocr_parallel(user))
 

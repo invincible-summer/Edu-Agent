@@ -544,8 +544,10 @@ async def execute(
             else:
                 messages = messages + [{"role": "user", "content": (
                     "[系统自动预检索] 已自动检索学生上传的资料，但未命中相关片段。"
-                    "你必须如实告诉学生「在已上传的资料中没有找到相关内容」，并建议补充上传"
-                    "或检查资料，严禁凭文件名猜测或编造资料内容。")}]
+                    "你可以先用更精确的篇目名/课文名/概念名调用 knowledge_search 重试一次"
+                    "（不得重复同一查询）；重试仍无结果，才如实告诉学生"
+                    "「在已上传的资料中没有找到相关内容」，并建议补充上传或检查资料，"
+                    "严禁凭文件名猜测或编造资料内容。")}]
 
     # Once deterministic grounding has supplied the evidence, spending the
     # remaining tool-call budget on hidden provider reasoning is counterproductive:

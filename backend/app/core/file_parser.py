@@ -56,9 +56,10 @@ def _maybe_sync_ocr(raw: bytes, text_layer: str, n_pages: int,
                     *, pages: list[str] | None = None) -> str:
     """同步 tesseract OCR 回退（扫描/混合 PDF）。返回合并文本或 ""（不触发/失败）。
 
-    触发条件（P5a-A2 逐页判定，替代旧的全书页均判定）：
+    触发条件（P5a-A2 逐页判定 + P8 乱码页，替代旧的全书页均判定）：
       - mode=off：不触发。
-      - mode=auto：存在**任一**稀疏页（页字符 < 阈值）即触发，但只 OCR 稀疏页，
+      - mode=auto：存在**任一**稀疏页（页字符 < 阈值）或稠密乱码页（定制字体
+        无 ToUnicode 映射，见 core/text_quality）即触发，但只 OCR 这些页，
         文本层达标页原样保留（混合书两半都得最佳文本；良好文本层页不被降质）。
       - mode=on：强制整本 OCR。
     tesseract 缺失时放弃（教材库后台仍有视觉模型通道）。OCR 页数受
@@ -87,13 +88,13 @@ def _maybe_sync_ocr(raw: bytes, text_layer: str, n_pages: int,
         if n_pages > cap:
             ocr_text += f"\n[注：页数 {n_pages} 超过同步 OCR 上限 {cap}，仅识别前 {cap} 页；完整识别请上传到教材库]"
         return ocr_text
-    # auto：逐页稀疏判定，无稀疏页不触发。
+    # auto：逐页判定（稀疏 ∪ 乱码），无目标页不触发。
     page_texts = pages if pages is not None else text_layer.split("\f")
-    if not pdf_ocr.sparse_page_indices(page_texts):
+    if not pdf_ocr.pages_needing_ocr(page_texts):
         return ""
     merged, stats = pdf_ocr.ocr_pdf_pages_mixed_sync(
         raw, lambda png: _ocr._tesseract_ocr(png, psm=3),
-        max_ocr_pages=cap, dpi=settings.pdf_ocr_dpi)
+        page_texts=page_texts, max_ocr_pages=cap, dpi=settings.pdf_ocr_dpi)
     if not merged:
         return ""
     ocr_text = "\f".join(merged)  # 空页占位保留（页码与物理页一一对应）

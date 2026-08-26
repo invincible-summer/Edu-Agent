@@ -66,28 +66,56 @@ def _quiz_projection(result: ToolResult) -> str:
 
 
 def project_knowledge_evidence(result: ToolResult, limit: int) -> str:
-    """Budget whole selected evidence blocks; never cut a material delimiter."""
+    """Budget whole selected evidence blocks; never cut a material delimiter.
+
+    P9 反碎片化：预算装不下的证据不再被静默丢弃，而是降为一行指针
+    （来源·页码·chunk 序号）——模型仍知道这些证据存在，可换关键词再查或
+    用 knowledge_read 按指针取原文。课文级合并块带 lesson_label 展示。
+    """
     rows = result.data.get("results", []) if isinstance(result.data, dict) else []
     if not isinstance(rows, list) or not rows:
         return result.text[:limit]
-    head = (f"从课程资料中筛选出 {len(rows)} 条可靠证据"
-            f"（过滤 {int(result.data.get('omitted_count', 0) or 0)} 条）：")
-    parts = [head]
+    partial = bool(result.data.get("partial"))
+    head = (f"找到 {len(rows)} 条部分相关证据（低置信，过滤 "
+            f"{int(result.data.get('omitted_count', 0) or 0)} 条；引用时须说明依据较弱）"
+            if partial else
+            f"从课程资料中筛选出 {len(rows)} 条可靠证据"
+            f"（过滤 {int(result.data.get('omitted_count', 0) or 0)} 条）")
+    parts = [head + "："]
     used = len(head)
+
+    def _row_location(row: dict) -> str:
+        rng = row.get("printed_page_range")
+        if rng and len(rng) == 2:
+            return f"教材第{rng[0]}–{rng[1]}页"
+        printed = row.get("printed_page")
+        if printed:
+            return f"教材第{printed}页"
+        if row.get("page"):
+            return f"PDF第{row.get('page')}页"
+        return f"chunk {row.get('index', 0)}"
+
+    overflow: list[str] = []
     for row in rows:
         if not isinstance(row, dict):
             continue
         excerpt = str(row.get("evidence_excerpt") or row.get("text") or "").strip()
         source = str(row.get("filename") or row.get("source") or "资料")
-        location = f" · 第{row.get('page')}页" if row.get("page") else ""
+        lesson = str(row.get("lesson_label") or row.get("lesson") or "").strip()
+        label = f"{source} · 课文《{lesson}》节选 · {_row_location(row)}" if lesson \
+            else f"{source} · {_row_location(row)}"
         confidence = row.get("confidence")
-        block = (f"[来源：{source}{location} · chunk {row.get('index', 0)}]"
+        block = (f"[来源：{label} · chunk {row.get('index', 0)}]"
                  f" (置信度 {confidence})\n"
                  f"<material_excerpt>{excerpt}</material_excerpt>")
         if used + len(block) + 2 > limit:
-            break
+            overflow.append(f"[未展开] {label} · chunk {row.get('index', 0)}"
+                            f"（置信度 {confidence}，可用 knowledge_read 取原文）")
+            continue
         parts.append(block)
         used += len(block) + 2
+    if overflow:
+        parts.append(f"另有 {len(overflow)} 条证据因篇幅未展开：\n" + "\n".join(overflow))
     if len(parts) == 1 and rows:
         # Keep one complete excerpt even when an unusually small custom limit is set.
         row = rows[0]

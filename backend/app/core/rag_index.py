@@ -56,8 +56,28 @@ def _validate_staged_chunks(text: str, chunks: list[Any]) -> dict[str, Any]:
         start, end = metadata.get("source_start"), metadata.get("source_end")
         if start is not None and end is not None and int(start) > int(end):
             raise ValueError("Structured RAG staging source mapping is invalid")
-    return {"status": "passed", "chunk_count": len(chunks),
-            "max_token_estimate": max_tokens, "hard_token_limit": HARD_TOKEN_LIMIT}
+    quality = {"status": "passed", "chunk_count": len(chunks),
+               "max_token_estimate": max_tokens, "hard_token_limit": HARD_TOKEN_LIMIT}
+    # P9 索引准入门：structured chunker 对乱码 chunk 已置 garble_excluded 且
+    # 不生成 BM25 token（mojibake 绝不进入索引）；此处计数供质量报告观测。
+    excluded = sum(1 for c in chunks
+                   if (getattr(c, "metadata", {}) or {}).get("garble_excluded"))
+    if excluded:
+        quality["excluded_by_garble"] = excluded
+    # 保真度检查（P8）：结构门槛只看 token/映射，乱码文本层（定制字体无
+    # ToUnicode 映射）同样能通过——2026-08 取证 27 卷中 8 卷以 mojibake
+    # 形态拿到 staging_quality=passed。这里按页跑 text_quality 分级，坏卷
+    # 标记 failed_garble 但仍发布（降级可检索），由质量报告端点/手动
+    # quality_ocr 重建兜底，绝不自动烧 OCR API。
+    from .text_quality import summarize_pages
+    summary = summarize_pages(text.split("\f"))
+    corrupt = int(summary["corrupt"])
+    non_empty = summary["total"] - summary["empty"]
+    if corrupt and non_empty and corrupt / non_empty >= 0.10:
+        quality["status"] = "failed_garble"
+    quality["text_quality"] = {k: (round(v, 6) if isinstance(v, float) else int(v))
+                               for k, v in summary.items()}
+    return quality
 
 
 def _stage_file_index(lib: Any, owner_id: str, file_id: str,

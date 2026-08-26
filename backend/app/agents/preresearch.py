@@ -12,18 +12,10 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
-_CONTENT_QUERY_RE = re.compile(
-    r"(什么|为何|为什么|如何|怎么|原理|定义|概念|公式|变换|解释|讲解|区别|"
-    r"关系|意义|推导|计算|总结|介绍|证明|条件|特点|过程|影响|"
-    r"what|why|how|define|definition|principle|formula|explain)", re.IGNORECASE)
-_NON_CONTENT_RE = re.compile(
-    r"^(你好|您好|嗨|谢谢|收到|继续|好的|好|嗯|取消|删除|打开|关闭|"
-    r"返回|重试|再见|hello|hi|thanks|ok|continue)$", re.IGNORECASE)
-
-_FILE_REF_RE = re.compile(
-    r"(文件|资料|文档|课件|教材|讲义|这份|该份|这篇|这本|这份文件|"
-    r"pdf|docx|doc|pptx|ppt|txt|md|markdown|"
-    r"上传|附件|报告|综述|开题|论文|作业)", re.IGNORECASE)
+from .material_signals import CONTENT_QUERY_RE as _CONTENT_QUERY_RE
+from .material_signals import NON_CONTENT_RE as _NON_CONTENT_RE
+from .material_signals import FILE_REF_RE as _FILE_REF_RE
+from .material_signals import mentions_title
 
 
 @dataclass(frozen=True)
@@ -62,9 +54,14 @@ def is_content_question(user_message: str) -> bool:
         return False
     if _CONTENT_QUERY_RE.search(text):
         return True
+    # 书名号里的篇目/课文名（≥2 字）几乎总是教材检索意图——「《荷塘月色讲》」
+    # 这类 7 字短句靠长度门槛永远过不去（2026-08-25 取证：双重否决导致
+    # 教材就在工作区却完全不触发检索）。
+    if mentions_title(user_message or ""):
+        return True
     # A substantive non-operational sentence is still a knowledge request.
     # Keep this conservative for very short control messages.
-    return len(text) >= 8 and not _FILE_REF_RE.fullmatch(text)
+    return len(text) >= 6 and not _FILE_REF_RE.fullmatch(text)
 
 
 def decide_material_grounding(

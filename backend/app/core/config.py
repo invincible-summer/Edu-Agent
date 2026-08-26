@@ -71,8 +71,12 @@ class Settings:
     reasoning_summary_level: str = os.getenv("REASONING_SUMMARY_LEVEL", "adaptive").strip().lower()
     tool_context_projection_mode: str = os.getenv("TOOL_CONTEXT_PROJECTION_MODE", "on").strip().lower()
     tool_message_mode: str = os.getenv("TOOL_MESSAGE_MODE", "native").strip().lower()
-    tool_context_current_max_chars: int = int(os.getenv("TOOL_CONTEXT_CURRENT_MAX_CHARS", "2000"))
+    tool_context_current_max_chars: int = int(os.getenv("TOOL_CONTEXT_CURRENT_MAX_CHARS", "6000"))
     tool_context_old_preview_chars: int = int(os.getenv("TOOL_CONTEXT_OLD_PREVIEW_CHARS", "400"))
+    # P9 反碎片化：单条证据摘录的字符上限（证据门 evidence_excerpt 用）。
+    # 旧值 500 的句窗把 520-token 的结构化 chunk 压成孤立碎片（洛伦兹取证：
+    # 「式（8.50）」被切成分式残段），900 配合课文级合并/邻块扩展给出完整语境。
+    rag_evidence_excerpt_chars: int = int(os.getenv("RAG_EVIDENCE_EXCERPT_CHARS", "900"))
     # Post-generation quiz verification: critic = 结构校验 + LLM 独立重解审题,
     # basic = 仅确定性结构校验, off = 旧行为（不校验）。
     quiz_verify_mode: str = os.getenv("QUIZ_VERIFY_MODE", "critic").strip().lower()

@@ -57,6 +57,34 @@ class Chunk:
     metadata: dict = field(default_factory=dict)
 
 
+def retrievable_text(chunk: Chunk) -> str:
+    """Index-time contextualized text（确定性 contextual-retrieval）。
+
+    在正文前拼「书名 · 课题 · 章节路径 · 印刷页码」面包屑头，供 BM25
+    tokenize 与（未来激活的）embedding 共用同一入口；展示文本（chunk.text）
+    不变。动机：课文/章节的标题常只出现在标题行，正文 chunk 对
+    「《荷塘月色》讲了什么」类课题查询零词面覆盖 → BM25 召回为空
+    （2026-08 trace 实证 no_absolute_evidence 假阴性）。面包屑头让每个
+    chunk 都携带其所属课文/章节的词面，Anthropic contextual-retrieval
+    的零 LLM 确定性版本。
+    """
+    meta = chunk.metadata or {}
+    parts: list[str] = [chunk.source] if chunk.source else []
+    section = " ".join(str(s) for s in (meta.get("section_path") or []) if str(s).strip())
+    lesson = str(meta.get("lesson") or "").strip()
+    if lesson and lesson not in section:
+        parts.append(lesson)
+    if section:
+        parts.append(section)
+    printed = meta.get("printed_page")
+    if printed:
+        parts.append(f"第{printed}页")
+    head = " ".join(p for p in parts if p).strip()
+    if not head or chunk.text.strip().startswith(head):
+        return chunk.text
+    return f"{head}\n{chunk.text}"
+
+
 # Sentence-ending punctuation for CJK + Latin. The chunker never cuts inside
 # a sentence: split points only exist right after one of these.
 _SENT_SPLIT_RE = re.compile(r"(?<=[。！？；.!?])")

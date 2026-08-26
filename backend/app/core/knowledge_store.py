@@ -126,7 +126,9 @@ class KnowledgeStore:
                      "printed_page": c.metadata.get("printed_page"),
                      "noise_flags": list(c.metadata.get("noise_flags", [])),
                      "block_types": list(c.metadata.get("block_types", [])),
-                     "section_path": list(c.metadata.get("section_path", []))} for c in pool]
+                     "section_path": list(c.metadata.get("section_path", [])),
+                     "lesson": c.metadata.get("lesson"),
+                     "is_lesson": bool(c.metadata.get("is_lesson"))} for c in pool]
         index = self._ensure_index() if file_ids is None else BM25Index(pool)
         results = index.search(query, top_k=top_k)
         return [{"source": c.source, "filename": c.source,
@@ -136,7 +138,9 @@ class KnowledgeStore:
                  "printed_page": c.metadata.get("printed_page"),
                  "noise_flags": list(c.metadata.get("noise_flags", [])),
                  "block_types": list(c.metadata.get("block_types", [])),
-                 "section_path": list(c.metadata.get("section_path", []))} for c, s in results]
+                 "section_path": list(c.metadata.get("section_path", [])),
+                 "lesson": c.metadata.get("lesson"),
+                 "is_lesson": bool(c.metadata.get("is_lesson"))} for c, s in results]
 
     def file_list(self) -> list[dict[str, Any]]:
         return list(self.files)
