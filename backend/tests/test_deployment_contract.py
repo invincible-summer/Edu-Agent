@@ -28,6 +28,18 @@ class DeploymentContractTests(unittest.TestCase):
         ]
         self.assertEqual([], offenders)
 
+    def test_renewal_hook_is_scoped_to_edu_certificate(self) -> None:
+        hook = (ROOT / "deploy" / "edu-agent-nginx-reload").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn(
+            "/etc/letsencrypt/live/edu-agent.invincible-summer.xyz",
+            hook,
+        )
+        self.assertIn("/usr/sbin/nginx -t", hook)
+        self.assertIn("/usr/bin/systemctl reload nginx.service", hook)
+        self.assertIn("${RENEWED_LINEAGE:-}", hook)
+
     def test_manual_uses_current_frontend_command(self) -> None:
         manual = (ROOT / "docs" / "The_Website_deployment_plan.md").read_text(
             encoding="utf-8"
