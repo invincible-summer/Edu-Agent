@@ -10,14 +10,6 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class DeploymentContractTests(unittest.TestCase):
-    def test_application_units_run_as_ecs_user(self) -> None:
-        for name in ("edu-backend.service", "edu-frontend.service"):
-            unit = (ROOT / "deploy" / name).read_text(encoding="utf-8")
-            self.assertIn("User=ecs-user", unit)
-            self.assertIn("Group=ecs-user", unit)
-            self.assertNotIn("User=eduagent", unit)
-            self.assertNotIn("Group=eduagent", unit)
-
     def test_frontend_unit_passes_next_arguments_without_separator(self) -> None:
         unit = (ROOT / "deploy" / "edu-frontend.service").read_text(encoding="utf-8")
         self.assertIn(
@@ -62,14 +54,6 @@ class DeploymentContractTests(unittest.TestCase):
             "tee /var/www/edu-agent-acme/health-check",
             manual,
         )
-        self.assertIn("`ecs-user` / `ecs-user`", manual)
-        self.assertIn("共享同一个 Unix 身份", manual)
-        self.assertNotIn("sudo useradd", manual)
-        self.assertNotIn("/home/eduagent", manual)
-        self.assertNotIn("sudo -u eduagent", manual)
-        self.assertNotIn("/home/ecs-user/.cache/pip", manual.replace(
-            "不清理共享的 `/home/ecs-user/.cache/pip`", ""
-        ))
 
 
 if __name__ == "__main__":

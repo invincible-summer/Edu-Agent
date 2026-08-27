@@ -5,8 +5,8 @@ After=network-online.target
 
 [Service]
 Type=simple
-User=ecs-user
-Group=ecs-user
+User=eduagent
+Group=eduagent
 UMask=0077
 WorkingDirectory=/opt/edu-agent
 EnvironmentFile=/opt/edu-agent/.env
