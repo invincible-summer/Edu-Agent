@@ -715,7 +715,7 @@ frontend/src/
 2. **同源生产**：不设该变量 → 相对路径 `/api/v1`，nginx 反代 `/api/*` 到后端（SSE 需 `proxy_buffering off`）。模板见 `deploy/`。
 3. **本地一键**：`./start.sh` 先探测后端/前端实际端口，再同步 `NEXT_PUBLIC_BACKEND_URL` 与本地 `CORS_ORIGINS`；子进程统一直连网络，不继承 shell 代理。前端默认生产模式（构建时烤入后端端口并记录于 `.next/edu-build-port`，端口漂移自动重建）。
 
-生产清单（`.env.example` 尾部）：`AUTH_MODE=1` + 替换 `AUTH_JWT_SECRET` + `CORS_ORIGINS` 白名单 + `chmod 600 .env`。依赖锁定：`requirements.lock`。**同机生产部署手册**（固定域名/端口、干净克隆、systemd、ACME/HTTPS、同机回归、备份与回滚）见 [`docs/The_Website_deployment_plan.md`](The_Website_deployment_plan.md)。
+生产清单（`.env.example` 尾部）：`AUTH_MODE=1` + 替换 `AUTH_JWT_SECRET` + `CORS_ORIGINS` 白名单 + `chmod 600 .env`。Python 生产依赖采用 `backend/requirements.txt` + `backend/constraints.txt` 约束；BM25 基础环境不安装可选向量/本地模型 requirements。**同机生产部署手册**（固定域名/端口、干净克隆、systemd、ACME/HTTPS、同机回归、备份与回滚）见 [`docs/The_Website_deployment_plan.md`](The_Website_deployment_plan.md)。
 
 ### 21.6 OpenAI 兼容门面（第三方平台接入）
 

@@ -40,7 +40,8 @@
 ```bash
 conda create -y -n edu_agent -c conda-forge --override-channels python=3.11 pip
 conda activate edu_agent
-pip install -r backend/requirements.txt
+pip install -r backend/requirements.txt  # 自动应用 backend/constraints.txt
+# 完整后端向量回归另装：pip install -r backend/requirements-test.txt
 cd frontend && pnpm install
 ```
 
@@ -50,7 +51,7 @@ cd frontend && pnpm install
 cp .env.example .env   # 填入 LLM_BASE_URL / LLM_API_KEY / LLM_MODEL，切勿提交 .env
 ```
 
-默认推荐 DeepSeek 官方 API；可改为任意 OpenAI 兼容端点（OpenAI / GLM / 本地 vLLM 等）。可选：`EMBEDDING_PROVIDER=local|openai` 启用 RAG 向量轨（默认 `off`，即开箱纯 BM25 检索；本地部署见 `docs/LOCAL_SEMANTIC_RAG.md`）。RAG 模型后端走统一 provider 接口（`core/embedding.py`）：跨 provider 的 `embed(texts)` 契约稳定，local（离线 CPU MiniLM）与 openai（OpenAI 兼容端点）只是两个内置实现，新增本地或远端模型后端只需实现同一接口并扩展 `EMBEDDING_PROVIDER` 枚举，任一 provider 故障都自动回退 BM25。`MULTIMODAL_*` 启用视觉识题/OCR（缺省本地 tesseract）。聊天图片上传会先进入当前会话资料库并返回 OCR 预览。
+默认推荐 DeepSeek 官方 API；可改为任意 OpenAI 兼容端点（OpenAI / GLM / 本地 vLLM 等）。基础 `backend/requirements.txt` 只安装 BM25/OCR/API 运行时，并由 `backend/constraints.txt` 固定生产版本；不会安装 Chroma、NumPy、PyTorch 或 sentence-transformers。可选：安装 `requirements-vector.txt` 或按 `docs/LOCAL_SEMANTIC_RAG.md` 安装 CPU 本地语义依赖后，再用 `EMBEDDING_PROVIDER=local|openai` 启用 RAG 向量轨（默认 `off`，即开箱纯 BM25 检索）。RAG 模型后端走统一 provider 接口（`core/embedding.py`）：跨 provider 的 `embed(texts)` 契约稳定，local（离线 CPU MiniLM）与 openai（OpenAI 兼容端点）只是两个内置实现，新增本地或远端模型后端只需实现同一接口并扩展 `EMBEDDING_PROVIDER` 枚举，任一 provider 故障都自动回退 BM25。`MULTIMODAL_*` 启用视觉识题/OCR（缺省本地 tesseract）。聊天图片上传会先进入当前会话资料库并返回 OCR 预览。
 
 ### 运行
 
@@ -144,7 +145,8 @@ Edu_Agent/
 ├── .env.example             # 配置模板
 ├── README.md / docs/DESIGN.md  # 入门 / 架构主文档
 ├── backend/
-│   ├── requirements.txt
+│   ├── requirements.txt / constraints.txt       # BM25 生产依赖 + 精确约束
+│   ├── requirements-{vector,local-rag,cpu,test}.txt # 可选语义/测试运行时
 │   ├── serve.py / cli.py
 │   └── app/
 │       ├── main.py          # FastAPI 工厂

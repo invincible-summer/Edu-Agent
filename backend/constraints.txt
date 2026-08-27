@@ -1,3 +1,9 @@
+# Tested production dependency set for Python 3.11.
+# requirements files declare capabilities; this file pins the complete tested
+# resolver set so fresh installs do not drift or backtrack. Constraints do not
+# install optional packages by themselves: BM25 production installs only the
+# packages reachable from requirements.txt.
+
 aiohappyeyeballs==2.7.1
 aiohttp==3.14.3
 aiosignal==1.4.0
@@ -95,3 +101,10 @@ websocket-client==1.9.0
 websockets==16.1.1
 xlsxwriter==3.2.9
 yarl==1.24.5
+
+# Optional local semantic RAG pins (activated only by requirements-local-rag.txt
+# after requirements-cpu.txt installs the matching +cpu PyTorch wheel).
+sentence-transformers==5.6.1
+transformers==5.14.1
+scikit-learn==1.9.0
+torch==2.13.0

@@ -1,3 +1,8 @@
+# Core runtime for BM25-only production and remote OpenAI-compatible services.
+# Exact production versions and resolver-sensitive transitive packages are
+# constrained in constraints.txt, matching the Paper Agent deployment model.
+-c constraints.txt
+
 openai>=1.40
 fastapi>=0.110
 uvicorn[standard]>=0.30
@@ -8,10 +13,9 @@ socksio>=1.0
 PyJWT>=2.8
 bcrypt>=4.2
 PyMuPDF>=1.24
+Pillow>=10.0
+pytesseract>=0.3.10
 python-docx>=1.1
 python-pptx>=0.6
 python-multipart>=0.0.9
-chromadb>=0.5
 email-validator>=2.0
-numpy>=1.26
-sentence-transformers>=3.0,<6

@@ -4,12 +4,19 @@ Edu_Agent 的语义检索是独立运行时：不 import Paper_Agent，不复用
 
 ## 1. CPU 运行时与配置
 
-先在 Edu_Agent 自己的虚拟环境安装 CPU PyTorch，再安装项目依赖，避免拉入 CUDA 运行时：
+使用 Python 3.11，并在 Edu_Agent 自己的虚拟环境中先安装仓库固定的 CPU PyTorch，再安装基础运行时与本地语义扩展，避免拉入 CUDA 运行时：
 
 ```bash
-python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
-python -m pip install -r backend/requirements.txt
+python3.11 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -r backend/requirements-cpu.txt
+.venv/bin/python -m pip install \
+  -r backend/requirements.txt \
+  -r backend/requirements-local-rag.txt
+.venv/bin/python -m pip check
 ```
+
+仅使用 OpenAI-compatible Embedding、无需本地 MiniLM 时，不安装 CPU PyTorch 和 `requirements-local-rag.txt`，改为在基础环境追加 `backend/requirements-vector.txt`。所有 optional requirements 都复用 `backend/constraints.txt` 的生产约束。
 
 生产 `.env` 示例：
 

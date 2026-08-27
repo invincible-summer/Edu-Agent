@@ -1,0 +1,7 @@
+# Optional offline MiniLM runtime. Install requirements-cpu.txt first on the
+# supported CPU-only deployment, then install this file together with the core
+# requirements. BM25-only production must not install this file.
+-c constraints.txt
+-r requirements-vector.txt
+
+sentence-transformers>=3.0,<6
