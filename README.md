@@ -50,7 +50,7 @@ cd frontend && pnpm install
 cp .env.example .env   # 填入 LLM_BASE_URL / LLM_API_KEY / LLM_MODEL，切勿提交 .env
 ```
 
-默认推荐 DeepSeek 官方 API；可改为任意 OpenAI 兼容端点（OpenAI / GLM / 本地 vLLM 等）。可选：`EMBEDDING_PROVIDER=local|openai` 启用 RAG 向量轨（本地部署见 `docs/LOCAL_SEMANTIC_RAG.md`），`MULTIMODAL_*` 启用视觉识题/OCR（缺省本地 tesseract）。聊天图片上传会先进入当前会话资料库并返回 OCR 预览。
+默认推荐 DeepSeek 官方 API；可改为任意 OpenAI 兼容端点（OpenAI / GLM / 本地 vLLM 等）。可选：`EMBEDDING_PROVIDER=local|openai` 启用 RAG 向量轨（默认 `off`，即开箱纯 BM25 检索；本地部署见 `docs/LOCAL_SEMANTIC_RAG.md`）。RAG 模型后端走统一 provider 接口（`core/embedding.py`）：跨 provider 的 `embed(texts)` 契约稳定，local（离线 CPU MiniLM）与 openai（OpenAI 兼容端点）只是两个内置实现，新增本地或远端模型后端只需实现同一接口并扩展 `EMBEDDING_PROVIDER` 枚举，任一 provider 故障都自动回退 BM25。`MULTIMODAL_*` 启用视觉识题/OCR（缺省本地 tesseract）。聊天图片上传会先进入当前会话资料库并返回 OCR 预览。
 
 ### 运行
 
@@ -112,7 +112,7 @@ cd backend && python cli.py --grade 初中 --once "讲一下惯性"
 | `QUIZ_VERIFY_MODE` | 出题后校验：critic=结构校验+LLM 独立重解审题 / basic=仅结构校验 / off=不校验 | critic |
 | `TOOL_CONTEXT_PROJECTION_MODE` | 工具专用上下文投影 off/shadow/on；SSE 与业务存储始终保留完整结果 | on |
 | `TOOL_MESSAGE_MODE` | legacy/shadow/native；native 使用原生 call/result，Provider 400 自动回退 legacy | native |
-| `EMBEDDING_PROVIDER` / `EMBEDDING_*` | off/local/openai；local 为离线 CPU MiniLM，失败回退 BM25 | off |
+| `EMBEDDING_PROVIDER` / `EMBEDDING_*` | RAG 向量模型 provider：off/local/openai；local=离线 CPU MiniLM，openai=OpenAI 兼容端点。接口可拓展——统一 `embed(texts)` 契约，新增后端只需实现同一接口并扩展枚举；任何 provider 故障回退 BM25 | off |
 | `MULTIMODAL_BASE_URL/API_KEY/MODEL` | 可选视觉模型（图片/扫描页/文档嵌入图片 OCR） | 未配=本地 tesseract |
 | `MULTIMODAL_DISABLE_THINKING` | VLM OCR 默认关闭思考/最低思考强度，网关拒绝自动去参重试 | 1 |
 | `MULTIMODAL_OCR_RETRIES` | 单页 vision 调用重试次数（异常/空 content 退避重试，耗尽回退 tesseract） | 3 |
@@ -130,7 +130,7 @@ cd backend && python cli.py --grade 初中 --once "讲一下惯性"
 | `ADMIN_EMAIL/ADMIN_PASSWORD` | 管理员引导（启动时确保存在 role=admin 账号；不配=无管理员） | 空 |
 | `CROSS_SESSION_MEMORY` | 详细 transcript 跨会话召回范围：workspace/all/off；精简 prompt memory 独立按用户 5–30 会话窗口管理 | workspace |
 | `EDU_SOFT_BUDGET_TOKENS` | 旧版固定上下文预算；未设置时按模型窗口、输出上限和安全区动态计算 | 动态 |
-| `RAG_HYBRID` / `CHROMA_DIR` | 混合检索开关 / 向量库目录 | 1 / `knowledge/vector_db` |
+| `RAG_HYBRID` / `CHROMA_DIR` | 混合检索开关 / 向量库目录；`EMBEDDING_PROVIDER=off`（默认）时向量轨不激活，实际检索为纯 BM25 | 1 / `knowledge/vector_db` |
 | `CORS_ORIGINS` | 跨域白名单（生产禁 `*`）；start.sh 自动加入实际本地前端端口 | 3000/3001/3030 本地 Origin |
 | `TRACE_DIR` | trace 落盘目录 | `backend/traces` |
 
