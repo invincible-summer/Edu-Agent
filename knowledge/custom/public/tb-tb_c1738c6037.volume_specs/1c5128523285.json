@@ -1,0 +1,5028 @@
+{
+  "file_id": "1c5128523285",
+  "text_sha256": "d5e936fffbf7c7d45af8cbfc091931cd508f3dfe38f7bee6dd8d7c68637a12bc",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章　分子动理论与气体实验定律",
+        "concepts": [
+          {
+            "name": "分子动理论基本观点",
+            "difficulty": 2,
+            "description": "物体由分子组成，分子永不停息运动且相互作用。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "分子动理论认为物体由大量分子组成，分子永不停息地做无规则运动，分子间存在相互作用力。",
+            "example": "墨水在水中逐渐散开。"
+          },
+          {
+            "name": "阿伏伽德罗常数",
+            "difficulty": 2,
+            "description": "1 mol物质所含的粒子数，约为6.02×10²³ mol⁻¹。",
+            "aliases": [
+              "NA"
+            ],
+            "prerequisites": [],
+            "definition": "1 mol任何物质所含的相同粒子数称为阿伏伽德罗常数。",
+            "example": "1 mol水约含6.02×10²³个水分子。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "扩散现象",
+            "difficulty": 2,
+            "description": "不同物质彼此进入对方的现象，温度越高扩散越快。",
+            "aliases": [],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "不同物质的分子由于无规则运动而彼此进入对方的现象称为扩散。",
+            "example": "蓝黑墨水在清水中逐渐混合均匀。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "布朗运动",
+            "difficulty": 3,
+            "description": "悬浮微粒受到液体分子撞击而产生的无规则运动。",
+            "aliases": [
+              "Brown运动"
+            ],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "悬浮微粒在液体中受到分子无规则撞击而产生的永不停息运动称为布朗运动。",
+            "example": "显微镜下碳素墨水微粒不断改变运动方向。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "热运动",
+            "difficulty": 2,
+            "description": "分子的无规则运动，温度越高运动越剧烈。",
+            "aliases": [
+              "分子热运动"
+            ],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "分子永不停息的无规则运动通常称为热运动。",
+            "example": "升高水温后，墨水扩散速度加快。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "分子间作用力",
+            "difficulty": 3,
+            "description": "分子间同时存在的引力和斥力，大小随距离变化。",
+            "aliases": [],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "分子间同时存在引力和斥力，其合力大小和方向随分子间距离变化。",
+            "example": "两个压紧的铅块不易被拉开。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "分子平衡位置",
+            "difficulty": 3,
+            "description": "分子间引力和斥力相互平衡、合力为零的位置。",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "分子间距离为r₀、引力与斥力相互平衡且合力为零的位置称为分子平衡位置。",
+            "example": "分子间距离等于r₀时合力为零。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "分子势能",
+            "difficulty": 3,
+            "description": "由分子间相对位置决定的势能。",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "由分子间相对位置决定的势能称为分子势能。",
+            "example": "物体体积变化时分子势能随之改变。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "平均动能",
+            "difficulty": 3,
+            "description": "大量分子热运动动能的平均值，温度是其标志。",
+            "aliases": [
+              "分子热运动平均动能"
+            ],
+            "prerequisites": [
+              "热运动"
+            ],
+            "definition": "大量分子热运动动能的平均值称为分子热运动的平均动能。",
+            "example": "温度升高时分子平均动能增大。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "物体的内能",
+            "difficulty": 3,
+            "description": "物体所有分子热运动动能与分子势能的总和。",
+            "aliases": [
+              "内能"
+            ],
+            "prerequisites": [
+              "分子势能",
+              "平均动能"
+            ],
+            "definition": "物体所有分子热运动的动能和分子势能的总和称为物体的内能。",
+            "example": "物体的内能与质量、温度和体积有关。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "油膜法",
+            "difficulty": 2,
+            "description": "利用油膜体积和面积间接估测分子直径的方法。",
+            "aliases": [
+              "油膜法估测"
+            ],
+            "prerequisites": [],
+            "definition": "通过测量油膜体积和面积并用厚度近似分子直径的估测方法称为油膜法。",
+            "example": "用油酸酒精溶液测定油酸分子大小。"
+          },
+          {
+            "name": "单分子油膜",
+            "difficulty": 3,
+            "description": "油酸在水面充分展开后形成的近似单层分子油膜。",
+            "aliases": [],
+            "prerequisites": [
+              "油膜法"
+            ],
+            "definition": "油酸膜面积最大且稳定时，可近似认为形成了单层油酸分子油膜。",
+            "example": "油酸滴在撒有爽身粉的水面上并充分扩散。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "统计规律",
+            "difficulty": 2,
+            "description": "大量偶然事件从整体上表现出的必然规律。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大量偶然事件表现出来的整体规律称为统计规律。",
+            "example": "大量钢珠落入伽尔顿板中央槽较多。"
+          },
+          {
+            "name": "速率分布规律",
+            "difficulty": 3,
+            "description": "气体分子速率分布呈现中间多、两头少的规律。",
+            "aliases": [
+              "麦克斯韦速率分布规律"
+            ],
+            "prerequisites": [
+              "统计规律",
+              "热运动"
+            ],
+            "definition": "一定温度下气体分子速率分布具有中间速率分子多、两端速率分子少的规律。",
+            "example": "升高温度，速率分布曲线峰值向高速率侧移动。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "气体状态参量",
+            "difficulty": 2,
+            "description": "描述一定质量气体宏观状态的体积、温度和压强。",
+            "aliases": [
+              "状态参量"
+            ],
+            "prerequisites": [],
+            "definition": "描述系统状态的体积、温度和压强等物理量称为状态参量。",
+            "example": "用p、V、T描述封闭气体状态。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "气体体积",
+            "difficulty": 2,
+            "description": "气体分子能够到达的空间，通常等于容器容积。",
+            "aliases": [],
+            "prerequisites": [
+              "气体状态参量"
+            ],
+            "definition": "气体体积是气体分子能够到达的空间，通常等于气体所充满的容器容积。",
+            "example": "气体充满容器时体积等于容器容积。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "热力学温度",
+            "difficulty": 2,
+            "description": "温度的国际单位制表示，单位为开尔文，符号为K。",
+            "aliases": [
+              "开尔文温度"
+            ],
+            "prerequisites": [
+              "热运动"
+            ],
+            "definition": "以开尔文为单位表示的温度称为热力学温度。",
+            "example": "摄氏温度20℃对应热力学温度293.15 K。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "气体压强",
+            "difficulty": 3,
+            "description": "气体分子频繁撞击容器壁而产生的压强。",
+            "aliases": [
+              "气压"
+            ],
+            "prerequisites": [
+              "热运动",
+              "气体状态参量"
+            ],
+            "definition": "气体分子频繁撞击容器壁，使容器壁受到稳定压力而产生气体压强。",
+            "example": "气体分子撞击活塞使其受到持续作用力。"
+          },
+          {
+            "name": "等温过程",
+            "difficulty": 2,
+            "description": "一定质量气体温度保持不变时发生的状态变化过程。",
+            "aliases": [
+              "等温变化"
+            ],
+            "prerequisites": [
+              "气体状态参量"
+            ],
+            "definition": "一定质量气体在温度不变条件下发生的状态变化称为等温过程。",
+            "example": "缓慢推压气筒活塞并使气体温度基本不变。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "玻意耳定律",
+            "difficulty": 3,
+            "description": "一定质量气体等温时，压强与体积成反比。",
+            "aliases": [
+              "玻意耳—马略特定律"
+            ],
+            "prerequisites": [
+              "等温过程",
+              "气体压强",
+              "气体体积"
+            ],
+            "definition": "一定质量气体在温度不变时，压强与体积成反比，即pV保持不变。",
+            "example": "气体体积减半时，压强变为原来的两倍。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "查理定律",
+            "difficulty": 3,
+            "description": "一定质量气体等容时，压强与热力学温度成正比。",
+            "aliases": [],
+            "prerequisites": [
+              "热力学温度",
+              "气体压强"
+            ],
+            "definition": "一定质量气体在体积不变时，压强与热力学温度成正比。",
+            "example": "密闭刚性容器加热后气体压强增大。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "盖—吕萨克定律",
+            "difficulty": 3,
+            "description": "一定质量气体等压时，体积与热力学温度成正比。",
+            "aliases": [],
+            "prerequisites": [
+              "热力学温度",
+              "气体体积"
+            ],
+            "definition": "一定质量气体在压强不变时，体积与热力学温度成正比。",
+            "example": "气球受热膨胀。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "理想气体模型",
+            "difficulty": 4,
+            "description": "分子大小可忽略，除碰撞外分子间作用力可忽略的模型。",
+            "aliases": [
+              "理想气体"
+            ],
+            "prerequisites": [
+              "分子间作用力",
+              "气体压强"
+            ],
+            "definition": "严格遵循三个气体实验定律的气体可视为理想气体模型。",
+            "example": "压强不大、温度不低时的气体可近似视为理想气体。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "理想气体状态方程",
+            "difficulty": 4,
+            "description": "一定质量理想气体满足pV/T为常量的状态关系。",
+            "aliases": [],
+            "prerequisites": [
+              "玻意耳定律",
+              "查理定律",
+              "理想气体模型"
+            ],
+            "definition": "一定质量理想气体状态变化时，压强、体积和热力学温度满足pV/T为常量。",
+            "example": "气体压强、体积和温度同时变化时进行状态计算。",
+            "section": "第5节 气体实验定律"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　走进微观世界",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第1节　分子动理论的基本观点",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第2节　科学测量：用油膜法估测油酸分子的大小",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第3节　气体分子速率分布的统计规律",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第4节　科学探究：气体压强与体积的关系",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第5节　气体实验定律",
+            "page_range": [
+              6,
+              37
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章　固体与液体",
+        "concepts": [
+          {
+            "name": "固体",
+            "difficulty": 1,
+            "description": "具有一定形状和体积的物质状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "固体是具有一定形状和体积的物质状态。",
+            "example": "粉笔和石膏都属于固体。"
+          },
+          {
+            "name": "液体",
+            "difficulty": 1,
+            "description": "具有一定体积但没有固定形状的物质状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "液体是具有一定体积而没有固定形状的物质状态。",
+            "example": "水、酒精和水银都是液体。"
+          },
+          {
+            "name": "晶体",
+            "difficulty": 2,
+            "description": "分子排列有规律且具有固定熔点的固体",
+            "aliases": [],
+            "prerequisites": [
+              "固体"
+            ],
+            "definition": "晶体是分子空间排列有规律并具有固定熔点的固体。",
+            "example": "食盐、糖和金属都是晶体。"
+          },
+          {
+            "name": "非晶体",
+            "difficulty": 2,
+            "description": "分子排列无规律且没有固定熔点的固体",
+            "aliases": [],
+            "prerequisites": [
+              "固体"
+            ],
+            "definition": "非晶体是分子空间排列无规律且没有固定熔点的固体。",
+            "example": "玻璃、蜂蜡和松香属于非晶体。"
+          },
+          {
+            "name": "单晶体",
+            "difficulty": 2,
+            "description": "具有规则几何外形的晶体",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "单晶体是内部微粒排列有序且具有规则几何外形的晶体。",
+            "example": "规则的食盐晶体属于单晶体。",
+            "section": "第1节 固体类型及微观结构"
+          },
+          {
+            "name": "多晶体",
+            "difficulty": 2,
+            "description": "由大量细小单晶体杂乱排列构成的晶体",
+            "aliases": [],
+            "prerequisites": [
+              "晶体",
+              "单晶体"
+            ],
+            "definition": "多晶体是由大量细微单晶体杂乱排列构成的晶体。",
+            "example": "许多金属固体属于多晶体。",
+            "section": "第1节 固体类型及微观结构"
+          },
+          {
+            "name": "各向异性",
+            "difficulty": 3,
+            "description": "物理性质随方向不同而不同的特性",
+            "aliases": [
+              "anisotropy"
+            ],
+            "prerequisites": [
+              "单晶体"
+            ],
+            "definition": "各向异性是物体在不同方向上物理性质不一定相同的特性。",
+            "example": "单晶云母在不同方向上的导热性不同。"
+          },
+          {
+            "name": "各向同性",
+            "difficulty": 3,
+            "description": "各个方向上的物理性质通常相同的特性",
+            "aliases": [
+              "isotropy"
+            ],
+            "prerequisites": [
+              "非晶体",
+              "多晶体"
+            ],
+            "definition": "各向同性是物体在各个方向上的物理性质通常相同的特性。",
+            "example": "玻璃在不同方向上的导热性相同。",
+            "section": "第1节 固体类型及微观结构"
+          },
+          {
+            "name": "分子间作用力",
+            "difficulty": 3,
+            "description": "物质微粒之间存在的相互作用力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "分子间作用力是物质微粒之间存在的相互作用力。",
+            "example": "金刚石中碳原子间作用力很强。"
+          },
+          {
+            "name": "晶体熔点",
+            "difficulty": 2,
+            "description": "晶体在一定压强下熔化时保持不变的温度",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶体熔点是晶体在一定压强下开始熔化并保持温度不变的温度。",
+            "example": "晶体熔化时固液共存且温度不变。"
+          },
+          {
+            "name": "晶体熔化特点",
+            "difficulty": 3,
+            "description": "晶体熔化时温度保持不变直到完全熔化",
+            "aliases": [],
+            "prerequisites": [
+              "晶体熔点",
+              "分子间作用力"
+            ],
+            "definition": "晶体熔化过程中吸收热量而温度保持在熔点不变。",
+            "example": "冰熔化过程中温度保持不变。"
+          },
+          {
+            "name": "表面层",
+            "difficulty": 2,
+            "description": "液体与气体接触处的分子薄层",
+            "aliases": [],
+            "prerequisites": [
+              "液体"
+            ],
+            "definition": "表面层是液体与气体接触表面处形成的分子薄层。",
+            "example": "水面上方的薄层分子分布较稀疏。"
+          },
+          {
+            "name": "表面张力",
+            "difficulty": 3,
+            "description": "液体表面各部分间的相互引力",
+            "aliases": [
+              "surface tension"
+            ],
+            "prerequisites": [
+              "表面层",
+              "分子间作用力"
+            ],
+            "definition": "表面张力是液体表面各部分之间的相互引力。",
+            "example": "水黾能够停留在水面上。"
+          },
+          {
+            "name": "内聚力",
+            "difficulty": 3,
+            "description": "液体内部同种分子之间的吸引力",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "内聚力是液体内部同种分子之间的吸引力。",
+            "example": "水分子之间存在内聚力。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "附着力",
+            "difficulty": 3,
+            "description": "液体分子与固体分子之间的吸引力",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "附着力是液体分子受到固体分子吸引而产生的作用力。",
+            "example": "水分子受到玻璃分子的吸引。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "浸润",
+            "difficulty": 2,
+            "description": "液体润湿固体并附着在其表面的现象",
+            "aliases": [],
+            "prerequisites": [
+              "内聚力",
+              "附着力"
+            ],
+            "definition": "浸润是液体润湿某种固体并附着在其表面的现象。",
+            "example": "水滴在洁净玻璃上扩展成薄层。"
+          },
+          {
+            "name": "不浸润",
+            "difficulty": 2,
+            "description": "液体不润湿固体且不附着其表面的现象",
+            "aliases": [],
+            "prerequisites": [
+              "内聚力",
+              "附着力"
+            ],
+            "definition": "不浸润是液体不润湿某种固体且不附着在其表面的现象。",
+            "example": "水滴在蜡纸上近似成球并可滚动。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "毛细管",
+            "difficulty": 2,
+            "description": "能够发生毛细现象的细管或细小孔道",
+            "aliases": [],
+            "prerequisites": [
+              "浸润",
+              "不浸润"
+            ],
+            "definition": "毛细管是能使液体发生毛细现象的细管。",
+            "example": "内径很小的玻璃管可作为毛细管。"
+          },
+          {
+            "name": "毛细现象",
+            "difficulty": 3,
+            "description": "液体在细管中上升或下降的现象",
+            "aliases": [],
+            "prerequisites": [
+              "表面张力",
+              "浸润",
+              "不浸润",
+              "毛细管"
+            ],
+            "definition": "毛细现象是浸润液体在细管中上升或不浸润液体在细管中下降的现象。",
+            "example": "水沿植物内部细小孔道上升。"
+          },
+          {
+            "name": "液晶",
+            "difficulty": 3,
+            "description": "兼有液体流动性和晶体各向异性的流体",
+            "aliases": [
+              "liquid crystal"
+            ],
+            "prerequisites": [
+              "液体",
+              "晶体",
+              "各向异性"
+            ],
+            "definition": "液晶是既有液体流动性又有晶体各向异性特点的流体。",
+            "example": "液晶可用于制造显示屏。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "材料分类",
+            "difficulty": 2,
+            "description": "材料可按特性、领域和组成进行分类",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "材料可按特性、应用领域及组成分为不同类别。",
+            "example": "材料可分为结构材料和功能材料。"
+          },
+          {
+            "name": "结构材料",
+            "difficulty": 2,
+            "description": "主要利用材料力学特性的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "结构材料是主要利用材料力学特性的材料。",
+            "example": "桥梁用材料通常属于结构材料。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "功能材料",
+            "difficulty": 2,
+            "description": "主要利用声光热电磁等特性的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "功能材料是主要利用材料声、光、热、电、磁等特性的材料。",
+            "example": "半导体材料属于功能材料。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "合金",
+            "difficulty": 2,
+            "description": "由金属与金属或非金属结合成的材料",
+            "aliases": [],
+            "prerequisites": [
+              "金属材料"
+            ],
+            "definition": "合金是由两种或两种以上金属，或金属与非金属结合形成的材料。",
+            "example": "钢是铁和碳组成的合金。"
+          },
+          {
+            "name": "金属材料",
+            "difficulty": 1,
+            "description": "包括金属与合金的一类材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "金属材料一般包括金属和合金。",
+            "example": "钢和不锈钢都属于金属材料。"
+          },
+          {
+            "name": "无机非金属材料",
+            "difficulty": 2,
+            "description": "以陶瓷和玻璃等为代表的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "无机非金属材料主要包括陶瓷和玻璃等材料。",
+            "example": "陶瓷可用作电绝缘材料。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "有机高分子材料",
+            "difficulty": 2,
+            "description": "由有机化合物构成的高分子材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "有机高分子材料是由含多种元素的有机化合物构成的材料。",
+            "example": "塑料、合成纤维和合成橡胶属于此类。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "复合材料",
+            "difficulty": 3,
+            "description": "由不同材料通过复合工艺组合成的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "复合材料是由不同类别材料通过复合工艺组合而成的新型材料。",
+            "example": "玻璃钢和碳纤维属于复合材料。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "半导体",
+            "difficulty": 3,
+            "description": "电阻率介于金属导体和绝缘体之间的材料",
+            "aliases": [],
+            "prerequisites": [
+              "功能材料"
+            ],
+            "definition": "半导体是电阻率介于金属导体和绝缘体之间的材料。",
+            "example": "硅是制造集成电路的重要半导体材料。"
+          },
+          {
+            "name": "纳米材料",
+            "difficulty": 3,
+            "description": "粒度在1至100纳米范围内的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "纳米材料是粒度处于1～100纳米范围内的材料。",
+            "example": "碳纳米管是典型的纳米材料。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "碳纳米管",
+            "difficulty": 3,
+            "description": "由碳原子层卷曲形成的纳米碳管",
+            "aliases": [],
+            "prerequisites": [
+              "纳米材料"
+            ],
+            "definition": "碳纳米管是由碳原子层卷曲而成的纳米尺度碳管。",
+            "example": "碳纳米管具有很高韧性和很强导电性。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "石墨烯",
+            "difficulty": 3,
+            "description": "由单层碳原子组成六角网格的材料",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "石墨烯是由单层碳原子连接成六角网格构成的材料。",
+            "example": "石墨烯可用于制作传感器和柔性显示屏。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "发光二极管",
+            "difficulty": 3,
+            "description": "将电能转化为光能的半导体器件",
+            "aliases": [
+              "LED"
+            ],
+            "prerequisites": [
+              "半导体"
+            ],
+            "definition": "发光二极管是能够把电能转化为光能的半导体二极管。",
+            "example": "LED灯具有工作电压低、寿命长等特点。",
+            "section": "第3节 材料及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　认识固体与液体",
+            "page_range": [
+              37,
+              37
+            ]
+          },
+          {
+            "name": "第1节　固体类型及微观结构",
+            "page_range": [
+              38,
+              41
+            ]
+          },
+          {
+            "name": "第2节　表面张力和毛细现象",
+            "page_range": [
+              42,
+              49
+            ]
+          },
+          {
+            "name": "第3节　材料及其应用",
+            "page_range": [
+              49,
+              55
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章　热力学定律",
+        "concepts": [
+          {
+            "name": "内能",
+            "difficulty": 2,
+            "description": "物体内部所有分子热运动和相互作用的能量总和",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "内能是物体内部所有分子热运动和相互作用所具有的能量总和。",
+            "example": "压缩气体时，外界做功使气体内能增加。"
+          },
+          {
+            "name": "热量",
+            "difficulty": 2,
+            "description": "热传递过程中物体吸收或放出的能量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "热量是物体在热传递过程中从外界吸收或向外界放出的能量。",
+            "example": "冰块熔化时从周围吸收热量。"
+          },
+          {
+            "name": "功热内能关系",
+            "difficulty": 3,
+            "description": "内能变化等于吸热量与外界对物体做功之和",
+            "aliases": [
+              "功、热量与内能"
+            ],
+            "prerequisites": [
+              "内能",
+              "热量"
+            ],
+            "definition": "物体内能的改变量等于吸收的热量与外界对物体所做的功之和。",
+            "example": "气体吸热并对外做功时，内能变化取决于两者差值。",
+            "section": "第1节 热力学第一定律"
+          },
+          {
+            "name": "热力学第一定律",
+            "difficulty": 3,
+            "description": "能量守恒定律在热现象宏观过程中的具体表述",
+            "aliases": [],
+            "prerequisites": [
+              "功热内能关系"
+            ],
+            "definition": "热力学第一定律表明热量、功与内能变化满足能量守恒关系。",
+            "example": "空气压缩机对空气做功，空气内能增加。"
+          },
+          {
+            "name": "能量守恒定律",
+            "difficulty": 3,
+            "description": "能量只能转化或转移，总量始终保持不变",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能量既不会消失，也不会创生，只能转化或转移而总值不变。",
+            "example": "电能可转化为光能和内能，但总能量不变。"
+          },
+          {
+            "name": "第一类永动机",
+            "difficulty": 2,
+            "description": "设想不消耗能量却能永远对外做功的机器",
+            "aliases": [],
+            "prerequisites": [
+              "能量守恒定律"
+            ],
+            "definition": "第一类永动机是不消耗任何能量却能永远对外做功的机器。",
+            "example": "螺旋汲水永动机因能量无中生有而不能实现。"
+          },
+          {
+            "name": "焦耳实验",
+            "difficulty": 3,
+            "description": "利用重物带动叶轮搅水，研究机械功与热量关系",
+            "aliases": [
+              "焦耳的叶轮搅水实验"
+            ],
+            "prerequisites": [
+              "功热内能关系"
+            ],
+            "definition": "焦耳实验通过重物带动叶轮搅动水，定量研究机械功转化为内能。",
+            "example": "重物下落使水温升高，表明机械能转化为内能。"
+          },
+          {
+            "name": "可逆过程",
+            "difficulty": 3,
+            "description": "系统和外界都能完全恢复原状的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若存在另一过程能使系统和外界完全复原，原过程就是可逆过程。",
+            "example": "教材指出实际热现象宏观过程通常不能完全逆向恢复。"
+          },
+          {
+            "name": "不可逆过程",
+            "difficulty": 3,
+            "description": "系统和外界不能完全恢复原状的过程",
+            "aliases": [],
+            "prerequisites": [
+              "可逆过程"
+            ],
+            "definition": "用任何方法都不能使系统和外界完全复原的过程称为不可逆过程。",
+            "example": "热量从高温物体传向低温物体是不可逆过程。"
+          },
+          {
+            "name": "热传递方向性",
+            "difficulty": 3,
+            "description": "热量自发地由高温物体传向低温物体",
+            "aliases": [],
+            "prerequisites": [
+              "不可逆过程",
+              "热量"
+            ],
+            "definition": "热量能够自发地从高温物体传向低温物体，不能自发反向传递。",
+            "example": "热水放在空气中会逐渐冷却至室温。"
+          },
+          {
+            "name": "热机",
+            "difficulty": 3,
+            "description": "在两个不同温度热源间消耗内能并对外做功的装置",
+            "aliases": [],
+            "prerequisites": [
+              "热力学第一定律",
+              "热传递方向性"
+            ],
+            "definition": "热机是从高温热源吸热、部分对外做功并向低温热源放热的装置。",
+            "example": "汽车发动机和蒸汽轮机都是热机。"
+          },
+          {
+            "name": "热机效率",
+            "difficulty": 3,
+            "description": "热机对外做功与从高温热源吸热之比",
+            "aliases": [
+              "效率η"
+            ],
+            "prerequisites": [
+              "热机"
+            ],
+            "definition": "热机效率是热机对外做的功与从高温热源吸收热量的比值。",
+            "example": "热机必须向低温热源放热，因此效率低于100%。"
+          },
+          {
+            "name": "克劳修斯表述",
+            "difficulty": 3,
+            "description": "热量不能无其他变化地从低温物体传向高温物体",
+            "aliases": [],
+            "prerequisites": [
+              "热传递方向性"
+            ],
+            "definition": "克劳修斯表述认为热量不可能在不引起其他变化时由低温物体传向高温物体。",
+            "example": "冰箱制冷需消耗电能，因而引起了其他变化。",
+            "section": "第3节 热力学第二定律"
+          },
+          {
+            "name": "开尔文表述",
+            "difficulty": 3,
+            "description": "不能从单一热源吸热并完全用来做功而无其他变化",
+            "aliases": [],
+            "prerequisites": [
+              "热机",
+              "热机效率"
+            ],
+            "definition": "开尔文表述认为不能从单一热源吸热，使其完全转化为功而不引起其他变化。",
+            "example": "理想气体等温膨胀吸热做功，但伴随体积膨胀。",
+            "section": "第3节 热力学第二定律"
+          },
+          {
+            "name": "热力学第二定律",
+            "difficulty": 4,
+            "description": "规定热现象宏观过程方向性的基本规律",
+            "aliases": [],
+            "prerequisites": [
+              "热传递方向性",
+              "不可逆过程"
+            ],
+            "definition": "热力学第二定律说明与热现象有关的宏观过程具有方向性且不可逆。",
+            "example": "它说明第二类永动机不可能实现。"
+          },
+          {
+            "name": "第二类永动机",
+            "difficulty": 3,
+            "description": "从单一热源吸热并完全转化为功的设想机器",
+            "aliases": [],
+            "prerequisites": [
+              "热力学第二定律"
+            ],
+            "definition": "第二类永动机是从单一热源吸热并将其完全转化为功而无其他变化的机器。",
+            "example": "设想利用海洋内能不停做功的机器属于第二类永动机。",
+            "section": "第3节 热力学第二定律"
+          },
+          {
+            "name": "有序与无序",
+            "difficulty": 2,
+            "description": "按规则程度和对应微观状态多少区分宏观状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "规则较多且对应微观状态较少的状态较有序，反之较无序。",
+            "example": "黑白小鸡分开排列比混合在一起更有序。",
+            "section": "第4节 熵——系统无序程度的量度"
+          },
+          {
+            "name": "熵",
+            "difficulty": 3,
+            "description": "用来量度系统无序程度的状态量",
+            "aliases": [
+              "S"
+            ],
+            "prerequisites": [
+              "有序与无序"
+            ],
+            "definition": "熵是量度系统无序程度的状态量，熵越大表示系统越无序。",
+            "example": "绿豆和米混合煮成粥后，系统熵增加。"
+          },
+          {
+            "name": "孤立系统",
+            "difficulty": 3,
+            "description": "与外界既无物质交换又无能量交换的系统",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "孤立系统是与外界既没有物质交换又没有能量交换的系统。",
+            "example": "教材用孤立系统说明自然过程中的熵增加。",
+            "section": "第4节 熵——系统无序程度的量度"
+          },
+          {
+            "name": "熵增加原理",
+            "difficulty": 4,
+            "description": "孤立系统的自然过程总是沿熵增加方向进行",
+            "aliases": [],
+            "prerequisites": [
+              "熵",
+              "孤立系统",
+              "热力学第二定律"
+            ],
+            "definition": "孤立系统发生自然变化时，其总熵必然朝增加方向变化。",
+            "example": "热传递使系统最终达到相同温度，整体无序程度增加。",
+            "section": "第4节 熵——系统无序程度的量度"
+          },
+          {
+            "name": "能量退降",
+            "difficulty": 4,
+            "description": "不可逆过程中能量由可利用状态转为不可利用状态",
+            "aliases": [],
+            "prerequisites": [
+              "能量守恒定律",
+              "熵增加原理"
+            ],
+            "definition": "能量退降是不可逆过程中能量品质降低、可利用能量减少的现象。",
+            "example": "摩擦使机械能转化为内能，物体做功的本领降低。",
+            "section": "第4节 熵——系统无序程度的量度"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　水车和水泵",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第1节　热力学第一定律",
+            "page_range": [
+              56,
+              59
+            ]
+          },
+          {
+            "name": "第2节　能量的转化与守恒",
+            "page_range": [
+              60,
+              63
+            ]
+          },
+          {
+            "name": "第3节　热力学第二定律",
+            "page_range": [
+              64,
+              67
+            ]
+          },
+          {
+            "name": "第4节　熵——系统无序程度的量度",
+            "page_range": [
+              68,
+              77
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4章　原子结构",
+        "concepts": [
+          {
+            "name": "早期原子论",
+            "difficulty": 1,
+            "description": "古人关于物质由最小微粒构成的思想",
+            "aliases": [
+              "原子论"
+            ],
+            "prerequisites": [],
+            "definition": "早期原子论认为宇宙中存在不可分割的微小实体并不断运动。",
+            "example": "德谟克利特认为物质由原子组成。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "分子—原子论",
+            "difficulty": 2,
+            "description": "关于分子、原子层次及物质构成的理论",
+            "aliases": [
+              "分子原子论"
+            ],
+            "prerequisites": [
+              "早期原子论"
+            ],
+            "definition": "分子—原子论认为分子由原子构成，原子是元素的最小单元。",
+            "example": "一个分子可由多个相同原子组成。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "阴极射线",
+            "difficulty": 2,
+            "description": "稀薄气体放电时阴极发出的射线",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "阴极射线是由阴极发出并能使玻璃管壁产生荧光的射线。",
+            "example": "阴极射线使放电管壁发出荧光。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "电子",
+            "difficulty": 2,
+            "description": "组成各种物质的带负电微观粒子",
+            "aliases": [
+              "electron"
+            ],
+            "prerequisites": [
+              "阴极射线"
+            ],
+            "definition": "电子是带负电且质量远小于氢离子的原子组成粒子。",
+            "example": "汤姆孙由阴极射线实验发现电子。"
+          },
+          {
+            "name": "电子比荷",
+            "difficulty": 3,
+            "description": "带电粒子电荷量与质量的比值",
+            "aliases": [
+              "比荷"
+            ],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "电子比荷是电子电荷量与质量的比值，可反映粒子性质。",
+            "example": "汤姆孙测得阴极射线粒子的比荷。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "油滴实验",
+            "difficulty": 2,
+            "description": "密立根精确测定电子电荷量的实验",
+            "aliases": [
+              "密立根油滴实验"
+            ],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "油滴实验通过研究带电油滴的运动测定了电子电荷量。",
+            "example": "密立根用油滴实验测定电子电荷。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "原子电中性",
+            "difficulty": 2,
+            "description": "通常情况下原子整体不带电的性质",
+            "aliases": [],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "原子电中性是指原子内正电荷与电子负电荷相互抵消。",
+            "example": "原子失去电子后会变成带正电的离子。"
+          },
+          {
+            "name": "汤姆孙原子模型",
+            "difficulty": 3,
+            "description": "正电荷均匀分布、电子镶嵌其中的模型",
+            "aliases": [
+              "葡萄干面包模型"
+            ],
+            "prerequisites": [
+              "电子",
+              "原子电中性"
+            ],
+            "definition": "汤姆孙模型认为正电荷充斥整个原子，电子镶嵌在其中。",
+            "example": "模型把电子比作嵌在面包中的葡萄干。"
+          },
+          {
+            "name": "α粒子散射实验",
+            "difficulty": 3,
+            "description": "用α粒子轰击金箔研究原子结构的实验",
+            "aliases": [
+              "卢瑟福散射实验"
+            ],
+            "prerequisites": [
+              "汤姆孙原子模型"
+            ],
+            "definition": "α粒子散射实验通过观察α粒子穿过金箔后的偏转推断原子结构。",
+            "example": "少数α粒子发生大角度偏转甚至被弹回。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "原子核",
+            "difficulty": 3,
+            "description": "集中原子全部正电荷及几乎全部质量的核心",
+            "aliases": [],
+            "prerequisites": [
+              "α粒子散射实验"
+            ],
+            "definition": "原子核是原子内部很小的区域，集中了全部正电荷和几乎全部质量。",
+            "example": "α粒子接近原子核时会受到明显斥力。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "原子核式结构模型",
+            "difficulty": 3,
+            "description": "电子绕小而重的原子核运动的模型",
+            "aliases": [
+              "行星模型",
+              "卢瑟福原子模型"
+            ],
+            "prerequisites": [
+              "原子核",
+              "α粒子散射实验"
+            ],
+            "definition": "核式结构模型认为原子由小原子核和核外运动的电子组成。",
+            "example": "该模型解释了α粒子的大角度散射。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "连续光谱",
+            "difficulty": 2,
+            "description": "各种波长单色光连续分布形成的光谱",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "连续光谱是色光按波长连续排列且中间没有空缺的光谱。",
+            "example": "太阳光经棱镜形成连续彩色光谱。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "线状光谱",
+            "difficulty": 2,
+            "description": "由一条条亮线组成的不连续光谱",
+            "aliases": [
+              "原子发射光谱"
+            ],
+            "prerequisites": [],
+            "definition": "线状光谱是由分立亮线组成的光谱，原子的发射光谱属于此类。",
+            "example": "稀薄氢气发光可产生线状光谱。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "吸收光谱",
+            "difficulty": 3,
+            "description": "连续光谱中出现特定暗线的光谱",
+            "aliases": [],
+            "prerequisites": [
+              "连续光谱"
+            ],
+            "definition": "吸收光谱是连续光通过物质后某些波长被吸收而形成暗线的光谱。",
+            "example": "太阳光谱中的暗线属于吸收光谱。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "特征谱线",
+            "difficulty": 2,
+            "description": "每种原子具有的独特光谱亮线",
+            "aliases": [],
+            "prerequisites": [
+              "线状光谱"
+            ],
+            "definition": "特征谱线是某种原子发射光谱中具有辨识作用的特定谱线。",
+            "example": "氢原子的Hα线可作为氢的识别依据。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "光谱分析",
+            "difficulty": 2,
+            "description": "利用特征谱线鉴别物质组成的方法",
+            "aliases": [],
+            "prerequisites": [
+              "特征谱线"
+            ],
+            "definition": "光谱分析是根据物质光谱中的特征谱线确定其化学组成的方法。",
+            "example": "通过太阳暗线可分析太阳大气中的元素。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "巴耳末公式",
+            "difficulty": 3,
+            "description": "描述氢原子可见光谱线规律的经验公式",
+            "aliases": [
+              "巴耳末系公式"
+            ],
+            "prerequisites": [
+              "氢原子光谱"
+            ],
+            "definition": "巴耳末公式给出了氢原子可见光谱波长随能级序数变化的规律。",
+            "example": "取n=3可计算氢原子的Hα线波长。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "里德伯公式",
+            "difficulty": 4,
+            "description": "表示氢原子各谱线系波长规律的公式",
+            "aliases": [
+              "里德伯经验公式"
+            ],
+            "prerequisites": [
+              "氢原子光谱"
+            ],
+            "definition": "里德伯公式把氢原子任一光谱线表示为两个光谱项之差。",
+            "example": "取m=2时得到巴耳末公式。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "氢原子光谱",
+            "difficulty": 3,
+            "description": "氢原子发光形成的具有规律的线状光谱",
+            "aliases": [],
+            "prerequisites": [
+              "线状光谱",
+              "特征谱线"
+            ],
+            "definition": "氢原子光谱由氢原子特征谱线组成并呈现分立的规律性。",
+            "example": "氢原子可见光谱包含Hα至Hδ等谱线。"
+          },
+          {
+            "name": "玻尔原子模型",
+            "difficulty": 4,
+            "description": "以定态轨道和跃迁解释原子光谱的模型",
+            "aliases": [
+              "玻尔模型"
+            ],
+            "prerequisites": [
+              "原子核式结构模型",
+              "氢原子光谱"
+            ],
+            "definition": "玻尔模型认为电子只能处于分立定态轨道并通过跃迁辐射或吸收能量。",
+            "example": "玻尔模型解释了氢原子的巴耳末系。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "定态",
+            "difficulty": 3,
+            "description": "电子在特定轨道上运动且不辐射能量的状态",
+            "aliases": [
+              "轨道定态"
+            ],
+            "prerequisites": [
+              "玻尔原子模型"
+            ],
+            "definition": "定态是电子在分立特定轨道上运动而原子能量保持确定的状态。",
+            "example": "氢原子基态是最低能量的定态。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "能级",
+            "difficulty": 3,
+            "description": "原子可能具有的分立确定能量值",
+            "aliases": [
+              "能量能级"
+            ],
+            "prerequisites": [
+              "定态"
+            ],
+            "definition": "能级是原子处于某一确定状态时所具有的分立能量值。",
+            "example": "氢原子基态能量为−13.6 eV。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "基态与激发态",
+            "difficulty": 3,
+            "description": "原子的最低能量状态和较高能量状态",
+            "aliases": [
+              "基态",
+              "激发态"
+            ],
+            "prerequisites": [
+              "能级"
+            ],
+            "definition": "基态是原子最低能级状态，激发态是吸收能量后处于较高能级的状态。",
+            "example": "氢原子从基态吸收能量可跃迁到激发态。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "能级跃迁",
+            "difficulty": 4,
+            "description": "电子在不同定态能级之间发生的转移",
+            "aliases": [
+              "电子跃迁"
+            ],
+            "prerequisites": [
+              "能级",
+              "基态与激发态"
+            ],
+            "definition": "能级跃迁是电子在不同能级间转移并按能量差吸收或辐射光子的过程。",
+            "example": "电子从高能级跃迁到低能级时辐射光子。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "光子",
+            "difficulty": 3,
+            "description": "原子跃迁时吸收或辐射的光能量量子",
+            "aliases": [],
+            "prerequisites": [
+              "能级跃迁"
+            ],
+            "definition": "光子是原子跃迁时携带能量且能量由两个能级差决定的光量子。",
+            "example": "能级差为12.8 eV时辐射能量为12.8 eV的光子。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "电子云",
+            "difficulty": 3,
+            "description": "用点的疏密表示电子出现概率的图形",
+            "aliases": [],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "电子云是以点的疏密表示电子在原子核周围出现概率分布的图形。",
+            "example": "电子云密集处表示电子出现概率较大。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "玻尔理论局限",
+            "difficulty": 3,
+            "description": "玻尔理论不能解释多电子原子光谱的限制",
+            "aliases": [],
+            "prerequisites": [
+              "玻尔原子模型",
+              "电子云"
+            ],
+            "definition": "玻尔理论局限在于保留经典确定轨道，不能解释多电子原子的光谱。",
+            "example": "玻尔理论无法解释氦原子光谱。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　从一幅图片说起",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第1节　电子的发现与汤姆孙原子模型",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第2节　原子的核式结构模型",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第3节　光谱与氢原子光谱",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第4节　玻尔原子模型",
+            "page_range": [
+              77,
+              99
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第5章　原子核与核能",
+        "concepts": [
+          {
+            "name": "天然放射现象",
+            "difficulty": 1,
+            "description": "物质自发放出射线的现象。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质无需外界作用而自发放出射线的现象称为天然放射现象。",
+            "example": "铀盐未经阳光照射也能使底片感光。",
+            "section": "第1节 认识原子核"
+          },
+          {
+            "name": "放射性",
+            "difficulty": 1,
+            "description": "物质放出射线的性质。",
+            "aliases": [],
+            "prerequisites": [
+              "天然放射现象"
+            ],
+            "definition": "物质能够放出射线的性质称为放射性。",
+            "example": "铀、钋和镭都具有放射性。"
+          },
+          {
+            "name": "放射性元素",
+            "difficulty": 1,
+            "description": "具有放射性的元素。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "具有放射性的元素称为放射性元素。",
+            "example": "铀是天然放射性元素。"
+          },
+          {
+            "name": "α射线",
+            "difficulty": 2,
+            "description": "高速氦原子核粒子流，电离作用强。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "α射线是高速运动的氦原子核粒子流。",
+            "example": "一张薄纸可以挡住α射线。"
+          },
+          {
+            "name": "β射线",
+            "difficulty": 2,
+            "description": "高速电子流，穿透能力较强。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "β射线是高速运动的电子流。",
+            "example": "β射线可穿透几毫米厚的铝板。"
+          },
+          {
+            "name": "γ射线",
+            "difficulty": 2,
+            "description": "波长很短、穿透能力很强的电磁波。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "γ射线是波长很短的电磁波。",
+            "example": "几厘米厚的铅板可削弱γ射线。"
+          },
+          {
+            "name": "质子",
+            "difficulty": 2,
+            "description": "带一个单位正电荷的核子。",
+            "aliases": [
+              "氢原子核"
+            ],
+            "prerequisites": [],
+            "definition": "质子是带一个单位正电荷的原子核组成粒子。",
+            "example": "氮核被α粒子轰击后放出质子。"
+          },
+          {
+            "name": "中子",
+            "difficulty": 2,
+            "description": "不带电且质量接近质子的核子。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中子是不带电、质量接近质子的原子核组成粒子。",
+            "example": "α粒子轰击铍可产生中子。"
+          },
+          {
+            "name": "核子",
+            "difficulty": 1,
+            "description": "质子和中子的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "质子",
+              "中子"
+            ],
+            "definition": "质子和中子统称为核子。",
+            "example": "原子核由一定数量的核子组成。"
+          },
+          {
+            "name": "原子核组成",
+            "difficulty": 2,
+            "description": "原子核由一定数量的质子和中子组成。",
+            "aliases": [],
+            "prerequisites": [
+              "质子",
+              "中子",
+              "核子"
+            ],
+            "definition": "原子核是由一定数量的质子和中子组成的。",
+            "example": "碳核含有6个质子和6个中子。"
+          },
+          {
+            "name": "质量数",
+            "difficulty": 2,
+            "description": "原子核内质子数与中子数之和。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核组成"
+            ],
+            "definition": "原子核内质子数与中子数之和称为质量数。",
+            "example": "碳-12的质量数为12。"
+          },
+          {
+            "name": "核电荷数",
+            "difficulty": 2,
+            "description": "原子核的电荷数，等于质子数。",
+            "aliases": [
+              "核电荷数"
+            ],
+            "prerequisites": [
+              "质子",
+              "原子核组成"
+            ],
+            "definition": "原子核的核电荷数等于其中的质子数。",
+            "example": "碳核的核电荷数为6。"
+          },
+          {
+            "name": "原子核符号",
+            "difficulty": 2,
+            "description": "用A、Z和元素符号表示原子核。",
+            "aliases": [],
+            "prerequisites": [
+              "质量数",
+              "核电荷数"
+            ],
+            "definition": "以质量数A和核电荷数Z标在元素符号旁表示原子核。",
+            "example": "碳原子核表示为¹²₆C。",
+            "section": "第1节 认识原子核"
+          },
+          {
+            "name": "同位素",
+            "difficulty": 2,
+            "description": "质子数相同而中子数不同的原子核。",
+            "aliases": [],
+            "prerequisites": [
+              "质量数",
+              "核电荷数"
+            ],
+            "definition": "具有相同质子数、不同中子数的原子核互称同位素。",
+            "example": "氕、氘、氚是氢的三种同位素。"
+          },
+          {
+            "name": "核反应",
+            "difficulty": 2,
+            "description": "原子核受其他粒子轰击产生新核的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核组成"
+            ],
+            "definition": "原子核在其他粒子轰击下产生新原子核的过程称为核反应。",
+            "example": "α粒子轰击氮核生成氧核和质子。"
+          },
+          {
+            "name": "核反应方程",
+            "difficulty": 3,
+            "description": "用原子核符号描述核反应的式子。",
+            "aliases": [],
+            "prerequisites": [
+              "核反应",
+              "原子核符号"
+            ],
+            "definition": "用原子核符号描述核反应过程的式子称为核反应方程。",
+            "example": "⁴₂He＋¹⁴₇N→¹⁷₈O＋¹₁H。"
+          },
+          {
+            "name": "质量数守恒",
+            "difficulty": 3,
+            "description": "核反应前后的质量数总和相等。",
+            "aliases": [],
+            "prerequisites": [
+              "质量数",
+              "核反应方程"
+            ],
+            "definition": "核反应前后各方质量数之和保持不变。",
+            "example": "⁴＋⁹等于¹²＋¹。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "核电荷数守恒",
+            "difficulty": 3,
+            "description": "核反应前后的核电荷数总和相等。",
+            "aliases": [],
+            "prerequisites": [
+              "核电荷数",
+              "核反应方程"
+            ],
+            "definition": "核反应前后各方核电荷数之和保持不变。",
+            "example": "⁴₂He＋⁹₄Be反应前后核电荷数均为6。"
+          },
+          {
+            "name": "原子核衰变",
+            "difficulty": 2,
+            "description": "原子核释放射线并转变成新核。",
+            "aliases": [
+              "衰变"
+            ],
+            "prerequisites": [
+              "放射性",
+              "核反应"
+            ],
+            "definition": "原子核因释放α或β射线而转变成新核的变化称为衰变。",
+            "example": "铀核放出α粒子变成钍核。"
+          },
+          {
+            "name": "α衰变",
+            "difficulty": 2,
+            "description": "原子核放出α粒子的衰变。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核衰变",
+              "α射线"
+            ],
+            "definition": "放出α粒子的原子核衰变称为α衰变。",
+            "example": "²³⁸₉₂U→²³⁴₉₀Th＋⁴₂He。"
+          },
+          {
+            "name": "β衰变",
+            "difficulty": 2,
+            "description": "原子核放出β粒子的衰变。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核衰变",
+              "β射线"
+            ],
+            "definition": "放出β粒子的原子核衰变称为β衰变。",
+            "example": "²³⁴₉₀Th放出电子变成²³⁴₉₁Pa。"
+          },
+          {
+            "name": "半衰期",
+            "difficulty": 3,
+            "description": "大量原子核有一半发生衰变所需的时间。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核衰变"
+            ],
+            "definition": "放射性元素的原子核有半数发生衰变需要的时间称为半衰期。",
+            "example": "氡-222的半衰期为3.8天。"
+          },
+          {
+            "name": "放射性示踪",
+            "difficulty": 2,
+            "description": "利用放射性同位素追踪元素运动。",
+            "aliases": [],
+            "prerequisites": [
+              "同位素",
+              "放射性"
+            ],
+            "definition": "利用放射性同位素发出的射线查明元素行踪的方法。",
+            "example": "示踪剂可显示内脏器官是否病变。",
+            "section": "第2节 原子核衰变及半衰期"
+          },
+          {
+            "name": "放射性污染",
+            "difficulty": 2,
+            "description": "过量放射线对环境和生物造成的污染。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "过量放射线对环境、人类和自然界造成的污染称为放射性污染。",
+            "example": "核泄漏会造成长期放射性污染。",
+            "section": "第2节 原子核衰变及半衰期"
+          },
+          {
+            "name": "放射性防护",
+            "difficulty": 2,
+            "description": "减少放射线伤害的时间、距离和屏蔽措施。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性污染"
+            ],
+            "definition": "为避免放射线伤害而采取的减少照射和设置屏蔽物等措施。",
+            "example": "用铅制容器存放放射源。"
+          },
+          {
+            "name": "核素",
+            "difficulty": 2,
+            "description": "具有一定质子数和中子数的原子核。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核组成"
+            ],
+            "definition": "具有一定质子数和中子数的原子核称为核素。",
+            "example": "不同核素在核素图中分别对应小方块。"
+          },
+          {
+            "name": "核力",
+            "difficulty": 3,
+            "description": "把原子核中核子维系在一起的短程强力。",
+            "aliases": [],
+            "prerequisites": [
+              "核子",
+              "原子核组成"
+            ],
+            "definition": "把原子核中的核子维系在一起的短程强相互作用力称为核力。",
+            "example": "核力抵消质子间库仑斥力。"
+          },
+          {
+            "name": "四种基本相互作用",
+            "difficulty": 3,
+            "description": "引力、电磁、强和弱相互作用的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "核力"
+            ],
+            "definition": "自然界的作用力本质上可归结为引力、电磁、强和弱相互作用。",
+            "example": "强相互作用、电磁相互作用、弱相互作用、引力相互作用依次减弱。"
+          },
+          {
+            "name": "质量亏损",
+            "difficulty": 3,
+            "description": "原子核质量小于组成核子质量之和的差值。",
+            "aliases": [],
+            "prerequisites": [
+              "核子",
+              "原子核组成"
+            ],
+            "definition": "组成原子核的自由核子质量之和与原子核质量的差值称为质量亏损。",
+            "example": "中子和质子结合成氘核时出现质量亏损。"
+          },
+          {
+            "name": "结合能",
+            "difficulty": 3,
+            "description": "自由核子结合成原子核释放的能量。",
+            "aliases": [],
+            "prerequisites": [
+              "核力",
+              "质量亏损"
+            ],
+            "definition": "核子结合成原子核时由核力释放的能量称为结合能。",
+            "example": "氘核由质子和中子结合时释放结合能。"
+          },
+          {
+            "name": "质能方程",
+            "difficulty": 3,
+            "description": "质量变化与能量变化满足E＝mc²。",
+            "aliases": [
+              "爱因斯坦质能方程"
+            ],
+            "prerequisites": [
+              "质量亏损",
+              "结合能"
+            ],
+            "definition": "物体质量变化对应的能量变化满足E＝mc²。",
+            "example": "质量亏损可通过ΔE＝Δmc²求核能。",
+            "section": "第3节 核力与核能"
+          },
+          {
+            "name": "平均结合能",
+            "difficulty": 3,
+            "description": "原子核结合能与质量数之比。",
+            "aliases": [
+              "比结合能"
+            ],
+            "prerequisites": [
+              "结合能",
+              "质量数"
+            ],
+            "definition": "原子核的结合能与其质量数之比称为平均结合能。",
+            "example": "平均结合能较大的核通常更稳定。"
+          },
+          {
+            "name": "核裂变",
+            "difficulty": 2,
+            "description": "重核分裂成中等质量核并释放能量。",
+            "aliases": [],
+            "prerequisites": [
+              "结合能",
+              "核反应"
+            ],
+            "definition": "重原子核分裂成质量相近的两部分并释放能量的过程。",
+            "example": "铀-235受中子轰击可裂变。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "链式反应",
+            "difficulty": 3,
+            "description": "裂变产生的中子引发后续裂变的反应。",
+            "aliases": [
+              "裂变链式反应"
+            ],
+            "prerequisites": [
+              "核裂变",
+              "中子"
+            ],
+            "definition": "裂变产生的中子继续引发其他原子核裂变的连续反应。",
+            "example": "铀-235裂变产生的中子引发下一代裂变。"
+          },
+          {
+            "name": "临界体积",
+            "difficulty": 3,
+            "description": "能够发生链式反应的铀块最小体积。",
+            "aliases": [],
+            "prerequisites": [
+              "链式反应"
+            ],
+            "definition": "能使链式反应发生的铀块最小体积称为临界体积。",
+            "example": "铀块体积不足时中子会逸出而难以链式反应。"
+          },
+          {
+            "name": "核反应堆",
+            "difficulty": 3,
+            "description": "维持和控制链式反应速度的装置。",
+            "aliases": [
+              "反应堆"
+            ],
+            "prerequisites": [
+              "链式反应",
+              "临界体积"
+            ],
+            "definition": "能够维持并控制核裂变链式反应速度的装置称为核反应堆。",
+            "example": "控制棒吸收中子以调节反应速度。"
+          },
+          {
+            "name": "核聚变",
+            "difficulty": 2,
+            "description": "轻核结合成较重核并释放能量。",
+            "aliases": [
+              "轻核聚变"
+            ],
+            "prerequisites": [
+              "结合能",
+              "核反应"
+            ],
+            "definition": "轻原子核结合成较重原子核并释放能量的过程。",
+            "example": "氘核和氚核聚变生成氦核和中子。"
+          },
+          {
+            "name": "等离子态",
+            "difficulty": 2,
+            "description": "高温下原子完全电离形成的物质状态。",
+            "aliases": [
+              "物质第四态"
+            ],
+            "prerequisites": [
+              "核聚变"
+            ],
+            "definition": "高温下原子完全电离形成的物质状态称为等离子态。",
+            "example": "可控聚变需要约束高温等离子体。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "可控热核聚变",
+            "difficulty": 4,
+            "description": "在受控条件下维持高温等离子体聚变。",
+            "aliases": [],
+            "prerequisites": [
+              "核聚变",
+              "等离子态"
+            ],
+            "definition": "通过约束高温等离子体使轻核持续聚变的过程。",
+            "example": "托卡马克装置采用磁约束实现聚变研究。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "核电站",
+            "difficulty": 2,
+            "description": "将核反应堆释放的核能转化为电能的发电厂。",
+            "aliases": [],
+            "prerequisites": [
+              "核反应堆"
+            ],
+            "definition": "利用核反应堆释放的核能发电的工厂称为核电站。",
+            "example": "压水式核电站用蒸汽驱动汽轮发电机。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　打开原子核的大门",
+            "page_range": [
+              99,
+              99
+            ]
+          },
+          {
+            "name": "第1节　认识原子核",
+            "page_range": [
+              100,
+              105
+            ]
+          },
+          {
+            "name": "第2节　原子核衰变及半衰期",
+            "page_range": [
+              106,
+              111
+            ]
+          },
+          {
+            "name": "第3节　核力与核能",
+            "page_range": [
+              112,
+              115
+            ]
+          },
+          {
+            "name": "第4节　核裂变和核聚变",
+            "page_range": [
+              116,
+              121
+            ]
+          },
+          {
+            "name": "第5节　核能的利用与环境保护",
+            "page_range": [
+              122,
+              129
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第6章　波粒二象性",
+        "concepts": [
+          {
+            "name": "能量子",
+            "difficulty": 3,
+            "description": "普朗克为解释黑体辐射提出的能量不连续概念",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能量子是以不连续形式存在和交换的能量单位。",
+            "example": "普朗克提出能量子解释黑体辐射",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "光电效应",
+            "difficulty": 2,
+            "description": "光照射物体时电子从其表面逸出的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光电效应是光照射物体时电子从物体表面逸出的现象。",
+            "example": "紫外光照射锌板产生光电效应"
+          },
+          {
+            "name": "光电子",
+            "difficulty": 2,
+            "description": "发生光电效应时从物体表面逸出的电子",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "光电子是光电效应中从物体表面逸出的电子。",
+            "example": "紫外光照射锌板逸出光电子"
+          },
+          {
+            "name": "极限频率",
+            "difficulty": 3,
+            "description": "金属发生光电效应所需入射光频率的最低值",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "极限频率是金属产生光电效应所需入射光频率的最低值。",
+            "example": "频率低于极限频率不能产生光电效应"
+          },
+          {
+            "name": "饱和电流",
+            "difficulty": 3,
+            "description": "光电流达到最大且不再随电压增加的电流值",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "饱和电流是光电流随电压增大后达到的最大稳定值。",
+            "example": "增大阳极电压后光电流达到饱和值",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "遏止电压",
+            "difficulty": 3,
+            "description": "使光电流恰好降为零的反向电压",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光电子"
+            ],
+            "definition": "遏止电压是使光电流恰好为零的最小反向电压。",
+            "example": "反向电压达到遏止电压时电流为零"
+          },
+          {
+            "name": "光电管",
+            "difficulty": 2,
+            "description": "利用光电效应产生光电流的真空器件",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光电子"
+            ],
+            "definition": "光电管是由真空管内阴极和阳极组成的光电转换器件。",
+            "example": "用光电管研究光电流与电压关系"
+          },
+          {
+            "name": "光子",
+            "difficulty": 3,
+            "description": "组成光的分立粒子，每个光子具有确定能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量子"
+            ],
+            "definition": "光子是组成光的分立粒子，其能量与光的频率有关。",
+            "example": "一个光子把能量传递给一个电子",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "逸出功",
+            "difficulty": 3,
+            "description": "电子从金属表面逸出必须克服的最小能量",
+            "aliases": [],
+            "prerequisites": [
+              "光子"
+            ],
+            "definition": "逸出功是一个电子从金属表面逸出所必须做的功。",
+            "example": "光子能量大于逸出功时电子可逸出"
+          },
+          {
+            "name": "光电方程",
+            "difficulty": 4,
+            "description": "描述光子能量与逸出功、电子动能关系的方程",
+            "aliases": [
+              "爱因斯坦光电效应方程"
+            ],
+            "prerequisites": [
+              "光子",
+              "逸出功",
+              "光电子"
+            ],
+            "definition": "光电方程表明光子能量等于逸出功与光电子最大初动能之和。",
+            "example": "用方程计算光电子最大初动能"
+          },
+          {
+            "name": "多光子光电效应",
+            "difficulty": 4,
+            "description": "一个电子同时吸收多个光子而产生的光电效应",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光子"
+            ],
+            "definition": "多光子光电效应是一个电子吸收多个光子后发生的光电效应。",
+            "example": "强激光照射金属可能产生多光子效应",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "内光电效应",
+            "difficulty": 3,
+            "description": "光照使半导体内部产生载流子或光伏电压的现象",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "内光电效应是光子被材料吸收后在其内部产生光电变化的现象。",
+            "example": "光照半导体使其电导率显著增加",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "康普顿效应",
+            "difficulty": 4,
+            "description": "X射线散射后出现波长变长成分的现象",
+            "aliases": [],
+            "prerequisites": [
+              "光子"
+            ],
+            "definition": "康普顿效应是X射线散射谱中出现波长较长成分的现象。",
+            "example": "X射线通过石墨后产生长波长散射线",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "光的波粒二象性",
+            "difficulty": 4,
+            "description": "光同时具有波动性和粒子性的基本特征",
+            "aliases": [
+              "波粒二象性"
+            ],
+            "prerequisites": [
+              "光电效应",
+              "光子"
+            ],
+            "definition": "光的波粒二象性指光既具有波动特征又具有粒子特征。",
+            "example": "双缝实验体现光的波动性和粒子性"
+          },
+          {
+            "name": "概率波",
+            "difficulty": 4,
+            "description": "用概率描述微观粒子出现位置的波",
+            "aliases": [],
+            "prerequisites": [
+              "光的波粒二象性"
+            ],
+            "definition": "概率波是描述光子等微观粒子出现位置概率的波。",
+            "example": "大量光子形成明暗相间的干涉条纹",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "德布罗意假说",
+            "difficulty": 3,
+            "description": "提出运动实物粒子也具有波动性的假说",
+            "aliases": [],
+            "prerequisites": [
+              "光的波粒二象性"
+            ],
+            "definition": "德布罗意假说认为每个运动的实物粒子都有对应的波。",
+            "example": "电子也被认为具有波动性"
+          },
+          {
+            "name": "德布罗意关系",
+            "difficulty": 4,
+            "description": "联系粒子能量、动量与相应波频率、波长的关系",
+            "aliases": [],
+            "prerequisites": [
+              "德布罗意假说"
+            ],
+            "definition": "德布罗意关系给出粒子能量、动量与物质波频率、波长的联系。",
+            "example": "由电子动量计算物质波波长"
+          },
+          {
+            "name": "物质波",
+            "difficulty": 3,
+            "description": "与运动实物粒子相对应的波，也称德布罗意波",
+            "aliases": [
+              "德布罗意波"
+            ],
+            "prerequisites": [
+              "德布罗意关系"
+            ],
+            "definition": "物质波是每个运动实物粒子所对应的波。",
+            "example": "电子束可表现出物质波特征"
+          },
+          {
+            "name": "电子衍射",
+            "difficulty": 3,
+            "description": "电子束通过晶体或金属薄片后产生衍射现象",
+            "aliases": [],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "电子衍射是电子束表现出波动性而产生的衍射现象。",
+            "example": "电子照射单晶体形成衍射图样",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "电子双缝干涉",
+            "difficulty": 4,
+            "description": "电子通过双缝后形成类似杨氏干涉的条纹",
+            "aliases": [],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "电子双缝干涉是电子通过双缝后形成明暗相间干涉图样的现象。",
+            "example": "约恩孙实验拍摄电子双缝干涉图样",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "隧道电流",
+            "difficulty": 4,
+            "description": "电子穿过电极间绝缘层形成的电流",
+            "aliases": [],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "隧道电流是电子凭借波动性穿过绝缘层形成的电流。",
+            "example": "扫描隧道显微镜中针尖产生隧道电流",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "扫描隧道显微镜",
+            "difficulty": 4,
+            "description": "利用隧道电流变化获取样品表面三维信息的仪器",
+            "aliases": [
+              "STM"
+            ],
+            "prerequisites": [
+              "隧道电流"
+            ],
+            "definition": "扫描隧道显微镜通过扫描针尖并测量隧道电流观察表面结构。",
+            "example": "STM可获得样品表面的三维信息",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "不确定性关系",
+            "difficulty": 5,
+            "description": "微观粒子位置和动量不能同时被精确确定的关系",
+            "aliases": [
+              "海森堡不确定性关系"
+            ],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "不确定性关系表明粒子位置和动量的不确定范围乘积有下限。",
+            "example": "不能同时准确知道电子的位置和动量",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "能量时间关系",
+            "difficulty": 5,
+            "description": "微观粒子能量和时间不确定范围之间的关系",
+            "aliases": [
+              "能量和时间的不确定性关系"
+            ],
+            "prerequisites": [
+              "不确定性关系"
+            ],
+            "definition": "能量时间关系表明能量与时间的不确定范围乘积有下限。",
+            "example": "能级能量范围越小停留时间越长",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "光电开关",
+            "difficulty": 2,
+            "description": "利用光电效应控制电路接通或断开的装置",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光电管"
+            ],
+            "definition": "光电开关是把光信号转换为电信号以控制电路的装置。",
+            "example": "遮挡光束时报警电路接通"
+          },
+          {
+            "name": "光电成像",
+            "difficulty": 2,
+            "description": "先将光信号转换为电信号再转换为图像的技术",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "光电成像是利用光电效应完成光信号与电信号转换的成像方式。",
+            "example": "数码相机利用CCD进行光电成像",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "电荷耦合器件",
+            "difficulty": 3,
+            "description": "光电成像中将光信号转换为电信号的器件",
+            "aliases": [
+              "CCD"
+            ],
+            "prerequisites": [
+              "光电成像"
+            ],
+            "definition": "电荷耦合器件是由光敏元件和电荷读出电路组成的成像器件。",
+            "example": "CCD应用于数码相机和扫描仪",
+            "section": "第1节 光电效应及其解释"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　光电效应及其解释",
+            "page_range": [
+              130,
+              139
+            ]
+          },
+          {
+            "name": "第2节　实物粒子的波粒二象性",
+            "page_range": [
+              140,
+              150
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 分子动理论与气体实验定律",
+        "concepts": [
+          {
+            "name": "分子动理论基本观点",
+            "difficulty": 2,
+            "description": "物体由分子组成，分子永不停息运动且相互作用。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "分子动理论认为物体由大量分子组成，分子永不停息地做无规则运动，分子间存在相互作用力。",
+            "example": "墨水在水中逐渐散开。"
+          },
+          {
+            "name": "阿伏伽德罗常数",
+            "difficulty": 2,
+            "description": "1 mol物质所含的粒子数，约为6.02×10²³ mol⁻¹。",
+            "aliases": [
+              "NA"
+            ],
+            "prerequisites": [],
+            "definition": "1 mol任何物质所含的相同粒子数称为阿伏伽德罗常数。",
+            "example": "1 mol水约含6.02×10²³个水分子。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "扩散现象",
+            "difficulty": 2,
+            "description": "不同物质彼此进入对方的现象，温度越高扩散越快。",
+            "aliases": [],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "不同物质的分子由于无规则运动而彼此进入对方的现象称为扩散。",
+            "example": "蓝黑墨水在清水中逐渐混合均匀。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "布朗运动",
+            "difficulty": 3,
+            "description": "悬浮微粒受到液体分子撞击而产生的无规则运动。",
+            "aliases": [
+              "Brown运动"
+            ],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "悬浮微粒在液体中受到分子无规则撞击而产生的永不停息运动称为布朗运动。",
+            "example": "显微镜下碳素墨水微粒不断改变运动方向。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "热运动",
+            "difficulty": 2,
+            "description": "分子的无规则运动，温度越高运动越剧烈。",
+            "aliases": [
+              "分子热运动"
+            ],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "分子永不停息的无规则运动通常称为热运动。",
+            "example": "升高水温后，墨水扩散速度加快。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "分子间作用力",
+            "difficulty": 3,
+            "description": "分子间同时存在的引力和斥力，大小随距离变化。",
+            "aliases": [],
+            "prerequisites": [
+              "分子动理论基本观点"
+            ],
+            "definition": "分子间同时存在引力和斥力，其合力大小和方向随分子间距离变化。",
+            "example": "两个压紧的铅块不易被拉开。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "分子平衡位置",
+            "difficulty": 3,
+            "description": "分子间引力和斥力相互平衡、合力为零的位置。",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "分子间距离为r₀、引力与斥力相互平衡且合力为零的位置称为分子平衡位置。",
+            "example": "分子间距离等于r₀时合力为零。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "分子势能",
+            "difficulty": 3,
+            "description": "由分子间相对位置决定的势能。",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "由分子间相对位置决定的势能称为分子势能。",
+            "example": "物体体积变化时分子势能随之改变。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "平均动能",
+            "difficulty": 3,
+            "description": "大量分子热运动动能的平均值，温度是其标志。",
+            "aliases": [
+              "分子热运动平均动能"
+            ],
+            "prerequisites": [
+              "热运动"
+            ],
+            "definition": "大量分子热运动动能的平均值称为分子热运动的平均动能。",
+            "example": "温度升高时分子平均动能增大。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "物体的内能",
+            "difficulty": 3,
+            "description": "物体所有分子热运动动能与分子势能的总和。",
+            "aliases": [
+              "内能"
+            ],
+            "prerequisites": [
+              "分子势能",
+              "平均动能"
+            ],
+            "definition": "物体所有分子热运动的动能和分子势能的总和称为物体的内能。",
+            "example": "物体的内能与质量、温度和体积有关。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "油膜法",
+            "difficulty": 2,
+            "description": "利用油膜体积和面积间接估测分子直径的方法。",
+            "aliases": [
+              "油膜法估测"
+            ],
+            "prerequisites": [],
+            "definition": "通过测量油膜体积和面积并用厚度近似分子直径的估测方法称为油膜法。",
+            "example": "用油酸酒精溶液测定油酸分子大小。"
+          },
+          {
+            "name": "单分子油膜",
+            "difficulty": 3,
+            "description": "油酸在水面充分展开后形成的近似单层分子油膜。",
+            "aliases": [],
+            "prerequisites": [
+              "油膜法"
+            ],
+            "definition": "油酸膜面积最大且稳定时，可近似认为形成了单层油酸分子油膜。",
+            "example": "油酸滴在撒有爽身粉的水面上并充分扩散。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "统计规律",
+            "difficulty": 2,
+            "description": "大量偶然事件从整体上表现出的必然规律。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大量偶然事件表现出来的整体规律称为统计规律。",
+            "example": "大量钢珠落入伽尔顿板中央槽较多。"
+          },
+          {
+            "name": "速率分布规律",
+            "difficulty": 3,
+            "description": "气体分子速率分布呈现中间多、两头少的规律。",
+            "aliases": [
+              "麦克斯韦速率分布规律"
+            ],
+            "prerequisites": [
+              "统计规律",
+              "热运动"
+            ],
+            "definition": "一定温度下气体分子速率分布具有中间速率分子多、两端速率分子少的规律。",
+            "example": "升高温度，速率分布曲线峰值向高速率侧移动。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "气体状态参量",
+            "difficulty": 2,
+            "description": "描述一定质量气体宏观状态的体积、温度和压强。",
+            "aliases": [
+              "状态参量"
+            ],
+            "prerequisites": [],
+            "definition": "描述系统状态的体积、温度和压强等物理量称为状态参量。",
+            "example": "用p、V、T描述封闭气体状态。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "气体体积",
+            "difficulty": 2,
+            "description": "气体分子能够到达的空间，通常等于容器容积。",
+            "aliases": [],
+            "prerequisites": [
+              "气体状态参量"
+            ],
+            "definition": "气体体积是气体分子能够到达的空间，通常等于气体所充满的容器容积。",
+            "example": "气体充满容器时体积等于容器容积。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "热力学温度",
+            "difficulty": 2,
+            "description": "温度的国际单位制表示，单位为开尔文，符号为K。",
+            "aliases": [
+              "开尔文温度"
+            ],
+            "prerequisites": [
+              "热运动"
+            ],
+            "definition": "以开尔文为单位表示的温度称为热力学温度。",
+            "example": "摄氏温度20℃对应热力学温度293.15 K。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "气体压强",
+            "difficulty": 3,
+            "description": "气体分子频繁撞击容器壁而产生的压强。",
+            "aliases": [
+              "气压"
+            ],
+            "prerequisites": [
+              "热运动",
+              "气体状态参量"
+            ],
+            "definition": "气体分子频繁撞击容器壁，使容器壁受到稳定压力而产生气体压强。",
+            "example": "气体分子撞击活塞使其受到持续作用力。"
+          },
+          {
+            "name": "等温过程",
+            "difficulty": 2,
+            "description": "一定质量气体温度保持不变时发生的状态变化过程。",
+            "aliases": [
+              "等温变化"
+            ],
+            "prerequisites": [
+              "气体状态参量"
+            ],
+            "definition": "一定质量气体在温度不变条件下发生的状态变化称为等温过程。",
+            "example": "缓慢推压气筒活塞并使气体温度基本不变。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "玻意耳定律",
+            "difficulty": 3,
+            "description": "一定质量气体等温时，压强与体积成反比。",
+            "aliases": [
+              "玻意耳—马略特定律"
+            ],
+            "prerequisites": [
+              "等温过程",
+              "气体压强",
+              "气体体积"
+            ],
+            "definition": "一定质量气体在温度不变时，压强与体积成反比，即pV保持不变。",
+            "example": "气体体积减半时，压强变为原来的两倍。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "查理定律",
+            "difficulty": 3,
+            "description": "一定质量气体等容时，压强与热力学温度成正比。",
+            "aliases": [],
+            "prerequisites": [
+              "热力学温度",
+              "气体压强"
+            ],
+            "definition": "一定质量气体在体积不变时，压强与热力学温度成正比。",
+            "example": "密闭刚性容器加热后气体压强增大。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "盖—吕萨克定律",
+            "difficulty": 3,
+            "description": "一定质量气体等压时，体积与热力学温度成正比。",
+            "aliases": [],
+            "prerequisites": [
+              "热力学温度",
+              "气体体积"
+            ],
+            "definition": "一定质量气体在压强不变时，体积与热力学温度成正比。",
+            "example": "气球受热膨胀。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "理想气体模型",
+            "difficulty": 4,
+            "description": "分子大小可忽略，除碰撞外分子间作用力可忽略的模型。",
+            "aliases": [
+              "理想气体"
+            ],
+            "prerequisites": [
+              "分子间作用力",
+              "气体压强"
+            ],
+            "definition": "严格遵循三个气体实验定律的气体可视为理想气体模型。",
+            "example": "压强不大、温度不低时的气体可近似视为理想气体。",
+            "section": "第5节 气体实验定律"
+          },
+          {
+            "name": "理想气体状态方程",
+            "difficulty": 4,
+            "description": "一定质量理想气体满足pV/T为常量的状态关系。",
+            "aliases": [],
+            "prerequisites": [
+              "玻意耳定律",
+              "查理定律",
+              "理想气体模型"
+            ],
+            "definition": "一定质量理想气体状态变化时，压强、体积和热力学温度满足pV/T为常量。",
+            "example": "气体压强、体积和温度同时变化时进行状态计算。",
+            "section": "第5节 气体实验定律"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 走进微观世界",
+            "section_key": "23622d1685",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第1节 分子动理论的基本观点",
+            "section_key": "7b6dff9cee",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第2节 科学测量:用油膜法估测油酸分子的大小",
+            "section_key": "e07888a753",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第3节 气体分子速率分布的统计规律",
+            "section_key": "91f097107c",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第4节 科学探究:气体压强与体积的关系",
+            "section_key": "362e8737e1",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第5节 气体实验定律",
+            "section_key": "b77bd108a0",
+            "page_range": [
+              6,
+              37
+            ]
+          }
+        ],
+        "chapter_key": "0694ab6a4f",
+        "metadata": {
+          "volume_id": "1c5128523285",
+          "file_id": "1c5128523285",
+          "volume_title": "普通高中教科书 物理 选择性必修第三册",
+          "chapter_order": 1,
+          "raw_heading": "第1章　分子动理论与气体实验定律"
+        }
+      },
+      {
+        "name": "第2章 固体与液体",
+        "concepts": [
+          {
+            "name": "固体",
+            "difficulty": 1,
+            "description": "具有一定形状和体积的物质状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "固体是具有一定形状和体积的物质状态。",
+            "example": "粉笔和石膏都属于固体。"
+          },
+          {
+            "name": "液体",
+            "difficulty": 1,
+            "description": "具有一定体积但没有固定形状的物质状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "液体是具有一定体积而没有固定形状的物质状态。",
+            "example": "水、酒精和水银都是液体。"
+          },
+          {
+            "name": "晶体",
+            "difficulty": 2,
+            "description": "分子排列有规律且具有固定熔点的固体",
+            "aliases": [],
+            "prerequisites": [
+              "固体"
+            ],
+            "definition": "晶体是分子空间排列有规律并具有固定熔点的固体。",
+            "example": "食盐、糖和金属都是晶体。"
+          },
+          {
+            "name": "非晶体",
+            "difficulty": 2,
+            "description": "分子排列无规律且没有固定熔点的固体",
+            "aliases": [],
+            "prerequisites": [
+              "固体"
+            ],
+            "definition": "非晶体是分子空间排列无规律且没有固定熔点的固体。",
+            "example": "玻璃、蜂蜡和松香属于非晶体。"
+          },
+          {
+            "name": "单晶体",
+            "difficulty": 2,
+            "description": "具有规则几何外形的晶体",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "单晶体是内部微粒排列有序且具有规则几何外形的晶体。",
+            "example": "规则的食盐晶体属于单晶体。",
+            "section": "第1节 固体类型及微观结构"
+          },
+          {
+            "name": "多晶体",
+            "difficulty": 2,
+            "description": "由大量细小单晶体杂乱排列构成的晶体",
+            "aliases": [],
+            "prerequisites": [
+              "晶体",
+              "单晶体"
+            ],
+            "definition": "多晶体是由大量细微单晶体杂乱排列构成的晶体。",
+            "example": "许多金属固体属于多晶体。",
+            "section": "第1节 固体类型及微观结构"
+          },
+          {
+            "name": "各向异性",
+            "difficulty": 3,
+            "description": "物理性质随方向不同而不同的特性",
+            "aliases": [
+              "anisotropy"
+            ],
+            "prerequisites": [
+              "单晶体"
+            ],
+            "definition": "各向异性是物体在不同方向上物理性质不一定相同的特性。",
+            "example": "单晶云母在不同方向上的导热性不同。"
+          },
+          {
+            "name": "各向同性",
+            "difficulty": 3,
+            "description": "各个方向上的物理性质通常相同的特性",
+            "aliases": [
+              "isotropy"
+            ],
+            "prerequisites": [
+              "非晶体",
+              "多晶体"
+            ],
+            "definition": "各向同性是物体在各个方向上的物理性质通常相同的特性。",
+            "example": "玻璃在不同方向上的导热性相同。",
+            "section": "第1节 固体类型及微观结构"
+          },
+          {
+            "name": "分子间作用力",
+            "difficulty": 3,
+            "description": "物质微粒之间存在的相互作用力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "分子间作用力是物质微粒之间存在的相互作用力。",
+            "example": "金刚石中碳原子间作用力很强。"
+          },
+          {
+            "name": "晶体熔点",
+            "difficulty": 2,
+            "description": "晶体在一定压强下熔化时保持不变的温度",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶体熔点是晶体在一定压强下开始熔化并保持温度不变的温度。",
+            "example": "晶体熔化时固液共存且温度不变。"
+          },
+          {
+            "name": "晶体熔化特点",
+            "difficulty": 3,
+            "description": "晶体熔化时温度保持不变直到完全熔化",
+            "aliases": [],
+            "prerequisites": [
+              "晶体熔点",
+              "分子间作用力"
+            ],
+            "definition": "晶体熔化过程中吸收热量而温度保持在熔点不变。",
+            "example": "冰熔化过程中温度保持不变。"
+          },
+          {
+            "name": "表面层",
+            "difficulty": 2,
+            "description": "液体与气体接触处的分子薄层",
+            "aliases": [],
+            "prerequisites": [
+              "液体"
+            ],
+            "definition": "表面层是液体与气体接触表面处形成的分子薄层。",
+            "example": "水面上方的薄层分子分布较稀疏。"
+          },
+          {
+            "name": "表面张力",
+            "difficulty": 3,
+            "description": "液体表面各部分间的相互引力",
+            "aliases": [
+              "surface tension"
+            ],
+            "prerequisites": [
+              "表面层",
+              "分子间作用力"
+            ],
+            "definition": "表面张力是液体表面各部分之间的相互引力。",
+            "example": "水黾能够停留在水面上。"
+          },
+          {
+            "name": "内聚力",
+            "difficulty": 3,
+            "description": "液体内部同种分子之间的吸引力",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "内聚力是液体内部同种分子之间的吸引力。",
+            "example": "水分子之间存在内聚力。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "附着力",
+            "difficulty": 3,
+            "description": "液体分子与固体分子之间的吸引力",
+            "aliases": [],
+            "prerequisites": [
+              "分子间作用力"
+            ],
+            "definition": "附着力是液体分子受到固体分子吸引而产生的作用力。",
+            "example": "水分子受到玻璃分子的吸引。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "浸润",
+            "difficulty": 2,
+            "description": "液体润湿固体并附着在其表面的现象",
+            "aliases": [],
+            "prerequisites": [
+              "内聚力",
+              "附着力"
+            ],
+            "definition": "浸润是液体润湿某种固体并附着在其表面的现象。",
+            "example": "水滴在洁净玻璃上扩展成薄层。"
+          },
+          {
+            "name": "不浸润",
+            "difficulty": 2,
+            "description": "液体不润湿固体且不附着其表面的现象",
+            "aliases": [],
+            "prerequisites": [
+              "内聚力",
+              "附着力"
+            ],
+            "definition": "不浸润是液体不润湿某种固体且不附着在其表面的现象。",
+            "example": "水滴在蜡纸上近似成球并可滚动。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "毛细管",
+            "difficulty": 2,
+            "description": "能够发生毛细现象的细管或细小孔道",
+            "aliases": [],
+            "prerequisites": [
+              "浸润",
+              "不浸润"
+            ],
+            "definition": "毛细管是能使液体发生毛细现象的细管。",
+            "example": "内径很小的玻璃管可作为毛细管。"
+          },
+          {
+            "name": "毛细现象",
+            "difficulty": 3,
+            "description": "液体在细管中上升或下降的现象",
+            "aliases": [],
+            "prerequisites": [
+              "表面张力",
+              "浸润",
+              "不浸润",
+              "毛细管"
+            ],
+            "definition": "毛细现象是浸润液体在细管中上升或不浸润液体在细管中下降的现象。",
+            "example": "水沿植物内部细小孔道上升。"
+          },
+          {
+            "name": "液晶",
+            "difficulty": 3,
+            "description": "兼有液体流动性和晶体各向异性的流体",
+            "aliases": [
+              "liquid crystal"
+            ],
+            "prerequisites": [
+              "液体",
+              "晶体",
+              "各向异性"
+            ],
+            "definition": "液晶是既有液体流动性又有晶体各向异性特点的流体。",
+            "example": "液晶可用于制造显示屏。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "材料分类",
+            "difficulty": 2,
+            "description": "材料可按特性、领域和组成进行分类",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "材料可按特性、应用领域及组成分为不同类别。",
+            "example": "材料可分为结构材料和功能材料。"
+          },
+          {
+            "name": "结构材料",
+            "difficulty": 2,
+            "description": "主要利用材料力学特性的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "结构材料是主要利用材料力学特性的材料。",
+            "example": "桥梁用材料通常属于结构材料。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "功能材料",
+            "difficulty": 2,
+            "description": "主要利用声光热电磁等特性的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "功能材料是主要利用材料声、光、热、电、磁等特性的材料。",
+            "example": "半导体材料属于功能材料。",
+            "section": "第2节 表面张力和毛细现象"
+          },
+          {
+            "name": "合金",
+            "difficulty": 2,
+            "description": "由金属与金属或非金属结合成的材料",
+            "aliases": [],
+            "prerequisites": [
+              "金属材料"
+            ],
+            "definition": "合金是由两种或两种以上金属，或金属与非金属结合形成的材料。",
+            "example": "钢是铁和碳组成的合金。"
+          },
+          {
+            "name": "金属材料",
+            "difficulty": 1,
+            "description": "包括金属与合金的一类材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "金属材料一般包括金属和合金。",
+            "example": "钢和不锈钢都属于金属材料。"
+          },
+          {
+            "name": "无机非金属材料",
+            "difficulty": 2,
+            "description": "以陶瓷和玻璃等为代表的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "无机非金属材料主要包括陶瓷和玻璃等材料。",
+            "example": "陶瓷可用作电绝缘材料。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "有机高分子材料",
+            "difficulty": 2,
+            "description": "由有机化合物构成的高分子材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "有机高分子材料是由含多种元素的有机化合物构成的材料。",
+            "example": "塑料、合成纤维和合成橡胶属于此类。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "复合材料",
+            "difficulty": 3,
+            "description": "由不同材料通过复合工艺组合成的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "复合材料是由不同类别材料通过复合工艺组合而成的新型材料。",
+            "example": "玻璃钢和碳纤维属于复合材料。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "半导体",
+            "difficulty": 3,
+            "description": "电阻率介于金属导体和绝缘体之间的材料",
+            "aliases": [],
+            "prerequisites": [
+              "功能材料"
+            ],
+            "definition": "半导体是电阻率介于金属导体和绝缘体之间的材料。",
+            "example": "硅是制造集成电路的重要半导体材料。"
+          },
+          {
+            "name": "纳米材料",
+            "difficulty": 3,
+            "description": "粒度在1至100纳米范围内的材料",
+            "aliases": [],
+            "prerequisites": [
+              "材料分类"
+            ],
+            "definition": "纳米材料是粒度处于1～100纳米范围内的材料。",
+            "example": "碳纳米管是典型的纳米材料。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "碳纳米管",
+            "difficulty": 3,
+            "description": "由碳原子层卷曲形成的纳米碳管",
+            "aliases": [],
+            "prerequisites": [
+              "纳米材料"
+            ],
+            "definition": "碳纳米管是由碳原子层卷曲而成的纳米尺度碳管。",
+            "example": "碳纳米管具有很高韧性和很强导电性。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "石墨烯",
+            "difficulty": 3,
+            "description": "由单层碳原子组成六角网格的材料",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "石墨烯是由单层碳原子连接成六角网格构成的材料。",
+            "example": "石墨烯可用于制作传感器和柔性显示屏。",
+            "section": "第3节 材料及其应用"
+          },
+          {
+            "name": "发光二极管",
+            "difficulty": 3,
+            "description": "将电能转化为光能的半导体器件",
+            "aliases": [
+              "LED"
+            ],
+            "prerequisites": [
+              "半导体"
+            ],
+            "definition": "发光二极管是能够把电能转化为光能的半导体二极管。",
+            "example": "LED灯具有工作电压低、寿命长等特点。",
+            "section": "第3节 材料及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 认识固体与液体",
+            "section_key": "7b7fbe04e8",
+            "page_range": [
+              37,
+              37
+            ]
+          },
+          {
+            "name": "第1节 固体类型及微观结构",
+            "section_key": "d333182e02",
+            "page_range": [
+              38,
+              41
+            ]
+          },
+          {
+            "name": "第2节 表面张力和毛细现象",
+            "section_key": "f13e778628",
+            "page_range": [
+              42,
+              49
+            ]
+          },
+          {
+            "name": "第3节 材料及其应用",
+            "section_key": "5aee195067",
+            "page_range": [
+              49,
+              55
+            ]
+          }
+        ],
+        "chapter_key": "9f8a2a58db",
+        "metadata": {
+          "volume_id": "1c5128523285",
+          "file_id": "1c5128523285",
+          "volume_title": "普通高中教科书 物理 选择性必修第三册",
+          "chapter_order": 2,
+          "raw_heading": "第2章　固体与液体"
+        }
+      },
+      {
+        "name": "第3章 热力学定律",
+        "concepts": [
+          {
+            "name": "内能",
+            "difficulty": 2,
+            "description": "物体内部所有分子热运动和相互作用的能量总和",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "内能是物体内部所有分子热运动和相互作用所具有的能量总和。",
+            "example": "压缩气体时，外界做功使气体内能增加。"
+          },
+          {
+            "name": "热量",
+            "difficulty": 2,
+            "description": "热传递过程中物体吸收或放出的能量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "热量是物体在热传递过程中从外界吸收或向外界放出的能量。",
+            "example": "冰块熔化时从周围吸收热量。"
+          },
+          {
+            "name": "功热内能关系",
+            "difficulty": 3,
+            "description": "内能变化等于吸热量与外界对物体做功之和",
+            "aliases": [
+              "功、热量与内能"
+            ],
+            "prerequisites": [
+              "内能",
+              "热量"
+            ],
+            "definition": "物体内能的改变量等于吸收的热量与外界对物体所做的功之和。",
+            "example": "气体吸热并对外做功时，内能变化取决于两者差值。",
+            "section": "第1节 热力学第一定律"
+          },
+          {
+            "name": "热力学第一定律",
+            "difficulty": 3,
+            "description": "能量守恒定律在热现象宏观过程中的具体表述",
+            "aliases": [],
+            "prerequisites": [
+              "功热内能关系"
+            ],
+            "definition": "热力学第一定律表明热量、功与内能变化满足能量守恒关系。",
+            "example": "空气压缩机对空气做功，空气内能增加。"
+          },
+          {
+            "name": "能量守恒定律",
+            "difficulty": 3,
+            "description": "能量只能转化或转移，总量始终保持不变",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能量既不会消失，也不会创生，只能转化或转移而总值不变。",
+            "example": "电能可转化为光能和内能，但总能量不变。"
+          },
+          {
+            "name": "第一类永动机",
+            "difficulty": 2,
+            "description": "设想不消耗能量却能永远对外做功的机器",
+            "aliases": [],
+            "prerequisites": [
+              "能量守恒定律"
+            ],
+            "definition": "第一类永动机是不消耗任何能量却能永远对外做功的机器。",
+            "example": "螺旋汲水永动机因能量无中生有而不能实现。"
+          },
+          {
+            "name": "焦耳实验",
+            "difficulty": 3,
+            "description": "利用重物带动叶轮搅水，研究机械功与热量关系",
+            "aliases": [
+              "焦耳的叶轮搅水实验"
+            ],
+            "prerequisites": [
+              "功热内能关系"
+            ],
+            "definition": "焦耳实验通过重物带动叶轮搅动水，定量研究机械功转化为内能。",
+            "example": "重物下落使水温升高，表明机械能转化为内能。"
+          },
+          {
+            "name": "可逆过程",
+            "difficulty": 3,
+            "description": "系统和外界都能完全恢复原状的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "若存在另一过程能使系统和外界完全复原，原过程就是可逆过程。",
+            "example": "教材指出实际热现象宏观过程通常不能完全逆向恢复。"
+          },
+          {
+            "name": "不可逆过程",
+            "difficulty": 3,
+            "description": "系统和外界不能完全恢复原状的过程",
+            "aliases": [],
+            "prerequisites": [
+              "可逆过程"
+            ],
+            "definition": "用任何方法都不能使系统和外界完全复原的过程称为不可逆过程。",
+            "example": "热量从高温物体传向低温物体是不可逆过程。"
+          },
+          {
+            "name": "热传递方向性",
+            "difficulty": 3,
+            "description": "热量自发地由高温物体传向低温物体",
+            "aliases": [],
+            "prerequisites": [
+              "不可逆过程",
+              "热量"
+            ],
+            "definition": "热量能够自发地从高温物体传向低温物体，不能自发反向传递。",
+            "example": "热水放在空气中会逐渐冷却至室温。"
+          },
+          {
+            "name": "热机",
+            "difficulty": 3,
+            "description": "在两个不同温度热源间消耗内能并对外做功的装置",
+            "aliases": [],
+            "prerequisites": [
+              "热力学第一定律",
+              "热传递方向性"
+            ],
+            "definition": "热机是从高温热源吸热、部分对外做功并向低温热源放热的装置。",
+            "example": "汽车发动机和蒸汽轮机都是热机。"
+          },
+          {
+            "name": "热机效率",
+            "difficulty": 3,
+            "description": "热机对外做功与从高温热源吸热之比",
+            "aliases": [
+              "效率η"
+            ],
+            "prerequisites": [
+              "热机"
+            ],
+            "definition": "热机效率是热机对外做的功与从高温热源吸收热量的比值。",
+            "example": "热机必须向低温热源放热，因此效率低于100%。"
+          },
+          {
+            "name": "克劳修斯表述",
+            "difficulty": 3,
+            "description": "热量不能无其他变化地从低温物体传向高温物体",
+            "aliases": [],
+            "prerequisites": [
+              "热传递方向性"
+            ],
+            "definition": "克劳修斯表述认为热量不可能在不引起其他变化时由低温物体传向高温物体。",
+            "example": "冰箱制冷需消耗电能，因而引起了其他变化。",
+            "section": "第3节 热力学第二定律"
+          },
+          {
+            "name": "开尔文表述",
+            "difficulty": 3,
+            "description": "不能从单一热源吸热并完全用来做功而无其他变化",
+            "aliases": [],
+            "prerequisites": [
+              "热机",
+              "热机效率"
+            ],
+            "definition": "开尔文表述认为不能从单一热源吸热，使其完全转化为功而不引起其他变化。",
+            "example": "理想气体等温膨胀吸热做功，但伴随体积膨胀。",
+            "section": "第3节 热力学第二定律"
+          },
+          {
+            "name": "热力学第二定律",
+            "difficulty": 4,
+            "description": "规定热现象宏观过程方向性的基本规律",
+            "aliases": [],
+            "prerequisites": [
+              "热传递方向性",
+              "不可逆过程"
+            ],
+            "definition": "热力学第二定律说明与热现象有关的宏观过程具有方向性且不可逆。",
+            "example": "它说明第二类永动机不可能实现。"
+          },
+          {
+            "name": "第二类永动机",
+            "difficulty": 3,
+            "description": "从单一热源吸热并完全转化为功的设想机器",
+            "aliases": [],
+            "prerequisites": [
+              "热力学第二定律"
+            ],
+            "definition": "第二类永动机是从单一热源吸热并将其完全转化为功而无其他变化的机器。",
+            "example": "设想利用海洋内能不停做功的机器属于第二类永动机。",
+            "section": "第3节 热力学第二定律"
+          },
+          {
+            "name": "有序与无序",
+            "difficulty": 2,
+            "description": "按规则程度和对应微观状态多少区分宏观状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "规则较多且对应微观状态较少的状态较有序，反之较无序。",
+            "example": "黑白小鸡分开排列比混合在一起更有序。",
+            "section": "第4节 熵——系统无序程度的量度"
+          },
+          {
+            "name": "熵",
+            "difficulty": 3,
+            "description": "用来量度系统无序程度的状态量",
+            "aliases": [
+              "S"
+            ],
+            "prerequisites": [
+              "有序与无序"
+            ],
+            "definition": "熵是量度系统无序程度的状态量，熵越大表示系统越无序。",
+            "example": "绿豆和米混合煮成粥后，系统熵增加。"
+          },
+          {
+            "name": "孤立系统",
+            "difficulty": 3,
+            "description": "与外界既无物质交换又无能量交换的系统",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "孤立系统是与外界既没有物质交换又没有能量交换的系统。",
+            "example": "教材用孤立系统说明自然过程中的熵增加。",
+            "section": "第4节 熵——系统无序程度的量度"
+          },
+          {
+            "name": "熵增加原理",
+            "difficulty": 4,
+            "description": "孤立系统的自然过程总是沿熵增加方向进行",
+            "aliases": [],
+            "prerequisites": [
+              "熵",
+              "孤立系统",
+              "热力学第二定律"
+            ],
+            "definition": "孤立系统发生自然变化时，其总熵必然朝增加方向变化。",
+            "example": "热传递使系统最终达到相同温度，整体无序程度增加。",
+            "section": "第4节 熵——系统无序程度的量度"
+          },
+          {
+            "name": "能量退降",
+            "difficulty": 4,
+            "description": "不可逆过程中能量由可利用状态转为不可利用状态",
+            "aliases": [],
+            "prerequisites": [
+              "能量守恒定律",
+              "熵增加原理"
+            ],
+            "definition": "能量退降是不可逆过程中能量品质降低、可利用能量减少的现象。",
+            "example": "摩擦使机械能转化为内能，物体做功的本领降低。",
+            "section": "第4节 熵——系统无序程度的量度"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 水车和水泵",
+            "section_key": "95b8762668",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第1节 热力学第一定律",
+            "section_key": "85a45016f6",
+            "page_range": [
+              56,
+              59
+            ]
+          },
+          {
+            "name": "第2节 能量的转化与守恒",
+            "section_key": "5518c506ff",
+            "page_range": [
+              60,
+              63
+            ]
+          },
+          {
+            "name": "第3节 热力学第二定律",
+            "section_key": "3837fcaaf8",
+            "page_range": [
+              64,
+              67
+            ]
+          },
+          {
+            "name": "第4节 熵——系统无序程度的量度",
+            "section_key": "e4299b171e",
+            "page_range": [
+              68,
+              77
+            ]
+          }
+        ],
+        "chapter_key": "a837df3397",
+        "metadata": {
+          "volume_id": "1c5128523285",
+          "file_id": "1c5128523285",
+          "volume_title": "普通高中教科书 物理 选择性必修第三册",
+          "chapter_order": 3,
+          "raw_heading": "第3章　热力学定律"
+        }
+      },
+      {
+        "name": "第4章 原子结构",
+        "concepts": [
+          {
+            "name": "早期原子论",
+            "difficulty": 1,
+            "description": "古人关于物质由最小微粒构成的思想",
+            "aliases": [
+              "原子论"
+            ],
+            "prerequisites": [],
+            "definition": "早期原子论认为宇宙中存在不可分割的微小实体并不断运动。",
+            "example": "德谟克利特认为物质由原子组成。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "分子—原子论",
+            "difficulty": 2,
+            "description": "关于分子、原子层次及物质构成的理论",
+            "aliases": [
+              "分子原子论"
+            ],
+            "prerequisites": [
+              "早期原子论"
+            ],
+            "definition": "分子—原子论认为分子由原子构成，原子是元素的最小单元。",
+            "example": "一个分子可由多个相同原子组成。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "阴极射线",
+            "difficulty": 2,
+            "description": "稀薄气体放电时阴极发出的射线",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "阴极射线是由阴极发出并能使玻璃管壁产生荧光的射线。",
+            "example": "阴极射线使放电管壁发出荧光。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "电子",
+            "difficulty": 2,
+            "description": "组成各种物质的带负电微观粒子",
+            "aliases": [
+              "electron"
+            ],
+            "prerequisites": [
+              "阴极射线"
+            ],
+            "definition": "电子是带负电且质量远小于氢离子的原子组成粒子。",
+            "example": "汤姆孙由阴极射线实验发现电子。"
+          },
+          {
+            "name": "电子比荷",
+            "difficulty": 3,
+            "description": "带电粒子电荷量与质量的比值",
+            "aliases": [
+              "比荷"
+            ],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "电子比荷是电子电荷量与质量的比值，可反映粒子性质。",
+            "example": "汤姆孙测得阴极射线粒子的比荷。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "油滴实验",
+            "difficulty": 2,
+            "description": "密立根精确测定电子电荷量的实验",
+            "aliases": [
+              "密立根油滴实验"
+            ],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "油滴实验通过研究带电油滴的运动测定了电子电荷量。",
+            "example": "密立根用油滴实验测定电子电荷。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "原子电中性",
+            "difficulty": 2,
+            "description": "通常情况下原子整体不带电的性质",
+            "aliases": [],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "原子电中性是指原子内正电荷与电子负电荷相互抵消。",
+            "example": "原子失去电子后会变成带正电的离子。"
+          },
+          {
+            "name": "汤姆孙原子模型",
+            "difficulty": 3,
+            "description": "正电荷均匀分布、电子镶嵌其中的模型",
+            "aliases": [
+              "葡萄干面包模型"
+            ],
+            "prerequisites": [
+              "电子",
+              "原子电中性"
+            ],
+            "definition": "汤姆孙模型认为正电荷充斥整个原子，电子镶嵌在其中。",
+            "example": "模型把电子比作嵌在面包中的葡萄干。"
+          },
+          {
+            "name": "α粒子散射实验",
+            "difficulty": 3,
+            "description": "用α粒子轰击金箔研究原子结构的实验",
+            "aliases": [
+              "卢瑟福散射实验"
+            ],
+            "prerequisites": [
+              "汤姆孙原子模型"
+            ],
+            "definition": "α粒子散射实验通过观察α粒子穿过金箔后的偏转推断原子结构。",
+            "example": "少数α粒子发生大角度偏转甚至被弹回。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "原子核",
+            "difficulty": 3,
+            "description": "集中原子全部正电荷及几乎全部质量的核心",
+            "aliases": [],
+            "prerequisites": [
+              "α粒子散射实验"
+            ],
+            "definition": "原子核是原子内部很小的区域，集中了全部正电荷和几乎全部质量。",
+            "example": "α粒子接近原子核时会受到明显斥力。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "原子核式结构模型",
+            "difficulty": 3,
+            "description": "电子绕小而重的原子核运动的模型",
+            "aliases": [
+              "行星模型",
+              "卢瑟福原子模型"
+            ],
+            "prerequisites": [
+              "原子核",
+              "α粒子散射实验"
+            ],
+            "definition": "核式结构模型认为原子由小原子核和核外运动的电子组成。",
+            "example": "该模型解释了α粒子的大角度散射。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "连续光谱",
+            "difficulty": 2,
+            "description": "各种波长单色光连续分布形成的光谱",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "连续光谱是色光按波长连续排列且中间没有空缺的光谱。",
+            "example": "太阳光经棱镜形成连续彩色光谱。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "线状光谱",
+            "difficulty": 2,
+            "description": "由一条条亮线组成的不连续光谱",
+            "aliases": [
+              "原子发射光谱"
+            ],
+            "prerequisites": [],
+            "definition": "线状光谱是由分立亮线组成的光谱，原子的发射光谱属于此类。",
+            "example": "稀薄氢气发光可产生线状光谱。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "吸收光谱",
+            "difficulty": 3,
+            "description": "连续光谱中出现特定暗线的光谱",
+            "aliases": [],
+            "prerequisites": [
+              "连续光谱"
+            ],
+            "definition": "吸收光谱是连续光通过物质后某些波长被吸收而形成暗线的光谱。",
+            "example": "太阳光谱中的暗线属于吸收光谱。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "特征谱线",
+            "difficulty": 2,
+            "description": "每种原子具有的独特光谱亮线",
+            "aliases": [],
+            "prerequisites": [
+              "线状光谱"
+            ],
+            "definition": "特征谱线是某种原子发射光谱中具有辨识作用的特定谱线。",
+            "example": "氢原子的Hα线可作为氢的识别依据。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "光谱分析",
+            "difficulty": 2,
+            "description": "利用特征谱线鉴别物质组成的方法",
+            "aliases": [],
+            "prerequisites": [
+              "特征谱线"
+            ],
+            "definition": "光谱分析是根据物质光谱中的特征谱线确定其化学组成的方法。",
+            "example": "通过太阳暗线可分析太阳大气中的元素。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "巴耳末公式",
+            "difficulty": 3,
+            "description": "描述氢原子可见光谱线规律的经验公式",
+            "aliases": [
+              "巴耳末系公式"
+            ],
+            "prerequisites": [
+              "氢原子光谱"
+            ],
+            "definition": "巴耳末公式给出了氢原子可见光谱波长随能级序数变化的规律。",
+            "example": "取n=3可计算氢原子的Hα线波长。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "里德伯公式",
+            "difficulty": 4,
+            "description": "表示氢原子各谱线系波长规律的公式",
+            "aliases": [
+              "里德伯经验公式"
+            ],
+            "prerequisites": [
+              "氢原子光谱"
+            ],
+            "definition": "里德伯公式把氢原子任一光谱线表示为两个光谱项之差。",
+            "example": "取m=2时得到巴耳末公式。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "氢原子光谱",
+            "difficulty": 3,
+            "description": "氢原子发光形成的具有规律的线状光谱",
+            "aliases": [],
+            "prerequisites": [
+              "线状光谱",
+              "特征谱线"
+            ],
+            "definition": "氢原子光谱由氢原子特征谱线组成并呈现分立的规律性。",
+            "example": "氢原子可见光谱包含Hα至Hδ等谱线。"
+          },
+          {
+            "name": "玻尔原子模型",
+            "difficulty": 4,
+            "description": "以定态轨道和跃迁解释原子光谱的模型",
+            "aliases": [
+              "玻尔模型"
+            ],
+            "prerequisites": [
+              "原子核式结构模型",
+              "氢原子光谱"
+            ],
+            "definition": "玻尔模型认为电子只能处于分立定态轨道并通过跃迁辐射或吸收能量。",
+            "example": "玻尔模型解释了氢原子的巴耳末系。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "定态",
+            "difficulty": 3,
+            "description": "电子在特定轨道上运动且不辐射能量的状态",
+            "aliases": [
+              "轨道定态"
+            ],
+            "prerequisites": [
+              "玻尔原子模型"
+            ],
+            "definition": "定态是电子在分立特定轨道上运动而原子能量保持确定的状态。",
+            "example": "氢原子基态是最低能量的定态。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "能级",
+            "difficulty": 3,
+            "description": "原子可能具有的分立确定能量值",
+            "aliases": [
+              "能量能级"
+            ],
+            "prerequisites": [
+              "定态"
+            ],
+            "definition": "能级是原子处于某一确定状态时所具有的分立能量值。",
+            "example": "氢原子基态能量为−13.6 eV。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "基态与激发态",
+            "difficulty": 3,
+            "description": "原子的最低能量状态和较高能量状态",
+            "aliases": [
+              "基态",
+              "激发态"
+            ],
+            "prerequisites": [
+              "能级"
+            ],
+            "definition": "基态是原子最低能级状态，激发态是吸收能量后处于较高能级的状态。",
+            "example": "氢原子从基态吸收能量可跃迁到激发态。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "能级跃迁",
+            "difficulty": 4,
+            "description": "电子在不同定态能级之间发生的转移",
+            "aliases": [
+              "电子跃迁"
+            ],
+            "prerequisites": [
+              "能级",
+              "基态与激发态"
+            ],
+            "definition": "能级跃迁是电子在不同能级间转移并按能量差吸收或辐射光子的过程。",
+            "example": "电子从高能级跃迁到低能级时辐射光子。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "光子",
+            "difficulty": 3,
+            "description": "原子跃迁时吸收或辐射的光能量量子",
+            "aliases": [],
+            "prerequisites": [
+              "能级跃迁"
+            ],
+            "definition": "光子是原子跃迁时携带能量且能量由两个能级差决定的光量子。",
+            "example": "能级差为12.8 eV时辐射能量为12.8 eV的光子。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "电子云",
+            "difficulty": 3,
+            "description": "用点的疏密表示电子出现概率的图形",
+            "aliases": [],
+            "prerequisites": [
+              "电子"
+            ],
+            "definition": "电子云是以点的疏密表示电子在原子核周围出现概率分布的图形。",
+            "example": "电子云密集处表示电子出现概率较大。",
+            "section": "第4节 玻尔原子模型"
+          },
+          {
+            "name": "玻尔理论局限",
+            "difficulty": 3,
+            "description": "玻尔理论不能解释多电子原子光谱的限制",
+            "aliases": [],
+            "prerequisites": [
+              "玻尔原子模型",
+              "电子云"
+            ],
+            "definition": "玻尔理论局限在于保留经典确定轨道，不能解释多电子原子的光谱。",
+            "example": "玻尔理论无法解释氦原子光谱。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 从一幅图片说起",
+            "section_key": "e0b3508751",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第1节 电子的发现与汤姆孙原子模型",
+            "section_key": "8c505d79fe",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第2节 原子的核式结构模型",
+            "section_key": "65518b51fc",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第3节 光谱与氢原子光谱",
+            "section_key": "0fea71553d",
+            "page_range": [
+              77,
+              77
+            ]
+          },
+          {
+            "name": "第4节 玻尔原子模型",
+            "section_key": "f7c451cf8e",
+            "page_range": [
+              77,
+              99
+            ]
+          }
+        ],
+        "chapter_key": "f45c62f6c7",
+        "metadata": {
+          "volume_id": "1c5128523285",
+          "file_id": "1c5128523285",
+          "volume_title": "普通高中教科书 物理 选择性必修第三册",
+          "chapter_order": 4,
+          "raw_heading": "第4章　原子结构"
+        }
+      },
+      {
+        "name": "第5章 原子核与核能",
+        "concepts": [
+          {
+            "name": "天然放射现象",
+            "difficulty": 1,
+            "description": "物质自发放出射线的现象。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质无需外界作用而自发放出射线的现象称为天然放射现象。",
+            "example": "铀盐未经阳光照射也能使底片感光。",
+            "section": "第1节 认识原子核"
+          },
+          {
+            "name": "放射性",
+            "difficulty": 1,
+            "description": "物质放出射线的性质。",
+            "aliases": [],
+            "prerequisites": [
+              "天然放射现象"
+            ],
+            "definition": "物质能够放出射线的性质称为放射性。",
+            "example": "铀、钋和镭都具有放射性。"
+          },
+          {
+            "name": "放射性元素",
+            "difficulty": 1,
+            "description": "具有放射性的元素。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "具有放射性的元素称为放射性元素。",
+            "example": "铀是天然放射性元素。"
+          },
+          {
+            "name": "α射线",
+            "difficulty": 2,
+            "description": "高速氦原子核粒子流，电离作用强。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "α射线是高速运动的氦原子核粒子流。",
+            "example": "一张薄纸可以挡住α射线。"
+          },
+          {
+            "name": "β射线",
+            "difficulty": 2,
+            "description": "高速电子流，穿透能力较强。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "β射线是高速运动的电子流。",
+            "example": "β射线可穿透几毫米厚的铝板。"
+          },
+          {
+            "name": "γ射线",
+            "difficulty": 2,
+            "description": "波长很短、穿透能力很强的电磁波。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "γ射线是波长很短的电磁波。",
+            "example": "几厘米厚的铅板可削弱γ射线。"
+          },
+          {
+            "name": "质子",
+            "difficulty": 2,
+            "description": "带一个单位正电荷的核子。",
+            "aliases": [
+              "氢原子核"
+            ],
+            "prerequisites": [],
+            "definition": "质子是带一个单位正电荷的原子核组成粒子。",
+            "example": "氮核被α粒子轰击后放出质子。"
+          },
+          {
+            "name": "中子",
+            "difficulty": 2,
+            "description": "不带电且质量接近质子的核子。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中子是不带电、质量接近质子的原子核组成粒子。",
+            "example": "α粒子轰击铍可产生中子。"
+          },
+          {
+            "name": "核子",
+            "difficulty": 1,
+            "description": "质子和中子的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "质子",
+              "中子"
+            ],
+            "definition": "质子和中子统称为核子。",
+            "example": "原子核由一定数量的核子组成。"
+          },
+          {
+            "name": "原子核组成",
+            "difficulty": 2,
+            "description": "原子核由一定数量的质子和中子组成。",
+            "aliases": [],
+            "prerequisites": [
+              "质子",
+              "中子",
+              "核子"
+            ],
+            "definition": "原子核是由一定数量的质子和中子组成的。",
+            "example": "碳核含有6个质子和6个中子。"
+          },
+          {
+            "name": "质量数",
+            "difficulty": 2,
+            "description": "原子核内质子数与中子数之和。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核组成"
+            ],
+            "definition": "原子核内质子数与中子数之和称为质量数。",
+            "example": "碳-12的质量数为12。"
+          },
+          {
+            "name": "核电荷数",
+            "difficulty": 2,
+            "description": "原子核的电荷数，等于质子数。",
+            "aliases": [
+              "核电荷数"
+            ],
+            "prerequisites": [
+              "质子",
+              "原子核组成"
+            ],
+            "definition": "原子核的核电荷数等于其中的质子数。",
+            "example": "碳核的核电荷数为6。"
+          },
+          {
+            "name": "原子核符号",
+            "difficulty": 2,
+            "description": "用A、Z和元素符号表示原子核。",
+            "aliases": [],
+            "prerequisites": [
+              "质量数",
+              "核电荷数"
+            ],
+            "definition": "以质量数A和核电荷数Z标在元素符号旁表示原子核。",
+            "example": "碳原子核表示为¹²₆C。",
+            "section": "第1节 认识原子核"
+          },
+          {
+            "name": "同位素",
+            "difficulty": 2,
+            "description": "质子数相同而中子数不同的原子核。",
+            "aliases": [],
+            "prerequisites": [
+              "质量数",
+              "核电荷数"
+            ],
+            "definition": "具有相同质子数、不同中子数的原子核互称同位素。",
+            "example": "氕、氘、氚是氢的三种同位素。"
+          },
+          {
+            "name": "核反应",
+            "difficulty": 2,
+            "description": "原子核受其他粒子轰击产生新核的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核组成"
+            ],
+            "definition": "原子核在其他粒子轰击下产生新原子核的过程称为核反应。",
+            "example": "α粒子轰击氮核生成氧核和质子。"
+          },
+          {
+            "name": "核反应方程",
+            "difficulty": 3,
+            "description": "用原子核符号描述核反应的式子。",
+            "aliases": [],
+            "prerequisites": [
+              "核反应",
+              "原子核符号"
+            ],
+            "definition": "用原子核符号描述核反应过程的式子称为核反应方程。",
+            "example": "⁴₂He＋¹⁴₇N→¹⁷₈O＋¹₁H。"
+          },
+          {
+            "name": "质量数守恒",
+            "difficulty": 3,
+            "description": "核反应前后的质量数总和相等。",
+            "aliases": [],
+            "prerequisites": [
+              "质量数",
+              "核反应方程"
+            ],
+            "definition": "核反应前后各方质量数之和保持不变。",
+            "example": "⁴＋⁹等于¹²＋¹。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "核电荷数守恒",
+            "difficulty": 3,
+            "description": "核反应前后的核电荷数总和相等。",
+            "aliases": [],
+            "prerequisites": [
+              "核电荷数",
+              "核反应方程"
+            ],
+            "definition": "核反应前后各方核电荷数之和保持不变。",
+            "example": "⁴₂He＋⁹₄Be反应前后核电荷数均为6。"
+          },
+          {
+            "name": "原子核衰变",
+            "difficulty": 2,
+            "description": "原子核释放射线并转变成新核。",
+            "aliases": [
+              "衰变"
+            ],
+            "prerequisites": [
+              "放射性",
+              "核反应"
+            ],
+            "definition": "原子核因释放α或β射线而转变成新核的变化称为衰变。",
+            "example": "铀核放出α粒子变成钍核。"
+          },
+          {
+            "name": "α衰变",
+            "difficulty": 2,
+            "description": "原子核放出α粒子的衰变。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核衰变",
+              "α射线"
+            ],
+            "definition": "放出α粒子的原子核衰变称为α衰变。",
+            "example": "²³⁸₉₂U→²³⁴₉₀Th＋⁴₂He。"
+          },
+          {
+            "name": "β衰变",
+            "difficulty": 2,
+            "description": "原子核放出β粒子的衰变。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核衰变",
+              "β射线"
+            ],
+            "definition": "放出β粒子的原子核衰变称为β衰变。",
+            "example": "²³⁴₉₀Th放出电子变成²³⁴₉₁Pa。"
+          },
+          {
+            "name": "半衰期",
+            "difficulty": 3,
+            "description": "大量原子核有一半发生衰变所需的时间。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核衰变"
+            ],
+            "definition": "放射性元素的原子核有半数发生衰变需要的时间称为半衰期。",
+            "example": "氡-222的半衰期为3.8天。"
+          },
+          {
+            "name": "放射性示踪",
+            "difficulty": 2,
+            "description": "利用放射性同位素追踪元素运动。",
+            "aliases": [],
+            "prerequisites": [
+              "同位素",
+              "放射性"
+            ],
+            "definition": "利用放射性同位素发出的射线查明元素行踪的方法。",
+            "example": "示踪剂可显示内脏器官是否病变。",
+            "section": "第2节 原子核衰变及半衰期"
+          },
+          {
+            "name": "放射性污染",
+            "difficulty": 2,
+            "description": "过量放射线对环境和生物造成的污染。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性"
+            ],
+            "definition": "过量放射线对环境、人类和自然界造成的污染称为放射性污染。",
+            "example": "核泄漏会造成长期放射性污染。",
+            "section": "第2节 原子核衰变及半衰期"
+          },
+          {
+            "name": "放射性防护",
+            "difficulty": 2,
+            "description": "减少放射线伤害的时间、距离和屏蔽措施。",
+            "aliases": [],
+            "prerequisites": [
+              "放射性污染"
+            ],
+            "definition": "为避免放射线伤害而采取的减少照射和设置屏蔽物等措施。",
+            "example": "用铅制容器存放放射源。"
+          },
+          {
+            "name": "核素",
+            "difficulty": 2,
+            "description": "具有一定质子数和中子数的原子核。",
+            "aliases": [],
+            "prerequisites": [
+              "原子核组成"
+            ],
+            "definition": "具有一定质子数和中子数的原子核称为核素。",
+            "example": "不同核素在核素图中分别对应小方块。"
+          },
+          {
+            "name": "核力",
+            "difficulty": 3,
+            "description": "把原子核中核子维系在一起的短程强力。",
+            "aliases": [],
+            "prerequisites": [
+              "核子",
+              "原子核组成"
+            ],
+            "definition": "把原子核中的核子维系在一起的短程强相互作用力称为核力。",
+            "example": "核力抵消质子间库仑斥力。"
+          },
+          {
+            "name": "四种基本相互作用",
+            "difficulty": 3,
+            "description": "引力、电磁、强和弱相互作用的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "核力"
+            ],
+            "definition": "自然界的作用力本质上可归结为引力、电磁、强和弱相互作用。",
+            "example": "强相互作用、电磁相互作用、弱相互作用、引力相互作用依次减弱。"
+          },
+          {
+            "name": "质量亏损",
+            "difficulty": 3,
+            "description": "原子核质量小于组成核子质量之和的差值。",
+            "aliases": [],
+            "prerequisites": [
+              "核子",
+              "原子核组成"
+            ],
+            "definition": "组成原子核的自由核子质量之和与原子核质量的差值称为质量亏损。",
+            "example": "中子和质子结合成氘核时出现质量亏损。"
+          },
+          {
+            "name": "结合能",
+            "difficulty": 3,
+            "description": "自由核子结合成原子核释放的能量。",
+            "aliases": [],
+            "prerequisites": [
+              "核力",
+              "质量亏损"
+            ],
+            "definition": "核子结合成原子核时由核力释放的能量称为结合能。",
+            "example": "氘核由质子和中子结合时释放结合能。"
+          },
+          {
+            "name": "质能方程",
+            "difficulty": 3,
+            "description": "质量变化与能量变化满足E＝mc²。",
+            "aliases": [
+              "爱因斯坦质能方程"
+            ],
+            "prerequisites": [
+              "质量亏损",
+              "结合能"
+            ],
+            "definition": "物体质量变化对应的能量变化满足E＝mc²。",
+            "example": "质量亏损可通过ΔE＝Δmc²求核能。",
+            "section": "第3节 核力与核能"
+          },
+          {
+            "name": "平均结合能",
+            "difficulty": 3,
+            "description": "原子核结合能与质量数之比。",
+            "aliases": [
+              "比结合能"
+            ],
+            "prerequisites": [
+              "结合能",
+              "质量数"
+            ],
+            "definition": "原子核的结合能与其质量数之比称为平均结合能。",
+            "example": "平均结合能较大的核通常更稳定。"
+          },
+          {
+            "name": "核裂变",
+            "difficulty": 2,
+            "description": "重核分裂成中等质量核并释放能量。",
+            "aliases": [],
+            "prerequisites": [
+              "结合能",
+              "核反应"
+            ],
+            "definition": "重原子核分裂成质量相近的两部分并释放能量的过程。",
+            "example": "铀-235受中子轰击可裂变。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "链式反应",
+            "difficulty": 3,
+            "description": "裂变产生的中子引发后续裂变的反应。",
+            "aliases": [
+              "裂变链式反应"
+            ],
+            "prerequisites": [
+              "核裂变",
+              "中子"
+            ],
+            "definition": "裂变产生的中子继续引发其他原子核裂变的连续反应。",
+            "example": "铀-235裂变产生的中子引发下一代裂变。"
+          },
+          {
+            "name": "临界体积",
+            "difficulty": 3,
+            "description": "能够发生链式反应的铀块最小体积。",
+            "aliases": [],
+            "prerequisites": [
+              "链式反应"
+            ],
+            "definition": "能使链式反应发生的铀块最小体积称为临界体积。",
+            "example": "铀块体积不足时中子会逸出而难以链式反应。"
+          },
+          {
+            "name": "核反应堆",
+            "difficulty": 3,
+            "description": "维持和控制链式反应速度的装置。",
+            "aliases": [
+              "反应堆"
+            ],
+            "prerequisites": [
+              "链式反应",
+              "临界体积"
+            ],
+            "definition": "能够维持并控制核裂变链式反应速度的装置称为核反应堆。",
+            "example": "控制棒吸收中子以调节反应速度。"
+          },
+          {
+            "name": "核聚变",
+            "difficulty": 2,
+            "description": "轻核结合成较重核并释放能量。",
+            "aliases": [
+              "轻核聚变"
+            ],
+            "prerequisites": [
+              "结合能",
+              "核反应"
+            ],
+            "definition": "轻原子核结合成较重原子核并释放能量的过程。",
+            "example": "氘核和氚核聚变生成氦核和中子。"
+          },
+          {
+            "name": "等离子态",
+            "difficulty": 2,
+            "description": "高温下原子完全电离形成的物质状态。",
+            "aliases": [
+              "物质第四态"
+            ],
+            "prerequisites": [
+              "核聚变"
+            ],
+            "definition": "高温下原子完全电离形成的物质状态称为等离子态。",
+            "example": "可控聚变需要约束高温等离子体。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "可控热核聚变",
+            "difficulty": 4,
+            "description": "在受控条件下维持高温等离子体聚变。",
+            "aliases": [],
+            "prerequisites": [
+              "核聚变",
+              "等离子态"
+            ],
+            "definition": "通过约束高温等离子体使轻核持续聚变的过程。",
+            "example": "托卡马克装置采用磁约束实现聚变研究。",
+            "section": "第4节 核裂变和核聚变"
+          },
+          {
+            "name": "核电站",
+            "difficulty": 2,
+            "description": "将核反应堆释放的核能转化为电能的发电厂。",
+            "aliases": [],
+            "prerequisites": [
+              "核反应堆"
+            ],
+            "definition": "利用核反应堆释放的核能发电的工厂称为核电站。",
+            "example": "压水式核电站用蒸汽驱动汽轮发电机。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 打开原子核的大门",
+            "section_key": "595486d73f",
+            "page_range": [
+              99,
+              99
+            ]
+          },
+          {
+            "name": "第1节 认识原子核",
+            "section_key": "92366fb1a9",
+            "page_range": [
+              100,
+              105
+            ]
+          },
+          {
+            "name": "第2节 原子核衰变及半衰期",
+            "section_key": "d8cc2685e6",
+            "page_range": [
+              106,
+              111
+            ]
+          },
+          {
+            "name": "第3节 核力与核能",
+            "section_key": "96e9ce2a32",
+            "page_range": [
+              112,
+              115
+            ]
+          },
+          {
+            "name": "第4节 核裂变和核聚变",
+            "section_key": "788266960b",
+            "page_range": [
+              116,
+              121
+            ]
+          },
+          {
+            "name": "第5节 核能的利用与环境保护",
+            "section_key": "b6d502553e",
+            "page_range": [
+              122,
+              129
+            ]
+          }
+        ],
+        "chapter_key": "e6210e0314",
+        "metadata": {
+          "volume_id": "1c5128523285",
+          "file_id": "1c5128523285",
+          "volume_title": "普通高中教科书 物理 选择性必修第三册",
+          "chapter_order": 5,
+          "raw_heading": "第5章　原子核与核能"
+        }
+      },
+      {
+        "name": "第6章 波粒二象性",
+        "concepts": [
+          {
+            "name": "能量子",
+            "difficulty": 3,
+            "description": "普朗克为解释黑体辐射提出的能量不连续概念",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能量子是以不连续形式存在和交换的能量单位。",
+            "example": "普朗克提出能量子解释黑体辐射",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "光电效应",
+            "difficulty": 2,
+            "description": "光照射物体时电子从其表面逸出的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光电效应是光照射物体时电子从物体表面逸出的现象。",
+            "example": "紫外光照射锌板产生光电效应"
+          },
+          {
+            "name": "光电子",
+            "difficulty": 2,
+            "description": "发生光电效应时从物体表面逸出的电子",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "光电子是光电效应中从物体表面逸出的电子。",
+            "example": "紫外光照射锌板逸出光电子"
+          },
+          {
+            "name": "极限频率",
+            "difficulty": 3,
+            "description": "金属发生光电效应所需入射光频率的最低值",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "极限频率是金属产生光电效应所需入射光频率的最低值。",
+            "example": "频率低于极限频率不能产生光电效应"
+          },
+          {
+            "name": "饱和电流",
+            "difficulty": 3,
+            "description": "光电流达到最大且不再随电压增加的电流值",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "饱和电流是光电流随电压增大后达到的最大稳定值。",
+            "example": "增大阳极电压后光电流达到饱和值",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "遏止电压",
+            "difficulty": 3,
+            "description": "使光电流恰好降为零的反向电压",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光电子"
+            ],
+            "definition": "遏止电压是使光电流恰好为零的最小反向电压。",
+            "example": "反向电压达到遏止电压时电流为零"
+          },
+          {
+            "name": "光电管",
+            "difficulty": 2,
+            "description": "利用光电效应产生光电流的真空器件",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光电子"
+            ],
+            "definition": "光电管是由真空管内阴极和阳极组成的光电转换器件。",
+            "example": "用光电管研究光电流与电压关系"
+          },
+          {
+            "name": "光子",
+            "difficulty": 3,
+            "description": "组成光的分立粒子，每个光子具有确定能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量子"
+            ],
+            "definition": "光子是组成光的分立粒子，其能量与光的频率有关。",
+            "example": "一个光子把能量传递给一个电子",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "逸出功",
+            "difficulty": 3,
+            "description": "电子从金属表面逸出必须克服的最小能量",
+            "aliases": [],
+            "prerequisites": [
+              "光子"
+            ],
+            "definition": "逸出功是一个电子从金属表面逸出所必须做的功。",
+            "example": "光子能量大于逸出功时电子可逸出"
+          },
+          {
+            "name": "光电方程",
+            "difficulty": 4,
+            "description": "描述光子能量与逸出功、电子动能关系的方程",
+            "aliases": [
+              "爱因斯坦光电效应方程"
+            ],
+            "prerequisites": [
+              "光子",
+              "逸出功",
+              "光电子"
+            ],
+            "definition": "光电方程表明光子能量等于逸出功与光电子最大初动能之和。",
+            "example": "用方程计算光电子最大初动能"
+          },
+          {
+            "name": "多光子光电效应",
+            "difficulty": 4,
+            "description": "一个电子同时吸收多个光子而产生的光电效应",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光子"
+            ],
+            "definition": "多光子光电效应是一个电子吸收多个光子后发生的光电效应。",
+            "example": "强激光照射金属可能产生多光子效应",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "内光电效应",
+            "difficulty": 3,
+            "description": "光照使半导体内部产生载流子或光伏电压的现象",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "内光电效应是光子被材料吸收后在其内部产生光电变化的现象。",
+            "example": "光照半导体使其电导率显著增加",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "康普顿效应",
+            "difficulty": 4,
+            "description": "X射线散射后出现波长变长成分的现象",
+            "aliases": [],
+            "prerequisites": [
+              "光子"
+            ],
+            "definition": "康普顿效应是X射线散射谱中出现波长较长成分的现象。",
+            "example": "X射线通过石墨后产生长波长散射线",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "光的波粒二象性",
+            "difficulty": 4,
+            "description": "光同时具有波动性和粒子性的基本特征",
+            "aliases": [
+              "波粒二象性"
+            ],
+            "prerequisites": [
+              "光电效应",
+              "光子"
+            ],
+            "definition": "光的波粒二象性指光既具有波动特征又具有粒子特征。",
+            "example": "双缝实验体现光的波动性和粒子性"
+          },
+          {
+            "name": "概率波",
+            "difficulty": 4,
+            "description": "用概率描述微观粒子出现位置的波",
+            "aliases": [],
+            "prerequisites": [
+              "光的波粒二象性"
+            ],
+            "definition": "概率波是描述光子等微观粒子出现位置概率的波。",
+            "example": "大量光子形成明暗相间的干涉条纹",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "德布罗意假说",
+            "difficulty": 3,
+            "description": "提出运动实物粒子也具有波动性的假说",
+            "aliases": [],
+            "prerequisites": [
+              "光的波粒二象性"
+            ],
+            "definition": "德布罗意假说认为每个运动的实物粒子都有对应的波。",
+            "example": "电子也被认为具有波动性"
+          },
+          {
+            "name": "德布罗意关系",
+            "difficulty": 4,
+            "description": "联系粒子能量、动量与相应波频率、波长的关系",
+            "aliases": [],
+            "prerequisites": [
+              "德布罗意假说"
+            ],
+            "definition": "德布罗意关系给出粒子能量、动量与物质波频率、波长的联系。",
+            "example": "由电子动量计算物质波波长"
+          },
+          {
+            "name": "物质波",
+            "difficulty": 3,
+            "description": "与运动实物粒子相对应的波，也称德布罗意波",
+            "aliases": [
+              "德布罗意波"
+            ],
+            "prerequisites": [
+              "德布罗意关系"
+            ],
+            "definition": "物质波是每个运动实物粒子所对应的波。",
+            "example": "电子束可表现出物质波特征"
+          },
+          {
+            "name": "电子衍射",
+            "difficulty": 3,
+            "description": "电子束通过晶体或金属薄片后产生衍射现象",
+            "aliases": [],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "电子衍射是电子束表现出波动性而产生的衍射现象。",
+            "example": "电子照射单晶体形成衍射图样",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "电子双缝干涉",
+            "difficulty": 4,
+            "description": "电子通过双缝后形成类似杨氏干涉的条纹",
+            "aliases": [],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "电子双缝干涉是电子通过双缝后形成明暗相间干涉图样的现象。",
+            "example": "约恩孙实验拍摄电子双缝干涉图样",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "隧道电流",
+            "difficulty": 4,
+            "description": "电子穿过电极间绝缘层形成的电流",
+            "aliases": [],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "隧道电流是电子凭借波动性穿过绝缘层形成的电流。",
+            "example": "扫描隧道显微镜中针尖产生隧道电流",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "扫描隧道显微镜",
+            "difficulty": 4,
+            "description": "利用隧道电流变化获取样品表面三维信息的仪器",
+            "aliases": [
+              "STM"
+            ],
+            "prerequisites": [
+              "隧道电流"
+            ],
+            "definition": "扫描隧道显微镜通过扫描针尖并测量隧道电流观察表面结构。",
+            "example": "STM可获得样品表面的三维信息",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "不确定性关系",
+            "difficulty": 5,
+            "description": "微观粒子位置和动量不能同时被精确确定的关系",
+            "aliases": [
+              "海森堡不确定性关系"
+            ],
+            "prerequisites": [
+              "物质波"
+            ],
+            "definition": "不确定性关系表明粒子位置和动量的不确定范围乘积有下限。",
+            "example": "不能同时准确知道电子的位置和动量",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "能量时间关系",
+            "difficulty": 5,
+            "description": "微观粒子能量和时间不确定范围之间的关系",
+            "aliases": [
+              "能量和时间的不确定性关系"
+            ],
+            "prerequisites": [
+              "不确定性关系"
+            ],
+            "definition": "能量时间关系表明能量与时间的不确定范围乘积有下限。",
+            "example": "能级能量范围越小停留时间越长",
+            "section": "第2节 实物粒子的波粒二象性"
+          },
+          {
+            "name": "光电开关",
+            "difficulty": 2,
+            "description": "利用光电效应控制电路接通或断开的装置",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应",
+              "光电管"
+            ],
+            "definition": "光电开关是把光信号转换为电信号以控制电路的装置。",
+            "example": "遮挡光束时报警电路接通"
+          },
+          {
+            "name": "光电成像",
+            "difficulty": 2,
+            "description": "先将光信号转换为电信号再转换为图像的技术",
+            "aliases": [],
+            "prerequisites": [
+              "光电效应"
+            ],
+            "definition": "光电成像是利用光电效应完成光信号与电信号转换的成像方式。",
+            "example": "数码相机利用CCD进行光电成像",
+            "section": "第1节 光电效应及其解释"
+          },
+          {
+            "name": "电荷耦合器件",
+            "difficulty": 3,
+            "description": "光电成像中将光信号转换为电信号的器件",
+            "aliases": [
+              "CCD"
+            ],
+            "prerequisites": [
+              "光电成像"
+            ],
+            "definition": "电荷耦合器件是由光敏元件和电荷读出电路组成的成像器件。",
+            "example": "CCD应用于数码相机和扫描仪",
+            "section": "第1节 光电效应及其解释"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 光电效应及其解释",
+            "section_key": "9a123fba58",
+            "page_range": [
+              130,
+              139
+            ]
+          },
+          {
+            "name": "第2节 实物粒子的波粒二象性",
+            "section_key": "9b3aea948c",
+            "page_range": [
+              140,
+              150
+            ]
+          }
+        ],
+        "chapter_key": "fa3f0158f3",
+        "metadata": {
+          "volume_id": "1c5128523285",
+          "file_id": "1c5128523285",
+          "volume_title": "普通高中教科书 物理 选择性必修第三册",
+          "chapter_order": 6,
+          "raw_heading": "第6章　波粒二象性"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "23622d1685": [
+        6,
+        6
+      ],
+      "导入 走进微观世界": [
+        6,
+        6
+      ],
+      "7b6dff9cee": [
+        6,
+        6
+      ],
+      "第1节 分子动理论的基本观点": [
+        6,
+        6
+      ],
+      "e07888a753": [
+        6,
+        6
+      ],
+      "第2节 科学测量:用油膜法估测油酸分子的大小": [
+        6,
+        6
+      ],
+      "91f097107c": [
+        6,
+        6
+      ],
+      "第3节 气体分子速率分布的统计规律": [
+        6,
+        6
+      ],
+      "362e8737e1": [
+        6,
+        6
+      ],
+      "第4节 科学探究:气体压强与体积的关系": [
+        6,
+        6
+      ],
+      "b77bd108a0": [
+        6,
+        37
+      ],
+      "第5节 气体实验定律": [
+        6,
+        37
+      ],
+      "7b7fbe04e8": [
+        37,
+        37
+      ],
+      "导入 认识固体与液体": [
+        37,
+        37
+      ],
+      "d333182e02": [
+        38,
+        41
+      ],
+      "第1节 固体类型及微观结构": [
+        38,
+        41
+      ],
+      "f13e778628": [
+        42,
+        49
+      ],
+      "第2节 表面张力和毛细现象": [
+        42,
+        49
+      ],
+      "5aee195067": [
+        49,
+        55
+      ],
+      "第3节 材料及其应用": [
+        49,
+        55
+      ],
+      "95b8762668": [
+        55,
+        55
+      ],
+      "导入 水车和水泵": [
+        55,
+        55
+      ],
+      "85a45016f6": [
+        56,
+        59
+      ],
+      "第1节 热力学第一定律": [
+        56,
+        59
+      ],
+      "5518c506ff": [
+        60,
+        63
+      ],
+      "第2节 能量的转化与守恒": [
+        60,
+        63
+      ],
+      "3837fcaaf8": [
+        64,
+        67
+      ],
+      "第3节 热力学第二定律": [
+        64,
+        67
+      ],
+      "e4299b171e": [
+        68,
+        77
+      ],
+      "第4节 熵——系统无序程度的量度": [
+        68,
+        77
+      ],
+      "e0b3508751": [
+        77,
+        77
+      ],
+      "导入 从一幅图片说起": [
+        77,
+        77
+      ],
+      "8c505d79fe": [
+        77,
+        77
+      ],
+      "第1节 电子的发现与汤姆孙原子模型": [
+        77,
+        77
+      ],
+      "65518b51fc": [
+        77,
+        77
+      ],
+      "第2节 原子的核式结构模型": [
+        77,
+        77
+      ],
+      "0fea71553d": [
+        77,
+        77
+      ],
+      "第3节 光谱与氢原子光谱": [
+        77,
+        77
+      ],
+      "f7c451cf8e": [
+        77,
+        99
+      ],
+      "第4节 玻尔原子模型": [
+        77,
+        99
+      ],
+      "595486d73f": [
+        99,
+        99
+      ],
+      "导入 打开原子核的大门": [
+        99,
+        99
+      ],
+      "92366fb1a9": [
+        100,
+        105
+      ],
+      "第1节 认识原子核": [
+        100,
+        105
+      ],
+      "d8cc2685e6": [
+        106,
+        111
+      ],
+      "第2节 原子核衰变及半衰期": [
+        106,
+        111
+      ],
+      "96e9ce2a32": [
+        112,
+        115
+      ],
+      "第3节 核力与核能": [
+        112,
+        115
+      ],
+      "788266960b": [
+        116,
+        121
+      ],
+      "第4节 核裂变和核聚变": [
+        116,
+        121
+      ],
+      "b6d502553e": [
+        122,
+        129
+      ],
+      "第5节 核能的利用与环境保护": [
+        122,
+        129
+      ],
+      "9a123fba58": [
+        130,
+        139
+      ],
+      "第1节 光电效应及其解释": [
+        130,
+        139
+      ],
+      "9b3aea948c": [
+        140,
+        150
+      ],
+      "第2节 实物粒子的波粒二象性": [
+        140,
+        150
+      ]
+    }
+  }
+}

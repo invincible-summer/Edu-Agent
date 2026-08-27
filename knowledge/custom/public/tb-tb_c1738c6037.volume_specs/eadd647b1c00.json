@@ -1,0 +1,3608 @@
+{
+  "file_id": "eadd647b1c00",
+  "text_sha256": "055bf0235443698dae8fc7de2302c8c354384f8f0b869b28386ec298d86bf03a",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1 章　安培力与洛伦兹力",
+        "concepts": [
+          {
+            "name": "安培力",
+            "difficulty": 2,
+            "description": "磁场对通电导线的作用力。",
+            "aliases": [
+              "Ampere force"
+            ],
+            "prerequisites": [],
+            "definition": "安培力是磁场对通电导线产生的作用力。",
+            "example": "通电铝箔在磁场中发生形变。"
+          },
+          {
+            "name": "磁感应强度",
+            "difficulty": 2,
+            "description": "描述磁场强弱和方向的物理量。",
+            "aliases": [
+              "B"
+            ],
+            "prerequisites": [],
+            "definition": "磁感应强度是表示磁场强弱和方向的物理量。",
+            "example": "地磁场的磁感应强度约为5.0×10^-5 T。"
+          },
+          {
+            "name": "左手定则",
+            "difficulty": 2,
+            "description": "判断安培力或洛伦兹力方向的规则。",
+            "aliases": [
+              "left-hand rule"
+            ],
+            "prerequisites": [
+              "安培力"
+            ],
+            "definition": "磁感线穿过左手手心、四指指电流时，拇指指向安培力方向。",
+            "example": "改变电流方向，安培力方向随之改变。"
+          },
+          {
+            "name": "安培力公式",
+            "difficulty": 3,
+            "description": "计算任意夹角下通电直导线受力大小。",
+            "aliases": [
+              "F=IlBsinθ"
+            ],
+            "prerequisites": [
+              "安培力",
+              "磁感应强度"
+            ],
+            "definition": "匀强磁场中通电直导线受力为F=IlBsinθ。",
+            "example": "导线垂直磁场时，F=IlB。"
+          },
+          {
+            "name": "平行导线作用",
+            "difficulty": 3,
+            "description": "描述两根平行通电导线间的相互作用。",
+            "aliases": [],
+            "prerequisites": [
+              "安培力",
+              "左手定则"
+            ],
+            "definition": "平行通电导线间会因安培力产生相互吸引或排斥。",
+            "example": "同向电流的平行导线相互吸引。"
+          },
+          {
+            "name": "电动机原理",
+            "difficulty": 3,
+            "description": "利用安培力使通电线圈持续转动。",
+            "aliases": [],
+            "prerequisites": [
+              "安培力",
+              "左手定则"
+            ],
+            "definition": "电动机利用磁场对通电线圈的安培力产生转动。",
+            "example": "电风扇转子在安培力作用下转动。"
+          },
+          {
+            "name": "电流计原理",
+            "difficulty": 3,
+            "description": "利用线圈安培力与游丝阻力测量电流。",
+            "aliases": [
+              "磁电式电表原理"
+            ],
+            "prerequisites": [
+              "安培力",
+              "电动机原理"
+            ],
+            "definition": "电流计依据线圈安培力与游丝阻力平衡时的偏角测量电流。",
+            "example": "电流越大，电流计指针偏角越大。"
+          },
+          {
+            "name": "洛伦兹力",
+            "difficulty": 2,
+            "description": "磁场对运动电荷的作用力。",
+            "aliases": [
+              "Lorentz force"
+            ],
+            "prerequisites": [
+              "安培力"
+            ],
+            "definition": "洛伦兹力是磁场对运动电荷产生的作用力。",
+            "example": "磁场使阴极射线发生偏转。"
+          },
+          {
+            "name": "洛伦兹力公式",
+            "difficulty": 3,
+            "description": "计算运动电荷在磁场中受到的作用力。",
+            "aliases": [
+              "f=qvBsinθ"
+            ],
+            "prerequisites": [
+              "洛伦兹力",
+              "磁感应强度"
+            ],
+            "definition": "电荷速度与磁场夹角为θ时，洛伦兹力大小为f=qvBsinθ。",
+            "example": "电荷垂直进入磁场时，f=qvB。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "洛伦兹力方向",
+            "difficulty": 3,
+            "description": "确定正负运动电荷所受磁场力方向。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力",
+              "左手定则"
+            ],
+            "definition": "正电荷按左手定则判断方向，负电荷受力方向相反。",
+            "example": "电子与正电荷速度相同时，受力方向相反。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "洛伦兹力不做功",
+            "difficulty": 3,
+            "description": "说明磁场力只改变速度方向而不改变速率。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力",
+              "洛伦兹力方向"
+            ],
+            "definition": "洛伦兹力始终垂直于运动速度，因此不对电荷做功。",
+            "example": "电子在磁场中速率不变而运动方向改变。"
+          },
+          {
+            "name": "带电粒子圆周运动",
+            "difficulty": 4,
+            "description": "带电粒子垂直进入匀强磁场时的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力公式",
+              "洛伦兹力不做功"
+            ],
+            "definition": "带电粒子垂直射入匀强磁场时，在洛伦兹力作用下做匀速圆周运动。",
+            "example": "电子垂直进入磁场后沿圆形轨迹运动。"
+          },
+          {
+            "name": "圆周运动半径",
+            "difficulty": 4,
+            "description": "带电粒子圆周轨道半径与参数的关系。",
+            "aliases": [
+              "r=mv/qB"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动"
+            ],
+            "definition": "带电粒子圆周运动半径为r=mv/(qB)。",
+            "example": "速度增大时，粒子轨道半径增大。"
+          },
+          {
+            "name": "圆周运动周期",
+            "difficulty": 4,
+            "description": "带电粒子在匀强磁场中的运动周期关系。",
+            "aliases": [
+              "T=2πm/qB"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动"
+            ],
+            "definition": "带电粒子圆周运动周期为T=2πm/(qB)，与速率和半径无关。",
+            "example": "同一磁场中速率不同的同种粒子周期相同。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "带电粒子螺旋运动",
+            "difficulty": 4,
+            "description": "带电粒子斜射入匀强磁场形成的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "带电粒子圆周运动"
+            ],
+            "definition": "带电粒子斜射入磁场时，沿磁场方向直线运动并绕磁感线圆周运动，形成螺旋线。",
+            "example": "电子不垂直射入磁场后呈螺旋形轨迹。"
+          },
+          {
+            "name": "磁偏转",
+            "difficulty": 2,
+            "description": "利用磁场改变带电粒子运动方向的技术。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力"
+            ],
+            "definition": "磁偏转是利用磁场改变带电粒子运动方向的方法。",
+            "example": "显像管用磁场使电子束扫描屏幕。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "显像管",
+            "difficulty": 3,
+            "description": "利用电子束磁偏转在荧光屏上显示图像。",
+            "aliases": [],
+            "prerequisites": [
+              "磁偏转"
+            ],
+            "definition": "显像管通过变化磁场控制电子束偏转并在荧光屏上成像。",
+            "example": "电视机显像管使电子束在屏幕上扫描。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "质谱仪",
+            "difficulty": 4,
+            "description": "利用电场加速和磁场偏转分离同位素。",
+            "aliases": [
+              "mass spectrometer"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动",
+              "磁偏转"
+            ],
+            "definition": "质谱仪依据不同离子比荷导致偏转半径不同来分离和测量离子。",
+            "example": "质谱仪可分离碘的不同同位素。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "回旋加速器",
+            "difficulty": 4,
+            "description": "利用交变电场反复加速带电粒子的装置。",
+            "aliases": [
+              "cyclotron"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动",
+              "圆周运动周期"
+            ],
+            "definition": "回旋加速器利用磁场回旋和交变电场加速使粒子获得高能量。",
+            "example": "粒子每次经过狭缝时都被电场加速。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "霍尔效应",
+            "difficulty": 3,
+            "description": "载流导体中运动电荷偏移并产生横向电压。",
+            "aliases": [
+              "Hall effect"
+            ],
+            "prerequisites": [
+              "洛伦兹力"
+            ],
+            "definition": "载流薄板中的运动电荷在洛伦兹力作用下偏移，使两侧产生电势差。",
+            "example": "霍尔传感器利用霍尔电压检测磁场。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "电磁流量计",
+            "difficulty": 4,
+            "description": "利用导电液体中的洛伦兹力测量流量。",
+            "aliases": [],
+            "prerequisites": [
+              "霍尔效应",
+              "洛伦兹力"
+            ],
+            "definition": "电磁流量计通过测量导电液体运动产生的电势差确定流量。",
+            "example": "测量管壁电极间电压可求液体流速。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "极光形成",
+            "difficulty": 3,
+            "description": "太阳风带电粒子受地磁场偏转并激发大气发光。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力",
+              "磁偏转"
+            ],
+            "definition": "太阳风粒子进入极地大气后受地磁场作用并激发原子分子形成极光。",
+            "example": "北极地区上空出现绚丽的北极光。",
+            "section": "第2 节 洛伦兹力"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节　安培力及其应用",
+            "page_range": [
+              8,
+              13
+            ]
+          },
+          {
+            "name": "第2 节　洛伦兹力",
+            "page_range": [
+              14,
+              21
+            ]
+          },
+          {
+            "name": "第3 节　洛伦兹力的应用",
+            "page_range": [
+              21,
+              32
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2 章　电磁感应及其应用",
+        "concepts": [
+          {
+            "name": "磁感线",
+            "difficulty": 1,
+            "description": "用曲线表示磁场方向和强弱的模型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "磁感线是形象描述磁场方向和分布的曲线。",
+            "example": "用磁感线表示条形磁铁周围的磁场。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "磁通量",
+            "difficulty": 2,
+            "description": "表示穿过某一回路的磁场多少",
+            "aliases": [],
+            "prerequisites": [
+              "磁感线"
+            ],
+            "definition": "磁通量是穿过某一回路的磁感线总数的物理量。",
+            "example": "磁铁插入线圈时，线圈磁通量增加。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "感应电流",
+            "difficulty": 2,
+            "description": "磁通量变化时回路中产生的电流",
+            "aliases": [],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "感应电流是穿过回路的磁通量发生变化时产生的电流。",
+            "example": "条形磁铁插入螺线管时电流计发生偏转。"
+          },
+          {
+            "name": "感应电流方向",
+            "difficulty": 2,
+            "description": "感应电流在闭合回路中的流动方向",
+            "aliases": [],
+            "prerequisites": [
+              "感应电流"
+            ],
+            "definition": "感应电流方向是电磁感应过程中回路内电流的确定流向。",
+            "example": "磁铁插入和拔出线圈时电流方向相反。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "楞次定律",
+            "difficulty": 3,
+            "description": "感应电流磁场阻碍磁通量的变化",
+            "aliases": [
+              "Lenz law"
+            ],
+            "prerequisites": [
+              "磁通量",
+              "感应电流"
+            ],
+            "definition": "感应电流的磁场总要阻碍引起感应电流的磁通量变化。",
+            "example": "磁铁靠近线圈时，线圈产生排斥磁场。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "安培定则",
+            "difficulty": 2,
+            "description": "根据电流方向判断电流磁场方向",
+            "aliases": [],
+            "prerequisites": [
+              "磁感线"
+            ],
+            "definition": "安培定则用来确定电流产生的磁场方向。",
+            "example": "由线圈磁场方向判断其中的电流方向。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "右手定则",
+            "difficulty": 3,
+            "description": "判断导体切割磁感线时电流方向",
+            "aliases": [
+              "right-hand rule"
+            ],
+            "prerequisites": [
+              "楞次定律",
+              "导体切割磁感线"
+            ],
+            "definition": "右手定则规定了磁场、导体运动和感应电流方向的关系。",
+            "example": "导体棒向右运动时用右手定则判断电流方向。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "感应电动势",
+            "difficulty": 2,
+            "description": "电磁感应现象中产生的电动势",
+            "aliases": [
+              "induction electromotive force"
+            ],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "感应电动势是电磁感应现象中由磁通量变化产生的电动势。",
+            "example": "电路断开时仍可存在感应电动势。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "磁通量变化率",
+            "difficulty": 3,
+            "description": "单位时间内磁通量的变化量",
+            "aliases": [],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "磁通量变化率是磁通量变化量与所用时间之比。",
+            "example": "磁铁运动越快，磁通量变化率越大。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "法拉第定律",
+            "difficulty": 3,
+            "description": "感应电动势与磁通量变化率成正比",
+            "aliases": [
+              "法拉第电磁感应定律",
+              "Faraday law"
+            ],
+            "prerequisites": [
+              "感应电动势",
+              "磁通量变化率"
+            ],
+            "definition": "电路中感应电动势的大小与穿过电路的磁通量变化率成正比。",
+            "example": "多匝线圈的电动势为E=nΔΦ/Δt。"
+          },
+          {
+            "name": "导体切割磁感线",
+            "difficulty": 3,
+            "description": "导体运动并切割磁感线产生电动势",
+            "aliases": [],
+            "prerequisites": [
+              "磁感线",
+              "感应电动势"
+            ],
+            "definition": "导体在磁场中运动切割磁感线时会产生感应电动势。",
+            "example": "导体棒在导轨上向右滑动产生电动势。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "动生电动势",
+            "difficulty": 3,
+            "description": "导体切割磁感线产生的感应电动势",
+            "aliases": [],
+            "prerequisites": [
+              "导体切割磁感线",
+              "感应电动势"
+            ],
+            "definition": "动生电动势是导体切割磁感线运动产生的电动势。",
+            "example": "金属棒在匀强磁场中运动产生动生电动势。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "感生电动势",
+            "difficulty": 3,
+            "description": "由变化磁场引起磁通量变化产生的电动势",
+            "aliases": [],
+            "prerequisites": [
+              "感应电动势",
+              "磁通量"
+            ],
+            "definition": "感生电动势是由磁场变化引起磁通量变化而产生的电动势。",
+            "example": "变化磁场在周围空间激发感应电场。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "自感现象",
+            "difficulty": 3,
+            "description": "线圈自身电流变化产生电磁感应",
+            "aliases": [
+              "self-induction"
+            ],
+            "prerequisites": [
+              "感应电动势",
+              "楞次定律"
+            ],
+            "definition": "自感现象是线圈自身电流变化引起电磁感应的现象。",
+            "example": "接通电路时串联线圈的小灯泡逐渐变亮。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "自感电动势",
+            "difficulty": 3,
+            "description": "由线圈自身电流变化产生的感应电动势",
+            "aliases": [
+              "self-induction electromotive force"
+            ],
+            "prerequisites": [
+              "自感现象",
+              "感应电动势"
+            ],
+            "definition": "自感电动势是由线圈自身电流变化产生的感应电动势。",
+            "example": "断开开关时线圈产生高压电弧。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "自感系数",
+            "difficulty": 4,
+            "description": "表示线圈自感特性和阻碍电流变化能力",
+            "aliases": [
+              "自感",
+              "电感"
+            ],
+            "prerequisites": [
+              "自感电动势"
+            ],
+            "definition": "自感系数是表示线圈自感特性的物理量，单位为亨利。",
+            "example": "在线圈中插入铁芯可使自感增大。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "涡流",
+            "difficulty": 3,
+            "description": "金属块内部形成闭合回路的感应电流",
+            "aliases": [
+              "涡电流"
+            ],
+            "prerequisites": [
+              "感应电流",
+              "磁通量"
+            ],
+            "definition": "涡流是金属块处于变化磁场中时内部产生的闭合感应电流。",
+            "example": "交变磁场使铁锅底部产生涡流。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "涡流加热",
+            "difficulty": 3,
+            "description": "利用涡流发热加热金属物体",
+            "aliases": [],
+            "prerequisites": [
+              "涡流",
+              "法拉第定律"
+            ],
+            "definition": "涡流加热是利用金属中的涡流产生热量进行加热。",
+            "example": "电磁炉利用锅底涡流加热食物。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "涡流损耗",
+            "difficulty": 4,
+            "description": "涡流使设备产生发热和电能损失",
+            "aliases": [],
+            "prerequisites": [
+              "涡流"
+            ],
+            "definition": "涡流损耗是涡流在设备中造成的电能损失及发热。",
+            "example": "变压器铁芯中的涡流会降低效率。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节　科学探究：感应电流的方向",
+            "page_range": [
+              32,
+              32
+            ]
+          },
+          {
+            "name": "第2 节　法拉第电磁感应定律",
+            "page_range": [
+              32,
+              32
+            ]
+          },
+          {
+            "name": "第3 节　自感现象与涡流",
+            "page_range": [
+              32,
+              55
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3 章　交变电流与远距离输电",
+        "concepts": [
+          {
+            "name": "直流电流",
+            "difficulty": 1,
+            "description": "方向不随时间变化的电流。",
+            "aliases": [
+              "直流电"
+            ],
+            "prerequisites": [],
+            "definition": "直流电流是方向不随时间变化的电流。",
+            "example": "干电池供给的恒定电流属于直流电流。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流",
+            "difficulty": 1,
+            "description": "大小和方向随时间周期性变化的电流。",
+            "aliases": [
+              "交流电"
+            ],
+            "prerequisites": [],
+            "definition": "交变电流是大小和方向都随时间做周期性变化的电流。",
+            "example": "家庭电路中使用的是交变电流。"
+          },
+          {
+            "name": "交变电流周期",
+            "difficulty": 2,
+            "description": "交变电流完成一次周期变化所需的时间。",
+            "aliases": [
+              "周期"
+            ],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交变电流周期是完成一次周期性变化所需要的时间。",
+            "example": "周期为0.02 s的交流电完成一次变化需0.02 s。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流频率",
+            "difficulty": 2,
+            "description": "单位时间内完成周期变化的次数。",
+            "aliases": [
+              "频率"
+            ],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交变电流频率是一段时间内完成周期性变化的次数与该时间之比。",
+            "example": "频率为50 Hz表示每秒完成50次周期变化。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "正弦式交变电流",
+            "difficulty": 2,
+            "description": "电流大小和方向随时间按正弦规律变化。",
+            "aliases": [
+              "正弦交流电"
+            ],
+            "prerequisites": [
+              "交变电流",
+              "交变电流周期"
+            ],
+            "definition": "正弦式交变电流是大小和方向随时间按正弦规律变化的交变电流。",
+            "example": "日常生活中使用的市电属于正弦式交变电流。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流峰值",
+            "difficulty": 2,
+            "description": "交变电压或电流能够达到的最大值。",
+            "aliases": [
+              "峰值",
+              "最大值"
+            ],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交变电流峰值是交变电压或电流在变化过程中能够达到的最大值。",
+            "example": "正弦交流电压的峰值高于其有效值。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流有效值",
+            "difficulty": 3,
+            "description": "按相同热效应确定的交变电流等效值。",
+            "aliases": [
+              "有效值"
+            ],
+            "prerequisites": [
+              "交变电流",
+              "交变电流峰值"
+            ],
+            "definition": "交变电流有效值是与其产生相同热效应的恒定电流数值。",
+            "example": "家用交流电压220 V指的是有效值。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流相位",
+            "difficulty": 3,
+            "description": "表示正弦交变电流变化状态的量。",
+            "aliases": [
+              "相"
+            ],
+            "prerequisites": [
+              "正弦式交变电流",
+              "交变电流频率"
+            ],
+            "definition": "交变电流相位是表达交变电流某时刻变化状态的量。",
+            "example": "两个同频交流电流可用相位比较变化步调。"
+          },
+          {
+            "name": "交变电流初相",
+            "difficulty": 3,
+            "description": "交变电流在计时起点的相位。",
+            "aliases": [
+              "初相"
+            ],
+            "prerequisites": [
+              "交变电流相位"
+            ],
+            "definition": "交变电流初相是交变电流在t等于零时的相位。",
+            "example": "改变计时起点会改变交变电流的初相。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交流发电机",
+            "difficulty": 2,
+            "description": "把机械能转变为交变电能的装置。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交流发电机是利用电磁感应产生交变电流的发电装置。",
+            "example": "手摇交流发电机能使电流计指针周期性偏转。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "中性面",
+            "difficulty": 3,
+            "description": "线圈不切割磁感线且感应电动势为零的位置。",
+            "aliases": [],
+            "prerequisites": [
+              "交流发电机"
+            ],
+            "definition": "中性面是线圈平面与磁感线垂直、感应电动势为零的位置。",
+            "example": "线圈每经过中性面一次，感应电流方向改变一次。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "正弦交流产生原理",
+            "difficulty": 3,
+            "description": "线圈在匀强磁场中匀速转动产生正弦交流。",
+            "aliases": [],
+            "prerequisites": [
+              "交流发电机",
+              "中性面"
+            ],
+            "definition": "矩形线圈在匀强磁场中绕轴匀速转动可产生正弦式交变电流。",
+            "example": "线圈从中性面开始转动可产生e=Emsinωt。"
+          },
+          {
+            "name": "变压器",
+            "difficulty": 2,
+            "description": "升高或降低交变电压的装置。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "变压器是利用电磁感应升高或降低交变电流电压的装置。",
+            "example": "输电时用变压器升高电压，用户端再降压。"
+          },
+          {
+            "name": "原线圈",
+            "difficulty": 1,
+            "description": "与电源相连的变压器线圈。",
+            "aliases": [
+              "初级线圈"
+            ],
+            "prerequisites": [
+              "变压器"
+            ],
+            "definition": "原线圈是变压器中与交变电源相连接的线圈。",
+            "example": "原线圈接入交流电源后产生变化的磁场。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "副线圈",
+            "difficulty": 1,
+            "description": "与负载相连的变压器线圈。",
+            "aliases": [
+              "次级线圈"
+            ],
+            "prerequisites": [
+              "变压器"
+            ],
+            "definition": "副线圈是变压器中与负载相连接的线圈。",
+            "example": "副线圈可向灯泡输出交变电压。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "互感现象",
+            "difficulty": 3,
+            "description": "一个线圈电流变化使相邻线圈产生感应电动势。",
+            "aliases": [],
+            "prerequisites": [
+              "变压器"
+            ],
+            "definition": "互感现象是一个线圈电流变化导致相邻线圈产生感应电动势的现象。",
+            "example": "变压器通过互感现象把能量传递到副线圈。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "理想变压器",
+            "difficulty": 3,
+            "description": "忽略漏磁、线圈电阻和铁芯涡流损失的变压器。",
+            "aliases": [],
+            "prerequisites": [
+              "变压器",
+              "互感现象"
+            ],
+            "definition": "理想变压器是各种能量损失均可忽略的变压器模型。",
+            "example": "理想变压器满足输入功率等于输出功率。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "变压器匝数关系",
+            "difficulty": 3,
+            "description": "理想变压器电压之比等于线圈匝数之比。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器",
+              "原线圈",
+              "副线圈"
+            ],
+            "definition": "理想变压器中原副线圈电压之比等于它们的匝数之比。",
+            "example": "原副线圈匝数比为2∶1时，副线圈电压为输入电压的一半。"
+          },
+          {
+            "name": "升压变压器",
+            "difficulty": 2,
+            "description": "副线圈匝数多于原线圈的变压器。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器",
+              "变压器匝数关系"
+            ],
+            "definition": "升压变压器是副线圈匝数多于原线圈、输出电压高于输入电压的变压器。",
+            "example": "远距离输电起点使用升压变压器。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "降压变压器",
+            "difficulty": 2,
+            "description": "副线圈匝数少于原线圈的变压器。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器",
+              "变压器匝数关系"
+            ],
+            "definition": "降压变压器是副线圈匝数少于原线圈、输出电压低于输入电压的变压器。",
+            "example": "用户端用降压变压器获得适用电压。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "变压器功率关系",
+            "difficulty": 3,
+            "description": "理想变压器输入功率等于输出功率。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器"
+            ],
+            "definition": "理想变压器中原线圈输入功率等于副线圈输出功率。",
+            "example": "已知U1、I1和U2可求副线圈电流。"
+          },
+          {
+            "name": "高压输电",
+            "difficulty": 2,
+            "description": "以较高电压输送一定功率的电能。",
+            "aliases": [
+              "远距离高压输电"
+            ],
+            "prerequisites": [
+              "变压器",
+              "输电功率损失"
+            ],
+            "definition": "高压输电是在输送功率一定时提高输电电压以减小输电电流的方式。",
+            "example": "发电厂先升压，再通过高压线路远距离输电。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "输电功率损失",
+            "difficulty": 3,
+            "description": "输电导线因电流热效应损耗的电功率。",
+            "aliases": [
+              "损失的功率"
+            ],
+            "prerequisites": [
+              "交变电流",
+              "高压输电"
+            ],
+            "definition": "输电功率损失是电流通过输电线电阻时因发热产生的功率损耗。",
+            "example": "输电线损失功率满足P损=I²R。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "容抗",
+            "difficulty": 3,
+            "description": "电容器对交变电流产生的阻碍作用。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "容抗是电容器对交变电流所产生的阻碍作用。",
+            "example": "地下输电线与大地间形成电容并产生容抗。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "感抗",
+            "difficulty": 3,
+            "description": "电感器对交变电流产生的阻碍作用。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "感抗是电感器因自感作用对交变电流产生的阻碍作用。",
+            "example": "输电导线的电感会对交流输电产生感抗。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "电抗",
+            "difficulty": 3,
+            "description": "感抗和容抗的合称。",
+            "aliases": [],
+            "prerequisites": [
+              "容抗",
+              "感抗"
+            ],
+            "definition": "电抗是交流电路中感抗与容抗的合称。",
+            "example": "交流输电线路的电抗会造成额外能量损失。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "高压直流输电",
+            "difficulty": 3,
+            "description": "将高压交流整流后用直流线路远距离输送。",
+            "aliases": [
+              "直流输电"
+            ],
+            "prerequisites": [
+              "高压输电"
+            ],
+            "definition": "高压直流输电是把高压交变电流变为直流后进行远距离输送的方式。",
+            "example": "高压直流输电适于地下和水下电缆输电。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "发电机能量转化",
+            "difficulty": 2,
+            "description": "发电机将机械能转化为电能。",
+            "aliases": [],
+            "prerequisites": [
+              "交流发电机"
+            ],
+            "definition": "发电机工作时把机械能转化为电能。",
+            "example": "水轮机带动发电机转子，将水能间接转化为电能。"
+          },
+          {
+            "name": "电动机能量转化",
+            "difficulty": 2,
+            "description": "电动机将电能转化为机械能。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "电动机工作时把电能转化为机械能。",
+            "example": "高铁利用电动机将电能转化为牵引列车的机械能。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节　交变电流的特点",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第2 节　交变电流的产生",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第3 节　科学探究：变压器",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第4 节　电能的远距离输送",
+            "page_range": [
+              55,
+              86
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4 章　电磁波",
+        "concepts": [
+          {
+            "name": "麦克斯韦电磁场理论",
+            "difficulty": 4,
+            "description": "揭示电场与磁场联系并预言电磁波的理论",
+            "aliases": [
+              "电磁场理论"
+            ],
+            "prerequisites": [],
+            "definition": "麦克斯韦电磁场理论认为变化的电场和磁场能够相互激发并统一存在。",
+            "example": "由理论预言电磁波存在及其传播速度为光速",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "涡旋电场",
+            "difficulty": 4,
+            "description": "变化磁场在周围空间激发的电场",
+            "aliases": [
+              "感生电场"
+            ],
+            "prerequisites": [],
+            "definition": "涡旋电场是变化的磁场在其周围空间激发出的电场。",
+            "example": "均匀变化的磁场产生稳定的涡旋电场",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "涡旋磁场",
+            "difficulty": 4,
+            "description": "变化电场在周围空间激发的磁场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "涡旋磁场是变化的电场在其周围空间激发出的磁场。",
+            "example": "电容器充电时周围产生涡旋磁场",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "位移电流",
+            "difficulty": 4,
+            "description": "变化电场产生磁场时等效的电流",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "位移电流是变化的电场在产生磁场作用上表现出的等效电流。",
+            "example": "电容器两极板间存在位移电流",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁波",
+            "difficulty": 3,
+            "description": "交变电场和磁场交替变化并传播形成的波",
+            "aliases": [
+              "electromagnetic wave"
+            ],
+            "prerequisites": [
+              "涡旋电场",
+              "涡旋磁场"
+            ],
+            "definition": "电磁波是交变电场和交变磁场相互联系并在空间传播形成的电磁场。",
+            "example": "手机通信利用电磁波传递信息"
+          },
+          {
+            "name": "赫兹实验",
+            "difficulty": 2,
+            "description": "首次用实验证实电磁波存在的实验",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "赫兹实验通过发射器和接收器间的火花放电证明了电磁波的存在。",
+            "example": "接收环间隙出现火花放电",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "振荡电流",
+            "difficulty": 2,
+            "description": "大小和方向都周期性变化的电流",
+            "aliases": [
+              "oscillating current"
+            ],
+            "prerequisites": [],
+            "definition": "振荡电流是大小和方向都随时间做周期性变化的电流。",
+            "example": "灵敏电流计指针左右摆动",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "LC振荡电路",
+            "difficulty": 3,
+            "description": "由电感线圈和电容器组成的振荡电路",
+            "aliases": [],
+            "prerequisites": [
+              "振荡电流"
+            ],
+            "definition": "LC振荡电路是由电感线圈和电容器组成的基本振荡电路。",
+            "example": "电容器周期性充放电形成振荡",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁振荡",
+            "difficulty": 3,
+            "description": "电场能与磁场能周期性相互转化的现象",
+            "aliases": [
+              "electromagnetic oscillation"
+            ],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "电磁振荡是电路中电场和磁场周期性交替变化且能量相互转化的现象。",
+            "example": "LC电路中电容器放电时电场能转为磁场能",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "振荡电路频率",
+            "difficulty": 3,
+            "description": "表示振荡电路变化快慢的物理量",
+            "aliases": [
+              "固有频率"
+            ],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "振荡电路频率是单位时间内完成周期性变化的次数。",
+            "example": "减小电容可提高LC电路频率",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "开放电路",
+            "difficulty": 3,
+            "description": "使电磁场分布到较大空间的发射电路",
+            "aliases": [],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "开放电路是将振荡电路电场和磁场尽量分布到较大空间以利于辐射的电路。",
+            "example": "长直导线组成天线和地线",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁波发射",
+            "difficulty": 3,
+            "description": "利用高频振荡电流向空间辐射电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "开放电路",
+              "电磁振荡"
+            ],
+            "definition": "电磁波发射是通过高频振荡电流在天线周围产生并辐射电磁波。",
+            "example": "发射天线向空间辐射无线电波",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调制",
+            "difficulty": 3,
+            "description": "把低频信号加载到高频载波上的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波发射"
+            ],
+            "definition": "调制是将低频电信号加载到高频等幅振荡电流上的过程。",
+            "example": "广播发射前先对声音信号进行调制",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调幅",
+            "difficulty": 2,
+            "description": "使载波振幅随信号改变的调制方式",
+            "aliases": [
+              "AM"
+            ],
+            "prerequisites": [
+              "调制"
+            ],
+            "definition": "调幅是使电磁波的振幅随输入信号变化而频率保持不变。",
+            "example": "调幅广播采用调幅方式传送声音",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调频",
+            "difficulty": 2,
+            "description": "使载波频率随信号改变的调制方式",
+            "aliases": [
+              "FM"
+            ],
+            "prerequisites": [
+              "调制"
+            ],
+            "definition": "调频是使电磁波的频率随输入信号变化的调制方式。",
+            "example": "调频广播抗干扰能力较强",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "地波",
+            "difficulty": 2,
+            "description": "沿地球表面空间传播的无线电波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "地波是沿地球表面传播并可绕过一定障碍物的无线电波。",
+            "example": "长波常采用地波传播",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "天波",
+            "difficulty": 2,
+            "description": "靠电离层反射传播的无线电波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "天波是依靠大气电离层反射进行传播的无线电波。",
+            "example": "短波适合采用天波传播",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "空间波",
+            "difficulty": 2,
+            "description": "像光束一样沿直线传播的无线电波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "空间波是主要沿直线传播并受地球曲面限制的无线电波。",
+            "example": "微波通信主要采用空间波",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电谐振",
+            "difficulty": 3,
+            "description": "接收电路频率与电磁波频率相同时的共振",
+            "aliases": [],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "电谐振是接收电路固有频率等于接收电磁波频率时电流达到最大的现象。",
+            "example": "调节线框使氖管最亮",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调谐",
+            "difficulty": 3,
+            "description": "从多种电磁波中选择特定频率的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电谐振"
+            ],
+            "definition": "调谐是利用电谐振有选择地接收某一特定频率电磁波的过程。",
+            "example": "转动收音机旋钮选择电台",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "检波",
+            "difficulty": 3,
+            "description": "从高频载波中还原低频信号的过程",
+            "aliases": [
+              "解调"
+            ],
+            "prerequisites": [
+              "调制"
+            ],
+            "definition": "检波是从经过调制的高频振荡电流中提取音频等低频信号的过程。",
+            "example": "二极管检波电路还原广播声音",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁波谱",
+            "difficulty": 2,
+            "description": "按波长或频率排列的电磁波序列",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "电磁波谱是把各种电磁波按波长或频率顺序排列形成的谱系。",
+            "example": "无线电波、可见光和γ射线均属于电磁波谱",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "无线电波",
+            "difficulty": 2,
+            "description": "电磁波谱中波长最长的一类电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "无线电波是电磁波谱中波长最长的电磁波，通常由振荡电路经天线发射。",
+            "example": "无线电波用于广播和通信",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "可见光",
+            "difficulty": 2,
+            "description": "人眼能够看见的频率范围很小的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "可见光是人眼能够感知的、在电磁波谱中范围很窄的一段电磁波。",
+            "example": "白光通过三棱镜分成不同颜色",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "红外线",
+            "difficulty": 2,
+            "description": "波长长于红光且热效应明显的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "红外线是波长比红光长并具有明显热效应的电磁波。",
+            "example": "红外线用于烤箱加热和遥感",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "紫外线",
+            "difficulty": 2,
+            "description": "波长短于紫光并能使物质发荧光的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "紫外线是波长比紫光短且能使某些物质发出荧光的电磁波。",
+            "example": "紫外线用于医院消毒",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "X射线",
+            "difficulty": 2,
+            "description": "波长较短且穿透力较强的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "X射线是电磁波谱中波长较短并具有较强穿透力的电磁波。",
+            "example": "X射线用于辅助疾病诊断",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "γ射线",
+            "difficulty": 2,
+            "description": "原子核发出且能量和穿透力很强的电磁波",
+            "aliases": [
+              "伽马射线"
+            ],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "γ射线是由原子核发出、能量较高且穿透力很强的电磁波。",
+            "example": "γ射线用于杀死癌细胞",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "谐振腔",
+            "difficulty": 3,
+            "description": "用金属盒替代线圈和电容器产生高频振荡",
+            "aliases": [],
+            "prerequisites": [
+              "电磁振荡"
+            ],
+            "definition": "谐振腔是利用矩形金属盒产生高频振荡的装置。",
+            "example": "微波炉用谐振腔产生微波",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "石英晶体振荡器",
+            "difficulty": 3,
+            "description": "利用石英晶体压电效应产生稳定振荡电流",
+            "aliases": [],
+            "prerequisites": [
+              "振荡电流"
+            ],
+            "definition": "石英晶体振荡器是利用石英晶体压电效应产生稳定振荡电流的装置。",
+            "example": "计算机和手表中使用石英晶体振荡器",
+            "section": "第3 节 电磁波谱"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节　电磁波的产生",
+            "page_range": [
+              86,
+              86
+            ]
+          },
+          {
+            "name": "第2 节　电磁波的发射、传播和接收",
+            "page_range": [
+              86,
+              86
+            ]
+          },
+          {
+            "name": "第3 节　电磁波谱",
+            "page_range": [
+              86,
+              104
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第5 章　传感器及其应用",
+        "concepts": [
+          {
+            "name": "传感器",
+            "difficulty": 1,
+            "description": "感受外界信息并转换为可用输出信号的器件",
+            "aliases": [
+              "sensor"
+            ],
+            "prerequisites": [],
+            "definition": "传感器是能感受外界信息并按规律转换成可用输出信号的器件或装置。",
+            "example": "麦克风把声音信号转化为电信号"
+          },
+          {
+            "name": "非电量电转换",
+            "difficulty": 2,
+            "description": "将压力、温度等非电学量转化为电学量",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "非电量电转换是把不易测量的非电学量转换成便于显示、处理和控制的电学量。",
+            "example": "电子秤将压力信息转换为电信号"
+          },
+          {
+            "name": "敏感元件",
+            "difficulty": 2,
+            "description": "直接感受被测量并输出有确定关系信号的元件",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "敏感元件直接感受被测量，并输出与被测量有确定关系的信号。",
+            "example": "光敏电阻感受光照强弱",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "转换元件",
+            "difficulty": 2,
+            "description": "把物理信号转换为便于处理的电信号",
+            "aliases": [],
+            "prerequisites": [
+              "传感器",
+              "敏感元件"
+            ],
+            "definition": "转换元件将敏感元件输出的物理信号转换为电信号。",
+            "example": "将压力信号转换为电压信号",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "光敏元件",
+            "difficulty": 2,
+            "description": "利用光照引起电学特性变化的敏感元件",
+            "aliases": [],
+            "prerequisites": [
+              "敏感元件"
+            ],
+            "definition": "光敏元件是利用材料在光照下电学特性发生变化制成的敏感元件。",
+            "example": "光敏电阻用于光敏传感器",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "光敏电阻",
+            "difficulty": 2,
+            "description": "光照越强，电阻值通常越小的光敏元件",
+            "aliases": [],
+            "prerequisites": [
+              "光敏元件"
+            ],
+            "definition": "光敏电阻利用半导体受光后电阻值改变的特性工作。",
+            "example": "光控路灯根据光照自动开关",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "热敏元件",
+            "difficulty": 2,
+            "description": "利用电学特性随温度变化而变化的元件",
+            "aliases": [],
+            "prerequisites": [
+              "敏感元件"
+            ],
+            "definition": "热敏元件利用敏感元件的电学特性随温度变化的规律制成。",
+            "example": "温度传感器中的热敏电阻",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "热敏电阻",
+            "difficulty": 2,
+            "description": "电阻值随温度变化而改变的温度敏感元件",
+            "aliases": [],
+            "prerequisites": [
+              "热敏元件"
+            ],
+            "definition": "热敏电阻利用半导体电阻随温度变化而改变的特性工作。",
+            "example": "电子体温计使用热敏电阻",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "负温度系数",
+            "difficulty": 3,
+            "description": "温度升高时热敏电阻阻值减小的特性",
+            "aliases": [
+              "NTC"
+            ],
+            "prerequisites": [
+              "热敏电阻"
+            ],
+            "definition": "负温度系数热敏电阻的阻值随温度升高而减小。",
+            "example": "NTC热敏电阻用于温度报警",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "正温度系数",
+            "difficulty": 3,
+            "description": "温度升高时热敏电阻阻值增大的特性",
+            "aliases": [
+              "PTC"
+            ],
+            "prerequisites": [
+              "热敏电阻"
+            ],
+            "definition": "正温度系数热敏电阻的阻值随温度升高而增大。",
+            "example": "PTC热敏电阻用于温度检测",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "霍尔效应",
+            "difficulty": 3,
+            "description": "电流和磁场作用下产生横向霍尔电压的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "霍尔效应是半导体中电流与磁场作用时在垂直方向产生电势差的现象。",
+            "example": "通电霍尔元件置于磁场中产生霍尔电压",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "霍尔元件",
+            "difficulty": 3,
+            "description": "根据霍尔效应制成的磁敏元件",
+            "aliases": [],
+            "prerequisites": [
+              "霍尔效应",
+              "磁敏元件"
+            ],
+            "definition": "霍尔元件是根据半导体材料霍尔效应制成的磁敏元件。",
+            "example": "用霍尔元件测量磁感应强度",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "磁敏元件",
+            "difficulty": 2,
+            "description": "能感受磁场并使相关电学量发生变化的元件",
+            "aliases": [],
+            "prerequisites": [
+              "敏感元件"
+            ],
+            "definition": "磁敏元件是利用材料磁敏特性实现磁场信息转换的敏感元件。",
+            "example": "霍尔元件用于磁传感器",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "电容式传感器",
+            "difficulty": 3,
+            "description": "待测量变化引起电容变化的传感器",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "电容式传感器实质上是待测量变化能引起电容变化的可变电容器。",
+            "example": "利用电容差异识别指纹",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "电磁继电器",
+            "difficulty": 3,
+            "description": "利用电磁作用控制电路通断的自动化元件",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "电磁继电器通过衔铁和触点动作实现控制电路的自动通断。",
+            "example": "光敏电阻控制街道路灯",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "自动控制装置",
+            "difficulty": 2,
+            "description": "利用传感器按设定条件自动执行控制的装置",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "自动控制装置根据传感器检测的信息自动完成相应控制动作。",
+            "example": "制作光报警装置和温度报警装置"
+          },
+          {
+            "name": "红外传感器",
+            "difficulty": 3,
+            "description": "通过探测人体红外线感知有无人员的传感器",
+            "aliases": [
+              "红外线传感器"
+            ],
+            "prerequisites": [
+              "传感器",
+              "热电效应"
+            ],
+            "definition": "红外传感器利用人体红外线引起热电元件电学量变化来检测人体。",
+            "example": "自动感应门检测门前是否有人",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "热电效应",
+            "difficulty": 3,
+            "description": "热电元件受热后释放电荷并引起电学量变化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "热电效应是热电元件感知温度变化后释放电荷的现象。",
+            "example": "人体红外线使热电元件产生电信号",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "指纹识别器",
+            "difficulty": 3,
+            "description": "利用电容差异获取并识别指纹信息的装置",
+            "aliases": [],
+            "prerequisites": [
+              "电容式传感器",
+              "传感器"
+            ],
+            "definition": "指纹识别器通过读取指纹脊谷造成的电容差异识别身份。",
+            "example": "密码门用指纹识别器验证身份",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "机器人传感器系统",
+            "difficulty": 3,
+            "description": "机器人感知外界环境和自身状态的传感器系统",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "机器人传感器系统由外部和内部传感器组成，用于感知环境及自身状态。",
+            "example": "视觉传感器测量物体距离"
+          },
+          {
+            "name": "光敏电阻特性实验",
+            "difficulty": 2,
+            "description": "探究光照强弱与光敏电阻阻值关系的实验",
+            "aliases": [],
+            "prerequisites": [
+              "光敏电阻"
+            ],
+            "definition": "光敏电阻特性实验通过改变光照观察并记录其阻值变化。",
+            "example": "用欧姆表测量不同光照下的阻值"
+          },
+          {
+            "name": "自动控制装置制作",
+            "difficulty": 3,
+            "description": "设计并制作光报警或温度报警装置的实验",
+            "aliases": [],
+            "prerequisites": [
+              "自动控制装置",
+              "光敏电阻",
+              "热敏电阻"
+            ],
+            "definition": "自动控制装置制作是利用传感器组装并调试简单报警装置的实验。",
+            "example": "制作一定温度下报警的温度报警器"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节　常见传感器的工作原理",
+            "page_range": [
+              104,
+              104
+            ]
+          },
+          {
+            "name": "第2 节　科学制作：简单的自动控制装置",
+            "page_range": [
+              104,
+              104
+            ]
+          },
+          {
+            "name": "第3 节　大显身手的传感器",
+            "page_range": [
+              104,
+              122
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1 章 安培力与洛伦兹力",
+        "concepts": [
+          {
+            "name": "安培力",
+            "difficulty": 2,
+            "description": "磁场对通电导线的作用力。",
+            "aliases": [
+              "Ampere force"
+            ],
+            "prerequisites": [],
+            "definition": "安培力是磁场对通电导线产生的作用力。",
+            "example": "通电铝箔在磁场中发生形变。"
+          },
+          {
+            "name": "磁感应强度",
+            "difficulty": 2,
+            "description": "描述磁场强弱和方向的物理量。",
+            "aliases": [
+              "B"
+            ],
+            "prerequisites": [],
+            "definition": "磁感应强度是表示磁场强弱和方向的物理量。",
+            "example": "地磁场的磁感应强度约为5.0×10^-5 T。"
+          },
+          {
+            "name": "左手定则",
+            "difficulty": 2,
+            "description": "判断安培力或洛伦兹力方向的规则。",
+            "aliases": [
+              "left-hand rule"
+            ],
+            "prerequisites": [
+              "安培力"
+            ],
+            "definition": "磁感线穿过左手手心、四指指电流时，拇指指向安培力方向。",
+            "example": "改变电流方向，安培力方向随之改变。"
+          },
+          {
+            "name": "安培力公式",
+            "difficulty": 3,
+            "description": "计算任意夹角下通电直导线受力大小。",
+            "aliases": [
+              "F=IlBsinθ"
+            ],
+            "prerequisites": [
+              "安培力",
+              "磁感应强度"
+            ],
+            "definition": "匀强磁场中通电直导线受力为F=IlBsinθ。",
+            "example": "导线垂直磁场时，F=IlB。"
+          },
+          {
+            "name": "平行导线作用",
+            "difficulty": 3,
+            "description": "描述两根平行通电导线间的相互作用。",
+            "aliases": [],
+            "prerequisites": [
+              "安培力",
+              "左手定则"
+            ],
+            "definition": "平行通电导线间会因安培力产生相互吸引或排斥。",
+            "example": "同向电流的平行导线相互吸引。"
+          },
+          {
+            "name": "电动机原理",
+            "difficulty": 3,
+            "description": "利用安培力使通电线圈持续转动。",
+            "aliases": [],
+            "prerequisites": [
+              "安培力",
+              "左手定则"
+            ],
+            "definition": "电动机利用磁场对通电线圈的安培力产生转动。",
+            "example": "电风扇转子在安培力作用下转动。"
+          },
+          {
+            "name": "电流计原理",
+            "difficulty": 3,
+            "description": "利用线圈安培力与游丝阻力测量电流。",
+            "aliases": [
+              "磁电式电表原理"
+            ],
+            "prerequisites": [
+              "安培力",
+              "电动机原理"
+            ],
+            "definition": "电流计依据线圈安培力与游丝阻力平衡时的偏角测量电流。",
+            "example": "电流越大，电流计指针偏角越大。"
+          },
+          {
+            "name": "洛伦兹力",
+            "difficulty": 2,
+            "description": "磁场对运动电荷的作用力。",
+            "aliases": [
+              "Lorentz force"
+            ],
+            "prerequisites": [
+              "安培力"
+            ],
+            "definition": "洛伦兹力是磁场对运动电荷产生的作用力。",
+            "example": "磁场使阴极射线发生偏转。"
+          },
+          {
+            "name": "洛伦兹力公式",
+            "difficulty": 3,
+            "description": "计算运动电荷在磁场中受到的作用力。",
+            "aliases": [
+              "f=qvBsinθ"
+            ],
+            "prerequisites": [
+              "洛伦兹力",
+              "磁感应强度"
+            ],
+            "definition": "电荷速度与磁场夹角为θ时，洛伦兹力大小为f=qvBsinθ。",
+            "example": "电荷垂直进入磁场时，f=qvB。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "洛伦兹力方向",
+            "difficulty": 3,
+            "description": "确定正负运动电荷所受磁场力方向。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力",
+              "左手定则"
+            ],
+            "definition": "正电荷按左手定则判断方向，负电荷受力方向相反。",
+            "example": "电子与正电荷速度相同时，受力方向相反。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "洛伦兹力不做功",
+            "difficulty": 3,
+            "description": "说明磁场力只改变速度方向而不改变速率。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力",
+              "洛伦兹力方向"
+            ],
+            "definition": "洛伦兹力始终垂直于运动速度，因此不对电荷做功。",
+            "example": "电子在磁场中速率不变而运动方向改变。"
+          },
+          {
+            "name": "带电粒子圆周运动",
+            "difficulty": 4,
+            "description": "带电粒子垂直进入匀强磁场时的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力公式",
+              "洛伦兹力不做功"
+            ],
+            "definition": "带电粒子垂直射入匀强磁场时，在洛伦兹力作用下做匀速圆周运动。",
+            "example": "电子垂直进入磁场后沿圆形轨迹运动。"
+          },
+          {
+            "name": "圆周运动半径",
+            "difficulty": 4,
+            "description": "带电粒子圆周轨道半径与参数的关系。",
+            "aliases": [
+              "r=mv/qB"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动"
+            ],
+            "definition": "带电粒子圆周运动半径为r=mv/(qB)。",
+            "example": "速度增大时，粒子轨道半径增大。"
+          },
+          {
+            "name": "圆周运动周期",
+            "difficulty": 4,
+            "description": "带电粒子在匀强磁场中的运动周期关系。",
+            "aliases": [
+              "T=2πm/qB"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动"
+            ],
+            "definition": "带电粒子圆周运动周期为T=2πm/(qB)，与速率和半径无关。",
+            "example": "同一磁场中速率不同的同种粒子周期相同。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "带电粒子螺旋运动",
+            "difficulty": 4,
+            "description": "带电粒子斜射入匀强磁场形成的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "带电粒子圆周运动"
+            ],
+            "definition": "带电粒子斜射入磁场时，沿磁场方向直线运动并绕磁感线圆周运动，形成螺旋线。",
+            "example": "电子不垂直射入磁场后呈螺旋形轨迹。"
+          },
+          {
+            "name": "磁偏转",
+            "difficulty": 2,
+            "description": "利用磁场改变带电粒子运动方向的技术。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力"
+            ],
+            "definition": "磁偏转是利用磁场改变带电粒子运动方向的方法。",
+            "example": "显像管用磁场使电子束扫描屏幕。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "显像管",
+            "difficulty": 3,
+            "description": "利用电子束磁偏转在荧光屏上显示图像。",
+            "aliases": [],
+            "prerequisites": [
+              "磁偏转"
+            ],
+            "definition": "显像管通过变化磁场控制电子束偏转并在荧光屏上成像。",
+            "example": "电视机显像管使电子束在屏幕上扫描。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "质谱仪",
+            "difficulty": 4,
+            "description": "利用电场加速和磁场偏转分离同位素。",
+            "aliases": [
+              "mass spectrometer"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动",
+              "磁偏转"
+            ],
+            "definition": "质谱仪依据不同离子比荷导致偏转半径不同来分离和测量离子。",
+            "example": "质谱仪可分离碘的不同同位素。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "回旋加速器",
+            "difficulty": 4,
+            "description": "利用交变电场反复加速带电粒子的装置。",
+            "aliases": [
+              "cyclotron"
+            ],
+            "prerequisites": [
+              "带电粒子圆周运动",
+              "圆周运动周期"
+            ],
+            "definition": "回旋加速器利用磁场回旋和交变电场加速使粒子获得高能量。",
+            "example": "粒子每次经过狭缝时都被电场加速。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "霍尔效应",
+            "difficulty": 3,
+            "description": "载流导体中运动电荷偏移并产生横向电压。",
+            "aliases": [
+              "Hall effect"
+            ],
+            "prerequisites": [
+              "洛伦兹力"
+            ],
+            "definition": "载流薄板中的运动电荷在洛伦兹力作用下偏移，使两侧产生电势差。",
+            "example": "霍尔传感器利用霍尔电压检测磁场。",
+            "section": "第2 节 洛伦兹力"
+          },
+          {
+            "name": "电磁流量计",
+            "difficulty": 4,
+            "description": "利用导电液体中的洛伦兹力测量流量。",
+            "aliases": [],
+            "prerequisites": [
+              "霍尔效应",
+              "洛伦兹力"
+            ],
+            "definition": "电磁流量计通过测量导电液体运动产生的电势差确定流量。",
+            "example": "测量管壁电极间电压可求液体流速。",
+            "section": "第3 节 洛伦兹力的应用"
+          },
+          {
+            "name": "极光形成",
+            "difficulty": 3,
+            "description": "太阳风带电粒子受地磁场偏转并激发大气发光。",
+            "aliases": [],
+            "prerequisites": [
+              "洛伦兹力",
+              "磁偏转"
+            ],
+            "definition": "太阳风粒子进入极地大气后受地磁场作用并激发原子分子形成极光。",
+            "example": "北极地区上空出现绚丽的北极光。",
+            "section": "第2 节 洛伦兹力"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节 安培力及其应用",
+            "section_key": "330b6075ac",
+            "page_range": [
+              8,
+              13
+            ]
+          },
+          {
+            "name": "第2 节 洛伦兹力",
+            "section_key": "dc24ae4439",
+            "page_range": [
+              14,
+              21
+            ]
+          },
+          {
+            "name": "第3 节 洛伦兹力的应用",
+            "section_key": "7f6621f0dd",
+            "page_range": [
+              21,
+              32
+            ]
+          }
+        ],
+        "chapter_key": "e8012a1b42",
+        "metadata": {
+          "volume_id": "eadd647b1c00",
+          "file_id": "eadd647b1c00",
+          "volume_title": "普通高中教科书 物理 选择性必修第二册",
+          "chapter_order": 1,
+          "raw_heading": "第1 章　安培力与洛伦兹力"
+        }
+      },
+      {
+        "name": "第2 章 电磁感应及其应用",
+        "concepts": [
+          {
+            "name": "磁感线",
+            "difficulty": 1,
+            "description": "用曲线表示磁场方向和强弱的模型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "磁感线是形象描述磁场方向和分布的曲线。",
+            "example": "用磁感线表示条形磁铁周围的磁场。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "磁通量",
+            "difficulty": 2,
+            "description": "表示穿过某一回路的磁场多少",
+            "aliases": [],
+            "prerequisites": [
+              "磁感线"
+            ],
+            "definition": "磁通量是穿过某一回路的磁感线总数的物理量。",
+            "example": "磁铁插入线圈时，线圈磁通量增加。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "感应电流",
+            "difficulty": 2,
+            "description": "磁通量变化时回路中产生的电流",
+            "aliases": [],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "感应电流是穿过回路的磁通量发生变化时产生的电流。",
+            "example": "条形磁铁插入螺线管时电流计发生偏转。"
+          },
+          {
+            "name": "感应电流方向",
+            "difficulty": 2,
+            "description": "感应电流在闭合回路中的流动方向",
+            "aliases": [],
+            "prerequisites": [
+              "感应电流"
+            ],
+            "definition": "感应电流方向是电磁感应过程中回路内电流的确定流向。",
+            "example": "磁铁插入和拔出线圈时电流方向相反。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "楞次定律",
+            "difficulty": 3,
+            "description": "感应电流磁场阻碍磁通量的变化",
+            "aliases": [
+              "Lenz law"
+            ],
+            "prerequisites": [
+              "磁通量",
+              "感应电流"
+            ],
+            "definition": "感应电流的磁场总要阻碍引起感应电流的磁通量变化。",
+            "example": "磁铁靠近线圈时，线圈产生排斥磁场。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "安培定则",
+            "difficulty": 2,
+            "description": "根据电流方向判断电流磁场方向",
+            "aliases": [],
+            "prerequisites": [
+              "磁感线"
+            ],
+            "definition": "安培定则用来确定电流产生的磁场方向。",
+            "example": "由线圈磁场方向判断其中的电流方向。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "右手定则",
+            "difficulty": 3,
+            "description": "判断导体切割磁感线时电流方向",
+            "aliases": [
+              "right-hand rule"
+            ],
+            "prerequisites": [
+              "楞次定律",
+              "导体切割磁感线"
+            ],
+            "definition": "右手定则规定了磁场、导体运动和感应电流方向的关系。",
+            "example": "导体棒向右运动时用右手定则判断电流方向。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "感应电动势",
+            "difficulty": 2,
+            "description": "电磁感应现象中产生的电动势",
+            "aliases": [
+              "induction electromotive force"
+            ],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "感应电动势是电磁感应现象中由磁通量变化产生的电动势。",
+            "example": "电路断开时仍可存在感应电动势。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "磁通量变化率",
+            "difficulty": 3,
+            "description": "单位时间内磁通量的变化量",
+            "aliases": [],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "磁通量变化率是磁通量变化量与所用时间之比。",
+            "example": "磁铁运动越快，磁通量变化率越大。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "法拉第定律",
+            "difficulty": 3,
+            "description": "感应电动势与磁通量变化率成正比",
+            "aliases": [
+              "法拉第电磁感应定律",
+              "Faraday law"
+            ],
+            "prerequisites": [
+              "感应电动势",
+              "磁通量变化率"
+            ],
+            "definition": "电路中感应电动势的大小与穿过电路的磁通量变化率成正比。",
+            "example": "多匝线圈的电动势为E=nΔΦ/Δt。"
+          },
+          {
+            "name": "导体切割磁感线",
+            "difficulty": 3,
+            "description": "导体运动并切割磁感线产生电动势",
+            "aliases": [],
+            "prerequisites": [
+              "磁感线",
+              "感应电动势"
+            ],
+            "definition": "导体在磁场中运动切割磁感线时会产生感应电动势。",
+            "example": "导体棒在导轨上向右滑动产生电动势。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "动生电动势",
+            "difficulty": 3,
+            "description": "导体切割磁感线产生的感应电动势",
+            "aliases": [],
+            "prerequisites": [
+              "导体切割磁感线",
+              "感应电动势"
+            ],
+            "definition": "动生电动势是导体切割磁感线运动产生的电动势。",
+            "example": "金属棒在匀强磁场中运动产生动生电动势。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "感生电动势",
+            "difficulty": 3,
+            "description": "由变化磁场引起磁通量变化产生的电动势",
+            "aliases": [],
+            "prerequisites": [
+              "感应电动势",
+              "磁通量"
+            ],
+            "definition": "感生电动势是由磁场变化引起磁通量变化而产生的电动势。",
+            "example": "变化磁场在周围空间激发感应电场。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "自感现象",
+            "difficulty": 3,
+            "description": "线圈自身电流变化产生电磁感应",
+            "aliases": [
+              "self-induction"
+            ],
+            "prerequisites": [
+              "感应电动势",
+              "楞次定律"
+            ],
+            "definition": "自感现象是线圈自身电流变化引起电磁感应的现象。",
+            "example": "接通电路时串联线圈的小灯泡逐渐变亮。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "自感电动势",
+            "difficulty": 3,
+            "description": "由线圈自身电流变化产生的感应电动势",
+            "aliases": [
+              "self-induction electromotive force"
+            ],
+            "prerequisites": [
+              "自感现象",
+              "感应电动势"
+            ],
+            "definition": "自感电动势是由线圈自身电流变化产生的感应电动势。",
+            "example": "断开开关时线圈产生高压电弧。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "自感系数",
+            "difficulty": 4,
+            "description": "表示线圈自感特性和阻碍电流变化能力",
+            "aliases": [
+              "自感",
+              "电感"
+            ],
+            "prerequisites": [
+              "自感电动势"
+            ],
+            "definition": "自感系数是表示线圈自感特性的物理量，单位为亨利。",
+            "example": "在线圈中插入铁芯可使自感增大。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "涡流",
+            "difficulty": 3,
+            "description": "金属块内部形成闭合回路的感应电流",
+            "aliases": [
+              "涡电流"
+            ],
+            "prerequisites": [
+              "感应电流",
+              "磁通量"
+            ],
+            "definition": "涡流是金属块处于变化磁场中时内部产生的闭合感应电流。",
+            "example": "交变磁场使铁锅底部产生涡流。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "涡流加热",
+            "difficulty": 3,
+            "description": "利用涡流发热加热金属物体",
+            "aliases": [],
+            "prerequisites": [
+              "涡流",
+              "法拉第定律"
+            ],
+            "definition": "涡流加热是利用金属中的涡流产生热量进行加热。",
+            "example": "电磁炉利用锅底涡流加热食物。",
+            "section": "第3 节 自感现象与涡流"
+          },
+          {
+            "name": "涡流损耗",
+            "difficulty": 4,
+            "description": "涡流使设备产生发热和电能损失",
+            "aliases": [],
+            "prerequisites": [
+              "涡流"
+            ],
+            "definition": "涡流损耗是涡流在设备中造成的电能损失及发热。",
+            "example": "变压器铁芯中的涡流会降低效率。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节 科学探究:感应电流的方向",
+            "section_key": "d049e50f25",
+            "page_range": [
+              32,
+              32
+            ]
+          },
+          {
+            "name": "第2 节 法拉第电磁感应定律",
+            "section_key": "5a8557ed3d",
+            "page_range": [
+              32,
+              32
+            ]
+          },
+          {
+            "name": "第3 节 自感现象与涡流",
+            "section_key": "eb3f94e3fe",
+            "page_range": [
+              32,
+              55
+            ]
+          }
+        ],
+        "chapter_key": "9d17e79873",
+        "metadata": {
+          "volume_id": "eadd647b1c00",
+          "file_id": "eadd647b1c00",
+          "volume_title": "普通高中教科书 物理 选择性必修第二册",
+          "chapter_order": 2,
+          "raw_heading": "第2 章　电磁感应及其应用"
+        }
+      },
+      {
+        "name": "第3 章 交变电流与远距离输电",
+        "concepts": [
+          {
+            "name": "直流电流",
+            "difficulty": 1,
+            "description": "方向不随时间变化的电流。",
+            "aliases": [
+              "直流电"
+            ],
+            "prerequisites": [],
+            "definition": "直流电流是方向不随时间变化的电流。",
+            "example": "干电池供给的恒定电流属于直流电流。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流",
+            "difficulty": 1,
+            "description": "大小和方向随时间周期性变化的电流。",
+            "aliases": [
+              "交流电"
+            ],
+            "prerequisites": [],
+            "definition": "交变电流是大小和方向都随时间做周期性变化的电流。",
+            "example": "家庭电路中使用的是交变电流。"
+          },
+          {
+            "name": "交变电流周期",
+            "difficulty": 2,
+            "description": "交变电流完成一次周期变化所需的时间。",
+            "aliases": [
+              "周期"
+            ],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交变电流周期是完成一次周期性变化所需要的时间。",
+            "example": "周期为0.02 s的交流电完成一次变化需0.02 s。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流频率",
+            "difficulty": 2,
+            "description": "单位时间内完成周期变化的次数。",
+            "aliases": [
+              "频率"
+            ],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交变电流频率是一段时间内完成周期性变化的次数与该时间之比。",
+            "example": "频率为50 Hz表示每秒完成50次周期变化。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "正弦式交变电流",
+            "difficulty": 2,
+            "description": "电流大小和方向随时间按正弦规律变化。",
+            "aliases": [
+              "正弦交流电"
+            ],
+            "prerequisites": [
+              "交变电流",
+              "交变电流周期"
+            ],
+            "definition": "正弦式交变电流是大小和方向随时间按正弦规律变化的交变电流。",
+            "example": "日常生活中使用的市电属于正弦式交变电流。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流峰值",
+            "difficulty": 2,
+            "description": "交变电压或电流能够达到的最大值。",
+            "aliases": [
+              "峰值",
+              "最大值"
+            ],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交变电流峰值是交变电压或电流在变化过程中能够达到的最大值。",
+            "example": "正弦交流电压的峰值高于其有效值。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流有效值",
+            "difficulty": 3,
+            "description": "按相同热效应确定的交变电流等效值。",
+            "aliases": [
+              "有效值"
+            ],
+            "prerequisites": [
+              "交变电流",
+              "交变电流峰值"
+            ],
+            "definition": "交变电流有效值是与其产生相同热效应的恒定电流数值。",
+            "example": "家用交流电压220 V指的是有效值。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交变电流相位",
+            "difficulty": 3,
+            "description": "表示正弦交变电流变化状态的量。",
+            "aliases": [
+              "相"
+            ],
+            "prerequisites": [
+              "正弦式交变电流",
+              "交变电流频率"
+            ],
+            "definition": "交变电流相位是表达交变电流某时刻变化状态的量。",
+            "example": "两个同频交流电流可用相位比较变化步调。"
+          },
+          {
+            "name": "交变电流初相",
+            "difficulty": 3,
+            "description": "交变电流在计时起点的相位。",
+            "aliases": [
+              "初相"
+            ],
+            "prerequisites": [
+              "交变电流相位"
+            ],
+            "definition": "交变电流初相是交变电流在t等于零时的相位。",
+            "example": "改变计时起点会改变交变电流的初相。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "交流发电机",
+            "difficulty": 2,
+            "description": "把机械能转变为交变电能的装置。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "交流发电机是利用电磁感应产生交变电流的发电装置。",
+            "example": "手摇交流发电机能使电流计指针周期性偏转。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "中性面",
+            "difficulty": 3,
+            "description": "线圈不切割磁感线且感应电动势为零的位置。",
+            "aliases": [],
+            "prerequisites": [
+              "交流发电机"
+            ],
+            "definition": "中性面是线圈平面与磁感线垂直、感应电动势为零的位置。",
+            "example": "线圈每经过中性面一次，感应电流方向改变一次。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "正弦交流产生原理",
+            "difficulty": 3,
+            "description": "线圈在匀强磁场中匀速转动产生正弦交流。",
+            "aliases": [],
+            "prerequisites": [
+              "交流发电机",
+              "中性面"
+            ],
+            "definition": "矩形线圈在匀强磁场中绕轴匀速转动可产生正弦式交变电流。",
+            "example": "线圈从中性面开始转动可产生e=Emsinωt。"
+          },
+          {
+            "name": "变压器",
+            "difficulty": 2,
+            "description": "升高或降低交变电压的装置。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "变压器是利用电磁感应升高或降低交变电流电压的装置。",
+            "example": "输电时用变压器升高电压，用户端再降压。"
+          },
+          {
+            "name": "原线圈",
+            "difficulty": 1,
+            "description": "与电源相连的变压器线圈。",
+            "aliases": [
+              "初级线圈"
+            ],
+            "prerequisites": [
+              "变压器"
+            ],
+            "definition": "原线圈是变压器中与交变电源相连接的线圈。",
+            "example": "原线圈接入交流电源后产生变化的磁场。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "副线圈",
+            "difficulty": 1,
+            "description": "与负载相连的变压器线圈。",
+            "aliases": [
+              "次级线圈"
+            ],
+            "prerequisites": [
+              "变压器"
+            ],
+            "definition": "副线圈是变压器中与负载相连接的线圈。",
+            "example": "副线圈可向灯泡输出交变电压。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "互感现象",
+            "difficulty": 3,
+            "description": "一个线圈电流变化使相邻线圈产生感应电动势。",
+            "aliases": [],
+            "prerequisites": [
+              "变压器"
+            ],
+            "definition": "互感现象是一个线圈电流变化导致相邻线圈产生感应电动势的现象。",
+            "example": "变压器通过互感现象把能量传递到副线圈。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "理想变压器",
+            "difficulty": 3,
+            "description": "忽略漏磁、线圈电阻和铁芯涡流损失的变压器。",
+            "aliases": [],
+            "prerequisites": [
+              "变压器",
+              "互感现象"
+            ],
+            "definition": "理想变压器是各种能量损失均可忽略的变压器模型。",
+            "example": "理想变压器满足输入功率等于输出功率。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "变压器匝数关系",
+            "difficulty": 3,
+            "description": "理想变压器电压之比等于线圈匝数之比。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器",
+              "原线圈",
+              "副线圈"
+            ],
+            "definition": "理想变压器中原副线圈电压之比等于它们的匝数之比。",
+            "example": "原副线圈匝数比为2∶1时，副线圈电压为输入电压的一半。"
+          },
+          {
+            "name": "升压变压器",
+            "difficulty": 2,
+            "description": "副线圈匝数多于原线圈的变压器。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器",
+              "变压器匝数关系"
+            ],
+            "definition": "升压变压器是副线圈匝数多于原线圈、输出电压高于输入电压的变压器。",
+            "example": "远距离输电起点使用升压变压器。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "降压变压器",
+            "difficulty": 2,
+            "description": "副线圈匝数少于原线圈的变压器。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器",
+              "变压器匝数关系"
+            ],
+            "definition": "降压变压器是副线圈匝数少于原线圈、输出电压低于输入电压的变压器。",
+            "example": "用户端用降压变压器获得适用电压。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "变压器功率关系",
+            "difficulty": 3,
+            "description": "理想变压器输入功率等于输出功率。",
+            "aliases": [],
+            "prerequisites": [
+              "理想变压器"
+            ],
+            "definition": "理想变压器中原线圈输入功率等于副线圈输出功率。",
+            "example": "已知U1、I1和U2可求副线圈电流。"
+          },
+          {
+            "name": "高压输电",
+            "difficulty": 2,
+            "description": "以较高电压输送一定功率的电能。",
+            "aliases": [
+              "远距离高压输电"
+            ],
+            "prerequisites": [
+              "变压器",
+              "输电功率损失"
+            ],
+            "definition": "高压输电是在输送功率一定时提高输电电压以减小输电电流的方式。",
+            "example": "发电厂先升压，再通过高压线路远距离输电。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "输电功率损失",
+            "difficulty": 3,
+            "description": "输电导线因电流热效应损耗的电功率。",
+            "aliases": [
+              "损失的功率"
+            ],
+            "prerequisites": [
+              "交变电流",
+              "高压输电"
+            ],
+            "definition": "输电功率损失是电流通过输电线电阻时因发热产生的功率损耗。",
+            "example": "输电线损失功率满足P损=I²R。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "容抗",
+            "difficulty": 3,
+            "description": "电容器对交变电流产生的阻碍作用。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "容抗是电容器对交变电流所产生的阻碍作用。",
+            "example": "地下输电线与大地间形成电容并产生容抗。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "感抗",
+            "difficulty": 3,
+            "description": "电感器对交变电流产生的阻碍作用。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "感抗是电感器因自感作用对交变电流产生的阻碍作用。",
+            "example": "输电导线的电感会对交流输电产生感抗。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "电抗",
+            "difficulty": 3,
+            "description": "感抗和容抗的合称。",
+            "aliases": [],
+            "prerequisites": [
+              "容抗",
+              "感抗"
+            ],
+            "definition": "电抗是交流电路中感抗与容抗的合称。",
+            "example": "交流输电线路的电抗会造成额外能量损失。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "高压直流输电",
+            "difficulty": 3,
+            "description": "将高压交流整流后用直流线路远距离输送。",
+            "aliases": [
+              "直流输电"
+            ],
+            "prerequisites": [
+              "高压输电"
+            ],
+            "definition": "高压直流输电是把高压交变电流变为直流后进行远距离输送的方式。",
+            "example": "高压直流输电适于地下和水下电缆输电。",
+            "section": "第4 节 电能的远距离输送"
+          },
+          {
+            "name": "发电机能量转化",
+            "difficulty": 2,
+            "description": "发电机将机械能转化为电能。",
+            "aliases": [],
+            "prerequisites": [
+              "交流发电机"
+            ],
+            "definition": "发电机工作时把机械能转化为电能。",
+            "example": "水轮机带动发电机转子，将水能间接转化为电能。"
+          },
+          {
+            "name": "电动机能量转化",
+            "difficulty": 2,
+            "description": "电动机将电能转化为机械能。",
+            "aliases": [],
+            "prerequisites": [
+              "交变电流"
+            ],
+            "definition": "电动机工作时把电能转化为机械能。",
+            "example": "高铁利用电动机将电能转化为牵引列车的机械能。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节 交变电流的特点",
+            "section_key": "b90ba96452",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第2 节 交变电流的产生",
+            "section_key": "91077aa2ba",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第3 节 科学探究:变压器",
+            "section_key": "245fb42105",
+            "page_range": [
+              55,
+              55
+            ]
+          },
+          {
+            "name": "第4 节 电能的远距离输送",
+            "section_key": "a3412cc483",
+            "page_range": [
+              55,
+              86
+            ]
+          }
+        ],
+        "chapter_key": "f3f19b1bf4",
+        "metadata": {
+          "volume_id": "eadd647b1c00",
+          "file_id": "eadd647b1c00",
+          "volume_title": "普通高中教科书 物理 选择性必修第二册",
+          "chapter_order": 3,
+          "raw_heading": "第3 章　交变电流与远距离输电"
+        }
+      },
+      {
+        "name": "第4 章 电磁波",
+        "concepts": [
+          {
+            "name": "麦克斯韦电磁场理论",
+            "difficulty": 4,
+            "description": "揭示电场与磁场联系并预言电磁波的理论",
+            "aliases": [
+              "电磁场理论"
+            ],
+            "prerequisites": [],
+            "definition": "麦克斯韦电磁场理论认为变化的电场和磁场能够相互激发并统一存在。",
+            "example": "由理论预言电磁波存在及其传播速度为光速",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "涡旋电场",
+            "difficulty": 4,
+            "description": "变化磁场在周围空间激发的电场",
+            "aliases": [
+              "感生电场"
+            ],
+            "prerequisites": [],
+            "definition": "涡旋电场是变化的磁场在其周围空间激发出的电场。",
+            "example": "均匀变化的磁场产生稳定的涡旋电场",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "涡旋磁场",
+            "difficulty": 4,
+            "description": "变化电场在周围空间激发的磁场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "涡旋磁场是变化的电场在其周围空间激发出的磁场。",
+            "example": "电容器充电时周围产生涡旋磁场",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "位移电流",
+            "difficulty": 4,
+            "description": "变化电场产生磁场时等效的电流",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "位移电流是变化的电场在产生磁场作用上表现出的等效电流。",
+            "example": "电容器两极板间存在位移电流",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁波",
+            "difficulty": 3,
+            "description": "交变电场和磁场交替变化并传播形成的波",
+            "aliases": [
+              "electromagnetic wave"
+            ],
+            "prerequisites": [
+              "涡旋电场",
+              "涡旋磁场"
+            ],
+            "definition": "电磁波是交变电场和交变磁场相互联系并在空间传播形成的电磁场。",
+            "example": "手机通信利用电磁波传递信息"
+          },
+          {
+            "name": "赫兹实验",
+            "difficulty": 2,
+            "description": "首次用实验证实电磁波存在的实验",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "赫兹实验通过发射器和接收器间的火花放电证明了电磁波的存在。",
+            "example": "接收环间隙出现火花放电",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "振荡电流",
+            "difficulty": 2,
+            "description": "大小和方向都周期性变化的电流",
+            "aliases": [
+              "oscillating current"
+            ],
+            "prerequisites": [],
+            "definition": "振荡电流是大小和方向都随时间做周期性变化的电流。",
+            "example": "灵敏电流计指针左右摆动",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "LC振荡电路",
+            "difficulty": 3,
+            "description": "由电感线圈和电容器组成的振荡电路",
+            "aliases": [],
+            "prerequisites": [
+              "振荡电流"
+            ],
+            "definition": "LC振荡电路是由电感线圈和电容器组成的基本振荡电路。",
+            "example": "电容器周期性充放电形成振荡",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁振荡",
+            "difficulty": 3,
+            "description": "电场能与磁场能周期性相互转化的现象",
+            "aliases": [
+              "electromagnetic oscillation"
+            ],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "电磁振荡是电路中电场和磁场周期性交替变化且能量相互转化的现象。",
+            "example": "LC电路中电容器放电时电场能转为磁场能",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "振荡电路频率",
+            "difficulty": 3,
+            "description": "表示振荡电路变化快慢的物理量",
+            "aliases": [
+              "固有频率"
+            ],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "振荡电路频率是单位时间内完成周期性变化的次数。",
+            "example": "减小电容可提高LC电路频率",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "开放电路",
+            "difficulty": 3,
+            "description": "使电磁场分布到较大空间的发射电路",
+            "aliases": [],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "开放电路是将振荡电路电场和磁场尽量分布到较大空间以利于辐射的电路。",
+            "example": "长直导线组成天线和地线",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁波发射",
+            "difficulty": 3,
+            "description": "利用高频振荡电流向空间辐射电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "开放电路",
+              "电磁振荡"
+            ],
+            "definition": "电磁波发射是通过高频振荡电流在天线周围产生并辐射电磁波。",
+            "example": "发射天线向空间辐射无线电波",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调制",
+            "difficulty": 3,
+            "description": "把低频信号加载到高频载波上的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波发射"
+            ],
+            "definition": "调制是将低频电信号加载到高频等幅振荡电流上的过程。",
+            "example": "广播发射前先对声音信号进行调制",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调幅",
+            "difficulty": 2,
+            "description": "使载波振幅随信号改变的调制方式",
+            "aliases": [
+              "AM"
+            ],
+            "prerequisites": [
+              "调制"
+            ],
+            "definition": "调幅是使电磁波的振幅随输入信号变化而频率保持不变。",
+            "example": "调幅广播采用调幅方式传送声音",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调频",
+            "difficulty": 2,
+            "description": "使载波频率随信号改变的调制方式",
+            "aliases": [
+              "FM"
+            ],
+            "prerequisites": [
+              "调制"
+            ],
+            "definition": "调频是使电磁波的频率随输入信号变化的调制方式。",
+            "example": "调频广播抗干扰能力较强",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "地波",
+            "difficulty": 2,
+            "description": "沿地球表面空间传播的无线电波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "地波是沿地球表面传播并可绕过一定障碍物的无线电波。",
+            "example": "长波常采用地波传播",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "天波",
+            "difficulty": 2,
+            "description": "靠电离层反射传播的无线电波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "天波是依靠大气电离层反射进行传播的无线电波。",
+            "example": "短波适合采用天波传播",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "空间波",
+            "difficulty": 2,
+            "description": "像光束一样沿直线传播的无线电波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "空间波是主要沿直线传播并受地球曲面限制的无线电波。",
+            "example": "微波通信主要采用空间波",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电谐振",
+            "difficulty": 3,
+            "description": "接收电路频率与电磁波频率相同时的共振",
+            "aliases": [],
+            "prerequisites": [
+              "LC振荡电路"
+            ],
+            "definition": "电谐振是接收电路固有频率等于接收电磁波频率时电流达到最大的现象。",
+            "example": "调节线框使氖管最亮",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "调谐",
+            "difficulty": 3,
+            "description": "从多种电磁波中选择特定频率的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电谐振"
+            ],
+            "definition": "调谐是利用电谐振有选择地接收某一特定频率电磁波的过程。",
+            "example": "转动收音机旋钮选择电台",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "检波",
+            "difficulty": 3,
+            "description": "从高频载波中还原低频信号的过程",
+            "aliases": [
+              "解调"
+            ],
+            "prerequisites": [
+              "调制"
+            ],
+            "definition": "检波是从经过调制的高频振荡电流中提取音频等低频信号的过程。",
+            "example": "二极管检波电路还原广播声音",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "电磁波谱",
+            "difficulty": 2,
+            "description": "按波长或频率排列的电磁波序列",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "电磁波谱是把各种电磁波按波长或频率顺序排列形成的谱系。",
+            "example": "无线电波、可见光和γ射线均属于电磁波谱",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "无线电波",
+            "difficulty": 2,
+            "description": "电磁波谱中波长最长的一类电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "无线电波是电磁波谱中波长最长的电磁波，通常由振荡电路经天线发射。",
+            "example": "无线电波用于广播和通信",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "可见光",
+            "difficulty": 2,
+            "description": "人眼能够看见的频率范围很小的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "可见光是人眼能够感知的、在电磁波谱中范围很窄的一段电磁波。",
+            "example": "白光通过三棱镜分成不同颜色",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "红外线",
+            "difficulty": 2,
+            "description": "波长长于红光且热效应明显的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "红外线是波长比红光长并具有明显热效应的电磁波。",
+            "example": "红外线用于烤箱加热和遥感",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "紫外线",
+            "difficulty": 2,
+            "description": "波长短于紫光并能使物质发荧光的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "紫外线是波长比紫光短且能使某些物质发出荧光的电磁波。",
+            "example": "紫外线用于医院消毒",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "X射线",
+            "difficulty": 2,
+            "description": "波长较短且穿透力较强的电磁波",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "X射线是电磁波谱中波长较短并具有较强穿透力的电磁波。",
+            "example": "X射线用于辅助疾病诊断",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "γ射线",
+            "difficulty": 2,
+            "description": "原子核发出且能量和穿透力很强的电磁波",
+            "aliases": [
+              "伽马射线"
+            ],
+            "prerequisites": [
+              "电磁波谱"
+            ],
+            "definition": "γ射线是由原子核发出、能量较高且穿透力很强的电磁波。",
+            "example": "γ射线用于杀死癌细胞",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "谐振腔",
+            "difficulty": 3,
+            "description": "用金属盒替代线圈和电容器产生高频振荡",
+            "aliases": [],
+            "prerequisites": [
+              "电磁振荡"
+            ],
+            "definition": "谐振腔是利用矩形金属盒产生高频振荡的装置。",
+            "example": "微波炉用谐振腔产生微波",
+            "section": "第3 节 电磁波谱"
+          },
+          {
+            "name": "石英晶体振荡器",
+            "difficulty": 3,
+            "description": "利用石英晶体压电效应产生稳定振荡电流",
+            "aliases": [],
+            "prerequisites": [
+              "振荡电流"
+            ],
+            "definition": "石英晶体振荡器是利用石英晶体压电效应产生稳定振荡电流的装置。",
+            "example": "计算机和手表中使用石英晶体振荡器",
+            "section": "第3 节 电磁波谱"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节 电磁波的产生",
+            "section_key": "6a7a465562",
+            "page_range": [
+              86,
+              86
+            ]
+          },
+          {
+            "name": "第2 节 电磁波的发射、传播和接收",
+            "section_key": "666d4c74d9",
+            "page_range": [
+              86,
+              86
+            ]
+          },
+          {
+            "name": "第3 节 电磁波谱",
+            "section_key": "8adb4fef1b",
+            "page_range": [
+              86,
+              104
+            ]
+          }
+        ],
+        "chapter_key": "4407a35932",
+        "metadata": {
+          "volume_id": "eadd647b1c00",
+          "file_id": "eadd647b1c00",
+          "volume_title": "普通高中教科书 物理 选择性必修第二册",
+          "chapter_order": 4,
+          "raw_heading": "第4 章　电磁波"
+        }
+      },
+      {
+        "name": "第5 章 传感器及其应用",
+        "concepts": [
+          {
+            "name": "传感器",
+            "difficulty": 1,
+            "description": "感受外界信息并转换为可用输出信号的器件",
+            "aliases": [
+              "sensor"
+            ],
+            "prerequisites": [],
+            "definition": "传感器是能感受外界信息并按规律转换成可用输出信号的器件或装置。",
+            "example": "麦克风把声音信号转化为电信号"
+          },
+          {
+            "name": "非电量电转换",
+            "difficulty": 2,
+            "description": "将压力、温度等非电学量转化为电学量",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "非电量电转换是把不易测量的非电学量转换成便于显示、处理和控制的电学量。",
+            "example": "电子秤将压力信息转换为电信号"
+          },
+          {
+            "name": "敏感元件",
+            "difficulty": 2,
+            "description": "直接感受被测量并输出有确定关系信号的元件",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "敏感元件直接感受被测量，并输出与被测量有确定关系的信号。",
+            "example": "光敏电阻感受光照强弱",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "转换元件",
+            "difficulty": 2,
+            "description": "把物理信号转换为便于处理的电信号",
+            "aliases": [],
+            "prerequisites": [
+              "传感器",
+              "敏感元件"
+            ],
+            "definition": "转换元件将敏感元件输出的物理信号转换为电信号。",
+            "example": "将压力信号转换为电压信号",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "光敏元件",
+            "difficulty": 2,
+            "description": "利用光照引起电学特性变化的敏感元件",
+            "aliases": [],
+            "prerequisites": [
+              "敏感元件"
+            ],
+            "definition": "光敏元件是利用材料在光照下电学特性发生变化制成的敏感元件。",
+            "example": "光敏电阻用于光敏传感器",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "光敏电阻",
+            "difficulty": 2,
+            "description": "光照越强，电阻值通常越小的光敏元件",
+            "aliases": [],
+            "prerequisites": [
+              "光敏元件"
+            ],
+            "definition": "光敏电阻利用半导体受光后电阻值改变的特性工作。",
+            "example": "光控路灯根据光照自动开关",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "热敏元件",
+            "difficulty": 2,
+            "description": "利用电学特性随温度变化而变化的元件",
+            "aliases": [],
+            "prerequisites": [
+              "敏感元件"
+            ],
+            "definition": "热敏元件利用敏感元件的电学特性随温度变化的规律制成。",
+            "example": "温度传感器中的热敏电阻",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "热敏电阻",
+            "difficulty": 2,
+            "description": "电阻值随温度变化而改变的温度敏感元件",
+            "aliases": [],
+            "prerequisites": [
+              "热敏元件"
+            ],
+            "definition": "热敏电阻利用半导体电阻随温度变化而改变的特性工作。",
+            "example": "电子体温计使用热敏电阻",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "负温度系数",
+            "difficulty": 3,
+            "description": "温度升高时热敏电阻阻值减小的特性",
+            "aliases": [
+              "NTC"
+            ],
+            "prerequisites": [
+              "热敏电阻"
+            ],
+            "definition": "负温度系数热敏电阻的阻值随温度升高而减小。",
+            "example": "NTC热敏电阻用于温度报警",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "正温度系数",
+            "difficulty": 3,
+            "description": "温度升高时热敏电阻阻值增大的特性",
+            "aliases": [
+              "PTC"
+            ],
+            "prerequisites": [
+              "热敏电阻"
+            ],
+            "definition": "正温度系数热敏电阻的阻值随温度升高而增大。",
+            "example": "PTC热敏电阻用于温度检测",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "霍尔效应",
+            "difficulty": 3,
+            "description": "电流和磁场作用下产生横向霍尔电压的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "霍尔效应是半导体中电流与磁场作用时在垂直方向产生电势差的现象。",
+            "example": "通电霍尔元件置于磁场中产生霍尔电压",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "霍尔元件",
+            "difficulty": 3,
+            "description": "根据霍尔效应制成的磁敏元件",
+            "aliases": [],
+            "prerequisites": [
+              "霍尔效应",
+              "磁敏元件"
+            ],
+            "definition": "霍尔元件是根据半导体材料霍尔效应制成的磁敏元件。",
+            "example": "用霍尔元件测量磁感应强度",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "磁敏元件",
+            "difficulty": 2,
+            "description": "能感受磁场并使相关电学量发生变化的元件",
+            "aliases": [],
+            "prerequisites": [
+              "敏感元件"
+            ],
+            "definition": "磁敏元件是利用材料磁敏特性实现磁场信息转换的敏感元件。",
+            "example": "霍尔元件用于磁传感器",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "电容式传感器",
+            "difficulty": 3,
+            "description": "待测量变化引起电容变化的传感器",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "电容式传感器实质上是待测量变化能引起电容变化的可变电容器。",
+            "example": "利用电容差异识别指纹",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "电磁继电器",
+            "difficulty": 3,
+            "description": "利用电磁作用控制电路通断的自动化元件",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "电磁继电器通过衔铁和触点动作实现控制电路的自动通断。",
+            "example": "光敏电阻控制街道路灯",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "自动控制装置",
+            "difficulty": 2,
+            "description": "利用传感器按设定条件自动执行控制的装置",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "自动控制装置根据传感器检测的信息自动完成相应控制动作。",
+            "example": "制作光报警装置和温度报警装置"
+          },
+          {
+            "name": "红外传感器",
+            "difficulty": 3,
+            "description": "通过探测人体红外线感知有无人员的传感器",
+            "aliases": [
+              "红外线传感器"
+            ],
+            "prerequisites": [
+              "传感器",
+              "热电效应"
+            ],
+            "definition": "红外传感器利用人体红外线引起热电元件电学量变化来检测人体。",
+            "example": "自动感应门检测门前是否有人",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "热电效应",
+            "difficulty": 3,
+            "description": "热电元件受热后释放电荷并引起电学量变化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "热电效应是热电元件感知温度变化后释放电荷的现象。",
+            "example": "人体红外线使热电元件产生电信号",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "指纹识别器",
+            "difficulty": 3,
+            "description": "利用电容差异获取并识别指纹信息的装置",
+            "aliases": [],
+            "prerequisites": [
+              "电容式传感器",
+              "传感器"
+            ],
+            "definition": "指纹识别器通过读取指纹脊谷造成的电容差异识别身份。",
+            "example": "密码门用指纹识别器验证身份",
+            "section": "第3 节 大显身手的传感器"
+          },
+          {
+            "name": "机器人传感器系统",
+            "difficulty": 3,
+            "description": "机器人感知外界环境和自身状态的传感器系统",
+            "aliases": [],
+            "prerequisites": [
+              "传感器"
+            ],
+            "definition": "机器人传感器系统由外部和内部传感器组成，用于感知环境及自身状态。",
+            "example": "视觉传感器测量物体距离"
+          },
+          {
+            "name": "光敏电阻特性实验",
+            "difficulty": 2,
+            "description": "探究光照强弱与光敏电阻阻值关系的实验",
+            "aliases": [],
+            "prerequisites": [
+              "光敏电阻"
+            ],
+            "definition": "光敏电阻特性实验通过改变光照观察并记录其阻值变化。",
+            "example": "用欧姆表测量不同光照下的阻值"
+          },
+          {
+            "name": "自动控制装置制作",
+            "difficulty": 3,
+            "description": "设计并制作光报警或温度报警装置的实验",
+            "aliases": [],
+            "prerequisites": [
+              "自动控制装置",
+              "光敏电阻",
+              "热敏电阻"
+            ],
+            "definition": "自动控制装置制作是利用传感器组装并调试简单报警装置的实验。",
+            "example": "制作一定温度下报警的温度报警器"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1 节 常见传感器的工作原理",
+            "section_key": "6a4d77a17e",
+            "page_range": [
+              104,
+              104
+            ]
+          },
+          {
+            "name": "第2 节 科学制作:简单的自动控制装置",
+            "section_key": "485923f616",
+            "page_range": [
+              104,
+              104
+            ]
+          },
+          {
+            "name": "第3 节 大显身手的传感器",
+            "section_key": "6ce8abe2f5",
+            "page_range": [
+              104,
+              122
+            ]
+          }
+        ],
+        "chapter_key": "f579db911a",
+        "metadata": {
+          "volume_id": "eadd647b1c00",
+          "file_id": "eadd647b1c00",
+          "volume_title": "普通高中教科书 物理 选择性必修第二册",
+          "chapter_order": 5,
+          "raw_heading": "第5 章　传感器及其应用"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "330b6075ac": [
+        8,
+        13
+      ],
+      "第1 节 安培力及其应用": [
+        8,
+        13
+      ],
+      "dc24ae4439": [
+        14,
+        21
+      ],
+      "第2 节 洛伦兹力": [
+        14,
+        21
+      ],
+      "7f6621f0dd": [
+        21,
+        32
+      ],
+      "第3 节 洛伦兹力的应用": [
+        21,
+        32
+      ],
+      "d049e50f25": [
+        32,
+        32
+      ],
+      "第1 节 科学探究:感应电流的方向": [
+        32,
+        32
+      ],
+      "5a8557ed3d": [
+        32,
+        32
+      ],
+      "第2 节 法拉第电磁感应定律": [
+        32,
+        32
+      ],
+      "eb3f94e3fe": [
+        32,
+        55
+      ],
+      "第3 节 自感现象与涡流": [
+        32,
+        55
+      ],
+      "b90ba96452": [
+        55,
+        55
+      ],
+      "第1 节 交变电流的特点": [
+        55,
+        55
+      ],
+      "91077aa2ba": [
+        55,
+        55
+      ],
+      "第2 节 交变电流的产生": [
+        55,
+        55
+      ],
+      "245fb42105": [
+        55,
+        55
+      ],
+      "第3 节 科学探究:变压器": [
+        55,
+        55
+      ],
+      "a3412cc483": [
+        55,
+        86
+      ],
+      "第4 节 电能的远距离输送": [
+        55,
+        86
+      ],
+      "6a7a465562": [
+        86,
+        86
+      ],
+      "第1 节 电磁波的产生": [
+        86,
+        86
+      ],
+      "666d4c74d9": [
+        86,
+        86
+      ],
+      "第2 节 电磁波的发射、传播和接收": [
+        86,
+        86
+      ],
+      "8adb4fef1b": [
+        86,
+        104
+      ],
+      "第3 节 电磁波谱": [
+        86,
+        104
+      ],
+      "6a4d77a17e": [
+        104,
+        104
+      ],
+      "第1 节 常见传感器的工作原理": [
+        104,
+        104
+      ],
+      "485923f616": [
+        104,
+        104
+      ],
+      "第2 节 科学制作:简单的自动控制装置": [
+        104,
+        104
+      ],
+      "6ce8abe2f5": [
+        104,
+        122
+      ],
+      "第3 节 大显身手的传感器": [
+        104,
+        122
+      ]
+    }
+  }
+}

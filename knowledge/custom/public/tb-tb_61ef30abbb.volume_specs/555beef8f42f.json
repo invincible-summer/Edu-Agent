@@ -1,0 +1,1689 @@
+{
+  "file_id": "555beef8f42f",
+  "text_sha256": "00fab02b212abbca4fc2af3abee022f18b597e41dc651c355058c20d9170739f",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 生产资料所有制与经济体制",
+        "concepts": [
+          {
+            "name": "生产资料所有制",
+            "difficulty": 2,
+            "description": "生产资料归谁所有的制度安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产资料所有制是生产资料归不同主体所有的制度安排。",
+            "example": "我国实行公有制为主体、多种所有制经济共同发展。"
+          },
+          {
+            "name": "公有制为主体",
+            "difficulty": 3,
+            "description": "公有制在所有制结构中占主体地位",
+            "aliases": [],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "公有制为主体是指公有制经济在我国所有制结构中居于主体地位。",
+            "example": "公有制为主体体现社会主义制度的优越性。"
+          },
+          {
+            "name": "多种所有制经济共同发展",
+            "difficulty": 3,
+            "description": "不同所有制经济共同存在、共同发展",
+            "aliases": [],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "多种所有制经济共同发展是指不同所有制经济在我国经济中共同存在并发展。",
+            "example": "我国既有公有制经济，也有其他所有制经济共同发展。"
+          },
+          {
+            "name": "按劳分配为主体",
+            "difficulty": 3,
+            "description": "按劳分配在分配制度中居于主体地位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "按劳分配为主体是我国分配制度中按劳分配居于主体地位。",
+            "example": "社会主义基本经济制度包括按劳分配为主体。"
+          },
+          {
+            "name": "多种分配方式并存",
+            "difficulty": 3,
+            "description": "除按劳分配外存在多种分配方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "多种分配方式并存是指我国分配领域除按劳分配外还存在其他分配方式。",
+            "example": "我国实行按劳分配为主体、多种分配方式并存。"
+          },
+          {
+            "name": "社会主义基本经济制度",
+            "difficulty": 4,
+            "description": "社会主义制度的重要经济制度安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会主义基本经济制度包括公有制为主体、多种所有制经济共同发展等内容。",
+            "example": "我国社会主义基本经济制度体现社会主义制度优越性。"
+          },
+          {
+            "name": "社会主义市场经济体制",
+            "difficulty": 4,
+            "description": "社会主义制度与市场经济相结合的体制",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义基本经济制度"
+            ],
+            "definition": "社会主义市场经济体制是社会主义基本经济制度的重要组成部分。",
+            "example": "社会主义市场经济体制要求更好发挥政府作用。"
+          },
+          {
+            "name": "市场配置资源",
+            "difficulty": 4,
+            "description": "通过市场机制实现资源配置",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义市场经济体制"
+            ],
+            "definition": "市场配置资源是指使市场在资源配置中起决定性作用。",
+            "example": "社会主义市场经济体制强调市场配置资源。"
+          },
+          {
+            "name": "非公有制经济",
+            "difficulty": 3,
+            "description": "公有制经济以外的所有制经济形式",
+            "aliases": [],
+            "prerequisites": [
+              "多种所有制经济共同发展"
+            ],
+            "definition": "非公有制经济是我国多种所有制经济共同发展格局中的重要组成部分。",
+            "example": "我国要鼓励、支持、引导非公有制经济发展。"
+          }
+        ]
+      },
+      {
+        "name": "第一课",
+        "concepts": [
+          {
+            "name": "劳动",
+            "difficulty": 1,
+            "description": "物质资料生产中人的劳动活动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "劳动是物质财富的源泉，也是价值的唯一源泉。",
+            "example": "工人生产产品、服务人员提供服务。"
+          },
+          {
+            "name": "生产资料",
+            "difficulty": 1,
+            "description": "创造物质财富和价值所必需的条件。",
+            "aliases": [],
+            "prerequisites": [
+              "劳动"
+            ],
+            "definition": "生产资料是创造物质财富和价值的条件。",
+            "example": "土地、厂房和机器设备。"
+          },
+          {
+            "name": "生产资料所有制",
+            "difficulty": 2,
+            "description": "生产资料归谁所有及其实现形式。",
+            "aliases": [
+              "所有制"
+            ],
+            "prerequisites": [
+              "生产资料"
+            ],
+            "definition": "生产资料所有制是生产关系的核心和经济制度的基础。",
+            "example": "公有制和非公有制。"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "人们在物质资料生产中形成的关系。",
+            "aliases": [],
+            "prerequisites": [
+              "劳动",
+              "生产资料"
+            ],
+            "definition": "生产关系是人们在物质资料生产过程中形成的社会关系。",
+            "example": "生产资料所有制是其核心。"
+          },
+          {
+            "name": "公有制经济",
+            "difficulty": 2,
+            "description": "由国家所有、集体所有等成分构成的经济。",
+            "aliases": [
+              "公有制"
+            ],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "公有制经济包括国有经济、集体经济及混合所有制中的公有成分。",
+            "example": "国有企业和农村集体经济。"
+          },
+          {
+            "name": "国有经济",
+            "difficulty": 2,
+            "description": "生产资料归全体人民共同所有的经济。",
+            "aliases": [
+              "全民所有制经济"
+            ],
+            "prerequisites": [
+              "公有制经济"
+            ],
+            "definition": "国有经济是生产资料归国家所有并由国家代表全民行使所有权的经济。",
+            "example": "石油、电力等行业的国有控股企业。"
+          },
+          {
+            "name": "集体经济",
+            "difficulty": 2,
+            "description": "生产资料归部分劳动群众共同所有的经济。",
+            "aliases": [
+              "农村集体经济"
+            ],
+            "prerequisites": [
+              "公有制经济"
+            ],
+            "definition": "集体经济是生产资料归部分劳动群众共同所有的公有制经济。",
+            "example": "村集体成立专业合作社发展农业。"
+          },
+          {
+            "name": "公有制主体地位",
+            "difficulty": 3,
+            "description": "公有制在所有制结构中占据主体地位。",
+            "aliases": [],
+            "prerequisites": [
+              "公有制经济",
+              "国有经济"
+            ],
+            "definition": "公有制主体地位主要体现在公有资产占优势和国有经济发挥主导作用。",
+            "example": "国有经济控制关系国民经济命脉的行业。"
+          },
+          {
+            "name": "所有制基本制度",
+            "difficulty": 3,
+            "description": "公有制为主体、多种所有制经济共同发展。",
+            "aliases": [
+              "我国基本经济制度"
+            ],
+            "prerequisites": [
+              "公有制经济",
+              "非公有制经济"
+            ],
+            "definition": "我国社会主义初级阶段坚持公有制为主体、多种所有制经济共同发展。",
+            "example": "国有企业与民营企业共同发展。"
+          },
+          {
+            "name": "非公有制经济",
+            "difficulty": 2,
+            "description": "个体、私营和外商投资等经济形式的统称。",
+            "aliases": [
+              "非公有制"
+            ],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "非公有制经济包括个体经济、私营经济、港澳台投资经济和外商投资经济等。",
+            "example": "个体商户、私营企业和外资企业。"
+          },
+          {
+            "name": "个体经济",
+            "difficulty": 2,
+            "description": "个人或家庭占有生产资料并经营的经济。",
+            "aliases": [
+              "个体经营"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "个体经济是劳动者个人或家庭占有生产资料、从事个体劳动和经营的经济。",
+            "example": "夫妻经营一家小饭馆。"
+          },
+          {
+            "name": "私营经济",
+            "difficulty": 2,
+            "description": "以生产资料私有和雇佣劳动为基础的经济。",
+            "aliases": [
+              "私营企业经济"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "私营经济是以生产资料私有和雇佣劳动为基础的经济。",
+            "example": "私营企业聘用数十名员工经营。"
+          },
+          {
+            "name": "外商投资经济",
+            "difficulty": 2,
+            "description": "外国投资者在我国境内投资形成的经济。",
+            "aliases": [
+              "外资经济"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "外商投资经济是外国投资者依法在我国境内设立企业或参与设立企业形成的经济。",
+            "example": "国外投资机构向连锁餐饮企业注资。"
+          },
+          {
+            "name": "混合所有制经济",
+            "difficulty": 3,
+            "description": "公有制和非公有制经济共同组成的经济。",
+            "aliases": [
+              "混合所有制"
+            ],
+            "prerequisites": [
+              "公有制经济",
+              "非公有制经济"
+            ],
+            "definition": "混合所有制经济是由公有制经济和非公有制经济组成的股份制经济。",
+            "example": "国有控股公司吸收员工和民营资本入股。"
+          },
+          {
+            "name": "国民经济命脉",
+            "difficulty": 3,
+            "description": "对经济社会发展具有重大作用的行业、企业和资源。",
+            "aliases": [],
+            "prerequisites": [
+              "国有经济"
+            ],
+            "definition": "国民经济命脉是对经济社会发展具有重大作用的行业、企业和资源。",
+            "example": "电力电网、铁路、国防工业。"
+          },
+          {
+            "name": "国有经济主导作用",
+            "difficulty": 3,
+            "description": "国有经济通过控制力发挥主导作用。",
+            "aliases": [
+              "国有经济主导地位"
+            ],
+            "prerequisites": [
+              "国有经济",
+              "国民经济命脉"
+            ],
+            "definition": "国有经济的主导作用主要体现在对国民经济的控制力上。",
+            "example": "国有经济控制石油、电力等重要行业。"
+          },
+          {
+            "name": "两个毫不动摇",
+            "difficulty": 3,
+            "description": "巩固发展公有制并支持非公有制经济发展。",
+            "aliases": [],
+            "prerequisites": [
+              "所有制基本制度"
+            ],
+            "definition": "两个毫不动摇是毫不动摇巩固和发展公有制经济，毫不动摇鼓励支持引导非公有制经济发展。",
+            "example": "同时推进国企改革和民营企业发展。"
+          },
+          {
+            "name": "农村基本经营制度",
+            "difficulty": 3,
+            "description": "以家庭承包经营为基础的双层经营体制。",
+            "aliases": [
+              "双层经营体制"
+            ],
+            "prerequisites": [
+              "集体经济"
+            ],
+            "definition": "农村基本经营制度是以家庭承包经营为基础、统分结合的双层经营体制。",
+            "example": "家庭承包土地并接受集体统一服务。"
+          },
+          {
+            "name": "农民专业合作社",
+            "difficulty": 3,
+            "description": "农民自愿联合、民主管理的互助性组织。",
+            "aliases": [
+              "专业合作社"
+            ],
+            "prerequisites": [
+              "农村基本经营制度",
+              "集体经济"
+            ],
+            "definition": "农民专业合作社是在家庭承包经营基础上自愿联合、民主管理的互助性经济组织。",
+            "example": "合作社统一销售农产品并提供技术服务。"
+          },
+          {
+            "name": "企业经营战略",
+            "difficulty": 2,
+            "description": "企业根据发展环境制定的总体经营谋划。",
+            "aliases": [
+              "经营战略"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "企业制定正确的经营战略是企业顺应时代潮流、抓住发展机遇的重要条件。",
+            "example": "软件公司选择科技园区并面向市场定位。"
+          },
+          {
+            "name": "企业自主创新",
+            "difficulty": 2,
+            "description": "企业依靠科技进步形成自身竞争优势。",
+            "aliases": [
+              "自主创新能力"
+            ],
+            "prerequisites": [
+              "企业经营战略"
+            ],
+            "definition": "企业提高自主创新能力，能够依靠科技进步和科学管理形成竞争优势。",
+            "example": "企业加大研发投入，开发新技术。"
+          },
+          {
+            "name": "企业诚信经营",
+            "difficulty": 2,
+            "description": "企业守法守信并维护良好信誉和形象。",
+            "aliases": [
+              "诚信经营"
+            ],
+            "prerequisites": [
+              "企业经营战略"
+            ],
+            "definition": "企业诚信经营有助于树立良好信誉和企业形象并形成竞争优势。",
+            "example": "企业如实宣传产品性能，不欺骗消费者。"
+          }
+        ]
+      },
+      {
+        "name": "第二单元 经济发展与社会进步",
+        "concepts": [
+          {
+            "name": "以人民为中心的发展思想",
+            "difficulty": 2,
+            "description": "把实现人民幸福作为发展的目的和归宿。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "以人民利益为出发点，推动发展为了人民、依靠人民、成果由人民共享。",
+            "example": "完善医疗服务，满足人民美好生活需要。"
+          },
+          {
+            "name": "经济增长",
+            "difficulty": 1,
+            "description": "一个国家或地区人均产出水平持续增加。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经济增长是经济总量或人均产出水平的持续增加。",
+            "example": "一个地区人均产值连续多年提高。"
+          },
+          {
+            "name": "经济发展",
+            "difficulty": 2,
+            "description": "包括增长、结构优化、效益提高等。",
+            "aliases": [],
+            "prerequisites": [
+              "经济增长"
+            ],
+            "definition": "经济发展不仅包括经济增长，还包括经济结构优化、经济效益提高等。",
+            "example": "经济增长同时带来生态改善和生活水平提高。"
+          },
+          {
+            "name": "新发展理念",
+            "difficulty": 2,
+            "description": "创新、协调、绿色、开放、共享的发展理念。",
+            "aliases": [],
+            "prerequisites": [
+              "经济发展"
+            ],
+            "definition": "新发展理念是破解发展难题、推动高质量发展的理念体系。",
+            "example": "某地统筹创新发展与生态保护。"
+          },
+          {
+            "name": "创新发展",
+            "difficulty": 2,
+            "description": "着重解决发展动力问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "创新发展把创新摆在国家发展全局的核心位置。",
+            "example": "通过科技创新推动产业转型升级。"
+          },
+          {
+            "name": "协调发展",
+            "difficulty": 2,
+            "description": "着重解决发展不平衡问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "协调发展要求正确处理重大关系，增强发展的整体性。",
+            "example": "促进城乡区域协调发展。"
+          },
+          {
+            "name": "绿色发展",
+            "difficulty": 2,
+            "description": "着重解决人与自然和谐共生问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "绿色发展要求节约资源、保护环境，走生态良好的文明发展道路。",
+            "example": "发展生态旅游并治理河道污染。"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 2,
+            "description": "满足当代需求且不损害后代需求能力。",
+            "aliases": [],
+            "prerequisites": [
+              "绿色发展"
+            ],
+            "definition": "可持续发展要求实现经济发展与资源环境保护相统一。",
+            "example": "合理利用森林资源，保护后代发展能力。"
+          },
+          {
+            "name": "开放发展",
+            "difficulty": 2,
+            "description": "着重解决发展内外联动问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "开放发展要求发展更高层次的开放型经济，推动互利共赢。",
+            "example": "企业积极参与国际交流合作。"
+          },
+          {
+            "name": "共享发展",
+            "difficulty": 2,
+            "description": "着重解决社会公平正义问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "共享发展要求使全体人民共享改革发展成果，走向共同富裕。",
+            "example": "完善制度安排，增加群众获得感。"
+          },
+          {
+            "name": "高质量发展",
+            "difficulty": 3,
+            "description": "新时代经济发展的阶段性要求。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念",
+              "现代化经济体系"
+            ],
+            "definition": "高质量发展是经济由高速增长阶段转向后的发展要求。",
+            "example": "经济增长更多依靠科技进步和效率提升。"
+          },
+          {
+            "name": "国内国际双循环",
+            "difficulty": 3,
+            "description": "以国内大循环为主体、内外循环相互促进。",
+            "aliases": [],
+            "prerequisites": [
+              "开放发展"
+            ],
+            "definition": "国内国际双循环通过畅通国内循环并促进内外循环协调发展。",
+            "example": "扩大内需同时提升出口和引资质量。"
+          },
+          {
+            "name": "经济发展方式",
+            "difficulty": 2,
+            "description": "实现经济总量增长和质量提高的途径方法。",
+            "aliases": [],
+            "prerequisites": [
+              "经济发展"
+            ],
+            "definition": "经济发展方式是落实发展理念、实现发展进步的具体路径。",
+            "example": "由资源消耗驱动转向科技进步驱动。"
+          },
+          {
+            "name": "现代化经济体系",
+            "difficulty": 3,
+            "description": "社会经济各环节相互联系的有机整体。",
+            "aliases": [],
+            "prerequisites": [
+              "经济发展方式"
+            ],
+            "definition": "现代化经济体系是由经济活动各环节、各层面、各领域构成的有机整体。",
+            "example": "建设创新产业体系和统一开放市场体系。"
+          },
+          {
+            "name": "实体经济",
+            "difficulty": 2,
+            "description": "物质产品、精神产品生产及相关服务活动。",
+            "aliases": [],
+            "prerequisites": [
+              "现代化经济体系"
+            ],
+            "definition": "实体经济是物质产品和精神产品的生产、销售及相关服务活动。",
+            "example": "制造企业生产并销售工业设备。"
+          },
+          {
+            "name": "供给侧结构性改革",
+            "difficulty": 3,
+            "description": "用改革办法调整结构，提升供给质量。",
+            "aliases": [],
+            "prerequisites": [
+              "现代化经济体系"
+            ],
+            "definition": "供给侧结构性改革旨在减少无效低端供给，扩大有效中高端供给。",
+            "example": "淘汰落后产能，发展先进制造业。"
+          },
+          {
+            "name": "乡村振兴战略",
+            "difficulty": 3,
+            "description": "推动农业农村现代化和城乡融合发展。",
+            "aliases": [],
+            "prerequisites": [
+              "协调发展"
+            ],
+            "definition": "乡村振兴战略要求坚持农业农村优先发展，促进城乡共同繁荣。",
+            "example": "发展特色农业并改善农村基础设施。"
+          },
+          {
+            "name": "区域协调发展战略",
+            "difficulty": 3,
+            "description": "促进区域间相互融通补充、协调发展。",
+            "aliases": [],
+            "prerequisites": [
+              "协调发展"
+            ],
+            "definition": "区域协调发展战略旨在推动不同区域优势互补、发展相对平衡。",
+            "example": "推进西部开发和东部率先发展。"
+          },
+          {
+            "name": "国民收入",
+            "difficulty": 2,
+            "description": "一定时期所有常住单位获得的收入。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "国民收入是一个国家或地区一定时期内所有常住单位所获得的收入。",
+            "example": "居民、企业和政府取得的收入构成国民收入。"
+          },
+          {
+            "name": "按劳分配",
+            "difficulty": 2,
+            "description": "以劳动数量和质量为尺度分配个人消费品。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "按劳分配要求在必要扣除后多劳多得、少劳少得。",
+            "example": "员工按劳动贡献获得工资和奖金。"
+          },
+          {
+            "name": "多种分配方式并存",
+            "difficulty": 2,
+            "description": "按劳分配为主体，多种方式共同存在。",
+            "aliases": [],
+            "prerequisites": [
+              "按劳分配"
+            ],
+            "definition": "我国分配制度由公有制为主体、多种所有制经济共同发展决定。",
+            "example": "居民既有工资收入，也有股息和租金收入。"
+          },
+          {
+            "name": "生产要素参与分配",
+            "difficulty": 3,
+            "description": "劳动、资本、土地等要素参与收入分配。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "生产要素参与分配有利于激发要素活力和优化资源配置。",
+            "example": "技术成果转化后获得相应报酬。"
+          },
+          {
+            "name": "劳动生产率",
+            "difficulty": 2,
+            "description": "劳动成果与劳动消耗量的比率。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "劳动生产率反映一定时间内劳动者创造成果与劳动消耗量的关系。",
+            "example": "单位时间生产的产品数量增加。"
+          },
+          {
+            "name": "劳动性收入",
+            "difficulty": 1,
+            "description": "通过劳动获得的工资、奖金、津贴等。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "劳动性收入是居民通过劳动所获得的收入。",
+            "example": "职工领取工资和年终奖金。"
+          },
+          {
+            "name": "财产性收入",
+            "difficulty": 1,
+            "description": "通过拥有的各类财产获得的收入。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "财产性收入是居民凭借各类财产获得的收入。",
+            "example": "居民获得银行存款利息和房屋租金。"
+          },
+          {
+            "name": "经营性收入",
+            "difficulty": 1,
+            "description": "通过生产经营活动获得的收入。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "经营性收入是居民从事生产经营活动取得的收入。",
+            "example": "农户经营农家乐获得收入。"
+          },
+          {
+            "name": "转移性收入",
+            "difficulty": 2,
+            "description": "国家、单位或社会团体等转移支付所得。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "转移性收入是居民获得的养老金、救济和补助等经常性转移收入。",
+            "example": "居民领取养老金和社会救济金。"
+          },
+          {
+            "name": "收入分配公平",
+            "difficulty": 2,
+            "description": "社会公平的重要体现和民生改善的重要内容。",
+            "aliases": [],
+            "prerequisites": [
+              "个人所得税",
+              "社会保障"
+            ],
+            "definition": "收入分配公平要求合理处理国家、企业和个人的收入分配关系。",
+            "example": "提高低收入者收入，扩大中等收入群体。"
+          },
+          {
+            "name": "个人所得税",
+            "difficulty": 2,
+            "description": "国家对个人所得征收的税。",
+            "aliases": [],
+            "prerequisites": [
+              "收入分配公平"
+            ],
+            "definition": "个人所得税是调节个人收入分配、实现社会公平的有效手段。",
+            "example": "综合所得扣除相关费用后依法纳税。"
+          },
+          {
+            "name": "初次分配",
+            "difficulty": 3,
+            "description": "生产活动完成后在相关主体间进行的分配。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "初次分配强调保护劳动所得和健全要素报酬由市场决定的机制。",
+            "example": "企业提高一线劳动者劳动报酬。"
+          },
+          {
+            "name": "再分配",
+            "difficulty": 3,
+            "description": "以税收、社保、转移支付调节收入。",
+            "aliases": [],
+            "prerequisites": [
+              "初次分配",
+              "个人所得税"
+            ],
+            "definition": "再分配是政府通过税收、社会保障和转移支付调节收入的分配。",
+            "example": "政府通过社会救助缩小收入差距。"
+          },
+          {
+            "name": "第三次分配",
+            "difficulty": 2,
+            "description": "通过慈善等社会公益事业进行的分配。",
+            "aliases": [],
+            "prerequisites": [
+              "再分配"
+            ],
+            "definition": "第三次分配是社会主体自愿开展公益慈善活动的收入分配方式。",
+            "example": "企业向困难群体捐赠物资。"
+          },
+          {
+            "name": "共同富裕",
+            "difficulty": 3,
+            "description": "全体人民共同富裕和全面发展的目标。",
+            "aliases": [],
+            "prerequisites": [
+              "收入分配公平"
+            ],
+            "definition": "共同富裕要求促进全体人民共享发展成果、实现全面发展。",
+            "example": "先富地区帮助相对落后地区发展。"
+          },
+          {
+            "name": "社会保障",
+            "difficulty": 2,
+            "description": "国家和社会构建的保障基本生活的安全网。",
+            "aliases": [],
+            "prerequisites": [
+              "再分配"
+            ],
+            "definition": "社会保障由政府和社会承担主要责任，防范化解成员生活风险。",
+            "example": "居民在失业或疾病时获得保障。"
+          },
+          {
+            "name": "社会保险",
+            "difficulty": 2,
+            "description": "社会保障体系的核心。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会保险由政府、单位和个人筹资，保障特定风险下的物质帮助。",
+            "example": "职工参加基本养老和医疗保险。"
+          },
+          {
+            "name": "社会救助",
+            "difficulty": 2,
+            "description": "保障最低生活水平的最后一道防线。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会救助由政府无偿帮助无法维持最低生活水平的公民。",
+            "example": "困难家庭领取最低生活保障金。"
+          },
+          {
+            "name": "社会福利",
+            "difficulty": 2,
+            "description": "为社会成员提供服务、实物或福利津贴。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会福利旨在改善社会成员生活质量，是较高层次的社会保障。",
+            "example": "为老年人提供养老服务。"
+          },
+          {
+            "name": "社会优抚",
+            "difficulty": 2,
+            "description": "面向军人及相关对象的特殊社会保障。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会优抚是国家和社会对现役军人等优抚对象提供的特殊保障。",
+            "example": "为退伍军人提供生活安置和职业培训。"
+          },
+          {
+            "name": "商业保险",
+            "difficulty": 2,
+            "description": "投保人付费并按合同获得风险保障。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "商业保险是投保人与保险人依合同约定进行的风险保障行为。",
+            "example": "购买人身保险规避疾病风险。"
+          },
+          {
+            "name": "绿色消费",
+            "difficulty": 2,
+            "description": "保护环境、节约资源的消费方式。",
+            "aliases": [],
+            "prerequisites": [
+              "绿色发展"
+            ],
+            "definition": "绿色消费要求保护环境、节约资源并践行绿色低碳生活。",
+            "example": "减少一次性用品使用，选择节能产品。"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 生产资料所有制与经济体制",
+        "concepts": [
+          {
+            "name": "生产资料所有制",
+            "difficulty": 2,
+            "description": "生产资料归谁所有的制度安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产资料所有制是生产资料归不同主体所有的制度安排。",
+            "example": "我国实行公有制为主体、多种所有制经济共同发展。"
+          },
+          {
+            "name": "公有制为主体",
+            "difficulty": 3,
+            "description": "公有制在所有制结构中占主体地位",
+            "aliases": [],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "公有制为主体是指公有制经济在我国所有制结构中居于主体地位。",
+            "example": "公有制为主体体现社会主义制度的优越性。"
+          },
+          {
+            "name": "多种所有制经济共同发展",
+            "difficulty": 3,
+            "description": "不同所有制经济共同存在、共同发展",
+            "aliases": [],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "多种所有制经济共同发展是指不同所有制经济在我国经济中共同存在并发展。",
+            "example": "我国既有公有制经济，也有其他所有制经济共同发展。"
+          },
+          {
+            "name": "按劳分配为主体",
+            "difficulty": 3,
+            "description": "按劳分配在分配制度中居于主体地位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "按劳分配为主体是我国分配制度中按劳分配居于主体地位。",
+            "example": "社会主义基本经济制度包括按劳分配为主体。"
+          },
+          {
+            "name": "多种分配方式并存",
+            "difficulty": 3,
+            "description": "除按劳分配外存在多种分配方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "多种分配方式并存是指我国分配领域除按劳分配外还存在其他分配方式。",
+            "example": "我国实行按劳分配为主体、多种分配方式并存。"
+          },
+          {
+            "name": "社会主义基本经济制度",
+            "difficulty": 4,
+            "description": "社会主义制度的重要经济制度安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会主义基本经济制度包括公有制为主体、多种所有制经济共同发展等内容。",
+            "example": "我国社会主义基本经济制度体现社会主义制度优越性。"
+          },
+          {
+            "name": "社会主义市场经济体制",
+            "difficulty": 4,
+            "description": "社会主义制度与市场经济相结合的体制",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义基本经济制度"
+            ],
+            "definition": "社会主义市场经济体制是社会主义基本经济制度的重要组成部分。",
+            "example": "社会主义市场经济体制要求更好发挥政府作用。"
+          },
+          {
+            "name": "市场配置资源",
+            "difficulty": 4,
+            "description": "通过市场机制实现资源配置",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义市场经济体制"
+            ],
+            "definition": "市场配置资源是指使市场在资源配置中起决定性作用。",
+            "example": "社会主义市场经济体制强调市场配置资源。"
+          },
+          {
+            "name": "非公有制经济",
+            "difficulty": 3,
+            "description": "公有制经济以外的所有制经济形式",
+            "aliases": [],
+            "prerequisites": [
+              "多种所有制经济共同发展"
+            ],
+            "definition": "非公有制经济是我国多种所有制经济共同发展格局中的重要组成部分。",
+            "example": "我国要鼓励、支持、引导非公有制经济发展。"
+          }
+        ],
+        "chapter_key": "d789e29275",
+        "metadata": {
+          "volume_id": "555beef8f42f",
+          "file_id": "555beef8f42f",
+          "volume_title": "高中政治 必修2 经济与社会",
+          "chapter_order": 1,
+          "raw_heading": "第一单元 生产资料所有制与经济体制"
+        }
+      },
+      {
+        "name": "第一课",
+        "concepts": [
+          {
+            "name": "劳动",
+            "difficulty": 1,
+            "description": "物质资料生产中人的劳动活动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "劳动是物质财富的源泉，也是价值的唯一源泉。",
+            "example": "工人生产产品、服务人员提供服务。"
+          },
+          {
+            "name": "生产资料",
+            "difficulty": 1,
+            "description": "创造物质财富和价值所必需的条件。",
+            "aliases": [],
+            "prerequisites": [
+              "劳动"
+            ],
+            "definition": "生产资料是创造物质财富和价值的条件。",
+            "example": "土地、厂房和机器设备。"
+          },
+          {
+            "name": "生产资料所有制",
+            "difficulty": 2,
+            "description": "生产资料归谁所有及其实现形式。",
+            "aliases": [
+              "所有制"
+            ],
+            "prerequisites": [
+              "生产资料"
+            ],
+            "definition": "生产资料所有制是生产关系的核心和经济制度的基础。",
+            "example": "公有制和非公有制。"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "人们在物质资料生产中形成的关系。",
+            "aliases": [],
+            "prerequisites": [
+              "劳动",
+              "生产资料"
+            ],
+            "definition": "生产关系是人们在物质资料生产过程中形成的社会关系。",
+            "example": "生产资料所有制是其核心。"
+          },
+          {
+            "name": "公有制经济",
+            "difficulty": 2,
+            "description": "由国家所有、集体所有等成分构成的经济。",
+            "aliases": [
+              "公有制"
+            ],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "公有制经济包括国有经济、集体经济及混合所有制中的公有成分。",
+            "example": "国有企业和农村集体经济。"
+          },
+          {
+            "name": "国有经济",
+            "difficulty": 2,
+            "description": "生产资料归全体人民共同所有的经济。",
+            "aliases": [
+              "全民所有制经济"
+            ],
+            "prerequisites": [
+              "公有制经济"
+            ],
+            "definition": "国有经济是生产资料归国家所有并由国家代表全民行使所有权的经济。",
+            "example": "石油、电力等行业的国有控股企业。"
+          },
+          {
+            "name": "集体经济",
+            "difficulty": 2,
+            "description": "生产资料归部分劳动群众共同所有的经济。",
+            "aliases": [
+              "农村集体经济"
+            ],
+            "prerequisites": [
+              "公有制经济"
+            ],
+            "definition": "集体经济是生产资料归部分劳动群众共同所有的公有制经济。",
+            "example": "村集体成立专业合作社发展农业。"
+          },
+          {
+            "name": "公有制主体地位",
+            "difficulty": 3,
+            "description": "公有制在所有制结构中占据主体地位。",
+            "aliases": [],
+            "prerequisites": [
+              "公有制经济",
+              "国有经济"
+            ],
+            "definition": "公有制主体地位主要体现在公有资产占优势和国有经济发挥主导作用。",
+            "example": "国有经济控制关系国民经济命脉的行业。"
+          },
+          {
+            "name": "所有制基本制度",
+            "difficulty": 3,
+            "description": "公有制为主体、多种所有制经济共同发展。",
+            "aliases": [
+              "我国基本经济制度"
+            ],
+            "prerequisites": [
+              "公有制经济",
+              "非公有制经济"
+            ],
+            "definition": "我国社会主义初级阶段坚持公有制为主体、多种所有制经济共同发展。",
+            "example": "国有企业与民营企业共同发展。"
+          },
+          {
+            "name": "非公有制经济",
+            "difficulty": 2,
+            "description": "个体、私营和外商投资等经济形式的统称。",
+            "aliases": [
+              "非公有制"
+            ],
+            "prerequisites": [
+              "生产资料所有制"
+            ],
+            "definition": "非公有制经济包括个体经济、私营经济、港澳台投资经济和外商投资经济等。",
+            "example": "个体商户、私营企业和外资企业。"
+          },
+          {
+            "name": "个体经济",
+            "difficulty": 2,
+            "description": "个人或家庭占有生产资料并经营的经济。",
+            "aliases": [
+              "个体经营"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "个体经济是劳动者个人或家庭占有生产资料、从事个体劳动和经营的经济。",
+            "example": "夫妻经营一家小饭馆。"
+          },
+          {
+            "name": "私营经济",
+            "difficulty": 2,
+            "description": "以生产资料私有和雇佣劳动为基础的经济。",
+            "aliases": [
+              "私营企业经济"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "私营经济是以生产资料私有和雇佣劳动为基础的经济。",
+            "example": "私营企业聘用数十名员工经营。"
+          },
+          {
+            "name": "外商投资经济",
+            "difficulty": 2,
+            "description": "外国投资者在我国境内投资形成的经济。",
+            "aliases": [
+              "外资经济"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "外商投资经济是外国投资者依法在我国境内设立企业或参与设立企业形成的经济。",
+            "example": "国外投资机构向连锁餐饮企业注资。"
+          },
+          {
+            "name": "混合所有制经济",
+            "difficulty": 3,
+            "description": "公有制和非公有制经济共同组成的经济。",
+            "aliases": [
+              "混合所有制"
+            ],
+            "prerequisites": [
+              "公有制经济",
+              "非公有制经济"
+            ],
+            "definition": "混合所有制经济是由公有制经济和非公有制经济组成的股份制经济。",
+            "example": "国有控股公司吸收员工和民营资本入股。"
+          },
+          {
+            "name": "国民经济命脉",
+            "difficulty": 3,
+            "description": "对经济社会发展具有重大作用的行业、企业和资源。",
+            "aliases": [],
+            "prerequisites": [
+              "国有经济"
+            ],
+            "definition": "国民经济命脉是对经济社会发展具有重大作用的行业、企业和资源。",
+            "example": "电力电网、铁路、国防工业。"
+          },
+          {
+            "name": "国有经济主导作用",
+            "difficulty": 3,
+            "description": "国有经济通过控制力发挥主导作用。",
+            "aliases": [
+              "国有经济主导地位"
+            ],
+            "prerequisites": [
+              "国有经济",
+              "国民经济命脉"
+            ],
+            "definition": "国有经济的主导作用主要体现在对国民经济的控制力上。",
+            "example": "国有经济控制石油、电力等重要行业。"
+          },
+          {
+            "name": "两个毫不动摇",
+            "difficulty": 3,
+            "description": "巩固发展公有制并支持非公有制经济发展。",
+            "aliases": [],
+            "prerequisites": [
+              "所有制基本制度"
+            ],
+            "definition": "两个毫不动摇是毫不动摇巩固和发展公有制经济，毫不动摇鼓励支持引导非公有制经济发展。",
+            "example": "同时推进国企改革和民营企业发展。"
+          },
+          {
+            "name": "农村基本经营制度",
+            "difficulty": 3,
+            "description": "以家庭承包经营为基础的双层经营体制。",
+            "aliases": [
+              "双层经营体制"
+            ],
+            "prerequisites": [
+              "集体经济"
+            ],
+            "definition": "农村基本经营制度是以家庭承包经营为基础、统分结合的双层经营体制。",
+            "example": "家庭承包土地并接受集体统一服务。"
+          },
+          {
+            "name": "农民专业合作社",
+            "difficulty": 3,
+            "description": "农民自愿联合、民主管理的互助性组织。",
+            "aliases": [
+              "专业合作社"
+            ],
+            "prerequisites": [
+              "农村基本经营制度",
+              "集体经济"
+            ],
+            "definition": "农民专业合作社是在家庭承包经营基础上自愿联合、民主管理的互助性经济组织。",
+            "example": "合作社统一销售农产品并提供技术服务。"
+          },
+          {
+            "name": "企业经营战略",
+            "difficulty": 2,
+            "description": "企业根据发展环境制定的总体经营谋划。",
+            "aliases": [
+              "经营战略"
+            ],
+            "prerequisites": [
+              "非公有制经济"
+            ],
+            "definition": "企业制定正确的经营战略是企业顺应时代潮流、抓住发展机遇的重要条件。",
+            "example": "软件公司选择科技园区并面向市场定位。"
+          },
+          {
+            "name": "企业自主创新",
+            "difficulty": 2,
+            "description": "企业依靠科技进步形成自身竞争优势。",
+            "aliases": [
+              "自主创新能力"
+            ],
+            "prerequisites": [
+              "企业经营战略"
+            ],
+            "definition": "企业提高自主创新能力，能够依靠科技进步和科学管理形成竞争优势。",
+            "example": "企业加大研发投入，开发新技术。"
+          },
+          {
+            "name": "企业诚信经营",
+            "difficulty": 2,
+            "description": "企业守法守信并维护良好信誉和形象。",
+            "aliases": [
+              "诚信经营"
+            ],
+            "prerequisites": [
+              "企业经营战略"
+            ],
+            "definition": "企业诚信经营有助于树立良好信誉和企业形象并形成竞争优势。",
+            "example": "企业如实宣传产品性能，不欺骗消费者。"
+          }
+        ],
+        "chapter_key": "bb63a42c3a",
+        "metadata": {
+          "volume_id": "555beef8f42f",
+          "file_id": "555beef8f42f",
+          "volume_title": "高中政治 必修2 经济与社会",
+          "chapter_order": 2,
+          "raw_heading": "第一课"
+        }
+      },
+      {
+        "name": "第二单元 经济发展与社会进步",
+        "concepts": [
+          {
+            "name": "以人民为中心的发展思想",
+            "difficulty": 2,
+            "description": "把实现人民幸福作为发展的目的和归宿。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "以人民利益为出发点，推动发展为了人民、依靠人民、成果由人民共享。",
+            "example": "完善医疗服务，满足人民美好生活需要。"
+          },
+          {
+            "name": "经济增长",
+            "difficulty": 1,
+            "description": "一个国家或地区人均产出水平持续增加。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经济增长是经济总量或人均产出水平的持续增加。",
+            "example": "一个地区人均产值连续多年提高。"
+          },
+          {
+            "name": "经济发展",
+            "difficulty": 2,
+            "description": "包括增长、结构优化、效益提高等。",
+            "aliases": [],
+            "prerequisites": [
+              "经济增长"
+            ],
+            "definition": "经济发展不仅包括经济增长，还包括经济结构优化、经济效益提高等。",
+            "example": "经济增长同时带来生态改善和生活水平提高。"
+          },
+          {
+            "name": "新发展理念",
+            "difficulty": 2,
+            "description": "创新、协调、绿色、开放、共享的发展理念。",
+            "aliases": [],
+            "prerequisites": [
+              "经济发展"
+            ],
+            "definition": "新发展理念是破解发展难题、推动高质量发展的理念体系。",
+            "example": "某地统筹创新发展与生态保护。"
+          },
+          {
+            "name": "创新发展",
+            "difficulty": 2,
+            "description": "着重解决发展动力问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "创新发展把创新摆在国家发展全局的核心位置。",
+            "example": "通过科技创新推动产业转型升级。"
+          },
+          {
+            "name": "协调发展",
+            "difficulty": 2,
+            "description": "着重解决发展不平衡问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "协调发展要求正确处理重大关系，增强发展的整体性。",
+            "example": "促进城乡区域协调发展。"
+          },
+          {
+            "name": "绿色发展",
+            "difficulty": 2,
+            "description": "着重解决人与自然和谐共生问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "绿色发展要求节约资源、保护环境，走生态良好的文明发展道路。",
+            "example": "发展生态旅游并治理河道污染。"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 2,
+            "description": "满足当代需求且不损害后代需求能力。",
+            "aliases": [],
+            "prerequisites": [
+              "绿色发展"
+            ],
+            "definition": "可持续发展要求实现经济发展与资源环境保护相统一。",
+            "example": "合理利用森林资源，保护后代发展能力。"
+          },
+          {
+            "name": "开放发展",
+            "difficulty": 2,
+            "description": "着重解决发展内外联动问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "开放发展要求发展更高层次的开放型经济，推动互利共赢。",
+            "example": "企业积极参与国际交流合作。"
+          },
+          {
+            "name": "共享发展",
+            "difficulty": 2,
+            "description": "着重解决社会公平正义问题。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念"
+            ],
+            "definition": "共享发展要求使全体人民共享改革发展成果，走向共同富裕。",
+            "example": "完善制度安排，增加群众获得感。"
+          },
+          {
+            "name": "高质量发展",
+            "difficulty": 3,
+            "description": "新时代经济发展的阶段性要求。",
+            "aliases": [],
+            "prerequisites": [
+              "新发展理念",
+              "现代化经济体系"
+            ],
+            "definition": "高质量发展是经济由高速增长阶段转向后的发展要求。",
+            "example": "经济增长更多依靠科技进步和效率提升。"
+          },
+          {
+            "name": "国内国际双循环",
+            "difficulty": 3,
+            "description": "以国内大循环为主体、内外循环相互促进。",
+            "aliases": [],
+            "prerequisites": [
+              "开放发展"
+            ],
+            "definition": "国内国际双循环通过畅通国内循环并促进内外循环协调发展。",
+            "example": "扩大内需同时提升出口和引资质量。"
+          },
+          {
+            "name": "经济发展方式",
+            "difficulty": 2,
+            "description": "实现经济总量增长和质量提高的途径方法。",
+            "aliases": [],
+            "prerequisites": [
+              "经济发展"
+            ],
+            "definition": "经济发展方式是落实发展理念、实现发展进步的具体路径。",
+            "example": "由资源消耗驱动转向科技进步驱动。"
+          },
+          {
+            "name": "现代化经济体系",
+            "difficulty": 3,
+            "description": "社会经济各环节相互联系的有机整体。",
+            "aliases": [],
+            "prerequisites": [
+              "经济发展方式"
+            ],
+            "definition": "现代化经济体系是由经济活动各环节、各层面、各领域构成的有机整体。",
+            "example": "建设创新产业体系和统一开放市场体系。"
+          },
+          {
+            "name": "实体经济",
+            "difficulty": 2,
+            "description": "物质产品、精神产品生产及相关服务活动。",
+            "aliases": [],
+            "prerequisites": [
+              "现代化经济体系"
+            ],
+            "definition": "实体经济是物质产品和精神产品的生产、销售及相关服务活动。",
+            "example": "制造企业生产并销售工业设备。"
+          },
+          {
+            "name": "供给侧结构性改革",
+            "difficulty": 3,
+            "description": "用改革办法调整结构，提升供给质量。",
+            "aliases": [],
+            "prerequisites": [
+              "现代化经济体系"
+            ],
+            "definition": "供给侧结构性改革旨在减少无效低端供给，扩大有效中高端供给。",
+            "example": "淘汰落后产能，发展先进制造业。"
+          },
+          {
+            "name": "乡村振兴战略",
+            "difficulty": 3,
+            "description": "推动农业农村现代化和城乡融合发展。",
+            "aliases": [],
+            "prerequisites": [
+              "协调发展"
+            ],
+            "definition": "乡村振兴战略要求坚持农业农村优先发展，促进城乡共同繁荣。",
+            "example": "发展特色农业并改善农村基础设施。"
+          },
+          {
+            "name": "区域协调发展战略",
+            "difficulty": 3,
+            "description": "促进区域间相互融通补充、协调发展。",
+            "aliases": [],
+            "prerequisites": [
+              "协调发展"
+            ],
+            "definition": "区域协调发展战略旨在推动不同区域优势互补、发展相对平衡。",
+            "example": "推进西部开发和东部率先发展。"
+          },
+          {
+            "name": "国民收入",
+            "difficulty": 2,
+            "description": "一定时期所有常住单位获得的收入。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "国民收入是一个国家或地区一定时期内所有常住单位所获得的收入。",
+            "example": "居民、企业和政府取得的收入构成国民收入。"
+          },
+          {
+            "name": "按劳分配",
+            "difficulty": 2,
+            "description": "以劳动数量和质量为尺度分配个人消费品。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "按劳分配要求在必要扣除后多劳多得、少劳少得。",
+            "example": "员工按劳动贡献获得工资和奖金。"
+          },
+          {
+            "name": "多种分配方式并存",
+            "difficulty": 2,
+            "description": "按劳分配为主体，多种方式共同存在。",
+            "aliases": [],
+            "prerequisites": [
+              "按劳分配"
+            ],
+            "definition": "我国分配制度由公有制为主体、多种所有制经济共同发展决定。",
+            "example": "居民既有工资收入，也有股息和租金收入。"
+          },
+          {
+            "name": "生产要素参与分配",
+            "difficulty": 3,
+            "description": "劳动、资本、土地等要素参与收入分配。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "生产要素参与分配有利于激发要素活力和优化资源配置。",
+            "example": "技术成果转化后获得相应报酬。"
+          },
+          {
+            "name": "劳动生产率",
+            "difficulty": 2,
+            "description": "劳动成果与劳动消耗量的比率。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "劳动生产率反映一定时间内劳动者创造成果与劳动消耗量的关系。",
+            "example": "单位时间生产的产品数量增加。"
+          },
+          {
+            "name": "劳动性收入",
+            "difficulty": 1,
+            "description": "通过劳动获得的工资、奖金、津贴等。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "劳动性收入是居民通过劳动所获得的收入。",
+            "example": "职工领取工资和年终奖金。"
+          },
+          {
+            "name": "财产性收入",
+            "difficulty": 1,
+            "description": "通过拥有的各类财产获得的收入。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "财产性收入是居民凭借各类财产获得的收入。",
+            "example": "居民获得银行存款利息和房屋租金。"
+          },
+          {
+            "name": "经营性收入",
+            "difficulty": 1,
+            "description": "通过生产经营活动获得的收入。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "经营性收入是居民从事生产经营活动取得的收入。",
+            "example": "农户经营农家乐获得收入。"
+          },
+          {
+            "name": "转移性收入",
+            "difficulty": 2,
+            "description": "国家、单位或社会团体等转移支付所得。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "转移性收入是居民获得的养老金、救济和补助等经常性转移收入。",
+            "example": "居民领取养老金和社会救济金。"
+          },
+          {
+            "name": "收入分配公平",
+            "difficulty": 2,
+            "description": "社会公平的重要体现和民生改善的重要内容。",
+            "aliases": [],
+            "prerequisites": [
+              "个人所得税",
+              "社会保障"
+            ],
+            "definition": "收入分配公平要求合理处理国家、企业和个人的收入分配关系。",
+            "example": "提高低收入者收入，扩大中等收入群体。"
+          },
+          {
+            "name": "个人所得税",
+            "difficulty": 2,
+            "description": "国家对个人所得征收的税。",
+            "aliases": [],
+            "prerequisites": [
+              "收入分配公平"
+            ],
+            "definition": "个人所得税是调节个人收入分配、实现社会公平的有效手段。",
+            "example": "综合所得扣除相关费用后依法纳税。"
+          },
+          {
+            "name": "初次分配",
+            "difficulty": 3,
+            "description": "生产活动完成后在相关主体间进行的分配。",
+            "aliases": [],
+            "prerequisites": [
+              "多种分配方式并存"
+            ],
+            "definition": "初次分配强调保护劳动所得和健全要素报酬由市场决定的机制。",
+            "example": "企业提高一线劳动者劳动报酬。"
+          },
+          {
+            "name": "再分配",
+            "difficulty": 3,
+            "description": "以税收、社保、转移支付调节收入。",
+            "aliases": [],
+            "prerequisites": [
+              "初次分配",
+              "个人所得税"
+            ],
+            "definition": "再分配是政府通过税收、社会保障和转移支付调节收入的分配。",
+            "example": "政府通过社会救助缩小收入差距。"
+          },
+          {
+            "name": "第三次分配",
+            "difficulty": 2,
+            "description": "通过慈善等社会公益事业进行的分配。",
+            "aliases": [],
+            "prerequisites": [
+              "再分配"
+            ],
+            "definition": "第三次分配是社会主体自愿开展公益慈善活动的收入分配方式。",
+            "example": "企业向困难群体捐赠物资。"
+          },
+          {
+            "name": "共同富裕",
+            "difficulty": 3,
+            "description": "全体人民共同富裕和全面发展的目标。",
+            "aliases": [],
+            "prerequisites": [
+              "收入分配公平"
+            ],
+            "definition": "共同富裕要求促进全体人民共享发展成果、实现全面发展。",
+            "example": "先富地区帮助相对落后地区发展。"
+          },
+          {
+            "name": "社会保障",
+            "difficulty": 2,
+            "description": "国家和社会构建的保障基本生活的安全网。",
+            "aliases": [],
+            "prerequisites": [
+              "再分配"
+            ],
+            "definition": "社会保障由政府和社会承担主要责任，防范化解成员生活风险。",
+            "example": "居民在失业或疾病时获得保障。"
+          },
+          {
+            "name": "社会保险",
+            "difficulty": 2,
+            "description": "社会保障体系的核心。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会保险由政府、单位和个人筹资，保障特定风险下的物质帮助。",
+            "example": "职工参加基本养老和医疗保险。"
+          },
+          {
+            "name": "社会救助",
+            "difficulty": 2,
+            "description": "保障最低生活水平的最后一道防线。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会救助由政府无偿帮助无法维持最低生活水平的公民。",
+            "example": "困难家庭领取最低生活保障金。"
+          },
+          {
+            "name": "社会福利",
+            "difficulty": 2,
+            "description": "为社会成员提供服务、实物或福利津贴。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会福利旨在改善社会成员生活质量，是较高层次的社会保障。",
+            "example": "为老年人提供养老服务。"
+          },
+          {
+            "name": "社会优抚",
+            "difficulty": 2,
+            "description": "面向军人及相关对象的特殊社会保障。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "社会优抚是国家和社会对现役军人等优抚对象提供的特殊保障。",
+            "example": "为退伍军人提供生活安置和职业培训。"
+          },
+          {
+            "name": "商业保险",
+            "difficulty": 2,
+            "description": "投保人付费并按合同获得风险保障。",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障"
+            ],
+            "definition": "商业保险是投保人与保险人依合同约定进行的风险保障行为。",
+            "example": "购买人身保险规避疾病风险。"
+          },
+          {
+            "name": "绿色消费",
+            "difficulty": 2,
+            "description": "保护环境、节约资源的消费方式。",
+            "aliases": [],
+            "prerequisites": [
+              "绿色发展"
+            ],
+            "definition": "绿色消费要求保护环境、节约资源并践行绿色低碳生活。",
+            "example": "减少一次性用品使用，选择节能产品。"
+          }
+        ],
+        "chapter_key": "780c0b2c86",
+        "metadata": {
+          "volume_id": "555beef8f42f",
+          "file_id": "555beef8f42f",
+          "volume_title": "高中政治 必修2 经济与社会",
+          "chapter_order": 3,
+          "raw_heading": "第二单元 经济发展与社会进步"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

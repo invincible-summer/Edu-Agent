@@ -1,0 +1,3414 @@
+{
+  "file_id": "c4a76e205bc8",
+  "text_sha256": "4b482d2eaff518b92a8aef45381facd385b413c258d84693d54ed535b31fc274",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 自然环境与人类社会",
+        "concepts": [
+          {
+            "name": "自然环境服务功能",
+            "difficulty": 2,
+            "description": "人类从自然环境中获得的各种益处",
+            "aliases": [
+              "自然环境的服务"
+            ],
+            "prerequisites": [
+              "自然环境"
+            ],
+            "definition": "自然环境服务功能是自然环境为人类生存和发展提供的各种益处。",
+            "example": "森林提供氧气、净化空气和旅游休憩等服务"
+          },
+          {
+            "name": "供给服务",
+            "difficulty": 2,
+            "description": "自然环境提供资源和物质能量的服务",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "供给服务是自然环境为人类提供自然资源以满足物质和能量需求的服务。",
+            "example": "森林提供木材，河流提供淡水"
+          },
+          {
+            "name": "调节服务",
+            "difficulty": 2,
+            "description": "自然环境调节环境并净化废弃物的服务",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "调节服务是自然环境调节气候、净化空气和水并降解废弃物的服务。",
+            "example": "水体调节温度并容纳、降解废弃物"
+          },
+          {
+            "name": "文化服务",
+            "difficulty": 2,
+            "description": "自然环境提供精神享受和审美体验的服务",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "文化服务是人类从自然环境中获得精神享受和审美体验等非物质收益的服务。",
+            "example": "人们在森林中旅游休憩并获得审美体验"
+          },
+          {
+            "name": "支撑服务",
+            "difficulty": 3,
+            "description": "维持自然环境稳定并支撑其他服务的功能",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "支撑服务是维持自然环境自身相对稳定并为其他服务提供基础和前提的功能。",
+            "example": "森林作为动物栖息地并维持生物多样性"
+          },
+          {
+            "name": "可持续利用",
+            "difficulty": 3,
+            "description": "在自然环境允许范围内持续获取服务",
+            "aliases": [
+              "服务功能可持续利用"
+            ],
+            "prerequisites": [
+              "自然环境服务功能",
+              "支撑服务"
+            ],
+            "definition": "可持续利用是将人类获取的自然环境服务控制在自然环境承受范围内的利用方式。",
+            "example": "森林采伐量不超过其自然更新能力",
+            "section": "第一节 自然环境的服务功能"
+          },
+          {
+            "name": "自然资本",
+            "difficulty": 3,
+            "description": "由自然环境及其服务构成的自然资本",
+            "aliases": [
+              "自然环境及其服务"
+            ],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "自然资本是可以持续提供自然环境服务的自然环境及其组成部分。",
+            "example": "森林既是自然资本，也持续提供木材和净化空气服务",
+            "section": "第一节 自然环境的服务功能"
+          },
+          {
+            "name": "自然资源",
+            "difficulty": 2,
+            "description": "可满足人类生产生活需求的自然物质和能量",
+            "aliases": [],
+            "prerequisites": [
+              "供给服务"
+            ],
+            "definition": "自然资源是在一定经济技术条件下从自然环境中获得并能满足人类生产生活需求的物质和能量。",
+            "example": "水、土地、植物、石油和铁矿都是自然资源"
+          },
+          {
+            "name": "自然资源双重属性",
+            "difficulty": 3,
+            "description": "自然资源同时具有自然属性和社会属性",
+            "aliases": [
+              "自然和社会双重属性"
+            ],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源双重属性指其数量质量分布受自然规律影响，利用方式又受人类需求和社会发展水平影响。",
+            "example": "石油形成于地质时期，现代则被大规模工业开采",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "可再生资源",
+            "difficulty": 2,
+            "description": "能够在一定条件下自然更新的资源",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "可再生资源是能够依靠自然过程在一定时间内更新的自然资源。",
+            "example": "森林资源能够通过自然更新恢复",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "非可再生资源",
+            "difficulty": 2,
+            "description": "形成后总量不会增加的自然资源",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "非可再生资源是在地质历史时期形成且总量不会增加的自然资源。",
+            "example": "煤炭、石油和天然气属于非可再生资源",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然资源数量特征",
+            "difficulty": 3,
+            "description": "自然资源总量有限且供给存在极限",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源数量特征是指资源总量及人类可获取量都受自然环境和技术条件限制。",
+            "example": "人类不能突破自然环境供给资源的极限"
+          },
+          {
+            "name": "自然资源稀缺性",
+            "difficulty": 3,
+            "description": "资源供给不能无限满足人类需求的特征",
+            "aliases": [
+              "稀缺性"
+            ],
+            "prerequisites": [
+              "自然资源数量特征"
+            ],
+            "definition": "自然资源稀缺性是指资源供给有限而人类需求不断增长，难以无限满足需求的特征。",
+            "example": "水资源短缺会引起价格和供需变化",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然资源质量特征",
+            "difficulty": 3,
+            "description": "自然资源满足需求的能力存在优劣差异",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源质量特征是指资源满足人类需求及产生经济、社会和生态效益的能力有高低之分。",
+            "example": "铁矿按品位分为富铁矿和贫铁矿"
+          },
+          {
+            "name": "矿石品位",
+            "difficulty": 3,
+            "description": "矿石中有用组分或矿物的含量",
+            "aliases": [
+              "品位"
+            ],
+            "prerequisites": [
+              "自然资源质量特征"
+            ],
+            "definition": "矿石品位是单位体积或单位质量矿石中有用组分或有用矿物的含量。",
+            "example": "提铁降硅技术可提高铁矿石品位",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然资源空间分布",
+            "difficulty": 3,
+            "description": "自然资源空间分布不均匀且具有规律",
+            "aliases": [
+              "空间分布特征"
+            ],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源空间分布是指资源在不同地区分布不均匀，但受自然规律制约而具有一定规律。",
+            "example": "我国北方多煤，南方多磷",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "资源调配与贸易",
+            "difficulty": 3,
+            "description": "不同地区间进行资源空间流动的方式",
+            "aliases": [
+              "资源空间流动"
+            ],
+            "prerequisites": [
+              "自然资源空间分布"
+            ],
+            "definition": "资源调配与贸易是不同地区因资源分布差异而通过工程或市场实现资源流动。",
+            "example": "缺水地区通过调水工程获得外地水资源",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然系统",
+            "difficulty": 3,
+            "description": "具有物质循环和能量流动的自然环境系统",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "自然系统是由生物和非生物因素组成并通过物质循环、能量流动维持稳定的系统。",
+            "example": "生产者、消费者和分解者共同参与自然系统运行",
+            "section": "第三节 环境问题及其危害"
+          },
+          {
+            "name": "人类系统",
+            "difficulty": 3,
+            "description": "依靠资源输入和废弃物排放运行的系统",
+            "aliases": [],
+            "prerequisites": [
+              "自然系统",
+              "自然资源"
+            ],
+            "definition": "人类系统是从自然获取物质能量并向自然排放废弃物的系统。",
+            "example": "城市输入能源和水并排放生活污水",
+            "section": "第三节 环境问题及其危害"
+          },
+          {
+            "name": "环境问题",
+            "difficulty": 2,
+            "description": "人类影响超过自然承受能力引发的环境问题",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能",
+              "自然资源"
+            ],
+            "definition": "环境问题是人类活动超过自然环境调节能力并损害其稳定状态而产生的问题。",
+            "example": "工业废弃物排放过多导致水污染"
+          },
+          {
+            "name": "环境影响因素",
+            "difficulty": 3,
+            "description": "人口、消费和技术共同影响环境程度",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "环境影响因素包括人口数量、人均资源消费量和单位资源使用造成的环境影响。",
+            "example": "人口增加会提高资源消耗和废弃物排放"
+          },
+          {
+            "name": "环境问题危害",
+            "difficulty": 3,
+            "description": "环境问题对服务功能和社会发展的损害",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "环境问题危害包括损害自然环境服务功能、影响生活质量健康并制约社会经济发展。",
+            "example": "雾霾影响户外活动并诱发多种疾病"
+          },
+          {
+            "name": "环境库兹涅茨曲线",
+            "difficulty": 4,
+            "description": "环境污染随人均收入先升后降的倒U形关系",
+            "aliases": [
+              "环境库兹涅茨关系"
+            ],
+            "prerequisites": [
+              "环境问题",
+              "环境问题危害"
+            ],
+            "definition": "环境库兹涅茨曲线描述环境质量随经济增长先恶化、达到拐点后改善的变化过程。",
+            "example": "部分地区收入提高后污染治理投入增加",
+            "section": "第三节 环境问题及其危害"
+          },
+          {
+            "name": "生态足迹",
+            "difficulty": 3,
+            "description": "评估人类对地球生态系统影响的核算体系",
+            "aliases": [
+              "生态占用"
+            ],
+            "prerequisites": [
+              "自然资源",
+              "环境问题"
+            ],
+            "definition": "生态足迹是将人类资源消费和废弃物排放折算为相应土地或水域面积的核算体系。",
+            "example": "将粮食消费量折算为生产粮食所需的耕地面积",
+            "section": "问题研究 我们的生态足迹有多大"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 自然环境的服务功能",
+            "page_range": [
+              7,
+              11
+            ]
+          },
+          {
+            "name": "第二节 自然资源及其利用",
+            "page_range": [
+              11,
+              17
+            ]
+          },
+          {
+            "name": "第三节 环境问题及其危害",
+            "page_range": [
+              17,
+              23
+            ]
+          },
+          {
+            "name": "问题研究 我们的生态足迹有多大",
+            "page_range": [
+              23,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二章 资源安全与国家安全",
+        "concepts": [
+          {
+            "name": "资源安全",
+            "difficulty": 2,
+            "description": "自然资源供给满足社会发展需要的状态或能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源安全是自然资源供给满足需求且稳定、及时、经济并不破坏环境供给功能的状态或能力。",
+            "example": "我国保障淡水、土地和能源持续供给。"
+          },
+          {
+            "name": "资源安全问题",
+            "difficulty": 2,
+            "description": "资源供给与需求失衡引发的安全风险",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "资源安全问题是资源短缺超过一定限度并影响生产、经济和社会正常运行的现象。",
+            "example": "我国水资源消费增长导致短缺加剧。"
+          },
+          {
+            "name": "资源禀赋",
+            "difficulty": 2,
+            "description": "资源类型、数量、质量和分布的总体状况",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源禀赋是一个地区资源类型、数量、质量和分布等状况的总和。",
+            "example": "我国能源禀赋表现为富煤、少油、缺气。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源供给能力",
+            "difficulty": 3,
+            "description": "资源开发、购买和调配资源的综合能力",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋"
+            ],
+            "definition": "资源供给能力是利用技术、经济和社会条件开发、购买及调配资源的能力。",
+            "example": "西气东输依赖能源调配能力。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源消费需求",
+            "difficulty": 2,
+            "description": "人类对资源消费数量和质量的需要",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源消费需求是人类社会对资源消费数量和质量提出的需要。",
+            "example": "人口增长会增加用水需求。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源绝对短缺",
+            "difficulty": 3,
+            "description": "资源供给达到极限或不稳定造成的短缺",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋",
+              "资源安全问题"
+            ],
+            "definition": "资源绝对短缺是因资源供给数量达到极限或供给不稳定造成的短缺。",
+            "example": "非可再生资源枯竭会形成绝对短缺。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源相对短缺",
+            "difficulty": 3,
+            "description": "资源需求量超过供给能力造成的短缺",
+            "aliases": [],
+            "prerequisites": [
+              "资源供给能力",
+              "资源消费需求"
+            ],
+            "definition": "资源相对短缺是资源需求量超过资源供给能力造成的短缺。",
+            "example": "人口增长使部分地区出现水资源相对短缺。"
+          },
+          {
+            "name": "战略资源",
+            "difficulty": 2,
+            "description": "关系国计民生和经济安全的重要自然资源",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "战略资源是事关国计民生、社会发展全局和经济安全且稀缺、难以替代的自然资源。",
+            "example": "淡水、土地、石油和稀土属于战略资源。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "国家总体安全",
+            "difficulty": 3,
+            "description": "涵盖多领域并相互关联的国家安全体系",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "国家总体安全是将政治、军事、资源、环境、经济等领域安全统筹起来的国家安全体系。",
+            "example": "资源安全与经济安全相互影响。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源供需失衡",
+            "difficulty": 2,
+            "description": "资源供给与需求不相适应的状态",
+            "aliases": [],
+            "prerequisites": [
+              "资源供给能力",
+              "资源消费需求"
+            ],
+            "definition": "资源供需失衡是资源供给量与需求量不相适应而形成的不安全状态。",
+            "example": "需求增加或供给减少都可能造成失衡。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源安全保障",
+            "difficulty": 3,
+            "description": "调节资源供需平衡并规避衍生风险",
+            "aliases": [],
+            "prerequisites": [
+              "资源供需失衡"
+            ],
+            "definition": "资源安全保障是通过增加供给、节约利用和规避环境及冲突风险来维持资源安全。",
+            "example": "开发替代资源并提高能源利用率。"
+          },
+          {
+            "name": "能源安全",
+            "difficulty": 2,
+            "description": "能源供给满足社会发展需求的安全状态",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "能源安全是能源供给能够持续满足社会发展需求并降低相关风险的状态。",
+            "example": "我国通过能源储备保障石油供应。"
+          },
+          {
+            "name": "能源消费结构",
+            "difficulty": 2,
+            "description": "不同能源在能源消费总量中的构成比例",
+            "aliases": [],
+            "prerequisites": [
+              "能源安全"
+            ],
+            "definition": "能源消费结构是煤炭、石油、天然气及非化石能源等在能源消费中的比例构成。",
+            "example": "我国能源消费结构以煤炭为主。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "能源对外依存度",
+            "difficulty": 3,
+            "description": "能源进口量占能源消费量的比重",
+            "aliases": [],
+            "prerequisites": [
+              "能源消费结构"
+            ],
+            "definition": "能源对外依存度是能源进口量占能源总消费量的比重。",
+            "example": "2017年我国石油对外依存度约为70%。"
+          },
+          {
+            "name": "能源空间配置",
+            "difficulty": 3,
+            "description": "能源生产地与消费地的空间分布关系",
+            "aliases": [],
+            "prerequisites": [
+              "能源供给能力",
+              "能源消费需求"
+            ],
+            "definition": "能源空间配置是能源生产区与消费区在空间上的分布及其匹配关系。",
+            "example": "我国能源形成西气东输、西电东送格局。"
+          },
+          {
+            "name": "石油供需",
+            "difficulty": 3,
+            "description": "石油生产供给与消费需求之间的关系",
+            "aliases": [],
+            "prerequisites": [
+              "资源供需失衡",
+              "能源安全"
+            ],
+            "definition": "石油供需是石油生产、进口等供给状况与石油消费需求之间的关系。",
+            "example": "我国石油消费增长使进口依赖程度提高。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "煤炭环境问题",
+            "difficulty": 3,
+            "description": "煤炭生产和消费造成的多种环境影响",
+            "aliases": [],
+            "prerequisites": [
+              "能源消费结构"
+            ],
+            "definition": "煤炭环境问题是煤炭开发和利用过程中产生的大气、水土及生态环境问题。",
+            "example": "煤炭燃烧会产生酸雨、雾霾和二氧化碳。"
+          },
+          {
+            "name": "碳排放系数",
+            "difficulty": 3,
+            "description": "燃烧单位能源产生的碳排放量",
+            "aliases": [],
+            "prerequisites": [
+              "能源消费结构"
+            ],
+            "definition": "碳排放系数是燃烧单位能源所产生的碳排放数量。",
+            "example": "煤炭碳排放系数高于天然气。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "低碳能源",
+            "difficulty": 2,
+            "description": "碳排放较低的能源类型",
+            "aliases": [],
+            "prerequisites": [
+              "碳排放系数"
+            ],
+            "definition": "低碳能源是能源利用过程中碳排放较少的能源，包括可再生能源、核能和天然气等。",
+            "example": "风能、太阳能和核能属于低碳能源。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "粮食安全",
+            "difficulty": 2,
+            "description": "人们及时获得足够健康食物的保障状态",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "粮食安全是保证人们及时得到生存和健康所需要的足够食物。",
+            "example": "粮食生产、储备或流通受阻都可能威胁粮食安全。"
+          },
+          {
+            "name": "耕地资源",
+            "difficulty": 2,
+            "description": "用于农作物种植并具有生产能力的土地资源",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋"
+            ],
+            "definition": "耕地资源是能够用于农作物种植并支撑粮食生产的土地资源。",
+            "example": "我国耕地分布不均且人均耕地少。"
+          },
+          {
+            "name": "粮食总产量",
+            "difficulty": 2,
+            "description": "一定时期内粮食生产的总数量",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源"
+            ],
+            "definition": "粮食总产量是耕地面积与单位耕地面积产量的乘积。",
+            "example": "扩大耕地面积可增加粮食总产量。"
+          },
+          {
+            "name": "单位面积产量",
+            "difficulty": 3,
+            "description": "单位耕地面积生产粮食的数量",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源"
+            ],
+            "definition": "单位面积产量是一定耕地面积上生产粮食的数量。",
+            "example": "提高复种指数有助于提高单位面积产量。"
+          },
+          {
+            "name": "耕地质量",
+            "difficulty": 3,
+            "description": "由自然因素和社会经济条件决定的土地质量",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源"
+            ],
+            "definition": "耕地质量反映由土地自然因素和社会经济条件共同决定的土地生产能力差异。",
+            "example": "水土流失会降低耕地质量。"
+          },
+          {
+            "name": "耕地红线",
+            "difficulty": 2,
+            "description": "为保障粮食安全划定的耕地数量底线",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源",
+              "粮食安全"
+            ],
+            "definition": "耕地红线是为确保耕地保有量和粮食生产能力而划定的具有法律效力的最低耕地数量底线。",
+            "example": "我国耕地红线要求耕地保有量在18亿亩以上。"
+          },
+          {
+            "name": "粮食储备",
+            "difficulty": 2,
+            "description": "国家储存粮食以调节供需和应对突发事件",
+            "aliases": [],
+            "prerequisites": [
+              "粮食安全"
+            ],
+            "definition": "粮食储备是通过储存粮食调节市场、救灾备荒和应对突发事件的制度安排。",
+            "example": "中央储备粮可稳定粮食市场。"
+          },
+          {
+            "name": "藏粮于地",
+            "difficulty": 3,
+            "description": "通过保护提升耕地能力保障持续供粮",
+            "aliases": [],
+            "prerequisites": [
+              "耕地质量",
+              "粮食安全"
+            ],
+            "definition": "藏粮于地是保护耕地数量、提升质量并恢复生产力以保障可持续粮食生产能力。",
+            "example": "实行轮作休耕和高标准农田建设。"
+          },
+          {
+            "name": "滩涂",
+            "difficulty": 2,
+            "description": "高潮线以下、低潮线以上的海陆过渡地带",
+            "aliases": [],
+            "prerequisites": [
+              "海洋空间资源"
+            ],
+            "definition": "滩涂是位于大潮高潮线以下、低潮线以上的亦海亦陆特殊地带。",
+            "example": "滩涂可用于盐田、水产养殖和旅游。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "海洋空间资源",
+            "difficulty": 2,
+            "description": "海岸、海面、水体和海底可利用的空间",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋"
+            ],
+            "definition": "海洋空间资源是海洋中可供人类开发利用的海岸、海面、水体和海底空间。",
+            "example": "人工岛和海上机场属于海洋空间利用。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "海洋国土",
+            "difficulty": 3,
+            "description": "国家主权管辖下的海域及其上空和底土",
+            "aliases": [],
+            "prerequisites": [
+              "海洋空间资源"
+            ],
+            "definition": "海洋国土是国家主权管辖下包括内水、领海、专属经济区和大陆架等在内的海域及相关空间。",
+            "example": "我国管辖海域约300万平方千米。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "海洋权益",
+            "difficulty": 3,
+            "description": "国家依法享有的海洋政治经济安全权利利益",
+            "aliases": [],
+            "prerequisites": [
+              "海洋国土"
+            ],
+            "definition": "海洋权益是国家在海洋上依法享有的政治、经济和安全等方面权利与利益的总称。",
+            "example": "在专属经济区享有开发自然资源的权利。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "淡水冲突",
+            "difficulty": 3,
+            "description": "国家间因共享淡水分配和利用产生的冲突",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全问题"
+            ],
+            "definition": "淡水冲突是共享淡水资源的国家因水资源分配和开发利用而产生的冲突。",
+            "example": "国家间可能因跨境河流水量分配发生冲突。",
+            "section": "第一节 资源安全对国家安全的影响"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 资源安全对国家安全的影响",
+            "page_range": [
+              27,
+              34
+            ]
+          },
+          {
+            "name": "第二节 中国的能源安全",
+            "page_range": [
+              34,
+              42
+            ]
+          },
+          {
+            "name": "第三节 中国的耕地资源与粮食安全",
+            "page_range": [
+              42,
+              51
+            ]
+          },
+          {
+            "name": "第四节 海洋空间资源开发与国家安全",
+            "page_range": [
+              51,
+              59
+            ]
+          },
+          {
+            "name": "问题研究 如何“藏粮于地”",
+            "page_range": [
+              59,
+              61
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三章 环境安全与国家安全",
+        "concepts": [
+          {
+            "name": "环境问题",
+            "difficulty": 1,
+            "description": "人类活动引起的环境污染、生态破坏等问题",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "环境问题是人类活动造成的环境污染、生态破坏、物种减少或灭绝等问题。",
+            "example": "工业排放造成大气污染"
+          },
+          {
+            "name": "自然环境服务功能",
+            "difficulty": 2,
+            "description": "自然环境为人类生存发展提供的服务能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然环境服务功能是自然环境为人类社会提供调节、供给等服务的能力。",
+            "example": "湿地具有蓄洪防旱功能",
+            "section": "第三节 生态保护与国家安全"
+          },
+          {
+            "name": "环境安全",
+            "difficulty": 2,
+            "description": "环境破坏与威胁处于环境或社会经济可承受范围",
+            "aliases": [
+              "生态安全"
+            ],
+            "prerequisites": [
+              "环境问题",
+              "自然环境服务功能"
+            ],
+            "definition": "环境安全是自然环境破坏与威胁处于环境或社会经济可承受范围之内的状态。",
+            "example": "水质符合生活饮用标准"
+          },
+          {
+            "name": "环境安全临界值",
+            "difficulty": 3,
+            "description": "环境问题演化为环境安全问题的限度",
+            "aliases": [
+              "临界值"
+            ],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "环境安全临界值是环境问题严重程度超过后会引发环境安全问题的限度。",
+            "example": "水质劣于相应等级产生安全问题",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "突发性环境安全问题",
+            "difficulty": 2,
+            "description": "由突然发生的严重污染事件导致的安全问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "环境安全临界值"
+            ],
+            "definition": "突发性环境安全问题是由高浓度污染物排放、危险物质泄漏等突发事件造成的问题。",
+            "example": "切尔诺贝利核泄漏影响长期存在",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "累积性环境安全问题",
+            "difficulty": 2,
+            "description": "由污染物累积或生态退化逐步加剧形成的问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "环境安全临界值"
+            ],
+            "definition": "累积性环境安全问题是污染物不断累积或生态退化逐步加剧形成的安全问题。",
+            "example": "农田重金属长期累积",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "空气质量指数",
+            "difficulty": 2,
+            "description": "综合表示空气污染程度和空气质量状况的指数",
+            "aliases": [
+              "AQI"
+            ],
+            "prerequisites": [
+              "环境污染"
+            ],
+            "definition": "空气质量指数是将多种空气污染物浓度简化为单一数值并分级表示空气质量的指标。",
+            "example": "AQI超过300表示严重污染",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "环境安全风险",
+            "difficulty": 3,
+            "description": "环境问题损害或威胁人类社会的可能性",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题",
+              "环境安全"
+            ],
+            "definition": "环境安全风险与环境问题严重程度及人类社会的敏感程度、抵抗能力有关。",
+            "example": "高危地区生产活动风险较高"
+          },
+          {
+            "name": "国家环境安全",
+            "difficulty": 3,
+            "description": "国家具有支撑生存发展的自然环境和应对能力",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "环境安全风险"
+            ],
+            "definition": "国家环境安全是国家生存发展所需自然环境及应对重大环境问题能力得到保障的状态。",
+            "example": "重大污染事件可能威胁国家安全"
+          },
+          {
+            "name": "突发环境事件",
+            "difficulty": 2,
+            "description": "突然爆发并造成严重影响的重大环境污染事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境污染",
+              "突发性环境安全问题"
+            ],
+            "definition": "突发环境事件是自然或人为因素导致的突然爆发并造成严重影响的重大污染事件。",
+            "example": "墨西哥湾原油泄漏事故"
+          },
+          {
+            "name": "环境群体性事件",
+            "difficulty": 3,
+            "description": "环境恶化或担忧引发公众抗争的群体性事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境污染",
+              "突发环境事件"
+            ],
+            "definition": "环境群体性事件是环境问题或公众对环境恶化的担忧诱发的社会公众抗争事件。",
+            "example": "福岛核泄漏后反核示威",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "污染物跨国转移",
+            "difficulty": 2,
+            "description": "污染物从一个国家扩散或输送到其他国家",
+            "aliases": [],
+            "prerequisites": [
+              "环境污染"
+            ],
+            "definition": "污染物跨国转移是污染物通过自然传输、废弃物输送或产品贸易进入其他国家的过程。",
+            "example": "污染废水扩散至下游国家"
+          },
+          {
+            "name": "污染物跨国传输",
+            "difficulty": 2,
+            "description": "污染物经大气环流、河流径流等自然过程跨国传输",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移"
+            ],
+            "definition": "污染物跨国传输是一个国家排放的污染物经自然过程传输到其他国家。",
+            "example": "氰化物废水沿河流进入邻国",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "废弃物跨国转移",
+            "difficulty": 2,
+            "description": "通过贸易或非法方式向他国输送固体废弃物",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移"
+            ],
+            "definition": "废弃物跨国转移是一个国家将本国产生的固体废弃物输送到其他国家。",
+            "example": "科特迪瓦毒污泥倾废事件"
+          },
+          {
+            "name": "有毒有害产品贸易",
+            "difficulty": 3,
+            "description": "含有超标或未知有毒物质的产品跨国贸易",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移"
+            ],
+            "definition": "有毒有害产品贸易是含有有毒有害物质的产品通过国际贸易进入其他国家。",
+            "example": "英国疯牛病牛肉出口事件"
+          },
+          {
+            "name": "环境安全冲突",
+            "difficulty": 3,
+            "description": "责任国与受害国因环境问题产生的对抗关系",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移",
+              "国家环境安全"
+            ],
+            "definition": "环境安全冲突是环境安全问题相关国家之间出现紧张关系、敌对行为或军事冲突。",
+            "example": "跨境污染引发外交抗议",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "环境安全合作",
+            "difficulty": 3,
+            "description": "国家遵守公约并联合应对跨境环境危机",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移",
+              "国家环境安全"
+            ],
+            "definition": "环境安全合作是相关国家遵守环境协定并共同应对跨境环境安全问题。",
+            "example": "中俄合作应对松花江污染",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "生态退化",
+            "difficulty": 2,
+            "description": "生态系统及其服务功能逐步下降的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "生态退化是森林破坏、土壤侵蚀、土地荒漠化等导致生态服务功能下降的过程。",
+            "example": "贵州石漠化"
+          },
+          {
+            "name": "生态修复",
+            "difficulty": 2,
+            "description": "使受损生态系统恢复或趋向良性循环的措施",
+            "aliases": [],
+            "prerequisites": [
+              "生态退化"
+            ],
+            "definition": "生态修复是利用自然恢复能力或人工措施使受损生态系统逐步恢复的过程。",
+            "example": "矿山生态修复"
+          },
+          {
+            "name": "自然恢复",
+            "difficulty": 2,
+            "description": "减少人为干扰并依靠生态系统自我调节恢复",
+            "aliases": [],
+            "prerequisites": [
+              "生态修复",
+              "生态退化"
+            ],
+            "definition": "自然恢复是通过消除或减少人为干扰，使生态系统依靠自我调节逐步恢复。",
+            "example": "林区封山育林",
+            "section": "第三节 生态保护与国家安全"
+          },
+          {
+            "name": "人工修复",
+            "difficulty": 2,
+            "description": "通过生物或工程措施加快生态系统恢复",
+            "aliases": [],
+            "prerequisites": [
+              "生态修复",
+              "生态退化"
+            ],
+            "definition": "人工修复是采取生物、工程等措施加快或帮助生态系统恢复到安全水平。",
+            "example": "整理水系并植树造林",
+            "section": "第三节 生态保护与国家安全"
+          },
+          {
+            "name": "自然保护区",
+            "difficulty": 2,
+            "description": "依法划定并特殊保护和管理自然对象的区域",
+            "aliases": [],
+            "prerequisites": [
+              "生态退化",
+              "生态修复"
+            ],
+            "definition": "自然保护区是对有代表性自然保护对象依法划定并实行特殊保护管理的区域。",
+            "example": "丰林国家级自然保护区"
+          },
+          {
+            "name": "温室效应",
+            "difficulty": 2,
+            "description": "温室气体吸收地面长波辐射并使地球保温的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "温室效应是大气中温室气体吸收地面长波辐射而产生保温作用的过程。",
+            "example": "二氧化碳增强大气保温作用",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "碳循环",
+            "difficulty": 3,
+            "description": "碳元素在四大圈层之间迁移转化的循环过程",
+            "aliases": [],
+            "prerequisites": [
+              "温室效应"
+            ],
+            "definition": "碳循环是碳元素在大气圈、水圈、生物圈和岩石圈之间迁移转化形成的循环。",
+            "example": "植物吸收二氧化碳后经呼吸返回大气",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "全球气候变化",
+            "difficulty": 2,
+            "description": "全球气候系统长期变化及其产生的综合影响",
+            "aliases": [],
+            "prerequisites": [
+              "温室效应",
+              "碳循环"
+            ],
+            "definition": "全球气候变化是全球气候系统发生的长期变化，当前以全球变暖为突出特征。",
+            "example": "全球气温和降水分布发生变化"
+          },
+          {
+            "name": "全球变暖",
+            "difficulty": 2,
+            "description": "全球平均气温总体升高的气候变化趋势",
+            "aliases": [],
+            "prerequisites": [
+              "温室效应",
+              "全球气候变化"
+            ],
+            "definition": "全球变暖是全球平均气温总体升高的气候变化趋势。",
+            "example": "20世纪50年代以来增温明显"
+          },
+          {
+            "name": "人为碳排放",
+            "difficulty": 3,
+            "description": "人类活动向大气排放二氧化碳等碳的过程",
+            "aliases": [],
+            "prerequisites": [
+              "碳循环",
+              "全球变暖"
+            ],
+            "definition": "人为碳排放主要来自化石燃料使用和土地利用变化释放的碳。",
+            "example": "燃烧煤炭排放二氧化碳",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "减缓措施",
+            "difficulty": 2,
+            "description": "通过减排增汇控制全球变暖速度的措施",
+            "aliases": [
+              "减缓"
+            ],
+            "prerequisites": [
+              "全球变暖",
+              "人为碳排放"
+            ],
+            "definition": "减缓措施是减少温室气体排放并增加吸收以控制全球变暖速度的措施。",
+            "example": "使用清洁能源和植树造林"
+          },
+          {
+            "name": "适应措施",
+            "difficulty": 2,
+            "description": "通过调整社会活动降低气候变化不利影响",
+            "aliases": [
+              "适应"
+            ],
+            "prerequisites": [
+              "全球气候变化"
+            ],
+            "definition": "适应措施是通过改变人类社会自身来降低气候变化不利影响的措施。",
+            "example": "建设抵御水旱灾害的水利工程",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "环境难民",
+            "difficulty": 3,
+            "description": "因环境变化导致生存空间丧失而迁移的人群",
+            "aliases": [],
+            "prerequisites": [
+              "全球变暖"
+            ],
+            "definition": "环境难民是因海平面上升等环境变化导致生存环境恶化而迁移的人群。",
+            "example": "图瓦卢居民计划举国搬迁",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "共同但有区别责任",
+            "difficulty": 3,
+            "description": "各国共同应对气候变化但承担不同责任的原则",
+            "aliases": [],
+            "prerequisites": [
+              "全球气候变化",
+              "人为碳排放"
+            ],
+            "definition": "共同但有区别责任原则要求各国共同减排，同时依据责任和能力承担不同义务。",
+            "example": "发达国家率先减排并提供支持"
+          },
+          {
+            "name": "黑天鹅事件",
+            "difficulty": 3,
+            "description": "不可预测但可能产生重大影响的小概率事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全风险",
+              "突发环境事件"
+            ],
+            "definition": "黑天鹅事件是稀有、不可预测且发生后冲击巨大的事件。",
+            "example": "难以预料的核电灾难",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "灰犀牛式危机",
+            "difficulty": 3,
+            "description": "大概率且影响巨大、爆发前有明显迹象的危机",
+            "aliases": [
+              "灰犀牛"
+            ],
+            "prerequisites": [
+              "环境安全风险",
+              "累积性环境安全问题"
+            ],
+            "definition": "灰犀牛式危机是大概率且影响巨大的潜在危机，爆发前通常已有明显迹象。",
+            "example": "土壤重金属污染危机",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "树轮冰川学",
+            "difficulty": 4,
+            "description": "利用树木年轮研究过去冰川变化的学科",
+            "aliases": [],
+            "prerequisites": [
+              "全球气候变化"
+            ],
+            "definition": "树轮冰川学是利用树木年轮推断过去冰川进退时间的学科。",
+            "example": "依据树木伤疤年轮推断冰川前进年份",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "核能安全隐患",
+            "difficulty": 3,
+            "description": "核能开发利用中存在的核废料、热污染和泄漏风险",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "核能"
+            ],
+            "definition": "核能安全隐患是核能开发利用过程中核废料、热污染及核泄漏等潜在风险。",
+            "example": "福岛核泄漏造成长期影响"
+          },
+          {
+            "name": "核能",
+            "difficulty": 2,
+            "description": "利用核裂变或核聚变释放能量的能源",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "核能是利用核原料裂变或聚变释放能量形成的能源。",
+            "example": "核电站利用核裂变发电"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 环境安全对国家安全的影响",
+            "page_range": [
+              63,
+              68
+            ]
+          },
+          {
+            "name": "第二节 环境污染与国家安全",
+            "page_range": [
+              68,
+              78
+            ]
+          },
+          {
+            "name": "第三节 生态保护与国家安全",
+            "page_range": [
+              78,
+              86
+            ]
+          },
+          {
+            "name": "第四节 全球气候变化与国家安全",
+            "page_range": [
+              86,
+              95
+            ]
+          },
+          {
+            "name": "问题研究 是否应该发展核能",
+            "page_range": [
+              95,
+              97
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四章 保障国家安全的资源、环境战略与行动",
+        "concepts": [
+          {
+            "name": "人地关系",
+            "difficulty": 2,
+            "description": "人类社会与自然环境相互影响、相互制约的关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人地关系是人类活动与自然环境之间相互作用的关系。",
+            "example": "工业社会大量开发资源并排放废弃物，使人地矛盾加剧。"
+          },
+          {
+            "name": "生态文明",
+            "difficulty": 2,
+            "description": "追求人与自然和谐共生的文明发展形态",
+            "aliases": [],
+            "prerequisites": [
+              "人地关系"
+            ],
+            "definition": "生态文明强调遵循自然规律，协调人口、资源、环境与发展。",
+            "example": "安吉县由工业立县转向生态立县。"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 2,
+            "description": "兼顾当代与后代需要的长期发展道路",
+            "aliases": [],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "可持续发展是在保护生态和资源持久支撑能力基础上的社会发展。",
+            "example": "协调经济发展与环境保护，处理眼前利益和长远利益。"
+          },
+          {
+            "name": "资源安全",
+            "difficulty": 2,
+            "description": "经济社会发展所需资源持续可靠有效供给的状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源安全是发展所需资源能够持续、可靠和有效供给。",
+            "example": "建立石油战略储备以保障石油供应安全。"
+          },
+          {
+            "name": "环境安全",
+            "difficulty": 2,
+            "description": "人民赖以生存发展的自然条件免受威胁和破坏",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "环境安全要求大气、水、土壤等自然条件不受威胁和破坏。",
+            "example": "建立大气和水环境污染监测网络。"
+          },
+          {
+            "name": "资源环境安全观",
+            "difficulty": 4,
+            "description": "寻求自然环境服务可持续利用与安全保障的观念",
+            "aliases": [
+              "人地和谐的资源与环境安全观"
+            ],
+            "prerequisites": [
+              "生态文明",
+              "资源安全",
+              "环境安全"
+            ],
+            "definition": "资源环境安全观强调在自然边界内实现环境服务利用与效益最大化的平衡。",
+            "example": "避免资源短缺和环境问题威胁社会可持续发展。",
+            "section": "第三节 国际合作"
+          },
+          {
+            "name": "绿色生产方式",
+            "difficulty": 3,
+            "description": "资源消耗低、污染少、科技含量高的生产方式",
+            "aliases": [
+              "生产方式绿色化"
+            ],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "绿色生产方式通过绿色产业和清洁生产协调资源利用与环境保护。",
+            "example": "绿色工业推行清洁生产并环保处置废弃物。",
+            "section": "第一节 走向生态文明"
+          },
+          {
+            "name": "绿色生活方式",
+            "difficulty": 3,
+            "description": "勤俭节约、绿色低碳、文明健康的生活方式",
+            "aliases": [
+              "生活方式绿色化"
+            ],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "绿色生活方式是减少资源消耗和环境损害的生活与消费模式。",
+            "example": "优先选择公共交通，减少一次性用品使用。"
+          },
+          {
+            "name": "被动屋",
+            "difficulty": 3,
+            "description": "依靠建筑设计和材料降低能耗的节能建筑",
+            "aliases": [
+              "被动式房屋",
+              "被动式超低能耗绿色建筑"
+            ],
+            "prerequisites": [
+              "绿色生产方式"
+            ],
+            "definition": "被动屋主要依靠被动收集热量维持舒适室温，显著降低采暖和制冷能耗。",
+            "example": "利用高性能玻璃、隔热层和室内余热保持室温。",
+            "section": "第一节 走向生态文明"
+          },
+          {
+            "name": "公地悲剧",
+            "difficulty": 3,
+            "description": "产权不明确导致公共资源被过度使用和退化",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "公地悲剧是公共资源因使用者追求自身利益而遭受过度利用的现象。",
+            "example": "免费公用牧场因过度放牧退化为荒地。"
+          },
+          {
+            "name": "战略资源",
+            "difficulty": 2,
+            "description": "对国家安全和经济社会发展具有重要作用的资源",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "战略资源是对国家安全和经济社会发展具有重要影响的资源。",
+            "example": "石油是需要重点开发、储备和运输保障的战略资源。"
+          },
+          {
+            "name": "能源战略",
+            "difficulty": 3,
+            "description": "国家对能源开发利用和安全保障作出的总体安排",
+            "aliases": [],
+            "prerequisites": [
+              "战略资源"
+            ],
+            "definition": "能源战略是国家根据资源储量、消费需求和国际市场制定的能源发展方向。",
+            "example": "我国提出坚持安全为本、节约优先、绿色低碳。"
+          },
+          {
+            "name": "战略资源储备",
+            "difficulty": 3,
+            "description": "为非常时期利用而储存重要战略资源的制度安排",
+            "aliases": [],
+            "prerequisites": [
+              "战略资源"
+            ],
+            "definition": "战略资源储备是以国家安全为宗旨储存重要资源以应对特殊时期需要。",
+            "example": "国际能源署成员国规定石油储备最低量相当于90天净进口量。"
+          },
+          {
+            "name": "资源运输通道",
+            "difficulty": 3,
+            "description": "保障战略资源运输能力和运输安全的通道体系",
+            "aliases": [
+              "资源运输战略通道"
+            ],
+            "prerequisites": [
+              "战略资源"
+            ],
+            "definition": "资源运输通道是连接资源供应地与需求地并需要安全保护的运输体系。",
+            "example": "通过海运、陆运和管运实现石油运输通道多元化。"
+          },
+          {
+            "name": "生态保护红线",
+            "difficulty": 3,
+            "description": "必须实行强制性保护的重要生态空间范围",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "生态保护红线是具有重要生态功能或生态环境敏感脆弱、必须保护的区域。",
+            "example": "红线内不能进行大规模生产活动和工程建设。"
+          },
+          {
+            "name": "风险预警",
+            "difficulty": 3,
+            "description": "分析风险信息并发布警示及对策建议",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "风险预警是通过分析推断风险信息，发布警示信息和对策建议。",
+            "example": "环境污染监测网络对常规污染指标进行监测预警。"
+          },
+          {
+            "name": "风险防控",
+            "difficulty": 3,
+            "description": "依据风险预警结果采取应对措施降低风险",
+            "aliases": [],
+            "prerequisites": [
+              "风险预警"
+            ],
+            "definition": "风险防控是根据风险预警结果提升应急响应和风险规避水平。",
+            "example": "针对污染监测结果及时采取控制污染源的措施。"
+          },
+          {
+            "name": "突发环境事件",
+            "difficulty": 3,
+            "description": "突然发生并可能造成环境损害的环境事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "突发环境事件是需要通过应急管理机制及时处置的环境安全事件。",
+            "example": "松花江水污染特别重大突发环境事件。"
+          },
+          {
+            "name": "应急预案",
+            "difficulty": 3,
+            "description": "为科学有序应对突发事件预先制定的工作方案",
+            "aliases": [],
+            "prerequisites": [
+              "突发环境事件"
+            ],
+            "definition": "应急预案是为迅速应对突发事件并减少损害而预先制定的方案。",
+            "example": "学校编制饮用水污染应急预案。"
+          },
+          {
+            "name": "公众参与",
+            "difficulty": 2,
+            "description": "公众参与资源环境保护和相关事务治理的行动",
+            "aliases": [],
+            "prerequisites": [
+              "环境意识"
+            ],
+            "definition": "公众参与是公民依法参与资源节约、环境保护和事务监督的过程。",
+            "example": "公众参与环境信息获取、意见表达和环境监督。"
+          },
+          {
+            "name": "环境意识",
+            "difficulty": 2,
+            "description": "公众对节约资源和保护环境责任的认识",
+            "aliases": [
+              "公众的环境意识"
+            ],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "环境意识是公众认识并自觉履行节约资源、保护环境责任的观念。",
+            "example": "将垃圾分类和低碳出行落实到日常行为。"
+          },
+          {
+            "name": "社会监督",
+            "difficulty": 3,
+            "description": "公众依法获取信息并监督资源环境事务的机制",
+            "aliases": [
+              "资源、环境事务的社会监督"
+            ],
+            "prerequisites": [
+              "公众参与"
+            ],
+            "definition": "社会监督是公众依法获取环境信息、表达诉求并监督环境保护工作的活动。",
+            "example": "通过政府网站查询重点企业污染物排放信息。",
+            "section": "第二节 国家战略与政策"
+          },
+          {
+            "name": "国际合作",
+            "difficulty": 2,
+            "description": "各国共同应对资源环境问题的协商与行动",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "国际合作是不同国家依据公平、共同但有区别等原则共同应对资源环境挑战。",
+            "example": "景洪水库向湄公河下游实施应急补水。"
+          },
+          {
+            "name": "全球性资源环境问题",
+            "difficulty": 3,
+            "description": "影响全球且单个国家无法独立解决的问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "国际合作"
+            ],
+            "definition": "全球性资源环境问题是影响范围广、需要全球共同行动解决的问题。",
+            "example": "全球气候变暖和生物多样性减少。"
+          },
+          {
+            "name": "跨国环境问题",
+            "difficulty": 3,
+            "description": "影响跨越国家或地区边界的资源环境问题",
+            "aliases": [
+              "跨国、跨地区资源环境问题"
+            ],
+            "prerequisites": [
+              "环境安全",
+              "国际合作"
+            ],
+            "definition": "跨国环境问题是影响范围跨越国界或地区、需要区域合作解决的问题。",
+            "example": "有毒化学品和危险废弃物越境转移。"
+          },
+          {
+            "name": "问卷调查",
+            "difficulty": 2,
+            "description": "利用问题表格收集行为、态度和社会特征资料",
+            "aliases": [],
+            "prerequisites": [
+              "公众参与"
+            ],
+            "definition": "问卷调查是通过设计和发放问题表格收集研究资料的方法。",
+            "example": "调查中学生资源、环境安全意识。",
+            "section": "问题研究 如何做中学生资源、环境安全意识问卷调查"
+          },
+          {
+            "name": "全面调查",
+            "difficulty": 2,
+            "description": "对所有调查对象进行调查的方法",
+            "aliases": [],
+            "prerequisites": [
+              "问卷调查"
+            ],
+            "definition": "全面调查是对总体中的全部调查对象进行调查。",
+            "example": "调查某年级所有学生的环保意识。",
+            "section": "问题研究 如何做中学生资源、环境安全意识问卷调查"
+          },
+          {
+            "name": "抽样调查",
+            "difficulty": 3,
+            "description": "抽取部分对象并据此推断总体状况的方法",
+            "aliases": [],
+            "prerequisites": [
+              "问卷调查"
+            ],
+            "definition": "抽样调查是从总体中抽取一部分对象并据此估计和推断总体。",
+            "example": "随机抽取部分学生填写环保意识问卷。",
+            "section": "问题研究 如何做中学生资源、环境安全意识问卷调查"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 走向生态文明",
+            "page_range": [
+              99,
+              104
+            ]
+          },
+          {
+            "name": "第二节 国家战略与政策",
+            "page_range": [
+              104,
+              112
+            ]
+          },
+          {
+            "name": "第三节 国际合作",
+            "page_range": [
+              112,
+              118
+            ]
+          },
+          {
+            "name": "问题研究 如何做中学生资源、环境安全意识问卷调查",
+            "page_range": [
+              118,
+              126
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 自然环境与人类社会",
+        "concepts": [
+          {
+            "name": "自然环境服务功能",
+            "difficulty": 2,
+            "description": "人类从自然环境中获得的各种益处",
+            "aliases": [
+              "自然环境的服务"
+            ],
+            "prerequisites": [
+              "自然环境"
+            ],
+            "definition": "自然环境服务功能是自然环境为人类生存和发展提供的各种益处。",
+            "example": "森林提供氧气、净化空气和旅游休憩等服务"
+          },
+          {
+            "name": "供给服务",
+            "difficulty": 2,
+            "description": "自然环境提供资源和物质能量的服务",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "供给服务是自然环境为人类提供自然资源以满足物质和能量需求的服务。",
+            "example": "森林提供木材，河流提供淡水"
+          },
+          {
+            "name": "调节服务",
+            "difficulty": 2,
+            "description": "自然环境调节环境并净化废弃物的服务",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "调节服务是自然环境调节气候、净化空气和水并降解废弃物的服务。",
+            "example": "水体调节温度并容纳、降解废弃物"
+          },
+          {
+            "name": "文化服务",
+            "difficulty": 2,
+            "description": "自然环境提供精神享受和审美体验的服务",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "文化服务是人类从自然环境中获得精神享受和审美体验等非物质收益的服务。",
+            "example": "人们在森林中旅游休憩并获得审美体验"
+          },
+          {
+            "name": "支撑服务",
+            "difficulty": 3,
+            "description": "维持自然环境稳定并支撑其他服务的功能",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "支撑服务是维持自然环境自身相对稳定并为其他服务提供基础和前提的功能。",
+            "example": "森林作为动物栖息地并维持生物多样性"
+          },
+          {
+            "name": "可持续利用",
+            "difficulty": 3,
+            "description": "在自然环境允许范围内持续获取服务",
+            "aliases": [
+              "服务功能可持续利用"
+            ],
+            "prerequisites": [
+              "自然环境服务功能",
+              "支撑服务"
+            ],
+            "definition": "可持续利用是将人类获取的自然环境服务控制在自然环境承受范围内的利用方式。",
+            "example": "森林采伐量不超过其自然更新能力",
+            "section": "第一节 自然环境的服务功能"
+          },
+          {
+            "name": "自然资本",
+            "difficulty": 3,
+            "description": "由自然环境及其服务构成的自然资本",
+            "aliases": [
+              "自然环境及其服务"
+            ],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "自然资本是可以持续提供自然环境服务的自然环境及其组成部分。",
+            "example": "森林既是自然资本，也持续提供木材和净化空气服务",
+            "section": "第一节 自然环境的服务功能"
+          },
+          {
+            "name": "自然资源",
+            "difficulty": 2,
+            "description": "可满足人类生产生活需求的自然物质和能量",
+            "aliases": [],
+            "prerequisites": [
+              "供给服务"
+            ],
+            "definition": "自然资源是在一定经济技术条件下从自然环境中获得并能满足人类生产生活需求的物质和能量。",
+            "example": "水、土地、植物、石油和铁矿都是自然资源"
+          },
+          {
+            "name": "自然资源双重属性",
+            "difficulty": 3,
+            "description": "自然资源同时具有自然属性和社会属性",
+            "aliases": [
+              "自然和社会双重属性"
+            ],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源双重属性指其数量质量分布受自然规律影响，利用方式又受人类需求和社会发展水平影响。",
+            "example": "石油形成于地质时期，现代则被大规模工业开采",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "可再生资源",
+            "difficulty": 2,
+            "description": "能够在一定条件下自然更新的资源",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "可再生资源是能够依靠自然过程在一定时间内更新的自然资源。",
+            "example": "森林资源能够通过自然更新恢复",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "非可再生资源",
+            "difficulty": 2,
+            "description": "形成后总量不会增加的自然资源",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "非可再生资源是在地质历史时期形成且总量不会增加的自然资源。",
+            "example": "煤炭、石油和天然气属于非可再生资源",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然资源数量特征",
+            "difficulty": 3,
+            "description": "自然资源总量有限且供给存在极限",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源数量特征是指资源总量及人类可获取量都受自然环境和技术条件限制。",
+            "example": "人类不能突破自然环境供给资源的极限"
+          },
+          {
+            "name": "自然资源稀缺性",
+            "difficulty": 3,
+            "description": "资源供给不能无限满足人类需求的特征",
+            "aliases": [
+              "稀缺性"
+            ],
+            "prerequisites": [
+              "自然资源数量特征"
+            ],
+            "definition": "自然资源稀缺性是指资源供给有限而人类需求不断增长，难以无限满足需求的特征。",
+            "example": "水资源短缺会引起价格和供需变化",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然资源质量特征",
+            "difficulty": 3,
+            "description": "自然资源满足需求的能力存在优劣差异",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源质量特征是指资源满足人类需求及产生经济、社会和生态效益的能力有高低之分。",
+            "example": "铁矿按品位分为富铁矿和贫铁矿"
+          },
+          {
+            "name": "矿石品位",
+            "difficulty": 3,
+            "description": "矿石中有用组分或矿物的含量",
+            "aliases": [
+              "品位"
+            ],
+            "prerequisites": [
+              "自然资源质量特征"
+            ],
+            "definition": "矿石品位是单位体积或单位质量矿石中有用组分或有用矿物的含量。",
+            "example": "提铁降硅技术可提高铁矿石品位",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然资源空间分布",
+            "difficulty": 3,
+            "description": "自然资源空间分布不均匀且具有规律",
+            "aliases": [
+              "空间分布特征"
+            ],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源空间分布是指资源在不同地区分布不均匀，但受自然规律制约而具有一定规律。",
+            "example": "我国北方多煤，南方多磷",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "资源调配与贸易",
+            "difficulty": 3,
+            "description": "不同地区间进行资源空间流动的方式",
+            "aliases": [
+              "资源空间流动"
+            ],
+            "prerequisites": [
+              "自然资源空间分布"
+            ],
+            "definition": "资源调配与贸易是不同地区因资源分布差异而通过工程或市场实现资源流动。",
+            "example": "缺水地区通过调水工程获得外地水资源",
+            "section": "第二节 自然资源及其利用"
+          },
+          {
+            "name": "自然系统",
+            "difficulty": 3,
+            "description": "具有物质循环和能量流动的自然环境系统",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "自然系统是由生物和非生物因素组成并通过物质循环、能量流动维持稳定的系统。",
+            "example": "生产者、消费者和分解者共同参与自然系统运行",
+            "section": "第三节 环境问题及其危害"
+          },
+          {
+            "name": "人类系统",
+            "difficulty": 3,
+            "description": "依靠资源输入和废弃物排放运行的系统",
+            "aliases": [],
+            "prerequisites": [
+              "自然系统",
+              "自然资源"
+            ],
+            "definition": "人类系统是从自然获取物质能量并向自然排放废弃物的系统。",
+            "example": "城市输入能源和水并排放生活污水",
+            "section": "第三节 环境问题及其危害"
+          },
+          {
+            "name": "环境问题",
+            "difficulty": 2,
+            "description": "人类影响超过自然承受能力引发的环境问题",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能",
+              "自然资源"
+            ],
+            "definition": "环境问题是人类活动超过自然环境调节能力并损害其稳定状态而产生的问题。",
+            "example": "工业废弃物排放过多导致水污染"
+          },
+          {
+            "name": "环境影响因素",
+            "difficulty": 3,
+            "description": "人口、消费和技术共同影响环境程度",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "环境影响因素包括人口数量、人均资源消费量和单位资源使用造成的环境影响。",
+            "example": "人口增加会提高资源消耗和废弃物排放"
+          },
+          {
+            "name": "环境问题危害",
+            "difficulty": 3,
+            "description": "环境问题对服务功能和社会发展的损害",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "环境问题危害包括损害自然环境服务功能、影响生活质量健康并制约社会经济发展。",
+            "example": "雾霾影响户外活动并诱发多种疾病"
+          },
+          {
+            "name": "环境库兹涅茨曲线",
+            "difficulty": 4,
+            "description": "环境污染随人均收入先升后降的倒U形关系",
+            "aliases": [
+              "环境库兹涅茨关系"
+            ],
+            "prerequisites": [
+              "环境问题",
+              "环境问题危害"
+            ],
+            "definition": "环境库兹涅茨曲线描述环境质量随经济增长先恶化、达到拐点后改善的变化过程。",
+            "example": "部分地区收入提高后污染治理投入增加",
+            "section": "第三节 环境问题及其危害"
+          },
+          {
+            "name": "生态足迹",
+            "difficulty": 3,
+            "description": "评估人类对地球生态系统影响的核算体系",
+            "aliases": [
+              "生态占用"
+            ],
+            "prerequisites": [
+              "自然资源",
+              "环境问题"
+            ],
+            "definition": "生态足迹是将人类资源消费和废弃物排放折算为相应土地或水域面积的核算体系。",
+            "example": "将粮食消费量折算为生产粮食所需的耕地面积",
+            "section": "问题研究 我们的生态足迹有多大"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 自然环境的服务功能",
+            "section_key": "b50592a1ad",
+            "page_range": [
+              7,
+              11
+            ]
+          },
+          {
+            "name": "第二节 自然资源及其利用",
+            "section_key": "c5842bc9b8",
+            "page_range": [
+              11,
+              17
+            ]
+          },
+          {
+            "name": "第三节 环境问题及其危害",
+            "section_key": "0574d1fc7b",
+            "page_range": [
+              17,
+              23
+            ]
+          },
+          {
+            "name": "问题研究 我们的生态足迹有多大",
+            "section_key": "fa735de413",
+            "page_range": [
+              23,
+              25
+            ]
+          }
+        ],
+        "chapter_key": "6e5a27c4bb",
+        "metadata": {
+          "volume_id": "c4a76e205bc8",
+          "file_id": "c4a76e205bc8",
+          "volume_title": "高中地理 选择性必修3",
+          "chapter_order": 1,
+          "raw_heading": "第一章 自然环境与人类社会"
+        }
+      },
+      {
+        "name": "第二章 资源安全与国家安全",
+        "concepts": [
+          {
+            "name": "资源安全",
+            "difficulty": 2,
+            "description": "自然资源供给满足社会发展需要的状态或能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源安全是自然资源供给满足需求且稳定、及时、经济并不破坏环境供给功能的状态或能力。",
+            "example": "我国保障淡水、土地和能源持续供给。"
+          },
+          {
+            "name": "资源安全问题",
+            "difficulty": 2,
+            "description": "资源供给与需求失衡引发的安全风险",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "资源安全问题是资源短缺超过一定限度并影响生产、经济和社会正常运行的现象。",
+            "example": "我国水资源消费增长导致短缺加剧。"
+          },
+          {
+            "name": "资源禀赋",
+            "difficulty": 2,
+            "description": "资源类型、数量、质量和分布的总体状况",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源禀赋是一个地区资源类型、数量、质量和分布等状况的总和。",
+            "example": "我国能源禀赋表现为富煤、少油、缺气。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源供给能力",
+            "difficulty": 3,
+            "description": "资源开发、购买和调配资源的综合能力",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋"
+            ],
+            "definition": "资源供给能力是利用技术、经济和社会条件开发、购买及调配资源的能力。",
+            "example": "西气东输依赖能源调配能力。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源消费需求",
+            "difficulty": 2,
+            "description": "人类对资源消费数量和质量的需要",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源消费需求是人类社会对资源消费数量和质量提出的需要。",
+            "example": "人口增长会增加用水需求。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源绝对短缺",
+            "difficulty": 3,
+            "description": "资源供给达到极限或不稳定造成的短缺",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋",
+              "资源安全问题"
+            ],
+            "definition": "资源绝对短缺是因资源供给数量达到极限或供给不稳定造成的短缺。",
+            "example": "非可再生资源枯竭会形成绝对短缺。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源相对短缺",
+            "difficulty": 3,
+            "description": "资源需求量超过供给能力造成的短缺",
+            "aliases": [],
+            "prerequisites": [
+              "资源供给能力",
+              "资源消费需求"
+            ],
+            "definition": "资源相对短缺是资源需求量超过资源供给能力造成的短缺。",
+            "example": "人口增长使部分地区出现水资源相对短缺。"
+          },
+          {
+            "name": "战略资源",
+            "difficulty": 2,
+            "description": "关系国计民生和经济安全的重要自然资源",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "战略资源是事关国计民生、社会发展全局和经济安全且稀缺、难以替代的自然资源。",
+            "example": "淡水、土地、石油和稀土属于战略资源。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "国家总体安全",
+            "difficulty": 3,
+            "description": "涵盖多领域并相互关联的国家安全体系",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "国家总体安全是将政治、军事、资源、环境、经济等领域安全统筹起来的国家安全体系。",
+            "example": "资源安全与经济安全相互影响。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源供需失衡",
+            "difficulty": 2,
+            "description": "资源供给与需求不相适应的状态",
+            "aliases": [],
+            "prerequisites": [
+              "资源供给能力",
+              "资源消费需求"
+            ],
+            "definition": "资源供需失衡是资源供给量与需求量不相适应而形成的不安全状态。",
+            "example": "需求增加或供给减少都可能造成失衡。",
+            "section": "第一节 资源安全对国家安全的影响"
+          },
+          {
+            "name": "资源安全保障",
+            "difficulty": 3,
+            "description": "调节资源供需平衡并规避衍生风险",
+            "aliases": [],
+            "prerequisites": [
+              "资源供需失衡"
+            ],
+            "definition": "资源安全保障是通过增加供给、节约利用和规避环境及冲突风险来维持资源安全。",
+            "example": "开发替代资源并提高能源利用率。"
+          },
+          {
+            "name": "能源安全",
+            "difficulty": 2,
+            "description": "能源供给满足社会发展需求的安全状态",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "能源安全是能源供给能够持续满足社会发展需求并降低相关风险的状态。",
+            "example": "我国通过能源储备保障石油供应。"
+          },
+          {
+            "name": "能源消费结构",
+            "difficulty": 2,
+            "description": "不同能源在能源消费总量中的构成比例",
+            "aliases": [],
+            "prerequisites": [
+              "能源安全"
+            ],
+            "definition": "能源消费结构是煤炭、石油、天然气及非化石能源等在能源消费中的比例构成。",
+            "example": "我国能源消费结构以煤炭为主。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "能源对外依存度",
+            "difficulty": 3,
+            "description": "能源进口量占能源消费量的比重",
+            "aliases": [],
+            "prerequisites": [
+              "能源消费结构"
+            ],
+            "definition": "能源对外依存度是能源进口量占能源总消费量的比重。",
+            "example": "2017年我国石油对外依存度约为70%。"
+          },
+          {
+            "name": "能源空间配置",
+            "difficulty": 3,
+            "description": "能源生产地与消费地的空间分布关系",
+            "aliases": [],
+            "prerequisites": [
+              "能源供给能力",
+              "能源消费需求"
+            ],
+            "definition": "能源空间配置是能源生产区与消费区在空间上的分布及其匹配关系。",
+            "example": "我国能源形成西气东输、西电东送格局。"
+          },
+          {
+            "name": "石油供需",
+            "difficulty": 3,
+            "description": "石油生产供给与消费需求之间的关系",
+            "aliases": [],
+            "prerequisites": [
+              "资源供需失衡",
+              "能源安全"
+            ],
+            "definition": "石油供需是石油生产、进口等供给状况与石油消费需求之间的关系。",
+            "example": "我国石油消费增长使进口依赖程度提高。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "煤炭环境问题",
+            "difficulty": 3,
+            "description": "煤炭生产和消费造成的多种环境影响",
+            "aliases": [],
+            "prerequisites": [
+              "能源消费结构"
+            ],
+            "definition": "煤炭环境问题是煤炭开发和利用过程中产生的大气、水土及生态环境问题。",
+            "example": "煤炭燃烧会产生酸雨、雾霾和二氧化碳。"
+          },
+          {
+            "name": "碳排放系数",
+            "difficulty": 3,
+            "description": "燃烧单位能源产生的碳排放量",
+            "aliases": [],
+            "prerequisites": [
+              "能源消费结构"
+            ],
+            "definition": "碳排放系数是燃烧单位能源所产生的碳排放数量。",
+            "example": "煤炭碳排放系数高于天然气。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "低碳能源",
+            "difficulty": 2,
+            "description": "碳排放较低的能源类型",
+            "aliases": [],
+            "prerequisites": [
+              "碳排放系数"
+            ],
+            "definition": "低碳能源是能源利用过程中碳排放较少的能源，包括可再生能源、核能和天然气等。",
+            "example": "风能、太阳能和核能属于低碳能源。",
+            "section": "第二节 中国的能源安全"
+          },
+          {
+            "name": "粮食安全",
+            "difficulty": 2,
+            "description": "人们及时获得足够健康食物的保障状态",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "粮食安全是保证人们及时得到生存和健康所需要的足够食物。",
+            "example": "粮食生产、储备或流通受阻都可能威胁粮食安全。"
+          },
+          {
+            "name": "耕地资源",
+            "difficulty": 2,
+            "description": "用于农作物种植并具有生产能力的土地资源",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋"
+            ],
+            "definition": "耕地资源是能够用于农作物种植并支撑粮食生产的土地资源。",
+            "example": "我国耕地分布不均且人均耕地少。"
+          },
+          {
+            "name": "粮食总产量",
+            "difficulty": 2,
+            "description": "一定时期内粮食生产的总数量",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源"
+            ],
+            "definition": "粮食总产量是耕地面积与单位耕地面积产量的乘积。",
+            "example": "扩大耕地面积可增加粮食总产量。"
+          },
+          {
+            "name": "单位面积产量",
+            "difficulty": 3,
+            "description": "单位耕地面积生产粮食的数量",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源"
+            ],
+            "definition": "单位面积产量是一定耕地面积上生产粮食的数量。",
+            "example": "提高复种指数有助于提高单位面积产量。"
+          },
+          {
+            "name": "耕地质量",
+            "difficulty": 3,
+            "description": "由自然因素和社会经济条件决定的土地质量",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源"
+            ],
+            "definition": "耕地质量反映由土地自然因素和社会经济条件共同决定的土地生产能力差异。",
+            "example": "水土流失会降低耕地质量。"
+          },
+          {
+            "name": "耕地红线",
+            "difficulty": 2,
+            "description": "为保障粮食安全划定的耕地数量底线",
+            "aliases": [],
+            "prerequisites": [
+              "耕地资源",
+              "粮食安全"
+            ],
+            "definition": "耕地红线是为确保耕地保有量和粮食生产能力而划定的具有法律效力的最低耕地数量底线。",
+            "example": "我国耕地红线要求耕地保有量在18亿亩以上。"
+          },
+          {
+            "name": "粮食储备",
+            "difficulty": 2,
+            "description": "国家储存粮食以调节供需和应对突发事件",
+            "aliases": [],
+            "prerequisites": [
+              "粮食安全"
+            ],
+            "definition": "粮食储备是通过储存粮食调节市场、救灾备荒和应对突发事件的制度安排。",
+            "example": "中央储备粮可稳定粮食市场。"
+          },
+          {
+            "name": "藏粮于地",
+            "difficulty": 3,
+            "description": "通过保护提升耕地能力保障持续供粮",
+            "aliases": [],
+            "prerequisites": [
+              "耕地质量",
+              "粮食安全"
+            ],
+            "definition": "藏粮于地是保护耕地数量、提升质量并恢复生产力以保障可持续粮食生产能力。",
+            "example": "实行轮作休耕和高标准农田建设。"
+          },
+          {
+            "name": "滩涂",
+            "difficulty": 2,
+            "description": "高潮线以下、低潮线以上的海陆过渡地带",
+            "aliases": [],
+            "prerequisites": [
+              "海洋空间资源"
+            ],
+            "definition": "滩涂是位于大潮高潮线以下、低潮线以上的亦海亦陆特殊地带。",
+            "example": "滩涂可用于盐田、水产养殖和旅游。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "海洋空间资源",
+            "difficulty": 2,
+            "description": "海岸、海面、水体和海底可利用的空间",
+            "aliases": [],
+            "prerequisites": [
+              "资源禀赋"
+            ],
+            "definition": "海洋空间资源是海洋中可供人类开发利用的海岸、海面、水体和海底空间。",
+            "example": "人工岛和海上机场属于海洋空间利用。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "海洋国土",
+            "difficulty": 3,
+            "description": "国家主权管辖下的海域及其上空和底土",
+            "aliases": [],
+            "prerequisites": [
+              "海洋空间资源"
+            ],
+            "definition": "海洋国土是国家主权管辖下包括内水、领海、专属经济区和大陆架等在内的海域及相关空间。",
+            "example": "我国管辖海域约300万平方千米。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "海洋权益",
+            "difficulty": 3,
+            "description": "国家依法享有的海洋政治经济安全权利利益",
+            "aliases": [],
+            "prerequisites": [
+              "海洋国土"
+            ],
+            "definition": "海洋权益是国家在海洋上依法享有的政治、经济和安全等方面权利与利益的总称。",
+            "example": "在专属经济区享有开发自然资源的权利。",
+            "section": "第四节 海洋空间资源开发与国家安全"
+          },
+          {
+            "name": "淡水冲突",
+            "difficulty": 3,
+            "description": "国家间因共享淡水分配和利用产生的冲突",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全问题"
+            ],
+            "definition": "淡水冲突是共享淡水资源的国家因水资源分配和开发利用而产生的冲突。",
+            "example": "国家间可能因跨境河流水量分配发生冲突。",
+            "section": "第一节 资源安全对国家安全的影响"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 资源安全对国家安全的影响",
+            "section_key": "f1eea034e0",
+            "page_range": [
+              27,
+              34
+            ]
+          },
+          {
+            "name": "第二节 中国的能源安全",
+            "section_key": "36f87a0341",
+            "page_range": [
+              34,
+              42
+            ]
+          },
+          {
+            "name": "第三节 中国的耕地资源与粮食安全",
+            "section_key": "246ab96900",
+            "page_range": [
+              42,
+              51
+            ]
+          },
+          {
+            "name": "第四节 海洋空间资源开发与国家安全",
+            "section_key": "0a6c4d3418",
+            "page_range": [
+              51,
+              59
+            ]
+          },
+          {
+            "name": "问题研究 如何“藏粮于地”",
+            "section_key": "11c33b7ea0",
+            "page_range": [
+              59,
+              61
+            ]
+          }
+        ],
+        "chapter_key": "d341e5e7e7",
+        "metadata": {
+          "volume_id": "c4a76e205bc8",
+          "file_id": "c4a76e205bc8",
+          "volume_title": "高中地理 选择性必修3",
+          "chapter_order": 2,
+          "raw_heading": "第二章 资源安全与国家安全"
+        }
+      },
+      {
+        "name": "第三章 环境安全与国家安全",
+        "concepts": [
+          {
+            "name": "环境问题",
+            "difficulty": 1,
+            "description": "人类活动引起的环境污染、生态破坏等问题",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "环境问题是人类活动造成的环境污染、生态破坏、物种减少或灭绝等问题。",
+            "example": "工业排放造成大气污染"
+          },
+          {
+            "name": "自然环境服务功能",
+            "difficulty": 2,
+            "description": "自然环境为人类生存发展提供的服务能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然环境服务功能是自然环境为人类社会提供调节、供给等服务的能力。",
+            "example": "湿地具有蓄洪防旱功能",
+            "section": "第三节 生态保护与国家安全"
+          },
+          {
+            "name": "环境安全",
+            "difficulty": 2,
+            "description": "环境破坏与威胁处于环境或社会经济可承受范围",
+            "aliases": [
+              "生态安全"
+            ],
+            "prerequisites": [
+              "环境问题",
+              "自然环境服务功能"
+            ],
+            "definition": "环境安全是自然环境破坏与威胁处于环境或社会经济可承受范围之内的状态。",
+            "example": "水质符合生活饮用标准"
+          },
+          {
+            "name": "环境安全临界值",
+            "difficulty": 3,
+            "description": "环境问题演化为环境安全问题的限度",
+            "aliases": [
+              "临界值"
+            ],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "环境安全临界值是环境问题严重程度超过后会引发环境安全问题的限度。",
+            "example": "水质劣于相应等级产生安全问题",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "突发性环境安全问题",
+            "difficulty": 2,
+            "description": "由突然发生的严重污染事件导致的安全问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "环境安全临界值"
+            ],
+            "definition": "突发性环境安全问题是由高浓度污染物排放、危险物质泄漏等突发事件造成的问题。",
+            "example": "切尔诺贝利核泄漏影响长期存在",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "累积性环境安全问题",
+            "difficulty": 2,
+            "description": "由污染物累积或生态退化逐步加剧形成的问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "环境安全临界值"
+            ],
+            "definition": "累积性环境安全问题是污染物不断累积或生态退化逐步加剧形成的安全问题。",
+            "example": "农田重金属长期累积",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "空气质量指数",
+            "difficulty": 2,
+            "description": "综合表示空气污染程度和空气质量状况的指数",
+            "aliases": [
+              "AQI"
+            ],
+            "prerequisites": [
+              "环境污染"
+            ],
+            "definition": "空气质量指数是将多种空气污染物浓度简化为单一数值并分级表示空气质量的指标。",
+            "example": "AQI超过300表示严重污染",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "环境安全风险",
+            "difficulty": 3,
+            "description": "环境问题损害或威胁人类社会的可能性",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题",
+              "环境安全"
+            ],
+            "definition": "环境安全风险与环境问题严重程度及人类社会的敏感程度、抵抗能力有关。",
+            "example": "高危地区生产活动风险较高"
+          },
+          {
+            "name": "国家环境安全",
+            "difficulty": 3,
+            "description": "国家具有支撑生存发展的自然环境和应对能力",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "环境安全风险"
+            ],
+            "definition": "国家环境安全是国家生存发展所需自然环境及应对重大环境问题能力得到保障的状态。",
+            "example": "重大污染事件可能威胁国家安全"
+          },
+          {
+            "name": "突发环境事件",
+            "difficulty": 2,
+            "description": "突然爆发并造成严重影响的重大环境污染事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境污染",
+              "突发性环境安全问题"
+            ],
+            "definition": "突发环境事件是自然或人为因素导致的突然爆发并造成严重影响的重大污染事件。",
+            "example": "墨西哥湾原油泄漏事故"
+          },
+          {
+            "name": "环境群体性事件",
+            "difficulty": 3,
+            "description": "环境恶化或担忧引发公众抗争的群体性事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境污染",
+              "突发环境事件"
+            ],
+            "definition": "环境群体性事件是环境问题或公众对环境恶化的担忧诱发的社会公众抗争事件。",
+            "example": "福岛核泄漏后反核示威",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "污染物跨国转移",
+            "difficulty": 2,
+            "description": "污染物从一个国家扩散或输送到其他国家",
+            "aliases": [],
+            "prerequisites": [
+              "环境污染"
+            ],
+            "definition": "污染物跨国转移是污染物通过自然传输、废弃物输送或产品贸易进入其他国家的过程。",
+            "example": "污染废水扩散至下游国家"
+          },
+          {
+            "name": "污染物跨国传输",
+            "difficulty": 2,
+            "description": "污染物经大气环流、河流径流等自然过程跨国传输",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移"
+            ],
+            "definition": "污染物跨国传输是一个国家排放的污染物经自然过程传输到其他国家。",
+            "example": "氰化物废水沿河流进入邻国",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "废弃物跨国转移",
+            "difficulty": 2,
+            "description": "通过贸易或非法方式向他国输送固体废弃物",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移"
+            ],
+            "definition": "废弃物跨国转移是一个国家将本国产生的固体废弃物输送到其他国家。",
+            "example": "科特迪瓦毒污泥倾废事件"
+          },
+          {
+            "name": "有毒有害产品贸易",
+            "difficulty": 3,
+            "description": "含有超标或未知有毒物质的产品跨国贸易",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移"
+            ],
+            "definition": "有毒有害产品贸易是含有有毒有害物质的产品通过国际贸易进入其他国家。",
+            "example": "英国疯牛病牛肉出口事件"
+          },
+          {
+            "name": "环境安全冲突",
+            "difficulty": 3,
+            "description": "责任国与受害国因环境问题产生的对抗关系",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移",
+              "国家环境安全"
+            ],
+            "definition": "环境安全冲突是环境安全问题相关国家之间出现紧张关系、敌对行为或军事冲突。",
+            "example": "跨境污染引发外交抗议",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "环境安全合作",
+            "difficulty": 3,
+            "description": "国家遵守公约并联合应对跨境环境危机",
+            "aliases": [],
+            "prerequisites": [
+              "污染物跨国转移",
+              "国家环境安全"
+            ],
+            "definition": "环境安全合作是相关国家遵守环境协定并共同应对跨境环境安全问题。",
+            "example": "中俄合作应对松花江污染",
+            "section": "第二节 环境污染与国家安全"
+          },
+          {
+            "name": "生态退化",
+            "difficulty": 2,
+            "description": "生态系统及其服务功能逐步下降的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境服务功能"
+            ],
+            "definition": "生态退化是森林破坏、土壤侵蚀、土地荒漠化等导致生态服务功能下降的过程。",
+            "example": "贵州石漠化"
+          },
+          {
+            "name": "生态修复",
+            "difficulty": 2,
+            "description": "使受损生态系统恢复或趋向良性循环的措施",
+            "aliases": [],
+            "prerequisites": [
+              "生态退化"
+            ],
+            "definition": "生态修复是利用自然恢复能力或人工措施使受损生态系统逐步恢复的过程。",
+            "example": "矿山生态修复"
+          },
+          {
+            "name": "自然恢复",
+            "difficulty": 2,
+            "description": "减少人为干扰并依靠生态系统自我调节恢复",
+            "aliases": [],
+            "prerequisites": [
+              "生态修复",
+              "生态退化"
+            ],
+            "definition": "自然恢复是通过消除或减少人为干扰，使生态系统依靠自我调节逐步恢复。",
+            "example": "林区封山育林",
+            "section": "第三节 生态保护与国家安全"
+          },
+          {
+            "name": "人工修复",
+            "difficulty": 2,
+            "description": "通过生物或工程措施加快生态系统恢复",
+            "aliases": [],
+            "prerequisites": [
+              "生态修复",
+              "生态退化"
+            ],
+            "definition": "人工修复是采取生物、工程等措施加快或帮助生态系统恢复到安全水平。",
+            "example": "整理水系并植树造林",
+            "section": "第三节 生态保护与国家安全"
+          },
+          {
+            "name": "自然保护区",
+            "difficulty": 2,
+            "description": "依法划定并特殊保护和管理自然对象的区域",
+            "aliases": [],
+            "prerequisites": [
+              "生态退化",
+              "生态修复"
+            ],
+            "definition": "自然保护区是对有代表性自然保护对象依法划定并实行特殊保护管理的区域。",
+            "example": "丰林国家级自然保护区"
+          },
+          {
+            "name": "温室效应",
+            "difficulty": 2,
+            "description": "温室气体吸收地面长波辐射并使地球保温的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "温室效应是大气中温室气体吸收地面长波辐射而产生保温作用的过程。",
+            "example": "二氧化碳增强大气保温作用",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "碳循环",
+            "difficulty": 3,
+            "description": "碳元素在四大圈层之间迁移转化的循环过程",
+            "aliases": [],
+            "prerequisites": [
+              "温室效应"
+            ],
+            "definition": "碳循环是碳元素在大气圈、水圈、生物圈和岩石圈之间迁移转化形成的循环。",
+            "example": "植物吸收二氧化碳后经呼吸返回大气",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "全球气候变化",
+            "difficulty": 2,
+            "description": "全球气候系统长期变化及其产生的综合影响",
+            "aliases": [],
+            "prerequisites": [
+              "温室效应",
+              "碳循环"
+            ],
+            "definition": "全球气候变化是全球气候系统发生的长期变化，当前以全球变暖为突出特征。",
+            "example": "全球气温和降水分布发生变化"
+          },
+          {
+            "name": "全球变暖",
+            "difficulty": 2,
+            "description": "全球平均气温总体升高的气候变化趋势",
+            "aliases": [],
+            "prerequisites": [
+              "温室效应",
+              "全球气候变化"
+            ],
+            "definition": "全球变暖是全球平均气温总体升高的气候变化趋势。",
+            "example": "20世纪50年代以来增温明显"
+          },
+          {
+            "name": "人为碳排放",
+            "difficulty": 3,
+            "description": "人类活动向大气排放二氧化碳等碳的过程",
+            "aliases": [],
+            "prerequisites": [
+              "碳循环",
+              "全球变暖"
+            ],
+            "definition": "人为碳排放主要来自化石燃料使用和土地利用变化释放的碳。",
+            "example": "燃烧煤炭排放二氧化碳",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "减缓措施",
+            "difficulty": 2,
+            "description": "通过减排增汇控制全球变暖速度的措施",
+            "aliases": [
+              "减缓"
+            ],
+            "prerequisites": [
+              "全球变暖",
+              "人为碳排放"
+            ],
+            "definition": "减缓措施是减少温室气体排放并增加吸收以控制全球变暖速度的措施。",
+            "example": "使用清洁能源和植树造林"
+          },
+          {
+            "name": "适应措施",
+            "difficulty": 2,
+            "description": "通过调整社会活动降低气候变化不利影响",
+            "aliases": [
+              "适应"
+            ],
+            "prerequisites": [
+              "全球气候变化"
+            ],
+            "definition": "适应措施是通过改变人类社会自身来降低气候变化不利影响的措施。",
+            "example": "建设抵御水旱灾害的水利工程",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "环境难民",
+            "difficulty": 3,
+            "description": "因环境变化导致生存空间丧失而迁移的人群",
+            "aliases": [],
+            "prerequisites": [
+              "全球变暖"
+            ],
+            "definition": "环境难民是因海平面上升等环境变化导致生存环境恶化而迁移的人群。",
+            "example": "图瓦卢居民计划举国搬迁",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "共同但有区别责任",
+            "difficulty": 3,
+            "description": "各国共同应对气候变化但承担不同责任的原则",
+            "aliases": [],
+            "prerequisites": [
+              "全球气候变化",
+              "人为碳排放"
+            ],
+            "definition": "共同但有区别责任原则要求各国共同减排，同时依据责任和能力承担不同义务。",
+            "example": "发达国家率先减排并提供支持"
+          },
+          {
+            "name": "黑天鹅事件",
+            "difficulty": 3,
+            "description": "不可预测但可能产生重大影响的小概率事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全风险",
+              "突发环境事件"
+            ],
+            "definition": "黑天鹅事件是稀有、不可预测且发生后冲击巨大的事件。",
+            "example": "难以预料的核电灾难",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "灰犀牛式危机",
+            "difficulty": 3,
+            "description": "大概率且影响巨大、爆发前有明显迹象的危机",
+            "aliases": [
+              "灰犀牛"
+            ],
+            "prerequisites": [
+              "环境安全风险",
+              "累积性环境安全问题"
+            ],
+            "definition": "灰犀牛式危机是大概率且影响巨大的潜在危机，爆发前通常已有明显迹象。",
+            "example": "土壤重金属污染危机",
+            "section": "第一节 环境安全对国家安全的影响"
+          },
+          {
+            "name": "树轮冰川学",
+            "difficulty": 4,
+            "description": "利用树木年轮研究过去冰川变化的学科",
+            "aliases": [],
+            "prerequisites": [
+              "全球气候变化"
+            ],
+            "definition": "树轮冰川学是利用树木年轮推断过去冰川进退时间的学科。",
+            "example": "依据树木伤疤年轮推断冰川前进年份",
+            "section": "第四节 全球气候变化与国家安全"
+          },
+          {
+            "name": "核能安全隐患",
+            "difficulty": 3,
+            "description": "核能开发利用中存在的核废料、热污染和泄漏风险",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "核能"
+            ],
+            "definition": "核能安全隐患是核能开发利用过程中核废料、热污染及核泄漏等潜在风险。",
+            "example": "福岛核泄漏造成长期影响"
+          },
+          {
+            "name": "核能",
+            "difficulty": 2,
+            "description": "利用核裂变或核聚变释放能量的能源",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "核能是利用核原料裂变或聚变释放能量形成的能源。",
+            "example": "核电站利用核裂变发电"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 环境安全对国家安全的影响",
+            "section_key": "7fab2e72bf",
+            "page_range": [
+              63,
+              68
+            ]
+          },
+          {
+            "name": "第二节 环境污染与国家安全",
+            "section_key": "c7b88ce64c",
+            "page_range": [
+              68,
+              78
+            ]
+          },
+          {
+            "name": "第三节 生态保护与国家安全",
+            "section_key": "a688d8a7f2",
+            "page_range": [
+              78,
+              86
+            ]
+          },
+          {
+            "name": "第四节 全球气候变化与国家安全",
+            "section_key": "47e3ca010d",
+            "page_range": [
+              86,
+              95
+            ]
+          },
+          {
+            "name": "问题研究 是否应该发展核能",
+            "section_key": "d7f9784219",
+            "page_range": [
+              95,
+              97
+            ]
+          }
+        ],
+        "chapter_key": "7e4fa7ee34",
+        "metadata": {
+          "volume_id": "c4a76e205bc8",
+          "file_id": "c4a76e205bc8",
+          "volume_title": "高中地理 选择性必修3",
+          "chapter_order": 3,
+          "raw_heading": "第三章 环境安全与国家安全"
+        }
+      },
+      {
+        "name": "第四章 保障国家安全的资源、环境战略与行动",
+        "concepts": [
+          {
+            "name": "人地关系",
+            "difficulty": 2,
+            "description": "人类社会与自然环境相互影响、相互制约的关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人地关系是人类活动与自然环境之间相互作用的关系。",
+            "example": "工业社会大量开发资源并排放废弃物，使人地矛盾加剧。"
+          },
+          {
+            "name": "生态文明",
+            "difficulty": 2,
+            "description": "追求人与自然和谐共生的文明发展形态",
+            "aliases": [],
+            "prerequisites": [
+              "人地关系"
+            ],
+            "definition": "生态文明强调遵循自然规律，协调人口、资源、环境与发展。",
+            "example": "安吉县由工业立县转向生态立县。"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 2,
+            "description": "兼顾当代与后代需要的长期发展道路",
+            "aliases": [],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "可持续发展是在保护生态和资源持久支撑能力基础上的社会发展。",
+            "example": "协调经济发展与环境保护，处理眼前利益和长远利益。"
+          },
+          {
+            "name": "资源安全",
+            "difficulty": 2,
+            "description": "经济社会发展所需资源持续可靠有效供给的状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源安全是发展所需资源能够持续、可靠和有效供给。",
+            "example": "建立石油战略储备以保障石油供应安全。"
+          },
+          {
+            "name": "环境安全",
+            "difficulty": 2,
+            "description": "人民赖以生存发展的自然条件免受威胁和破坏",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "环境安全要求大气、水、土壤等自然条件不受威胁和破坏。",
+            "example": "建立大气和水环境污染监测网络。"
+          },
+          {
+            "name": "资源环境安全观",
+            "difficulty": 4,
+            "description": "寻求自然环境服务可持续利用与安全保障的观念",
+            "aliases": [
+              "人地和谐的资源与环境安全观"
+            ],
+            "prerequisites": [
+              "生态文明",
+              "资源安全",
+              "环境安全"
+            ],
+            "definition": "资源环境安全观强调在自然边界内实现环境服务利用与效益最大化的平衡。",
+            "example": "避免资源短缺和环境问题威胁社会可持续发展。",
+            "section": "第三节 国际合作"
+          },
+          {
+            "name": "绿色生产方式",
+            "difficulty": 3,
+            "description": "资源消耗低、污染少、科技含量高的生产方式",
+            "aliases": [
+              "生产方式绿色化"
+            ],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "绿色生产方式通过绿色产业和清洁生产协调资源利用与环境保护。",
+            "example": "绿色工业推行清洁生产并环保处置废弃物。",
+            "section": "第一节 走向生态文明"
+          },
+          {
+            "name": "绿色生活方式",
+            "difficulty": 3,
+            "description": "勤俭节约、绿色低碳、文明健康的生活方式",
+            "aliases": [
+              "生活方式绿色化"
+            ],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "绿色生活方式是减少资源消耗和环境损害的生活与消费模式。",
+            "example": "优先选择公共交通，减少一次性用品使用。"
+          },
+          {
+            "name": "被动屋",
+            "difficulty": 3,
+            "description": "依靠建筑设计和材料降低能耗的节能建筑",
+            "aliases": [
+              "被动式房屋",
+              "被动式超低能耗绿色建筑"
+            ],
+            "prerequisites": [
+              "绿色生产方式"
+            ],
+            "definition": "被动屋主要依靠被动收集热量维持舒适室温，显著降低采暖和制冷能耗。",
+            "example": "利用高性能玻璃、隔热层和室内余热保持室温。",
+            "section": "第一节 走向生态文明"
+          },
+          {
+            "name": "公地悲剧",
+            "difficulty": 3,
+            "description": "产权不明确导致公共资源被过度使用和退化",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "公地悲剧是公共资源因使用者追求自身利益而遭受过度利用的现象。",
+            "example": "免费公用牧场因过度放牧退化为荒地。"
+          },
+          {
+            "name": "战略资源",
+            "difficulty": 2,
+            "description": "对国家安全和经济社会发展具有重要作用的资源",
+            "aliases": [],
+            "prerequisites": [
+              "资源安全"
+            ],
+            "definition": "战略资源是对国家安全和经济社会发展具有重要影响的资源。",
+            "example": "石油是需要重点开发、储备和运输保障的战略资源。"
+          },
+          {
+            "name": "能源战略",
+            "difficulty": 3,
+            "description": "国家对能源开发利用和安全保障作出的总体安排",
+            "aliases": [],
+            "prerequisites": [
+              "战略资源"
+            ],
+            "definition": "能源战略是国家根据资源储量、消费需求和国际市场制定的能源发展方向。",
+            "example": "我国提出坚持安全为本、节约优先、绿色低碳。"
+          },
+          {
+            "name": "战略资源储备",
+            "difficulty": 3,
+            "description": "为非常时期利用而储存重要战略资源的制度安排",
+            "aliases": [],
+            "prerequisites": [
+              "战略资源"
+            ],
+            "definition": "战略资源储备是以国家安全为宗旨储存重要资源以应对特殊时期需要。",
+            "example": "国际能源署成员国规定石油储备最低量相当于90天净进口量。"
+          },
+          {
+            "name": "资源运输通道",
+            "difficulty": 3,
+            "description": "保障战略资源运输能力和运输安全的通道体系",
+            "aliases": [
+              "资源运输战略通道"
+            ],
+            "prerequisites": [
+              "战略资源"
+            ],
+            "definition": "资源运输通道是连接资源供应地与需求地并需要安全保护的运输体系。",
+            "example": "通过海运、陆运和管运实现石油运输通道多元化。"
+          },
+          {
+            "name": "生态保护红线",
+            "difficulty": 3,
+            "description": "必须实行强制性保护的重要生态空间范围",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "生态保护红线是具有重要生态功能或生态环境敏感脆弱、必须保护的区域。",
+            "example": "红线内不能进行大规模生产活动和工程建设。"
+          },
+          {
+            "name": "风险预警",
+            "difficulty": 3,
+            "description": "分析风险信息并发布警示及对策建议",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "风险预警是通过分析推断风险信息，发布警示信息和对策建议。",
+            "example": "环境污染监测网络对常规污染指标进行监测预警。"
+          },
+          {
+            "name": "风险防控",
+            "difficulty": 3,
+            "description": "依据风险预警结果采取应对措施降低风险",
+            "aliases": [],
+            "prerequisites": [
+              "风险预警"
+            ],
+            "definition": "风险防控是根据风险预警结果提升应急响应和风险规避水平。",
+            "example": "针对污染监测结果及时采取控制污染源的措施。"
+          },
+          {
+            "name": "突发环境事件",
+            "difficulty": 3,
+            "description": "突然发生并可能造成环境损害的环境事件",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全"
+            ],
+            "definition": "突发环境事件是需要通过应急管理机制及时处置的环境安全事件。",
+            "example": "松花江水污染特别重大突发环境事件。"
+          },
+          {
+            "name": "应急预案",
+            "difficulty": 3,
+            "description": "为科学有序应对突发事件预先制定的工作方案",
+            "aliases": [],
+            "prerequisites": [
+              "突发环境事件"
+            ],
+            "definition": "应急预案是为迅速应对突发事件并减少损害而预先制定的方案。",
+            "example": "学校编制饮用水污染应急预案。"
+          },
+          {
+            "name": "公众参与",
+            "difficulty": 2,
+            "description": "公众参与资源环境保护和相关事务治理的行动",
+            "aliases": [],
+            "prerequisites": [
+              "环境意识"
+            ],
+            "definition": "公众参与是公民依法参与资源节约、环境保护和事务监督的过程。",
+            "example": "公众参与环境信息获取、意见表达和环境监督。"
+          },
+          {
+            "name": "环境意识",
+            "difficulty": 2,
+            "description": "公众对节约资源和保护环境责任的认识",
+            "aliases": [
+              "公众的环境意识"
+            ],
+            "prerequisites": [
+              "生态文明"
+            ],
+            "definition": "环境意识是公众认识并自觉履行节约资源、保护环境责任的观念。",
+            "example": "将垃圾分类和低碳出行落实到日常行为。"
+          },
+          {
+            "name": "社会监督",
+            "difficulty": 3,
+            "description": "公众依法获取信息并监督资源环境事务的机制",
+            "aliases": [
+              "资源、环境事务的社会监督"
+            ],
+            "prerequisites": [
+              "公众参与"
+            ],
+            "definition": "社会监督是公众依法获取环境信息、表达诉求并监督环境保护工作的活动。",
+            "example": "通过政府网站查询重点企业污染物排放信息。",
+            "section": "第二节 国家战略与政策"
+          },
+          {
+            "name": "国际合作",
+            "difficulty": 2,
+            "description": "各国共同应对资源环境问题的协商与行动",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "国际合作是不同国家依据公平、共同但有区别等原则共同应对资源环境挑战。",
+            "example": "景洪水库向湄公河下游实施应急补水。"
+          },
+          {
+            "name": "全球性资源环境问题",
+            "difficulty": 3,
+            "description": "影响全球且单个国家无法独立解决的问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境安全",
+              "国际合作"
+            ],
+            "definition": "全球性资源环境问题是影响范围广、需要全球共同行动解决的问题。",
+            "example": "全球气候变暖和生物多样性减少。"
+          },
+          {
+            "name": "跨国环境问题",
+            "difficulty": 3,
+            "description": "影响跨越国家或地区边界的资源环境问题",
+            "aliases": [
+              "跨国、跨地区资源环境问题"
+            ],
+            "prerequisites": [
+              "环境安全",
+              "国际合作"
+            ],
+            "definition": "跨国环境问题是影响范围跨越国界或地区、需要区域合作解决的问题。",
+            "example": "有毒化学品和危险废弃物越境转移。"
+          },
+          {
+            "name": "问卷调查",
+            "difficulty": 2,
+            "description": "利用问题表格收集行为、态度和社会特征资料",
+            "aliases": [],
+            "prerequisites": [
+              "公众参与"
+            ],
+            "definition": "问卷调查是通过设计和发放问题表格收集研究资料的方法。",
+            "example": "调查中学生资源、环境安全意识。",
+            "section": "问题研究 如何做中学生资源、环境安全意识问卷调查"
+          },
+          {
+            "name": "全面调查",
+            "difficulty": 2,
+            "description": "对所有调查对象进行调查的方法",
+            "aliases": [],
+            "prerequisites": [
+              "问卷调查"
+            ],
+            "definition": "全面调查是对总体中的全部调查对象进行调查。",
+            "example": "调查某年级所有学生的环保意识。",
+            "section": "问题研究 如何做中学生资源、环境安全意识问卷调查"
+          },
+          {
+            "name": "抽样调查",
+            "difficulty": 3,
+            "description": "抽取部分对象并据此推断总体状况的方法",
+            "aliases": [],
+            "prerequisites": [
+              "问卷调查"
+            ],
+            "definition": "抽样调查是从总体中抽取一部分对象并据此估计和推断总体。",
+            "example": "随机抽取部分学生填写环保意识问卷。",
+            "section": "问题研究 如何做中学生资源、环境安全意识问卷调查"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 走向生态文明",
+            "section_key": "7160f6fc15",
+            "page_range": [
+              99,
+              104
+            ]
+          },
+          {
+            "name": "第二节 国家战略与政策",
+            "section_key": "ce286db2c4",
+            "page_range": [
+              104,
+              112
+            ]
+          },
+          {
+            "name": "第三节 国际合作",
+            "section_key": "041769cdfc",
+            "page_range": [
+              112,
+              118
+            ]
+          },
+          {
+            "name": "问题研究 如何做中学生资源、环境安全意识问卷调查",
+            "section_key": "c1921786d2",
+            "page_range": [
+              118,
+              126
+            ]
+          }
+        ],
+        "chapter_key": "e92167ed9c",
+        "metadata": {
+          "volume_id": "c4a76e205bc8",
+          "file_id": "c4a76e205bc8",
+          "volume_title": "高中地理 选择性必修3",
+          "chapter_order": 4,
+          "raw_heading": "第四章 保障国家安全的资源、环境战略与行动"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "b50592a1ad": [
+        7,
+        11
+      ],
+      "第一节 自然环境的服务功能": [
+        7,
+        11
+      ],
+      "c5842bc9b8": [
+        11,
+        17
+      ],
+      "第二节 自然资源及其利用": [
+        11,
+        17
+      ],
+      "0574d1fc7b": [
+        17,
+        23
+      ],
+      "第三节 环境问题及其危害": [
+        17,
+        23
+      ],
+      "fa735de413": [
+        23,
+        25
+      ],
+      "问题研究 我们的生态足迹有多大": [
+        23,
+        25
+      ],
+      "f1eea034e0": [
+        27,
+        34
+      ],
+      "第一节 资源安全对国家安全的影响": [
+        27,
+        34
+      ],
+      "36f87a0341": [
+        34,
+        42
+      ],
+      "第二节 中国的能源安全": [
+        34,
+        42
+      ],
+      "246ab96900": [
+        42,
+        51
+      ],
+      "第三节 中国的耕地资源与粮食安全": [
+        42,
+        51
+      ],
+      "0a6c4d3418": [
+        51,
+        59
+      ],
+      "第四节 海洋空间资源开发与国家安全": [
+        51,
+        59
+      ],
+      "11c33b7ea0": [
+        59,
+        61
+      ],
+      "问题研究 如何“藏粮于地”": [
+        59,
+        61
+      ],
+      "7fab2e72bf": [
+        63,
+        68
+      ],
+      "第一节 环境安全对国家安全的影响": [
+        63,
+        68
+      ],
+      "c7b88ce64c": [
+        68,
+        78
+      ],
+      "第二节 环境污染与国家安全": [
+        68,
+        78
+      ],
+      "a688d8a7f2": [
+        78,
+        86
+      ],
+      "第三节 生态保护与国家安全": [
+        78,
+        86
+      ],
+      "47e3ca010d": [
+        86,
+        95
+      ],
+      "第四节 全球气候变化与国家安全": [
+        86,
+        95
+      ],
+      "d7f9784219": [
+        95,
+        97
+      ],
+      "问题研究 是否应该发展核能": [
+        95,
+        97
+      ],
+      "7160f6fc15": [
+        99,
+        104
+      ],
+      "第一节 走向生态文明": [
+        99,
+        104
+      ],
+      "ce286db2c4": [
+        104,
+        112
+      ],
+      "第二节 国家战略与政策": [
+        104,
+        112
+      ],
+      "041769cdfc": [
+        112,
+        118
+      ],
+      "第三节 国际合作": [
+        112,
+        118
+      ],
+      "c1921786d2": [
+        118,
+        126
+      ],
+      "问题研究 如何做中学生资源、环境安全意识问卷调查": [
+        118,
+        126
+      ]
+    }
+  }
+}

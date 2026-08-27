@@ -1,0 +1,2107 @@
+{
+  "file_id": "321856223cb2",
+  "text_sha256": "ec3c39907159d471669dfacdbccd365b059f40c7f840ac402cb63912fe0c9cbc",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "化学反应原理第1章",
+        "concepts": [
+          {
+            "name": "反应热",
+            "difficulty": 2,
+            "description": "定量描述一定温度下反应释放或吸收的热量",
+            "aliases": [
+              "热效应"
+            ],
+            "prerequisites": [],
+            "definition": "化学反应在一定温度下释放或吸收的热量称为反应热。",
+            "example": "盐酸与氢氧化钠反应放热，Q取负值"
+          },
+          {
+            "name": "热化学",
+            "difficulty": 2,
+            "description": "研究化学反应热效应的化学分支",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "用实验和理论方法研究反应热的化学分支称为热化学。",
+            "example": "利用量热计测定中和反应热"
+          },
+          {
+            "name": "量热计",
+            "difficulty": 2,
+            "description": "用于测定化学反应热的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "通过测量反应前后温度变化来测定反应热的仪器称为量热计。",
+            "example": "简易量热计测定盐酸与NaOH反应热"
+          },
+          {
+            "name": "热容",
+            "difficulty": 2,
+            "description": "物质温度升高1 K所吸收的热量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质在不发生化学反应且聚集状态不变时温度升高1 K所吸收的热量称为热容。",
+            "example": "量热计和溶液具有一定热容"
+          },
+          {
+            "name": "比热容",
+            "difficulty": 2,
+            "description": "单位质量物质的热容",
+            "aliases": [
+              "比热"
+            ],
+            "prerequisites": [
+              "热容"
+            ],
+            "definition": "单位质量物质的热容称为比热容。",
+            "example": "常温下水的比热约为4.18 kJ·K⁻¹·kg⁻¹"
+          },
+          {
+            "name": "体系与环境",
+            "difficulty": 1,
+            "description": "研究对象及其以外部分的划分",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人为划定的研究对象称为体系，体系以外的部分称为环境。",
+            "example": "密闭容器内气体是体系，容器是环境"
+          },
+          {
+            "name": "内能",
+            "difficulty": 3,
+            "description": "体系内物质所含各种微观粒子的能量总和",
+            "aliases": [],
+            "prerequisites": [
+              "体系与环境"
+            ],
+            "definition": "体系内物质所含各种微观粒子的能量总和称为内能。",
+            "example": "反应物与产物内能不同导致能量变化"
+          },
+          {
+            "name": "内能变化",
+            "difficulty": 3,
+            "description": "反应产物与反应物内能之差",
+            "aliases": [
+              "ΔU"
+            ],
+            "prerequisites": [
+              "内能"
+            ],
+            "definition": "化学反应中产物内能与反应物内能之差称为内能变化。",
+            "example": "无功过程可用反应热表示内能变化"
+          },
+          {
+            "name": "焓",
+            "difficulty": 3,
+            "description": "等压反应中描述体系能量状态的物理量",
+            "aliases": [
+              "H"
+            ],
+            "prerequisites": [
+              "内能"
+            ],
+            "definition": "焓是由体系内能、压强和体积共同确定的物理量，H=U+pV。",
+            "example": "等压反应常用焓变化描述热效应"
+          },
+          {
+            "name": "焓变",
+            "difficulty": 3,
+            "description": "等压反应中产物焓与反应物焓之差",
+            "aliases": [
+              "反应焓变",
+              "ΔH"
+            ],
+            "prerequisites": [
+              "焓"
+            ],
+            "definition": "反应产物的焓与反应物的焓之差称为反应焓变。",
+            "example": "H₂燃烧生成液态水时ΔH为负"
+          },
+          {
+            "name": "等压反应",
+            "difficulty": 3,
+            "description": "在反应前后压强不变条件下进行的反应",
+            "aliases": [],
+            "prerequisites": [
+              "体系与环境"
+            ],
+            "definition": "在压强不变条件下发生的化学反应称为等压反应。",
+            "example": "敞口容器中进行的多数反应近似等压"
+          },
+          {
+            "name": "吸热反应",
+            "difficulty": 1,
+            "description": "反应吸收热量或焓增加的反应",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "反应过程中体系从环境吸收热量的反应称为吸热反应。",
+            "example": "氯化铵与氢氧化钙反应吸热"
+          },
+          {
+            "name": "放热反应",
+            "difficulty": 1,
+            "description": "反应释放热量或焓降低的反应",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "反应过程中体系向环境释放热量的反应称为放热反应。",
+            "example": "氢气在氧气中燃烧放热"
+          },
+          {
+            "name": "热化学方程式",
+            "difficulty": 3,
+            "description": "同时表示物质变化和焓变的化学方程式",
+            "aliases": [],
+            "prerequisites": [
+              "焓变"
+            ],
+            "definition": "同时表示化学反应物质变化及其焓变的化学方程式称为热化学方程式。",
+            "example": "H₂+½O₂=H₂O(l)，ΔH=-285.8 kJ·mol⁻¹"
+          },
+          {
+            "name": "原电池",
+            "difficulty": 3,
+            "description": "将氧化还原反应化学能转化为电能的装置",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "通过自发氧化还原反应将化学能直接转化为电能的装置称为原电池。",
+            "example": "锌铜原电池产生电流"
+          },
+          {
+            "name": "电极反应",
+            "difficulty": 3,
+            "description": "在电极表面发生的氧化或还原反应",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "氧化还原反应在电极表面分别进行的反应称为电极反应。",
+            "example": "锌极反应为Zn-2e⁻=Zn²⁺"
+          },
+          {
+            "name": "电池反应",
+            "difficulty": 3,
+            "description": "组成电池的两个电极反应的总反应",
+            "aliases": [],
+            "prerequisites": [
+              "电极反应"
+            ],
+            "definition": "电池中两个电极反应相加得到的总反应称为电池反应。",
+            "example": "氢氧燃料电池反应为2H₂+O₂=2H₂O"
+          },
+          {
+            "name": "化学电源",
+            "difficulty": 2,
+            "description": "将化学能转化为电能的实用装置",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "能够实际输出电能的化学能转化装置称为化学电源。",
+            "example": "锌锰干电池属于一次电池"
+          },
+          {
+            "name": "一次电池",
+            "difficulty": 2,
+            "description": "只能放电而不能充电的化学电源",
+            "aliases": [],
+            "prerequisites": [
+              "化学电源"
+            ],
+            "definition": "只能放电、使用后通常弃去的化学电源称为一次电池。",
+            "example": "锌锰干电池"
+          },
+          {
+            "name": "二次电池",
+            "difficulty": 2,
+            "description": "能够反复充电和放电的化学电源",
+            "aliases": [
+              "可充电电池"
+            ],
+            "prerequisites": [
+              "化学电源"
+            ],
+            "definition": "可以反复充电和放电的化学电源称为二次电池。",
+            "example": "铅蓄电池属于二次电池"
+          },
+          {
+            "name": "燃料电池",
+            "difficulty": 3,
+            "description": "燃料和氧化剂持续输入并输出电能的电池",
+            "aliases": [],
+            "prerequisites": [
+              "化学电源",
+              "电极反应"
+            ],
+            "definition": "将燃料和氧化剂分别连续输入两极并通过电池反应发电的电池称为燃料电池。",
+            "example": "氢氧燃料电池的产物只有水"
+          },
+          {
+            "name": "电解",
+            "difficulty": 2,
+            "description": "利用电能使电解质发生氧化还原反应的过程",
+            "aliases": [
+              "电解过程"
+            ],
+            "prerequisites": [
+              "电极反应"
+            ],
+            "definition": "将直流电通过熔融电解质或电解质溶液并在两极发生氧化还原反应的过程称为电解。",
+            "example": "电解熔融氯化钠制取钠和氯气"
+          },
+          {
+            "name": "电解池",
+            "difficulty": 2,
+            "description": "将电能转化为化学能的装置",
+            "aliases": [],
+            "prerequisites": [
+              "电解"
+            ],
+            "definition": "利用外加直流电源将电能转化为化学能的装置称为电解池。",
+            "example": "电解食盐水装置"
+          },
+          {
+            "name": "阳极与阴极",
+            "difficulty": 3,
+            "description": "分别发生氧化反应和还原反应的电极",
+            "aliases": [
+              "阳极",
+              "阴极"
+            ],
+            "prerequisites": [
+              "电极反应"
+            ],
+            "definition": "发生氧化反应的电极叫阳极，发生还原反应的电极叫阴极。",
+            "example": "电解熔融NaCl时阳极生成Cl₂"
+          },
+          {
+            "name": "离子放电顺序",
+            "difficulty": 4,
+            "description": "多种离子在电极上得失电子的先后规律",
+            "aliases": [],
+            "prerequisites": [
+              "电解",
+              "阳极与阴极"
+            ],
+            "definition": "电解质中多种离子在电极表面得到或失去电子的先后顺序称为离子放电顺序。",
+            "example": "阴极通常有Cu²⁺优先于H⁺放电"
+          },
+          {
+            "name": "电镀",
+            "difficulty": 2,
+            "description": "利用电解在金属表面镀上金属或合金",
+            "aliases": [],
+            "prerequisites": [
+              "电解"
+            ],
+            "definition": "应用电解原理在金属表面镀上一薄层金属或合金的方法称为电镀。",
+            "example": "在铁制品表面镀锌以防腐蚀"
+          },
+          {
+            "name": "电解精炼",
+            "difficulty": 3,
+            "description": "利用电解除去粗金属中杂质制取精金属",
+            "aliases": [],
+            "prerequisites": [
+              "电解",
+              "离子放电顺序"
+            ],
+            "definition": "利用电解使粗金属溶解并使目标金属析出以提高纯度的方法称为电解精炼。",
+            "example": "以粗铜为阳极、精铜为阴极精炼铜"
+          },
+          {
+            "name": "金属腐蚀",
+            "difficulty": 2,
+            "description": "金属与环境反应而受到破坏的现象",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "金属或合金与周围环境发生化学或电化学反应而被破坏的现象称为金属腐蚀。",
+            "example": "钢铁在潮湿空气中逐渐生锈"
+          },
+          {
+            "name": "电化学腐蚀",
+            "difficulty": 3,
+            "description": "金属在潮湿环境中形成原电池而发生的腐蚀",
+            "aliases": [],
+            "prerequisites": [
+              "金属腐蚀",
+              "原电池"
+            ],
+            "definition": "金属在电解质环境中因原电池作用发生的腐蚀称为电化学腐蚀。",
+            "example": "钢铁在食盐水中加速腐蚀"
+          },
+          {
+            "name": "金属防护",
+            "difficulty": 2,
+            "description": "减缓或阻止金属腐蚀的措施",
+            "aliases": [
+              "金属的防护"
+            ],
+            "prerequisites": [
+              "金属腐蚀"
+            ],
+            "definition": "通过改变金属或环境条件来减缓或阻止金属腐蚀的方法称为金属防护。",
+            "example": "铁制品表面镀锌以减缓腐蚀"
+          },
+          {
+            "name": "离子交换膜",
+            "difficulty": 3,
+            "description": "能选择性允许特定离子通过的高分子膜",
+            "aliases": [
+              "离子膜"
+            ],
+            "prerequisites": [
+              "电解"
+            ],
+            "definition": "能够选择性地使某些离子通过而阻止其他离子通过的高分子膜称为离子交换膜。",
+            "example": "阳离子交换膜允许Na⁺通过而阻止Cl⁻通过"
+          },
+          {
+            "name": "萨巴蒂尔反应",
+            "difficulty": 3,
+            "description": "二氧化碳与氢气反应生成甲烷和水",
+            "aliases": [],
+            "prerequisites": [
+              "焓变"
+            ],
+            "definition": "二氧化碳在催化剂和一定温度下与氢气反应生成甲烷和水的反应称为萨巴蒂尔反应。",
+            "example": "CO₂+4H₂=CH₄+2H₂O"
+          }
+        ]
+      },
+      {
+        "name": "化学反应原理第2章",
+        "concepts": [
+          {
+            "name": "化学反应方向",
+            "difficulty": 2,
+            "description": "判断反应在指定条件下能否按预期方向进行",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "化学反应方向是反应在给定条件下自发进行的方向。",
+            "example": "汽车尾气中NO和CO可自发反应生成氮气和二氧化碳。"
+          },
+          {
+            "name": "自发反应",
+            "difficulty": 2,
+            "description": "在一定条件下无需外界持续作用即可进行的反应",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应方向"
+            ],
+            "definition": "自发反应是在给定条件下具有正向自发进行趋势的反应。",
+            "example": "氢氧化亚铁被氧化为氢氧化铁。"
+          },
+          {
+            "name": "反应焓变",
+            "difficulty": 2,
+            "description": "表示反应过程中体系焓变化的物理量",
+            "aliases": [
+              "ΔH"
+            ],
+            "prerequisites": [],
+            "definition": "反应焓变是反应产物总焓与反应物总焓之差。",
+            "example": "氢氧化亚铁氧化反应的ΔH为负值。"
+          },
+          {
+            "name": "熵",
+            "difficulty": 2,
+            "description": "描述体系无序程度的物理量",
+            "aliases": [
+              "S"
+            ],
+            "prerequisites": [],
+            "definition": "熵是用来描述体系无序程度的物理量。",
+            "example": "气态物质的熵通常大于同种液态物质。"
+          },
+          {
+            "name": "反应熵变",
+            "difficulty": 3,
+            "description": "表示反应前后体系熵变化的物理量",
+            "aliases": [
+              "ΔS"
+            ],
+            "prerequisites": [
+              "熵"
+            ],
+            "definition": "反应熵变是反应产物总熵与反应物总熵之差。",
+            "example": "过氧化氢分解生成氧气，通常属于熵增加反应。"
+          },
+          {
+            "name": "自发判据",
+            "difficulty": 4,
+            "description": "用ΔH、ΔS和温度综合判断反应方向",
+            "aliases": [
+              "ΔH-TΔS判据"
+            ],
+            "prerequisites": [
+              "反应焓变",
+              "反应熵变"
+            ],
+            "definition": "在限定条件下，ΔH-TΔS小于零表示反应正向能自发进行。",
+            "example": "ΔH-TΔS<0时反应具有正向自发趋势。"
+          },
+          {
+            "name": "吉布斯自由能",
+            "difficulty": 4,
+            "description": "表征等温等压体系做最大非体积功能力",
+            "aliases": [
+              "G",
+              "ΔG"
+            ],
+            "prerequisites": [
+              "反应焓变",
+              "反应熵变"
+            ],
+            "definition": "吉布斯自由能变满足ΔG=ΔH-TΔS并可判断反应方向。",
+            "example": "ΔG=0表示体系达到平衡状态。"
+          },
+          {
+            "name": "可逆反应",
+            "difficulty": 2,
+            "description": "正逆两个方向均能进行的化学反应",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "可逆反应是在一定条件下既能正向进行又能逆向进行的反应。",
+            "example": "合成氨反应可表示为N₂与H₂生成NH₃的可逆过程。"
+          },
+          {
+            "name": "化学平衡",
+            "difficulty": 3,
+            "description": "可逆反应正逆反应速率相等的动态状态",
+            "aliases": [
+              "化学平衡状态"
+            ],
+            "prerequisites": [
+              "可逆反应"
+            ],
+            "definition": "化学平衡是可逆反应进行到正逆反应速率相等且组成不再变化的状态。",
+            "example": "H₂、I₂和HI达到平衡后各物质浓度保持不变。"
+          },
+          {
+            "name": "平衡常数",
+            "difficulty": 4,
+            "description": "定量描述可逆反应进行限度的常数",
+            "aliases": [
+              "K"
+            ],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "平衡常数是在一定温度下由平衡浓度按方程式系数组合得到的常数。",
+            "example": "H₂与I₂生成HI的平衡常数可由平衡浓度计算。"
+          },
+          {
+            "name": "平衡常数表达式",
+            "difficulty": 4,
+            "description": "由平衡浓度和化学计量数构成的K表达式",
+            "aliases": [],
+            "prerequisites": [
+              "平衡常数"
+            ],
+            "definition": "平衡常数表达式是各生成物平衡浓度幂的乘积与各反应物对应乘积之比。",
+            "example": "纯固体和纯液体不列入平衡常数表达式。"
+          },
+          {
+            "name": "平衡转化率",
+            "difficulty": 3,
+            "description": "表示反应物达到平衡时的转化程度",
+            "aliases": [
+              "α"
+            ],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "平衡转化率是反应物已转化量与其初始量的百分比。",
+            "example": "根据SO₂初始量和平衡量可计算其平衡转化率。"
+          },
+          {
+            "name": "勒夏特列原理",
+            "difficulty": 4,
+            "description": "预测平衡体系受条件改变后的移动方向",
+            "aliases": [
+              "平衡移动原理"
+            ],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "封闭平衡体系改变一个条件时，平衡将向减弱该改变的方向移动。",
+            "example": "合成氨反应增大压强，平衡向气体物质的量减少方向移动。"
+          },
+          {
+            "name": "化学平衡移动",
+            "difficulty": 3,
+            "description": "平衡条件改变后组成向新状态调整的过程",
+            "aliases": [],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "化学平衡移动是平衡体系因条件改变而由原平衡转变为新平衡的过程。",
+            "example": "升高放热反应温度，平衡通常向吸热方向移动。"
+          },
+          {
+            "name": "化学反应速率",
+            "difficulty": 2,
+            "description": "定量表示化学反应进行快慢的物理量",
+            "aliases": [
+              "反应速率",
+              "υ"
+            ],
+            "prerequisites": [],
+            "definition": "化学反应速率是单位时间内反应物或生成物浓度变化的量。",
+            "example": "用镁条与盐酸反应中盐酸浓度的变化表示速率。"
+          },
+          {
+            "name": "反应历程",
+            "difficulty": 3,
+            "description": "由多个基元反应构成的反应步骤序列",
+            "aliases": [
+              "反应机理"
+            ],
+            "prerequisites": [
+              "基元反应"
+            ],
+            "definition": "反应历程是反应物经一系列基元反应转化为产物的过程。",
+            "example": "氢气和氧气生成水的反应约经历多个步骤。"
+          },
+          {
+            "name": "基元反应",
+            "difficulty": 3,
+            "description": "化学反应历程中的单一步骤反应",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基元反应是组成反应历程的每一个单独反应步骤。",
+            "example": "H·与O₂反应生成·OH和O·是一个基元反应。"
+          },
+          {
+            "name": "自由基",
+            "difficulty": 3,
+            "description": "含有未成对电子、反应活性强的微粒",
+            "aliases": [
+              "自由原子"
+            ],
+            "prerequisites": [],
+            "definition": "自由基是含有未成对电子且通常反应活性强、寿命短的微粒。",
+            "example": "H·、·OH和O·都是自由基。"
+          },
+          {
+            "name": "反应速率表达式",
+            "difficulty": 4,
+            "description": "表示速率与参与反应物浓度关系的数学式",
+            "aliases": [
+              "速率方程"
+            ],
+            "prerequisites": [
+              "化学反应速率"
+            ],
+            "definition": "反应速率表达式是由实验确定的速率与反应物浓度之间的定量关系。",
+            "example": "某反应可表示为υ=k c(H₂O₂)c(HI)。"
+          },
+          {
+            "name": "反应速率常数",
+            "difficulty": 3,
+            "description": "表示单位浓度条件下反应速率的常数",
+            "aliases": [
+              "k"
+            ],
+            "prerequisites": [
+              "反应速率表达式"
+            ],
+            "definition": "反应速率常数是在特定温度等条件下反映反应快慢的比例常数。",
+            "example": "速率常数越大，通常表示反应进行得越快。"
+          },
+          {
+            "name": "活化能",
+            "difficulty": 4,
+            "description": "反应物形成过渡态所需克服的能量差",
+            "aliases": [
+              "Ea"
+            ],
+            "prerequisites": [
+              "基元反应"
+            ],
+            "definition": "活化能是过渡态能量与反应物平均能量之差。",
+            "example": "基元反应活化能越高，反应通常越难发生。"
+          },
+          {
+            "name": "碰撞理论",
+            "difficulty": 4,
+            "description": "用有效碰撞解释基元反应发生条件的理论",
+            "aliases": [
+              "基元反应碰撞理论"
+            ],
+            "prerequisites": [
+              "活化能"
+            ],
+            "definition": "碰撞理论认为只有能量足够且方向合适的碰撞才是有效碰撞。",
+            "example": "升高温度可增加活化分子和有效碰撞数。"
+          },
+          {
+            "name": "过渡态理论",
+            "difficulty": 4,
+            "description": "用反应过程中的高能中间状态解释反应速率",
+            "aliases": [
+              "基元反应过渡态理论"
+            ],
+            "prerequisites": [
+              "活化能"
+            ],
+            "definition": "过渡态理论认为基元反应需经过能量最高的过渡态。",
+            "example": "H…H…Cl结构可表示H₂与Cl·反应的过渡态。"
+          },
+          {
+            "name": "催化剂",
+            "difficulty": 3,
+            "description": "改变反应速率而自身反应前后基本不变的物质",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应速率",
+              "活化能"
+            ],
+            "definition": "催化剂通过改变反应历程影响反应速率，反应前后自身性质和质量基本不变。",
+            "example": "汽车尾气净化器使用贵金属催化剂加快反应。"
+          },
+          {
+            "name": "阿伦尼乌斯公式",
+            "difficulty": 4,
+            "description": "表示速率常数与温度和活化能关系的经验公式",
+            "aliases": [
+              "Arrhenius公式"
+            ],
+            "prerequisites": [
+              "反应速率常数",
+              "活化能"
+            ],
+            "definition": "阿伦尼乌斯公式为k=Ae^(-Ea/RT)，描述速率常数的温度依赖。",
+            "example": "活化能越大，升高相同温度对速率常数影响越明显。"
+          },
+          {
+            "name": "化工条件优化",
+            "difficulty": 4,
+            "description": "综合平衡、速率、成本和安全选择生产条件",
+            "aliases": [
+              "反应条件优化"
+            ],
+            "prerequisites": [
+              "平衡常数",
+              "化学反应速率",
+              "催化剂"
+            ],
+            "definition": "化工条件优化是在转化率、速率、选择性、成本和安全之间综合权衡。",
+            "example": "工业合成氨需综合考虑温度、压强、催化剂和原料利用率。"
+          },
+          {
+            "name": "主反应与副反应",
+            "difficulty": 3,
+            "description": "工业过程中目标反应与伴随发生的非目标反应",
+            "aliases": [],
+            "prerequisites": [
+              "可逆反应"
+            ],
+            "definition": "主反应生成目标产物，副反应则生成非目标产物并影响生产效果。",
+            "example": "合成甲醇时CO₂与H₂反应为主反应，生成CO的反应为副反应。"
+          },
+          {
+            "name": "反应选择性",
+            "difficulty": 3,
+            "description": "目标产物在反应产物或转化物中的相对比例",
+            "aliases": [
+              "选择性"
+            ],
+            "prerequisites": [
+              "主反应与副反应"
+            ],
+            "definition": "反应选择性是生成目标产物的反应物在全部反应物转化中的比例。",
+            "example": "选择性高的催化剂可减少甲醇合成中的副反应影响。"
+          }
+        ]
+      },
+      {
+        "name": "化学反应原理第3章",
+        "concepts": [
+          {
+            "name": "电解质",
+            "difficulty": 1,
+            "description": "在水溶液中或熔融状态能导电的化合物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电解质是在水溶液中或熔融状态能导电的化合物。",
+            "example": "NaCl、CH3COOH属于电解质"
+          },
+          {
+            "name": "水的电离",
+            "difficulty": 2,
+            "description": "水分子生成H+和OH−的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "水的电离是水分子生成H+和OH−的可逆过程。",
+            "example": "H2O ⇌ H+＋OH−"
+          },
+          {
+            "name": "电离平衡",
+            "difficulty": 2,
+            "description": "弱电解质电离与结合速率相等的状态",
+            "aliases": [],
+            "prerequisites": [
+              "水的电离"
+            ],
+            "definition": "电离平衡是弱电解质电离和离子重新结合达到的动态平衡状态。",
+            "example": "醋酸溶液中存在电离平衡"
+          },
+          {
+            "name": "水的离子积",
+            "difficulty": 2,
+            "description": "水溶液中H+与OH−浓度乘积",
+            "aliases": [
+              "离子积"
+            ],
+            "prerequisites": [
+              "水的电离"
+            ],
+            "definition": "水的离子积是一定温度下水溶液中H+和OH−平衡浓度的乘积。",
+            "example": "25℃时KW＝1.0×10−14"
+          },
+          {
+            "name": "强电解质",
+            "difficulty": 2,
+            "description": "在稀水溶液中能完全电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "强电解质是在稀的水溶液中能够完全电离的电解质。",
+            "example": "HCl在水中完全电离"
+          },
+          {
+            "name": "弱电解质",
+            "difficulty": 2,
+            "description": "在水溶液中只能部分电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离平衡"
+            ],
+            "definition": "弱电解质是在水溶液中只能部分电离并存在电离平衡的电解质。",
+            "example": "CH3COOH只能部分电离"
+          },
+          {
+            "name": "溶剂化作用",
+            "difficulty": 2,
+            "description": "溶质微粒与溶剂分子相互吸引结合",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "溶剂化作用是溶质离子或分子与溶剂分子相互吸引结合的作用。",
+            "example": "Na+以水合离子形式存在"
+          },
+          {
+            "name": "溶液酸碱性",
+            "difficulty": 2,
+            "description": "由H+和OH−浓度相对大小决定的性质",
+            "aliases": [],
+            "prerequisites": [
+              "水的离子积"
+            ],
+            "definition": "水溶液的酸碱性由H+和OH−平衡浓度的相对大小决定。",
+            "example": "c(H+)大于c(OH−)时呈酸性"
+          },
+          {
+            "name": "pH",
+            "difficulty": 2,
+            "description": "表示水溶液酸碱度的数值",
+            "aliases": [
+              "酸碱度"
+            ],
+            "prerequisites": [
+              "溶液酸碱性"
+            ],
+            "definition": "pH是以负的H+平衡浓度常用对数表示的溶液酸碱度。",
+            "example": "c(H+)＝1.0×10−3mol·L−1时pH＝3"
+          },
+          {
+            "name": "电离常数",
+            "difficulty": 3,
+            "description": "表示弱电解质电离能力的平衡常数",
+            "aliases": [
+              "电离平衡常数"
+            ],
+            "prerequisites": [
+              "弱电解质",
+              "电离平衡"
+            ],
+            "definition": "电离常数是弱电解质电离平衡时离子浓度幂的乘积与未电离分子浓度之比。",
+            "example": "醋酸用Ka表示电离常数"
+          },
+          {
+            "name": "电离度",
+            "difficulty": 3,
+            "description": "已电离溶质占原有溶质的百分率",
+            "aliases": [
+              "α"
+            ],
+            "prerequisites": [
+              "弱电解质",
+              "电离平衡"
+            ],
+            "definition": "电离度是达到电离平衡时已电离溶质占原有溶质总量的百分率。",
+            "example": "0.10mol·L−1醋酸电离度约为1.3%"
+          },
+          {
+            "name": "电离平衡移动",
+            "difficulty": 3,
+            "description": "外界条件改变引起电离平衡方向变化",
+            "aliases": [],
+            "prerequisites": [
+              "电离平衡",
+              "电离常数"
+            ],
+            "definition": "电离平衡移动是温度、浓度或离子变化导致平衡向电离或生成分子方向改变。",
+            "example": "稀释醋酸促进其电离"
+          },
+          {
+            "name": "盐类水解",
+            "difficulty": 3,
+            "description": "盐电离产生的离子与水反应的过程",
+            "aliases": [
+              "水解"
+            ],
+            "prerequisites": [
+              "强电解质",
+              "水的电离"
+            ],
+            "definition": "盐类水解是盐电离产生的弱酸酸根或弱碱阳离子与水反应的过程。",
+            "example": "CO3^2−＋H2O⇌HCO3−＋OH−"
+          },
+          {
+            "name": "水解平衡",
+            "difficulty": 3,
+            "description": "盐类水解反应达到的动态平衡",
+            "aliases": [],
+            "prerequisites": [
+              "盐类水解",
+              "电离平衡"
+            ],
+            "definition": "水解平衡是盐类离子水解及其逆反应达到的动态平衡状态。",
+            "example": "醋酸根水解存在平衡"
+          },
+          {
+            "name": "沉淀溶解平衡",
+            "difficulty": 3,
+            "description": "难溶电解质溶解与沉淀速率相等",
+            "aliases": [],
+            "prerequisites": [
+              "电离平衡"
+            ],
+            "definition": "沉淀溶解平衡是难溶电解质沉淀与溶解达到的动态平衡状态。",
+            "example": "BaSO4(s)⇌Ba2+＋SO4^2−"
+          },
+          {
+            "name": "溶度积",
+            "difficulty": 3,
+            "description": "难溶电解质饱和溶液中的离子积",
+            "aliases": [
+              "Ksp"
+            ],
+            "prerequisites": [
+              "沉淀溶解平衡"
+            ],
+            "definition": "溶度积是一定温度下难溶电解质饱和溶液中各离子浓度幂的乘积。",
+            "example": "BaSO4的Ksp约为1.1×10−10"
+          },
+          {
+            "name": "沉淀转化",
+            "difficulty": 3,
+            "description": "一种难溶电解质沉淀转为另一种沉淀",
+            "aliases": [],
+            "prerequisites": [
+              "沉淀溶解平衡",
+              "溶度积"
+            ],
+            "definition": "沉淀转化是原沉淀溶解产生的离子生成另一种难溶电解质沉淀的过程。",
+            "example": "ZnS可转化为更难溶的CuS"
+          },
+          {
+            "name": "离子反应",
+            "difficulty": 2,
+            "description": "溶液中离子参与的化学反应",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "离子反应是溶液中离子之间以及离子与原子或分子之间发生的反应。",
+            "example": "Ba2+与SO4^2−生成BaSO4"
+          },
+          {
+            "name": "离子方程式",
+            "difficulty": 3,
+            "description": "用实际参加反应的离子表示反应",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应"
+            ],
+            "definition": "离子方程式是用实际参加反应的离子、原子或分子表示反应实质的式子。",
+            "example": "H+＋OH−＝H2O"
+          },
+          {
+            "name": "离子反应条件",
+            "difficulty": 3,
+            "description": "生成沉淀、弱电解质、气体或发生氧化还原",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应",
+              "离子方程式"
+            ],
+            "definition": "离子反应通常因生成沉淀、弱电解质、气体或发生氧化还原而发生。",
+            "example": "碳酸根遇酸生成CO2"
+          },
+          {
+            "name": "酸碱中和滴定",
+            "difficulty": 3,
+            "description": "利用恰好中和测定酸碱浓度的方法",
+            "aliases": [
+              "中和滴定"
+            ],
+            "prerequisites": [
+              "离子反应",
+              "pH"
+            ],
+            "definition": "酸碱中和滴定是用已知浓度酸或碱测定未知溶液浓度的方法。",
+            "example": "用NaOH滴定未知盐酸"
+          },
+          {
+            "name": "酸碱指示剂",
+            "difficulty": 2,
+            "description": "随溶液pH变化而发生颜色变化的物质",
+            "aliases": [],
+            "prerequisites": [
+              "pH"
+            ],
+            "definition": "酸碱指示剂是在不同pH范围内呈现不同颜色的物质。",
+            "example": "甲基橙可指示酸碱变化"
+          },
+          {
+            "name": "氧化还原滴定",
+            "difficulty": 3,
+            "description": "利用氧化还原反应测定物质浓度",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应"
+            ],
+            "definition": "氧化还原滴定是用已知浓度的氧化剂或还原剂测定待测物浓度的方法。",
+            "example": "用Fe2+溶液测定MnO4−浓度"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {
+      "化学反应原理第1章": [
+        4,
+        51
+      ],
+      "化学反应原理第2章": [
+        52,
+        96
+      ],
+      "化学反应原理第3章": [
+        97,
+        148
+      ]
+    },
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "化学反应原理第1章",
+        "concepts": [
+          {
+            "name": "反应热",
+            "difficulty": 2,
+            "description": "定量描述一定温度下反应释放或吸收的热量",
+            "aliases": [
+              "热效应"
+            ],
+            "prerequisites": [],
+            "definition": "化学反应在一定温度下释放或吸收的热量称为反应热。",
+            "example": "盐酸与氢氧化钠反应放热，Q取负值"
+          },
+          {
+            "name": "热化学",
+            "difficulty": 2,
+            "description": "研究化学反应热效应的化学分支",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "用实验和理论方法研究反应热的化学分支称为热化学。",
+            "example": "利用量热计测定中和反应热"
+          },
+          {
+            "name": "量热计",
+            "difficulty": 2,
+            "description": "用于测定化学反应热的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "通过测量反应前后温度变化来测定反应热的仪器称为量热计。",
+            "example": "简易量热计测定盐酸与NaOH反应热"
+          },
+          {
+            "name": "热容",
+            "difficulty": 2,
+            "description": "物质温度升高1 K所吸收的热量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质在不发生化学反应且聚集状态不变时温度升高1 K所吸收的热量称为热容。",
+            "example": "量热计和溶液具有一定热容"
+          },
+          {
+            "name": "比热容",
+            "difficulty": 2,
+            "description": "单位质量物质的热容",
+            "aliases": [
+              "比热"
+            ],
+            "prerequisites": [
+              "热容"
+            ],
+            "definition": "单位质量物质的热容称为比热容。",
+            "example": "常温下水的比热约为4.18 kJ·K⁻¹·kg⁻¹"
+          },
+          {
+            "name": "体系与环境",
+            "difficulty": 1,
+            "description": "研究对象及其以外部分的划分",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人为划定的研究对象称为体系，体系以外的部分称为环境。",
+            "example": "密闭容器内气体是体系，容器是环境"
+          },
+          {
+            "name": "内能",
+            "difficulty": 3,
+            "description": "体系内物质所含各种微观粒子的能量总和",
+            "aliases": [],
+            "prerequisites": [
+              "体系与环境"
+            ],
+            "definition": "体系内物质所含各种微观粒子的能量总和称为内能。",
+            "example": "反应物与产物内能不同导致能量变化"
+          },
+          {
+            "name": "内能变化",
+            "difficulty": 3,
+            "description": "反应产物与反应物内能之差",
+            "aliases": [
+              "ΔU"
+            ],
+            "prerequisites": [
+              "内能"
+            ],
+            "definition": "化学反应中产物内能与反应物内能之差称为内能变化。",
+            "example": "无功过程可用反应热表示内能变化"
+          },
+          {
+            "name": "焓",
+            "difficulty": 3,
+            "description": "等压反应中描述体系能量状态的物理量",
+            "aliases": [
+              "H"
+            ],
+            "prerequisites": [
+              "内能"
+            ],
+            "definition": "焓是由体系内能、压强和体积共同确定的物理量，H=U+pV。",
+            "example": "等压反应常用焓变化描述热效应"
+          },
+          {
+            "name": "焓变",
+            "difficulty": 3,
+            "description": "等压反应中产物焓与反应物焓之差",
+            "aliases": [
+              "反应焓变",
+              "ΔH"
+            ],
+            "prerequisites": [
+              "焓"
+            ],
+            "definition": "反应产物的焓与反应物的焓之差称为反应焓变。",
+            "example": "H₂燃烧生成液态水时ΔH为负"
+          },
+          {
+            "name": "等压反应",
+            "difficulty": 3,
+            "description": "在反应前后压强不变条件下进行的反应",
+            "aliases": [],
+            "prerequisites": [
+              "体系与环境"
+            ],
+            "definition": "在压强不变条件下发生的化学反应称为等压反应。",
+            "example": "敞口容器中进行的多数反应近似等压"
+          },
+          {
+            "name": "吸热反应",
+            "difficulty": 1,
+            "description": "反应吸收热量或焓增加的反应",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "反应过程中体系从环境吸收热量的反应称为吸热反应。",
+            "example": "氯化铵与氢氧化钙反应吸热"
+          },
+          {
+            "name": "放热反应",
+            "difficulty": 1,
+            "description": "反应释放热量或焓降低的反应",
+            "aliases": [],
+            "prerequisites": [
+              "反应热"
+            ],
+            "definition": "反应过程中体系向环境释放热量的反应称为放热反应。",
+            "example": "氢气在氧气中燃烧放热"
+          },
+          {
+            "name": "热化学方程式",
+            "difficulty": 3,
+            "description": "同时表示物质变化和焓变的化学方程式",
+            "aliases": [],
+            "prerequisites": [
+              "焓变"
+            ],
+            "definition": "同时表示化学反应物质变化及其焓变的化学方程式称为热化学方程式。",
+            "example": "H₂+½O₂=H₂O(l)，ΔH=-285.8 kJ·mol⁻¹"
+          },
+          {
+            "name": "原电池",
+            "difficulty": 3,
+            "description": "将氧化还原反应化学能转化为电能的装置",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "通过自发氧化还原反应将化学能直接转化为电能的装置称为原电池。",
+            "example": "锌铜原电池产生电流"
+          },
+          {
+            "name": "电极反应",
+            "difficulty": 3,
+            "description": "在电极表面发生的氧化或还原反应",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "氧化还原反应在电极表面分别进行的反应称为电极反应。",
+            "example": "锌极反应为Zn-2e⁻=Zn²⁺"
+          },
+          {
+            "name": "电池反应",
+            "difficulty": 3,
+            "description": "组成电池的两个电极反应的总反应",
+            "aliases": [],
+            "prerequisites": [
+              "电极反应"
+            ],
+            "definition": "电池中两个电极反应相加得到的总反应称为电池反应。",
+            "example": "氢氧燃料电池反应为2H₂+O₂=2H₂O"
+          },
+          {
+            "name": "化学电源",
+            "difficulty": 2,
+            "description": "将化学能转化为电能的实用装置",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "能够实际输出电能的化学能转化装置称为化学电源。",
+            "example": "锌锰干电池属于一次电池"
+          },
+          {
+            "name": "一次电池",
+            "difficulty": 2,
+            "description": "只能放电而不能充电的化学电源",
+            "aliases": [],
+            "prerequisites": [
+              "化学电源"
+            ],
+            "definition": "只能放电、使用后通常弃去的化学电源称为一次电池。",
+            "example": "锌锰干电池"
+          },
+          {
+            "name": "二次电池",
+            "difficulty": 2,
+            "description": "能够反复充电和放电的化学电源",
+            "aliases": [
+              "可充电电池"
+            ],
+            "prerequisites": [
+              "化学电源"
+            ],
+            "definition": "可以反复充电和放电的化学电源称为二次电池。",
+            "example": "铅蓄电池属于二次电池"
+          },
+          {
+            "name": "燃料电池",
+            "difficulty": 3,
+            "description": "燃料和氧化剂持续输入并输出电能的电池",
+            "aliases": [],
+            "prerequisites": [
+              "化学电源",
+              "电极反应"
+            ],
+            "definition": "将燃料和氧化剂分别连续输入两极并通过电池反应发电的电池称为燃料电池。",
+            "example": "氢氧燃料电池的产物只有水"
+          },
+          {
+            "name": "电解",
+            "difficulty": 2,
+            "description": "利用电能使电解质发生氧化还原反应的过程",
+            "aliases": [
+              "电解过程"
+            ],
+            "prerequisites": [
+              "电极反应"
+            ],
+            "definition": "将直流电通过熔融电解质或电解质溶液并在两极发生氧化还原反应的过程称为电解。",
+            "example": "电解熔融氯化钠制取钠和氯气"
+          },
+          {
+            "name": "电解池",
+            "difficulty": 2,
+            "description": "将电能转化为化学能的装置",
+            "aliases": [],
+            "prerequisites": [
+              "电解"
+            ],
+            "definition": "利用外加直流电源将电能转化为化学能的装置称为电解池。",
+            "example": "电解食盐水装置"
+          },
+          {
+            "name": "阳极与阴极",
+            "difficulty": 3,
+            "description": "分别发生氧化反应和还原反应的电极",
+            "aliases": [
+              "阳极",
+              "阴极"
+            ],
+            "prerequisites": [
+              "电极反应"
+            ],
+            "definition": "发生氧化反应的电极叫阳极，发生还原反应的电极叫阴极。",
+            "example": "电解熔融NaCl时阳极生成Cl₂"
+          },
+          {
+            "name": "离子放电顺序",
+            "difficulty": 4,
+            "description": "多种离子在电极上得失电子的先后规律",
+            "aliases": [],
+            "prerequisites": [
+              "电解",
+              "阳极与阴极"
+            ],
+            "definition": "电解质中多种离子在电极表面得到或失去电子的先后顺序称为离子放电顺序。",
+            "example": "阴极通常有Cu²⁺优先于H⁺放电"
+          },
+          {
+            "name": "电镀",
+            "difficulty": 2,
+            "description": "利用电解在金属表面镀上金属或合金",
+            "aliases": [],
+            "prerequisites": [
+              "电解"
+            ],
+            "definition": "应用电解原理在金属表面镀上一薄层金属或合金的方法称为电镀。",
+            "example": "在铁制品表面镀锌以防腐蚀"
+          },
+          {
+            "name": "电解精炼",
+            "difficulty": 3,
+            "description": "利用电解除去粗金属中杂质制取精金属",
+            "aliases": [],
+            "prerequisites": [
+              "电解",
+              "离子放电顺序"
+            ],
+            "definition": "利用电解使粗金属溶解并使目标金属析出以提高纯度的方法称为电解精炼。",
+            "example": "以粗铜为阳极、精铜为阴极精炼铜"
+          },
+          {
+            "name": "金属腐蚀",
+            "difficulty": 2,
+            "description": "金属与环境反应而受到破坏的现象",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "金属或合金与周围环境发生化学或电化学反应而被破坏的现象称为金属腐蚀。",
+            "example": "钢铁在潮湿空气中逐渐生锈"
+          },
+          {
+            "name": "电化学腐蚀",
+            "difficulty": 3,
+            "description": "金属在潮湿环境中形成原电池而发生的腐蚀",
+            "aliases": [],
+            "prerequisites": [
+              "金属腐蚀",
+              "原电池"
+            ],
+            "definition": "金属在电解质环境中因原电池作用发生的腐蚀称为电化学腐蚀。",
+            "example": "钢铁在食盐水中加速腐蚀"
+          },
+          {
+            "name": "金属防护",
+            "difficulty": 2,
+            "description": "减缓或阻止金属腐蚀的措施",
+            "aliases": [
+              "金属的防护"
+            ],
+            "prerequisites": [
+              "金属腐蚀"
+            ],
+            "definition": "通过改变金属或环境条件来减缓或阻止金属腐蚀的方法称为金属防护。",
+            "example": "铁制品表面镀锌以减缓腐蚀"
+          },
+          {
+            "name": "离子交换膜",
+            "difficulty": 3,
+            "description": "能选择性允许特定离子通过的高分子膜",
+            "aliases": [
+              "离子膜"
+            ],
+            "prerequisites": [
+              "电解"
+            ],
+            "definition": "能够选择性地使某些离子通过而阻止其他离子通过的高分子膜称为离子交换膜。",
+            "example": "阳离子交换膜允许Na⁺通过而阻止Cl⁻通过"
+          },
+          {
+            "name": "萨巴蒂尔反应",
+            "difficulty": 3,
+            "description": "二氧化碳与氢气反应生成甲烷和水",
+            "aliases": [],
+            "prerequisites": [
+              "焓变"
+            ],
+            "definition": "二氧化碳在催化剂和一定温度下与氢气反应生成甲烷和水的反应称为萨巴蒂尔反应。",
+            "example": "CO₂+4H₂=CH₄+2H₂O"
+          }
+        ],
+        "chapter_key": "d8aa89b85f",
+        "metadata": {
+          "volume_id": "321856223cb2",
+          "file_id": "321856223cb2",
+          "volume_title": "普通高中教科书 化学 选择性必修1 化学反应原理",
+          "chapter_order": 1,
+          "raw_heading": "化学反应原理第1章",
+          "page_range": [
+            4,
+            51
+          ]
+        }
+      },
+      {
+        "name": "化学反应原理第2章",
+        "concepts": [
+          {
+            "name": "化学反应方向",
+            "difficulty": 2,
+            "description": "判断反应在指定条件下能否按预期方向进行",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "化学反应方向是反应在给定条件下自发进行的方向。",
+            "example": "汽车尾气中NO和CO可自发反应生成氮气和二氧化碳。"
+          },
+          {
+            "name": "自发反应",
+            "difficulty": 2,
+            "description": "在一定条件下无需外界持续作用即可进行的反应",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应方向"
+            ],
+            "definition": "自发反应是在给定条件下具有正向自发进行趋势的反应。",
+            "example": "氢氧化亚铁被氧化为氢氧化铁。"
+          },
+          {
+            "name": "反应焓变",
+            "difficulty": 2,
+            "description": "表示反应过程中体系焓变化的物理量",
+            "aliases": [
+              "ΔH"
+            ],
+            "prerequisites": [],
+            "definition": "反应焓变是反应产物总焓与反应物总焓之差。",
+            "example": "氢氧化亚铁氧化反应的ΔH为负值。"
+          },
+          {
+            "name": "熵",
+            "difficulty": 2,
+            "description": "描述体系无序程度的物理量",
+            "aliases": [
+              "S"
+            ],
+            "prerequisites": [],
+            "definition": "熵是用来描述体系无序程度的物理量。",
+            "example": "气态物质的熵通常大于同种液态物质。"
+          },
+          {
+            "name": "反应熵变",
+            "difficulty": 3,
+            "description": "表示反应前后体系熵变化的物理量",
+            "aliases": [
+              "ΔS"
+            ],
+            "prerequisites": [
+              "熵"
+            ],
+            "definition": "反应熵变是反应产物总熵与反应物总熵之差。",
+            "example": "过氧化氢分解生成氧气，通常属于熵增加反应。"
+          },
+          {
+            "name": "自发判据",
+            "difficulty": 4,
+            "description": "用ΔH、ΔS和温度综合判断反应方向",
+            "aliases": [
+              "ΔH-TΔS判据"
+            ],
+            "prerequisites": [
+              "反应焓变",
+              "反应熵变"
+            ],
+            "definition": "在限定条件下，ΔH-TΔS小于零表示反应正向能自发进行。",
+            "example": "ΔH-TΔS<0时反应具有正向自发趋势。"
+          },
+          {
+            "name": "吉布斯自由能",
+            "difficulty": 4,
+            "description": "表征等温等压体系做最大非体积功能力",
+            "aliases": [
+              "G",
+              "ΔG"
+            ],
+            "prerequisites": [
+              "反应焓变",
+              "反应熵变"
+            ],
+            "definition": "吉布斯自由能变满足ΔG=ΔH-TΔS并可判断反应方向。",
+            "example": "ΔG=0表示体系达到平衡状态。"
+          },
+          {
+            "name": "可逆反应",
+            "difficulty": 2,
+            "description": "正逆两个方向均能进行的化学反应",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "可逆反应是在一定条件下既能正向进行又能逆向进行的反应。",
+            "example": "合成氨反应可表示为N₂与H₂生成NH₃的可逆过程。"
+          },
+          {
+            "name": "化学平衡",
+            "difficulty": 3,
+            "description": "可逆反应正逆反应速率相等的动态状态",
+            "aliases": [
+              "化学平衡状态"
+            ],
+            "prerequisites": [
+              "可逆反应"
+            ],
+            "definition": "化学平衡是可逆反应进行到正逆反应速率相等且组成不再变化的状态。",
+            "example": "H₂、I₂和HI达到平衡后各物质浓度保持不变。"
+          },
+          {
+            "name": "平衡常数",
+            "difficulty": 4,
+            "description": "定量描述可逆反应进行限度的常数",
+            "aliases": [
+              "K"
+            ],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "平衡常数是在一定温度下由平衡浓度按方程式系数组合得到的常数。",
+            "example": "H₂与I₂生成HI的平衡常数可由平衡浓度计算。"
+          },
+          {
+            "name": "平衡常数表达式",
+            "difficulty": 4,
+            "description": "由平衡浓度和化学计量数构成的K表达式",
+            "aliases": [],
+            "prerequisites": [
+              "平衡常数"
+            ],
+            "definition": "平衡常数表达式是各生成物平衡浓度幂的乘积与各反应物对应乘积之比。",
+            "example": "纯固体和纯液体不列入平衡常数表达式。"
+          },
+          {
+            "name": "平衡转化率",
+            "difficulty": 3,
+            "description": "表示反应物达到平衡时的转化程度",
+            "aliases": [
+              "α"
+            ],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "平衡转化率是反应物已转化量与其初始量的百分比。",
+            "example": "根据SO₂初始量和平衡量可计算其平衡转化率。"
+          },
+          {
+            "name": "勒夏特列原理",
+            "difficulty": 4,
+            "description": "预测平衡体系受条件改变后的移动方向",
+            "aliases": [
+              "平衡移动原理"
+            ],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "封闭平衡体系改变一个条件时，平衡将向减弱该改变的方向移动。",
+            "example": "合成氨反应增大压强，平衡向气体物质的量减少方向移动。"
+          },
+          {
+            "name": "化学平衡移动",
+            "difficulty": 3,
+            "description": "平衡条件改变后组成向新状态调整的过程",
+            "aliases": [],
+            "prerequisites": [
+              "化学平衡"
+            ],
+            "definition": "化学平衡移动是平衡体系因条件改变而由原平衡转变为新平衡的过程。",
+            "example": "升高放热反应温度，平衡通常向吸热方向移动。"
+          },
+          {
+            "name": "化学反应速率",
+            "difficulty": 2,
+            "description": "定量表示化学反应进行快慢的物理量",
+            "aliases": [
+              "反应速率",
+              "υ"
+            ],
+            "prerequisites": [],
+            "definition": "化学反应速率是单位时间内反应物或生成物浓度变化的量。",
+            "example": "用镁条与盐酸反应中盐酸浓度的变化表示速率。"
+          },
+          {
+            "name": "反应历程",
+            "difficulty": 3,
+            "description": "由多个基元反应构成的反应步骤序列",
+            "aliases": [
+              "反应机理"
+            ],
+            "prerequisites": [
+              "基元反应"
+            ],
+            "definition": "反应历程是反应物经一系列基元反应转化为产物的过程。",
+            "example": "氢气和氧气生成水的反应约经历多个步骤。"
+          },
+          {
+            "name": "基元反应",
+            "difficulty": 3,
+            "description": "化学反应历程中的单一步骤反应",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基元反应是组成反应历程的每一个单独反应步骤。",
+            "example": "H·与O₂反应生成·OH和O·是一个基元反应。"
+          },
+          {
+            "name": "自由基",
+            "difficulty": 3,
+            "description": "含有未成对电子、反应活性强的微粒",
+            "aliases": [
+              "自由原子"
+            ],
+            "prerequisites": [],
+            "definition": "自由基是含有未成对电子且通常反应活性强、寿命短的微粒。",
+            "example": "H·、·OH和O·都是自由基。"
+          },
+          {
+            "name": "反应速率表达式",
+            "difficulty": 4,
+            "description": "表示速率与参与反应物浓度关系的数学式",
+            "aliases": [
+              "速率方程"
+            ],
+            "prerequisites": [
+              "化学反应速率"
+            ],
+            "definition": "反应速率表达式是由实验确定的速率与反应物浓度之间的定量关系。",
+            "example": "某反应可表示为υ=k c(H₂O₂)c(HI)。"
+          },
+          {
+            "name": "反应速率常数",
+            "difficulty": 3,
+            "description": "表示单位浓度条件下反应速率的常数",
+            "aliases": [
+              "k"
+            ],
+            "prerequisites": [
+              "反应速率表达式"
+            ],
+            "definition": "反应速率常数是在特定温度等条件下反映反应快慢的比例常数。",
+            "example": "速率常数越大，通常表示反应进行得越快。"
+          },
+          {
+            "name": "活化能",
+            "difficulty": 4,
+            "description": "反应物形成过渡态所需克服的能量差",
+            "aliases": [
+              "Ea"
+            ],
+            "prerequisites": [
+              "基元反应"
+            ],
+            "definition": "活化能是过渡态能量与反应物平均能量之差。",
+            "example": "基元反应活化能越高，反应通常越难发生。"
+          },
+          {
+            "name": "碰撞理论",
+            "difficulty": 4,
+            "description": "用有效碰撞解释基元反应发生条件的理论",
+            "aliases": [
+              "基元反应碰撞理论"
+            ],
+            "prerequisites": [
+              "活化能"
+            ],
+            "definition": "碰撞理论认为只有能量足够且方向合适的碰撞才是有效碰撞。",
+            "example": "升高温度可增加活化分子和有效碰撞数。"
+          },
+          {
+            "name": "过渡态理论",
+            "difficulty": 4,
+            "description": "用反应过程中的高能中间状态解释反应速率",
+            "aliases": [
+              "基元反应过渡态理论"
+            ],
+            "prerequisites": [
+              "活化能"
+            ],
+            "definition": "过渡态理论认为基元反应需经过能量最高的过渡态。",
+            "example": "H…H…Cl结构可表示H₂与Cl·反应的过渡态。"
+          },
+          {
+            "name": "催化剂",
+            "difficulty": 3,
+            "description": "改变反应速率而自身反应前后基本不变的物质",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应速率",
+              "活化能"
+            ],
+            "definition": "催化剂通过改变反应历程影响反应速率，反应前后自身性质和质量基本不变。",
+            "example": "汽车尾气净化器使用贵金属催化剂加快反应。"
+          },
+          {
+            "name": "阿伦尼乌斯公式",
+            "difficulty": 4,
+            "description": "表示速率常数与温度和活化能关系的经验公式",
+            "aliases": [
+              "Arrhenius公式"
+            ],
+            "prerequisites": [
+              "反应速率常数",
+              "活化能"
+            ],
+            "definition": "阿伦尼乌斯公式为k=Ae^(-Ea/RT)，描述速率常数的温度依赖。",
+            "example": "活化能越大，升高相同温度对速率常数影响越明显。"
+          },
+          {
+            "name": "化工条件优化",
+            "difficulty": 4,
+            "description": "综合平衡、速率、成本和安全选择生产条件",
+            "aliases": [
+              "反应条件优化"
+            ],
+            "prerequisites": [
+              "平衡常数",
+              "化学反应速率",
+              "催化剂"
+            ],
+            "definition": "化工条件优化是在转化率、速率、选择性、成本和安全之间综合权衡。",
+            "example": "工业合成氨需综合考虑温度、压强、催化剂和原料利用率。"
+          },
+          {
+            "name": "主反应与副反应",
+            "difficulty": 3,
+            "description": "工业过程中目标反应与伴随发生的非目标反应",
+            "aliases": [],
+            "prerequisites": [
+              "可逆反应"
+            ],
+            "definition": "主反应生成目标产物，副反应则生成非目标产物并影响生产效果。",
+            "example": "合成甲醇时CO₂与H₂反应为主反应，生成CO的反应为副反应。"
+          },
+          {
+            "name": "反应选择性",
+            "difficulty": 3,
+            "description": "目标产物在反应产物或转化物中的相对比例",
+            "aliases": [
+              "选择性"
+            ],
+            "prerequisites": [
+              "主反应与副反应"
+            ],
+            "definition": "反应选择性是生成目标产物的反应物在全部反应物转化中的比例。",
+            "example": "选择性高的催化剂可减少甲醇合成中的副反应影响。"
+          }
+        ],
+        "chapter_key": "f62ccb5b2c",
+        "metadata": {
+          "volume_id": "321856223cb2",
+          "file_id": "321856223cb2",
+          "volume_title": "普通高中教科书 化学 选择性必修1 化学反应原理",
+          "chapter_order": 2,
+          "raw_heading": "化学反应原理第2章",
+          "page_range": [
+            52,
+            96
+          ]
+        }
+      },
+      {
+        "name": "化学反应原理第3章",
+        "concepts": [
+          {
+            "name": "电解质",
+            "difficulty": 1,
+            "description": "在水溶液中或熔融状态能导电的化合物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电解质是在水溶液中或熔融状态能导电的化合物。",
+            "example": "NaCl、CH3COOH属于电解质"
+          },
+          {
+            "name": "水的电离",
+            "difficulty": 2,
+            "description": "水分子生成H+和OH−的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "水的电离是水分子生成H+和OH−的可逆过程。",
+            "example": "H2O ⇌ H+＋OH−"
+          },
+          {
+            "name": "电离平衡",
+            "difficulty": 2,
+            "description": "弱电解质电离与结合速率相等的状态",
+            "aliases": [],
+            "prerequisites": [
+              "水的电离"
+            ],
+            "definition": "电离平衡是弱电解质电离和离子重新结合达到的动态平衡状态。",
+            "example": "醋酸溶液中存在电离平衡"
+          },
+          {
+            "name": "水的离子积",
+            "difficulty": 2,
+            "description": "水溶液中H+与OH−浓度乘积",
+            "aliases": [
+              "离子积"
+            ],
+            "prerequisites": [
+              "水的电离"
+            ],
+            "definition": "水的离子积是一定温度下水溶液中H+和OH−平衡浓度的乘积。",
+            "example": "25℃时KW＝1.0×10−14"
+          },
+          {
+            "name": "强电解质",
+            "difficulty": 2,
+            "description": "在稀水溶液中能完全电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "强电解质是在稀的水溶液中能够完全电离的电解质。",
+            "example": "HCl在水中完全电离"
+          },
+          {
+            "name": "弱电解质",
+            "difficulty": 2,
+            "description": "在水溶液中只能部分电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离平衡"
+            ],
+            "definition": "弱电解质是在水溶液中只能部分电离并存在电离平衡的电解质。",
+            "example": "CH3COOH只能部分电离"
+          },
+          {
+            "name": "溶剂化作用",
+            "difficulty": 2,
+            "description": "溶质微粒与溶剂分子相互吸引结合",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "溶剂化作用是溶质离子或分子与溶剂分子相互吸引结合的作用。",
+            "example": "Na+以水合离子形式存在"
+          },
+          {
+            "name": "溶液酸碱性",
+            "difficulty": 2,
+            "description": "由H+和OH−浓度相对大小决定的性质",
+            "aliases": [],
+            "prerequisites": [
+              "水的离子积"
+            ],
+            "definition": "水溶液的酸碱性由H+和OH−平衡浓度的相对大小决定。",
+            "example": "c(H+)大于c(OH−)时呈酸性"
+          },
+          {
+            "name": "pH",
+            "difficulty": 2,
+            "description": "表示水溶液酸碱度的数值",
+            "aliases": [
+              "酸碱度"
+            ],
+            "prerequisites": [
+              "溶液酸碱性"
+            ],
+            "definition": "pH是以负的H+平衡浓度常用对数表示的溶液酸碱度。",
+            "example": "c(H+)＝1.0×10−3mol·L−1时pH＝3"
+          },
+          {
+            "name": "电离常数",
+            "difficulty": 3,
+            "description": "表示弱电解质电离能力的平衡常数",
+            "aliases": [
+              "电离平衡常数"
+            ],
+            "prerequisites": [
+              "弱电解质",
+              "电离平衡"
+            ],
+            "definition": "电离常数是弱电解质电离平衡时离子浓度幂的乘积与未电离分子浓度之比。",
+            "example": "醋酸用Ka表示电离常数"
+          },
+          {
+            "name": "电离度",
+            "difficulty": 3,
+            "description": "已电离溶质占原有溶质的百分率",
+            "aliases": [
+              "α"
+            ],
+            "prerequisites": [
+              "弱电解质",
+              "电离平衡"
+            ],
+            "definition": "电离度是达到电离平衡时已电离溶质占原有溶质总量的百分率。",
+            "example": "0.10mol·L−1醋酸电离度约为1.3%"
+          },
+          {
+            "name": "电离平衡移动",
+            "difficulty": 3,
+            "description": "外界条件改变引起电离平衡方向变化",
+            "aliases": [],
+            "prerequisites": [
+              "电离平衡",
+              "电离常数"
+            ],
+            "definition": "电离平衡移动是温度、浓度或离子变化导致平衡向电离或生成分子方向改变。",
+            "example": "稀释醋酸促进其电离"
+          },
+          {
+            "name": "盐类水解",
+            "difficulty": 3,
+            "description": "盐电离产生的离子与水反应的过程",
+            "aliases": [
+              "水解"
+            ],
+            "prerequisites": [
+              "强电解质",
+              "水的电离"
+            ],
+            "definition": "盐类水解是盐电离产生的弱酸酸根或弱碱阳离子与水反应的过程。",
+            "example": "CO3^2−＋H2O⇌HCO3−＋OH−"
+          },
+          {
+            "name": "水解平衡",
+            "difficulty": 3,
+            "description": "盐类水解反应达到的动态平衡",
+            "aliases": [],
+            "prerequisites": [
+              "盐类水解",
+              "电离平衡"
+            ],
+            "definition": "水解平衡是盐类离子水解及其逆反应达到的动态平衡状态。",
+            "example": "醋酸根水解存在平衡"
+          },
+          {
+            "name": "沉淀溶解平衡",
+            "difficulty": 3,
+            "description": "难溶电解质溶解与沉淀速率相等",
+            "aliases": [],
+            "prerequisites": [
+              "电离平衡"
+            ],
+            "definition": "沉淀溶解平衡是难溶电解质沉淀与溶解达到的动态平衡状态。",
+            "example": "BaSO4(s)⇌Ba2+＋SO4^2−"
+          },
+          {
+            "name": "溶度积",
+            "difficulty": 3,
+            "description": "难溶电解质饱和溶液中的离子积",
+            "aliases": [
+              "Ksp"
+            ],
+            "prerequisites": [
+              "沉淀溶解平衡"
+            ],
+            "definition": "溶度积是一定温度下难溶电解质饱和溶液中各离子浓度幂的乘积。",
+            "example": "BaSO4的Ksp约为1.1×10−10"
+          },
+          {
+            "name": "沉淀转化",
+            "difficulty": 3,
+            "description": "一种难溶电解质沉淀转为另一种沉淀",
+            "aliases": [],
+            "prerequisites": [
+              "沉淀溶解平衡",
+              "溶度积"
+            ],
+            "definition": "沉淀转化是原沉淀溶解产生的离子生成另一种难溶电解质沉淀的过程。",
+            "example": "ZnS可转化为更难溶的CuS"
+          },
+          {
+            "name": "离子反应",
+            "difficulty": 2,
+            "description": "溶液中离子参与的化学反应",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "离子反应是溶液中离子之间以及离子与原子或分子之间发生的反应。",
+            "example": "Ba2+与SO4^2−生成BaSO4"
+          },
+          {
+            "name": "离子方程式",
+            "difficulty": 3,
+            "description": "用实际参加反应的离子表示反应",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应"
+            ],
+            "definition": "离子方程式是用实际参加反应的离子、原子或分子表示反应实质的式子。",
+            "example": "H+＋OH−＝H2O"
+          },
+          {
+            "name": "离子反应条件",
+            "difficulty": 3,
+            "description": "生成沉淀、弱电解质、气体或发生氧化还原",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应",
+              "离子方程式"
+            ],
+            "definition": "离子反应通常因生成沉淀、弱电解质、气体或发生氧化还原而发生。",
+            "example": "碳酸根遇酸生成CO2"
+          },
+          {
+            "name": "酸碱中和滴定",
+            "difficulty": 3,
+            "description": "利用恰好中和测定酸碱浓度的方法",
+            "aliases": [
+              "中和滴定"
+            ],
+            "prerequisites": [
+              "离子反应",
+              "pH"
+            ],
+            "definition": "酸碱中和滴定是用已知浓度酸或碱测定未知溶液浓度的方法。",
+            "example": "用NaOH滴定未知盐酸"
+          },
+          {
+            "name": "酸碱指示剂",
+            "difficulty": 2,
+            "description": "随溶液pH变化而发生颜色变化的物质",
+            "aliases": [],
+            "prerequisites": [
+              "pH"
+            ],
+            "definition": "酸碱指示剂是在不同pH范围内呈现不同颜色的物质。",
+            "example": "甲基橙可指示酸碱变化"
+          },
+          {
+            "name": "氧化还原滴定",
+            "difficulty": 3,
+            "description": "利用氧化还原反应测定物质浓度",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应"
+            ],
+            "definition": "氧化还原滴定是用已知浓度的氧化剂或还原剂测定待测物浓度的方法。",
+            "example": "用Fe2+溶液测定MnO4−浓度"
+          }
+        ],
+        "chapter_key": "0bd8054449",
+        "metadata": {
+          "volume_id": "321856223cb2",
+          "file_id": "321856223cb2",
+          "volume_title": "普通高中教科书 化学 选择性必修1 化学反应原理",
+          "chapter_order": 3,
+          "raw_heading": "化学反应原理第3章",
+          "page_range": [
+            97,
+            148
+          ]
+        }
+      }
+    ],
+    "page_ranges": {
+      "d8aa89b85f": [
+        4,
+        51
+      ],
+      "化学反应原理第1章": [
+        4,
+        51
+      ],
+      "f62ccb5b2c": [
+        52,
+        96
+      ],
+      "化学反应原理第2章": [
+        52,
+        96
+      ],
+      "0bd8054449": [
+        97,
+        148
+      ],
+      "化学反应原理第3章": [
+        97,
+        148
+      ]
+    },
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

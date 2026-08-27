@@ -1,0 +1,5367 @@
+{
+  "file_id": "cd9f53c867df",
+  "text_sha256": "06c9a9e994d3da41472d92a7528786c39c764cf29016361c8782276b22360d37",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "历史",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 政治制度",
+        "concepts": [
+          {
+            "name": "国家",
+            "difficulty": 1,
+            "description": "社会发展到一定阶段阶级矛盾不可调和的产物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "国家是社会发展到一定阶段阶级矛盾不可调和而产生的公共权力。",
+            "example": "夏朝是中国最早的奴隶制王朝国家。"
+          },
+          {
+            "name": "社会治理",
+            "difficulty": 1,
+            "description": "国家通过政治制度实现的基本职能",
+            "aliases": [],
+            "prerequisites": [
+              "国家"
+            ],
+            "definition": "社会治理是国家的基本职能之一。",
+            "example": "秦朝通过郡县制加强全国治理。"
+          },
+          {
+            "name": "政治制度",
+            "difficulty": 1,
+            "description": "国家实现社会治理的制度形式",
+            "aliases": [],
+            "prerequisites": [
+              "国家",
+              "社会治理"
+            ],
+            "definition": "政治制度是国家实现社会治理所采用的制度形式。",
+            "example": "古代中国形成了中央集权政治制度。"
+          },
+          {
+            "name": "世袭制",
+            "difficulty": 2,
+            "description": "王位或统治权按照血缘世代继承的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "世袭制是统治权按照血缘关系世代传承的制度。",
+            "example": "夏启继位使世袭制代替禅让制。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "内外服制",
+            "difficulty": 2,
+            "description": "商朝统治内服王畿和外服地区的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "内外服制是商王直接控制王畿并间接统治外服的制度。",
+            "example": "商王直接控制内服王畿地区。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "分封制",
+            "difficulty": 2,
+            "description": "西周分封贵族建立诸侯国的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "分封制是周天子将土地和人民分封给贵族建立诸侯国的制度。",
+            "example": "周天子将地方分封给同姓贵族和异姓功臣。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "宗法制",
+            "difficulty": 2,
+            "description": "以嫡长子继承制维系贵族关系的制度",
+            "aliases": [],
+            "prerequisites": [
+              "分封制"
+            ],
+            "definition": "宗法制是以血缘关系和嫡长子继承制维护贵族等级秩序的制度。",
+            "example": "周天子与各级贵族实行嫡长子继承制。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "中央集权",
+            "difficulty": 2,
+            "description": "中央掌握国家权力并控制地方的政治制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "中央集权是中央政府掌握主要权力并直接控制地方的制度。",
+            "example": "秦统一后在全国建立中央集权国家。"
+          },
+          {
+            "name": "郡县制",
+            "difficulty": 2,
+            "description": "秦朝实行的中央直接管理地方的制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "郡县制是由中央任命官吏管理郡县的地方行政制度。",
+            "example": "秦朝地方分为郡、县两级，主要官吏由中央任命。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "官僚制",
+            "difficulty": 2,
+            "description": "由各级官吏组成并分掌政务的行政制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "官僚制是由具有明确职能和等级的官吏机构管理国家事务的制度。",
+            "example": "战国时期各国改革推动官僚制产生。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "皇帝制度",
+            "difficulty": 3,
+            "description": "秦朝以皇帝为核心的最高权力制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "皇帝制度是以皇帝为国家最高统治者并实行皇位世袭的制度。",
+            "example": "秦始皇确立皇帝制度，皇帝掌握国家大权。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "三公九卿制",
+            "difficulty": 3,
+            "description": "秦朝中央政府的官僚机构制度",
+            "aliases": [],
+            "prerequisites": [
+              "皇帝制度",
+              "官僚制"
+            ],
+            "definition": "三公九卿制是秦朝以丞相、太尉、御史大夫和九卿组成中央政府的制度。",
+            "example": "丞相掌行政，太尉掌军事，御史大夫掌监察。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "文书行政",
+            "difficulty": 3,
+            "description": "以文书传达政令并实施行政管理",
+            "aliases": [],
+            "prerequisites": [
+              "官僚制"
+            ],
+            "definition": "文书行政是各级官僚机构依靠文书推行行政管理的方式。",
+            "example": "秦朝通过邮传系统传送中央政令。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "中朝",
+            "difficulty": 3,
+            "description": "汉武帝时期由皇帝亲信组成的行政中枢",
+            "aliases": [],
+            "prerequisites": [
+              "三公九卿制"
+            ],
+            "definition": "中朝是汉武帝为加强集权而设立的皇帝亲信行政中枢。",
+            "example": "中朝权力增强后，外朝丞相权力被削弱。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "三省六部制",
+            "difficulty": 3,
+            "description": "隋唐时期职责分明并相互制约的中央制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "三省六部制是由中书、门下、尚书三省及六部组成的中央行政制度。",
+            "example": "中书省决策，门下省审议，尚书省执行。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "内阁",
+            "difficulty": 3,
+            "description": "明朝皇帝的顾问和事实行政中枢",
+            "aliases": [],
+            "prerequisites": [
+              "皇帝制度"
+            ],
+            "definition": "内阁是明朝废宰相后由文官组成并协助皇帝处理政务的机构。",
+            "example": "内阁大学士为皇帝提供顾问并处理政务。"
+          },
+          {
+            "name": "军机处",
+            "difficulty": 3,
+            "description": "清朝直接秉承皇帝旨意处理军国大事的机构",
+            "aliases": [],
+            "prerequisites": [
+              "皇帝制度"
+            ],
+            "definition": "军机处是清朝由军机大臣直接听命于皇帝处理军国事务的中枢机构。",
+            "example": "雍正帝设军机处后其逐渐成为全国政务中枢。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "行省制",
+            "difficulty": 3,
+            "description": "元朝设置行中书省管理地方的制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权",
+              "郡县制"
+            ],
+            "definition": "行省制是元朝以行中书省作为地方最高行政机构的制度。",
+            "example": "元朝在地方设置行中书省，简称行省。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "雅典民主",
+            "difficulty": 3,
+            "description": "古典雅典公民直接参与国家管理的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "雅典民主是以公民大会等机构为核心、由公民直接参与政治的制度。",
+            "example": "雅典公民大会决定国家法律和政策。"
+          },
+          {
+            "name": "斯巴达寡头政治",
+            "difficulty": 3,
+            "description": "斯巴达由少数贵族和国王掌握权力的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "斯巴达寡头政治是王位世袭、贵族长老会拥有重要权力的政治制度。",
+            "example": "斯巴达国王垄断军事统帅权。"
+          },
+          {
+            "name": "罗马共和国",
+            "difficulty": 3,
+            "description": "罗马由执政官、元老院和公民大会共掌权力的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "罗马共和国是由执政官、元老院和公民大会共同参与国家治理的政体。",
+            "example": "执政官由公民选举产生并任职一年。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "元首制",
+            "difficulty": 3,
+            "description": "屋大维建立的实际由个人掌握大权的制度",
+            "aliases": [],
+            "prerequisites": [
+              "罗马共和国"
+            ],
+            "definition": "元首制是罗马共和国崩溃后由屋大维建立的君主政治形式。",
+            "example": "屋大维逐步把元老院和立法等权力集中于己。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "西欧封建制度",
+            "difficulty": 3,
+            "description": "以封君和封臣关系为基本特征的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "西欧封建制度是以封君、封臣关系和土地分封为基本特征的制度。",
+            "example": "日耳曼人君主把征服地区分封给儿子和随从。"
+          },
+          {
+            "name": "等级君主制",
+            "difficulty": 3,
+            "description": "国王与贵族、教会和市民合作统治的制度",
+            "aliases": [],
+            "prerequisites": [
+              "西欧封建制度"
+            ],
+            "definition": "等级君主制是国王通过等级会议与社会等级共同治理国家的制度。",
+            "example": "法国三级会议的召开标志着等级君主制形成。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "英国君主立宪制",
+            "difficulty": 3,
+            "description": "国王受议会和法律限制的资本主义制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "英国君主立宪制是国王权力受法律和议会限制的政治制度。",
+            "example": "未经议会同意，国王不得征税和招募常备军。"
+          },
+          {
+            "name": "内阁制度",
+            "difficulty": 3,
+            "description": "由首相和各部大臣组成并掌握政府权力的制度",
+            "aliases": [],
+            "prerequisites": [
+              "英国君主立宪制"
+            ],
+            "definition": "内阁制度是由议会多数派领袖组织政府并由内阁实际行使行政权的制度。",
+            "example": "英国首相提名各部大臣组成内阁。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "联邦制共和国",
+            "difficulty": 3,
+            "description": "中央与各州分权的共和国家制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "联邦制共和国是联邦政府和各州依据宪法分配权力的共和制度。",
+            "example": "美国联邦政府拥有宪法规定的权力，各州享有一定自治权。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "三权分立",
+            "difficulty": 3,
+            "description": "行政、立法、司法权分别由不同机构行使",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "三权分立是将行政权、立法权和司法权分别交由不同机构行使的制度。",
+            "example": "美国总统、国会和最高法院分别行使三类权力。"
+          },
+          {
+            "name": "法国共和制",
+            "difficulty": 3,
+            "description": "法国通过革命和宪法确立的共和制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "法国共和制是法国以国会和总统等机构组织国家权力的共和制度。",
+            "example": "1875年法国通过新宪法，确立第三共和国制度。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "责任内阁制",
+            "difficulty": 3,
+            "description": "内阁总理由议会多数党产生并承担政治责任",
+            "aliases": [],
+            "prerequisites": [
+              "三权分立"
+            ],
+            "definition": "责任内阁制是内阁由议会多数党组织并对议会负责的制度。",
+            "example": "《中华民国临时约法》规定内阁总理由议会多数党产生。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "苏维埃政权",
+            "difficulty": 3,
+            "description": "革命根据地建立的人民革命政权形式",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "苏维埃政权是中国共产党在革命根据地建立的人民革命政权形式。",
+            "example": "1931年中华苏维埃共和国临时中央政府成立。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "三三制",
+            "difficulty": 3,
+            "description": "抗日根据地政权中各类人员各占三分之一的原则",
+            "aliases": [],
+            "prerequisites": [
+              "苏维埃政权"
+            ],
+            "definition": "三三制是抗日根据地政权中共产党员、党外人士和群众代表各占一定比例的民主合作原则。",
+            "example": "共产党员在政权机关工作人员中只占三分之一。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "人民代表大会制度",
+            "difficulty": 4,
+            "description": "以人民代表大会为核心的国家政权组织形式",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "人民代表大会制度是人民通过人民代表大会行使国家权力的根本政治制度。",
+            "example": "1954年宪法以国家根本法形式规定实行该制度。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "多党合作政治协商制度",
+            "difficulty": 4,
+            "description": "中国共产党领导各民主党派合作和协商的制度",
+            "aliases": [],
+            "prerequisites": [
+              "人民代表大会制度"
+            ],
+            "definition": "多党合作政治协商制度是中国共产党领导各民主党派共同合作、接受监督并参与政治协商的制度。",
+            "example": "人民政协履行政治协商、民主监督和参政议政职能。"
+          },
+          {
+            "name": "民族区域自治制度",
+            "difficulty": 3,
+            "description": "少数民族聚居地方设自治机关行使自治权的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "民族区域自治制度是在国家统一领导下少数民族聚居地区实行区域自治的制度。",
+            "example": "自治区、自治州和自治县依法行使自治权。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "基层群众自治制度",
+            "difficulty": 3,
+            "description": "居民或村民实行自我管理和自我监督的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "基层群众自治制度是居民或村民依法通过自治组织实行自我管理的制度。",
+            "example": "居民选举居民委员会参与基层事务管理。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "商鞅变法",
+            "difficulty": 3,
+            "description": "战国时期秦国推行的富国强兵改革",
+            "aliases": [],
+            "prerequisites": [
+              "改革"
+            ],
+            "definition": "商鞅变法是秦国通过废除井田制、奖励军功和建立县制等措施进行的改革。",
+            "example": "商鞅变法使秦国成为政治军事强国。",
+            "section": "第4课 中国历代变法和改革"
+          },
+          {
+            "name": "改革",
+            "difficulty": 2,
+            "description": "顺应时代变化而调整制度和政策的社会行动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "改革是通过调整制度和政策以适应社会发展需要的历史行动。",
+            "example": "各诸侯国为富国强兵纷纷推行变法。"
+          },
+          {
+            "name": "孝文帝改革",
+            "difficulty": 3,
+            "description": "北魏孝文帝推动民族交融和社会发展的改革",
+            "aliases": [],
+            "prerequisites": [
+              "改革"
+            ],
+            "definition": "孝文帝改革是北魏通过迁都、改汉姓和通婚等措施促进民族交融的改革。",
+            "example": "迁都洛阳并推行改汉姓、说汉话等措施。"
+          },
+          {
+            "name": "王安石变法",
+            "difficulty": 3,
+            "description": "北宋针对官僚、财政和军事弊端的改革",
+            "aliases": [],
+            "prerequisites": [
+              "改革"
+            ],
+            "definition": "王安石变法是北宋为富国强兵而推行的综合性改革。",
+            "example": "王安石针对官僚机构、财政和军事体制制定新法。",
+            "section": "第4课 中国历代变法和改革"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1课 中国古代政治制度的形成与发展",
+            "page_range": [
+              7,
+              13
+            ]
+          },
+          {
+            "name": "第2课 西方国家古代和近代政治制度的演变",
+            "page_range": [
+              13,
+              19
+            ]
+          },
+          {
+            "name": "第3课 中国近代至当代政治制度的演变",
+            "page_range": [
+              19,
+              27
+            ]
+          },
+          {
+            "name": "第4课 中国历代变法和改革",
+            "page_range": [
+              27,
+              34
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二单元 官员的选拔与管理",
+        "concepts": [
+          {
+            "name": "世官制",
+            "difficulty": 1,
+            "description": "西周至春秋官位世袭、贵族垄断高官的制度",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世官制是官职由贵族世代继承的官员选拔制度。",
+            "example": "贵族世代垄断高官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "尚贤思想",
+            "difficulty": 1,
+            "description": "春秋战国时期重视选用有才能者的思想",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "尚贤思想主张突破世袭限制，举荐有才能的人为官。",
+            "example": "各国鼓励举荐贤能。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "以法为教",
+            "difficulty": 2,
+            "description": "秦统一后向官吏学习律令而为官的制度",
+            "aliases": [
+              "以法为教、以吏为师"
+            ],
+            "prerequisites": [],
+            "definition": "以法为教是秦代主要通过学习律令培养和选任官员的方式。",
+            "example": "向官吏学习律令后为官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "察举制",
+            "difficulty": 2,
+            "description": "汉武帝推行的考察后推举官员的制度",
+            "aliases": [],
+            "prerequisites": [
+              "尚贤思想"
+            ],
+            "definition": "察举制是先考察士人的舆论评价和为官能力，再推荐任用的制度。",
+            "example": "郡国举孝廉入仕。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "察举常科",
+            "difficulty": 2,
+            "description": "察举制中每年举行且有定额和标准的科目",
+            "aliases": [
+              "常科",
+              "岁举"
+            ],
+            "prerequisites": [
+              "察举制"
+            ],
+            "definition": "察举常科是察举制中按年度定期举行并规定人数和标准的选官方式。",
+            "example": "孝廉、茂才属于常科。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "察举特科",
+            "difficulty": 2,
+            "description": "察举制中有标准但无固定时间的选官方式",
+            "aliases": [
+              "特科"
+            ],
+            "prerequisites": [
+              "察举制"
+            ],
+            "definition": "察举特科是依据特定标准、不定期举行的察举科目。",
+            "example": "贤良方正属于特科。"
+          },
+          {
+            "name": "九品中正制",
+            "difficulty": 3,
+            "description": "魏晋南北朝按家世、道德和才能评定资品的制度",
+            "aliases": [
+              "九品官人法"
+            ],
+            "prerequisites": [
+              "察举制"
+            ],
+            "definition": "九品中正制是由中正评定士人资品并据此授官的选官制度。",
+            "example": "士人被评为九品后由吏部授官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "门阀士族",
+            "difficulty": 2,
+            "description": "魏晋南北朝控制地方选人权的豪强大族势力",
+            "aliases": [
+              "士族",
+              "门阀"
+            ],
+            "prerequisites": [
+              "九品中正制"
+            ],
+            "definition": "门阀士族是凭借家世和政治权力垄断仕途的豪强贵族集团。",
+            "example": "形成“上品无寒门”局面。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "上计制",
+            "difficulty": 3,
+            "description": "秦汉官员以户口、垦田等政绩汇报接受考核的制度",
+            "aliases": [
+              "上计"
+            ],
+            "prerequisites": [],
+            "definition": "上计制是地方逐级汇总行政数据并上报中央以考核官员的制度。",
+            "example": "县国岁末上报计簿。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "刺史监察",
+            "difficulty": 2,
+            "description": "汉武帝设置刺史巡行郡国、纠举地方官员的制度",
+            "aliases": [
+              "刺史制度"
+            ],
+            "prerequisites": [],
+            "definition": "刺史监察是刺史代表皇帝巡察州部并纠举地方不法行为的制度。",
+            "example": "刺史纠察郡国守相。"
+          },
+          {
+            "name": "科举制",
+            "difficulty": 2,
+            "description": "隋唐形成的以分科考试选拔官员的制度",
+            "aliases": [
+              "科举"
+            ],
+            "prerequisites": [
+              "尚贤思想"
+            ],
+            "definition": "科举制是通过分科考试选拔人才并授予任官资格的制度。",
+            "example": "进士科成为重要科目。"
+          },
+          {
+            "name": "制举与常举",
+            "difficulty": 3,
+            "description": "科举制的两类考试，分别由皇帝设科和定期举行",
+            "aliases": [
+              "制举",
+              "常举"
+            ],
+            "prerequisites": [
+              "科举制"
+            ],
+            "definition": "制举与常举是科举制中皇帝自设科目考试和每年定期考试的分类。",
+            "example": "明经、进士属于常举科目。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "明清科举三级",
+            "difficulty": 2,
+            "description": "明清科举依次举行乡试、会试和殿试",
+            "aliases": [
+              "乡试会试殿试"
+            ],
+            "prerequisites": [
+              "科举制"
+            ],
+            "definition": "明清科举三级是从地方乡试到会试、殿试的三级考试体系。",
+            "example": "乡试中举者参加会试。"
+          },
+          {
+            "name": "明清考核制度",
+            "difficulty": 3,
+            "description": "明清通过考满、考察、京察和大计管理官员",
+            "aliases": [
+              "考满与考察",
+              "京察与大计"
+            ],
+            "prerequisites": [
+              "上计制"
+            ],
+            "definition": "明清考核制度是以任期考核和定期察访决定官员升降奖惩的制度。",
+            "example": "考满结果分称职、平常、不称职。"
+          },
+          {
+            "name": "御史台",
+            "difficulty": 2,
+            "description": "隋唐时期中央最高监察机构",
+            "aliases": [],
+            "prerequisites": [
+              "刺史监察"
+            ],
+            "definition": "御史台是隋唐及后世承担中央监察职能的机构。",
+            "example": "御史大夫为其长官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "科道",
+            "difficulty": 3,
+            "description": "明清都察院与六科合称的监察机构",
+            "aliases": [
+              "都察院和六科"
+            ],
+            "prerequisites": [
+              "御史台"
+            ],
+            "definition": "科道是明清都察院和六科的合称，负责监察百官及稽查政务。",
+            "example": "御史负责纠察百官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "政党分肥制",
+            "difficulty": 2,
+            "description": "执政党将政府官职分给党内同僚的做法",
+            "aliases": [
+              "分肥制"
+            ],
+            "prerequisites": [],
+            "definition": "政党分肥制是政党按政治归属分配官职并随政党更替更换官员的制度。",
+            "example": "内阁更替导致大批官员变动。",
+            "section": "第6课 西方的文官制度"
+          },
+          {
+            "name": "西方文官制度",
+            "difficulty": 3,
+            "description": "西方国家考试录用、中立、常任的事务官制度",
+            "aliases": [
+              "文官制度"
+            ],
+            "prerequisites": [
+              "政党分肥制"
+            ],
+            "definition": "西方文官制度是以公开考试、政治中立和长期任职为主要特征的行政官员制度。",
+            "example": "英国十九世纪中后期确立文官制度。"
+          },
+          {
+            "name": "政务官与事务官",
+            "difficulty": 3,
+            "description": "西方政府中负责政策和具体行政事务的两类官员",
+            "aliases": [
+              "政务官",
+              "事务官"
+            ],
+            "prerequisites": [
+              "西方文官制度"
+            ],
+            "definition": "政务官与事务官分别承担制定政策和执行日常行政事务的职责。",
+            "example": "大臣随内阁进退，文官长期任职。",
+            "section": "第6课 西方的文官制度"
+          },
+          {
+            "name": "文官考试录用",
+            "difficulty": 2,
+            "description": "通过公开竞争考试择优录用政府事务官",
+            "aliases": [
+              "考试录用"
+            ],
+            "prerequisites": [
+              "西方文官制度"
+            ],
+            "definition": "文官考试录用是面向符合法律规定的公民公开考试并择优任用的方式。",
+            "example": "英国规定重要文官职位公开竞争考试。"
+          },
+          {
+            "name": "文官政治中立",
+            "difficulty": 3,
+            "description": "文官不得公开参与党派政治并忠实执行政策",
+            "aliases": [
+              "政治中立"
+            ],
+            "prerequisites": [
+              "政务官与事务官"
+            ],
+            "definition": "文官政治中立是文官不受党派影响并在政务官领导下执行政策的原则。",
+            "example": "文官不得为政党提供政治服务。"
+          },
+          {
+            "name": "文官常任制",
+            "difficulty": 2,
+            "description": "文官无严重过错即可任职至退休的制度安排",
+            "aliases": [
+              "常任"
+            ],
+            "prerequisites": [
+              "政务官与事务官"
+            ],
+            "definition": "文官常任制是文官不随政党和内阁更替而更换、可任职至退休的制度。",
+            "example": "政府更替不影响事务官任职。",
+            "section": "第6课 西方的文官制度"
+          },
+          {
+            "name": "学堂选官制度",
+            "difficulty": 2,
+            "description": "晚清从学堂毕业生中选拔官员的制度",
+            "aliases": [
+              "学堂选官"
+            ],
+            "prerequisites": [
+              "科举制"
+            ],
+            "definition": "学堂选官制度是以近代学堂教育和毕业考试成绩作为选官依据的制度。",
+            "example": "学堂毕业生获授相应官职。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "留学毕业生选官",
+            "difficulty": 2,
+            "description": "晚清通过归国留学生考试选拔官员的制度",
+            "aliases": [
+              "留学毕业生选官制度"
+            ],
+            "prerequisites": [
+              "学堂选官制度"
+            ],
+            "definition": "留学毕业生选官是通过归国留学生考试并按成绩授予出身和官职的制度。",
+            "example": "归国留学生考试分三等。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "文官考试制度",
+            "difficulty": 3,
+            "description": "民国时期以考试为主体选拔文官的制度",
+            "aliases": [
+              "文官考试"
+            ],
+            "prerequisites": [
+              "学堂选官制度"
+            ],
+            "definition": "文官考试制度是民国时期通过法律规定的考试选拔政府官员的制度。",
+            "example": "北洋政府颁布《文官考试法草案》。"
+          },
+          {
+            "name": "甄别制度",
+            "difficulty": 3,
+            "description": "通过审查经历和成绩决定在职人员能否留任",
+            "aliases": [
+              "甄别"
+            ],
+            "prerequisites": [
+              "文官考试制度"
+            ],
+            "definition": "甄别制度是对原有文官的资历、经历和工作表现进行审查以决定留任的制度。",
+            "example": "检验文凭并考查工作经验。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "干部制度",
+            "difficulty": 2,
+            "description": "新中国干部选拔、任用、考核和监督的管理制度",
+            "aliases": [
+              "干部人事制度"
+            ],
+            "prerequisites": [],
+            "definition": "干部制度是涵盖干部人事管理体制及选任、考核、监督等内容的制度。",
+            "example": "党委组织部门统一管理干部。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "公务员制度",
+            "difficulty": 3,
+            "description": "新中国以法律规范公务员考试录用和管理的制度",
+            "aliases": [
+              "公务员制度"
+            ],
+            "prerequisites": [
+              "干部制度"
+            ],
+            "definition": "公务员制度是依法对政府等机关公务员进行考试录用和管理的制度。",
+            "example": "2005年公务员法标志制度正式形成。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "公务员考试录用",
+            "difficulty": 2,
+            "description": "公开考试、严格考察、平等竞争、择优录取公务员",
+            "aliases": [
+              "公务员考录制度"
+            ],
+            "prerequisites": [
+              "公务员制度"
+            ],
+            "definition": "公务员考试录用是通过公开考试和严格考察择优录取公务员的方式。",
+            "example": "主任科员以下职位采用公开考试录用。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第5课 中国古代官员的选拔与管理",
+            "page_range": [
+              35,
+              39
+            ]
+          },
+          {
+            "name": "第6课 西方的文官制度",
+            "page_range": [
+              40,
+              43
+            ]
+          },
+          {
+            "name": "第7课 近代以来中国的官员选拔与管理",
+            "page_range": [
+              44,
+              49
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三单元 法律与教化",
+        "concepts": [
+          {
+            "name": "法律",
+            "difficulty": 1,
+            "description": "统治阶级意志的体现和国家统治工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "法律是统治阶级意志的体现，是国家的统治工具。",
+            "example": "秦汉以律和令治理国家"
+          },
+          {
+            "name": "教化",
+            "difficulty": 1,
+            "description": "通过教育和引导进行社会治理",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "教化是社会治理的重要工具，着眼于教育和引导。",
+            "example": "儒学士人以乡约教化乡里"
+          },
+          {
+            "name": "礼制",
+            "difficulty": 2,
+            "description": "西周以宗法为核心建立的社会秩序制度",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "礼制是西周统治者为维护社会等级秩序而建立的制度。",
+            "example": "西周建立以宗法为核心的礼制",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "成文法",
+            "difficulty": 2,
+            "description": "以文字形式公布和固定的法律",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "成文法是以文字记载并正式公布的法律。",
+            "example": "子产铸刑书制定成文法"
+          },
+          {
+            "name": "德治思想",
+            "difficulty": 2,
+            "description": "以道德礼义和仁政治理国家的思想",
+            "aliases": [
+              "儒家德治"
+            ],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "德治思想主张统治者施行仁政并以道德礼义教化民众。",
+            "example": "孟子主张省刑罚、薄税敛",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "法治思想",
+            "difficulty": 2,
+            "description": "以法律、刑罚和赏罚治理国家的思想",
+            "aliases": [
+              "法家法治"
+            ],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "法治思想主张以明确法律和赏罚管理国家与臣民。",
+            "example": "韩非主张以法、术、势驾驭臣下",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "德治与法治之争",
+            "difficulty": 3,
+            "description": "先秦围绕道德治理与法律治理的思想争论",
+            "aliases": [],
+            "prerequisites": [
+              "德治思想",
+              "法治思想"
+            ],
+            "definition": "德治与法治之争是先秦思想界关于治理国家主要手段的争论。",
+            "example": "叔向反对子产公布刑书",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "律令",
+            "difficulty": 2,
+            "description": "秦汉以后具有法律效力的律和令",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "律令是古代国家中具有法律效力的刑法规范和行政文告。",
+            "example": "汉朝沿袭秦律并发布法律文告",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "律令儒家化",
+            "difficulty": 3,
+            "description": "儒家思想逐步融入法律制定与解释",
+            "aliases": [],
+            "prerequisites": [
+              "德治思想",
+              "律令"
+            ],
+            "definition": "律令儒家化是魏晋时期以儒家思想解释和改造律令的过程。",
+            "example": "律博士专用儒家思想解释律令",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "礼法结合",
+            "difficulty": 3,
+            "description": "将礼教与法律共同用于国家治理",
+            "aliases": [],
+            "prerequisites": [
+              "礼制",
+              "法律",
+              "教化"
+            ],
+            "definition": "礼法结合是以礼教规范和法律惩罚共同治理社会的方式。",
+            "example": "唐律重视儒家伦理中的孝",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "中华法系",
+            "difficulty": 3,
+            "description": "以中国古代法律传统为基础的法律体系",
+            "aliases": [],
+            "prerequisites": [
+              "礼法结合"
+            ],
+            "definition": "中华法系是以中国古代法律制度及礼法传统为基础形成的法律体系。",
+            "example": "唐律疏议标志中华法系确立",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "唐朝法律体系",
+            "difficulty": 3,
+            "description": "由律、令、格、式构成的法律体系",
+            "aliases": [],
+            "prerequisites": [
+              "律令"
+            ],
+            "definition": "唐朝法律体系包括律、令、格、式四类法律规范。",
+            "example": "律定罪量刑，式规定实施细则",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "乡约教化",
+            "difficulty": 3,
+            "description": "通过乡约规范乡里行为并开展基层教化",
+            "aliases": [
+              "乡约"
+            ],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "乡约教化是儒学士人或政府借助乡约教导和约束乡民的方式。",
+            "example": "《吕氏乡约》劝善规过",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "理学基层教化",
+            "difficulty": 3,
+            "description": "理学借助教育、家训和乡约深入社会基层",
+            "aliases": [],
+            "prerequisites": [
+              "教化",
+              "乡约教化"
+            ],
+            "definition": "理学基层教化是理学通过家训、书院和乡约传播行为规范的过程。",
+            "example": "朱熹《家礼》成为家庭行为规范"
+          },
+          {
+            "name": "罗马法",
+            "difficulty": 2,
+            "description": "古罗马形成并影响近代西方法律的法律传统",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "罗马法是古罗马逐步形成并成为近代西方法律制度重要渊源的法律传统。",
+            "example": "《罗马民法大全》是其最高成就",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "英美法系",
+            "difficulty": 3,
+            "description": "以判例法和遵循先例为主要特征的法系",
+            "aliases": [
+              "普通法系"
+            ],
+            "prerequisites": [
+              "罗马法"
+            ],
+            "definition": "英美法系是以判例法为主要法律渊源并遵循先例的法律体系。",
+            "example": "英国和美国属于英美法系",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "大陆法系",
+            "difficulty": 3,
+            "description": "以成文法为主要法律渊源的法律体系",
+            "aliases": [
+              "民法系"
+            ],
+            "prerequisites": [
+              "罗马法",
+              "成文法"
+            ],
+            "definition": "大陆法系是以成文法为主要法律渊源且法律体系较完整的法律体系。",
+            "example": "法国和德国属于大陆法系",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "立法司法独立",
+            "difficulty": 3,
+            "description": "立法权与司法权分工并保持相对独立",
+            "aliases": [
+              "司法独立"
+            ],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "立法司法独立强调立法和司法分工，法院依法独立行使司法权。",
+            "example": "议会制定法律，法院独立审判",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "权力制衡",
+            "difficulty": 3,
+            "description": "通过权力分立避免国家权力过度集中",
+            "aliases": [
+              "三权分立"
+            ],
+            "prerequisites": [
+              "立法司法独立"
+            ],
+            "definition": "权力制衡是将国家权力分为立法、行政和司法并相互制约。",
+            "example": "议会、行政机构和法院分掌不同权力",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "个人权利保护",
+            "difficulty": 2,
+            "description": "法律重视保护个人生命、自由和财产权",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "个人权利保护是近代西方法律制度重视保障个人基本权利的特征。",
+            "example": "法律保护个人的生命权和财产权"
+          },
+          {
+            "name": "无罪推定",
+            "difficulty": 3,
+            "description": "判决前将被审判者视为无罪",
+            "aliases": [],
+            "prerequisites": [
+              "个人权利保护"
+            ],
+            "definition": "无罪推定是指所有被审判者在判决之前都被视为无罪。",
+            "example": "判决前不能称其为罪犯",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "律师制度",
+            "difficulty": 2,
+            "description": "由律师为被审判者提供法律辩护的制度",
+            "aliases": [],
+            "prerequisites": [
+              "个人权利保护"
+            ],
+            "definition": "律师制度是由独立专业律师为被审判者提供辩护的司法制度。",
+            "example": "被告聘请律师进行法庭辩护",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "陪审团制度",
+            "difficulty": 2,
+            "description": "由民众参与案件事实认定和审理的制度",
+            "aliases": [],
+            "prerequisites": [
+              "个人权利保护"
+            ],
+            "definition": "陪审团制度是由民众参与案件审理并就事实问题作出决定的制度。",
+            "example": "陪审团聆听证据后判断事实",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "宗教伦理",
+            "difficulty": 2,
+            "description": "基督教教义形成的行为规范和道德要求",
+            "aliases": [],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "宗教伦理是宗教教义对社会成员思想和行为提出的道德规范。",
+            "example": "基督教要求人们孝敬父母、不得偷盗",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "基督教教化",
+            "difficulty": 3,
+            "description": "基督教通过教会、学校和仪式影响社会生活",
+            "aliases": [],
+            "prerequisites": [
+              "宗教伦理",
+              "教化"
+            ],
+            "definition": "基督教教化是教会借助宣讲、教育和宗教仪式规范社会成员的过程。",
+            "example": "教会开办学校并宣讲教义"
+          },
+          {
+            "name": "社会主义法制",
+            "difficulty": 2,
+            "description": "体现广大人民意志的社会主义法律制度",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "社会主义法制是社会主义国家实施的体现广大人民意志的法律制度。",
+            "example": "1954年宪法初步奠定法制基础",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "依法治国",
+            "difficulty": 2,
+            "description": "依靠法律治理国家并推进国家治理现代化",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义法制"
+            ],
+            "definition": "依法治国是依照法律治理国家、建设社会主义法治国家的方针。",
+            "example": "中共十五大提出依法治国",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "中国特色社会主义法律体系",
+            "difficulty": 3,
+            "description": "适应中国社会主义建设各领域的法律体系",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义法制",
+              "依法治国"
+            ],
+            "definition": "中国特色社会主义法律体系是覆盖国家经济、政治、文化和社会等领域的法律体系。",
+            "example": "2010年底该法律体系形成",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "民法典",
+            "difficulty": 2,
+            "description": "系统规范社会生活民事关系的基础性法典",
+            "aliases": [
+              "中华人民共和国民法典"
+            ],
+            "prerequisites": [
+              "中国特色社会主义法律体系"
+            ],
+            "definition": "民法典是系统整合民事法律规范并保护民事权利的基础性法典。",
+            "example": "2020年通过中华人民共和国民法典"
+          },
+          {
+            "name": "社会主义精神文明建设",
+            "difficulty": 2,
+            "description": "社会主义社会的重要特征和现代化建设保障",
+            "aliases": [],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "社会主义精神文明建设是社会主义社会的重要特征和现代化建设的重要目标与保证。",
+            "example": "开展群众性精神文明创建活动",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "爱国主义教育",
+            "difficulty": 2,
+            "description": "以振奋民族精神和增强民族凝聚力为目的的教育",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义精神文明建设"
+            ],
+            "definition": "爱国主义教育是引导人民热爱祖国并为社会主义建设共同奋斗的教育。",
+            "example": "1994年颁布爱国主义教育实施纲要",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "公民道德建设",
+            "difficulty": 2,
+            "description": "通过道德规范建设提升公民思想道德素质",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义精神文明建设"
+            ],
+            "definition": "公民道德建设是国家规划和推进公民思想道德建设的社会实践。",
+            "example": "2001年颁布公民道德建设实施纲要",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "社会主义核心价值观",
+            "difficulty": 3,
+            "description": "当代中国精神的集中体现和共同价值追求",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义精神文明建设"
+            ],
+            "definition": "社会主义核心价值观是当代中国精神的集中体现，凝结着全体人民共同的价值追求。",
+            "example": "社会层面包括自由、平等、公正、法治",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第8课 中国古代的法治与教化",
+            "page_range": [
+              50,
+              55
+            ]
+          },
+          {
+            "name": "第9课 近代西方的法律与教化",
+            "page_range": [
+              55,
+              60
+            ]
+          },
+          {
+            "name": "第10课 当代中国的法治与精神文明建设",
+            "page_range": [
+              60,
+              66
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四单元 民族关系与国家关系",
+        "concepts": [
+          {
+            "name": "统一多民族国家",
+            "difficulty": 2,
+            "description": "各民族共同组成并持续发展的统一国家形态",
+            "aliases": [
+              "统一多民族封建国家"
+            ],
+            "prerequisites": [],
+            "definition": "统一多民族国家是多民族在共同政治体制下形成和发展的国家。",
+            "example": "秦朝建立统一多民族国家。"
+          },
+          {
+            "name": "民族交往交流交融",
+            "difficulty": 2,
+            "description": "各民族迁徙、接触、合作并相互融合的过程",
+            "aliases": [
+              "民族交融"
+            ],
+            "prerequisites": [],
+            "definition": "民族交往交流交融是各民族在长期接触中相互影响、共同发展的过程。",
+            "example": "魏晋南北朝时期民族大迁徙推动民族交融。"
+          },
+          {
+            "name": "边疆管理制度",
+            "difficulty": 3,
+            "description": "历代中央政府治理边疆民族地区的制度体系",
+            "aliases": [
+              "边疆治理"
+            ],
+            "prerequisites": [
+              "统一多民族国家"
+            ],
+            "definition": "边疆管理制度是国家针对边疆地区设置机构、任用官员并实施治理的制度安排。",
+            "example": "唐朝设置大都护府、都督府和羁縻州。"
+          },
+          {
+            "name": "和亲政策",
+            "difficulty": 2,
+            "description": "通过联姻等方式缓和民族矛盾的政策",
+            "aliases": [
+              "和亲"
+            ],
+            "prerequisites": [
+              "民族交往交流交融"
+            ],
+            "definition": "和亲政策是中原王朝通过与周边民族联姻来维持和平关系的政策。",
+            "example": "汉初朝廷对匈奴采取和亲政策。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "屯戍政策",
+            "difficulty": 3,
+            "description": "军队驻守边疆并屯田开发边疆的政策",
+            "aliases": [
+              "屯田"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "屯戍政策是国家派遣戍卒驻守边疆并通过屯田推动边疆开发的政策。",
+            "example": "汉朝在西域设置田官督率戍卒屯田。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "都护府",
+            "difficulty": 3,
+            "description": "唐朝管理边疆地区的军政机构",
+            "aliases": [
+              "大都护府"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "都护府是唐朝设于边疆、统辖地方民族事务并接受中央领导的机构。",
+            "example": "唐朝在西北设置安西、北庭都护府。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "羁縻州",
+            "difficulty": 3,
+            "description": "唐朝以民族首领任职并由中央统辖的地方机构",
+            "aliases": [
+              "羁縻制度"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "羁縻州是唐朝在边疆以当地民族首领任刺史并接受中央统辖的治理形式。",
+            "example": "羁縻州刺史由各民族首领担任。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "改土归流",
+            "difficulty": 3,
+            "description": "废除土官世袭、改由中央派遣流官治理",
+            "aliases": [
+              "改土归流政策"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "改土归流是清朝逐渐废除土司世袭制度、改派有任期流官治理的政策。",
+            "example": "清朝在西南逐渐实行改土归流。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "朝贡贸易",
+            "difficulty": 3,
+            "description": "以朝贡和回赐为主要形式的官方贸易体系",
+            "aliases": [
+              "朝贡体制",
+              "朝贡贸易体系"
+            ],
+            "prerequisites": [
+              "中国古代对外交往"
+            ],
+            "definition": "朝贡贸易是古代中国与周边国家通过使节朝贡和政府回赐开展的官方贸易。",
+            "example": "明清政府致力于维护朝贡贸易体系。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "中国古代对外交往",
+            "difficulty": 2,
+            "description": "古代中国与外部世界开展的陆海交通和交流",
+            "aliases": [
+              "古代对外交往"
+            ],
+            "prerequisites": [],
+            "definition": "中国古代对外交往是中国通过陆路、海路与世界其他地区进行政治、经济和文化联系。",
+            "example": "唐朝与日本通过遣唐使开展交流。"
+          },
+          {
+            "name": "近代民族国家",
+            "difficulty": 3,
+            "description": "以民族认同和独立主权为基础的国家形态",
+            "aliases": [
+              "民族国家"
+            ],
+            "prerequisites": [
+              "民族认同"
+            ],
+            "definition": "近代民族国家是具有独立主权并以民族认同为重要基础的国家。",
+            "example": "欧洲专制王权国家逐渐变为民族国家。"
+          },
+          {
+            "name": "民族认同",
+            "difficulty": 2,
+            "description": "人们对共同民族语言、文化和国家的归属意识",
+            "aliases": [
+              "民族意识"
+            ],
+            "prerequisites": [],
+            "definition": "民族认同是成员对共同民族及其文化、国家的归属和认同意识。",
+            "example": "民族语言的统一强化了英法两国的民族认同。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "宗教改革",
+            "difficulty": 2,
+            "description": "削弱教会势力并强化世俗国家权力的运动",
+            "aliases": [
+              "宗教改革运动"
+            ],
+            "prerequisites": [],
+            "definition": "宗教改革是16世纪前后欧洲削弱罗马教会控制、强化世俗权力的社会运动。",
+            "example": "宗教改革推动欧洲国家世俗权力增强。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "近代国际法",
+            "difficulty": 3,
+            "description": "规范主权国家关系并减少武力冲突的法律规则",
+            "aliases": [
+              "国际法"
+            ],
+            "prerequisites": [
+              "近代民族国家"
+            ],
+            "definition": "近代国际法是以主权国家为主体、用于规范国家间关系的法律体系。",
+            "example": "格劳秀斯的《战争与和平法》奠定了国际法基础。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "威斯特伐利亚体系",
+            "difficulty": 4,
+            "description": "以国家领土、主权和独立原则为基础的国际体系",
+            "aliases": [
+              "威斯特伐利亚体系"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "威斯特伐利亚体系是1648年和约确立的以国家主权和独立为核心的国际关系体系。",
+            "example": "《威斯特伐利亚和约》确认缔约国须遵守条约。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "外交制度",
+            "difficulty": 3,
+            "description": "国家通过常驻使节等形式开展对外交往的制度",
+            "aliases": [
+              "常驻外交制度"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "外交制度是国家以常驻外交使节和外交使团保持对外联系的制度。",
+            "example": "17世纪欧洲君主开始派遣常驻外交使节。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "维也纳体系",
+            "difficulty": 4,
+            "description": "以大国协调和欧洲均势为特征的国际关系体系",
+            "aliases": [
+              "维也纳体系"
+            ],
+            "prerequisites": [
+              "外交制度"
+            ],
+            "definition": "维也纳体系是1815年后形成的以大国协调和欧洲均势为特征的国际关系体系。",
+            "example": "维也纳会议推动外交制度进一步发展。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "国际联盟",
+            "difficulty": 3,
+            "description": "一战后建立的首个政治性国际组织",
+            "aliases": [
+              "国联"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "国际联盟是第一次世界大战后由主权国家参加的政治性国际组织。",
+            "example": "国联因缺乏普遍性和权威性而难以制止战争。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "联合国宪章",
+            "difficulty": 3,
+            "description": "确立和平解决争端和制裁侵略机制的国际文件",
+            "aliases": [
+              "《联合国宪章》"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "《联合国宪章》是1945年签署、规定联合国宗旨和集体安全机制的国际文件。",
+            "example": "宪章赋予安理会制裁侵略的权力。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "民族区域自治制度",
+            "difficulty": 3,
+            "description": "在国家统一领导下少数民族聚居地实行区域自治",
+            "aliases": [
+              "民族区域自治"
+            ],
+            "prerequisites": [
+              "统一多民族国家"
+            ],
+            "definition": "民族区域自治制度是在国家统一领导下各少数民族聚居地方依法行使自治权的制度。",
+            "example": "内蒙古自治区于1947年成立。",
+            "section": "第13课 当代中国的民族政策"
+          },
+          {
+            "name": "中华民族共同体意识",
+            "difficulty": 3,
+            "description": "各民族对共同祖国和共同体的深层认同",
+            "aliases": [
+              "共同体意识"
+            ],
+            "prerequisites": [
+              "民族交往交流交融",
+              "民族区域自治制度"
+            ],
+            "definition": "中华民族共同体意识是各民族对共同祖国、中华民族及共同发展道路的认同。",
+            "example": "中共十九大提出铸牢中华民族共同体意识。",
+            "section": "第13课 当代中国的民族政策"
+          },
+          {
+            "name": "三个离不开",
+            "difficulty": 2,
+            "description": "阐明各民族相互依存、不可分离的思想",
+            "aliases": [
+              "三个离不开思想"
+            ],
+            "prerequisites": [
+              "民族交往交流交融"
+            ],
+            "definition": "“三个离不开”指汉族离不开少数民族、少数民族离不开汉族、各少数民族相互离不开。",
+            "example": "1990年中共中央提出“三个离不开”。",
+            "section": "第13课 当代中国的民族政策"
+          },
+          {
+            "name": "和平共处五项原则",
+            "difficulty": 3,
+            "description": "中国倡导的处理国际关系的基本准则",
+            "aliases": [
+              "五项原则"
+            ],
+            "prerequisites": [
+              "独立自主的和平外交"
+            ],
+            "definition": "和平共处五项原则是中国倡导的以互相尊重主权和领土完整等为内容的国际关系准则。",
+            "example": "1954年中国倡导和平共处五项原则。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "求同存异",
+            "difficulty": 2,
+            "description": "寻求共同点、保留不同意见的国际交往方针",
+            "aliases": [
+              "求同存异方针"
+            ],
+            "prerequisites": [
+              "和平共处五项原则"
+            ],
+            "definition": "求同存异是中国在国际交往中寻求共同利益、尊重并保留不同立场的方针。",
+            "example": "万隆会议上中国提出求同存异方针。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "独立自主的和平外交",
+            "difficulty": 3,
+            "description": "新中国坚持自主决定外交政策并维护世界和平",
+            "aliases": [
+              "独立自主和平外交方针"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "独立自主的和平外交是新中国坚持自主处理国际事务、反对霸权并维护和平的外交方针。",
+            "example": "中国在万隆会议上推动亚非友好合作。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "三条外交方针",
+            "difficulty": 3,
+            "description": "新中国成立初期外交工作的基本政策",
+            "aliases": [
+              "另起炉灶",
+              "打扫干净屋子再请客",
+              "一边倒"
+            ],
+            "prerequisites": [
+              "独立自主的和平外交"
+            ],
+            "definition": "三条外交方针是“另起炉灶”“打扫干净屋子再请客”和“一边倒”。",
+            "example": "新中国以三条方针指导初期外交。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "人类命运共同体",
+            "difficulty": 3,
+            "description": "倡导各国共同发展、共同安全与共同繁荣的理念",
+            "aliases": [
+              "构建人类命运共同体"
+            ],
+            "prerequisites": [
+              "独立自主的和平外交"
+            ],
+            "definition": "人类命运共同体是倡导各国相互尊重、合作共赢并共同应对全球问题的理念。",
+            "example": "中国提出推动构建人类命运共同体。",
+            "section": "第14课 当代中国的外交"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第11课 中国古代的民族关系与对外交往",
+            "page_range": [
+              67,
+              74
+            ]
+          },
+          {
+            "name": "第12课 近代西方民族国家与国际法的发展",
+            "page_range": [
+              74,
+              80
+            ]
+          },
+          {
+            "name": "第13课 当代中国的民族政策",
+            "page_range": [
+              80,
+              85
+            ]
+          },
+          {
+            "name": "第14课 当代中国的外交",
+            "page_range": [
+              85,
+              91
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第五单元 货币与赋税制度",
+        "concepts": [
+          {
+            "name": "商品交换",
+            "difficulty": 1,
+            "description": "商品之间以交换为目的的经济活动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "商品交换是不同商品所有者之间进行商品互换的经济活动。",
+            "example": "先秦时期贸易活动逐渐活跃。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "货币",
+            "difficulty": 1,
+            "description": "固定充当一般等价物的特殊商品。",
+            "aliases": [],
+            "prerequisites": [
+              "商品交换"
+            ],
+            "definition": "货币是在商品交换发展到一定程度后产生的特殊商品。",
+            "example": "海贝曾被用作货币。"
+          },
+          {
+            "name": "铜铸币",
+            "difficulty": 2,
+            "description": "以铜铸造、用于商品交换的古代货币。",
+            "aliases": [
+              "铜钱"
+            ],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "铜铸币是中国古代以铜铸造并投入流通的货币。",
+            "example": "春秋战国时期有布币、刀币等。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "秦朝统一货币",
+            "difficulty": 2,
+            "description": "秦朝将货币统一为圆形方孔钱。",
+            "aliases": [],
+            "prerequisites": [
+              "铜铸币"
+            ],
+            "definition": "秦朝在圜钱基础上把全国货币统一为圆形方孔钱。",
+            "example": "秦朝统一铸造圆形方孔钱。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "交子",
+            "difficulty": 2,
+            "description": "北宋诞生的世界上最早的纸币。",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "交子是北宋发行并与铜钱并行使用的纸币。",
+            "example": "北宋以交子作为辅币。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "纸币",
+            "difficulty": 2,
+            "description": "以纸张印制并作为货币流通的货币形式。",
+            "aliases": [
+              "钞"
+            ],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "纸币是以纸张为载体、由国家或政权发行流通的货币。",
+            "example": "元朝发行以钞为名的纸币。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "白银货币化",
+            "difficulty": 3,
+            "description": "白银逐渐成为财政和交易的基本支付手段。",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "白银货币化是白银逐渐取得主要支付和法定货币地位的过程。",
+            "example": "明朝中期白银成为基本支付手段。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "法币改革",
+            "difficulty": 3,
+            "description": "1935年国民政府推行的货币制度改革。",
+            "aliases": [
+              "法币"
+            ],
+            "prerequisites": [
+              "白银货币化"
+            ],
+            "definition": "法币改革规定由指定银行发行钞票为法币并禁止银元流通。",
+            "example": "1935年国民政府实行法币改革。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "人民币",
+            "difficulty": 2,
+            "description": "中华人民共和国的法定货币。",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "人民币是中国人民银行依法发行的中华人民共和国法定货币。",
+            "example": "1948年中国人民银行开始统一发行人民币。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "人民币发行原则",
+            "difficulty": 3,
+            "description": "人民币发行遵循经济、计划、集中统一原则。",
+            "aliases": [],
+            "prerequisites": [
+              "人民币"
+            ],
+            "definition": "人民币发行原则包括经济发行、计划发行和集中统一发行。",
+            "example": "中国人民银行拥有统一货币发行权。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "金本位制",
+            "difficulty": 3,
+            "description": "以金币或黄金作为国际流通和价值基础的制度。",
+            "aliases": [
+              "国际金本位货币制度"
+            ],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "金本位制是以黄金或金币作为货币价值和国际结算基础的制度。",
+            "example": "英国1816年实行金本位制。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "金本位制崩溃",
+            "difficulty": 3,
+            "description": "经济危机导致国际金本位制度失去统一基础。",
+            "aliases": [],
+            "prerequisites": [
+              "金本位制"
+            ],
+            "definition": "金本位制崩溃是各国停止黄金兑换后国际货币统一标准瓦解的过程。",
+            "example": "1929年经济大危机后金本位制崩溃。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "布雷顿森林体系",
+            "difficulty": 3,
+            "description": "二战后以美元为中心的国际货币体系。",
+            "aliases": [],
+            "prerequisites": [
+              "金本位制"
+            ],
+            "definition": "布雷顿森林体系是1944年确立的以美元为中心的国际货币体系。",
+            "example": "规定35美元兑换1盎司黄金。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "浮动汇率制",
+            "difficulty": 3,
+            "description": "汇率不再固定而主要随市场变化的制度。",
+            "aliases": [
+              "浮动汇率"
+            ],
+            "prerequisites": [
+              "布雷顿森林体系"
+            ],
+            "definition": "浮动汇率制是货币汇率由市场变化而非固定比值决定的制度。",
+            "example": "布雷顿森林体系瓦解后浮动汇率制取代固定汇率制。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "田赋",
+            "difficulty": 2,
+            "description": "古代国家向土地占有者征收的赋税。",
+            "aliases": [
+              "地税"
+            ],
+            "prerequisites": [],
+            "definition": "田赋是古代国家以土地或土地收成为对象征收的税。",
+            "example": "秦朝田赋税率曾达到收泰半之赋。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "人头税",
+            "difficulty": 2,
+            "description": "以人口或成年男子为对象征收的税。",
+            "aliases": [
+              "口赋",
+              "算赋"
+            ],
+            "prerequisites": [],
+            "definition": "人头税是古代国家按照人口数量或身份征收的税。",
+            "example": "汉朝向不同年龄人口征收口赋、算赋。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "徭役",
+            "difficulty": 2,
+            "description": "古代民众承担的国家无偿劳役或兵役。",
+            "aliases": [
+              "役"
+            ],
+            "prerequisites": [],
+            "definition": "徭役是国家强制民众承担的劳动、运输或军事服役。",
+            "example": "秦汉徭役包括更卒、正卒和戍卒。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "租庸调制",
+            "difficulty": 3,
+            "description": "唐朝向成年男子征收租、调并以庸代役的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "田赋",
+              "徭役"
+            ],
+            "definition": "租庸调制是以成年男子为主要对象征收租、调并允许纳绢布代役的制度。",
+            "example": "唐朝以庸替代部分徭役。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "两税法",
+            "difficulty": 3,
+            "description": "唐朝按田亩、人口和资产分夏秋征税的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "田赋",
+              "人头税"
+            ],
+            "definition": "两税法是按田亩征地税、按人丁资产征户税并分夏秋征收的制度。",
+            "example": "780年唐朝废租庸调改行两税法。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "募役法",
+            "difficulty": 3,
+            "description": "王安石时期以免役钱等募人代役的措施。",
+            "aliases": [
+              "免役法"
+            ],
+            "prerequisites": [
+              "徭役"
+            ],
+            "definition": "募役法是通过征收免役钱、助役钱来雇人承担徭役的制度。",
+            "example": "北宋百姓纳钱后由官府募人代役。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "科差",
+            "difficulty": 2,
+            "description": "元朝按户等征收丝和银两的赋税。",
+            "aliases": [],
+            "prerequisites": [
+              "两税法"
+            ],
+            "definition": "科差是元朝在税粮之外按户等征收丝和银两的税项。",
+            "example": "元朝向民户征收科差。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "一条鞭法",
+            "difficulty": 3,
+            "description": "明后期将赋税和徭役合并并折银征收。",
+            "aliases": [],
+            "prerequisites": [
+              "两税法",
+              "徭役"
+            ],
+            "definition": "一条鞭法是将赋税、徭役合并，按丁田折银统一征收的制度。",
+            "example": "张居正在全国推行一条鞭法。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "摊丁入亩",
+            "difficulty": 3,
+            "description": "清朝将丁银摊入田赋征收的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "人头税",
+              "田赋"
+            ],
+            "definition": "摊丁入亩是清朝把丁银分摊到田赋中征收的制度。",
+            "example": "雍正时期实行摊丁入亩。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "人头税废除",
+            "difficulty": 3,
+            "description": "清朝摊丁入亩后延续约两千年的人头税被废除。",
+            "aliases": [],
+            "prerequisites": [
+              "摊丁入亩",
+              "人头税"
+            ],
+            "definition": "人头税废除是国家不再独立按人口征收丁银的制度变化。",
+            "example": "摊丁入亩后人头税彻底废除。"
+          },
+          {
+            "name": "关税",
+            "difficulty": 2,
+            "description": "国家对进出关境物品征收的税。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "关税是海关依据关税政策和税则对进出关境物品征收的税。",
+            "example": "西周货物通过边境关卡时需要缴税。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "国内关税",
+            "difficulty": 2,
+            "description": "在一国国内不同地区之间征收的关税。",
+            "aliases": [],
+            "prerequisites": [
+              "关税"
+            ],
+            "definition": "国内关税是国家在国内关卡对地区间流通货物征收的税。",
+            "example": "中国历史上国内关税曾与国境关税并立。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "国境关税",
+            "difficulty": 2,
+            "description": "国家对进出国境的货物征收的关税。",
+            "aliases": [],
+            "prerequisites": [
+              "关税"
+            ],
+            "definition": "国境关税是国家在国境线上对进出口货物征收的税。",
+            "example": "1937年中国实行统一的国境关税。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "关税自主权",
+            "difficulty": 3,
+            "description": "国家自主制定税率并管理国境关税的权力。",
+            "aliases": [
+              "关税自主"
+            ],
+            "prerequisites": [
+              "国境关税"
+            ],
+            "definition": "关税自主权是国家独立决定关税税率并管理海关事务的权力。",
+            "example": "新中国成立后中国真正收回关税自主权。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "协定关税",
+            "difficulty": 3,
+            "description": "关税税率由条约协商确定而非一国自主决定。",
+            "aliases": [
+              "协定关税权"
+            ],
+            "prerequisites": [
+              "关税自主权"
+            ],
+            "definition": "协定关税是国家通过不平等条约与外国议定关税税率的制度。",
+            "example": "《南京条约》开启了协定关税的恶例。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "个人所得税",
+            "difficulty": 2,
+            "description": "以个人取得的各项应税所得为征收对象的税。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "个人所得税是国家对个人各项应税所得征收的税。",
+            "example": "工资、稿酬和经营所得均可纳税。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "个人所得税法",
+            "difficulty": 3,
+            "description": "规范个人所得税征收的法律制度。",
+            "aliases": [],
+            "prerequisites": [
+              "个人所得税"
+            ],
+            "definition": "个人所得税法是规定个人所得税纳税范围和征收制度的法律。",
+            "example": "1980年中国颁布个人所得税法。",
+            "section": "第16课 中国赋税制度的演变"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第15课 货币的使用与世界货币体系的形成",
+            "page_range": [
+              92,
+              98
+            ]
+          },
+          {
+            "name": "第16课 中国赋税制度的演变",
+            "page_range": [
+              98,
+              103
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第六单元 基层治理与社会保障",
+        "concepts": [
+          {
+            "name": "基层治理",
+            "difficulty": 2,
+            "description": "对基层社会事务进行组织、管理和服务的活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基层治理是国家和社会在基层组织公共生活、维护秩序并提供服务的过程。",
+            "example": "中国古代通过乡里组织管理基层民众。"
+          },
+          {
+            "name": "赋役征发",
+            "difficulty": 2,
+            "description": "国家向民众征收赋税并征调劳役",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "赋役征发是古代国家获取财政和劳动力资源的重要方式。",
+            "example": "政府依据户籍向编户征发赋役。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "户籍制度",
+            "difficulty": 3,
+            "description": "国家登记、编制和管理人口的制度",
+            "aliases": [],
+            "prerequisites": [
+              "赋役征发"
+            ],
+            "definition": "户籍制度是政府以基层组织为单位掌握人口及其身份、财产等信息的制度。",
+            "example": "秦朝将男女姓名登记在政府簿籍中。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "编户齐民",
+            "difficulty": 3,
+            "description": "汉代编入户籍并承担赋役的普通民户",
+            "aliases": [],
+            "prerequisites": [
+              "户籍制度"
+            ],
+            "definition": "编户齐民是汉代百姓编入国家户籍后形成的身份称谓。",
+            "example": "百姓入籍后成为国家的编户齐民。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "黄册",
+            "difficulty": 3,
+            "description": "明朝登记人口、田土和房屋的户籍册",
+            "aliases": [],
+            "prerequisites": [
+              "户籍制度"
+            ],
+            "definition": "黄册是明朝以里甲制为基础编制的户籍册。",
+            "example": "明朝将黄册集中存放于南京玄武湖。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "土断",
+            "difficulty": 4,
+            "description": "东晋将侨居人口编入所在地户籍的措施",
+            "aliases": [],
+            "prerequisites": [
+              "户籍制度"
+            ],
+            "definition": "土断是东晋及南朝把侨居户口编入所居郡县户籍并征发赋役的制度调整。",
+            "example": "白籍人口经土断后承担赋役。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "乡里制",
+            "difficulty": 3,
+            "description": "古代县以下管理民众的基层组织体系",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "乡里制是秦汉至明清各王朝在县以下设置乡、里等组织进行基层管理的制度。",
+            "example": "秦汉县下设乡、里和亭。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "里甲制",
+            "difficulty": 3,
+            "description": "明朝以户为单位编组基层民众的组织制度",
+            "aliases": [],
+            "prerequisites": [
+              "乡里制"
+            ],
+            "definition": "里甲制是明朝以十户为甲、百余户为里并设置相应首领的基层组织制度。",
+            "example": "明朝设置甲首和里长管理基层事务。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "保甲制",
+            "difficulty": 3,
+            "description": "以户为单位编组并实行治安监督的制度",
+            "aliases": [],
+            "prerequisites": [
+              "乡里制"
+            ],
+            "definition": "保甲制是通过牌、甲、保等层级组织民众进行户籍管理和相互监督的制度。",
+            "example": "清初十户为牌、十牌为甲、十甲为保。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "社会救济",
+            "difficulty": 2,
+            "description": "国家和社会帮助贫困及受灾人群的措施",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "社会救济是为灾民和贫困无依者提供生活保障的社会援助活动。",
+            "example": "政府在灾年开仓赈济灾民。"
+          },
+          {
+            "name": "常平仓",
+            "difficulty": 3,
+            "description": "汉朝积谷备荒并调节粮价的仓储制度",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "常平仓是政府储粮以备灾荒并调节粮食价格的制度。",
+            "example": "汉朝设置常平仓，平抑粮价。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "义仓",
+            "difficulty": 3,
+            "description": "民间按贫富出粮以备灾荒的仓储",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "义仓是隋唐时期倡导民间积储、用于救助灾荒的仓储组织。",
+            "example": "隋文帝令百姓按贫富分等出粮建仓。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "优抚政策",
+            "difficulty": 3,
+            "description": "国家对老弱贫苦等弱势群体的照顾措施",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "优抚政策是政府尊养老人、救助鳏寡孤独和残弱群体的政策。",
+            "example": "汉朝向高龄老人赐发鸠杖。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "慈善组织",
+            "difficulty": 3,
+            "description": "民间开展救助和公益活动的社会组织",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "慈善组织是由社会力量设立并开展救贫助弱等公益活动的组织。",
+            "example": "明清时期出现善堂、善会等机构。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "庄园治理",
+            "difficulty": 3,
+            "description": "西欧庄园主对庄园生产和事务的管理",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "庄园治理是西欧封建庄园主或管家组织生产、征收地租并审理纠纷的基层管理方式。",
+            "example": "庄园主主持庄园法庭审判。"
+          },
+          {
+            "name": "基层自治",
+            "difficulty": 3,
+            "description": "基层居民参与管理本地公共事务的方式",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "基层自治是基层居民通过自治组织管理本地事务并提供公共服务的治理方式。",
+            "example": "古希腊村社大会处理村社公共事务。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          },
+          {
+            "name": "社区治理",
+            "difficulty": 3,
+            "description": "政府、社区组织和居民共同管理社区事务",
+            "aliases": [],
+            "prerequisites": [
+              "基层自治"
+            ],
+            "definition": "社区治理是在政府管理或组织下由居民、社区及社会力量共同解决基层问题的方式。",
+            "example": "社区组织居民参与城市规划和公共服务。"
+          },
+          {
+            "name": "社会保险制度",
+            "difficulty": 3,
+            "description": "通过保险方式保障疾病、工伤和养老等风险",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障制度"
+            ],
+            "definition": "社会保险制度是国家针对疾病、工伤、养老等社会风险提供保障的制度。",
+            "example": "德国19世纪80年代建立社会保险制度。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          },
+          {
+            "name": "社会保障制度",
+            "difficulty": 3,
+            "description": "国家保障居民基本生活和社会权利的制度",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "社会保障制度是国家通过社会保险、社会救助和福利等方式保障居民生活的制度。",
+            "example": "英国二战后建立覆盖家庭、养老、疾病和失业的保障体系。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          },
+          {
+            "name": "福利国家",
+            "difficulty": 4,
+            "description": "社会保障制度基本建立并覆盖广泛的国家",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障制度"
+            ],
+            "definition": "福利国家是以较完善的社会福利和社会保障体系改善民众生活的国家。",
+            "example": "瑞典、挪威等北欧国家建成福利国家。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第17课 中国古代的户籍制度与社会治理",
+            "page_range": [
+              104,
+              110
+            ]
+          },
+          {
+            "name": "第18课 世界主要国家的基层治理与社会保障",
+            "page_range": [
+              110,
+              115
+            ]
+          }
+        ]
+      },
+      {
+        "name": "活动课",
+        "concepts": [
+          {
+            "name": "大一统",
+            "difficulty": 3,
+            "description": "重视和尊重一体、统合的治理制度体系",
+            "aliases": [
+              "一统"
+            ],
+            "prerequisites": [],
+            "definition": "大一统是重视和尊重一体、统合的治理制度体系。",
+            "example": "秦汉时期海内为郡县，法令由一统。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "大一统思想",
+            "difficulty": 3,
+            "description": "追求天下统一与国家统合的政治思想",
+            "aliases": [
+              "公羊学大一统思想"
+            ],
+            "prerequisites": [
+              "大一统"
+            ],
+            "definition": "大一统思想是关于天下统一、民族认同和国家统合的思想观念。",
+            "example": "孟子提出“天下定于一”。"
+          },
+          {
+            "name": "分封制",
+            "difficulty": 2,
+            "description": "以周天子为天下共主的等级国家结构",
+            "aliases": [
+              "等级分封制"
+            ],
+            "prerequisites": [],
+            "definition": "分封制是以周天子为天下共主的等级分封国家结构。",
+            "example": "周天子作为天下共主实行分封。"
+          },
+          {
+            "name": "国家统一",
+            "difficulty": 3,
+            "description": "大一统中央集权国家治理体系形成的基础",
+            "aliases": [
+              "统一"
+            ],
+            "prerequisites": [
+              "大一统"
+            ],
+            "definition": "国家统一是大一统中央集权国家治理体系形成的基础。",
+            "example": "中国历史上的分裂最终多走向统一。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "中央集权",
+            "difficulty": 3,
+            "description": "国家权力集中于中央的制度体系",
+            "aliases": [
+              "中央集权制度"
+            ],
+            "prerequisites": [
+              "国家统一"
+            ],
+            "definition": "中央集权是以中央政府集中掌握国家权力的制度体系。",
+            "example": "中央通过文书律令推行政令。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "郡县体制",
+            "difficulty": 3,
+            "description": "中央集权下由中央管理地方的行政体系",
+            "aliases": [
+              "郡县制"
+            ],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "郡县体制是中央集权下由中央划分并管理地方行政区域的体系。",
+            "example": "中央委派官员管理郡、县等行政区域。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "因俗而治",
+            "difficulty": 3,
+            "description": "依据不同地区情况采取差异化治理",
+            "aliases": [
+              "因地制宜治理"
+            ],
+            "prerequisites": [
+              "大一统"
+            ],
+            "definition": "因俗而治是在统一治理下适度保持自治分治并依地方状况施政。",
+            "example": "“修其教不易其俗，齐其政不易其宜”。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "中央地方关系",
+            "difficulty": 3,
+            "description": "中央政府与地方行政区域之间的治理关系",
+            "aliases": [
+              "中央与地方关系"
+            ],
+            "prerequisites": [
+              "中央集权",
+              "郡县体制"
+            ],
+            "definition": "中央地方关系是中央对地方行政区划和治理实施管控的关系。",
+            "example": "地方行政区划变迁反映中央地方关系变化。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "考核监察制度",
+            "difficulty": 4,
+            "description": "对国家治理及官员行政进行考核监督的制度",
+            "aliases": [
+              "考核与监察制度"
+            ],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "考核监察制度是国家对官员施政进行考察、监督和约束的制度。",
+            "example": "中央通过考核监察维护中央权威。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "统一多民族国家",
+            "difficulty": 3,
+            "description": "在长期统一进程中形成发展的国家形态",
+            "aliases": [],
+            "prerequisites": [
+              "国家统一",
+              "大一统"
+            ],
+            "definition": "统一多民族国家是由多个民族共同组成并在统一进程中发展的国家。",
+            "example": "炎帝、黄帝被尊为华夏始祖并获周边民族认同。",
+            "section": "中国历史上的大一统国家治理"
+          }
+        ],
+        "sections": [
+          {
+            "name": "中国历史上的大一统国家治理",
+            "page_range": [
+              115,
+              119
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "历史",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 政治制度",
+        "concepts": [
+          {
+            "name": "国家",
+            "difficulty": 1,
+            "description": "社会发展到一定阶段阶级矛盾不可调和的产物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "国家是社会发展到一定阶段阶级矛盾不可调和而产生的公共权力。",
+            "example": "夏朝是中国最早的奴隶制王朝国家。"
+          },
+          {
+            "name": "社会治理",
+            "difficulty": 1,
+            "description": "国家通过政治制度实现的基本职能",
+            "aliases": [],
+            "prerequisites": [
+              "国家"
+            ],
+            "definition": "社会治理是国家的基本职能之一。",
+            "example": "秦朝通过郡县制加强全国治理。"
+          },
+          {
+            "name": "政治制度",
+            "difficulty": 1,
+            "description": "国家实现社会治理的制度形式",
+            "aliases": [],
+            "prerequisites": [
+              "国家",
+              "社会治理"
+            ],
+            "definition": "政治制度是国家实现社会治理所采用的制度形式。",
+            "example": "古代中国形成了中央集权政治制度。"
+          },
+          {
+            "name": "世袭制",
+            "difficulty": 2,
+            "description": "王位或统治权按照血缘世代继承的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "世袭制是统治权按照血缘关系世代传承的制度。",
+            "example": "夏启继位使世袭制代替禅让制。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "内外服制",
+            "difficulty": 2,
+            "description": "商朝统治内服王畿和外服地区的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "内外服制是商王直接控制王畿并间接统治外服的制度。",
+            "example": "商王直接控制内服王畿地区。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "分封制",
+            "difficulty": 2,
+            "description": "西周分封贵族建立诸侯国的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "分封制是周天子将土地和人民分封给贵族建立诸侯国的制度。",
+            "example": "周天子将地方分封给同姓贵族和异姓功臣。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "宗法制",
+            "difficulty": 2,
+            "description": "以嫡长子继承制维系贵族关系的制度",
+            "aliases": [],
+            "prerequisites": [
+              "分封制"
+            ],
+            "definition": "宗法制是以血缘关系和嫡长子继承制维护贵族等级秩序的制度。",
+            "example": "周天子与各级贵族实行嫡长子继承制。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "中央集权",
+            "difficulty": 2,
+            "description": "中央掌握国家权力并控制地方的政治制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "中央集权是中央政府掌握主要权力并直接控制地方的制度。",
+            "example": "秦统一后在全国建立中央集权国家。"
+          },
+          {
+            "name": "郡县制",
+            "difficulty": 2,
+            "description": "秦朝实行的中央直接管理地方的制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "郡县制是由中央任命官吏管理郡县的地方行政制度。",
+            "example": "秦朝地方分为郡、县两级，主要官吏由中央任命。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "官僚制",
+            "difficulty": 2,
+            "description": "由各级官吏组成并分掌政务的行政制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "官僚制是由具有明确职能和等级的官吏机构管理国家事务的制度。",
+            "example": "战国时期各国改革推动官僚制产生。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "皇帝制度",
+            "difficulty": 3,
+            "description": "秦朝以皇帝为核心的最高权力制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "皇帝制度是以皇帝为国家最高统治者并实行皇位世袭的制度。",
+            "example": "秦始皇确立皇帝制度，皇帝掌握国家大权。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "三公九卿制",
+            "difficulty": 3,
+            "description": "秦朝中央政府的官僚机构制度",
+            "aliases": [],
+            "prerequisites": [
+              "皇帝制度",
+              "官僚制"
+            ],
+            "definition": "三公九卿制是秦朝以丞相、太尉、御史大夫和九卿组成中央政府的制度。",
+            "example": "丞相掌行政，太尉掌军事，御史大夫掌监察。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "文书行政",
+            "difficulty": 3,
+            "description": "以文书传达政令并实施行政管理",
+            "aliases": [],
+            "prerequisites": [
+              "官僚制"
+            ],
+            "definition": "文书行政是各级官僚机构依靠文书推行行政管理的方式。",
+            "example": "秦朝通过邮传系统传送中央政令。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "中朝",
+            "difficulty": 3,
+            "description": "汉武帝时期由皇帝亲信组成的行政中枢",
+            "aliases": [],
+            "prerequisites": [
+              "三公九卿制"
+            ],
+            "definition": "中朝是汉武帝为加强集权而设立的皇帝亲信行政中枢。",
+            "example": "中朝权力增强后，外朝丞相权力被削弱。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "三省六部制",
+            "difficulty": 3,
+            "description": "隋唐时期职责分明并相互制约的中央制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "三省六部制是由中书、门下、尚书三省及六部组成的中央行政制度。",
+            "example": "中书省决策，门下省审议，尚书省执行。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "内阁",
+            "difficulty": 3,
+            "description": "明朝皇帝的顾问和事实行政中枢",
+            "aliases": [],
+            "prerequisites": [
+              "皇帝制度"
+            ],
+            "definition": "内阁是明朝废宰相后由文官组成并协助皇帝处理政务的机构。",
+            "example": "内阁大学士为皇帝提供顾问并处理政务。"
+          },
+          {
+            "name": "军机处",
+            "difficulty": 3,
+            "description": "清朝直接秉承皇帝旨意处理军国大事的机构",
+            "aliases": [],
+            "prerequisites": [
+              "皇帝制度"
+            ],
+            "definition": "军机处是清朝由军机大臣直接听命于皇帝处理军国事务的中枢机构。",
+            "example": "雍正帝设军机处后其逐渐成为全国政务中枢。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "行省制",
+            "difficulty": 3,
+            "description": "元朝设置行中书省管理地方的制度",
+            "aliases": [],
+            "prerequisites": [
+              "中央集权",
+              "郡县制"
+            ],
+            "definition": "行省制是元朝以行中书省作为地方最高行政机构的制度。",
+            "example": "元朝在地方设置行中书省，简称行省。",
+            "section": "第1课 中国古代政治制度的形成与发展"
+          },
+          {
+            "name": "雅典民主",
+            "difficulty": 3,
+            "description": "古典雅典公民直接参与国家管理的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "雅典民主是以公民大会等机构为核心、由公民直接参与政治的制度。",
+            "example": "雅典公民大会决定国家法律和政策。"
+          },
+          {
+            "name": "斯巴达寡头政治",
+            "difficulty": 3,
+            "description": "斯巴达由少数贵族和国王掌握权力的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "斯巴达寡头政治是王位世袭、贵族长老会拥有重要权力的政治制度。",
+            "example": "斯巴达国王垄断军事统帅权。"
+          },
+          {
+            "name": "罗马共和国",
+            "difficulty": 3,
+            "description": "罗马由执政官、元老院和公民大会共掌权力的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "罗马共和国是由执政官、元老院和公民大会共同参与国家治理的政体。",
+            "example": "执政官由公民选举产生并任职一年。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "元首制",
+            "difficulty": 3,
+            "description": "屋大维建立的实际由个人掌握大权的制度",
+            "aliases": [],
+            "prerequisites": [
+              "罗马共和国"
+            ],
+            "definition": "元首制是罗马共和国崩溃后由屋大维建立的君主政治形式。",
+            "example": "屋大维逐步把元老院和立法等权力集中于己。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "西欧封建制度",
+            "difficulty": 3,
+            "description": "以封君和封臣关系为基本特征的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "西欧封建制度是以封君、封臣关系和土地分封为基本特征的制度。",
+            "example": "日耳曼人君主把征服地区分封给儿子和随从。"
+          },
+          {
+            "name": "等级君主制",
+            "difficulty": 3,
+            "description": "国王与贵族、教会和市民合作统治的制度",
+            "aliases": [],
+            "prerequisites": [
+              "西欧封建制度"
+            ],
+            "definition": "等级君主制是国王通过等级会议与社会等级共同治理国家的制度。",
+            "example": "法国三级会议的召开标志着等级君主制形成。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "英国君主立宪制",
+            "difficulty": 3,
+            "description": "国王受议会和法律限制的资本主义制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "英国君主立宪制是国王权力受法律和议会限制的政治制度。",
+            "example": "未经议会同意，国王不得征税和招募常备军。"
+          },
+          {
+            "name": "内阁制度",
+            "difficulty": 3,
+            "description": "由首相和各部大臣组成并掌握政府权力的制度",
+            "aliases": [],
+            "prerequisites": [
+              "英国君主立宪制"
+            ],
+            "definition": "内阁制度是由议会多数派领袖组织政府并由内阁实际行使行政权的制度。",
+            "example": "英国首相提名各部大臣组成内阁。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "联邦制共和国",
+            "difficulty": 3,
+            "description": "中央与各州分权的共和国家制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "联邦制共和国是联邦政府和各州依据宪法分配权力的共和制度。",
+            "example": "美国联邦政府拥有宪法规定的权力，各州享有一定自治权。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "三权分立",
+            "difficulty": 3,
+            "description": "行政、立法、司法权分别由不同机构行使",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "三权分立是将行政权、立法权和司法权分别交由不同机构行使的制度。",
+            "example": "美国总统、国会和最高法院分别行使三类权力。"
+          },
+          {
+            "name": "法国共和制",
+            "difficulty": 3,
+            "description": "法国通过革命和宪法确立的共和制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "法国共和制是法国以国会和总统等机构组织国家权力的共和制度。",
+            "example": "1875年法国通过新宪法，确立第三共和国制度。",
+            "section": "第2课 西方国家古代和近代政治制度的演变"
+          },
+          {
+            "name": "责任内阁制",
+            "difficulty": 3,
+            "description": "内阁总理由议会多数党产生并承担政治责任",
+            "aliases": [],
+            "prerequisites": [
+              "三权分立"
+            ],
+            "definition": "责任内阁制是内阁由议会多数党组织并对议会负责的制度。",
+            "example": "《中华民国临时约法》规定内阁总理由议会多数党产生。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "苏维埃政权",
+            "difficulty": 3,
+            "description": "革命根据地建立的人民革命政权形式",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "苏维埃政权是中国共产党在革命根据地建立的人民革命政权形式。",
+            "example": "1931年中华苏维埃共和国临时中央政府成立。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "三三制",
+            "difficulty": 3,
+            "description": "抗日根据地政权中各类人员各占三分之一的原则",
+            "aliases": [],
+            "prerequisites": [
+              "苏维埃政权"
+            ],
+            "definition": "三三制是抗日根据地政权中共产党员、党外人士和群众代表各占一定比例的民主合作原则。",
+            "example": "共产党员在政权机关工作人员中只占三分之一。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "人民代表大会制度",
+            "difficulty": 4,
+            "description": "以人民代表大会为核心的国家政权组织形式",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "人民代表大会制度是人民通过人民代表大会行使国家权力的根本政治制度。",
+            "example": "1954年宪法以国家根本法形式规定实行该制度。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "多党合作政治协商制度",
+            "difficulty": 4,
+            "description": "中国共产党领导各民主党派合作和协商的制度",
+            "aliases": [],
+            "prerequisites": [
+              "人民代表大会制度"
+            ],
+            "definition": "多党合作政治协商制度是中国共产党领导各民主党派共同合作、接受监督并参与政治协商的制度。",
+            "example": "人民政协履行政治协商、民主监督和参政议政职能。"
+          },
+          {
+            "name": "民族区域自治制度",
+            "difficulty": 3,
+            "description": "少数民族聚居地方设自治机关行使自治权的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "民族区域自治制度是在国家统一领导下少数民族聚居地区实行区域自治的制度。",
+            "example": "自治区、自治州和自治县依法行使自治权。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "基层群众自治制度",
+            "difficulty": 3,
+            "description": "居民或村民实行自我管理和自我监督的制度",
+            "aliases": [],
+            "prerequisites": [
+              "政治制度"
+            ],
+            "definition": "基层群众自治制度是居民或村民依法通过自治组织实行自我管理的制度。",
+            "example": "居民选举居民委员会参与基层事务管理。",
+            "section": "第3课 中国近代至当代政治制度的演变"
+          },
+          {
+            "name": "商鞅变法",
+            "difficulty": 3,
+            "description": "战国时期秦国推行的富国强兵改革",
+            "aliases": [],
+            "prerequisites": [
+              "改革"
+            ],
+            "definition": "商鞅变法是秦国通过废除井田制、奖励军功和建立县制等措施进行的改革。",
+            "example": "商鞅变法使秦国成为政治军事强国。",
+            "section": "第4课 中国历代变法和改革"
+          },
+          {
+            "name": "改革",
+            "difficulty": 2,
+            "description": "顺应时代变化而调整制度和政策的社会行动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "改革是通过调整制度和政策以适应社会发展需要的历史行动。",
+            "example": "各诸侯国为富国强兵纷纷推行变法。"
+          },
+          {
+            "name": "孝文帝改革",
+            "difficulty": 3,
+            "description": "北魏孝文帝推动民族交融和社会发展的改革",
+            "aliases": [],
+            "prerequisites": [
+              "改革"
+            ],
+            "definition": "孝文帝改革是北魏通过迁都、改汉姓和通婚等措施促进民族交融的改革。",
+            "example": "迁都洛阳并推行改汉姓、说汉话等措施。"
+          },
+          {
+            "name": "王安石变法",
+            "difficulty": 3,
+            "description": "北宋针对官僚、财政和军事弊端的改革",
+            "aliases": [],
+            "prerequisites": [
+              "改革"
+            ],
+            "definition": "王安石变法是北宋为富国强兵而推行的综合性改革。",
+            "example": "王安石针对官僚机构、财政和军事体制制定新法。",
+            "section": "第4课 中国历代变法和改革"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1课 中国古代政治制度的形成与发展",
+            "section_key": "55a47858f2",
+            "page_range": [
+              7,
+              13
+            ]
+          },
+          {
+            "name": "第2课 西方国家古代和近代政治制度的演变",
+            "section_key": "6c27bbebe7",
+            "page_range": [
+              13,
+              19
+            ]
+          },
+          {
+            "name": "第3课 中国近代至当代政治制度的演变",
+            "section_key": "e7689b08e4",
+            "page_range": [
+              19,
+              27
+            ]
+          },
+          {
+            "name": "第4课 中国历代变法和改革",
+            "section_key": "5d2b79c813",
+            "page_range": [
+              27,
+              34
+            ]
+          }
+        ],
+        "chapter_key": "b355a9a48c",
+        "metadata": {
+          "volume_id": "cd9f53c867df",
+          "file_id": "cd9f53c867df",
+          "volume_title": "高中历史 选择性必修1",
+          "chapter_order": 1,
+          "raw_heading": "第一单元 政治制度"
+        }
+      },
+      {
+        "name": "第二单元 官员的选拔与管理",
+        "concepts": [
+          {
+            "name": "世官制",
+            "difficulty": 1,
+            "description": "西周至春秋官位世袭、贵族垄断高官的制度",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世官制是官职由贵族世代继承的官员选拔制度。",
+            "example": "贵族世代垄断高官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "尚贤思想",
+            "difficulty": 1,
+            "description": "春秋战国时期重视选用有才能者的思想",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "尚贤思想主张突破世袭限制，举荐有才能的人为官。",
+            "example": "各国鼓励举荐贤能。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "以法为教",
+            "difficulty": 2,
+            "description": "秦统一后向官吏学习律令而为官的制度",
+            "aliases": [
+              "以法为教、以吏为师"
+            ],
+            "prerequisites": [],
+            "definition": "以法为教是秦代主要通过学习律令培养和选任官员的方式。",
+            "example": "向官吏学习律令后为官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "察举制",
+            "difficulty": 2,
+            "description": "汉武帝推行的考察后推举官员的制度",
+            "aliases": [],
+            "prerequisites": [
+              "尚贤思想"
+            ],
+            "definition": "察举制是先考察士人的舆论评价和为官能力，再推荐任用的制度。",
+            "example": "郡国举孝廉入仕。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "察举常科",
+            "difficulty": 2,
+            "description": "察举制中每年举行且有定额和标准的科目",
+            "aliases": [
+              "常科",
+              "岁举"
+            ],
+            "prerequisites": [
+              "察举制"
+            ],
+            "definition": "察举常科是察举制中按年度定期举行并规定人数和标准的选官方式。",
+            "example": "孝廉、茂才属于常科。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "察举特科",
+            "difficulty": 2,
+            "description": "察举制中有标准但无固定时间的选官方式",
+            "aliases": [
+              "特科"
+            ],
+            "prerequisites": [
+              "察举制"
+            ],
+            "definition": "察举特科是依据特定标准、不定期举行的察举科目。",
+            "example": "贤良方正属于特科。"
+          },
+          {
+            "name": "九品中正制",
+            "difficulty": 3,
+            "description": "魏晋南北朝按家世、道德和才能评定资品的制度",
+            "aliases": [
+              "九品官人法"
+            ],
+            "prerequisites": [
+              "察举制"
+            ],
+            "definition": "九品中正制是由中正评定士人资品并据此授官的选官制度。",
+            "example": "士人被评为九品后由吏部授官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "门阀士族",
+            "difficulty": 2,
+            "description": "魏晋南北朝控制地方选人权的豪强大族势力",
+            "aliases": [
+              "士族",
+              "门阀"
+            ],
+            "prerequisites": [
+              "九品中正制"
+            ],
+            "definition": "门阀士族是凭借家世和政治权力垄断仕途的豪强贵族集团。",
+            "example": "形成“上品无寒门”局面。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "上计制",
+            "difficulty": 3,
+            "description": "秦汉官员以户口、垦田等政绩汇报接受考核的制度",
+            "aliases": [
+              "上计"
+            ],
+            "prerequisites": [],
+            "definition": "上计制是地方逐级汇总行政数据并上报中央以考核官员的制度。",
+            "example": "县国岁末上报计簿。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "刺史监察",
+            "difficulty": 2,
+            "description": "汉武帝设置刺史巡行郡国、纠举地方官员的制度",
+            "aliases": [
+              "刺史制度"
+            ],
+            "prerequisites": [],
+            "definition": "刺史监察是刺史代表皇帝巡察州部并纠举地方不法行为的制度。",
+            "example": "刺史纠察郡国守相。"
+          },
+          {
+            "name": "科举制",
+            "difficulty": 2,
+            "description": "隋唐形成的以分科考试选拔官员的制度",
+            "aliases": [
+              "科举"
+            ],
+            "prerequisites": [
+              "尚贤思想"
+            ],
+            "definition": "科举制是通过分科考试选拔人才并授予任官资格的制度。",
+            "example": "进士科成为重要科目。"
+          },
+          {
+            "name": "制举与常举",
+            "difficulty": 3,
+            "description": "科举制的两类考试，分别由皇帝设科和定期举行",
+            "aliases": [
+              "制举",
+              "常举"
+            ],
+            "prerequisites": [
+              "科举制"
+            ],
+            "definition": "制举与常举是科举制中皇帝自设科目考试和每年定期考试的分类。",
+            "example": "明经、进士属于常举科目。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "明清科举三级",
+            "difficulty": 2,
+            "description": "明清科举依次举行乡试、会试和殿试",
+            "aliases": [
+              "乡试会试殿试"
+            ],
+            "prerequisites": [
+              "科举制"
+            ],
+            "definition": "明清科举三级是从地方乡试到会试、殿试的三级考试体系。",
+            "example": "乡试中举者参加会试。"
+          },
+          {
+            "name": "明清考核制度",
+            "difficulty": 3,
+            "description": "明清通过考满、考察、京察和大计管理官员",
+            "aliases": [
+              "考满与考察",
+              "京察与大计"
+            ],
+            "prerequisites": [
+              "上计制"
+            ],
+            "definition": "明清考核制度是以任期考核和定期察访决定官员升降奖惩的制度。",
+            "example": "考满结果分称职、平常、不称职。"
+          },
+          {
+            "name": "御史台",
+            "difficulty": 2,
+            "description": "隋唐时期中央最高监察机构",
+            "aliases": [],
+            "prerequisites": [
+              "刺史监察"
+            ],
+            "definition": "御史台是隋唐及后世承担中央监察职能的机构。",
+            "example": "御史大夫为其长官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "科道",
+            "difficulty": 3,
+            "description": "明清都察院与六科合称的监察机构",
+            "aliases": [
+              "都察院和六科"
+            ],
+            "prerequisites": [
+              "御史台"
+            ],
+            "definition": "科道是明清都察院和六科的合称，负责监察百官及稽查政务。",
+            "example": "御史负责纠察百官。",
+            "section": "第5课 中国古代官员的选拔与管理"
+          },
+          {
+            "name": "政党分肥制",
+            "difficulty": 2,
+            "description": "执政党将政府官职分给党内同僚的做法",
+            "aliases": [
+              "分肥制"
+            ],
+            "prerequisites": [],
+            "definition": "政党分肥制是政党按政治归属分配官职并随政党更替更换官员的制度。",
+            "example": "内阁更替导致大批官员变动。",
+            "section": "第6课 西方的文官制度"
+          },
+          {
+            "name": "西方文官制度",
+            "difficulty": 3,
+            "description": "西方国家考试录用、中立、常任的事务官制度",
+            "aliases": [
+              "文官制度"
+            ],
+            "prerequisites": [
+              "政党分肥制"
+            ],
+            "definition": "西方文官制度是以公开考试、政治中立和长期任职为主要特征的行政官员制度。",
+            "example": "英国十九世纪中后期确立文官制度。"
+          },
+          {
+            "name": "政务官与事务官",
+            "difficulty": 3,
+            "description": "西方政府中负责政策和具体行政事务的两类官员",
+            "aliases": [
+              "政务官",
+              "事务官"
+            ],
+            "prerequisites": [
+              "西方文官制度"
+            ],
+            "definition": "政务官与事务官分别承担制定政策和执行日常行政事务的职责。",
+            "example": "大臣随内阁进退，文官长期任职。",
+            "section": "第6课 西方的文官制度"
+          },
+          {
+            "name": "文官考试录用",
+            "difficulty": 2,
+            "description": "通过公开竞争考试择优录用政府事务官",
+            "aliases": [
+              "考试录用"
+            ],
+            "prerequisites": [
+              "西方文官制度"
+            ],
+            "definition": "文官考试录用是面向符合法律规定的公民公开考试并择优任用的方式。",
+            "example": "英国规定重要文官职位公开竞争考试。"
+          },
+          {
+            "name": "文官政治中立",
+            "difficulty": 3,
+            "description": "文官不得公开参与党派政治并忠实执行政策",
+            "aliases": [
+              "政治中立"
+            ],
+            "prerequisites": [
+              "政务官与事务官"
+            ],
+            "definition": "文官政治中立是文官不受党派影响并在政务官领导下执行政策的原则。",
+            "example": "文官不得为政党提供政治服务。"
+          },
+          {
+            "name": "文官常任制",
+            "difficulty": 2,
+            "description": "文官无严重过错即可任职至退休的制度安排",
+            "aliases": [
+              "常任"
+            ],
+            "prerequisites": [
+              "政务官与事务官"
+            ],
+            "definition": "文官常任制是文官不随政党和内阁更替而更换、可任职至退休的制度。",
+            "example": "政府更替不影响事务官任职。",
+            "section": "第6课 西方的文官制度"
+          },
+          {
+            "name": "学堂选官制度",
+            "difficulty": 2,
+            "description": "晚清从学堂毕业生中选拔官员的制度",
+            "aliases": [
+              "学堂选官"
+            ],
+            "prerequisites": [
+              "科举制"
+            ],
+            "definition": "学堂选官制度是以近代学堂教育和毕业考试成绩作为选官依据的制度。",
+            "example": "学堂毕业生获授相应官职。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "留学毕业生选官",
+            "difficulty": 2,
+            "description": "晚清通过归国留学生考试选拔官员的制度",
+            "aliases": [
+              "留学毕业生选官制度"
+            ],
+            "prerequisites": [
+              "学堂选官制度"
+            ],
+            "definition": "留学毕业生选官是通过归国留学生考试并按成绩授予出身和官职的制度。",
+            "example": "归国留学生考试分三等。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "文官考试制度",
+            "difficulty": 3,
+            "description": "民国时期以考试为主体选拔文官的制度",
+            "aliases": [
+              "文官考试"
+            ],
+            "prerequisites": [
+              "学堂选官制度"
+            ],
+            "definition": "文官考试制度是民国时期通过法律规定的考试选拔政府官员的制度。",
+            "example": "北洋政府颁布《文官考试法草案》。"
+          },
+          {
+            "name": "甄别制度",
+            "difficulty": 3,
+            "description": "通过审查经历和成绩决定在职人员能否留任",
+            "aliases": [
+              "甄别"
+            ],
+            "prerequisites": [
+              "文官考试制度"
+            ],
+            "definition": "甄别制度是对原有文官的资历、经历和工作表现进行审查以决定留任的制度。",
+            "example": "检验文凭并考查工作经验。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "干部制度",
+            "difficulty": 2,
+            "description": "新中国干部选拔、任用、考核和监督的管理制度",
+            "aliases": [
+              "干部人事制度"
+            ],
+            "prerequisites": [],
+            "definition": "干部制度是涵盖干部人事管理体制及选任、考核、监督等内容的制度。",
+            "example": "党委组织部门统一管理干部。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "公务员制度",
+            "difficulty": 3,
+            "description": "新中国以法律规范公务员考试录用和管理的制度",
+            "aliases": [
+              "公务员制度"
+            ],
+            "prerequisites": [
+              "干部制度"
+            ],
+            "definition": "公务员制度是依法对政府等机关公务员进行考试录用和管理的制度。",
+            "example": "2005年公务员法标志制度正式形成。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          },
+          {
+            "name": "公务员考试录用",
+            "difficulty": 2,
+            "description": "公开考试、严格考察、平等竞争、择优录取公务员",
+            "aliases": [
+              "公务员考录制度"
+            ],
+            "prerequisites": [
+              "公务员制度"
+            ],
+            "definition": "公务员考试录用是通过公开考试和严格考察择优录取公务员的方式。",
+            "example": "主任科员以下职位采用公开考试录用。",
+            "section": "第7课 近代以来中国的官员选拔与管理"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第5课 中国古代官员的选拔与管理",
+            "section_key": "e6493d276f",
+            "page_range": [
+              35,
+              39
+            ]
+          },
+          {
+            "name": "第6课 西方的文官制度",
+            "section_key": "a7d7bbb4d8",
+            "page_range": [
+              40,
+              43
+            ]
+          },
+          {
+            "name": "第7课 近代以来中国的官员选拔与管理",
+            "section_key": "b12011b9d5",
+            "page_range": [
+              44,
+              49
+            ]
+          }
+        ],
+        "chapter_key": "43fd8e7dd7",
+        "metadata": {
+          "volume_id": "cd9f53c867df",
+          "file_id": "cd9f53c867df",
+          "volume_title": "高中历史 选择性必修1",
+          "chapter_order": 2,
+          "raw_heading": "第二单元 官员的选拔与管理"
+        }
+      },
+      {
+        "name": "第三单元 法律与教化",
+        "concepts": [
+          {
+            "name": "法律",
+            "difficulty": 1,
+            "description": "统治阶级意志的体现和国家统治工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "法律是统治阶级意志的体现，是国家的统治工具。",
+            "example": "秦汉以律和令治理国家"
+          },
+          {
+            "name": "教化",
+            "difficulty": 1,
+            "description": "通过教育和引导进行社会治理",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "教化是社会治理的重要工具，着眼于教育和引导。",
+            "example": "儒学士人以乡约教化乡里"
+          },
+          {
+            "name": "礼制",
+            "difficulty": 2,
+            "description": "西周以宗法为核心建立的社会秩序制度",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "礼制是西周统治者为维护社会等级秩序而建立的制度。",
+            "example": "西周建立以宗法为核心的礼制",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "成文法",
+            "difficulty": 2,
+            "description": "以文字形式公布和固定的法律",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "成文法是以文字记载并正式公布的法律。",
+            "example": "子产铸刑书制定成文法"
+          },
+          {
+            "name": "德治思想",
+            "difficulty": 2,
+            "description": "以道德礼义和仁政治理国家的思想",
+            "aliases": [
+              "儒家德治"
+            ],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "德治思想主张统治者施行仁政并以道德礼义教化民众。",
+            "example": "孟子主张省刑罚、薄税敛",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "法治思想",
+            "difficulty": 2,
+            "description": "以法律、刑罚和赏罚治理国家的思想",
+            "aliases": [
+              "法家法治"
+            ],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "法治思想主张以明确法律和赏罚管理国家与臣民。",
+            "example": "韩非主张以法、术、势驾驭臣下",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "德治与法治之争",
+            "difficulty": 3,
+            "description": "先秦围绕道德治理与法律治理的思想争论",
+            "aliases": [],
+            "prerequisites": [
+              "德治思想",
+              "法治思想"
+            ],
+            "definition": "德治与法治之争是先秦思想界关于治理国家主要手段的争论。",
+            "example": "叔向反对子产公布刑书",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "律令",
+            "difficulty": 2,
+            "description": "秦汉以后具有法律效力的律和令",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "律令是古代国家中具有法律效力的刑法规范和行政文告。",
+            "example": "汉朝沿袭秦律并发布法律文告",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "律令儒家化",
+            "difficulty": 3,
+            "description": "儒家思想逐步融入法律制定与解释",
+            "aliases": [],
+            "prerequisites": [
+              "德治思想",
+              "律令"
+            ],
+            "definition": "律令儒家化是魏晋时期以儒家思想解释和改造律令的过程。",
+            "example": "律博士专用儒家思想解释律令",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "礼法结合",
+            "difficulty": 3,
+            "description": "将礼教与法律共同用于国家治理",
+            "aliases": [],
+            "prerequisites": [
+              "礼制",
+              "法律",
+              "教化"
+            ],
+            "definition": "礼法结合是以礼教规范和法律惩罚共同治理社会的方式。",
+            "example": "唐律重视儒家伦理中的孝",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "中华法系",
+            "difficulty": 3,
+            "description": "以中国古代法律传统为基础的法律体系",
+            "aliases": [],
+            "prerequisites": [
+              "礼法结合"
+            ],
+            "definition": "中华法系是以中国古代法律制度及礼法传统为基础形成的法律体系。",
+            "example": "唐律疏议标志中华法系确立",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "唐朝法律体系",
+            "difficulty": 3,
+            "description": "由律、令、格、式构成的法律体系",
+            "aliases": [],
+            "prerequisites": [
+              "律令"
+            ],
+            "definition": "唐朝法律体系包括律、令、格、式四类法律规范。",
+            "example": "律定罪量刑，式规定实施细则",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "乡约教化",
+            "difficulty": 3,
+            "description": "通过乡约规范乡里行为并开展基层教化",
+            "aliases": [
+              "乡约"
+            ],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "乡约教化是儒学士人或政府借助乡约教导和约束乡民的方式。",
+            "example": "《吕氏乡约》劝善规过",
+            "section": "第8课 中国古代的法治与教化"
+          },
+          {
+            "name": "理学基层教化",
+            "difficulty": 3,
+            "description": "理学借助教育、家训和乡约深入社会基层",
+            "aliases": [],
+            "prerequisites": [
+              "教化",
+              "乡约教化"
+            ],
+            "definition": "理学基层教化是理学通过家训、书院和乡约传播行为规范的过程。",
+            "example": "朱熹《家礼》成为家庭行为规范"
+          },
+          {
+            "name": "罗马法",
+            "difficulty": 2,
+            "description": "古罗马形成并影响近代西方法律的法律传统",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "罗马法是古罗马逐步形成并成为近代西方法律制度重要渊源的法律传统。",
+            "example": "《罗马民法大全》是其最高成就",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "英美法系",
+            "difficulty": 3,
+            "description": "以判例法和遵循先例为主要特征的法系",
+            "aliases": [
+              "普通法系"
+            ],
+            "prerequisites": [
+              "罗马法"
+            ],
+            "definition": "英美法系是以判例法为主要法律渊源并遵循先例的法律体系。",
+            "example": "英国和美国属于英美法系",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "大陆法系",
+            "difficulty": 3,
+            "description": "以成文法为主要法律渊源的法律体系",
+            "aliases": [
+              "民法系"
+            ],
+            "prerequisites": [
+              "罗马法",
+              "成文法"
+            ],
+            "definition": "大陆法系是以成文法为主要法律渊源且法律体系较完整的法律体系。",
+            "example": "法国和德国属于大陆法系",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "立法司法独立",
+            "difficulty": 3,
+            "description": "立法权与司法权分工并保持相对独立",
+            "aliases": [
+              "司法独立"
+            ],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "立法司法独立强调立法和司法分工，法院依法独立行使司法权。",
+            "example": "议会制定法律，法院独立审判",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "权力制衡",
+            "difficulty": 3,
+            "description": "通过权力分立避免国家权力过度集中",
+            "aliases": [
+              "三权分立"
+            ],
+            "prerequisites": [
+              "立法司法独立"
+            ],
+            "definition": "权力制衡是将国家权力分为立法、行政和司法并相互制约。",
+            "example": "议会、行政机构和法院分掌不同权力",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "个人权利保护",
+            "difficulty": 2,
+            "description": "法律重视保护个人生命、自由和财产权",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "个人权利保护是近代西方法律制度重视保障个人基本权利的特征。",
+            "example": "法律保护个人的生命权和财产权"
+          },
+          {
+            "name": "无罪推定",
+            "difficulty": 3,
+            "description": "判决前将被审判者视为无罪",
+            "aliases": [],
+            "prerequisites": [
+              "个人权利保护"
+            ],
+            "definition": "无罪推定是指所有被审判者在判决之前都被视为无罪。",
+            "example": "判决前不能称其为罪犯",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "律师制度",
+            "difficulty": 2,
+            "description": "由律师为被审判者提供法律辩护的制度",
+            "aliases": [],
+            "prerequisites": [
+              "个人权利保护"
+            ],
+            "definition": "律师制度是由独立专业律师为被审判者提供辩护的司法制度。",
+            "example": "被告聘请律师进行法庭辩护",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "陪审团制度",
+            "difficulty": 2,
+            "description": "由民众参与案件事实认定和审理的制度",
+            "aliases": [],
+            "prerequisites": [
+              "个人权利保护"
+            ],
+            "definition": "陪审团制度是由民众参与案件审理并就事实问题作出决定的制度。",
+            "example": "陪审团聆听证据后判断事实",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "宗教伦理",
+            "difficulty": 2,
+            "description": "基督教教义形成的行为规范和道德要求",
+            "aliases": [],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "宗教伦理是宗教教义对社会成员思想和行为提出的道德规范。",
+            "example": "基督教要求人们孝敬父母、不得偷盗",
+            "section": "第9课 近代西方的法律与教化"
+          },
+          {
+            "name": "基督教教化",
+            "difficulty": 3,
+            "description": "基督教通过教会、学校和仪式影响社会生活",
+            "aliases": [],
+            "prerequisites": [
+              "宗教伦理",
+              "教化"
+            ],
+            "definition": "基督教教化是教会借助宣讲、教育和宗教仪式规范社会成员的过程。",
+            "example": "教会开办学校并宣讲教义"
+          },
+          {
+            "name": "社会主义法制",
+            "difficulty": 2,
+            "description": "体现广大人民意志的社会主义法律制度",
+            "aliases": [],
+            "prerequisites": [
+              "法律"
+            ],
+            "definition": "社会主义法制是社会主义国家实施的体现广大人民意志的法律制度。",
+            "example": "1954年宪法初步奠定法制基础",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "依法治国",
+            "difficulty": 2,
+            "description": "依靠法律治理国家并推进国家治理现代化",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义法制"
+            ],
+            "definition": "依法治国是依照法律治理国家、建设社会主义法治国家的方针。",
+            "example": "中共十五大提出依法治国",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "中国特色社会主义法律体系",
+            "difficulty": 3,
+            "description": "适应中国社会主义建设各领域的法律体系",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义法制",
+              "依法治国"
+            ],
+            "definition": "中国特色社会主义法律体系是覆盖国家经济、政治、文化和社会等领域的法律体系。",
+            "example": "2010年底该法律体系形成",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "民法典",
+            "difficulty": 2,
+            "description": "系统规范社会生活民事关系的基础性法典",
+            "aliases": [
+              "中华人民共和国民法典"
+            ],
+            "prerequisites": [
+              "中国特色社会主义法律体系"
+            ],
+            "definition": "民法典是系统整合民事法律规范并保护民事权利的基础性法典。",
+            "example": "2020年通过中华人民共和国民法典"
+          },
+          {
+            "name": "社会主义精神文明建设",
+            "difficulty": 2,
+            "description": "社会主义社会的重要特征和现代化建设保障",
+            "aliases": [],
+            "prerequisites": [
+              "教化"
+            ],
+            "definition": "社会主义精神文明建设是社会主义社会的重要特征和现代化建设的重要目标与保证。",
+            "example": "开展群众性精神文明创建活动",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "爱国主义教育",
+            "difficulty": 2,
+            "description": "以振奋民族精神和增强民族凝聚力为目的的教育",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义精神文明建设"
+            ],
+            "definition": "爱国主义教育是引导人民热爱祖国并为社会主义建设共同奋斗的教育。",
+            "example": "1994年颁布爱国主义教育实施纲要",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "公民道德建设",
+            "difficulty": 2,
+            "description": "通过道德规范建设提升公民思想道德素质",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义精神文明建设"
+            ],
+            "definition": "公民道德建设是国家规划和推进公民思想道德建设的社会实践。",
+            "example": "2001年颁布公民道德建设实施纲要",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          },
+          {
+            "name": "社会主义核心价值观",
+            "difficulty": 3,
+            "description": "当代中国精神的集中体现和共同价值追求",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义精神文明建设"
+            ],
+            "definition": "社会主义核心价值观是当代中国精神的集中体现，凝结着全体人民共同的价值追求。",
+            "example": "社会层面包括自由、平等、公正、法治",
+            "section": "第10课 当代中国的法治与精神文明建设"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第8课 中国古代的法治与教化",
+            "section_key": "0de85e6244",
+            "page_range": [
+              50,
+              55
+            ]
+          },
+          {
+            "name": "第9课 近代西方的法律与教化",
+            "section_key": "44887ea484",
+            "page_range": [
+              55,
+              60
+            ]
+          },
+          {
+            "name": "第10课 当代中国的法治与精神文明建设",
+            "section_key": "08601ab6fc",
+            "page_range": [
+              60,
+              66
+            ]
+          }
+        ],
+        "chapter_key": "32b625dd7f",
+        "metadata": {
+          "volume_id": "cd9f53c867df",
+          "file_id": "cd9f53c867df",
+          "volume_title": "高中历史 选择性必修1",
+          "chapter_order": 3,
+          "raw_heading": "第三单元 法律与教化"
+        }
+      },
+      {
+        "name": "第四单元 民族关系与国家关系",
+        "concepts": [
+          {
+            "name": "统一多民族国家",
+            "difficulty": 2,
+            "description": "各民族共同组成并持续发展的统一国家形态",
+            "aliases": [
+              "统一多民族封建国家"
+            ],
+            "prerequisites": [],
+            "definition": "统一多民族国家是多民族在共同政治体制下形成和发展的国家。",
+            "example": "秦朝建立统一多民族国家。"
+          },
+          {
+            "name": "民族交往交流交融",
+            "difficulty": 2,
+            "description": "各民族迁徙、接触、合作并相互融合的过程",
+            "aliases": [
+              "民族交融"
+            ],
+            "prerequisites": [],
+            "definition": "民族交往交流交融是各民族在长期接触中相互影响、共同发展的过程。",
+            "example": "魏晋南北朝时期民族大迁徙推动民族交融。"
+          },
+          {
+            "name": "边疆管理制度",
+            "difficulty": 3,
+            "description": "历代中央政府治理边疆民族地区的制度体系",
+            "aliases": [
+              "边疆治理"
+            ],
+            "prerequisites": [
+              "统一多民族国家"
+            ],
+            "definition": "边疆管理制度是国家针对边疆地区设置机构、任用官员并实施治理的制度安排。",
+            "example": "唐朝设置大都护府、都督府和羁縻州。"
+          },
+          {
+            "name": "和亲政策",
+            "difficulty": 2,
+            "description": "通过联姻等方式缓和民族矛盾的政策",
+            "aliases": [
+              "和亲"
+            ],
+            "prerequisites": [
+              "民族交往交流交融"
+            ],
+            "definition": "和亲政策是中原王朝通过与周边民族联姻来维持和平关系的政策。",
+            "example": "汉初朝廷对匈奴采取和亲政策。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "屯戍政策",
+            "difficulty": 3,
+            "description": "军队驻守边疆并屯田开发边疆的政策",
+            "aliases": [
+              "屯田"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "屯戍政策是国家派遣戍卒驻守边疆并通过屯田推动边疆开发的政策。",
+            "example": "汉朝在西域设置田官督率戍卒屯田。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "都护府",
+            "difficulty": 3,
+            "description": "唐朝管理边疆地区的军政机构",
+            "aliases": [
+              "大都护府"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "都护府是唐朝设于边疆、统辖地方民族事务并接受中央领导的机构。",
+            "example": "唐朝在西北设置安西、北庭都护府。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "羁縻州",
+            "difficulty": 3,
+            "description": "唐朝以民族首领任职并由中央统辖的地方机构",
+            "aliases": [
+              "羁縻制度"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "羁縻州是唐朝在边疆以当地民族首领任刺史并接受中央统辖的治理形式。",
+            "example": "羁縻州刺史由各民族首领担任。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "改土归流",
+            "difficulty": 3,
+            "description": "废除土官世袭、改由中央派遣流官治理",
+            "aliases": [
+              "改土归流政策"
+            ],
+            "prerequisites": [
+              "边疆管理制度"
+            ],
+            "definition": "改土归流是清朝逐渐废除土司世袭制度、改派有任期流官治理的政策。",
+            "example": "清朝在西南逐渐实行改土归流。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "朝贡贸易",
+            "difficulty": 3,
+            "description": "以朝贡和回赐为主要形式的官方贸易体系",
+            "aliases": [
+              "朝贡体制",
+              "朝贡贸易体系"
+            ],
+            "prerequisites": [
+              "中国古代对外交往"
+            ],
+            "definition": "朝贡贸易是古代中国与周边国家通过使节朝贡和政府回赐开展的官方贸易。",
+            "example": "明清政府致力于维护朝贡贸易体系。",
+            "section": "第11课 中国古代的民族关系与对外交往"
+          },
+          {
+            "name": "中国古代对外交往",
+            "difficulty": 2,
+            "description": "古代中国与外部世界开展的陆海交通和交流",
+            "aliases": [
+              "古代对外交往"
+            ],
+            "prerequisites": [],
+            "definition": "中国古代对外交往是中国通过陆路、海路与世界其他地区进行政治、经济和文化联系。",
+            "example": "唐朝与日本通过遣唐使开展交流。"
+          },
+          {
+            "name": "近代民族国家",
+            "difficulty": 3,
+            "description": "以民族认同和独立主权为基础的国家形态",
+            "aliases": [
+              "民族国家"
+            ],
+            "prerequisites": [
+              "民族认同"
+            ],
+            "definition": "近代民族国家是具有独立主权并以民族认同为重要基础的国家。",
+            "example": "欧洲专制王权国家逐渐变为民族国家。"
+          },
+          {
+            "name": "民族认同",
+            "difficulty": 2,
+            "description": "人们对共同民族语言、文化和国家的归属意识",
+            "aliases": [
+              "民族意识"
+            ],
+            "prerequisites": [],
+            "definition": "民族认同是成员对共同民族及其文化、国家的归属和认同意识。",
+            "example": "民族语言的统一强化了英法两国的民族认同。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "宗教改革",
+            "difficulty": 2,
+            "description": "削弱教会势力并强化世俗国家权力的运动",
+            "aliases": [
+              "宗教改革运动"
+            ],
+            "prerequisites": [],
+            "definition": "宗教改革是16世纪前后欧洲削弱罗马教会控制、强化世俗权力的社会运动。",
+            "example": "宗教改革推动欧洲国家世俗权力增强。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "近代国际法",
+            "difficulty": 3,
+            "description": "规范主权国家关系并减少武力冲突的法律规则",
+            "aliases": [
+              "国际法"
+            ],
+            "prerequisites": [
+              "近代民族国家"
+            ],
+            "definition": "近代国际法是以主权国家为主体、用于规范国家间关系的法律体系。",
+            "example": "格劳秀斯的《战争与和平法》奠定了国际法基础。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "威斯特伐利亚体系",
+            "difficulty": 4,
+            "description": "以国家领土、主权和独立原则为基础的国际体系",
+            "aliases": [
+              "威斯特伐利亚体系"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "威斯特伐利亚体系是1648年和约确立的以国家主权和独立为核心的国际关系体系。",
+            "example": "《威斯特伐利亚和约》确认缔约国须遵守条约。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "外交制度",
+            "difficulty": 3,
+            "description": "国家通过常驻使节等形式开展对外交往的制度",
+            "aliases": [
+              "常驻外交制度"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "外交制度是国家以常驻外交使节和外交使团保持对外联系的制度。",
+            "example": "17世纪欧洲君主开始派遣常驻外交使节。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "维也纳体系",
+            "difficulty": 4,
+            "description": "以大国协调和欧洲均势为特征的国际关系体系",
+            "aliases": [
+              "维也纳体系"
+            ],
+            "prerequisites": [
+              "外交制度"
+            ],
+            "definition": "维也纳体系是1815年后形成的以大国协调和欧洲均势为特征的国际关系体系。",
+            "example": "维也纳会议推动外交制度进一步发展。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "国际联盟",
+            "difficulty": 3,
+            "description": "一战后建立的首个政治性国际组织",
+            "aliases": [
+              "国联"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "国际联盟是第一次世界大战后由主权国家参加的政治性国际组织。",
+            "example": "国联因缺乏普遍性和权威性而难以制止战争。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "联合国宪章",
+            "difficulty": 3,
+            "description": "确立和平解决争端和制裁侵略机制的国际文件",
+            "aliases": [
+              "《联合国宪章》"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "《联合国宪章》是1945年签署、规定联合国宗旨和集体安全机制的国际文件。",
+            "example": "宪章赋予安理会制裁侵略的权力。",
+            "section": "第12课 近代西方民族国家与国际法的发展"
+          },
+          {
+            "name": "民族区域自治制度",
+            "difficulty": 3,
+            "description": "在国家统一领导下少数民族聚居地实行区域自治",
+            "aliases": [
+              "民族区域自治"
+            ],
+            "prerequisites": [
+              "统一多民族国家"
+            ],
+            "definition": "民族区域自治制度是在国家统一领导下各少数民族聚居地方依法行使自治权的制度。",
+            "example": "内蒙古自治区于1947年成立。",
+            "section": "第13课 当代中国的民族政策"
+          },
+          {
+            "name": "中华民族共同体意识",
+            "difficulty": 3,
+            "description": "各民族对共同祖国和共同体的深层认同",
+            "aliases": [
+              "共同体意识"
+            ],
+            "prerequisites": [
+              "民族交往交流交融",
+              "民族区域自治制度"
+            ],
+            "definition": "中华民族共同体意识是各民族对共同祖国、中华民族及共同发展道路的认同。",
+            "example": "中共十九大提出铸牢中华民族共同体意识。",
+            "section": "第13课 当代中国的民族政策"
+          },
+          {
+            "name": "三个离不开",
+            "difficulty": 2,
+            "description": "阐明各民族相互依存、不可分离的思想",
+            "aliases": [
+              "三个离不开思想"
+            ],
+            "prerequisites": [
+              "民族交往交流交融"
+            ],
+            "definition": "“三个离不开”指汉族离不开少数民族、少数民族离不开汉族、各少数民族相互离不开。",
+            "example": "1990年中共中央提出“三个离不开”。",
+            "section": "第13课 当代中国的民族政策"
+          },
+          {
+            "name": "和平共处五项原则",
+            "difficulty": 3,
+            "description": "中国倡导的处理国际关系的基本准则",
+            "aliases": [
+              "五项原则"
+            ],
+            "prerequisites": [
+              "独立自主的和平外交"
+            ],
+            "definition": "和平共处五项原则是中国倡导的以互相尊重主权和领土完整等为内容的国际关系准则。",
+            "example": "1954年中国倡导和平共处五项原则。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "求同存异",
+            "difficulty": 2,
+            "description": "寻求共同点、保留不同意见的国际交往方针",
+            "aliases": [
+              "求同存异方针"
+            ],
+            "prerequisites": [
+              "和平共处五项原则"
+            ],
+            "definition": "求同存异是中国在国际交往中寻求共同利益、尊重并保留不同立场的方针。",
+            "example": "万隆会议上中国提出求同存异方针。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "独立自主的和平外交",
+            "difficulty": 3,
+            "description": "新中国坚持自主决定外交政策并维护世界和平",
+            "aliases": [
+              "独立自主和平外交方针"
+            ],
+            "prerequisites": [
+              "近代国际法"
+            ],
+            "definition": "独立自主的和平外交是新中国坚持自主处理国际事务、反对霸权并维护和平的外交方针。",
+            "example": "中国在万隆会议上推动亚非友好合作。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "三条外交方针",
+            "difficulty": 3,
+            "description": "新中国成立初期外交工作的基本政策",
+            "aliases": [
+              "另起炉灶",
+              "打扫干净屋子再请客",
+              "一边倒"
+            ],
+            "prerequisites": [
+              "独立自主的和平外交"
+            ],
+            "definition": "三条外交方针是“另起炉灶”“打扫干净屋子再请客”和“一边倒”。",
+            "example": "新中国以三条方针指导初期外交。",
+            "section": "第14课 当代中国的外交"
+          },
+          {
+            "name": "人类命运共同体",
+            "difficulty": 3,
+            "description": "倡导各国共同发展、共同安全与共同繁荣的理念",
+            "aliases": [
+              "构建人类命运共同体"
+            ],
+            "prerequisites": [
+              "独立自主的和平外交"
+            ],
+            "definition": "人类命运共同体是倡导各国相互尊重、合作共赢并共同应对全球问题的理念。",
+            "example": "中国提出推动构建人类命运共同体。",
+            "section": "第14课 当代中国的外交"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第11课 中国古代的民族关系与对外交往",
+            "section_key": "4fab47eff2",
+            "page_range": [
+              67,
+              74
+            ]
+          },
+          {
+            "name": "第12课 近代西方民族国家与国际法的发展",
+            "section_key": "ddbd3014e8",
+            "page_range": [
+              74,
+              80
+            ]
+          },
+          {
+            "name": "第13课 当代中国的民族政策",
+            "section_key": "acd346d209",
+            "page_range": [
+              80,
+              85
+            ]
+          },
+          {
+            "name": "第14课 当代中国的外交",
+            "section_key": "f01bdaa7d3",
+            "page_range": [
+              85,
+              91
+            ]
+          }
+        ],
+        "chapter_key": "388e7f13c9",
+        "metadata": {
+          "volume_id": "cd9f53c867df",
+          "file_id": "cd9f53c867df",
+          "volume_title": "高中历史 选择性必修1",
+          "chapter_order": 4,
+          "raw_heading": "第四单元 民族关系与国家关系"
+        }
+      },
+      {
+        "name": "第五单元 货币与赋税制度",
+        "concepts": [
+          {
+            "name": "商品交换",
+            "difficulty": 1,
+            "description": "商品之间以交换为目的的经济活动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "商品交换是不同商品所有者之间进行商品互换的经济活动。",
+            "example": "先秦时期贸易活动逐渐活跃。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "货币",
+            "difficulty": 1,
+            "description": "固定充当一般等价物的特殊商品。",
+            "aliases": [],
+            "prerequisites": [
+              "商品交换"
+            ],
+            "definition": "货币是在商品交换发展到一定程度后产生的特殊商品。",
+            "example": "海贝曾被用作货币。"
+          },
+          {
+            "name": "铜铸币",
+            "difficulty": 2,
+            "description": "以铜铸造、用于商品交换的古代货币。",
+            "aliases": [
+              "铜钱"
+            ],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "铜铸币是中国古代以铜铸造并投入流通的货币。",
+            "example": "春秋战国时期有布币、刀币等。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "秦朝统一货币",
+            "difficulty": 2,
+            "description": "秦朝将货币统一为圆形方孔钱。",
+            "aliases": [],
+            "prerequisites": [
+              "铜铸币"
+            ],
+            "definition": "秦朝在圜钱基础上把全国货币统一为圆形方孔钱。",
+            "example": "秦朝统一铸造圆形方孔钱。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "交子",
+            "difficulty": 2,
+            "description": "北宋诞生的世界上最早的纸币。",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "交子是北宋发行并与铜钱并行使用的纸币。",
+            "example": "北宋以交子作为辅币。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "纸币",
+            "difficulty": 2,
+            "description": "以纸张印制并作为货币流通的货币形式。",
+            "aliases": [
+              "钞"
+            ],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "纸币是以纸张为载体、由国家或政权发行流通的货币。",
+            "example": "元朝发行以钞为名的纸币。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "白银货币化",
+            "difficulty": 3,
+            "description": "白银逐渐成为财政和交易的基本支付手段。",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "白银货币化是白银逐渐取得主要支付和法定货币地位的过程。",
+            "example": "明朝中期白银成为基本支付手段。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "法币改革",
+            "difficulty": 3,
+            "description": "1935年国民政府推行的货币制度改革。",
+            "aliases": [
+              "法币"
+            ],
+            "prerequisites": [
+              "白银货币化"
+            ],
+            "definition": "法币改革规定由指定银行发行钞票为法币并禁止银元流通。",
+            "example": "1935年国民政府实行法币改革。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "人民币",
+            "difficulty": 2,
+            "description": "中华人民共和国的法定货币。",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "人民币是中国人民银行依法发行的中华人民共和国法定货币。",
+            "example": "1948年中国人民银行开始统一发行人民币。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "人民币发行原则",
+            "difficulty": 3,
+            "description": "人民币发行遵循经济、计划、集中统一原则。",
+            "aliases": [],
+            "prerequisites": [
+              "人民币"
+            ],
+            "definition": "人民币发行原则包括经济发行、计划发行和集中统一发行。",
+            "example": "中国人民银行拥有统一货币发行权。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "金本位制",
+            "difficulty": 3,
+            "description": "以金币或黄金作为国际流通和价值基础的制度。",
+            "aliases": [
+              "国际金本位货币制度"
+            ],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "金本位制是以黄金或金币作为货币价值和国际结算基础的制度。",
+            "example": "英国1816年实行金本位制。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "金本位制崩溃",
+            "difficulty": 3,
+            "description": "经济危机导致国际金本位制度失去统一基础。",
+            "aliases": [],
+            "prerequisites": [
+              "金本位制"
+            ],
+            "definition": "金本位制崩溃是各国停止黄金兑换后国际货币统一标准瓦解的过程。",
+            "example": "1929年经济大危机后金本位制崩溃。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "布雷顿森林体系",
+            "difficulty": 3,
+            "description": "二战后以美元为中心的国际货币体系。",
+            "aliases": [],
+            "prerequisites": [
+              "金本位制"
+            ],
+            "definition": "布雷顿森林体系是1944年确立的以美元为中心的国际货币体系。",
+            "example": "规定35美元兑换1盎司黄金。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "浮动汇率制",
+            "difficulty": 3,
+            "description": "汇率不再固定而主要随市场变化的制度。",
+            "aliases": [
+              "浮动汇率"
+            ],
+            "prerequisites": [
+              "布雷顿森林体系"
+            ],
+            "definition": "浮动汇率制是货币汇率由市场变化而非固定比值决定的制度。",
+            "example": "布雷顿森林体系瓦解后浮动汇率制取代固定汇率制。",
+            "section": "第15课 货币的使用与世界货币体系的形成"
+          },
+          {
+            "name": "田赋",
+            "difficulty": 2,
+            "description": "古代国家向土地占有者征收的赋税。",
+            "aliases": [
+              "地税"
+            ],
+            "prerequisites": [],
+            "definition": "田赋是古代国家以土地或土地收成为对象征收的税。",
+            "example": "秦朝田赋税率曾达到收泰半之赋。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "人头税",
+            "difficulty": 2,
+            "description": "以人口或成年男子为对象征收的税。",
+            "aliases": [
+              "口赋",
+              "算赋"
+            ],
+            "prerequisites": [],
+            "definition": "人头税是古代国家按照人口数量或身份征收的税。",
+            "example": "汉朝向不同年龄人口征收口赋、算赋。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "徭役",
+            "difficulty": 2,
+            "description": "古代民众承担的国家无偿劳役或兵役。",
+            "aliases": [
+              "役"
+            ],
+            "prerequisites": [],
+            "definition": "徭役是国家强制民众承担的劳动、运输或军事服役。",
+            "example": "秦汉徭役包括更卒、正卒和戍卒。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "租庸调制",
+            "difficulty": 3,
+            "description": "唐朝向成年男子征收租、调并以庸代役的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "田赋",
+              "徭役"
+            ],
+            "definition": "租庸调制是以成年男子为主要对象征收租、调并允许纳绢布代役的制度。",
+            "example": "唐朝以庸替代部分徭役。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "两税法",
+            "difficulty": 3,
+            "description": "唐朝按田亩、人口和资产分夏秋征税的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "田赋",
+              "人头税"
+            ],
+            "definition": "两税法是按田亩征地税、按人丁资产征户税并分夏秋征收的制度。",
+            "example": "780年唐朝废租庸调改行两税法。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "募役法",
+            "difficulty": 3,
+            "description": "王安石时期以免役钱等募人代役的措施。",
+            "aliases": [
+              "免役法"
+            ],
+            "prerequisites": [
+              "徭役"
+            ],
+            "definition": "募役法是通过征收免役钱、助役钱来雇人承担徭役的制度。",
+            "example": "北宋百姓纳钱后由官府募人代役。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "科差",
+            "difficulty": 2,
+            "description": "元朝按户等征收丝和银两的赋税。",
+            "aliases": [],
+            "prerequisites": [
+              "两税法"
+            ],
+            "definition": "科差是元朝在税粮之外按户等征收丝和银两的税项。",
+            "example": "元朝向民户征收科差。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "一条鞭法",
+            "difficulty": 3,
+            "description": "明后期将赋税和徭役合并并折银征收。",
+            "aliases": [],
+            "prerequisites": [
+              "两税法",
+              "徭役"
+            ],
+            "definition": "一条鞭法是将赋税、徭役合并，按丁田折银统一征收的制度。",
+            "example": "张居正在全国推行一条鞭法。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "摊丁入亩",
+            "difficulty": 3,
+            "description": "清朝将丁银摊入田赋征收的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "人头税",
+              "田赋"
+            ],
+            "definition": "摊丁入亩是清朝把丁银分摊到田赋中征收的制度。",
+            "example": "雍正时期实行摊丁入亩。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "人头税废除",
+            "difficulty": 3,
+            "description": "清朝摊丁入亩后延续约两千年的人头税被废除。",
+            "aliases": [],
+            "prerequisites": [
+              "摊丁入亩",
+              "人头税"
+            ],
+            "definition": "人头税废除是国家不再独立按人口征收丁银的制度变化。",
+            "example": "摊丁入亩后人头税彻底废除。"
+          },
+          {
+            "name": "关税",
+            "difficulty": 2,
+            "description": "国家对进出关境物品征收的税。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "关税是海关依据关税政策和税则对进出关境物品征收的税。",
+            "example": "西周货物通过边境关卡时需要缴税。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "国内关税",
+            "difficulty": 2,
+            "description": "在一国国内不同地区之间征收的关税。",
+            "aliases": [],
+            "prerequisites": [
+              "关税"
+            ],
+            "definition": "国内关税是国家在国内关卡对地区间流通货物征收的税。",
+            "example": "中国历史上国内关税曾与国境关税并立。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "国境关税",
+            "difficulty": 2,
+            "description": "国家对进出国境的货物征收的关税。",
+            "aliases": [],
+            "prerequisites": [
+              "关税"
+            ],
+            "definition": "国境关税是国家在国境线上对进出口货物征收的税。",
+            "example": "1937年中国实行统一的国境关税。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "关税自主权",
+            "difficulty": 3,
+            "description": "国家自主制定税率并管理国境关税的权力。",
+            "aliases": [
+              "关税自主"
+            ],
+            "prerequisites": [
+              "国境关税"
+            ],
+            "definition": "关税自主权是国家独立决定关税税率并管理海关事务的权力。",
+            "example": "新中国成立后中国真正收回关税自主权。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "协定关税",
+            "difficulty": 3,
+            "description": "关税税率由条约协商确定而非一国自主决定。",
+            "aliases": [
+              "协定关税权"
+            ],
+            "prerequisites": [
+              "关税自主权"
+            ],
+            "definition": "协定关税是国家通过不平等条约与外国议定关税税率的制度。",
+            "example": "《南京条约》开启了协定关税的恶例。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "个人所得税",
+            "difficulty": 2,
+            "description": "以个人取得的各项应税所得为征收对象的税。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "个人所得税是国家对个人各项应税所得征收的税。",
+            "example": "工资、稿酬和经营所得均可纳税。",
+            "section": "第16课 中国赋税制度的演变"
+          },
+          {
+            "name": "个人所得税法",
+            "difficulty": 3,
+            "description": "规范个人所得税征收的法律制度。",
+            "aliases": [],
+            "prerequisites": [
+              "个人所得税"
+            ],
+            "definition": "个人所得税法是规定个人所得税纳税范围和征收制度的法律。",
+            "example": "1980年中国颁布个人所得税法。",
+            "section": "第16课 中国赋税制度的演变"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第15课 货币的使用与世界货币体系的形成",
+            "section_key": "e954d29ab6",
+            "page_range": [
+              92,
+              98
+            ]
+          },
+          {
+            "name": "第16课 中国赋税制度的演变",
+            "section_key": "f8f164f104",
+            "page_range": [
+              98,
+              103
+            ]
+          }
+        ],
+        "chapter_key": "92de5fdd35",
+        "metadata": {
+          "volume_id": "cd9f53c867df",
+          "file_id": "cd9f53c867df",
+          "volume_title": "高中历史 选择性必修1",
+          "chapter_order": 5,
+          "raw_heading": "第五单元 货币与赋税制度"
+        }
+      },
+      {
+        "name": "第六单元 基层治理与社会保障",
+        "concepts": [
+          {
+            "name": "基层治理",
+            "difficulty": 2,
+            "description": "对基层社会事务进行组织、管理和服务的活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基层治理是国家和社会在基层组织公共生活、维护秩序并提供服务的过程。",
+            "example": "中国古代通过乡里组织管理基层民众。"
+          },
+          {
+            "name": "赋役征发",
+            "difficulty": 2,
+            "description": "国家向民众征收赋税并征调劳役",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "赋役征发是古代国家获取财政和劳动力资源的重要方式。",
+            "example": "政府依据户籍向编户征发赋役。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "户籍制度",
+            "difficulty": 3,
+            "description": "国家登记、编制和管理人口的制度",
+            "aliases": [],
+            "prerequisites": [
+              "赋役征发"
+            ],
+            "definition": "户籍制度是政府以基层组织为单位掌握人口及其身份、财产等信息的制度。",
+            "example": "秦朝将男女姓名登记在政府簿籍中。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "编户齐民",
+            "difficulty": 3,
+            "description": "汉代编入户籍并承担赋役的普通民户",
+            "aliases": [],
+            "prerequisites": [
+              "户籍制度"
+            ],
+            "definition": "编户齐民是汉代百姓编入国家户籍后形成的身份称谓。",
+            "example": "百姓入籍后成为国家的编户齐民。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "黄册",
+            "difficulty": 3,
+            "description": "明朝登记人口、田土和房屋的户籍册",
+            "aliases": [],
+            "prerequisites": [
+              "户籍制度"
+            ],
+            "definition": "黄册是明朝以里甲制为基础编制的户籍册。",
+            "example": "明朝将黄册集中存放于南京玄武湖。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "土断",
+            "difficulty": 4,
+            "description": "东晋将侨居人口编入所在地户籍的措施",
+            "aliases": [],
+            "prerequisites": [
+              "户籍制度"
+            ],
+            "definition": "土断是东晋及南朝把侨居户口编入所居郡县户籍并征发赋役的制度调整。",
+            "example": "白籍人口经土断后承担赋役。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "乡里制",
+            "difficulty": 3,
+            "description": "古代县以下管理民众的基层组织体系",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "乡里制是秦汉至明清各王朝在县以下设置乡、里等组织进行基层管理的制度。",
+            "example": "秦汉县下设乡、里和亭。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "里甲制",
+            "difficulty": 3,
+            "description": "明朝以户为单位编组基层民众的组织制度",
+            "aliases": [],
+            "prerequisites": [
+              "乡里制"
+            ],
+            "definition": "里甲制是明朝以十户为甲、百余户为里并设置相应首领的基层组织制度。",
+            "example": "明朝设置甲首和里长管理基层事务。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "保甲制",
+            "difficulty": 3,
+            "description": "以户为单位编组并实行治安监督的制度",
+            "aliases": [],
+            "prerequisites": [
+              "乡里制"
+            ],
+            "definition": "保甲制是通过牌、甲、保等层级组织民众进行户籍管理和相互监督的制度。",
+            "example": "清初十户为牌、十牌为甲、十甲为保。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "社会救济",
+            "difficulty": 2,
+            "description": "国家和社会帮助贫困及受灾人群的措施",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "社会救济是为灾民和贫困无依者提供生活保障的社会援助活动。",
+            "example": "政府在灾年开仓赈济灾民。"
+          },
+          {
+            "name": "常平仓",
+            "difficulty": 3,
+            "description": "汉朝积谷备荒并调节粮价的仓储制度",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "常平仓是政府储粮以备灾荒并调节粮食价格的制度。",
+            "example": "汉朝设置常平仓，平抑粮价。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "义仓",
+            "difficulty": 3,
+            "description": "民间按贫富出粮以备灾荒的仓储",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "义仓是隋唐时期倡导民间积储、用于救助灾荒的仓储组织。",
+            "example": "隋文帝令百姓按贫富分等出粮建仓。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "优抚政策",
+            "difficulty": 3,
+            "description": "国家对老弱贫苦等弱势群体的照顾措施",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "优抚政策是政府尊养老人、救助鳏寡孤独和残弱群体的政策。",
+            "example": "汉朝向高龄老人赐发鸠杖。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "慈善组织",
+            "difficulty": 3,
+            "description": "民间开展救助和公益活动的社会组织",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "慈善组织是由社会力量设立并开展救贫助弱等公益活动的组织。",
+            "example": "明清时期出现善堂、善会等机构。",
+            "section": "第17课 中国古代的户籍制度与社会治理"
+          },
+          {
+            "name": "庄园治理",
+            "difficulty": 3,
+            "description": "西欧庄园主对庄园生产和事务的管理",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "庄园治理是西欧封建庄园主或管家组织生产、征收地租并审理纠纷的基层管理方式。",
+            "example": "庄园主主持庄园法庭审判。"
+          },
+          {
+            "name": "基层自治",
+            "difficulty": 3,
+            "description": "基层居民参与管理本地公共事务的方式",
+            "aliases": [],
+            "prerequisites": [
+              "基层治理"
+            ],
+            "definition": "基层自治是基层居民通过自治组织管理本地事务并提供公共服务的治理方式。",
+            "example": "古希腊村社大会处理村社公共事务。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          },
+          {
+            "name": "社区治理",
+            "difficulty": 3,
+            "description": "政府、社区组织和居民共同管理社区事务",
+            "aliases": [],
+            "prerequisites": [
+              "基层自治"
+            ],
+            "definition": "社区治理是在政府管理或组织下由居民、社区及社会力量共同解决基层问题的方式。",
+            "example": "社区组织居民参与城市规划和公共服务。"
+          },
+          {
+            "name": "社会保险制度",
+            "difficulty": 3,
+            "description": "通过保险方式保障疾病、工伤和养老等风险",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障制度"
+            ],
+            "definition": "社会保险制度是国家针对疾病、工伤、养老等社会风险提供保障的制度。",
+            "example": "德国19世纪80年代建立社会保险制度。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          },
+          {
+            "name": "社会保障制度",
+            "difficulty": 3,
+            "description": "国家保障居民基本生活和社会权利的制度",
+            "aliases": [],
+            "prerequisites": [
+              "社会救济"
+            ],
+            "definition": "社会保障制度是国家通过社会保险、社会救助和福利等方式保障居民生活的制度。",
+            "example": "英国二战后建立覆盖家庭、养老、疾病和失业的保障体系。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          },
+          {
+            "name": "福利国家",
+            "difficulty": 4,
+            "description": "社会保障制度基本建立并覆盖广泛的国家",
+            "aliases": [],
+            "prerequisites": [
+              "社会保障制度"
+            ],
+            "definition": "福利国家是以较完善的社会福利和社会保障体系改善民众生活的国家。",
+            "example": "瑞典、挪威等北欧国家建成福利国家。",
+            "section": "第18课 世界主要国家的基层治理与社会保障"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第17课 中国古代的户籍制度与社会治理",
+            "section_key": "76b89e58bc",
+            "page_range": [
+              104,
+              110
+            ]
+          },
+          {
+            "name": "第18课 世界主要国家的基层治理与社会保障",
+            "section_key": "6af81ad4e1",
+            "page_range": [
+              110,
+              115
+            ]
+          }
+        ],
+        "chapter_key": "07a135afb8",
+        "metadata": {
+          "volume_id": "cd9f53c867df",
+          "file_id": "cd9f53c867df",
+          "volume_title": "高中历史 选择性必修1",
+          "chapter_order": 6,
+          "raw_heading": "第六单元 基层治理与社会保障"
+        }
+      },
+      {
+        "name": "活动课",
+        "concepts": [
+          {
+            "name": "大一统",
+            "difficulty": 3,
+            "description": "重视和尊重一体、统合的治理制度体系",
+            "aliases": [
+              "一统"
+            ],
+            "prerequisites": [],
+            "definition": "大一统是重视和尊重一体、统合的治理制度体系。",
+            "example": "秦汉时期海内为郡县，法令由一统。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "大一统思想",
+            "difficulty": 3,
+            "description": "追求天下统一与国家统合的政治思想",
+            "aliases": [
+              "公羊学大一统思想"
+            ],
+            "prerequisites": [
+              "大一统"
+            ],
+            "definition": "大一统思想是关于天下统一、民族认同和国家统合的思想观念。",
+            "example": "孟子提出“天下定于一”。"
+          },
+          {
+            "name": "分封制",
+            "difficulty": 2,
+            "description": "以周天子为天下共主的等级国家结构",
+            "aliases": [
+              "等级分封制"
+            ],
+            "prerequisites": [],
+            "definition": "分封制是以周天子为天下共主的等级分封国家结构。",
+            "example": "周天子作为天下共主实行分封。"
+          },
+          {
+            "name": "国家统一",
+            "difficulty": 3,
+            "description": "大一统中央集权国家治理体系形成的基础",
+            "aliases": [
+              "统一"
+            ],
+            "prerequisites": [
+              "大一统"
+            ],
+            "definition": "国家统一是大一统中央集权国家治理体系形成的基础。",
+            "example": "中国历史上的分裂最终多走向统一。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "中央集权",
+            "difficulty": 3,
+            "description": "国家权力集中于中央的制度体系",
+            "aliases": [
+              "中央集权制度"
+            ],
+            "prerequisites": [
+              "国家统一"
+            ],
+            "definition": "中央集权是以中央政府集中掌握国家权力的制度体系。",
+            "example": "中央通过文书律令推行政令。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "郡县体制",
+            "difficulty": 3,
+            "description": "中央集权下由中央管理地方的行政体系",
+            "aliases": [
+              "郡县制"
+            ],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "郡县体制是中央集权下由中央划分并管理地方行政区域的体系。",
+            "example": "中央委派官员管理郡、县等行政区域。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "因俗而治",
+            "difficulty": 3,
+            "description": "依据不同地区情况采取差异化治理",
+            "aliases": [
+              "因地制宜治理"
+            ],
+            "prerequisites": [
+              "大一统"
+            ],
+            "definition": "因俗而治是在统一治理下适度保持自治分治并依地方状况施政。",
+            "example": "“修其教不易其俗，齐其政不易其宜”。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "中央地方关系",
+            "difficulty": 3,
+            "description": "中央政府与地方行政区域之间的治理关系",
+            "aliases": [
+              "中央与地方关系"
+            ],
+            "prerequisites": [
+              "中央集权",
+              "郡县体制"
+            ],
+            "definition": "中央地方关系是中央对地方行政区划和治理实施管控的关系。",
+            "example": "地方行政区划变迁反映中央地方关系变化。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "考核监察制度",
+            "difficulty": 4,
+            "description": "对国家治理及官员行政进行考核监督的制度",
+            "aliases": [
+              "考核与监察制度"
+            ],
+            "prerequisites": [
+              "中央集权"
+            ],
+            "definition": "考核监察制度是国家对官员施政进行考察、监督和约束的制度。",
+            "example": "中央通过考核监察维护中央权威。",
+            "section": "中国历史上的大一统国家治理"
+          },
+          {
+            "name": "统一多民族国家",
+            "difficulty": 3,
+            "description": "在长期统一进程中形成发展的国家形态",
+            "aliases": [],
+            "prerequisites": [
+              "国家统一",
+              "大一统"
+            ],
+            "definition": "统一多民族国家是由多个民族共同组成并在统一进程中发展的国家。",
+            "example": "炎帝、黄帝被尊为华夏始祖并获周边民族认同。",
+            "section": "中国历史上的大一统国家治理"
+          }
+        ],
+        "sections": [
+          {
+            "name": "中国历史上的大一统国家治理",
+            "section_key": "74647411c3",
+            "page_range": [
+              115,
+              119
+            ]
+          }
+        ],
+        "chapter_key": "c23df07877",
+        "metadata": {
+          "volume_id": "cd9f53c867df",
+          "file_id": "cd9f53c867df",
+          "volume_title": "高中历史 选择性必修1",
+          "chapter_order": 7,
+          "raw_heading": "活动课"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "55a47858f2": [
+        7,
+        13
+      ],
+      "第1课 中国古代政治制度的形成与发展": [
+        7,
+        13
+      ],
+      "6c27bbebe7": [
+        13,
+        19
+      ],
+      "第2课 西方国家古代和近代政治制度的演变": [
+        13,
+        19
+      ],
+      "e7689b08e4": [
+        19,
+        27
+      ],
+      "第3课 中国近代至当代政治制度的演变": [
+        19,
+        27
+      ],
+      "5d2b79c813": [
+        27,
+        34
+      ],
+      "第4课 中国历代变法和改革": [
+        27,
+        34
+      ],
+      "e6493d276f": [
+        35,
+        39
+      ],
+      "第5课 中国古代官员的选拔与管理": [
+        35,
+        39
+      ],
+      "a7d7bbb4d8": [
+        40,
+        43
+      ],
+      "第6课 西方的文官制度": [
+        40,
+        43
+      ],
+      "b12011b9d5": [
+        44,
+        49
+      ],
+      "第7课 近代以来中国的官员选拔与管理": [
+        44,
+        49
+      ],
+      "0de85e6244": [
+        50,
+        55
+      ],
+      "第8课 中国古代的法治与教化": [
+        50,
+        55
+      ],
+      "44887ea484": [
+        55,
+        60
+      ],
+      "第9课 近代西方的法律与教化": [
+        55,
+        60
+      ],
+      "08601ab6fc": [
+        60,
+        66
+      ],
+      "第10课 当代中国的法治与精神文明建设": [
+        60,
+        66
+      ],
+      "4fab47eff2": [
+        67,
+        74
+      ],
+      "第11课 中国古代的民族关系与对外交往": [
+        67,
+        74
+      ],
+      "ddbd3014e8": [
+        74,
+        80
+      ],
+      "第12课 近代西方民族国家与国际法的发展": [
+        74,
+        80
+      ],
+      "acd346d209": [
+        80,
+        85
+      ],
+      "第13课 当代中国的民族政策": [
+        80,
+        85
+      ],
+      "f01bdaa7d3": [
+        85,
+        91
+      ],
+      "第14课 当代中国的外交": [
+        85,
+        91
+      ],
+      "e954d29ab6": [
+        92,
+        98
+      ],
+      "第15课 货币的使用与世界货币体系的形成": [
+        92,
+        98
+      ],
+      "f8f164f104": [
+        98,
+        103
+      ],
+      "第16课 中国赋税制度的演变": [
+        98,
+        103
+      ],
+      "76b89e58bc": [
+        104,
+        110
+      ],
+      "第17课 中国古代的户籍制度与社会治理": [
+        104,
+        110
+      ],
+      "6af81ad4e1": [
+        110,
+        115
+      ],
+      "第18课 世界主要国家的基层治理与社会保障": [
+        110,
+        115
+      ],
+      "74647411c3": [
+        115,
+        119
+      ],
+      "中国历史上的大一统国家治理": [
+        115,
+        119
+      ]
+    }
+  }
+}

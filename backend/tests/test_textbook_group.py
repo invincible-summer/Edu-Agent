@@ -16,6 +16,7 @@ import json
 import os
 import sys
 import tempfile
+import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -306,14 +307,25 @@ class TestGroupParallelVolumes(unittest.TestCase):
             with patch.object(textbook_builder, "_volume_spec",
                               side_effect=fake_volume_spec):
                 await textbook_builder.build_group_graph("stu1", grp["id"], object())
+        # 模拟真实流程：OCR 轮 deferred 前已把卷级 waiting 状态落盘
+        # （waiting 卷先写 ocr_waiting、兄弟卷完成结算可能覆盖回 building）。
+        tb_mod.update_textbook(
+            "stu1", grp["id"], status="building",
+            ocr_state={"version": 1, "volumes": {
+                "f2": {"status": "waiting", "pending_pages": [3],
+                       "target_pages": [3], "successful_pages": [],
+                       "next_retry_at": time.time() + 60,
+                       "last_error_summary": "多模态 OCR 返回空内容"}}})
         asyncio.run(drive())
         # 两卷都被抽取（延迟不阻断兄弟卷）；f1 spec 落缓存供重试轮复用。
         self.assertEqual(sorted(seen), ["f1", "f2"])
         self.assertIsNotNone(kgs_mod.load_volume_spec("stu1", grp["topic_key"], "f1"))
         self.assertIsNone(kgs_mod.load_volume_spec("stu1", grp["topic_key"], "f2"))
         out = tb_mod.find_textbook("stu1", grp["id"])
-        # 延迟 ≠ 失败：不落 graph_failed（真实流程中状态由 OCR 轮置 ocr_waiting）。
-        self.assertNotEqual(out["status"], "graph_failed")
+        # 延迟 ≠ 失败：deferred 出口按卷级状态权威结算为 ocr_waiting
+        # （绝不维持被兄弟卷覆盖出的 building，也绝不落 graph_failed）。
+        self.assertEqual(out["status"], "ocr_waiting")
+        self.assertEqual(out["progress"]["stage"], "ocr_waiting")
 
 
 class TestHarvestModeContract(unittest.TestCase):

@@ -1,0 +1,5046 @@
+{
+  "file_id": "81aec39e9a3a",
+  "text_sha256": "1a4570287a3d2ef5598bcdae750184667e937de55bd4cef5803bd111f7ff2801",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "历史",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 食物生产与社会生活",
+        "concepts": [
+          {
+            "name": "食物采集",
+            "difficulty": 1,
+            "description": "依靠采集植物、捕捞鱼虾和猎取动物获取食物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "食物采集是人类利用自然界现成动植物维持生活的方式。",
+            "example": "远古人类采集果实、捕捞鱼虾并猎取动物。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "原始农耕",
+            "difficulty": 1,
+            "description": "人类选择并栽培野生植物的早期农业形式",
+            "aliases": [],
+            "prerequisites": [
+              "食物采集"
+            ],
+            "definition": "原始农耕是人类通过播种和栽培作物获取食物的早期生产方式。",
+            "example": "长江中下游居民早期种植水稻。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "原始畜牧",
+            "difficulty": 1,
+            "description": "人类驯化和饲养野生动物的早期生产形式",
+            "aliases": [],
+            "prerequisites": [
+              "食物采集"
+            ],
+            "definition": "原始畜牧是人类在狩猎和定居基础上驯养动物的生产方式。",
+            "example": "西亚居民饲养绵羊和山羊。"
+          },
+          {
+            "name": "农业起源",
+            "difficulty": 2,
+            "description": "约一万年前农耕和畜牧在多个地区出现",
+            "aliases": [],
+            "prerequisites": [
+              "食物采集"
+            ],
+            "definition": "农业起源是人类由采集渔猎转向种植作物和饲养家畜的过程。",
+            "example": "农耕主要起源于西亚、东亚和中美洲。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "农业革命",
+            "difficulty": 2,
+            "description": "农业出现引发的人类经济和社会生活重大变革",
+            "aliases": [],
+            "prerequisites": [
+              "农业起源"
+            ],
+            "definition": "农业革命是农业出现后人类生产方式和社会生活发生的第一次重大变革。",
+            "example": "人类由食物采集者转变为食物生产者。"
+          },
+          {
+            "name": "定居生活",
+            "difficulty": 1,
+            "description": "人类由迁徙转向长期居住并形成聚落",
+            "aliases": [],
+            "prerequisites": [
+              "农业革命"
+            ],
+            "definition": "定居生活是人类依靠稳定生产长期居住并逐渐形成聚落的生活方式。",
+            "example": "农业发展后，人们建造长期住所。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "灌溉农业",
+            "difficulty": 2,
+            "description": "依靠引水灌溉发展起来的农业生产方式",
+            "aliases": [],
+            "prerequisites": [
+              "原始农耕"
+            ],
+            "definition": "灌溉农业是利用水利设施调节水源以保障农作物生长的农业。",
+            "example": "两河流域和尼罗河流域灌溉农业发达。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "水利工程",
+            "difficulty": 2,
+            "description": "用于防洪、引水和灌溉的农业基础设施",
+            "aliases": [],
+            "prerequisites": [
+              "灌溉农业"
+            ],
+            "definition": "水利工程是人类为控制水患、引水灌溉而修建的工程设施。",
+            "example": "古埃及人修堤筑坝、挖沟开渠。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "铁犁牛耕",
+            "difficulty": 2,
+            "description": "铁制农具与牛力耕作结合的农业技术",
+            "aliases": [],
+            "prerequisites": [
+              "原始农耕"
+            ],
+            "definition": "铁犁牛耕是以铁制犁具和牛作为动力提高耕作效率的技术。",
+            "example": "战国以后铁犁牛耕在中国推广。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "精耕细作",
+            "difficulty": 3,
+            "description": "通过细致耕作提高土地利用率和农业产量",
+            "aliases": [],
+            "prerequisites": [
+              "铁犁牛耕"
+            ],
+            "definition": "精耕细作是中国古代逐步形成的集约型农业技术体系。",
+            "example": "秦汉至隋唐形成北方旱田和南方水田体系。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "家庭生产",
+            "difficulty": 2,
+            "description": "以家庭为基本单位进行农业和家庭手工业生产",
+            "aliases": [],
+            "prerequisites": [
+              "定居生活"
+            ],
+            "definition": "家庭生产是农民以家庭为单位组织耕作并兼营家庭手工业的生产方式。",
+            "example": "农民耕作之余通过家庭手工业补贴家用。"
+          },
+          {
+            "name": "重农抑商",
+            "difficulty": 2,
+            "description": "统治者重视农业并限制商业发展的政策",
+            "aliases": [],
+            "prerequisites": [
+              "家庭生产"
+            ],
+            "definition": "重农抑商是秦以后统治者为维护统治而推行的经济政策。",
+            "example": "秦以后统治者往往推行重农抑商政策。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "剩余产品",
+            "difficulty": 2,
+            "description": "满足生产者需要后仍然剩余的社会产品",
+            "aliases": [],
+            "prerequisites": [
+              "农业革命"
+            ],
+            "definition": "剩余产品是社会生产超过基本生活需要而留下的产品。",
+            "example": "农业生产力提高后，人类生产的产品出现剩余。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "私有制",
+            "difficulty": 2,
+            "description": "个人或少数人占有生产资料和社会财产的制度",
+            "aliases": [],
+            "prerequisites": [
+              "剩余产品"
+            ],
+            "definition": "私有制是公共财产被个人或少数人据为己有的财产制度。",
+            "example": "氏族首领将部分集体财物变成私有财产。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "阶级产生",
+            "difficulty": 2,
+            "description": "社会因财产差异和利益冲突形成不同阶级",
+            "aliases": [],
+            "prerequisites": [
+              "私有制"
+            ],
+            "definition": "阶级产生是私有制出现后社会成员因财产和地位差异发生分化。",
+            "example": "氏族内部出现富人和穷人的差别。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "国家起源",
+            "difficulty": 3,
+            "description": "阶级矛盾不可调和后强制机关国家出现",
+            "aliases": [],
+            "prerequisites": [
+              "阶级产生"
+            ],
+            "definition": "国家起源是社会阶级矛盾激化并需要强制机关调节冲突的结果。",
+            "example": "阶级产生后，国家应运而生。"
+          },
+          {
+            "name": "新航路开辟",
+            "difficulty": 2,
+            "description": "15世纪末至16世纪初推动全球物种交流的历史事件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "新航路开辟是近代早期跨洲交通拓展并促进物种全球传播的过程。",
+            "example": "西班牙人和葡萄牙人将美洲作物带到欧洲。",
+            "section": "第2课 新航路开辟后的食物物种交流"
+          },
+          {
+            "name": "食物物种交流",
+            "difficulty": 2,
+            "description": "不同地区和大洲之间食物作物及禽畜的传播",
+            "aliases": [],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "食物物种交流是不同区域之间农作物和禽畜相互传播的历史过程。",
+            "example": "玉米、马铃薯由美洲传播到欧洲和亚洲。",
+            "section": "第2课 新航路开辟后的食物物种交流"
+          },
+          {
+            "name": "美洲作物外传",
+            "difficulty": 2,
+            "description": "新航路开辟后美洲作物传播到世界各地",
+            "aliases": [],
+            "prerequisites": [
+              "食物物种交流"
+            ],
+            "definition": "美洲作物外传是玉米、马铃薯等美洲作物向其他洲传播的过程。",
+            "example": "明朝时玉米通过多种途径传入中国。"
+          },
+          {
+            "name": "欧亚作物入美",
+            "difficulty": 2,
+            "description": "小麦、水稻等欧亚作物传入美洲并推广",
+            "aliases": [],
+            "prerequisites": [
+              "食物物种交流"
+            ],
+            "definition": "欧亚作物入美是欧洲移民和殖民者将欧亚作物带到美洲的过程。",
+            "example": "小麦传入美洲后成为主要粮食作物。"
+          },
+          {
+            "name": "食物交流影响",
+            "difficulty": 3,
+            "description": "物种交流对粮食、饮食、经济和生态产生影响",
+            "aliases": [],
+            "prerequisites": [
+              "食物物种交流"
+            ],
+            "definition": "食物交流影响是跨区域物种传播对社会生活和自然环境造成的变化。",
+            "example": "马铃薯提高了欧洲人的抗饥荒能力。"
+          },
+          {
+            "name": "现代农业",
+            "difficulty": 2,
+            "description": "以机器、科技和设施为基础的农业生产形态",
+            "aliases": [],
+            "prerequisites": [
+              "农业革命"
+            ],
+            "definition": "现代农业是工业革命后由传统农业转变形成的科技化生产体系。",
+            "example": "大型农场和养殖场成为主要生产经营模式。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "设施农业",
+            "difficulty": 2,
+            "description": "借助人工设施创造适宜动植物生长环境的农业",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "设施农业是利用温室等人工设施使动植物能够全天候生长的生产方式。",
+            "example": "温室大棚可在冬季保温、夏季降温。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "农业机械化",
+            "difficulty": 2,
+            "description": "使用农业机器替代人工完成生产环节",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "农业机械化是运用拖拉机、播种机和收割机等提高农业效率。",
+            "example": "联合收割机集中完成收割和脱粒。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "农业集约化",
+            "difficulty": 3,
+            "description": "集中利用土地、资本和技术提高单位产出",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "农业集约化是通过集中投入和规模经营提高农业生产效率的方式。",
+            "example": "欧美建立高度集约的现代农业。"
+          },
+          {
+            "name": "杂交育种",
+            "difficulty": 2,
+            "description": "通过杂交培育高产优良农作物品种的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "杂交育种是利用不同品种杂交培育优良农作物的农业科技。",
+            "example": "杂交水稻提高了粮食作物单位面积产量。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "食物储备技术",
+            "difficulty": 2,
+            "description": "通过粮仓和现代设备保存粮食与食品的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "食物储备技术是防止粮食变质并延长食品保存期限的方法体系。",
+            "example": "低温、低氧储藏技术提高了粮食保存效果。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "冷链物流",
+            "difficulty": 2,
+            "description": "食品全流程处于规定低温环境的物流系统",
+            "aliases": [],
+            "prerequisites": [
+              "食物储备技术"
+            ],
+            "definition": "冷链物流是食品在生产、运输、销售等环节持续低温保存的系统工程。",
+            "example": "生鲜食品通过运输船冷库运往市场。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "粮食安全",
+            "difficulty": 3,
+            "description": "保障粮食供给并减少饥饿的国家和国际议题",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业",
+              "食物储备技术"
+            ],
+            "definition": "粮食安全是持续保障人们粮食供给、应对供需矛盾的状态和任务。",
+            "example": "各国政府把保障粮食安全作为首要任务。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "食品安全",
+            "difficulty": 3,
+            "description": "食品不受污染且不会危害人体健康的状态",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "食品安全是食品及其生产经营过程符合标准并保障人体健康的要求。",
+            "example": "中国通过食品安全法治理农药残留和违法添加剂。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1课 从食物采集到食物生产",
+            "page_range": [
+              7,
+              13
+            ]
+          },
+          {
+            "name": "第2课 新航路开辟后的食物物种交流",
+            "page_range": [
+              13,
+              17
+            ]
+          },
+          {
+            "name": "第3课 现代食物的生产、储备与食品安全",
+            "page_range": [
+              18,
+              23
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二单元 生产工具与劳作方式",
+        "concepts": [
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然、进行社会生产的能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产力是人类利用生产工具和劳动经验进行生产的能力。",
+            "example": "铁农具推广提高农业生产力"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "人们在社会生产中形成的相互关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产关系是人们在生产过程中形成的社会关系。",
+            "example": "工厂制度形成新的生产关系",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "生产工具",
+            "difficulty": 1,
+            "description": "人们进行生产劳动时使用的器具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产工具是劳动者用来改造自然和进行生产的器具。",
+            "example": "铁犁铧是农业生产工具"
+          },
+          {
+            "name": "生产方式",
+            "difficulty": 2,
+            "description": "人们进行生产活动的组织和实现形式",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "生产方式是生产工具、劳动组织和生产关系的综合表现。",
+            "example": "男耕女织是古代生产方式"
+          },
+          {
+            "name": "石器",
+            "difficulty": 1,
+            "description": "以石为主要材料制作的早期生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "石器是古代人类以石材制成的生产和生活工具。",
+            "example": "河姆渡遗址出土石制农具",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "青铜器",
+            "difficulty": 2,
+            "description": "以青铜铸造的古代器物和生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "青铜器是人类掌握青铜冶炼技术后铸造的器物。",
+            "example": "商周时期青铜农具数量有限",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "铁器",
+            "difficulty": 2,
+            "description": "以铁制成的锋利、轻便生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "铁器是以铁为材料制作且易于锻制打磨的工具。",
+            "example": "战国时期铁制农具逐步推广",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "耕作方式",
+            "difficulty": 2,
+            "description": "人类利用土地进行农业生产的方式",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "耕作方式是农业生产中土地翻耕和种植的基本形式。",
+            "example": "人类耕作经历刀耕、锄耕、犁耕",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "刀耕火种",
+            "difficulty": 2,
+            "description": "砍伐焚烧植被后利用草木灰种田",
+            "aliases": [],
+            "prerequisites": [
+              "耕作方式"
+            ],
+            "definition": "刀耕火种是砍伐并焚烧植被后在土地上耕种的方式。",
+            "example": "原始农业时期采用刀耕火种",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "锄耕",
+            "difficulty": 2,
+            "description": "使用翻土农具进行耕作的方式",
+            "aliases": [],
+            "prerequisites": [
+              "耕作方式"
+            ],
+            "definition": "锄耕是使用石耜、石铲等翻土农具进行的耕作方式。",
+            "example": "新石器时代中期出现锄耕",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "铁犁牛耕",
+            "difficulty": 3,
+            "description": "铁犁与牛力结合的传统农业耕作方式",
+            "aliases": [],
+            "prerequisites": [
+              "铁器",
+              "耕作方式"
+            ],
+            "definition": "铁犁牛耕是使用铁犁并以牛牵引进行耕作的方式。",
+            "example": "汉朝以后成为中国传统农业主要方式",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "灌溉工具",
+            "difficulty": 2,
+            "description": "用于汲水和灌溉农田的生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "灌溉工具是人类利用器械或水力向农田供水的工具。",
+            "example": "翻车和筒车用于农田灌溉",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "翻车",
+            "difficulty": 2,
+            "description": "中国古代利用杠杆和人力汲水的工具",
+            "aliases": [],
+            "prerequisites": [
+              "灌溉工具"
+            ],
+            "definition": "翻车是东汉末出现并用于提水灌溉的农业工具。",
+            "example": "三国时期马钧革新翻车",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "筒车",
+            "difficulty": 2,
+            "description": "借助水力汲水入筒进行灌溉的工具",
+            "aliases": [],
+            "prerequisites": [
+              "灌溉工具"
+            ],
+            "definition": "筒车是唐朝出现的利用水力连续汲水的灌溉工具。",
+            "example": "唐朝农民使用筒车灌田",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "纺织工具",
+            "difficulty": 2,
+            "description": "用于纺线、纺纱和织布的手工业工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "纺织工具是古代纺线、纺纱和织造纺织品所用的工具。",
+            "example": "陶纺轮用于纺线",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "提花机",
+            "difficulty": 3,
+            "description": "能够织出精美花纹丝织品的织机",
+            "aliases": [],
+            "prerequisites": [
+              "纺织工具"
+            ],
+            "definition": "提花机是古代用于织造带有复杂花纹丝织品的织机。",
+            "example": "汉朝成都出现蜀锦提花机模型",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "坯车",
+            "difficulty": 2,
+            "description": "陶瓷制作中用于旋转制坯的工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "坯车是陶瓷生产中通过旋转制作圆形坯件的工具。",
+            "example": "新石器时代晚期采用坯车制坯",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "匣钵",
+            "difficulty": 2,
+            "description": "烧制陶瓷时保护坯件的耐火容器",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "匣钵是烧制陶瓷时放置坯件以防污损的耐火容器。",
+            "example": "南朝工匠使用匣钵烧制坯件",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "支钉",
+            "difficulty": 2,
+            "description": "烧制陶瓷时防止器物粘连的支撑物",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "支钉是陶瓷烧制时垫在器物底部防止粘连的工具。",
+            "example": "唐宋时期陶瓷器物使用支钉",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "水排",
+            "difficulty": 3,
+            "description": "利用水力鼓风提高冶铁效率的装置",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "水排是东汉杜诗发明的以水力驱动风箱的冶铁装置。",
+            "example": "水排使冶铁用力少而效率高",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "农业家庭式劳作",
+            "difficulty": 2,
+            "description": "以家庭为单位从事农业生产的劳作方式",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "农业家庭式劳作是家庭成员共同进行农业生产的方式。",
+            "example": "战国时期男耕女织逐渐普及",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "男耕女织",
+            "difficulty": 2,
+            "description": "家庭中男女分别从事耕作和纺织",
+            "aliases": [],
+            "prerequisites": [
+              "农业家庭式劳作"
+            ],
+            "definition": "男耕女织是古代家庭中男女分工生产的典型形式。",
+            "example": "男子种田，女子织布",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "农业庄园式劳作",
+            "difficulty": 3,
+            "description": "奴隶或农奴在庄园土地上集中劳作",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "农业庄园式劳作是劳动者被束缚于庄园土地上的集中生产方式。",
+            "example": "中古西欧农奴在领主庄园服劳役",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "手工业家庭式劳作",
+            "difficulty": 2,
+            "description": "以制作手工业产品为生的家庭生产方式",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "手工业家庭式劳作是家庭成员以制作手工业品为生的方式。",
+            "example": "古代家庭制作纺织品",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "作坊式劳作",
+            "difficulty": 2,
+            "description": "手工业者在民营或官营作坊中生产",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "作坊式劳作是手工业者在作坊中进行专业化生产的方式。",
+            "example": "商朝制骨作坊规模较大",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "工业革命",
+            "difficulty": 3,
+            "description": "从手工劳动转向机器大生产的技术变革",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具",
+              "生产方式"
+            ],
+            "definition": "工业革命是以技术革新推动机器大生产和社会变革的过程。",
+            "example": "18世纪60年代英国工业革命开始"
+          },
+          {
+            "name": "机器大生产",
+            "difficulty": 2,
+            "description": "使用机器进行大规模、专业化的生产",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "机器大生产是以机器取代手工劳动并进行规模化生产的方式。",
+            "example": "工业革命实现机器大生产",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "工厂制度",
+            "difficulty": 3,
+            "description": "工人集中于厂房并接受严格管理的制度",
+            "aliases": [],
+            "prerequisites": [
+              "机器大生产"
+            ],
+            "definition": "工厂制度是工厂主集中雇佣工人并以规章制度组织生产的制度。",
+            "example": "工厂实行倒班制和严格纪律",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "生产流水线",
+            "difficulty": 2,
+            "description": "各生产环节连续协同完成产品制造",
+            "aliases": [],
+            "prerequisites": [
+              "机器大生产"
+            ],
+            "definition": "生产流水线是将生产过程分为环节并连续协同完成的组织形式。",
+            "example": "工厂用流水线提高生产效率",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "产业工人",
+            "difficulty": 2,
+            "description": "在工厂中从事机器大生产的雇佣劳动者",
+            "aliases": [],
+            "prerequisites": [
+              "机器大生产"
+            ],
+            "definition": "产业工人是受雇于工厂并从事工业生产的劳动者。",
+            "example": "工业革命时期大批产业工人进入厂房",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "城市化",
+            "difficulty": 2,
+            "description": "人口和生产活动不断向城市集中的过程",
+            "aliases": [],
+            "prerequisites": [
+              "工业革命"
+            ],
+            "definition": "城市化是工业发展推动人口和产业向城市集中的过程。",
+            "example": "工业革命后伦敦工业人口猛增",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "电子计算机",
+            "difficulty": 2,
+            "description": "能够进行电子信息处理和计算的机器",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "电子计算机是利用电子技术进行高速计算和信息处理的设备。",
+            "example": "1946年埃尼阿克问世",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "计算机网络",
+            "difficulty": 2,
+            "description": "通过连接计算机实现信息共享的系统",
+            "aliases": [],
+            "prerequisites": [
+              "电子计算机"
+            ],
+            "definition": "计算机网络是由相互连接的计算机组成的信息交流系统。",
+            "example": "互联网由计算机网络发展而来",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "人工智能技术",
+            "difficulty": 3,
+            "description": "通过计算机模拟人的思维解决实际问题",
+            "aliases": [
+              "人工智能"
+            ],
+            "prerequisites": [
+              "电子计算机"
+            ],
+            "definition": "人工智能技术是利用计算机模拟人的思维并解决实际问题的技术。",
+            "example": "机器人可用于无人车间",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "航天技术",
+            "difficulty": 2,
+            "description": "开发和利用太空及地外天体的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "航天技术是运用航天器探索和利用太空及地外天体的技术。",
+            "example": "嫦娥四号实现月背软着陆",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "现代科学技术",
+            "difficulty": 2,
+            "description": "二战后快速发展的多领域尖端技术",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "现代科学技术是二战后在多个尖端领域迅速发展的技术体系。",
+            "example": "计算机和人工智能技术快速发展",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "海洋技术",
+            "difficulty": 2,
+            "description": "探索、研究和利用海洋的现代技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "海洋技术是人类开展海洋探测、研究和利用的技术。",
+            "example": "奋斗者号实现载人深潜",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "原子能",
+            "difficulty": 3,
+            "description": "由原子核反应释放和利用的能量",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "原子能是通过原子核反应产生并可被人类利用的能量。",
+            "example": "原子能用于核动力船和医学研究",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "新材料技术",
+            "difficulty": 2,
+            "description": "研发具有传统材料不具备特点的新材料",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "新材料技术是研究和应用高分子、纳米等新型材料的技术。",
+            "example": "纳米材料应用于生产生活",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "生物技术",
+            "difficulty": 2,
+            "description": "运用生物学知识服务生产和医疗的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "生物技术是利用生物学原理和方法解决实际问题的技术。",
+            "example": "疫苗和血清属于早期生物技术",
+            "section": "第6课 现代科技进步与人类社会发展"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第4课 古代的生产工具与劳作",
+            "page_range": [
+              24,
+              29
+            ]
+          },
+          {
+            "name": "第5课 工业革命与工厂制度",
+            "page_range": [
+              30,
+              35
+            ]
+          },
+          {
+            "name": "第6课 现代科技进步与人类社会发展",
+            "page_range": [
+              35,
+              40
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三单元 商业贸易与日常生活",
+        "concepts": [
+          {
+            "name": "商业贸易",
+            "difficulty": 1,
+            "description": "以商品交换为基础的经济活动，逐步由地方扩展至全球",
+            "aliases": [],
+            "prerequisites": [
+              "社会分工",
+              "产品剩余"
+            ],
+            "definition": "商业贸易是人们通过商品交换获取所需物品的经济活动。",
+            "example": "商人将各地商品运往东京集散。"
+          },
+          {
+            "name": "社会分工",
+            "difficulty": 1,
+            "description": "社会成员分别从事不同生产活动的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会分工是社会成员在生产活动中分担不同工作的组织形式。",
+            "example": "有人务农，有人专门制作器物。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "产品剩余",
+            "difficulty": 1,
+            "description": "生产者满足自身需要后剩余的产品",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "产品剩余是生产成果超过生产者自身消费需要的部分。",
+            "example": "部落将剩余粮食用于交换。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "商品经济",
+            "difficulty": 2,
+            "description": "以商品生产和交换为主要特征的经济形态",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商品经济是以商品生产和商品交换为基本内容的经济形态。",
+            "example": "明清时期农产品商品化程度加深。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "商帮",
+            "difficulty": 2,
+            "description": "明清时期兴盛的地域性商人群体",
+            "aliases": [
+              "地域性商人群体"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商帮是以地域关系为纽带形成的商人群体。",
+            "example": "晋商经营盐业和票号。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "丝绸之路",
+            "difficulty": 2,
+            "description": "古代贯通亚欧北非的重要贸易通道",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "丝绸之路是古代连接亚洲、欧洲和北非的陆上贸易通道。",
+            "example": "中国丝绸运往中亚、西亚和欧洲。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "海上贸易",
+            "difficulty": 2,
+            "description": "通过海上航线开展的跨地区对外贸易",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "海上贸易是利用海上航线进行商品交换和贸易往来的活动。",
+            "example": "唐宋以后商船从东南沿海港口出发。"
+          },
+          {
+            "name": "朝贡贸易",
+            "difficulty": 2,
+            "description": "中国古代对外贸易的重要方式",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "朝贡贸易是以朝贡关系为基础开展的中国古代对外贸易方式。",
+            "example": "明清朝廷规定朝贡国家和贡品种类。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "货币",
+            "difficulty": 2,
+            "description": "充当商品价值一般等价物的交换媒介",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "货币是固定充当商品价值一般等价物并用于交换的特殊商品。",
+            "example": "商朝使用贝作为货币。"
+          },
+          {
+            "name": "信贷",
+            "difficulty": 2,
+            "description": "以借贷、汇兑等方式融通资金的经济活动",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "信贷是以偿还和支付利息为条件的资金借贷及相关活动。",
+            "example": "唐朝出现类似现代汇票的飞钱。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "商业契约",
+            "difficulty": 2,
+            "description": "约定商业活动中当事人权利义务的文书",
+            "aliases": [
+              "契约"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商业契约是交易双方以书面形式明确责权利并受到保护的协议。",
+            "example": "唐朝马匹买卖契约有保人作证。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "当铺",
+            "difficulty": 2,
+            "description": "主营抵押小额贷款的传统金融机构",
+            "aliases": [
+              "质库"
+            ],
+            "prerequisites": [
+              "信贷"
+            ],
+            "definition": "当铺是以动产抵押方式发放贷款并兼营相关金融业务的机构。",
+            "example": "宋代当铺开展消费性动产抵押放贷。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "新航路开辟",
+            "difficulty": 2,
+            "description": "开通欧洲通往亚洲和美洲新航线的历史进程",
+            "aliases": [],
+            "prerequisites": [
+              "海上贸易"
+            ],
+            "definition": "新航路开辟是15世纪末欧洲人开通通往亚洲和美洲新航线的历史事件。",
+            "example": "欧洲贸易中心由地中海转移到大西洋沿岸。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "世界市场",
+            "difficulty": 3,
+            "description": "世界各地纳入资本主义经济联系的市场体系",
+            "aliases": [
+              "资本主义世界市场"
+            ],
+            "prerequisites": [
+              "新航路开辟",
+              "殖民扩张"
+            ],
+            "definition": "世界市场是世界各地区通过资本主义生产和贸易形成的全球经济联系体系。",
+            "example": "20世纪初亚非拉多数地区被纳入其中。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "殖民扩张",
+            "difficulty": 2,
+            "description": "资本主义国家建立殖民地并进行掠夺的活动",
+            "aliases": [
+              "殖民扩张与掠夺"
+            ],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "殖民扩张是资本主义国家通过征服和控制海外地区获取利益的活动。",
+            "example": "葡萄牙和西班牙在海外建立殖民地。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "贸易中心转移",
+            "difficulty": 2,
+            "description": "新航路开辟后欧洲贸易中心向大西洋沿岸转移",
+            "aliases": [],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "贸易中心转移是国际贸易中心由地中海沿岸转向大西洋沿岸的变化。",
+            "example": "阿姆斯特丹成为国际贸易中心。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "股份制贸易公司",
+            "difficulty": 3,
+            "description": "由商人集股并享有国家特权的海外贸易公司",
+            "aliases": [
+              "东印度公司"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "股份制贸易公司是通过集股组织并经营海外垄断贸易的企业。",
+            "example": "荷兰东印度公司垄断部分亚洲贸易。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "商品交易所",
+            "difficulty": 3,
+            "description": "集中进行商品交易的商业机构",
+            "aliases": [
+              "交易所"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商品交易所是为商品集中交易提供场所和规则的商业机构。",
+            "example": "1531年安特卫普开设商品交易所。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "世界贸易组织",
+            "difficulty": 3,
+            "description": "促进货物和服务贸易的国际组织",
+            "aliases": [
+              "WTO"
+            ],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "世界贸易组织是以推动多边贸易体制和扩大贸易为宗旨的国际组织。",
+            "example": "中国于2001年正式加入世界贸易组织。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "国际贸易",
+            "difficulty": 2,
+            "description": "国家或地区之间进行的商品和服务交换",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "国际贸易是不同国家或地区之间开展的商品、服务及相关经济交换。",
+            "example": "各国通过谈判削减关税促进贸易发展。"
+          },
+          {
+            "name": "服务贸易",
+            "difficulty": 3,
+            "description": "旅游、运输、教育、金融等服务的国际交换",
+            "aliases": [],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "服务贸易是国家或地区之间进行服务交换的国际贸易形式。",
+            "example": "跨境旅游和国际金融服务属于服务贸易。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "电子商务",
+            "difficulty": 2,
+            "description": "利用互联网和通信技术进行商品服务交换",
+            "aliases": [
+              "电商"
+            ],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "电子商务是利用网络技术进行商品、技术和服务交换的商业形式。",
+            "example": "消费者通过手机购买世界各地商品。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "布雷顿森林体系",
+            "difficulty": 3,
+            "description": "二战后建立的国际货币金融体系",
+            "aliases": [],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "布雷顿森林体系是第二次世界大战后建立的国际货币金融制度安排。",
+            "example": "国际货币基金组织和世界银行在其背景下成立。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "国际货币基金组织",
+            "difficulty": 3,
+            "description": "维持汇率稳定并调节国际收支的金融组织",
+            "aliases": [
+              "IMF"
+            ],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "国际货币基金组织是向会员国提供短期贷款以调节国际收支的组织。",
+            "example": "成员国可申请贷款应对国际收支困难。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "世界银行",
+            "difficulty": 3,
+            "description": "提供中长期贷款以促进经济发展的国际组织",
+            "aliases": [
+              "国际复兴开发银行"
+            ],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "世界银行是向会员国提供中长期贷款以恢复和发展经济的国际组织。",
+            "example": "贷款投向基础设施和能源开发。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "金融全球化",
+            "difficulty": 3,
+            "description": "资本流动、金融市场和金融机构的全球化",
+            "aliases": [],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "金融全球化是资本、金融市场和金融机构跨国联系与扩张的过程。",
+            "example": "跨国金融集团和国际证券融资不断发展。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "网络金融",
+            "difficulty": 2,
+            "description": "依托互联网办理转账、投资和贷款等金融业务",
+            "aliases": [
+              "互联网金融"
+            ],
+            "prerequisites": [
+              "金融全球化"
+            ],
+            "definition": "网络金融是利用网络终端开展金融服务和资金活动的方式。",
+            "example": "通过手机办理转账汇款和投资理财。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "贸易保护主义",
+            "difficulty": 2,
+            "description": "通过贸易封锁和提高关税保护本国贸易",
+            "aliases": [],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "贸易保护主义是国家以限制进口等手段保护本国贸易和产业的政策倾向。",
+            "example": "经济危机期间一些国家提高关税。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "社会主义市场经济",
+            "difficulty": 3,
+            "description": "市场调节与社会主义制度和国家宏观调控结合",
+            "aliases": [
+              "社会主义市场经济体制"
+            ],
+            "prerequisites": [
+              "商品经济"
+            ],
+            "definition": "社会主义市场经济是使市场在国家宏观调控下对资源配置起基础性作用的经济体制。",
+            "example": "中国改革开放后逐步建立该体制。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "政府宏观调控",
+            "difficulty": 2,
+            "description": "政府运用经济政策调节国民经济运行",
+            "aliases": [
+              "宏观调控"
+            ],
+            "prerequisites": [
+              "商品经济"
+            ],
+            "definition": "政府宏观调控是政府通过经济计划和政策对国民经济进行总体调节。",
+            "example": "战后资本主义国家结合财政和货币政策调控经济。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第7课 古代的商业贸易",
+            "page_range": [
+              41,
+              47
+            ]
+          },
+          {
+            "name": "第8课 世界市场与商业贸易",
+            "page_range": [
+              47,
+              53
+            ]
+          },
+          {
+            "name": "第9课 20世纪以来人类的经济与生活",
+            "page_range": [
+              53,
+              60
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四单元 村落、城镇与居住环境",
+        "concepts": [
+          {
+            "name": "居住形式演变",
+            "difficulty": 2,
+            "description": "人类居住方式由穴居、巢居逐步发展为地面筑屋",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "居住形式演变是人类由天然洞穴和巢居走向建屋定居的历史过程。",
+            "example": "人类居住形式经历了穴居、巢居、半穴居到地面筑屋。"
+          },
+          {
+            "name": "村落",
+            "difficulty": 1,
+            "description": "农业出现后形成的具有一定规模的居民聚居点",
+            "aliases": [],
+            "prerequisites": [
+              "居住形式演变"
+            ],
+            "definition": "村落是农业出现后人们筑屋定居而形成的居民聚居点。",
+            "example": "兴隆洼遗址是距今8000多年前的原始村落遗址。"
+          },
+          {
+            "name": "村落功能",
+            "difficulty": 2,
+            "description": "村落为定居、繁衍、防卫和集体活动提供条件",
+            "aliases": [],
+            "prerequisites": [
+              "村落"
+            ],
+            "definition": "村落通过住宅、仓廪、地窖和公共场所保障居民生活与活动。",
+            "example": "村落中的仓廪和地窖便于储存粮食。"
+          },
+          {
+            "name": "集镇形成",
+            "difficulty": 2,
+            "description": "手工业者和商人聚集并筑垒设防形成集镇",
+            "aliases": [],
+            "prerequisites": [
+              "村落"
+            ],
+            "definition": "集镇是社会生产力发展和商品交换扩大的结果。",
+            "example": "手工业者在便于交换的地方集聚，逐渐形成集镇雏形。"
+          },
+          {
+            "name": "集镇发展",
+            "difficulty": 3,
+            "description": "集镇促进市场繁荣并发展为区域经济中心",
+            "aliases": [],
+            "prerequisites": [
+              "集镇形成"
+            ],
+            "definition": "集镇发展表现为人口增加、作坊商铺增多和专业分工形成。",
+            "example": "明清时期盛泽镇丝织业兴盛，石门镇榨油业发达。",
+            "section": "第10课 古代的村落、集镇和城市"
+          },
+          {
+            "name": "城市产生",
+            "difficulty": 2,
+            "description": "较大居民中心因政治、经济和防御需要形成城市",
+            "aliases": [],
+            "prerequisites": [
+              "集镇形成"
+            ],
+            "definition": "城市是农业区域内较大居民中心发展并承担多种功能的结果。",
+            "example": "公元前3500年至前3100年两河流域形成早期城市。"
+          },
+          {
+            "name": "城市功能",
+            "difficulty": 2,
+            "description": "城市承担政治、军事、经济、宗教和文化等功能",
+            "aliases": [],
+            "prerequisites": [
+              "城市产生"
+            ],
+            "definition": "城市功能是城市作为区域中心所承担的综合社会职能。",
+            "example": "古希腊城市同时具有行政、防御、宗教和商业功能。"
+          },
+          {
+            "name": "古代城市布局",
+            "difficulty": 3,
+            "description": "城市通常划分宫殿、手工业商业和居民等区域",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能"
+            ],
+            "definition": "古代城市布局是依据政治、经济、军事和居民生活需要进行的空间安排。",
+            "example": "中国古代城市主要分为宫殿区、手工业区和商业区、居民区。"
+          },
+          {
+            "name": "城市营建制度",
+            "difficulty": 3,
+            "description": "周朝对城邑选址、规模、道路和功能分区作出规定",
+            "aliases": [],
+            "prerequisites": [
+              "古代城市布局"
+            ],
+            "definition": "城市营建制度是周朝对城邑建设标准和等级秩序的制度化规定。",
+            "example": "《周礼·考工记》规定城邑道路、城门和宫室布局。"
+          },
+          {
+            "name": "民居差异",
+            "difficulty": 2,
+            "description": "民居受自然环境、经济水平和文化习俗共同影响",
+            "aliases": [],
+            "prerequisites": [
+              "村落"
+            ],
+            "definition": "民居差异是不同地区住宅形制和材料因环境与社会条件不同而形成的差别。",
+            "example": "两河流域用土坯建房，古埃及房屋多用泥和木材。"
+          },
+          {
+            "name": "巢居与穴居",
+            "difficulty": 2,
+            "description": "中国远古民居最早形成的两种居住类型",
+            "aliases": [],
+            "prerequisites": [
+              "居住形式演变"
+            ],
+            "definition": "巢居与穴居是中国先民分别适应南方湿地和北方干燥环境的住宅形式。",
+            "example": "南方巢居发展为干栏式民居，北方穴居发展为地上建筑。"
+          },
+          {
+            "name": "中国民居类型",
+            "difficulty": 3,
+            "description": "中国民居包括窑洞、四合院、徽派民居和土楼等",
+            "aliases": [],
+            "prerequisites": [
+              "巢居与穴居",
+              "民居差异"
+            ],
+            "definition": "中国民居类型是各地自然环境、建筑传统和社会习俗共同形成的住宅形态。",
+            "example": "北方有窑洞、四合院，南方有徽派民居和福建土楼。"
+          },
+          {
+            "name": "民居等级观念",
+            "difficulty": 3,
+            "description": "中国传统住宅布局体现等级秩序和长幼有序",
+            "aliases": [],
+            "prerequisites": [
+              "中国民居类型"
+            ],
+            "definition": "民居等级观念是传统住宅设计遵循身份等级和家庭礼仪秩序的原则。",
+            "example": "住宅布局讲求对称、主次分明和院落有序。"
+          },
+          {
+            "name": "古罗马住宅",
+            "difficulty": 3,
+            "description": "以中庭为核心，广泛使用木、石、砖和混凝土",
+            "aliases": [],
+            "prerequisites": [
+              "民居差异"
+            ],
+            "definition": "古罗马住宅以带列柱围廊的中庭为核心，并发展出多种建筑技术。",
+            "example": "古罗马建筑将混凝土、拱券和希腊柱式结合起来。",
+            "section": "第10课 古代的村落、集镇和城市"
+          },
+          {
+            "name": "古罗马公寓",
+            "difficulty": 3,
+            "description": "古罗马为缓解住房紧缺而出现的多层集体住宅",
+            "aliases": [],
+            "prerequisites": [
+              "古罗马住宅"
+            ],
+            "definition": "古罗马公寓是供百姓或外来人员租住的多层复合式住宅。",
+            "example": "4世纪罗马城大部分民居是复合式公寓。"
+          },
+          {
+            "name": "城市化",
+            "difficulty": 2,
+            "description": "城市人口增加、规模扩大及设施和生活水平提高的过程",
+            "aliases": [],
+            "prerequisites": [
+              "城市产生"
+            ],
+            "definition": "城市化是乡村社会向城市社会转变的历史过程。",
+            "example": "工业革命以来，越来越多乡村人口迁入城市。",
+            "section": "第11课 近代以来的城市化进程"
+          },
+          {
+            "name": "工业化与城市化",
+            "difficulty": 3,
+            "description": "工业生产集中于城市，推动人口和经济活动向城市聚集",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "工业化通过集中生产和创造就业推动城市化进程。",
+            "example": "英国城市化伴随工业革命展开，1851年城市人口超过总人口一半。"
+          },
+          {
+            "name": "居住条件改善",
+            "difficulty": 2,
+            "description": "建筑技术和城市服务发展使住宅生活更加便利舒适",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "居住条件改善是城市发展过程中住宅设备、卫生和生活便利性提高的现象。",
+            "example": "电梯、钢筋混凝土、集中供暖和私人卫生间逐渐普及。"
+          },
+          {
+            "name": "城市基础设施",
+            "difficulty": 2,
+            "description": "供水、排水、照明、通信和交通等城市公共设施",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "城市基础设施是支撑城市运行和居民生活的公共工程与服务系统。",
+            "example": "自来水、地铁、电灯和电话逐渐进入城市生活。",
+            "section": "第11课 近代以来的城市化进程"
+          },
+          {
+            "name": "城市化问题",
+            "difficulty": 2,
+            "description": "城市化过程中出现污染、拥堵、贫富矛盾等问题",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "城市化问题是城市快速发展带来的环境、交通和社会矛盾。",
+            "example": "工厂排放废水废气，汽车普及造成交通拥堵。"
+          },
+          {
+            "name": "城市社区功能",
+            "difficulty": 3,
+            "description": "社区由慈善救济扩展到教育、医疗、服务和娱乐",
+            "aliases": [],
+            "prerequisites": [
+              "城市基础设施"
+            ],
+            "definition": "城市社区功能是社区为居民提供社会保障、公共服务和文化生活的作用。",
+            "example": "现代社区提供教育、医疗、绿化和娱乐等服务。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第10课 古代的村落、集镇和城市",
+            "page_range": [
+              61,
+              68
+            ]
+          },
+          {
+            "name": "第11课 近代以来的城市化进程",
+            "page_range": [
+              68,
+              73
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第五单元 交通与社会变迁",
+        "concepts": [
+          {
+            "name": "交通",
+            "difficulty": 1,
+            "description": "人员、物资和信息的运输传递活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "交通是人或物转运输送以及邮电通信的总称。",
+            "example": "铁路运输货物和人员。"
+          },
+          {
+            "name": "橇",
+            "difficulty": 1,
+            "description": "人类早期利用滑动运输重物的工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "橇是把重物放在木制架子上拖拉的早期运输工具。",
+            "example": "古人用橇拖运重物。"
+          },
+          {
+            "name": "轮车",
+            "difficulty": 1,
+            "description": "利用轮子滚动运输的车辆",
+            "aliases": [],
+            "prerequisites": [
+              "橇"
+            ],
+            "definition": "轮车是以轮子滚动替代滑动来提高运输效率的车辆。",
+            "example": "轮车提高了运载量和速度。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "马车",
+            "difficulty": 1,
+            "description": "以马为动力的古代陆路交通工具",
+            "aliases": [],
+            "prerequisites": [
+              "轮车"
+            ],
+            "definition": "马车是由马牵引车体进行运输或作战的交通工具。",
+            "example": "马和马车是古代重要的交通工具。"
+          },
+          {
+            "name": "人工道路",
+            "difficulty": 2,
+            "description": "人类修筑的陆路交通线路",
+            "aliases": [
+              "道路铺设"
+            ],
+            "prerequisites": [],
+            "definition": "人工道路是人们为运输和交流而修筑的陆路通道。",
+            "example": "秦朝修筑驰道和直道。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "驿站交通网",
+            "difficulty": 2,
+            "description": "以驿站和驿道组成的古代交通网络",
+            "aliases": [
+              "驿路交通网"
+            ],
+            "prerequisites": [
+              "人工道路"
+            ],
+            "definition": "驿站交通网是以驿道和驿站连接各地、服务政务与交通的网络。",
+            "example": "元朝遍设驿站连接全国。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "运河",
+            "difficulty": 1,
+            "description": "人工开凿并用于航运的河流",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "运河是人类人工开凿的河流，主要用于沟通水系和航运。",
+            "example": "灵渠沟通长江和珠江水系。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "大运河",
+            "difficulty": 2,
+            "description": "沟通中国南北的重要人工水道",
+            "aliases": [
+              "京杭大运河"
+            ],
+            "prerequisites": [
+              "运河"
+            ],
+            "definition": "大运河是沟通中国南方和北方的长距离人工水道。",
+            "example": "元朝京杭大运河全长近1800千米。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "筏",
+            "difficulty": 1,
+            "description": "捆绑漂浮物制成的早期水上工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "筏是人们将树干等漂浮物捆绑后制成的水上运输工具。",
+            "example": "古人把树干捆绑成筏。"
+          },
+          {
+            "name": "独木舟",
+            "difficulty": 1,
+            "description": "刳木制成的原始船只",
+            "aliases": [],
+            "prerequisites": [
+              "筏"
+            ],
+            "definition": "独木舟是人们刳挖整段木材制成的原始船。",
+            "example": "新石器时代出现了独木舟。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "木板船",
+            "difficulty": 2,
+            "description": "在舟体四周加装木板制成的船",
+            "aliases": [],
+            "prerequisites": [
+              "独木舟"
+            ],
+            "definition": "木板船是在舟体上加装木板并采取连接、堵漏等措施制成的船。",
+            "example": "木板船改善了载重和航行性能。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "磁罗盘",
+            "difficulty": 2,
+            "description": "利用磁性指示航向的航海仪器",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "磁罗盘是宋代发展起来、用于辨别航向的航海仪器。",
+            "example": "磁罗盘帮助海船持续航行。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "海上丝绸之路",
+            "difficulty": 2,
+            "description": "连接中国与亚非地区的古代海上航线",
+            "aliases": [],
+            "prerequisites": [
+              "磁罗盘"
+            ],
+            "definition": "海上丝绸之路是古代连接中国与东亚、南亚、西亚和非洲的海上交通路线。",
+            "example": "郑和船队曾航行于海上丝绸之路。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "新航路开辟",
+            "difficulty": 2,
+            "description": "15至16世纪欧洲人开辟全球海上航线",
+            "aliases": [],
+            "prerequisites": [
+              "海上丝绸之路"
+            ],
+            "definition": "新航路开辟是欧洲航海家开通通往美洲、亚洲等地新海路的历史进程。",
+            "example": "达·伽马开辟绕过非洲到达东方的航线。"
+          },
+          {
+            "name": "环球交通网络",
+            "difficulty": 3,
+            "description": "由全球海路和陆路联系形成的交通体系",
+            "aliases": [],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "环球交通网络是世界主要大洋和大陆通过航线建立直接联系后形成的全球交通体系。",
+            "example": "新航路开辟推动环球交通网络形成。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "苏伊士运河",
+            "difficulty": 2,
+            "description": "连接红海和地中海的国际运河",
+            "aliases": [],
+            "prerequisites": [
+              "运河"
+            ],
+            "definition": "苏伊士运河是连接红海与地中海、缩短欧亚航程的人工水道。",
+            "example": "1869年苏伊士运河开通。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "巴拿马运河",
+            "difficulty": 2,
+            "description": "连接大西洋和太平洋的国际运河",
+            "aliases": [],
+            "prerequisites": [
+              "运河"
+            ],
+            "definition": "巴拿马运河是连接大西洋和太平洋、缩短两洋航程的人工水道。",
+            "example": "1914年巴拿马运河通航。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "铁路时代",
+            "difficulty": 2,
+            "description": "铁路成为陆路交通主干的历史阶段",
+            "aliases": [],
+            "prerequisites": [
+              "人工道路"
+            ],
+            "definition": "铁路时代是铁路网广泛建设并成为陆路交通主干的时期。",
+            "example": "19世纪上半期欧美逐步进入铁路时代。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "蒸汽机车",
+            "difficulty": 2,
+            "description": "以蒸汽动力驱动的铁路机车",
+            "aliases": [],
+            "prerequisites": [
+              "铁路时代"
+            ],
+            "definition": "蒸汽机车是利用蒸汽机产生动力牵引列车运行的机车。",
+            "example": "斯蒂芬森于1814年改进蒸汽机车。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "轮船",
+            "difficulty": 2,
+            "description": "以蒸汽机或内燃机为动力的船舶",
+            "aliases": [
+              "汽船"
+            ],
+            "prerequisites": [
+              "木板船"
+            ],
+            "definition": "轮船是以蒸汽机或内燃机驱动、具有较大吨位和较远航距的船舶。",
+            "example": "富尔顿于1807年发明汽船。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "汽车",
+            "difficulty": 1,
+            "description": "以发动机驱动的现代道路交通工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "汽车是以发动机为动力、在道路上行驶的现代交通工具。",
+            "example": "福特T型汽车实现量产。"
+          },
+          {
+            "name": "高速公路",
+            "difficulty": 2,
+            "description": "供汽车分道高速行驶并控制出入的公路",
+            "aliases": [],
+            "prerequisites": [
+              "汽车"
+            ],
+            "definition": "高速公路是专供汽车分向、分车道高速行驶并控制出入的公路。",
+            "example": "上海沪嘉高速是中国大陆第一条高速公路。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "高速铁路",
+            "difficulty": 2,
+            "description": "运行速度较高的现代铁路系统",
+            "aliases": [
+              "高铁"
+            ],
+            "prerequisites": [
+              "铁路时代"
+            ],
+            "definition": "高速铁路是以高速列车提供商业运营服务的现代铁路交通系统。",
+            "example": "京津城际铁路通车标志中国进入高铁时代。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "现代航运",
+            "difficulty": 3,
+            "description": "以雷达、卫星通信等技术支撑的航运体系",
+            "aliases": [],
+            "prerequisites": [
+              "轮船"
+            ],
+            "definition": "现代航运是运用先进航海技术和大型化、专业化船舶开展的水上运输。",
+            "example": "航海雷达提高了船舶航行能力。"
+          },
+          {
+            "name": "飞机时代",
+            "difficulty": 2,
+            "description": "飞机成为重要交通工具并开通航空航线的时期",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "飞机时代是飞机发明并逐渐形成民用航空运输体系的历史阶段。",
+            "example": "莱特兄弟的飞机成功升空开启飞机时代。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "民航",
+            "difficulty": 2,
+            "description": "面向公众提供航空运输服务的行业",
+            "aliases": [
+              "民用航空"
+            ],
+            "prerequisites": [
+              "飞机时代"
+            ],
+            "definition": "民航是面向社会公众提供客货航空运输及相关服务的行业。",
+            "example": "中国民航开通了多条国际和国内航线。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "物流业",
+            "difficulty": 2,
+            "description": "整合运输、仓储、通信和包装的行业",
+            "aliases": [],
+            "prerequisites": [
+              "交通"
+            ],
+            "definition": "物流业是整合交通、仓储、通信和包装等环节以输送物资的行业。",
+            "example": "物流业使物资运输更快捷精准。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "公共交通",
+            "difficulty": 1,
+            "description": "面向公众提供城市出行服务的交通系统",
+            "aliases": [],
+            "prerequisites": [
+              "交通"
+            ],
+            "definition": "公共交通是面向城市公众提供共同出行服务的交通方式和系统。",
+            "example": "公共汽车、地铁属于公共交通。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "现代时间观念",
+            "difficulty": 2,
+            "description": "按时分秒精确安排生活和工作的观念",
+            "aliases": [],
+            "prerequisites": [
+              "公共交通"
+            ],
+            "definition": "现代时间观念是交通工具时刻表推动形成的精确计时和守时意识。",
+            "example": "人们按照公共汽车时刻表出行。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "大众旅游",
+            "difficulty": 2,
+            "description": "普通民众广泛参与的旅游活动潮流",
+            "aliases": [],
+            "prerequisites": [
+              "交通"
+            ],
+            "definition": "大众旅游是交通成本降低和收入增加后兴起的普通民众旅游潮流。",
+            "example": "普通民众从“旅”发展到“游”。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "交通与城市发展",
+            "difficulty": 2,
+            "description": "交通变化对城市兴衰和空间布局的影响",
+            "aliases": [],
+            "prerequisites": [
+              "人工道路",
+              "运河"
+            ],
+            "definition": "交通与城市发展指交通线路和工具变化推动城市兴起、扩张或衰落。",
+            "example": "铁路开通推动郑州发展超过洛阳与开封。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第12课 水陆交通的变迁",
+            "page_range": [
+              74,
+              80
+            ]
+          },
+          {
+            "name": "第13课 现代交通运输的新变化",
+            "page_range": [
+              80,
+              86
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第六单元 医疗与公共卫生",
+        "concepts": [
+          {
+            "name": "疫病",
+            "difficulty": 2,
+            "description": "由强致病性微生物感染人体引起的急性传染病",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "疫病是由细菌、病毒等强烈致病性微生物感染人体而引起的急性传染病。",
+            "example": "古代天花、鼠疫和近代大流感"
+          },
+          {
+            "name": "疫病影响",
+            "difficulty": 2,
+            "description": "疫病对人口、社会、政治和经济造成的影响",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "疫病流行会造成大量人口死亡，并引发社会混乱及政治经济变动。",
+            "example": "黑死病导致欧洲劳动力短缺和生产停滞"
+          },
+          {
+            "name": "公共卫生",
+            "difficulty": 2,
+            "description": "社会为预防疾病、保障群体健康而采取的措施",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "公共卫生是通过环境治理、疾病防治等方式保障社会群体健康的事业。",
+            "example": "修建下水道、清理污水和处理垃圾"
+          },
+          {
+            "name": "隔离防疫",
+            "difficulty": 2,
+            "description": "通过隔离患者和传染源阻断疫病传播",
+            "aliases": [],
+            "prerequisites": [
+              "疫病",
+              "公共卫生"
+            ],
+            "definition": "隔离防疫是将疫病患者或传染源隔离，以减少疾病传播的防治措施。",
+            "example": "西汉政府将疫病患者安置在空置宅第"
+          },
+          {
+            "name": "人痘接种法",
+            "difficulty": 3,
+            "description": "中国古人为预防天花发明的接种方法",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "人痘接种法是中国古人为预防天花而发明并推广的接种方法。",
+            "example": "明朝中期已广泛使用，后来传入欧洲",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "牛痘接种法",
+            "difficulty": 2,
+            "description": "詹纳发明的降低天花发病率的接种方法",
+            "aliases": [],
+            "prerequisites": [
+              "人痘接种法"
+            ],
+            "definition": "牛痘接种法是英国医生詹纳于18世纪晚期发明的天花预防方法。",
+            "example": "牛痘接种法使天花发病率大大降低",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "巴氏消毒法",
+            "difficulty": 2,
+            "description": "巴斯德创立并应用于医学的消毒方法",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "巴氏消毒法是巴斯德创立并广泛应用于医学领域的消毒方法。",
+            "example": "用于医学领域的消毒处理",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "细菌学说",
+            "difficulty": 3,
+            "description": "解释细菌与疾病关系的近代医学学说",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "细菌学说是近代医学关于细菌等微生物与疾病发生关系的理论。",
+            "example": "19世纪细胞与细菌学说发展迅速",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "青霉素",
+            "difficulty": 2,
+            "description": "弗莱明发现的有效治疗细菌感染的药物",
+            "aliases": [],
+            "prerequisites": [
+              "细菌学说"
+            ],
+            "definition": "青霉素是弗莱明于1928年发现的抗菌药物。",
+            "example": "改变了人类对细菌传染病束手无策的状态",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "四诊法",
+            "difficulty": 2,
+            "description": "中医通过望、闻、问、切进行诊断的方法",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "四诊法是中医通过望、闻、问、切观察和判断病情的诊断方法。",
+            "example": "扁鹊使用望、闻、问、切诊断疾病",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "中医药学",
+            "difficulty": 2,
+            "description": "具有独特理论体系和丰富临床经验的医学体系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中医药学是在长期实践中形成的具有独特理论、诊断和治疗方法的医学体系。",
+            "example": "形成阴阳五行理论和丰富的临床经验",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "辨证施治",
+            "difficulty": 3,
+            "description": "依据患者具体病情进行诊断和治疗的原则",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学",
+              "四诊法"
+            ],
+            "definition": "辨证施治是根据患者的具体证候确定治疗方法的中医临床原则。",
+            "example": "张仲景在临床实践中提出这一原则",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "针灸",
+            "difficulty": 2,
+            "description": "建立在经络学说基础上的中医治疗方法",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "针灸是建立在经络学说基础上，通过针刺等方式治疗疾病的中医方法。",
+            "example": "针灸因简便经济而受到中国人欢迎",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "药食同源",
+            "difficulty": 2,
+            "description": "中医认为食品和药品之间没有明确界限",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "药食同源是中医关于食品与药品可以相互调理身体的观点。",
+            "example": "病情不重时用五谷果蔬调理",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "中西医结合",
+            "difficulty": 2,
+            "description": "结合中医与西医优势发展医疗事业的方针",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学",
+              "西医传播"
+            ],
+            "definition": "中西医结合是综合运用中医和西医知识与方法推进医疗发展的方针。",
+            "example": "新中国成立后推动中西医团结协作",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "青蒿素",
+            "difficulty": 2,
+            "description": "从青蒿中分离出的抗疟药物",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "青蒿素是研究团队从青蒿中分离出的有效抗疟药物。",
+            "example": "屠呦呦团队受古代医药记载启发发现青蒿素",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "西医传播",
+            "difficulty": 2,
+            "description": "西方医学传入并在中国建立发展的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "西医传播是西方医学由传入中国到建立医院、学校并培养人才的发展过程。",
+            "example": "鸦片战争后西式医院在通商口岸建立"
+          },
+          {
+            "name": "实验药理学",
+            "difficulty": 3,
+            "description": "将生理研究与临床实践结合研究药物功能的学科",
+            "aliases": [],
+            "prerequisites": [
+              "西医传播"
+            ],
+            "definition": "实验药理学是19世纪将生理与临床结合以探索药物功能和作用的学科。",
+            "example": "19世纪人们开始系统研究药物作用",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "现代医疗卫生体系",
+            "difficulty": 3,
+            "description": "由医疗、药品、保障和基本卫生体系构成的系统",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "现代医疗卫生体系包括基本医疗卫生、医疗服务、药品供应和医疗保障体系。",
+            "example": "新中国逐步建立覆盖全国的医疗网络",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "计划免疫",
+            "difficulty": 2,
+            "description": "国家有计划地组织实施疫苗接种",
+            "aliases": [],
+            "prerequisites": [
+              "现代医疗卫生体系",
+              "疫病"
+            ],
+            "definition": "计划免疫是现代医疗卫生体系中通过有计划接种疫苗预防传染病的措施。",
+            "example": "我国通过计划免疫控制多种重大疫病",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "医疗保障制度",
+            "difficulty": 3,
+            "description": "为居民获得医疗服务提供制度和物质支持",
+            "aliases": [],
+            "prerequisites": [
+              "现代医疗卫生体系"
+            ],
+            "definition": "医疗保障制度是国家通过相关制度保障居民医疗需求和医疗费用的体系。",
+            "example": "城乡居民基本医疗保险制度",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "爱国卫生运动",
+            "difficulty": 2,
+            "description": "中国开展的清理环境、预防疾病和保护健康的群众运动",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "爱国卫生运动是中国发动群众改善环境卫生、预防疾病和保护健康的社会运动。",
+            "example": "开展形式多样的环境清理和疾病预防活动",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "健康中国战略",
+            "difficulty": 3,
+            "description": "以人民健康为中心推进国家卫生事业发展的战略",
+            "aliases": [],
+            "prerequisites": [
+              "现代医疗卫生体系",
+              "公共卫生"
+            ],
+            "definition": "健康中国战略旨在完善国民健康政策并提供全方位全周期健康服务。",
+            "example": "推动全民健身与全民健康深度融合",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "精神卫生",
+            "difficulty": 2,
+            "description": "关注精神健康并防治精神障碍的卫生领域",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "精神卫生是关注心理健康、促进精神疾病早发现早治疗的卫生工作领域。",
+            "example": "普及精神医学知识，促进患者康复",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "医疗伦理",
+            "difficulty": 3,
+            "description": "医生在行医中应遵守的职业道德和行为准则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "医疗伦理要求医生尊重患者、平等行医、保守隐私并尽力救治。",
+            "example": "《希波克拉底誓言》要求不伤害病人"
+          },
+          {
+            "name": "世界卫生组织",
+            "difficulty": 2,
+            "description": "联合国下属的政府间国际卫生组织",
+            "aliases": [
+              "WHO"
+            ],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "世界卫生组织是联合国下属的专门卫生机构，宗旨是促进全世界人民获得高水平健康。",
+            "example": "协调流行病和地方病防治工作",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第14课 历史上的疫病与医学成就",
+            "page_range": [
+              87,
+              93
+            ]
+          },
+          {
+            "name": "第15课 现代医疗卫生体系与社会生活",
+            "page_range": [
+              93,
+              98
+            ]
+          }
+        ]
+      },
+      {
+        "name": "活动课",
+        "concepts": [
+          {
+            "name": "技术进步影响社会生活",
+            "difficulty": 2,
+            "description": "技术变革推动社会生活在多个方面发生变化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "技术进步能够促进社会生活现象的生成和变化。",
+            "example": "智能手机的使用影响人们出行",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "社会生活现象",
+            "difficulty": 1,
+            "description": "特定时期和区域人们生活状况的具体表现",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会生活现象是一定时期、区域内社会生活的具体表现。",
+            "example": "某时期人们的出行方式",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "问题意识",
+            "difficulty": 2,
+            "description": "围绕研究对象提出明确且可探究的问题",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活现象"
+            ],
+            "definition": "问题意识是对研究对象持续追问并形成清晰研究问题的意识。",
+            "example": "追问某种现象由哪些因素促成",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "研究计划",
+            "difficulty": 2,
+            "description": "对研究任务、分工、资料路径和成果形式的安排",
+            "aliases": [],
+            "prerequisites": [
+              "问题意识"
+            ],
+            "definition": "研究计划是研究开始前对任务、方法、分工和成果呈现方式的具体安排。",
+            "example": "小组制定资料搜集和成果展示方案",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "文字记载",
+            "difficulty": 2,
+            "description": "以文字形式保存的有关历史现象的资料",
+            "aliases": [
+              "文献资料"
+            ],
+            "prerequisites": [
+              "社会生活现象"
+            ],
+            "definition": "文字记载是记录社会现象及其历史信息的文字资料。",
+            "example": "查找关于某种社会生活的文字记录",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "历史信息",
+            "difficulty": 2,
+            "description": "资料中反映的特定时期社会状况及其变化信息",
+            "aliases": [],
+            "prerequisites": [
+              "文字记载"
+            ],
+            "definition": "历史信息是文字资料所反映的历史现象、状况及其变化。",
+            "example": "从记载中了解某地生活方式变化",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "唯物史观",
+            "difficulty": 3,
+            "description": "从社会发展客观规律出发分析历史问题的方法",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活现象"
+            ],
+            "definition": "唯物史观是依据社会发展客观规律解读文献资料和分析历史问题的观点。",
+            "example": "用社会存在与社会意识关系解读资料",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "生产力决定生产关系",
+            "difficulty": 3,
+            "description": "生产力发展状况制约生产关系的形成和变化",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观"
+            ],
+            "definition": "生产力决定生产关系是指生产力的发展状况决定生产关系的性质和变革。",
+            "example": "技术进步推动生产方式及关系变化",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "经济基础决定上层建筑",
+            "difficulty": 3,
+            "description": "经济基础制约上层建筑的形成与发展",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观"
+            ],
+            "definition": "经济基础决定上层建筑是指社会经济结构制约政治法律等上层建筑。",
+            "example": "经济生活变化影响社会制度发展",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "社会存在决定社会意识",
+            "difficulty": 3,
+            "description": "社会物质生活条件制约社会意识的发展变化",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观"
+            ],
+            "definition": "社会存在决定社会意识是指社会物质生活条件制约人们思想观念的形成变化。",
+            "example": "生活方式变化影响人们的社会观念",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "研究报告",
+            "difficulty": 3,
+            "description": "呈现研究问题、材料、论证和结论的书面成果",
+            "aliases": [],
+            "prerequisites": [
+              "研究计划",
+              "历史信息"
+            ],
+            "definition": "研究报告是依据资料对研究问题进行分析论证并形成结论的书面成果。",
+            "example": "小组提交技术影响社会生活的报告",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "证据支持",
+            "difficulty": 3,
+            "description": "运用具体材料证明研究解释和结论",
+            "aliases": [],
+            "prerequisites": [
+              "文字记载",
+              "研究报告"
+            ],
+            "definition": "证据支持是用可靠材料说明研究观点和结论的依据关系。",
+            "example": "用文字记载证明技术促进某现象生成"
+          }
+        ],
+        "sections": [
+          {
+            "name": "技术进步与社会生活的变化",
+            "page_range": [
+              98,
+              102
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "历史",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 食物生产与社会生活",
+        "concepts": [
+          {
+            "name": "食物采集",
+            "difficulty": 1,
+            "description": "依靠采集植物、捕捞鱼虾和猎取动物获取食物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "食物采集是人类利用自然界现成动植物维持生活的方式。",
+            "example": "远古人类采集果实、捕捞鱼虾并猎取动物。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "原始农耕",
+            "difficulty": 1,
+            "description": "人类选择并栽培野生植物的早期农业形式",
+            "aliases": [],
+            "prerequisites": [
+              "食物采集"
+            ],
+            "definition": "原始农耕是人类通过播种和栽培作物获取食物的早期生产方式。",
+            "example": "长江中下游居民早期种植水稻。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "原始畜牧",
+            "difficulty": 1,
+            "description": "人类驯化和饲养野生动物的早期生产形式",
+            "aliases": [],
+            "prerequisites": [
+              "食物采集"
+            ],
+            "definition": "原始畜牧是人类在狩猎和定居基础上驯养动物的生产方式。",
+            "example": "西亚居民饲养绵羊和山羊。"
+          },
+          {
+            "name": "农业起源",
+            "difficulty": 2,
+            "description": "约一万年前农耕和畜牧在多个地区出现",
+            "aliases": [],
+            "prerequisites": [
+              "食物采集"
+            ],
+            "definition": "农业起源是人类由采集渔猎转向种植作物和饲养家畜的过程。",
+            "example": "农耕主要起源于西亚、东亚和中美洲。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "农业革命",
+            "difficulty": 2,
+            "description": "农业出现引发的人类经济和社会生活重大变革",
+            "aliases": [],
+            "prerequisites": [
+              "农业起源"
+            ],
+            "definition": "农业革命是农业出现后人类生产方式和社会生活发生的第一次重大变革。",
+            "example": "人类由食物采集者转变为食物生产者。"
+          },
+          {
+            "name": "定居生活",
+            "difficulty": 1,
+            "description": "人类由迁徙转向长期居住并形成聚落",
+            "aliases": [],
+            "prerequisites": [
+              "农业革命"
+            ],
+            "definition": "定居生活是人类依靠稳定生产长期居住并逐渐形成聚落的生活方式。",
+            "example": "农业发展后，人们建造长期住所。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "灌溉农业",
+            "difficulty": 2,
+            "description": "依靠引水灌溉发展起来的农业生产方式",
+            "aliases": [],
+            "prerequisites": [
+              "原始农耕"
+            ],
+            "definition": "灌溉农业是利用水利设施调节水源以保障农作物生长的农业。",
+            "example": "两河流域和尼罗河流域灌溉农业发达。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "水利工程",
+            "difficulty": 2,
+            "description": "用于防洪、引水和灌溉的农业基础设施",
+            "aliases": [],
+            "prerequisites": [
+              "灌溉农业"
+            ],
+            "definition": "水利工程是人类为控制水患、引水灌溉而修建的工程设施。",
+            "example": "古埃及人修堤筑坝、挖沟开渠。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "铁犁牛耕",
+            "difficulty": 2,
+            "description": "铁制农具与牛力耕作结合的农业技术",
+            "aliases": [],
+            "prerequisites": [
+              "原始农耕"
+            ],
+            "definition": "铁犁牛耕是以铁制犁具和牛作为动力提高耕作效率的技术。",
+            "example": "战国以后铁犁牛耕在中国推广。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "精耕细作",
+            "difficulty": 3,
+            "description": "通过细致耕作提高土地利用率和农业产量",
+            "aliases": [],
+            "prerequisites": [
+              "铁犁牛耕"
+            ],
+            "definition": "精耕细作是中国古代逐步形成的集约型农业技术体系。",
+            "example": "秦汉至隋唐形成北方旱田和南方水田体系。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "家庭生产",
+            "difficulty": 2,
+            "description": "以家庭为基本单位进行农业和家庭手工业生产",
+            "aliases": [],
+            "prerequisites": [
+              "定居生活"
+            ],
+            "definition": "家庭生产是农民以家庭为单位组织耕作并兼营家庭手工业的生产方式。",
+            "example": "农民耕作之余通过家庭手工业补贴家用。"
+          },
+          {
+            "name": "重农抑商",
+            "difficulty": 2,
+            "description": "统治者重视农业并限制商业发展的政策",
+            "aliases": [],
+            "prerequisites": [
+              "家庭生产"
+            ],
+            "definition": "重农抑商是秦以后统治者为维护统治而推行的经济政策。",
+            "example": "秦以后统治者往往推行重农抑商政策。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "剩余产品",
+            "difficulty": 2,
+            "description": "满足生产者需要后仍然剩余的社会产品",
+            "aliases": [],
+            "prerequisites": [
+              "农业革命"
+            ],
+            "definition": "剩余产品是社会生产超过基本生活需要而留下的产品。",
+            "example": "农业生产力提高后，人类生产的产品出现剩余。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "私有制",
+            "difficulty": 2,
+            "description": "个人或少数人占有生产资料和社会财产的制度",
+            "aliases": [],
+            "prerequisites": [
+              "剩余产品"
+            ],
+            "definition": "私有制是公共财产被个人或少数人据为己有的财产制度。",
+            "example": "氏族首领将部分集体财物变成私有财产。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "阶级产生",
+            "difficulty": 2,
+            "description": "社会因财产差异和利益冲突形成不同阶级",
+            "aliases": [],
+            "prerequisites": [
+              "私有制"
+            ],
+            "definition": "阶级产生是私有制出现后社会成员因财产和地位差异发生分化。",
+            "example": "氏族内部出现富人和穷人的差别。",
+            "section": "第1课 从食物采集到食物生产"
+          },
+          {
+            "name": "国家起源",
+            "difficulty": 3,
+            "description": "阶级矛盾不可调和后强制机关国家出现",
+            "aliases": [],
+            "prerequisites": [
+              "阶级产生"
+            ],
+            "definition": "国家起源是社会阶级矛盾激化并需要强制机关调节冲突的结果。",
+            "example": "阶级产生后，国家应运而生。"
+          },
+          {
+            "name": "新航路开辟",
+            "difficulty": 2,
+            "description": "15世纪末至16世纪初推动全球物种交流的历史事件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "新航路开辟是近代早期跨洲交通拓展并促进物种全球传播的过程。",
+            "example": "西班牙人和葡萄牙人将美洲作物带到欧洲。",
+            "section": "第2课 新航路开辟后的食物物种交流"
+          },
+          {
+            "name": "食物物种交流",
+            "difficulty": 2,
+            "description": "不同地区和大洲之间食物作物及禽畜的传播",
+            "aliases": [],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "食物物种交流是不同区域之间农作物和禽畜相互传播的历史过程。",
+            "example": "玉米、马铃薯由美洲传播到欧洲和亚洲。",
+            "section": "第2课 新航路开辟后的食物物种交流"
+          },
+          {
+            "name": "美洲作物外传",
+            "difficulty": 2,
+            "description": "新航路开辟后美洲作物传播到世界各地",
+            "aliases": [],
+            "prerequisites": [
+              "食物物种交流"
+            ],
+            "definition": "美洲作物外传是玉米、马铃薯等美洲作物向其他洲传播的过程。",
+            "example": "明朝时玉米通过多种途径传入中国。"
+          },
+          {
+            "name": "欧亚作物入美",
+            "difficulty": 2,
+            "description": "小麦、水稻等欧亚作物传入美洲并推广",
+            "aliases": [],
+            "prerequisites": [
+              "食物物种交流"
+            ],
+            "definition": "欧亚作物入美是欧洲移民和殖民者将欧亚作物带到美洲的过程。",
+            "example": "小麦传入美洲后成为主要粮食作物。"
+          },
+          {
+            "name": "食物交流影响",
+            "difficulty": 3,
+            "description": "物种交流对粮食、饮食、经济和生态产生影响",
+            "aliases": [],
+            "prerequisites": [
+              "食物物种交流"
+            ],
+            "definition": "食物交流影响是跨区域物种传播对社会生活和自然环境造成的变化。",
+            "example": "马铃薯提高了欧洲人的抗饥荒能力。"
+          },
+          {
+            "name": "现代农业",
+            "difficulty": 2,
+            "description": "以机器、科技和设施为基础的农业生产形态",
+            "aliases": [],
+            "prerequisites": [
+              "农业革命"
+            ],
+            "definition": "现代农业是工业革命后由传统农业转变形成的科技化生产体系。",
+            "example": "大型农场和养殖场成为主要生产经营模式。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "设施农业",
+            "difficulty": 2,
+            "description": "借助人工设施创造适宜动植物生长环境的农业",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "设施农业是利用温室等人工设施使动植物能够全天候生长的生产方式。",
+            "example": "温室大棚可在冬季保温、夏季降温。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "农业机械化",
+            "difficulty": 2,
+            "description": "使用农业机器替代人工完成生产环节",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "农业机械化是运用拖拉机、播种机和收割机等提高农业效率。",
+            "example": "联合收割机集中完成收割和脱粒。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "农业集约化",
+            "difficulty": 3,
+            "description": "集中利用土地、资本和技术提高单位产出",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "农业集约化是通过集中投入和规模经营提高农业生产效率的方式。",
+            "example": "欧美建立高度集约的现代农业。"
+          },
+          {
+            "name": "杂交育种",
+            "difficulty": 2,
+            "description": "通过杂交培育高产优良农作物品种的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "杂交育种是利用不同品种杂交培育优良农作物的农业科技。",
+            "example": "杂交水稻提高了粮食作物单位面积产量。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "食物储备技术",
+            "difficulty": 2,
+            "description": "通过粮仓和现代设备保存粮食与食品的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "食物储备技术是防止粮食变质并延长食品保存期限的方法体系。",
+            "example": "低温、低氧储藏技术提高了粮食保存效果。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "冷链物流",
+            "difficulty": 2,
+            "description": "食品全流程处于规定低温环境的物流系统",
+            "aliases": [],
+            "prerequisites": [
+              "食物储备技术"
+            ],
+            "definition": "冷链物流是食品在生产、运输、销售等环节持续低温保存的系统工程。",
+            "example": "生鲜食品通过运输船冷库运往市场。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "粮食安全",
+            "difficulty": 3,
+            "description": "保障粮食供给并减少饥饿的国家和国际议题",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业",
+              "食物储备技术"
+            ],
+            "definition": "粮食安全是持续保障人们粮食供给、应对供需矛盾的状态和任务。",
+            "example": "各国政府把保障粮食安全作为首要任务。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          },
+          {
+            "name": "食品安全",
+            "difficulty": 3,
+            "description": "食品不受污染且不会危害人体健康的状态",
+            "aliases": [],
+            "prerequisites": [
+              "现代农业"
+            ],
+            "definition": "食品安全是食品及其生产经营过程符合标准并保障人体健康的要求。",
+            "example": "中国通过食品安全法治理农药残留和违法添加剂。",
+            "section": "第3课 现代食物的生产、储备与食品安全"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1课 从食物采集到食物生产",
+            "section_key": "facbdea477",
+            "page_range": [
+              7,
+              13
+            ]
+          },
+          {
+            "name": "第2课 新航路开辟后的食物物种交流",
+            "section_key": "e646d770cd",
+            "page_range": [
+              13,
+              17
+            ]
+          },
+          {
+            "name": "第3课 现代食物的生产、储备与食品安全",
+            "section_key": "57c511965f",
+            "page_range": [
+              18,
+              23
+            ]
+          }
+        ],
+        "chapter_key": "140f421955",
+        "metadata": {
+          "volume_id": "81aec39e9a3a",
+          "file_id": "81aec39e9a3a",
+          "volume_title": "高中历史 选择性必修2",
+          "chapter_order": 1,
+          "raw_heading": "第一单元 食物生产与社会生活"
+        }
+      },
+      {
+        "name": "第二单元 生产工具与劳作方式",
+        "concepts": [
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然、进行社会生产的能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产力是人类利用生产工具和劳动经验进行生产的能力。",
+            "example": "铁农具推广提高农业生产力"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "人们在社会生产中形成的相互关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产关系是人们在生产过程中形成的社会关系。",
+            "example": "工厂制度形成新的生产关系",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "生产工具",
+            "difficulty": 1,
+            "description": "人们进行生产劳动时使用的器具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产工具是劳动者用来改造自然和进行生产的器具。",
+            "example": "铁犁铧是农业生产工具"
+          },
+          {
+            "name": "生产方式",
+            "difficulty": 2,
+            "description": "人们进行生产活动的组织和实现形式",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "生产方式是生产工具、劳动组织和生产关系的综合表现。",
+            "example": "男耕女织是古代生产方式"
+          },
+          {
+            "name": "石器",
+            "difficulty": 1,
+            "description": "以石为主要材料制作的早期生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "石器是古代人类以石材制成的生产和生活工具。",
+            "example": "河姆渡遗址出土石制农具",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "青铜器",
+            "difficulty": 2,
+            "description": "以青铜铸造的古代器物和生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "青铜器是人类掌握青铜冶炼技术后铸造的器物。",
+            "example": "商周时期青铜农具数量有限",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "铁器",
+            "difficulty": 2,
+            "description": "以铁制成的锋利、轻便生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "铁器是以铁为材料制作且易于锻制打磨的工具。",
+            "example": "战国时期铁制农具逐步推广",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "耕作方式",
+            "difficulty": 2,
+            "description": "人类利用土地进行农业生产的方式",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "耕作方式是农业生产中土地翻耕和种植的基本形式。",
+            "example": "人类耕作经历刀耕、锄耕、犁耕",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "刀耕火种",
+            "difficulty": 2,
+            "description": "砍伐焚烧植被后利用草木灰种田",
+            "aliases": [],
+            "prerequisites": [
+              "耕作方式"
+            ],
+            "definition": "刀耕火种是砍伐并焚烧植被后在土地上耕种的方式。",
+            "example": "原始农业时期采用刀耕火种",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "锄耕",
+            "difficulty": 2,
+            "description": "使用翻土农具进行耕作的方式",
+            "aliases": [],
+            "prerequisites": [
+              "耕作方式"
+            ],
+            "definition": "锄耕是使用石耜、石铲等翻土农具进行的耕作方式。",
+            "example": "新石器时代中期出现锄耕",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "铁犁牛耕",
+            "difficulty": 3,
+            "description": "铁犁与牛力结合的传统农业耕作方式",
+            "aliases": [],
+            "prerequisites": [
+              "铁器",
+              "耕作方式"
+            ],
+            "definition": "铁犁牛耕是使用铁犁并以牛牵引进行耕作的方式。",
+            "example": "汉朝以后成为中国传统农业主要方式",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "灌溉工具",
+            "difficulty": 2,
+            "description": "用于汲水和灌溉农田的生产工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "灌溉工具是人类利用器械或水力向农田供水的工具。",
+            "example": "翻车和筒车用于农田灌溉",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "翻车",
+            "difficulty": 2,
+            "description": "中国古代利用杠杆和人力汲水的工具",
+            "aliases": [],
+            "prerequisites": [
+              "灌溉工具"
+            ],
+            "definition": "翻车是东汉末出现并用于提水灌溉的农业工具。",
+            "example": "三国时期马钧革新翻车",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "筒车",
+            "difficulty": 2,
+            "description": "借助水力汲水入筒进行灌溉的工具",
+            "aliases": [],
+            "prerequisites": [
+              "灌溉工具"
+            ],
+            "definition": "筒车是唐朝出现的利用水力连续汲水的灌溉工具。",
+            "example": "唐朝农民使用筒车灌田",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "纺织工具",
+            "difficulty": 2,
+            "description": "用于纺线、纺纱和织布的手工业工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "纺织工具是古代纺线、纺纱和织造纺织品所用的工具。",
+            "example": "陶纺轮用于纺线",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "提花机",
+            "difficulty": 3,
+            "description": "能够织出精美花纹丝织品的织机",
+            "aliases": [],
+            "prerequisites": [
+              "纺织工具"
+            ],
+            "definition": "提花机是古代用于织造带有复杂花纹丝织品的织机。",
+            "example": "汉朝成都出现蜀锦提花机模型",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "坯车",
+            "difficulty": 2,
+            "description": "陶瓷制作中用于旋转制坯的工具",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "坯车是陶瓷生产中通过旋转制作圆形坯件的工具。",
+            "example": "新石器时代晚期采用坯车制坯",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "匣钵",
+            "difficulty": 2,
+            "description": "烧制陶瓷时保护坯件的耐火容器",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "匣钵是烧制陶瓷时放置坯件以防污损的耐火容器。",
+            "example": "南朝工匠使用匣钵烧制坯件",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "支钉",
+            "difficulty": 2,
+            "description": "烧制陶瓷时防止器物粘连的支撑物",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "支钉是陶瓷烧制时垫在器物底部防止粘连的工具。",
+            "example": "唐宋时期陶瓷器物使用支钉",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "水排",
+            "difficulty": 3,
+            "description": "利用水力鼓风提高冶铁效率的装置",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "水排是东汉杜诗发明的以水力驱动风箱的冶铁装置。",
+            "example": "水排使冶铁用力少而效率高",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "农业家庭式劳作",
+            "difficulty": 2,
+            "description": "以家庭为单位从事农业生产的劳作方式",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "农业家庭式劳作是家庭成员共同进行农业生产的方式。",
+            "example": "战国时期男耕女织逐渐普及",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "男耕女织",
+            "difficulty": 2,
+            "description": "家庭中男女分别从事耕作和纺织",
+            "aliases": [],
+            "prerequisites": [
+              "农业家庭式劳作"
+            ],
+            "definition": "男耕女织是古代家庭中男女分工生产的典型形式。",
+            "example": "男子种田，女子织布",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "农业庄园式劳作",
+            "difficulty": 3,
+            "description": "奴隶或农奴在庄园土地上集中劳作",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "农业庄园式劳作是劳动者被束缚于庄园土地上的集中生产方式。",
+            "example": "中古西欧农奴在领主庄园服劳役",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "手工业家庭式劳作",
+            "difficulty": 2,
+            "description": "以制作手工业产品为生的家庭生产方式",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "手工业家庭式劳作是家庭成员以制作手工业品为生的方式。",
+            "example": "古代家庭制作纺织品",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "作坊式劳作",
+            "difficulty": 2,
+            "description": "手工业者在民营或官营作坊中生产",
+            "aliases": [],
+            "prerequisites": [
+              "生产方式"
+            ],
+            "definition": "作坊式劳作是手工业者在作坊中进行专业化生产的方式。",
+            "example": "商朝制骨作坊规模较大",
+            "section": "第4课 古代的生产工具与劳作"
+          },
+          {
+            "name": "工业革命",
+            "difficulty": 3,
+            "description": "从手工劳动转向机器大生产的技术变革",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具",
+              "生产方式"
+            ],
+            "definition": "工业革命是以技术革新推动机器大生产和社会变革的过程。",
+            "example": "18世纪60年代英国工业革命开始"
+          },
+          {
+            "name": "机器大生产",
+            "difficulty": 2,
+            "description": "使用机器进行大规模、专业化的生产",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "机器大生产是以机器取代手工劳动并进行规模化生产的方式。",
+            "example": "工业革命实现机器大生产",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "工厂制度",
+            "difficulty": 3,
+            "description": "工人集中于厂房并接受严格管理的制度",
+            "aliases": [],
+            "prerequisites": [
+              "机器大生产"
+            ],
+            "definition": "工厂制度是工厂主集中雇佣工人并以规章制度组织生产的制度。",
+            "example": "工厂实行倒班制和严格纪律",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "生产流水线",
+            "difficulty": 2,
+            "description": "各生产环节连续协同完成产品制造",
+            "aliases": [],
+            "prerequisites": [
+              "机器大生产"
+            ],
+            "definition": "生产流水线是将生产过程分为环节并连续协同完成的组织形式。",
+            "example": "工厂用流水线提高生产效率",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "产业工人",
+            "difficulty": 2,
+            "description": "在工厂中从事机器大生产的雇佣劳动者",
+            "aliases": [],
+            "prerequisites": [
+              "机器大生产"
+            ],
+            "definition": "产业工人是受雇于工厂并从事工业生产的劳动者。",
+            "example": "工业革命时期大批产业工人进入厂房",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "城市化",
+            "difficulty": 2,
+            "description": "人口和生产活动不断向城市集中的过程",
+            "aliases": [],
+            "prerequisites": [
+              "工业革命"
+            ],
+            "definition": "城市化是工业发展推动人口和产业向城市集中的过程。",
+            "example": "工业革命后伦敦工业人口猛增",
+            "section": "第5课 工业革命与工厂制度"
+          },
+          {
+            "name": "电子计算机",
+            "difficulty": 2,
+            "description": "能够进行电子信息处理和计算的机器",
+            "aliases": [],
+            "prerequisites": [
+              "生产工具"
+            ],
+            "definition": "电子计算机是利用电子技术进行高速计算和信息处理的设备。",
+            "example": "1946年埃尼阿克问世",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "计算机网络",
+            "difficulty": 2,
+            "description": "通过连接计算机实现信息共享的系统",
+            "aliases": [],
+            "prerequisites": [
+              "电子计算机"
+            ],
+            "definition": "计算机网络是由相互连接的计算机组成的信息交流系统。",
+            "example": "互联网由计算机网络发展而来",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "人工智能技术",
+            "difficulty": 3,
+            "description": "通过计算机模拟人的思维解决实际问题",
+            "aliases": [
+              "人工智能"
+            ],
+            "prerequisites": [
+              "电子计算机"
+            ],
+            "definition": "人工智能技术是利用计算机模拟人的思维并解决实际问题的技术。",
+            "example": "机器人可用于无人车间",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "航天技术",
+            "difficulty": 2,
+            "description": "开发和利用太空及地外天体的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "航天技术是运用航天器探索和利用太空及地外天体的技术。",
+            "example": "嫦娥四号实现月背软着陆",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "现代科学技术",
+            "difficulty": 2,
+            "description": "二战后快速发展的多领域尖端技术",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "现代科学技术是二战后在多个尖端领域迅速发展的技术体系。",
+            "example": "计算机和人工智能技术快速发展",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "海洋技术",
+            "difficulty": 2,
+            "description": "探索、研究和利用海洋的现代技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "海洋技术是人类开展海洋探测、研究和利用的技术。",
+            "example": "奋斗者号实现载人深潜",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "原子能",
+            "difficulty": 3,
+            "description": "由原子核反应释放和利用的能量",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "原子能是通过原子核反应产生并可被人类利用的能量。",
+            "example": "原子能用于核动力船和医学研究",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "新材料技术",
+            "difficulty": 2,
+            "description": "研发具有传统材料不具备特点的新材料",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "新材料技术是研究和应用高分子、纳米等新型材料的技术。",
+            "example": "纳米材料应用于生产生活",
+            "section": "第6课 现代科技进步与人类社会发展"
+          },
+          {
+            "name": "生物技术",
+            "difficulty": 2,
+            "description": "运用生物学知识服务生产和医疗的技术",
+            "aliases": [],
+            "prerequisites": [
+              "现代科学技术"
+            ],
+            "definition": "生物技术是利用生物学原理和方法解决实际问题的技术。",
+            "example": "疫苗和血清属于早期生物技术",
+            "section": "第6课 现代科技进步与人类社会发展"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第4课 古代的生产工具与劳作",
+            "section_key": "9ffe1ff199",
+            "page_range": [
+              24,
+              29
+            ]
+          },
+          {
+            "name": "第5课 工业革命与工厂制度",
+            "section_key": "bae894e13c",
+            "page_range": [
+              30,
+              35
+            ]
+          },
+          {
+            "name": "第6课 现代科技进步与人类社会发展",
+            "section_key": "113ecad292",
+            "page_range": [
+              35,
+              40
+            ]
+          }
+        ],
+        "chapter_key": "e0a792bac5",
+        "metadata": {
+          "volume_id": "81aec39e9a3a",
+          "file_id": "81aec39e9a3a",
+          "volume_title": "高中历史 选择性必修2",
+          "chapter_order": 2,
+          "raw_heading": "第二单元 生产工具与劳作方式"
+        }
+      },
+      {
+        "name": "第三单元 商业贸易与日常生活",
+        "concepts": [
+          {
+            "name": "商业贸易",
+            "difficulty": 1,
+            "description": "以商品交换为基础的经济活动，逐步由地方扩展至全球",
+            "aliases": [],
+            "prerequisites": [
+              "社会分工",
+              "产品剩余"
+            ],
+            "definition": "商业贸易是人们通过商品交换获取所需物品的经济活动。",
+            "example": "商人将各地商品运往东京集散。"
+          },
+          {
+            "name": "社会分工",
+            "difficulty": 1,
+            "description": "社会成员分别从事不同生产活动的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会分工是社会成员在生产活动中分担不同工作的组织形式。",
+            "example": "有人务农，有人专门制作器物。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "产品剩余",
+            "difficulty": 1,
+            "description": "生产者满足自身需要后剩余的产品",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "产品剩余是生产成果超过生产者自身消费需要的部分。",
+            "example": "部落将剩余粮食用于交换。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "商品经济",
+            "difficulty": 2,
+            "description": "以商品生产和交换为主要特征的经济形态",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商品经济是以商品生产和商品交换为基本内容的经济形态。",
+            "example": "明清时期农产品商品化程度加深。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "商帮",
+            "difficulty": 2,
+            "description": "明清时期兴盛的地域性商人群体",
+            "aliases": [
+              "地域性商人群体"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商帮是以地域关系为纽带形成的商人群体。",
+            "example": "晋商经营盐业和票号。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "丝绸之路",
+            "difficulty": 2,
+            "description": "古代贯通亚欧北非的重要贸易通道",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "丝绸之路是古代连接亚洲、欧洲和北非的陆上贸易通道。",
+            "example": "中国丝绸运往中亚、西亚和欧洲。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "海上贸易",
+            "difficulty": 2,
+            "description": "通过海上航线开展的跨地区对外贸易",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "海上贸易是利用海上航线进行商品交换和贸易往来的活动。",
+            "example": "唐宋以后商船从东南沿海港口出发。"
+          },
+          {
+            "name": "朝贡贸易",
+            "difficulty": 2,
+            "description": "中国古代对外贸易的重要方式",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "朝贡贸易是以朝贡关系为基础开展的中国古代对外贸易方式。",
+            "example": "明清朝廷规定朝贡国家和贡品种类。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "货币",
+            "difficulty": 2,
+            "description": "充当商品价值一般等价物的交换媒介",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "货币是固定充当商品价值一般等价物并用于交换的特殊商品。",
+            "example": "商朝使用贝作为货币。"
+          },
+          {
+            "name": "信贷",
+            "difficulty": 2,
+            "description": "以借贷、汇兑等方式融通资金的经济活动",
+            "aliases": [],
+            "prerequisites": [
+              "货币"
+            ],
+            "definition": "信贷是以偿还和支付利息为条件的资金借贷及相关活动。",
+            "example": "唐朝出现类似现代汇票的飞钱。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "商业契约",
+            "difficulty": 2,
+            "description": "约定商业活动中当事人权利义务的文书",
+            "aliases": [
+              "契约"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商业契约是交易双方以书面形式明确责权利并受到保护的协议。",
+            "example": "唐朝马匹买卖契约有保人作证。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "当铺",
+            "difficulty": 2,
+            "description": "主营抵押小额贷款的传统金融机构",
+            "aliases": [
+              "质库"
+            ],
+            "prerequisites": [
+              "信贷"
+            ],
+            "definition": "当铺是以动产抵押方式发放贷款并兼营相关金融业务的机构。",
+            "example": "宋代当铺开展消费性动产抵押放贷。",
+            "section": "第7课 古代的商业贸易"
+          },
+          {
+            "name": "新航路开辟",
+            "difficulty": 2,
+            "description": "开通欧洲通往亚洲和美洲新航线的历史进程",
+            "aliases": [],
+            "prerequisites": [
+              "海上贸易"
+            ],
+            "definition": "新航路开辟是15世纪末欧洲人开通通往亚洲和美洲新航线的历史事件。",
+            "example": "欧洲贸易中心由地中海转移到大西洋沿岸。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "世界市场",
+            "difficulty": 3,
+            "description": "世界各地纳入资本主义经济联系的市场体系",
+            "aliases": [
+              "资本主义世界市场"
+            ],
+            "prerequisites": [
+              "新航路开辟",
+              "殖民扩张"
+            ],
+            "definition": "世界市场是世界各地区通过资本主义生产和贸易形成的全球经济联系体系。",
+            "example": "20世纪初亚非拉多数地区被纳入其中。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "殖民扩张",
+            "difficulty": 2,
+            "description": "资本主义国家建立殖民地并进行掠夺的活动",
+            "aliases": [
+              "殖民扩张与掠夺"
+            ],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "殖民扩张是资本主义国家通过征服和控制海外地区获取利益的活动。",
+            "example": "葡萄牙和西班牙在海外建立殖民地。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "贸易中心转移",
+            "difficulty": 2,
+            "description": "新航路开辟后欧洲贸易中心向大西洋沿岸转移",
+            "aliases": [],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "贸易中心转移是国际贸易中心由地中海沿岸转向大西洋沿岸的变化。",
+            "example": "阿姆斯特丹成为国际贸易中心。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "股份制贸易公司",
+            "difficulty": 3,
+            "description": "由商人集股并享有国家特权的海外贸易公司",
+            "aliases": [
+              "东印度公司"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "股份制贸易公司是通过集股组织并经营海外垄断贸易的企业。",
+            "example": "荷兰东印度公司垄断部分亚洲贸易。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "商品交易所",
+            "difficulty": 3,
+            "description": "集中进行商品交易的商业机构",
+            "aliases": [
+              "交易所"
+            ],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "商品交易所是为商品集中交易提供场所和规则的商业机构。",
+            "example": "1531年安特卫普开设商品交易所。",
+            "section": "第8课 世界市场与商业贸易"
+          },
+          {
+            "name": "世界贸易组织",
+            "difficulty": 3,
+            "description": "促进货物和服务贸易的国际组织",
+            "aliases": [
+              "WTO"
+            ],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "世界贸易组织是以推动多边贸易体制和扩大贸易为宗旨的国际组织。",
+            "example": "中国于2001年正式加入世界贸易组织。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "国际贸易",
+            "difficulty": 2,
+            "description": "国家或地区之间进行的商品和服务交换",
+            "aliases": [],
+            "prerequisites": [
+              "商业贸易"
+            ],
+            "definition": "国际贸易是不同国家或地区之间开展的商品、服务及相关经济交换。",
+            "example": "各国通过谈判削减关税促进贸易发展。"
+          },
+          {
+            "name": "服务贸易",
+            "difficulty": 3,
+            "description": "旅游、运输、教育、金融等服务的国际交换",
+            "aliases": [],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "服务贸易是国家或地区之间进行服务交换的国际贸易形式。",
+            "example": "跨境旅游和国际金融服务属于服务贸易。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "电子商务",
+            "difficulty": 2,
+            "description": "利用互联网和通信技术进行商品服务交换",
+            "aliases": [
+              "电商"
+            ],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "电子商务是利用网络技术进行商品、技术和服务交换的商业形式。",
+            "example": "消费者通过手机购买世界各地商品。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "布雷顿森林体系",
+            "difficulty": 3,
+            "description": "二战后建立的国际货币金融体系",
+            "aliases": [],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "布雷顿森林体系是第二次世界大战后建立的国际货币金融制度安排。",
+            "example": "国际货币基金组织和世界银行在其背景下成立。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "国际货币基金组织",
+            "difficulty": 3,
+            "description": "维持汇率稳定并调节国际收支的金融组织",
+            "aliases": [
+              "IMF"
+            ],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "国际货币基金组织是向会员国提供短期贷款以调节国际收支的组织。",
+            "example": "成员国可申请贷款应对国际收支困难。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "世界银行",
+            "difficulty": 3,
+            "description": "提供中长期贷款以促进经济发展的国际组织",
+            "aliases": [
+              "国际复兴开发银行"
+            ],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "世界银行是向会员国提供中长期贷款以恢复和发展经济的国际组织。",
+            "example": "贷款投向基础设施和能源开发。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "金融全球化",
+            "difficulty": 3,
+            "description": "资本流动、金融市场和金融机构的全球化",
+            "aliases": [],
+            "prerequisites": [
+              "国际金融"
+            ],
+            "definition": "金融全球化是资本、金融市场和金融机构跨国联系与扩张的过程。",
+            "example": "跨国金融集团和国际证券融资不断发展。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "网络金融",
+            "difficulty": 2,
+            "description": "依托互联网办理转账、投资和贷款等金融业务",
+            "aliases": [
+              "互联网金融"
+            ],
+            "prerequisites": [
+              "金融全球化"
+            ],
+            "definition": "网络金融是利用网络终端开展金融服务和资金活动的方式。",
+            "example": "通过手机办理转账汇款和投资理财。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "贸易保护主义",
+            "difficulty": 2,
+            "description": "通过贸易封锁和提高关税保护本国贸易",
+            "aliases": [],
+            "prerequisites": [
+              "国际贸易"
+            ],
+            "definition": "贸易保护主义是国家以限制进口等手段保护本国贸易和产业的政策倾向。",
+            "example": "经济危机期间一些国家提高关税。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "社会主义市场经济",
+            "difficulty": 3,
+            "description": "市场调节与社会主义制度和国家宏观调控结合",
+            "aliases": [
+              "社会主义市场经济体制"
+            ],
+            "prerequisites": [
+              "商品经济"
+            ],
+            "definition": "社会主义市场经济是使市场在国家宏观调控下对资源配置起基础性作用的经济体制。",
+            "example": "中国改革开放后逐步建立该体制。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          },
+          {
+            "name": "政府宏观调控",
+            "difficulty": 2,
+            "description": "政府运用经济政策调节国民经济运行",
+            "aliases": [
+              "宏观调控"
+            ],
+            "prerequisites": [
+              "商品经济"
+            ],
+            "definition": "政府宏观调控是政府通过经济计划和政策对国民经济进行总体调节。",
+            "example": "战后资本主义国家结合财政和货币政策调控经济。",
+            "section": "第9课 20世纪以来人类的经济与生活"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第7课 古代的商业贸易",
+            "section_key": "c5dd593bab",
+            "page_range": [
+              41,
+              47
+            ]
+          },
+          {
+            "name": "第8课 世界市场与商业贸易",
+            "section_key": "649d130b85",
+            "page_range": [
+              47,
+              53
+            ]
+          },
+          {
+            "name": "第9课 20世纪以来人类的经济与生活",
+            "section_key": "bb2ec9f435",
+            "page_range": [
+              53,
+              60
+            ]
+          }
+        ],
+        "chapter_key": "128a01fb7c",
+        "metadata": {
+          "volume_id": "81aec39e9a3a",
+          "file_id": "81aec39e9a3a",
+          "volume_title": "高中历史 选择性必修2",
+          "chapter_order": 3,
+          "raw_heading": "第三单元 商业贸易与日常生活"
+        }
+      },
+      {
+        "name": "第四单元 村落、城镇与居住环境",
+        "concepts": [
+          {
+            "name": "居住形式演变",
+            "difficulty": 2,
+            "description": "人类居住方式由穴居、巢居逐步发展为地面筑屋",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "居住形式演变是人类由天然洞穴和巢居走向建屋定居的历史过程。",
+            "example": "人类居住形式经历了穴居、巢居、半穴居到地面筑屋。"
+          },
+          {
+            "name": "村落",
+            "difficulty": 1,
+            "description": "农业出现后形成的具有一定规模的居民聚居点",
+            "aliases": [],
+            "prerequisites": [
+              "居住形式演变"
+            ],
+            "definition": "村落是农业出现后人们筑屋定居而形成的居民聚居点。",
+            "example": "兴隆洼遗址是距今8000多年前的原始村落遗址。"
+          },
+          {
+            "name": "村落功能",
+            "difficulty": 2,
+            "description": "村落为定居、繁衍、防卫和集体活动提供条件",
+            "aliases": [],
+            "prerequisites": [
+              "村落"
+            ],
+            "definition": "村落通过住宅、仓廪、地窖和公共场所保障居民生活与活动。",
+            "example": "村落中的仓廪和地窖便于储存粮食。"
+          },
+          {
+            "name": "集镇形成",
+            "difficulty": 2,
+            "description": "手工业者和商人聚集并筑垒设防形成集镇",
+            "aliases": [],
+            "prerequisites": [
+              "村落"
+            ],
+            "definition": "集镇是社会生产力发展和商品交换扩大的结果。",
+            "example": "手工业者在便于交换的地方集聚，逐渐形成集镇雏形。"
+          },
+          {
+            "name": "集镇发展",
+            "difficulty": 3,
+            "description": "集镇促进市场繁荣并发展为区域经济中心",
+            "aliases": [],
+            "prerequisites": [
+              "集镇形成"
+            ],
+            "definition": "集镇发展表现为人口增加、作坊商铺增多和专业分工形成。",
+            "example": "明清时期盛泽镇丝织业兴盛，石门镇榨油业发达。",
+            "section": "第10课 古代的村落、集镇和城市"
+          },
+          {
+            "name": "城市产生",
+            "difficulty": 2,
+            "description": "较大居民中心因政治、经济和防御需要形成城市",
+            "aliases": [],
+            "prerequisites": [
+              "集镇形成"
+            ],
+            "definition": "城市是农业区域内较大居民中心发展并承担多种功能的结果。",
+            "example": "公元前3500年至前3100年两河流域形成早期城市。"
+          },
+          {
+            "name": "城市功能",
+            "difficulty": 2,
+            "description": "城市承担政治、军事、经济、宗教和文化等功能",
+            "aliases": [],
+            "prerequisites": [
+              "城市产生"
+            ],
+            "definition": "城市功能是城市作为区域中心所承担的综合社会职能。",
+            "example": "古希腊城市同时具有行政、防御、宗教和商业功能。"
+          },
+          {
+            "name": "古代城市布局",
+            "difficulty": 3,
+            "description": "城市通常划分宫殿、手工业商业和居民等区域",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能"
+            ],
+            "definition": "古代城市布局是依据政治、经济、军事和居民生活需要进行的空间安排。",
+            "example": "中国古代城市主要分为宫殿区、手工业区和商业区、居民区。"
+          },
+          {
+            "name": "城市营建制度",
+            "difficulty": 3,
+            "description": "周朝对城邑选址、规模、道路和功能分区作出规定",
+            "aliases": [],
+            "prerequisites": [
+              "古代城市布局"
+            ],
+            "definition": "城市营建制度是周朝对城邑建设标准和等级秩序的制度化规定。",
+            "example": "《周礼·考工记》规定城邑道路、城门和宫室布局。"
+          },
+          {
+            "name": "民居差异",
+            "difficulty": 2,
+            "description": "民居受自然环境、经济水平和文化习俗共同影响",
+            "aliases": [],
+            "prerequisites": [
+              "村落"
+            ],
+            "definition": "民居差异是不同地区住宅形制和材料因环境与社会条件不同而形成的差别。",
+            "example": "两河流域用土坯建房，古埃及房屋多用泥和木材。"
+          },
+          {
+            "name": "巢居与穴居",
+            "difficulty": 2,
+            "description": "中国远古民居最早形成的两种居住类型",
+            "aliases": [],
+            "prerequisites": [
+              "居住形式演变"
+            ],
+            "definition": "巢居与穴居是中国先民分别适应南方湿地和北方干燥环境的住宅形式。",
+            "example": "南方巢居发展为干栏式民居，北方穴居发展为地上建筑。"
+          },
+          {
+            "name": "中国民居类型",
+            "difficulty": 3,
+            "description": "中国民居包括窑洞、四合院、徽派民居和土楼等",
+            "aliases": [],
+            "prerequisites": [
+              "巢居与穴居",
+              "民居差异"
+            ],
+            "definition": "中国民居类型是各地自然环境、建筑传统和社会习俗共同形成的住宅形态。",
+            "example": "北方有窑洞、四合院，南方有徽派民居和福建土楼。"
+          },
+          {
+            "name": "民居等级观念",
+            "difficulty": 3,
+            "description": "中国传统住宅布局体现等级秩序和长幼有序",
+            "aliases": [],
+            "prerequisites": [
+              "中国民居类型"
+            ],
+            "definition": "民居等级观念是传统住宅设计遵循身份等级和家庭礼仪秩序的原则。",
+            "example": "住宅布局讲求对称、主次分明和院落有序。"
+          },
+          {
+            "name": "古罗马住宅",
+            "difficulty": 3,
+            "description": "以中庭为核心，广泛使用木、石、砖和混凝土",
+            "aliases": [],
+            "prerequisites": [
+              "民居差异"
+            ],
+            "definition": "古罗马住宅以带列柱围廊的中庭为核心，并发展出多种建筑技术。",
+            "example": "古罗马建筑将混凝土、拱券和希腊柱式结合起来。",
+            "section": "第10课 古代的村落、集镇和城市"
+          },
+          {
+            "name": "古罗马公寓",
+            "difficulty": 3,
+            "description": "古罗马为缓解住房紧缺而出现的多层集体住宅",
+            "aliases": [],
+            "prerequisites": [
+              "古罗马住宅"
+            ],
+            "definition": "古罗马公寓是供百姓或外来人员租住的多层复合式住宅。",
+            "example": "4世纪罗马城大部分民居是复合式公寓。"
+          },
+          {
+            "name": "城市化",
+            "difficulty": 2,
+            "description": "城市人口增加、规模扩大及设施和生活水平提高的过程",
+            "aliases": [],
+            "prerequisites": [
+              "城市产生"
+            ],
+            "definition": "城市化是乡村社会向城市社会转变的历史过程。",
+            "example": "工业革命以来，越来越多乡村人口迁入城市。",
+            "section": "第11课 近代以来的城市化进程"
+          },
+          {
+            "name": "工业化与城市化",
+            "difficulty": 3,
+            "description": "工业生产集中于城市，推动人口和经济活动向城市聚集",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "工业化通过集中生产和创造就业推动城市化进程。",
+            "example": "英国城市化伴随工业革命展开，1851年城市人口超过总人口一半。"
+          },
+          {
+            "name": "居住条件改善",
+            "difficulty": 2,
+            "description": "建筑技术和城市服务发展使住宅生活更加便利舒适",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "居住条件改善是城市发展过程中住宅设备、卫生和生活便利性提高的现象。",
+            "example": "电梯、钢筋混凝土、集中供暖和私人卫生间逐渐普及。"
+          },
+          {
+            "name": "城市基础设施",
+            "difficulty": 2,
+            "description": "供水、排水、照明、通信和交通等城市公共设施",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "城市基础设施是支撑城市运行和居民生活的公共工程与服务系统。",
+            "example": "自来水、地铁、电灯和电话逐渐进入城市生活。",
+            "section": "第11课 近代以来的城市化进程"
+          },
+          {
+            "name": "城市化问题",
+            "difficulty": 2,
+            "description": "城市化过程中出现污染、拥堵、贫富矛盾等问题",
+            "aliases": [],
+            "prerequisites": [
+              "城市化"
+            ],
+            "definition": "城市化问题是城市快速发展带来的环境、交通和社会矛盾。",
+            "example": "工厂排放废水废气，汽车普及造成交通拥堵。"
+          },
+          {
+            "name": "城市社区功能",
+            "difficulty": 3,
+            "description": "社区由慈善救济扩展到教育、医疗、服务和娱乐",
+            "aliases": [],
+            "prerequisites": [
+              "城市基础设施"
+            ],
+            "definition": "城市社区功能是社区为居民提供社会保障、公共服务和文化生活的作用。",
+            "example": "现代社区提供教育、医疗、绿化和娱乐等服务。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第10课 古代的村落、集镇和城市",
+            "section_key": "813a7e5f3c",
+            "page_range": [
+              61,
+              68
+            ]
+          },
+          {
+            "name": "第11课 近代以来的城市化进程",
+            "section_key": "0ffbad4767",
+            "page_range": [
+              68,
+              73
+            ]
+          }
+        ],
+        "chapter_key": "4c979c6552",
+        "metadata": {
+          "volume_id": "81aec39e9a3a",
+          "file_id": "81aec39e9a3a",
+          "volume_title": "高中历史 选择性必修2",
+          "chapter_order": 4,
+          "raw_heading": "第四单元 村落、城镇与居住环境"
+        }
+      },
+      {
+        "name": "第五单元 交通与社会变迁",
+        "concepts": [
+          {
+            "name": "交通",
+            "difficulty": 1,
+            "description": "人员、物资和信息的运输传递活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "交通是人或物转运输送以及邮电通信的总称。",
+            "example": "铁路运输货物和人员。"
+          },
+          {
+            "name": "橇",
+            "difficulty": 1,
+            "description": "人类早期利用滑动运输重物的工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "橇是把重物放在木制架子上拖拉的早期运输工具。",
+            "example": "古人用橇拖运重物。"
+          },
+          {
+            "name": "轮车",
+            "difficulty": 1,
+            "description": "利用轮子滚动运输的车辆",
+            "aliases": [],
+            "prerequisites": [
+              "橇"
+            ],
+            "definition": "轮车是以轮子滚动替代滑动来提高运输效率的车辆。",
+            "example": "轮车提高了运载量和速度。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "马车",
+            "difficulty": 1,
+            "description": "以马为动力的古代陆路交通工具",
+            "aliases": [],
+            "prerequisites": [
+              "轮车"
+            ],
+            "definition": "马车是由马牵引车体进行运输或作战的交通工具。",
+            "example": "马和马车是古代重要的交通工具。"
+          },
+          {
+            "name": "人工道路",
+            "difficulty": 2,
+            "description": "人类修筑的陆路交通线路",
+            "aliases": [
+              "道路铺设"
+            ],
+            "prerequisites": [],
+            "definition": "人工道路是人们为运输和交流而修筑的陆路通道。",
+            "example": "秦朝修筑驰道和直道。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "驿站交通网",
+            "difficulty": 2,
+            "description": "以驿站和驿道组成的古代交通网络",
+            "aliases": [
+              "驿路交通网"
+            ],
+            "prerequisites": [
+              "人工道路"
+            ],
+            "definition": "驿站交通网是以驿道和驿站连接各地、服务政务与交通的网络。",
+            "example": "元朝遍设驿站连接全国。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "运河",
+            "difficulty": 1,
+            "description": "人工开凿并用于航运的河流",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "运河是人类人工开凿的河流，主要用于沟通水系和航运。",
+            "example": "灵渠沟通长江和珠江水系。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "大运河",
+            "difficulty": 2,
+            "description": "沟通中国南北的重要人工水道",
+            "aliases": [
+              "京杭大运河"
+            ],
+            "prerequisites": [
+              "运河"
+            ],
+            "definition": "大运河是沟通中国南方和北方的长距离人工水道。",
+            "example": "元朝京杭大运河全长近1800千米。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "筏",
+            "difficulty": 1,
+            "description": "捆绑漂浮物制成的早期水上工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "筏是人们将树干等漂浮物捆绑后制成的水上运输工具。",
+            "example": "古人把树干捆绑成筏。"
+          },
+          {
+            "name": "独木舟",
+            "difficulty": 1,
+            "description": "刳木制成的原始船只",
+            "aliases": [],
+            "prerequisites": [
+              "筏"
+            ],
+            "definition": "独木舟是人们刳挖整段木材制成的原始船。",
+            "example": "新石器时代出现了独木舟。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "木板船",
+            "difficulty": 2,
+            "description": "在舟体四周加装木板制成的船",
+            "aliases": [],
+            "prerequisites": [
+              "独木舟"
+            ],
+            "definition": "木板船是在舟体上加装木板并采取连接、堵漏等措施制成的船。",
+            "example": "木板船改善了载重和航行性能。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "磁罗盘",
+            "difficulty": 2,
+            "description": "利用磁性指示航向的航海仪器",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "磁罗盘是宋代发展起来、用于辨别航向的航海仪器。",
+            "example": "磁罗盘帮助海船持续航行。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "海上丝绸之路",
+            "difficulty": 2,
+            "description": "连接中国与亚非地区的古代海上航线",
+            "aliases": [],
+            "prerequisites": [
+              "磁罗盘"
+            ],
+            "definition": "海上丝绸之路是古代连接中国与东亚、南亚、西亚和非洲的海上交通路线。",
+            "example": "郑和船队曾航行于海上丝绸之路。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "新航路开辟",
+            "difficulty": 2,
+            "description": "15至16世纪欧洲人开辟全球海上航线",
+            "aliases": [],
+            "prerequisites": [
+              "海上丝绸之路"
+            ],
+            "definition": "新航路开辟是欧洲航海家开通通往美洲、亚洲等地新海路的历史进程。",
+            "example": "达·伽马开辟绕过非洲到达东方的航线。"
+          },
+          {
+            "name": "环球交通网络",
+            "difficulty": 3,
+            "description": "由全球海路和陆路联系形成的交通体系",
+            "aliases": [],
+            "prerequisites": [
+              "新航路开辟"
+            ],
+            "definition": "环球交通网络是世界主要大洋和大陆通过航线建立直接联系后形成的全球交通体系。",
+            "example": "新航路开辟推动环球交通网络形成。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "苏伊士运河",
+            "difficulty": 2,
+            "description": "连接红海和地中海的国际运河",
+            "aliases": [],
+            "prerequisites": [
+              "运河"
+            ],
+            "definition": "苏伊士运河是连接红海与地中海、缩短欧亚航程的人工水道。",
+            "example": "1869年苏伊士运河开通。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "巴拿马运河",
+            "difficulty": 2,
+            "description": "连接大西洋和太平洋的国际运河",
+            "aliases": [],
+            "prerequisites": [
+              "运河"
+            ],
+            "definition": "巴拿马运河是连接大西洋和太平洋、缩短两洋航程的人工水道。",
+            "example": "1914年巴拿马运河通航。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "铁路时代",
+            "difficulty": 2,
+            "description": "铁路成为陆路交通主干的历史阶段",
+            "aliases": [],
+            "prerequisites": [
+              "人工道路"
+            ],
+            "definition": "铁路时代是铁路网广泛建设并成为陆路交通主干的时期。",
+            "example": "19世纪上半期欧美逐步进入铁路时代。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "蒸汽机车",
+            "difficulty": 2,
+            "description": "以蒸汽动力驱动的铁路机车",
+            "aliases": [],
+            "prerequisites": [
+              "铁路时代"
+            ],
+            "definition": "蒸汽机车是利用蒸汽机产生动力牵引列车运行的机车。",
+            "example": "斯蒂芬森于1814年改进蒸汽机车。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "轮船",
+            "difficulty": 2,
+            "description": "以蒸汽机或内燃机为动力的船舶",
+            "aliases": [
+              "汽船"
+            ],
+            "prerequisites": [
+              "木板船"
+            ],
+            "definition": "轮船是以蒸汽机或内燃机驱动、具有较大吨位和较远航距的船舶。",
+            "example": "富尔顿于1807年发明汽船。",
+            "section": "第12课 水陆交通的变迁"
+          },
+          {
+            "name": "汽车",
+            "difficulty": 1,
+            "description": "以发动机驱动的现代道路交通工具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "汽车是以发动机为动力、在道路上行驶的现代交通工具。",
+            "example": "福特T型汽车实现量产。"
+          },
+          {
+            "name": "高速公路",
+            "difficulty": 2,
+            "description": "供汽车分道高速行驶并控制出入的公路",
+            "aliases": [],
+            "prerequisites": [
+              "汽车"
+            ],
+            "definition": "高速公路是专供汽车分向、分车道高速行驶并控制出入的公路。",
+            "example": "上海沪嘉高速是中国大陆第一条高速公路。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "高速铁路",
+            "difficulty": 2,
+            "description": "运行速度较高的现代铁路系统",
+            "aliases": [
+              "高铁"
+            ],
+            "prerequisites": [
+              "铁路时代"
+            ],
+            "definition": "高速铁路是以高速列车提供商业运营服务的现代铁路交通系统。",
+            "example": "京津城际铁路通车标志中国进入高铁时代。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "现代航运",
+            "difficulty": 3,
+            "description": "以雷达、卫星通信等技术支撑的航运体系",
+            "aliases": [],
+            "prerequisites": [
+              "轮船"
+            ],
+            "definition": "现代航运是运用先进航海技术和大型化、专业化船舶开展的水上运输。",
+            "example": "航海雷达提高了船舶航行能力。"
+          },
+          {
+            "name": "飞机时代",
+            "difficulty": 2,
+            "description": "飞机成为重要交通工具并开通航空航线的时期",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "飞机时代是飞机发明并逐渐形成民用航空运输体系的历史阶段。",
+            "example": "莱特兄弟的飞机成功升空开启飞机时代。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "民航",
+            "difficulty": 2,
+            "description": "面向公众提供航空运输服务的行业",
+            "aliases": [
+              "民用航空"
+            ],
+            "prerequisites": [
+              "飞机时代"
+            ],
+            "definition": "民航是面向社会公众提供客货航空运输及相关服务的行业。",
+            "example": "中国民航开通了多条国际和国内航线。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "物流业",
+            "difficulty": 2,
+            "description": "整合运输、仓储、通信和包装的行业",
+            "aliases": [],
+            "prerequisites": [
+              "交通"
+            ],
+            "definition": "物流业是整合交通、仓储、通信和包装等环节以输送物资的行业。",
+            "example": "物流业使物资运输更快捷精准。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "公共交通",
+            "difficulty": 1,
+            "description": "面向公众提供城市出行服务的交通系统",
+            "aliases": [],
+            "prerequisites": [
+              "交通"
+            ],
+            "definition": "公共交通是面向城市公众提供共同出行服务的交通方式和系统。",
+            "example": "公共汽车、地铁属于公共交通。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "现代时间观念",
+            "difficulty": 2,
+            "description": "按时分秒精确安排生活和工作的观念",
+            "aliases": [],
+            "prerequisites": [
+              "公共交通"
+            ],
+            "definition": "现代时间观念是交通工具时刻表推动形成的精确计时和守时意识。",
+            "example": "人们按照公共汽车时刻表出行。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "大众旅游",
+            "difficulty": 2,
+            "description": "普通民众广泛参与的旅游活动潮流",
+            "aliases": [],
+            "prerequisites": [
+              "交通"
+            ],
+            "definition": "大众旅游是交通成本降低和收入增加后兴起的普通民众旅游潮流。",
+            "example": "普通民众从“旅”发展到“游”。",
+            "section": "第13课 现代交通运输的新变化"
+          },
+          {
+            "name": "交通与城市发展",
+            "difficulty": 2,
+            "description": "交通变化对城市兴衰和空间布局的影响",
+            "aliases": [],
+            "prerequisites": [
+              "人工道路",
+              "运河"
+            ],
+            "definition": "交通与城市发展指交通线路和工具变化推动城市兴起、扩张或衰落。",
+            "example": "铁路开通推动郑州发展超过洛阳与开封。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第12课 水陆交通的变迁",
+            "section_key": "db36a573ec",
+            "page_range": [
+              74,
+              80
+            ]
+          },
+          {
+            "name": "第13课 现代交通运输的新变化",
+            "section_key": "8e220a308b",
+            "page_range": [
+              80,
+              86
+            ]
+          }
+        ],
+        "chapter_key": "f90c7ed3e8",
+        "metadata": {
+          "volume_id": "81aec39e9a3a",
+          "file_id": "81aec39e9a3a",
+          "volume_title": "高中历史 选择性必修2",
+          "chapter_order": 5,
+          "raw_heading": "第五单元 交通与社会变迁"
+        }
+      },
+      {
+        "name": "第六单元 医疗与公共卫生",
+        "concepts": [
+          {
+            "name": "疫病",
+            "difficulty": 2,
+            "description": "由强致病性微生物感染人体引起的急性传染病",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "疫病是由细菌、病毒等强烈致病性微生物感染人体而引起的急性传染病。",
+            "example": "古代天花、鼠疫和近代大流感"
+          },
+          {
+            "name": "疫病影响",
+            "difficulty": 2,
+            "description": "疫病对人口、社会、政治和经济造成的影响",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "疫病流行会造成大量人口死亡，并引发社会混乱及政治经济变动。",
+            "example": "黑死病导致欧洲劳动力短缺和生产停滞"
+          },
+          {
+            "name": "公共卫生",
+            "difficulty": 2,
+            "description": "社会为预防疾病、保障群体健康而采取的措施",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "公共卫生是通过环境治理、疾病防治等方式保障社会群体健康的事业。",
+            "example": "修建下水道、清理污水和处理垃圾"
+          },
+          {
+            "name": "隔离防疫",
+            "difficulty": 2,
+            "description": "通过隔离患者和传染源阻断疫病传播",
+            "aliases": [],
+            "prerequisites": [
+              "疫病",
+              "公共卫生"
+            ],
+            "definition": "隔离防疫是将疫病患者或传染源隔离，以减少疾病传播的防治措施。",
+            "example": "西汉政府将疫病患者安置在空置宅第"
+          },
+          {
+            "name": "人痘接种法",
+            "difficulty": 3,
+            "description": "中国古人为预防天花发明的接种方法",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "人痘接种法是中国古人为预防天花而发明并推广的接种方法。",
+            "example": "明朝中期已广泛使用，后来传入欧洲",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "牛痘接种法",
+            "difficulty": 2,
+            "description": "詹纳发明的降低天花发病率的接种方法",
+            "aliases": [],
+            "prerequisites": [
+              "人痘接种法"
+            ],
+            "definition": "牛痘接种法是英国医生詹纳于18世纪晚期发明的天花预防方法。",
+            "example": "牛痘接种法使天花发病率大大降低",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "巴氏消毒法",
+            "difficulty": 2,
+            "description": "巴斯德创立并应用于医学的消毒方法",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "巴氏消毒法是巴斯德创立并广泛应用于医学领域的消毒方法。",
+            "example": "用于医学领域的消毒处理",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "细菌学说",
+            "difficulty": 3,
+            "description": "解释细菌与疾病关系的近代医学学说",
+            "aliases": [],
+            "prerequisites": [
+              "疫病"
+            ],
+            "definition": "细菌学说是近代医学关于细菌等微生物与疾病发生关系的理论。",
+            "example": "19世纪细胞与细菌学说发展迅速",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "青霉素",
+            "difficulty": 2,
+            "description": "弗莱明发现的有效治疗细菌感染的药物",
+            "aliases": [],
+            "prerequisites": [
+              "细菌学说"
+            ],
+            "definition": "青霉素是弗莱明于1928年发现的抗菌药物。",
+            "example": "改变了人类对细菌传染病束手无策的状态",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "四诊法",
+            "difficulty": 2,
+            "description": "中医通过望、闻、问、切进行诊断的方法",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "四诊法是中医通过望、闻、问、切观察和判断病情的诊断方法。",
+            "example": "扁鹊使用望、闻、问、切诊断疾病",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "中医药学",
+            "difficulty": 2,
+            "description": "具有独特理论体系和丰富临床经验的医学体系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中医药学是在长期实践中形成的具有独特理论、诊断和治疗方法的医学体系。",
+            "example": "形成阴阳五行理论和丰富的临床经验",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "辨证施治",
+            "difficulty": 3,
+            "description": "依据患者具体病情进行诊断和治疗的原则",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学",
+              "四诊法"
+            ],
+            "definition": "辨证施治是根据患者的具体证候确定治疗方法的中医临床原则。",
+            "example": "张仲景在临床实践中提出这一原则",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "针灸",
+            "difficulty": 2,
+            "description": "建立在经络学说基础上的中医治疗方法",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "针灸是建立在经络学说基础上，通过针刺等方式治疗疾病的中医方法。",
+            "example": "针灸因简便经济而受到中国人欢迎",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "药食同源",
+            "difficulty": 2,
+            "description": "中医认为食品和药品之间没有明确界限",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "药食同源是中医关于食品与药品可以相互调理身体的观点。",
+            "example": "病情不重时用五谷果蔬调理",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "中西医结合",
+            "difficulty": 2,
+            "description": "结合中医与西医优势发展医疗事业的方针",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学",
+              "西医传播"
+            ],
+            "definition": "中西医结合是综合运用中医和西医知识与方法推进医疗发展的方针。",
+            "example": "新中国成立后推动中西医团结协作",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "青蒿素",
+            "difficulty": 2,
+            "description": "从青蒿中分离出的抗疟药物",
+            "aliases": [],
+            "prerequisites": [
+              "中医药学"
+            ],
+            "definition": "青蒿素是研究团队从青蒿中分离出的有效抗疟药物。",
+            "example": "屠呦呦团队受古代医药记载启发发现青蒿素",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "西医传播",
+            "difficulty": 2,
+            "description": "西方医学传入并在中国建立发展的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "西医传播是西方医学由传入中国到建立医院、学校并培养人才的发展过程。",
+            "example": "鸦片战争后西式医院在通商口岸建立"
+          },
+          {
+            "name": "实验药理学",
+            "difficulty": 3,
+            "description": "将生理研究与临床实践结合研究药物功能的学科",
+            "aliases": [],
+            "prerequisites": [
+              "西医传播"
+            ],
+            "definition": "实验药理学是19世纪将生理与临床结合以探索药物功能和作用的学科。",
+            "example": "19世纪人们开始系统研究药物作用",
+            "section": "第14课 历史上的疫病与医学成就"
+          },
+          {
+            "name": "现代医疗卫生体系",
+            "difficulty": 3,
+            "description": "由医疗、药品、保障和基本卫生体系构成的系统",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "现代医疗卫生体系包括基本医疗卫生、医疗服务、药品供应和医疗保障体系。",
+            "example": "新中国逐步建立覆盖全国的医疗网络",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "计划免疫",
+            "difficulty": 2,
+            "description": "国家有计划地组织实施疫苗接种",
+            "aliases": [],
+            "prerequisites": [
+              "现代医疗卫生体系",
+              "疫病"
+            ],
+            "definition": "计划免疫是现代医疗卫生体系中通过有计划接种疫苗预防传染病的措施。",
+            "example": "我国通过计划免疫控制多种重大疫病",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "医疗保障制度",
+            "difficulty": 3,
+            "description": "为居民获得医疗服务提供制度和物质支持",
+            "aliases": [],
+            "prerequisites": [
+              "现代医疗卫生体系"
+            ],
+            "definition": "医疗保障制度是国家通过相关制度保障居民医疗需求和医疗费用的体系。",
+            "example": "城乡居民基本医疗保险制度",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "爱国卫生运动",
+            "difficulty": 2,
+            "description": "中国开展的清理环境、预防疾病和保护健康的群众运动",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "爱国卫生运动是中国发动群众改善环境卫生、预防疾病和保护健康的社会运动。",
+            "example": "开展形式多样的环境清理和疾病预防活动",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "健康中国战略",
+            "difficulty": 3,
+            "description": "以人民健康为中心推进国家卫生事业发展的战略",
+            "aliases": [],
+            "prerequisites": [
+              "现代医疗卫生体系",
+              "公共卫生"
+            ],
+            "definition": "健康中国战略旨在完善国民健康政策并提供全方位全周期健康服务。",
+            "example": "推动全民健身与全民健康深度融合",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "精神卫生",
+            "difficulty": 2,
+            "description": "关注精神健康并防治精神障碍的卫生领域",
+            "aliases": [],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "精神卫生是关注心理健康、促进精神疾病早发现早治疗的卫生工作领域。",
+            "example": "普及精神医学知识，促进患者康复",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          },
+          {
+            "name": "医疗伦理",
+            "difficulty": 3,
+            "description": "医生在行医中应遵守的职业道德和行为准则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "医疗伦理要求医生尊重患者、平等行医、保守隐私并尽力救治。",
+            "example": "《希波克拉底誓言》要求不伤害病人"
+          },
+          {
+            "name": "世界卫生组织",
+            "difficulty": 2,
+            "description": "联合国下属的政府间国际卫生组织",
+            "aliases": [
+              "WHO"
+            ],
+            "prerequisites": [
+              "公共卫生"
+            ],
+            "definition": "世界卫生组织是联合国下属的专门卫生机构，宗旨是促进全世界人民获得高水平健康。",
+            "example": "协调流行病和地方病防治工作",
+            "section": "第15课 现代医疗卫生体系与社会生活"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第14课 历史上的疫病与医学成就",
+            "section_key": "ea8a5dda2d",
+            "page_range": [
+              87,
+              93
+            ]
+          },
+          {
+            "name": "第15课 现代医疗卫生体系与社会生活",
+            "section_key": "2f10a9e53b",
+            "page_range": [
+              93,
+              98
+            ]
+          }
+        ],
+        "chapter_key": "33c69e37e3",
+        "metadata": {
+          "volume_id": "81aec39e9a3a",
+          "file_id": "81aec39e9a3a",
+          "volume_title": "高中历史 选择性必修2",
+          "chapter_order": 6,
+          "raw_heading": "第六单元 医疗与公共卫生"
+        }
+      },
+      {
+        "name": "活动课",
+        "concepts": [
+          {
+            "name": "技术进步影响社会生活",
+            "difficulty": 2,
+            "description": "技术变革推动社会生活在多个方面发生变化",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "技术进步能够促进社会生活现象的生成和变化。",
+            "example": "智能手机的使用影响人们出行",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "社会生活现象",
+            "difficulty": 1,
+            "description": "特定时期和区域人们生活状况的具体表现",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会生活现象是一定时期、区域内社会生活的具体表现。",
+            "example": "某时期人们的出行方式",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "问题意识",
+            "difficulty": 2,
+            "description": "围绕研究对象提出明确且可探究的问题",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活现象"
+            ],
+            "definition": "问题意识是对研究对象持续追问并形成清晰研究问题的意识。",
+            "example": "追问某种现象由哪些因素促成",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "研究计划",
+            "difficulty": 2,
+            "description": "对研究任务、分工、资料路径和成果形式的安排",
+            "aliases": [],
+            "prerequisites": [
+              "问题意识"
+            ],
+            "definition": "研究计划是研究开始前对任务、方法、分工和成果呈现方式的具体安排。",
+            "example": "小组制定资料搜集和成果展示方案",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "文字记载",
+            "difficulty": 2,
+            "description": "以文字形式保存的有关历史现象的资料",
+            "aliases": [
+              "文献资料"
+            ],
+            "prerequisites": [
+              "社会生活现象"
+            ],
+            "definition": "文字记载是记录社会现象及其历史信息的文字资料。",
+            "example": "查找关于某种社会生活的文字记录",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "历史信息",
+            "difficulty": 2,
+            "description": "资料中反映的特定时期社会状况及其变化信息",
+            "aliases": [],
+            "prerequisites": [
+              "文字记载"
+            ],
+            "definition": "历史信息是文字资料所反映的历史现象、状况及其变化。",
+            "example": "从记载中了解某地生活方式变化",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "唯物史观",
+            "difficulty": 3,
+            "description": "从社会发展客观规律出发分析历史问题的方法",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活现象"
+            ],
+            "definition": "唯物史观是依据社会发展客观规律解读文献资料和分析历史问题的观点。",
+            "example": "用社会存在与社会意识关系解读资料",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "生产力决定生产关系",
+            "difficulty": 3,
+            "description": "生产力发展状况制约生产关系的形成和变化",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观"
+            ],
+            "definition": "生产力决定生产关系是指生产力的发展状况决定生产关系的性质和变革。",
+            "example": "技术进步推动生产方式及关系变化",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "经济基础决定上层建筑",
+            "difficulty": 3,
+            "description": "经济基础制约上层建筑的形成与发展",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观"
+            ],
+            "definition": "经济基础决定上层建筑是指社会经济结构制约政治法律等上层建筑。",
+            "example": "经济生活变化影响社会制度发展",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "社会存在决定社会意识",
+            "difficulty": 3,
+            "description": "社会物质生活条件制约社会意识的发展变化",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观"
+            ],
+            "definition": "社会存在决定社会意识是指社会物质生活条件制约人们思想观念的形成变化。",
+            "example": "生活方式变化影响人们的社会观念",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "研究报告",
+            "difficulty": 3,
+            "description": "呈现研究问题、材料、论证和结论的书面成果",
+            "aliases": [],
+            "prerequisites": [
+              "研究计划",
+              "历史信息"
+            ],
+            "definition": "研究报告是依据资料对研究问题进行分析论证并形成结论的书面成果。",
+            "example": "小组提交技术影响社会生活的报告",
+            "section": "技术进步与社会生活的变化"
+          },
+          {
+            "name": "证据支持",
+            "difficulty": 3,
+            "description": "运用具体材料证明研究解释和结论",
+            "aliases": [],
+            "prerequisites": [
+              "文字记载",
+              "研究报告"
+            ],
+            "definition": "证据支持是用可靠材料说明研究观点和结论的依据关系。",
+            "example": "用文字记载证明技术促进某现象生成"
+          }
+        ],
+        "sections": [
+          {
+            "name": "技术进步与社会生活的变化",
+            "section_key": "d0bfd840b6",
+            "page_range": [
+              98,
+              102
+            ]
+          }
+        ],
+        "chapter_key": "130b332a9e",
+        "metadata": {
+          "volume_id": "81aec39e9a3a",
+          "file_id": "81aec39e9a3a",
+          "volume_title": "高中历史 选择性必修2",
+          "chapter_order": 7,
+          "raw_heading": "活动课"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "facbdea477": [
+        7,
+        13
+      ],
+      "第1课 从食物采集到食物生产": [
+        7,
+        13
+      ],
+      "e646d770cd": [
+        13,
+        17
+      ],
+      "第2课 新航路开辟后的食物物种交流": [
+        13,
+        17
+      ],
+      "57c511965f": [
+        18,
+        23
+      ],
+      "第3课 现代食物的生产、储备与食品安全": [
+        18,
+        23
+      ],
+      "9ffe1ff199": [
+        24,
+        29
+      ],
+      "第4课 古代的生产工具与劳作": [
+        24,
+        29
+      ],
+      "bae894e13c": [
+        30,
+        35
+      ],
+      "第5课 工业革命与工厂制度": [
+        30,
+        35
+      ],
+      "113ecad292": [
+        35,
+        40
+      ],
+      "第6课 现代科技进步与人类社会发展": [
+        35,
+        40
+      ],
+      "c5dd593bab": [
+        41,
+        47
+      ],
+      "第7课 古代的商业贸易": [
+        41,
+        47
+      ],
+      "649d130b85": [
+        47,
+        53
+      ],
+      "第8课 世界市场与商业贸易": [
+        47,
+        53
+      ],
+      "bb2ec9f435": [
+        53,
+        60
+      ],
+      "第9课 20世纪以来人类的经济与生活": [
+        53,
+        60
+      ],
+      "813a7e5f3c": [
+        61,
+        68
+      ],
+      "第10课 古代的村落、集镇和城市": [
+        61,
+        68
+      ],
+      "0ffbad4767": [
+        68,
+        73
+      ],
+      "第11课 近代以来的城市化进程": [
+        68,
+        73
+      ],
+      "db36a573ec": [
+        74,
+        80
+      ],
+      "第12课 水陆交通的变迁": [
+        74,
+        80
+      ],
+      "8e220a308b": [
+        80,
+        86
+      ],
+      "第13课 现代交通运输的新变化": [
+        80,
+        86
+      ],
+      "ea8a5dda2d": [
+        87,
+        93
+      ],
+      "第14课 历史上的疫病与医学成就": [
+        87,
+        93
+      ],
+      "2f10a9e53b": [
+        93,
+        98
+      ],
+      "第15课 现代医疗卫生体系与社会生活": [
+        93,
+        98
+      ],
+      "d0bfd840b6": [
+        98,
+        102
+      ],
+      "技术进步与社会生活的变化": [
+        98,
+        102
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "file_id": "08ecdeefd231",
-  "text_sha256": "10a645f5d8c5091c8cb8e184ca55752d34e809a094531f0ecdfd4367cf17c983",
+  "text_sha256": "faf605bb166891b579cc0781b59cb2df00b9ef35f331a00f1c3732aa8d7f4b21",
   "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
   "schema_version": "3",
   "chapter_locator_version": "5",
@@ -15,401 +15,228 @@
           {
             "name": "古典诗歌源流",
             "difficulty": 2,
-            "description": "中国古典诗歌由源头向汉唐宋不断发展",
+            "description": "梳理《诗经》以来古典诗歌的发展脉络",
             "aliases": [],
             "prerequisites": [],
-            "definition": "古典诗歌源流是指诗歌从《诗经》《楚辞》到汉乐府、唐诗和宋词的发展脉络。",
-            "example": "《诗经》与《楚辞》分别开启现实主义和浪漫主义传统"
+            "definition": "古典诗歌源流是从《诗经》《楚辞》到汉乐府、唐诗和宋词的发展过程。",
+            "example": "《诗经》与《楚辞》是古典诗歌的源头。"
           },
           {
             "name": "现实主义传统",
             "difficulty": 2,
-            "description": "源于《诗经》并重视现实生活与真实情感",
+            "description": "重在反映现实生活和真实情感的诗歌传统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "现实主义传统是继承《诗经》、关注现实人生并表现真实情感的文学传统。",
-            "example": "汉乐府缘事而发，表现民间哀乐",
-            "section": "2 * 孔雀东南飞并序"
+            "definition": "现实主义传统是古典诗歌中关注现实人生、缘事抒情的创作传统。",
+            "example": "汉乐府继承《诗经》的现实主义传统。"
           },
           {
             "name": "浪漫主义传统",
             "difficulty": 2,
-            "description": "《楚辞》开启的富于想象和抒情的传统",
+            "description": "借助想象抒发理想和强烈情感的诗歌传统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "浪漫主义传统是以丰富想象、强烈抒情和理想追求为特征的文学传统。",
-            "example": "诗人借香草意象寄托高洁理想"
-          },
-          {
-            "name": "风骚传统",
-            "difficulty": 3,
-            "description": "《诗经》和《楚辞》艺术精神的合称",
-            "aliases": [],
-            "prerequisites": [
-              "现实主义传统",
-              "浪漫主义传统"
-            ],
-            "definition": "风骚传统是后人对《诗经》和《楚辞》艺术精神及其文学影响的概称。",
-            "example": "《诗经》的现实精神与《楚辞》的抒情传统"
-          },
-          {
-            "name": "楚辞体",
-            "difficulty": 2,
-            "description": "运用楚地形式、方言声韵的诗体",
-            "aliases": [
-              "骚体"
-            ],
-            "prerequisites": [
-              "浪漫主义传统"
-            ],
-            "definition": "楚辞体是运用楚地诗歌形式、方言声韵并具有地方色彩的诗体。",
-            "example": "诗句多用“兮”字，形成独特节奏"
-          },
-          {
-            "name": "乐府诗",
-            "difficulty": 2,
-            "description": "汉魏六朝时期重要的诗歌类型",
-            "aliases": [],
-            "prerequisites": [
-              "现实主义传统"
-            ],
-            "definition": "乐府诗是汉魏六朝时期继承现实主义传统、讲究缘事而发的诗歌类型。",
-            "example": "以婚姻悲剧展开较长篇幅的叙事",
-            "section": "2 * 孔雀东南飞并序"
-          },
-          {
-            "name": "叙事与抒情结合",
-            "difficulty": 3,
-            "description": "在讲述事件中融入人物情感和心理变化",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "叙事与抒情结合是诗歌将故事推进、人物经历与情感表达融为一体的写法。",
-            "example": "写女子恋爱、婚姻和被弃并表现其心路变化"
-          },
-          {
-            "name": "比兴手法",
-            "difficulty": 3,
-            "description": "借眼前事物起兴或作比来寄托情感",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "比兴手法是借具体事物作比或触景起兴，以引出并寄托诗歌情感的表现手法。",
-            "example": "以桑叶荣枯比喻女子容貌与婚姻变化"
+            "definition": "浪漫主义传统是以丰富想象和浓烈情感表现理想追求的创作传统。",
+            "example": "《楚辞》开启了浪漫主义文学传统。"
           },
           {
             "name": "抒情传统",
             "difficulty": 2,
-            "description": "古典诗歌以情感表达为核心的传统",
-            "aliases": [],
-            "prerequisites": [
-              "叙事与抒情结合"
-            ],
-            "definition": "抒情传统是古典诗歌重视由情感触发语言、歌咏和意义表达的文学传统。",
-            "example": "“诗者，志之所之也”强调诗歌表达志情"
-          },
-          {
-            "name": "香草美人象征",
-            "difficulty": 4,
-            "description": "以香草美人寄托品德、理想和政治情志",
-            "aliases": [],
-            "prerequisites": [
-              "比兴手法"
-            ],
-            "definition": "香草美人象征是借香草和美人等形象象征高洁品德、贤能者或政治理想的表现方式。",
-            "example": "佩戴香草象征坚贞和高洁品德"
-          },
-          {
-            "name": "回旋复沓",
-            "difficulty": 3,
-            "description": "反复回环的语言组织方式，强化情感",
+            "description": "以情感表达为核心的中国诗歌传统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "回旋复沓是诗歌反复使用相近语句或结构，使节奏回环并增强情感力度的表达方式。",
-            "example": "反复咏叹时间流逝和理想坚守",
-            "section": "离骚(节选)"
+            "definition": "抒情传统是诗歌通过语言、声韵和意象表达内在情感的传统。",
+            "example": "“诗者，志之所之也”体现了抒情传统。"
           },
           {
-            "name": "偏义复词",
-            "difficulty": 3,
-            "description": "复音词只取一个语素的意义",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "偏义复词是由两个相关或相反语素构成而整体只取其中一个语素意义的复音词。",
-            "example": "“作息”在“昼夜勤作息”中只指劳作",
-            "section": "2 * 孔雀东南飞并序"
-          },
-          {
-            "name": "古体诗",
+            "name": "叙事诗",
             "difficulty": 2,
-            "description": "格律限制较少、句式和形式灵活的诗体",
+            "description": "通过讲述事件和情节表现人物与情感的诗歌",
             "aliases": [],
-            "prerequisites": [
-              "古典诗歌体式"
-            ],
-            "definition": "古体诗是格律不拘、句式灵活、形式自由的古典诗歌体式。",
-            "example": "诗句长短参差，节奏不受固定格律约束",
-            "section": "* 蜀相"
+            "prerequisites": [],
+            "definition": "叙事诗是以叙述故事、安排情节和塑造人物为主要表达方式的诗歌。",
+            "example": "《孔雀东南飞》是杰出的叙事诗。"
           },
           {
-            "name": "杂言古体诗",
+            "name": "楚辞体",
             "difficulty": 3,
-            "description": "句子字数长短不一的古体诗",
-            "aliases": [],
-            "prerequisites": [
-              "古体诗"
-            ],
-            "definition": "杂言古体诗是句式字数长短不一、格律较为自由的古体诗。",
-            "example": "诗句在三言、五言、七言之间灵活变化",
-            "section": "* 蜀相"
-          },
-          {
-            "name": "七言律诗",
-            "difficulty": 3,
-            "description": "每句七字、结构严整的律诗体式",
+            "description": "运用楚地形式、方言声韵的诗体",
             "aliases": [
-              "七律"
+              "骚体"
             ],
-            "prerequisites": [
-              "古典诗歌体式"
-            ],
-            "definition": "七言律诗是以七字句为基本形式、讲究格律并具有严整结构的诗体。",
-            "example": "全诗八句，每句七字，结构法度严整",
-            "section": "* 蜀相"
+            "prerequisites": [],
+            "definition": "楚辞体是具有楚地地方色彩、常用“兮”字的诗歌体式。",
+            "example": "《离骚》是楚辞体的代表作品。"
           },
           {
-            "name": "词牌",
+            "name": "比兴",
             "difficulty": 3,
-            "description": "规定词的句式、字数和声韵的名称",
+            "description": "借物起兴或比喻以寄托、引出情感的手法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "比兴是借助具体事物引发联想或寄托情感的诗歌表现手法。",
+            "example": "《氓》以桑树荣枯比喻爱情变化。"
+          },
+          {
+            "name": "香草美人",
+            "difficulty": 3,
+            "description": "以香草和美人象征高洁品德与理想人物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "香草美人是《离骚》中借香草、美人等形象象征品德、贤者和理想的表现方式。",
+            "example": "佩戴江离、秋兰象征诗人修德自守。"
+          },
+          {
+            "name": "叙事抒情结合",
+            "difficulty": 3,
+            "description": "在讲述故事过程中同时表达人物情感",
             "aliases": [],
             "prerequisites": [
-              "古典诗歌体式"
+              "叙事诗"
             ],
-            "definition": "词牌是词所依照的曲调名称，并规定相应的句式、字数和声韵形式。",
-            "example": "同一词牌可形成固定的篇章格式",
-            "section": "* 蜀相"
+            "definition": "叙事抒情结合是将事件叙述与情感抒发融为一体的诗歌构思方式。",
+            "example": "《氓》叙述婚姻经历并表现女子心路变化。"
           },
           {
-            "name": "铺叙",
-            "difficulty": 3,
-            "description": "按层次铺陈描写对象和相关情景",
-            "aliases": [],
-            "prerequisites": [
-              "叙事与抒情结合"
-            ],
-            "definition": "铺叙是按照一定层次对景物、场面或情事进行铺陈叙写的表现手法。",
-            "example": "依次描写城市位置、风景、市井和生活",
-            "section": "* 蜀相"
-          },
-          {
-            "name": "虚实相间",
-            "difficulty": 3,
-            "description": "现实描写与想象联想相互结合",
-            "aliases": [],
-            "prerequisites": [
-              "铺叙"
-            ],
-            "definition": "虚实相间是诗歌将眼前实景与想象、联想或历史内容交织表现的写法。",
-            "example": "既写眼前景象，又想象故人重游时的感受",
-            "section": "* 蜀相"
-          },
-          {
-            "name": "今昔盛衰对比",
-            "difficulty": 3,
-            "description": "通过过去繁盛与眼前衰败形成对照",
-            "aliases": [],
-            "prerequisites": [
-              "虚实相间"
-            ],
-            "definition": "今昔盛衰对比是将城市昔日繁华与当下残破并置以强化感慨的表现手法。",
-            "example": "昔日长街繁华，今日只见废池乔木"
-          },
-          {
-            "name": "诗歌节奏韵律",
+            "name": "民歌色彩",
             "difficulty": 2,
-            "description": "诗歌由句式、声韵和节拍形成的音乐性",
+            "description": "语言口语化、形式自然、情感真切的诗歌特点",
             "aliases": [],
-            "prerequisites": [
-              "古典诗歌体式"
-            ],
-            "definition": "诗歌节奏韵律是诗句在字数、停顿、声调和押韵等方面形成的音乐美。",
-            "example": "杂言句式形成参差错落的节奏"
+            "prerequisites": [],
+            "definition": "民歌色彩是诗歌保留民间歌谣的口语表达、生活气息和真挚情感。",
+            "example": "《孔雀东南飞》的人物对话多为浅白口语。"
           },
           {
             "name": "对话塑造人物",
             "difficulty": 3,
-            "description": "通过人物对话表现性格并推进情节",
+            "description": "通过人物对话推动情节并展现人物性格",
             "aliases": [],
             "prerequisites": [
-              "叙事与抒情结合"
+              "叙事诗"
             ],
-            "definition": "对话塑造人物是借人物在不同情境中的语言和语气刻画形象、推动故事发展的方法。",
-            "example": "人物面对母亲和兄长时回答语气各不相同"
+            "definition": "对话塑造人物是借人物在不同情境中的语言表现其性格和处境。",
+            "example": "兰芝面对母亲和兄长时的回答语态不同。"
+          },
+          {
+            "name": "偏义复词",
+            "difficulty": 3,
+            "description": "两个语素组成而词义偏取其中一个的复音词",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "偏义复词是由两个相关或相反语素构成但整体只取其中一方意义的词。",
+            "example": "“作息”在“昼夜勤作息”中偏指劳作。"
+          },
+          {
+            "name": "杂言古体诗",
+            "difficulty": 3,
+            "description": "句式长短不齐、格律较为自由的古体诗",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "杂言古体诗是句式参差、格律不拘、形式灵活的古体诗。",
+            "example": "《蜀道难》句式长短错落，格律不拘。",
+            "section": "蜀相"
+          },
+          {
+            "name": "七言律诗",
+            "difficulty": 3,
+            "description": "以七言句为基本形式、结构严整的律诗",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "七言律诗是由七言诗句组成并具有严整格律和结构的诗体。",
+            "example": "《蜀相》是结构严整的七言律诗。",
+            "section": "蜀相"
+          },
+          {
+            "name": "词牌",
+            "difficulty": 2,
+            "description": "规定词的句式、字数和声韵格式的名称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "词牌是词调的名称，用以规定词的基本格律和音乐形式。",
+            "example": "《望海潮》和《扬州慢》都是词牌名。",
+            "section": "蜀相"
+          },
+          {
+            "name": "铺叙",
+            "difficulty": 3,
+            "description": "按层次铺陈描写对象以形成整体气势",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "铺叙是对景物、场面或事物进行层层展开描写的表现方式。",
+            "example": "《望海潮》铺写杭州风景、市井与生活。",
+            "section": "蜀相"
+          },
+          {
+            "name": "虚实相生",
+            "difficulty": 3,
+            "description": "交织实写与想象、联想以营造艺术境界",
+            "aliases": [],
+            "prerequisites": [
+              "意象",
+              "意境"
+            ],
+            "definition": "虚实相生是把眼前实景与想象、回忆或联想结合起来表现情感。",
+            "example": "《蜀道难》将山路实景与神话想象交织。",
+            "section": "蜀相"
+          },
+          {
+            "name": "意象",
+            "difficulty": 2,
+            "description": "寄托诗人情感和意味的具体物象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "意象是诗歌中融入主观情感和审美意味的景物或事物形象。",
+            "example": "“寒水”“清角”“空城”构成扬州的凄清意象。"
+          },
+          {
+            "name": "意境",
+            "difficulty": 3,
+            "description": "意象组合营造出的整体审美境界",
+            "aliases": [],
+            "prerequisites": [
+              "意象"
+            ],
+            "definition": "意境是诗歌通过意象组合和情感融合形成的整体艺术境界。",
+            "example": "《望海潮》营造出繁华热闹的城市意境。"
+          },
+          {
+            "name": "回旋复沓",
+            "difficulty": 3,
+            "description": "反复回环使用语句或表达以强化情感和节奏",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "回旋复沓是诗歌反复使用相近语句以形成回环节奏并强化情感的表达方式。",
+            "example": "《离骚》多用“兮”字形成回旋复沓的节奏。"
           }
         ],
         "sections": [
           {
-            "name": "离骚（节选）",
-            "page_range": [
-              11,
-              12
-            ]
-          },
-          {
-            "name": "2 * 孔雀东南飞并序",
-            "page_range": [
-              12,
-              19
-            ]
-          },
-          {
-            "name": "3 蜀道难",
+            "name": "蜀道难",
             "page_range": [
               19,
               21
             ]
           },
           {
-            "name": "* 蜀相",
+            "name": "蜀相",
             "page_range": [
               21,
               25
             ]
-          }
-        ]
-      },
-      {
-        "name": "古诗词诵读",
-        "concepts": [
-          {
-            "name": "古典诗歌",
-            "difficulty": 1,
-            "description": "中国古代诗歌的统称，以抒情诗为主",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "古典诗歌是中国古代创作的诗歌作品。",
-            "example": "古典诗歌中既有抒情诗，也有叙事诗"
           },
           {
-            "name": "抒情诗",
-            "difficulty": 1,
-            "description": "以抒发诗人情感为主要内容的诗歌",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "抒情诗是侧重表达思想感情的诗歌。",
-            "example": "诗歌借景物表达诗人的情怀"
+            "name": "望海潮(东南形胜)",
+            "page_range": [
+              25,
+              25
+            ]
           },
           {
-            "name": "叙事诗",
-            "difficulty": 2,
-            "description": "以叙述故事和刻画人物为主要内容的诗歌",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "叙事诗是侧重讲述事件、表现人物的诗歌。",
-            "example": "诗歌围绕婚姻爱情悲剧展开叙述"
-          },
-          {
-            "name": "民歌",
-            "difficulty": 2,
-            "description": "民间创作并流传的诗歌作品",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "民歌是由民间创作并在民众中流传的诗歌。",
-            "example": "古代民歌常表现普通人的生活与情感"
-          },
-          {
-            "name": "情节梳理",
-            "difficulty": 2,
-            "description": "按照事件发展脉络概括诗歌内容",
-            "aliases": [],
-            "prerequisites": [
-              "叙事诗"
-            ],
-            "definition": "情节梳理是依照事件发展的先后概括作品内容。",
-            "example": "按相遇、婚变、离异概括诗歌情节"
-          },
-          {
-            "name": "意象",
-            "difficulty": 2,
-            "description": "诗歌中寄托情感的具体物象",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "意象是诗歌中融入诗人情感的具体形象。",
-            "example": "月、江水等物象可构成诗歌意象"
-          },
-          {
-            "name": "意境",
-            "difficulty": 3,
-            "description": "由意象组合形成的诗歌艺术境界",
-            "aliases": [],
-            "prerequisites": [
-              "意象"
-            ],
-            "definition": "意境是诗歌意象组合后营造出的情景交融境界。",
-            "example": "冷落意象组合成凄清的意境"
-          },
-          {
-            "name": "虚实相生",
-            "difficulty": 3,
-            "description": "实写与虚写相互结合营造艺术境界",
-            "aliases": [],
-            "prerequisites": [
-              "意象"
-            ],
-            "definition": "虚实相生是将现实描写与想象联结起来表现诗境的手法。",
-            "example": "实写蜀道景象，辅以奇特想象"
-          },
-          {
-            "name": "表现手法",
-            "difficulty": 3,
-            "description": "诗歌表现内容和情感所采用的艺术方法",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "表现手法是诗人组织内容、塑造形象和抒发情感的方法。",
-            "example": "虚实相生是古典诗词常见的表现手法"
-          },
-          {
-            "name": "语言风格",
-            "difficulty": 3,
-            "description": "诗歌语言呈现出的整体表达特点",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "语言风格是诗歌语言在表达上的整体特色。",
-            "example": "比较两首诗语言的质朴与华丽"
-          },
-          {
-            "name": "诗歌主旨",
-            "difficulty": 3,
-            "description": "诗歌所表达的核心思想和感情",
-            "aliases": [
-              "主旨"
-            ],
-            "prerequisites": [
-              "意境"
-            ],
-            "definition": "诗歌主旨是作品通过形象和意境集中表达的思想情感。",
-            "example": "从意象和意境把握作品主旨"
-          },
-          {
-            "name": "意象组合",
-            "difficulty": 3,
-            "description": "诗歌中多个意象的选择与组织方式",
-            "aliases": [],
-            "prerequisites": [
-              "意象"
-            ],
-            "definition": "意象组合是诗人对不同意象进行选择、排列和联系的方式。",
-            "example": "比较两首词意象选取和组合的不同"
+            "name": "扬州慢(淮左名都)",
+            "page_range": [
+              25,
+              25
+            ]
           }
         ]
       },
@@ -417,376 +244,301 @@
         "name": "第二单元",
         "concepts": [
           {
-            "name": "小说",
-            "difficulty": 1,
-            "description": "以塑造人物、叙述故事和反映生活为主要特征的文学体裁",
+            "name": "现当代文学",
+            "difficulty": 2,
+            "description": "伴随中国近现代社会变革发展的文学",
+            "aliases": [
+              "中国现当代文学"
+            ],
+            "prerequisites": [],
+            "definition": "现当代文学是中国近现代社会变革的产物。",
+            "example": "鲁迅、沈从文等作家的作品",
+            "section": "茶馆(节选)"
+          },
+          {
+            "name": "文学体裁",
+            "difficulty": 2,
+            "description": "小说、诗歌、散文、话剧等文学样式",
             "aliases": [],
             "prerequisites": [],
-            "definition": "小说是通过人物、情节和环境来表现社会生活的文学体裁。",
-            "example": "通过阿Q的经历展现乡村社会"
+            "definition": "文学体裁是文学作品在表现方式和形式上的类别。",
+            "example": "本单元涵盖小说、诗歌、散文、话剧"
+          },
+          {
+            "name": "社会历史背景",
+            "difficulty": 2,
+            "description": "影响作品思想内涵和人物命运的时代环境",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会历史背景是作品产生及人物活动所处的时代环境。",
+            "example": "小说以辛亥革命前后的农村为背景"
+          },
+          {
+            "name": "民族心理",
+            "difficulty": 3,
+            "description": "文学作品中体现的民族共同心理特征",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "民族心理是特定民族在历史发展中形成的共同心理倾向。",
+            "example": "作品探索民族心理和时代精神",
+            "section": "茶馆(节选)"
+          },
+          {
+            "name": "时代精神",
+            "difficulty": 3,
+            "description": "文学作品所体现的时代思想和精神风貌",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "时代精神是某一历史时期社会思想和精神风貌的集中体现。",
+            "example": "作品表现百年来社会变革中的时代精神",
+            "section": "茶馆(节选)"
           },
           {
             "name": "精神胜利法",
             "difficulty": 3,
-            "description": "以自我欺骗和自我贬抑化解现实失败的心理方式",
+            "description": "以自我欺骗和精神想象化解现实失败",
             "aliases": [
               "阿Q精神"
             ],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "精神胜利法是阿Q把现实屈辱转换为心理胜利的自我安慰方式。",
-            "example": "挨打后说成“儿子打老子”"
-          },
-          {
-            "name": "国民性",
-            "difficulty": 4,
-            "description": "文学作品对民族共同心理弱点及精神状态的揭示",
-            "aliases": [],
-            "prerequisites": [
-              "精神胜利法"
-            ],
-            "definition": "国民性是一个民族在长期社会生活中形成的普遍心理与行为特征。",
-            "example": "阿Q的自欺反映国民精神弱点"
+            "prerequisites": [],
+            "definition": "精神胜利法是阿Q以心理上的虚假胜利来掩盖现实失败的方式。",
+            "example": "挨打后认为自己“第一个”自轻自贱"
           },
           {
             "name": "典型人物",
             "difficulty": 3,
-            "description": "集中体现某类社会人物特征并具有概括意义的人物",
+            "description": "集中体现某类社会性格和精神特征的人物",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "典型人物是具有鲜明个性并集中反映社会普遍特征的人物形象。",
-            "example": "阿Q兼具个人遭遇和社会意义",
-            "section": "5 阿Q正传(节选)"
+            "prerequisites": [],
+            "definition": "典型人物是具有鲜明个性并集中反映社会特征的人物形象。",
+            "example": "阿Q集中体现旧中国国民的某些弱点",
+            "section": "边城(节选)"
           },
           {
-            "name": "幽默手法",
-            "difficulty": 2,
-            "description": "用诙谐表达造成趣味并寄寓意味的表现手法",
-            "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "幽默手法是通过诙谐有趣的叙述引发笑意并传达思想的手法。",
-            "example": "阿Q一本正经地解释挨打"
-          },
-          {
-            "name": "夸张手法",
-            "difficulty": 2,
-            "description": "有意扩大或缩小事物特征以增强表现效果的手法",
-            "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "夸张手法是对事物特征或情节效果进行有意强化的表现手法。",
-            "example": "把普通癞疮写成高尚光荣"
-          },
-          {
-            "name": "讽刺手法",
+            "name": "喜剧表象",
             "difficulty": 3,
-            "description": "用反常、反语或夸张揭露对象矛盾与弊病的手法",
+            "description": "以可笑情节和人物言行呈现的表层效果",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "讽刺手法是通过表面肯定或诙谐描写来揭示对象荒谬与弊病的手法。",
-            "example": "阿Q以自贱取得心理胜利"
+            "prerequisites": [],
+            "definition": "喜剧表象是作品通过滑稽场面和可笑言行形成的表层艺术效果。",
+            "example": "阿Q挨打后仍认为自己精神上得胜",
+            "section": "边城(节选)"
           },
           {
-            "name": "喜剧悲剧意味",
-            "difficulty": 4,
-            "description": "作品表面引人发笑而深层呈现人物苦难与社会悲剧",
+            "name": "悲剧意味",
+            "difficulty": 3,
+            "description": "喜剧或温暖表象下潜藏的痛苦与悲凉",
             "aliases": [],
-            "prerequisites": [
-              "典型人物"
-            ],
-            "definition": "喜剧悲剧意味是喜剧性情节背后隐藏着人物悲惨命运和社会悲剧。",
-            "example": "阿Q的可笑结局令人感到悲凉"
+            "prerequisites": [],
+            "definition": "悲剧意味是作品表层情节背后呈现的深层苦难和悲凉。",
+            "example": "阿Q的可笑背后是精神和现实的双重悲剧",
+            "section": "边城(节选)"
           },
           {
             "name": "散文化小说",
             "difficulty": 3,
-            "description": "小说融入散文笔调，重视抒情、写景和生活氛围",
+            "description": "融合小说叙事与散文抒情写法的小说",
             "aliases": [],
             "prerequisites": [
-              "小说"
+              "文学体裁"
             ],
-            "definition": "散文化小说是以小说叙事为基础并具有散文式抒情和写景特点的小说。",
-            "example": "湘西生活描写富有抒情意味"
+            "definition": "散文化小说是具有小说叙事因素并带有散文抒情特点的小说。",
+            "example": "作品描写湘西风物并寄托人生理想"
           },
           {
-            "name": "田园牧歌情调",
-            "difficulty": 3,
-            "description": "表现乡村宁静淳朴与人性美好的审美情调",
-            "aliases": [],
-            "prerequisites": [
-              "散文化小说"
-            ],
-            "definition": "田园牧歌情调是对和谐乡村生活及纯美人性的诗意化表现。",
-            "example": "节日风俗呈现宁静淳朴的生活",
-            "section": "5 阿Q正传(节选)"
-          },
-          {
-            "name": "风土人情描写",
+            "name": "风俗描写",
             "difficulty": 2,
-            "description": "对地域性的生活习俗、节庆活动和民情风貌的描写",
+            "description": "对地方节日、习俗和生活方式的具体描写",
             "aliases": [],
-            "prerequisites": [
-              "散文化小说"
-            ],
-            "definition": "风土人情描写是通过地方习俗和日常生活展现地域文化风貌的描写。",
-            "example": "端午划船、追鸭子的活动"
-          },
-          {
-            "name": "人物描写",
-            "difficulty": 2,
-            "description": "通过人物行动、语言和心理表现人物性格特征",
-            "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "人物描写是对人物行动、语言、心理等进行刻画以塑造形象的方法。",
-            "example": "翠翠听鼓声时的动作与心情"
+            "prerequisites": [],
+            "definition": "风俗描写是对特定地域社会生活习惯和民间活动的描写。",
+            "example": "端午节赛龙船、追赶鸭子"
           },
           {
             "name": "景物描写",
             "difficulty": 2,
-            "description": "对自然景物及其声色状态进行描绘以营造氛围",
+            "description": "通过自然景物呈现环境并寄托情感",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "景物描写是对自然环境进行具体描绘并服务于情感和主题表达的方法。",
-            "example": "溪水、树林衬托山村的幽静"
-          },
-          {
-            "name": "人性善良美好",
-            "difficulty": 3,
-            "description": "作品对普通人真诚、互助、淳朴等人性品质的表现",
-            "aliases": [],
-            "prerequisites": [
-              "人物描写"
-            ],
-            "definition": "人性善良美好是作品对人物真诚友爱和淳朴品格的肯定性呈现。",
-            "example": "老人把救人视为不可逃避的责任"
+            "prerequisites": [],
+            "definition": "景物描写是对自然环境和景物特征的描写。",
+            "example": "泉水、鼠麴草和有加利树引发联想"
           },
           {
             "name": "自由体诗",
-            "difficulty": 2,
-            "description": "句式、行数和节奏较自由的现代诗歌形式",
+            "difficulty": 3,
+            "description": "不拘固定格律、形式较自由的现代诗体",
             "aliases": [
               "现代自由体诗"
             ],
-            "prerequisites": [],
-            "definition": "自由体诗是不拘守传统格律而以自然节奏和情感表达为重的现代诗体。",
-            "example": "诗行长短随情感自然变化",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "直接抒情",
-            "difficulty": 2,
-            "description": "作者或抒情主体直接表达思想感情的抒情方式",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "直接抒情是抒情主体不借助完整故事而直接倾诉情感的方式。",
-            "example": "直接表达对保姆的敬爱",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "叙述描写抒情",
-            "difficulty": 3,
-            "description": "借助叙事和具体描写积累、深化诗歌情感的方式",
-            "aliases": [],
             "prerequisites": [
-              "直接抒情"
+              "文学体裁"
             ],
-            "definition": "叙述描写抒情是通过讲述经历和描绘细节来含蓄强化情感的方式。",
-            "example": "连续写劳动细节表现深厚母爱"
+            "definition": "自由体诗是不受严格格律限制、依靠自然节奏抒情的现代诗体。",
+            "example": "诗中长短句自由铺陈对保姆的感情",
+            "section": "再别康桥"
           },
           {
             "name": "新月派三美",
             "difficulty": 3,
-            "description": "新月派诗歌追求音乐美、绘画美和建筑美的形式主张",
+            "description": "新诗格律化追求的音乐美、绘画美、建筑美",
             "aliases": [
               "三美"
             ],
-            "prerequisites": [],
-            "definition": "新月派三美是新月派关于诗歌音乐、画面和结构形式的审美要求。",
-            "example": "诗歌节奏整齐且意象色彩鲜明",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "音乐美",
-            "difficulty": 2,
-            "description": "诗歌通过节奏、韵律和音响形成听觉美感",
-            "aliases": [],
             "prerequisites": [
-              "新月派三美"
+              "文学体裁"
             ],
-            "definition": "音乐美是诗歌语言在节奏韵律和声音安排上形成的和谐美感。",
-            "example": "反复“轻轻的”形成舒缓节奏",
-            "section": "* 再别康桥"
+            "definition": "新月派三美指新诗在音乐、画面和诗行结构上的形式追求。",
+            "example": "诗歌以节奏、意象和分节体现三美",
+            "section": "再别康桥"
           },
           {
-            "name": "绘画美",
+            "name": "直接抒情",
             "difficulty": 2,
-            "description": "诗歌借助色彩、形象和意象组合形成画面美感",
-            "aliases": [],
-            "prerequisites": [
-              "新月派三美"
-            ],
-            "definition": "绘画美是诗歌通过鲜明意象和色彩描写构成可感画面的美感。",
-            "example": "金柳、彩虹和星辉构成画面",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "建筑美",
-            "difficulty": 2,
-            "description": "诗歌通过诗节、诗行和排列形式形成结构美感",
-            "aliases": [],
-            "prerequisites": [
-              "新月派三美"
-            ],
-            "definition": "建筑美是诗歌在篇章、诗节和诗行的组织排列中形成的形式美。",
-            "example": "各节句式整齐，篇章结构匀称",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "现代文学风格",
-            "difficulty": 3,
-            "description": "现代作家在思想表达、艺术特色和语言运用上的独特面貌",
+            "description": "直接表达作者或抒情主人公的情感",
             "aliases": [],
             "prerequisites": [],
-            "definition": "现代文学风格是作家作品在创作理念、艺术表现和语言形式上的综合特征。",
-            "example": "鲁迅的讽刺与沈从文的抒情形成差异"
+            "definition": "直接抒情是不借助完整叙事而直接抒发感情的表达方式。",
+            "example": "诗中直接称颂并表达对保姆的敬爱",
+            "section": "再别康桥"
           },
           {
             "name": "戏剧冲突",
             "difficulty": 3,
-            "description": "剧中人物、人物与社会或不同力量之间的矛盾对抗",
+            "description": "人物之间或人物与时代之间的矛盾对立",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "戏剧冲突是推动戏剧情节发展并展现人物与时代矛盾的对抗关系。",
-            "example": "茶客因言论被差役拘捕",
-            "section": "* 秦腔"
+            "prerequisites": [
+              "文学体裁"
+            ],
+            "definition": "戏剧冲突是剧中人物、群体或人与时代之间的矛盾对抗。",
+            "example": "茶客因言论被捕形成戏剧冲突",
+            "section": "茶馆(节选)"
           },
           {
-            "name": "时代横断面",
+            "name": "横断面结构",
             "difficulty": 4,
-            "description": "截取特定历史时期的社会切面呈现时代风貌",
+            "description": "截取不同历史时期的社会生活片段来组剧",
             "aliases": [],
             "prerequisites": [
               "戏剧冲突"
             ],
-            "definition": "时代横断面是通过一个阶段的生活场景集中展示社会状况的结构方式。",
-            "example": "茶馆场景呈现晚清社会风貌"
+            "definition": "横断面结构是通过截取不同时代的生活片段展示社会变迁的结构方式。",
+            "example": "全剧截取旧中国三个时代的社会横断面"
           },
           {
             "name": "京味语言",
-            "difficulty": 2,
-            "description": "具有北京地域特色、口语色彩和身份差异的戏剧语言",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "具有北京口语和地方风俗色彩的戏剧语言",
+            "aliases": [
+              "响嗑儿脆"
+            ],
             "prerequisites": [],
-            "definition": "京味语言是融入北京方言、口语习惯和地域文化色彩的语言风格。",
-            "example": "人物使用“爷”“嗻”等称谓语",
-            "section": "* 秦腔"
+            "definition": "京味语言是融入北京口语习惯和地域文化色彩的语言风格。",
+            "example": "人物对话使用“嘛”“您甭”等北京口语",
+            "section": "茶馆(节选)"
           },
           {
             "name": "语言锤炼",
             "difficulty": 2,
-            "description": "反复推敲词句以使表达准确、生动并富有艺术性",
+            "description": "推敲字句以使表达准确、生动并富有艺术性",
             "aliases": [],
             "prerequisites": [],
-            "definition": "语言锤炼是为获得准确、鲜明、富有表现力的表达而推敲语言的过程。",
-            "example": "反复使用“忽忽不乐”强化失落感"
+            "definition": "语言锤炼是对词语、句式和修辞进行推敲以提升表达效果。",
+            "example": "反复使用“忽忽不乐”表现阿Q的失意"
           },
           {
-            "name": "词语推敲",
+            "name": "推敲词语",
             "difficulty": 2,
-            "description": "选择最准确、生动、鲜明且富于变化的词语",
+            "description": "选择最准确、生动、鲜明的词语表达意思",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "词语推敲是根据表达需要反复选择最恰当词语的语言训练。",
-            "example": "用“荡漾”表现心中持续的波动"
+            "definition": "推敲词语是从近似词语中选择最适合语境和表达目的的词语。",
+            "example": "用“飘飘然”表现阿Q得意忘形",
+            "section": "茶馆(节选)"
           },
           {
-            "name": "句式运用",
+            "name": "句式变化",
             "difficulty": 2,
-            "description": "灵活安排长短句、整散句及不同语气句式",
+            "description": "灵活运用长短句、整散句和不同语气句式",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "句式运用是根据思想感情和表达节奏选择并组合不同句式的方法。",
-            "example": "长短句交错写出秦腔场面的喧闹"
+            "definition": "句式变化是根据思想感情和节奏需要灵活安排句子形式。",
+            "example": "长短句交错表现秦腔场面的热闹"
           },
           {
-            "name": "修辞运用",
+            "name": "巧用修辞",
             "difficulty": 2,
-            "description": "恰当使用修辞增强语言的表现力和感染力",
+            "description": "恰当运用修辞增强语言表现力和感染力",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "修辞运用是借助特定语言方式增强表达形象性和感染力的方法。",
-            "example": "把情感写成追随唢呐远去"
+            "definition": "巧用修辞是根据表达需要运用修辞手法增强语言效果。",
+            "example": "将情感写成追随唢呐声远去",
+            "section": "茶馆(节选)"
           },
           {
             "name": "情趣与理趣",
             "difficulty": 3,
-            "description": "语言既具有生动趣味，又能体现思想意味和理性思考",
+            "description": "语言兼具趣味性和思想意味的表达品质",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "情趣与理趣是语言在富有生活趣味的同时蕴含思想意味的表达追求。",
-            "example": "生动叙写日常又引发对社会的思考"
+            "definition": "情趣与理趣是语言既有生动趣味又能表现情感或道理的品质。",
+            "example": "记叙文渲染情趣，议论文表现理趣"
           }
         ],
         "sections": [
           {
-            "name": "5 阿Q正传（节选）",
+            "name": "阿Q正传(节选)",
             "page_range": [
-              45,
-              45
+              27,
+              34
             ]
           },
           {
-            "name": "* 边城（节选）",
+            "name": "边城(节选)",
             "page_range": [
-              45,
+              34,
               46
             ]
           },
           {
-            "name": "6 大堰河——我的保姆",
+            "name": "大堰河——我的保姆",
             "page_range": [
               46,
               50
             ]
           },
           {
-            "name": "* 再别康桥",
+            "name": "再别康桥",
             "page_range": [
               50,
               52
             ]
           },
           {
-            "name": "7 一个消逝了的山村",
+            "name": "一个消逝了的山村",
             "page_range": [
               52,
               55
             ]
           },
           {
-            "name": "* 秦腔",
+            "name": "秦腔",
             "page_range": [
               55,
+              60
+            ]
+          },
+          {
+            "name": "茶馆(节选)",
+            "page_range": [
+              60,
               73
             ]
           }
@@ -801,260 +553,349 @@
             "description": "魏晋至明代散文体裁多样、风格各异",
             "aliases": [],
             "prerequisites": [],
-            "definition": "古代散文是以记事、抒情或说理为主要内容的文章体裁。",
-            "example": "六篇文章呈现古代散文的多样面貌",
-            "section": "12 * 石钟山记"
+            "definition": "古代散文是以自由灵活的形式承载情感、思想和文化观念的文章。",
+            "example": "同单元文章有的抒情，有的说理。",
+            "section": "石钟山记"
           },
           {
-            "name": "表文体",
+            "name": "表文",
             "difficulty": 2,
-            "description": "古代臣子向皇帝陈述事情、表达请求的文体",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "表是臣子向皇帝陈述事情、表达请求或谢意的文体。",
-            "example": "向皇帝请求暂不奉诏"
-          },
-          {
-            "name": "委婉得体",
-            "difficulty": 3,
-            "description": "语言切合身份，以恭敬自谦表达真实请求",
+            "description": "古代臣子向皇帝陈述请求的文体",
             "aliases": [],
             "prerequisites": [
-              "表文体"
+              "古代散文"
             ],
-            "definition": "委婉得体是根据交际对象和身份恰当表达态度与诉求。",
-            "example": "用“伏惟”“谨”等词表达恭敬"
-          },
-          {
-            "name": "孝道观念",
-            "difficulty": 2,
-            "description": "以奉养祖辈、尊亲尽孝为重要价值准则",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "孝道观念是尊敬父母长辈并承担奉养责任的传统文化观念。",
-            "example": "愿乞终养祖母"
+            "definition": "表是古代臣子向皇帝陈述事实、表达请求或谢意的文体。",
+            "example": "向皇帝请求暂缓赴任。",
+            "section": "项脊轩志"
           },
           {
             "name": "志文体",
             "difficulty": 2,
-            "description": "记叙身边事物和生活琐事以寄托情感的文体",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "志是一种记事写物、寄托情感的古代散文文体。",
-            "example": "记写一间小屋及家庭往事"
-          },
-          {
-            "name": "细节传情",
-            "difficulty": 3,
-            "description": "通过日常琐事、动作和物件含蓄表现深情",
+            "description": "记叙生活见闻和身边琐事的文体",
             "aliases": [],
             "prerequisites": [
-              "志文体"
+              "古代散文"
             ],
-            "definition": "细节传情是借具体生活细节表现人物情感和关系。",
-            "example": "枇杷树是妻子去世时亲手所植"
+            "definition": "志是一种记叙人物、事件、景物或生活杂事的古代文体。",
+            "example": "记录书斋环境与家庭往事。"
           },
           {
-            "name": "序与辞",
-            "difficulty": 3,
-            "description": "序以散体叙事，辞以骈体抒情",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "序与辞是同篇中分别承担叙事说明和抒情表达功能的文体部分。",
-            "example": "序写辞官缘由，辞写归田之乐"
-          },
-          {
-            "name": "生死哲思",
-            "difficulty": 3,
-            "description": "由雅集游赏引发对时间、生命和生死的思考",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "生死哲思是对生命短暂、生死重大及人生意义的哲理思考。",
-            "example": "死生亦大矣"
-          },
-          {
-            "name": "情理交融",
-            "difficulty": 3,
-            "description": "文章既抒发真挚情感，又融入深刻理趣",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "情理交融是情感表达与道理思考相互结合的写作特点。",
-            "example": "由曲水流觞之乐转入生死之叹",
-            "section": "归去来兮辞并序"
-          },
-          {
-            "name": "骈散结合",
-            "difficulty": 3,
-            "description": "骈句与散句相互配合以表情达意",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "骈散结合是整齐对偶的骈句和自由灵活的散句交错使用。",
-            "example": "仰观宇宙之大，俯察品类之盛",
-            "section": "12 * 石钟山记"
-          },
-          {
-            "name": "对偶句",
+            "name": "辞文体",
             "difficulty": 2,
-            "description": "相同位置词语相对，语义相近或相反的句子",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "对偶句是结构相称、字数相等、意义相关的成对句子。",
-            "example": "悟已往之不谏，知来者之可追",
-            "section": "归去来兮辞并序"
-          },
-          {
-            "name": "归程结构",
-            "difficulty": 3,
-            "description": "按归程、归舍、归园、归田、归尽组织全文",
+            "description": "押韵并善于铺陈咏叹的古代文体",
             "aliases": [],
             "prerequisites": [
-              "章法"
+              "古代散文"
             ],
-            "definition": "归程结构是围绕回归田园的行程和生活层层展开文章内容。",
-            "example": "全文由归程写起，结于归尽"
-          },
-          {
-            "name": "辞的语言特色",
-            "difficulty": 3,
-            "description": "反复咏叹，骈偶押韵，语言清新自然",
-            "aliases": [],
-            "prerequisites": [
-              "序与辞"
-            ],
-            "definition": "辞的语言特色表现为骈偶押韵与反复咏叹相结合。",
-            "example": "归去来兮，田园将芜胡不归"
-          },
-          {
-            "name": "因事明理",
-            "difficulty": 3,
-            "description": "借种树故事说明治民道理，针砭现实弊政",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "因事明理是从具体事件或经验出发阐发普遍道理。",
-            "example": "由种树之道推及官理",
-            "section": "11 * 种树郭橐驼传"
-          },
-          {
-            "name": "顺应本性",
-            "difficulty": 3,
-            "description": "依照树木天性生长，不妄加干预和扰乱",
-            "aliases": [],
-            "prerequisites": [
-              "因事明理"
-            ],
-            "definition": "顺应本性是遵循事物自身规律并减少过度干预。",
-            "example": "勿动勿虑，去不复顾"
-          },
-          {
-            "name": "类比说理",
-            "difficulty": 3,
-            "description": "以种树与治民相类比，委婉讽刺政令烦扰",
-            "aliases": [],
-            "prerequisites": [
-              "因事明理"
-            ],
-            "definition": "类比说理是借相似事物的规律说明另一事物的道理。",
-            "example": "以养树之术说明养民之道"
-          },
-          {
-            "name": "传记写法",
-            "difficulty": 2,
-            "description": "从人物姓名、职业和特长写起并记述关键言论",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "传记写法是围绕人物经历、身份和言行组织叙述的方式。",
-            "example": "先写人物得名，再写种树本领"
+            "definition": "辞是古代一种讲究押韵、适合抒情咏叹的文体。",
+            "example": "反复咏叹归隐田园的心情。"
           },
           {
             "name": "游记",
             "difficulty": 2,
-            "description": "记叙出游缘由、所见所闻及游览后的感想",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "游记是记述游览经历并表达见闻感想的散文体裁。",
-            "example": "乘小舟夜探山石声响",
-            "section": "12 * 石钟山记"
-          },
-          {
-            "name": "求真务实",
-            "difficulty": 3,
-            "description": "重视亲身观察验证，反对未经考察的主观臆断",
+            "description": "记叙出游经历、见闻和感想的文章",
             "aliases": [],
             "prerequisites": [
-              "游记"
+              "古代散文"
             ],
-            "definition": "求真务实是以实际观察和验证为依据探究事物真相。",
-            "example": "事不目见耳闻，而臆断其有无，可乎"
+            "definition": "游记是以出游过程为线索记述所见所闻并抒发感想的散文。",
+            "example": "记述夜游山石并辨析其声响。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "骈散结合",
+            "difficulty": 3,
+            "description": "骈句与散句交错使用的行文方式",
+            "aliases": [],
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "骈散结合是文章交替使用整齐对偶句和自由散句的表达方式。",
+            "example": "整齐铺陈景物，散句推进议论。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "对偶",
+            "difficulty": 2,
+            "description": "结构相同、意义相关或相反的句式",
+            "aliases": [],
+            "prerequisites": [
+              "骈散结合"
+            ],
+            "definition": "对偶是把字数相等、结构相近、意义相连的两个句子相对排列。",
+            "example": "仰观宇宙之大，俯察品类之盛。",
+            "section": "兰亭集序"
           },
           {
             "name": "章法",
             "difficulty": 3,
-            "description": "文章的整体结构及各部分之间的组织联系",
+            "description": "文章的结构安排及各部分的内部联系",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "章法是文章安排结构、组织层次并建立内部关联的方法。",
-            "example": "文章由归程层层写到归尽",
-            "section": "12 * 石钟山记"
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "章法是文章组织材料、安排层次和形成内部联系的方法。",
+            "example": "文章由归程写到归舍、归园、归田。",
+            "section": "石钟山记"
           },
           {
             "name": "评点",
             "difficulty": 2,
-            "description": "品析文章内容、语言和写法并作概括评论的方法",
+            "description": "品析文章内容、语言和写法的阅读方法",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "评点是细读文章后对其内容和表达特点进行简要评论。",
-            "example": "评说深夜探访一段的绘声效果",
-            "section": "12 * 石钟山记"
+            "prerequisites": [
+              "章法"
+            ],
+            "definition": "评点是对诗文的内容、结构、语言或情感作简要分析和评价。",
+            "example": "评说一处细节为何情感浓厚。",
+            "section": "石钟山记"
           },
           {
             "name": "词类活用",
             "difficulty": 3,
-            "description": "文言词语在特定语境中临时改变意义或用法",
+            "description": "文言词语在语境中临时改变意义或用法",
             "aliases": [],
             "prerequisites": [],
             "definition": "词类活用是文言词语依据语境临时改变词性或用法的现象。",
-            "example": "“舟行”中的“舟”名词作状语",
-            "section": "12 * 石钟山记"
+            "example": "“舟行”中的“舟”名词作状语。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "以情感人",
+            "difficulty": 2,
+            "description": "通过真挚情感感染读者的表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "以情感人是借助真实、强烈而动人的情感打动读者。",
+            "example": "写祖孙相依以打动皇帝。",
+            "section": "项脊轩志"
+          },
+          {
+            "name": "以理服人",
+            "difficulty": 2,
+            "description": "通过道理和逻辑说服读者的表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "以理服人是通过清晰的道理和严密的联系使读者信服。",
+            "example": "用孝道说明暂不赴任的理由。"
+          },
+          {
+            "name": "情理交融",
+            "difficulty": 3,
+            "description": "情感抒发与哲理思考相互结合",
+            "aliases": [],
+            "prerequisites": [
+              "以情感人",
+              "以理服人"
+            ],
+            "definition": "情理交融是文章既抒发真切情感又进行深入思考的表达特点。",
+            "example": "由宴集之乐思考生命短暂。",
+            "section": "兰亭集序"
+          },
+          {
+            "name": "孝道",
+            "difficulty": 2,
+            "description": "尊敬、奉养父母和长辈的传统伦理观念",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "孝道是以敬爱和奉养长辈为核心的传统文化观念。",
+            "example": "请求奉养病重的祖母。",
+            "section": "项脊轩志"
+          },
+          {
+            "name": "志物怀人",
+            "difficulty": 3,
+            "description": "借身边物件和环境寄托对亲人的怀念",
+            "aliases": [],
+            "prerequisites": [
+              "志文体"
+            ],
+            "definition": "志物怀人是通过描写物品、居所或景物来追忆和怀念人物。",
+            "example": "枇杷树寄托对亡妻的思念。",
+            "section": "项脊轩志"
+          },
+          {
+            "name": "细节抒情",
+            "difficulty": 3,
+            "description": "通过具体生活细节表现深厚情感",
+            "aliases": [],
+            "prerequisites": [
+              "以情感人"
+            ],
+            "definition": "细节抒情是借日常动作、语言和小事含蓄表现人物情感。",
+            "example": "祖母阖门自语并赠象笏。"
+          },
+          {
+            "name": "生死哲思",
+            "difficulty": 3,
+            "description": "对生命短暂、生死归宿等问题的思考",
+            "aliases": [],
+            "prerequisites": [
+              "情理交融"
+            ],
+            "definition": "生死哲思是围绕生命有限和生死意义展开的哲理思考。",
+            "example": "感叹人生短暂、死生重大。"
+          },
+          {
+            "name": "归隐田园",
+            "difficulty": 2,
+            "description": "辞去官职、回归自然田园的生活选择",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "归隐田园是拒绝或摆脱仕途，选择回归乡居自然的生活方式。",
+            "example": "辞官回家，耕作、游园、饮酒。"
+          },
+          {
+            "name": "顺应自然",
+            "difficulty": 3,
+            "description": "尊重事物本性和自然规律而不过度干预",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "顺应自然是依循事物自身规律，使其保持本性并自然发展。",
+            "example": "种树后不妄加摇动和照看。"
+          },
+          {
+            "name": "因事明理",
+            "difficulty": 3,
+            "description": "从具体事件和经验中揭示普遍道理",
+            "aliases": [],
+            "prerequisites": [
+              "以理服人"
+            ],
+            "definition": "因事明理是先叙述具体事情，再由事情推导出深层道理。",
+            "example": "由种树方法说明治理百姓的道理。",
+            "section": "种树郭橐驼传"
+          },
+          {
+            "name": "类比说理",
+            "difficulty": 3,
+            "description": "借相似事物说明另一领域道理的论证方式",
+            "aliases": [],
+            "prerequisites": [
+              "因事明理"
+            ],
+            "definition": "类比说理是把性质相近的事物进行比较以阐明观点。",
+            "example": "以养树类比养民。"
+          },
+          {
+            "name": "对举说理",
+            "difficulty": 3,
+            "description": "用相对并列的语句突出事物差异",
+            "aliases": [],
+            "prerequisites": [
+              "对偶",
+              "以理服人"
+            ],
+            "definition": "对举说理是通过两种相反或相对情况的并列来增强说服力。",
+            "example": "虽曰爱之，其实害之。"
+          },
+          {
+            "name": "婉而多讽",
+            "difficulty": 3,
+            "description": "语言委婉含蓄而具有讽刺意味的写法",
+            "aliases": [],
+            "prerequisites": [
+              "类比说理"
+            ],
+            "definition": "婉而多讽是借委婉叙事和寓意表达对现实问题的批评。",
+            "example": "借种树者之口讽刺政令繁多。",
+            "section": "种树郭橐驼传"
+          },
+          {
+            "name": "求真务实",
+            "difficulty": 2,
+            "description": "重视亲身观察验证、不凭主观臆断",
+            "aliases": [],
+            "prerequisites": [
+              "以理服人"
+            ],
+            "definition": "求真务实是以实际观察和验证为依据探求事实真相的精神。",
+            "example": "夜泊绝壁亲自考察山石声响。"
+          },
+          {
+            "name": "质疑精神",
+            "difficulty": 2,
+            "description": "对已有说法保持疑问并主动探究",
+            "aliases": [],
+            "prerequisites": [
+              "求真务实"
+            ],
+            "definition": "质疑精神是面对前人结论不盲从并追问其真实性的态度。",
+            "example": "连续怀疑两种石钟山得名说法。"
+          },
+          {
+            "name": "说真话抒真情",
+            "difficulty": 2,
+            "description": "真实表达心声、经历和情感的写作要求",
+            "aliases": [],
+            "prerequisites": [
+              "以情感人"
+            ],
+            "definition": "说真话抒真情要求坦诚记录真实经历并表达真实感受。",
+            "example": "写信说明自己的选择及真实理由。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "委婉得体",
+            "difficulty": 3,
+            "description": "根据身份和情境恰当、含蓄地表达诉求",
+            "aliases": [],
+            "prerequisites": [
+              "表文",
+              "说真话抒真情"
+            ],
+            "definition": "委婉得体是切合身份和场合，以恭敬含蓄的方式表达真实意愿。",
+            "example": "用“伏惟”“谨”等词向皇帝陈情。"
+          },
+          {
+            "name": "合理虚构",
+            "difficulty": 3,
+            "description": "基于生活可能性进行有文学意义的虚构",
+            "aliases": [],
+            "prerequisites": [
+              "说真话抒真情"
+            ],
+            "definition": "合理虚构是在符合生活逻辑的前提下创造可能发生的情节。",
+            "example": "文学作品虚构人物经历但保持生活真实感。",
+            "section": "石钟山记"
           }
         ],
         "sections": [
           {
-            "name": "9 陈情表",
+            "name": "陈情表",
             "page_range": [
               75,
               77
             ]
           },
           {
-            "name": "* 项脊轩志",
+            "name": "项脊轩志",
             "page_range": [
               77,
               80
             ]
           },
           {
-            "name": "10 兰亭集序",
+            "name": "兰亭集序",
             "page_range": [
               80,
-              82
-            ]
-          },
-          {
-            "name": "归去来兮辞并序",
-            "page_range": [
-              82,
               86
             ]
           },
           {
-            "name": "11 * 种树郭橐驼传",
+            "name": "种树郭橐驼传",
             "page_range": [
               86,
               88
             ]
           },
           {
-            "name": "12 * 石钟山记",
+            "name": "石钟山记",
             "page_range": [
               88,
               91
@@ -1068,24 +909,58 @@
           {
             "name": "科学精神",
             "difficulty": 2,
-            "description": "以理性、严谨态度探索和认识自然",
+            "description": "自然科学论著中体现的理性、严谨态度",
             "aliases": [],
             "prerequisites": [],
-            "definition": "科学精神是以求真为目标并重视理性、严谨和实践检验的探索态度。",
-            "example": "用观测事实检验宇宙学说。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "科学精神是以理性、严谨和求真为基础探索自然的态度。",
+            "example": "面对未知既勇于怀疑，又尊重事实。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "自然科学论著",
+            "difficulty": 2,
+            "description": "阐明科学原理、介绍科学知识的论著",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然科学论著是运用科学事实和推理阐述自然规律的文章。",
+            "example": "通过事实和推论说明生物演化。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "科普作品",
+            "difficulty": 2,
+            "description": "用通俗语言介绍科学知识的作品",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "科普作品是以易于理解的方式向公众介绍科学知识的作品。",
+            "example": "用宇宙漫游的顺序介绍星系和行星。",
+            "section": "自然选择的证明"
           },
           {
             "name": "自然选择",
-            "difficulty": 5,
-            "description": "保存有利变异并淘汰不利变异的过程",
-            "aliases": [],
-            "prerequisites": [
-              "个体差异",
-              "遗传变异"
+            "difficulty": 4,
+            "description": "保存有利变异、淘汰不利类型的自然力量",
+            "aliases": [
+              "最适者生存"
             ],
-            "definition": "自然选择是生物在生存竞争中保存有利变异、淘汰不利变异的过程。",
-            "example": "适应环境的变异逐代积累。"
+            "prerequisites": [
+              "遗传变异",
+              "生存竞争"
+            ],
+            "definition": "自然选择是生物在生存竞争中保存有利变异并积累改良的过程。",
+            "example": "有利变异的后代逐渐取代旧类型。"
+          },
+          {
+            "name": "遗传变异",
+            "difficulty": 3,
+            "description": "生物性状在遗传延续中产生差异的现象",
+            "aliases": [
+              "连续变异"
+            ],
+            "prerequisites": [],
+            "definition": "遗传变异是生物后代继承性状并产生差异的现象。",
+            "example": "同一物种的后代出现微小性状差异。",
+            "section": "自然选择的证明"
           },
           {
             "name": "个体差异",
@@ -1093,103 +968,75 @@
             "description": "同一物种个体之间存在的细微差别",
             "aliases": [],
             "prerequisites": [],
-            "definition": "个体差异是同一物种不同个体在性状等方面存在的差别。",
-            "example": "同种鸟类的体色略有不同。",
-            "section": "13 自然选择的证明"
+            "definition": "个体差异是同一物种不同个体在性状上的差别。",
+            "example": "同种鸟类个体的体色略有不同。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "遗传变异",
-            "difficulty": 4,
-            "description": "生物性状在遗传基础上的变化现象",
+            "name": "生存竞争",
+            "difficulty": 3,
+            "description": "有限生存空间中生物之间的竞争",
             "aliases": [
-              "遗传变异理论"
+              "竞争"
             ],
             "prerequisites": [
-              "个体差异"
+              "遗传变异"
             ],
-            "definition": "遗传变异是生物性状发生变化并能在世代间传递的现象。",
-            "example": "有利性状在后代中逐渐增多。",
-            "section": "13 自然选择的证明"
+            "definition": "生存竞争是生物为生存和繁殖而争夺有限条件的过程。",
+            "example": "优势类型在竞争中排挤较弱类型。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "适者生存",
+            "name": "性选择",
             "difficulty": 3,
-            "description": "有利变异个体更易存活并繁殖",
+            "description": "使繁殖相关性状得到保存和发展的选择",
             "aliases": [],
             "prerequisites": [
               "自然选择"
             ],
-            "definition": "适者生存指适应环境的生物更可能生存下来并繁殖后代。",
-            "example": "适应寒冷的个体留下更多后代。",
-            "section": "13 自然选择的证明"
+            "definition": "性选择是与繁殖有关的选择力量对生物性状的保存和发展。",
+            "example": "雄鸟鲜艳色泽和优美体态得到保留。",
+            "section": "自然选择的证明"
           },
           {
             "name": "共同祖先",
             "difficulty": 3,
-            "description": "不同生物类型共同追溯的祖先类型",
-            "aliases": [],
+            "description": "不同生物类型共同来源的祖先类型",
+            "aliases": [
+              "世系关系"
+            ],
             "prerequisites": [
               "遗传变异"
             ],
-            "definition": "共同祖先是不同现生或绝灭生物通过世系关系共同追溯的祖先。",
-            "example": "近缘物种可追溯到共同祖先。",
-            "section": "13 自然选择的证明"
+            "definition": "共同祖先是多个近缘生物类型在演化历史上共同的来源。",
+            "example": "同属物种被认为来自一个共同祖先。",
+            "section": "自然选择的证明"
           },
           {
             "name": "物种形成",
             "difficulty": 4,
-            "description": "变异积累导致新物种产生的过程",
+            "description": "变异积累并形成稳定物种的演化过程",
             "aliases": [],
             "prerequisites": [
               "自然选择",
               "遗传变异"
             ],
-            "definition": "物种形成是生物变异长期积累并形成稳定、明确新类型的过程。",
-            "example": "不同变种逐渐形成界限分明的物种。",
-            "section": "13 自然选择的证明"
+            "definition": "物种形成是生物变异长期积累并形成稳定差异的过程。",
+            "example": "变种间差异扩大后成为不同物种。",
+            "section": "自然选择的证明"
           },
           {
             "name": "地理分布",
             "difficulty": 3,
-            "description": "生物在不同地区的分布及其联系",
+            "description": "生物在不同地区和时空中的分布现象",
             "aliases": [],
             "prerequisites": [
+              "遗传变异",
               "共同祖先"
             ],
-            "definition": "地理分布是生物类型在不同地域中的分布状况及其历史联系。",
-            "example": "岛屿生物常与邻近大陆生物相关。",
-            "section": "13 自然选择的证明"
-          },
-          {
-            "name": "科学论著",
-            "difficulty": 2,
-            "description": "阐明科学原理、介绍科学知识的文章",
-            "aliases": [
-              "学术论著"
-            ],
-            "prerequisites": [],
-            "definition": "科学论著是以科学事实和严密论证阐明原理、说明知识的文章。",
-            "example": "文章用考察事实论证生物进化原理。"
-          },
-          {
-            "name": "科普作品",
-            "difficulty": 2,
-            "description": "以通俗语言介绍科学知识的作品",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "科普作品是面向公众、用通俗易懂语言传播科学知识的作品。",
-            "example": "用宇宙漫游介绍星系和行星。",
-            "section": "* 宇宙的边疆"
-          },
-          {
-            "name": "事实规律结论",
-            "difficulty": 3,
-            "description": "科学论述中事实、规律与结论的关系",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "科学论述常由事实发现规律，再依据规律作出结论。",
-            "example": "观察变异，概括规律，得出自然选择结论。",
-            "section": "* 宇宙的边疆"
+            "definition": "地理分布是生物类型在不同地域和地质时期中的分布状况。",
+            "example": "岛屿生物与邻近大陆生物存在联系。",
+            "section": "自然选择的证明"
           },
           {
             "name": "光年",
@@ -1197,207 +1044,227 @@
             "description": "光在一年中传播的距离单位",
             "aliases": [],
             "prerequisites": [],
-            "definition": "光年是光在一年内传播的距离，用来度量宇宙中的巨大距离。",
-            "example": "某星系距地球数百万光年。",
-            "section": "* 宇宙的边疆"
+            "definition": "光年是光在一年内传播的距离，是度量宇宙距离的单位。",
+            "example": "某星系距离地球数百万光年。",
+            "section": "自然选择的证明"
           },
           {
             "name": "星系",
             "difficulty": 2,
-            "description": "由恒星、气体和尘埃组成的巨大系统",
+            "description": "由气体、尘埃和恒星群组成的天体系统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "星系是由大量恒星以及气体、尘埃等组成的天体系统。",
-            "example": "银河系包含约四千亿颗恒星。",
-            "section": "* 宇宙的边疆"
+            "definition": "星系是由大量恒星以及气体、尘埃组成的巨大天体系统。",
+            "example": "银河系是一个旋涡星系。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "银河系",
+            "name": "旋涡星系",
             "difficulty": 2,
-            "description": "人类所在的旋涡星系",
-            "aliases": [
-              "本星系"
-            ],
+            "description": "具有明亮核心和旋臂结构的星系",
+            "aliases": [],
             "prerequisites": [
               "星系"
             ],
-            "definition": "银河系是太阳及其所在行星系统所属的旋涡星系。",
-            "example": "太阳位于银河系的边远地带。",
-            "section": "* 宇宙的边疆"
+            "definition": "旋涡星系是具有明亮核心并向外延伸旋臂的星系。",
+            "example": "银河系具有旋涡臂结构。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "太阳系",
+            "name": "宇宙探索",
             "difficulty": 2,
-            "description": "以太阳为中心的行星及天体系统",
+            "description": "人类认识宇宙及自身位置的探索活动",
             "aliases": [],
             "prerequisites": [
-              "银河系"
+              "科学精神"
             ],
-            "definition": "太阳系是以太阳为中心、各行星受重力作用运行的天体系统。",
-            "example": "火星和木星都绕太阳运行。",
-            "section": "* 宇宙的边疆"
-          },
-          {
-            "name": "黑洞",
-            "difficulty": 3,
-            "description": "引力极强且物质和辐射无法逃逸的天体",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "黑洞是具有超强引力、使物体和辐射无法从其附近逃逸的天体。",
-            "example": "黑洞在几千米外就看不见。",
-            "section": "* 宇宙的边疆"
-          },
-          {
-            "name": "超新星",
-            "difficulty": 3,
-            "description": "亮度突然大幅增加的爆发性变星",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "超新星是爆发时光度突然增至原来一千万倍以上的变星。",
-            "example": "其亮度可与整个星系相当。",
-            "section": "* 宇宙的边疆"
+            "definition": "宇宙探索是人类通过观测和研究认识宇宙的活动。",
+            "example": "从地球出发认识太阳系和星系。"
           },
           {
             "name": "宣夜说",
             "difficulty": 3,
-            "description": "认为天体自由浮于无限虚空的宇宙学说",
+            "description": "认为天体自由漂浮于无限虚空的宇宙学说",
             "aliases": [],
             "prerequisites": [],
-            "definition": "宣夜说认为天是虚空，日月星辰自由浮动且彼此没有共同规律。",
-            "example": "以虚空解释天体的自由运行。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "宣夜说认为天无实体，日月星辰自由浮生于虚空之中。",
+            "example": "以天体无所根系解释其运行不规则。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "盖天说",
-            "difficulty": 4,
-            "description": "认为天地是上下平行平面的宇宙学说",
+            "difficulty": 3,
+            "description": "认为天地如盖与盘、天上地下的学说",
             "aliases": [],
             "prerequisites": [],
-            "definition": "盖天说认为天在上、地在下，日月星辰依附天壳绕北极运行。",
-            "example": "用七衡六间推算太阳运行。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "盖天说认为天似盖笠、地如覆盘，日月星辰依附天壳运行。",
+            "example": "用立竿测影和数学方法推算天文数据。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "浑天说",
-            "difficulty": 4,
-            "description": "认为天为圆球、地居其中的宇宙学说",
+            "difficulty": 3,
+            "description": "认为天为圆球、地处其中的宇宙学说",
             "aliases": [],
-            "prerequisites": [
-              "盖天说"
-            ],
-            "definition": "浑天说认为天是包围大地的圆球，地处于天球内部。",
-            "example": "以浑天说制定更符合天象的历法。",
-            "section": "14 * 天文学上的旷世之争"
+            "prerequisites": [],
+            "definition": "浑天说认为天是包着地的圆球，地处于天球内部。",
+            "example": "以天球模型解释日月星辰的运行。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "浑盖之争",
             "difficulty": 3,
-            "description": "浑天说与盖天说长期争论的科学史事件",
+            "description": "中国古代浑天说与盖天说的长期争论",
             "aliases": [],
             "prerequisites": [
               "盖天说",
               "浑天说"
             ],
-            "definition": "浑盖之争是中国古代围绕宇宙结构学说展开的长期学术争论。",
-            "example": "双方通过历法和观测结果相互辩论。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "浑盖之争是围绕中国古代宇宙结构学说展开的长期学术论争。",
+            "example": "双方历经千年争论并以观测结果相互检验。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "实际校验",
+            "name": "重视校验",
             "difficulty": 3,
-            "description": "用观测和仪器检验学说是否符合实际",
-            "aliases": [],
-            "prerequisites": [
-              "事实规律结论"
+            "description": "以观测实践检验学说是否符合实际",
+            "aliases": [
+              "实际校验"
             ],
-            "definition": "实际校验是通过天文观测、仪器测量等方式检验理论的实践。",
-            "example": "观测日月升降来判断学说真伪。",
-            "section": "14 * 天文学上的旷世之争"
+            "prerequisites": [],
+            "definition": "重视校验是依据观测、仪器和实践结果判断学说真伪。",
+            "example": "通过观测日月升降检验宇宙模型。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "文章立意",
+            "name": "科学史",
             "difficulty": 2,
-            "description": "文章确立的中心思想和表达主旨",
+            "description": "研究科学发现、理论和思想演变历史的学问",
             "aliases": [],
             "prerequisites": [],
-            "definition": "文章立意是作者对写作对象形成并要集中表达的中心思想。",
-            "example": "修改时把分散观点提炼为明确主题。"
+            "definition": "科学史是揭示科学发现发展并探讨科学理论演变的学问。",
+            "example": "追溯古代宇宙结构学说的演变。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "文章结构",
-            "difficulty": 2,
-            "description": "文章内容的组织层次和安排方式",
-            "aliases": [
-              "谋篇布局"
-            ],
-            "prerequisites": [
-              "文章立意"
-            ],
-            "definition": "文章结构是文章各部分内容的层次、顺序及其衔接关系。",
-            "example": "调整段落顺序使过渡更加顺畅。",
-            "section": "14 * 天文学上的旷世之争"
+            "name": "事实规律结论",
+            "difficulty": 3,
+            "description": "科学论述中事实、规律与结论的推理关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "事实规律结论关系是从具体事实概括规律并据此形成结论的过程。",
+            "example": "由生物变异事实推导自然选择结论。",
+            "section": "自然选择的证明"
           },
           {
             "name": "托物寓意",
             "difficulty": 3,
-            "description": "借具体事物寄托思想情感",
+            "description": "借具体事物寄托情感和思想意义",
             "aliases": [],
-            "prerequisites": [
-              "文章立意"
-            ],
-            "definition": "托物寓意是借写具体事物来寄托作者的思想和情感。",
-            "example": "以水的流向寄托对命运的感慨。",
-            "section": "14 * 天文学上的旷世之争"
+            "prerequisites": [],
+            "definition": "托物寓意是借助具体事物的形态或状态表达深层情志。",
+            "example": "借水的流向寄托人生境遇。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "生活细节",
             "difficulty": 2,
-            "description": "日常生活中富有表现力的具体情景",
+            "description": "通过日常生活场景和动作表现人物心境",
             "aliases": [],
             "prerequisites": [],
-            "definition": "生活细节是作品中表现人物心境和情趣的日常行为或场景。",
-            "example": "写开蓬门、邀邻翁表现待客兴味。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "生活细节是诗歌中能够具体表现人物情感的日常场景或动作。",
+            "example": "开蓬门、邀邻翁表现待客兴味。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "用典",
             "difficulty": 3,
-            "description": "借用古代故事或语句表达情意",
-            "aliases": [],
+            "description": "借用前人故事或语句表达诗歌情意",
+            "aliases": [
+              "典故"
+            ],
             "prerequisites": [],
-            "definition": "用典是引用古代故事、人物或语句来含蓄表达思想感情。",
-            "example": "借伯牙绝弦慨叹世无知己。"
+            "definition": "用典是借助历史故事或前人语句含蓄表达当下情感。",
+            "example": "借伯牙绝弦感叹世无知己。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "含蓄表达",
+            "name": "起兴",
             "difficulty": 2,
-            "description": "不直说情感而通过形象和细节暗示",
+            "description": "先写相关事物以引出所要表现的情感",
             "aliases": [],
-            "prerequisites": [
-              "生活细节",
-              "托物寓意"
+            "prerequisites": [],
+            "definition": "起兴是先描写眼前事物，再引出诗歌所要抒写的情意。",
+            "example": "先写泻水东西流，再写人生境遇。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "文章立意",
+            "difficulty": 2,
+            "description": "文章确立的基本观点和中心思想",
+            "aliases": [
+              "立意"
             ],
-            "definition": "含蓄表达是借景物、细节或动作间接传达情感和思想。",
-            "example": "写听雨分茶暗示诗人的落寞。"
+            "prerequisites": [],
+            "definition": "文章立意是作者对文章主题和基本观点的总体确定。",
+            "example": "修改时检查主题是否集中深刻。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "材料取舍",
+            "difficulty": 2,
+            "description": "根据主题需要增删和选择文章材料",
+            "aliases": [
+              "增删材料"
+            ],
+            "prerequisites": [
+              "文章立意"
+            ],
+            "definition": "材料取舍是围绕主题选择恰当典型材料并删除冗余内容。",
+            "example": "补充必要论据，删去重复情节。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "文章结构",
+            "difficulty": 2,
+            "description": "文章内容安排、层次组织和衔接方式",
+            "aliases": [
+              "调整结构"
+            ],
+            "prerequisites": [
+              "文章立意",
+              "材料取舍"
+            ],
+            "definition": "文章结构是文章各部分的组织顺序、层次关系和过渡安排。",
+            "example": "调整段落顺序使过渡更加顺畅。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "语言推敲",
+            "difficulty": 2,
+            "description": "修改语言以求准确、规范、简洁和生动",
+            "aliases": [
+              "推敲语言"
+            ],
+            "prerequisites": [
+              "文章立意",
+              "文章结构"
+            ],
+            "definition": "语言推敲是反复修改措辞以准确表达文章思想的过程。",
+            "example": "删去重复词语，使句子表达更简洁。",
+            "section": "天文学上的旷世之争"
           }
         ],
         "sections": [
           {
-            "name": "13 自然选择的证明",
+            "name": "自然选择的证明",
             "page_range": [
               93,
-              99
-            ]
-          },
-          {
-            "name": "* 宇宙的边疆",
-            "page_range": [
-              99,
               106
             ]
           },
           {
-            "name": "14 * 天文学上的旷世之争",
+            "name": "天文学上的旷世之争",
             "page_range": [
               106,
               122
@@ -1422,266 +1289,230 @@
           {
             "name": "古典诗歌源流",
             "difficulty": 2,
-            "description": "中国古典诗歌由源头向汉唐宋不断发展",
+            "description": "梳理《诗经》以来古典诗歌的发展脉络",
             "aliases": [],
             "prerequisites": [],
-            "definition": "古典诗歌源流是指诗歌从《诗经》《楚辞》到汉乐府、唐诗和宋词的发展脉络。",
-            "example": "《诗经》与《楚辞》分别开启现实主义和浪漫主义传统"
+            "definition": "古典诗歌源流是从《诗经》《楚辞》到汉乐府、唐诗和宋词的发展过程。",
+            "example": "《诗经》与《楚辞》是古典诗歌的源头。"
           },
           {
             "name": "现实主义传统",
             "difficulty": 2,
-            "description": "源于《诗经》并重视现实生活与真实情感",
+            "description": "重在反映现实生活和真实情感的诗歌传统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "现实主义传统是继承《诗经》、关注现实人生并表现真实情感的文学传统。",
-            "example": "汉乐府缘事而发，表现民间哀乐",
-            "section": "2 * 孔雀东南飞并序"
+            "definition": "现实主义传统是古典诗歌中关注现实人生、缘事抒情的创作传统。",
+            "example": "汉乐府继承《诗经》的现实主义传统。"
           },
           {
             "name": "浪漫主义传统",
             "difficulty": 2,
-            "description": "《楚辞》开启的富于想象和抒情的传统",
+            "description": "借助想象抒发理想和强烈情感的诗歌传统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "浪漫主义传统是以丰富想象、强烈抒情和理想追求为特征的文学传统。",
-            "example": "诗人借香草意象寄托高洁理想"
-          },
-          {
-            "name": "风骚传统",
-            "difficulty": 3,
-            "description": "《诗经》和《楚辞》艺术精神的合称",
-            "aliases": [],
-            "prerequisites": [
-              "现实主义传统",
-              "浪漫主义传统"
-            ],
-            "definition": "风骚传统是后人对《诗经》和《楚辞》艺术精神及其文学影响的概称。",
-            "example": "《诗经》的现实精神与《楚辞》的抒情传统"
-          },
-          {
-            "name": "楚辞体",
-            "difficulty": 2,
-            "description": "运用楚地形式、方言声韵的诗体",
-            "aliases": [
-              "骚体"
-            ],
-            "prerequisites": [
-              "浪漫主义传统"
-            ],
-            "definition": "楚辞体是运用楚地诗歌形式、方言声韵并具有地方色彩的诗体。",
-            "example": "诗句多用“兮”字，形成独特节奏"
-          },
-          {
-            "name": "乐府诗",
-            "difficulty": 2,
-            "description": "汉魏六朝时期重要的诗歌类型",
-            "aliases": [],
-            "prerequisites": [
-              "现实主义传统"
-            ],
-            "definition": "乐府诗是汉魏六朝时期继承现实主义传统、讲究缘事而发的诗歌类型。",
-            "example": "以婚姻悲剧展开较长篇幅的叙事",
-            "section": "2 * 孔雀东南飞并序"
-          },
-          {
-            "name": "叙事与抒情结合",
-            "difficulty": 3,
-            "description": "在讲述事件中融入人物情感和心理变化",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "叙事与抒情结合是诗歌将故事推进、人物经历与情感表达融为一体的写法。",
-            "example": "写女子恋爱、婚姻和被弃并表现其心路变化"
-          },
-          {
-            "name": "比兴手法",
-            "difficulty": 3,
-            "description": "借眼前事物起兴或作比来寄托情感",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "比兴手法是借具体事物作比或触景起兴，以引出并寄托诗歌情感的表现手法。",
-            "example": "以桑叶荣枯比喻女子容貌与婚姻变化"
+            "definition": "浪漫主义传统是以丰富想象和浓烈情感表现理想追求的创作传统。",
+            "example": "《楚辞》开启了浪漫主义文学传统。"
           },
           {
             "name": "抒情传统",
             "difficulty": 2,
-            "description": "古典诗歌以情感表达为核心的传统",
-            "aliases": [],
-            "prerequisites": [
-              "叙事与抒情结合"
-            ],
-            "definition": "抒情传统是古典诗歌重视由情感触发语言、歌咏和意义表达的文学传统。",
-            "example": "“诗者，志之所之也”强调诗歌表达志情"
-          },
-          {
-            "name": "香草美人象征",
-            "difficulty": 4,
-            "description": "以香草美人寄托品德、理想和政治情志",
-            "aliases": [],
-            "prerequisites": [
-              "比兴手法"
-            ],
-            "definition": "香草美人象征是借香草和美人等形象象征高洁品德、贤能者或政治理想的表现方式。",
-            "example": "佩戴香草象征坚贞和高洁品德"
-          },
-          {
-            "name": "回旋复沓",
-            "difficulty": 3,
-            "description": "反复回环的语言组织方式，强化情感",
+            "description": "以情感表达为核心的中国诗歌传统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "回旋复沓是诗歌反复使用相近语句或结构，使节奏回环并增强情感力度的表达方式。",
-            "example": "反复咏叹时间流逝和理想坚守",
-            "section": "离骚(节选)"
+            "definition": "抒情传统是诗歌通过语言、声韵和意象表达内在情感的传统。",
+            "example": "“诗者，志之所之也”体现了抒情传统。"
           },
           {
-            "name": "偏义复词",
-            "difficulty": 3,
-            "description": "复音词只取一个语素的意义",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "偏义复词是由两个相关或相反语素构成而整体只取其中一个语素意义的复音词。",
-            "example": "“作息”在“昼夜勤作息”中只指劳作",
-            "section": "2 * 孔雀东南飞并序"
-          },
-          {
-            "name": "古体诗",
+            "name": "叙事诗",
             "difficulty": 2,
-            "description": "格律限制较少、句式和形式灵活的诗体",
+            "description": "通过讲述事件和情节表现人物与情感的诗歌",
             "aliases": [],
-            "prerequisites": [
-              "古典诗歌体式"
-            ],
-            "definition": "古体诗是格律不拘、句式灵活、形式自由的古典诗歌体式。",
-            "example": "诗句长短参差，节奏不受固定格律约束",
-            "section": "* 蜀相"
+            "prerequisites": [],
+            "definition": "叙事诗是以叙述故事、安排情节和塑造人物为主要表达方式的诗歌。",
+            "example": "《孔雀东南飞》是杰出的叙事诗。"
           },
           {
-            "name": "杂言古体诗",
+            "name": "楚辞体",
             "difficulty": 3,
-            "description": "句子字数长短不一的古体诗",
-            "aliases": [],
-            "prerequisites": [
-              "古体诗"
-            ],
-            "definition": "杂言古体诗是句式字数长短不一、格律较为自由的古体诗。",
-            "example": "诗句在三言、五言、七言之间灵活变化",
-            "section": "* 蜀相"
-          },
-          {
-            "name": "七言律诗",
-            "difficulty": 3,
-            "description": "每句七字、结构严整的律诗体式",
+            "description": "运用楚地形式、方言声韵的诗体",
             "aliases": [
-              "七律"
+              "骚体"
             ],
-            "prerequisites": [
-              "古典诗歌体式"
-            ],
-            "definition": "七言律诗是以七字句为基本形式、讲究格律并具有严整结构的诗体。",
-            "example": "全诗八句，每句七字，结构法度严整",
-            "section": "* 蜀相"
+            "prerequisites": [],
+            "definition": "楚辞体是具有楚地地方色彩、常用“兮”字的诗歌体式。",
+            "example": "《离骚》是楚辞体的代表作品。"
           },
           {
-            "name": "词牌",
+            "name": "比兴",
             "difficulty": 3,
-            "description": "规定词的句式、字数和声韵的名称",
+            "description": "借物起兴或比喻以寄托、引出情感的手法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "比兴是借助具体事物引发联想或寄托情感的诗歌表现手法。",
+            "example": "《氓》以桑树荣枯比喻爱情变化。"
+          },
+          {
+            "name": "香草美人",
+            "difficulty": 3,
+            "description": "以香草和美人象征高洁品德与理想人物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "香草美人是《离骚》中借香草、美人等形象象征品德、贤者和理想的表现方式。",
+            "example": "佩戴江离、秋兰象征诗人修德自守。"
+          },
+          {
+            "name": "叙事抒情结合",
+            "difficulty": 3,
+            "description": "在讲述故事过程中同时表达人物情感",
             "aliases": [],
             "prerequisites": [
-              "古典诗歌体式"
+              "叙事诗"
             ],
-            "definition": "词牌是词所依照的曲调名称，并规定相应的句式、字数和声韵形式。",
-            "example": "同一词牌可形成固定的篇章格式",
-            "section": "* 蜀相"
+            "definition": "叙事抒情结合是将事件叙述与情感抒发融为一体的诗歌构思方式。",
+            "example": "《氓》叙述婚姻经历并表现女子心路变化。"
           },
           {
-            "name": "铺叙",
-            "difficulty": 3,
-            "description": "按层次铺陈描写对象和相关情景",
-            "aliases": [],
-            "prerequisites": [
-              "叙事与抒情结合"
-            ],
-            "definition": "铺叙是按照一定层次对景物、场面或情事进行铺陈叙写的表现手法。",
-            "example": "依次描写城市位置、风景、市井和生活",
-            "section": "* 蜀相"
-          },
-          {
-            "name": "虚实相间",
-            "difficulty": 3,
-            "description": "现实描写与想象联想相互结合",
-            "aliases": [],
-            "prerequisites": [
-              "铺叙"
-            ],
-            "definition": "虚实相间是诗歌将眼前实景与想象、联想或历史内容交织表现的写法。",
-            "example": "既写眼前景象，又想象故人重游时的感受",
-            "section": "* 蜀相"
-          },
-          {
-            "name": "今昔盛衰对比",
-            "difficulty": 3,
-            "description": "通过过去繁盛与眼前衰败形成对照",
-            "aliases": [],
-            "prerequisites": [
-              "虚实相间"
-            ],
-            "definition": "今昔盛衰对比是将城市昔日繁华与当下残破并置以强化感慨的表现手法。",
-            "example": "昔日长街繁华，今日只见废池乔木"
-          },
-          {
-            "name": "诗歌节奏韵律",
+            "name": "民歌色彩",
             "difficulty": 2,
-            "description": "诗歌由句式、声韵和节拍形成的音乐性",
+            "description": "语言口语化、形式自然、情感真切的诗歌特点",
             "aliases": [],
-            "prerequisites": [
-              "古典诗歌体式"
-            ],
-            "definition": "诗歌节奏韵律是诗句在字数、停顿、声调和押韵等方面形成的音乐美。",
-            "example": "杂言句式形成参差错落的节奏"
+            "prerequisites": [],
+            "definition": "民歌色彩是诗歌保留民间歌谣的口语表达、生活气息和真挚情感。",
+            "example": "《孔雀东南飞》的人物对话多为浅白口语。"
           },
           {
             "name": "对话塑造人物",
             "difficulty": 3,
-            "description": "通过人物对话表现性格并推进情节",
+            "description": "通过人物对话推动情节并展现人物性格",
             "aliases": [],
             "prerequisites": [
-              "叙事与抒情结合"
+              "叙事诗"
             ],
-            "definition": "对话塑造人物是借人物在不同情境中的语言和语气刻画形象、推动故事发展的方法。",
-            "example": "人物面对母亲和兄长时回答语气各不相同"
+            "definition": "对话塑造人物是借人物在不同情境中的语言表现其性格和处境。",
+            "example": "兰芝面对母亲和兄长时的回答语态不同。"
+          },
+          {
+            "name": "偏义复词",
+            "difficulty": 3,
+            "description": "两个语素组成而词义偏取其中一个的复音词",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "偏义复词是由两个相关或相反语素构成但整体只取其中一方意义的词。",
+            "example": "“作息”在“昼夜勤作息”中偏指劳作。"
+          },
+          {
+            "name": "杂言古体诗",
+            "difficulty": 3,
+            "description": "句式长短不齐、格律较为自由的古体诗",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "杂言古体诗是句式参差、格律不拘、形式灵活的古体诗。",
+            "example": "《蜀道难》句式长短错落，格律不拘。",
+            "section": "蜀相"
+          },
+          {
+            "name": "七言律诗",
+            "difficulty": 3,
+            "description": "以七言句为基本形式、结构严整的律诗",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "七言律诗是由七言诗句组成并具有严整格律和结构的诗体。",
+            "example": "《蜀相》是结构严整的七言律诗。",
+            "section": "蜀相"
+          },
+          {
+            "name": "词牌",
+            "difficulty": 2,
+            "description": "规定词的句式、字数和声韵格式的名称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "词牌是词调的名称，用以规定词的基本格律和音乐形式。",
+            "example": "《望海潮》和《扬州慢》都是词牌名。",
+            "section": "蜀相"
+          },
+          {
+            "name": "铺叙",
+            "difficulty": 3,
+            "description": "按层次铺陈描写对象以形成整体气势",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "铺叙是对景物、场面或事物进行层层展开描写的表现方式。",
+            "example": "《望海潮》铺写杭州风景、市井与生活。",
+            "section": "蜀相"
+          },
+          {
+            "name": "虚实相生",
+            "difficulty": 3,
+            "description": "交织实写与想象、联想以营造艺术境界",
+            "aliases": [],
+            "prerequisites": [
+              "意象",
+              "意境"
+            ],
+            "definition": "虚实相生是把眼前实景与想象、回忆或联想结合起来表现情感。",
+            "example": "《蜀道难》将山路实景与神话想象交织。",
+            "section": "蜀相"
+          },
+          {
+            "name": "意象",
+            "difficulty": 2,
+            "description": "寄托诗人情感和意味的具体物象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "意象是诗歌中融入主观情感和审美意味的景物或事物形象。",
+            "example": "“寒水”“清角”“空城”构成扬州的凄清意象。"
+          },
+          {
+            "name": "意境",
+            "difficulty": 3,
+            "description": "意象组合营造出的整体审美境界",
+            "aliases": [],
+            "prerequisites": [
+              "意象"
+            ],
+            "definition": "意境是诗歌通过意象组合和情感融合形成的整体艺术境界。",
+            "example": "《望海潮》营造出繁华热闹的城市意境。"
+          },
+          {
+            "name": "回旋复沓",
+            "difficulty": 3,
+            "description": "反复回环使用语句或表达以强化情感和节奏",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "回旋复沓是诗歌反复使用相近语句以形成回环节奏并强化情感的表达方式。",
+            "example": "《离骚》多用“兮”字形成回旋复沓的节奏。"
           }
         ],
         "sections": [
           {
-            "name": "离骚(节选)",
-            "section_key": "fddd62ac5b",
-            "page_range": [
-              11,
-              12
-            ]
-          },
-          {
-            "name": "2 * 孔雀东南飞并序",
-            "section_key": "1f0e3d1f8d",
-            "page_range": [
-              12,
-              19
-            ]
-          },
-          {
-            "name": "3 蜀道难",
-            "section_key": "9d3b7b826c",
+            "name": "蜀道难",
+            "section_key": "193e6a5397",
             "page_range": [
               19,
               21
             ]
           },
           {
-            "name": "* 蜀相",
-            "section_key": "ec3bca4afe",
+            "name": "蜀相",
+            "section_key": "58135fcc18",
             "page_range": [
               21,
+              25
+            ]
+          },
+          {
+            "name": "望海潮(东南形胜)",
+            "section_key": "e1854fb64f",
+            "page_range": [
+              25,
+              25
+            ]
+          },
+          {
+            "name": "扬州慢(淮左名都)",
+            "section_key": "200e0bb13b",
+            "page_range": [
+              25,
               25
             ]
           }
@@ -1696,540 +1527,321 @@
         }
       },
       {
-        "name": "古诗词诵读",
-        "concepts": [
-          {
-            "name": "古典诗歌",
-            "difficulty": 1,
-            "description": "中国古代诗歌的统称，以抒情诗为主",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "古典诗歌是中国古代创作的诗歌作品。",
-            "example": "古典诗歌中既有抒情诗，也有叙事诗"
-          },
-          {
-            "name": "抒情诗",
-            "difficulty": 1,
-            "description": "以抒发诗人情感为主要内容的诗歌",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "抒情诗是侧重表达思想感情的诗歌。",
-            "example": "诗歌借景物表达诗人的情怀"
-          },
-          {
-            "name": "叙事诗",
-            "difficulty": 2,
-            "description": "以叙述故事和刻画人物为主要内容的诗歌",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "叙事诗是侧重讲述事件、表现人物的诗歌。",
-            "example": "诗歌围绕婚姻爱情悲剧展开叙述"
-          },
-          {
-            "name": "民歌",
-            "difficulty": 2,
-            "description": "民间创作并流传的诗歌作品",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "民歌是由民间创作并在民众中流传的诗歌。",
-            "example": "古代民歌常表现普通人的生活与情感"
-          },
-          {
-            "name": "情节梳理",
-            "difficulty": 2,
-            "description": "按照事件发展脉络概括诗歌内容",
-            "aliases": [],
-            "prerequisites": [
-              "叙事诗"
-            ],
-            "definition": "情节梳理是依照事件发展的先后概括作品内容。",
-            "example": "按相遇、婚变、离异概括诗歌情节"
-          },
-          {
-            "name": "意象",
-            "difficulty": 2,
-            "description": "诗歌中寄托情感的具体物象",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "意象是诗歌中融入诗人情感的具体形象。",
-            "example": "月、江水等物象可构成诗歌意象"
-          },
-          {
-            "name": "意境",
-            "difficulty": 3,
-            "description": "由意象组合形成的诗歌艺术境界",
-            "aliases": [],
-            "prerequisites": [
-              "意象"
-            ],
-            "definition": "意境是诗歌意象组合后营造出的情景交融境界。",
-            "example": "冷落意象组合成凄清的意境"
-          },
-          {
-            "name": "虚实相生",
-            "difficulty": 3,
-            "description": "实写与虚写相互结合营造艺术境界",
-            "aliases": [],
-            "prerequisites": [
-              "意象"
-            ],
-            "definition": "虚实相生是将现实描写与想象联结起来表现诗境的手法。",
-            "example": "实写蜀道景象，辅以奇特想象"
-          },
-          {
-            "name": "表现手法",
-            "difficulty": 3,
-            "description": "诗歌表现内容和情感所采用的艺术方法",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "表现手法是诗人组织内容、塑造形象和抒发情感的方法。",
-            "example": "虚实相生是古典诗词常见的表现手法"
-          },
-          {
-            "name": "语言风格",
-            "difficulty": 3,
-            "description": "诗歌语言呈现出的整体表达特点",
-            "aliases": [],
-            "prerequisites": [
-              "古典诗歌"
-            ],
-            "definition": "语言风格是诗歌语言在表达上的整体特色。",
-            "example": "比较两首诗语言的质朴与华丽"
-          },
-          {
-            "name": "诗歌主旨",
-            "difficulty": 3,
-            "description": "诗歌所表达的核心思想和感情",
-            "aliases": [
-              "主旨"
-            ],
-            "prerequisites": [
-              "意境"
-            ],
-            "definition": "诗歌主旨是作品通过形象和意境集中表达的思想情感。",
-            "example": "从意象和意境把握作品主旨"
-          },
-          {
-            "name": "意象组合",
-            "difficulty": 3,
-            "description": "诗歌中多个意象的选择与组织方式",
-            "aliases": [],
-            "prerequisites": [
-              "意象"
-            ],
-            "definition": "意象组合是诗人对不同意象进行选择、排列和联系的方式。",
-            "example": "比较两首词意象选取和组合的不同"
-          }
-        ],
-        "chapter_key": "d06bebd41a",
-        "metadata": {
-          "volume_id": "08ecdeefd231",
-          "file_id": "08ecdeefd231",
-          "volume_title": "普通高中教科书语文选择性必修下册",
-          "chapter_order": 2,
-          "raw_heading": "古诗词诵读"
-        }
-      },
-      {
         "name": "第二单元",
         "concepts": [
           {
-            "name": "小说",
-            "difficulty": 1,
-            "description": "以塑造人物、叙述故事和反映生活为主要特征的文学体裁",
+            "name": "现当代文学",
+            "difficulty": 2,
+            "description": "伴随中国近现代社会变革发展的文学",
+            "aliases": [
+              "中国现当代文学"
+            ],
+            "prerequisites": [],
+            "definition": "现当代文学是中国近现代社会变革的产物。",
+            "example": "鲁迅、沈从文等作家的作品",
+            "section": "茶馆(节选)"
+          },
+          {
+            "name": "文学体裁",
+            "difficulty": 2,
+            "description": "小说、诗歌、散文、话剧等文学样式",
             "aliases": [],
             "prerequisites": [],
-            "definition": "小说是通过人物、情节和环境来表现社会生活的文学体裁。",
-            "example": "通过阿Q的经历展现乡村社会"
+            "definition": "文学体裁是文学作品在表现方式和形式上的类别。",
+            "example": "本单元涵盖小说、诗歌、散文、话剧"
+          },
+          {
+            "name": "社会历史背景",
+            "difficulty": 2,
+            "description": "影响作品思想内涵和人物命运的时代环境",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会历史背景是作品产生及人物活动所处的时代环境。",
+            "example": "小说以辛亥革命前后的农村为背景"
+          },
+          {
+            "name": "民族心理",
+            "difficulty": 3,
+            "description": "文学作品中体现的民族共同心理特征",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "民族心理是特定民族在历史发展中形成的共同心理倾向。",
+            "example": "作品探索民族心理和时代精神",
+            "section": "茶馆(节选)"
+          },
+          {
+            "name": "时代精神",
+            "difficulty": 3,
+            "description": "文学作品所体现的时代思想和精神风貌",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "时代精神是某一历史时期社会思想和精神风貌的集中体现。",
+            "example": "作品表现百年来社会变革中的时代精神",
+            "section": "茶馆(节选)"
           },
           {
             "name": "精神胜利法",
             "difficulty": 3,
-            "description": "以自我欺骗和自我贬抑化解现实失败的心理方式",
+            "description": "以自我欺骗和精神想象化解现实失败",
             "aliases": [
               "阿Q精神"
             ],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "精神胜利法是阿Q把现实屈辱转换为心理胜利的自我安慰方式。",
-            "example": "挨打后说成“儿子打老子”"
-          },
-          {
-            "name": "国民性",
-            "difficulty": 4,
-            "description": "文学作品对民族共同心理弱点及精神状态的揭示",
-            "aliases": [],
-            "prerequisites": [
-              "精神胜利法"
-            ],
-            "definition": "国民性是一个民族在长期社会生活中形成的普遍心理与行为特征。",
-            "example": "阿Q的自欺反映国民精神弱点"
+            "prerequisites": [],
+            "definition": "精神胜利法是阿Q以心理上的虚假胜利来掩盖现实失败的方式。",
+            "example": "挨打后认为自己“第一个”自轻自贱"
           },
           {
             "name": "典型人物",
             "difficulty": 3,
-            "description": "集中体现某类社会人物特征并具有概括意义的人物",
+            "description": "集中体现某类社会性格和精神特征的人物",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "典型人物是具有鲜明个性并集中反映社会普遍特征的人物形象。",
-            "example": "阿Q兼具个人遭遇和社会意义",
-            "section": "5 阿Q正传(节选)"
+            "prerequisites": [],
+            "definition": "典型人物是具有鲜明个性并集中反映社会特征的人物形象。",
+            "example": "阿Q集中体现旧中国国民的某些弱点",
+            "section": "边城(节选)"
           },
           {
-            "name": "幽默手法",
-            "difficulty": 2,
-            "description": "用诙谐表达造成趣味并寄寓意味的表现手法",
-            "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "幽默手法是通过诙谐有趣的叙述引发笑意并传达思想的手法。",
-            "example": "阿Q一本正经地解释挨打"
-          },
-          {
-            "name": "夸张手法",
-            "difficulty": 2,
-            "description": "有意扩大或缩小事物特征以增强表现效果的手法",
-            "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "夸张手法是对事物特征或情节效果进行有意强化的表现手法。",
-            "example": "把普通癞疮写成高尚光荣"
-          },
-          {
-            "name": "讽刺手法",
+            "name": "喜剧表象",
             "difficulty": 3,
-            "description": "用反常、反语或夸张揭露对象矛盾与弊病的手法",
+            "description": "以可笑情节和人物言行呈现的表层效果",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "讽刺手法是通过表面肯定或诙谐描写来揭示对象荒谬与弊病的手法。",
-            "example": "阿Q以自贱取得心理胜利"
+            "prerequisites": [],
+            "definition": "喜剧表象是作品通过滑稽场面和可笑言行形成的表层艺术效果。",
+            "example": "阿Q挨打后仍认为自己精神上得胜",
+            "section": "边城(节选)"
           },
           {
-            "name": "喜剧悲剧意味",
-            "difficulty": 4,
-            "description": "作品表面引人发笑而深层呈现人物苦难与社会悲剧",
+            "name": "悲剧意味",
+            "difficulty": 3,
+            "description": "喜剧或温暖表象下潜藏的痛苦与悲凉",
             "aliases": [],
-            "prerequisites": [
-              "典型人物"
-            ],
-            "definition": "喜剧悲剧意味是喜剧性情节背后隐藏着人物悲惨命运和社会悲剧。",
-            "example": "阿Q的可笑结局令人感到悲凉"
+            "prerequisites": [],
+            "definition": "悲剧意味是作品表层情节背后呈现的深层苦难和悲凉。",
+            "example": "阿Q的可笑背后是精神和现实的双重悲剧",
+            "section": "边城(节选)"
           },
           {
             "name": "散文化小说",
             "difficulty": 3,
-            "description": "小说融入散文笔调，重视抒情、写景和生活氛围",
+            "description": "融合小说叙事与散文抒情写法的小说",
             "aliases": [],
             "prerequisites": [
-              "小说"
+              "文学体裁"
             ],
-            "definition": "散文化小说是以小说叙事为基础并具有散文式抒情和写景特点的小说。",
-            "example": "湘西生活描写富有抒情意味"
+            "definition": "散文化小说是具有小说叙事因素并带有散文抒情特点的小说。",
+            "example": "作品描写湘西风物并寄托人生理想"
           },
           {
-            "name": "田园牧歌情调",
-            "difficulty": 3,
-            "description": "表现乡村宁静淳朴与人性美好的审美情调",
-            "aliases": [],
-            "prerequisites": [
-              "散文化小说"
-            ],
-            "definition": "田园牧歌情调是对和谐乡村生活及纯美人性的诗意化表现。",
-            "example": "节日风俗呈现宁静淳朴的生活",
-            "section": "5 阿Q正传(节选)"
-          },
-          {
-            "name": "风土人情描写",
+            "name": "风俗描写",
             "difficulty": 2,
-            "description": "对地域性的生活习俗、节庆活动和民情风貌的描写",
+            "description": "对地方节日、习俗和生活方式的具体描写",
             "aliases": [],
-            "prerequisites": [
-              "散文化小说"
-            ],
-            "definition": "风土人情描写是通过地方习俗和日常生活展现地域文化风貌的描写。",
-            "example": "端午划船、追鸭子的活动"
-          },
-          {
-            "name": "人物描写",
-            "difficulty": 2,
-            "description": "通过人物行动、语言和心理表现人物性格特征",
-            "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "人物描写是对人物行动、语言、心理等进行刻画以塑造形象的方法。",
-            "example": "翠翠听鼓声时的动作与心情"
+            "prerequisites": [],
+            "definition": "风俗描写是对特定地域社会生活习惯和民间活动的描写。",
+            "example": "端午节赛龙船、追赶鸭子"
           },
           {
             "name": "景物描写",
             "difficulty": 2,
-            "description": "对自然景物及其声色状态进行描绘以营造氛围",
+            "description": "通过自然景物呈现环境并寄托情感",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "景物描写是对自然环境进行具体描绘并服务于情感和主题表达的方法。",
-            "example": "溪水、树林衬托山村的幽静"
-          },
-          {
-            "name": "人性善良美好",
-            "difficulty": 3,
-            "description": "作品对普通人真诚、互助、淳朴等人性品质的表现",
-            "aliases": [],
-            "prerequisites": [
-              "人物描写"
-            ],
-            "definition": "人性善良美好是作品对人物真诚友爱和淳朴品格的肯定性呈现。",
-            "example": "老人把救人视为不可逃避的责任"
+            "prerequisites": [],
+            "definition": "景物描写是对自然环境和景物特征的描写。",
+            "example": "泉水、鼠麴草和有加利树引发联想"
           },
           {
             "name": "自由体诗",
-            "difficulty": 2,
-            "description": "句式、行数和节奏较自由的现代诗歌形式",
+            "difficulty": 3,
+            "description": "不拘固定格律、形式较自由的现代诗体",
             "aliases": [
               "现代自由体诗"
             ],
-            "prerequisites": [],
-            "definition": "自由体诗是不拘守传统格律而以自然节奏和情感表达为重的现代诗体。",
-            "example": "诗行长短随情感自然变化",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "直接抒情",
-            "difficulty": 2,
-            "description": "作者或抒情主体直接表达思想感情的抒情方式",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "直接抒情是抒情主体不借助完整故事而直接倾诉情感的方式。",
-            "example": "直接表达对保姆的敬爱",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "叙述描写抒情",
-            "difficulty": 3,
-            "description": "借助叙事和具体描写积累、深化诗歌情感的方式",
-            "aliases": [],
             "prerequisites": [
-              "直接抒情"
+              "文学体裁"
             ],
-            "definition": "叙述描写抒情是通过讲述经历和描绘细节来含蓄强化情感的方式。",
-            "example": "连续写劳动细节表现深厚母爱"
+            "definition": "自由体诗是不受严格格律限制、依靠自然节奏抒情的现代诗体。",
+            "example": "诗中长短句自由铺陈对保姆的感情",
+            "section": "再别康桥"
           },
           {
             "name": "新月派三美",
             "difficulty": 3,
-            "description": "新月派诗歌追求音乐美、绘画美和建筑美的形式主张",
+            "description": "新诗格律化追求的音乐美、绘画美、建筑美",
             "aliases": [
               "三美"
             ],
-            "prerequisites": [],
-            "definition": "新月派三美是新月派关于诗歌音乐、画面和结构形式的审美要求。",
-            "example": "诗歌节奏整齐且意象色彩鲜明",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "音乐美",
-            "difficulty": 2,
-            "description": "诗歌通过节奏、韵律和音响形成听觉美感",
-            "aliases": [],
             "prerequisites": [
-              "新月派三美"
+              "文学体裁"
             ],
-            "definition": "音乐美是诗歌语言在节奏韵律和声音安排上形成的和谐美感。",
-            "example": "反复“轻轻的”形成舒缓节奏",
-            "section": "* 再别康桥"
+            "definition": "新月派三美指新诗在音乐、画面和诗行结构上的形式追求。",
+            "example": "诗歌以节奏、意象和分节体现三美",
+            "section": "再别康桥"
           },
           {
-            "name": "绘画美",
+            "name": "直接抒情",
             "difficulty": 2,
-            "description": "诗歌借助色彩、形象和意象组合形成画面美感",
-            "aliases": [],
-            "prerequisites": [
-              "新月派三美"
-            ],
-            "definition": "绘画美是诗歌通过鲜明意象和色彩描写构成可感画面的美感。",
-            "example": "金柳、彩虹和星辉构成画面",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "建筑美",
-            "difficulty": 2,
-            "description": "诗歌通过诗节、诗行和排列形式形成结构美感",
-            "aliases": [],
-            "prerequisites": [
-              "新月派三美"
-            ],
-            "definition": "建筑美是诗歌在篇章、诗节和诗行的组织排列中形成的形式美。",
-            "example": "各节句式整齐，篇章结构匀称",
-            "section": "* 再别康桥"
-          },
-          {
-            "name": "现代文学风格",
-            "difficulty": 3,
-            "description": "现代作家在思想表达、艺术特色和语言运用上的独特面貌",
+            "description": "直接表达作者或抒情主人公的情感",
             "aliases": [],
             "prerequisites": [],
-            "definition": "现代文学风格是作家作品在创作理念、艺术表现和语言形式上的综合特征。",
-            "example": "鲁迅的讽刺与沈从文的抒情形成差异"
+            "definition": "直接抒情是不借助完整叙事而直接抒发感情的表达方式。",
+            "example": "诗中直接称颂并表达对保姆的敬爱",
+            "section": "再别康桥"
           },
           {
             "name": "戏剧冲突",
             "difficulty": 3,
-            "description": "剧中人物、人物与社会或不同力量之间的矛盾对抗",
+            "description": "人物之间或人物与时代之间的矛盾对立",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "戏剧冲突是推动戏剧情节发展并展现人物与时代矛盾的对抗关系。",
-            "example": "茶客因言论被差役拘捕",
-            "section": "* 秦腔"
+            "prerequisites": [
+              "文学体裁"
+            ],
+            "definition": "戏剧冲突是剧中人物、群体或人与时代之间的矛盾对抗。",
+            "example": "茶客因言论被捕形成戏剧冲突",
+            "section": "茶馆(节选)"
           },
           {
-            "name": "时代横断面",
+            "name": "横断面结构",
             "difficulty": 4,
-            "description": "截取特定历史时期的社会切面呈现时代风貌",
+            "description": "截取不同历史时期的社会生活片段来组剧",
             "aliases": [],
             "prerequisites": [
               "戏剧冲突"
             ],
-            "definition": "时代横断面是通过一个阶段的生活场景集中展示社会状况的结构方式。",
-            "example": "茶馆场景呈现晚清社会风貌"
+            "definition": "横断面结构是通过截取不同时代的生活片段展示社会变迁的结构方式。",
+            "example": "全剧截取旧中国三个时代的社会横断面"
           },
           {
             "name": "京味语言",
-            "difficulty": 2,
-            "description": "具有北京地域特色、口语色彩和身份差异的戏剧语言",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "具有北京口语和地方风俗色彩的戏剧语言",
+            "aliases": [
+              "响嗑儿脆"
+            ],
             "prerequisites": [],
-            "definition": "京味语言是融入北京方言、口语习惯和地域文化色彩的语言风格。",
-            "example": "人物使用“爷”“嗻”等称谓语",
-            "section": "* 秦腔"
+            "definition": "京味语言是融入北京口语习惯和地域文化色彩的语言风格。",
+            "example": "人物对话使用“嘛”“您甭”等北京口语",
+            "section": "茶馆(节选)"
           },
           {
             "name": "语言锤炼",
             "difficulty": 2,
-            "description": "反复推敲词句以使表达准确、生动并富有艺术性",
+            "description": "推敲字句以使表达准确、生动并富有艺术性",
             "aliases": [],
             "prerequisites": [],
-            "definition": "语言锤炼是为获得准确、鲜明、富有表现力的表达而推敲语言的过程。",
-            "example": "反复使用“忽忽不乐”强化失落感"
+            "definition": "语言锤炼是对词语、句式和修辞进行推敲以提升表达效果。",
+            "example": "反复使用“忽忽不乐”表现阿Q的失意"
           },
           {
-            "name": "词语推敲",
+            "name": "推敲词语",
             "difficulty": 2,
-            "description": "选择最准确、生动、鲜明且富于变化的词语",
+            "description": "选择最准确、生动、鲜明的词语表达意思",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "词语推敲是根据表达需要反复选择最恰当词语的语言训练。",
-            "example": "用“荡漾”表现心中持续的波动"
+            "definition": "推敲词语是从近似词语中选择最适合语境和表达目的的词语。",
+            "example": "用“飘飘然”表现阿Q得意忘形",
+            "section": "茶馆(节选)"
           },
           {
-            "name": "句式运用",
+            "name": "句式变化",
             "difficulty": 2,
-            "description": "灵活安排长短句、整散句及不同语气句式",
+            "description": "灵活运用长短句、整散句和不同语气句式",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "句式运用是根据思想感情和表达节奏选择并组合不同句式的方法。",
-            "example": "长短句交错写出秦腔场面的喧闹"
+            "definition": "句式变化是根据思想感情和节奏需要灵活安排句子形式。",
+            "example": "长短句交错表现秦腔场面的热闹"
           },
           {
-            "name": "修辞运用",
+            "name": "巧用修辞",
             "difficulty": 2,
-            "description": "恰当使用修辞增强语言的表现力和感染力",
+            "description": "恰当运用修辞增强语言表现力和感染力",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "修辞运用是借助特定语言方式增强表达形象性和感染力的方法。",
-            "example": "把情感写成追随唢呐远去"
+            "definition": "巧用修辞是根据表达需要运用修辞手法增强语言效果。",
+            "example": "将情感写成追随唢呐声远去",
+            "section": "茶馆(节选)"
           },
           {
             "name": "情趣与理趣",
             "difficulty": 3,
-            "description": "语言既具有生动趣味，又能体现思想意味和理性思考",
+            "description": "语言兼具趣味性和思想意味的表达品质",
             "aliases": [],
             "prerequisites": [
               "语言锤炼"
             ],
-            "definition": "情趣与理趣是语言在富有生活趣味的同时蕴含思想意味的表达追求。",
-            "example": "生动叙写日常又引发对社会的思考"
+            "definition": "情趣与理趣是语言既有生动趣味又能表现情感或道理的品质。",
+            "example": "记叙文渲染情趣，议论文表现理趣"
           }
         ],
         "sections": [
           {
-            "name": "5 阿Q正传(节选)",
-            "section_key": "426216d5d5",
+            "name": "阿Q正传(节选)",
+            "section_key": "4df0b118fe",
             "page_range": [
-              45,
-              45
+              27,
+              34
             ]
           },
           {
-            "name": "* 边城(节选)",
-            "section_key": "274e70efba",
+            "name": "边城(节选)",
+            "section_key": "3b79c3d625",
             "page_range": [
-              45,
+              34,
               46
             ]
           },
           {
-            "name": "6 大堰河——我的保姆",
-            "section_key": "6a90c986cd",
+            "name": "大堰河——我的保姆",
+            "section_key": "e94aa4992f",
             "page_range": [
               46,
               50
             ]
           },
           {
-            "name": "* 再别康桥",
-            "section_key": "21e401b73a",
+            "name": "再别康桥",
+            "section_key": "606827b08c",
             "page_range": [
               50,
               52
             ]
           },
           {
-            "name": "7 一个消逝了的山村",
-            "section_key": "75ff74c39a",
+            "name": "一个消逝了的山村",
+            "section_key": "8f7267de4d",
             "page_range": [
               52,
               55
             ]
           },
           {
-            "name": "* 秦腔",
-            "section_key": "7f786c3004",
+            "name": "秦腔",
+            "section_key": "d9bed59726",
             "page_range": [
               55,
+              60
+            ]
+          },
+          {
+            "name": "茶馆(节选)",
+            "section_key": "d9d083623b",
+            "page_range": [
+              60,
               73
             ]
           }
         ],
-        "chapter_key": "53f71c0739",
+        "chapter_key": "e2a2b27e12",
         "metadata": {
           "volume_id": "08ecdeefd231",
           "file_id": "08ecdeefd231",
           "volume_title": "普通高中教科书语文选择性必修下册",
-          "chapter_order": 3,
+          "chapter_order": 2,
           "raw_heading": "第二单元"
         }
       },
@@ -2242,278 +1854,366 @@
             "description": "魏晋至明代散文体裁多样、风格各异",
             "aliases": [],
             "prerequisites": [],
-            "definition": "古代散文是以记事、抒情或说理为主要内容的文章体裁。",
-            "example": "六篇文章呈现古代散文的多样面貌",
-            "section": "12 * 石钟山记"
+            "definition": "古代散文是以自由灵活的形式承载情感、思想和文化观念的文章。",
+            "example": "同单元文章有的抒情，有的说理。",
+            "section": "石钟山记"
           },
           {
-            "name": "表文体",
+            "name": "表文",
             "difficulty": 2,
-            "description": "古代臣子向皇帝陈述事情、表达请求的文体",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "表是臣子向皇帝陈述事情、表达请求或谢意的文体。",
-            "example": "向皇帝请求暂不奉诏"
-          },
-          {
-            "name": "委婉得体",
-            "difficulty": 3,
-            "description": "语言切合身份，以恭敬自谦表达真实请求",
+            "description": "古代臣子向皇帝陈述请求的文体",
             "aliases": [],
             "prerequisites": [
-              "表文体"
+              "古代散文"
             ],
-            "definition": "委婉得体是根据交际对象和身份恰当表达态度与诉求。",
-            "example": "用“伏惟”“谨”等词表达恭敬"
-          },
-          {
-            "name": "孝道观念",
-            "difficulty": 2,
-            "description": "以奉养祖辈、尊亲尽孝为重要价值准则",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "孝道观念是尊敬父母长辈并承担奉养责任的传统文化观念。",
-            "example": "愿乞终养祖母"
+            "definition": "表是古代臣子向皇帝陈述事实、表达请求或谢意的文体。",
+            "example": "向皇帝请求暂缓赴任。",
+            "section": "项脊轩志"
           },
           {
             "name": "志文体",
             "difficulty": 2,
-            "description": "记叙身边事物和生活琐事以寄托情感的文体",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "志是一种记事写物、寄托情感的古代散文文体。",
-            "example": "记写一间小屋及家庭往事"
-          },
-          {
-            "name": "细节传情",
-            "difficulty": 3,
-            "description": "通过日常琐事、动作和物件含蓄表现深情",
+            "description": "记叙生活见闻和身边琐事的文体",
             "aliases": [],
             "prerequisites": [
-              "志文体"
+              "古代散文"
             ],
-            "definition": "细节传情是借具体生活细节表现人物情感和关系。",
-            "example": "枇杷树是妻子去世时亲手所植"
+            "definition": "志是一种记叙人物、事件、景物或生活杂事的古代文体。",
+            "example": "记录书斋环境与家庭往事。"
           },
           {
-            "name": "序与辞",
-            "difficulty": 3,
-            "description": "序以散体叙事，辞以骈体抒情",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "序与辞是同篇中分别承担叙事说明和抒情表达功能的文体部分。",
-            "example": "序写辞官缘由，辞写归田之乐"
-          },
-          {
-            "name": "生死哲思",
-            "difficulty": 3,
-            "description": "由雅集游赏引发对时间、生命和生死的思考",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "生死哲思是对生命短暂、生死重大及人生意义的哲理思考。",
-            "example": "死生亦大矣"
-          },
-          {
-            "name": "情理交融",
-            "difficulty": 3,
-            "description": "文章既抒发真挚情感，又融入深刻理趣",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "情理交融是情感表达与道理思考相互结合的写作特点。",
-            "example": "由曲水流觞之乐转入生死之叹",
-            "section": "归去来兮辞并序"
-          },
-          {
-            "name": "骈散结合",
-            "difficulty": 3,
-            "description": "骈句与散句相互配合以表情达意",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "骈散结合是整齐对偶的骈句和自由灵活的散句交错使用。",
-            "example": "仰观宇宙之大，俯察品类之盛",
-            "section": "12 * 石钟山记"
-          },
-          {
-            "name": "对偶句",
+            "name": "辞文体",
             "difficulty": 2,
-            "description": "相同位置词语相对，语义相近或相反的句子",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "对偶句是结构相称、字数相等、意义相关的成对句子。",
-            "example": "悟已往之不谏，知来者之可追",
-            "section": "归去来兮辞并序"
-          },
-          {
-            "name": "归程结构",
-            "difficulty": 3,
-            "description": "按归程、归舍、归园、归田、归尽组织全文",
+            "description": "押韵并善于铺陈咏叹的古代文体",
             "aliases": [],
             "prerequisites": [
-              "章法"
+              "古代散文"
             ],
-            "definition": "归程结构是围绕回归田园的行程和生活层层展开文章内容。",
-            "example": "全文由归程写起，结于归尽"
-          },
-          {
-            "name": "辞的语言特色",
-            "difficulty": 3,
-            "description": "反复咏叹，骈偶押韵，语言清新自然",
-            "aliases": [],
-            "prerequisites": [
-              "序与辞"
-            ],
-            "definition": "辞的语言特色表现为骈偶押韵与反复咏叹相结合。",
-            "example": "归去来兮，田园将芜胡不归"
-          },
-          {
-            "name": "因事明理",
-            "difficulty": 3,
-            "description": "借种树故事说明治民道理，针砭现实弊政",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "因事明理是从具体事件或经验出发阐发普遍道理。",
-            "example": "由种树之道推及官理",
-            "section": "11 * 种树郭橐驼传"
-          },
-          {
-            "name": "顺应本性",
-            "difficulty": 3,
-            "description": "依照树木天性生长，不妄加干预和扰乱",
-            "aliases": [],
-            "prerequisites": [
-              "因事明理"
-            ],
-            "definition": "顺应本性是遵循事物自身规律并减少过度干预。",
-            "example": "勿动勿虑，去不复顾"
-          },
-          {
-            "name": "类比说理",
-            "difficulty": 3,
-            "description": "以种树与治民相类比，委婉讽刺政令烦扰",
-            "aliases": [],
-            "prerequisites": [
-              "因事明理"
-            ],
-            "definition": "类比说理是借相似事物的规律说明另一事物的道理。",
-            "example": "以养树之术说明养民之道"
-          },
-          {
-            "name": "传记写法",
-            "difficulty": 2,
-            "description": "从人物姓名、职业和特长写起并记述关键言论",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "传记写法是围绕人物经历、身份和言行组织叙述的方式。",
-            "example": "先写人物得名，再写种树本领"
+            "definition": "辞是古代一种讲究押韵、适合抒情咏叹的文体。",
+            "example": "反复咏叹归隐田园的心情。"
           },
           {
             "name": "游记",
             "difficulty": 2,
-            "description": "记叙出游缘由、所见所闻及游览后的感想",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "游记是记述游览经历并表达见闻感想的散文体裁。",
-            "example": "乘小舟夜探山石声响",
-            "section": "12 * 石钟山记"
-          },
-          {
-            "name": "求真务实",
-            "difficulty": 3,
-            "description": "重视亲身观察验证，反对未经考察的主观臆断",
+            "description": "记叙出游经历、见闻和感想的文章",
             "aliases": [],
             "prerequisites": [
-              "游记"
+              "古代散文"
             ],
-            "definition": "求真务实是以实际观察和验证为依据探究事物真相。",
-            "example": "事不目见耳闻，而臆断其有无，可乎"
+            "definition": "游记是以出游过程为线索记述所见所闻并抒发感想的散文。",
+            "example": "记述夜游山石并辨析其声响。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "骈散结合",
+            "difficulty": 3,
+            "description": "骈句与散句交错使用的行文方式",
+            "aliases": [],
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "骈散结合是文章交替使用整齐对偶句和自由散句的表达方式。",
+            "example": "整齐铺陈景物，散句推进议论。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "对偶",
+            "difficulty": 2,
+            "description": "结构相同、意义相关或相反的句式",
+            "aliases": [],
+            "prerequisites": [
+              "骈散结合"
+            ],
+            "definition": "对偶是把字数相等、结构相近、意义相连的两个句子相对排列。",
+            "example": "仰观宇宙之大，俯察品类之盛。",
+            "section": "兰亭集序"
           },
           {
             "name": "章法",
             "difficulty": 3,
-            "description": "文章的整体结构及各部分之间的组织联系",
+            "description": "文章的结构安排及各部分的内部联系",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "章法是文章安排结构、组织层次并建立内部关联的方法。",
-            "example": "文章由归程层层写到归尽",
-            "section": "12 * 石钟山记"
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "章法是文章组织材料、安排层次和形成内部联系的方法。",
+            "example": "文章由归程写到归舍、归园、归田。",
+            "section": "石钟山记"
           },
           {
             "name": "评点",
             "difficulty": 2,
-            "description": "品析文章内容、语言和写法并作概括评论的方法",
+            "description": "品析文章内容、语言和写法的阅读方法",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "评点是细读文章后对其内容和表达特点进行简要评论。",
-            "example": "评说深夜探访一段的绘声效果",
-            "section": "12 * 石钟山记"
+            "prerequisites": [
+              "章法"
+            ],
+            "definition": "评点是对诗文的内容、结构、语言或情感作简要分析和评价。",
+            "example": "评说一处细节为何情感浓厚。",
+            "section": "石钟山记"
           },
           {
             "name": "词类活用",
             "difficulty": 3,
-            "description": "文言词语在特定语境中临时改变意义或用法",
+            "description": "文言词语在语境中临时改变意义或用法",
             "aliases": [],
             "prerequisites": [],
             "definition": "词类活用是文言词语依据语境临时改变词性或用法的现象。",
-            "example": "“舟行”中的“舟”名词作状语",
-            "section": "12 * 石钟山记"
+            "example": "“舟行”中的“舟”名词作状语。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "以情感人",
+            "difficulty": 2,
+            "description": "通过真挚情感感染读者的表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "以情感人是借助真实、强烈而动人的情感打动读者。",
+            "example": "写祖孙相依以打动皇帝。",
+            "section": "项脊轩志"
+          },
+          {
+            "name": "以理服人",
+            "difficulty": 2,
+            "description": "通过道理和逻辑说服读者的表达方式",
+            "aliases": [],
+            "prerequisites": [
+              "古代散文"
+            ],
+            "definition": "以理服人是通过清晰的道理和严密的联系使读者信服。",
+            "example": "用孝道说明暂不赴任的理由。"
+          },
+          {
+            "name": "情理交融",
+            "difficulty": 3,
+            "description": "情感抒发与哲理思考相互结合",
+            "aliases": [],
+            "prerequisites": [
+              "以情感人",
+              "以理服人"
+            ],
+            "definition": "情理交融是文章既抒发真切情感又进行深入思考的表达特点。",
+            "example": "由宴集之乐思考生命短暂。",
+            "section": "兰亭集序"
+          },
+          {
+            "name": "孝道",
+            "difficulty": 2,
+            "description": "尊敬、奉养父母和长辈的传统伦理观念",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "孝道是以敬爱和奉养长辈为核心的传统文化观念。",
+            "example": "请求奉养病重的祖母。",
+            "section": "项脊轩志"
+          },
+          {
+            "name": "志物怀人",
+            "difficulty": 3,
+            "description": "借身边物件和环境寄托对亲人的怀念",
+            "aliases": [],
+            "prerequisites": [
+              "志文体"
+            ],
+            "definition": "志物怀人是通过描写物品、居所或景物来追忆和怀念人物。",
+            "example": "枇杷树寄托对亡妻的思念。",
+            "section": "项脊轩志"
+          },
+          {
+            "name": "细节抒情",
+            "difficulty": 3,
+            "description": "通过具体生活细节表现深厚情感",
+            "aliases": [],
+            "prerequisites": [
+              "以情感人"
+            ],
+            "definition": "细节抒情是借日常动作、语言和小事含蓄表现人物情感。",
+            "example": "祖母阖门自语并赠象笏。"
+          },
+          {
+            "name": "生死哲思",
+            "difficulty": 3,
+            "description": "对生命短暂、生死归宿等问题的思考",
+            "aliases": [],
+            "prerequisites": [
+              "情理交融"
+            ],
+            "definition": "生死哲思是围绕生命有限和生死意义展开的哲理思考。",
+            "example": "感叹人生短暂、死生重大。"
+          },
+          {
+            "name": "归隐田园",
+            "difficulty": 2,
+            "description": "辞去官职、回归自然田园的生活选择",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "归隐田园是拒绝或摆脱仕途，选择回归乡居自然的生活方式。",
+            "example": "辞官回家，耕作、游园、饮酒。"
+          },
+          {
+            "name": "顺应自然",
+            "difficulty": 3,
+            "description": "尊重事物本性和自然规律而不过度干预",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "顺应自然是依循事物自身规律，使其保持本性并自然发展。",
+            "example": "种树后不妄加摇动和照看。"
+          },
+          {
+            "name": "因事明理",
+            "difficulty": 3,
+            "description": "从具体事件和经验中揭示普遍道理",
+            "aliases": [],
+            "prerequisites": [
+              "以理服人"
+            ],
+            "definition": "因事明理是先叙述具体事情，再由事情推导出深层道理。",
+            "example": "由种树方法说明治理百姓的道理。",
+            "section": "种树郭橐驼传"
+          },
+          {
+            "name": "类比说理",
+            "difficulty": 3,
+            "description": "借相似事物说明另一领域道理的论证方式",
+            "aliases": [],
+            "prerequisites": [
+              "因事明理"
+            ],
+            "definition": "类比说理是把性质相近的事物进行比较以阐明观点。",
+            "example": "以养树类比养民。"
+          },
+          {
+            "name": "对举说理",
+            "difficulty": 3,
+            "description": "用相对并列的语句突出事物差异",
+            "aliases": [],
+            "prerequisites": [
+              "对偶",
+              "以理服人"
+            ],
+            "definition": "对举说理是通过两种相反或相对情况的并列来增强说服力。",
+            "example": "虽曰爱之，其实害之。"
+          },
+          {
+            "name": "婉而多讽",
+            "difficulty": 3,
+            "description": "语言委婉含蓄而具有讽刺意味的写法",
+            "aliases": [],
+            "prerequisites": [
+              "类比说理"
+            ],
+            "definition": "婉而多讽是借委婉叙事和寓意表达对现实问题的批评。",
+            "example": "借种树者之口讽刺政令繁多。",
+            "section": "种树郭橐驼传"
+          },
+          {
+            "name": "求真务实",
+            "difficulty": 2,
+            "description": "重视亲身观察验证、不凭主观臆断",
+            "aliases": [],
+            "prerequisites": [
+              "以理服人"
+            ],
+            "definition": "求真务实是以实际观察和验证为依据探求事实真相的精神。",
+            "example": "夜泊绝壁亲自考察山石声响。"
+          },
+          {
+            "name": "质疑精神",
+            "difficulty": 2,
+            "description": "对已有说法保持疑问并主动探究",
+            "aliases": [],
+            "prerequisites": [
+              "求真务实"
+            ],
+            "definition": "质疑精神是面对前人结论不盲从并追问其真实性的态度。",
+            "example": "连续怀疑两种石钟山得名说法。"
+          },
+          {
+            "name": "说真话抒真情",
+            "difficulty": 2,
+            "description": "真实表达心声、经历和情感的写作要求",
+            "aliases": [],
+            "prerequisites": [
+              "以情感人"
+            ],
+            "definition": "说真话抒真情要求坦诚记录真实经历并表达真实感受。",
+            "example": "写信说明自己的选择及真实理由。",
+            "section": "石钟山记"
+          },
+          {
+            "name": "委婉得体",
+            "difficulty": 3,
+            "description": "根据身份和情境恰当、含蓄地表达诉求",
+            "aliases": [],
+            "prerequisites": [
+              "表文",
+              "说真话抒真情"
+            ],
+            "definition": "委婉得体是切合身份和场合，以恭敬含蓄的方式表达真实意愿。",
+            "example": "用“伏惟”“谨”等词向皇帝陈情。"
+          },
+          {
+            "name": "合理虚构",
+            "difficulty": 3,
+            "description": "基于生活可能性进行有文学意义的虚构",
+            "aliases": [],
+            "prerequisites": [
+              "说真话抒真情"
+            ],
+            "definition": "合理虚构是在符合生活逻辑的前提下创造可能发生的情节。",
+            "example": "文学作品虚构人物经历但保持生活真实感。",
+            "section": "石钟山记"
           }
         ],
         "sections": [
           {
-            "name": "9 陈情表",
-            "section_key": "7a0b99d977",
+            "name": "陈情表",
+            "section_key": "2cda957059",
             "page_range": [
               75,
               77
             ]
           },
           {
-            "name": "* 项脊轩志",
-            "section_key": "65aa292b01",
+            "name": "项脊轩志",
+            "section_key": "69604bf8ea",
             "page_range": [
               77,
               80
             ]
           },
           {
-            "name": "10 兰亭集序",
-            "section_key": "f1d0984295",
+            "name": "兰亭集序",
+            "section_key": "9feee2a67c",
             "page_range": [
               80,
-              82
-            ]
-          },
-          {
-            "name": "归去来兮辞并序",
-            "section_key": "6d498507d9",
-            "page_range": [
-              82,
               86
             ]
           },
           {
-            "name": "11 * 种树郭橐驼传",
-            "section_key": "cabb4bf33f",
+            "name": "种树郭橐驼传",
+            "section_key": "b7bfd5df63",
             "page_range": [
               86,
               88
             ]
           },
           {
-            "name": "12 * 石钟山记",
-            "section_key": "326fd56d99",
+            "name": "石钟山记",
+            "section_key": "7de94545ae",
             "page_range": [
               88,
               91
             ]
           }
         ],
-        "chapter_key": "c646bc45bc",
+        "chapter_key": "ab079692ac",
         "metadata": {
           "volume_id": "08ecdeefd231",
           "file_id": "08ecdeefd231",
           "volume_title": "普通高中教科书语文选择性必修下册",
-          "chapter_order": 4,
+          "chapter_order": 3,
           "raw_heading": "第三单元"
         }
       },
@@ -2523,24 +2223,58 @@
           {
             "name": "科学精神",
             "difficulty": 2,
-            "description": "以理性、严谨态度探索和认识自然",
+            "description": "自然科学论著中体现的理性、严谨态度",
             "aliases": [],
             "prerequisites": [],
-            "definition": "科学精神是以求真为目标并重视理性、严谨和实践检验的探索态度。",
-            "example": "用观测事实检验宇宙学说。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "科学精神是以理性、严谨和求真为基础探索自然的态度。",
+            "example": "面对未知既勇于怀疑，又尊重事实。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "自然科学论著",
+            "difficulty": 2,
+            "description": "阐明科学原理、介绍科学知识的论著",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然科学论著是运用科学事实和推理阐述自然规律的文章。",
+            "example": "通过事实和推论说明生物演化。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "科普作品",
+            "difficulty": 2,
+            "description": "用通俗语言介绍科学知识的作品",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "科普作品是以易于理解的方式向公众介绍科学知识的作品。",
+            "example": "用宇宙漫游的顺序介绍星系和行星。",
+            "section": "自然选择的证明"
           },
           {
             "name": "自然选择",
-            "difficulty": 5,
-            "description": "保存有利变异并淘汰不利变异的过程",
-            "aliases": [],
-            "prerequisites": [
-              "个体差异",
-              "遗传变异"
+            "difficulty": 4,
+            "description": "保存有利变异、淘汰不利类型的自然力量",
+            "aliases": [
+              "最适者生存"
             ],
-            "definition": "自然选择是生物在生存竞争中保存有利变异、淘汰不利变异的过程。",
-            "example": "适应环境的变异逐代积累。"
+            "prerequisites": [
+              "遗传变异",
+              "生存竞争"
+            ],
+            "definition": "自然选择是生物在生存竞争中保存有利变异并积累改良的过程。",
+            "example": "有利变异的后代逐渐取代旧类型。"
+          },
+          {
+            "name": "遗传变异",
+            "difficulty": 3,
+            "description": "生物性状在遗传延续中产生差异的现象",
+            "aliases": [
+              "连续变异"
+            ],
+            "prerequisites": [],
+            "definition": "遗传变异是生物后代继承性状并产生差异的现象。",
+            "example": "同一物种的后代出现微小性状差异。",
+            "section": "自然选择的证明"
           },
           {
             "name": "个体差异",
@@ -2548,103 +2282,75 @@
             "description": "同一物种个体之间存在的细微差别",
             "aliases": [],
             "prerequisites": [],
-            "definition": "个体差异是同一物种不同个体在性状等方面存在的差别。",
-            "example": "同种鸟类的体色略有不同。",
-            "section": "13 自然选择的证明"
+            "definition": "个体差异是同一物种不同个体在性状上的差别。",
+            "example": "同种鸟类个体的体色略有不同。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "遗传变异",
-            "difficulty": 4,
-            "description": "生物性状在遗传基础上的变化现象",
+            "name": "生存竞争",
+            "difficulty": 3,
+            "description": "有限生存空间中生物之间的竞争",
             "aliases": [
-              "遗传变异理论"
+              "竞争"
             ],
             "prerequisites": [
-              "个体差异"
+              "遗传变异"
             ],
-            "definition": "遗传变异是生物性状发生变化并能在世代间传递的现象。",
-            "example": "有利性状在后代中逐渐增多。",
-            "section": "13 自然选择的证明"
+            "definition": "生存竞争是生物为生存和繁殖而争夺有限条件的过程。",
+            "example": "优势类型在竞争中排挤较弱类型。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "适者生存",
+            "name": "性选择",
             "difficulty": 3,
-            "description": "有利变异个体更易存活并繁殖",
+            "description": "使繁殖相关性状得到保存和发展的选择",
             "aliases": [],
             "prerequisites": [
               "自然选择"
             ],
-            "definition": "适者生存指适应环境的生物更可能生存下来并繁殖后代。",
-            "example": "适应寒冷的个体留下更多后代。",
-            "section": "13 自然选择的证明"
+            "definition": "性选择是与繁殖有关的选择力量对生物性状的保存和发展。",
+            "example": "雄鸟鲜艳色泽和优美体态得到保留。",
+            "section": "自然选择的证明"
           },
           {
             "name": "共同祖先",
             "difficulty": 3,
-            "description": "不同生物类型共同追溯的祖先类型",
-            "aliases": [],
+            "description": "不同生物类型共同来源的祖先类型",
+            "aliases": [
+              "世系关系"
+            ],
             "prerequisites": [
               "遗传变异"
             ],
-            "definition": "共同祖先是不同现生或绝灭生物通过世系关系共同追溯的祖先。",
-            "example": "近缘物种可追溯到共同祖先。",
-            "section": "13 自然选择的证明"
+            "definition": "共同祖先是多个近缘生物类型在演化历史上共同的来源。",
+            "example": "同属物种被认为来自一个共同祖先。",
+            "section": "自然选择的证明"
           },
           {
             "name": "物种形成",
             "difficulty": 4,
-            "description": "变异积累导致新物种产生的过程",
+            "description": "变异积累并形成稳定物种的演化过程",
             "aliases": [],
             "prerequisites": [
               "自然选择",
               "遗传变异"
             ],
-            "definition": "物种形成是生物变异长期积累并形成稳定、明确新类型的过程。",
-            "example": "不同变种逐渐形成界限分明的物种。",
-            "section": "13 自然选择的证明"
+            "definition": "物种形成是生物变异长期积累并形成稳定差异的过程。",
+            "example": "变种间差异扩大后成为不同物种。",
+            "section": "自然选择的证明"
           },
           {
             "name": "地理分布",
             "difficulty": 3,
-            "description": "生物在不同地区的分布及其联系",
+            "description": "生物在不同地区和时空中的分布现象",
             "aliases": [],
             "prerequisites": [
+              "遗传变异",
               "共同祖先"
             ],
-            "definition": "地理分布是生物类型在不同地域中的分布状况及其历史联系。",
-            "example": "岛屿生物常与邻近大陆生物相关。",
-            "section": "13 自然选择的证明"
-          },
-          {
-            "name": "科学论著",
-            "difficulty": 2,
-            "description": "阐明科学原理、介绍科学知识的文章",
-            "aliases": [
-              "学术论著"
-            ],
-            "prerequisites": [],
-            "definition": "科学论著是以科学事实和严密论证阐明原理、说明知识的文章。",
-            "example": "文章用考察事实论证生物进化原理。"
-          },
-          {
-            "name": "科普作品",
-            "difficulty": 2,
-            "description": "以通俗语言介绍科学知识的作品",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "科普作品是面向公众、用通俗易懂语言传播科学知识的作品。",
-            "example": "用宇宙漫游介绍星系和行星。",
-            "section": "* 宇宙的边疆"
-          },
-          {
-            "name": "事实规律结论",
-            "difficulty": 3,
-            "description": "科学论述中事实、规律与结论的关系",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "科学论述常由事实发现规律，再依据规律作出结论。",
-            "example": "观察变异，概括规律，得出自然选择结论。",
-            "section": "* 宇宙的边疆"
+            "definition": "地理分布是生物类型在不同地域和地质时期中的分布状况。",
+            "example": "岛屿生物与邻近大陆生物存在联系。",
+            "section": "自然选择的证明"
           },
           {
             "name": "光年",
@@ -2652,222 +2358,241 @@
             "description": "光在一年中传播的距离单位",
             "aliases": [],
             "prerequisites": [],
-            "definition": "光年是光在一年内传播的距离，用来度量宇宙中的巨大距离。",
-            "example": "某星系距地球数百万光年。",
-            "section": "* 宇宙的边疆"
+            "definition": "光年是光在一年内传播的距离，是度量宇宙距离的单位。",
+            "example": "某星系距离地球数百万光年。",
+            "section": "自然选择的证明"
           },
           {
             "name": "星系",
             "difficulty": 2,
-            "description": "由恒星、气体和尘埃组成的巨大系统",
+            "description": "由气体、尘埃和恒星群组成的天体系统",
             "aliases": [],
             "prerequisites": [],
-            "definition": "星系是由大量恒星以及气体、尘埃等组成的天体系统。",
-            "example": "银河系包含约四千亿颗恒星。",
-            "section": "* 宇宙的边疆"
+            "definition": "星系是由大量恒星以及气体、尘埃组成的巨大天体系统。",
+            "example": "银河系是一个旋涡星系。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "银河系",
+            "name": "旋涡星系",
             "difficulty": 2,
-            "description": "人类所在的旋涡星系",
-            "aliases": [
-              "本星系"
-            ],
+            "description": "具有明亮核心和旋臂结构的星系",
+            "aliases": [],
             "prerequisites": [
               "星系"
             ],
-            "definition": "银河系是太阳及其所在行星系统所属的旋涡星系。",
-            "example": "太阳位于银河系的边远地带。",
-            "section": "* 宇宙的边疆"
+            "definition": "旋涡星系是具有明亮核心并向外延伸旋臂的星系。",
+            "example": "银河系具有旋涡臂结构。",
+            "section": "自然选择的证明"
           },
           {
-            "name": "太阳系",
+            "name": "宇宙探索",
             "difficulty": 2,
-            "description": "以太阳为中心的行星及天体系统",
+            "description": "人类认识宇宙及自身位置的探索活动",
             "aliases": [],
             "prerequisites": [
-              "银河系"
+              "科学精神"
             ],
-            "definition": "太阳系是以太阳为中心、各行星受重力作用运行的天体系统。",
-            "example": "火星和木星都绕太阳运行。",
-            "section": "* 宇宙的边疆"
-          },
-          {
-            "name": "黑洞",
-            "difficulty": 3,
-            "description": "引力极强且物质和辐射无法逃逸的天体",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "黑洞是具有超强引力、使物体和辐射无法从其附近逃逸的天体。",
-            "example": "黑洞在几千米外就看不见。",
-            "section": "* 宇宙的边疆"
-          },
-          {
-            "name": "超新星",
-            "difficulty": 3,
-            "description": "亮度突然大幅增加的爆发性变星",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "超新星是爆发时光度突然增至原来一千万倍以上的变星。",
-            "example": "其亮度可与整个星系相当。",
-            "section": "* 宇宙的边疆"
+            "definition": "宇宙探索是人类通过观测和研究认识宇宙的活动。",
+            "example": "从地球出发认识太阳系和星系。"
           },
           {
             "name": "宣夜说",
             "difficulty": 3,
-            "description": "认为天体自由浮于无限虚空的宇宙学说",
+            "description": "认为天体自由漂浮于无限虚空的宇宙学说",
             "aliases": [],
             "prerequisites": [],
-            "definition": "宣夜说认为天是虚空，日月星辰自由浮动且彼此没有共同规律。",
-            "example": "以虚空解释天体的自由运行。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "宣夜说认为天无实体，日月星辰自由浮生于虚空之中。",
+            "example": "以天体无所根系解释其运行不规则。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "盖天说",
-            "difficulty": 4,
-            "description": "认为天地是上下平行平面的宇宙学说",
+            "difficulty": 3,
+            "description": "认为天地如盖与盘、天上地下的学说",
             "aliases": [],
             "prerequisites": [],
-            "definition": "盖天说认为天在上、地在下，日月星辰依附天壳绕北极运行。",
-            "example": "用七衡六间推算太阳运行。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "盖天说认为天似盖笠、地如覆盘，日月星辰依附天壳运行。",
+            "example": "用立竿测影和数学方法推算天文数据。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "浑天说",
-            "difficulty": 4,
-            "description": "认为天为圆球、地居其中的宇宙学说",
+            "difficulty": 3,
+            "description": "认为天为圆球、地处其中的宇宙学说",
             "aliases": [],
-            "prerequisites": [
-              "盖天说"
-            ],
-            "definition": "浑天说认为天是包围大地的圆球，地处于天球内部。",
-            "example": "以浑天说制定更符合天象的历法。",
-            "section": "14 * 天文学上的旷世之争"
+            "prerequisites": [],
+            "definition": "浑天说认为天是包着地的圆球，地处于天球内部。",
+            "example": "以天球模型解释日月星辰的运行。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "浑盖之争",
             "difficulty": 3,
-            "description": "浑天说与盖天说长期争论的科学史事件",
+            "description": "中国古代浑天说与盖天说的长期争论",
             "aliases": [],
             "prerequisites": [
               "盖天说",
               "浑天说"
             ],
-            "definition": "浑盖之争是中国古代围绕宇宙结构学说展开的长期学术争论。",
-            "example": "双方通过历法和观测结果相互辩论。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "浑盖之争是围绕中国古代宇宙结构学说展开的长期学术论争。",
+            "example": "双方历经千年争论并以观测结果相互检验。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "实际校验",
+            "name": "重视校验",
             "difficulty": 3,
-            "description": "用观测和仪器检验学说是否符合实际",
-            "aliases": [],
-            "prerequisites": [
-              "事实规律结论"
+            "description": "以观测实践检验学说是否符合实际",
+            "aliases": [
+              "实际校验"
             ],
-            "definition": "实际校验是通过天文观测、仪器测量等方式检验理论的实践。",
-            "example": "观测日月升降来判断学说真伪。",
-            "section": "14 * 天文学上的旷世之争"
+            "prerequisites": [],
+            "definition": "重视校验是依据观测、仪器和实践结果判断学说真伪。",
+            "example": "通过观测日月升降检验宇宙模型。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "文章立意",
+            "name": "科学史",
             "difficulty": 2,
-            "description": "文章确立的中心思想和表达主旨",
+            "description": "研究科学发现、理论和思想演变历史的学问",
             "aliases": [],
             "prerequisites": [],
-            "definition": "文章立意是作者对写作对象形成并要集中表达的中心思想。",
-            "example": "修改时把分散观点提炼为明确主题。"
+            "definition": "科学史是揭示科学发现发展并探讨科学理论演变的学问。",
+            "example": "追溯古代宇宙结构学说的演变。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "文章结构",
-            "difficulty": 2,
-            "description": "文章内容的组织层次和安排方式",
-            "aliases": [
-              "谋篇布局"
-            ],
-            "prerequisites": [
-              "文章立意"
-            ],
-            "definition": "文章结构是文章各部分内容的层次、顺序及其衔接关系。",
-            "example": "调整段落顺序使过渡更加顺畅。",
-            "section": "14 * 天文学上的旷世之争"
+            "name": "事实规律结论",
+            "difficulty": 3,
+            "description": "科学论述中事实、规律与结论的推理关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "事实规律结论关系是从具体事实概括规律并据此形成结论的过程。",
+            "example": "由生物变异事实推导自然选择结论。",
+            "section": "自然选择的证明"
           },
           {
             "name": "托物寓意",
             "difficulty": 3,
-            "description": "借具体事物寄托思想情感",
+            "description": "借具体事物寄托情感和思想意义",
             "aliases": [],
-            "prerequisites": [
-              "文章立意"
-            ],
-            "definition": "托物寓意是借写具体事物来寄托作者的思想和情感。",
-            "example": "以水的流向寄托对命运的感慨。",
-            "section": "14 * 天文学上的旷世之争"
+            "prerequisites": [],
+            "definition": "托物寓意是借助具体事物的形态或状态表达深层情志。",
+            "example": "借水的流向寄托人生境遇。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "生活细节",
             "difficulty": 2,
-            "description": "日常生活中富有表现力的具体情景",
+            "description": "通过日常生活场景和动作表现人物心境",
             "aliases": [],
             "prerequisites": [],
-            "definition": "生活细节是作品中表现人物心境和情趣的日常行为或场景。",
-            "example": "写开蓬门、邀邻翁表现待客兴味。",
-            "section": "14 * 天文学上的旷世之争"
+            "definition": "生活细节是诗歌中能够具体表现人物情感的日常场景或动作。",
+            "example": "开蓬门、邀邻翁表现待客兴味。",
+            "section": "天文学上的旷世之争"
           },
           {
             "name": "用典",
             "difficulty": 3,
-            "description": "借用古代故事或语句表达情意",
-            "aliases": [],
+            "description": "借用前人故事或语句表达诗歌情意",
+            "aliases": [
+              "典故"
+            ],
             "prerequisites": [],
-            "definition": "用典是引用古代故事、人物或语句来含蓄表达思想感情。",
-            "example": "借伯牙绝弦慨叹世无知己。"
+            "definition": "用典是借助历史故事或前人语句含蓄表达当下情感。",
+            "example": "借伯牙绝弦感叹世无知己。",
+            "section": "天文学上的旷世之争"
           },
           {
-            "name": "含蓄表达",
+            "name": "起兴",
             "difficulty": 2,
-            "description": "不直说情感而通过形象和细节暗示",
+            "description": "先写相关事物以引出所要表现的情感",
             "aliases": [],
-            "prerequisites": [
-              "生活细节",
-              "托物寓意"
+            "prerequisites": [],
+            "definition": "起兴是先描写眼前事物，再引出诗歌所要抒写的情意。",
+            "example": "先写泻水东西流，再写人生境遇。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "文章立意",
+            "difficulty": 2,
+            "description": "文章确立的基本观点和中心思想",
+            "aliases": [
+              "立意"
             ],
-            "definition": "含蓄表达是借景物、细节或动作间接传达情感和思想。",
-            "example": "写听雨分茶暗示诗人的落寞。"
+            "prerequisites": [],
+            "definition": "文章立意是作者对文章主题和基本观点的总体确定。",
+            "example": "修改时检查主题是否集中深刻。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "材料取舍",
+            "difficulty": 2,
+            "description": "根据主题需要增删和选择文章材料",
+            "aliases": [
+              "增删材料"
+            ],
+            "prerequisites": [
+              "文章立意"
+            ],
+            "definition": "材料取舍是围绕主题选择恰当典型材料并删除冗余内容。",
+            "example": "补充必要论据，删去重复情节。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "文章结构",
+            "difficulty": 2,
+            "description": "文章内容安排、层次组织和衔接方式",
+            "aliases": [
+              "调整结构"
+            ],
+            "prerequisites": [
+              "文章立意",
+              "材料取舍"
+            ],
+            "definition": "文章结构是文章各部分的组织顺序、层次关系和过渡安排。",
+            "example": "调整段落顺序使过渡更加顺畅。",
+            "section": "天文学上的旷世之争"
+          },
+          {
+            "name": "语言推敲",
+            "difficulty": 2,
+            "description": "修改语言以求准确、规范、简洁和生动",
+            "aliases": [
+              "推敲语言"
+            ],
+            "prerequisites": [
+              "文章立意",
+              "文章结构"
+            ],
+            "definition": "语言推敲是反复修改措辞以准确表达文章思想的过程。",
+            "example": "删去重复词语，使句子表达更简洁。",
+            "section": "天文学上的旷世之争"
           }
         ],
         "sections": [
           {
-            "name": "13 自然选择的证明",
-            "section_key": "9a01859a01",
+            "name": "自然选择的证明",
+            "section_key": "a1abff2b33",
             "page_range": [
               93,
-              99
-            ]
-          },
-          {
-            "name": "* 宇宙的边疆",
-            "section_key": "80638714ff",
-            "page_range": [
-              99,
               106
             ]
           },
           {
-            "name": "14 * 天文学上的旷世之争",
-            "section_key": "d4c0f4e200",
+            "name": "天文学上的旷世之争",
+            "section_key": "462cf3b6dc",
             "page_range": [
               106,
               122
             ]
           }
         ],
-        "chapter_key": "63bd8e21ae",
+        "chapter_key": "d44df3b3e2",
         "metadata": {
           "volume_id": "08ecdeefd231",
           "file_id": "08ecdeefd231",
           "volume_title": "普通高中教科书语文选择性必修下册",
-          "chapter_order": 5,
+          "chapter_order": 4,
           "raw_heading": "第四单元"
         }
       }
@@ -2878,155 +2603,147 @@
       "reason": ""
     },
     "section_ranges": {
-      "fddd62ac5b": [
-        11,
-        12
-      ],
-      "离骚(节选)": [
-        11,
-        12
-      ],
-      "1f0e3d1f8d": [
-        12,
-        19
-      ],
-      "2 * 孔雀东南飞并序": [
-        12,
-        19
-      ],
-      "9d3b7b826c": [
+      "193e6a5397": [
         19,
         21
       ],
-      "3 蜀道难": [
+      "蜀道难": [
         19,
         21
       ],
-      "ec3bca4afe": [
+      "58135fcc18": [
         21,
         25
       ],
-      "* 蜀相": [
+      "蜀相": [
         21,
         25
       ],
-      "426216d5d5": [
-        45,
-        45
+      "e1854fb64f": [
+        25,
+        25
       ],
-      "5 阿Q正传(节选)": [
-        45,
-        45
+      "望海潮(东南形胜)": [
+        25,
+        25
       ],
-      "274e70efba": [
-        45,
+      "200e0bb13b": [
+        25,
+        25
+      ],
+      "扬州慢(淮左名都)": [
+        25,
+        25
+      ],
+      "4df0b118fe": [
+        27,
+        34
+      ],
+      "阿Q正传(节选)": [
+        27,
+        34
+      ],
+      "3b79c3d625": [
+        34,
         46
       ],
-      "* 边城(节选)": [
-        45,
+      "边城(节选)": [
+        34,
         46
       ],
-      "6a90c986cd": [
+      "e94aa4992f": [
         46,
         50
       ],
-      "6 大堰河——我的保姆": [
+      "大堰河——我的保姆": [
         46,
         50
       ],
-      "21e401b73a": [
+      "606827b08c": [
         50,
         52
       ],
-      "* 再别康桥": [
+      "再别康桥": [
         50,
         52
       ],
-      "75ff74c39a": [
+      "8f7267de4d": [
         52,
         55
       ],
-      "7 一个消逝了的山村": [
+      "一个消逝了的山村": [
         52,
         55
       ],
-      "7f786c3004": [
+      "d9bed59726": [
         55,
+        60
+      ],
+      "秦腔": [
+        55,
+        60
+      ],
+      "d9d083623b": [
+        60,
         73
       ],
-      "* 秦腔": [
-        55,
+      "茶馆(节选)": [
+        60,
         73
       ],
-      "7a0b99d977": [
+      "2cda957059": [
         75,
         77
       ],
-      "9 陈情表": [
+      "陈情表": [
         75,
         77
       ],
-      "65aa292b01": [
+      "69604bf8ea": [
         77,
         80
       ],
-      "* 项脊轩志": [
+      "项脊轩志": [
         77,
         80
       ],
-      "f1d0984295": [
+      "9feee2a67c": [
         80,
-        82
-      ],
-      "10 兰亭集序": [
-        80,
-        82
-      ],
-      "6d498507d9": [
-        82,
         86
       ],
-      "归去来兮辞并序": [
-        82,
+      "兰亭集序": [
+        80,
         86
       ],
-      "cabb4bf33f": [
+      "b7bfd5df63": [
         86,
         88
       ],
-      "11 * 种树郭橐驼传": [
+      "种树郭橐驼传": [
         86,
         88
       ],
-      "326fd56d99": [
+      "7de94545ae": [
         88,
         91
       ],
-      "12 * 石钟山记": [
+      "石钟山记": [
         88,
         91
       ],
-      "9a01859a01": [
+      "a1abff2b33": [
         93,
-        99
-      ],
-      "13 自然选择的证明": [
-        93,
-        99
-      ],
-      "80638714ff": [
-        99,
         106
       ],
-      "* 宇宙的边疆": [
-        99,
+      "自然选择的证明": [
+        93,
         106
       ],
-      "d4c0f4e200": [
+      "462cf3b6dc": [
         106,
         122
       ],
-      "14 * 天文学上的旷世之争": [
+      "天文学上的旷世之争": [
         106,
         122
       ]

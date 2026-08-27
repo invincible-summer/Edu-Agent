@@ -1,0 +1,4297 @@
+{
+  "file_id": "1f9a0bb8ef3e",
+  "text_sha256": "1fd48191c69c1bce71862cdcd251e5df7c90770e4e22e37f0c43c103025df1be",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章",
+        "concepts": [
+          {
+            "name": "天体",
+            "difficulty": 1,
+            "description": "宇宙中物质存在的各种形式。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "天体是宇宙中天然存在的物质形体。",
+            "example": "太阳、行星、卫星都是天体。"
+          },
+          {
+            "name": "恒星",
+            "difficulty": 1,
+            "description": "由炽热气体组成且能自行发光的天体。",
+            "aliases": [],
+            "prerequisites": [
+              "天体"
+            ],
+            "definition": "恒星是由炽热气体组成、能自己发光的球状或类球状天体。",
+            "example": "太阳是离地球最近的恒星。"
+          },
+          {
+            "name": "行星",
+            "difficulty": 1,
+            "description": "绕恒星运行、近似球状且本身不发光的天体。",
+            "aliases": [],
+            "prerequisites": [
+              "天体",
+              "恒星"
+            ],
+            "definition": "行星是在椭圆轨道上绕恒星运行、近似球状且靠反射恒星光发亮的天体。",
+            "example": "地球是太阳系的一颗行星。"
+          },
+          {
+            "name": "卫星",
+            "difficulty": 1,
+            "description": "环绕行星运转的天体。",
+            "aliases": [],
+            "prerequisites": [
+              "天体",
+              "行星"
+            ],
+            "definition": "卫星是环绕行星运转的天体。",
+            "example": "月球是地球唯一的天然卫星。"
+          },
+          {
+            "name": "天体系统",
+            "difficulty": 2,
+            "description": "运动天体相互吸引、相互绕转形成的系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体"
+            ],
+            "definition": "天体系统是运动中的天体相互吸引、相互绕转形成的系统。",
+            "example": "地月系是最低级的天体系统。"
+          },
+          {
+            "name": "地月系",
+            "difficulty": 1,
+            "description": "由地球和月球组成的天体系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体系统",
+              "卫星"
+            ],
+            "definition": "地月系是由地球和月球组成的天体系统。",
+            "example": "月球围绕地球运动。"
+          },
+          {
+            "name": "太阳系",
+            "difficulty": 2,
+            "description": "以太阳为中心、由多类天体组成的系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体系统",
+              "恒星",
+              "行星"
+            ],
+            "definition": "太阳系是由太阳、行星及其卫星等天体构成的天体系统。",
+            "example": "地球距离太阳约1.5亿千米。"
+          },
+          {
+            "name": "银河系",
+            "difficulty": 2,
+            "description": "由太阳和众多恒星组成的庞大恒星系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体系统",
+              "恒星"
+            ],
+            "definition": "银河系是由太阳和众多恒星组成的庞大恒星系统。",
+            "example": "太阳系位于银河系的一条旋臂上。"
+          },
+          {
+            "name": "河外星系",
+            "difficulty": 2,
+            "description": "银河系以外与银河系类似的星系。",
+            "aliases": [],
+            "prerequisites": [
+              "银河系"
+            ],
+            "definition": "河外星系是银河系以外、与银河系类似的星系。",
+            "example": "仙女座星云属于河外星系。"
+          },
+          {
+            "name": "可观测宇宙",
+            "difficulty": 2,
+            "description": "银河系和现阶段可观测河外星系的总称。",
+            "aliases": [],
+            "prerequisites": [
+              "银河系",
+              "河外星系"
+            ],
+            "definition": "可观测宇宙是银河系和现阶段所能观测到的河外星系的总称。",
+            "example": "可观测宇宙包含许多河外星系。"
+          },
+          {
+            "name": "类地行星",
+            "difficulty": 2,
+            "description": "靠近太阳、有固体表面且体积较小的行星。",
+            "aliases": [],
+            "prerequisites": [
+              "行星"
+            ],
+            "definition": "类地行星是靠近太阳、具有固体表面且体积较小的行星。",
+            "example": "水星、金星、地球和火星属于类地行星。"
+          },
+          {
+            "name": "太阳辐射",
+            "difficulty": 2,
+            "description": "太阳以电磁波形式向宇宙空间放射能量。",
+            "aliases": [],
+            "prerequisites": [
+              "恒星"
+            ],
+            "definition": "太阳辐射是太阳以电磁波形式向宇宙空间放射能量的现象。",
+            "example": "太阳辐射为地球提供光和热。"
+          },
+          {
+            "name": "核聚变",
+            "difficulty": 3,
+            "description": "轻原子核聚合成重原子核并释放巨大能量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "核聚变是质量小的原子核相聚合并释放巨大能量的过程。",
+            "example": "太阳能量来自内部的核聚变。"
+          },
+          {
+            "name": "太阳活动",
+            "difficulty": 2,
+            "description": "太阳大气的变化及其活动现象。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射"
+            ],
+            "definition": "太阳活动是太阳大气发生变化的现象。",
+            "example": "太阳黑子和耀斑属于太阳活动。"
+          },
+          {
+            "name": "太阳风",
+            "difficulty": 2,
+            "description": "太阳大气释放的高速带电粒子流。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "太阳风是太阳大气不断释放的高速带电粒子流。",
+            "example": "地球磁场能够阻挡正常的太阳风。"
+          },
+          {
+            "name": "太阳黑子",
+            "difficulty": 2,
+            "description": "光球层上温度较低、颜色较深的黑斑点。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "太阳黑子是出现在光球层上的低温黑斑点。",
+            "example": "太阳黑子数量可标志太阳活动强弱。"
+          },
+          {
+            "name": "太阳耀斑",
+            "difficulty": 2,
+            "description": "色球层表面突然出现的大而亮的斑块。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "太阳耀斑是色球层表面突然出现的大而亮的斑块。",
+            "example": "强烈耀斑会释放大量能量。"
+          },
+          {
+            "name": "日珥",
+            "difficulty": 2,
+            "description": "色球层发生的喷射弧状气体的剧烈活动。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "日珥是色球层上喷射弧状气体的剧烈太阳活动现象。",
+            "example": "日全食时可看到火红的日珥。"
+          },
+          {
+            "name": "日冕物质抛射",
+            "difficulty": 3,
+            "description": "日冕结构剧变并向外抛射大量带电粒子。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动",
+              "太阳风"
+            ],
+            "definition": "日冕物质抛射是日冕结构明显变化并向外抛射大量带电粒子的现象。",
+            "example": "日冕物质抛射可能损害卫星和电网。"
+          },
+          {
+            "name": "地层",
+            "difficulty": 1,
+            "description": "具有时间顺序的层状岩石。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地层是具有时间顺序的层状岩石。",
+            "example": "沉积岩地层通常下老上新。"
+          },
+          {
+            "name": "化石",
+            "difficulty": 1,
+            "description": "保存在沉积物中的生物遗体或遗迹。",
+            "aliases": [],
+            "prerequisites": [
+              "地层"
+            ],
+            "definition": "化石是生物遗体或遗迹在沉积物中保存形成的遗存。",
+            "example": "恐龙骨骼可以形成化石。"
+          },
+          {
+            "name": "地质年代",
+            "difficulty": 2,
+            "description": "依据地层和生物演化划分的地球历史时间系统。",
+            "aliases": [],
+            "prerequisites": [
+              "地层",
+              "化石"
+            ],
+            "definition": "地质年代是依据地层顺序、生物演化阶段和岩石年龄建立的地球历史编年。",
+            "example": "地质年代包括宙、代、纪等单位。"
+          },
+          {
+            "name": "前寒武纪",
+            "difficulty": 2,
+            "description": "地球诞生至距今5.41亿年的漫长时期。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "前寒武纪是自地球诞生至距今5.41亿年的地质时期。",
+            "example": "前寒武纪出现了蓝细菌和多细胞生物。"
+          },
+          {
+            "name": "古生代",
+            "difficulty": 2,
+            "description": "距今5.41亿年至2.52亿年的远古生物时代。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "古生代是距今5.41亿年至2.52亿年的地质时代。",
+            "example": "古生代是海洋无脊椎动物和脊椎动物发展的时代。"
+          },
+          {
+            "name": "中生代",
+            "difficulty": 2,
+            "description": "距今2.52亿年至6600万年的中间生物时代。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "中生代是介于古生代和新生代之间的地质时代。",
+            "example": "中生代被称为爬行动物的时代。"
+          },
+          {
+            "name": "新生代",
+            "difficulty": 2,
+            "description": "距今6600万年至今的最近生物时代。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "新生代是距今6600万年至今的地质时代。",
+            "example": "第四纪出现了人类。"
+          },
+          {
+            "name": "联合古陆",
+            "difficulty": 2,
+            "description": "古生代后期地球各块大陆汇聚成的整体。",
+            "aliases": [],
+            "prerequisites": [
+              "古生代"
+            ],
+            "definition": "联合古陆是古生代后期地球各块大陆汇聚形成的整体。",
+            "example": "联合古陆后来在中生代开始解体。"
+          },
+          {
+            "name": "地震波",
+            "difficulty": 1,
+            "description": "地震产生的弹性震动以波的形式向四周传播。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地震波是地下岩石受冲击产生并向四周传播的弹性震动。",
+            "example": "科学家利用地震波研究地球内部。"
+          },
+          {
+            "name": "纵波",
+            "difficulty": 2,
+            "description": "传播速度较快且可通过固液气体传播的地震波。",
+            "aliases": [
+              "P波"
+            ],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "纵波是传播速度较快、能够通过固体液体和气体传播的地震波。",
+            "example": "纵波可以穿过地核的液态物质。"
+          },
+          {
+            "name": "横波",
+            "difficulty": 2,
+            "description": "传播速度较慢且只能通过固体传播的地震波。",
+            "aliases": [
+              "S波"
+            ],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "横波是传播速度较慢、只能通过固体传播的地震波。",
+            "example": "横波在外核处完全消失。"
+          },
+          {
+            "name": "不连续面",
+            "difficulty": 2,
+            "description": "地震波传播速度发生突然变化的界面。",
+            "aliases": [],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "不连续面是地震波速度在一定深度发生突然变化的面。",
+            "example": "莫霍界面是不连续面。"
+          },
+          {
+            "name": "莫霍界面",
+            "difficulty": 3,
+            "description": "地下约33千米处地震波速度明显增加的界面。",
+            "aliases": [
+              "莫霍洛维奇界面"
+            ],
+            "prerequisites": [
+              "不连续面",
+              "纵波",
+              "横波"
+            ],
+            "definition": "莫霍界面是地下平均33千米处纵波和横波速度都明显增加的界面。",
+            "example": "莫霍界面是地壳与地幔的分界。"
+          },
+          {
+            "name": "古登堡界面",
+            "difficulty": 3,
+            "description": "地下约2900千米处横波消失的界面。",
+            "aliases": [],
+            "prerequisites": [
+              "不连续面",
+              "纵波",
+              "横波"
+            ],
+            "definition": "古登堡界面是地下约2900千米处纵波速度下降且横波消失的界面。",
+            "example": "古登堡界面分隔地幔和地核。"
+          },
+          {
+            "name": "地壳",
+            "difficulty": 1,
+            "description": "地球表面由固体岩石组成的坚硬外壳。",
+            "aliases": [],
+            "prerequisites": [
+              "莫霍界面"
+            ],
+            "definition": "地壳是位于莫霍界面以外的地球固体岩石外壳。",
+            "example": "海洋地壳通常比大陆地壳薄。"
+          },
+          {
+            "name": "地幔",
+            "difficulty": 2,
+            "description": "位于莫霍界面和古登堡界面之间的圈层。",
+            "aliases": [],
+            "prerequisites": [
+              "莫霍界面",
+              "古登堡界面"
+            ],
+            "definition": "地幔是从莫霍界面延伸至古登堡界面的地球内部圈层。",
+            "example": "地幔占地球总体积的约80%。"
+          },
+          {
+            "name": "软流层",
+            "difficulty": 3,
+            "description": "上地幔上部岩石部分熔融并能缓慢流动的层。",
+            "aliases": [],
+            "prerequisites": [
+              "地幔"
+            ],
+            "definition": "软流层是上地幔上部温度很高、岩石部分熔融且能缓慢流动的层。",
+            "example": "软流层被认为是岩浆的主要发源地。"
+          },
+          {
+            "name": "岩石圈",
+            "difficulty": 2,
+            "description": "地壳与上地幔顶部坚硬岩石组成的圈层。",
+            "aliases": [],
+            "prerequisites": [
+              "地壳",
+              "地幔"
+            ],
+            "definition": "岩石圈是由地壳和上地幔顶部坚硬岩石组成的圈层。",
+            "example": "地球板块属于岩石圈的一部分。"
+          },
+          {
+            "name": "地核",
+            "difficulty": 2,
+            "description": "位于古登堡界面以内、主要由铁镍组成的圈层。",
+            "aliases": [],
+            "prerequisites": [
+              "古登堡界面"
+            ],
+            "definition": "地核是古登堡界面以内主要由铁和镍等金属组成的地球内部圈层。",
+            "example": "地核分为外核和内核。"
+          },
+          {
+            "name": "大气圈",
+            "difficulty": 1,
+            "description": "由气体和悬浮物质组成的地球外部圈层。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大气圈是由气体和悬浮物质组成并笼罩地球的复杂系统。",
+            "example": "大气圈中的云和雨属于天气现象。"
+          },
+          {
+            "name": "水圈",
+            "difficulty": 1,
+            "description": "地表和近地表各种形态水体的总称。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水圈是地表和近地表各种形态水体的总称。",
+            "example": "海洋、河流和冰川都属于水圈。"
+          }
+        ]
+      },
+      {
+        "name": "第二章",
+        "concepts": [
+          {
+            "name": "大气组成",
+            "difficulty": 1,
+            "description": "大气由干洁空气、水汽和杂质等组成",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大气组成是指包围地球的大气所含各种物质及其含量。",
+            "example": "低层大气包括干洁空气、水汽和杂质"
+          },
+          {
+            "name": "干洁空气",
+            "difficulty": 1,
+            "description": "除去水汽和杂质后的低层大气混合气体",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "干洁空气是低层大气中除去水汽和杂质以外的混合气体。",
+            "example": "25千米以下干洁空气中氮气约占78%"
+          },
+          {
+            "name": "大气水汽",
+            "difficulty": 1,
+            "description": "大气中含量少且随时空变化的水分",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气水汽是以气态形式存在于大气中的水分。",
+            "example": "水汽凝结可形成云、雾和降水"
+          },
+          {
+            "name": "大气杂质",
+            "difficulty": 1,
+            "description": "大气中含量少且可作为凝结核的物质",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气杂质是悬浮在大气中的微粒等物质，能够作为凝结核。",
+            "example": "杂质为成云致雨提供凝结核"
+          },
+          {
+            "name": "二氧化碳作用",
+            "difficulty": 2,
+            "description": "二氧化碳参与光合作用并吸收地面辐射",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "二氧化碳既是绿色植物光合作用的原料，也能吸收地面长波辐射。",
+            "example": "化石燃料燃烧会增加大气二氧化碳含量"
+          },
+          {
+            "name": "臭氧作用",
+            "difficulty": 2,
+            "description": "臭氧吸收紫外线并保护地球生命",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "臭氧能够吸收太阳紫外线，使大气增温并减少到达地面的紫外线。",
+            "example": "臭氧层可减弱紫外线对生物的伤害"
+          },
+          {
+            "name": "大气污染",
+            "difficulty": 2,
+            "description": "大气成分异常或有害物质进入大气的现象",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气污染是自然或人为原因使大气成分超过正常含量并造成危害的现象。",
+            "example": "工业废气和汽车尾气可造成大气污染"
+          },
+          {
+            "name": "大气垂直分层",
+            "difficulty": 2,
+            "description": "依据温度、运动状况和密度划分大气层次",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气垂直分层是按温度、运动状况和密度将大气自下而上划分为不同层次。",
+            "example": "大气自下而上分为对流层、平流层和高层大气"
+          },
+          {
+            "name": "对流层",
+            "difficulty": 2,
+            "description": "大气圈底层，天气现象集中发生于此",
+            "aliases": [],
+            "prerequisites": [
+              "大气垂直分层"
+            ],
+            "definition": "对流层是大气圈最底层，集中了大部分质量及几乎全部水汽和杂质。",
+            "example": "云、雨、雾、雪等天气现象发生在对流层"
+          },
+          {
+            "name": "平流层",
+            "difficulty": 2,
+            "description": "对流层顶部至约50—55千米的高空大气层",
+            "aliases": [],
+            "prerequisites": [
+              "大气垂直分层"
+            ],
+            "definition": "平流层是自对流层顶部至约50—55千米高空、以平流运动为主的大气层。",
+            "example": "平流层水汽少、无云雨，适合航空飞行"
+          },
+          {
+            "name": "高层大气",
+            "difficulty": 2,
+            "description": "平流层以上、空气密度很小的大气层",
+            "aliases": [],
+            "prerequisites": [
+              "大气垂直分层"
+            ],
+            "definition": "高层大气是平流层以上的大气，空气密度很小并包含电离层。",
+            "example": "流星体常在高层大气中燃烧"
+          },
+          {
+            "name": "臭氧层",
+            "difficulty": 2,
+            "description": "平流层中臭氧含量达到最大值的区域",
+            "aliases": [],
+            "prerequisites": [
+              "平流层",
+              "臭氧作用"
+            ],
+            "definition": "臭氧层是平流层中臭氧含量较高并在22—27千米达到最大值的区域。",
+            "example": "臭氧层被称为地球生命的保护伞"
+          },
+          {
+            "name": "电离层",
+            "difficulty": 3,
+            "description": "高层大气中处于高度电离状态的区域",
+            "aliases": [],
+            "prerequisites": [
+              "高层大气"
+            ],
+            "definition": "电离层是受太阳紫外线和宇宙射线作用而高度电离的大气区域。",
+            "example": "电离层能反射无线电波"
+          },
+          {
+            "name": "臭氧空洞",
+            "difficulty": 2,
+            "description": "臭氧层臭氧含量大幅下降的现象",
+            "aliases": [],
+            "prerequisites": [
+              "臭氧层",
+              "臭氧作用"
+            ],
+            "definition": "臭氧空洞是臭氧层被破坏、臭氧含量显著减少的现象。",
+            "example": "南极上空春季曾出现臭氧空洞"
+          },
+          {
+            "name": "太阳辐射",
+            "difficulty": 1,
+            "description": "地球大气最重要的能量来源",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "太阳辐射是太阳以电磁波形式向外传递的能量，也是地球大气最重要的能量来源。",
+            "example": "太阳辐射穿过大气后大部分到达地面"
+          },
+          {
+            "name": "长波辐射",
+            "difficulty": 2,
+            "description": "地面受热后向外发出的较长波长辐射",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射"
+            ],
+            "definition": "长波辐射是温度较低的地面向外传递热量时发出的辐射。",
+            "example": "地面以长波辐射形式向近地面大气传热"
+          },
+          {
+            "name": "大气受热过程",
+            "difficulty": 3,
+            "description": "太阳辐射、地面辐射与大气增温的过程",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射",
+              "长波辐射"
+            ],
+            "definition": "大气受热过程是太阳辐射加热地面、地面长波辐射加热近地面大气的能量传递过程。",
+            "example": "地面是近地面大气主要的直接热源"
+          },
+          {
+            "name": "大气逆辐射",
+            "difficulty": 2,
+            "description": "大气向下射向地面的长波辐射",
+            "aliases": [],
+            "prerequisites": [
+              "长波辐射",
+              "大气受热过程"
+            ],
+            "definition": "大气逆辐射是大气增温后向下射向地面的长波辐射。",
+            "example": "低云浓密时大气逆辐射较强"
+          },
+          {
+            "name": "大气保温作用",
+            "difficulty": 2,
+            "description": "大气逆辐射补偿地面热量损失的作用",
+            "aliases": [],
+            "prerequisites": [
+              "大气逆辐射"
+            ],
+            "definition": "大气保温作用是大气通过吸收地面辐射并以逆辐射向下传热来减弱地面降温的作用。",
+            "example": "地球昼夜温差小于没有大气的月球"
+          },
+          {
+            "name": "温室气体",
+            "difficulty": 2,
+            "description": "能够吸收地表长波辐射的气体",
+            "aliases": [],
+            "prerequisites": [
+              "长波辐射"
+            ],
+            "definition": "温室气体是能够吸收地表红外长波辐射的气体，主要包括二氧化碳和水汽。",
+            "example": "二氧化碳不能像氧气、氮气一样透过红外辐射"
+          },
+          {
+            "name": "大气运动",
+            "difficulty": 1,
+            "description": "大气的垂直运动和水平运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大气运动是大气中空气发生垂直升降或水平位移的运动。",
+            "example": "气流上升属于垂直运动，风属于水平运动"
+          },
+          {
+            "name": "气压",
+            "difficulty": 2,
+            "description": "空气对单位面积地面的压力",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动"
+            ],
+            "definition": "气压是大气作用在单位面积地面上的压力。",
+            "example": "空气下沉的地区近地面常形成高气压"
+          },
+          {
+            "name": "气压梯度",
+            "difficulty": 2,
+            "description": "单位距离间的气压差",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "气压梯度是单位距离间的气压差异。",
+            "example": "等压线越密，气压梯度越大"
+          },
+          {
+            "name": "大气热力环流",
+            "difficulty": 3,
+            "description": "地面冷热不均形成的空气环流",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动",
+              "气压"
+            ],
+            "definition": "大气热力环流是由于地面冷热不均而形成的空气环流。",
+            "example": "海陆风是海陆间热力环流的表现"
+          },
+          {
+            "name": "水平气压梯度力",
+            "difficulty": 3,
+            "description": "促使空气由高压区流向低压区的力",
+            "aliases": [],
+            "prerequisites": [
+              "气压梯度"
+            ],
+            "definition": "水平气压梯度力是由气压梯度产生并促使空气从高压区流向低压区的力。",
+            "example": "它是形成风的直接原因"
+          },
+          {
+            "name": "地转偏向力",
+            "difficulty": 3,
+            "description": "使水平运动物体方向发生偏转的力",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动"
+            ],
+            "definition": "地转偏向力是地球自转导致水平运动物体方向发生偏转的力。",
+            "example": "北半球风向向右偏转"
+          },
+          {
+            "name": "摩擦力",
+            "difficulty": 2,
+            "description": "地面和空气相互作用产生的阻力",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动"
+            ],
+            "definition": "摩擦力是地面与空气或不同空气层相互作用产生的阻力。",
+            "example": "近地面摩擦力会减小风速"
+          },
+          {
+            "name": "风",
+            "difficulty": 2,
+            "description": "大气的水平运动",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动",
+              "水平气压梯度力"
+            ],
+            "definition": "风是大气在水平气压梯度力作用下由高压区向低压区进行的水平运动。",
+            "example": "近地面风向受三种力共同影响"
+          },
+          {
+            "name": "等压线",
+            "difficulty": 2,
+            "description": "同一高度上气压相等点的连线",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "等压线是同一高度上气压相等的各点所组成的连线。",
+            "example": "等压线疏密可反映气压梯度大小"
+          },
+          {
+            "name": "城市热岛环流",
+            "difficulty": 3,
+            "description": "城市中心与郊区温差形成的热力环流",
+            "aliases": [],
+            "prerequisites": [
+              "大气热力环流"
+            ],
+            "definition": "城市热岛环流是城市中心和郊区温度差异导致的局地热力环流。",
+            "example": "近地面气流由郊区流向城市中心"
+          },
+          {
+            "name": "海陆风",
+            "difficulty": 2,
+            "description": "海陆昼夜温差引起的局地环流",
+            "aliases": [],
+            "prerequisites": [
+              "大气热力环流"
+            ],
+            "definition": "海陆风是海陆间昼夜温度差异引起的大气热力环流。",
+            "example": "白天近地面通常由海洋吹向陆地"
+          }
+        ]
+      },
+      {
+        "name": "第三章",
+        "concepts": [
+          {
+            "name": "水循环",
+            "difficulty": 2,
+            "description": "自然界的水在四大圈层间连续运动的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水循环是自然界的水在水圈、大气圈、岩石圈和生物圈中连续运动的过程。",
+            "example": "海水蒸发后形成降水并通过径流返回海洋"
+          },
+          {
+            "name": "蒸发",
+            "difficulty": 1,
+            "description": "水体受热由液态水转化为水汽",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "蒸发是水体表面的水在太阳辐射等作用下转化为水汽的过程。",
+            "example": "太阳加热海水使其蒸发"
+          },
+          {
+            "name": "水汽输送",
+            "difficulty": 2,
+            "description": "水汽随气流在不同空间之间移动",
+            "aliases": [],
+            "prerequisites": [
+              "蒸发"
+            ],
+            "definition": "水汽输送是水汽在大气中被气流带到其他地区的过程。",
+            "example": "海洋水汽被气流输送到大陆上空"
+          },
+          {
+            "name": "降水",
+            "difficulty": 1,
+            "description": "水汽凝结后以水滴或冰晶形式降落",
+            "aliases": [],
+            "prerequisites": [
+              "水汽输送"
+            ],
+            "definition": "降水是大气中的水汽凝结后以雨、雪等形式降落到地面的过程。",
+            "example": "大陆上空的水汽凝结形成降雨"
+          },
+          {
+            "name": "下渗",
+            "difficulty": 1,
+            "description": "地表水向地下土壤和岩层渗透",
+            "aliases": [],
+            "prerequisites": [
+              "降水"
+            ],
+            "definition": "下渗是降落到地面的水向土壤和地下空间渗透的过程。",
+            "example": "部分降水下渗形成地下径流"
+          },
+          {
+            "name": "地表径流",
+            "difficulty": 2,
+            "description": "水沿地面流动形成的径流",
+            "aliases": [],
+            "prerequisites": [
+              "降水"
+            ],
+            "definition": "地表径流是降水等在地面流动并汇入河流的水流。",
+            "example": "雨水沿地面流动汇入江河"
+          },
+          {
+            "name": "地下径流",
+            "difficulty": 2,
+            "description": "水在地下沿土壤或岩层流动",
+            "aliases": [],
+            "prerequisites": [
+              "下渗"
+            ],
+            "definition": "地下径流是下渗后的水在地下沿土壤或岩层流动形成的径流。",
+            "example": "下渗水汇集后形成地下径流"
+          },
+          {
+            "name": "海陆间循环",
+            "difficulty": 2,
+            "description": "发生在海洋与陆地之间的水循环",
+            "aliases": [
+              "大循环"
+            ],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "海陆间循环是海洋和陆地之间通过蒸发、降水及径流等环节进行的水循环。",
+            "example": "海水蒸发后降水并经河流返回海洋"
+          },
+          {
+            "name": "陆地内循环",
+            "difficulty": 2,
+            "description": "陆地水体在陆地范围内的循环",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "陆地内循环是陆地水体蒸发或蒸腾后形成降水并仍降落在陆地上的循环。",
+            "example": "陆地湖泊蒸发后在陆地上空降水"
+          },
+          {
+            "name": "海上内循环",
+            "difficulty": 2,
+            "description": "海洋水体在海洋范围内的循环",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "海上内循环是海水蒸发后在海洋上空凝结降水并返回海面的循环。",
+            "example": "海面蒸发形成水汽并在海上降雨"
+          },
+          {
+            "name": "水循环意义",
+            "difficulty": 3,
+            "description": "水循环对水量、物质、能量和环境的作用",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "水循环具有维持全球水量动态平衡、更新水资源、迁移物质和转换能量等地理意义。",
+            "example": "地表径流将泥沙和盐类输送入海"
+          },
+          {
+            "name": "海水温度",
+            "difficulty": 2,
+            "description": "反映海水冷热状况的理化性质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海水温度是反映海水冷热状况并受海洋热量收支影响的理化性质。",
+            "example": "表层海水温度通常高于深层"
+          },
+          {
+            "name": "海水盐度",
+            "difficulty": 2,
+            "description": "海水中盐类物质质量分数的指标",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海水盐度是海水中盐类物质质量分数的表示，通常用千分比表示。",
+            "example": "世界大洋平均盐度约为35‰"
+          },
+          {
+            "name": "海水密度",
+            "difficulty": 2,
+            "description": "单位体积海水的质量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海水密度是单位体积海水的质量，主要受温度、盐度和深度影响。",
+            "example": "通常海水温度越高，密度越低"
+          },
+          {
+            "name": "海中断崖",
+            "difficulty": 4,
+            "description": "海水密度随深度增加反而减小的海水层",
+            "aliases": [],
+            "prerequisites": [
+              "海水密度"
+            ],
+            "definition": "海中断崖是海水密度随深度增大而减小的特殊海水层。",
+            "example": "潜艇遇到海中断崖可能因浮力骤减而下沉"
+          },
+          {
+            "name": "海浪",
+            "difficulty": 2,
+            "description": "海水受扰动形成的波状起伏运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海浪是海水表层最基本的运动形式之一，常由风力形成。",
+            "example": "冲浪活动需要较高的浪高"
+          },
+          {
+            "name": "海啸",
+            "difficulty": 3,
+            "description": "海底剧烈活动引起的巨大海浪",
+            "aliases": [],
+            "prerequisites": [
+              "海浪"
+            ],
+            "definition": "海啸是海底地震、火山爆发或水下滑坡等引起的巨大海水波动。",
+            "example": "海底地震可能引发海啸"
+          },
+          {
+            "name": "风暴潮",
+            "difficulty": 3,
+            "description": "强风作用下近岸海面水位急剧升降",
+            "aliases": [],
+            "prerequisites": [
+              "海浪"
+            ],
+            "definition": "风暴潮是在强风等作用下近岸海面水位急剧升降的现象。",
+            "example": "强风与涨潮同时发生会增强风暴潮"
+          },
+          {
+            "name": "潮汐",
+            "difficulty": 2,
+            "description": "海水有规律的周期性涨落现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "潮汐是与月球和太阳引力有关的海水周期性涨落现象。",
+            "example": "农历初一和十五前后潮汐较明显"
+          },
+          {
+            "name": "潮间带",
+            "difficulty": 2,
+            "description": "退潮露出、涨潮淹没的海岸地带",
+            "aliases": [],
+            "prerequisites": [
+              "潮汐"
+            ],
+            "definition": "潮间带是退潮时露出水面、涨潮时被海水淹没的海岸地带。",
+            "example": "霞浦潮间带用于紫菜养殖"
+          },
+          {
+            "name": "洋流",
+            "difficulty": 2,
+            "description": "海水沿一定方向的大规模流动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "洋流是海洋中的海水常年比较稳定地沿一定方向作大规模流动。",
+            "example": "洋流可挟带冰山向较低纬度漂移"
+          },
+          {
+            "name": "暖流",
+            "difficulty": 3,
+            "description": "从高温海域流向低温海域的洋流",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "暖流是从水温较高海域流向水温较低海域的洋流。",
+            "example": "纽芬兰附近的暖流与寒流交汇"
+          },
+          {
+            "name": "寒流",
+            "difficulty": 3,
+            "description": "从低温海域流向高温海域的洋流",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "寒流是从水温较低海域流向水温较高海域的洋流。",
+            "example": "纽芬兰附近寒暖流交汇形成渔场"
+          },
+          {
+            "name": "寒暖流交汇",
+            "difficulty": 3,
+            "description": "寒流与暖流在海域中相遇的现象",
+            "aliases": [],
+            "prerequisites": [
+              "暖流",
+              "寒流"
+            ],
+            "definition": "寒暖流交汇是寒流和暖流在同一海域相遇并相互作用的现象。",
+            "example": "纽芬兰岛附近形成著名渔场"
+          },
+          {
+            "name": "海水淡化",
+            "difficulty": 3,
+            "description": "通过技术处理将海水转化为淡水",
+            "aliases": [],
+            "prerequisites": [
+              "海水盐度"
+            ],
+            "definition": "海水淡化是通过技术处理降低海水盐度并获得淡水的过程。",
+            "example": "曹妃甸利用海水淡化缓解缺水"
+          },
+          {
+            "name": "海冰淡化",
+            "difficulty": 4,
+            "description": "从海冰中分离高浓度盐水以获得淡水",
+            "aliases": [],
+            "prerequisites": [
+              "海水淡化",
+              "海水盐度"
+            ],
+            "definition": "海冰淡化是将海冰内部的高浓度盐水分离出来以降低融水盐度的方法。",
+            "example": "堆放海冰使浓盐水沿冰体缝隙排出"
+          }
+        ]
+      },
+      {
+        "name": "第四章",
+        "concepts": [
+          {
+            "name": "地貌",
+            "difficulty": 1,
+            "description": "岩石圈受多圈层作用形成的地表形态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地貌是出露地表的岩石圈在大气圈、水圈、生物圈综合作用下呈现的形态。",
+            "example": "山地、平原等地表形态"
+          },
+          {
+            "name": "喀斯特地貌",
+            "difficulty": 2,
+            "description": "可溶性岩石受水溶蚀和沉淀形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "喀斯特地貌是可溶性岩石的物质溶于水并被带走或重新沉淀形成的地貌。",
+            "example": "广西桂林峰林"
+          },
+          {
+            "name": "溶沟",
+            "difficulty": 2,
+            "description": "地表喀斯特地貌中的长条形或网格状沟槽",
+            "aliases": [],
+            "prerequisites": [
+              "喀斯特地貌"
+            ],
+            "definition": "溶沟是地表喀斯特地貌中呈长条形或网格状、地面崎岖不平的沟槽。",
+            "example": "石灰岩地表的沟槽"
+          },
+          {
+            "name": "洼地",
+            "difficulty": 2,
+            "description": "溶沟发展形成的面积较大、底部较平坦地形",
+            "aliases": [],
+            "prerequisites": [
+              "溶沟"
+            ],
+            "definition": "洼地是溶沟进一步发展形成的面积较大、底部较平坦的喀斯特地貌。",
+            "example": "广西、贵州的坝子"
+          },
+          {
+            "name": "峰林",
+            "difficulty": 2,
+            "description": "洼地边缘残留岩体形成的锥状峰体群",
+            "aliases": [],
+            "prerequisites": [
+              "洼地"
+            ],
+            "definition": "峰林是洼地边缘残留岩体呈锥状耸立而构成的喀斯特地貌。",
+            "example": "桂林漓江两岸峰林"
+          },
+          {
+            "name": "溶洞",
+            "difficulty": 2,
+            "description": "地下喀斯特地貌的主要类型",
+            "aliases": [],
+            "prerequisites": [
+              "喀斯特地貌"
+            ],
+            "definition": "溶洞是地下喀斯特地貌的主要类型，洞内常发育钟乳石、石笋和石柱。",
+            "example": "土耳其安纳托利亚高原溶洞"
+          },
+          {
+            "name": "河流地貌",
+            "difficulty": 2,
+            "description": "河流作用形成的河谷、平原和河口地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "河流地貌是河流侵蚀、搬运和堆积作用形成的各种地貌。",
+            "example": "河谷、冲积平原、三角洲"
+          },
+          {
+            "name": "V形河谷",
+            "difficulty": 2,
+            "description": "山区河流侵蚀形成的深窄河谷",
+            "aliases": [
+              "“V”形河谷"
+            ],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "V形河谷是山区河流不断侵蚀河谷岩石形成的深、陡、窄河谷。",
+            "example": "澜沧江上游河谷"
+          },
+          {
+            "name": "冲积平原",
+            "difficulty": 2,
+            "description": "河流泥沙大量堆积形成的宽广平原",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "冲积平原是由河流挟带的泥沙大量堆积而成的平原。",
+            "example": "江汉平原"
+          },
+          {
+            "name": "河曲",
+            "difficulty": 2,
+            "description": "平缓地势中呈S形弯曲的河道",
+            "aliases": [
+              "曲流"
+            ],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "河曲是在地势平缓地区形成的呈S形弯曲的河道。",
+            "example": "呼伦贝尔草原河曲"
+          },
+          {
+            "name": "牛轭湖",
+            "difficulty": 3,
+            "description": "河曲颈部被洪水冲断后形成的湖泊",
+            "aliases": [],
+            "prerequisites": [
+              "河曲"
+            ],
+            "definition": "牛轭湖是洪水冲断河曲颈部后，弯曲河段与主河道分离形成的湖泊。",
+            "example": "呼伦贝尔草原牛轭湖"
+          },
+          {
+            "name": "三角洲",
+            "difficulty": 2,
+            "description": "河口泥沙淤积形成的三角形地貌",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "三角洲是河流入海或入湖处泥沙淤积形成的、平面形态近似三角形的地貌。",
+            "example": "黄河三角洲"
+          },
+          {
+            "name": "风沙地貌",
+            "difficulty": 2,
+            "description": "干旱地区以风力为主形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "风沙地貌是在干旱地区以风力作用为主形成的各种地貌。",
+            "example": "西北地区沙漠地貌"
+          },
+          {
+            "name": "风蚀蘑菇",
+            "difficulty": 2,
+            "description": "岩石下部受风沙侵蚀形成的蘑菇状地貌",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "风蚀蘑菇是孤立岩石下部遭受较强风沙侵蚀后形成的上宽下窄地貌。",
+            "example": "撒哈拉沙漠风蚀蘑菇"
+          },
+          {
+            "name": "雅丹",
+            "difficulty": 3,
+            "description": "沟槽和垄脊相间的风蚀地貌",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "雅丹是由不规则沟槽和垄脊相间构成、走向与主风向一致的地貌。",
+            "example": "甘肃敦煌雅丹"
+          },
+          {
+            "name": "沙丘",
+            "difficulty": 2,
+            "description": "沙漠中由风沙堆积形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "沙丘是沙漠中由风沙堆积形成的形态多样的地貌。",
+            "example": "新月形沙丘"
+          },
+          {
+            "name": "新月形沙丘",
+            "difficulty": 2,
+            "description": "迎风坡缓、背风坡陡的新月状沙丘",
+            "aliases": [],
+            "prerequisites": [
+              "沙丘"
+            ],
+            "definition": "新月形沙丘因形似新月而得名，具有迎风坡缓、背风坡陡的特点。",
+            "example": "阿联酋利瓦沙漠沙丘"
+          },
+          {
+            "name": "海岸地貌",
+            "difficulty": 2,
+            "description": "海浪等海岸作用形成的各种地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "海岸地貌是海岸在海浪等作用下形成的各种地貌。",
+            "example": "海蚀崖、海滩"
+          },
+          {
+            "name": "海蚀崖",
+            "difficulty": 2,
+            "description": "海浪侵蚀崩塌形成的海岸陡崖",
+            "aliases": [],
+            "prerequisites": [
+              "海岸地貌"
+            ],
+            "definition": "海蚀崖是岩石海岸受海浪长期侵蚀崩塌后形成的高出海面的陡崖。",
+            "example": "广西涠洲岛海蚀崖"
+          },
+          {
+            "name": "海蚀平台",
+            "difficulty": 2,
+            "description": "海蚀崖前方微向海倾斜的岩石平台",
+            "aliases": [],
+            "prerequisites": [
+              "海蚀崖"
+            ],
+            "definition": "海蚀平台是海蚀崖逐渐后退后，在崖前形成的微向海倾斜的平台。",
+            "example": "涠洲岛海蚀平台"
+          },
+          {
+            "name": "海蚀拱桥",
+            "difficulty": 3,
+            "description": "海浪侵蚀贯通岩体形成的拱形地貌",
+            "aliases": [],
+            "prerequisites": [
+              "海岸地貌"
+            ],
+            "definition": "海蚀拱桥是突出的陡立岩石两侧海蚀穴贯通后形成的拱形地貌。",
+            "example": "英国西南部海岸拱桥"
+          },
+          {
+            "name": "海滩",
+            "difficulty": 2,
+            "description": "海岸常见的堆积地貌",
+            "aliases": [],
+            "prerequisites": [
+              "海岸地貌"
+            ],
+            "definition": "海滩是海岸沉积物堆积形成的地貌，可分为砾滩、沙滩和泥滩。",
+            "example": "海南三亚沙滩"
+          },
+          {
+            "name": "宏观到微观观察",
+            "difficulty": 2,
+            "description": "地貌观察由大地貌到小地貌的顺序",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "地貌观察宜从宏观到微观、从面到点，依次观察不同尺度的地貌。",
+            "example": "先看山地，再看河谷和河岸"
+          },
+          {
+            "name": "绝对高度",
+            "difficulty": 2,
+            "description": "划分高原、山地和平原的重要高度指标",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "绝对高度是地面某点相对于基准面的高度。",
+            "example": "某点海拔879米"
+          },
+          {
+            "name": "相对高度",
+            "difficulty": 2,
+            "description": "反映地面起伏状况的高度差",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "相对高度是两个地点绝对高度之间的差值。",
+            "example": "山顶与谷底的高度差"
+          },
+          {
+            "name": "坡度",
+            "difficulty": 2,
+            "description": "表示地面倾斜程度的指标",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "坡度是地面倾斜程度，通常用坡度角或垂直距离与水平距离的比值表示。",
+            "example": "铁路线路坡度"
+          },
+          {
+            "name": "坡向",
+            "difficulty": 2,
+            "description": "坡面朝向及其迎光、迎风特征",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "坡向是坡面所朝的方向，观察时需关注阳坡、阴坡、迎风坡和背风坡。",
+            "example": "山地阳坡与阴坡植被差异"
+          },
+          {
+            "name": "红柳沙包",
+            "difficulty": 3,
+            "description": "红柳灌丛中枯叶层与风沙层交替堆积体",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "红柳沙包是风沙在红柳丛中堆积并与枯枝落叶层交替形成的沙包。",
+            "example": "我国西北沙漠红柳沙包"
+          }
+        ]
+      },
+      {
+        "name": "第五章",
+        "concepts": [
+          {
+            "name": "植被",
+            "difficulty": 2,
+            "description": "自然界成群生长的各种植物的整体。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植被是自然界成群生长的各种植物的整体。",
+            "example": "森林、草原和荒漠都是植被类型。"
+          },
+          {
+            "name": "天然植被",
+            "difficulty": 2,
+            "description": "自然形成的森林、草原、荒漠等植被。",
+            "aliases": [],
+            "prerequisites": [
+              "植被"
+            ],
+            "definition": "天然植被是自然界天然形成的植被。",
+            "example": "热带雨林属于天然植被。"
+          },
+          {
+            "name": "人工植被",
+            "difficulty": 2,
+            "description": "人工栽培和经营管理形成的植被。",
+            "aliases": [],
+            "prerequisites": [
+              "植被"
+            ],
+            "definition": "人工植被是人工栽培和经营管理形成的植被。",
+            "example": "经济林和人工草场属于人工植被。"
+          },
+          {
+            "name": "植被垂直结构",
+            "difficulty": 3,
+            "description": "植物群体因竞争形成的明显垂直分层。",
+            "aliases": [
+              "垂直结构",
+              "成层现象"
+            ],
+            "prerequisites": [
+              "植被"
+            ],
+            "definition": "植被垂直结构是不同植物群体占据不同垂直空间形成的分层结构。",
+            "example": "森林通常具有乔木、灌木等分层。"
+          },
+          {
+            "name": "热带雨林",
+            "difficulty": 3,
+            "description": "终年高温多雨、结构复杂的森林类型。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被",
+              "植被垂直结构"
+            ],
+            "definition": "热带雨林是主要分布于热带湿热气候区的森林植被类型。",
+            "example": "亚马孙流域分布有热带雨林。"
+          },
+          {
+            "name": "常绿阔叶林",
+            "difficulty": 3,
+            "description": "亚热带湿润地区常绿的阔叶森林。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "常绿阔叶林是主要分布于亚热带湿润地区的常绿阔叶森林。",
+            "example": "我国南方常见常绿阔叶林。"
+          },
+          {
+            "name": "落叶阔叶林",
+            "difficulty": 3,
+            "description": "春季发叶、秋冬季落叶的森林类型。",
+            "aliases": [
+              "夏绿林"
+            ],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "落叶阔叶林是乔木春季发叶、秋冬季落叶的森林植被类型。",
+            "example": "我国华北地区有落叶阔叶林。"
+          },
+          {
+            "name": "亚寒带针叶林",
+            "difficulty": 3,
+            "description": "寒冷地区以松、杉类为主的针叶林。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "亚寒带针叶林是主要分布于亚寒带、以松杉类为主的森林。",
+            "example": "亚欧大陆北部广布亚寒带针叶林。"
+          },
+          {
+            "name": "热带草原",
+            "difficulty": 3,
+            "description": "全年高温、干湿季分明的草本植被。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "热带草原是分布于热带干湿季地区、以草本为主的植被。",
+            "example": "东非高原有广阔的热带草原。"
+          },
+          {
+            "name": "温带草原",
+            "difficulty": 3,
+            "description": "夏季温暖、冬季寒冷且较干燥的草原。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "温带草原是分布于温带干燥地区、以草本为主的植被。",
+            "example": "内蒙古呼伦贝尔有温带草原。"
+          },
+          {
+            "name": "荒漠植被",
+            "difficulty": 3,
+            "description": "干旱地区以耐旱灌木为主的植被。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "荒漠植被是从热带至温带干旱地区形成的植被，主要由旱生灌木组成。",
+            "example": "新疆阿克苏地区分布有温带荒漠植被。"
+          },
+          {
+            "name": "红树林",
+            "difficulty": 4,
+            "description": "热带亚热带潮间带的特殊森林植被。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "红树林是主要分布在热带、亚热带滨海潮间带的森林植被。",
+            "example": "巴西北部河口地区有红树林。"
+          },
+          {
+            "name": "红树林适应性",
+            "difficulty": 4,
+            "description": "红树林根系、胎生和排盐等环境适应特征。",
+            "aliases": [],
+            "prerequisites": [
+              "红树林"
+            ],
+            "definition": "红树林适应性是其通过支柱根、呼吸根、胎生和排盐腺体适应潮间带环境的特征。",
+            "example": "呼吸根帮助红树林在淤泥中通气。"
+          },
+          {
+            "name": "土壤",
+            "difficulty": 2,
+            "description": "陆地表层具有肥力并能生长植物的疏松层。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "土壤是陆地表层具有一定肥力、能够生长植物的疏松表层。",
+            "example": "农田表层土壤可供作物扎根生长。"
+          },
+          {
+            "name": "土壤质地",
+            "difficulty": 3,
+            "description": "土壤中不同粒级矿物质的相对比例。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤质地是不同粒级矿物质在土壤中所占的相对比例。",
+            "example": "砂土、壤土和黏土是三种质地类型。"
+          },
+          {
+            "name": "土壤剖面构造",
+            "difficulty": 4,
+            "description": "土壤垂直剖面中不同土层的组合结构。",
+            "aliases": [
+              "土壤剖面"
+            ],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤剖面构造是由形态特征各异且大致水平展布的土层组成的垂直结构。",
+            "example": "森林土壤剖面可见腐殖质层和淀积层。"
+          },
+          {
+            "name": "耕作土壤",
+            "difficulty": 3,
+            "description": "自然土壤经长期耕作培育形成的土壤。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤",
+              "土壤剖面构造"
+            ],
+            "definition": "耕作土壤是自然土壤经过人为耕作熟化形成的土壤。",
+            "example": "农田中的土壤通常属于耕作土壤。"
+          },
+          {
+            "name": "成土母质",
+            "difficulty": 3,
+            "description": "岩石风化产物，是土壤发育的物质基础。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "成土母质是岩石风化形成的、作为土壤发育物质基础的松散物质。",
+            "example": "成土母质影响土壤矿物质成分和质地。"
+          },
+          {
+            "name": "风化",
+            "difficulty": 2,
+            "description": "岩石在多种因素影响下破碎或分解的过程。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "风化是地表或近地表岩石在温度、水、空气和生物等作用下破碎或分解的过程。",
+            "example": "岩石风化可形成松散的成土母质。"
+          },
+          {
+            "name": "生物循环",
+            "difficulty": 4,
+            "description": "营养元素在生物与土壤间循环并富集的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "生物循环是植物吸收营养元素并经残体分解释放、使元素在土壤表层富集的过程。",
+            "example": "枯枝落叶分解后增加土壤有机质。"
+          },
+          {
+            "name": "土壤形成因素",
+            "difficulty": 3,
+            "description": "影响土壤形成的母质、生物、气候、地貌和时间。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤形成因素是综合影响土壤发育的成土母质、生物、气候、地貌和时间等因素。",
+            "example": "湿热气候可加快岩石风化和土壤形成。"
+          },
+          {
+            "name": "土壤功能",
+            "difficulty": 3,
+            "description": "土壤在自然环境和人类生产中的重要作用。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤功能包括供植物扎根、蓄水保水、维持生物生存和支撑农业生产等作用。",
+            "example": "土壤蓄水可减少地表径流。"
+          },
+          {
+            "name": "土壤养护",
+            "difficulty": 3,
+            "description": "合理利用并保持土壤持续肥力的措施。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤功能"
+            ],
+            "definition": "土壤养护是通过合理利用、改良和保护保持土壤功能与肥力的行为。",
+            "example": "休耕、轮作和施用农家肥可养护土壤。"
+          },
+          {
+            "name": "盐碱化",
+            "difficulty": 4,
+            "description": "土壤表层盐分积累导致土壤性质恶化的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "盐碱化是土壤盐分在表层积累并影响耕作的土壤退化现象。",
+            "example": "强烈蒸发会造成盐分随水上升并积累。"
+          },
+          {
+            "name": "微量元素",
+            "difficulty": 3,
+            "description": "人体中含量极少但具有生理作用的化学元素。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "微量元素是人体中含量极少且摄入过少或过多都可能引发病变的化学元素。",
+            "example": "碘是人体必需的微量元素。"
+          },
+          {
+            "name": "地方病",
+            "difficulty": 4,
+            "description": "由当地环境微量元素异常导致的人体病变。",
+            "aliases": [],
+            "prerequisites": [
+              "微量元素"
+            ],
+            "definition": "地方病是因某地环境中某种微量元素缺乏或含量过高而导致的人体病变。",
+            "example": "食盐加碘可预防缺碘引起的地方病。"
+          },
+          {
+            "name": "雨水花园",
+            "difficulty": 3,
+            "description": "蓄积、下渗和净化雨水的场地或设施。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤功能"
+            ],
+            "definition": "雨水花园是用于蓄积雨水并减少地面径流的场地。",
+            "example": "住宅区可建设雨水花园削减雨水径流。"
+          },
+          {
+            "name": "海绵城市",
+            "difficulty": 4,
+            "description": "能够吸水、蓄水、渗水、净水并利用雨水的城市。",
+            "aliases": [],
+            "prerequisites": [
+              "雨水花园",
+              "土壤功能"
+            ],
+            "definition": "海绵城市是通过城市系统调节雨水、提升生态功能并减少洪涝灾害的建设理念。",
+            "example": "湿地公园和透水地面可参与海绵城市建设。"
+          }
+        ]
+      },
+      {
+        "name": "第六章",
+        "concepts": [
+          {
+            "name": "自然灾害",
+            "difficulty": 1,
+            "description": "自然环境异常变化造成危害的事件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然环境发生异常变化并对生命、财产安全构成危害，形成自然灾害。",
+            "example": "暴雨引发洪水并造成房屋倒塌"
+          },
+          {
+            "name": "气象灾害",
+            "difficulty": 1,
+            "description": "由气象异常变化引发的灾害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由大气或天气异常变化造成的自然灾害。",
+            "example": "台风、寒潮属于气象灾害"
+          },
+          {
+            "name": "水文灾害",
+            "difficulty": 1,
+            "description": "与水文过程异常有关的灾害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由水循环或水文过程异常变化引起的自然灾害。",
+            "example": "洪涝属于水文灾害"
+          },
+          {
+            "name": "地质灾害",
+            "difficulty": 1,
+            "description": "由地质作用或地质环境异常引发的灾害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由地质作用或地质环境异常变化造成的自然灾害。",
+            "example": "地震、滑坡和泥石流"
+          },
+          {
+            "name": "洪涝灾害",
+            "difficulty": 2,
+            "description": "洪水泛滥或积水淹没造成的灾害",
+            "aliases": [
+              "洪涝"
+            ],
+            "prerequisites": [],
+            "definition": "连续性降水或短时强降水导致洪水泛滥、积水淹没低洼土地而形成的灾害。",
+            "example": "暴雨使武汉多处道路被积水淹没"
+          },
+          {
+            "name": "山洪",
+            "difficulty": 2,
+            "description": "山区暴雨后快速汇集形成的洪水",
+            "aliases": [],
+            "prerequisites": [
+              "洪涝灾害"
+            ],
+            "definition": "山区大量降水形成并迅速涌向下游的洪水。",
+            "example": "贵州望谟暴雨引发山洪"
+          },
+          {
+            "name": "干旱",
+            "difficulty": 1,
+            "description": "长时间少雨造成空气和土壤缺水",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长时间无降水或降水异常偏少造成空气干燥、土壤缺水的现象。",
+            "example": "长期少雨使耕地出现裂缝"
+          },
+          {
+            "name": "干旱灾害",
+            "difficulty": 2,
+            "description": "持续干旱影响生产生活形成的灾害",
+            "aliases": [
+              "旱灾"
+            ],
+            "prerequisites": [
+              "干旱"
+            ],
+            "definition": "干旱持续时间较长并影响人类生活和生产时形成的灾害。",
+            "example": "华北冬春连旱导致农作物受损"
+          },
+          {
+            "name": "台风",
+            "difficulty": 2,
+            "description": "热带或副热带洋面上的强烈大气旋涡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "在热带或副热带洋面上形成并强烈发展、中心附近最大风力达12级以上的大气旋涡。",
+            "example": "台风“菲特”登陆福建沿海"
+          },
+          {
+            "name": "台风眼",
+            "difficulty": 2,
+            "description": "成熟台风中心无风少云的区域",
+            "aliases": [],
+            "prerequisites": [
+              "台风"
+            ],
+            "definition": "成熟台风中心附近表现为无风、少云和干暖天气的区域。",
+            "example": "台风中心经过时可能短暂平静"
+          },
+          {
+            "name": "风暴潮",
+            "difficulty": 2,
+            "description": "台风等天气造成海水异常升高",
+            "aliases": [],
+            "prerequisites": [
+              "台风"
+            ],
+            "definition": "台风等天气系统引起海水异常升高并冲击海岸的现象。",
+            "example": "风暴潮造成海水倒灌"
+          },
+          {
+            "name": "寒潮",
+            "difficulty": 2,
+            "description": "强冷空气入侵造成大范围剧烈降温",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "强冷空气迅速入侵造成大范围剧烈降温并伴随大风、雨雪或冻害的天气过程。",
+            "example": "寒潮使输电线路覆冰倒塌"
+          },
+          {
+            "name": "地震",
+            "difficulty": 2,
+            "description": "岩层断裂错位释放能量引起地面震动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "岩层在地应力作用下突然断裂或错位，释放能量并引起地面震动的现象。",
+            "example": "唐山发生里氏7.8级地震"
+          },
+          {
+            "name": "地震波",
+            "difficulty": 2,
+            "description": "震源释放并向四周传播的能量波",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "地震发生时由震源释放并向四周传播的能量波。",
+            "example": "地震波冲击造成房屋倒塌"
+          },
+          {
+            "name": "震级",
+            "difficulty": 2,
+            "description": "表示地震能量大小的指标",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "用来表示地震释放能量大小的量。",
+            "example": "汶川地震震级为8.0级"
+          },
+          {
+            "name": "地震烈度",
+            "difficulty": 3,
+            "description": "表示某地地面受影响和破坏程度的指标",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "表示地震时某一地区地面受到影响和破坏程度的指标。",
+            "example": "不同地区的地震烈度可能不同"
+          },
+          {
+            "name": "震源",
+            "difficulty": 2,
+            "description": "地球内部岩层破裂引起震动的地点",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "地球内部岩层破裂并引起震动的地方。",
+            "example": "震源位于地下岩层中"
+          },
+          {
+            "name": "震中",
+            "difficulty": 2,
+            "description": "地面正对震源的地点",
+            "aliases": [],
+            "prerequisites": [
+              "震源"
+            ],
+            "definition": "地面上正对着震源的那一点。",
+            "example": "震中附近通常破坏较严重"
+          },
+          {
+            "name": "震源深度",
+            "difficulty": 2,
+            "description": "震源到地面的垂直距离",
+            "aliases": [],
+            "prerequisites": [
+              "震源"
+            ],
+            "definition": "震源到地面的垂直距离。",
+            "example": "浅源地震的震源深度较小"
+          },
+          {
+            "name": "震中距",
+            "difficulty": 2,
+            "description": "地面一点到震中的直线距离",
+            "aliases": [],
+            "prerequisites": [
+              "震中"
+            ],
+            "definition": "地面上任意一点到震中的直线距离。",
+            "example": "两地震中距不同，受影响程度可能不同"
+          },
+          {
+            "name": "等震线",
+            "difficulty": 3,
+            "description": "连接地震破坏程度相似点的曲线",
+            "aliases": [],
+            "prerequisites": [
+              "地震烈度"
+            ],
+            "definition": "把地面破坏程度相似的各点连接起来形成的曲线。",
+            "example": "等震线可表示烈度分布范围"
+          },
+          {
+            "name": "滑坡",
+            "difficulty": 2,
+            "description": "山地斜坡上的岩土体整体下滑",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "山地斜坡上的岩体或土体在重力作用下沿一定滑动面整体下滑的现象。",
+            "example": "暴雨后山体滑坡掩埋道路"
+          },
+          {
+            "name": "泥石流",
+            "difficulty": 2,
+            "description": "山区沟谷中含大量泥沙石块的洪流",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "山区沟谷中由暴雨或冰雪消融激发的含大量泥沙、石块的特殊洪流。",
+            "example": "舟曲暴雨引发特大泥石流"
+          },
+          {
+            "name": "灾害链条",
+            "difficulty": 3,
+            "description": "灾害及其后续灾害连续发生的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然灾害"
+            ],
+            "definition": "一种自然灾害引发其他灾害，后续灾害又继续引发新灾害的连续过程。",
+            "example": "地震—堰塞湖—洪水"
+          },
+          {
+            "name": "防灾减灾",
+            "difficulty": 1,
+            "description": "预防并减轻自然灾害影响的工作",
+            "aliases": [],
+            "prerequisites": [
+              "自然灾害"
+            ],
+            "definition": "通过监测、防御、救援救助和灾后恢复等手段减轻自然灾害影响的工作。",
+            "example": "修建堤坝并开展灾害预警"
+          },
+          {
+            "name": "灾害监测",
+            "difficulty": 2,
+            "description": "动态监测灾害全过程的防灾工作",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "对自然灾害的孕育、发生、发展和致灾全过程进行动态监测。",
+            "example": "利用气象站监测降水变化"
+          },
+          {
+            "name": "灾害防御",
+            "difficulty": 2,
+            "description": "控制和减少灾害损失的工程与措施",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "通过防灾工程、法律法规和减灾教育控制并减少自然灾害损失。",
+            "example": "修建水库和堤坝防御洪水"
+          },
+          {
+            "name": "灾害救援与救助",
+            "difficulty": 2,
+            "description": "灾害发生后组织人员物资实施救助",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "灾害发生后调动人员和物资，稳定秩序、救治伤员并提供心理援助。",
+            "example": "救援队在废墟中搜救伤员"
+          },
+          {
+            "name": "灾后恢复",
+            "difficulty": 2,
+            "description": "恢复灾区生产生活及经济社会发展",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "灾害发生后恢复群众生产生活并促进经济社会恢复发展的过程。",
+            "example": "异地重建北川新县城"
+          },
+          {
+            "name": "自救与互救",
+            "difficulty": 2,
+            "description": "个人和家庭应对灾害的救助行动",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "灾害发生前后个人和家庭为保护生命而进行的自我救助与相互救助。",
+            "example": "地震后按路线撤离并互相救助"
+          },
+          {
+            "name": "地震预警系统",
+            "difficulty": 3,
+            "description": "利用波速差在地震波到达前发出警报",
+            "aliases": [],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "探测传播较快的纵波并在横波到达前计算、发布地震警报的系统。",
+            "example": "芦山地震时系统提前发布预警"
+          },
+          {
+            "name": "应急避难场所",
+            "difficulty": 2,
+            "description": "城镇居民躲避自然灾害的场所",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "城镇中供人们躲避自然灾害并保障基本生活需求的场所。",
+            "example": "地震发生后前往附近避难场所"
+          },
+          {
+            "name": "遥感技术",
+            "difficulty": 2,
+            "description": "利用航空航天设备远距离感知地表",
+            "aliases": [
+              "遥感"
+            ],
+            "prerequisites": [],
+            "definition": "利用航空器或航天器上的光学、电子设备远距离感知地表物体的技术。",
+            "example": "卫星遥感监测台风移动"
+          },
+          {
+            "name": "全球卫星导航系统",
+            "difficulty": 2,
+            "description": "利用卫星进行全球实时定位和导航",
+            "aliases": [
+              "全球卫星导航系统"
+            ],
+            "prerequisites": [],
+            "definition": "利用卫星在全球范围内提供实时定位和导航服务的地理信息技术。",
+            "example": "灾民用导航设备发送求救位置"
+          },
+          {
+            "name": "北斗卫星导航系统",
+            "difficulty": 2,
+            "description": "我国提供定位、通信和授时的卫星系统",
+            "aliases": [
+              "北斗系统"
+            ],
+            "prerequisites": [
+              "全球卫星导航系统"
+            ],
+            "definition": "我国集卫星定位、短信报文和精密授时于一体的卫星导航系统。",
+            "example": "北斗用户机传递汶川灾区信息"
+          },
+          {
+            "name": "地理信息系统",
+            "difficulty": 3,
+            "description": "处理和分析地理数据的计算机信息系统",
+            "aliases": [
+              "GIS"
+            ],
+            "prerequisites": [],
+            "definition": "对地理数据进行输入、处理、存储、管理、查询、分析和输出的计算机信息系统。",
+            "example": "利用系统确定泥石流受灾范围"
+          },
+          {
+            "name": "图层",
+            "difficulty": 2,
+            "description": "描述某一主题地理数据的数据层",
+            "aliases": [],
+            "prerequisites": [
+              "地理信息系统"
+            ],
+            "definition": "用图形、符号和文本描述道路、村庄、河流等某一主题数据的数据层。",
+            "example": "雨量站图层叠加行政区图层"
+          },
+          {
+            "name": "空间叠加分析",
+            "difficulty": 3,
+            "description": "将不同地理数据图层叠加分析",
+            "aliases": [],
+            "prerequisites": [
+              "地理信息系统",
+              "图层"
+            ],
+            "definition": "利用地理信息系统将不同图层按空间位置叠加，以获得新的地理信息。",
+            "example": "叠加雨量站图与行政区图"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章",
+        "concepts": [
+          {
+            "name": "天体",
+            "difficulty": 1,
+            "description": "宇宙中物质存在的各种形式。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "天体是宇宙中天然存在的物质形体。",
+            "example": "太阳、行星、卫星都是天体。"
+          },
+          {
+            "name": "恒星",
+            "difficulty": 1,
+            "description": "由炽热气体组成且能自行发光的天体。",
+            "aliases": [],
+            "prerequisites": [
+              "天体"
+            ],
+            "definition": "恒星是由炽热气体组成、能自己发光的球状或类球状天体。",
+            "example": "太阳是离地球最近的恒星。"
+          },
+          {
+            "name": "行星",
+            "difficulty": 1,
+            "description": "绕恒星运行、近似球状且本身不发光的天体。",
+            "aliases": [],
+            "prerequisites": [
+              "天体",
+              "恒星"
+            ],
+            "definition": "行星是在椭圆轨道上绕恒星运行、近似球状且靠反射恒星光发亮的天体。",
+            "example": "地球是太阳系的一颗行星。"
+          },
+          {
+            "name": "卫星",
+            "difficulty": 1,
+            "description": "环绕行星运转的天体。",
+            "aliases": [],
+            "prerequisites": [
+              "天体",
+              "行星"
+            ],
+            "definition": "卫星是环绕行星运转的天体。",
+            "example": "月球是地球唯一的天然卫星。"
+          },
+          {
+            "name": "天体系统",
+            "difficulty": 2,
+            "description": "运动天体相互吸引、相互绕转形成的系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体"
+            ],
+            "definition": "天体系统是运动中的天体相互吸引、相互绕转形成的系统。",
+            "example": "地月系是最低级的天体系统。"
+          },
+          {
+            "name": "地月系",
+            "difficulty": 1,
+            "description": "由地球和月球组成的天体系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体系统",
+              "卫星"
+            ],
+            "definition": "地月系是由地球和月球组成的天体系统。",
+            "example": "月球围绕地球运动。"
+          },
+          {
+            "name": "太阳系",
+            "difficulty": 2,
+            "description": "以太阳为中心、由多类天体组成的系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体系统",
+              "恒星",
+              "行星"
+            ],
+            "definition": "太阳系是由太阳、行星及其卫星等天体构成的天体系统。",
+            "example": "地球距离太阳约1.5亿千米。"
+          },
+          {
+            "name": "银河系",
+            "difficulty": 2,
+            "description": "由太阳和众多恒星组成的庞大恒星系统。",
+            "aliases": [],
+            "prerequisites": [
+              "天体系统",
+              "恒星"
+            ],
+            "definition": "银河系是由太阳和众多恒星组成的庞大恒星系统。",
+            "example": "太阳系位于银河系的一条旋臂上。"
+          },
+          {
+            "name": "河外星系",
+            "difficulty": 2,
+            "description": "银河系以外与银河系类似的星系。",
+            "aliases": [],
+            "prerequisites": [
+              "银河系"
+            ],
+            "definition": "河外星系是银河系以外、与银河系类似的星系。",
+            "example": "仙女座星云属于河外星系。"
+          },
+          {
+            "name": "可观测宇宙",
+            "difficulty": 2,
+            "description": "银河系和现阶段可观测河外星系的总称。",
+            "aliases": [],
+            "prerequisites": [
+              "银河系",
+              "河外星系"
+            ],
+            "definition": "可观测宇宙是银河系和现阶段所能观测到的河外星系的总称。",
+            "example": "可观测宇宙包含许多河外星系。"
+          },
+          {
+            "name": "类地行星",
+            "difficulty": 2,
+            "description": "靠近太阳、有固体表面且体积较小的行星。",
+            "aliases": [],
+            "prerequisites": [
+              "行星"
+            ],
+            "definition": "类地行星是靠近太阳、具有固体表面且体积较小的行星。",
+            "example": "水星、金星、地球和火星属于类地行星。"
+          },
+          {
+            "name": "太阳辐射",
+            "difficulty": 2,
+            "description": "太阳以电磁波形式向宇宙空间放射能量。",
+            "aliases": [],
+            "prerequisites": [
+              "恒星"
+            ],
+            "definition": "太阳辐射是太阳以电磁波形式向宇宙空间放射能量的现象。",
+            "example": "太阳辐射为地球提供光和热。"
+          },
+          {
+            "name": "核聚变",
+            "difficulty": 3,
+            "description": "轻原子核聚合成重原子核并释放巨大能量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "核聚变是质量小的原子核相聚合并释放巨大能量的过程。",
+            "example": "太阳能量来自内部的核聚变。"
+          },
+          {
+            "name": "太阳活动",
+            "difficulty": 2,
+            "description": "太阳大气的变化及其活动现象。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射"
+            ],
+            "definition": "太阳活动是太阳大气发生变化的现象。",
+            "example": "太阳黑子和耀斑属于太阳活动。"
+          },
+          {
+            "name": "太阳风",
+            "difficulty": 2,
+            "description": "太阳大气释放的高速带电粒子流。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "太阳风是太阳大气不断释放的高速带电粒子流。",
+            "example": "地球磁场能够阻挡正常的太阳风。"
+          },
+          {
+            "name": "太阳黑子",
+            "difficulty": 2,
+            "description": "光球层上温度较低、颜色较深的黑斑点。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "太阳黑子是出现在光球层上的低温黑斑点。",
+            "example": "太阳黑子数量可标志太阳活动强弱。"
+          },
+          {
+            "name": "太阳耀斑",
+            "difficulty": 2,
+            "description": "色球层表面突然出现的大而亮的斑块。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "太阳耀斑是色球层表面突然出现的大而亮的斑块。",
+            "example": "强烈耀斑会释放大量能量。"
+          },
+          {
+            "name": "日珥",
+            "difficulty": 2,
+            "description": "色球层发生的喷射弧状气体的剧烈活动。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动"
+            ],
+            "definition": "日珥是色球层上喷射弧状气体的剧烈太阳活动现象。",
+            "example": "日全食时可看到火红的日珥。"
+          },
+          {
+            "name": "日冕物质抛射",
+            "difficulty": 3,
+            "description": "日冕结构剧变并向外抛射大量带电粒子。",
+            "aliases": [],
+            "prerequisites": [
+              "太阳活动",
+              "太阳风"
+            ],
+            "definition": "日冕物质抛射是日冕结构明显变化并向外抛射大量带电粒子的现象。",
+            "example": "日冕物质抛射可能损害卫星和电网。"
+          },
+          {
+            "name": "地层",
+            "difficulty": 1,
+            "description": "具有时间顺序的层状岩石。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地层是具有时间顺序的层状岩石。",
+            "example": "沉积岩地层通常下老上新。"
+          },
+          {
+            "name": "化石",
+            "difficulty": 1,
+            "description": "保存在沉积物中的生物遗体或遗迹。",
+            "aliases": [],
+            "prerequisites": [
+              "地层"
+            ],
+            "definition": "化石是生物遗体或遗迹在沉积物中保存形成的遗存。",
+            "example": "恐龙骨骼可以形成化石。"
+          },
+          {
+            "name": "地质年代",
+            "difficulty": 2,
+            "description": "依据地层和生物演化划分的地球历史时间系统。",
+            "aliases": [],
+            "prerequisites": [
+              "地层",
+              "化石"
+            ],
+            "definition": "地质年代是依据地层顺序、生物演化阶段和岩石年龄建立的地球历史编年。",
+            "example": "地质年代包括宙、代、纪等单位。"
+          },
+          {
+            "name": "前寒武纪",
+            "difficulty": 2,
+            "description": "地球诞生至距今5.41亿年的漫长时期。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "前寒武纪是自地球诞生至距今5.41亿年的地质时期。",
+            "example": "前寒武纪出现了蓝细菌和多细胞生物。"
+          },
+          {
+            "name": "古生代",
+            "difficulty": 2,
+            "description": "距今5.41亿年至2.52亿年的远古生物时代。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "古生代是距今5.41亿年至2.52亿年的地质时代。",
+            "example": "古生代是海洋无脊椎动物和脊椎动物发展的时代。"
+          },
+          {
+            "name": "中生代",
+            "difficulty": 2,
+            "description": "距今2.52亿年至6600万年的中间生物时代。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "中生代是介于古生代和新生代之间的地质时代。",
+            "example": "中生代被称为爬行动物的时代。"
+          },
+          {
+            "name": "新生代",
+            "difficulty": 2,
+            "description": "距今6600万年至今的最近生物时代。",
+            "aliases": [],
+            "prerequisites": [
+              "地质年代"
+            ],
+            "definition": "新生代是距今6600万年至今的地质时代。",
+            "example": "第四纪出现了人类。"
+          },
+          {
+            "name": "联合古陆",
+            "difficulty": 2,
+            "description": "古生代后期地球各块大陆汇聚成的整体。",
+            "aliases": [],
+            "prerequisites": [
+              "古生代"
+            ],
+            "definition": "联合古陆是古生代后期地球各块大陆汇聚形成的整体。",
+            "example": "联合古陆后来在中生代开始解体。"
+          },
+          {
+            "name": "地震波",
+            "difficulty": 1,
+            "description": "地震产生的弹性震动以波的形式向四周传播。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地震波是地下岩石受冲击产生并向四周传播的弹性震动。",
+            "example": "科学家利用地震波研究地球内部。"
+          },
+          {
+            "name": "纵波",
+            "difficulty": 2,
+            "description": "传播速度较快且可通过固液气体传播的地震波。",
+            "aliases": [
+              "P波"
+            ],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "纵波是传播速度较快、能够通过固体液体和气体传播的地震波。",
+            "example": "纵波可以穿过地核的液态物质。"
+          },
+          {
+            "name": "横波",
+            "difficulty": 2,
+            "description": "传播速度较慢且只能通过固体传播的地震波。",
+            "aliases": [
+              "S波"
+            ],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "横波是传播速度较慢、只能通过固体传播的地震波。",
+            "example": "横波在外核处完全消失。"
+          },
+          {
+            "name": "不连续面",
+            "difficulty": 2,
+            "description": "地震波传播速度发生突然变化的界面。",
+            "aliases": [],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "不连续面是地震波速度在一定深度发生突然变化的面。",
+            "example": "莫霍界面是不连续面。"
+          },
+          {
+            "name": "莫霍界面",
+            "difficulty": 3,
+            "description": "地下约33千米处地震波速度明显增加的界面。",
+            "aliases": [
+              "莫霍洛维奇界面"
+            ],
+            "prerequisites": [
+              "不连续面",
+              "纵波",
+              "横波"
+            ],
+            "definition": "莫霍界面是地下平均33千米处纵波和横波速度都明显增加的界面。",
+            "example": "莫霍界面是地壳与地幔的分界。"
+          },
+          {
+            "name": "古登堡界面",
+            "difficulty": 3,
+            "description": "地下约2900千米处横波消失的界面。",
+            "aliases": [],
+            "prerequisites": [
+              "不连续面",
+              "纵波",
+              "横波"
+            ],
+            "definition": "古登堡界面是地下约2900千米处纵波速度下降且横波消失的界面。",
+            "example": "古登堡界面分隔地幔和地核。"
+          },
+          {
+            "name": "地壳",
+            "difficulty": 1,
+            "description": "地球表面由固体岩石组成的坚硬外壳。",
+            "aliases": [],
+            "prerequisites": [
+              "莫霍界面"
+            ],
+            "definition": "地壳是位于莫霍界面以外的地球固体岩石外壳。",
+            "example": "海洋地壳通常比大陆地壳薄。"
+          },
+          {
+            "name": "地幔",
+            "difficulty": 2,
+            "description": "位于莫霍界面和古登堡界面之间的圈层。",
+            "aliases": [],
+            "prerequisites": [
+              "莫霍界面",
+              "古登堡界面"
+            ],
+            "definition": "地幔是从莫霍界面延伸至古登堡界面的地球内部圈层。",
+            "example": "地幔占地球总体积的约80%。"
+          },
+          {
+            "name": "软流层",
+            "difficulty": 3,
+            "description": "上地幔上部岩石部分熔融并能缓慢流动的层。",
+            "aliases": [],
+            "prerequisites": [
+              "地幔"
+            ],
+            "definition": "软流层是上地幔上部温度很高、岩石部分熔融且能缓慢流动的层。",
+            "example": "软流层被认为是岩浆的主要发源地。"
+          },
+          {
+            "name": "岩石圈",
+            "difficulty": 2,
+            "description": "地壳与上地幔顶部坚硬岩石组成的圈层。",
+            "aliases": [],
+            "prerequisites": [
+              "地壳",
+              "地幔"
+            ],
+            "definition": "岩石圈是由地壳和上地幔顶部坚硬岩石组成的圈层。",
+            "example": "地球板块属于岩石圈的一部分。"
+          },
+          {
+            "name": "地核",
+            "difficulty": 2,
+            "description": "位于古登堡界面以内、主要由铁镍组成的圈层。",
+            "aliases": [],
+            "prerequisites": [
+              "古登堡界面"
+            ],
+            "definition": "地核是古登堡界面以内主要由铁和镍等金属组成的地球内部圈层。",
+            "example": "地核分为外核和内核。"
+          },
+          {
+            "name": "大气圈",
+            "difficulty": 1,
+            "description": "由气体和悬浮物质组成的地球外部圈层。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大气圈是由气体和悬浮物质组成并笼罩地球的复杂系统。",
+            "example": "大气圈中的云和雨属于天气现象。"
+          },
+          {
+            "name": "水圈",
+            "difficulty": 1,
+            "description": "地表和近地表各种形态水体的总称。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水圈是地表和近地表各种形态水体的总称。",
+            "example": "海洋、河流和冰川都属于水圈。"
+          }
+        ],
+        "chapter_key": "db781ccc15",
+        "metadata": {
+          "volume_id": "1f9a0bb8ef3e",
+          "file_id": "1f9a0bb8ef3e",
+          "volume_title": "高中地理 必修第1册",
+          "chapter_order": 1,
+          "raw_heading": "第一章"
+        }
+      },
+      {
+        "name": "第二章",
+        "concepts": [
+          {
+            "name": "大气组成",
+            "difficulty": 1,
+            "description": "大气由干洁空气、水汽和杂质等组成",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大气组成是指包围地球的大气所含各种物质及其含量。",
+            "example": "低层大气包括干洁空气、水汽和杂质"
+          },
+          {
+            "name": "干洁空气",
+            "difficulty": 1,
+            "description": "除去水汽和杂质后的低层大气混合气体",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "干洁空气是低层大气中除去水汽和杂质以外的混合气体。",
+            "example": "25千米以下干洁空气中氮气约占78%"
+          },
+          {
+            "name": "大气水汽",
+            "difficulty": 1,
+            "description": "大气中含量少且随时空变化的水分",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气水汽是以气态形式存在于大气中的水分。",
+            "example": "水汽凝结可形成云、雾和降水"
+          },
+          {
+            "name": "大气杂质",
+            "difficulty": 1,
+            "description": "大气中含量少且可作为凝结核的物质",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气杂质是悬浮在大气中的微粒等物质，能够作为凝结核。",
+            "example": "杂质为成云致雨提供凝结核"
+          },
+          {
+            "name": "二氧化碳作用",
+            "difficulty": 2,
+            "description": "二氧化碳参与光合作用并吸收地面辐射",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "二氧化碳既是绿色植物光合作用的原料，也能吸收地面长波辐射。",
+            "example": "化石燃料燃烧会增加大气二氧化碳含量"
+          },
+          {
+            "name": "臭氧作用",
+            "difficulty": 2,
+            "description": "臭氧吸收紫外线并保护地球生命",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "臭氧能够吸收太阳紫外线，使大气增温并减少到达地面的紫外线。",
+            "example": "臭氧层可减弱紫外线对生物的伤害"
+          },
+          {
+            "name": "大气污染",
+            "difficulty": 2,
+            "description": "大气成分异常或有害物质进入大气的现象",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气污染是自然或人为原因使大气成分超过正常含量并造成危害的现象。",
+            "example": "工业废气和汽车尾气可造成大气污染"
+          },
+          {
+            "name": "大气垂直分层",
+            "difficulty": 2,
+            "description": "依据温度、运动状况和密度划分大气层次",
+            "aliases": [],
+            "prerequisites": [
+              "大气组成"
+            ],
+            "definition": "大气垂直分层是按温度、运动状况和密度将大气自下而上划分为不同层次。",
+            "example": "大气自下而上分为对流层、平流层和高层大气"
+          },
+          {
+            "name": "对流层",
+            "difficulty": 2,
+            "description": "大气圈底层，天气现象集中发生于此",
+            "aliases": [],
+            "prerequisites": [
+              "大气垂直分层"
+            ],
+            "definition": "对流层是大气圈最底层，集中了大部分质量及几乎全部水汽和杂质。",
+            "example": "云、雨、雾、雪等天气现象发生在对流层"
+          },
+          {
+            "name": "平流层",
+            "difficulty": 2,
+            "description": "对流层顶部至约50—55千米的高空大气层",
+            "aliases": [],
+            "prerequisites": [
+              "大气垂直分层"
+            ],
+            "definition": "平流层是自对流层顶部至约50—55千米高空、以平流运动为主的大气层。",
+            "example": "平流层水汽少、无云雨，适合航空飞行"
+          },
+          {
+            "name": "高层大气",
+            "difficulty": 2,
+            "description": "平流层以上、空气密度很小的大气层",
+            "aliases": [],
+            "prerequisites": [
+              "大气垂直分层"
+            ],
+            "definition": "高层大气是平流层以上的大气，空气密度很小并包含电离层。",
+            "example": "流星体常在高层大气中燃烧"
+          },
+          {
+            "name": "臭氧层",
+            "difficulty": 2,
+            "description": "平流层中臭氧含量达到最大值的区域",
+            "aliases": [],
+            "prerequisites": [
+              "平流层",
+              "臭氧作用"
+            ],
+            "definition": "臭氧层是平流层中臭氧含量较高并在22—27千米达到最大值的区域。",
+            "example": "臭氧层被称为地球生命的保护伞"
+          },
+          {
+            "name": "电离层",
+            "difficulty": 3,
+            "description": "高层大气中处于高度电离状态的区域",
+            "aliases": [],
+            "prerequisites": [
+              "高层大气"
+            ],
+            "definition": "电离层是受太阳紫外线和宇宙射线作用而高度电离的大气区域。",
+            "example": "电离层能反射无线电波"
+          },
+          {
+            "name": "臭氧空洞",
+            "difficulty": 2,
+            "description": "臭氧层臭氧含量大幅下降的现象",
+            "aliases": [],
+            "prerequisites": [
+              "臭氧层",
+              "臭氧作用"
+            ],
+            "definition": "臭氧空洞是臭氧层被破坏、臭氧含量显著减少的现象。",
+            "example": "南极上空春季曾出现臭氧空洞"
+          },
+          {
+            "name": "太阳辐射",
+            "difficulty": 1,
+            "description": "地球大气最重要的能量来源",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "太阳辐射是太阳以电磁波形式向外传递的能量，也是地球大气最重要的能量来源。",
+            "example": "太阳辐射穿过大气后大部分到达地面"
+          },
+          {
+            "name": "长波辐射",
+            "difficulty": 2,
+            "description": "地面受热后向外发出的较长波长辐射",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射"
+            ],
+            "definition": "长波辐射是温度较低的地面向外传递热量时发出的辐射。",
+            "example": "地面以长波辐射形式向近地面大气传热"
+          },
+          {
+            "name": "大气受热过程",
+            "difficulty": 3,
+            "description": "太阳辐射、地面辐射与大气增温的过程",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射",
+              "长波辐射"
+            ],
+            "definition": "大气受热过程是太阳辐射加热地面、地面长波辐射加热近地面大气的能量传递过程。",
+            "example": "地面是近地面大气主要的直接热源"
+          },
+          {
+            "name": "大气逆辐射",
+            "difficulty": 2,
+            "description": "大气向下射向地面的长波辐射",
+            "aliases": [],
+            "prerequisites": [
+              "长波辐射",
+              "大气受热过程"
+            ],
+            "definition": "大气逆辐射是大气增温后向下射向地面的长波辐射。",
+            "example": "低云浓密时大气逆辐射较强"
+          },
+          {
+            "name": "大气保温作用",
+            "difficulty": 2,
+            "description": "大气逆辐射补偿地面热量损失的作用",
+            "aliases": [],
+            "prerequisites": [
+              "大气逆辐射"
+            ],
+            "definition": "大气保温作用是大气通过吸收地面辐射并以逆辐射向下传热来减弱地面降温的作用。",
+            "example": "地球昼夜温差小于没有大气的月球"
+          },
+          {
+            "name": "温室气体",
+            "difficulty": 2,
+            "description": "能够吸收地表长波辐射的气体",
+            "aliases": [],
+            "prerequisites": [
+              "长波辐射"
+            ],
+            "definition": "温室气体是能够吸收地表红外长波辐射的气体，主要包括二氧化碳和水汽。",
+            "example": "二氧化碳不能像氧气、氮气一样透过红外辐射"
+          },
+          {
+            "name": "大气运动",
+            "difficulty": 1,
+            "description": "大气的垂直运动和水平运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "大气运动是大气中空气发生垂直升降或水平位移的运动。",
+            "example": "气流上升属于垂直运动，风属于水平运动"
+          },
+          {
+            "name": "气压",
+            "difficulty": 2,
+            "description": "空气对单位面积地面的压力",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动"
+            ],
+            "definition": "气压是大气作用在单位面积地面上的压力。",
+            "example": "空气下沉的地区近地面常形成高气压"
+          },
+          {
+            "name": "气压梯度",
+            "difficulty": 2,
+            "description": "单位距离间的气压差",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "气压梯度是单位距离间的气压差异。",
+            "example": "等压线越密，气压梯度越大"
+          },
+          {
+            "name": "大气热力环流",
+            "difficulty": 3,
+            "description": "地面冷热不均形成的空气环流",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动",
+              "气压"
+            ],
+            "definition": "大气热力环流是由于地面冷热不均而形成的空气环流。",
+            "example": "海陆风是海陆间热力环流的表现"
+          },
+          {
+            "name": "水平气压梯度力",
+            "difficulty": 3,
+            "description": "促使空气由高压区流向低压区的力",
+            "aliases": [],
+            "prerequisites": [
+              "气压梯度"
+            ],
+            "definition": "水平气压梯度力是由气压梯度产生并促使空气从高压区流向低压区的力。",
+            "example": "它是形成风的直接原因"
+          },
+          {
+            "name": "地转偏向力",
+            "difficulty": 3,
+            "description": "使水平运动物体方向发生偏转的力",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动"
+            ],
+            "definition": "地转偏向力是地球自转导致水平运动物体方向发生偏转的力。",
+            "example": "北半球风向向右偏转"
+          },
+          {
+            "name": "摩擦力",
+            "difficulty": 2,
+            "description": "地面和空气相互作用产生的阻力",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动"
+            ],
+            "definition": "摩擦力是地面与空气或不同空气层相互作用产生的阻力。",
+            "example": "近地面摩擦力会减小风速"
+          },
+          {
+            "name": "风",
+            "difficulty": 2,
+            "description": "大气的水平运动",
+            "aliases": [],
+            "prerequisites": [
+              "大气运动",
+              "水平气压梯度力"
+            ],
+            "definition": "风是大气在水平气压梯度力作用下由高压区向低压区进行的水平运动。",
+            "example": "近地面风向受三种力共同影响"
+          },
+          {
+            "name": "等压线",
+            "difficulty": 2,
+            "description": "同一高度上气压相等点的连线",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "等压线是同一高度上气压相等的各点所组成的连线。",
+            "example": "等压线疏密可反映气压梯度大小"
+          },
+          {
+            "name": "城市热岛环流",
+            "difficulty": 3,
+            "description": "城市中心与郊区温差形成的热力环流",
+            "aliases": [],
+            "prerequisites": [
+              "大气热力环流"
+            ],
+            "definition": "城市热岛环流是城市中心和郊区温度差异导致的局地热力环流。",
+            "example": "近地面气流由郊区流向城市中心"
+          },
+          {
+            "name": "海陆风",
+            "difficulty": 2,
+            "description": "海陆昼夜温差引起的局地环流",
+            "aliases": [],
+            "prerequisites": [
+              "大气热力环流"
+            ],
+            "definition": "海陆风是海陆间昼夜温度差异引起的大气热力环流。",
+            "example": "白天近地面通常由海洋吹向陆地"
+          }
+        ],
+        "chapter_key": "c8134a0504",
+        "metadata": {
+          "volume_id": "1f9a0bb8ef3e",
+          "file_id": "1f9a0bb8ef3e",
+          "volume_title": "高中地理 必修第1册",
+          "chapter_order": 2,
+          "raw_heading": "第二章"
+        }
+      },
+      {
+        "name": "第三章",
+        "concepts": [
+          {
+            "name": "水循环",
+            "difficulty": 2,
+            "description": "自然界的水在四大圈层间连续运动的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水循环是自然界的水在水圈、大气圈、岩石圈和生物圈中连续运动的过程。",
+            "example": "海水蒸发后形成降水并通过径流返回海洋"
+          },
+          {
+            "name": "蒸发",
+            "difficulty": 1,
+            "description": "水体受热由液态水转化为水汽",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "蒸发是水体表面的水在太阳辐射等作用下转化为水汽的过程。",
+            "example": "太阳加热海水使其蒸发"
+          },
+          {
+            "name": "水汽输送",
+            "difficulty": 2,
+            "description": "水汽随气流在不同空间之间移动",
+            "aliases": [],
+            "prerequisites": [
+              "蒸发"
+            ],
+            "definition": "水汽输送是水汽在大气中被气流带到其他地区的过程。",
+            "example": "海洋水汽被气流输送到大陆上空"
+          },
+          {
+            "name": "降水",
+            "difficulty": 1,
+            "description": "水汽凝结后以水滴或冰晶形式降落",
+            "aliases": [],
+            "prerequisites": [
+              "水汽输送"
+            ],
+            "definition": "降水是大气中的水汽凝结后以雨、雪等形式降落到地面的过程。",
+            "example": "大陆上空的水汽凝结形成降雨"
+          },
+          {
+            "name": "下渗",
+            "difficulty": 1,
+            "description": "地表水向地下土壤和岩层渗透",
+            "aliases": [],
+            "prerequisites": [
+              "降水"
+            ],
+            "definition": "下渗是降落到地面的水向土壤和地下空间渗透的过程。",
+            "example": "部分降水下渗形成地下径流"
+          },
+          {
+            "name": "地表径流",
+            "difficulty": 2,
+            "description": "水沿地面流动形成的径流",
+            "aliases": [],
+            "prerequisites": [
+              "降水"
+            ],
+            "definition": "地表径流是降水等在地面流动并汇入河流的水流。",
+            "example": "雨水沿地面流动汇入江河"
+          },
+          {
+            "name": "地下径流",
+            "difficulty": 2,
+            "description": "水在地下沿土壤或岩层流动",
+            "aliases": [],
+            "prerequisites": [
+              "下渗"
+            ],
+            "definition": "地下径流是下渗后的水在地下沿土壤或岩层流动形成的径流。",
+            "example": "下渗水汇集后形成地下径流"
+          },
+          {
+            "name": "海陆间循环",
+            "difficulty": 2,
+            "description": "发生在海洋与陆地之间的水循环",
+            "aliases": [
+              "大循环"
+            ],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "海陆间循环是海洋和陆地之间通过蒸发、降水及径流等环节进行的水循环。",
+            "example": "海水蒸发后降水并经河流返回海洋"
+          },
+          {
+            "name": "陆地内循环",
+            "difficulty": 2,
+            "description": "陆地水体在陆地范围内的循环",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "陆地内循环是陆地水体蒸发或蒸腾后形成降水并仍降落在陆地上的循环。",
+            "example": "陆地湖泊蒸发后在陆地上空降水"
+          },
+          {
+            "name": "海上内循环",
+            "difficulty": 2,
+            "description": "海洋水体在海洋范围内的循环",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "海上内循环是海水蒸发后在海洋上空凝结降水并返回海面的循环。",
+            "example": "海面蒸发形成水汽并在海上降雨"
+          },
+          {
+            "name": "水循环意义",
+            "difficulty": 3,
+            "description": "水循环对水量、物质、能量和环境的作用",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "水循环具有维持全球水量动态平衡、更新水资源、迁移物质和转换能量等地理意义。",
+            "example": "地表径流将泥沙和盐类输送入海"
+          },
+          {
+            "name": "海水温度",
+            "difficulty": 2,
+            "description": "反映海水冷热状况的理化性质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海水温度是反映海水冷热状况并受海洋热量收支影响的理化性质。",
+            "example": "表层海水温度通常高于深层"
+          },
+          {
+            "name": "海水盐度",
+            "difficulty": 2,
+            "description": "海水中盐类物质质量分数的指标",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海水盐度是海水中盐类物质质量分数的表示，通常用千分比表示。",
+            "example": "世界大洋平均盐度约为35‰"
+          },
+          {
+            "name": "海水密度",
+            "difficulty": 2,
+            "description": "单位体积海水的质量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海水密度是单位体积海水的质量，主要受温度、盐度和深度影响。",
+            "example": "通常海水温度越高，密度越低"
+          },
+          {
+            "name": "海中断崖",
+            "difficulty": 4,
+            "description": "海水密度随深度增加反而减小的海水层",
+            "aliases": [],
+            "prerequisites": [
+              "海水密度"
+            ],
+            "definition": "海中断崖是海水密度随深度增大而减小的特殊海水层。",
+            "example": "潜艇遇到海中断崖可能因浮力骤减而下沉"
+          },
+          {
+            "name": "海浪",
+            "difficulty": 2,
+            "description": "海水受扰动形成的波状起伏运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海浪是海水表层最基本的运动形式之一，常由风力形成。",
+            "example": "冲浪活动需要较高的浪高"
+          },
+          {
+            "name": "海啸",
+            "difficulty": 3,
+            "description": "海底剧烈活动引起的巨大海浪",
+            "aliases": [],
+            "prerequisites": [
+              "海浪"
+            ],
+            "definition": "海啸是海底地震、火山爆发或水下滑坡等引起的巨大海水波动。",
+            "example": "海底地震可能引发海啸"
+          },
+          {
+            "name": "风暴潮",
+            "difficulty": 3,
+            "description": "强风作用下近岸海面水位急剧升降",
+            "aliases": [],
+            "prerequisites": [
+              "海浪"
+            ],
+            "definition": "风暴潮是在强风等作用下近岸海面水位急剧升降的现象。",
+            "example": "强风与涨潮同时发生会增强风暴潮"
+          },
+          {
+            "name": "潮汐",
+            "difficulty": 2,
+            "description": "海水有规律的周期性涨落现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "潮汐是与月球和太阳引力有关的海水周期性涨落现象。",
+            "example": "农历初一和十五前后潮汐较明显"
+          },
+          {
+            "name": "潮间带",
+            "difficulty": 2,
+            "description": "退潮露出、涨潮淹没的海岸地带",
+            "aliases": [],
+            "prerequisites": [
+              "潮汐"
+            ],
+            "definition": "潮间带是退潮时露出水面、涨潮时被海水淹没的海岸地带。",
+            "example": "霞浦潮间带用于紫菜养殖"
+          },
+          {
+            "name": "洋流",
+            "difficulty": 2,
+            "description": "海水沿一定方向的大规模流动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "洋流是海洋中的海水常年比较稳定地沿一定方向作大规模流动。",
+            "example": "洋流可挟带冰山向较低纬度漂移"
+          },
+          {
+            "name": "暖流",
+            "difficulty": 3,
+            "description": "从高温海域流向低温海域的洋流",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "暖流是从水温较高海域流向水温较低海域的洋流。",
+            "example": "纽芬兰附近的暖流与寒流交汇"
+          },
+          {
+            "name": "寒流",
+            "difficulty": 3,
+            "description": "从低温海域流向高温海域的洋流",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "寒流是从水温较低海域流向水温较高海域的洋流。",
+            "example": "纽芬兰附近寒暖流交汇形成渔场"
+          },
+          {
+            "name": "寒暖流交汇",
+            "difficulty": 3,
+            "description": "寒流与暖流在海域中相遇的现象",
+            "aliases": [],
+            "prerequisites": [
+              "暖流",
+              "寒流"
+            ],
+            "definition": "寒暖流交汇是寒流和暖流在同一海域相遇并相互作用的现象。",
+            "example": "纽芬兰岛附近形成著名渔场"
+          },
+          {
+            "name": "海水淡化",
+            "difficulty": 3,
+            "description": "通过技术处理将海水转化为淡水",
+            "aliases": [],
+            "prerequisites": [
+              "海水盐度"
+            ],
+            "definition": "海水淡化是通过技术处理降低海水盐度并获得淡水的过程。",
+            "example": "曹妃甸利用海水淡化缓解缺水"
+          },
+          {
+            "name": "海冰淡化",
+            "difficulty": 4,
+            "description": "从海冰中分离高浓度盐水以获得淡水",
+            "aliases": [],
+            "prerequisites": [
+              "海水淡化",
+              "海水盐度"
+            ],
+            "definition": "海冰淡化是将海冰内部的高浓度盐水分离出来以降低融水盐度的方法。",
+            "example": "堆放海冰使浓盐水沿冰体缝隙排出"
+          }
+        ],
+        "chapter_key": "04987539b3",
+        "metadata": {
+          "volume_id": "1f9a0bb8ef3e",
+          "file_id": "1f9a0bb8ef3e",
+          "volume_title": "高中地理 必修第1册",
+          "chapter_order": 3,
+          "raw_heading": "第三章"
+        }
+      },
+      {
+        "name": "第四章",
+        "concepts": [
+          {
+            "name": "地貌",
+            "difficulty": 1,
+            "description": "岩石圈受多圈层作用形成的地表形态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地貌是出露地表的岩石圈在大气圈、水圈、生物圈综合作用下呈现的形态。",
+            "example": "山地、平原等地表形态"
+          },
+          {
+            "name": "喀斯特地貌",
+            "difficulty": 2,
+            "description": "可溶性岩石受水溶蚀和沉淀形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "喀斯特地貌是可溶性岩石的物质溶于水并被带走或重新沉淀形成的地貌。",
+            "example": "广西桂林峰林"
+          },
+          {
+            "name": "溶沟",
+            "difficulty": 2,
+            "description": "地表喀斯特地貌中的长条形或网格状沟槽",
+            "aliases": [],
+            "prerequisites": [
+              "喀斯特地貌"
+            ],
+            "definition": "溶沟是地表喀斯特地貌中呈长条形或网格状、地面崎岖不平的沟槽。",
+            "example": "石灰岩地表的沟槽"
+          },
+          {
+            "name": "洼地",
+            "difficulty": 2,
+            "description": "溶沟发展形成的面积较大、底部较平坦地形",
+            "aliases": [],
+            "prerequisites": [
+              "溶沟"
+            ],
+            "definition": "洼地是溶沟进一步发展形成的面积较大、底部较平坦的喀斯特地貌。",
+            "example": "广西、贵州的坝子"
+          },
+          {
+            "name": "峰林",
+            "difficulty": 2,
+            "description": "洼地边缘残留岩体形成的锥状峰体群",
+            "aliases": [],
+            "prerequisites": [
+              "洼地"
+            ],
+            "definition": "峰林是洼地边缘残留岩体呈锥状耸立而构成的喀斯特地貌。",
+            "example": "桂林漓江两岸峰林"
+          },
+          {
+            "name": "溶洞",
+            "difficulty": 2,
+            "description": "地下喀斯特地貌的主要类型",
+            "aliases": [],
+            "prerequisites": [
+              "喀斯特地貌"
+            ],
+            "definition": "溶洞是地下喀斯特地貌的主要类型，洞内常发育钟乳石、石笋和石柱。",
+            "example": "土耳其安纳托利亚高原溶洞"
+          },
+          {
+            "name": "河流地貌",
+            "difficulty": 2,
+            "description": "河流作用形成的河谷、平原和河口地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "河流地貌是河流侵蚀、搬运和堆积作用形成的各种地貌。",
+            "example": "河谷、冲积平原、三角洲"
+          },
+          {
+            "name": "V形河谷",
+            "difficulty": 2,
+            "description": "山区河流侵蚀形成的深窄河谷",
+            "aliases": [
+              "“V”形河谷"
+            ],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "V形河谷是山区河流不断侵蚀河谷岩石形成的深、陡、窄河谷。",
+            "example": "澜沧江上游河谷"
+          },
+          {
+            "name": "冲积平原",
+            "difficulty": 2,
+            "description": "河流泥沙大量堆积形成的宽广平原",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "冲积平原是由河流挟带的泥沙大量堆积而成的平原。",
+            "example": "江汉平原"
+          },
+          {
+            "name": "河曲",
+            "difficulty": 2,
+            "description": "平缓地势中呈S形弯曲的河道",
+            "aliases": [
+              "曲流"
+            ],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "河曲是在地势平缓地区形成的呈S形弯曲的河道。",
+            "example": "呼伦贝尔草原河曲"
+          },
+          {
+            "name": "牛轭湖",
+            "difficulty": 3,
+            "description": "河曲颈部被洪水冲断后形成的湖泊",
+            "aliases": [],
+            "prerequisites": [
+              "河曲"
+            ],
+            "definition": "牛轭湖是洪水冲断河曲颈部后，弯曲河段与主河道分离形成的湖泊。",
+            "example": "呼伦贝尔草原牛轭湖"
+          },
+          {
+            "name": "三角洲",
+            "difficulty": 2,
+            "description": "河口泥沙淤积形成的三角形地貌",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "三角洲是河流入海或入湖处泥沙淤积形成的、平面形态近似三角形的地貌。",
+            "example": "黄河三角洲"
+          },
+          {
+            "name": "风沙地貌",
+            "difficulty": 2,
+            "description": "干旱地区以风力为主形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "风沙地貌是在干旱地区以风力作用为主形成的各种地貌。",
+            "example": "西北地区沙漠地貌"
+          },
+          {
+            "name": "风蚀蘑菇",
+            "difficulty": 2,
+            "description": "岩石下部受风沙侵蚀形成的蘑菇状地貌",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "风蚀蘑菇是孤立岩石下部遭受较强风沙侵蚀后形成的上宽下窄地貌。",
+            "example": "撒哈拉沙漠风蚀蘑菇"
+          },
+          {
+            "name": "雅丹",
+            "difficulty": 3,
+            "description": "沟槽和垄脊相间的风蚀地貌",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "雅丹是由不规则沟槽和垄脊相间构成、走向与主风向一致的地貌。",
+            "example": "甘肃敦煌雅丹"
+          },
+          {
+            "name": "沙丘",
+            "difficulty": 2,
+            "description": "沙漠中由风沙堆积形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "沙丘是沙漠中由风沙堆积形成的形态多样的地貌。",
+            "example": "新月形沙丘"
+          },
+          {
+            "name": "新月形沙丘",
+            "difficulty": 2,
+            "description": "迎风坡缓、背风坡陡的新月状沙丘",
+            "aliases": [],
+            "prerequisites": [
+              "沙丘"
+            ],
+            "definition": "新月形沙丘因形似新月而得名，具有迎风坡缓、背风坡陡的特点。",
+            "example": "阿联酋利瓦沙漠沙丘"
+          },
+          {
+            "name": "海岸地貌",
+            "difficulty": 2,
+            "description": "海浪等海岸作用形成的各种地貌",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "海岸地貌是海岸在海浪等作用下形成的各种地貌。",
+            "example": "海蚀崖、海滩"
+          },
+          {
+            "name": "海蚀崖",
+            "difficulty": 2,
+            "description": "海浪侵蚀崩塌形成的海岸陡崖",
+            "aliases": [],
+            "prerequisites": [
+              "海岸地貌"
+            ],
+            "definition": "海蚀崖是岩石海岸受海浪长期侵蚀崩塌后形成的高出海面的陡崖。",
+            "example": "广西涠洲岛海蚀崖"
+          },
+          {
+            "name": "海蚀平台",
+            "difficulty": 2,
+            "description": "海蚀崖前方微向海倾斜的岩石平台",
+            "aliases": [],
+            "prerequisites": [
+              "海蚀崖"
+            ],
+            "definition": "海蚀平台是海蚀崖逐渐后退后，在崖前形成的微向海倾斜的平台。",
+            "example": "涠洲岛海蚀平台"
+          },
+          {
+            "name": "海蚀拱桥",
+            "difficulty": 3,
+            "description": "海浪侵蚀贯通岩体形成的拱形地貌",
+            "aliases": [],
+            "prerequisites": [
+              "海岸地貌"
+            ],
+            "definition": "海蚀拱桥是突出的陡立岩石两侧海蚀穴贯通后形成的拱形地貌。",
+            "example": "英国西南部海岸拱桥"
+          },
+          {
+            "name": "海滩",
+            "difficulty": 2,
+            "description": "海岸常见的堆积地貌",
+            "aliases": [],
+            "prerequisites": [
+              "海岸地貌"
+            ],
+            "definition": "海滩是海岸沉积物堆积形成的地貌，可分为砾滩、沙滩和泥滩。",
+            "example": "海南三亚沙滩"
+          },
+          {
+            "name": "宏观到微观观察",
+            "difficulty": 2,
+            "description": "地貌观察由大地貌到小地貌的顺序",
+            "aliases": [],
+            "prerequisites": [
+              "地貌"
+            ],
+            "definition": "地貌观察宜从宏观到微观、从面到点，依次观察不同尺度的地貌。",
+            "example": "先看山地，再看河谷和河岸"
+          },
+          {
+            "name": "绝对高度",
+            "difficulty": 2,
+            "description": "划分高原、山地和平原的重要高度指标",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "绝对高度是地面某点相对于基准面的高度。",
+            "example": "某点海拔879米"
+          },
+          {
+            "name": "相对高度",
+            "difficulty": 2,
+            "description": "反映地面起伏状况的高度差",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "相对高度是两个地点绝对高度之间的差值。",
+            "example": "山顶与谷底的高度差"
+          },
+          {
+            "name": "坡度",
+            "difficulty": 2,
+            "description": "表示地面倾斜程度的指标",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "坡度是地面倾斜程度，通常用坡度角或垂直距离与水平距离的比值表示。",
+            "example": "铁路线路坡度"
+          },
+          {
+            "name": "坡向",
+            "difficulty": 2,
+            "description": "坡面朝向及其迎光、迎风特征",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "坡向是坡面所朝的方向，观察时需关注阳坡、阴坡、迎风坡和背风坡。",
+            "example": "山地阳坡与阴坡植被差异"
+          },
+          {
+            "name": "红柳沙包",
+            "difficulty": 3,
+            "description": "红柳灌丛中枯叶层与风沙层交替堆积体",
+            "aliases": [],
+            "prerequisites": [
+              "风沙地貌"
+            ],
+            "definition": "红柳沙包是风沙在红柳丛中堆积并与枯枝落叶层交替形成的沙包。",
+            "example": "我国西北沙漠红柳沙包"
+          }
+        ],
+        "chapter_key": "505e71c52c",
+        "metadata": {
+          "volume_id": "1f9a0bb8ef3e",
+          "file_id": "1f9a0bb8ef3e",
+          "volume_title": "高中地理 必修第1册",
+          "chapter_order": 4,
+          "raw_heading": "第四章"
+        }
+      },
+      {
+        "name": "第五章",
+        "concepts": [
+          {
+            "name": "植被",
+            "difficulty": 2,
+            "description": "自然界成群生长的各种植物的整体。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植被是自然界成群生长的各种植物的整体。",
+            "example": "森林、草原和荒漠都是植被类型。"
+          },
+          {
+            "name": "天然植被",
+            "difficulty": 2,
+            "description": "自然形成的森林、草原、荒漠等植被。",
+            "aliases": [],
+            "prerequisites": [
+              "植被"
+            ],
+            "definition": "天然植被是自然界天然形成的植被。",
+            "example": "热带雨林属于天然植被。"
+          },
+          {
+            "name": "人工植被",
+            "difficulty": 2,
+            "description": "人工栽培和经营管理形成的植被。",
+            "aliases": [],
+            "prerequisites": [
+              "植被"
+            ],
+            "definition": "人工植被是人工栽培和经营管理形成的植被。",
+            "example": "经济林和人工草场属于人工植被。"
+          },
+          {
+            "name": "植被垂直结构",
+            "difficulty": 3,
+            "description": "植物群体因竞争形成的明显垂直分层。",
+            "aliases": [
+              "垂直结构",
+              "成层现象"
+            ],
+            "prerequisites": [
+              "植被"
+            ],
+            "definition": "植被垂直结构是不同植物群体占据不同垂直空间形成的分层结构。",
+            "example": "森林通常具有乔木、灌木等分层。"
+          },
+          {
+            "name": "热带雨林",
+            "difficulty": 3,
+            "description": "终年高温多雨、结构复杂的森林类型。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被",
+              "植被垂直结构"
+            ],
+            "definition": "热带雨林是主要分布于热带湿热气候区的森林植被类型。",
+            "example": "亚马孙流域分布有热带雨林。"
+          },
+          {
+            "name": "常绿阔叶林",
+            "difficulty": 3,
+            "description": "亚热带湿润地区常绿的阔叶森林。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "常绿阔叶林是主要分布于亚热带湿润地区的常绿阔叶森林。",
+            "example": "我国南方常见常绿阔叶林。"
+          },
+          {
+            "name": "落叶阔叶林",
+            "difficulty": 3,
+            "description": "春季发叶、秋冬季落叶的森林类型。",
+            "aliases": [
+              "夏绿林"
+            ],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "落叶阔叶林是乔木春季发叶、秋冬季落叶的森林植被类型。",
+            "example": "我国华北地区有落叶阔叶林。"
+          },
+          {
+            "name": "亚寒带针叶林",
+            "difficulty": 3,
+            "description": "寒冷地区以松、杉类为主的针叶林。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "亚寒带针叶林是主要分布于亚寒带、以松杉类为主的森林。",
+            "example": "亚欧大陆北部广布亚寒带针叶林。"
+          },
+          {
+            "name": "热带草原",
+            "difficulty": 3,
+            "description": "全年高温、干湿季分明的草本植被。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "热带草原是分布于热带干湿季地区、以草本为主的植被。",
+            "example": "东非高原有广阔的热带草原。"
+          },
+          {
+            "name": "温带草原",
+            "difficulty": 3,
+            "description": "夏季温暖、冬季寒冷且较干燥的草原。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "温带草原是分布于温带干燥地区、以草本为主的植被。",
+            "example": "内蒙古呼伦贝尔有温带草原。"
+          },
+          {
+            "name": "荒漠植被",
+            "difficulty": 3,
+            "description": "干旱地区以耐旱灌木为主的植被。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "荒漠植被是从热带至温带干旱地区形成的植被，主要由旱生灌木组成。",
+            "example": "新疆阿克苏地区分布有温带荒漠植被。"
+          },
+          {
+            "name": "红树林",
+            "difficulty": 4,
+            "description": "热带亚热带潮间带的特殊森林植被。",
+            "aliases": [],
+            "prerequisites": [
+              "天然植被"
+            ],
+            "definition": "红树林是主要分布在热带、亚热带滨海潮间带的森林植被。",
+            "example": "巴西北部河口地区有红树林。"
+          },
+          {
+            "name": "红树林适应性",
+            "difficulty": 4,
+            "description": "红树林根系、胎生和排盐等环境适应特征。",
+            "aliases": [],
+            "prerequisites": [
+              "红树林"
+            ],
+            "definition": "红树林适应性是其通过支柱根、呼吸根、胎生和排盐腺体适应潮间带环境的特征。",
+            "example": "呼吸根帮助红树林在淤泥中通气。"
+          },
+          {
+            "name": "土壤",
+            "difficulty": 2,
+            "description": "陆地表层具有肥力并能生长植物的疏松层。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "土壤是陆地表层具有一定肥力、能够生长植物的疏松表层。",
+            "example": "农田表层土壤可供作物扎根生长。"
+          },
+          {
+            "name": "土壤质地",
+            "difficulty": 3,
+            "description": "土壤中不同粒级矿物质的相对比例。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤质地是不同粒级矿物质在土壤中所占的相对比例。",
+            "example": "砂土、壤土和黏土是三种质地类型。"
+          },
+          {
+            "name": "土壤剖面构造",
+            "difficulty": 4,
+            "description": "土壤垂直剖面中不同土层的组合结构。",
+            "aliases": [
+              "土壤剖面"
+            ],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤剖面构造是由形态特征各异且大致水平展布的土层组成的垂直结构。",
+            "example": "森林土壤剖面可见腐殖质层和淀积层。"
+          },
+          {
+            "name": "耕作土壤",
+            "difficulty": 3,
+            "description": "自然土壤经长期耕作培育形成的土壤。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤",
+              "土壤剖面构造"
+            ],
+            "definition": "耕作土壤是自然土壤经过人为耕作熟化形成的土壤。",
+            "example": "农田中的土壤通常属于耕作土壤。"
+          },
+          {
+            "name": "成土母质",
+            "difficulty": 3,
+            "description": "岩石风化产物，是土壤发育的物质基础。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "成土母质是岩石风化形成的、作为土壤发育物质基础的松散物质。",
+            "example": "成土母质影响土壤矿物质成分和质地。"
+          },
+          {
+            "name": "风化",
+            "difficulty": 2,
+            "description": "岩石在多种因素影响下破碎或分解的过程。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "风化是地表或近地表岩石在温度、水、空气和生物等作用下破碎或分解的过程。",
+            "example": "岩石风化可形成松散的成土母质。"
+          },
+          {
+            "name": "生物循环",
+            "difficulty": 4,
+            "description": "营养元素在生物与土壤间循环并富集的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "生物循环是植物吸收营养元素并经残体分解释放、使元素在土壤表层富集的过程。",
+            "example": "枯枝落叶分解后增加土壤有机质。"
+          },
+          {
+            "name": "土壤形成因素",
+            "difficulty": 3,
+            "description": "影响土壤形成的母质、生物、气候、地貌和时间。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤形成因素是综合影响土壤发育的成土母质、生物、气候、地貌和时间等因素。",
+            "example": "湿热气候可加快岩石风化和土壤形成。"
+          },
+          {
+            "name": "土壤功能",
+            "difficulty": 3,
+            "description": "土壤在自然环境和人类生产中的重要作用。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "土壤功能包括供植物扎根、蓄水保水、维持生物生存和支撑农业生产等作用。",
+            "example": "土壤蓄水可减少地表径流。"
+          },
+          {
+            "name": "土壤养护",
+            "difficulty": 3,
+            "description": "合理利用并保持土壤持续肥力的措施。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤功能"
+            ],
+            "definition": "土壤养护是通过合理利用、改良和保护保持土壤功能与肥力的行为。",
+            "example": "休耕、轮作和施用农家肥可养护土壤。"
+          },
+          {
+            "name": "盐碱化",
+            "difficulty": 4,
+            "description": "土壤表层盐分积累导致土壤性质恶化的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤"
+            ],
+            "definition": "盐碱化是土壤盐分在表层积累并影响耕作的土壤退化现象。",
+            "example": "强烈蒸发会造成盐分随水上升并积累。"
+          },
+          {
+            "name": "微量元素",
+            "difficulty": 3,
+            "description": "人体中含量极少但具有生理作用的化学元素。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "微量元素是人体中含量极少且摄入过少或过多都可能引发病变的化学元素。",
+            "example": "碘是人体必需的微量元素。"
+          },
+          {
+            "name": "地方病",
+            "difficulty": 4,
+            "description": "由当地环境微量元素异常导致的人体病变。",
+            "aliases": [],
+            "prerequisites": [
+              "微量元素"
+            ],
+            "definition": "地方病是因某地环境中某种微量元素缺乏或含量过高而导致的人体病变。",
+            "example": "食盐加碘可预防缺碘引起的地方病。"
+          },
+          {
+            "name": "雨水花园",
+            "difficulty": 3,
+            "description": "蓄积、下渗和净化雨水的场地或设施。",
+            "aliases": [],
+            "prerequisites": [
+              "土壤功能"
+            ],
+            "definition": "雨水花园是用于蓄积雨水并减少地面径流的场地。",
+            "example": "住宅区可建设雨水花园削减雨水径流。"
+          },
+          {
+            "name": "海绵城市",
+            "difficulty": 4,
+            "description": "能够吸水、蓄水、渗水、净水并利用雨水的城市。",
+            "aliases": [],
+            "prerequisites": [
+              "雨水花园",
+              "土壤功能"
+            ],
+            "definition": "海绵城市是通过城市系统调节雨水、提升生态功能并减少洪涝灾害的建设理念。",
+            "example": "湿地公园和透水地面可参与海绵城市建设。"
+          }
+        ],
+        "chapter_key": "365a3ea45c",
+        "metadata": {
+          "volume_id": "1f9a0bb8ef3e",
+          "file_id": "1f9a0bb8ef3e",
+          "volume_title": "高中地理 必修第1册",
+          "chapter_order": 5,
+          "raw_heading": "第五章"
+        }
+      },
+      {
+        "name": "第六章",
+        "concepts": [
+          {
+            "name": "自然灾害",
+            "difficulty": 1,
+            "description": "自然环境异常变化造成危害的事件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然环境发生异常变化并对生命、财产安全构成危害，形成自然灾害。",
+            "example": "暴雨引发洪水并造成房屋倒塌"
+          },
+          {
+            "name": "气象灾害",
+            "difficulty": 1,
+            "description": "由气象异常变化引发的灾害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由大气或天气异常变化造成的自然灾害。",
+            "example": "台风、寒潮属于气象灾害"
+          },
+          {
+            "name": "水文灾害",
+            "difficulty": 1,
+            "description": "与水文过程异常有关的灾害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由水循环或水文过程异常变化引起的自然灾害。",
+            "example": "洪涝属于水文灾害"
+          },
+          {
+            "name": "地质灾害",
+            "difficulty": 1,
+            "description": "由地质作用或地质环境异常引发的灾害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由地质作用或地质环境异常变化造成的自然灾害。",
+            "example": "地震、滑坡和泥石流"
+          },
+          {
+            "name": "洪涝灾害",
+            "difficulty": 2,
+            "description": "洪水泛滥或积水淹没造成的灾害",
+            "aliases": [
+              "洪涝"
+            ],
+            "prerequisites": [],
+            "definition": "连续性降水或短时强降水导致洪水泛滥、积水淹没低洼土地而形成的灾害。",
+            "example": "暴雨使武汉多处道路被积水淹没"
+          },
+          {
+            "name": "山洪",
+            "difficulty": 2,
+            "description": "山区暴雨后快速汇集形成的洪水",
+            "aliases": [],
+            "prerequisites": [
+              "洪涝灾害"
+            ],
+            "definition": "山区大量降水形成并迅速涌向下游的洪水。",
+            "example": "贵州望谟暴雨引发山洪"
+          },
+          {
+            "name": "干旱",
+            "difficulty": 1,
+            "description": "长时间少雨造成空气和土壤缺水",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长时间无降水或降水异常偏少造成空气干燥、土壤缺水的现象。",
+            "example": "长期少雨使耕地出现裂缝"
+          },
+          {
+            "name": "干旱灾害",
+            "difficulty": 2,
+            "description": "持续干旱影响生产生活形成的灾害",
+            "aliases": [
+              "旱灾"
+            ],
+            "prerequisites": [
+              "干旱"
+            ],
+            "definition": "干旱持续时间较长并影响人类生活和生产时形成的灾害。",
+            "example": "华北冬春连旱导致农作物受损"
+          },
+          {
+            "name": "台风",
+            "difficulty": 2,
+            "description": "热带或副热带洋面上的强烈大气旋涡",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "在热带或副热带洋面上形成并强烈发展、中心附近最大风力达12级以上的大气旋涡。",
+            "example": "台风“菲特”登陆福建沿海"
+          },
+          {
+            "name": "台风眼",
+            "difficulty": 2,
+            "description": "成熟台风中心无风少云的区域",
+            "aliases": [],
+            "prerequisites": [
+              "台风"
+            ],
+            "definition": "成熟台风中心附近表现为无风、少云和干暖天气的区域。",
+            "example": "台风中心经过时可能短暂平静"
+          },
+          {
+            "name": "风暴潮",
+            "difficulty": 2,
+            "description": "台风等天气造成海水异常升高",
+            "aliases": [],
+            "prerequisites": [
+              "台风"
+            ],
+            "definition": "台风等天气系统引起海水异常升高并冲击海岸的现象。",
+            "example": "风暴潮造成海水倒灌"
+          },
+          {
+            "name": "寒潮",
+            "difficulty": 2,
+            "description": "强冷空气入侵造成大范围剧烈降温",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "强冷空气迅速入侵造成大范围剧烈降温并伴随大风、雨雪或冻害的天气过程。",
+            "example": "寒潮使输电线路覆冰倒塌"
+          },
+          {
+            "name": "地震",
+            "difficulty": 2,
+            "description": "岩层断裂错位释放能量引起地面震动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "岩层在地应力作用下突然断裂或错位，释放能量并引起地面震动的现象。",
+            "example": "唐山发生里氏7.8级地震"
+          },
+          {
+            "name": "地震波",
+            "difficulty": 2,
+            "description": "震源释放并向四周传播的能量波",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "地震发生时由震源释放并向四周传播的能量波。",
+            "example": "地震波冲击造成房屋倒塌"
+          },
+          {
+            "name": "震级",
+            "difficulty": 2,
+            "description": "表示地震能量大小的指标",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "用来表示地震释放能量大小的量。",
+            "example": "汶川地震震级为8.0级"
+          },
+          {
+            "name": "地震烈度",
+            "difficulty": 3,
+            "description": "表示某地地面受影响和破坏程度的指标",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "表示地震时某一地区地面受到影响和破坏程度的指标。",
+            "example": "不同地区的地震烈度可能不同"
+          },
+          {
+            "name": "震源",
+            "difficulty": 2,
+            "description": "地球内部岩层破裂引起震动的地点",
+            "aliases": [],
+            "prerequisites": [
+              "地震"
+            ],
+            "definition": "地球内部岩层破裂并引起震动的地方。",
+            "example": "震源位于地下岩层中"
+          },
+          {
+            "name": "震中",
+            "difficulty": 2,
+            "description": "地面正对震源的地点",
+            "aliases": [],
+            "prerequisites": [
+              "震源"
+            ],
+            "definition": "地面上正对着震源的那一点。",
+            "example": "震中附近通常破坏较严重"
+          },
+          {
+            "name": "震源深度",
+            "difficulty": 2,
+            "description": "震源到地面的垂直距离",
+            "aliases": [],
+            "prerequisites": [
+              "震源"
+            ],
+            "definition": "震源到地面的垂直距离。",
+            "example": "浅源地震的震源深度较小"
+          },
+          {
+            "name": "震中距",
+            "difficulty": 2,
+            "description": "地面一点到震中的直线距离",
+            "aliases": [],
+            "prerequisites": [
+              "震中"
+            ],
+            "definition": "地面上任意一点到震中的直线距离。",
+            "example": "两地震中距不同，受影响程度可能不同"
+          },
+          {
+            "name": "等震线",
+            "difficulty": 3,
+            "description": "连接地震破坏程度相似点的曲线",
+            "aliases": [],
+            "prerequisites": [
+              "地震烈度"
+            ],
+            "definition": "把地面破坏程度相似的各点连接起来形成的曲线。",
+            "example": "等震线可表示烈度分布范围"
+          },
+          {
+            "name": "滑坡",
+            "difficulty": 2,
+            "description": "山地斜坡上的岩土体整体下滑",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "山地斜坡上的岩体或土体在重力作用下沿一定滑动面整体下滑的现象。",
+            "example": "暴雨后山体滑坡掩埋道路"
+          },
+          {
+            "name": "泥石流",
+            "difficulty": 2,
+            "description": "山区沟谷中含大量泥沙石块的洪流",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "山区沟谷中由暴雨或冰雪消融激发的含大量泥沙、石块的特殊洪流。",
+            "example": "舟曲暴雨引发特大泥石流"
+          },
+          {
+            "name": "灾害链条",
+            "difficulty": 3,
+            "description": "灾害及其后续灾害连续发生的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然灾害"
+            ],
+            "definition": "一种自然灾害引发其他灾害，后续灾害又继续引发新灾害的连续过程。",
+            "example": "地震—堰塞湖—洪水"
+          },
+          {
+            "name": "防灾减灾",
+            "difficulty": 1,
+            "description": "预防并减轻自然灾害影响的工作",
+            "aliases": [],
+            "prerequisites": [
+              "自然灾害"
+            ],
+            "definition": "通过监测、防御、救援救助和灾后恢复等手段减轻自然灾害影响的工作。",
+            "example": "修建堤坝并开展灾害预警"
+          },
+          {
+            "name": "灾害监测",
+            "difficulty": 2,
+            "description": "动态监测灾害全过程的防灾工作",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "对自然灾害的孕育、发生、发展和致灾全过程进行动态监测。",
+            "example": "利用气象站监测降水变化"
+          },
+          {
+            "name": "灾害防御",
+            "difficulty": 2,
+            "description": "控制和减少灾害损失的工程与措施",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "通过防灾工程、法律法规和减灾教育控制并减少自然灾害损失。",
+            "example": "修建水库和堤坝防御洪水"
+          },
+          {
+            "name": "灾害救援与救助",
+            "difficulty": 2,
+            "description": "灾害发生后组织人员物资实施救助",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "灾害发生后调动人员和物资，稳定秩序、救治伤员并提供心理援助。",
+            "example": "救援队在废墟中搜救伤员"
+          },
+          {
+            "name": "灾后恢复",
+            "difficulty": 2,
+            "description": "恢复灾区生产生活及经济社会发展",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "灾害发生后恢复群众生产生活并促进经济社会恢复发展的过程。",
+            "example": "异地重建北川新县城"
+          },
+          {
+            "name": "自救与互救",
+            "difficulty": 2,
+            "description": "个人和家庭应对灾害的救助行动",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "灾害发生前后个人和家庭为保护生命而进行的自我救助与相互救助。",
+            "example": "地震后按路线撤离并互相救助"
+          },
+          {
+            "name": "地震预警系统",
+            "difficulty": 3,
+            "description": "利用波速差在地震波到达前发出警报",
+            "aliases": [],
+            "prerequisites": [
+              "地震波"
+            ],
+            "definition": "探测传播较快的纵波并在横波到达前计算、发布地震警报的系统。",
+            "example": "芦山地震时系统提前发布预警"
+          },
+          {
+            "name": "应急避难场所",
+            "difficulty": 2,
+            "description": "城镇居民躲避自然灾害的场所",
+            "aliases": [],
+            "prerequisites": [
+              "防灾减灾"
+            ],
+            "definition": "城镇中供人们躲避自然灾害并保障基本生活需求的场所。",
+            "example": "地震发生后前往附近避难场所"
+          },
+          {
+            "name": "遥感技术",
+            "difficulty": 2,
+            "description": "利用航空航天设备远距离感知地表",
+            "aliases": [
+              "遥感"
+            ],
+            "prerequisites": [],
+            "definition": "利用航空器或航天器上的光学、电子设备远距离感知地表物体的技术。",
+            "example": "卫星遥感监测台风移动"
+          },
+          {
+            "name": "全球卫星导航系统",
+            "difficulty": 2,
+            "description": "利用卫星进行全球实时定位和导航",
+            "aliases": [
+              "全球卫星导航系统"
+            ],
+            "prerequisites": [],
+            "definition": "利用卫星在全球范围内提供实时定位和导航服务的地理信息技术。",
+            "example": "灾民用导航设备发送求救位置"
+          },
+          {
+            "name": "北斗卫星导航系统",
+            "difficulty": 2,
+            "description": "我国提供定位、通信和授时的卫星系统",
+            "aliases": [
+              "北斗系统"
+            ],
+            "prerequisites": [
+              "全球卫星导航系统"
+            ],
+            "definition": "我国集卫星定位、短信报文和精密授时于一体的卫星导航系统。",
+            "example": "北斗用户机传递汶川灾区信息"
+          },
+          {
+            "name": "地理信息系统",
+            "difficulty": 3,
+            "description": "处理和分析地理数据的计算机信息系统",
+            "aliases": [
+              "GIS"
+            ],
+            "prerequisites": [],
+            "definition": "对地理数据进行输入、处理、存储、管理、查询、分析和输出的计算机信息系统。",
+            "example": "利用系统确定泥石流受灾范围"
+          },
+          {
+            "name": "图层",
+            "difficulty": 2,
+            "description": "描述某一主题地理数据的数据层",
+            "aliases": [],
+            "prerequisites": [
+              "地理信息系统"
+            ],
+            "definition": "用图形、符号和文本描述道路、村庄、河流等某一主题数据的数据层。",
+            "example": "雨量站图层叠加行政区图层"
+          },
+          {
+            "name": "空间叠加分析",
+            "difficulty": 3,
+            "description": "将不同地理数据图层叠加分析",
+            "aliases": [],
+            "prerequisites": [
+              "地理信息系统",
+              "图层"
+            ],
+            "definition": "利用地理信息系统将不同图层按空间位置叠加，以获得新的地理信息。",
+            "example": "叠加雨量站图与行政区图"
+          }
+        ],
+        "chapter_key": "4772e1ba6c",
+        "metadata": {
+          "volume_id": "1f9a0bb8ef3e",
+          "file_id": "1f9a0bb8ef3e",
+          "volume_title": "高中地理 必修第1册",
+          "chapter_order": 6,
+          "raw_heading": "第六章"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

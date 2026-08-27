@@ -1,0 +1,5127 @@
+{
+  "file_id": "43663efceaf9",
+  "text_sha256": "1be827693bc2f0186d524b882e6314b7fcdcc073c6b755147f770318be0daf9b",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章　静电力与电场强度",
+        "concepts": [
+          {
+            "name": "静电现象",
+            "difficulty": 1,
+            "description": "物体带有静止电荷而表现出的吸引、排斥等现象",
+            "aliases": [
+              "静电"
+            ],
+            "prerequisites": [],
+            "definition": "静电现象是由物体上相对静止的电荷引起的各种现象。",
+            "example": "摩擦后的塑料梳吸起细小纸屑"
+          },
+          {
+            "name": "电荷",
+            "difficulty": 1,
+            "description": "物体具有产生静电相互作用的性质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电荷是物体具有电作用性质的物理量。",
+            "example": "玻璃棒摩擦后带正电荷"
+          },
+          {
+            "name": "正负电荷",
+            "difficulty": 1,
+            "description": "电荷按相互作用性质分为正电荷和负电荷",
+            "aliases": [],
+            "prerequisites": [
+              "电荷"
+            ],
+            "definition": "正电荷与负电荷是电荷的两种基本类型。",
+            "example": "丝绸摩擦玻璃棒带正电，橡胶棒带负电",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "电荷量",
+            "difficulty": 1,
+            "description": "表示电荷多少的物理量，单位是库仑",
+            "aliases": [
+              "电量"
+            ],
+            "prerequisites": [
+              "电荷"
+            ],
+            "definition": "电荷量是电荷多少的量度，国际单位制单位为库仑。",
+            "example": "物体带电量可用库仑表示"
+          },
+          {
+            "name": "摩擦起电",
+            "difficulty": 1,
+            "description": "物体通过相互摩擦而带电的方式",
+            "aliases": [],
+            "prerequisites": [
+              "正负电荷",
+              "电荷量"
+            ],
+            "definition": "摩擦起电是不同物质的物体摩擦后因电子转移而带电。",
+            "example": "用丝绸摩擦玻璃棒"
+          },
+          {
+            "name": "接触起电",
+            "difficulty": 1,
+            "description": "带电体与其他物体接触使其带电的方式",
+            "aliases": [],
+            "prerequisites": [
+              "正负电荷",
+              "电荷量"
+            ],
+            "definition": "接触起电是带电体接触另一物体后发生电荷转移使其带电。",
+            "example": "带电橡胶棒接触验电器",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "静电感应",
+            "difficulty": 2,
+            "description": "带电体靠近导体使导体电荷重新分布的现象",
+            "aliases": [
+              "电荷感应"
+            ],
+            "prerequisites": [
+              "正负电荷",
+              "自由电子"
+            ],
+            "definition": "静电感应是附近带电体影响导体，使导体上的电荷重新分布的现象。",
+            "example": "带负电橡胶棒靠近验电器"
+          },
+          {
+            "name": "感应起电",
+            "difficulty": 2,
+            "description": "利用静电感应使金属导体带电的方式",
+            "aliases": [],
+            "prerequisites": [
+              "静电感应",
+              "电荷守恒定律"
+            ],
+            "definition": "感应起电是利用带电体和接地等操作使导体带上电荷的方法。",
+            "example": "用带电棒靠近验电器并接地",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "验电器",
+            "difficulty": 1,
+            "description": "检验物体是否带电并估测带电多少的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "电荷量"
+            ],
+            "definition": "验电器是用金属箔片张开来检验和估测物体带电情况的仪器。",
+            "example": "箔片张开说明验电器带电",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "原子结构",
+            "difficulty": 2,
+            "description": "原子由带正电原子核和带负电电子组成",
+            "aliases": [
+              "原子模型"
+            ],
+            "prerequisites": [
+              "正负电荷"
+            ],
+            "definition": "原子由原子核和电子组成，原子核含质子和中子。",
+            "example": "中性原子中质子数等于电子数"
+          },
+          {
+            "name": "自由电子",
+            "difficulty": 2,
+            "description": "能在导体内部移动并参与电荷转移的电子",
+            "aliases": [],
+            "prerequisites": [
+              "原子结构"
+            ],
+            "definition": "自由电子是导体中能够在一定范围内定向或重新分布的电子。",
+            "example": "感应起电时自由电子发生移动"
+          },
+          {
+            "name": "电荷守恒定律",
+            "difficulty": 2,
+            "description": "电荷只能转移，电荷总量保持不变",
+            "aliases": [],
+            "prerequisites": [
+              "电荷量",
+              "原子结构"
+            ],
+            "definition": "电荷守恒定律指出电荷不能被创造或消灭，只能发生转移。",
+            "example": "摩擦起电时两物体带等量异号电荷",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "电介质极化",
+            "difficulty": 2,
+            "description": "电介质受外电荷影响而出现电荷重新分布",
+            "aliases": [
+              "极化现象"
+            ],
+            "prerequisites": [
+              "正负电荷",
+              "静电感应"
+            ],
+            "definition": "电介质极化是电介质内部正负电荷发生相对偏移的现象。",
+            "example": "带电梳子使纸片两端出现极化电荷",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "静电力",
+            "difficulty": 2,
+            "description": "电荷之间相互作用产生的力",
+            "aliases": [
+              "库仑力"
+            ],
+            "prerequisites": [
+              "正负电荷",
+              "电荷量"
+            ],
+            "definition": "静电力是电荷之间通过电场产生的相互作用力。",
+            "example": "两个同种电荷相互排斥"
+          },
+          {
+            "name": "点电荷",
+            "difficulty": 2,
+            "description": "可忽略带电体大小和形状的理想化电荷模型",
+            "aliases": [
+              "点电荷模型"
+            ],
+            "prerequisites": [
+              "电荷量",
+              "静电力"
+            ],
+            "definition": "点电荷是带电体大小相对距离足够小而可视为几何点的理想模型。",
+            "example": "远距离研究带电小球时可视为点电荷"
+          },
+          {
+            "name": "库仑定律",
+            "difficulty": 3,
+            "description": "真空中点电荷静电力与电荷量乘积成正比",
+            "aliases": [],
+            "prerequisites": [
+              "点电荷",
+              "静电力"
+            ],
+            "definition": "库仑定律指出点电荷间静电力与电荷量乘积成正比、与距离平方成反比。",
+            "example": "两点电荷距离增大，静电力减小"
+          },
+          {
+            "name": "静电力叠加",
+            "difficulty": 3,
+            "description": "多个点电荷的合静电力等于各分力的矢量和",
+            "aliases": [
+              "静电力叠加原理"
+            ],
+            "prerequisites": [
+              "库仑定律"
+            ],
+            "definition": "静电力叠加原理指出一点电荷所受总静电力是各个作用力的矢量和。",
+            "example": "求三电荷系统中某电荷所受合力"
+          },
+          {
+            "name": "电场",
+            "difficulty": 2,
+            "description": "电荷周围存在并传递电荷相互作用的物质形式",
+            "aliases": [
+              "电场空间"
+            ],
+            "prerequisites": [
+              "静电力"
+            ],
+            "definition": "电场是存在于电荷周围并对其中电荷施加力作用的物质形式。",
+            "example": "带电体周围存在电场"
+          },
+          {
+            "name": "静电场",
+            "difficulty": 2,
+            "description": "静止电荷产生的电场",
+            "aliases": [],
+            "prerequisites": [
+              "电场",
+              "电荷"
+            ],
+            "definition": "静电场是由静止电荷产生的电场。",
+            "example": "静止带电小球周围的电场"
+          },
+          {
+            "name": "电场力",
+            "difficulty": 2,
+            "description": "电场对处于其中的电荷施加的力",
+            "aliases": [],
+            "prerequisites": [
+              "电场",
+              "电荷"
+            ],
+            "definition": "电场力是电荷处于电场中时受到的力。",
+            "example": "带电尘埃在电场中向收尘极运动"
+          },
+          {
+            "name": "试探电荷",
+            "difficulty": 3,
+            "description": "用来检验电场性质且不明显扰动原电场的电荷",
+            "aliases": [
+              "检验电荷"
+            ],
+            "prerequisites": [
+              "电场",
+              "电场力"
+            ],
+            "definition": "试探电荷是电荷量足够小、可视为点电荷的检验电场用电荷。",
+            "example": "用小电荷测量某点的场强"
+          },
+          {
+            "name": "场源电荷",
+            "difficulty": 2,
+            "description": "产生被研究电场的电荷",
+            "aliases": [
+              "源电荷"
+            ],
+            "prerequisites": [
+              "电荷",
+              "电场"
+            ],
+            "definition": "场源电荷是激发被研究电场的电荷。",
+            "example": "带电体A是周围电场的场源电荷",
+            "section": "第3节 电场与电场强度"
+          },
+          {
+            "name": "电场强度",
+            "difficulty": 3,
+            "description": "电场中某点电场力与试探电荷量的比值",
+            "aliases": [
+              "场强"
+            ],
+            "prerequisites": [
+              "电场力",
+              "试探电荷"
+            ],
+            "definition": "电场强度是试探电荷在某点受到的电场力与其电荷量之比。",
+            "example": "某点场强为150 N/C"
+          },
+          {
+            "name": "电场线",
+            "difficulty": 3,
+            "description": "切线方向表示各点电场强度方向的假想曲线",
+            "aliases": [],
+            "prerequisites": [
+              "电场强度"
+            ],
+            "definition": "电场线是切线方向与该点场强方向一致的假想曲线。",
+            "example": "正点电荷电场线由电荷向外发散"
+          },
+          {
+            "name": "点电荷电场",
+            "difficulty": 3,
+            "description": "点电荷产生的场强随距离平方反比变化的电场",
+            "aliases": [],
+            "prerequisites": [
+              "点电荷",
+              "电场强度"
+            ],
+            "definition": "点电荷电场中场强大小与源电荷量成正比、与距离平方成反比。",
+            "example": "正点电荷外部场强方向向外",
+            "section": "第4节 点电荷的电场 匀强电场"
+          },
+          {
+            "name": "场强叠加原理",
+            "difficulty": 3,
+            "description": "多个点电荷在一点产生的场强为各场强矢量和",
+            "aliases": [
+              "电场强度叠加原理"
+            ],
+            "prerequisites": [
+              "电场强度",
+              "静电力叠加"
+            ],
+            "definition": "场强叠加原理指出合场强等于各点电荷独自产生场强的矢量和。",
+            "example": "计算等量异种点电荷中点场强"
+          },
+          {
+            "name": "匀强电场",
+            "difficulty": 2,
+            "description": "电场强度大小和方向处处相同的电场",
+            "aliases": [],
+            "prerequisites": [
+              "电场强度",
+              "电场线"
+            ],
+            "definition": "匀强电场是电场强度大小和方向在各处都相同的电场。",
+            "example": "平行金属板边缘外的内部区域"
+          },
+          {
+            "name": "电荷量子化",
+            "difficulty": 3,
+            "description": "带电微粒电荷量是元电荷的整数倍",
+            "aliases": [
+              "电荷的量子化"
+            ],
+            "prerequisites": [
+              "电荷量",
+              "元电荷"
+            ],
+            "definition": "电荷量子化是带电体所带电荷量为元电荷整数倍的性质。",
+            "example": "油滴电荷量约为电子电荷量的整数倍",
+            "section": "第4节 点电荷的电场 匀强电场"
+          },
+          {
+            "name": "元电荷",
+            "difficulty": 2,
+            "description": "电荷量的基本单位，电子电荷量大小约为1.60×10^-19库仑",
+            "aliases": [
+              "基本电荷"
+            ],
+            "prerequisites": [
+              "电荷量"
+            ],
+            "definition": "元电荷是电荷量的基本单位，其大小等于电子电荷量的绝对值。",
+            "example": "电子电荷量大小为一个元电荷",
+            "section": "第4节 点电荷的电场 匀强电场"
+          },
+          {
+            "name": "静电除尘",
+            "difficulty": 2,
+            "description": "利用高压静电使尘埃带电并迁移收集",
+            "aliases": [],
+            "prerequisites": [
+              "电场力",
+              "电场强度"
+            ],
+            "definition": "静电除尘是利用电场力使带电尘埃向收尘极运动的除尘方法。",
+            "example": "工业烟气通过静电除尘器净化"
+          },
+          {
+            "name": "静电喷涂",
+            "difficulty": 2,
+            "description": "使涂料微粒带电并利用电场力吸附到工件",
+            "aliases": [
+              "静电喷雾"
+            ],
+            "prerequisites": [
+              "电场力",
+              "正负电荷"
+            ],
+            "definition": "静电喷涂是利用带电涂料微粒在电场中运动并均匀附着的技术。",
+            "example": "汽车外壳采用静电喷涂",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "激光打印",
+            "difficulty": 2,
+            "description": "利用感光鼓静电潜像吸附并转移碳粉的打印技术",
+            "aliases": [],
+            "prerequisites": [
+              "正负电荷",
+              "静电力"
+            ],
+            "definition": "激光打印是利用静电作用形成图文并转移碳粉的打印方法。",
+            "example": "感光鼓吸附带异号电荷的碳粉",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "尖端放电",
+            "difficulty": 3,
+            "description": "导体尖端附近空气电离而产生气体放电",
+            "aliases": [],
+            "prerequisites": [
+              "电场强度",
+              "电场力"
+            ],
+            "definition": "尖端放电是导体尖端强电场使附近空气电离并放电的现象。",
+            "example": "针尖附近形成电风",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "静电防护",
+            "difficulty": 2,
+            "description": "通过接地、增湿等方式减少静电危害",
+            "aliases": [],
+            "prerequisites": [
+              "静电现象",
+              "电荷守恒定律"
+            ],
+            "definition": "静电防护是将静电及时导走或减弱以避免危害的措施。",
+            "example": "油罐车安装导电拖地带"
+          },
+          {
+            "name": "静电平衡",
+            "difficulty": 3,
+            "description": "导体内部没有电荷定向移动的状态",
+            "aliases": [],
+            "prerequisites": [
+              "静电感应",
+              "电场强度"
+            ],
+            "definition": "静电平衡是导体内自由电子不再定向移动的状态。",
+            "example": "静电平衡导体内部场强为零",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "静电屏蔽",
+            "difficulty": 3,
+            "description": "导体表面对内部形成保护使内部不受外电场影响",
+            "aliases": [],
+            "prerequisites": [
+              "静电平衡",
+              "场强叠加原理"
+            ],
+            "definition": "静电屏蔽是利用静电平衡导体内部合场强为零来隔离外电场的现象。",
+            "example": "金属外壳保护内部电子设备",
+            "section": "第5节 静电的利用与防护"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　静电的产生及其微观解释",
+            "page_range": [
+              8,
+              12
+            ]
+          },
+          {
+            "name": "第2节　库仑定律",
+            "page_range": [
+              12,
+              17
+            ]
+          },
+          {
+            "name": "第3节　电场与电场强度",
+            "page_range": [
+              17,
+              22
+            ]
+          },
+          {
+            "name": "第4节　点电荷的电场 匀强电场",
+            "page_range": [
+              22,
+              27
+            ]
+          },
+          {
+            "name": "第5节　静电的利用与防护",
+            "page_range": [
+              27,
+              35
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章　电势能与电势差",
+        "concepts": [
+          {
+            "name": "静电力做功",
+            "difficulty": 3,
+            "description": "静电力做功与路径无关，只由始末位置决定",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电荷在静电场中移动时，静电力所做的功只与始末位置有关。",
+            "example": "正电荷沿不同路径从A移到B，静电力做功相同"
+          },
+          {
+            "name": "电势能",
+            "difficulty": 3,
+            "description": "电荷在电场中因位置而具有的能量",
+            "aliases": [],
+            "prerequisites": [
+              "静电力做功"
+            ],
+            "definition": "电荷在电场中某点因位置而具有的能量称为电势能。",
+            "example": "正电荷沿电场方向运动，电势能通常减小"
+          },
+          {
+            "name": "电势能变化",
+            "difficulty": 3,
+            "description": "静电力做功等于电势能的减少量",
+            "aliases": [],
+            "prerequisites": [
+              "电势能"
+            ],
+            "definition": "静电力做功等于电荷初末位置电势能之差。",
+            "example": "静电力做正功，电势能减小",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "零电势能点",
+            "difficulty": 2,
+            "description": "规定电荷电势能为零的位置",
+            "aliases": [],
+            "prerequisites": [
+              "电势能"
+            ],
+            "definition": "人为规定电荷在某一位置的电势能为零，该位置称为零电势能点。",
+            "example": "常取无穷远处为零电势能点",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电势",
+            "difficulty": 3,
+            "description": "单位正电荷在某点具有的电势能",
+            "aliases": [],
+            "prerequisites": [
+              "电势能"
+            ],
+            "definition": "电荷在电场中某点的电势能与其电荷量之比称为该点的电势。",
+            "example": "若电荷量为q且电势能为Ep，则φ=Ep/q"
+          },
+          {
+            "name": "零电势点",
+            "difficulty": 2,
+            "description": "规定电场中电势为零的位置",
+            "aliases": [],
+            "prerequisites": [
+              "电势"
+            ],
+            "definition": "人为规定电场中某一位置的电势为零，该位置称为零电势点。",
+            "example": "实际问题中常选地球为零电势点",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "等势面",
+            "difficulty": 3,
+            "description": "电场中电势相等的点构成的面",
+            "aliases": [],
+            "prerequisites": [
+              "电势"
+            ],
+            "definition": "电场中电势相等的各点构成的面称为等势面。",
+            "example": "点电荷电场的等势面是同心球面"
+          },
+          {
+            "name": "等势面性质",
+            "difficulty": 3,
+            "description": "等势面上移动电荷，静电力不做功",
+            "aliases": [],
+            "prerequisites": [
+              "等势面",
+              "电势能变化"
+            ],
+            "definition": "电荷在等势面上移动时电势能不变，静电力不做功。",
+            "example": "沿等势面移动电荷，电势能保持不变"
+          },
+          {
+            "name": "电势差",
+            "difficulty": 3,
+            "description": "电场中两点电势的差值",
+            "aliases": [
+              "电压"
+            ],
+            "prerequisites": [
+              "电势"
+            ],
+            "definition": "电场中两点间电势的差值称为电势差，也称电压。",
+            "example": "UAB=φA−φB"
+          },
+          {
+            "name": "静电力做功公式",
+            "difficulty": 3,
+            "description": "静电力做功等于电荷量与电势差的乘积",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "电荷从A点移到B点时，静电力做功满足WAB=qUAB。",
+            "example": "已知q和UAB即可求静电力做功"
+          },
+          {
+            "name": "电子伏特",
+            "difficulty": 2,
+            "description": "研究微观粒子能量时常用的能量单位",
+            "aliases": [
+              "eV"
+            ],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "电子在电势差为1V的两点间移动时静电力所做的功定义为1eV。",
+            "example": "1eV等于1.60×10^-19J",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "匀强场电势差关系",
+            "difficulty": 3,
+            "description": "匀强电场中U、E与沿场方向距离的关系",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "匀强电场中两点间电势差等于电场强度与沿场方向距离的乘积。",
+            "example": "两板间距为d时，板间电压U=Ed"
+          },
+          {
+            "name": "带电粒子加速",
+            "difficulty": 3,
+            "description": "利用电场使带电粒子获得更大速度和动能",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "电场对带电粒子做功，使其动能增加并达到预定速度。",
+            "example": "电子枪用加速电场提高电子动能",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "带电粒子偏转",
+            "difficulty": 4,
+            "description": "利用电场改变带电粒子的运动方向",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "带电粒子在电场力作用下运动方向发生改变的现象称为偏转。",
+            "example": "示波器偏转板使电子束在荧光屏上偏移",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容器",
+            "difficulty": 2,
+            "description": "能够储存电荷的电学元件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能够储存电荷的电学元件称为电容器。",
+            "example": "两块彼此绝缘的平行金属板可组成电容器",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容",
+            "difficulty": 3,
+            "description": "描述电容器储存电荷能力的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "电容器所带电荷量与两极板间电压之比称为电容。",
+            "example": "电容器满足C=Q/U",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容器充电",
+            "difficulty": 2,
+            "description": "电容器两极板带上等量异种电荷的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "电容器接通电源后，两极板分别带上等量异种电荷的过程称为充电。",
+            "example": "接通直流电源后电容器两端电压逐渐增大",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容器放电",
+            "difficulty": 2,
+            "description": "电容器两极板电荷逐渐中和的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "充电后的电容器接通电路后，两极板电荷中和的过程称为放电。",
+            "example": "电容器通过电流计放电时产生瞬时电流",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "平行板电容器",
+            "difficulty": 3,
+            "description": "由两块平行金属板和其间介质组成的电容器",
+            "aliases": [],
+            "prerequisites": [
+              "电容器",
+              "电容"
+            ],
+            "definition": "两块彼此绝缘且相互平行的金属板构成的电容器称为平行板电容器。",
+            "example": "其电容与正对面积成正比、板间距成反比",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电介质",
+            "difficulty": 3,
+            "description": "在电场作用下能够产生极化的物质",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "在电场作用下能产生极化的物质称为电介质。",
+            "example": "云母、玻璃和陶瓷都可作为电介质",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "击穿电压",
+            "difficulty": 3,
+            "description": "电容器电介质发生击穿时的电压极限",
+            "aliases": [],
+            "prerequisites": [
+              "电介质"
+            ],
+            "definition": "电容器电介质能够承受的电压极限称为击穿电压。",
+            "example": "超过击穿电压，极板间可能导通并损坏",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "静电计",
+            "difficulty": 3,
+            "description": "利用指针偏转反映电势差的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "通过指针张角大小测量或比较电势差的仪器称为静电计。",
+            "example": "静电计张角越大，表示两端电势差越大",
+            "section": "第5节 科学探究:电容器"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　静电力做功与电势能",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第2节　电势与等势面",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第3节　电势差与电场强度的关系",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第4节　带电粒子在电场中的运动",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第5节　科学探究：电容器",
+            "page_range": [
+              35,
+              67
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章　恒定电流",
+        "concepts": [
+          {
+            "name": "自由电荷",
+            "difficulty": 1,
+            "description": "能够在导体中自由移动的电荷",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自由电荷是能在物质内部自由移动的电荷。",
+            "example": "金属导体中的自由电子"
+          },
+          {
+            "name": "电流形成条件",
+            "difficulty": 2,
+            "description": "形成电流需要自由电荷和持续电压",
+            "aliases": [],
+            "prerequisites": [
+              "自由电荷",
+              "电压"
+            ],
+            "definition": "导体中存在自由电荷且两端有持续电压时，才能形成持续电流。",
+            "example": "电池连接金属导线形成电流"
+          },
+          {
+            "name": "电流",
+            "difficulty": 2,
+            "description": "自由电荷的定向移动形成电流",
+            "aliases": [],
+            "prerequisites": [
+              "自由电荷",
+              "电场"
+            ],
+            "definition": "电流是自由电荷定向移动形成的物理现象。",
+            "example": "金属导线中电子定向移动"
+          },
+          {
+            "name": "电子漂移",
+            "difficulty": 2,
+            "description": "金属中电子在电场作用下的定向运动",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电场"
+            ],
+            "definition": "电子漂移是金属自由电子在电场作用下产生的缓慢定向移动。",
+            "example": "接通电路后导线中的电子漂移",
+            "section": "第1节 电 流"
+          },
+          {
+            "name": "电流方向",
+            "difficulty": 2,
+            "description": "规定为正电荷定向移动的方向",
+            "aliases": [],
+            "prerequisites": [
+              "电流"
+            ],
+            "definition": "电流方向规定为正电荷定向移动的方向。",
+            "example": "电源外部电路由正极指向负极",
+            "section": "第1节 电 流"
+          },
+          {
+            "name": "电流大小",
+            "difficulty": 2,
+            "description": "单位时间内通过导体横截面的电荷量",
+            "aliases": [
+              "电流强度"
+            ],
+            "prerequisites": [
+              "电流"
+            ],
+            "definition": "电流大小等于通过导体某横截面的电荷量与时间之比。",
+            "example": "3秒通过3库仑电荷，电流为1安"
+          },
+          {
+            "name": "直流电",
+            "difficulty": 2,
+            "description": "电流方向不随时间变化的电流",
+            "aliases": [],
+            "prerequisites": [
+              "电流方向"
+            ],
+            "definition": "方向不随时间变化的电流称为直流电。",
+            "example": "电池供电电路中的电流"
+          },
+          {
+            "name": "恒定电流",
+            "difficulty": 2,
+            "description": "大小和方向都不随时间变化的电流",
+            "aliases": [],
+            "prerequisites": [
+              "直流电",
+              "电流大小"
+            ],
+            "definition": "大小和方向都不随时间变化的电流称为恒定电流。",
+            "example": "稳定电池电路中的电流"
+          },
+          {
+            "name": "电阻",
+            "difficulty": 2,
+            "description": "导体对电流阻碍作用的大小",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电压"
+            ],
+            "definition": "电阻是反映导体对电流阻碍作用大小的物理量。",
+            "example": "铜线通常比电阻丝电阻小"
+          },
+          {
+            "name": "伏安法测电阻",
+            "difficulty": 3,
+            "description": "用电压表和电流表测量导体电阻",
+            "aliases": [],
+            "prerequisites": [
+              "电阻",
+              "电流大小"
+            ],
+            "definition": "伏安法通过测量导体两端电压和其中电流并用R=U/I求电阻。",
+            "example": "测量金属丝的电阻"
+          },
+          {
+            "name": "电阻率",
+            "difficulty": 3,
+            "description": "反映材料导电性能的物理量",
+            "aliases": [
+              "材料的电阻率"
+            ],
+            "prerequisites": [
+              "电阻"
+            ],
+            "definition": "电阻率是反映材料导电性能的物理量。",
+            "example": "铜的电阻率较小"
+          },
+          {
+            "name": "电阻公式",
+            "difficulty": 3,
+            "description": "电阻与材料、长度和横截面积的关系",
+            "aliases": [
+              "电阻定律"
+            ],
+            "prerequisites": [
+              "电阻",
+              "电阻率"
+            ],
+            "definition": "均匀导体的电阻满足R=ρl/S。",
+            "example": "导线越长电阻通常越大"
+          },
+          {
+            "name": "温度对电阻率影响",
+            "difficulty": 3,
+            "description": "材料电阻率随温度变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "电阻率"
+            ],
+            "definition": "金属电阻率通常随温度升高而增大，绝缘体和半导体多相反。",
+            "example": "灯丝发热后电阻增大"
+          },
+          {
+            "name": "伏安特性曲线",
+            "difficulty": 3,
+            "description": "表示导体电流与电压关系的图像",
+            "aliases": [
+              "I-U图像"
+            ],
+            "prerequisites": [
+              "电流大小",
+              "电压",
+              "电阻"
+            ],
+            "definition": "以电压和电流为坐标绘出的关系图像称为伏安特性曲线。",
+            "example": "小灯泡的伏安特性曲线是曲线",
+            "section": "第2节 电 阻"
+          },
+          {
+            "name": "线性元件",
+            "difficulty": 3,
+            "description": "伏安特性曲线为过原点直线的元件",
+            "aliases": [],
+            "prerequisites": [
+              "伏安特性曲线"
+            ],
+            "definition": "具有通过原点的直线伏安特性曲线的电学元件称为线性元件。",
+            "example": "一定条件下的金属导体",
+            "section": "第2节 电 阻"
+          },
+          {
+            "name": "可变电阻",
+            "difficulty": 2,
+            "description": "阻值能够调节变化的电阻",
+            "aliases": [],
+            "prerequisites": [
+              "电阻"
+            ],
+            "definition": "可变电阻是阻值可以根据需要调节的电阻元件。",
+            "example": "台灯亮度调节中的电阻",
+            "section": "第2节 电 阻"
+          },
+          {
+            "name": "滑动变阻器",
+            "difficulty": 3,
+            "description": "通过改变接入电阻丝长度调节电阻",
+            "aliases": [],
+            "prerequisites": [
+              "电阻",
+              "可变电阻"
+            ],
+            "definition": "滑动变阻器通过移动滑片改变接入电阻丝的长度，从而改变电阻。",
+            "example": "接通电路前滑片置于最大阻值处"
+          },
+          {
+            "name": "电功",
+            "difficulty": 3,
+            "description": "电流通过用电器时所做的功",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电压"
+            ],
+            "definition": "电功是电流通过用电器时电能转化为其他形式能量所做的功。",
+            "example": "电灯消耗电能发光"
+          },
+          {
+            "name": "电功率",
+            "difficulty": 3,
+            "description": "表示电流做功快慢的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "电功"
+            ],
+            "definition": "电功率是表示电流做功快慢的物理量。",
+            "example": "60瓦白炽灯的额定功率"
+          },
+          {
+            "name": "焦耳定律",
+            "difficulty": 3,
+            "description": "描述电流通过导体产生热量的规律",
+            "aliases": [
+              "焦耳—楞次定律"
+            ],
+            "prerequisites": [
+              "电流大小",
+              "电阻"
+            ],
+            "definition": "电流通过导体产生的热量与电流平方、电阻和时间的乘积有关。",
+            "example": "电热器利用电流产生热量"
+          },
+          {
+            "name": "纯电阻电路",
+            "difficulty": 3,
+            "description": "电能全部转化为内能的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电功",
+              "焦耳定律"
+            ],
+            "definition": "电能除转化为内能外没有转化为其他形式能量的电路称为纯电阻电路。",
+            "example": "电热器工作电路",
+            "section": "第3节 电功与电热"
+          },
+          {
+            "name": "非纯电阻电路",
+            "difficulty": 3,
+            "description": "电能还转化为机械能等其他能量的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电功",
+              "焦耳定律"
+            ],
+            "definition": "电能除转化为内能外还转化为机械能或化学能等的电路称为非纯电阻电路。",
+            "example": "电动机正常工作电路",
+            "section": "第3节 电功与电热"
+          },
+          {
+            "name": "串联电路",
+            "difficulty": 2,
+            "description": "电路元件逐个顺次连接的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电阻"
+            ],
+            "definition": "将电路元件逐个顺次连接起来形成的电路称为串联电路。",
+            "example": "多个电阻首尾相接"
+          },
+          {
+            "name": "串联分压",
+            "difficulty": 3,
+            "description": "串联电阻按阻值分配总电压",
+            "aliases": [
+              "串联电路的分压作用"
+            ],
+            "prerequisites": [
+              "串联电路",
+              "电阻"
+            ],
+            "definition": "串联电路中各电阻两端电压与其阻值成正比。",
+            "example": "电流计串联分压电阻改装电压表"
+          },
+          {
+            "name": "并联电路",
+            "difficulty": 2,
+            "description": "各元件两端分别连接在两节点的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电压"
+            ],
+            "definition": "电路元件各有一端接在同一节点、另一端接在另一节点的电路称为并联电路。",
+            "example": "家庭用电器通常并联"
+          },
+          {
+            "name": "并联分流",
+            "difficulty": 3,
+            "description": "并联支路按电阻大小分配总电流",
+            "aliases": [
+              "并联电路的分流作用"
+            ],
+            "prerequisites": [
+              "并联电路",
+              "电阻"
+            ],
+            "definition": "并联电路中各支路电流与支路电阻成反比。",
+            "example": "电流计并联分流电阻改装电流表",
+            "section": "第4节 串联电路和并联电路"
+          },
+          {
+            "name": "游标卡尺",
+            "difficulty": 2,
+            "description": "可测长度、内外径和深度的精密量具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "游标卡尺由主尺和可滑动的游标尺组成，用于精密测量长度、内外径和深度。",
+            "example": "测量小钢球直径",
+            "section": "第5节 科学测量:长度的测量及测量工具的选用"
+          },
+          {
+            "name": "游标卡尺读数",
+            "difficulty": 3,
+            "description": "主尺整数读数加游标对齐刻度读数",
+            "aliases": [],
+            "prerequisites": [
+              "游标卡尺"
+            ],
+            "definition": "游标卡尺读数等于主尺整毫米数与游标对齐刻度数乘精度之和。",
+            "example": "7毫米加6乘0.1毫米为7.6毫米",
+            "section": "第5节 科学测量:长度的测量及测量工具的选用"
+          },
+          {
+            "name": "螺旋测微器",
+            "difficulty": 2,
+            "description": "比游标卡尺更精密的长度测量工具",
+            "aliases": [
+              "千分尺"
+            ],
+            "prerequisites": [],
+            "definition": "螺旋测微器利用螺旋运动将微小长度放大读数，用于精密测量长度。",
+            "example": "精确测量细金属丝直径"
+          },
+          {
+            "name": "电流表外接法",
+            "difficulty": 3,
+            "description": "电压表并联待测电阻的测量接法",
+            "aliases": [
+              "外接法"
+            ],
+            "prerequisites": [
+              "伏安法测电阻",
+              "并联电路"
+            ],
+            "definition": "电压表与待测电阻并联、二者再与电流表串联的接法称为外接法。",
+            "example": "待测金属丝电阻较小时采用",
+            "section": "第6节 科学测量:金属丝的电阻率"
+          },
+          {
+            "name": "电流表内接法",
+            "difficulty": 3,
+            "description": "电流表串联待测电阻的测量接法",
+            "aliases": [
+              "内接法"
+            ],
+            "prerequisites": [
+              "伏安法测电阻",
+              "串联电路"
+            ],
+            "definition": "电流表与待测电阻串联、二者再与电压表并联的接法称为内接法。",
+            "example": "待测电阻远大于电流表内阻时采用",
+            "section": "第6节 科学测量:金属丝的电阻率"
+          },
+          {
+            "name": "金属丝电阻率测量",
+            "difficulty": 4,
+            "description": "用伏安法和长度测量求金属丝电阻率",
+            "aliases": [],
+            "prerequisites": [
+              "电阻公式",
+              "伏安法测电阻",
+              "螺旋测微器"
+            ],
+            "definition": "测出金属丝电阻、长度和横截面积后由ρ=RS/l求电阻率。",
+            "example": "测量金属丝直径、长度和电阻"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　电　流",
+            "page_range": [
+              68,
+              72
+            ]
+          },
+          {
+            "name": "第2节　电 阻",
+            "page_range": [
+              72,
+              77
+            ]
+          },
+          {
+            "name": "第3节　电功与电热",
+            "page_range": [
+              77,
+              83
+            ]
+          },
+          {
+            "name": "第4节　串联电路和并联电路",
+            "page_range": [
+              83,
+              88
+            ]
+          },
+          {
+            "name": "第5节　科学测量：长度的测量及测量工具的选用",
+            "page_range": [
+              88,
+              94
+            ]
+          },
+          {
+            "name": "第6节　科学测量：金属丝的电阻率",
+            "page_range": [
+              94,
+              101
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4章　闭合电路欧姆定律与科学用电",
+        "concepts": [
+          {
+            "name": "闭合电路",
+            "difficulty": 1,
+            "description": "开关闭合后形成电流闭合回路",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电路"
+            ],
+            "definition": "由电源、用电器、开关和导线等组成的完整电流回路。",
+            "example": "干电池接小灯泡并闭合开关。"
+          },
+          {
+            "name": "外电路",
+            "difficulty": 1,
+            "description": "电源外部由导线和用电器组成的电路",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路"
+            ],
+            "definition": "闭合电路中位于电源外部的部分。",
+            "example": "灯泡和连接导线属于外电路。"
+          },
+          {
+            "name": "内电路",
+            "difficulty": 1,
+            "description": "电源内部存在电阻的电路部分",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路"
+            ],
+            "definition": "闭合电路中位于电源内部的部分。",
+            "example": "电池内部的电路属于内电路。",
+            "section": "第1节 闭合电路欧姆定律"
+          },
+          {
+            "name": "电动势",
+            "difficulty": 2,
+            "description": "表示电源转化其他能量为电能本领的物理量",
+            "aliases": [
+              "E"
+            ],
+            "prerequisites": [
+              "电压"
+            ],
+            "definition": "电源把其他形式的能转化为电能本领的物理量。",
+            "example": "干电池的电动势约为1.5 V。"
+          },
+          {
+            "name": "内阻",
+            "difficulty": 2,
+            "description": "电源内部具有的电阻",
+            "aliases": [
+              "r"
+            ],
+            "prerequisites": [
+              "电阻"
+            ],
+            "definition": "电源内部存在的、会影响闭合电路电流的电阻。",
+            "example": "相同电动势的两种电池因内阻不同而亮度不同。"
+          },
+          {
+            "name": "部分电路欧姆定律",
+            "difficulty": 1,
+            "description": "描述部分电路电流、电压和电阻关系的规律",
+            "aliases": [
+              "欧姆定律"
+            ],
+            "prerequisites": [
+              "电流",
+              "电压",
+              "电阻"
+            ],
+            "definition": "部分电路中电流等于两端电压与电阻之比。",
+            "example": "电阻两端电压为6 V、电阻为3 Ω时电流为2 A。"
+          },
+          {
+            "name": "闭合电路欧姆定律",
+            "difficulty": 3,
+            "description": "描述闭合电路电流与电动势及内外电阻的关系",
+            "aliases": [],
+            "prerequisites": [
+              "电动势",
+              "内阻",
+              "部分电路欧姆定律"
+            ],
+            "definition": "闭合电路电流等于电动势除以内外电阻之和。",
+            "example": "E=6 V、内阻1 Ω、外阻5 Ω时电流为1 A。"
+          },
+          {
+            "name": "内电压",
+            "difficulty": 2,
+            "description": "电流通过电源内阻产生的电势降落",
+            "aliases": [
+              "U内"
+            ],
+            "prerequisites": [
+              "内阻",
+              "电流"
+            ],
+            "definition": "电源内阻两端沿电流方向的电势差。",
+            "example": "内阻为1 Ω、电流为2 A时内电压为2 V。",
+            "section": "第1节 闭合电路欧姆定律"
+          },
+          {
+            "name": "外电压",
+            "difficulty": 2,
+            "description": "外电路两端的电压",
+            "aliases": [
+              "路端电压",
+              "U外"
+            ],
+            "prerequisites": [
+              "电压",
+              "外电路"
+            ],
+            "definition": "外电路两端的电势差，通常称为路端电压。",
+            "example": "电池接入灯泡后测量电池两端电压。"
+          },
+          {
+            "name": "电势升降关系",
+            "difficulty": 3,
+            "description": "电源电动势等于内外电路电压降之和",
+            "aliases": [
+              "E=U外+U内"
+            ],
+            "prerequisites": [
+              "内电压",
+              "外电压",
+              "电动势"
+            ],
+            "definition": "闭合电路中电源电势升高等于内外电路电势降落之和。",
+            "example": "E=IR+Ir。",
+            "section": "第1节 闭合电路欧姆定律"
+          },
+          {
+            "name": "路端电压变化",
+            "difficulty": 3,
+            "description": "外电阻变化时路端电压和电流随之变化",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路欧姆定律",
+              "路端电压"
+            ],
+            "definition": "外电阻增大时电流减小而路端电压增大。",
+            "example": "并联用电器增多后灯泡两端电压降低。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "断路",
+            "difficulty": 1,
+            "description": "电路某处断开而没有电流的状态",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路",
+              "电流"
+            ],
+            "definition": "电路在某处断开、用电器不能工作的故障状态。",
+            "example": "灯丝烧断后电灯不亮。"
+          },
+          {
+            "name": "短路",
+            "difficulty": 2,
+            "description": "火线和零线或电路两端被低电阻直接连接",
+            "aliases": [],
+            "prerequisites": [
+              "电阻",
+              "闭合电路"
+            ],
+            "definition": "电路中电流不经正常用电器而形成低电阻通路的状态。",
+            "example": "导线误接火线和零线会造成短路。"
+          },
+          {
+            "name": "短路电流",
+            "difficulty": 3,
+            "description": "外电路短路时电路中的电流",
+            "aliases": [
+              "I短"
+            ],
+            "prerequisites": [
+              "电动势",
+              "内阻",
+              "短路"
+            ],
+            "definition": "外电阻为零时由电源电动势和内阻决定的电流。",
+            "example": "E=6 V、r=1 Ω时短路电流为6 A。"
+          },
+          {
+            "name": "U-I图像",
+            "difficulty": 3,
+            "description": "表示电源路端电压随电流变化的图像",
+            "aliases": [
+              "电源U-I图像"
+            ],
+            "prerequisites": [
+              "路端电压",
+              "电流"
+            ],
+            "definition": "以路端电压为纵轴、电流为横轴表示二者关系的图像。",
+            "example": "直线纵轴截距表示电动势。"
+          },
+          {
+            "name": "测量电动势内阻",
+            "difficulty": 3,
+            "description": "通过改变外电阻测量电源电动势和内阻的实验",
+            "aliases": [
+              "伏安法测电动势和内阻"
+            ],
+            "prerequisites": [
+              "闭合电路欧姆定律",
+              "路端电压",
+              "电流"
+            ],
+            "definition": "改变外电路并测量多组电压、电流以求电动势和内阻的方法。",
+            "example": "用滑动变阻器获得多组U、I数据。"
+          },
+          {
+            "name": "欧姆表",
+            "difficulty": 2,
+            "description": "利用电流与待测电阻对应关系测量电阻的仪表",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路欧姆定律",
+              "电流",
+              "电阻"
+            ],
+            "definition": "将电流计刻度换算为电阻刻度以测量电阻的仪表。",
+            "example": "测电阻前先短接表笔并进行欧姆调零。",
+            "section": "第3节 科学测量:用多用电表测量电学量"
+          },
+          {
+            "name": "多用电表",
+            "difficulty": 2,
+            "description": "集测量电压、电流和电阻功能于一体的仪表",
+            "aliases": [
+              "万用表"
+            ],
+            "prerequisites": [
+              "电压",
+              "电流",
+              "电阻"
+            ],
+            "definition": "能够直接测量电压、电流和电阻等电学量的仪器。",
+            "example": "用直流电压挡测量灯泡两端电压。"
+          },
+          {
+            "name": "机械调零",
+            "difficulty": 1,
+            "description": "测量前将指针调到左端零刻度的操作",
+            "aliases": [],
+            "prerequisites": [
+              "多用电表"
+            ],
+            "definition": "使用指针式多用电表前校正指针初始位置的操作。",
+            "example": "指针未在左端零刻度时旋动机械调零旋钮。",
+            "section": "第3节 科学测量:用多用电表测量电学量"
+          },
+          {
+            "name": "欧姆调零",
+            "difficulty": 2,
+            "description": "测电阻前短接表笔并校准电阻零刻度",
+            "aliases": [],
+            "prerequisites": [
+              "欧姆表",
+              "多用电表"
+            ],
+            "definition": "测量电阻前短接表笔并调节电阻零点的操作。",
+            "example": "短接红黑表笔后调节欧姆调零旋钮。",
+            "section": "第3节 科学测量:用多用电表测量电学量"
+          },
+          {
+            "name": "量程选择",
+            "difficulty": 2,
+            "description": "根据估计值选择合适的电表测量范围",
+            "aliases": [],
+            "prerequisites": [
+              "多用电表"
+            ],
+            "definition": "测量前依据被测量大小选定适当挡位和量程的方法。",
+            "example": "无法估计电压时先选用大量程挡。"
+          },
+          {
+            "name": "家庭电路",
+            "difficulty": 1,
+            "description": "由进户线、保护设备和用电器组成的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电路",
+              "电压"
+            ],
+            "definition": "家庭中由火线、零线及相关设备构成的供电电路。",
+            "example": "家庭电路包括电能表、空气开关和插座。"
+          },
+          {
+            "name": "电能表",
+            "difficulty": 1,
+            "description": "测量一定时间内用户消耗电能的仪表",
+            "aliases": [],
+            "prerequisites": [
+              "电能"
+            ],
+            "definition": "用于测量用户在一定时间内消耗电能的仪表。",
+            "example": "通过电能表示数计算家庭用电量。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "空气断路器",
+            "difficulty": 2,
+            "description": "电流超过额定值时自动断开电路的保护设备",
+            "aliases": [
+              "空气开关"
+            ],
+            "prerequisites": [
+              "家庭电路",
+              "过载"
+            ],
+            "definition": "能对过载、短路等故障自动分断电路的装置。",
+            "example": "多台大功率电器同时使用可能使空气开关跳闸。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "熔断器",
+            "difficulty": 2,
+            "description": "利用熔丝熔断切断过大电流的保险设备",
+            "aliases": [],
+            "prerequisites": [
+              "家庭电路",
+              "电流的热效应"
+            ],
+            "definition": "电流超过规定值时熔丝熔断以保护电路的装置。",
+            "example": "短路时保险丝因发热而熔断。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "触电保护器",
+            "difficulty": 2,
+            "description": "检测火线零线电流差异并自动断电的装置",
+            "aliases": [],
+            "prerequisites": [
+              "家庭电路",
+              "触电"
+            ],
+            "definition": "通过检测漏电或触电造成的电流差异来切断电路的设备。",
+            "example": "人体漏电时触电保护器自动切断电源。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "过载",
+            "difficulty": 2,
+            "description": "用电器功率过大导致干路电流过大的状态",
+            "aliases": [],
+            "prerequisites": [
+              "电功率",
+              "家庭电路"
+            ],
+            "definition": "家庭电路中总用电功率过大而使电流超过允许值的状态。",
+            "example": "插座同时接入多台大功率电器会造成过载。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "触电",
+            "difficulty": 2,
+            "description": "人体直接或间接接触带电体造成的事故",
+            "aliases": [],
+            "prerequisites": [
+              "家庭电路",
+              "电压"
+            ],
+            "definition": "人体因接触带电体或靠近高压带电体而形成电流通路。",
+            "example": "用湿手接触带电开关可能发生触电。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "安全用电",
+            "difficulty": 2,
+            "description": "采取措施避免触电、火灾等用电事故",
+            "aliases": [],
+            "prerequisites": [
+              "短路",
+              "过载",
+              "触电"
+            ],
+            "definition": "按照安全要求使用和维护电路及用电器的行为。",
+            "example": "金属外壳用电器按规定接地。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "节约用电",
+            "difficulty": 1,
+            "description": "减少不必要的电能消耗和能源浪费",
+            "aliases": [],
+            "prerequisites": [
+              "电能"
+            ],
+            "definition": "通过合理使用电器减少电能消耗及环境影响的行为。",
+            "example": "不让家电长期处于待机状态。",
+            "section": "第4节 科学用电"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　闭合电路欧姆定律",
+            "page_range": [
+              102,
+              108
+            ]
+          },
+          {
+            "name": "第2节　科学测量：电源的电动势和内阻",
+            "page_range": [
+              108,
+              112
+            ]
+          },
+          {
+            "name": "第3节　科学测量：用多用电表测量电学量",
+            "page_range": [
+              112,
+              118
+            ]
+          },
+          {
+            "name": "第4节　科学用电",
+            "page_range": [
+              118,
+              129
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第5章　初识电磁场与电磁波",
+        "concepts": [
+          {
+            "name": "磁场",
+            "difficulty": 1,
+            "description": "磁体或电流周围存在的特殊物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "磁场是存在于磁体或电流周围、能对磁体产生力作用的特殊物质。",
+            "example": "通电导线使附近小磁针偏转"
+          },
+          {
+            "name": "磁场方向",
+            "difficulty": 2,
+            "description": "小磁针北极静止时的指向",
+            "aliases": [],
+            "prerequisites": [
+              "磁场"
+            ],
+            "definition": "磁场方向规定为该处小磁针静止时北极的指向。",
+            "example": "指南针北极指示磁场方向",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁感应强度",
+            "difficulty": 3,
+            "description": "描述磁场强弱和方向的矢量",
+            "aliases": [
+              "B"
+            ],
+            "prerequisites": [
+              "磁场"
+            ],
+            "definition": "磁感应强度是垂直磁场的通电直导线受力与电流、长度乘积之比。",
+            "example": "B=F/(Il)",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁场叠加",
+            "difficulty": 3,
+            "description": "多个磁场同时存在时相互叠加",
+            "aliases": [
+              "磁场叠加原理"
+            ],
+            "prerequisites": [
+              "磁感应强度"
+            ],
+            "definition": "某点合磁场的磁感应强度等于各磁场磁感应强度的矢量和。",
+            "example": "两个磁场共同作用形成合磁场"
+          },
+          {
+            "name": "磁感线",
+            "difficulty": 2,
+            "description": "有方向的假想曲线，描述磁场分布",
+            "aliases": [
+              "磁力线"
+            ],
+            "prerequisites": [
+              "磁场",
+              "磁感应强度"
+            ],
+            "definition": "磁感线是磁场中画出的有方向假想曲线，其切线方向表示磁场方向。",
+            "example": "条形磁铁外部磁感线由N极指向S极",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "匀强磁场",
+            "difficulty": 2,
+            "description": "各点磁感应强度大小和方向相同",
+            "aliases": [],
+            "prerequisites": [
+              "磁场",
+              "磁感应强度",
+              "磁感线"
+            ],
+            "definition": "某区域各点磁感应强度大小和方向都相同的磁场叫匀强磁场。",
+            "example": "通电长螺线管内部磁场可视为匀强磁场",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电流的磁场",
+            "difficulty": 2,
+            "description": "通电导线周围产生的磁场",
+            "aliases": [
+              "电流磁效应"
+            ],
+            "prerequisites": [
+              "磁场"
+            ],
+            "definition": "通电导线会在其周围空间产生磁场。",
+            "example": "通电直导线周围出现同心圆磁感线",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "安培定则",
+            "difficulty": 3,
+            "description": "用右手判断电流磁场方向的规律",
+            "aliases": [
+              "右手定则"
+            ],
+            "prerequisites": [
+              "电流的磁场",
+              "磁感线"
+            ],
+            "definition": "安培定则利用右手握住导线的姿势判断电流周围磁感线方向。",
+            "example": "拇指指向电流，四指指向磁感线环绕方向",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁通量",
+            "difficulty": 3,
+            "description": "表示穿过某个面的磁感线多少",
+            "aliases": [
+              "磁通"
+            ],
+            "prerequisites": [
+              "磁感应强度",
+              "匀强磁场"
+            ],
+            "definition": "磁通量是穿过某个面的磁感线总数的物理量。",
+            "example": "垂直于磁场的线圈中Φ=BS",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁通量变化",
+            "difficulty": 3,
+            "description": "变化后与变化前磁通量之差的绝对值",
+            "aliases": [
+              "磁通量的变化量"
+            ],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "磁通量变化量等于变化前后磁通量之差的绝对值。",
+            "example": "线圈转动使穿过它的磁通量减小",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁感应",
+            "difficulty": 3,
+            "description": "闭合回路磁通量变化而产生电流的现象",
+            "aliases": [],
+            "prerequisites": [
+              "磁通量",
+              "磁通量变化"
+            ],
+            "definition": "因穿过闭合回路的磁通量发生变化而产生电流的现象叫电磁感应。",
+            "example": "磁铁插入螺线管时产生电流"
+          },
+          {
+            "name": "感应电流",
+            "difficulty": 2,
+            "description": "电磁感应中产生的电流",
+            "aliases": [
+              "感应电流"
+            ],
+            "prerequisites": [
+              "电磁感应"
+            ],
+            "definition": "电磁感应现象中闭合回路内产生的电流叫感应电流。",
+            "example": "导体棒切割磁感线时电流计偏转",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁记录",
+            "difficulty": 3,
+            "description": "利用磁性材料记录和读取信息",
+            "aliases": [],
+            "prerequisites": [
+              "电磁感应",
+              "电流的磁场"
+            ],
+            "definition": "磁记录利用变化磁场磁化材料来记录信息，并借助电磁感应读取信息。",
+            "example": "计算机磁盘记录数字信息",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "无线充电",
+            "difficulty": 2,
+            "description": "利用变化磁场使手机线圈产生感应电流",
+            "aliases": [],
+            "prerequisites": [
+              "电磁感应"
+            ],
+            "definition": "无线充电利用充电座线圈的变化磁场在手机线圈中产生感应电流。",
+            "example": "手机放在充电座上进行充电",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "动圈式话筒",
+            "difficulty": 3,
+            "description": "把声音振动转变为变化电流的装置",
+            "aliases": [],
+            "prerequisites": [
+              "电磁感应"
+            ],
+            "definition": "动圈式话筒利用线圈在永磁体磁场中振动产生感应电流。",
+            "example": "讲话使膜片和线圈振动并输出电信号",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电场",
+            "difficulty": 2,
+            "description": "能使自由电子定向移动的场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电场是能使闭合回路中自由电子定向移动的物理场。",
+            "example": "变化磁场激发周围电场",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁场",
+            "difficulty": 3,
+            "description": "变化电场和变化磁场统一形成的场",
+            "aliases": [],
+            "prerequisites": [
+              "电场",
+              "磁场"
+            ],
+            "definition": "变化的电场和变化的磁场相互联系形成统一的电磁场。",
+            "example": "变压器线圈周围存在变化的电磁场",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁波",
+            "difficulty": 3,
+            "description": "交替变化的电磁场在空间中的传播",
+            "aliases": [],
+            "prerequisites": [
+              "电磁场"
+            ],
+            "definition": "交替变化的电磁场传播出去形成电磁波。",
+            "example": "收音机接收广播电磁波"
+          },
+          {
+            "name": "雷达",
+            "difficulty": 3,
+            "description": "利用电磁波反射探测远距离物体",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "雷达根据电磁波反射信号的返回时间和方向判断目标位置。",
+            "example": "雷达探测飞机方位",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁污染",
+            "difficulty": 2,
+            "description": "电磁辐射密度和功率过大造成的污染",
+            "aliases": [
+              "电磁波污染",
+              "射频辐射污染"
+            ],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "电磁污染是电磁辐射增加而对生产生活和人体产生不利影响的现象。",
+            "example": "电磁辐射干扰飞机导航仪表",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁辐射防护",
+            "difficulty": 2,
+            "description": "从辐射源、传播途径和人体进行防护",
+            "aliases": [],
+            "prerequisites": [
+              "电磁污染"
+            ],
+            "definition": "电磁辐射防护包括降低发射功率、屏蔽隔离和采取个人防护措施。",
+            "example": "用屏蔽方法隔离辐射源"
+          },
+          {
+            "name": "光电效应",
+            "difficulty": 2,
+            "description": "光照射金属使其发射电子的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光电效应是光照射金属时金属发射出电子的现象。",
+            "example": "光照金属表面逸出电子",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "光子",
+            "difficulty": 3,
+            "description": "光发射、传播和接收的能量单位",
+            "aliases": [
+              "光量子"
+            ],
+            "prerequisites": [
+              "光电效应",
+              "量子假说"
+            ],
+            "definition": "光子是光发射、传播和接收时所表现出的一个个能量单位。",
+            "example": "光电效应可用光子解释",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "光的电磁本质",
+            "difficulty": 2,
+            "description": "光本质上是一种电磁波",
+            "aliases": [
+              "光的电磁波说"
+            ],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "光的电磁本质是指光与电磁波具有相同的本质。",
+            "example": "真空中光速与电磁波传播速度相同",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "光的波粒二象性",
+            "difficulty": 3,
+            "description": "光同时具有波动性和粒子性",
+            "aliases": [
+              "波粒二象性"
+            ],
+            "prerequisites": [
+              "光子",
+              "光的电磁本质"
+            ],
+            "definition": "光的波粒二象性指光在不同条件下表现出波动性或粒子性。",
+            "example": "光能表现出干涉，也能表现出光电效应",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "量子假说",
+            "difficulty": 3,
+            "description": "物质辐射或吸收能量是能量子的整数倍",
+            "aliases": [
+              "普朗克量子假说"
+            ],
+            "prerequisites": [],
+            "definition": "量子假说认为物质辐射或吸收的能量只能是最小能量单位的整数倍。",
+            "example": "E=nε",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "能量量子化",
+            "difficulty": 3,
+            "description": "能量以不可分割的基本单位存在",
+            "aliases": [
+              "量子化"
+            ],
+            "prerequisites": [
+              "量子假说"
+            ],
+            "definition": "能量量子化是指能量存在最小的不可分割基本单位。",
+            "example": "微观粒子的能量呈不连续特征",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "普朗克常量",
+            "difficulty": 3,
+            "description": "联系能量子与频率的物理常量",
+            "aliases": [
+              "h"
+            ],
+            "prerequisites": [
+              "量子假说"
+            ],
+            "definition": "普朗克常量是能量子与频率成正比关系中的比例常量。",
+            "example": "ε=hν",
+            "section": "第4节 初识光量子与量子世界"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　磁场及其描述",
+            "page_range": [
+              129,
+              129
+            ]
+          },
+          {
+            "name": "第2节　电磁感应现象及其应用",
+            "page_range": [
+              129,
+              129
+            ]
+          },
+          {
+            "name": "第3节　初识电磁波及其应用",
+            "page_range": [
+              129,
+              129
+            ]
+          },
+          {
+            "name": "第4节　初识光量子与量子世界",
+            "page_range": [
+              129,
+              159
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第6章　能源与可持续发展",
+        "concepts": [
+          {
+            "name": "能量",
+            "difficulty": 1,
+            "description": "物体或系统具有的做功本领",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能量是物体或系统具有的做功本领。",
+            "example": "食物具有化学能"
+          },
+          {
+            "name": "机械能",
+            "difficulty": 1,
+            "description": "动能、重力势能和弹性势能的统称",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "机械能包括动能、重力势能和弹性势能等。",
+            "example": "撑竿跳高涉及多种机械能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "内能",
+            "difficulty": 2,
+            "description": "物体内分子动能和分子势能的总和",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "内能是物体内分子无规则运动的动能和分子势能的总和。",
+            "example": "物体温度升高通常内能增大",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "电能",
+            "difficulty": 1,
+            "description": "电以各种形式做功的能力",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "电能是电以各种形式做功的能力。",
+            "example": "电炉把电能转化为内能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "光能",
+            "difficulty": 1,
+            "description": "光所具有的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "光能是光具有的能量。",
+            "example": "太阳光为地球生命提供能量",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "化学能",
+            "difficulty": 1,
+            "description": "储存在食物或燃料等物质中的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "化学能是储存在食物或燃料等物质中的能量。",
+            "example": "蜡烛燃烧释放化学能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "核能",
+            "difficulty": 2,
+            "description": "原子核结构发生变化释放的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "核能是物质的原子核结构发生变化而释放的能量。",
+            "example": "核电站将核能转化为电能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "一次能源",
+            "difficulty": 2,
+            "description": "直接取自自然界且未经加工转化的能源",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "一次能源是直接取自自然界、未经加工转化的能源。",
+            "example": "煤、石油和天然气属于一次能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "二次能源",
+            "difficulty": 2,
+            "description": "由一次能源加工转化而成的能源产品",
+            "aliases": [],
+            "prerequisites": [
+              "一次能源"
+            ],
+            "definition": "二次能源是由一次能源加工转化而成的能源产品。",
+            "example": "电和蒸汽属于二次能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "可再生能源",
+            "difficulty": 2,
+            "description": "能在自然界中循环再生的能源",
+            "aliases": [],
+            "prerequisites": [
+              "一次能源"
+            ],
+            "definition": "可再生能源是在自然界中可以循环再生的能源。",
+            "example": "太阳能和风能属于可再生能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "不可再生能源",
+            "difficulty": 2,
+            "description": "形成时间漫长且短期内无法恢复的能源",
+            "aliases": [],
+            "prerequisites": [
+              "一次能源"
+            ],
+            "definition": "不可再生能源是经过亿万年形成、短期内无法恢复的能源。",
+            "example": "煤和石油属于不可再生能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "新能源",
+            "difficulty": 2,
+            "description": "为应对能源问题而积极开发的能源",
+            "aliases": [],
+            "prerequisites": [
+              "可再生能源"
+            ],
+            "definition": "新能源是人们为解决能源问题而积极开发利用的能源。",
+            "example": "氢能源是受到关注的新能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "能量转化",
+            "difficulty": 2,
+            "description": "能量从一种形式转变为另一种形式",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "能量转化是能量从一种形式转化为另一种形式的过程。",
+            "example": "水的重力势能转化为电能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "能量转移",
+            "difficulty": 2,
+            "description": "能量从一个物体转移到另一个物体",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "能量转移是能量从一个物体转移到另一个物体的过程。",
+            "example": "热水向空气转移内能"
+          },
+          {
+            "name": "能量守恒定律",
+            "difficulty": 3,
+            "description": "能量转化或转移时总量保持不变",
+            "aliases": [
+              "能量守恒"
+            ],
+            "prerequisites": [
+              "能量转化",
+              "能量转移"
+            ],
+            "definition": "在孤立系统中，能量不能凭空产生或消失，只能转化或转移且总量不变。",
+            "example": "秋千机械能转化为内能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "能量转化方向性",
+            "difficulty": 3,
+            "description": "自然过程中的能量转化具有方向",
+            "aliases": [
+              "自然过程的方向性"
+            ],
+            "prerequisites": [
+              "能量转化",
+              "能量守恒定律"
+            ],
+            "definition": "自然发生的与热现象有关的宏观过程具有方向性且不可逆。",
+            "example": "机械能可自动转化为内能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "熵",
+            "difficulty": 3,
+            "description": "描述系统无序程度的物理量",
+            "aliases": [
+              "entropy"
+            ],
+            "prerequisites": [
+              "能量转化方向性"
+            ],
+            "definition": "熵是描述系统微观粒子运动无序程度的物理量。",
+            "example": "香精扩散使系统熵增加",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "有效能量",
+            "difficulty": 3,
+            "description": "仍具有较强做功能力的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量转化方向性",
+              "熵"
+            ],
+            "definition": "有效能量是能量转化过程中仍能较好地用来做功的能量。",
+            "example": "坝顶水的重力势能可用于发电",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "无效能量",
+            "difficulty": 3,
+            "description": "做功能力降低、难以再次利用的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量转化方向性",
+              "熵"
+            ],
+            "definition": "无效能量是能量转化过程中做功能力降低的能量。",
+            "example": "落到坝底的水难以自动再次发电",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "第一类永动机",
+            "difficulty": 3,
+            "description": "不需外界能量却能持续对外做功的装置",
+            "aliases": [],
+            "prerequisites": [
+              "能量守恒定律"
+            ],
+            "definition": "第一类永动机是不需动力或燃料却能不停运动并对外做功的装置。",
+            "example": "无外界供能而持续做功的机器不可能制成",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "第二类永动机",
+            "difficulty": 4,
+            "description": "从单一热源吸热并完全转化为有用功的装置",
+            "aliases": [],
+            "prerequisites": [
+              "能量转化方向性"
+            ],
+            "definition": "第二类永动机是从单一热源吸热并使其完全变为有用功而无其他影响的装置。",
+            "example": "单一海洋热源完全转化为功的装置不可能制成",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "氢能源",
+            "difficulty": 2,
+            "description": "利用氢燃烧放热获得能量的能源",
+            "aliases": [
+              "氢能"
+            ],
+            "prerequisites": [
+              "化学能",
+              "新能源"
+            ],
+            "definition": "氢能源是利用氢燃烧时放出的热量获得能量的能源。",
+            "example": "液氢燃料已用于航空航天",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "兼顾能源利用与环境保护的发展方式",
+            "aliases": [],
+            "prerequisites": [
+              "可再生能源",
+              "不可再生能源",
+              "能量转化方向性"
+            ],
+            "definition": "可持续发展强调合理利用能源并保护地球环境。",
+            "example": "节约用电并发展环保新能源",
+            "section": "第3节 珍惜大自然"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　能量的多种形式",
+            "page_range": [
+              159,
+              159
+            ]
+          },
+          {
+            "name": "第2节　能量的转化与守恒",
+            "page_range": [
+              159,
+              159
+            ]
+          },
+          {
+            "name": "第3节　珍惜大自然",
+            "page_range": [
+              159,
+              174
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 静电力与电场强度",
+        "concepts": [
+          {
+            "name": "静电现象",
+            "difficulty": 1,
+            "description": "物体带有静止电荷而表现出的吸引、排斥等现象",
+            "aliases": [
+              "静电"
+            ],
+            "prerequisites": [],
+            "definition": "静电现象是由物体上相对静止的电荷引起的各种现象。",
+            "example": "摩擦后的塑料梳吸起细小纸屑"
+          },
+          {
+            "name": "电荷",
+            "difficulty": 1,
+            "description": "物体具有产生静电相互作用的性质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电荷是物体具有电作用性质的物理量。",
+            "example": "玻璃棒摩擦后带正电荷"
+          },
+          {
+            "name": "正负电荷",
+            "difficulty": 1,
+            "description": "电荷按相互作用性质分为正电荷和负电荷",
+            "aliases": [],
+            "prerequisites": [
+              "电荷"
+            ],
+            "definition": "正电荷与负电荷是电荷的两种基本类型。",
+            "example": "丝绸摩擦玻璃棒带正电，橡胶棒带负电",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "电荷量",
+            "difficulty": 1,
+            "description": "表示电荷多少的物理量，单位是库仑",
+            "aliases": [
+              "电量"
+            ],
+            "prerequisites": [
+              "电荷"
+            ],
+            "definition": "电荷量是电荷多少的量度，国际单位制单位为库仑。",
+            "example": "物体带电量可用库仑表示"
+          },
+          {
+            "name": "摩擦起电",
+            "difficulty": 1,
+            "description": "物体通过相互摩擦而带电的方式",
+            "aliases": [],
+            "prerequisites": [
+              "正负电荷",
+              "电荷量"
+            ],
+            "definition": "摩擦起电是不同物质的物体摩擦后因电子转移而带电。",
+            "example": "用丝绸摩擦玻璃棒"
+          },
+          {
+            "name": "接触起电",
+            "difficulty": 1,
+            "description": "带电体与其他物体接触使其带电的方式",
+            "aliases": [],
+            "prerequisites": [
+              "正负电荷",
+              "电荷量"
+            ],
+            "definition": "接触起电是带电体接触另一物体后发生电荷转移使其带电。",
+            "example": "带电橡胶棒接触验电器",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "静电感应",
+            "difficulty": 2,
+            "description": "带电体靠近导体使导体电荷重新分布的现象",
+            "aliases": [
+              "电荷感应"
+            ],
+            "prerequisites": [
+              "正负电荷",
+              "自由电子"
+            ],
+            "definition": "静电感应是附近带电体影响导体，使导体上的电荷重新分布的现象。",
+            "example": "带负电橡胶棒靠近验电器"
+          },
+          {
+            "name": "感应起电",
+            "difficulty": 2,
+            "description": "利用静电感应使金属导体带电的方式",
+            "aliases": [],
+            "prerequisites": [
+              "静电感应",
+              "电荷守恒定律"
+            ],
+            "definition": "感应起电是利用带电体和接地等操作使导体带上电荷的方法。",
+            "example": "用带电棒靠近验电器并接地",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "验电器",
+            "difficulty": 1,
+            "description": "检验物体是否带电并估测带电多少的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "电荷量"
+            ],
+            "definition": "验电器是用金属箔片张开来检验和估测物体带电情况的仪器。",
+            "example": "箔片张开说明验电器带电",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "原子结构",
+            "difficulty": 2,
+            "description": "原子由带正电原子核和带负电电子组成",
+            "aliases": [
+              "原子模型"
+            ],
+            "prerequisites": [
+              "正负电荷"
+            ],
+            "definition": "原子由原子核和电子组成，原子核含质子和中子。",
+            "example": "中性原子中质子数等于电子数"
+          },
+          {
+            "name": "自由电子",
+            "difficulty": 2,
+            "description": "能在导体内部移动并参与电荷转移的电子",
+            "aliases": [],
+            "prerequisites": [
+              "原子结构"
+            ],
+            "definition": "自由电子是导体中能够在一定范围内定向或重新分布的电子。",
+            "example": "感应起电时自由电子发生移动"
+          },
+          {
+            "name": "电荷守恒定律",
+            "difficulty": 2,
+            "description": "电荷只能转移，电荷总量保持不变",
+            "aliases": [],
+            "prerequisites": [
+              "电荷量",
+              "原子结构"
+            ],
+            "definition": "电荷守恒定律指出电荷不能被创造或消灭，只能发生转移。",
+            "example": "摩擦起电时两物体带等量异号电荷",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "电介质极化",
+            "difficulty": 2,
+            "description": "电介质受外电荷影响而出现电荷重新分布",
+            "aliases": [
+              "极化现象"
+            ],
+            "prerequisites": [
+              "正负电荷",
+              "静电感应"
+            ],
+            "definition": "电介质极化是电介质内部正负电荷发生相对偏移的现象。",
+            "example": "带电梳子使纸片两端出现极化电荷",
+            "section": "第1节 静电的产生及其微观解释"
+          },
+          {
+            "name": "静电力",
+            "difficulty": 2,
+            "description": "电荷之间相互作用产生的力",
+            "aliases": [
+              "库仑力"
+            ],
+            "prerequisites": [
+              "正负电荷",
+              "电荷量"
+            ],
+            "definition": "静电力是电荷之间通过电场产生的相互作用力。",
+            "example": "两个同种电荷相互排斥"
+          },
+          {
+            "name": "点电荷",
+            "difficulty": 2,
+            "description": "可忽略带电体大小和形状的理想化电荷模型",
+            "aliases": [
+              "点电荷模型"
+            ],
+            "prerequisites": [
+              "电荷量",
+              "静电力"
+            ],
+            "definition": "点电荷是带电体大小相对距离足够小而可视为几何点的理想模型。",
+            "example": "远距离研究带电小球时可视为点电荷"
+          },
+          {
+            "name": "库仑定律",
+            "difficulty": 3,
+            "description": "真空中点电荷静电力与电荷量乘积成正比",
+            "aliases": [],
+            "prerequisites": [
+              "点电荷",
+              "静电力"
+            ],
+            "definition": "库仑定律指出点电荷间静电力与电荷量乘积成正比、与距离平方成反比。",
+            "example": "两点电荷距离增大，静电力减小"
+          },
+          {
+            "name": "静电力叠加",
+            "difficulty": 3,
+            "description": "多个点电荷的合静电力等于各分力的矢量和",
+            "aliases": [
+              "静电力叠加原理"
+            ],
+            "prerequisites": [
+              "库仑定律"
+            ],
+            "definition": "静电力叠加原理指出一点电荷所受总静电力是各个作用力的矢量和。",
+            "example": "求三电荷系统中某电荷所受合力"
+          },
+          {
+            "name": "电场",
+            "difficulty": 2,
+            "description": "电荷周围存在并传递电荷相互作用的物质形式",
+            "aliases": [
+              "电场空间"
+            ],
+            "prerequisites": [
+              "静电力"
+            ],
+            "definition": "电场是存在于电荷周围并对其中电荷施加力作用的物质形式。",
+            "example": "带电体周围存在电场"
+          },
+          {
+            "name": "静电场",
+            "difficulty": 2,
+            "description": "静止电荷产生的电场",
+            "aliases": [],
+            "prerequisites": [
+              "电场",
+              "电荷"
+            ],
+            "definition": "静电场是由静止电荷产生的电场。",
+            "example": "静止带电小球周围的电场"
+          },
+          {
+            "name": "电场力",
+            "difficulty": 2,
+            "description": "电场对处于其中的电荷施加的力",
+            "aliases": [],
+            "prerequisites": [
+              "电场",
+              "电荷"
+            ],
+            "definition": "电场力是电荷处于电场中时受到的力。",
+            "example": "带电尘埃在电场中向收尘极运动"
+          },
+          {
+            "name": "试探电荷",
+            "difficulty": 3,
+            "description": "用来检验电场性质且不明显扰动原电场的电荷",
+            "aliases": [
+              "检验电荷"
+            ],
+            "prerequisites": [
+              "电场",
+              "电场力"
+            ],
+            "definition": "试探电荷是电荷量足够小、可视为点电荷的检验电场用电荷。",
+            "example": "用小电荷测量某点的场强"
+          },
+          {
+            "name": "场源电荷",
+            "difficulty": 2,
+            "description": "产生被研究电场的电荷",
+            "aliases": [
+              "源电荷"
+            ],
+            "prerequisites": [
+              "电荷",
+              "电场"
+            ],
+            "definition": "场源电荷是激发被研究电场的电荷。",
+            "example": "带电体A是周围电场的场源电荷",
+            "section": "第3节 电场与电场强度"
+          },
+          {
+            "name": "电场强度",
+            "difficulty": 3,
+            "description": "电场中某点电场力与试探电荷量的比值",
+            "aliases": [
+              "场强"
+            ],
+            "prerequisites": [
+              "电场力",
+              "试探电荷"
+            ],
+            "definition": "电场强度是试探电荷在某点受到的电场力与其电荷量之比。",
+            "example": "某点场强为150 N/C"
+          },
+          {
+            "name": "电场线",
+            "difficulty": 3,
+            "description": "切线方向表示各点电场强度方向的假想曲线",
+            "aliases": [],
+            "prerequisites": [
+              "电场强度"
+            ],
+            "definition": "电场线是切线方向与该点场强方向一致的假想曲线。",
+            "example": "正点电荷电场线由电荷向外发散"
+          },
+          {
+            "name": "点电荷电场",
+            "difficulty": 3,
+            "description": "点电荷产生的场强随距离平方反比变化的电场",
+            "aliases": [],
+            "prerequisites": [
+              "点电荷",
+              "电场强度"
+            ],
+            "definition": "点电荷电场中场强大小与源电荷量成正比、与距离平方成反比。",
+            "example": "正点电荷外部场强方向向外",
+            "section": "第4节 点电荷的电场 匀强电场"
+          },
+          {
+            "name": "场强叠加原理",
+            "difficulty": 3,
+            "description": "多个点电荷在一点产生的场强为各场强矢量和",
+            "aliases": [
+              "电场强度叠加原理"
+            ],
+            "prerequisites": [
+              "电场强度",
+              "静电力叠加"
+            ],
+            "definition": "场强叠加原理指出合场强等于各点电荷独自产生场强的矢量和。",
+            "example": "计算等量异种点电荷中点场强"
+          },
+          {
+            "name": "匀强电场",
+            "difficulty": 2,
+            "description": "电场强度大小和方向处处相同的电场",
+            "aliases": [],
+            "prerequisites": [
+              "电场强度",
+              "电场线"
+            ],
+            "definition": "匀强电场是电场强度大小和方向在各处都相同的电场。",
+            "example": "平行金属板边缘外的内部区域"
+          },
+          {
+            "name": "电荷量子化",
+            "difficulty": 3,
+            "description": "带电微粒电荷量是元电荷的整数倍",
+            "aliases": [
+              "电荷的量子化"
+            ],
+            "prerequisites": [
+              "电荷量",
+              "元电荷"
+            ],
+            "definition": "电荷量子化是带电体所带电荷量为元电荷整数倍的性质。",
+            "example": "油滴电荷量约为电子电荷量的整数倍",
+            "section": "第4节 点电荷的电场 匀强电场"
+          },
+          {
+            "name": "元电荷",
+            "difficulty": 2,
+            "description": "电荷量的基本单位，电子电荷量大小约为1.60×10^-19库仑",
+            "aliases": [
+              "基本电荷"
+            ],
+            "prerequisites": [
+              "电荷量"
+            ],
+            "definition": "元电荷是电荷量的基本单位，其大小等于电子电荷量的绝对值。",
+            "example": "电子电荷量大小为一个元电荷",
+            "section": "第4节 点电荷的电场 匀强电场"
+          },
+          {
+            "name": "静电除尘",
+            "difficulty": 2,
+            "description": "利用高压静电使尘埃带电并迁移收集",
+            "aliases": [],
+            "prerequisites": [
+              "电场力",
+              "电场强度"
+            ],
+            "definition": "静电除尘是利用电场力使带电尘埃向收尘极运动的除尘方法。",
+            "example": "工业烟气通过静电除尘器净化"
+          },
+          {
+            "name": "静电喷涂",
+            "difficulty": 2,
+            "description": "使涂料微粒带电并利用电场力吸附到工件",
+            "aliases": [
+              "静电喷雾"
+            ],
+            "prerequisites": [
+              "电场力",
+              "正负电荷"
+            ],
+            "definition": "静电喷涂是利用带电涂料微粒在电场中运动并均匀附着的技术。",
+            "example": "汽车外壳采用静电喷涂",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "激光打印",
+            "difficulty": 2,
+            "description": "利用感光鼓静电潜像吸附并转移碳粉的打印技术",
+            "aliases": [],
+            "prerequisites": [
+              "正负电荷",
+              "静电力"
+            ],
+            "definition": "激光打印是利用静电作用形成图文并转移碳粉的打印方法。",
+            "example": "感光鼓吸附带异号电荷的碳粉",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "尖端放电",
+            "difficulty": 3,
+            "description": "导体尖端附近空气电离而产生气体放电",
+            "aliases": [],
+            "prerequisites": [
+              "电场强度",
+              "电场力"
+            ],
+            "definition": "尖端放电是导体尖端强电场使附近空气电离并放电的现象。",
+            "example": "针尖附近形成电风",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "静电防护",
+            "difficulty": 2,
+            "description": "通过接地、增湿等方式减少静电危害",
+            "aliases": [],
+            "prerequisites": [
+              "静电现象",
+              "电荷守恒定律"
+            ],
+            "definition": "静电防护是将静电及时导走或减弱以避免危害的措施。",
+            "example": "油罐车安装导电拖地带"
+          },
+          {
+            "name": "静电平衡",
+            "difficulty": 3,
+            "description": "导体内部没有电荷定向移动的状态",
+            "aliases": [],
+            "prerequisites": [
+              "静电感应",
+              "电场强度"
+            ],
+            "definition": "静电平衡是导体内自由电子不再定向移动的状态。",
+            "example": "静电平衡导体内部场强为零",
+            "section": "第5节 静电的利用与防护"
+          },
+          {
+            "name": "静电屏蔽",
+            "difficulty": 3,
+            "description": "导体表面对内部形成保护使内部不受外电场影响",
+            "aliases": [],
+            "prerequisites": [
+              "静电平衡",
+              "场强叠加原理"
+            ],
+            "definition": "静电屏蔽是利用静电平衡导体内部合场强为零来隔离外电场的现象。",
+            "example": "金属外壳保护内部电子设备",
+            "section": "第5节 静电的利用与防护"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 静电的产生及其微观解释",
+            "section_key": "1495e947a8",
+            "page_range": [
+              8,
+              12
+            ]
+          },
+          {
+            "name": "第2节 库仑定律",
+            "section_key": "6b023090a8",
+            "page_range": [
+              12,
+              17
+            ]
+          },
+          {
+            "name": "第3节 电场与电场强度",
+            "section_key": "6cce7aa9e6",
+            "page_range": [
+              17,
+              22
+            ]
+          },
+          {
+            "name": "第4节 点电荷的电场 匀强电场",
+            "section_key": "e9e9f338f0",
+            "page_range": [
+              22,
+              27
+            ]
+          },
+          {
+            "name": "第5节 静电的利用与防护",
+            "section_key": "acbdfade1c",
+            "page_range": [
+              27,
+              35
+            ]
+          }
+        ],
+        "chapter_key": "9c417987ca",
+        "metadata": {
+          "volume_id": "43663efceaf9",
+          "file_id": "43663efceaf9",
+          "volume_title": "普通高中教科书 物理 必修第三册",
+          "chapter_order": 1,
+          "raw_heading": "第1章　静电力与电场强度"
+        }
+      },
+      {
+        "name": "第2章 电势能与电势差",
+        "concepts": [
+          {
+            "name": "静电力做功",
+            "difficulty": 3,
+            "description": "静电力做功与路径无关，只由始末位置决定",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电荷在静电场中移动时，静电力所做的功只与始末位置有关。",
+            "example": "正电荷沿不同路径从A移到B，静电力做功相同"
+          },
+          {
+            "name": "电势能",
+            "difficulty": 3,
+            "description": "电荷在电场中因位置而具有的能量",
+            "aliases": [],
+            "prerequisites": [
+              "静电力做功"
+            ],
+            "definition": "电荷在电场中某点因位置而具有的能量称为电势能。",
+            "example": "正电荷沿电场方向运动，电势能通常减小"
+          },
+          {
+            "name": "电势能变化",
+            "difficulty": 3,
+            "description": "静电力做功等于电势能的减少量",
+            "aliases": [],
+            "prerequisites": [
+              "电势能"
+            ],
+            "definition": "静电力做功等于电荷初末位置电势能之差。",
+            "example": "静电力做正功，电势能减小",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "零电势能点",
+            "difficulty": 2,
+            "description": "规定电荷电势能为零的位置",
+            "aliases": [],
+            "prerequisites": [
+              "电势能"
+            ],
+            "definition": "人为规定电荷在某一位置的电势能为零，该位置称为零电势能点。",
+            "example": "常取无穷远处为零电势能点",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电势",
+            "difficulty": 3,
+            "description": "单位正电荷在某点具有的电势能",
+            "aliases": [],
+            "prerequisites": [
+              "电势能"
+            ],
+            "definition": "电荷在电场中某点的电势能与其电荷量之比称为该点的电势。",
+            "example": "若电荷量为q且电势能为Ep，则φ=Ep/q"
+          },
+          {
+            "name": "零电势点",
+            "difficulty": 2,
+            "description": "规定电场中电势为零的位置",
+            "aliases": [],
+            "prerequisites": [
+              "电势"
+            ],
+            "definition": "人为规定电场中某一位置的电势为零，该位置称为零电势点。",
+            "example": "实际问题中常选地球为零电势点",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "等势面",
+            "difficulty": 3,
+            "description": "电场中电势相等的点构成的面",
+            "aliases": [],
+            "prerequisites": [
+              "电势"
+            ],
+            "definition": "电场中电势相等的各点构成的面称为等势面。",
+            "example": "点电荷电场的等势面是同心球面"
+          },
+          {
+            "name": "等势面性质",
+            "difficulty": 3,
+            "description": "等势面上移动电荷，静电力不做功",
+            "aliases": [],
+            "prerequisites": [
+              "等势面",
+              "电势能变化"
+            ],
+            "definition": "电荷在等势面上移动时电势能不变，静电力不做功。",
+            "example": "沿等势面移动电荷，电势能保持不变"
+          },
+          {
+            "name": "电势差",
+            "difficulty": 3,
+            "description": "电场中两点电势的差值",
+            "aliases": [
+              "电压"
+            ],
+            "prerequisites": [
+              "电势"
+            ],
+            "definition": "电场中两点间电势的差值称为电势差，也称电压。",
+            "example": "UAB=φA−φB"
+          },
+          {
+            "name": "静电力做功公式",
+            "difficulty": 3,
+            "description": "静电力做功等于电荷量与电势差的乘积",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "电荷从A点移到B点时，静电力做功满足WAB=qUAB。",
+            "example": "已知q和UAB即可求静电力做功"
+          },
+          {
+            "name": "电子伏特",
+            "difficulty": 2,
+            "description": "研究微观粒子能量时常用的能量单位",
+            "aliases": [
+              "eV"
+            ],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "电子在电势差为1V的两点间移动时静电力所做的功定义为1eV。",
+            "example": "1eV等于1.60×10^-19J",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "匀强场电势差关系",
+            "difficulty": 3,
+            "description": "匀强电场中U、E与沿场方向距离的关系",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "匀强电场中两点间电势差等于电场强度与沿场方向距离的乘积。",
+            "example": "两板间距为d时，板间电压U=Ed"
+          },
+          {
+            "name": "带电粒子加速",
+            "difficulty": 3,
+            "description": "利用电场使带电粒子获得更大速度和动能",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "电场对带电粒子做功，使其动能增加并达到预定速度。",
+            "example": "电子枪用加速电场提高电子动能",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "带电粒子偏转",
+            "difficulty": 4,
+            "description": "利用电场改变带电粒子的运动方向",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "带电粒子在电场力作用下运动方向发生改变的现象称为偏转。",
+            "example": "示波器偏转板使电子束在荧光屏上偏移",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容器",
+            "difficulty": 2,
+            "description": "能够储存电荷的电学元件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能够储存电荷的电学元件称为电容器。",
+            "example": "两块彼此绝缘的平行金属板可组成电容器",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容",
+            "difficulty": 3,
+            "description": "描述电容器储存电荷能力的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "电容器所带电荷量与两极板间电压之比称为电容。",
+            "example": "电容器满足C=Q/U",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容器充电",
+            "difficulty": 2,
+            "description": "电容器两极板带上等量异种电荷的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "电容器接通电源后，两极板分别带上等量异种电荷的过程称为充电。",
+            "example": "接通直流电源后电容器两端电压逐渐增大",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电容器放电",
+            "difficulty": 2,
+            "description": "电容器两极板电荷逐渐中和的过程",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "充电后的电容器接通电路后，两极板电荷中和的过程称为放电。",
+            "example": "电容器通过电流计放电时产生瞬时电流",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "平行板电容器",
+            "difficulty": 3,
+            "description": "由两块平行金属板和其间介质组成的电容器",
+            "aliases": [],
+            "prerequisites": [
+              "电容器",
+              "电容"
+            ],
+            "definition": "两块彼此绝缘且相互平行的金属板构成的电容器称为平行板电容器。",
+            "example": "其电容与正对面积成正比、板间距成反比",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "电介质",
+            "difficulty": 3,
+            "description": "在电场作用下能够产生极化的物质",
+            "aliases": [],
+            "prerequisites": [
+              "电容器"
+            ],
+            "definition": "在电场作用下能产生极化的物质称为电介质。",
+            "example": "云母、玻璃和陶瓷都可作为电介质",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "击穿电压",
+            "difficulty": 3,
+            "description": "电容器电介质发生击穿时的电压极限",
+            "aliases": [],
+            "prerequisites": [
+              "电介质"
+            ],
+            "definition": "电容器电介质能够承受的电压极限称为击穿电压。",
+            "example": "超过击穿电压，极板间可能导通并损坏",
+            "section": "第5节 科学探究:电容器"
+          },
+          {
+            "name": "静电计",
+            "difficulty": 3,
+            "description": "利用指针偏转反映电势差的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "电势差"
+            ],
+            "definition": "通过指针张角大小测量或比较电势差的仪器称为静电计。",
+            "example": "静电计张角越大，表示两端电势差越大",
+            "section": "第5节 科学探究:电容器"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 静电力做功与电势能",
+            "section_key": "5a19988410",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第2节 电势与等势面",
+            "section_key": "90814cb1aa",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第3节 电势差与电场强度的关系",
+            "section_key": "85eaf838c2",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第4节 带电粒子在电场中的运动",
+            "section_key": "52092268fa",
+            "page_range": [
+              35,
+              35
+            ]
+          },
+          {
+            "name": "第5节 科学探究:电容器",
+            "section_key": "1764500d87",
+            "page_range": [
+              35,
+              67
+            ]
+          }
+        ],
+        "chapter_key": "cf88fb520f",
+        "metadata": {
+          "volume_id": "43663efceaf9",
+          "file_id": "43663efceaf9",
+          "volume_title": "普通高中教科书 物理 必修第三册",
+          "chapter_order": 2,
+          "raw_heading": "第2章　电势能与电势差"
+        }
+      },
+      {
+        "name": "第3章 恒定电流",
+        "concepts": [
+          {
+            "name": "自由电荷",
+            "difficulty": 1,
+            "description": "能够在导体中自由移动的电荷",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自由电荷是能在物质内部自由移动的电荷。",
+            "example": "金属导体中的自由电子"
+          },
+          {
+            "name": "电流形成条件",
+            "difficulty": 2,
+            "description": "形成电流需要自由电荷和持续电压",
+            "aliases": [],
+            "prerequisites": [
+              "自由电荷",
+              "电压"
+            ],
+            "definition": "导体中存在自由电荷且两端有持续电压时，才能形成持续电流。",
+            "example": "电池连接金属导线形成电流"
+          },
+          {
+            "name": "电流",
+            "difficulty": 2,
+            "description": "自由电荷的定向移动形成电流",
+            "aliases": [],
+            "prerequisites": [
+              "自由电荷",
+              "电场"
+            ],
+            "definition": "电流是自由电荷定向移动形成的物理现象。",
+            "example": "金属导线中电子定向移动"
+          },
+          {
+            "name": "电子漂移",
+            "difficulty": 2,
+            "description": "金属中电子在电场作用下的定向运动",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电场"
+            ],
+            "definition": "电子漂移是金属自由电子在电场作用下产生的缓慢定向移动。",
+            "example": "接通电路后导线中的电子漂移",
+            "section": "第1节 电 流"
+          },
+          {
+            "name": "电流方向",
+            "difficulty": 2,
+            "description": "规定为正电荷定向移动的方向",
+            "aliases": [],
+            "prerequisites": [
+              "电流"
+            ],
+            "definition": "电流方向规定为正电荷定向移动的方向。",
+            "example": "电源外部电路由正极指向负极",
+            "section": "第1节 电 流"
+          },
+          {
+            "name": "电流大小",
+            "difficulty": 2,
+            "description": "单位时间内通过导体横截面的电荷量",
+            "aliases": [
+              "电流强度"
+            ],
+            "prerequisites": [
+              "电流"
+            ],
+            "definition": "电流大小等于通过导体某横截面的电荷量与时间之比。",
+            "example": "3秒通过3库仑电荷，电流为1安"
+          },
+          {
+            "name": "直流电",
+            "difficulty": 2,
+            "description": "电流方向不随时间变化的电流",
+            "aliases": [],
+            "prerequisites": [
+              "电流方向"
+            ],
+            "definition": "方向不随时间变化的电流称为直流电。",
+            "example": "电池供电电路中的电流"
+          },
+          {
+            "name": "恒定电流",
+            "difficulty": 2,
+            "description": "大小和方向都不随时间变化的电流",
+            "aliases": [],
+            "prerequisites": [
+              "直流电",
+              "电流大小"
+            ],
+            "definition": "大小和方向都不随时间变化的电流称为恒定电流。",
+            "example": "稳定电池电路中的电流"
+          },
+          {
+            "name": "电阻",
+            "difficulty": 2,
+            "description": "导体对电流阻碍作用的大小",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电压"
+            ],
+            "definition": "电阻是反映导体对电流阻碍作用大小的物理量。",
+            "example": "铜线通常比电阻丝电阻小"
+          },
+          {
+            "name": "伏安法测电阻",
+            "difficulty": 3,
+            "description": "用电压表和电流表测量导体电阻",
+            "aliases": [],
+            "prerequisites": [
+              "电阻",
+              "电流大小"
+            ],
+            "definition": "伏安法通过测量导体两端电压和其中电流并用R=U/I求电阻。",
+            "example": "测量金属丝的电阻"
+          },
+          {
+            "name": "电阻率",
+            "difficulty": 3,
+            "description": "反映材料导电性能的物理量",
+            "aliases": [
+              "材料的电阻率"
+            ],
+            "prerequisites": [
+              "电阻"
+            ],
+            "definition": "电阻率是反映材料导电性能的物理量。",
+            "example": "铜的电阻率较小"
+          },
+          {
+            "name": "电阻公式",
+            "difficulty": 3,
+            "description": "电阻与材料、长度和横截面积的关系",
+            "aliases": [
+              "电阻定律"
+            ],
+            "prerequisites": [
+              "电阻",
+              "电阻率"
+            ],
+            "definition": "均匀导体的电阻满足R=ρl/S。",
+            "example": "导线越长电阻通常越大"
+          },
+          {
+            "name": "温度对电阻率影响",
+            "difficulty": 3,
+            "description": "材料电阻率随温度变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "电阻率"
+            ],
+            "definition": "金属电阻率通常随温度升高而增大，绝缘体和半导体多相反。",
+            "example": "灯丝发热后电阻增大"
+          },
+          {
+            "name": "伏安特性曲线",
+            "difficulty": 3,
+            "description": "表示导体电流与电压关系的图像",
+            "aliases": [
+              "I-U图像"
+            ],
+            "prerequisites": [
+              "电流大小",
+              "电压",
+              "电阻"
+            ],
+            "definition": "以电压和电流为坐标绘出的关系图像称为伏安特性曲线。",
+            "example": "小灯泡的伏安特性曲线是曲线",
+            "section": "第2节 电 阻"
+          },
+          {
+            "name": "线性元件",
+            "difficulty": 3,
+            "description": "伏安特性曲线为过原点直线的元件",
+            "aliases": [],
+            "prerequisites": [
+              "伏安特性曲线"
+            ],
+            "definition": "具有通过原点的直线伏安特性曲线的电学元件称为线性元件。",
+            "example": "一定条件下的金属导体",
+            "section": "第2节 电 阻"
+          },
+          {
+            "name": "可变电阻",
+            "difficulty": 2,
+            "description": "阻值能够调节变化的电阻",
+            "aliases": [],
+            "prerequisites": [
+              "电阻"
+            ],
+            "definition": "可变电阻是阻值可以根据需要调节的电阻元件。",
+            "example": "台灯亮度调节中的电阻",
+            "section": "第2节 电 阻"
+          },
+          {
+            "name": "滑动变阻器",
+            "difficulty": 3,
+            "description": "通过改变接入电阻丝长度调节电阻",
+            "aliases": [],
+            "prerequisites": [
+              "电阻",
+              "可变电阻"
+            ],
+            "definition": "滑动变阻器通过移动滑片改变接入电阻丝的长度，从而改变电阻。",
+            "example": "接通电路前滑片置于最大阻值处"
+          },
+          {
+            "name": "电功",
+            "difficulty": 3,
+            "description": "电流通过用电器时所做的功",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电压"
+            ],
+            "definition": "电功是电流通过用电器时电能转化为其他形式能量所做的功。",
+            "example": "电灯消耗电能发光"
+          },
+          {
+            "name": "电功率",
+            "difficulty": 3,
+            "description": "表示电流做功快慢的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "电功"
+            ],
+            "definition": "电功率是表示电流做功快慢的物理量。",
+            "example": "60瓦白炽灯的额定功率"
+          },
+          {
+            "name": "焦耳定律",
+            "difficulty": 3,
+            "description": "描述电流通过导体产生热量的规律",
+            "aliases": [
+              "焦耳—楞次定律"
+            ],
+            "prerequisites": [
+              "电流大小",
+              "电阻"
+            ],
+            "definition": "电流通过导体产生的热量与电流平方、电阻和时间的乘积有关。",
+            "example": "电热器利用电流产生热量"
+          },
+          {
+            "name": "纯电阻电路",
+            "difficulty": 3,
+            "description": "电能全部转化为内能的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电功",
+              "焦耳定律"
+            ],
+            "definition": "电能除转化为内能外没有转化为其他形式能量的电路称为纯电阻电路。",
+            "example": "电热器工作电路",
+            "section": "第3节 电功与电热"
+          },
+          {
+            "name": "非纯电阻电路",
+            "difficulty": 3,
+            "description": "电能还转化为机械能等其他能量的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电功",
+              "焦耳定律"
+            ],
+            "definition": "电能除转化为内能外还转化为机械能或化学能等的电路称为非纯电阻电路。",
+            "example": "电动机正常工作电路",
+            "section": "第3节 电功与电热"
+          },
+          {
+            "name": "串联电路",
+            "difficulty": 2,
+            "description": "电路元件逐个顺次连接的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电阻"
+            ],
+            "definition": "将电路元件逐个顺次连接起来形成的电路称为串联电路。",
+            "example": "多个电阻首尾相接"
+          },
+          {
+            "name": "串联分压",
+            "difficulty": 3,
+            "description": "串联电阻按阻值分配总电压",
+            "aliases": [
+              "串联电路的分压作用"
+            ],
+            "prerequisites": [
+              "串联电路",
+              "电阻"
+            ],
+            "definition": "串联电路中各电阻两端电压与其阻值成正比。",
+            "example": "电流计串联分压电阻改装电压表"
+          },
+          {
+            "name": "并联电路",
+            "difficulty": 2,
+            "description": "各元件两端分别连接在两节点的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电压"
+            ],
+            "definition": "电路元件各有一端接在同一节点、另一端接在另一节点的电路称为并联电路。",
+            "example": "家庭用电器通常并联"
+          },
+          {
+            "name": "并联分流",
+            "difficulty": 3,
+            "description": "并联支路按电阻大小分配总电流",
+            "aliases": [
+              "并联电路的分流作用"
+            ],
+            "prerequisites": [
+              "并联电路",
+              "电阻"
+            ],
+            "definition": "并联电路中各支路电流与支路电阻成反比。",
+            "example": "电流计并联分流电阻改装电流表",
+            "section": "第4节 串联电路和并联电路"
+          },
+          {
+            "name": "游标卡尺",
+            "difficulty": 2,
+            "description": "可测长度、内外径和深度的精密量具",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "游标卡尺由主尺和可滑动的游标尺组成，用于精密测量长度、内外径和深度。",
+            "example": "测量小钢球直径",
+            "section": "第5节 科学测量:长度的测量及测量工具的选用"
+          },
+          {
+            "name": "游标卡尺读数",
+            "difficulty": 3,
+            "description": "主尺整数读数加游标对齐刻度读数",
+            "aliases": [],
+            "prerequisites": [
+              "游标卡尺"
+            ],
+            "definition": "游标卡尺读数等于主尺整毫米数与游标对齐刻度数乘精度之和。",
+            "example": "7毫米加6乘0.1毫米为7.6毫米",
+            "section": "第5节 科学测量:长度的测量及测量工具的选用"
+          },
+          {
+            "name": "螺旋测微器",
+            "difficulty": 2,
+            "description": "比游标卡尺更精密的长度测量工具",
+            "aliases": [
+              "千分尺"
+            ],
+            "prerequisites": [],
+            "definition": "螺旋测微器利用螺旋运动将微小长度放大读数，用于精密测量长度。",
+            "example": "精确测量细金属丝直径"
+          },
+          {
+            "name": "电流表外接法",
+            "difficulty": 3,
+            "description": "电压表并联待测电阻的测量接法",
+            "aliases": [
+              "外接法"
+            ],
+            "prerequisites": [
+              "伏安法测电阻",
+              "并联电路"
+            ],
+            "definition": "电压表与待测电阻并联、二者再与电流表串联的接法称为外接法。",
+            "example": "待测金属丝电阻较小时采用",
+            "section": "第6节 科学测量:金属丝的电阻率"
+          },
+          {
+            "name": "电流表内接法",
+            "difficulty": 3,
+            "description": "电流表串联待测电阻的测量接法",
+            "aliases": [
+              "内接法"
+            ],
+            "prerequisites": [
+              "伏安法测电阻",
+              "串联电路"
+            ],
+            "definition": "电流表与待测电阻串联、二者再与电压表并联的接法称为内接法。",
+            "example": "待测电阻远大于电流表内阻时采用",
+            "section": "第6节 科学测量:金属丝的电阻率"
+          },
+          {
+            "name": "金属丝电阻率测量",
+            "difficulty": 4,
+            "description": "用伏安法和长度测量求金属丝电阻率",
+            "aliases": [],
+            "prerequisites": [
+              "电阻公式",
+              "伏安法测电阻",
+              "螺旋测微器"
+            ],
+            "definition": "测出金属丝电阻、长度和横截面积后由ρ=RS/l求电阻率。",
+            "example": "测量金属丝直径、长度和电阻"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 电 流",
+            "section_key": "c39c21963f",
+            "page_range": [
+              68,
+              72
+            ]
+          },
+          {
+            "name": "第2节 电 阻",
+            "section_key": "874051bd8e",
+            "page_range": [
+              72,
+              77
+            ]
+          },
+          {
+            "name": "第3节 电功与电热",
+            "section_key": "fcd7d53734",
+            "page_range": [
+              77,
+              83
+            ]
+          },
+          {
+            "name": "第4节 串联电路和并联电路",
+            "section_key": "f22d676437",
+            "page_range": [
+              83,
+              88
+            ]
+          },
+          {
+            "name": "第5节 科学测量:长度的测量及测量工具的选用",
+            "section_key": "4585d53765",
+            "page_range": [
+              88,
+              94
+            ]
+          },
+          {
+            "name": "第6节 科学测量:金属丝的电阻率",
+            "section_key": "6d3b0a918f",
+            "page_range": [
+              94,
+              101
+            ]
+          }
+        ],
+        "chapter_key": "4aed479a57",
+        "metadata": {
+          "volume_id": "43663efceaf9",
+          "file_id": "43663efceaf9",
+          "volume_title": "普通高中教科书 物理 必修第三册",
+          "chapter_order": 3,
+          "raw_heading": "第3章　恒定电流"
+        }
+      },
+      {
+        "name": "第4章 闭合电路欧姆定律与科学用电",
+        "concepts": [
+          {
+            "name": "闭合电路",
+            "difficulty": 1,
+            "description": "开关闭合后形成电流闭合回路",
+            "aliases": [],
+            "prerequisites": [
+              "电流",
+              "电路"
+            ],
+            "definition": "由电源、用电器、开关和导线等组成的完整电流回路。",
+            "example": "干电池接小灯泡并闭合开关。"
+          },
+          {
+            "name": "外电路",
+            "difficulty": 1,
+            "description": "电源外部由导线和用电器组成的电路",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路"
+            ],
+            "definition": "闭合电路中位于电源外部的部分。",
+            "example": "灯泡和连接导线属于外电路。"
+          },
+          {
+            "name": "内电路",
+            "difficulty": 1,
+            "description": "电源内部存在电阻的电路部分",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路"
+            ],
+            "definition": "闭合电路中位于电源内部的部分。",
+            "example": "电池内部的电路属于内电路。",
+            "section": "第1节 闭合电路欧姆定律"
+          },
+          {
+            "name": "电动势",
+            "difficulty": 2,
+            "description": "表示电源转化其他能量为电能本领的物理量",
+            "aliases": [
+              "E"
+            ],
+            "prerequisites": [
+              "电压"
+            ],
+            "definition": "电源把其他形式的能转化为电能本领的物理量。",
+            "example": "干电池的电动势约为1.5 V。"
+          },
+          {
+            "name": "内阻",
+            "difficulty": 2,
+            "description": "电源内部具有的电阻",
+            "aliases": [
+              "r"
+            ],
+            "prerequisites": [
+              "电阻"
+            ],
+            "definition": "电源内部存在的、会影响闭合电路电流的电阻。",
+            "example": "相同电动势的两种电池因内阻不同而亮度不同。"
+          },
+          {
+            "name": "部分电路欧姆定律",
+            "difficulty": 1,
+            "description": "描述部分电路电流、电压和电阻关系的规律",
+            "aliases": [
+              "欧姆定律"
+            ],
+            "prerequisites": [
+              "电流",
+              "电压",
+              "电阻"
+            ],
+            "definition": "部分电路中电流等于两端电压与电阻之比。",
+            "example": "电阻两端电压为6 V、电阻为3 Ω时电流为2 A。"
+          },
+          {
+            "name": "闭合电路欧姆定律",
+            "difficulty": 3,
+            "description": "描述闭合电路电流与电动势及内外电阻的关系",
+            "aliases": [],
+            "prerequisites": [
+              "电动势",
+              "内阻",
+              "部分电路欧姆定律"
+            ],
+            "definition": "闭合电路电流等于电动势除以内外电阻之和。",
+            "example": "E=6 V、内阻1 Ω、外阻5 Ω时电流为1 A。"
+          },
+          {
+            "name": "内电压",
+            "difficulty": 2,
+            "description": "电流通过电源内阻产生的电势降落",
+            "aliases": [
+              "U内"
+            ],
+            "prerequisites": [
+              "内阻",
+              "电流"
+            ],
+            "definition": "电源内阻两端沿电流方向的电势差。",
+            "example": "内阻为1 Ω、电流为2 A时内电压为2 V。",
+            "section": "第1节 闭合电路欧姆定律"
+          },
+          {
+            "name": "外电压",
+            "difficulty": 2,
+            "description": "外电路两端的电压",
+            "aliases": [
+              "路端电压",
+              "U外"
+            ],
+            "prerequisites": [
+              "电压",
+              "外电路"
+            ],
+            "definition": "外电路两端的电势差，通常称为路端电压。",
+            "example": "电池接入灯泡后测量电池两端电压。"
+          },
+          {
+            "name": "电势升降关系",
+            "difficulty": 3,
+            "description": "电源电动势等于内外电路电压降之和",
+            "aliases": [
+              "E=U外+U内"
+            ],
+            "prerequisites": [
+              "内电压",
+              "外电压",
+              "电动势"
+            ],
+            "definition": "闭合电路中电源电势升高等于内外电路电势降落之和。",
+            "example": "E=IR+Ir。",
+            "section": "第1节 闭合电路欧姆定律"
+          },
+          {
+            "name": "路端电压变化",
+            "difficulty": 3,
+            "description": "外电阻变化时路端电压和电流随之变化",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路欧姆定律",
+              "路端电压"
+            ],
+            "definition": "外电阻增大时电流减小而路端电压增大。",
+            "example": "并联用电器增多后灯泡两端电压降低。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "断路",
+            "difficulty": 1,
+            "description": "电路某处断开而没有电流的状态",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路",
+              "电流"
+            ],
+            "definition": "电路在某处断开、用电器不能工作的故障状态。",
+            "example": "灯丝烧断后电灯不亮。"
+          },
+          {
+            "name": "短路",
+            "difficulty": 2,
+            "description": "火线和零线或电路两端被低电阻直接连接",
+            "aliases": [],
+            "prerequisites": [
+              "电阻",
+              "闭合电路"
+            ],
+            "definition": "电路中电流不经正常用电器而形成低电阻通路的状态。",
+            "example": "导线误接火线和零线会造成短路。"
+          },
+          {
+            "name": "短路电流",
+            "difficulty": 3,
+            "description": "外电路短路时电路中的电流",
+            "aliases": [
+              "I短"
+            ],
+            "prerequisites": [
+              "电动势",
+              "内阻",
+              "短路"
+            ],
+            "definition": "外电阻为零时由电源电动势和内阻决定的电流。",
+            "example": "E=6 V、r=1 Ω时短路电流为6 A。"
+          },
+          {
+            "name": "U-I图像",
+            "difficulty": 3,
+            "description": "表示电源路端电压随电流变化的图像",
+            "aliases": [
+              "电源U-I图像"
+            ],
+            "prerequisites": [
+              "路端电压",
+              "电流"
+            ],
+            "definition": "以路端电压为纵轴、电流为横轴表示二者关系的图像。",
+            "example": "直线纵轴截距表示电动势。"
+          },
+          {
+            "name": "测量电动势内阻",
+            "difficulty": 3,
+            "description": "通过改变外电阻测量电源电动势和内阻的实验",
+            "aliases": [
+              "伏安法测电动势和内阻"
+            ],
+            "prerequisites": [
+              "闭合电路欧姆定律",
+              "路端电压",
+              "电流"
+            ],
+            "definition": "改变外电路并测量多组电压、电流以求电动势和内阻的方法。",
+            "example": "用滑动变阻器获得多组U、I数据。"
+          },
+          {
+            "name": "欧姆表",
+            "difficulty": 2,
+            "description": "利用电流与待测电阻对应关系测量电阻的仪表",
+            "aliases": [],
+            "prerequisites": [
+              "闭合电路欧姆定律",
+              "电流",
+              "电阻"
+            ],
+            "definition": "将电流计刻度换算为电阻刻度以测量电阻的仪表。",
+            "example": "测电阻前先短接表笔并进行欧姆调零。",
+            "section": "第3节 科学测量:用多用电表测量电学量"
+          },
+          {
+            "name": "多用电表",
+            "difficulty": 2,
+            "description": "集测量电压、电流和电阻功能于一体的仪表",
+            "aliases": [
+              "万用表"
+            ],
+            "prerequisites": [
+              "电压",
+              "电流",
+              "电阻"
+            ],
+            "definition": "能够直接测量电压、电流和电阻等电学量的仪器。",
+            "example": "用直流电压挡测量灯泡两端电压。"
+          },
+          {
+            "name": "机械调零",
+            "difficulty": 1,
+            "description": "测量前将指针调到左端零刻度的操作",
+            "aliases": [],
+            "prerequisites": [
+              "多用电表"
+            ],
+            "definition": "使用指针式多用电表前校正指针初始位置的操作。",
+            "example": "指针未在左端零刻度时旋动机械调零旋钮。",
+            "section": "第3节 科学测量:用多用电表测量电学量"
+          },
+          {
+            "name": "欧姆调零",
+            "difficulty": 2,
+            "description": "测电阻前短接表笔并校准电阻零刻度",
+            "aliases": [],
+            "prerequisites": [
+              "欧姆表",
+              "多用电表"
+            ],
+            "definition": "测量电阻前短接表笔并调节电阻零点的操作。",
+            "example": "短接红黑表笔后调节欧姆调零旋钮。",
+            "section": "第3节 科学测量:用多用电表测量电学量"
+          },
+          {
+            "name": "量程选择",
+            "difficulty": 2,
+            "description": "根据估计值选择合适的电表测量范围",
+            "aliases": [],
+            "prerequisites": [
+              "多用电表"
+            ],
+            "definition": "测量前依据被测量大小选定适当挡位和量程的方法。",
+            "example": "无法估计电压时先选用大量程挡。"
+          },
+          {
+            "name": "家庭电路",
+            "difficulty": 1,
+            "description": "由进户线、保护设备和用电器组成的电路",
+            "aliases": [],
+            "prerequisites": [
+              "电路",
+              "电压"
+            ],
+            "definition": "家庭中由火线、零线及相关设备构成的供电电路。",
+            "example": "家庭电路包括电能表、空气开关和插座。"
+          },
+          {
+            "name": "电能表",
+            "difficulty": 1,
+            "description": "测量一定时间内用户消耗电能的仪表",
+            "aliases": [],
+            "prerequisites": [
+              "电能"
+            ],
+            "definition": "用于测量用户在一定时间内消耗电能的仪表。",
+            "example": "通过电能表示数计算家庭用电量。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "空气断路器",
+            "difficulty": 2,
+            "description": "电流超过额定值时自动断开电路的保护设备",
+            "aliases": [
+              "空气开关"
+            ],
+            "prerequisites": [
+              "家庭电路",
+              "过载"
+            ],
+            "definition": "能对过载、短路等故障自动分断电路的装置。",
+            "example": "多台大功率电器同时使用可能使空气开关跳闸。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "熔断器",
+            "difficulty": 2,
+            "description": "利用熔丝熔断切断过大电流的保险设备",
+            "aliases": [],
+            "prerequisites": [
+              "家庭电路",
+              "电流的热效应"
+            ],
+            "definition": "电流超过规定值时熔丝熔断以保护电路的装置。",
+            "example": "短路时保险丝因发热而熔断。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "触电保护器",
+            "difficulty": 2,
+            "description": "检测火线零线电流差异并自动断电的装置",
+            "aliases": [],
+            "prerequisites": [
+              "家庭电路",
+              "触电"
+            ],
+            "definition": "通过检测漏电或触电造成的电流差异来切断电路的设备。",
+            "example": "人体漏电时触电保护器自动切断电源。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "过载",
+            "difficulty": 2,
+            "description": "用电器功率过大导致干路电流过大的状态",
+            "aliases": [],
+            "prerequisites": [
+              "电功率",
+              "家庭电路"
+            ],
+            "definition": "家庭电路中总用电功率过大而使电流超过允许值的状态。",
+            "example": "插座同时接入多台大功率电器会造成过载。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "触电",
+            "difficulty": 2,
+            "description": "人体直接或间接接触带电体造成的事故",
+            "aliases": [],
+            "prerequisites": [
+              "家庭电路",
+              "电压"
+            ],
+            "definition": "人体因接触带电体或靠近高压带电体而形成电流通路。",
+            "example": "用湿手接触带电开关可能发生触电。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "安全用电",
+            "difficulty": 2,
+            "description": "采取措施避免触电、火灾等用电事故",
+            "aliases": [],
+            "prerequisites": [
+              "短路",
+              "过载",
+              "触电"
+            ],
+            "definition": "按照安全要求使用和维护电路及用电器的行为。",
+            "example": "金属外壳用电器按规定接地。",
+            "section": "第4节 科学用电"
+          },
+          {
+            "name": "节约用电",
+            "difficulty": 1,
+            "description": "减少不必要的电能消耗和能源浪费",
+            "aliases": [],
+            "prerequisites": [
+              "电能"
+            ],
+            "definition": "通过合理使用电器减少电能消耗及环境影响的行为。",
+            "example": "不让家电长期处于待机状态。",
+            "section": "第4节 科学用电"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 闭合电路欧姆定律",
+            "section_key": "48635f66c4",
+            "page_range": [
+              102,
+              108
+            ]
+          },
+          {
+            "name": "第2节 科学测量:电源的电动势和内阻",
+            "section_key": "86b9c7e14f",
+            "page_range": [
+              108,
+              112
+            ]
+          },
+          {
+            "name": "第3节 科学测量:用多用电表测量电学量",
+            "section_key": "52d729300f",
+            "page_range": [
+              112,
+              118
+            ]
+          },
+          {
+            "name": "第4节 科学用电",
+            "section_key": "309b531921",
+            "page_range": [
+              118,
+              129
+            ]
+          }
+        ],
+        "chapter_key": "5d75d2681f",
+        "metadata": {
+          "volume_id": "43663efceaf9",
+          "file_id": "43663efceaf9",
+          "volume_title": "普通高中教科书 物理 必修第三册",
+          "chapter_order": 4,
+          "raw_heading": "第4章　闭合电路欧姆定律与科学用电"
+        }
+      },
+      {
+        "name": "第5章 初识电磁场与电磁波",
+        "concepts": [
+          {
+            "name": "磁场",
+            "difficulty": 1,
+            "description": "磁体或电流周围存在的特殊物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "磁场是存在于磁体或电流周围、能对磁体产生力作用的特殊物质。",
+            "example": "通电导线使附近小磁针偏转"
+          },
+          {
+            "name": "磁场方向",
+            "difficulty": 2,
+            "description": "小磁针北极静止时的指向",
+            "aliases": [],
+            "prerequisites": [
+              "磁场"
+            ],
+            "definition": "磁场方向规定为该处小磁针静止时北极的指向。",
+            "example": "指南针北极指示磁场方向",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁感应强度",
+            "difficulty": 3,
+            "description": "描述磁场强弱和方向的矢量",
+            "aliases": [
+              "B"
+            ],
+            "prerequisites": [
+              "磁场"
+            ],
+            "definition": "磁感应强度是垂直磁场的通电直导线受力与电流、长度乘积之比。",
+            "example": "B=F/(Il)",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁场叠加",
+            "difficulty": 3,
+            "description": "多个磁场同时存在时相互叠加",
+            "aliases": [
+              "磁场叠加原理"
+            ],
+            "prerequisites": [
+              "磁感应强度"
+            ],
+            "definition": "某点合磁场的磁感应强度等于各磁场磁感应强度的矢量和。",
+            "example": "两个磁场共同作用形成合磁场"
+          },
+          {
+            "name": "磁感线",
+            "difficulty": 2,
+            "description": "有方向的假想曲线，描述磁场分布",
+            "aliases": [
+              "磁力线"
+            ],
+            "prerequisites": [
+              "磁场",
+              "磁感应强度"
+            ],
+            "definition": "磁感线是磁场中画出的有方向假想曲线，其切线方向表示磁场方向。",
+            "example": "条形磁铁外部磁感线由N极指向S极",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "匀强磁场",
+            "difficulty": 2,
+            "description": "各点磁感应强度大小和方向相同",
+            "aliases": [],
+            "prerequisites": [
+              "磁场",
+              "磁感应强度",
+              "磁感线"
+            ],
+            "definition": "某区域各点磁感应强度大小和方向都相同的磁场叫匀强磁场。",
+            "example": "通电长螺线管内部磁场可视为匀强磁场",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电流的磁场",
+            "difficulty": 2,
+            "description": "通电导线周围产生的磁场",
+            "aliases": [
+              "电流磁效应"
+            ],
+            "prerequisites": [
+              "磁场"
+            ],
+            "definition": "通电导线会在其周围空间产生磁场。",
+            "example": "通电直导线周围出现同心圆磁感线",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "安培定则",
+            "difficulty": 3,
+            "description": "用右手判断电流磁场方向的规律",
+            "aliases": [
+              "右手定则"
+            ],
+            "prerequisites": [
+              "电流的磁场",
+              "磁感线"
+            ],
+            "definition": "安培定则利用右手握住导线的姿势判断电流周围磁感线方向。",
+            "example": "拇指指向电流，四指指向磁感线环绕方向",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁通量",
+            "difficulty": 3,
+            "description": "表示穿过某个面的磁感线多少",
+            "aliases": [
+              "磁通"
+            ],
+            "prerequisites": [
+              "磁感应强度",
+              "匀强磁场"
+            ],
+            "definition": "磁通量是穿过某个面的磁感线总数的物理量。",
+            "example": "垂直于磁场的线圈中Φ=BS",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁通量变化",
+            "difficulty": 3,
+            "description": "变化后与变化前磁通量之差的绝对值",
+            "aliases": [
+              "磁通量的变化量"
+            ],
+            "prerequisites": [
+              "磁通量"
+            ],
+            "definition": "磁通量变化量等于变化前后磁通量之差的绝对值。",
+            "example": "线圈转动使穿过它的磁通量减小",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁感应",
+            "difficulty": 3,
+            "description": "闭合回路磁通量变化而产生电流的现象",
+            "aliases": [],
+            "prerequisites": [
+              "磁通量",
+              "磁通量变化"
+            ],
+            "definition": "因穿过闭合回路的磁通量发生变化而产生电流的现象叫电磁感应。",
+            "example": "磁铁插入螺线管时产生电流"
+          },
+          {
+            "name": "感应电流",
+            "difficulty": 2,
+            "description": "电磁感应中产生的电流",
+            "aliases": [
+              "感应电流"
+            ],
+            "prerequisites": [
+              "电磁感应"
+            ],
+            "definition": "电磁感应现象中闭合回路内产生的电流叫感应电流。",
+            "example": "导体棒切割磁感线时电流计偏转",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "磁记录",
+            "difficulty": 3,
+            "description": "利用磁性材料记录和读取信息",
+            "aliases": [],
+            "prerequisites": [
+              "电磁感应",
+              "电流的磁场"
+            ],
+            "definition": "磁记录利用变化磁场磁化材料来记录信息，并借助电磁感应读取信息。",
+            "example": "计算机磁盘记录数字信息",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "无线充电",
+            "difficulty": 2,
+            "description": "利用变化磁场使手机线圈产生感应电流",
+            "aliases": [],
+            "prerequisites": [
+              "电磁感应"
+            ],
+            "definition": "无线充电利用充电座线圈的变化磁场在手机线圈中产生感应电流。",
+            "example": "手机放在充电座上进行充电",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "动圈式话筒",
+            "difficulty": 3,
+            "description": "把声音振动转变为变化电流的装置",
+            "aliases": [],
+            "prerequisites": [
+              "电磁感应"
+            ],
+            "definition": "动圈式话筒利用线圈在永磁体磁场中振动产生感应电流。",
+            "example": "讲话使膜片和线圈振动并输出电信号",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电场",
+            "difficulty": 2,
+            "description": "能使自由电子定向移动的场",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电场是能使闭合回路中自由电子定向移动的物理场。",
+            "example": "变化磁场激发周围电场",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁场",
+            "difficulty": 3,
+            "description": "变化电场和变化磁场统一形成的场",
+            "aliases": [],
+            "prerequisites": [
+              "电场",
+              "磁场"
+            ],
+            "definition": "变化的电场和变化的磁场相互联系形成统一的电磁场。",
+            "example": "变压器线圈周围存在变化的电磁场",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁波",
+            "difficulty": 3,
+            "description": "交替变化的电磁场在空间中的传播",
+            "aliases": [],
+            "prerequisites": [
+              "电磁场"
+            ],
+            "definition": "交替变化的电磁场传播出去形成电磁波。",
+            "example": "收音机接收广播电磁波"
+          },
+          {
+            "name": "雷达",
+            "difficulty": 3,
+            "description": "利用电磁波反射探测远距离物体",
+            "aliases": [],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "雷达根据电磁波反射信号的返回时间和方向判断目标位置。",
+            "example": "雷达探测飞机方位",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁污染",
+            "difficulty": 2,
+            "description": "电磁辐射密度和功率过大造成的污染",
+            "aliases": [
+              "电磁波污染",
+              "射频辐射污染"
+            ],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "电磁污染是电磁辐射增加而对生产生活和人体产生不利影响的现象。",
+            "example": "电磁辐射干扰飞机导航仪表",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "电磁辐射防护",
+            "difficulty": 2,
+            "description": "从辐射源、传播途径和人体进行防护",
+            "aliases": [],
+            "prerequisites": [
+              "电磁污染"
+            ],
+            "definition": "电磁辐射防护包括降低发射功率、屏蔽隔离和采取个人防护措施。",
+            "example": "用屏蔽方法隔离辐射源"
+          },
+          {
+            "name": "光电效应",
+            "difficulty": 2,
+            "description": "光照射金属使其发射电子的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光电效应是光照射金属时金属发射出电子的现象。",
+            "example": "光照金属表面逸出电子",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "光子",
+            "difficulty": 3,
+            "description": "光发射、传播和接收的能量单位",
+            "aliases": [
+              "光量子"
+            ],
+            "prerequisites": [
+              "光电效应",
+              "量子假说"
+            ],
+            "definition": "光子是光发射、传播和接收时所表现出的一个个能量单位。",
+            "example": "光电效应可用光子解释",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "光的电磁本质",
+            "difficulty": 2,
+            "description": "光本质上是一种电磁波",
+            "aliases": [
+              "光的电磁波说"
+            ],
+            "prerequisites": [
+              "电磁波"
+            ],
+            "definition": "光的电磁本质是指光与电磁波具有相同的本质。",
+            "example": "真空中光速与电磁波传播速度相同",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "光的波粒二象性",
+            "difficulty": 3,
+            "description": "光同时具有波动性和粒子性",
+            "aliases": [
+              "波粒二象性"
+            ],
+            "prerequisites": [
+              "光子",
+              "光的电磁本质"
+            ],
+            "definition": "光的波粒二象性指光在不同条件下表现出波动性或粒子性。",
+            "example": "光能表现出干涉，也能表现出光电效应",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "量子假说",
+            "difficulty": 3,
+            "description": "物质辐射或吸收能量是能量子的整数倍",
+            "aliases": [
+              "普朗克量子假说"
+            ],
+            "prerequisites": [],
+            "definition": "量子假说认为物质辐射或吸收的能量只能是最小能量单位的整数倍。",
+            "example": "E=nε",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "能量量子化",
+            "difficulty": 3,
+            "description": "能量以不可分割的基本单位存在",
+            "aliases": [
+              "量子化"
+            ],
+            "prerequisites": [
+              "量子假说"
+            ],
+            "definition": "能量量子化是指能量存在最小的不可分割基本单位。",
+            "example": "微观粒子的能量呈不连续特征",
+            "section": "第4节 初识光量子与量子世界"
+          },
+          {
+            "name": "普朗克常量",
+            "difficulty": 3,
+            "description": "联系能量子与频率的物理常量",
+            "aliases": [
+              "h"
+            ],
+            "prerequisites": [
+              "量子假说"
+            ],
+            "definition": "普朗克常量是能量子与频率成正比关系中的比例常量。",
+            "example": "ε=hν",
+            "section": "第4节 初识光量子与量子世界"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 磁场及其描述",
+            "section_key": "d02676dc95",
+            "page_range": [
+              129,
+              129
+            ]
+          },
+          {
+            "name": "第2节 电磁感应现象及其应用",
+            "section_key": "ddb18a2914",
+            "page_range": [
+              129,
+              129
+            ]
+          },
+          {
+            "name": "第3节 初识电磁波及其应用",
+            "section_key": "6daa9116dc",
+            "page_range": [
+              129,
+              129
+            ]
+          },
+          {
+            "name": "第4节 初识光量子与量子世界",
+            "section_key": "614f3e4f57",
+            "page_range": [
+              129,
+              159
+            ]
+          }
+        ],
+        "chapter_key": "25ca40ea02",
+        "metadata": {
+          "volume_id": "43663efceaf9",
+          "file_id": "43663efceaf9",
+          "volume_title": "普通高中教科书 物理 必修第三册",
+          "chapter_order": 5,
+          "raw_heading": "第5章　初识电磁场与电磁波"
+        }
+      },
+      {
+        "name": "第6章 能源与可持续发展",
+        "concepts": [
+          {
+            "name": "能量",
+            "difficulty": 1,
+            "description": "物体或系统具有的做功本领",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能量是物体或系统具有的做功本领。",
+            "example": "食物具有化学能"
+          },
+          {
+            "name": "机械能",
+            "difficulty": 1,
+            "description": "动能、重力势能和弹性势能的统称",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "机械能包括动能、重力势能和弹性势能等。",
+            "example": "撑竿跳高涉及多种机械能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "内能",
+            "difficulty": 2,
+            "description": "物体内分子动能和分子势能的总和",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "内能是物体内分子无规则运动的动能和分子势能的总和。",
+            "example": "物体温度升高通常内能增大",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "电能",
+            "difficulty": 1,
+            "description": "电以各种形式做功的能力",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "电能是电以各种形式做功的能力。",
+            "example": "电炉把电能转化为内能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "光能",
+            "difficulty": 1,
+            "description": "光所具有的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "光能是光具有的能量。",
+            "example": "太阳光为地球生命提供能量",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "化学能",
+            "difficulty": 1,
+            "description": "储存在食物或燃料等物质中的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "化学能是储存在食物或燃料等物质中的能量。",
+            "example": "蜡烛燃烧释放化学能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "核能",
+            "difficulty": 2,
+            "description": "原子核结构发生变化释放的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "核能是物质的原子核结构发生变化而释放的能量。",
+            "example": "核电站将核能转化为电能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "一次能源",
+            "difficulty": 2,
+            "description": "直接取自自然界且未经加工转化的能源",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "一次能源是直接取自自然界、未经加工转化的能源。",
+            "example": "煤、石油和天然气属于一次能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "二次能源",
+            "difficulty": 2,
+            "description": "由一次能源加工转化而成的能源产品",
+            "aliases": [],
+            "prerequisites": [
+              "一次能源"
+            ],
+            "definition": "二次能源是由一次能源加工转化而成的能源产品。",
+            "example": "电和蒸汽属于二次能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "可再生能源",
+            "difficulty": 2,
+            "description": "能在自然界中循环再生的能源",
+            "aliases": [],
+            "prerequisites": [
+              "一次能源"
+            ],
+            "definition": "可再生能源是在自然界中可以循环再生的能源。",
+            "example": "太阳能和风能属于可再生能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "不可再生能源",
+            "difficulty": 2,
+            "description": "形成时间漫长且短期内无法恢复的能源",
+            "aliases": [],
+            "prerequisites": [
+              "一次能源"
+            ],
+            "definition": "不可再生能源是经过亿万年形成、短期内无法恢复的能源。",
+            "example": "煤和石油属于不可再生能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "新能源",
+            "difficulty": 2,
+            "description": "为应对能源问题而积极开发的能源",
+            "aliases": [],
+            "prerequisites": [
+              "可再生能源"
+            ],
+            "definition": "新能源是人们为解决能源问题而积极开发利用的能源。",
+            "example": "氢能源是受到关注的新能源",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "能量转化",
+            "difficulty": 2,
+            "description": "能量从一种形式转变为另一种形式",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "能量转化是能量从一种形式转化为另一种形式的过程。",
+            "example": "水的重力势能转化为电能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "能量转移",
+            "difficulty": 2,
+            "description": "能量从一个物体转移到另一个物体",
+            "aliases": [],
+            "prerequisites": [
+              "能量"
+            ],
+            "definition": "能量转移是能量从一个物体转移到另一个物体的过程。",
+            "example": "热水向空气转移内能"
+          },
+          {
+            "name": "能量守恒定律",
+            "difficulty": 3,
+            "description": "能量转化或转移时总量保持不变",
+            "aliases": [
+              "能量守恒"
+            ],
+            "prerequisites": [
+              "能量转化",
+              "能量转移"
+            ],
+            "definition": "在孤立系统中，能量不能凭空产生或消失，只能转化或转移且总量不变。",
+            "example": "秋千机械能转化为内能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "能量转化方向性",
+            "difficulty": 3,
+            "description": "自然过程中的能量转化具有方向",
+            "aliases": [
+              "自然过程的方向性"
+            ],
+            "prerequisites": [
+              "能量转化",
+              "能量守恒定律"
+            ],
+            "definition": "自然发生的与热现象有关的宏观过程具有方向性且不可逆。",
+            "example": "机械能可自动转化为内能",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "熵",
+            "difficulty": 3,
+            "description": "描述系统无序程度的物理量",
+            "aliases": [
+              "entropy"
+            ],
+            "prerequisites": [
+              "能量转化方向性"
+            ],
+            "definition": "熵是描述系统微观粒子运动无序程度的物理量。",
+            "example": "香精扩散使系统熵增加",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "有效能量",
+            "difficulty": 3,
+            "description": "仍具有较强做功能力的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量转化方向性",
+              "熵"
+            ],
+            "definition": "有效能量是能量转化过程中仍能较好地用来做功的能量。",
+            "example": "坝顶水的重力势能可用于发电",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "无效能量",
+            "difficulty": 3,
+            "description": "做功能力降低、难以再次利用的能量",
+            "aliases": [],
+            "prerequisites": [
+              "能量转化方向性",
+              "熵"
+            ],
+            "definition": "无效能量是能量转化过程中做功能力降低的能量。",
+            "example": "落到坝底的水难以自动再次发电",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "第一类永动机",
+            "difficulty": 3,
+            "description": "不需外界能量却能持续对外做功的装置",
+            "aliases": [],
+            "prerequisites": [
+              "能量守恒定律"
+            ],
+            "definition": "第一类永动机是不需动力或燃料却能不停运动并对外做功的装置。",
+            "example": "无外界供能而持续做功的机器不可能制成",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "第二类永动机",
+            "difficulty": 4,
+            "description": "从单一热源吸热并完全转化为有用功的装置",
+            "aliases": [],
+            "prerequisites": [
+              "能量转化方向性"
+            ],
+            "definition": "第二类永动机是从单一热源吸热并使其完全变为有用功而无其他影响的装置。",
+            "example": "单一海洋热源完全转化为功的装置不可能制成",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "氢能源",
+            "difficulty": 2,
+            "description": "利用氢燃烧放热获得能量的能源",
+            "aliases": [
+              "氢能"
+            ],
+            "prerequisites": [
+              "化学能",
+              "新能源"
+            ],
+            "definition": "氢能源是利用氢燃烧时放出的热量获得能量的能源。",
+            "example": "液氢燃料已用于航空航天",
+            "section": "第3节 珍惜大自然"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "兼顾能源利用与环境保护的发展方式",
+            "aliases": [],
+            "prerequisites": [
+              "可再生能源",
+              "不可再生能源",
+              "能量转化方向性"
+            ],
+            "definition": "可持续发展强调合理利用能源并保护地球环境。",
+            "example": "节约用电并发展环保新能源",
+            "section": "第3节 珍惜大自然"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 能量的多种形式",
+            "section_key": "5a190082eb",
+            "page_range": [
+              159,
+              159
+            ]
+          },
+          {
+            "name": "第2节 能量的转化与守恒",
+            "section_key": "a8bb81e78a",
+            "page_range": [
+              159,
+              159
+            ]
+          },
+          {
+            "name": "第3节 珍惜大自然",
+            "section_key": "f0564c65fe",
+            "page_range": [
+              159,
+              174
+            ]
+          }
+        ],
+        "chapter_key": "769f623deb",
+        "metadata": {
+          "volume_id": "43663efceaf9",
+          "file_id": "43663efceaf9",
+          "volume_title": "普通高中教科书 物理 必修第三册",
+          "chapter_order": 6,
+          "raw_heading": "第6章　能源与可持续发展"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "1495e947a8": [
+        8,
+        12
+      ],
+      "第1节 静电的产生及其微观解释": [
+        8,
+        12
+      ],
+      "6b023090a8": [
+        12,
+        17
+      ],
+      "第2节 库仑定律": [
+        12,
+        17
+      ],
+      "6cce7aa9e6": [
+        17,
+        22
+      ],
+      "第3节 电场与电场强度": [
+        17,
+        22
+      ],
+      "e9e9f338f0": [
+        22,
+        27
+      ],
+      "第4节 点电荷的电场 匀强电场": [
+        22,
+        27
+      ],
+      "acbdfade1c": [
+        27,
+        35
+      ],
+      "第5节 静电的利用与防护": [
+        27,
+        35
+      ],
+      "5a19988410": [
+        35,
+        35
+      ],
+      "第1节 静电力做功与电势能": [
+        35,
+        35
+      ],
+      "90814cb1aa": [
+        35,
+        35
+      ],
+      "第2节 电势与等势面": [
+        35,
+        35
+      ],
+      "85eaf838c2": [
+        35,
+        35
+      ],
+      "第3节 电势差与电场强度的关系": [
+        35,
+        35
+      ],
+      "52092268fa": [
+        35,
+        35
+      ],
+      "第4节 带电粒子在电场中的运动": [
+        35,
+        35
+      ],
+      "1764500d87": [
+        35,
+        67
+      ],
+      "第5节 科学探究:电容器": [
+        35,
+        67
+      ],
+      "c39c21963f": [
+        68,
+        72
+      ],
+      "第1节 电 流": [
+        68,
+        72
+      ],
+      "874051bd8e": [
+        72,
+        77
+      ],
+      "第2节 电 阻": [
+        72,
+        77
+      ],
+      "fcd7d53734": [
+        77,
+        83
+      ],
+      "第3节 电功与电热": [
+        77,
+        83
+      ],
+      "f22d676437": [
+        83,
+        88
+      ],
+      "第4节 串联电路和并联电路": [
+        83,
+        88
+      ],
+      "4585d53765": [
+        88,
+        94
+      ],
+      "第5节 科学测量:长度的测量及测量工具的选用": [
+        88,
+        94
+      ],
+      "6d3b0a918f": [
+        94,
+        101
+      ],
+      "第6节 科学测量:金属丝的电阻率": [
+        94,
+        101
+      ],
+      "48635f66c4": [
+        102,
+        108
+      ],
+      "第1节 闭合电路欧姆定律": [
+        102,
+        108
+      ],
+      "86b9c7e14f": [
+        108,
+        112
+      ],
+      "第2节 科学测量:电源的电动势和内阻": [
+        108,
+        112
+      ],
+      "52d729300f": [
+        112,
+        118
+      ],
+      "第3节 科学测量:用多用电表测量电学量": [
+        112,
+        118
+      ],
+      "309b531921": [
+        118,
+        129
+      ],
+      "第4节 科学用电": [
+        118,
+        129
+      ],
+      "d02676dc95": [
+        129,
+        129
+      ],
+      "第1节 磁场及其描述": [
+        129,
+        129
+      ],
+      "ddb18a2914": [
+        129,
+        129
+      ],
+      "第2节 电磁感应现象及其应用": [
+        129,
+        129
+      ],
+      "6daa9116dc": [
+        129,
+        129
+      ],
+      "第3节 初识电磁波及其应用": [
+        129,
+        129
+      ],
+      "614f3e4f57": [
+        129,
+        159
+      ],
+      "第4节 初识光量子与量子世界": [
+        129,
+        159
+      ],
+      "5a190082eb": [
+        159,
+        159
+      ],
+      "第1节 能量的多种形式": [
+        159,
+        159
+      ],
+      "a8bb81e78a": [
+        159,
+        159
+      ],
+      "第2节 能量的转化与守恒": [
+        159,
+        159
+      ],
+      "f0564c65fe": [
+        159,
+        174
+      ],
+      "第3节 珍惜大自然": [
+        159,
+        174
+      ]
+    }
+  }
+}

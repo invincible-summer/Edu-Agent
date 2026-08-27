@@ -1,0 +1,4516 @@
+{
+  "file_id": "628398397614",
+  "text_sha256": "90c8ad79a05f5d5f200c336b9c6d93a276315f2223bad4d83721ca2e01023717",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 遗传因子的发现",
+        "concepts": [
+          {
+            "name": "自花传粉",
+            "difficulty": 1,
+            "description": "花粉落到同一朵花雌蕊柱头上的传粉方式",
+            "aliases": [
+              "自交"
+            ],
+            "prerequisites": [],
+            "definition": "自花传粉是同一朵花的花粉落到自身雌蕊柱头上的传粉方式。",
+            "example": "豌豆花未开放时完成自花传粉。"
+          },
+          {
+            "name": "异花传粉",
+            "difficulty": 1,
+            "description": "两朵花之间进行的传粉过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "异花传粉是不同植株的花之间进行的传粉过程。",
+            "example": "将一株豌豆的花粉传给另一株。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "人工杂交",
+            "difficulty": 2,
+            "description": "通过去雄和传粉控制亲本间受精的实验",
+            "aliases": [
+              "人工异花传粉"
+            ],
+            "prerequisites": [
+              "异花传粉"
+            ],
+            "definition": "人工杂交是人为控制不同植株间传粉以获得杂交后代的方法。",
+            "example": "去除未成熟雄蕊后，将另一植株花粉涂到柱头上。"
+          },
+          {
+            "name": "相对性状",
+            "difficulty": 1,
+            "description": "同种生物同一性状的不同表现类型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "相对性状是同一种生物同一种性状的不同表现类型。",
+            "example": "豌豆的高茎和矮茎。"
+          },
+          {
+            "name": "去雄",
+            "difficulty": 2,
+            "description": "除去未成熟花的全部雄蕊",
+            "aliases": [],
+            "prerequisites": [
+              "人工杂交"
+            ],
+            "definition": "去雄是人工杂交时先除去未成熟花全部雄蕊的操作。",
+            "example": "给豌豆花去雄后套上纸袋。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "父本和母本",
+            "difficulty": 2,
+            "description": "异花传粉中提供和接受花粉的植株",
+            "aliases": [
+              "父本",
+              "母本"
+            ],
+            "prerequisites": [
+              "异花传粉"
+            ],
+            "definition": "父本是供应花粉的植株，母本是接受花粉的植株。",
+            "example": "人工杂交中提供花粉的植株为父本。"
+          },
+          {
+            "name": "亲本与子代",
+            "difficulty": 1,
+            "description": "杂交中亲代及其产生的后代个体",
+            "aliases": [
+              "P、F1、F2"
+            ],
+            "prerequisites": [
+              "人工杂交"
+            ],
+            "definition": "亲本是参与杂交的亲代，子一代和子二代分别记作F1和F2。",
+            "example": "纯种高茎与纯种矮茎为P，后代为F1。"
+          },
+          {
+            "name": "显性性状",
+            "difficulty": 2,
+            "description": "杂种后代中显现出来的性状",
+            "aliases": [],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "显性性状是杂种后代中能够显现出来的性状。",
+            "example": "高茎豌豆在F1中表现为显性性状。"
+          },
+          {
+            "name": "隐性性状",
+            "difficulty": 2,
+            "description": "杂种后代中未显现但可能遗传的性状",
+            "aliases": [],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "隐性性状是杂种后代中未显现出来的性状。",
+            "example": "矮茎在F1中未显现，在F2中重新出现。"
+          },
+          {
+            "name": "性状分离",
+            "difficulty": 2,
+            "description": "杂种后代同时出现显性和隐性性状",
+            "aliases": [],
+            "prerequisites": [
+              "显性性状",
+              "隐性性状"
+            ],
+            "definition": "性状分离是杂种后代中同时出现显性性状和隐性性状的现象。",
+            "example": "F1自交后出现高茎和矮茎。"
+          },
+          {
+            "name": "遗传因子",
+            "difficulty": 2,
+            "description": "决定生物特定性状的独立颗粒状因子",
+            "aliases": [
+              "遗传因子假说"
+            ],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "遗传因子是孟德尔假设的决定生物特定性状且不相互融合的因子。",
+            "example": "D决定高茎，d决定矮茎。"
+          },
+          {
+            "name": "显性遗传因子",
+            "difficulty": 2,
+            "description": "决定显性性状并用大写字母表示的因子",
+            "aliases": [],
+            "prerequisites": [
+              "遗传因子",
+              "显性性状"
+            ],
+            "definition": "显性遗传因子是决定显性性状并通常用大写字母表示的遗传因子。",
+            "example": "用D表示决定高茎的显性遗传因子。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "隐性遗传因子",
+            "difficulty": 2,
+            "description": "决定隐性性状并用小写字母表示的因子",
+            "aliases": [],
+            "prerequisites": [
+              "遗传因子",
+              "隐性性状"
+            ],
+            "definition": "隐性遗传因子是决定隐性性状并通常用小写字母表示的遗传因子。",
+            "example": "用d表示决定矮茎的隐性遗传因子。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "纯合子",
+            "difficulty": 2,
+            "description": "遗传因子组成相同的个体",
+            "aliases": [
+              "纯种"
+            ],
+            "prerequisites": [
+              "遗传因子"
+            ],
+            "definition": "纯合子是控制相对性状的一对遗传因子组成相同的个体。",
+            "example": "高茎豌豆DD和矮茎豌豆dd都是纯合子。"
+          },
+          {
+            "name": "杂合子",
+            "difficulty": 2,
+            "description": "遗传因子组成不同的个体",
+            "aliases": [
+              "杂种"
+            ],
+            "prerequisites": [
+              "遗传因子"
+            ],
+            "definition": "杂合子是控制相对性状的一对遗传因子组成不同的个体。",
+            "example": "F1高茎豌豆的遗传因子组成为Dd。"
+          },
+          {
+            "name": "配子",
+            "difficulty": 2,
+            "description": "生物形成的生殖细胞，含成对因子中的一个",
+            "aliases": [],
+            "prerequisites": [
+              "遗传因子"
+            ],
+            "definition": "配子是生物形成的生殖细胞，其中每对遗传因子只含有一个。",
+            "example": "Dd个体形成含D或d的配子。"
+          },
+          {
+            "name": "分离定律",
+            "difficulty": 3,
+            "description": "成对遗传因子在形成配子时彼此分离",
+            "aliases": [
+              "孟德尔第一定律"
+            ],
+            "prerequisites": [
+              "遗传因子",
+              "配子"
+            ],
+            "definition": "分离定律指出成对遗传因子在形成配子时分离并分别进入不同配子。",
+            "example": "Dd个体形成D和d数量相等的配子。"
+          },
+          {
+            "name": "测交",
+            "difficulty": 3,
+            "description": "杂种子一代与隐性纯合子进行的杂交",
+            "aliases": [
+              "测交实验"
+            ],
+            "prerequisites": [
+              "杂合子",
+              "隐性性状",
+              "纯合子"
+            ],
+            "definition": "测交是让待测个体与隐性纯合子杂交以检验其遗传因子组成的实验。",
+            "example": "Dd高茎与dd矮茎杂交，后代高矮比接近1∶1。"
+          },
+          {
+            "name": "假说—演绎法",
+            "difficulty": 3,
+            "description": "提出假说、演绎预测并用实验检验的方法",
+            "aliases": [
+              "假说演绎法"
+            ],
+            "prerequisites": [
+              "测交",
+              "数学统计"
+            ],
+            "definition": "假说—演绎法是从问题提出假说，推演预测结果并通过实验检验的方法。",
+            "example": "孟德尔用测交结果验证遗传因子假说。"
+          },
+          {
+            "name": "数学统计",
+            "difficulty": 2,
+            "description": "对杂交后代不同性状个体进行数量分析",
+            "aliases": [
+              "统计分析"
+            ],
+            "prerequisites": [
+              "性状分离"
+            ],
+            "definition": "数学统计是通过统计后代各性状个体数量及比例来分析遗传规律的方法。",
+            "example": "F2高茎与矮茎数量比接近3∶1。"
+          },
+          {
+            "name": "自由组合定律",
+            "difficulty": 3,
+            "description": "不同性状遗传因子的分离和组合互不干扰",
+            "aliases": [
+              "孟德尔第二定律"
+            ],
+            "prerequisites": [
+              "分离定律",
+              "配子"
+            ],
+            "definition": "自由组合定律指出不同性状遗传因子的分离和组合互不干扰并可自由组合。",
+            "example": "YyRr可形成YR、Yr、yR、yr四种配子。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          },
+          {
+            "name": "基因型",
+            "difficulty": 2,
+            "description": "与个体表型有关的基因组成",
+            "aliases": [
+              "遗传因子组成"
+            ],
+            "prerequisites": [
+              "遗传因子",
+              "表型"
+            ],
+            "definition": "基因型是生物个体与性状表现有关的基因组成。",
+            "example": "高茎豌豆的基因型可以是DD或Dd。"
+          },
+          {
+            "name": "表型",
+            "difficulty": 2,
+            "description": "生物个体表现出来的性状",
+            "aliases": [
+              "表现型"
+            ],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "表型是生物个体实际表现出来的性状。",
+            "example": "豌豆的高茎是其表型之一。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          },
+          {
+            "name": "等位基因",
+            "difficulty": 3,
+            "description": "控制相对性状的一对基因",
+            "aliases": [
+              "等位遗传因子"
+            ],
+            "prerequisites": [
+              "基因型",
+              "遗传因子"
+            ],
+            "definition": "等位基因是控制同一相对性状不同表现类型的基因。",
+            "example": "D和d是控制茎高度的一对等位基因。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          },
+          {
+            "name": "杂交育种",
+            "difficulty": 3,
+            "description": "杂交亲本并筛选优良性状品种的方法",
+            "aliases": [],
+            "prerequisites": [
+              "分离定律",
+              "自由组合定律"
+            ],
+            "definition": "杂交育种是有目的地杂交不同优良性状亲本并筛选培育新品种的方法。",
+            "example": "通过杂交和筛选培育抗倒伏又抗病的小麦。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 孟德尔的豌豆杂交实验（一）",
+            "page_range": [
+              11,
+              17
+            ]
+          },
+          {
+            "name": "第2节 孟德尔的豌豆杂交实验（二）",
+            "page_range": [
+              18,
+              26
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章 基因和染色体的关系",
+        "concepts": [
+          {
+            "name": "减数分裂",
+            "difficulty": 2,
+            "description": "产生成熟生殖细胞时染色体数目减半的细胞分裂",
+            "aliases": [
+              "meiosis"
+            ],
+            "prerequisites": [],
+            "definition": "减数分裂是有性生殖生物形成成熟生殖细胞时进行的染色体数目减半的细胞分裂。",
+            "example": "精原细胞经减数分裂形成精细胞。"
+          },
+          {
+            "name": "同源染色体",
+            "difficulty": 2,
+            "description": "形态大小相同、一条来自父方一条来自母方的染色体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "同源染色体是形状和大小一般相同、分别来自父方和母方的一对染色体。",
+            "example": "减数分裂Ⅰ中成对分离的染色体。"
+          },
+          {
+            "name": "联会",
+            "difficulty": 2,
+            "description": "减数分裂时同源染色体两两配对的现象",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "减数分裂"
+            ],
+            "definition": "联会是减数分裂过程中同源染色体两两配对的现象。",
+            "example": "初级精母细胞前期发生联会。"
+          },
+          {
+            "name": "四分体",
+            "difficulty": 2,
+            "description": "联会后的一对同源染色体包含四条染色单体",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "联会"
+            ],
+            "definition": "四分体是联会后每对同源染色体所含的四条染色单体。",
+            "example": "四分体中的非姐妹染色单体可发生互换。"
+          },
+          {
+            "name": "染色体互换",
+            "difficulty": 3,
+            "description": "四分体中非姐妹染色单体交换相应片段",
+            "aliases": [],
+            "prerequisites": [
+              "四分体"
+            ],
+            "definition": "染色体互换是四分体中非姐妹染色单体之间交换相应片段的现象。",
+            "example": "互换可增加配子遗传物质组合的多样性。",
+            "section": "第1节 减数分裂和受精作用"
+          },
+          {
+            "name": "减数分裂Ⅰ",
+            "difficulty": 3,
+            "description": "同源染色体分离，染色体数目在此阶段减半",
+            "aliases": [
+              "减数第一次分裂"
+            ],
+            "prerequisites": [
+              "减数分裂",
+              "同源染色体",
+              "联会"
+            ],
+            "definition": "减数分裂Ⅰ是同源染色体分离并使子细胞染色体数目减半的分裂。",
+            "example": "初级精母细胞形成两个次级精母细胞。"
+          },
+          {
+            "name": "减数分裂Ⅱ",
+            "difficulty": 3,
+            "description": "着丝粒分裂，姐妹染色单体分开",
+            "aliases": [
+              "减数第二次分裂"
+            ],
+            "prerequisites": [
+              "减数分裂Ⅰ"
+            ],
+            "definition": "减数分裂Ⅱ是每条染色体的着丝粒分裂、姐妹染色单体分开的分裂。",
+            "example": "两个次级精母细胞形成四个精细胞。",
+            "section": "第1节 减数分裂和受精作用"
+          },
+          {
+            "name": "配子",
+            "difficulty": 1,
+            "description": "有性生殖中由减数分裂形成的成熟生殖细胞",
+            "aliases": [],
+            "prerequisites": [
+              "减数分裂"
+            ],
+            "definition": "配子是有性生殖过程中参与受精并含有数目减半染色体的生殖细胞。",
+            "example": "精子和卵细胞都是配子。"
+          },
+          {
+            "name": "受精作用",
+            "difficulty": 2,
+            "description": "卵细胞和精子相互识别、融合成为受精卵",
+            "aliases": [
+              "fertilization"
+            ],
+            "prerequisites": [
+              "配子"
+            ],
+            "definition": "受精作用是卵细胞和精子相互识别并融合形成受精卵的过程。",
+            "example": "精子与卵细胞融合后形成受精卵。"
+          },
+          {
+            "name": "配子组合多样性",
+            "difficulty": 3,
+            "description": "减数分裂使配子中的染色体组合出现多样性",
+            "aliases": [],
+            "prerequisites": [
+              "减数分裂Ⅰ",
+              "染色体互换",
+              "配子"
+            ],
+            "definition": "配子组合多样性是由非同源染色体自由组合和非姐妹染色单体互换造成的配子差异。",
+            "example": "同一双亲可形成遗传组成不同的后代。"
+          },
+          {
+            "name": "萨顿假说",
+            "difficulty": 3,
+            "description": "认为基因由染色体携带并随染色体传递",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "减数分裂"
+            ],
+            "definition": "萨顿假说认为基因位于染色体上，因为二者在遗传过程中存在平行关系。",
+            "example": "等位基因分离与同源染色体分离相似。"
+          },
+          {
+            "name": "基因在染色体上",
+            "difficulty": 2,
+            "description": "基因由染色体携带，一条染色体上有多个基因",
+            "aliases": [],
+            "prerequisites": [
+              "萨顿假说"
+            ],
+            "definition": "基因在染色体上是指染色体作为基因的主要载体并携带遗传信息。",
+            "example": "控制果蝇白眼的基因位于X染色体上。",
+            "section": "第2节 基因在染色体上"
+          },
+          {
+            "name": "基因线性排列",
+            "difficulty": 2,
+            "description": "一条染色体上的多个基因呈线性排列",
+            "aliases": [],
+            "prerequisites": [
+              "基因在染色体上"
+            ],
+            "definition": "基因线性排列是指同一条染色体上的多个基因按一定顺序排列。",
+            "example": "果蝇X染色体上的多个基因可绘制相对位置图。"
+          },
+          {
+            "name": "等位基因",
+            "difficulty": 2,
+            "description": "位于一对同源染色体相同位置、控制相对性状的基因",
+            "aliases": [
+              "遗传因子"
+            ],
+            "prerequisites": [
+              "同源染色体",
+              "基因在染色体上"
+            ],
+            "definition": "等位基因是位于一对同源染色体相同位置、控制相对性状的基因。",
+            "example": "控制红眼和白眼的基因是一对等位基因。"
+          },
+          {
+            "name": "基因分离定律现代解释",
+            "difficulty": 3,
+            "description": "等位基因随同源染色体分开而分别进入配子",
+            "aliases": [],
+            "prerequisites": [
+              "等位基因",
+              "减数分裂Ⅰ",
+              "基因在染色体上"
+            ],
+            "definition": "基因分离定律的实质是等位基因随同源染色体分离而分别进入两个配子。",
+            "example": "杂合子形成配子时等位基因发生分离。"
+          },
+          {
+            "name": "非同源染色体自由组合",
+            "difficulty": 3,
+            "description": "减数分裂时非同源染色体组合彼此不受干扰",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "减数分裂Ⅰ"
+            ],
+            "definition": "非同源染色体自由组合是指减数分裂时非同源染色体的分离或组合互不干扰。",
+            "example": "两对非同源染色体可形成多种配子组合。"
+          },
+          {
+            "name": "基因自由组合定律现代解释",
+            "difficulty": 3,
+            "description": "非等位基因随非同源染色体自由组合而遗传",
+            "aliases": [],
+            "prerequisites": [
+              "非同源染色体自由组合",
+              "等位基因"
+            ],
+            "definition": "基因自由组合定律的实质是非等位基因随非同源染色体自由组合而彼此独立遗传。",
+            "example": "两对位于非同源染色体上的基因自由组合。"
+          },
+          {
+            "name": "伴性遗传",
+            "difficulty": 2,
+            "description": "性染色体上的基因控制的性状与性别相关联",
+            "aliases": [
+              "sex-linked inheritance"
+            ],
+            "prerequisites": [
+              "性染色体",
+              "基因在染色体上"
+            ],
+            "definition": "伴性遗传是位于性染色体上的基因控制的性状在遗传上与性别相关联的现象。",
+            "example": "人类红绿色盲属于伴性遗传。"
+          },
+          {
+            "name": "性染色体",
+            "difficulty": 1,
+            "description": "与性别决定及相关性状遗传有关的染色体",
+            "aliases": [
+              "sex chromosome"
+            ],
+            "prerequisites": [
+              "染色体"
+            ],
+            "definition": "性染色体是与生物性别决定及伴性状遗传有关的染色体。",
+            "example": "人类女性为XX，男性为XY。"
+          },
+          {
+            "name": "常染色体",
+            "difficulty": 1,
+            "description": "除性染色体外的其他染色体",
+            "aliases": [
+              "autosome"
+            ],
+            "prerequisites": [
+              "染色体",
+              "性染色体"
+            ],
+            "definition": "常染色体是生物染色体中除性染色体以外的染色体。",
+            "example": "果蝇有三对常染色体和一对性染色体。"
+          },
+          {
+            "name": "X染色体隐性遗传",
+            "difficulty": 4,
+            "description": "X染色体上的隐性基因所表现的伴性遗传方式",
+            "aliases": [],
+            "prerequisites": [
+              "伴性遗传",
+              "性染色体"
+            ],
+            "definition": "X染色体隐性遗传是由X染色体上的隐性基因控制并表现伴性特点的遗传方式。",
+            "example": "红绿色盲患者中男性远多于女性。"
+          },
+          {
+            "name": "X染色体显性遗传",
+            "difficulty": 4,
+            "description": "X染色体上的显性基因所表现的伴性遗传方式",
+            "aliases": [],
+            "prerequisites": [
+              "伴性遗传",
+              "性染色体"
+            ],
+            "definition": "X染色体显性遗传是由X染色体上的显性基因控制并表现伴性特点的遗传方式。",
+            "example": "抗维生素D佝偻病属于此类遗传病。",
+            "section": "第3节 伴性遗传"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 减数分裂和受精作用",
+            "page_range": [
+              27,
+              37
+            ]
+          },
+          {
+            "name": "第2节 基因在染色体上",
+            "page_range": [
+              38,
+              43
+            ]
+          },
+          {
+            "name": "第3节 伴性遗传",
+            "page_range": [
+              43,
+              51
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章 基因的本质",
+        "concepts": [
+          {
+            "name": "遗传物质",
+            "difficulty": 2,
+            "description": "能储存、传递并表达遗传信息的物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "遗传物质是能够储存和传递遗传信息并使后代保持亲代性状的物质。",
+            "example": "多数生物以DNA作为遗传物质"
+          },
+          {
+            "name": "染色体",
+            "difficulty": 2,
+            "description": "主要由蛋白质和DNA组成的结构",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "染色体是细胞中主要由蛋白质和DNA组成的遗传结构。",
+            "example": "染色体上分布着DNA和基因"
+          },
+          {
+            "name": "DNA",
+            "difficulty": 2,
+            "description": "由脱氧核苷酸聚合而成的生物大分子",
+            "aliases": [
+              "脱氧核糖核酸"
+            ],
+            "prerequisites": [
+              "脱氧核苷酸"
+            ],
+            "definition": "DNA是由许多脱氧核苷酸聚合而成、能储存遗传信息的生物大分子。",
+            "example": "染色体的主要成分包括DNA"
+          },
+          {
+            "name": "脱氧核苷酸",
+            "difficulty": 2,
+            "description": "组成DNA的基本单位，含磷酸、碱基和脱氧核糖",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "脱氧核苷酸是由磷酸、碱基和脱氧核糖组成的DNA基本单位。",
+            "example": "DNA含有四种脱氧核苷酸"
+          },
+          {
+            "name": "S型细菌",
+            "difficulty": 2,
+            "description": "有荚膜、有致病性的肺炎链球菌",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "S型细菌是具有多糖类荚膜并能使小鼠患病的肺炎链球菌。",
+            "example": "注射S型活细菌可使小鼠死亡",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "R型细菌",
+            "difficulty": 2,
+            "description": "无荚膜、无致病性的肺炎链球菌",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "R型细菌是没有多糖类荚膜且无致病性的肺炎链球菌。",
+            "example": "注射R型活细菌小鼠不死亡",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "肺炎链球菌转化",
+            "difficulty": 3,
+            "description": "R型活细菌转化为S型活细菌的现象",
+            "aliases": [
+              "转化实验"
+            ],
+            "prerequisites": [
+              "S型细菌",
+              "R型细菌"
+            ],
+            "definition": "肺炎链球菌转化是R型活细菌在转化因子作用下获得S型特征的过程。",
+            "example": "R型活细菌与加热致死S型细菌混合可产生S型细菌"
+          },
+          {
+            "name": "转化因子",
+            "difficulty": 3,
+            "description": "促使R型细菌产生稳定遗传变化的物质",
+            "aliases": [],
+            "prerequisites": [
+              "肺炎链球菌转化"
+            ],
+            "definition": "转化因子是能促使R型活细菌转化为S型活细菌的活性物质。",
+            "example": "加热致死的S型细菌中含有转化因子",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "艾弗里实验",
+            "difficulty": 4,
+            "description": "通过酶处理细胞提取物探究转化因子的实验",
+            "aliases": [
+              "艾弗里肺炎链球菌实验"
+            ],
+            "prerequisites": [
+              "转化因子",
+              "DNA"
+            ],
+            "definition": "艾弗里实验表明细胞提取物经DNA酶处理后失去转化活性，说明DNA是遗传物质。",
+            "example": "DNA酶处理后R型细菌不再转化为S型",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "噬菌体侵染实验",
+            "difficulty": 4,
+            "description": "用同位素标记研究噬菌体遗传物质的实验",
+            "aliases": [
+              "赫尔希和蔡斯实验"
+            ],
+            "prerequisites": [
+              "DNA",
+              "蛋白质"
+            ],
+            "definition": "噬菌体侵染实验表明侵染细菌时进入细胞的是DNA而非蛋白质外壳。",
+            "example": "32P标记主要出现在被侵染细菌的沉淀物中"
+          },
+          {
+            "name": "RNA遗传物质",
+            "difficulty": 3,
+            "description": "某些不含DNA的病毒以RNA作为遗传物质",
+            "aliases": [],
+            "prerequisites": [
+              "遗传物质",
+              "RNA"
+            ],
+            "definition": "RNA遗传物质是指在某些病毒中承担遗传信息储存和传递功能的RNA。",
+            "example": "烟草花叶病毒的RNA能使烟草感染病毒"
+          },
+          {
+            "name": "DNA双螺旋结构",
+            "difficulty": 3,
+            "description": "两条反向平行单链盘旋形成的结构",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "脱氧核苷酸"
+            ],
+            "definition": "DNA双螺旋结构由两条反向平行的脱氧核苷酸链盘旋而成。",
+            "example": "DNA两条链共同形成规则的双螺旋"
+          },
+          {
+            "name": "碱基互补配对",
+            "difficulty": 3,
+            "description": "A与T配对、G与C配对的规律",
+            "aliases": [
+              "碱基互补配对原则"
+            ],
+            "prerequisites": [
+              "DNA双螺旋结构"
+            ],
+            "definition": "碱基互补配对是指DNA中A与T配对、G与C配对的规律。",
+            "example": "一条链为A时，互补链对应T"
+          },
+          {
+            "name": "DNA反向平行",
+            "difficulty": 3,
+            "description": "DNA两条单链的走向相反",
+            "aliases": [
+              "反向平行"
+            ],
+            "prerequisites": [
+              "DNA双螺旋结构"
+            ],
+            "definition": "DNA反向平行是指两条单链分别沿5′端到3′端和3′端到5′端延伸。",
+            "example": "一条链为5′端至3′端，另一条相反"
+          },
+          {
+            "name": "DNA复制",
+            "difficulty": 3,
+            "description": "以亲代DNA为模板合成子代DNA的过程",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "碱基互补配对"
+            ],
+            "definition": "DNA复制是以亲代DNA为模板合成两个相同子代DNA分子的过程。",
+            "example": "细胞分裂前DNA完成复制",
+            "section": "第3节 DNA 的复制"
+          },
+          {
+            "name": "半保留复制",
+            "difficulty": 4,
+            "description": "每个子代DNA保留一条亲代链",
+            "aliases": [],
+            "prerequisites": [
+              "DNA复制",
+              "碱基互补配对"
+            ],
+            "definition": "半保留复制是指每个新形成的DNA分子保留亲代DNA的一条链。",
+            "example": "15N标记实验第二代出现杂合和轻DNA"
+          },
+          {
+            "name": "DNA解旋",
+            "difficulty": 3,
+            "description": "DNA双螺旋两条链分开的过程",
+            "aliases": [
+              "解旋"
+            ],
+            "prerequisites": [
+              "DNA双螺旋结构",
+              "DNA复制"
+            ],
+            "definition": "DNA解旋是复制开始时DNA双螺旋两条链在酶作用下分开的过程。",
+            "example": "解旋酶使互补碱基间的氢键断裂",
+            "section": "第3节 DNA 的复制"
+          },
+          {
+            "name": "DNA聚合酶",
+            "difficulty": 3,
+            "description": "以母链为模板催化子链合成的酶",
+            "aliases": [],
+            "prerequisites": [
+              "DNA复制",
+              "DNA解旋"
+            ],
+            "definition": "DNA聚合酶是利用游离脱氧核苷酸合成互补DNA子链的酶。",
+            "example": "DNA聚合酶催化新子链不断延伸",
+            "section": "第3节 DNA 的复制"
+          },
+          {
+            "name": "遗传信息",
+            "difficulty": 3,
+            "description": "蕴藏在DNA碱基排列顺序中的信息",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "脱氧核苷酸"
+            ],
+            "definition": "遗传信息是蕴藏在DNA碱基特定排列顺序中的生物遗传内容。",
+            "example": "DNA碱基序列可储存生物体所需信息"
+          },
+          {
+            "name": "基因",
+            "difficulty": 3,
+            "description": "通常是有遗传效应的DNA片段",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "遗传信息"
+            ],
+            "definition": "基因通常是具有特定遗传效应的DNA片段。",
+            "example": "绿色荧光蛋白基因使小鼠发出绿色荧光"
+          },
+          {
+            "name": "DNA多样性",
+            "difficulty": 3,
+            "description": "DNA碱基排列顺序千变万化的特征",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "遗传信息"
+            ],
+            "definition": "DNA多样性是指不同DNA分子中碱基排列顺序具有多种变化。",
+            "example": "不同物种的DNA序列通常不同"
+          },
+          {
+            "name": "DNA特异性",
+            "difficulty": 3,
+            "description": "每个DNA分子具有特定碱基排列顺序的特征",
+            "aliases": [],
+            "prerequisites": [
+              "DNA多样性",
+              "遗传信息"
+            ],
+            "definition": "DNA特异性是指特定DNA分子具有区别于其他分子的碱基排列顺序。",
+            "example": "个体间DNA指纹图通常不同"
+          },
+          {
+            "name": "DNA指纹技术",
+            "difficulty": 3,
+            "description": "依据DNA片段图谱差异进行身份识别的技术",
+            "aliases": [],
+            "prerequisites": [
+              "DNA特异性"
+            ],
+            "definition": "DNA指纹技术是通过比较DNA片段形成的指纹图来帮助确认身份的方法。",
+            "example": "可用于亲子鉴定和死者遗骸鉴定",
+            "section": "第2节 DNA 的结构"
+          },
+          {
+            "name": "生物信息学",
+            "difficulty": 3,
+            "description": "研究生物学、数学和计算机科学的交叉学科",
+            "aliases": [],
+            "prerequisites": [
+              "遗传信息"
+            ],
+            "definition": "生物信息学利用计算机处理和分析核酸与蛋白质序列数据。",
+            "example": "通过基因组序列分析人类迁移历史"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 DNA 是主要的遗传物质",
+            "page_range": [
+              51,
+              57
+            ]
+          },
+          {
+            "name": "第2节 DNA 的结构",
+            "page_range": [
+              57,
+              61
+            ]
+          },
+          {
+            "name": "第3节 DNA 的复制",
+            "page_range": [
+              62,
+              65
+            ]
+          },
+          {
+            "name": "第4节 基因通常是有遗传效应的DNA片段",
+            "page_range": [
+              66,
+              72
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4章 基因的表达",
+        "concepts": [
+          {
+            "name": "DNA",
+            "difficulty": 1,
+            "description": "主要存在于细胞核中并携带遗传信息的核酸。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "DNA是遗传信息的主要载体。",
+            "example": "基因是有遗传效应的DNA片段。"
+          },
+          {
+            "name": "蛋白质",
+            "difficulty": 1,
+            "description": "基因表达形成并承担细胞生命活动职责的产物。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "蛋白质是遗传信息表达形成的产物。",
+            "example": "蛋白质可构成酶并参与代谢。"
+          },
+          {
+            "name": "氨基酸",
+            "difficulty": 1,
+            "description": "翻译过程中按一定顺序连接形成肽链的原料。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "氨基酸是合成蛋白质的基本原料。",
+            "example": "tRNA将氨基酸运送到核糖体。"
+          },
+          {
+            "name": "RNA",
+            "difficulty": 1,
+            "description": "可在DNA与蛋白质之间传递遗传信息的核酸。",
+            "aliases": [],
+            "prerequisites": [
+              "DNA"
+            ],
+            "definition": "RNA是由核糖核苷酸连接而成的另一类核酸。",
+            "example": "RNA一般为单链且比DNA短。"
+          },
+          {
+            "name": "mRNA",
+            "difficulty": 2,
+            "description": "作为DNA信使并以碱基序列传递遗传信息的RNA。",
+            "aliases": [
+              "信使RNA",
+              "messenger RNA"
+            ],
+            "prerequisites": [
+              "RNA",
+              "DNA"
+            ],
+            "definition": "mRNA是将DNA遗传信息传递到细胞质的信使RNA。",
+            "example": "mRNA通过核孔进入细胞质。"
+          },
+          {
+            "name": "tRNA",
+            "difficulty": 2,
+            "description": "识别密码子并转运特定氨基酸的RNA。",
+            "aliases": [
+              "转运RNA",
+              "transfer RNA"
+            ],
+            "prerequisites": [
+              "RNA",
+              "mRNA",
+              "氨基酸"
+            ],
+            "definition": "tRNA能通过反密码子识别密码子并携带一种氨基酸。",
+            "example": "携带甲硫氨酸的tRNA识别AUG。"
+          },
+          {
+            "name": "rRNA",
+            "difficulty": 2,
+            "description": "参与蛋白质合成的核糖体RNA。",
+            "aliases": [
+              "核糖体RNA",
+              "ribosomal RNA"
+            ],
+            "prerequisites": [
+              "RNA"
+            ],
+            "definition": "rRNA是构成并参与核糖体功能的RNA。",
+            "example": "rRNA参与蛋白质合成过程。"
+          },
+          {
+            "name": "核糖体",
+            "difficulty": 2,
+            "description": "与mRNA结合并进行蛋白质合成的细胞结构。",
+            "aliases": [],
+            "prerequisites": [
+              "mRNA",
+              "rRNA"
+            ],
+            "definition": "核糖体是读取mRNA并合成肽链的蛋白质装配机器。",
+            "example": "核糖体沿mRNA移动合成肽链。"
+          },
+          {
+            "name": "遗传信息",
+            "difficulty": 2,
+            "description": "蕴含在核酸碱基序列中的可传递信息。",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "RNA"
+            ],
+            "definition": "遗传信息是由核酸碱基序列承载的生物信息。",
+            "example": "mRNA碱基序列蕴含遗传信息。"
+          },
+          {
+            "name": "转录",
+            "difficulty": 2,
+            "description": "以DNA一条链为模板合成mRNA的过程。",
+            "aliases": [
+              "transcription"
+            ],
+            "prerequisites": [
+              "DNA",
+              "RNA",
+              "mRNA"
+            ],
+            "definition": "转录是在RNA聚合酶作用下以DNA一条链为模板合成RNA的过程。",
+            "example": "细胞核中DNA模板链合成mRNA。"
+          },
+          {
+            "name": "密码子",
+            "difficulty": 2,
+            "description": "mRNA上三个相邻碱基组成的遗传密码单位。",
+            "aliases": [
+              "codon"
+            ],
+            "prerequisites": [
+              "mRNA",
+              "遗传信息"
+            ],
+            "definition": "密码子是mRNA上三个相邻碱基组成的单位，决定一个氨基酸或翻译起止。",
+            "example": "AUG是起始密码子并编码甲硫氨酸。"
+          },
+          {
+            "name": "反密码子",
+            "difficulty": 3,
+            "description": "tRNA上与mRNA密码子互补配对的三个碱基。",
+            "aliases": [
+              "anticodon"
+            ],
+            "prerequisites": [
+              "tRNA",
+              "密码子"
+            ],
+            "definition": "反密码子是tRNA上能与密码子互补配对的三个碱基。",
+            "example": "tRNA反密码子与AUG互补配对。",
+            "section": "第1节 基因指导蛋白质的合成"
+          },
+          {
+            "name": "翻译",
+            "difficulty": 2,
+            "description": "以mRNA为模板合成特定氨基酸序列蛋白质的过程。",
+            "aliases": [
+              "translation"
+            ],
+            "prerequisites": [
+              "mRNA",
+              "密码子",
+              "tRNA",
+              "核糖体",
+              "氨基酸"
+            ],
+            "definition": "翻译是核糖体按照密码子与氨基酸对应关系合成肽链的过程。",
+            "example": "核糖体读取密码子并连接氨基酸。"
+          },
+          {
+            "name": "基因的表达",
+            "difficulty": 3,
+            "description": "基因通过转录和翻译合成蛋白质的过程。",
+            "aliases": [
+              "gene expression"
+            ],
+            "prerequisites": [
+              "DNA",
+              "转录",
+              "翻译",
+              "蛋白质"
+            ],
+            "definition": "基因的表达是基因通过mRNA指导蛋白质合成的过程。",
+            "example": "基因表达包括转录和翻译两个阶段。"
+          },
+          {
+            "name": "密码子简并",
+            "difficulty": 3,
+            "description": "绝大多数氨基酸由几个不同密码子决定的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "密码子",
+              "翻译"
+            ],
+            "definition": "密码子简并是多个密码子对应同一种氨基酸的现象。",
+            "example": "苯丙氨酸有多个对应密码子。"
+          },
+          {
+            "name": "中心法则",
+            "difficulty": 3,
+            "description": "概括遗传信息在DNA、RNA和蛋白质间传递规律。",
+            "aliases": [
+              "central dogma"
+            ],
+            "prerequisites": [
+              "遗传信息",
+              "转录",
+              "翻译"
+            ],
+            "definition": "中心法则描述遗传信息可由DNA流向DNA、RNA和蛋白质等规律。",
+            "example": "DNA经转录和翻译形成蛋白质。"
+          },
+          {
+            "name": "逆转录",
+            "difficulty": 3,
+            "description": "少数生物中遗传信息由RNA流向DNA的过程。",
+            "aliases": [
+              "reverse transcription"
+            ],
+            "prerequisites": [
+              "中心法则",
+              "RNA",
+              "DNA"
+            ],
+            "definition": "逆转录是以RNA为信息来源合成DNA的遗传信息传递过程。",
+            "example": "一些RNA病毒可发生逆转录。",
+            "section": "第1节 基因指导蛋白质的合成"
+          },
+          {
+            "name": "基因表达产物",
+            "difficulty": 3,
+            "description": "基因表达形成的蛋白质及其对性状产生的作用。",
+            "aliases": [],
+            "prerequisites": [
+              "基因的表达",
+              "蛋白质"
+            ],
+            "definition": "基因表达产物主要是通过表达形成并影响性状的蛋白质。",
+            "example": "淀粉分支酶影响豌豆种子的圆粒或皱粒。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "基因表达调控",
+            "difficulty": 3,
+            "description": "调节基因何时、何处及以多高水平表达的机制。",
+            "aliases": [],
+            "prerequisites": [
+              "基因的表达"
+            ],
+            "definition": "基因表达调控是对基因表达时间、细胞类型和表达水平的控制。",
+            "example": "不同细胞表达的基因存在差异。"
+          },
+          {
+            "name": "选择性表达",
+            "difficulty": 3,
+            "description": "不同类型细胞表达不同基因的基因表达状态。",
+            "aliases": [
+              "基因的选择性表达"
+            ],
+            "prerequisites": [
+              "基因表达调控",
+              "基因的表达"
+            ],
+            "definition": "基因的选择性表达是细胞只表达部分基因而不表达其他基因的现象。",
+            "example": "胰岛细胞表达胰岛素基因。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "细胞分化",
+            "difficulty": 3,
+            "description": "细胞在形态、结构和功能上形成差异的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "选择性表达"
+            ],
+            "definition": "细胞分化的本质是基因的选择性表达。",
+            "example": "同一受精卵产生神经细胞和肌细胞。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "DNA甲基化",
+            "difficulty": 3,
+            "description": "DNA部分碱基连接甲基基团并影响基因表达的修饰。",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "基因表达调控"
+            ],
+            "definition": "DNA甲基化是可抑制相关基因表达的DNA化学修饰。",
+            "example": "Lcyc基因高度甲基化后不表达。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "表观遗传",
+            "difficulty": 4,
+            "description": "碱基序列不变而基因表达和表型发生可遗传变化。",
+            "aliases": [
+              "epigenetic inheritance"
+            ],
+            "prerequisites": [
+              "基因表达调控",
+              "DNA甲基化"
+            ],
+            "definition": "表观遗传是基因碱基序列不变但表达和表型发生可遗传变化的现象。",
+            "example": "小鼠毛色受Avy基因甲基化程度影响。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "基因与性状关系",
+            "difficulty": 4,
+            "description": "基因、蛋白质和环境共同作用形成生物体性状。",
+            "aliases": [],
+            "prerequisites": [
+              "基因表达产物",
+              "基因表达调控",
+              "表观遗传"
+            ],
+            "definition": "基因与性状通常不是一一对应，而是受多基因、环境及相互作用共同影响。",
+            "example": "人的身高受多个基因和营养锻炼影响。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "基因工程",
+            "difficulty": 3,
+            "description": "提取改造并转移基因以获得需要生物或产品的技术。",
+            "aliases": [
+              "gene engineering"
+            ],
+            "prerequisites": [
+              "DNA",
+              "基因的表达",
+              "基因与性状关系"
+            ],
+            "definition": "基因工程是将某生物基因提取改造后转移到另一生物细胞中的技术。",
+            "example": "将人的胰岛素基因转入大肠杆菌生产胰岛素。",
+            "section": "第2节 基因表达与性状的关系"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 基因指导蛋白质的合成",
+            "page_range": [
+              73,
+              79
+            ]
+          },
+          {
+            "name": "第2节 基因表达与性状的关系",
+            "page_range": [
+              80,
+              88
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第5章 基因突变及其他变异",
+        "concepts": [
+          {
+            "name": "可遗传变异",
+            "difficulty": 2,
+            "description": "能够由亲代遗传给后代的变异",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由亲代生殖细胞内遗传物质改变引起并能遗传给后代的变异叫可遗传变异。",
+            "example": "基因突变导致镰状细胞贫血",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "DNA复制",
+            "difficulty": 2,
+            "description": "遗传信息复制的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "以DNA分子为模板按照碱基互补配对原则合成新的DNA分子的过程叫DNA复制。",
+            "example": "细胞分裂前复制DNA"
+          },
+          {
+            "name": "基因突变",
+            "difficulty": 3,
+            "description": "基因碱基序列发生改变",
+            "aliases": [],
+            "prerequisites": [
+              "DNA复制"
+            ],
+            "definition": "DNA分子中碱基的替换、增添或缺失引起的基因碱基序列改变叫基因突变。",
+            "example": "镰状细胞贫血的致病基因突变"
+          },
+          {
+            "name": "基因突变类型",
+            "difficulty": 2,
+            "description": "碱基替换、增添和缺失",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变按DNA碱基变化可分为替换、增添和缺失。",
+            "example": "编码区碱基发生增添"
+          },
+          {
+            "name": "基因突变遗传",
+            "difficulty": 3,
+            "description": "突变发生部位影响遗传性",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变发生在配子中通常可遗传，发生在体细胞中一般不能遗传。",
+            "example": "植物体细胞突变可经无性生殖遗传"
+          },
+          {
+            "name": "基因突变原因",
+            "difficulty": 2,
+            "description": "基因突变可诱发也可自发产生",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变可由物理、化学、生物因素诱发，也可因DNA复制错误自发产生。",
+            "example": "X射线提高果蝇突变频率"
+          },
+          {
+            "name": "基因突变特点",
+            "difficulty": 3,
+            "description": "具有普遍性、随机性和不定向性",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变在生物界普遍存在，并具有随机性、不定向性和低频性。",
+            "example": "同一基因可产生多个等位基因"
+          },
+          {
+            "name": "基因突变意义",
+            "difficulty": 3,
+            "description": "产生新基因和进化原材料",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变是产生新基因的途径，为生物进化提供丰富原材料。",
+            "example": "抗药性突变帮助微生物适应环境"
+          },
+          {
+            "name": "诱变育种",
+            "difficulty": 3,
+            "description": "利用因素诱发突变培育新品种",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "用物理或化学因素处理生物以提高突变率并选育新品种的方法叫诱变育种。",
+            "example": "辐射处理大豆培育高油品种",
+            "section": "第1节 基因突变和基因重组"
+          },
+          {
+            "name": "原癌基因",
+            "difficulty": 3,
+            "description": "促进细胞正常生长和增殖的基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "原癌基因表达的蛋白质通常是细胞正常生长和增殖所必需的。",
+            "example": "原癌基因过量表达可能引起癌变"
+          },
+          {
+            "name": "抑癌基因",
+            "difficulty": 3,
+            "description": "抑制细胞生长或促进凋亡的基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "抑癌基因表达的蛋白质能抑制细胞生长增殖或促进细胞凋亡。",
+            "example": "抑癌基因突变可能导致癌变"
+          },
+          {
+            "name": "癌细胞特征",
+            "difficulty": 3,
+            "description": "癌细胞具有无限增殖和易转移等特征",
+            "aliases": [],
+            "prerequisites": [
+              "原癌基因",
+              "抑癌基因"
+            ],
+            "definition": "癌细胞能够无限增殖，形态结构改变且易分散和转移。",
+            "example": "癌细胞膜糖蛋白减少"
+          },
+          {
+            "name": "基因重组",
+            "difficulty": 3,
+            "description": "有性生殖中基因重新组合",
+            "aliases": [],
+            "prerequisites": [
+              "有性生殖",
+              "减数分裂"
+            ],
+            "definition": "生物进行有性生殖时控制不同性状的基因重新组合叫基因重组。",
+            "example": "非同源染色体自由组合产生新配子"
+          },
+          {
+            "name": "基因重组意义",
+            "difficulty": 3,
+            "description": "增加配子和子代基因组合多样性",
+            "aliases": [],
+            "prerequisites": [
+              "基因重组"
+            ],
+            "definition": "基因重组使配子和子代的基因组合多样化，有利于生物适应环境变化。",
+            "example": "金鱼杂交产生多种性状"
+          },
+          {
+            "name": "染色体变异",
+            "difficulty": 3,
+            "description": "染色体数目或结构发生改变",
+            "aliases": [],
+            "prerequisites": [
+              "染色体"
+            ],
+            "definition": "生物体体细胞或生殖细胞内染色体数目或结构的变化叫染色体变异。",
+            "example": "唐氏综合征患者多一条21号染色体"
+          },
+          {
+            "name": "染色体组",
+            "difficulty": 3,
+            "description": "一套非同源染色体的集合",
+            "aliases": [],
+            "prerequisites": [
+              "染色体"
+            ],
+            "definition": "每套形态和功能不同的非同源染色体称为一个染色体组。",
+            "example": "野生马铃薯每组含12条染色体"
+          },
+          {
+            "name": "二倍体",
+            "difficulty": 2,
+            "description": "体细胞含有两个染色体组的个体",
+            "aliases": [],
+            "prerequisites": [
+              "染色体组"
+            ],
+            "definition": "体细胞中含有两个染色体组的个体叫二倍体。",
+            "example": "野生马铃薯是二倍体",
+            "section": "第2节 染色体变异"
+          },
+          {
+            "name": "多倍体",
+            "difficulty": 3,
+            "description": "体细胞含有三个或更多染色体组",
+            "aliases": [],
+            "prerequisites": [
+              "染色体组"
+            ],
+            "definition": "体细胞中含有三个或三个以上染色体组的个体统称多倍体。",
+            "example": "三倍体无子西瓜"
+          },
+          {
+            "name": "三倍体",
+            "difficulty": 3,
+            "description": "体细胞含有三个染色体组",
+            "aliases": [],
+            "prerequisites": [
+              "多倍体"
+            ],
+            "definition": "体细胞中含有三个染色体组的个体叫三倍体。",
+            "example": "三倍体香蕉通常无种子"
+          },
+          {
+            "name": "单倍体",
+            "difficulty": 3,
+            "description": "体细胞染色体数与配子相同",
+            "aliases": [],
+            "prerequisites": [
+              "染色体组"
+            ],
+            "definition": "体细胞中染色体数目与本物种配子染色体数目相同的个体叫单倍体。",
+            "example": "蜜蜂雄蜂是单倍体",
+            "section": "第2节 染色体变异"
+          },
+          {
+            "name": "多倍体育种",
+            "difficulty": 3,
+            "description": "人工诱导多倍体培育新品种",
+            "aliases": [],
+            "prerequisites": [
+              "多倍体"
+            ],
+            "definition": "通过人工诱导形成多倍体植株以培育新品种的方法叫多倍体育种。",
+            "example": "诱导四倍体葡萄"
+          },
+          {
+            "name": "秋水仙素诱导",
+            "difficulty": 3,
+            "description": "抑制纺锤体形成使染色体加倍",
+            "aliases": [],
+            "prerequisites": [
+              "多倍体"
+            ],
+            "definition": "秋水仙素抑制有丝分裂时纺锤体形成，使染色体不能正常分离而数目加倍。",
+            "example": "处理西瓜幼苗获得四倍体"
+          },
+          {
+            "name": "染色体结构变异",
+            "difficulty": 3,
+            "description": "染色体片段数目或顺序改变",
+            "aliases": [],
+            "prerequisites": [
+              "染色体变异"
+            ],
+            "definition": "染色体片段的缺失、重复、倒位或易位造成的变异叫染色体结构变异。",
+            "example": "猫叫综合征由5号染色体部分缺失引起",
+            "section": "第2节 染色体变异"
+          },
+          {
+            "name": "染色体结构变异类型",
+            "difficulty": 3,
+            "description": "包括缺失、重复、倒位和易位",
+            "aliases": [],
+            "prerequisites": [
+              "染色体结构变异"
+            ],
+            "definition": "染色体结构变异主要包括片段缺失、重复、倒位和易位四种类型。",
+            "example": "非同源染色体片段互换属于易位"
+          },
+          {
+            "name": "人类遗传病",
+            "difficulty": 2,
+            "description": "由遗传物质改变引起的人类疾病",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "通常由遗传物质改变引起的人类疾病叫人类遗传病。",
+            "example": "白化病",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "单基因遗传病",
+            "difficulty": 2,
+            "description": "受一对等位基因控制的遗传病",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "受一对等位基因控制的遗传病叫单基因遗传病。",
+            "example": "多指和白化病",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "多基因遗传病",
+            "difficulty": 3,
+            "description": "受两对或以上等位基因控制",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "受两对或两对以上等位基因控制的遗传病叫多基因遗传病。",
+            "example": "原发性高血压",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "染色体异常遗传病",
+            "difficulty": 3,
+            "description": "由染色体变异引起的遗传病",
+            "aliases": [],
+            "prerequisites": [
+              "染色体变异",
+              "人类遗传病"
+            ],
+            "definition": "由染色体变异引起的遗传病叫染色体异常遗传病。",
+            "example": "唐氏综合征",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "遗传咨询",
+            "difficulty": 2,
+            "description": "评估遗传病风险并提出建议",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "通过检查、分析遗传病传递方式并推算后代风险而提供防治建议的过程叫遗传咨询。",
+            "example": "为有家族病史的夫妇评估风险",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "产前诊断",
+            "difficulty": 2,
+            "description": "胎儿出生前检测遗传病或先天病",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "在胎儿出生前用专门检测手段确定其是否患遗传病或先天性疾病叫产前诊断。",
+            "example": "羊水检查筛查唐氏综合征",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "基因检测",
+            "difficulty": 2,
+            "description": "检测DNA序列了解基因状况",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "通过检测人体细胞中的DNA序列以了解人体基因状况的方法叫基因检测。",
+            "example": "检测致病基因突变",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "基因治疗",
+            "difficulty": 3,
+            "description": "用正常基因替代或修补缺陷基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因检测"
+            ],
+            "definition": "用正常基因取代或修补患者细胞中的缺陷基因以治疗疾病叫基因治疗。",
+            "example": "导入正常ADA基因治疗免疫缺陷"
+          },
+          {
+            "name": "基因组编辑",
+            "difficulty": 4,
+            "description": "对基因序列进行定点修改",
+            "aliases": [
+              "基因编辑"
+            ],
+            "prerequisites": [
+              "基因突变",
+              "基因检测"
+            ],
+            "definition": "利用技术对基因组中特定基因序列进行准确修改或破坏的技术叫基因组编辑。",
+            "example": "CRISPR/Cas9编辑哺乳动物细胞",
+            "section": "第1节 基因突变和基因重组"
+          },
+          {
+            "name": "精准医疗",
+            "difficulty": 3,
+            "description": "依据个体组学信息制定治疗方案",
+            "aliases": [],
+            "prerequisites": [
+              "基因检测"
+            ],
+            "definition": "以患者组学信息为基础通过大数据分析设计个体化治疗方案的医疗模式叫精准医疗。",
+            "example": "依据基因突变选择靶向药物",
+            "section": "第1节 基因突变和基因重组"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 基因突变和基因重组",
+            "page_range": [
+              89,
+              95
+            ]
+          },
+          {
+            "name": "第2节 染色体变异",
+            "page_range": [
+              96,
+              101
+            ]
+          },
+          {
+            "name": "第3节 人类遗传病",
+            "page_range": [
+              101,
+              108
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第6章 生物的进化",
+        "concepts": [
+          {
+            "name": "共同由来学说",
+            "difficulty": 2,
+            "description": "地球上的生物都由原始共同祖先进化而来。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "共同由来学说认为当今所有生物都来自共同祖先。",
+            "example": "人和猿有共同的祖先。",
+            "section": "第1节 生物有共同祖先的证据"
+          },
+          {
+            "name": "自然选择学说",
+            "difficulty": 3,
+            "description": "揭示生物进化机制，解释适应和物种形成。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "自然选择学说认为生物通过自然选择不断进化并形成适应。",
+            "example": "长颈鹿颈长性状逐代增加。"
+          },
+          {
+            "name": "化石",
+            "difficulty": 1,
+            "description": "保存在地层中的古代生物遗体、遗物或痕迹。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "化石是通过自然作用保存在地层中的古代生物遗体、遗物或生活痕迹。",
+            "example": "赫氏近鸟龙化石。"
+          },
+          {
+            "name": "化石证据",
+            "difficulty": 2,
+            "description": "化石是研究生物进化最直接、最重要的证据。",
+            "aliases": [],
+            "prerequisites": [
+              "化石"
+            ],
+            "definition": "化石证据通过古生物遗存揭示生物进化的顺序和过程。",
+            "example": "化石显示生物由水生逐渐到陆生。",
+            "section": "第1节 生物有共同祖先的证据"
+          },
+          {
+            "name": "比较解剖学证据",
+            "difficulty": 2,
+            "description": "比较不同生物器官和系统的形态结构以研究亲缘关系。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "比较解剖学证据依据不同生物器官结构的共同点支持共同祖先观点。",
+            "example": "人的上肢与蝙蝠的翼骨骼结构相似。",
+            "section": "第1节 生物有共同祖先的证据"
+          },
+          {
+            "name": "胚胎学证据",
+            "difficulty": 2,
+            "description": "比较不同生物胚胎发育过程以寻找进化证据。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "胚胎学证据通过比较胚胎发育的相似阶段推断生物的共同祖先。",
+            "example": "人的胚胎早期出现鳃裂和尾。"
+          },
+          {
+            "name": "细胞分子证据",
+            "difficulty": 3,
+            "description": "细胞结构及DNA、蛋白质等分子的共同点支持共同起源。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "细胞分子证据依据生物在细胞和分子水平的相似性支持共同祖先。",
+            "example": "人与黑猩猩基因组差异较小。"
+          },
+          {
+            "name": "适应",
+            "difficulty": 2,
+            "description": "生物结构及功能适合一定环境中的生存和繁殖。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "适应是生物的形态结构及其功能与特定环境相适合的现象。",
+            "example": "枯叶蝶翅膀像枯叶。"
+          },
+          {
+            "name": "适应相对性",
+            "difficulty": 3,
+            "description": "生物适应受环境限制，并非绝对或完全适应。",
+            "aliases": [],
+            "prerequisites": [
+              "适应"
+            ],
+            "definition": "适应相对性指生物的适应只能在一定环境和条件下发挥作用。",
+            "example": "雷鸟白色羽毛在无雪环境中保护作用有限。",
+            "section": "第2节 自然选择与适应的形成"
+          },
+          {
+            "name": "用进废退",
+            "difficulty": 2,
+            "description": "拉马克认为器官多用则发达，少用则退化。",
+            "aliases": [],
+            "prerequisites": [
+              "适应"
+            ],
+            "definition": "用进废退是拉马克关于器官因使用或不使用而发达或退化的观点。",
+            "example": "鼹鼠长期地下生活导致眼睛退化。",
+            "section": "第2节 自然选择与适应的形成"
+          },
+          {
+            "name": "获得性遗传",
+            "difficulty": 2,
+            "description": "拉马克认为生物后天获得的性状能够遗传给后代。",
+            "aliases": [],
+            "prerequisites": [
+              "用进废退"
+            ],
+            "definition": "获得性遗传认为个体因环境或生活方式获得的性状可以传给后代。",
+            "example": "拉马克认为食蚁兽的细长舌可遗传。",
+            "section": "第2节 自然选择与适应的形成"
+          },
+          {
+            "name": "可遗传变异",
+            "difficulty": 2,
+            "description": "能够遗传给后代的生物变异，是进化的重要基础。",
+            "aliases": [],
+            "prerequisites": [
+              "适应"
+            ],
+            "definition": "可遗传变异是生物个体间能够传递给后代的差异。",
+            "example": "长颈鹿祖先出现可遗传的颈长变异。"
+          },
+          {
+            "name": "生存斗争",
+            "difficulty": 2,
+            "description": "由于资源有限，生物个体之间存在生存和繁殖的竞争。",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "生存斗争是生物因过度繁殖和资源有限而产生的竞争。",
+            "example": "干旱季节长颈鹿争夺有限食物。"
+          },
+          {
+            "name": "自然选择",
+            "difficulty": 3,
+            "description": "环境选择有利变异，使其个体留下更多后代。",
+            "aliases": [
+              "natural selection"
+            ],
+            "prerequisites": [
+              "可遗传变异",
+              "生存斗争"
+            ],
+            "definition": "自然选择是环境使具有不同变异的个体在生存和繁殖上产生差异的过程。",
+            "example": "黑色桦尺蛾在黑树干上更易存活。"
+          },
+          {
+            "name": "种群",
+            "difficulty": 1,
+            "description": "生活在一定区域内的同种生物全部个体的集合。",
+            "aliases": [
+              "population"
+            ],
+            "prerequisites": [],
+            "definition": "种群是生活在一定区域内、能够相互交配繁殖的同种生物群体。",
+            "example": "一片树林中的全部猕猴。"
+          },
+          {
+            "name": "基因库",
+            "difficulty": 2,
+            "description": "一个种群中全部个体所含有的全部基因。",
+            "aliases": [
+              "gene pool"
+            ],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "基因库是一个种群全部个体所含有的全部基因的总和。",
+            "example": "猕猴种群所有个体的基因构成基因库。"
+          },
+          {
+            "name": "基因频率",
+            "difficulty": 3,
+            "description": "某基因占种群全部等位基因数的比值。",
+            "aliases": [],
+            "prerequisites": [
+              "种群",
+              "基因库"
+            ],
+            "definition": "基因频率是种群基因库中某个基因所占全部等位基因的比例。",
+            "example": "某昆虫种群中A基因频率为60%。"
+          },
+          {
+            "name": "基因突变",
+            "difficulty": 2,
+            "description": "基因结构发生改变并产生新的等位基因。",
+            "aliases": [
+              "mutation"
+            ],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "基因突变是基因结构发生改变并形成新等位基因的变异。",
+            "example": "昆虫出现残翅突变。"
+          },
+          {
+            "name": "基因重组",
+            "difficulty": 2,
+            "description": "有性生殖过程中基因重新组合，形成多种基因型。",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "基因重组是基因在有性生殖过程中重新组合形成不同基因型。",
+            "example": "不同等位基因组合形成新的基因型。"
+          },
+          {
+            "name": "染色体变异",
+            "difficulty": 2,
+            "description": "染色体数目或结构发生改变，可引起基因频率变化。",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "染色体变异是染色体数目或结构改变形成的可遗传变异。",
+            "example": "染色体数目差异影响斑马和驴后代育性。"
+          },
+          {
+            "name": "生物进化实质",
+            "difficulty": 3,
+            "description": "从基因水平看，是种群基因频率发生定向改变。",
+            "aliases": [],
+            "prerequisites": [
+              "种群",
+              "基因频率",
+              "自然选择"
+            ],
+            "definition": "生物进化的实质是种群基因频率在多种因素作用下发生定向改变。",
+            "example": "桦尺蛾种群中S基因频率升高。"
+          },
+          {
+            "name": "物种",
+            "difficulty": 2,
+            "description": "能在自然状态下相互交配并产生可育后代的一群生物。",
+            "aliases": [
+              "species"
+            ],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "物种是能够在自然状态下相互交配并产生可育后代的生物群体。",
+            "example": "马和驴属于两个物种。"
+          },
+          {
+            "name": "生殖隔离",
+            "difficulty": 3,
+            "description": "不同群体不能相互交配或不能产生可育后代。",
+            "aliases": [
+              "reproductive isolation"
+            ],
+            "prerequisites": [
+              "物种"
+            ],
+            "definition": "生殖隔离是不同群体间不能相互交配或不能产生可育后代的现象。",
+            "example": "马和驴的后代骡不育。"
+          },
+          {
+            "name": "地理隔离",
+            "difficulty": 2,
+            "description": "地理障碍使同种不同种群间不能进行基因交流。",
+            "aliases": [
+              "geographical isolation"
+            ],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "地理隔离是地理障碍导致同种不同种群间基因不能自由交流。",
+            "example": "河流将鼠种群分隔在两岸。"
+          },
+          {
+            "name": "隔离",
+            "difficulty": 3,
+            "description": "不同群体间个体在自然条件下不能自由交流基因。",
+            "aliases": [
+              "isolation"
+            ],
+            "prerequisites": [
+              "地理隔离",
+              "生殖隔离"
+            ],
+            "definition": "隔离是不同群体间个体不能在自然条件下自由交流基因的现象。",
+            "example": "岛屿阻隔使地雀种群分化。"
+          },
+          {
+            "name": "物种形成",
+            "difficulty": 4,
+            "description": "种群基因库差异积累并形成生殖隔离，产生新物种。",
+            "aliases": [],
+            "prerequisites": [
+              "种群",
+              "基因频率",
+              "隔离"
+            ],
+            "definition": "物种形成是种群分化并最终形成生殖隔离而产生新物种的过程。",
+            "example": "加拉帕戈斯地雀形成多个物种。"
+          },
+          {
+            "name": "协同进化",
+            "difficulty": 3,
+            "description": "不同物种及生物与无机环境相互影响、共同进化。",
+            "aliases": [
+              "coevolution"
+            ],
+            "prerequisites": [
+              "自然选择",
+              "物种"
+            ],
+            "definition": "协同进化是生物之间以及生物与无机环境相互影响中不断进化。",
+            "example": "猎豹和羚羊在选择作用下共同进化。",
+            "section": "第4节 协同进化与生物多样性的形成"
+          },
+          {
+            "name": "生物多样性",
+            "difficulty": 2,
+            "description": "包括遗传、物种和生态系统三个层次的多样性。",
+            "aliases": [],
+            "prerequisites": [
+              "物种",
+              "协同进化"
+            ],
+            "definition": "生物多样性是生物在遗传、物种和生态系统层次上的丰富程度。",
+            "example": "地球上形成多种生态系统。",
+            "section": "第4节 协同进化与生物多样性的形成"
+          },
+          {
+            "name": "现代进化理论",
+            "difficulty": 4,
+            "description": "以自然选择为核心，解释适应、物种形成和多样性。",
+            "aliases": [],
+            "prerequisites": [
+              "自然选择",
+              "基因频率",
+              "物种形成",
+              "协同进化"
+            ],
+            "definition": "现代进化理论以自然选择为核心，强调种群基因频率改变及隔离成种。",
+            "example": "耐药菌比例在抗生素选择下升高。"
+          },
+          {
+            "name": "半衰期",
+            "difficulty": 2,
+            "description": "放射性同位素在一定时间内衰变一半所需的时间。",
+            "aliases": [],
+            "prerequisites": [
+              "化石"
+            ],
+            "definition": "半衰期是放射性同位素数量衰变为原来一半所需的时间。",
+            "example": "238U的半衰期约为45亿年。",
+            "section": "第1节 生物有共同祖先的证据"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 生物有共同祖先的证据",
+            "page_range": [
+              109,
+              115
+            ]
+          },
+          {
+            "name": "第2节 自然选择与适应的形成",
+            "page_range": [
+              115,
+              119
+            ]
+          },
+          {
+            "name": "第3节 种群基因组成的变化与物种的形成",
+            "page_range": [
+              119,
+              127
+            ]
+          },
+          {
+            "name": "第4节 协同进化与生物多样性的形成",
+            "page_range": [
+              128,
+              138
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 遗传因子的发现",
+        "concepts": [
+          {
+            "name": "自花传粉",
+            "difficulty": 1,
+            "description": "花粉落到同一朵花雌蕊柱头上的传粉方式",
+            "aliases": [
+              "自交"
+            ],
+            "prerequisites": [],
+            "definition": "自花传粉是同一朵花的花粉落到自身雌蕊柱头上的传粉方式。",
+            "example": "豌豆花未开放时完成自花传粉。"
+          },
+          {
+            "name": "异花传粉",
+            "difficulty": 1,
+            "description": "两朵花之间进行的传粉过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "异花传粉是不同植株的花之间进行的传粉过程。",
+            "example": "将一株豌豆的花粉传给另一株。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "人工杂交",
+            "difficulty": 2,
+            "description": "通过去雄和传粉控制亲本间受精的实验",
+            "aliases": [
+              "人工异花传粉"
+            ],
+            "prerequisites": [
+              "异花传粉"
+            ],
+            "definition": "人工杂交是人为控制不同植株间传粉以获得杂交后代的方法。",
+            "example": "去除未成熟雄蕊后，将另一植株花粉涂到柱头上。"
+          },
+          {
+            "name": "相对性状",
+            "difficulty": 1,
+            "description": "同种生物同一性状的不同表现类型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "相对性状是同一种生物同一种性状的不同表现类型。",
+            "example": "豌豆的高茎和矮茎。"
+          },
+          {
+            "name": "去雄",
+            "difficulty": 2,
+            "description": "除去未成熟花的全部雄蕊",
+            "aliases": [],
+            "prerequisites": [
+              "人工杂交"
+            ],
+            "definition": "去雄是人工杂交时先除去未成熟花全部雄蕊的操作。",
+            "example": "给豌豆花去雄后套上纸袋。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "父本和母本",
+            "difficulty": 2,
+            "description": "异花传粉中提供和接受花粉的植株",
+            "aliases": [
+              "父本",
+              "母本"
+            ],
+            "prerequisites": [
+              "异花传粉"
+            ],
+            "definition": "父本是供应花粉的植株，母本是接受花粉的植株。",
+            "example": "人工杂交中提供花粉的植株为父本。"
+          },
+          {
+            "name": "亲本与子代",
+            "difficulty": 1,
+            "description": "杂交中亲代及其产生的后代个体",
+            "aliases": [
+              "P、F1、F2"
+            ],
+            "prerequisites": [
+              "人工杂交"
+            ],
+            "definition": "亲本是参与杂交的亲代，子一代和子二代分别记作F1和F2。",
+            "example": "纯种高茎与纯种矮茎为P，后代为F1。"
+          },
+          {
+            "name": "显性性状",
+            "difficulty": 2,
+            "description": "杂种后代中显现出来的性状",
+            "aliases": [],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "显性性状是杂种后代中能够显现出来的性状。",
+            "example": "高茎豌豆在F1中表现为显性性状。"
+          },
+          {
+            "name": "隐性性状",
+            "difficulty": 2,
+            "description": "杂种后代中未显现但可能遗传的性状",
+            "aliases": [],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "隐性性状是杂种后代中未显现出来的性状。",
+            "example": "矮茎在F1中未显现，在F2中重新出现。"
+          },
+          {
+            "name": "性状分离",
+            "difficulty": 2,
+            "description": "杂种后代同时出现显性和隐性性状",
+            "aliases": [],
+            "prerequisites": [
+              "显性性状",
+              "隐性性状"
+            ],
+            "definition": "性状分离是杂种后代中同时出现显性性状和隐性性状的现象。",
+            "example": "F1自交后出现高茎和矮茎。"
+          },
+          {
+            "name": "遗传因子",
+            "difficulty": 2,
+            "description": "决定生物特定性状的独立颗粒状因子",
+            "aliases": [
+              "遗传因子假说"
+            ],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "遗传因子是孟德尔假设的决定生物特定性状且不相互融合的因子。",
+            "example": "D决定高茎，d决定矮茎。"
+          },
+          {
+            "name": "显性遗传因子",
+            "difficulty": 2,
+            "description": "决定显性性状并用大写字母表示的因子",
+            "aliases": [],
+            "prerequisites": [
+              "遗传因子",
+              "显性性状"
+            ],
+            "definition": "显性遗传因子是决定显性性状并通常用大写字母表示的遗传因子。",
+            "example": "用D表示决定高茎的显性遗传因子。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "隐性遗传因子",
+            "difficulty": 2,
+            "description": "决定隐性性状并用小写字母表示的因子",
+            "aliases": [],
+            "prerequisites": [
+              "遗传因子",
+              "隐性性状"
+            ],
+            "definition": "隐性遗传因子是决定隐性性状并通常用小写字母表示的遗传因子。",
+            "example": "用d表示决定矮茎的隐性遗传因子。",
+            "section": "第1节 孟德尔的豌豆杂交实验(一)"
+          },
+          {
+            "name": "纯合子",
+            "difficulty": 2,
+            "description": "遗传因子组成相同的个体",
+            "aliases": [
+              "纯种"
+            ],
+            "prerequisites": [
+              "遗传因子"
+            ],
+            "definition": "纯合子是控制相对性状的一对遗传因子组成相同的个体。",
+            "example": "高茎豌豆DD和矮茎豌豆dd都是纯合子。"
+          },
+          {
+            "name": "杂合子",
+            "difficulty": 2,
+            "description": "遗传因子组成不同的个体",
+            "aliases": [
+              "杂种"
+            ],
+            "prerequisites": [
+              "遗传因子"
+            ],
+            "definition": "杂合子是控制相对性状的一对遗传因子组成不同的个体。",
+            "example": "F1高茎豌豆的遗传因子组成为Dd。"
+          },
+          {
+            "name": "配子",
+            "difficulty": 2,
+            "description": "生物形成的生殖细胞，含成对因子中的一个",
+            "aliases": [],
+            "prerequisites": [
+              "遗传因子"
+            ],
+            "definition": "配子是生物形成的生殖细胞，其中每对遗传因子只含有一个。",
+            "example": "Dd个体形成含D或d的配子。"
+          },
+          {
+            "name": "分离定律",
+            "difficulty": 3,
+            "description": "成对遗传因子在形成配子时彼此分离",
+            "aliases": [
+              "孟德尔第一定律"
+            ],
+            "prerequisites": [
+              "遗传因子",
+              "配子"
+            ],
+            "definition": "分离定律指出成对遗传因子在形成配子时分离并分别进入不同配子。",
+            "example": "Dd个体形成D和d数量相等的配子。"
+          },
+          {
+            "name": "测交",
+            "difficulty": 3,
+            "description": "杂种子一代与隐性纯合子进行的杂交",
+            "aliases": [
+              "测交实验"
+            ],
+            "prerequisites": [
+              "杂合子",
+              "隐性性状",
+              "纯合子"
+            ],
+            "definition": "测交是让待测个体与隐性纯合子杂交以检验其遗传因子组成的实验。",
+            "example": "Dd高茎与dd矮茎杂交，后代高矮比接近1∶1。"
+          },
+          {
+            "name": "假说—演绎法",
+            "difficulty": 3,
+            "description": "提出假说、演绎预测并用实验检验的方法",
+            "aliases": [
+              "假说演绎法"
+            ],
+            "prerequisites": [
+              "测交",
+              "数学统计"
+            ],
+            "definition": "假说—演绎法是从问题提出假说，推演预测结果并通过实验检验的方法。",
+            "example": "孟德尔用测交结果验证遗传因子假说。"
+          },
+          {
+            "name": "数学统计",
+            "difficulty": 2,
+            "description": "对杂交后代不同性状个体进行数量分析",
+            "aliases": [
+              "统计分析"
+            ],
+            "prerequisites": [
+              "性状分离"
+            ],
+            "definition": "数学统计是通过统计后代各性状个体数量及比例来分析遗传规律的方法。",
+            "example": "F2高茎与矮茎数量比接近3∶1。"
+          },
+          {
+            "name": "自由组合定律",
+            "difficulty": 3,
+            "description": "不同性状遗传因子的分离和组合互不干扰",
+            "aliases": [
+              "孟德尔第二定律"
+            ],
+            "prerequisites": [
+              "分离定律",
+              "配子"
+            ],
+            "definition": "自由组合定律指出不同性状遗传因子的分离和组合互不干扰并可自由组合。",
+            "example": "YyRr可形成YR、Yr、yR、yr四种配子。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          },
+          {
+            "name": "基因型",
+            "difficulty": 2,
+            "description": "与个体表型有关的基因组成",
+            "aliases": [
+              "遗传因子组成"
+            ],
+            "prerequisites": [
+              "遗传因子",
+              "表型"
+            ],
+            "definition": "基因型是生物个体与性状表现有关的基因组成。",
+            "example": "高茎豌豆的基因型可以是DD或Dd。"
+          },
+          {
+            "name": "表型",
+            "difficulty": 2,
+            "description": "生物个体表现出来的性状",
+            "aliases": [
+              "表现型"
+            ],
+            "prerequisites": [
+              "相对性状"
+            ],
+            "definition": "表型是生物个体实际表现出来的性状。",
+            "example": "豌豆的高茎是其表型之一。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          },
+          {
+            "name": "等位基因",
+            "difficulty": 3,
+            "description": "控制相对性状的一对基因",
+            "aliases": [
+              "等位遗传因子"
+            ],
+            "prerequisites": [
+              "基因型",
+              "遗传因子"
+            ],
+            "definition": "等位基因是控制同一相对性状不同表现类型的基因。",
+            "example": "D和d是控制茎高度的一对等位基因。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          },
+          {
+            "name": "杂交育种",
+            "difficulty": 3,
+            "description": "杂交亲本并筛选优良性状品种的方法",
+            "aliases": [],
+            "prerequisites": [
+              "分离定律",
+              "自由组合定律"
+            ],
+            "definition": "杂交育种是有目的地杂交不同优良性状亲本并筛选培育新品种的方法。",
+            "example": "通过杂交和筛选培育抗倒伏又抗病的小麦。",
+            "section": "第2节 孟德尔的豌豆杂交实验(二)"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 孟德尔的豌豆杂交实验(一)",
+            "section_key": "435682a55d",
+            "page_range": [
+              11,
+              17
+            ]
+          },
+          {
+            "name": "第2节 孟德尔的豌豆杂交实验(二)",
+            "section_key": "6cad339d89",
+            "page_range": [
+              18,
+              26
+            ]
+          }
+        ],
+        "chapter_key": "76f9b9b2fe",
+        "metadata": {
+          "volume_id": "628398397614",
+          "file_id": "628398397614",
+          "volume_title": "高中生物 必修2",
+          "chapter_order": 1,
+          "raw_heading": "第1章 遗传因子的发现"
+        }
+      },
+      {
+        "name": "第2章 基因和染色体的关系",
+        "concepts": [
+          {
+            "name": "减数分裂",
+            "difficulty": 2,
+            "description": "产生成熟生殖细胞时染色体数目减半的细胞分裂",
+            "aliases": [
+              "meiosis"
+            ],
+            "prerequisites": [],
+            "definition": "减数分裂是有性生殖生物形成成熟生殖细胞时进行的染色体数目减半的细胞分裂。",
+            "example": "精原细胞经减数分裂形成精细胞。"
+          },
+          {
+            "name": "同源染色体",
+            "difficulty": 2,
+            "description": "形态大小相同、一条来自父方一条来自母方的染色体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "同源染色体是形状和大小一般相同、分别来自父方和母方的一对染色体。",
+            "example": "减数分裂Ⅰ中成对分离的染色体。"
+          },
+          {
+            "name": "联会",
+            "difficulty": 2,
+            "description": "减数分裂时同源染色体两两配对的现象",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "减数分裂"
+            ],
+            "definition": "联会是减数分裂过程中同源染色体两两配对的现象。",
+            "example": "初级精母细胞前期发生联会。"
+          },
+          {
+            "name": "四分体",
+            "difficulty": 2,
+            "description": "联会后的一对同源染色体包含四条染色单体",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "联会"
+            ],
+            "definition": "四分体是联会后每对同源染色体所含的四条染色单体。",
+            "example": "四分体中的非姐妹染色单体可发生互换。"
+          },
+          {
+            "name": "染色体互换",
+            "difficulty": 3,
+            "description": "四分体中非姐妹染色单体交换相应片段",
+            "aliases": [],
+            "prerequisites": [
+              "四分体"
+            ],
+            "definition": "染色体互换是四分体中非姐妹染色单体之间交换相应片段的现象。",
+            "example": "互换可增加配子遗传物质组合的多样性。",
+            "section": "第1节 减数分裂和受精作用"
+          },
+          {
+            "name": "减数分裂Ⅰ",
+            "difficulty": 3,
+            "description": "同源染色体分离，染色体数目在此阶段减半",
+            "aliases": [
+              "减数第一次分裂"
+            ],
+            "prerequisites": [
+              "减数分裂",
+              "同源染色体",
+              "联会"
+            ],
+            "definition": "减数分裂Ⅰ是同源染色体分离并使子细胞染色体数目减半的分裂。",
+            "example": "初级精母细胞形成两个次级精母细胞。"
+          },
+          {
+            "name": "减数分裂Ⅱ",
+            "difficulty": 3,
+            "description": "着丝粒分裂，姐妹染色单体分开",
+            "aliases": [
+              "减数第二次分裂"
+            ],
+            "prerequisites": [
+              "减数分裂Ⅰ"
+            ],
+            "definition": "减数分裂Ⅱ是每条染色体的着丝粒分裂、姐妹染色单体分开的分裂。",
+            "example": "两个次级精母细胞形成四个精细胞。",
+            "section": "第1节 减数分裂和受精作用"
+          },
+          {
+            "name": "配子",
+            "difficulty": 1,
+            "description": "有性生殖中由减数分裂形成的成熟生殖细胞",
+            "aliases": [],
+            "prerequisites": [
+              "减数分裂"
+            ],
+            "definition": "配子是有性生殖过程中参与受精并含有数目减半染色体的生殖细胞。",
+            "example": "精子和卵细胞都是配子。"
+          },
+          {
+            "name": "受精作用",
+            "difficulty": 2,
+            "description": "卵细胞和精子相互识别、融合成为受精卵",
+            "aliases": [
+              "fertilization"
+            ],
+            "prerequisites": [
+              "配子"
+            ],
+            "definition": "受精作用是卵细胞和精子相互识别并融合形成受精卵的过程。",
+            "example": "精子与卵细胞融合后形成受精卵。"
+          },
+          {
+            "name": "配子组合多样性",
+            "difficulty": 3,
+            "description": "减数分裂使配子中的染色体组合出现多样性",
+            "aliases": [],
+            "prerequisites": [
+              "减数分裂Ⅰ",
+              "染色体互换",
+              "配子"
+            ],
+            "definition": "配子组合多样性是由非同源染色体自由组合和非姐妹染色单体互换造成的配子差异。",
+            "example": "同一双亲可形成遗传组成不同的后代。"
+          },
+          {
+            "name": "萨顿假说",
+            "difficulty": 3,
+            "description": "认为基因由染色体携带并随染色体传递",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "减数分裂"
+            ],
+            "definition": "萨顿假说认为基因位于染色体上，因为二者在遗传过程中存在平行关系。",
+            "example": "等位基因分离与同源染色体分离相似。"
+          },
+          {
+            "name": "基因在染色体上",
+            "difficulty": 2,
+            "description": "基因由染色体携带，一条染色体上有多个基因",
+            "aliases": [],
+            "prerequisites": [
+              "萨顿假说"
+            ],
+            "definition": "基因在染色体上是指染色体作为基因的主要载体并携带遗传信息。",
+            "example": "控制果蝇白眼的基因位于X染色体上。",
+            "section": "第2节 基因在染色体上"
+          },
+          {
+            "name": "基因线性排列",
+            "difficulty": 2,
+            "description": "一条染色体上的多个基因呈线性排列",
+            "aliases": [],
+            "prerequisites": [
+              "基因在染色体上"
+            ],
+            "definition": "基因线性排列是指同一条染色体上的多个基因按一定顺序排列。",
+            "example": "果蝇X染色体上的多个基因可绘制相对位置图。"
+          },
+          {
+            "name": "等位基因",
+            "difficulty": 2,
+            "description": "位于一对同源染色体相同位置、控制相对性状的基因",
+            "aliases": [
+              "遗传因子"
+            ],
+            "prerequisites": [
+              "同源染色体",
+              "基因在染色体上"
+            ],
+            "definition": "等位基因是位于一对同源染色体相同位置、控制相对性状的基因。",
+            "example": "控制红眼和白眼的基因是一对等位基因。"
+          },
+          {
+            "name": "基因分离定律现代解释",
+            "difficulty": 3,
+            "description": "等位基因随同源染色体分开而分别进入配子",
+            "aliases": [],
+            "prerequisites": [
+              "等位基因",
+              "减数分裂Ⅰ",
+              "基因在染色体上"
+            ],
+            "definition": "基因分离定律的实质是等位基因随同源染色体分离而分别进入两个配子。",
+            "example": "杂合子形成配子时等位基因发生分离。"
+          },
+          {
+            "name": "非同源染色体自由组合",
+            "difficulty": 3,
+            "description": "减数分裂时非同源染色体组合彼此不受干扰",
+            "aliases": [],
+            "prerequisites": [
+              "同源染色体",
+              "减数分裂Ⅰ"
+            ],
+            "definition": "非同源染色体自由组合是指减数分裂时非同源染色体的分离或组合互不干扰。",
+            "example": "两对非同源染色体可形成多种配子组合。"
+          },
+          {
+            "name": "基因自由组合定律现代解释",
+            "difficulty": 3,
+            "description": "非等位基因随非同源染色体自由组合而遗传",
+            "aliases": [],
+            "prerequisites": [
+              "非同源染色体自由组合",
+              "等位基因"
+            ],
+            "definition": "基因自由组合定律的实质是非等位基因随非同源染色体自由组合而彼此独立遗传。",
+            "example": "两对位于非同源染色体上的基因自由组合。"
+          },
+          {
+            "name": "伴性遗传",
+            "difficulty": 2,
+            "description": "性染色体上的基因控制的性状与性别相关联",
+            "aliases": [
+              "sex-linked inheritance"
+            ],
+            "prerequisites": [
+              "性染色体",
+              "基因在染色体上"
+            ],
+            "definition": "伴性遗传是位于性染色体上的基因控制的性状在遗传上与性别相关联的现象。",
+            "example": "人类红绿色盲属于伴性遗传。"
+          },
+          {
+            "name": "性染色体",
+            "difficulty": 1,
+            "description": "与性别决定及相关性状遗传有关的染色体",
+            "aliases": [
+              "sex chromosome"
+            ],
+            "prerequisites": [
+              "染色体"
+            ],
+            "definition": "性染色体是与生物性别决定及伴性状遗传有关的染色体。",
+            "example": "人类女性为XX，男性为XY。"
+          },
+          {
+            "name": "常染色体",
+            "difficulty": 1,
+            "description": "除性染色体外的其他染色体",
+            "aliases": [
+              "autosome"
+            ],
+            "prerequisites": [
+              "染色体",
+              "性染色体"
+            ],
+            "definition": "常染色体是生物染色体中除性染色体以外的染色体。",
+            "example": "果蝇有三对常染色体和一对性染色体。"
+          },
+          {
+            "name": "X染色体隐性遗传",
+            "difficulty": 4,
+            "description": "X染色体上的隐性基因所表现的伴性遗传方式",
+            "aliases": [],
+            "prerequisites": [
+              "伴性遗传",
+              "性染色体"
+            ],
+            "definition": "X染色体隐性遗传是由X染色体上的隐性基因控制并表现伴性特点的遗传方式。",
+            "example": "红绿色盲患者中男性远多于女性。"
+          },
+          {
+            "name": "X染色体显性遗传",
+            "difficulty": 4,
+            "description": "X染色体上的显性基因所表现的伴性遗传方式",
+            "aliases": [],
+            "prerequisites": [
+              "伴性遗传",
+              "性染色体"
+            ],
+            "definition": "X染色体显性遗传是由X染色体上的显性基因控制并表现伴性特点的遗传方式。",
+            "example": "抗维生素D佝偻病属于此类遗传病。",
+            "section": "第3节 伴性遗传"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 减数分裂和受精作用",
+            "section_key": "c4247b955b",
+            "page_range": [
+              27,
+              37
+            ]
+          },
+          {
+            "name": "第2节 基因在染色体上",
+            "section_key": "50284e34c7",
+            "page_range": [
+              38,
+              43
+            ]
+          },
+          {
+            "name": "第3节 伴性遗传",
+            "section_key": "e1c56b6ee6",
+            "page_range": [
+              43,
+              51
+            ]
+          }
+        ],
+        "chapter_key": "40290a237a",
+        "metadata": {
+          "volume_id": "628398397614",
+          "file_id": "628398397614",
+          "volume_title": "高中生物 必修2",
+          "chapter_order": 2,
+          "raw_heading": "第2章 基因和染色体的关系"
+        }
+      },
+      {
+        "name": "第3章 基因的本质",
+        "concepts": [
+          {
+            "name": "遗传物质",
+            "difficulty": 2,
+            "description": "能储存、传递并表达遗传信息的物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "遗传物质是能够储存和传递遗传信息并使后代保持亲代性状的物质。",
+            "example": "多数生物以DNA作为遗传物质"
+          },
+          {
+            "name": "染色体",
+            "difficulty": 2,
+            "description": "主要由蛋白质和DNA组成的结构",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "染色体是细胞中主要由蛋白质和DNA组成的遗传结构。",
+            "example": "染色体上分布着DNA和基因"
+          },
+          {
+            "name": "DNA",
+            "difficulty": 2,
+            "description": "由脱氧核苷酸聚合而成的生物大分子",
+            "aliases": [
+              "脱氧核糖核酸"
+            ],
+            "prerequisites": [
+              "脱氧核苷酸"
+            ],
+            "definition": "DNA是由许多脱氧核苷酸聚合而成、能储存遗传信息的生物大分子。",
+            "example": "染色体的主要成分包括DNA"
+          },
+          {
+            "name": "脱氧核苷酸",
+            "difficulty": 2,
+            "description": "组成DNA的基本单位，含磷酸、碱基和脱氧核糖",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "脱氧核苷酸是由磷酸、碱基和脱氧核糖组成的DNA基本单位。",
+            "example": "DNA含有四种脱氧核苷酸"
+          },
+          {
+            "name": "S型细菌",
+            "difficulty": 2,
+            "description": "有荚膜、有致病性的肺炎链球菌",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "S型细菌是具有多糖类荚膜并能使小鼠患病的肺炎链球菌。",
+            "example": "注射S型活细菌可使小鼠死亡",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "R型细菌",
+            "difficulty": 2,
+            "description": "无荚膜、无致病性的肺炎链球菌",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "R型细菌是没有多糖类荚膜且无致病性的肺炎链球菌。",
+            "example": "注射R型活细菌小鼠不死亡",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "肺炎链球菌转化",
+            "difficulty": 3,
+            "description": "R型活细菌转化为S型活细菌的现象",
+            "aliases": [
+              "转化实验"
+            ],
+            "prerequisites": [
+              "S型细菌",
+              "R型细菌"
+            ],
+            "definition": "肺炎链球菌转化是R型活细菌在转化因子作用下获得S型特征的过程。",
+            "example": "R型活细菌与加热致死S型细菌混合可产生S型细菌"
+          },
+          {
+            "name": "转化因子",
+            "difficulty": 3,
+            "description": "促使R型细菌产生稳定遗传变化的物质",
+            "aliases": [],
+            "prerequisites": [
+              "肺炎链球菌转化"
+            ],
+            "definition": "转化因子是能促使R型活细菌转化为S型活细菌的活性物质。",
+            "example": "加热致死的S型细菌中含有转化因子",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "艾弗里实验",
+            "difficulty": 4,
+            "description": "通过酶处理细胞提取物探究转化因子的实验",
+            "aliases": [
+              "艾弗里肺炎链球菌实验"
+            ],
+            "prerequisites": [
+              "转化因子",
+              "DNA"
+            ],
+            "definition": "艾弗里实验表明细胞提取物经DNA酶处理后失去转化活性，说明DNA是遗传物质。",
+            "example": "DNA酶处理后R型细菌不再转化为S型",
+            "section": "第1节 DNA 是主要的遗传物质"
+          },
+          {
+            "name": "噬菌体侵染实验",
+            "difficulty": 4,
+            "description": "用同位素标记研究噬菌体遗传物质的实验",
+            "aliases": [
+              "赫尔希和蔡斯实验"
+            ],
+            "prerequisites": [
+              "DNA",
+              "蛋白质"
+            ],
+            "definition": "噬菌体侵染实验表明侵染细菌时进入细胞的是DNA而非蛋白质外壳。",
+            "example": "32P标记主要出现在被侵染细菌的沉淀物中"
+          },
+          {
+            "name": "RNA遗传物质",
+            "difficulty": 3,
+            "description": "某些不含DNA的病毒以RNA作为遗传物质",
+            "aliases": [],
+            "prerequisites": [
+              "遗传物质",
+              "RNA"
+            ],
+            "definition": "RNA遗传物质是指在某些病毒中承担遗传信息储存和传递功能的RNA。",
+            "example": "烟草花叶病毒的RNA能使烟草感染病毒"
+          },
+          {
+            "name": "DNA双螺旋结构",
+            "difficulty": 3,
+            "description": "两条反向平行单链盘旋形成的结构",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "脱氧核苷酸"
+            ],
+            "definition": "DNA双螺旋结构由两条反向平行的脱氧核苷酸链盘旋而成。",
+            "example": "DNA两条链共同形成规则的双螺旋"
+          },
+          {
+            "name": "碱基互补配对",
+            "difficulty": 3,
+            "description": "A与T配对、G与C配对的规律",
+            "aliases": [
+              "碱基互补配对原则"
+            ],
+            "prerequisites": [
+              "DNA双螺旋结构"
+            ],
+            "definition": "碱基互补配对是指DNA中A与T配对、G与C配对的规律。",
+            "example": "一条链为A时，互补链对应T"
+          },
+          {
+            "name": "DNA反向平行",
+            "difficulty": 3,
+            "description": "DNA两条单链的走向相反",
+            "aliases": [
+              "反向平行"
+            ],
+            "prerequisites": [
+              "DNA双螺旋结构"
+            ],
+            "definition": "DNA反向平行是指两条单链分别沿5′端到3′端和3′端到5′端延伸。",
+            "example": "一条链为5′端至3′端，另一条相反"
+          },
+          {
+            "name": "DNA复制",
+            "difficulty": 3,
+            "description": "以亲代DNA为模板合成子代DNA的过程",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "碱基互补配对"
+            ],
+            "definition": "DNA复制是以亲代DNA为模板合成两个相同子代DNA分子的过程。",
+            "example": "细胞分裂前DNA完成复制",
+            "section": "第3节 DNA 的复制"
+          },
+          {
+            "name": "半保留复制",
+            "difficulty": 4,
+            "description": "每个子代DNA保留一条亲代链",
+            "aliases": [],
+            "prerequisites": [
+              "DNA复制",
+              "碱基互补配对"
+            ],
+            "definition": "半保留复制是指每个新形成的DNA分子保留亲代DNA的一条链。",
+            "example": "15N标记实验第二代出现杂合和轻DNA"
+          },
+          {
+            "name": "DNA解旋",
+            "difficulty": 3,
+            "description": "DNA双螺旋两条链分开的过程",
+            "aliases": [
+              "解旋"
+            ],
+            "prerequisites": [
+              "DNA双螺旋结构",
+              "DNA复制"
+            ],
+            "definition": "DNA解旋是复制开始时DNA双螺旋两条链在酶作用下分开的过程。",
+            "example": "解旋酶使互补碱基间的氢键断裂",
+            "section": "第3节 DNA 的复制"
+          },
+          {
+            "name": "DNA聚合酶",
+            "difficulty": 3,
+            "description": "以母链为模板催化子链合成的酶",
+            "aliases": [],
+            "prerequisites": [
+              "DNA复制",
+              "DNA解旋"
+            ],
+            "definition": "DNA聚合酶是利用游离脱氧核苷酸合成互补DNA子链的酶。",
+            "example": "DNA聚合酶催化新子链不断延伸",
+            "section": "第3节 DNA 的复制"
+          },
+          {
+            "name": "遗传信息",
+            "difficulty": 3,
+            "description": "蕴藏在DNA碱基排列顺序中的信息",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "脱氧核苷酸"
+            ],
+            "definition": "遗传信息是蕴藏在DNA碱基特定排列顺序中的生物遗传内容。",
+            "example": "DNA碱基序列可储存生物体所需信息"
+          },
+          {
+            "name": "基因",
+            "difficulty": 3,
+            "description": "通常是有遗传效应的DNA片段",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "遗传信息"
+            ],
+            "definition": "基因通常是具有特定遗传效应的DNA片段。",
+            "example": "绿色荧光蛋白基因使小鼠发出绿色荧光"
+          },
+          {
+            "name": "DNA多样性",
+            "difficulty": 3,
+            "description": "DNA碱基排列顺序千变万化的特征",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "遗传信息"
+            ],
+            "definition": "DNA多样性是指不同DNA分子中碱基排列顺序具有多种变化。",
+            "example": "不同物种的DNA序列通常不同"
+          },
+          {
+            "name": "DNA特异性",
+            "difficulty": 3,
+            "description": "每个DNA分子具有特定碱基排列顺序的特征",
+            "aliases": [],
+            "prerequisites": [
+              "DNA多样性",
+              "遗传信息"
+            ],
+            "definition": "DNA特异性是指特定DNA分子具有区别于其他分子的碱基排列顺序。",
+            "example": "个体间DNA指纹图通常不同"
+          },
+          {
+            "name": "DNA指纹技术",
+            "difficulty": 3,
+            "description": "依据DNA片段图谱差异进行身份识别的技术",
+            "aliases": [],
+            "prerequisites": [
+              "DNA特异性"
+            ],
+            "definition": "DNA指纹技术是通过比较DNA片段形成的指纹图来帮助确认身份的方法。",
+            "example": "可用于亲子鉴定和死者遗骸鉴定",
+            "section": "第2节 DNA 的结构"
+          },
+          {
+            "name": "生物信息学",
+            "difficulty": 3,
+            "description": "研究生物学、数学和计算机科学的交叉学科",
+            "aliases": [],
+            "prerequisites": [
+              "遗传信息"
+            ],
+            "definition": "生物信息学利用计算机处理和分析核酸与蛋白质序列数据。",
+            "example": "通过基因组序列分析人类迁移历史"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 DNA 是主要的遗传物质",
+            "section_key": "94e5fc5614",
+            "page_range": [
+              51,
+              57
+            ]
+          },
+          {
+            "name": "第2节 DNA 的结构",
+            "section_key": "5507c98ae4",
+            "page_range": [
+              57,
+              61
+            ]
+          },
+          {
+            "name": "第3节 DNA 的复制",
+            "section_key": "420ddd3942",
+            "page_range": [
+              62,
+              65
+            ]
+          },
+          {
+            "name": "第4节 基因通常是有遗传效应的DNA片段",
+            "section_key": "b3b4f6b4e1",
+            "page_range": [
+              66,
+              72
+            ]
+          }
+        ],
+        "chapter_key": "892f933025",
+        "metadata": {
+          "volume_id": "628398397614",
+          "file_id": "628398397614",
+          "volume_title": "高中生物 必修2",
+          "chapter_order": 3,
+          "raw_heading": "第3章 基因的本质"
+        }
+      },
+      {
+        "name": "第4章 基因的表达",
+        "concepts": [
+          {
+            "name": "DNA",
+            "difficulty": 1,
+            "description": "主要存在于细胞核中并携带遗传信息的核酸。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "DNA是遗传信息的主要载体。",
+            "example": "基因是有遗传效应的DNA片段。"
+          },
+          {
+            "name": "蛋白质",
+            "difficulty": 1,
+            "description": "基因表达形成并承担细胞生命活动职责的产物。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "蛋白质是遗传信息表达形成的产物。",
+            "example": "蛋白质可构成酶并参与代谢。"
+          },
+          {
+            "name": "氨基酸",
+            "difficulty": 1,
+            "description": "翻译过程中按一定顺序连接形成肽链的原料。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "氨基酸是合成蛋白质的基本原料。",
+            "example": "tRNA将氨基酸运送到核糖体。"
+          },
+          {
+            "name": "RNA",
+            "difficulty": 1,
+            "description": "可在DNA与蛋白质之间传递遗传信息的核酸。",
+            "aliases": [],
+            "prerequisites": [
+              "DNA"
+            ],
+            "definition": "RNA是由核糖核苷酸连接而成的另一类核酸。",
+            "example": "RNA一般为单链且比DNA短。"
+          },
+          {
+            "name": "mRNA",
+            "difficulty": 2,
+            "description": "作为DNA信使并以碱基序列传递遗传信息的RNA。",
+            "aliases": [
+              "信使RNA",
+              "messenger RNA"
+            ],
+            "prerequisites": [
+              "RNA",
+              "DNA"
+            ],
+            "definition": "mRNA是将DNA遗传信息传递到细胞质的信使RNA。",
+            "example": "mRNA通过核孔进入细胞质。"
+          },
+          {
+            "name": "tRNA",
+            "difficulty": 2,
+            "description": "识别密码子并转运特定氨基酸的RNA。",
+            "aliases": [
+              "转运RNA",
+              "transfer RNA"
+            ],
+            "prerequisites": [
+              "RNA",
+              "mRNA",
+              "氨基酸"
+            ],
+            "definition": "tRNA能通过反密码子识别密码子并携带一种氨基酸。",
+            "example": "携带甲硫氨酸的tRNA识别AUG。"
+          },
+          {
+            "name": "rRNA",
+            "difficulty": 2,
+            "description": "参与蛋白质合成的核糖体RNA。",
+            "aliases": [
+              "核糖体RNA",
+              "ribosomal RNA"
+            ],
+            "prerequisites": [
+              "RNA"
+            ],
+            "definition": "rRNA是构成并参与核糖体功能的RNA。",
+            "example": "rRNA参与蛋白质合成过程。"
+          },
+          {
+            "name": "核糖体",
+            "difficulty": 2,
+            "description": "与mRNA结合并进行蛋白质合成的细胞结构。",
+            "aliases": [],
+            "prerequisites": [
+              "mRNA",
+              "rRNA"
+            ],
+            "definition": "核糖体是读取mRNA并合成肽链的蛋白质装配机器。",
+            "example": "核糖体沿mRNA移动合成肽链。"
+          },
+          {
+            "name": "遗传信息",
+            "difficulty": 2,
+            "description": "蕴含在核酸碱基序列中的可传递信息。",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "RNA"
+            ],
+            "definition": "遗传信息是由核酸碱基序列承载的生物信息。",
+            "example": "mRNA碱基序列蕴含遗传信息。"
+          },
+          {
+            "name": "转录",
+            "difficulty": 2,
+            "description": "以DNA一条链为模板合成mRNA的过程。",
+            "aliases": [
+              "transcription"
+            ],
+            "prerequisites": [
+              "DNA",
+              "RNA",
+              "mRNA"
+            ],
+            "definition": "转录是在RNA聚合酶作用下以DNA一条链为模板合成RNA的过程。",
+            "example": "细胞核中DNA模板链合成mRNA。"
+          },
+          {
+            "name": "密码子",
+            "difficulty": 2,
+            "description": "mRNA上三个相邻碱基组成的遗传密码单位。",
+            "aliases": [
+              "codon"
+            ],
+            "prerequisites": [
+              "mRNA",
+              "遗传信息"
+            ],
+            "definition": "密码子是mRNA上三个相邻碱基组成的单位，决定一个氨基酸或翻译起止。",
+            "example": "AUG是起始密码子并编码甲硫氨酸。"
+          },
+          {
+            "name": "反密码子",
+            "difficulty": 3,
+            "description": "tRNA上与mRNA密码子互补配对的三个碱基。",
+            "aliases": [
+              "anticodon"
+            ],
+            "prerequisites": [
+              "tRNA",
+              "密码子"
+            ],
+            "definition": "反密码子是tRNA上能与密码子互补配对的三个碱基。",
+            "example": "tRNA反密码子与AUG互补配对。",
+            "section": "第1节 基因指导蛋白质的合成"
+          },
+          {
+            "name": "翻译",
+            "difficulty": 2,
+            "description": "以mRNA为模板合成特定氨基酸序列蛋白质的过程。",
+            "aliases": [
+              "translation"
+            ],
+            "prerequisites": [
+              "mRNA",
+              "密码子",
+              "tRNA",
+              "核糖体",
+              "氨基酸"
+            ],
+            "definition": "翻译是核糖体按照密码子与氨基酸对应关系合成肽链的过程。",
+            "example": "核糖体读取密码子并连接氨基酸。"
+          },
+          {
+            "name": "基因的表达",
+            "difficulty": 3,
+            "description": "基因通过转录和翻译合成蛋白质的过程。",
+            "aliases": [
+              "gene expression"
+            ],
+            "prerequisites": [
+              "DNA",
+              "转录",
+              "翻译",
+              "蛋白质"
+            ],
+            "definition": "基因的表达是基因通过mRNA指导蛋白质合成的过程。",
+            "example": "基因表达包括转录和翻译两个阶段。"
+          },
+          {
+            "name": "密码子简并",
+            "difficulty": 3,
+            "description": "绝大多数氨基酸由几个不同密码子决定的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "密码子",
+              "翻译"
+            ],
+            "definition": "密码子简并是多个密码子对应同一种氨基酸的现象。",
+            "example": "苯丙氨酸有多个对应密码子。"
+          },
+          {
+            "name": "中心法则",
+            "difficulty": 3,
+            "description": "概括遗传信息在DNA、RNA和蛋白质间传递规律。",
+            "aliases": [
+              "central dogma"
+            ],
+            "prerequisites": [
+              "遗传信息",
+              "转录",
+              "翻译"
+            ],
+            "definition": "中心法则描述遗传信息可由DNA流向DNA、RNA和蛋白质等规律。",
+            "example": "DNA经转录和翻译形成蛋白质。"
+          },
+          {
+            "name": "逆转录",
+            "difficulty": 3,
+            "description": "少数生物中遗传信息由RNA流向DNA的过程。",
+            "aliases": [
+              "reverse transcription"
+            ],
+            "prerequisites": [
+              "中心法则",
+              "RNA",
+              "DNA"
+            ],
+            "definition": "逆转录是以RNA为信息来源合成DNA的遗传信息传递过程。",
+            "example": "一些RNA病毒可发生逆转录。",
+            "section": "第1节 基因指导蛋白质的合成"
+          },
+          {
+            "name": "基因表达产物",
+            "difficulty": 3,
+            "description": "基因表达形成的蛋白质及其对性状产生的作用。",
+            "aliases": [],
+            "prerequisites": [
+              "基因的表达",
+              "蛋白质"
+            ],
+            "definition": "基因表达产物主要是通过表达形成并影响性状的蛋白质。",
+            "example": "淀粉分支酶影响豌豆种子的圆粒或皱粒。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "基因表达调控",
+            "difficulty": 3,
+            "description": "调节基因何时、何处及以多高水平表达的机制。",
+            "aliases": [],
+            "prerequisites": [
+              "基因的表达"
+            ],
+            "definition": "基因表达调控是对基因表达时间、细胞类型和表达水平的控制。",
+            "example": "不同细胞表达的基因存在差异。"
+          },
+          {
+            "name": "选择性表达",
+            "difficulty": 3,
+            "description": "不同类型细胞表达不同基因的基因表达状态。",
+            "aliases": [
+              "基因的选择性表达"
+            ],
+            "prerequisites": [
+              "基因表达调控",
+              "基因的表达"
+            ],
+            "definition": "基因的选择性表达是细胞只表达部分基因而不表达其他基因的现象。",
+            "example": "胰岛细胞表达胰岛素基因。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "细胞分化",
+            "difficulty": 3,
+            "description": "细胞在形态、结构和功能上形成差异的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "选择性表达"
+            ],
+            "definition": "细胞分化的本质是基因的选择性表达。",
+            "example": "同一受精卵产生神经细胞和肌细胞。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "DNA甲基化",
+            "difficulty": 3,
+            "description": "DNA部分碱基连接甲基基团并影响基因表达的修饰。",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "基因表达调控"
+            ],
+            "definition": "DNA甲基化是可抑制相关基因表达的DNA化学修饰。",
+            "example": "Lcyc基因高度甲基化后不表达。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "表观遗传",
+            "difficulty": 4,
+            "description": "碱基序列不变而基因表达和表型发生可遗传变化。",
+            "aliases": [
+              "epigenetic inheritance"
+            ],
+            "prerequisites": [
+              "基因表达调控",
+              "DNA甲基化"
+            ],
+            "definition": "表观遗传是基因碱基序列不变但表达和表型发生可遗传变化的现象。",
+            "example": "小鼠毛色受Avy基因甲基化程度影响。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "基因与性状关系",
+            "difficulty": 4,
+            "description": "基因、蛋白质和环境共同作用形成生物体性状。",
+            "aliases": [],
+            "prerequisites": [
+              "基因表达产物",
+              "基因表达调控",
+              "表观遗传"
+            ],
+            "definition": "基因与性状通常不是一一对应，而是受多基因、环境及相互作用共同影响。",
+            "example": "人的身高受多个基因和营养锻炼影响。",
+            "section": "第2节 基因表达与性状的关系"
+          },
+          {
+            "name": "基因工程",
+            "difficulty": 3,
+            "description": "提取改造并转移基因以获得需要生物或产品的技术。",
+            "aliases": [
+              "gene engineering"
+            ],
+            "prerequisites": [
+              "DNA",
+              "基因的表达",
+              "基因与性状关系"
+            ],
+            "definition": "基因工程是将某生物基因提取改造后转移到另一生物细胞中的技术。",
+            "example": "将人的胰岛素基因转入大肠杆菌生产胰岛素。",
+            "section": "第2节 基因表达与性状的关系"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 基因指导蛋白质的合成",
+            "section_key": "4ecee948f0",
+            "page_range": [
+              73,
+              79
+            ]
+          },
+          {
+            "name": "第2节 基因表达与性状的关系",
+            "section_key": "cbe977fa2f",
+            "page_range": [
+              80,
+              88
+            ]
+          }
+        ],
+        "chapter_key": "cf57f1b764",
+        "metadata": {
+          "volume_id": "628398397614",
+          "file_id": "628398397614",
+          "volume_title": "高中生物 必修2",
+          "chapter_order": 4,
+          "raw_heading": "第4章 基因的表达"
+        }
+      },
+      {
+        "name": "第5章 基因突变及其他变异",
+        "concepts": [
+          {
+            "name": "可遗传变异",
+            "difficulty": 2,
+            "description": "能够由亲代遗传给后代的变异",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "由亲代生殖细胞内遗传物质改变引起并能遗传给后代的变异叫可遗传变异。",
+            "example": "基因突变导致镰状细胞贫血",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "DNA复制",
+            "difficulty": 2,
+            "description": "遗传信息复制的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "以DNA分子为模板按照碱基互补配对原则合成新的DNA分子的过程叫DNA复制。",
+            "example": "细胞分裂前复制DNA"
+          },
+          {
+            "name": "基因突变",
+            "difficulty": 3,
+            "description": "基因碱基序列发生改变",
+            "aliases": [],
+            "prerequisites": [
+              "DNA复制"
+            ],
+            "definition": "DNA分子中碱基的替换、增添或缺失引起的基因碱基序列改变叫基因突变。",
+            "example": "镰状细胞贫血的致病基因突变"
+          },
+          {
+            "name": "基因突变类型",
+            "difficulty": 2,
+            "description": "碱基替换、增添和缺失",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变按DNA碱基变化可分为替换、增添和缺失。",
+            "example": "编码区碱基发生增添"
+          },
+          {
+            "name": "基因突变遗传",
+            "difficulty": 3,
+            "description": "突变发生部位影响遗传性",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变发生在配子中通常可遗传，发生在体细胞中一般不能遗传。",
+            "example": "植物体细胞突变可经无性生殖遗传"
+          },
+          {
+            "name": "基因突变原因",
+            "difficulty": 2,
+            "description": "基因突变可诱发也可自发产生",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变可由物理、化学、生物因素诱发，也可因DNA复制错误自发产生。",
+            "example": "X射线提高果蝇突变频率"
+          },
+          {
+            "name": "基因突变特点",
+            "difficulty": 3,
+            "description": "具有普遍性、随机性和不定向性",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变在生物界普遍存在，并具有随机性、不定向性和低频性。",
+            "example": "同一基因可产生多个等位基因"
+          },
+          {
+            "name": "基因突变意义",
+            "difficulty": 3,
+            "description": "产生新基因和进化原材料",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "基因突变是产生新基因的途径，为生物进化提供丰富原材料。",
+            "example": "抗药性突变帮助微生物适应环境"
+          },
+          {
+            "name": "诱变育种",
+            "difficulty": 3,
+            "description": "利用因素诱发突变培育新品种",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "用物理或化学因素处理生物以提高突变率并选育新品种的方法叫诱变育种。",
+            "example": "辐射处理大豆培育高油品种",
+            "section": "第1节 基因突变和基因重组"
+          },
+          {
+            "name": "原癌基因",
+            "difficulty": 3,
+            "description": "促进细胞正常生长和增殖的基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "原癌基因表达的蛋白质通常是细胞正常生长和增殖所必需的。",
+            "example": "原癌基因过量表达可能引起癌变"
+          },
+          {
+            "name": "抑癌基因",
+            "difficulty": 3,
+            "description": "抑制细胞生长或促进凋亡的基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因突变"
+            ],
+            "definition": "抑癌基因表达的蛋白质能抑制细胞生长增殖或促进细胞凋亡。",
+            "example": "抑癌基因突变可能导致癌变"
+          },
+          {
+            "name": "癌细胞特征",
+            "difficulty": 3,
+            "description": "癌细胞具有无限增殖和易转移等特征",
+            "aliases": [],
+            "prerequisites": [
+              "原癌基因",
+              "抑癌基因"
+            ],
+            "definition": "癌细胞能够无限增殖，形态结构改变且易分散和转移。",
+            "example": "癌细胞膜糖蛋白减少"
+          },
+          {
+            "name": "基因重组",
+            "difficulty": 3,
+            "description": "有性生殖中基因重新组合",
+            "aliases": [],
+            "prerequisites": [
+              "有性生殖",
+              "减数分裂"
+            ],
+            "definition": "生物进行有性生殖时控制不同性状的基因重新组合叫基因重组。",
+            "example": "非同源染色体自由组合产生新配子"
+          },
+          {
+            "name": "基因重组意义",
+            "difficulty": 3,
+            "description": "增加配子和子代基因组合多样性",
+            "aliases": [],
+            "prerequisites": [
+              "基因重组"
+            ],
+            "definition": "基因重组使配子和子代的基因组合多样化，有利于生物适应环境变化。",
+            "example": "金鱼杂交产生多种性状"
+          },
+          {
+            "name": "染色体变异",
+            "difficulty": 3,
+            "description": "染色体数目或结构发生改变",
+            "aliases": [],
+            "prerequisites": [
+              "染色体"
+            ],
+            "definition": "生物体体细胞或生殖细胞内染色体数目或结构的变化叫染色体变异。",
+            "example": "唐氏综合征患者多一条21号染色体"
+          },
+          {
+            "name": "染色体组",
+            "difficulty": 3,
+            "description": "一套非同源染色体的集合",
+            "aliases": [],
+            "prerequisites": [
+              "染色体"
+            ],
+            "definition": "每套形态和功能不同的非同源染色体称为一个染色体组。",
+            "example": "野生马铃薯每组含12条染色体"
+          },
+          {
+            "name": "二倍体",
+            "difficulty": 2,
+            "description": "体细胞含有两个染色体组的个体",
+            "aliases": [],
+            "prerequisites": [
+              "染色体组"
+            ],
+            "definition": "体细胞中含有两个染色体组的个体叫二倍体。",
+            "example": "野生马铃薯是二倍体",
+            "section": "第2节 染色体变异"
+          },
+          {
+            "name": "多倍体",
+            "difficulty": 3,
+            "description": "体细胞含有三个或更多染色体组",
+            "aliases": [],
+            "prerequisites": [
+              "染色体组"
+            ],
+            "definition": "体细胞中含有三个或三个以上染色体组的个体统称多倍体。",
+            "example": "三倍体无子西瓜"
+          },
+          {
+            "name": "三倍体",
+            "difficulty": 3,
+            "description": "体细胞含有三个染色体组",
+            "aliases": [],
+            "prerequisites": [
+              "多倍体"
+            ],
+            "definition": "体细胞中含有三个染色体组的个体叫三倍体。",
+            "example": "三倍体香蕉通常无种子"
+          },
+          {
+            "name": "单倍体",
+            "difficulty": 3,
+            "description": "体细胞染色体数与配子相同",
+            "aliases": [],
+            "prerequisites": [
+              "染色体组"
+            ],
+            "definition": "体细胞中染色体数目与本物种配子染色体数目相同的个体叫单倍体。",
+            "example": "蜜蜂雄蜂是单倍体",
+            "section": "第2节 染色体变异"
+          },
+          {
+            "name": "多倍体育种",
+            "difficulty": 3,
+            "description": "人工诱导多倍体培育新品种",
+            "aliases": [],
+            "prerequisites": [
+              "多倍体"
+            ],
+            "definition": "通过人工诱导形成多倍体植株以培育新品种的方法叫多倍体育种。",
+            "example": "诱导四倍体葡萄"
+          },
+          {
+            "name": "秋水仙素诱导",
+            "difficulty": 3,
+            "description": "抑制纺锤体形成使染色体加倍",
+            "aliases": [],
+            "prerequisites": [
+              "多倍体"
+            ],
+            "definition": "秋水仙素抑制有丝分裂时纺锤体形成，使染色体不能正常分离而数目加倍。",
+            "example": "处理西瓜幼苗获得四倍体"
+          },
+          {
+            "name": "染色体结构变异",
+            "difficulty": 3,
+            "description": "染色体片段数目或顺序改变",
+            "aliases": [],
+            "prerequisites": [
+              "染色体变异"
+            ],
+            "definition": "染色体片段的缺失、重复、倒位或易位造成的变异叫染色体结构变异。",
+            "example": "猫叫综合征由5号染色体部分缺失引起",
+            "section": "第2节 染色体变异"
+          },
+          {
+            "name": "染色体结构变异类型",
+            "difficulty": 3,
+            "description": "包括缺失、重复、倒位和易位",
+            "aliases": [],
+            "prerequisites": [
+              "染色体结构变异"
+            ],
+            "definition": "染色体结构变异主要包括片段缺失、重复、倒位和易位四种类型。",
+            "example": "非同源染色体片段互换属于易位"
+          },
+          {
+            "name": "人类遗传病",
+            "difficulty": 2,
+            "description": "由遗传物质改变引起的人类疾病",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "通常由遗传物质改变引起的人类疾病叫人类遗传病。",
+            "example": "白化病",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "单基因遗传病",
+            "difficulty": 2,
+            "description": "受一对等位基因控制的遗传病",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "受一对等位基因控制的遗传病叫单基因遗传病。",
+            "example": "多指和白化病",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "多基因遗传病",
+            "difficulty": 3,
+            "description": "受两对或以上等位基因控制",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "受两对或两对以上等位基因控制的遗传病叫多基因遗传病。",
+            "example": "原发性高血压",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "染色体异常遗传病",
+            "difficulty": 3,
+            "description": "由染色体变异引起的遗传病",
+            "aliases": [],
+            "prerequisites": [
+              "染色体变异",
+              "人类遗传病"
+            ],
+            "definition": "由染色体变异引起的遗传病叫染色体异常遗传病。",
+            "example": "唐氏综合征",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "遗传咨询",
+            "difficulty": 2,
+            "description": "评估遗传病风险并提出建议",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "通过检查、分析遗传病传递方式并推算后代风险而提供防治建议的过程叫遗传咨询。",
+            "example": "为有家族病史的夫妇评估风险",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "产前诊断",
+            "difficulty": 2,
+            "description": "胎儿出生前检测遗传病或先天病",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "在胎儿出生前用专门检测手段确定其是否患遗传病或先天性疾病叫产前诊断。",
+            "example": "羊水检查筛查唐氏综合征",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "基因检测",
+            "difficulty": 2,
+            "description": "检测DNA序列了解基因状况",
+            "aliases": [],
+            "prerequisites": [
+              "人类遗传病"
+            ],
+            "definition": "通过检测人体细胞中的DNA序列以了解人体基因状况的方法叫基因检测。",
+            "example": "检测致病基因突变",
+            "section": "第3节 人类遗传病"
+          },
+          {
+            "name": "基因治疗",
+            "difficulty": 3,
+            "description": "用正常基因替代或修补缺陷基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因检测"
+            ],
+            "definition": "用正常基因取代或修补患者细胞中的缺陷基因以治疗疾病叫基因治疗。",
+            "example": "导入正常ADA基因治疗免疫缺陷"
+          },
+          {
+            "name": "基因组编辑",
+            "difficulty": 4,
+            "description": "对基因序列进行定点修改",
+            "aliases": [
+              "基因编辑"
+            ],
+            "prerequisites": [
+              "基因突变",
+              "基因检测"
+            ],
+            "definition": "利用技术对基因组中特定基因序列进行准确修改或破坏的技术叫基因组编辑。",
+            "example": "CRISPR/Cas9编辑哺乳动物细胞",
+            "section": "第1节 基因突变和基因重组"
+          },
+          {
+            "name": "精准医疗",
+            "difficulty": 3,
+            "description": "依据个体组学信息制定治疗方案",
+            "aliases": [],
+            "prerequisites": [
+              "基因检测"
+            ],
+            "definition": "以患者组学信息为基础通过大数据分析设计个体化治疗方案的医疗模式叫精准医疗。",
+            "example": "依据基因突变选择靶向药物",
+            "section": "第1节 基因突变和基因重组"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 基因突变和基因重组",
+            "section_key": "8d69b16837",
+            "page_range": [
+              89,
+              95
+            ]
+          },
+          {
+            "name": "第2节 染色体变异",
+            "section_key": "a2fa976aef",
+            "page_range": [
+              96,
+              101
+            ]
+          },
+          {
+            "name": "第3节 人类遗传病",
+            "section_key": "b3b685814d",
+            "page_range": [
+              101,
+              108
+            ]
+          }
+        ],
+        "chapter_key": "060b76a3d5",
+        "metadata": {
+          "volume_id": "628398397614",
+          "file_id": "628398397614",
+          "volume_title": "高中生物 必修2",
+          "chapter_order": 5,
+          "raw_heading": "第5章 基因突变及其他变异"
+        }
+      },
+      {
+        "name": "第6章 生物的进化",
+        "concepts": [
+          {
+            "name": "共同由来学说",
+            "difficulty": 2,
+            "description": "地球上的生物都由原始共同祖先进化而来。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "共同由来学说认为当今所有生物都来自共同祖先。",
+            "example": "人和猿有共同的祖先。",
+            "section": "第1节 生物有共同祖先的证据"
+          },
+          {
+            "name": "自然选择学说",
+            "difficulty": 3,
+            "description": "揭示生物进化机制，解释适应和物种形成。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "自然选择学说认为生物通过自然选择不断进化并形成适应。",
+            "example": "长颈鹿颈长性状逐代增加。"
+          },
+          {
+            "name": "化石",
+            "difficulty": 1,
+            "description": "保存在地层中的古代生物遗体、遗物或痕迹。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "化石是通过自然作用保存在地层中的古代生物遗体、遗物或生活痕迹。",
+            "example": "赫氏近鸟龙化石。"
+          },
+          {
+            "name": "化石证据",
+            "difficulty": 2,
+            "description": "化石是研究生物进化最直接、最重要的证据。",
+            "aliases": [],
+            "prerequisites": [
+              "化石"
+            ],
+            "definition": "化石证据通过古生物遗存揭示生物进化的顺序和过程。",
+            "example": "化石显示生物由水生逐渐到陆生。",
+            "section": "第1节 生物有共同祖先的证据"
+          },
+          {
+            "name": "比较解剖学证据",
+            "difficulty": 2,
+            "description": "比较不同生物器官和系统的形态结构以研究亲缘关系。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "比较解剖学证据依据不同生物器官结构的共同点支持共同祖先观点。",
+            "example": "人的上肢与蝙蝠的翼骨骼结构相似。",
+            "section": "第1节 生物有共同祖先的证据"
+          },
+          {
+            "name": "胚胎学证据",
+            "difficulty": 2,
+            "description": "比较不同生物胚胎发育过程以寻找进化证据。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "胚胎学证据通过比较胚胎发育的相似阶段推断生物的共同祖先。",
+            "example": "人的胚胎早期出现鳃裂和尾。"
+          },
+          {
+            "name": "细胞分子证据",
+            "difficulty": 3,
+            "description": "细胞结构及DNA、蛋白质等分子的共同点支持共同起源。",
+            "aliases": [],
+            "prerequisites": [
+              "共同由来学说"
+            ],
+            "definition": "细胞分子证据依据生物在细胞和分子水平的相似性支持共同祖先。",
+            "example": "人与黑猩猩基因组差异较小。"
+          },
+          {
+            "name": "适应",
+            "difficulty": 2,
+            "description": "生物结构及功能适合一定环境中的生存和繁殖。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "适应是生物的形态结构及其功能与特定环境相适合的现象。",
+            "example": "枯叶蝶翅膀像枯叶。"
+          },
+          {
+            "name": "适应相对性",
+            "difficulty": 3,
+            "description": "生物适应受环境限制，并非绝对或完全适应。",
+            "aliases": [],
+            "prerequisites": [
+              "适应"
+            ],
+            "definition": "适应相对性指生物的适应只能在一定环境和条件下发挥作用。",
+            "example": "雷鸟白色羽毛在无雪环境中保护作用有限。",
+            "section": "第2节 自然选择与适应的形成"
+          },
+          {
+            "name": "用进废退",
+            "difficulty": 2,
+            "description": "拉马克认为器官多用则发达，少用则退化。",
+            "aliases": [],
+            "prerequisites": [
+              "适应"
+            ],
+            "definition": "用进废退是拉马克关于器官因使用或不使用而发达或退化的观点。",
+            "example": "鼹鼠长期地下生活导致眼睛退化。",
+            "section": "第2节 自然选择与适应的形成"
+          },
+          {
+            "name": "获得性遗传",
+            "difficulty": 2,
+            "description": "拉马克认为生物后天获得的性状能够遗传给后代。",
+            "aliases": [],
+            "prerequisites": [
+              "用进废退"
+            ],
+            "definition": "获得性遗传认为个体因环境或生活方式获得的性状可以传给后代。",
+            "example": "拉马克认为食蚁兽的细长舌可遗传。",
+            "section": "第2节 自然选择与适应的形成"
+          },
+          {
+            "name": "可遗传变异",
+            "difficulty": 2,
+            "description": "能够遗传给后代的生物变异，是进化的重要基础。",
+            "aliases": [],
+            "prerequisites": [
+              "适应"
+            ],
+            "definition": "可遗传变异是生物个体间能够传递给后代的差异。",
+            "example": "长颈鹿祖先出现可遗传的颈长变异。"
+          },
+          {
+            "name": "生存斗争",
+            "difficulty": 2,
+            "description": "由于资源有限，生物个体之间存在生存和繁殖的竞争。",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "生存斗争是生物因过度繁殖和资源有限而产生的竞争。",
+            "example": "干旱季节长颈鹿争夺有限食物。"
+          },
+          {
+            "name": "自然选择",
+            "difficulty": 3,
+            "description": "环境选择有利变异，使其个体留下更多后代。",
+            "aliases": [
+              "natural selection"
+            ],
+            "prerequisites": [
+              "可遗传变异",
+              "生存斗争"
+            ],
+            "definition": "自然选择是环境使具有不同变异的个体在生存和繁殖上产生差异的过程。",
+            "example": "黑色桦尺蛾在黑树干上更易存活。"
+          },
+          {
+            "name": "种群",
+            "difficulty": 1,
+            "description": "生活在一定区域内的同种生物全部个体的集合。",
+            "aliases": [
+              "population"
+            ],
+            "prerequisites": [],
+            "definition": "种群是生活在一定区域内、能够相互交配繁殖的同种生物群体。",
+            "example": "一片树林中的全部猕猴。"
+          },
+          {
+            "name": "基因库",
+            "difficulty": 2,
+            "description": "一个种群中全部个体所含有的全部基因。",
+            "aliases": [
+              "gene pool"
+            ],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "基因库是一个种群全部个体所含有的全部基因的总和。",
+            "example": "猕猴种群所有个体的基因构成基因库。"
+          },
+          {
+            "name": "基因频率",
+            "difficulty": 3,
+            "description": "某基因占种群全部等位基因数的比值。",
+            "aliases": [],
+            "prerequisites": [
+              "种群",
+              "基因库"
+            ],
+            "definition": "基因频率是种群基因库中某个基因所占全部等位基因的比例。",
+            "example": "某昆虫种群中A基因频率为60%。"
+          },
+          {
+            "name": "基因突变",
+            "difficulty": 2,
+            "description": "基因结构发生改变并产生新的等位基因。",
+            "aliases": [
+              "mutation"
+            ],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "基因突变是基因结构发生改变并形成新等位基因的变异。",
+            "example": "昆虫出现残翅突变。"
+          },
+          {
+            "name": "基因重组",
+            "difficulty": 2,
+            "description": "有性生殖过程中基因重新组合，形成多种基因型。",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "基因重组是基因在有性生殖过程中重新组合形成不同基因型。",
+            "example": "不同等位基因组合形成新的基因型。"
+          },
+          {
+            "name": "染色体变异",
+            "difficulty": 2,
+            "description": "染色体数目或结构发生改变，可引起基因频率变化。",
+            "aliases": [],
+            "prerequisites": [
+              "可遗传变异"
+            ],
+            "definition": "染色体变异是染色体数目或结构改变形成的可遗传变异。",
+            "example": "染色体数目差异影响斑马和驴后代育性。"
+          },
+          {
+            "name": "生物进化实质",
+            "difficulty": 3,
+            "description": "从基因水平看，是种群基因频率发生定向改变。",
+            "aliases": [],
+            "prerequisites": [
+              "种群",
+              "基因频率",
+              "自然选择"
+            ],
+            "definition": "生物进化的实质是种群基因频率在多种因素作用下发生定向改变。",
+            "example": "桦尺蛾种群中S基因频率升高。"
+          },
+          {
+            "name": "物种",
+            "difficulty": 2,
+            "description": "能在自然状态下相互交配并产生可育后代的一群生物。",
+            "aliases": [
+              "species"
+            ],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "物种是能够在自然状态下相互交配并产生可育后代的生物群体。",
+            "example": "马和驴属于两个物种。"
+          },
+          {
+            "name": "生殖隔离",
+            "difficulty": 3,
+            "description": "不同群体不能相互交配或不能产生可育后代。",
+            "aliases": [
+              "reproductive isolation"
+            ],
+            "prerequisites": [
+              "物种"
+            ],
+            "definition": "生殖隔离是不同群体间不能相互交配或不能产生可育后代的现象。",
+            "example": "马和驴的后代骡不育。"
+          },
+          {
+            "name": "地理隔离",
+            "difficulty": 2,
+            "description": "地理障碍使同种不同种群间不能进行基因交流。",
+            "aliases": [
+              "geographical isolation"
+            ],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "地理隔离是地理障碍导致同种不同种群间基因不能自由交流。",
+            "example": "河流将鼠种群分隔在两岸。"
+          },
+          {
+            "name": "隔离",
+            "difficulty": 3,
+            "description": "不同群体间个体在自然条件下不能自由交流基因。",
+            "aliases": [
+              "isolation"
+            ],
+            "prerequisites": [
+              "地理隔离",
+              "生殖隔离"
+            ],
+            "definition": "隔离是不同群体间个体不能在自然条件下自由交流基因的现象。",
+            "example": "岛屿阻隔使地雀种群分化。"
+          },
+          {
+            "name": "物种形成",
+            "difficulty": 4,
+            "description": "种群基因库差异积累并形成生殖隔离，产生新物种。",
+            "aliases": [],
+            "prerequisites": [
+              "种群",
+              "基因频率",
+              "隔离"
+            ],
+            "definition": "物种形成是种群分化并最终形成生殖隔离而产生新物种的过程。",
+            "example": "加拉帕戈斯地雀形成多个物种。"
+          },
+          {
+            "name": "协同进化",
+            "difficulty": 3,
+            "description": "不同物种及生物与无机环境相互影响、共同进化。",
+            "aliases": [
+              "coevolution"
+            ],
+            "prerequisites": [
+              "自然选择",
+              "物种"
+            ],
+            "definition": "协同进化是生物之间以及生物与无机环境相互影响中不断进化。",
+            "example": "猎豹和羚羊在选择作用下共同进化。",
+            "section": "第4节 协同进化与生物多样性的形成"
+          },
+          {
+            "name": "生物多样性",
+            "difficulty": 2,
+            "description": "包括遗传、物种和生态系统三个层次的多样性。",
+            "aliases": [],
+            "prerequisites": [
+              "物种",
+              "协同进化"
+            ],
+            "definition": "生物多样性是生物在遗传、物种和生态系统层次上的丰富程度。",
+            "example": "地球上形成多种生态系统。",
+            "section": "第4节 协同进化与生物多样性的形成"
+          },
+          {
+            "name": "现代进化理论",
+            "difficulty": 4,
+            "description": "以自然选择为核心，解释适应、物种形成和多样性。",
+            "aliases": [],
+            "prerequisites": [
+              "自然选择",
+              "基因频率",
+              "物种形成",
+              "协同进化"
+            ],
+            "definition": "现代进化理论以自然选择为核心，强调种群基因频率改变及隔离成种。",
+            "example": "耐药菌比例在抗生素选择下升高。"
+          },
+          {
+            "name": "半衰期",
+            "difficulty": 2,
+            "description": "放射性同位素在一定时间内衰变一半所需的时间。",
+            "aliases": [],
+            "prerequisites": [
+              "化石"
+            ],
+            "definition": "半衰期是放射性同位素数量衰变为原来一半所需的时间。",
+            "example": "238U的半衰期约为45亿年。",
+            "section": "第1节 生物有共同祖先的证据"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 生物有共同祖先的证据",
+            "section_key": "7a7e3d45c4",
+            "page_range": [
+              109,
+              115
+            ]
+          },
+          {
+            "name": "第2节 自然选择与适应的形成",
+            "section_key": "3c803afeed",
+            "page_range": [
+              115,
+              119
+            ]
+          },
+          {
+            "name": "第3节 种群基因组成的变化与物种的形成",
+            "section_key": "46a1c73f3b",
+            "page_range": [
+              119,
+              127
+            ]
+          },
+          {
+            "name": "第4节 协同进化与生物多样性的形成",
+            "section_key": "bfc49e9a41",
+            "page_range": [
+              128,
+              138
+            ]
+          }
+        ],
+        "chapter_key": "c995f8e351",
+        "metadata": {
+          "volume_id": "628398397614",
+          "file_id": "628398397614",
+          "volume_title": "高中生物 必修2",
+          "chapter_order": 6,
+          "raw_heading": "第6章 生物的进化"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "435682a55d": [
+        11,
+        17
+      ],
+      "第1节 孟德尔的豌豆杂交实验(一)": [
+        11,
+        17
+      ],
+      "6cad339d89": [
+        18,
+        26
+      ],
+      "第2节 孟德尔的豌豆杂交实验(二)": [
+        18,
+        26
+      ],
+      "c4247b955b": [
+        27,
+        37
+      ],
+      "第1节 减数分裂和受精作用": [
+        27,
+        37
+      ],
+      "50284e34c7": [
+        38,
+        43
+      ],
+      "第2节 基因在染色体上": [
+        38,
+        43
+      ],
+      "e1c56b6ee6": [
+        43,
+        51
+      ],
+      "第3节 伴性遗传": [
+        43,
+        51
+      ],
+      "94e5fc5614": [
+        51,
+        57
+      ],
+      "第1节 DNA 是主要的遗传物质": [
+        51,
+        57
+      ],
+      "5507c98ae4": [
+        57,
+        61
+      ],
+      "第2节 DNA 的结构": [
+        57,
+        61
+      ],
+      "420ddd3942": [
+        62,
+        65
+      ],
+      "第3节 DNA 的复制": [
+        62,
+        65
+      ],
+      "b3b4f6b4e1": [
+        66,
+        72
+      ],
+      "第4节 基因通常是有遗传效应的DNA片段": [
+        66,
+        72
+      ],
+      "4ecee948f0": [
+        73,
+        79
+      ],
+      "第1节 基因指导蛋白质的合成": [
+        73,
+        79
+      ],
+      "cbe977fa2f": [
+        80,
+        88
+      ],
+      "第2节 基因表达与性状的关系": [
+        80,
+        88
+      ],
+      "8d69b16837": [
+        89,
+        95
+      ],
+      "第1节 基因突变和基因重组": [
+        89,
+        95
+      ],
+      "a2fa976aef": [
+        96,
+        101
+      ],
+      "第2节 染色体变异": [
+        96,
+        101
+      ],
+      "b3b685814d": [
+        101,
+        108
+      ],
+      "第3节 人类遗传病": [
+        101,
+        108
+      ],
+      "7a7e3d45c4": [
+        109,
+        115
+      ],
+      "第1节 生物有共同祖先的证据": [
+        109,
+        115
+      ],
+      "3c803afeed": [
+        115,
+        119
+      ],
+      "第2节 自然选择与适应的形成": [
+        115,
+        119
+      ],
+      "46a1c73f3b": [
+        119,
+        127
+      ],
+      "第3节 种群基因组成的变化与物种的形成": [
+        119,
+        127
+      ],
+      "bfc49e9a41": [
+        128,
+        138
+      ],
+      "第4节 协同进化与生物多样性的形成": [
+        128,
+        138
+      ]
+    }
+  }
+}

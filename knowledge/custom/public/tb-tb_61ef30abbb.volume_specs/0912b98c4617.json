@@ -1,0 +1,3375 @@
+{
+  "file_id": "0912b98c4617",
+  "text_sha256": "03ccefac4d904adb30c235223f8f62ce52c9505e1a0d3a127d08c76911550615",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一课 社会主义从空想到科学、从理论到实践的发展",
+        "concepts": [
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然、创造社会财富的能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产力是人类改造自然和进行物质生产的能力。",
+            "example": "铁制农具推广推动农业生产力发展"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "生产过程中形成的人与人之间的关系",
+            "aliases": [],
+            "prerequisites": [
+              "生产力"
+            ],
+            "definition": "生产关系是人们在物质资料生产过程中形成的社会关系。",
+            "example": "原始社会共同占有生产资料"
+          },
+          {
+            "name": "原始社会",
+            "difficulty": 1,
+            "description": "人类社会发展的最初阶段和最低阶段",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原始社会是人类社会发展的最初阶段，生产力水平极其低下。",
+            "example": "人们共同劳动、平均分配产品",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "原始社会生产关系",
+            "difficulty": 2,
+            "description": "共同劳动、共同占有、平等互助、平均分配",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "原始社会"
+            ],
+            "definition": "原始社会生产关系以共同劳动和共同占有生产资料为主要特点。",
+            "example": "氏族成员共同采集并平均分配食物",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "氏族制度",
+            "difficulty": 2,
+            "description": "按血缘关系组织原始人共同生活的制度",
+            "aliases": [],
+            "prerequisites": [
+              "原始社会"
+            ],
+            "definition": "氏族制度是原始人按照血缘关系结成氏族并管理共同事务的制度。",
+            "example": "氏族议事会共同决定重大事务",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "私有制确立",
+            "difficulty": 2,
+            "description": "生产资料由氏族公有转为家庭私有",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "私有制确立是生产资料由氏族公有转归家庭私有的历史过程。",
+            "example": "土地后来变成家庭私有财产"
+          },
+          {
+            "name": "阶级",
+            "difficulty": 2,
+            "description": "在一定生产关系中处于不同地位的集团",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "私有制确立"
+            ],
+            "definition": "阶级是在一定生产关系中处于不同地位的社会集团。",
+            "example": "奴隶主阶级和奴隶阶级"
+          },
+          {
+            "name": "国家",
+            "difficulty": 2,
+            "description": "阶级矛盾不可调和的产物和统治工具",
+            "aliases": [],
+            "prerequisites": [
+              "阶级"
+            ],
+            "definition": "国家是阶级矛盾不可调和的产物，是阶级统治的工具。",
+            "example": "奴隶主建立军队和法庭维护统治"
+          },
+          {
+            "name": "奴隶制生产关系",
+            "difficulty": 2,
+            "description": "奴隶主占有生产资料并完全占有奴隶",
+            "aliases": [],
+            "prerequisites": [
+              "阶级",
+              "生产关系"
+            ],
+            "definition": "奴隶制生产关系以奴隶主完全占有生产资料和奴隶为特征。",
+            "example": "奴隶劳动的全部产品归奴隶主支配",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "奴隶社会",
+            "difficulty": 2,
+            "description": "以奴隶主和奴隶对立为主要矛盾的社会",
+            "aliases": [],
+            "prerequisites": [
+              "奴隶制生产关系",
+              "国家"
+            ],
+            "definition": "奴隶社会是奴隶主阶级剥削和统治奴隶阶级的社会形态。",
+            "example": "古代埃及属于奴隶制国家",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "封建制生产关系",
+            "difficulty": 2,
+            "description": "地主占有土地并通过地租剥削农民",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "封建制生产关系以地主占有土地和农民依附地主为主要特征。",
+            "example": "农民缴纳地租后保留部分劳动成果",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "封建社会",
+            "difficulty": 2,
+            "description": "以地主和农民对立为主要矛盾的社会",
+            "aliases": [],
+            "prerequisites": [
+              "封建制生产关系"
+            ],
+            "definition": "封建社会是地主阶级剥削和统治农民阶级的社会形态。",
+            "example": "封建国家通常君主专制、等级森严",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "资本主义生产关系",
+            "difficulty": 3,
+            "description": "资本家占有生产资料并占有工人剩余价值",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "剩余价值"
+            ],
+            "definition": "资本主义生产关系以资本家占有生产资料和工人剩余价值为特征。",
+            "example": "工人出卖劳动力受雇于资本家",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "剩余价值",
+            "difficulty": 3,
+            "description": "工人创造且被资本家无偿占有的超过工资部分",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义生产关系"
+            ],
+            "definition": "剩余价值是工人创造的超过劳动力价值并被资本家无偿占有的价值。",
+            "example": "工人创造的价值超过其所得工资"
+          },
+          {
+            "name": "资本主义社会",
+            "difficulty": 2,
+            "description": "以资产阶级和无产阶级对立为特征的社会",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义生产关系",
+              "阶级"
+            ],
+            "definition": "资本主义社会是资产阶级占有生产资料并剥削雇佣工人的社会形态。",
+            "example": "资本家通过雇佣劳动组织生产"
+          },
+          {
+            "name": "资产阶级革命",
+            "difficulty": 3,
+            "description": "资产阶级推翻封建政权、建立资本主义制度的革命",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义生产关系",
+              "封建社会"
+            ],
+            "definition": "资产阶级革命是资产阶级为扫清资本主义发展障碍而发动的反封建革命。",
+            "example": "法国资产阶级革命推翻封建专制",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "工业革命",
+            "difficulty": 2,
+            "description": "机器大生产推动生产力巨大飞跃的历史过程",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义社会",
+              "生产力"
+            ],
+            "definition": "工业革命是以机器大生产发展为主要表现的生产力重大变革。",
+            "example": "蒸汽机推动第一次工业革命"
+          },
+          {
+            "name": "经济危机",
+            "difficulty": 3,
+            "description": "以生产过剩为基本特征的资本主义危机",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义社会",
+              "资本主义基本矛盾"
+            ],
+            "definition": "经济危机是资本主义发展到一定阶段出现的以生产过剩为基本特征的危机。",
+            "example": "大量商品滞销、企业破产、工人失业",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "资本主义基本矛盾",
+            "difficulty": 4,
+            "description": "生产社会化与生产资料资本主义私人占有的矛盾",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "资本主义生产关系"
+            ],
+            "definition": "资本主义基本矛盾是生产社会化和生产资料资本主义私人占有之间的矛盾。",
+            "example": "社会化生产成果被少数资本家私人占有",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "空想社会主义",
+            "difficulty": 3,
+            "description": "揭露资本主义弊端并设想未来理想社会的思想",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义社会"
+            ],
+            "definition": "空想社会主义是从理性和正义原则出发批判资本主义并设计理想社会的思想。",
+            "example": "欧文进行“新和谐公社”实验"
+          },
+          {
+            "name": "三大工人运动",
+            "difficulty": 3,
+            "description": "标志工人阶级作为独立政治力量登上历史舞台",
+            "aliases": [],
+            "prerequisites": [
+              "空想社会主义"
+            ],
+            "definition": "三大工人运动是法国里昂工人起义、英国宪章运动和德国西里西亚纺织工人起义。",
+            "example": "英国宪章运动反抗资产阶级统治",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "阶级斗争形式",
+            "difficulty": 3,
+            "description": "无产阶级斗争包括经济、政治和思想理论斗争",
+            "aliases": [],
+            "prerequisites": [
+              "阶级",
+              "三大工人运动"
+            ],
+            "definition": "无产阶级反对资产阶级的阶级斗争有经济、政治和思想理论三种基本形式。",
+            "example": "经济罢工属于经济斗争"
+          },
+          {
+            "name": "唯物史观",
+            "difficulty": 4,
+            "description": "揭示人类社会发展一般规律的理论",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "阶级"
+            ],
+            "definition": "唯物史观揭示了人类社会发展的一般规律和人民群众的历史主体作用。",
+            "example": "用生产力发展解释社会形态更替",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "剩余价值学说",
+            "difficulty": 4,
+            "description": "揭示资本主义剥削工人剩余劳动秘密的理论",
+            "aliases": [],
+            "prerequisites": [
+              "剩余价值",
+              "资本主义基本矛盾"
+            ],
+            "definition": "剩余价值学说揭示了剩余价值来源及资本家剥削工人的秘密。",
+            "example": "说明利润来源于工人的剩余劳动",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "科学社会主义",
+            "difficulty": 3,
+            "description": "建立在社会发展规律科学认识基础上的社会主义理论",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观",
+              "剩余价值学说"
+            ],
+            "definition": "科学社会主义是以科学认识社会发展规律为基础的社会主义理论。",
+            "example": "科学论证社会主义必然胜利"
+          },
+          {
+            "name": "共产党宣言",
+            "difficulty": 3,
+            "description": "第一次全面阐述科学社会主义原理的著作",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义"
+            ],
+            "definition": "《共产党宣言》是1848年发表、标志科学社会主义诞生的经典著作。",
+            "example": "宣告资产阶级灭亡和无产阶级胜利不可避免",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "巴黎公社",
+            "difficulty": 3,
+            "description": "无产阶级建立政权的第一次伟大尝试",
+            "aliases": [],
+            "prerequisites": [
+              "阶级斗争形式",
+              "科学社会主义"
+            ],
+            "definition": "巴黎公社是工人阶级建立新社会的政权尝试。",
+            "example": "公职人员由民主选举产生",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "社会主义生产关系",
+            "difficulty": 3,
+            "description": "劳动者共同占有生产资料并实行按劳分配",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "科学社会主义"
+            ],
+            "definition": "社会主义生产关系以劳动者共同占有生产资料和按劳分配为主要特征。",
+            "example": "劳动者共同占有生产资料",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "十月革命",
+            "difficulty": 3,
+            "description": "建立世界上第一个社会主义国家的革命",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义",
+              "阶级斗争形式"
+            ],
+            "definition": "十月革命推翻资产阶级统治并确立社会主义生产关系。",
+            "example": "俄国无产阶级在列宁领导下取得胜利",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "社会主义实践",
+            "difficulty": 3,
+            "description": "社会主义从理论和运动走向制度与现实发展的过程",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义生产关系",
+              "十月革命"
+            ],
+            "definition": "社会主义实践是社会主义理论通过革命和制度建设转化为现实的过程。",
+            "example": "十月革命实现社会主义从理论到实践的跨越"
+          },
+          {
+            "name": "社会主义必然胜利",
+            "difficulty": 4,
+            "description": "资本主义终将被社会主义取代的历史趋势",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义基本矛盾",
+              "科学社会主义"
+            ],
+            "definition": "社会主义必然胜利是资本主义基本矛盾发展决定的历史必然趋势。",
+            "example": "生产社会化程度提高使资本主义矛盾尖锐化",
+            "section": "科学社会主义的理论与实践"
+          }
+        ],
+        "sections": [
+          {
+            "name": "原始社会的解体和阶级社会的演进",
+            "page_range": [
+              6,
+              16
+            ]
+          },
+          {
+            "name": "科学社会主义的理论与实践",
+            "page_range": [
+              16,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二课 只有社会主义才能救中国",
+        "concepts": [
+          {
+            "name": "半殖民地半封建社会",
+            "difficulty": 2,
+            "description": "近代中国逐步形成的基本社会性质。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "半殖民地半封建社会是近代中国在列强侵略和封建统治下形成的社会形态。",
+            "example": "鸦片战争后中国逐步成为半殖民地半封建社会。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "近代中国历史任务",
+            "difficulty": 2,
+            "description": "近代中国人民承担的民族复兴任务。",
+            "aliases": [],
+            "prerequisites": [
+              "半殖民地半封建社会"
+            ],
+            "definition": "近代中国的历史任务是争取民族独立、人民解放和实现国家富强、人民幸福。",
+            "example": "推翻列强压迫、实现国家富强。"
+          },
+          {
+            "name": "资本主义道路走不通",
+            "difficulty": 3,
+            "description": "近代中国探索资本主义道路失败的历史结论。",
+            "aliases": [],
+            "prerequisites": [
+              "半殖民地半封建社会",
+              "近代中国历史任务"
+            ],
+            "definition": "近代中国的基本国情决定了资本主义道路无法实现民族独立和国家富强。",
+            "example": "辛亥革命后多种政治制度尝试均未改变中国命运。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "马克思列宁主义传播",
+            "difficulty": 2,
+            "description": "马克思列宁主义在中国被接触、接受和传播。",
+            "aliases": [],
+            "prerequisites": [
+              "近代中国历史任务"
+            ],
+            "definition": "十月革命后，中国先进分子开始接受并传播马克思列宁主义。",
+            "example": "李大钊在中国大地上举起科学社会主义旗帜。"
+          },
+          {
+            "name": "五四运动",
+            "difficulty": 3,
+            "description": "推动社会进步和马克思主义传播的爱国运动。",
+            "aliases": [],
+            "prerequisites": [
+              "马克思列宁主义传播"
+            ],
+            "definition": "五四运动是中国旧民主主义革命走向新民主主义革命的转折点。",
+            "example": "五四运动促进了马克思主义同中国工人运动的结合。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "中国共产党成立",
+            "difficulty": 3,
+            "description": "马克思主义与中国工人运动结合的历史成果。",
+            "aliases": [],
+            "prerequisites": [
+              "马克思列宁主义传播",
+              "五四运动"
+            ],
+            "definition": "1921年中国共产党成立，使中国人民的斗争有了主心骨。",
+            "example": "中共一大召开标志着中国共产党成立。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "新民主主义革命",
+            "difficulty": 3,
+            "description": "无产阶级领导的人民大众民主革命。",
+            "aliases": [],
+            "prerequisites": [
+              "半殖民地半封建社会",
+              "中国共产党成立"
+            ],
+            "definition": "新民主主义革命是无产阶级领导、以工农联盟为基础、反对三大敌人的民主革命。",
+            "example": "中国共产党领导人民进行土地革命战争。"
+          },
+          {
+            "name": "革命两个步骤",
+            "difficulty": 3,
+            "description": "中国革命必须经历的民主革命和社会主义革命。",
+            "aliases": [],
+            "prerequisites": [
+              "新民主主义革命"
+            ],
+            "definition": "中国革命先改变半殖民地半封建社会，再建立社会主义社会。",
+            "example": "新民主主义革命为社会主义革命作必要准备。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "新民主主义革命胜利",
+            "difficulty": 3,
+            "description": "中国共产党领导人民取得革命胜利并建立新中国。",
+            "aliases": [],
+            "prerequisites": [
+              "新民主主义革命",
+              "革命两个步骤"
+            ],
+            "definition": "1949年中华人民共和国成立，标志着新民主主义革命取得伟大胜利。",
+            "example": "解放战争胜利后中华人民共和国成立。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "农村包围城市",
+            "difficulty": 3,
+            "description": "适合中国国情的革命道路的重要内容。",
+            "aliases": [],
+            "prerequisites": [
+              "新民主主义革命"
+            ],
+            "definition": "农村包围城市、武装夺取政权是中国共产党开辟的正确革命道路。",
+            "example": "革命力量先在农村建立和发展根据地。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "毛泽东思想",
+            "difficulty": 4,
+            "description": "马克思主义中国化时代化的第一次历史性飞跃。",
+            "aliases": [],
+            "prerequisites": [
+              "马克思列宁主义传播",
+              "新民主主义革命"
+            ],
+            "definition": "毛泽东思想是马克思列宁主义在中国的创造性运用和发展。",
+            "example": "毛泽东思想为新民主主义革命胜利指明方向。"
+          },
+          {
+            "name": "过渡时期总路线",
+            "difficulty": 3,
+            "description": "新中国向社会主义过渡时期的总路线和总任务。",
+            "aliases": [
+              "一化三改"
+            ],
+            "prerequisites": [
+              "新民主主义革命胜利"
+            ],
+            "definition": "过渡时期总路线要求逐步实现社会主义工业化并完成三项社会主义改造。",
+            "example": "国家逐步推进工业化和农业合作化。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "社会主义改造",
+            "difficulty": 3,
+            "description": "对生产资料私有制进行社会主义改造的历史进程。",
+            "aliases": [],
+            "prerequisites": [
+              "过渡时期总路线"
+            ],
+            "definition": "社会主义改造是对农业、手工业和资本主义工商业进行的社会主义改造。",
+            "example": "上海信大祥绸布商店实行公私合营。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "社会主义制度确立",
+            "difficulty": 3,
+            "description": "中国完成社会主义改造并进入社会主义社会。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义改造"
+            ],
+            "definition": "1956年生产资料私有制社会主义改造取得决定性胜利，标志社会主义制度在中国确立。",
+            "example": "1956年中国进入社会主义社会。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "党的八大主要矛盾",
+            "difficulty": 4,
+            "description": "社会主义改造完成后我国社会主要矛盾的判断。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义制度确立"
+            ],
+            "definition": "党的八大指出我国主要矛盾是人民需要与落后生产之间的矛盾。",
+            "example": "人民要求先进工业国与落后农业国现实之间存在矛盾。"
+          },
+          {
+            "name": "社会主义建设道路探索",
+            "difficulty": 4,
+            "description": "中国共产党探索适合本国国情的建设道路。",
+            "aliases": [
+              "第二次结合"
+            ],
+            "prerequisites": [
+              "社会主义制度确立",
+              "毛泽东思想"
+            ],
+            "definition": "社会主义建设道路探索是把马克思列宁主义基本原理同中国建设实际相结合的实践。",
+            "example": "《论十大关系》探索适合中国国情的建设道路。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "社会主义建设成就",
+            "difficulty": 3,
+            "description": "社会主义制度建立后中国建设取得的重大成就。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义制度确立",
+              "社会主义建设道路探索"
+            ],
+            "definition": "社会主义建设成就包括工业体系建立、基础设施发展以及教育科技事业进步。",
+            "example": "“一五”计划为我国工业化打下初步基础。"
+          },
+          {
+            "name": "两弹一星精神",
+            "difficulty": 2,
+            "description": "社会主义建设时期形成的崇高精神。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义建设成就"
+            ],
+            "definition": "两弹一星精神体现了热爱祖国、无私奉献、自力更生和勇于登攀。",
+            "example": "科研人员攻克国防科技难题。",
+            "section": "社会主义制度在中国的确立"
+          }
+        ],
+        "sections": [
+          {
+            "name": "新民主主义革命的胜利",
+            "page_range": [
+              25,
+              30
+            ]
+          },
+          {
+            "name": "社会主义制度在中国的确立",
+            "page_range": [
+              30,
+              36
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三课 只有中国特色社会主义才能发展中国",
+        "concepts": [
+          {
+            "name": "改革开放",
+            "difficulty": 2,
+            "description": "党和人民作出的重大历史性决策。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "改革开放是中国共产党带领人民进行的改变中国面貌的伟大实践。",
+            "example": "1978年党的十一届三中全会开启改革开放。"
+          },
+          {
+            "name": "十一届三中全会",
+            "difficulty": 2,
+            "description": "开启改革开放和现代化建设新时期。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "党的十一届三中全会重新确立正确路线并实现工作中心战略转移。",
+            "example": "会议把工作重点转移到社会主义现代化建设上来。"
+          },
+          {
+            "name": "家庭联产承包责任制",
+            "difficulty": 2,
+            "description": "农村改革率先取得突破的重要制度。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "家庭联产承包责任制是改革开放后农村推行的生产经营制度。",
+            "example": "安徽等地推行家庭联产承包责任制后农业发展加快。",
+            "section": "伟大的改革开放"
+          },
+          {
+            "name": "经济特区",
+            "difficulty": 2,
+            "description": "我国对外开放的重要窗口和先行区域。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "经济特区是国家批准设置的实行特殊经济政策和管理体制的区域。",
+            "example": "1980年深圳、珠海等地设置经济特区。",
+            "section": "伟大的改革开放"
+          },
+          {
+            "name": "社会主义市场经济",
+            "difficulty": 3,
+            "description": "社会主义制度与市场经济相结合的体制。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "社会主义市场经济体制是在社会主义制度下发挥市场作用的经济体制。",
+            "example": "党的十四大明确建立社会主义市场经济体制目标。"
+          },
+          {
+            "name": "对外开放格局",
+            "difficulty": 3,
+            "description": "全方位、多层次、宽领域的开放格局。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "对外开放格局是我国逐步形成的多层次、宽领域、全方位开放体系。",
+            "example": "沿海城市、内陆省会和沿边城市相继开放。",
+            "section": "伟大的改革开放"
+          },
+          {
+            "name": "改革开放意义",
+            "difficulty": 2,
+            "description": "改革开放对中国发展和复兴的重大作用。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "改革开放是赶上时代、发展中国特色社会主义和实现民族复兴的关键一招。",
+            "example": "改革开放推动中国人民从温饱不足走向小康富裕。"
+          },
+          {
+            "name": "党的全部理论实践主题",
+            "difficulty": 3,
+            "description": "改革开放以来党的理论和实践的主题。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "中国特色社会主义是改革开放以来中国共产党全部理论和实践的主题。",
+            "example": "党的理论创新和实践创新都围绕建设中国特色社会主义展开。"
+          },
+          {
+            "name": "邓小平理论",
+            "difficulty": 3,
+            "description": "成功开创中国特色社会主义的理论成果。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "邓小平理论科学回答了建设中国特色社会主义的一系列基本问题。",
+            "example": "邓小平理论提出走自己的道路、建设中国特色社会主义。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "三个代表",
+            "difficulty": 3,
+            "description": "关于党的先进性和执政基础的重要思想。",
+            "aliases": [
+              "“三个代表”重要思想"
+            ],
+            "prerequisites": [
+              "邓小平理论"
+            ],
+            "definition": "“三个代表”重要思想要求党始终代表先进生产力、先进文化和最广大人民根本利益。",
+            "example": "其本质是坚持执政为民。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "科学发展观",
+            "difficulty": 3,
+            "description": "回答新形势下实现什么样发展的理论。",
+            "aliases": [],
+            "prerequisites": [
+              "三个代表"
+            ],
+            "definition": "科学发展观强调以人为本、全面协调可持续发展和统筹兼顾。",
+            "example": "科学发展观把发展作为第一要义。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "习近平新时代思想",
+            "difficulty": 4,
+            "description": "中国特色社会主义进入新时代的理论成果。",
+            "aliases": [
+              "习近平新时代中国特色社会主义思想"
+            ],
+            "prerequisites": [
+              "科学发展观"
+            ],
+            "definition": "习近平新时代中国特色社会主义思想是从新的实际出发创立的理论成果。",
+            "example": "它推动党和国家事业取得历史性成就。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义道路",
+            "difficulty": 3,
+            "description": "符合中国国情和时代要求的发展道路。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "中国特色社会主义道路是在党的领导下建设社会主义现代化、实现共同富裕的道路。",
+            "example": "坚持以经济建设为中心并推进各方面建设。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义理论体系",
+            "difficulty": 4,
+            "description": "发展中国特色社会主义的理论成果体系。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义理论体系是对建设中国特色社会主义一系列基本问题的科学回答。",
+            "example": "邓小平理论、“三个代表”重要思想等构成其重要成果。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义制度",
+            "difficulty": 3,
+            "description": "党和人民长期实践形成的科学制度体系。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义制度是以马克思主义为指导、植根中国大地并具有优越性的制度体系。",
+            "example": "公有制为主体、多种所有制经济共同发展。"
+          },
+          {
+            "name": "国家治理体系",
+            "difficulty": 3,
+            "description": "依照国家制度治理国家的制度和机制体系。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义制度"
+            ],
+            "definition": "国家治理体系是中国特色社会主义制度及其执行能力的集中体现。",
+            "example": "坚持党的集中统一领导开展国家治理。"
+          },
+          {
+            "name": "国家治理能力",
+            "difficulty": 3,
+            "description": "运用制度管理国家和社会的能力。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义制度"
+            ],
+            "definition": "国家治理能力是国家治理体系有效运行和执行制度的能力。",
+            "example": "推进国家治理体系和治理能力现代化。"
+          },
+          {
+            "name": "中国特色社会主义文化",
+            "difficulty": 3,
+            "description": "植根中国特色社会主义伟大实践的社会主义文化。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义文化以马克思主义为指导，融合优秀传统文化、革命文化和先进文化。",
+            "example": "发展面向现代化、面向世界、面向未来的社会主义文化。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "四个自信",
+            "difficulty": 2,
+            "description": "对中国特色社会主义的道路、理论、制度、文化自信。",
+            "aliases": [
+              "道路自信、理论自信、制度自信、文化自信"
+            ],
+            "prerequisites": [
+              "中国特色社会主义道路",
+              "中国特色社会主义理论体系",
+              "中国特色社会主义制度",
+              "中国特色社会主义文化"
+            ],
+            "definition": "四个自信是对中国特色社会主义道路、理论、制度和文化的坚定信心。",
+            "example": "学习本课后坚定中国特色社会主义四个自信。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义伟大实践",
+            "difficulty": 3,
+            "description": "道路、理论、制度、文化统一发展的实践。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路",
+              "中国特色社会主义理论体系",
+              "中国特色社会主义制度",
+              "中国特色社会主义文化"
+            ],
+            "definition": "中国特色社会主义伟大实践是道路、理论、制度和文化相互联系并统一发展的实践。",
+            "example": "改革开放推动中国特色社会主义不断创立、发展和完善。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          }
+        ],
+        "sections": [
+          {
+            "name": "伟大的改革开放",
+            "page_range": [
+              36,
+              40
+            ]
+          },
+          {
+            "name": "中国特色社会主义的创立、发展和完善",
+            "page_range": [
+              40,
+              47
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四课 只有坚持和发展中国特色社会主义才能实现中华民族伟大复兴",
+        "concepts": [
+          {
+            "name": "中国特色社会主义",
+            "difficulty": 2,
+            "description": "反映中国人民意愿和时代要求的科学社会主义",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国特色社会主义是根植中国大地、适合中国国情的科学社会主义。",
+            "example": "坚持中国特色社会主义道路"
+          },
+          {
+            "name": "中国特色社会主义新时代",
+            "difficulty": 2,
+            "description": "我国发展新的历史方位和新的发展阶段",
+            "aliases": [
+              "新时代"
+            ],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "中国特色社会主义进入新时代，是我国发展新的历史方位。",
+            "example": "党的十八大以来进入新时代"
+          },
+          {
+            "name": "新时代科学内涵",
+            "difficulty": 3,
+            "description": "新时代在发展目标、人民生活和世界贡献等方面的内涵",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义新时代"
+            ],
+            "definition": "新时代是继续发展中国特色社会主义、实现民族复兴并为人类作出更大贡献的时代。",
+            "example": "逐步实现全体人民共同富裕"
+          },
+          {
+            "name": "新时代社会主要矛盾",
+            "difficulty": 3,
+            "description": "人民美好生活需要与发展不平衡不充分之间的矛盾",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义新时代"
+            ],
+            "definition": "新时代我国社会主要矛盾是人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。",
+            "example": "推动经济社会协调发展"
+          },
+          {
+            "name": "社会主义初级阶段",
+            "difficulty": 2,
+            "description": "我国仍处于并将长期处于的社会主义发展阶段",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "社会主义初级阶段是我国仍处于并将长期处于的基本国情和历史阶段。",
+            "example": "从社会主义初级阶段实际出发",
+            "section": "中国特色社会主义进入新时代"
+          },
+          {
+            "name": "党的基本路线",
+            "difficulty": 3,
+            "description": "党在社会主义初级阶段的根本路线",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义初级阶段"
+            ],
+            "definition": "党的基本路线是以经济建设为中心，坚持四项基本原则和改革开放。",
+            "example": "坚持改革开放和自力更生"
+          },
+          {
+            "name": "一以贯之发展",
+            "difficulty": 3,
+            "description": "新时代必须持续坚持和发展中国特色社会主义",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义新时代",
+              "中国特色社会主义"
+            ],
+            "definition": "新时代中国特色社会主义是伟大社会革命的成果和继续，必须一以贯之进行下去。",
+            "example": "在实践中不断丰富中国特色社会主义"
+          },
+          {
+            "name": "中国梦",
+            "difficulty": 2,
+            "description": "实现中华民族伟大复兴的共同梦想",
+            "aliases": [
+              "中华民族伟大复兴的中国梦"
+            ],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "中国梦就是实现中华民族伟大复兴，体现国家、民族和人民的共同愿景。",
+            "example": "为实现中国梦接续奋斗"
+          },
+          {
+            "name": "中国梦的本质",
+            "difficulty": 2,
+            "description": "国家富强、民族振兴、人民幸福",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "中国梦的本质是国家富强、民族振兴、人民幸福。",
+            "example": "建设现代化强国促进人民幸福",
+            "section": "中国特色社会主义进入新时代"
+          },
+          {
+            "name": "中国梦人民主体",
+            "difficulty": 3,
+            "description": "中国梦依靠人民实现并由人民共享",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "人民是中国梦的主体、创造者和享有者，中国梦必须紧紧依靠人民实现。",
+            "example": "把个人理想融入国家梦想"
+          },
+          {
+            "name": "中国梦世界意义",
+            "difficulty": 3,
+            "description": "中国梦不仅造福中国也造福世界",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "中国梦是奉献世界的梦，将为世界和平与发展作出更大贡献。",
+            "example": "推动构建人类命运共同体"
+          },
+          {
+            "name": "伟大斗争",
+            "difficulty": 3,
+            "description": "应对挑战、风险、阻力和矛盾的长期斗争",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "伟大斗争是实现伟大梦想、应对重大挑战和风险所必须进行的斗争。",
+            "example": "防范化解各领域风险",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "伟大工程",
+            "difficulty": 3,
+            "description": "深入推进党的建设新的伟大工程",
+            "aliases": [
+              "党的建设新的伟大工程"
+            ],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "伟大工程是实现伟大梦想必须深入推进的党的建设新的伟大工程。",
+            "example": "全面推进从严治党",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "伟大事业",
+            "difficulty": 3,
+            "description": "推进和发展中国特色社会主义伟大事业",
+            "aliases": [
+              "中国特色社会主义伟大事业"
+            ],
+            "prerequisites": [
+              "中国特色社会主义",
+              "中国梦"
+            ],
+            "definition": "伟大事业是推进中国特色社会主义并实现民族复兴的必由之路。",
+            "example": "增强中国特色社会主义四个自信",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "四个伟大关系",
+            "difficulty": 4,
+            "description": "伟大斗争、工程、事业、梦想相互联系贯通",
+            "aliases": [],
+            "prerequisites": [
+              "伟大斗争",
+              "伟大工程",
+              "伟大事业",
+              "中国梦"
+            ],
+            "definition": "伟大斗争、伟大工程、伟大事业、伟大梦想紧密联系、相互贯通、相互作用。",
+            "example": "党的建设新的伟大工程起决定作用"
+          },
+          {
+            "name": "中国式现代化",
+            "difficulty": 3,
+            "description": "中国共产党领导的社会主义现代化",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "中国式现代化是中国共产党领导的社会主义现代化，具有基于中国国情的中国特色。",
+            "example": "以中国式现代化推进民族复兴"
+          },
+          {
+            "name": "中国式现代化本质要求",
+            "difficulty": 4,
+            "description": "坚持党的领导和社会主义等九方面要求",
+            "aliases": [],
+            "prerequisites": [
+              "中国式现代化"
+            ],
+            "definition": "中国式现代化的本质要求包括坚持党的领导、实现高质量发展和共同富裕等。",
+            "example": "促进人与自然和谐共生"
+          },
+          {
+            "name": "两步走战略",
+            "difficulty": 3,
+            "description": "二〇二〇年至本世纪中叶的现代化战略安排",
+            "aliases": [
+              "分两步走战略"
+            ],
+            "prerequisites": [
+              "中国式现代化"
+            ],
+            "definition": "两步走战略是二〇二〇年至二〇三五年基本实现现代化，之后建成现代化强国。",
+            "example": "二〇三五年基本实现现代化",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "新时代中心任务",
+            "difficulty": 4,
+            "description": "全面建成强国并以中国式现代化推进民族复兴",
+            "aliases": [],
+            "prerequisites": [
+              "中国式现代化",
+              "两步走战略"
+            ],
+            "definition": "新时代新征程党的中心任务是全面建成社会主义现代化强国、实现民族复兴。",
+            "example": "团结带领人民实现第二个百年奋斗目标"
+          },
+          {
+            "name": "四个自信",
+            "difficulty": 3,
+            "description": "道路、理论、制度、文化自信",
+            "aliases": [
+              "道路自信理论自信制度自信文化自信"
+            ],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "四个自信是对中国特色社会主义道路、理论、制度和文化的自信。",
+            "example": "坚定中国特色社会主义文化自信"
+          },
+          {
+            "name": "新时代思想",
+            "difficulty": 4,
+            "description": "指导新时代实践的科学理论体系",
+            "aliases": [
+              "习近平新时代中国特色社会主义思想"
+            ],
+            "prerequisites": [
+              "中国特色社会主义新时代"
+            ],
+            "definition": "习近平新时代中国特色社会主义思想是马克思主义中国化时代化新的飞跃。",
+            "example": "用新时代思想指导改革发展"
+          },
+          {
+            "name": "十个明确",
+            "difficulty": 4,
+            "description": "新时代思想最为核心关键的组成部分",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "十个明确是支撑习近平新时代中国特色社会主义思想的核心内容和“四梁八柱”。",
+            "example": "明确党的领导是最本质特征",
+            "section": "习近平新时代中国特色社会主义思想"
+          },
+          {
+            "name": "十四个坚持",
+            "difficulty": 4,
+            "description": "新时代坚持和发展中国特色社会主义的基本方略",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "十四个坚持是新时代坚持和发展中国特色社会主义的基本方略。",
+            "example": "坚持以人民为中心",
+            "section": "习近平新时代中国特色社会主义思想"
+          },
+          {
+            "name": "十三个方面成就",
+            "difficulty": 4,
+            "description": "新时代党和国家事业历史性成就的系统总结",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "十三个方面成就是对新时代党和国家事业历史性成就和变革的分领域总结。",
+            "example": "总结经济建设领域的历史性成就",
+            "section": "习近平新时代中国特色社会主义思想"
+          },
+          {
+            "name": "六个必须坚持",
+            "difficulty": 4,
+            "description": "新时代思想的世界观和方法论",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "六个必须坚持包括人民至上、自信自立、守正创新、问题导向、系统观念、胸怀天下。",
+            "example": "坚持问题导向解决发展难题"
+          },
+          {
+            "name": "历史机遇",
+            "difficulty": 3,
+            "description": "新时代实现复兴和创造美好生活的重要机遇",
+            "aliases": [
+              "新时代的历史机遇"
+            ],
+            "prerequisites": [
+              "中国特色社会主义新时代",
+              "中国梦"
+            ],
+            "definition": "新时代历史机遇是中华民族强起来、实现复兴和人民走向共同富裕的机遇。",
+            "example": "抓住大有可为的历史机遇",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "新时代青年要求",
+            "difficulty": 3,
+            "description": "青年成长成才和担当民族复兴使命的要求",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "新时代青年要树立远大理想、热爱祖国、担当责任、砥砺奋斗、练就本领、锤炼品德。",
+            "example": "以真才实学服务人民"
+          }
+        ],
+        "sections": [
+          {
+            "name": "中国特色社会主义进入新时代",
+            "page_range": [
+              47,
+              52
+            ]
+          },
+          {
+            "name": "实现中华民族伟大复兴的中国梦",
+            "page_range": [
+              52,
+              62
+            ]
+          },
+          {
+            "name": "习近平新时代中国特色社会主义思想",
+            "page_range": [
+              62,
+              72
+            ]
+          }
+        ]
+      },
+      {
+        "name": "综合探究一 回看走过的路 比较别人的路 远眺前行的路",
+        "concepts": [
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然、获取物质资料的能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产力是社会发展的最终决定力量。",
+            "example": "机器生产的发展推动社会生产力提高。"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "人们在生产过程中形成的社会关系",
+            "aliases": [],
+            "prerequisites": [
+              "生产力"
+            ],
+            "definition": "生产关系是人们在物质资料生产过程中形成的关系。",
+            "example": "资本主义生产中的雇佣劳动关系。"
+          },
+          {
+            "name": "经济基础",
+            "difficulty": 2,
+            "description": "由生产关系总和构成的社会基础",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系"
+            ],
+            "definition": "经济基础是一定社会形态中生产关系的总和。",
+            "example": "资本主义社会的经济基础是资本主义生产关系。"
+          },
+          {
+            "name": "上层建筑",
+            "difficulty": 2,
+            "description": "建立在经济基础上的制度和思想体系",
+            "aliases": [],
+            "prerequisites": [
+              "经济基础"
+            ],
+            "definition": "上层建筑是建立在经济基础之上的政治法律制度及思想观念。",
+            "example": "社会主义社会的政治制度属于上层建筑。"
+          },
+          {
+            "name": "社会基本矛盾",
+            "difficulty": 3,
+            "description": "生产力与生产关系等之间的矛盾",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "经济基础",
+              "上层建筑"
+            ],
+            "definition": "社会基本矛盾包括生产力与生产关系、经济基础与上层建筑的矛盾。",
+            "example": "生产力发展推动生产关系相应调整。"
+          },
+          {
+            "name": "社会形态更替",
+            "difficulty": 3,
+            "description": "社会形态由低级向高级依次变化",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "社会形态更替是社会基本矛盾运动推动不同社会形态相互代替的过程。",
+            "example": "封建社会代替奴隶社会。"
+          },
+          {
+            "name": "人类社会发展一般进程",
+            "difficulty": 3,
+            "description": "人类社会形态依次发展变化的总体规律",
+            "aliases": [],
+            "prerequisites": [
+              "社会形态更替"
+            ],
+            "definition": "人类社会发展一般进程表现为社会形态由低级向高级依次形成和更替。",
+            "example": "奴隶社会、封建社会、资本主义社会依次发展。"
+          },
+          {
+            "name": "社会发展总趋势",
+            "difficulty": 3,
+            "description": "人类社会向前发展的不可逆转趋势",
+            "aliases": [],
+            "prerequisites": [
+              "人类社会发展一般进程"
+            ],
+            "definition": "社会发展总趋势是社会历史不断向前发展的不可逆转趋势。",
+            "example": "社会主义经历长期发展后必然代替资本主义。"
+          },
+          {
+            "name": "历史发展多样性",
+            "difficulty": 3,
+            "description": "不同国家地区民族的发展道路各不相同",
+            "aliases": [],
+            "prerequisites": [
+              "人类社会发展一般进程"
+            ],
+            "definition": "历史发展多样性是各国各地区各民族因条件不同而呈现不同发展道路。",
+            "example": "英国和法国确立资本主义制度的方式不同。"
+          },
+          {
+            "name": "社会形态跨越",
+            "difficulty": 3,
+            "description": "特定条件下跨越某种社会形态发展",
+            "aliases": [],
+            "prerequisites": [
+              "历史发展多样性"
+            ],
+            "definition": "社会形态跨越是某民族或地区越过某种社会形态直接进入更高级社会形态。",
+            "example": "西藏等地区由封建农奴制直接进入社会主义社会。"
+          },
+          {
+            "name": "社会进步标准",
+            "difficulty": 3,
+            "description": "判断社会形态进步或倒退的主要依据",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "判断社会进步的主要标准是生产关系是否适应生产力发展要求并符合社会发展总趋势。",
+            "example": "生产关系适应生产力发展，表明社会形态具有进步性。"
+          },
+          {
+            "name": "科学社会主义",
+            "difficulty": 3,
+            "description": "以科学理论揭示社会主义发展规律的学说",
+            "aliases": [],
+            "prerequisites": [
+              "社会发展总趋势"
+            ],
+            "definition": "科学社会主义是揭示社会主义产生和发展规律的科学理论。",
+            "example": "把科学社会主义基本原则同中国实际相结合。"
+          },
+          {
+            "name": "理论逻辑与历史逻辑",
+            "difficulty": 4,
+            "description": "科学社会主义理论与中国发展实际的统一",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义",
+              "历史发展多样性"
+            ],
+            "definition": "理论逻辑与历史逻辑的统一指科学社会主义理论逻辑同中国社会发展历史逻辑的辩证统一。",
+            "example": "中国特色社会主义根植中国大地并反映人民意愿。"
+          },
+          {
+            "name": "中国特色社会主义",
+            "difficulty": 4,
+            "description": "具有中国特色的科学社会主义实践形态",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义",
+              "理论逻辑与历史逻辑"
+            ],
+            "definition": "中国特色社会主义是科学社会主义理论逻辑和中国社会发展历史逻辑的辩证统一。",
+            "example": "改革开放实践推动中国特色社会主义不断发展。"
+          },
+          {
+            "name": "中国特色社会主义道路",
+            "difficulty": 4,
+            "description": "中国坚持和发展中国特色社会主义的道路",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义",
+              "历史发展多样性"
+            ],
+            "definition": "中国特色社会主义道路是立足中国实际、引领中国发展进步的社会主义道路。",
+            "example": "中国通过改革开放走出中国特色社会主义道路。"
+          }
+        ]
+      },
+      {
+        "name": "综合探究二 方向决定道路 道路决定命运",
+        "concepts": [
+          {
+            "name": "中国特色社会主义道路",
+            "difficulty": 3,
+            "description": "中国人民在奋斗实践中创造的发展道路。",
+            "aliases": [
+              "中国道路"
+            ],
+            "prerequisites": [],
+            "definition": "中国特色社会主义道路是中国人民在自己的奋斗实践中创造的实现中华民族伟大复兴的必由之路。",
+            "example": "中国坚持走中国特色社会主义道路，取得经济快速发展和社会长期稳定成就。"
+          },
+          {
+            "name": "中国特色社会主义制度",
+            "difficulty": 3,
+            "description": "中国发展进步的制度保障和重要优势。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国特色社会主义制度是党领导人民建立和完善的制度体系，具有显著优越性。",
+            "example": "中国制度在疫情防控中展现出集中力量办大事的优势。"
+          },
+          {
+            "name": "四个自信",
+            "difficulty": 3,
+            "description": "对道路、理论、制度、文化的自信。",
+            "aliases": [
+              "中国特色社会主义自信"
+            ],
+            "prerequisites": [
+              "中国特色社会主义道路",
+              "中国特色社会主义制度"
+            ],
+            "definition": "四个自信是对中国特色社会主义道路、理论、制度、文化的自信。",
+            "example": "中国取得辉煌成就增强了人民的四个自信。"
+          },
+          {
+            "name": "中华民族伟大复兴",
+            "difficulty": 2,
+            "description": "近代以来中华民族最伟大的梦想。",
+            "aliases": [
+              "中国梦"
+            ],
+            "prerequisites": [],
+            "definition": "中华民族伟大复兴是近代以来中华民族最伟大的梦想。",
+            "example": "中国共产党把实现中华民族伟大复兴作为历史使命。"
+          },
+          {
+            "name": "共产主义远大理想",
+            "difficulty": 3,
+            "description": "中国共产党人追求的崇高理想。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "共产主义远大理想是中国人民和中国共产党人为之奋斗的崇高理想。",
+            "example": "先进人物为共产主义理想长期奋斗。"
+          },
+          {
+            "name": "最高理想和最终目标",
+            "difficulty": 3,
+            "description": "中国共产党把实现共产主义作为最高追求。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国共产党的最高理想和最终目标是实现共产主义。",
+            "example": "党成立后义无反顾地肩负起民族复兴使命。"
+          },
+          {
+            "name": "中国共产党领导",
+            "difficulty": 2,
+            "description": "中国取得革命、建设成就的根本领导力量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国共产党领导人民建立和完善制度并推进中国特色社会主义事业。",
+            "example": "党领导人民创造了经济快速发展和社会长期稳定奇迹。"
+          },
+          {
+            "name": "科学社会主义生机活力",
+            "difficulty": 4,
+            "description": "科学社会主义在当代中国展现出的发展活力。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义的发展表明科学社会主义在二十一世纪的中国焕发出强大生机活力。",
+            "example": "中国的发展实践有力回应了“历史已经终结”的观点。"
+          },
+          {
+            "name": "经济快速发展奇迹",
+            "difficulty": 2,
+            "description": "新中国成立后我国经济快速发展的成就。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经济快速发展奇迹是我国大踏步赶上时代并跃升为世界第二大经济体。",
+            "example": "我国综合国力和人民生活水平显著提升。"
+          },
+          {
+            "name": "社会长期稳定奇迹",
+            "difficulty": 2,
+            "description": "我国长期保持社会和谐稳定、人民安居乐业。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会长期稳定奇迹是我国长期保持社会和谐稳定、人民安居乐业的重大成就。",
+            "example": "中国成为国际社会公认的最有安全感的国家之一。"
+          },
+          {
+            "name": "中国智慧和中国方案",
+            "difficulty": 3,
+            "description": "中国为全球治理和世界发展贡献的理念与方案。",
+            "aliases": [
+              "中国智慧",
+              "中国方案"
+            ],
+            "prerequisites": [],
+            "definition": "中国智慧和中国方案是中国为解决世界和平与发展问题、完善全球治理贡献的理念与实践方案。",
+            "example": "构建人类命运共同体为世界带来希望。"
+          },
+          {
+            "name": "人类命运共同体",
+            "difficulty": 3,
+            "description": "推动世界共赢共享、共同发展的中国方案。",
+            "aliases": [],
+            "prerequisites": [
+              "中国智慧和中国方案"
+            ],
+            "definition": "人类命运共同体强调各国通过全球合作实现共赢共享。",
+            "example": "中国倡导构建人类命运共同体，推动全球治理改革。"
+          },
+          {
+            "name": "三大历史性事件",
+            "difficulty": 3,
+            "description": "五四运动以来实现民族复兴的三大里程碑。",
+            "aliases": [
+              "三大里程碑"
+            ],
+            "prerequisites": [
+              "中华民族伟大复兴"
+            ],
+            "definition": "三大历史性事件是建立中国共产党、成立中华人民共和国、推进改革开放和中国特色社会主义事业。",
+            "example": "三大历史性事件推动了中华民族伟大复兴进程。"
+          },
+          {
+            "name": "社会主义现代化强国",
+            "difficulty": 3,
+            "description": "第二个百年奋斗目标的重要内容。",
+            "aliases": [],
+            "prerequisites": [
+              "中华民族伟大复兴"
+            ],
+            "definition": "社会主义现代化强国是富强民主文明和谐美丽的国家发展目标。",
+            "example": "我国向着全面建成社会主义现代化强国的目标迈进。"
+          },
+          {
+            "name": "站富强到强大飞跃",
+            "difficulty": 2,
+            "description": "中华民族由站起来到强起来的历史进程。",
+            "aliases": [
+              "站起来富起来强起来"
+            ],
+            "prerequisites": [
+              "中华民族伟大复兴"
+            ],
+            "definition": "伟大飞跃是中华民族从站起来、富起来到强起来的发展变化。",
+            "example": "改革开放和中国特色社会主义事业推动了这一伟大飞跃。"
+          },
+          {
+            "name": "信仰信念信心",
+            "difficulty": 2,
+            "description": "支撑人民不断奋斗前进的精神力量。",
+            "aliases": [],
+            "prerequisites": [
+              "四个自信"
+            ],
+            "definition": "信仰、信念、信心是个人、集体、政党和国家愈挫愈奋的重要精神力量。",
+            "example": "对马克思主义的信仰支撑人民实现站起来、富起来、强起来。"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一课 社会主义从空想到科学、从理论到实践的发展",
+        "concepts": [
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然、创造社会财富的能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产力是人类改造自然和进行物质生产的能力。",
+            "example": "铁制农具推广推动农业生产力发展"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "生产过程中形成的人与人之间的关系",
+            "aliases": [],
+            "prerequisites": [
+              "生产力"
+            ],
+            "definition": "生产关系是人们在物质资料生产过程中形成的社会关系。",
+            "example": "原始社会共同占有生产资料"
+          },
+          {
+            "name": "原始社会",
+            "difficulty": 1,
+            "description": "人类社会发展的最初阶段和最低阶段",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原始社会是人类社会发展的最初阶段，生产力水平极其低下。",
+            "example": "人们共同劳动、平均分配产品",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "原始社会生产关系",
+            "difficulty": 2,
+            "description": "共同劳动、共同占有、平等互助、平均分配",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "原始社会"
+            ],
+            "definition": "原始社会生产关系以共同劳动和共同占有生产资料为主要特点。",
+            "example": "氏族成员共同采集并平均分配食物",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "氏族制度",
+            "difficulty": 2,
+            "description": "按血缘关系组织原始人共同生活的制度",
+            "aliases": [],
+            "prerequisites": [
+              "原始社会"
+            ],
+            "definition": "氏族制度是原始人按照血缘关系结成氏族并管理共同事务的制度。",
+            "example": "氏族议事会共同决定重大事务",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "私有制确立",
+            "difficulty": 2,
+            "description": "生产资料由氏族公有转为家庭私有",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "私有制确立是生产资料由氏族公有转归家庭私有的历史过程。",
+            "example": "土地后来变成家庭私有财产"
+          },
+          {
+            "name": "阶级",
+            "difficulty": 2,
+            "description": "在一定生产关系中处于不同地位的集团",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "私有制确立"
+            ],
+            "definition": "阶级是在一定生产关系中处于不同地位的社会集团。",
+            "example": "奴隶主阶级和奴隶阶级"
+          },
+          {
+            "name": "国家",
+            "difficulty": 2,
+            "description": "阶级矛盾不可调和的产物和统治工具",
+            "aliases": [],
+            "prerequisites": [
+              "阶级"
+            ],
+            "definition": "国家是阶级矛盾不可调和的产物，是阶级统治的工具。",
+            "example": "奴隶主建立军队和法庭维护统治"
+          },
+          {
+            "name": "奴隶制生产关系",
+            "difficulty": 2,
+            "description": "奴隶主占有生产资料并完全占有奴隶",
+            "aliases": [],
+            "prerequisites": [
+              "阶级",
+              "生产关系"
+            ],
+            "definition": "奴隶制生产关系以奴隶主完全占有生产资料和奴隶为特征。",
+            "example": "奴隶劳动的全部产品归奴隶主支配",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "奴隶社会",
+            "difficulty": 2,
+            "description": "以奴隶主和奴隶对立为主要矛盾的社会",
+            "aliases": [],
+            "prerequisites": [
+              "奴隶制生产关系",
+              "国家"
+            ],
+            "definition": "奴隶社会是奴隶主阶级剥削和统治奴隶阶级的社会形态。",
+            "example": "古代埃及属于奴隶制国家",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "封建制生产关系",
+            "difficulty": 2,
+            "description": "地主占有土地并通过地租剥削农民",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "封建制生产关系以地主占有土地和农民依附地主为主要特征。",
+            "example": "农民缴纳地租后保留部分劳动成果",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "封建社会",
+            "difficulty": 2,
+            "description": "以地主和农民对立为主要矛盾的社会",
+            "aliases": [],
+            "prerequisites": [
+              "封建制生产关系"
+            ],
+            "definition": "封建社会是地主阶级剥削和统治农民阶级的社会形态。",
+            "example": "封建国家通常君主专制、等级森严",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "资本主义生产关系",
+            "difficulty": 3,
+            "description": "资本家占有生产资料并占有工人剩余价值",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "剩余价值"
+            ],
+            "definition": "资本主义生产关系以资本家占有生产资料和工人剩余价值为特征。",
+            "example": "工人出卖劳动力受雇于资本家",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "剩余价值",
+            "difficulty": 3,
+            "description": "工人创造且被资本家无偿占有的超过工资部分",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义生产关系"
+            ],
+            "definition": "剩余价值是工人创造的超过劳动力价值并被资本家无偿占有的价值。",
+            "example": "工人创造的价值超过其所得工资"
+          },
+          {
+            "name": "资本主义社会",
+            "difficulty": 2,
+            "description": "以资产阶级和无产阶级对立为特征的社会",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义生产关系",
+              "阶级"
+            ],
+            "definition": "资本主义社会是资产阶级占有生产资料并剥削雇佣工人的社会形态。",
+            "example": "资本家通过雇佣劳动组织生产"
+          },
+          {
+            "name": "资产阶级革命",
+            "difficulty": 3,
+            "description": "资产阶级推翻封建政权、建立资本主义制度的革命",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义生产关系",
+              "封建社会"
+            ],
+            "definition": "资产阶级革命是资产阶级为扫清资本主义发展障碍而发动的反封建革命。",
+            "example": "法国资产阶级革命推翻封建专制",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "工业革命",
+            "difficulty": 2,
+            "description": "机器大生产推动生产力巨大飞跃的历史过程",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义社会",
+              "生产力"
+            ],
+            "definition": "工业革命是以机器大生产发展为主要表现的生产力重大变革。",
+            "example": "蒸汽机推动第一次工业革命"
+          },
+          {
+            "name": "经济危机",
+            "difficulty": 3,
+            "description": "以生产过剩为基本特征的资本主义危机",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义社会",
+              "资本主义基本矛盾"
+            ],
+            "definition": "经济危机是资本主义发展到一定阶段出现的以生产过剩为基本特征的危机。",
+            "example": "大量商品滞销、企业破产、工人失业",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "资本主义基本矛盾",
+            "difficulty": 4,
+            "description": "生产社会化与生产资料资本主义私人占有的矛盾",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "资本主义生产关系"
+            ],
+            "definition": "资本主义基本矛盾是生产社会化和生产资料资本主义私人占有之间的矛盾。",
+            "example": "社会化生产成果被少数资本家私人占有",
+            "section": "原始社会的解体和阶级社会的演进"
+          },
+          {
+            "name": "空想社会主义",
+            "difficulty": 3,
+            "description": "揭露资本主义弊端并设想未来理想社会的思想",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义社会"
+            ],
+            "definition": "空想社会主义是从理性和正义原则出发批判资本主义并设计理想社会的思想。",
+            "example": "欧文进行“新和谐公社”实验"
+          },
+          {
+            "name": "三大工人运动",
+            "difficulty": 3,
+            "description": "标志工人阶级作为独立政治力量登上历史舞台",
+            "aliases": [],
+            "prerequisites": [
+              "空想社会主义"
+            ],
+            "definition": "三大工人运动是法国里昂工人起义、英国宪章运动和德国西里西亚纺织工人起义。",
+            "example": "英国宪章运动反抗资产阶级统治",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "阶级斗争形式",
+            "difficulty": 3,
+            "description": "无产阶级斗争包括经济、政治和思想理论斗争",
+            "aliases": [],
+            "prerequisites": [
+              "阶级",
+              "三大工人运动"
+            ],
+            "definition": "无产阶级反对资产阶级的阶级斗争有经济、政治和思想理论三种基本形式。",
+            "example": "经济罢工属于经济斗争"
+          },
+          {
+            "name": "唯物史观",
+            "difficulty": 4,
+            "description": "揭示人类社会发展一般规律的理论",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "阶级"
+            ],
+            "definition": "唯物史观揭示了人类社会发展的一般规律和人民群众的历史主体作用。",
+            "example": "用生产力发展解释社会形态更替",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "剩余价值学说",
+            "difficulty": 4,
+            "description": "揭示资本主义剥削工人剩余劳动秘密的理论",
+            "aliases": [],
+            "prerequisites": [
+              "剩余价值",
+              "资本主义基本矛盾"
+            ],
+            "definition": "剩余价值学说揭示了剩余价值来源及资本家剥削工人的秘密。",
+            "example": "说明利润来源于工人的剩余劳动",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "科学社会主义",
+            "difficulty": 3,
+            "description": "建立在社会发展规律科学认识基础上的社会主义理论",
+            "aliases": [],
+            "prerequisites": [
+              "唯物史观",
+              "剩余价值学说"
+            ],
+            "definition": "科学社会主义是以科学认识社会发展规律为基础的社会主义理论。",
+            "example": "科学论证社会主义必然胜利"
+          },
+          {
+            "name": "共产党宣言",
+            "difficulty": 3,
+            "description": "第一次全面阐述科学社会主义原理的著作",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义"
+            ],
+            "definition": "《共产党宣言》是1848年发表、标志科学社会主义诞生的经典著作。",
+            "example": "宣告资产阶级灭亡和无产阶级胜利不可避免",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "巴黎公社",
+            "difficulty": 3,
+            "description": "无产阶级建立政权的第一次伟大尝试",
+            "aliases": [],
+            "prerequisites": [
+              "阶级斗争形式",
+              "科学社会主义"
+            ],
+            "definition": "巴黎公社是工人阶级建立新社会的政权尝试。",
+            "example": "公职人员由民主选举产生",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "社会主义生产关系",
+            "difficulty": 3,
+            "description": "劳动者共同占有生产资料并实行按劳分配",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系",
+              "科学社会主义"
+            ],
+            "definition": "社会主义生产关系以劳动者共同占有生产资料和按劳分配为主要特征。",
+            "example": "劳动者共同占有生产资料",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "十月革命",
+            "difficulty": 3,
+            "description": "建立世界上第一个社会主义国家的革命",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义",
+              "阶级斗争形式"
+            ],
+            "definition": "十月革命推翻资产阶级统治并确立社会主义生产关系。",
+            "example": "俄国无产阶级在列宁领导下取得胜利",
+            "section": "科学社会主义的理论与实践"
+          },
+          {
+            "name": "社会主义实践",
+            "difficulty": 3,
+            "description": "社会主义从理论和运动走向制度与现实发展的过程",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义生产关系",
+              "十月革命"
+            ],
+            "definition": "社会主义实践是社会主义理论通过革命和制度建设转化为现实的过程。",
+            "example": "十月革命实现社会主义从理论到实践的跨越"
+          },
+          {
+            "name": "社会主义必然胜利",
+            "difficulty": 4,
+            "description": "资本主义终将被社会主义取代的历史趋势",
+            "aliases": [],
+            "prerequisites": [
+              "资本主义基本矛盾",
+              "科学社会主义"
+            ],
+            "definition": "社会主义必然胜利是资本主义基本矛盾发展决定的历史必然趋势。",
+            "example": "生产社会化程度提高使资本主义矛盾尖锐化",
+            "section": "科学社会主义的理论与实践"
+          }
+        ],
+        "sections": [
+          {
+            "name": "原始社会的解体和阶级社会的演进",
+            "section_key": "6557275660",
+            "page_range": [
+              6,
+              16
+            ]
+          },
+          {
+            "name": "科学社会主义的理论与实践",
+            "section_key": "409156d883",
+            "page_range": [
+              16,
+              25
+            ]
+          }
+        ],
+        "chapter_key": "fd55eb3345",
+        "metadata": {
+          "volume_id": "0912b98c4617",
+          "file_id": "0912b98c4617",
+          "volume_title": "高中政治 必修1 中国特色社会主义",
+          "chapter_order": 1,
+          "raw_heading": "第一课 社会主义从空想到科学、从理论到实践的发展"
+        }
+      },
+      {
+        "name": "第二课 只有社会主义才能救中国",
+        "concepts": [
+          {
+            "name": "半殖民地半封建社会",
+            "difficulty": 2,
+            "description": "近代中国逐步形成的基本社会性质。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "半殖民地半封建社会是近代中国在列强侵略和封建统治下形成的社会形态。",
+            "example": "鸦片战争后中国逐步成为半殖民地半封建社会。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "近代中国历史任务",
+            "difficulty": 2,
+            "description": "近代中国人民承担的民族复兴任务。",
+            "aliases": [],
+            "prerequisites": [
+              "半殖民地半封建社会"
+            ],
+            "definition": "近代中国的历史任务是争取民族独立、人民解放和实现国家富强、人民幸福。",
+            "example": "推翻列强压迫、实现国家富强。"
+          },
+          {
+            "name": "资本主义道路走不通",
+            "difficulty": 3,
+            "description": "近代中国探索资本主义道路失败的历史结论。",
+            "aliases": [],
+            "prerequisites": [
+              "半殖民地半封建社会",
+              "近代中国历史任务"
+            ],
+            "definition": "近代中国的基本国情决定了资本主义道路无法实现民族独立和国家富强。",
+            "example": "辛亥革命后多种政治制度尝试均未改变中国命运。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "马克思列宁主义传播",
+            "difficulty": 2,
+            "description": "马克思列宁主义在中国被接触、接受和传播。",
+            "aliases": [],
+            "prerequisites": [
+              "近代中国历史任务"
+            ],
+            "definition": "十月革命后，中国先进分子开始接受并传播马克思列宁主义。",
+            "example": "李大钊在中国大地上举起科学社会主义旗帜。"
+          },
+          {
+            "name": "五四运动",
+            "difficulty": 3,
+            "description": "推动社会进步和马克思主义传播的爱国运动。",
+            "aliases": [],
+            "prerequisites": [
+              "马克思列宁主义传播"
+            ],
+            "definition": "五四运动是中国旧民主主义革命走向新民主主义革命的转折点。",
+            "example": "五四运动促进了马克思主义同中国工人运动的结合。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "中国共产党成立",
+            "difficulty": 3,
+            "description": "马克思主义与中国工人运动结合的历史成果。",
+            "aliases": [],
+            "prerequisites": [
+              "马克思列宁主义传播",
+              "五四运动"
+            ],
+            "definition": "1921年中国共产党成立，使中国人民的斗争有了主心骨。",
+            "example": "中共一大召开标志着中国共产党成立。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "新民主主义革命",
+            "difficulty": 3,
+            "description": "无产阶级领导的人民大众民主革命。",
+            "aliases": [],
+            "prerequisites": [
+              "半殖民地半封建社会",
+              "中国共产党成立"
+            ],
+            "definition": "新民主主义革命是无产阶级领导、以工农联盟为基础、反对三大敌人的民主革命。",
+            "example": "中国共产党领导人民进行土地革命战争。"
+          },
+          {
+            "name": "革命两个步骤",
+            "difficulty": 3,
+            "description": "中国革命必须经历的民主革命和社会主义革命。",
+            "aliases": [],
+            "prerequisites": [
+              "新民主主义革命"
+            ],
+            "definition": "中国革命先改变半殖民地半封建社会，再建立社会主义社会。",
+            "example": "新民主主义革命为社会主义革命作必要准备。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "新民主主义革命胜利",
+            "difficulty": 3,
+            "description": "中国共产党领导人民取得革命胜利并建立新中国。",
+            "aliases": [],
+            "prerequisites": [
+              "新民主主义革命",
+              "革命两个步骤"
+            ],
+            "definition": "1949年中华人民共和国成立，标志着新民主主义革命取得伟大胜利。",
+            "example": "解放战争胜利后中华人民共和国成立。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "农村包围城市",
+            "difficulty": 3,
+            "description": "适合中国国情的革命道路的重要内容。",
+            "aliases": [],
+            "prerequisites": [
+              "新民主主义革命"
+            ],
+            "definition": "农村包围城市、武装夺取政权是中国共产党开辟的正确革命道路。",
+            "example": "革命力量先在农村建立和发展根据地。",
+            "section": "新民主主义革命的胜利"
+          },
+          {
+            "name": "毛泽东思想",
+            "difficulty": 4,
+            "description": "马克思主义中国化时代化的第一次历史性飞跃。",
+            "aliases": [],
+            "prerequisites": [
+              "马克思列宁主义传播",
+              "新民主主义革命"
+            ],
+            "definition": "毛泽东思想是马克思列宁主义在中国的创造性运用和发展。",
+            "example": "毛泽东思想为新民主主义革命胜利指明方向。"
+          },
+          {
+            "name": "过渡时期总路线",
+            "difficulty": 3,
+            "description": "新中国向社会主义过渡时期的总路线和总任务。",
+            "aliases": [
+              "一化三改"
+            ],
+            "prerequisites": [
+              "新民主主义革命胜利"
+            ],
+            "definition": "过渡时期总路线要求逐步实现社会主义工业化并完成三项社会主义改造。",
+            "example": "国家逐步推进工业化和农业合作化。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "社会主义改造",
+            "difficulty": 3,
+            "description": "对生产资料私有制进行社会主义改造的历史进程。",
+            "aliases": [],
+            "prerequisites": [
+              "过渡时期总路线"
+            ],
+            "definition": "社会主义改造是对农业、手工业和资本主义工商业进行的社会主义改造。",
+            "example": "上海信大祥绸布商店实行公私合营。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "社会主义制度确立",
+            "difficulty": 3,
+            "description": "中国完成社会主义改造并进入社会主义社会。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义改造"
+            ],
+            "definition": "1956年生产资料私有制社会主义改造取得决定性胜利，标志社会主义制度在中国确立。",
+            "example": "1956年中国进入社会主义社会。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "党的八大主要矛盾",
+            "difficulty": 4,
+            "description": "社会主义改造完成后我国社会主要矛盾的判断。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义制度确立"
+            ],
+            "definition": "党的八大指出我国主要矛盾是人民需要与落后生产之间的矛盾。",
+            "example": "人民要求先进工业国与落后农业国现实之间存在矛盾。"
+          },
+          {
+            "name": "社会主义建设道路探索",
+            "difficulty": 4,
+            "description": "中国共产党探索适合本国国情的建设道路。",
+            "aliases": [
+              "第二次结合"
+            ],
+            "prerequisites": [
+              "社会主义制度确立",
+              "毛泽东思想"
+            ],
+            "definition": "社会主义建设道路探索是把马克思列宁主义基本原理同中国建设实际相结合的实践。",
+            "example": "《论十大关系》探索适合中国国情的建设道路。",
+            "section": "社会主义制度在中国的确立"
+          },
+          {
+            "name": "社会主义建设成就",
+            "difficulty": 3,
+            "description": "社会主义制度建立后中国建设取得的重大成就。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义制度确立",
+              "社会主义建设道路探索"
+            ],
+            "definition": "社会主义建设成就包括工业体系建立、基础设施发展以及教育科技事业进步。",
+            "example": "“一五”计划为我国工业化打下初步基础。"
+          },
+          {
+            "name": "两弹一星精神",
+            "difficulty": 2,
+            "description": "社会主义建设时期形成的崇高精神。",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义建设成就"
+            ],
+            "definition": "两弹一星精神体现了热爱祖国、无私奉献、自力更生和勇于登攀。",
+            "example": "科研人员攻克国防科技难题。",
+            "section": "社会主义制度在中国的确立"
+          }
+        ],
+        "sections": [
+          {
+            "name": "新民主主义革命的胜利",
+            "section_key": "f326abc7d8",
+            "page_range": [
+              25,
+              30
+            ]
+          },
+          {
+            "name": "社会主义制度在中国的确立",
+            "section_key": "1bde7a4802",
+            "page_range": [
+              30,
+              36
+            ]
+          }
+        ],
+        "chapter_key": "45388c0971",
+        "metadata": {
+          "volume_id": "0912b98c4617",
+          "file_id": "0912b98c4617",
+          "volume_title": "高中政治 必修1 中国特色社会主义",
+          "chapter_order": 2,
+          "raw_heading": "第二课 只有社会主义才能救中国"
+        }
+      },
+      {
+        "name": "第三课 只有中国特色社会主义才能发展中国",
+        "concepts": [
+          {
+            "name": "改革开放",
+            "difficulty": 2,
+            "description": "党和人民作出的重大历史性决策。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "改革开放是中国共产党带领人民进行的改变中国面貌的伟大实践。",
+            "example": "1978年党的十一届三中全会开启改革开放。"
+          },
+          {
+            "name": "十一届三中全会",
+            "difficulty": 2,
+            "description": "开启改革开放和现代化建设新时期。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "党的十一届三中全会重新确立正确路线并实现工作中心战略转移。",
+            "example": "会议把工作重点转移到社会主义现代化建设上来。"
+          },
+          {
+            "name": "家庭联产承包责任制",
+            "difficulty": 2,
+            "description": "农村改革率先取得突破的重要制度。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "家庭联产承包责任制是改革开放后农村推行的生产经营制度。",
+            "example": "安徽等地推行家庭联产承包责任制后农业发展加快。",
+            "section": "伟大的改革开放"
+          },
+          {
+            "name": "经济特区",
+            "difficulty": 2,
+            "description": "我国对外开放的重要窗口和先行区域。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "经济特区是国家批准设置的实行特殊经济政策和管理体制的区域。",
+            "example": "1980年深圳、珠海等地设置经济特区。",
+            "section": "伟大的改革开放"
+          },
+          {
+            "name": "社会主义市场经济",
+            "difficulty": 3,
+            "description": "社会主义制度与市场经济相结合的体制。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "社会主义市场经济体制是在社会主义制度下发挥市场作用的经济体制。",
+            "example": "党的十四大明确建立社会主义市场经济体制目标。"
+          },
+          {
+            "name": "对外开放格局",
+            "difficulty": 3,
+            "description": "全方位、多层次、宽领域的开放格局。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "对外开放格局是我国逐步形成的多层次、宽领域、全方位开放体系。",
+            "example": "沿海城市、内陆省会和沿边城市相继开放。",
+            "section": "伟大的改革开放"
+          },
+          {
+            "name": "改革开放意义",
+            "difficulty": 2,
+            "description": "改革开放对中国发展和复兴的重大作用。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "改革开放是赶上时代、发展中国特色社会主义和实现民族复兴的关键一招。",
+            "example": "改革开放推动中国人民从温饱不足走向小康富裕。"
+          },
+          {
+            "name": "党的全部理论实践主题",
+            "difficulty": 3,
+            "description": "改革开放以来党的理论和实践的主题。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "中国特色社会主义是改革开放以来中国共产党全部理论和实践的主题。",
+            "example": "党的理论创新和实践创新都围绕建设中国特色社会主义展开。"
+          },
+          {
+            "name": "邓小平理论",
+            "difficulty": 3,
+            "description": "成功开创中国特色社会主义的理论成果。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "邓小平理论科学回答了建设中国特色社会主义的一系列基本问题。",
+            "example": "邓小平理论提出走自己的道路、建设中国特色社会主义。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "三个代表",
+            "difficulty": 3,
+            "description": "关于党的先进性和执政基础的重要思想。",
+            "aliases": [
+              "“三个代表”重要思想"
+            ],
+            "prerequisites": [
+              "邓小平理论"
+            ],
+            "definition": "“三个代表”重要思想要求党始终代表先进生产力、先进文化和最广大人民根本利益。",
+            "example": "其本质是坚持执政为民。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "科学发展观",
+            "difficulty": 3,
+            "description": "回答新形势下实现什么样发展的理论。",
+            "aliases": [],
+            "prerequisites": [
+              "三个代表"
+            ],
+            "definition": "科学发展观强调以人为本、全面协调可持续发展和统筹兼顾。",
+            "example": "科学发展观把发展作为第一要义。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "习近平新时代思想",
+            "difficulty": 4,
+            "description": "中国特色社会主义进入新时代的理论成果。",
+            "aliases": [
+              "习近平新时代中国特色社会主义思想"
+            ],
+            "prerequisites": [
+              "科学发展观"
+            ],
+            "definition": "习近平新时代中国特色社会主义思想是从新的实际出发创立的理论成果。",
+            "example": "它推动党和国家事业取得历史性成就。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义道路",
+            "difficulty": 3,
+            "description": "符合中国国情和时代要求的发展道路。",
+            "aliases": [],
+            "prerequisites": [
+              "改革开放"
+            ],
+            "definition": "中国特色社会主义道路是在党的领导下建设社会主义现代化、实现共同富裕的道路。",
+            "example": "坚持以经济建设为中心并推进各方面建设。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义理论体系",
+            "difficulty": 4,
+            "description": "发展中国特色社会主义的理论成果体系。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义理论体系是对建设中国特色社会主义一系列基本问题的科学回答。",
+            "example": "邓小平理论、“三个代表”重要思想等构成其重要成果。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义制度",
+            "difficulty": 3,
+            "description": "党和人民长期实践形成的科学制度体系。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义制度是以马克思主义为指导、植根中国大地并具有优越性的制度体系。",
+            "example": "公有制为主体、多种所有制经济共同发展。"
+          },
+          {
+            "name": "国家治理体系",
+            "difficulty": 3,
+            "description": "依照国家制度治理国家的制度和机制体系。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义制度"
+            ],
+            "definition": "国家治理体系是中国特色社会主义制度及其执行能力的集中体现。",
+            "example": "坚持党的集中统一领导开展国家治理。"
+          },
+          {
+            "name": "国家治理能力",
+            "difficulty": 3,
+            "description": "运用制度管理国家和社会的能力。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义制度"
+            ],
+            "definition": "国家治理能力是国家治理体系有效运行和执行制度的能力。",
+            "example": "推进国家治理体系和治理能力现代化。"
+          },
+          {
+            "name": "中国特色社会主义文化",
+            "difficulty": 3,
+            "description": "植根中国特色社会主义伟大实践的社会主义文化。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义文化以马克思主义为指导，融合优秀传统文化、革命文化和先进文化。",
+            "example": "发展面向现代化、面向世界、面向未来的社会主义文化。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "四个自信",
+            "difficulty": 2,
+            "description": "对中国特色社会主义的道路、理论、制度、文化自信。",
+            "aliases": [
+              "道路自信、理论自信、制度自信、文化自信"
+            ],
+            "prerequisites": [
+              "中国特色社会主义道路",
+              "中国特色社会主义理论体系",
+              "中国特色社会主义制度",
+              "中国特色社会主义文化"
+            ],
+            "definition": "四个自信是对中国特色社会主义道路、理论、制度和文化的坚定信心。",
+            "example": "学习本课后坚定中国特色社会主义四个自信。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          },
+          {
+            "name": "中国特色社会主义伟大实践",
+            "difficulty": 3,
+            "description": "道路、理论、制度、文化统一发展的实践。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路",
+              "中国特色社会主义理论体系",
+              "中国特色社会主义制度",
+              "中国特色社会主义文化"
+            ],
+            "definition": "中国特色社会主义伟大实践是道路、理论、制度和文化相互联系并统一发展的实践。",
+            "example": "改革开放推动中国特色社会主义不断创立、发展和完善。",
+            "section": "中国特色社会主义的创立、发展和完善"
+          }
+        ],
+        "sections": [
+          {
+            "name": "伟大的改革开放",
+            "section_key": "673f8b2c4c",
+            "page_range": [
+              36,
+              40
+            ]
+          },
+          {
+            "name": "中国特色社会主义的创立、发展和完善",
+            "section_key": "c8cf6949b0",
+            "page_range": [
+              40,
+              47
+            ]
+          }
+        ],
+        "chapter_key": "cac37b6218",
+        "metadata": {
+          "volume_id": "0912b98c4617",
+          "file_id": "0912b98c4617",
+          "volume_title": "高中政治 必修1 中国特色社会主义",
+          "chapter_order": 3,
+          "raw_heading": "第三课 只有中国特色社会主义才能发展中国"
+        }
+      },
+      {
+        "name": "第四课 只有坚持和发展中国特色社会主义才能实现中华民族伟大复兴",
+        "concepts": [
+          {
+            "name": "中国特色社会主义",
+            "difficulty": 2,
+            "description": "反映中国人民意愿和时代要求的科学社会主义",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国特色社会主义是根植中国大地、适合中国国情的科学社会主义。",
+            "example": "坚持中国特色社会主义道路"
+          },
+          {
+            "name": "中国特色社会主义新时代",
+            "difficulty": 2,
+            "description": "我国发展新的历史方位和新的发展阶段",
+            "aliases": [
+              "新时代"
+            ],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "中国特色社会主义进入新时代，是我国发展新的历史方位。",
+            "example": "党的十八大以来进入新时代"
+          },
+          {
+            "name": "新时代科学内涵",
+            "difficulty": 3,
+            "description": "新时代在发展目标、人民生活和世界贡献等方面的内涵",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义新时代"
+            ],
+            "definition": "新时代是继续发展中国特色社会主义、实现民族复兴并为人类作出更大贡献的时代。",
+            "example": "逐步实现全体人民共同富裕"
+          },
+          {
+            "name": "新时代社会主要矛盾",
+            "difficulty": 3,
+            "description": "人民美好生活需要与发展不平衡不充分之间的矛盾",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义新时代"
+            ],
+            "definition": "新时代我国社会主要矛盾是人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。",
+            "example": "推动经济社会协调发展"
+          },
+          {
+            "name": "社会主义初级阶段",
+            "difficulty": 2,
+            "description": "我国仍处于并将长期处于的社会主义发展阶段",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "社会主义初级阶段是我国仍处于并将长期处于的基本国情和历史阶段。",
+            "example": "从社会主义初级阶段实际出发",
+            "section": "中国特色社会主义进入新时代"
+          },
+          {
+            "name": "党的基本路线",
+            "difficulty": 3,
+            "description": "党在社会主义初级阶段的根本路线",
+            "aliases": [],
+            "prerequisites": [
+              "社会主义初级阶段"
+            ],
+            "definition": "党的基本路线是以经济建设为中心，坚持四项基本原则和改革开放。",
+            "example": "坚持改革开放和自力更生"
+          },
+          {
+            "name": "一以贯之发展",
+            "difficulty": 3,
+            "description": "新时代必须持续坚持和发展中国特色社会主义",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义新时代",
+              "中国特色社会主义"
+            ],
+            "definition": "新时代中国特色社会主义是伟大社会革命的成果和继续，必须一以贯之进行下去。",
+            "example": "在实践中不断丰富中国特色社会主义"
+          },
+          {
+            "name": "中国梦",
+            "difficulty": 2,
+            "description": "实现中华民族伟大复兴的共同梦想",
+            "aliases": [
+              "中华民族伟大复兴的中国梦"
+            ],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "中国梦就是实现中华民族伟大复兴，体现国家、民族和人民的共同愿景。",
+            "example": "为实现中国梦接续奋斗"
+          },
+          {
+            "name": "中国梦的本质",
+            "difficulty": 2,
+            "description": "国家富强、民族振兴、人民幸福",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "中国梦的本质是国家富强、民族振兴、人民幸福。",
+            "example": "建设现代化强国促进人民幸福",
+            "section": "中国特色社会主义进入新时代"
+          },
+          {
+            "name": "中国梦人民主体",
+            "difficulty": 3,
+            "description": "中国梦依靠人民实现并由人民共享",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "人民是中国梦的主体、创造者和享有者，中国梦必须紧紧依靠人民实现。",
+            "example": "把个人理想融入国家梦想"
+          },
+          {
+            "name": "中国梦世界意义",
+            "difficulty": 3,
+            "description": "中国梦不仅造福中国也造福世界",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "中国梦是奉献世界的梦，将为世界和平与发展作出更大贡献。",
+            "example": "推动构建人类命运共同体"
+          },
+          {
+            "name": "伟大斗争",
+            "difficulty": 3,
+            "description": "应对挑战、风险、阻力和矛盾的长期斗争",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "伟大斗争是实现伟大梦想、应对重大挑战和风险所必须进行的斗争。",
+            "example": "防范化解各领域风险",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "伟大工程",
+            "difficulty": 3,
+            "description": "深入推进党的建设新的伟大工程",
+            "aliases": [
+              "党的建设新的伟大工程"
+            ],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "伟大工程是实现伟大梦想必须深入推进的党的建设新的伟大工程。",
+            "example": "全面推进从严治党",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "伟大事业",
+            "difficulty": 3,
+            "description": "推进和发展中国特色社会主义伟大事业",
+            "aliases": [
+              "中国特色社会主义伟大事业"
+            ],
+            "prerequisites": [
+              "中国特色社会主义",
+              "中国梦"
+            ],
+            "definition": "伟大事业是推进中国特色社会主义并实现民族复兴的必由之路。",
+            "example": "增强中国特色社会主义四个自信",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "四个伟大关系",
+            "difficulty": 4,
+            "description": "伟大斗争、工程、事业、梦想相互联系贯通",
+            "aliases": [],
+            "prerequisites": [
+              "伟大斗争",
+              "伟大工程",
+              "伟大事业",
+              "中国梦"
+            ],
+            "definition": "伟大斗争、伟大工程、伟大事业、伟大梦想紧密联系、相互贯通、相互作用。",
+            "example": "党的建设新的伟大工程起决定作用"
+          },
+          {
+            "name": "中国式现代化",
+            "difficulty": 3,
+            "description": "中国共产党领导的社会主义现代化",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "中国式现代化是中国共产党领导的社会主义现代化，具有基于中国国情的中国特色。",
+            "example": "以中国式现代化推进民族复兴"
+          },
+          {
+            "name": "中国式现代化本质要求",
+            "difficulty": 4,
+            "description": "坚持党的领导和社会主义等九方面要求",
+            "aliases": [],
+            "prerequisites": [
+              "中国式现代化"
+            ],
+            "definition": "中国式现代化的本质要求包括坚持党的领导、实现高质量发展和共同富裕等。",
+            "example": "促进人与自然和谐共生"
+          },
+          {
+            "name": "两步走战略",
+            "difficulty": 3,
+            "description": "二〇二〇年至本世纪中叶的现代化战略安排",
+            "aliases": [
+              "分两步走战略"
+            ],
+            "prerequisites": [
+              "中国式现代化"
+            ],
+            "definition": "两步走战略是二〇二〇年至二〇三五年基本实现现代化，之后建成现代化强国。",
+            "example": "二〇三五年基本实现现代化",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "新时代中心任务",
+            "difficulty": 4,
+            "description": "全面建成强国并以中国式现代化推进民族复兴",
+            "aliases": [],
+            "prerequisites": [
+              "中国式现代化",
+              "两步走战略"
+            ],
+            "definition": "新时代新征程党的中心任务是全面建成社会主义现代化强国、实现民族复兴。",
+            "example": "团结带领人民实现第二个百年奋斗目标"
+          },
+          {
+            "name": "四个自信",
+            "difficulty": 3,
+            "description": "道路、理论、制度、文化自信",
+            "aliases": [
+              "道路自信理论自信制度自信文化自信"
+            ],
+            "prerequisites": [
+              "中国特色社会主义"
+            ],
+            "definition": "四个自信是对中国特色社会主义道路、理论、制度和文化的自信。",
+            "example": "坚定中国特色社会主义文化自信"
+          },
+          {
+            "name": "新时代思想",
+            "difficulty": 4,
+            "description": "指导新时代实践的科学理论体系",
+            "aliases": [
+              "习近平新时代中国特色社会主义思想"
+            ],
+            "prerequisites": [
+              "中国特色社会主义新时代"
+            ],
+            "definition": "习近平新时代中国特色社会主义思想是马克思主义中国化时代化新的飞跃。",
+            "example": "用新时代思想指导改革发展"
+          },
+          {
+            "name": "十个明确",
+            "difficulty": 4,
+            "description": "新时代思想最为核心关键的组成部分",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "十个明确是支撑习近平新时代中国特色社会主义思想的核心内容和“四梁八柱”。",
+            "example": "明确党的领导是最本质特征",
+            "section": "习近平新时代中国特色社会主义思想"
+          },
+          {
+            "name": "十四个坚持",
+            "difficulty": 4,
+            "description": "新时代坚持和发展中国特色社会主义的基本方略",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "十四个坚持是新时代坚持和发展中国特色社会主义的基本方略。",
+            "example": "坚持以人民为中心",
+            "section": "习近平新时代中国特色社会主义思想"
+          },
+          {
+            "name": "十三个方面成就",
+            "difficulty": 4,
+            "description": "新时代党和国家事业历史性成就的系统总结",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "十三个方面成就是对新时代党和国家事业历史性成就和变革的分领域总结。",
+            "example": "总结经济建设领域的历史性成就",
+            "section": "习近平新时代中国特色社会主义思想"
+          },
+          {
+            "name": "六个必须坚持",
+            "difficulty": 4,
+            "description": "新时代思想的世界观和方法论",
+            "aliases": [],
+            "prerequisites": [
+              "新时代思想"
+            ],
+            "definition": "六个必须坚持包括人民至上、自信自立、守正创新、问题导向、系统观念、胸怀天下。",
+            "example": "坚持问题导向解决发展难题"
+          },
+          {
+            "name": "历史机遇",
+            "difficulty": 3,
+            "description": "新时代实现复兴和创造美好生活的重要机遇",
+            "aliases": [
+              "新时代的历史机遇"
+            ],
+            "prerequisites": [
+              "中国特色社会主义新时代",
+              "中国梦"
+            ],
+            "definition": "新时代历史机遇是中华民族强起来、实现复兴和人民走向共同富裕的机遇。",
+            "example": "抓住大有可为的历史机遇",
+            "section": "实现中华民族伟大复兴的中国梦"
+          },
+          {
+            "name": "新时代青年要求",
+            "difficulty": 3,
+            "description": "青年成长成才和担当民族复兴使命的要求",
+            "aliases": [],
+            "prerequisites": [
+              "中国梦"
+            ],
+            "definition": "新时代青年要树立远大理想、热爱祖国、担当责任、砥砺奋斗、练就本领、锤炼品德。",
+            "example": "以真才实学服务人民"
+          }
+        ],
+        "sections": [
+          {
+            "name": "中国特色社会主义进入新时代",
+            "section_key": "91499a7eda",
+            "page_range": [
+              47,
+              52
+            ]
+          },
+          {
+            "name": "实现中华民族伟大复兴的中国梦",
+            "section_key": "2ef3bc4a18",
+            "page_range": [
+              52,
+              62
+            ]
+          },
+          {
+            "name": "习近平新时代中国特色社会主义思想",
+            "section_key": "d0f5afaf6e",
+            "page_range": [
+              62,
+              72
+            ]
+          }
+        ],
+        "chapter_key": "ce0ac2a7bb",
+        "metadata": {
+          "volume_id": "0912b98c4617",
+          "file_id": "0912b98c4617",
+          "volume_title": "高中政治 必修1 中国特色社会主义",
+          "chapter_order": 4,
+          "raw_heading": "第四课 只有坚持和发展中国特色社会主义才能实现中华民族伟大复兴"
+        }
+      },
+      {
+        "name": "综合探究一 回看走过的路 比较别人的路 远眺前行的路",
+        "concepts": [
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然、获取物质资料的能力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生产力是社会发展的最终决定力量。",
+            "example": "机器生产的发展推动社会生产力提高。"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "人们在生产过程中形成的社会关系",
+            "aliases": [],
+            "prerequisites": [
+              "生产力"
+            ],
+            "definition": "生产关系是人们在物质资料生产过程中形成的关系。",
+            "example": "资本主义生产中的雇佣劳动关系。"
+          },
+          {
+            "name": "经济基础",
+            "difficulty": 2,
+            "description": "由生产关系总和构成的社会基础",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系"
+            ],
+            "definition": "经济基础是一定社会形态中生产关系的总和。",
+            "example": "资本主义社会的经济基础是资本主义生产关系。"
+          },
+          {
+            "name": "上层建筑",
+            "difficulty": 2,
+            "description": "建立在经济基础上的制度和思想体系",
+            "aliases": [],
+            "prerequisites": [
+              "经济基础"
+            ],
+            "definition": "上层建筑是建立在经济基础之上的政治法律制度及思想观念。",
+            "example": "社会主义社会的政治制度属于上层建筑。"
+          },
+          {
+            "name": "社会基本矛盾",
+            "difficulty": 3,
+            "description": "生产力与生产关系等之间的矛盾",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "经济基础",
+              "上层建筑"
+            ],
+            "definition": "社会基本矛盾包括生产力与生产关系、经济基础与上层建筑的矛盾。",
+            "example": "生产力发展推动生产关系相应调整。"
+          },
+          {
+            "name": "社会形态更替",
+            "difficulty": 3,
+            "description": "社会形态由低级向高级依次变化",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "社会形态更替是社会基本矛盾运动推动不同社会形态相互代替的过程。",
+            "example": "封建社会代替奴隶社会。"
+          },
+          {
+            "name": "人类社会发展一般进程",
+            "difficulty": 3,
+            "description": "人类社会形态依次发展变化的总体规律",
+            "aliases": [],
+            "prerequisites": [
+              "社会形态更替"
+            ],
+            "definition": "人类社会发展一般进程表现为社会形态由低级向高级依次形成和更替。",
+            "example": "奴隶社会、封建社会、资本主义社会依次发展。"
+          },
+          {
+            "name": "社会发展总趋势",
+            "difficulty": 3,
+            "description": "人类社会向前发展的不可逆转趋势",
+            "aliases": [],
+            "prerequisites": [
+              "人类社会发展一般进程"
+            ],
+            "definition": "社会发展总趋势是社会历史不断向前发展的不可逆转趋势。",
+            "example": "社会主义经历长期发展后必然代替资本主义。"
+          },
+          {
+            "name": "历史发展多样性",
+            "difficulty": 3,
+            "description": "不同国家地区民族的发展道路各不相同",
+            "aliases": [],
+            "prerequisites": [
+              "人类社会发展一般进程"
+            ],
+            "definition": "历史发展多样性是各国各地区各民族因条件不同而呈现不同发展道路。",
+            "example": "英国和法国确立资本主义制度的方式不同。"
+          },
+          {
+            "name": "社会形态跨越",
+            "difficulty": 3,
+            "description": "特定条件下跨越某种社会形态发展",
+            "aliases": [],
+            "prerequisites": [
+              "历史发展多样性"
+            ],
+            "definition": "社会形态跨越是某民族或地区越过某种社会形态直接进入更高级社会形态。",
+            "example": "西藏等地区由封建农奴制直接进入社会主义社会。"
+          },
+          {
+            "name": "社会进步标准",
+            "difficulty": 3,
+            "description": "判断社会形态进步或倒退的主要依据",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "判断社会进步的主要标准是生产关系是否适应生产力发展要求并符合社会发展总趋势。",
+            "example": "生产关系适应生产力发展，表明社会形态具有进步性。"
+          },
+          {
+            "name": "科学社会主义",
+            "difficulty": 3,
+            "description": "以科学理论揭示社会主义发展规律的学说",
+            "aliases": [],
+            "prerequisites": [
+              "社会发展总趋势"
+            ],
+            "definition": "科学社会主义是揭示社会主义产生和发展规律的科学理论。",
+            "example": "把科学社会主义基本原则同中国实际相结合。"
+          },
+          {
+            "name": "理论逻辑与历史逻辑",
+            "difficulty": 4,
+            "description": "科学社会主义理论与中国发展实际的统一",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义",
+              "历史发展多样性"
+            ],
+            "definition": "理论逻辑与历史逻辑的统一指科学社会主义理论逻辑同中国社会发展历史逻辑的辩证统一。",
+            "example": "中国特色社会主义根植中国大地并反映人民意愿。"
+          },
+          {
+            "name": "中国特色社会主义",
+            "difficulty": 4,
+            "description": "具有中国特色的科学社会主义实践形态",
+            "aliases": [],
+            "prerequisites": [
+              "科学社会主义",
+              "理论逻辑与历史逻辑"
+            ],
+            "definition": "中国特色社会主义是科学社会主义理论逻辑和中国社会发展历史逻辑的辩证统一。",
+            "example": "改革开放实践推动中国特色社会主义不断发展。"
+          },
+          {
+            "name": "中国特色社会主义道路",
+            "difficulty": 4,
+            "description": "中国坚持和发展中国特色社会主义的道路",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义",
+              "历史发展多样性"
+            ],
+            "definition": "中国特色社会主义道路是立足中国实际、引领中国发展进步的社会主义道路。",
+            "example": "中国通过改革开放走出中国特色社会主义道路。"
+          }
+        ],
+        "chapter_key": "63410dd96e",
+        "metadata": {
+          "volume_id": "0912b98c4617",
+          "file_id": "0912b98c4617",
+          "volume_title": "高中政治 必修1 中国特色社会主义",
+          "chapter_order": 5,
+          "raw_heading": "综合探究一 回看走过的路 比较别人的路 远眺前行的路"
+        }
+      },
+      {
+        "name": "综合探究二 方向决定道路 道路决定命运",
+        "concepts": [
+          {
+            "name": "中国特色社会主义道路",
+            "difficulty": 3,
+            "description": "中国人民在奋斗实践中创造的发展道路。",
+            "aliases": [
+              "中国道路"
+            ],
+            "prerequisites": [],
+            "definition": "中国特色社会主义道路是中国人民在自己的奋斗实践中创造的实现中华民族伟大复兴的必由之路。",
+            "example": "中国坚持走中国特色社会主义道路，取得经济快速发展和社会长期稳定成就。"
+          },
+          {
+            "name": "中国特色社会主义制度",
+            "difficulty": 3,
+            "description": "中国发展进步的制度保障和重要优势。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国特色社会主义制度是党领导人民建立和完善的制度体系，具有显著优越性。",
+            "example": "中国制度在疫情防控中展现出集中力量办大事的优势。"
+          },
+          {
+            "name": "四个自信",
+            "difficulty": 3,
+            "description": "对道路、理论、制度、文化的自信。",
+            "aliases": [
+              "中国特色社会主义自信"
+            ],
+            "prerequisites": [
+              "中国特色社会主义道路",
+              "中国特色社会主义制度"
+            ],
+            "definition": "四个自信是对中国特色社会主义道路、理论、制度、文化的自信。",
+            "example": "中国取得辉煌成就增强了人民的四个自信。"
+          },
+          {
+            "name": "中华民族伟大复兴",
+            "difficulty": 2,
+            "description": "近代以来中华民族最伟大的梦想。",
+            "aliases": [
+              "中国梦"
+            ],
+            "prerequisites": [],
+            "definition": "中华民族伟大复兴是近代以来中华民族最伟大的梦想。",
+            "example": "中国共产党把实现中华民族伟大复兴作为历史使命。"
+          },
+          {
+            "name": "共产主义远大理想",
+            "difficulty": 3,
+            "description": "中国共产党人追求的崇高理想。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "共产主义远大理想是中国人民和中国共产党人为之奋斗的崇高理想。",
+            "example": "先进人物为共产主义理想长期奋斗。"
+          },
+          {
+            "name": "最高理想和最终目标",
+            "difficulty": 3,
+            "description": "中国共产党把实现共产主义作为最高追求。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国共产党的最高理想和最终目标是实现共产主义。",
+            "example": "党成立后义无反顾地肩负起民族复兴使命。"
+          },
+          {
+            "name": "中国共产党领导",
+            "difficulty": 2,
+            "description": "中国取得革命、建设成就的根本领导力量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "中国共产党领导人民建立和完善制度并推进中国特色社会主义事业。",
+            "example": "党领导人民创造了经济快速发展和社会长期稳定奇迹。"
+          },
+          {
+            "name": "科学社会主义生机活力",
+            "difficulty": 4,
+            "description": "科学社会主义在当代中国展现出的发展活力。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义道路"
+            ],
+            "definition": "中国特色社会主义的发展表明科学社会主义在二十一世纪的中国焕发出强大生机活力。",
+            "example": "中国的发展实践有力回应了“历史已经终结”的观点。"
+          },
+          {
+            "name": "经济快速发展奇迹",
+            "difficulty": 2,
+            "description": "新中国成立后我国经济快速发展的成就。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经济快速发展奇迹是我国大踏步赶上时代并跃升为世界第二大经济体。",
+            "example": "我国综合国力和人民生活水平显著提升。"
+          },
+          {
+            "name": "社会长期稳定奇迹",
+            "difficulty": 2,
+            "description": "我国长期保持社会和谐稳定、人民安居乐业。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "社会长期稳定奇迹是我国长期保持社会和谐稳定、人民安居乐业的重大成就。",
+            "example": "中国成为国际社会公认的最有安全感的国家之一。"
+          },
+          {
+            "name": "中国智慧和中国方案",
+            "difficulty": 3,
+            "description": "中国为全球治理和世界发展贡献的理念与方案。",
+            "aliases": [
+              "中国智慧",
+              "中国方案"
+            ],
+            "prerequisites": [],
+            "definition": "中国智慧和中国方案是中国为解决世界和平与发展问题、完善全球治理贡献的理念与实践方案。",
+            "example": "构建人类命运共同体为世界带来希望。"
+          },
+          {
+            "name": "人类命运共同体",
+            "difficulty": 3,
+            "description": "推动世界共赢共享、共同发展的中国方案。",
+            "aliases": [],
+            "prerequisites": [
+              "中国智慧和中国方案"
+            ],
+            "definition": "人类命运共同体强调各国通过全球合作实现共赢共享。",
+            "example": "中国倡导构建人类命运共同体，推动全球治理改革。"
+          },
+          {
+            "name": "三大历史性事件",
+            "difficulty": 3,
+            "description": "五四运动以来实现民族复兴的三大里程碑。",
+            "aliases": [
+              "三大里程碑"
+            ],
+            "prerequisites": [
+              "中华民族伟大复兴"
+            ],
+            "definition": "三大历史性事件是建立中国共产党、成立中华人民共和国、推进改革开放和中国特色社会主义事业。",
+            "example": "三大历史性事件推动了中华民族伟大复兴进程。"
+          },
+          {
+            "name": "社会主义现代化强国",
+            "difficulty": 3,
+            "description": "第二个百年奋斗目标的重要内容。",
+            "aliases": [],
+            "prerequisites": [
+              "中华民族伟大复兴"
+            ],
+            "definition": "社会主义现代化强国是富强民主文明和谐美丽的国家发展目标。",
+            "example": "我国向着全面建成社会主义现代化强国的目标迈进。"
+          },
+          {
+            "name": "站富强到强大飞跃",
+            "difficulty": 2,
+            "description": "中华民族由站起来到强起来的历史进程。",
+            "aliases": [
+              "站起来富起来强起来"
+            ],
+            "prerequisites": [
+              "中华民族伟大复兴"
+            ],
+            "definition": "伟大飞跃是中华民族从站起来、富起来到强起来的发展变化。",
+            "example": "改革开放和中国特色社会主义事业推动了这一伟大飞跃。"
+          },
+          {
+            "name": "信仰信念信心",
+            "difficulty": 2,
+            "description": "支撑人民不断奋斗前进的精神力量。",
+            "aliases": [],
+            "prerequisites": [
+              "四个自信"
+            ],
+            "definition": "信仰、信念、信心是个人、集体、政党和国家愈挫愈奋的重要精神力量。",
+            "example": "对马克思主义的信仰支撑人民实现站起来、富起来、强起来。"
+          }
+        ],
+        "chapter_key": "8c6a3e192a",
+        "metadata": {
+          "volume_id": "0912b98c4617",
+          "file_id": "0912b98c4617",
+          "volume_title": "高中政治 必修1 中国特色社会主义",
+          "chapter_order": 6,
+          "raw_heading": "综合探究二 方向决定道路 道路决定命运"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "6557275660": [
+        6,
+        16
+      ],
+      "原始社会的解体和阶级社会的演进": [
+        6,
+        16
+      ],
+      "409156d883": [
+        16,
+        25
+      ],
+      "科学社会主义的理论与实践": [
+        16,
+        25
+      ],
+      "f326abc7d8": [
+        25,
+        30
+      ],
+      "新民主主义革命的胜利": [
+        25,
+        30
+      ],
+      "1bde7a4802": [
+        30,
+        36
+      ],
+      "社会主义制度在中国的确立": [
+        30,
+        36
+      ],
+      "673f8b2c4c": [
+        36,
+        40
+      ],
+      "伟大的改革开放": [
+        36,
+        40
+      ],
+      "c8cf6949b0": [
+        40,
+        47
+      ],
+      "中国特色社会主义的创立、发展和完善": [
+        40,
+        47
+      ],
+      "91499a7eda": [
+        47,
+        52
+      ],
+      "中国特色社会主义进入新时代": [
+        47,
+        52
+      ],
+      "2ef3bc4a18": [
+        52,
+        62
+      ],
+      "实现中华民族伟大复兴的中国梦": [
+        52,
+        62
+      ],
+      "d0f5afaf6e": [
+        62,
+        72
+      ],
+      "习近平新时代中国特色社会主义思想": [
+        62,
+        72
+      ]
+    }
+  }
+}

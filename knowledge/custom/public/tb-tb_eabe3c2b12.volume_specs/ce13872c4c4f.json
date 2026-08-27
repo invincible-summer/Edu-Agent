@@ -1,0 +1,3594 @@
+{
+  "file_id": "ce13872c4c4f",
+  "text_sha256": "0df1b3bd8c3a7d91a8a2f726e73dc86d437f0f9fac02da0fc2bc96e6a8cabfa7",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 民事权利与义务",
+        "concepts": [
+          {
+            "name": "民法",
+            "difficulty": 1,
+            "description": "调整平等主体之间人身关系和财产关系的法律。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "民法是调整平等主体的自然人、法人和非法人组织之间人身关系和财产关系的法律。",
+            "example": "买卖商品、租赁房屋都需要民法规范。"
+          },
+          {
+            "name": "民事主体",
+            "difficulty": 1,
+            "description": "依法参与民事法律关系并享有权利、承担义务的主体。",
+            "aliases": [],
+            "prerequisites": [
+              "民法"
+            ],
+            "definition": "民事主体是参与民事法律关系、依法享有民事权利并承担民事义务的自然人、法人和非法人组织。",
+            "example": "消费者与商店都是民事主体。"
+          },
+          {
+            "name": "自然人",
+            "difficulty": 1,
+            "description": "从出生到死亡具有民事权利能力的个人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "自然人是从出生时起到死亡时止具有民事权利能力的个人。",
+            "example": "未成年人和成年人都属于自然人。"
+          },
+          {
+            "name": "法人",
+            "difficulty": 2,
+            "description": "依法独立享有权利、承担义务的组织。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "法人是具有民事权利能力和民事行为能力、依法独立享有民事权利和承担民事义务的组织。",
+            "example": "有限责任公司属于营利法人。"
+          },
+          {
+            "name": "非法人组织",
+            "difficulty": 2,
+            "description": "不具有法人资格但能以自己名义从事民事活动的组织。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "非法人组织是不具有法人资格但能够依法以自己的名义从事民事活动的组织。",
+            "example": "个人独资企业属于非法人组织。"
+          },
+          {
+            "name": "民事法律关系",
+            "difficulty": 2,
+            "description": "由民法调整的人身关系和财产关系。",
+            "aliases": [],
+            "prerequisites": [
+              "民法",
+              "民事主体"
+            ],
+            "definition": "民事法律关系是由民法调整的人身关系和财产关系。",
+            "example": "买卖合同形成财产关系。"
+          },
+          {
+            "name": "民事法律关系要素",
+            "difficulty": 2,
+            "description": "民事法律关系由主体、客体和内容构成。",
+            "aliases": [],
+            "prerequisites": [
+              "民事法律关系"
+            ],
+            "definition": "民事法律关系包含主体、客体和内容三个要素。",
+            "example": "租赁关系包括出租人、房屋和双方义务。"
+          },
+          {
+            "name": "民事权利",
+            "difficulty": 1,
+            "description": "民法赋予主体实现特定利益的行为自由。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "民事权利是民法赋予民事主体为实现某种特定利益而为或不为一定行为的自由。",
+            "example": "所有权人可以使用自己的房屋。"
+          },
+          {
+            "name": "民事义务",
+            "difficulty": 1,
+            "description": "民事主体为满足权利利益依法应为或不为的行为。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利"
+            ],
+            "definition": "民事义务是民事主体为满足民事权利所保护的利益而依法应当为或不为一定行为的约束。",
+            "example": "借款人应按约定还款。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "民事权利能力",
+            "difficulty": 2,
+            "description": "主体依法享有权利、承担义务的资格。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "民事权利能力是法律赋予民事主体从事民事活动、依法享有民事权利和承担民事义务的资格。",
+            "example": "自然人出生即具有民事权利能力。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "民事行为能力",
+            "difficulty": 2,
+            "description": "主体通过自己的行为取得权利、承担义务的能力。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利能力"
+            ],
+            "definition": "民事行为能力是法律确认的民事主体通过自己的行为从事民事活动、取得民事权利和承担民事义务的能力。",
+            "example": "成年人通常可以独立订立合同。"
+          },
+          {
+            "name": "完全民事行为能力人",
+            "difficulty": 2,
+            "description": "能够独立实施民事法律行为的自然人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "完全民事行为能力人是能够独立通过自己的行为从事民事活动的自然人。",
+            "example": "年满十八周岁的成年人通常属于此类。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "限制民事行为能力人",
+            "difficulty": 3,
+            "description": "民事行为能力受到年龄或辨认能力限制的自然人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "限制民事行为能力人是依法只能独立实施部分民事法律行为的自然人。",
+            "example": "八周岁以上未成年人属于此类。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "无民事行为能力人",
+            "difficulty": 3,
+            "description": "不能独立实施民事法律行为的自然人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "无民事行为能力人是依法不能独立通过自己的行为从事民事活动的自然人。",
+            "example": "不满八周岁的未成年人属于此类。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "民法基本原则",
+            "difficulty": 2,
+            "description": "民事活动和审理民事案件应遵循的基本准则。",
+            "aliases": [],
+            "prerequisites": [
+              "民法"
+            ],
+            "definition": "民法基本原则是民事主体从事民事活动和司法机关审理民事案件时应当遵循的基本准则。",
+            "example": "订立合同应遵循诚信原则。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "自愿原则",
+            "difficulty": 2,
+            "description": "民事主体按自己的意思设立、变更、终止法律关系。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "自愿原则要求民事主体按照自己的意思设立、变更、终止民事法律关系。",
+            "example": "买卖双方自愿确定交易内容。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "公平原则",
+            "difficulty": 2,
+            "description": "合理确定民事活动各方的权利和义务。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "公平原则要求民事主体合理确定民事活动各方的权利和义务。",
+            "example": "合同不能明显偏袒一方。"
+          },
+          {
+            "name": "诚信原则",
+            "difficulty": 2,
+            "description": "民事主体应诚实守信、恪守承诺。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "诚信原则要求民事主体秉持诚实、恪守承诺从事民事活动。",
+            "example": "商家应兑现公开承诺的赠品。"
+          },
+          {
+            "name": "公序良俗原则",
+            "difficulty": 3,
+            "description": "民事活动不得违反法律和社会公共秩序善良习俗。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则",
+              "自愿原则"
+            ],
+            "definition": "公序良俗原则要求民事主体从事民事活动不得违反法律、不得违背公序良俗。",
+            "example": "取名不得违背公序良俗。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "绿色原则",
+            "difficulty": 2,
+            "description": "民事活动应有利于节约资源和保护生态环境。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "绿色原则要求民事主体从事民事活动应当有利于节约资源、保护生态环境。",
+            "example": "建设活动应减少环境污染。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "人身权",
+            "difficulty": 2,
+            "description": "民事主体依法享有的人身利益相关权利。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利"
+            ],
+            "definition": "人身权是民事主体依法享有的与人身利益相联系的民事权利。",
+            "example": "自然人享有姓名权和隐私权。"
+          },
+          {
+            "name": "人格权",
+            "difficulty": 2,
+            "description": "维护自然人人格尊严和人身自由的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人身权"
+            ],
+            "definition": "人格权是自然人依法享有的生命、身体、健康、姓名、肖像、名誉、隐私等权利。",
+            "example": "禁止他人侮辱、诽谤自己。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "身份权",
+            "difficulty": 2,
+            "description": "基于婚姻家庭关系等身份产生的人身权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人身权"
+            ],
+            "definition": "身份权是自然人基于婚姻家庭关系等身份依法享有的人身权利。",
+            "example": "夫妻之间依法享有身份权。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "姓名权",
+            "difficulty": 2,
+            "description": "自然人决定、使用、变更或许可使用姓名的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "姓名权是自然人对其姓名依法享有的决定、使用、变更或者许可他人使用的人身权利。",
+            "example": "未经许可不得盗用他人姓名。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "肖像权",
+            "difficulty": 2,
+            "description": "自然人依法制作、使用、公开或许可使用肖像的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "肖像权是自然人对可被识别的外部形象依法享有的权利。",
+            "example": "商店未经许可使用小郝照片做广告。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "名誉权",
+            "difficulty": 2,
+            "description": "民事主体维护其社会评价不受侵害的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "名誉权是民事主体依法享有的维护其品德、声望、才能、信用等社会评价的权利。",
+            "example": "不得通过诽谤损害他人名誉。"
+          },
+          {
+            "name": "隐私权",
+            "difficulty": 2,
+            "description": "自然人保护私人生活安宁及私密信息的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "隐私权是自然人依法享有的私人生活安宁和不愿为他人知晓的私密空间、活动、信息不受侵扰的权利。",
+            "example": "擅自翻看他人日记侵犯隐私权。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "财产权",
+            "difficulty": 1,
+            "description": "能够给民事主体带来经济收益的民事权利。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利"
+            ],
+            "definition": "财产权是包括物权、债权、知识产权等能够给民事主体带来经济收益的权利。",
+            "example": "房屋所有权属于财产权。"
+          },
+          {
+            "name": "物权",
+            "difficulty": 2,
+            "description": "权利人对特定物享有直接支配和排他的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "财产权"
+            ],
+            "definition": "物权是权利人依法对特定的物享有直接支配和排他的权利。",
+            "example": "所有权人可以支配自己的汽车。"
+          },
+          {
+            "name": "所有权",
+            "difficulty": 2,
+            "description": "权利人对不动产或动产享有占有使用收益处分权。",
+            "aliases": [],
+            "prerequisites": [
+              "物权"
+            ],
+            "definition": "所有权是权利人对自己的不动产或者动产依法享有的占有、使用、收益和处分的权利。",
+            "example": "房主可以出租自己的房屋。"
+          },
+          {
+            "name": "用益物权",
+            "difficulty": 3,
+            "description": "对他人财产依法享有占有、使用和收益的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "物权"
+            ],
+            "definition": "用益物权是对他人所有的不动产或者动产依法享有占有、使用和收益的权利。",
+            "example": "土地承包经营权属于用益物权。"
+          },
+          {
+            "name": "担保物权",
+            "difficulty": 3,
+            "description": "为确保债权实现而在他人财产上设立的物权。",
+            "aliases": [],
+            "prerequisites": [
+              "物权",
+              "债权"
+            ],
+            "definition": "担保物权是为了确保债权实现而在他人财产上设立的物权。",
+            "example": "借款人以房屋设立抵押权。"
+          },
+          {
+            "name": "知识产权",
+            "difficulty": 2,
+            "description": "对智力成果或工商业标记享有的专有性权利。",
+            "aliases": [],
+            "prerequisites": [
+              "财产权"
+            ],
+            "definition": "知识产权是权利人依法就作品、发明创造、商标等享有的专有性权利。",
+            "example": "作者对原创作品享有著作权。"
+          },
+          {
+            "name": "著作权",
+            "difficulty": 2,
+            "description": "权利人对特定作品依法享有支配和获益的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "知识产权"
+            ],
+            "definition": "著作权是权利人针对特定作品依法享有的支配和获取利益的权利。",
+            "example": "未经许可复制他人文章可能侵权。"
+          },
+          {
+            "name": "专利权",
+            "difficulty": 2,
+            "description": "权利人对特定发明创造在期限内享有的专有权。",
+            "aliases": [],
+            "prerequisites": [
+              "知识产权"
+            ],
+            "definition": "专利权是权利人就特定的发明创造依法在规定期限内享有的专有权。",
+            "example": "发明人申请智能插座专利。"
+          },
+          {
+            "name": "商标权",
+            "difficulty": 2,
+            "description": "注册商标权利人依法享有的商标专用权。",
+            "aliases": [],
+            "prerequisites": [
+              "知识产权"
+            ],
+            "definition": "商标权是注册商标人依法享有的注册商标专用权。",
+            "example": "他人擅用注册商标可能构成侵权。"
+          },
+          {
+            "name": "合同",
+            "difficulty": 1,
+            "description": "民事主体设立、变更、终止民事法律关系的协议。",
+            "aliases": [],
+            "prerequisites": [
+              "民事法律关系",
+              "自愿原则"
+            ],
+            "definition": "合同是民事主体之间设立、变更、终止民事法律关系的协议。",
+            "example": "乘坐公交车会形成运输合同。"
+          },
+          {
+            "name": "意思表示",
+            "difficulty": 2,
+            "description": "行为人将产生法律效果的内心意愿表现于外部。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "意思表示是行为人将其期望发生法律效果的内心意愿以一定方式表现于外部的行为。",
+            "example": "顾客表示购买商品构成意思表示。",
+            "section": "第三课 订约履约 诚信为本"
+          },
+          {
+            "name": "要约",
+            "difficulty": 2,
+            "description": "希望与他人订立合同的意思表示。",
+            "aliases": [],
+            "prerequisites": [
+              "合同",
+              "意思表示"
+            ],
+            "definition": "要约是希望与他人订立合同的意思表示。",
+            "example": "公司发邮件提出明确采购条件。",
+            "section": "第三课 订约履约 诚信为本"
+          },
+          {
+            "name": "承诺",
+            "difficulty": 2,
+            "description": "受要约人同意要约并在期限内作出的意思表示。",
+            "aliases": [],
+            "prerequisites": [
+              "要约"
+            ],
+            "definition": "承诺是受要约人同意要约、及时在期限内向要约人作出的意思表示。",
+            "example": "顾客按标价表示购买商品。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一课 在生活中学民法用民法",
+            "page_range": [
+              7,
+              17
+            ]
+          },
+          {
+            "name": "第二课 依法有效保护财产权",
+            "page_range": [
+              17,
+              27
+            ]
+          },
+          {
+            "name": "第三课 订约履约 诚信为本",
+            "page_range": [
+              27,
+              37
+            ]
+          },
+          {
+            "name": "第四课 侵权责任与权利界限",
+            "page_range": [
+              37,
+              44
+            ]
+          },
+          {
+            "name": "综合探究 财产制度助力经济社会发展",
+            "page_range": [
+              44,
+              45
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二单元 家庭与婚姻",
+        "concepts": [
+          {
+            "name": "家庭",
+            "difficulty": 2,
+            "description": "基于婚姻、血缘等关系组成的共同生活单位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "家庭是人们基于婚姻、血缘等关系，由一定范围亲属组成的共同生活单位。",
+            "example": "父母与子女共同生活组成家庭。"
+          },
+          {
+            "name": "婚姻",
+            "difficulty": 2,
+            "description": "由法律确认的男女两性结合及夫妻关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "婚姻是由法律确认的男女两性的结合以及由此产生的夫妻关系。",
+            "example": "男女双方依法登记结婚形成婚姻关系。"
+          },
+          {
+            "name": "婚姻自由",
+            "difficulty": 3,
+            "description": "包括结婚自由和离婚自由的婚姻制度原则",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻"
+            ],
+            "definition": "婚姻自由是婚姻制度的基本原则，包括结婚自由和离婚自由。",
+            "example": "成年人依法自主决定结婚对象。"
+          },
+          {
+            "name": "父母抚养教育义务",
+            "difficulty": 3,
+            "description": "父母对未成年子女负有抚养和教育责任",
+            "aliases": [],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "父母应当抚养、教育未成年子女，不得虐待、遗弃或阻碍其接受义务教育。",
+            "example": "父母让适龄子女按时入学并完成义务教育。"
+          },
+          {
+            "name": "监护职责",
+            "difficulty": 3,
+            "description": "父母保护未成年子女人身、健康和财产利益",
+            "aliases": [],
+            "prerequisites": [
+              "父母抚养教育义务"
+            ],
+            "definition": "监护职责要求父母保护未成年子女的人身安全、健康及财产利益。",
+            "example": "未成年子女造成他人损害，父母依法承担责任。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "探望权",
+            "difficulty": 3,
+            "description": "离婚后不直接抚养子女一方探望子女的权利",
+            "aliases": [],
+            "prerequisites": [
+              "父母抚养教育义务"
+            ],
+            "definition": "离婚后不直接抚养子女的父或母享有探望子女的权利，另一方有协助义务。",
+            "example": "父亲按约定定期探望离婚后的子女。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "子女赡养义务",
+            "difficulty": 3,
+            "description": "成年子女在经济、生活和精神上照料父母",
+            "aliases": [
+              "赡养义务"
+            ],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "成年子女应当在经济、生活和精神上赡养父母并照顾其特殊需要。",
+            "example": "成年子女支付父母生活费并经常看望问候。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "成年意定监护",
+            "difficulty": 4,
+            "description": "成年人预先书面确定自己丧失行为能力时的监护人",
+            "aliases": [
+              "成年意定监护制度"
+            ],
+            "prerequisites": [
+              "监护职责"
+            ],
+            "definition": "具有完全民事行为能力的成年人可书面预先确定自己未来的监护人。",
+            "example": "老人事先书面指定近亲属担任监护人。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "家庭暴力",
+            "difficulty": 3,
+            "description": "侵犯家庭成员权利、破坏家庭和睦的暴力行为",
+            "aliases": [],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "家庭暴力是家庭成员之间实施的侵犯权利、破坏家庭和睦的暴力行为。",
+            "example": "家庭成员长期殴打、限制另一成员人身自由。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "继承",
+            "difficulty": 3,
+            "description": "自然人死亡后个人合法财产依法转移给他人",
+            "aliases": [],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "继承是将自然人死亡后遗留的个人合法财产依法转移给他人所有。",
+            "example": "子女依法承受去世父亲留下的个人合法财产。"
+          },
+          {
+            "name": "遗产",
+            "difficulty": 3,
+            "description": "被继承人死亡时遗留的个人合法财产",
+            "aliases": [],
+            "prerequisites": [
+              "继承"
+            ],
+            "definition": "遗产是被继承人死亡时遗留的个人合法财产。",
+            "example": "析出夫妻共同财产后，死者名下存款属于遗产。"
+          },
+          {
+            "name": "继承权",
+            "difficulty": 3,
+            "description": "继承人依法享有的承受遗产的财产性权利",
+            "aliases": [],
+            "prerequisites": [
+              "继承",
+              "遗产"
+            ],
+            "definition": "继承权是继承人依法承受被继承人遗产的财产性权利。",
+            "example": "子女依法享有继承父母遗产的权利。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "法定继承",
+            "difficulty": 4,
+            "description": "依据婚姻、血缘或扶养关系取得继承权",
+            "aliases": [],
+            "prerequisites": [
+              "继承权"
+            ],
+            "definition": "法定继承是依据法律直接规定的亲属关系等取得继承权。",
+            "example": "被继承人未立有效遗嘱时，配偶依法继承。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "法定继承顺序",
+            "difficulty": 4,
+            "description": "法律规定的第一、第二顺序继承人范围",
+            "aliases": [],
+            "prerequisites": [
+              "法定继承"
+            ],
+            "definition": "法定继承顺序是法律依亲属关系亲疏规定的继承先后次序。",
+            "example": "有第一顺序继承人时，第二顺序继承人不继承。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "遗嘱",
+            "difficulty": 4,
+            "description": "遗嘱人生前处分个人合法财产的单方意思表示",
+            "aliases": [],
+            "prerequisites": [
+              "遗产"
+            ],
+            "definition": "遗嘱是自然人生前依法处分个人合法财产并于死亡时生效的单方意思表示。",
+            "example": "老人亲笔写下并签名注明日期的自书遗嘱。"
+          },
+          {
+            "name": "遗嘱继承",
+            "difficulty": 4,
+            "description": "依据合法有效遗嘱在法定继承人中指定继承人",
+            "aliases": [],
+            "prerequisites": [
+              "法定继承",
+              "遗嘱"
+            ],
+            "definition": "遗嘱继承是按照合法有效遗嘱在法定继承人范围内确定继承人及份额。",
+            "example": "遗嘱指定其中一名子女继承某处房产。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "遗赠",
+            "difficulty": 4,
+            "description": "遗嘱人将个人财产赠与法定继承人以外主体",
+            "aliases": [],
+            "prerequisites": [
+              "遗嘱",
+              "遗产"
+            ],
+            "definition": "遗赠是自然人通过遗嘱将个人财产赠与法定继承人以外的组织或个人。",
+            "example": "遗嘱将存款赠给侄女。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "遗赠扶养协议",
+            "difficulty": 4,
+            "description": "扶养人承担生养死葬义务并取得受遗赠权利",
+            "aliases": [],
+            "prerequisites": [
+              "遗赠"
+            ],
+            "definition": "遗赠扶养协议是自然人与继承人以外主体约定扶养和遗赠权利义务的协议。",
+            "example": "孤寡老人约定由个人照料晚年并接受遗赠。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "结婚条件",
+            "difficulty": 3,
+            "description": "结婚须自愿、达到婚龄、符合一夫一妻等要求",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻自由"
+            ],
+            "definition": "结婚必须双方完全自愿、达到法定婚龄、符合一夫一妻制且不存在近亲婚姻禁令。",
+            "example": "双方自愿且男满二十二周岁、女满二十周岁。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "一夫一妻",
+            "difficulty": 3,
+            "description": "一男一女结为夫妻，禁止重婚和有配偶同居",
+            "aliases": [
+              "一夫一妻制"
+            ],
+            "prerequisites": [
+              "结婚条件"
+            ],
+            "definition": "一夫一妻是指一男一女结为夫妻，任何人不得同时拥有两个以上配偶。",
+            "example": "已有配偶者不得再登记结婚。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "结婚登记",
+            "difficulty": 3,
+            "description": "确立婚姻关系、明确夫妻权利义务的法律程序",
+            "aliases": [],
+            "prerequisites": [
+              "结婚条件"
+            ],
+            "definition": "结婚登记是男女双方确立婚姻关系必须履行的法律程序。",
+            "example": "双方经申请、审查后领取结婚证。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "离婚冷静期",
+            "difficulty": 3,
+            "description": "协议离婚申请提交后三十日内可撤回申请",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻自由"
+            ],
+            "definition": "离婚冷静期是婚姻登记机关收到协议离婚申请后三十日内的等待期间。",
+            "example": "一方在三十日内不愿离婚，可以撤回申请。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "协议离婚",
+            "difficulty": 4,
+            "description": "夫妻双方协商一致并办理离婚登记解除婚姻关系",
+            "aliases": [],
+            "prerequisites": [
+              "离婚冷静期"
+            ],
+            "definition": "协议离婚要求双方就子女抚养、财产分割等达成协议并依法领取离婚证。",
+            "example": "夫妻协商好财产和子女安排后办理离婚登记。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "裁判离婚",
+            "difficulty": 4,
+            "description": "夫妻感情破裂且调解无效时由法院判决离婚",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻自由"
+            ],
+            "definition": "裁判离婚是人民法院审理离婚案件并在感情确已破裂、调解无效时判决离婚。",
+            "example": "法院调解无效后判决夫妻解除婚姻关系。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "夫妻地位平等",
+            "difficulty": 3,
+            "description": "夫妻平等行使权利、履行义务和承担责任",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻"
+            ],
+            "definition": "夫妻地位平等要求双方在婚姻家庭中平等行使权利、履行义务并承担责任。",
+            "example": "夫妻共同决定家庭重大事项。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "夫妻人身关系",
+            "difficulty": 4,
+            "description": "夫妻之间人格独立、姓名使用和活动自由等关系",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻地位平等"
+            ],
+            "definition": "夫妻人身关系体现为夫妻双方人格独立并享有使用自己姓名等权利。",
+            "example": "夫妻双方均有参加工作、学习和社会活动的自由。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "夫妻共同财产",
+            "difficulty": 4,
+            "description": "婚姻存续期间依法归夫妻共同所有的财产",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻地位平等"
+            ],
+            "definition": "夫妻共同财产是婚姻关系存续期间依法归夫妻双方共同所有的财产。",
+            "example": "婚后工资、奖金和经营收益通常属于共同财产。"
+          },
+          {
+            "name": "夫妻个人财产",
+            "difficulty": 4,
+            "description": "依法归夫妻一方单独所有的财产",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻地位平等"
+            ],
+            "definition": "夫妻个人财产是依法归夫妻一方单独所有的财产。",
+            "example": "一方婚前购买的房屋属于个人财产。"
+          },
+          {
+            "name": "夫妻财产约定",
+            "difficulty": 4,
+            "description": "夫妻以书面形式约定婚前及婚后财产归属",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻共同财产",
+              "夫妻个人财产"
+            ],
+            "definition": "夫妻财产约定是夫妻平等自愿以书面形式约定财产归属及范围。",
+            "example": "夫妻书面约定婚后收入分别归各自所有。"
+          },
+          {
+            "name": "夫妻共同债务",
+            "difficulty": 4,
+            "description": "夫妻共同意思表示或家庭日常生活需要产生的债务",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻共同财产"
+            ],
+            "definition": "夫妻共同债务包括双方共同意思表示所负及一方为家庭日常生活需要所负的债务。",
+            "example": "夫妻共同签名借款用于家庭生活。",
+            "section": "第六课 珍惜婚姻关系"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第五课 在和睦家庭中成长",
+            "page_range": [
+              47,
+              55
+            ]
+          },
+          {
+            "name": "第六课 珍惜婚姻关系",
+            "page_range": [
+              55,
+              62
+            ]
+          },
+          {
+            "name": "综合探究 家庭生活 法律守护",
+            "page_range": [
+              62,
+              63
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三单元 就业与创业",
+        "concepts": [
+          {
+            "name": "劳动者",
+            "difficulty": 1,
+            "description": "具有劳动能力并以劳动收入为主要生活来源的人",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "劳动者是具有劳动能力、以从事社会劳动获得收入为主要生活来源并接受用人单位管理的人。",
+            "example": "在公司管理下工作的员工属于劳动者。"
+          },
+          {
+            "name": "劳动关系",
+            "difficulty": 2,
+            "description": "劳动者与用人单位在劳动过程中形成的社会关系",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "劳动关系是劳动者与用人单位在劳动过程中发生的社会关系。",
+            "example": "员工接受公司管理并获得工资形成劳动关系。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动权利义务",
+            "difficulty": 2,
+            "description": "劳动者依法享有权利并承担相应义务",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "劳动权利义务是劳动者依法享有劳动权益并完成劳动任务、遵守劳动纪律等应承担的责任。",
+            "example": "员工有取得工资的权利，也有完成劳动任务的义务。"
+          },
+          {
+            "name": "劳动法律法规",
+            "difficulty": 2,
+            "description": "规范劳动关系并保护劳动者权益的法律规范",
+            "aliases": [],
+            "prerequisites": [
+              "劳动关系"
+            ],
+            "definition": "劳动法律法规是调整劳动关系、规定劳动者权利和用人单位义务的法律规范。",
+            "example": "劳动法为劳动者维权提供法律依据。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "平等就业",
+            "difficulty": 2,
+            "description": "劳动者享有平等就业和选择职业的权利",
+            "aliases": [
+              "平等就业权"
+            ],
+            "prerequisites": [
+              "劳动者",
+              "劳动法律法规"
+            ],
+            "definition": "平等就业是劳动者不因民族、种族、性别、宗教信仰等不同而受就业歧视。",
+            "example": "招聘不得仅以性别为由拒绝求职者面试。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "特殊劳动保护",
+            "difficulty": 2,
+            "description": "国家对特殊劳动者实施的倾斜性劳动保护",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者",
+              "劳动法律法规"
+            ],
+            "definition": "特殊劳动保护是国家针对未成年工、残疾劳动者等特殊劳动者采取的保护措施。",
+            "example": "不得安排未成年工从事矿山井下劳动。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动合同",
+            "difficulty": 2,
+            "description": "确立劳动关系并明确双方权利义务的协议",
+            "aliases": [],
+            "prerequisites": [
+              "劳动关系"
+            ],
+            "definition": "劳动合同是劳动者与用人单位确立劳动关系、明确双方权利和义务的协议。",
+            "example": "公司与员工签订书面劳动合同。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "合同订立原则",
+            "difficulty": 3,
+            "description": "订立劳动合同应遵循的基本原则",
+            "aliases": [],
+            "prerequisites": [
+              "劳动合同"
+            ],
+            "definition": "合同订立原则包括合法、公平、平等自愿、协商一致和诚实信用。",
+            "example": "双方协商一致后签订劳动合同。"
+          },
+          {
+            "name": "劳动合同效力",
+            "difficulty": 3,
+            "description": "劳动合同依法成立后对双方产生的约束力",
+            "aliases": [],
+            "prerequisites": [
+              "劳动合同",
+              "合同订立原则"
+            ],
+            "definition": "劳动合同符合法律规定的条件才产生法律效力，签字或盖章后对双方形成约束力。",
+            "example": "合同生效后，用人单位不得随意解除合同。"
+          },
+          {
+            "name": "无效劳动合同",
+            "difficulty": 3,
+            "description": "因违法或违背真实意思而不具有法律约束力的合同",
+            "aliases": [],
+            "prerequisites": [
+              "劳动合同效力"
+            ],
+            "definition": "无效劳动合同是因欺诈、胁迫、免除法定责任或违反强制性规定而无效的合同。",
+            "example": "合同排除劳动者权利的，相关条款可能无效。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动报酬权",
+            "difficulty": 2,
+            "description": "劳动者要求获得工资及相关劳动报酬的权利",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者",
+              "劳动合同"
+            ],
+            "definition": "劳动报酬权是劳动者要求用人单位按约定支付工资等劳动报酬的权利。",
+            "example": "用人单位不得无故拖欠员工工资。"
+          },
+          {
+            "name": "休息休假权",
+            "difficulty": 2,
+            "description": "劳动者依法享有休息、休假和带薪年休假的权利",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "休息休假权是劳动者依法享有休息日、法定休假和带薪年休假的权利。",
+            "example": "员工年休假期间应享受正常工资收入。"
+          },
+          {
+            "name": "劳动安全卫生权",
+            "difficulty": 2,
+            "description": "劳动者获得劳动安全卫生条件和保护用品的权利",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "劳动安全卫生权是劳动者要求用人单位提供安全卫生条件和必要防护用品的权利。",
+            "example": "企业为有职业危害岗位员工提供防护用品。"
+          },
+          {
+            "name": "社会保险权",
+            "difficulty": 2,
+            "description": "劳动者依法享受社会保险和福利待遇的权利",
+            "aliases": [
+              "社会保险"
+            ],
+            "prerequisites": [
+              "劳动者",
+              "劳动法律法规"
+            ],
+            "definition": "社会保险权是劳动者在年老、患病、工伤、失业、生育等情况下获得基本保障的权利。",
+            "example": "员工因工受伤可依法享受工伤保险待遇。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动者义务",
+            "difficulty": 2,
+            "description": "劳动者完成任务、提升技能并遵守劳动规范的责任",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者",
+              "劳动权利义务"
+            ],
+            "definition": "劳动者义务包括完成劳动任务、提高职业技能、执行安全卫生规程和遵守劳动纪律职业道德。",
+            "example": "员工应按规定执行安全生产操作规程。"
+          },
+          {
+            "name": "劳动争议",
+            "difficulty": 2,
+            "description": "劳动者与用人单位因劳动关系产生的纠纷",
+            "aliases": [],
+            "prerequisites": [
+              "劳动关系",
+              "劳动合同"
+            ],
+            "definition": "劳动争议是劳动者与用人单位因履行劳动合同等问题发生的纠纷。",
+            "example": "双方因工资支付问题发生争议。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动争议调解",
+            "difficulty": 2,
+            "description": "由调解组织促成双方自愿合法解决劳动争议",
+            "aliases": [
+              "劳动调解"
+            ],
+            "prerequisites": [
+              "劳动争议"
+            ],
+            "definition": "劳动争议调解是在自愿、合法基础上由调解组织促成双方达成协议的解决方式。",
+            "example": "员工向企业劳动争议调解委员会申请调解。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动仲裁",
+            "difficulty": 3,
+            "description": "劳动争议仲裁委员会居中裁决劳动争议的活动",
+            "aliases": [
+              "劳动争议仲裁"
+            ],
+            "prerequisites": [
+              "劳动争议"
+            ],
+            "definition": "劳动仲裁是劳动争议仲裁委员会以第三方身份作出具有法律约束力裁决的活动。",
+            "example": "协商调解不成后，劳动者申请劳动仲裁。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "企业经营主体",
+            "difficulty": 2,
+            "description": "依法从事经营活动的企业或经营组织形式",
+            "aliases": [
+              "经营主体"
+            ],
+            "prerequisites": [],
+            "definition": "企业经营主体是创业者依法选择并用于开展经营活动的组织形式。",
+            "example": "创业者可选择个体工商户或有限责任公司。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "有限责任",
+            "difficulty": 3,
+            "description": "出资人以认缴出资或认购股份承担责任",
+            "aliases": [],
+            "prerequisites": [
+              "企业经营主体"
+            ],
+            "definition": "有限责任是公司股东以认缴出资或认购股份为限承担企业债务责任。",
+            "example": "有限责任公司股东通常以出资额为限担责。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "企业登记",
+            "difficulty": 2,
+            "description": "企业依法办理设立、变更和终止登记的制度",
+            "aliases": [
+              "企业注册"
+            ],
+            "prerequisites": [
+              "企业经营主体"
+            ],
+            "definition": "企业登记是经营者向相关主管部门办理企业设立、变更或终止手续的行为。",
+            "example": "企业设立后依法领取营业执照。"
+          },
+          {
+            "name": "企业信息公示",
+            "difficulty": 2,
+            "description": "依法向社会公开企业及其经营状况信息",
+            "aliases": [],
+            "prerequisites": [
+              "企业登记"
+            ],
+            "definition": "企业信息公示是企业和政府部门依法通过信用信息公示系统公开相关信息的制度。",
+            "example": "企业依法公示营业执照和经营信息。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "公平竞争",
+            "difficulty": 2,
+            "description": "经营者遵守市场规则并在市场中公平竞争",
+            "aliases": [],
+            "prerequisites": [
+              "企业经营主体"
+            ],
+            "definition": "公平竞争是经营者遵守法律规则、不以不正当手段损害竞争者和市场秩序。",
+            "example": "经营者不得通过仿冒他人标识获取竞争优势。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "混淆行为",
+            "difficulty": 3,
+            "description": "利用仿冒手段使消费者误认商品或经营联系的行为",
+            "aliases": [
+              "搭便车"
+            ],
+            "prerequisites": [
+              "公平竞争"
+            ],
+            "definition": "混淆行为是经营者利用他人商业信誉，使消费者误认为其商品或服务与他人存在特定联系。",
+            "example": "仿冒知名商品包装使消费者误认来源。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "虚假宣传",
+            "difficulty": 3,
+            "description": "对商品信息作虚假或引人误解的商业宣传",
+            "aliases": [],
+            "prerequisites": [
+              "公平竞争"
+            ],
+            "definition": "虚假宣传是经营者对商品性能、质量、销量或评价等作虚假或引人误解的宣传。",
+            "example": "广告虚称平台销量遥遥领先。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "诚信经营",
+            "difficulty": 2,
+            "description": "经营者依法真实经营并保护消费者合法权益",
+            "aliases": [],
+            "prerequisites": [
+              "公平竞争"
+            ],
+            "definition": "诚信经营是经营者遵循自愿、平等、公平、诚信原则，真实提供商品和服务。",
+            "example": "商家如实说明商品质量和有效期限。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "消费者知情权",
+            "difficulty": 2,
+            "description": "消费者了解商品或服务真实信息的权利",
+            "aliases": [
+              "知情权"
+            ],
+            "prerequisites": [
+              "诚信经营"
+            ],
+            "definition": "消费者知情权是消费者了解商品或服务质量、性能、用途和期限等真实全面信息的权利。",
+            "example": "商家应明确标示商品价格和真实名称。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "消费者自主选择权",
+            "difficulty": 2,
+            "description": "消费者自主选择经营者、商品品种和服务方式的权利",
+            "aliases": [
+              "自主选择权"
+            ],
+            "prerequisites": [
+              "诚信经营"
+            ],
+            "definition": "消费者自主选择权是消费者自主选择经营者、商品品种或服务方式并进行比较挑选的权利。",
+            "example": "消费者可比较不同商家的商品后自主购买。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "消费者维权途径",
+            "difficulty": 2,
+            "description": "消费者通过协商、调解、投诉、仲裁或诉讼维权",
+            "aliases": [],
+            "prerequisites": [
+              "消费者知情权",
+              "消费者自主选择权"
+            ],
+            "definition": "消费者维权途径是消费者解决消费争议、维护合法权益的多种法律方式。",
+            "example": "消费者可向消费者协会申请调解。"
+          },
+          {
+            "name": "依法纳税",
+            "difficulty": 2,
+            "description": "个人和企业依法履行纳税义务的行为",
+            "aliases": [
+              "纳税义务"
+            ],
+            "prerequisites": [],
+            "definition": "依法纳税是个人或企业按照法律规定履行纳税义务的行为。",
+            "example": "企业依法缴纳企业所得税。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "增值税",
+            "difficulty": 3,
+            "description": "以商品流转中的增值额为计税依据征收的税",
+            "aliases": [],
+            "prerequisites": [
+              "依法纳税"
+            ],
+            "definition": "增值税是以生产经营者一定期间新创造的增值额为计税依据征收的税。",
+            "example": "商品生产和流转环节的增值额可作为计税依据。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "企业所得税",
+            "difficulty": 3,
+            "description": "对企业生产经营所得和其他所得征收的税",
+            "aliases": [],
+            "prerequisites": [
+              "依法纳税"
+            ],
+            "definition": "企业所得税是对我国境内企业及其他取得收入组织的生产经营所得等征收的税。",
+            "example": "公司年度经营所得依法缴纳企业所得税。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "个人所得税",
+            "difficulty": 3,
+            "description": "对个人取得的相关收入依法征收的税",
+            "aliases": [],
+            "prerequisites": [
+              "依法纳税"
+            ],
+            "definition": "个人所得税是对居民个人境内外收入或非居民个人境内收入依法征收的税。",
+            "example": "个人取得工资收入后依法缴纳个人所得税。",
+            "section": "第八课 自主创业与诚信经营"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第七课 做个明白的劳动者",
+            "page_range": [
+              65,
+              75
+            ]
+          },
+          {
+            "name": "第八课 自主创业与诚信经营",
+            "page_range": [
+              75,
+              84
+            ]
+          },
+          {
+            "name": "综合探究 企业创办之旅",
+            "page_range": [
+              84,
+              85
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四单元 社会争议解决",
+        "concepts": [
+          {
+            "name": "和解",
+            "difficulty": 1,
+            "description": "纠纷当事人自行协商并达成合意解决纠纷。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "和解是发生纠纷的当事人通过自行协商达成合意，从而解决纠纷的方式。",
+            "example": "租客与房东协商维修水管并分担费用。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "调解",
+            "difficulty": 2,
+            "description": "第三方排解疏导，促使当事人自愿达成协议。",
+            "aliases": [],
+            "prerequisites": [
+              "和解"
+            ],
+            "definition": "调解是通过第三方排解疏导、说服教育，促使当事人自愿达成协议解决纠纷的活动。",
+            "example": "邻居调解租客与房东的维修赔偿争议。"
+          },
+          {
+            "name": "人民调解",
+            "difficulty": 2,
+            "description": "人民调解委员会组织进行的免费民间纠纷调解。",
+            "aliases": [
+              "东方经验"
+            ],
+            "prerequisites": [
+              "调解"
+            ],
+            "definition": "人民调解是在人民调解委员会组织下进行的民间纠纷调解。",
+            "example": "居民委员会调解邻里之间的噪声纠纷。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "司法确认",
+            "difficulty": 3,
+            "description": "人民法院依法确认调解协议有效并赋予执行效力。",
+            "aliases": [],
+            "prerequisites": [
+              "人民调解"
+            ],
+            "definition": "司法确认是人民法院依法确认有效调解协议并赋予其强制执行效力的制度。",
+            "example": "双方申请法院确认人民调解协议后，一方仍不履行。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "仲裁",
+            "difficulty": 2,
+            "description": "当事人将特定纠纷提交仲裁机构解决的方式。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "仲裁是当事人将符合法定条件的纠纷提交仲裁机构裁决的纠纷解决方式。",
+            "example": "公司依据仲裁条款解决货物买卖合同纠纷。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "仲裁协议",
+            "difficulty": 3,
+            "description": "当事人自愿将纠纷提交仲裁的有效约定。",
+            "aliases": [],
+            "prerequisites": [
+              "仲裁"
+            ],
+            "definition": "仲裁协议是双方自愿约定将合同纠纷或其他财产权益纠纷提交仲裁的协议。",
+            "example": "合同约定争议提交指定仲裁委员会仲裁。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "一裁终局",
+            "difficulty": 3,
+            "description": "仲裁裁决作出后即发生法律效力，不能再申请仲裁。",
+            "aliases": [],
+            "prerequisites": [
+              "仲裁"
+            ],
+            "definition": "一裁终局是指仲裁裁决一经作出即发生法律效力的制度特点。",
+            "example": "仲裁机构作出裁决后，双方不能就同一争议再次仲裁。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "诉讼",
+            "difficulty": 2,
+            "description": "人民法院依照法定程序解决具体纠纷的活动。",
+            "aliases": [
+              "打官司"
+            ],
+            "prerequisites": [],
+            "definition": "诉讼是在纠纷主体参与下由人民法院依照法定程序解决具体纠纷的活动。",
+            "example": "小莹向人民法院起诉，维护自己的合法权益。"
+          },
+          {
+            "name": "诉讼特点",
+            "difficulty": 3,
+            "description": "诉讼具有公权性、程序性、终局性和强制性。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "诉讼的主要特点是公权性、程序性、终局性和强制性。",
+            "example": "法院依法审判并作出生效裁判，双方须遵守。"
+          },
+          {
+            "name": "民事诉讼",
+            "difficulty": 2,
+            "description": "解决平等主体之间民事权利义务纠纷的诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "民事诉讼是解决平等主体之间民事权利和义务纠纷的诉讼。",
+            "example": "消费者起诉商家赔偿商品造成的损失。"
+          },
+          {
+            "name": "行政诉讼",
+            "difficulty": 2,
+            "description": "解决行政行为是否合法问题的诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "行政诉讼是解决国家行政机关实施的行政行为是否合法问题的诉讼。",
+            "example": "公民起诉行政机关撤销违法罚款决定。"
+          },
+          {
+            "name": "刑事诉讼",
+            "difficulty": 2,
+            "description": "解决涉嫌犯罪者是否犯罪及刑罚问题的诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "刑事诉讼是解决涉嫌犯罪的人是否犯罪、犯何罪及应处何种刑罚的诉讼。",
+            "example": "人民检察院以抢劫罪向法院提起公诉。"
+          },
+          {
+            "name": "行政相对人",
+            "difficulty": 3,
+            "description": "行政法律关系中与行政机关相对应的另一方当事人。",
+            "aliases": [],
+            "prerequisites": [
+              "行政诉讼"
+            ],
+            "definition": "行政相对人是行政法律关系中权益受行政行为影响的公民、法人或其他组织。",
+            "example": "被行政机关罚款的公民提起行政诉讼。"
+          },
+          {
+            "name": "自诉",
+            "difficulty": 3,
+            "description": "被害人等直接向人民法院提起刑事诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "刑事诉讼"
+            ],
+            "definition": "自诉是被害人或其法定代理人、近亲属直接向人民法院提起刑事诉讼。",
+            "example": "被害人直接向法院追究被告人的刑事责任。"
+          },
+          {
+            "name": "公诉",
+            "difficulty": 3,
+            "description": "人民检察院代表国家向法院追究犯罪责任。",
+            "aliases": [],
+            "prerequisites": [
+              "刑事诉讼"
+            ],
+            "definition": "公诉是人民检察院代表国家向人民法院提起诉讼追究被告人刑事责任。",
+            "example": "检察院对涉嫌抢劫的被告人提起公诉。"
+          },
+          {
+            "name": "诉讼代理人",
+            "difficulty": 3,
+            "description": "在民事、行政诉讼中帮助当事人进行诉讼的人。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "诉讼代理人是民事或行政诉讼中帮助当事人进行诉讼活动的人。",
+            "example": "律师代理消费者参加民事诉讼。"
+          },
+          {
+            "name": "辩护人",
+            "difficulty": 3,
+            "description": "刑事诉讼中帮助犯罪嫌疑人或被告人的人。",
+            "aliases": [],
+            "prerequisites": [
+              "刑事诉讼"
+            ],
+            "definition": "辩护人是刑事诉讼中帮助犯罪嫌疑人、被告人进行诉讼活动的人。",
+            "example": "律师为未成年被告人提出从轻处罚意见。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "回避制度",
+            "difficulty": 3,
+            "description": "有关人员存在法定情形时退出案件审理或诉讼活动。",
+            "aliases": [
+              "回避"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "回避制度是诉讼参与人员具有法定不宜参加情形时退出相关诉讼活动的制度。",
+            "example": "审判人员与案件当事人有利害关系时申请回避。"
+          },
+          {
+            "name": "上诉权",
+            "difficulty": 3,
+            "description": "当事人不服一审裁判时依法提起上诉的权利。",
+            "aliases": [
+              "上诉"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "上诉权是当事人在规定期限内不服一审裁判而提出上诉的诉讼权利。",
+            "example": "当事人不服一审判决，在期限内提起上诉。"
+          },
+          {
+            "name": "两审终审制",
+            "difficulty": 3,
+            "description": "案件经过两级人民法院审理后通常终结。",
+            "aliases": [],
+            "prerequisites": [
+              "上诉权"
+            ],
+            "definition": "两审终审制是除特殊情况外案件经两级人民法院审理便告终结的制度。",
+            "example": "一审判决后上诉，二审裁判成为终审裁判。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "法律援助",
+            "difficulty": 2,
+            "description": "国家为特定当事人无偿提供法律服务的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "法律援助是国家为经济困难公民和特殊案件当事人无偿提供法律服务的制度。",
+            "example": "法律援助律师无偿为未成年被告人辩护。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "起诉",
+            "difficulty": 2,
+            "description": "当事人向有管辖权的法院提出诉讼请求。",
+            "aliases": [
+              "告状"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "起诉是公民、法人或其他组织向有管辖权的人民法院提出诉讼请求的行为。",
+            "example": "消费者提交民事起诉状请求商家赔偿。"
+          },
+          {
+            "name": "管辖制度",
+            "difficulty": 3,
+            "description": "规定不同人民法院受理第一审案件分工和权限的制度。",
+            "aliases": [
+              "管辖"
+            ],
+            "prerequisites": [
+              "起诉"
+            ],
+            "definition": "管辖制度是诉讼法规定的人民法院受理第一审案件分工和权限的制度。",
+            "example": "当事人向有管辖权的基层法院提起诉讼。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "开庭审理",
+            "difficulty": 3,
+            "description": "法院依照法定程序在法庭上审理案件并作出判决。",
+            "aliases": [],
+            "prerequisites": [
+              "起诉"
+            ],
+            "definition": "开庭审理是法院在诉讼参与人参加下依照法定程序审理案件并作出判决的活动。",
+            "example": "法院依法进行法庭调查和法庭辩论。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "公开审判制度",
+            "difficulty": 3,
+            "description": "案件审理原则上公开进行，法律另有规定的除外。",
+            "aliases": [],
+            "prerequisites": [
+              "开庭审理"
+            ],
+            "definition": "公开审判制度是人民法院审理案件除法定情形外一律公开进行的制度。",
+            "example": "公民依法到庭旁听公开审理的案件。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "诉讼证据",
+            "difficulty": 2,
+            "description": "诉讼过程中用来证明案件事实的根据。",
+            "aliases": [
+              "证据"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "诉讼证据是诉讼过程中用来证明案件事实的根据。",
+            "example": "合同、收据和聊天记录用于证明借贷关系。"
+          },
+          {
+            "name": "证据种类",
+            "difficulty": 3,
+            "description": "包括书证、物证、证人证言、电子数据等类型。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "证据种类是法律规定的证明案件事实的不同证据形式。",
+            "example": "手机录音属于视听资料或电子数据相关证据。"
+          },
+          {
+            "name": "谁主张谁举证",
+            "difficulty": 3,
+            "description": "民事诉讼中主张权利的一方对主张承担举证责任。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "谁主张谁举证是民事诉讼中当事人对自己提出的主张承担举证责任的原则。",
+            "example": "原告主张借款未还，应提供借条或转账记录。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "举证责任倒置",
+            "difficulty": 4,
+            "description": "法律规定由提出主张的一方对方承担举证责任。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "举证责任倒置是法律基于公平合理考虑由对方当事人负责举证的原则。",
+            "example": "环境污染纠纷中由行为人证明不存在因果关系。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "证据裁判规则",
+            "difficulty": 4,
+            "description": "以证据认定案件事实并据此作出裁判。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "证据裁判规则要求司法机关以证据认定案件事实并作出裁判。",
+            "example": "法院依据银行流水判断借款是否已经偿还。",
+            "section": "第十课 诉讼实现公平正义"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第九课 纠纷的多元解决方式",
+            "page_range": [
+              87,
+              93
+            ]
+          },
+          {
+            "name": "第十课 诉讼实现公平正义",
+            "page_range": [
+              93,
+              104
+            ]
+          },
+          {
+            "name": "综合探究 感受司法公正",
+            "page_range": [
+              104,
+              110
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 民事权利与义务",
+        "concepts": [
+          {
+            "name": "民法",
+            "difficulty": 1,
+            "description": "调整平等主体之间人身关系和财产关系的法律。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "民法是调整平等主体的自然人、法人和非法人组织之间人身关系和财产关系的法律。",
+            "example": "买卖商品、租赁房屋都需要民法规范。"
+          },
+          {
+            "name": "民事主体",
+            "difficulty": 1,
+            "description": "依法参与民事法律关系并享有权利、承担义务的主体。",
+            "aliases": [],
+            "prerequisites": [
+              "民法"
+            ],
+            "definition": "民事主体是参与民事法律关系、依法享有民事权利并承担民事义务的自然人、法人和非法人组织。",
+            "example": "消费者与商店都是民事主体。"
+          },
+          {
+            "name": "自然人",
+            "difficulty": 1,
+            "description": "从出生到死亡具有民事权利能力的个人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "自然人是从出生时起到死亡时止具有民事权利能力的个人。",
+            "example": "未成年人和成年人都属于自然人。"
+          },
+          {
+            "name": "法人",
+            "difficulty": 2,
+            "description": "依法独立享有权利、承担义务的组织。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "法人是具有民事权利能力和民事行为能力、依法独立享有民事权利和承担民事义务的组织。",
+            "example": "有限责任公司属于营利法人。"
+          },
+          {
+            "name": "非法人组织",
+            "difficulty": 2,
+            "description": "不具有法人资格但能以自己名义从事民事活动的组织。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "非法人组织是不具有法人资格但能够依法以自己的名义从事民事活动的组织。",
+            "example": "个人独资企业属于非法人组织。"
+          },
+          {
+            "name": "民事法律关系",
+            "difficulty": 2,
+            "description": "由民法调整的人身关系和财产关系。",
+            "aliases": [],
+            "prerequisites": [
+              "民法",
+              "民事主体"
+            ],
+            "definition": "民事法律关系是由民法调整的人身关系和财产关系。",
+            "example": "买卖合同形成财产关系。"
+          },
+          {
+            "name": "民事法律关系要素",
+            "difficulty": 2,
+            "description": "民事法律关系由主体、客体和内容构成。",
+            "aliases": [],
+            "prerequisites": [
+              "民事法律关系"
+            ],
+            "definition": "民事法律关系包含主体、客体和内容三个要素。",
+            "example": "租赁关系包括出租人、房屋和双方义务。"
+          },
+          {
+            "name": "民事权利",
+            "difficulty": 1,
+            "description": "民法赋予主体实现特定利益的行为自由。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "民事权利是民法赋予民事主体为实现某种特定利益而为或不为一定行为的自由。",
+            "example": "所有权人可以使用自己的房屋。"
+          },
+          {
+            "name": "民事义务",
+            "difficulty": 1,
+            "description": "民事主体为满足权利利益依法应为或不为的行为。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利"
+            ],
+            "definition": "民事义务是民事主体为满足民事权利所保护的利益而依法应当为或不为一定行为的约束。",
+            "example": "借款人应按约定还款。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "民事权利能力",
+            "difficulty": 2,
+            "description": "主体依法享有权利、承担义务的资格。",
+            "aliases": [],
+            "prerequisites": [
+              "民事主体"
+            ],
+            "definition": "民事权利能力是法律赋予民事主体从事民事活动、依法享有民事权利和承担民事义务的资格。",
+            "example": "自然人出生即具有民事权利能力。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "民事行为能力",
+            "difficulty": 2,
+            "description": "主体通过自己的行为取得权利、承担义务的能力。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利能力"
+            ],
+            "definition": "民事行为能力是法律确认的民事主体通过自己的行为从事民事活动、取得民事权利和承担民事义务的能力。",
+            "example": "成年人通常可以独立订立合同。"
+          },
+          {
+            "name": "完全民事行为能力人",
+            "difficulty": 2,
+            "description": "能够独立实施民事法律行为的自然人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "完全民事行为能力人是能够独立通过自己的行为从事民事活动的自然人。",
+            "example": "年满十八周岁的成年人通常属于此类。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "限制民事行为能力人",
+            "difficulty": 3,
+            "description": "民事行为能力受到年龄或辨认能力限制的自然人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "限制民事行为能力人是依法只能独立实施部分民事法律行为的自然人。",
+            "example": "八周岁以上未成年人属于此类。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "无民事行为能力人",
+            "difficulty": 3,
+            "description": "不能独立实施民事法律行为的自然人。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "无民事行为能力人是依法不能独立通过自己的行为从事民事活动的自然人。",
+            "example": "不满八周岁的未成年人属于此类。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "民法基本原则",
+            "difficulty": 2,
+            "description": "民事活动和审理民事案件应遵循的基本准则。",
+            "aliases": [],
+            "prerequisites": [
+              "民法"
+            ],
+            "definition": "民法基本原则是民事主体从事民事活动和司法机关审理民事案件时应当遵循的基本准则。",
+            "example": "订立合同应遵循诚信原则。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "自愿原则",
+            "difficulty": 2,
+            "description": "民事主体按自己的意思设立、变更、终止法律关系。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "自愿原则要求民事主体按照自己的意思设立、变更、终止民事法律关系。",
+            "example": "买卖双方自愿确定交易内容。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "公平原则",
+            "difficulty": 2,
+            "description": "合理确定民事活动各方的权利和义务。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "公平原则要求民事主体合理确定民事活动各方的权利和义务。",
+            "example": "合同不能明显偏袒一方。"
+          },
+          {
+            "name": "诚信原则",
+            "difficulty": 2,
+            "description": "民事主体应诚实守信、恪守承诺。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "诚信原则要求民事主体秉持诚实、恪守承诺从事民事活动。",
+            "example": "商家应兑现公开承诺的赠品。"
+          },
+          {
+            "name": "公序良俗原则",
+            "difficulty": 3,
+            "description": "民事活动不得违反法律和社会公共秩序善良习俗。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则",
+              "自愿原则"
+            ],
+            "definition": "公序良俗原则要求民事主体从事民事活动不得违反法律、不得违背公序良俗。",
+            "example": "取名不得违背公序良俗。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "绿色原则",
+            "difficulty": 2,
+            "description": "民事活动应有利于节约资源和保护生态环境。",
+            "aliases": [],
+            "prerequisites": [
+              "民法基本原则"
+            ],
+            "definition": "绿色原则要求民事主体从事民事活动应当有利于节约资源、保护生态环境。",
+            "example": "建设活动应减少环境污染。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "人身权",
+            "difficulty": 2,
+            "description": "民事主体依法享有的人身利益相关权利。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利"
+            ],
+            "definition": "人身权是民事主体依法享有的与人身利益相联系的民事权利。",
+            "example": "自然人享有姓名权和隐私权。"
+          },
+          {
+            "name": "人格权",
+            "difficulty": 2,
+            "description": "维护自然人人格尊严和人身自由的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人身权"
+            ],
+            "definition": "人格权是自然人依法享有的生命、身体、健康、姓名、肖像、名誉、隐私等权利。",
+            "example": "禁止他人侮辱、诽谤自己。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "身份权",
+            "difficulty": 2,
+            "description": "基于婚姻家庭关系等身份产生的人身权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人身权"
+            ],
+            "definition": "身份权是自然人基于婚姻家庭关系等身份依法享有的人身权利。",
+            "example": "夫妻之间依法享有身份权。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "姓名权",
+            "difficulty": 2,
+            "description": "自然人决定、使用、变更或许可使用姓名的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "姓名权是自然人对其姓名依法享有的决定、使用、变更或者许可他人使用的人身权利。",
+            "example": "未经许可不得盗用他人姓名。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "肖像权",
+            "difficulty": 2,
+            "description": "自然人依法制作、使用、公开或许可使用肖像的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "肖像权是自然人对可被识别的外部形象依法享有的权利。",
+            "example": "商店未经许可使用小郝照片做广告。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "名誉权",
+            "difficulty": 2,
+            "description": "民事主体维护其社会评价不受侵害的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "名誉权是民事主体依法享有的维护其品德、声望、才能、信用等社会评价的权利。",
+            "example": "不得通过诽谤损害他人名誉。"
+          },
+          {
+            "name": "隐私权",
+            "difficulty": 2,
+            "description": "自然人保护私人生活安宁及私密信息的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "人格权"
+            ],
+            "definition": "隐私权是自然人依法享有的私人生活安宁和不愿为他人知晓的私密空间、活动、信息不受侵扰的权利。",
+            "example": "擅自翻看他人日记侵犯隐私权。",
+            "section": "第一课 在生活中学民法用民法"
+          },
+          {
+            "name": "财产权",
+            "difficulty": 1,
+            "description": "能够给民事主体带来经济收益的民事权利。",
+            "aliases": [],
+            "prerequisites": [
+              "民事权利"
+            ],
+            "definition": "财产权是包括物权、债权、知识产权等能够给民事主体带来经济收益的权利。",
+            "example": "房屋所有权属于财产权。"
+          },
+          {
+            "name": "物权",
+            "difficulty": 2,
+            "description": "权利人对特定物享有直接支配和排他的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "财产权"
+            ],
+            "definition": "物权是权利人依法对特定的物享有直接支配和排他的权利。",
+            "example": "所有权人可以支配自己的汽车。"
+          },
+          {
+            "name": "所有权",
+            "difficulty": 2,
+            "description": "权利人对不动产或动产享有占有使用收益处分权。",
+            "aliases": [],
+            "prerequisites": [
+              "物权"
+            ],
+            "definition": "所有权是权利人对自己的不动产或者动产依法享有的占有、使用、收益和处分的权利。",
+            "example": "房主可以出租自己的房屋。"
+          },
+          {
+            "name": "用益物权",
+            "difficulty": 3,
+            "description": "对他人财产依法享有占有、使用和收益的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "物权"
+            ],
+            "definition": "用益物权是对他人所有的不动产或者动产依法享有占有、使用和收益的权利。",
+            "example": "土地承包经营权属于用益物权。"
+          },
+          {
+            "name": "担保物权",
+            "difficulty": 3,
+            "description": "为确保债权实现而在他人财产上设立的物权。",
+            "aliases": [],
+            "prerequisites": [
+              "物权",
+              "债权"
+            ],
+            "definition": "担保物权是为了确保债权实现而在他人财产上设立的物权。",
+            "example": "借款人以房屋设立抵押权。"
+          },
+          {
+            "name": "知识产权",
+            "difficulty": 2,
+            "description": "对智力成果或工商业标记享有的专有性权利。",
+            "aliases": [],
+            "prerequisites": [
+              "财产权"
+            ],
+            "definition": "知识产权是权利人依法就作品、发明创造、商标等享有的专有性权利。",
+            "example": "作者对原创作品享有著作权。"
+          },
+          {
+            "name": "著作权",
+            "difficulty": 2,
+            "description": "权利人对特定作品依法享有支配和获益的权利。",
+            "aliases": [],
+            "prerequisites": [
+              "知识产权"
+            ],
+            "definition": "著作权是权利人针对特定作品依法享有的支配和获取利益的权利。",
+            "example": "未经许可复制他人文章可能侵权。"
+          },
+          {
+            "name": "专利权",
+            "difficulty": 2,
+            "description": "权利人对特定发明创造在期限内享有的专有权。",
+            "aliases": [],
+            "prerequisites": [
+              "知识产权"
+            ],
+            "definition": "专利权是权利人就特定的发明创造依法在规定期限内享有的专有权。",
+            "example": "发明人申请智能插座专利。"
+          },
+          {
+            "name": "商标权",
+            "difficulty": 2,
+            "description": "注册商标权利人依法享有的商标专用权。",
+            "aliases": [],
+            "prerequisites": [
+              "知识产权"
+            ],
+            "definition": "商标权是注册商标人依法享有的注册商标专用权。",
+            "example": "他人擅用注册商标可能构成侵权。"
+          },
+          {
+            "name": "合同",
+            "difficulty": 1,
+            "description": "民事主体设立、变更、终止民事法律关系的协议。",
+            "aliases": [],
+            "prerequisites": [
+              "民事法律关系",
+              "自愿原则"
+            ],
+            "definition": "合同是民事主体之间设立、变更、终止民事法律关系的协议。",
+            "example": "乘坐公交车会形成运输合同。"
+          },
+          {
+            "name": "意思表示",
+            "difficulty": 2,
+            "description": "行为人将产生法律效果的内心意愿表现于外部。",
+            "aliases": [],
+            "prerequisites": [
+              "民事行为能力"
+            ],
+            "definition": "意思表示是行为人将其期望发生法律效果的内心意愿以一定方式表现于外部的行为。",
+            "example": "顾客表示购买商品构成意思表示。",
+            "section": "第三课 订约履约 诚信为本"
+          },
+          {
+            "name": "要约",
+            "difficulty": 2,
+            "description": "希望与他人订立合同的意思表示。",
+            "aliases": [],
+            "prerequisites": [
+              "合同",
+              "意思表示"
+            ],
+            "definition": "要约是希望与他人订立合同的意思表示。",
+            "example": "公司发邮件提出明确采购条件。",
+            "section": "第三课 订约履约 诚信为本"
+          },
+          {
+            "name": "承诺",
+            "difficulty": 2,
+            "description": "受要约人同意要约并在期限内作出的意思表示。",
+            "aliases": [],
+            "prerequisites": [
+              "要约"
+            ],
+            "definition": "承诺是受要约人同意要约、及时在期限内向要约人作出的意思表示。",
+            "example": "顾客按标价表示购买商品。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一课 在生活中学民法用民法",
+            "section_key": "e5c9c9f4fc",
+            "page_range": [
+              7,
+              17
+            ]
+          },
+          {
+            "name": "第二课 依法有效保护财产权",
+            "section_key": "a53f6a1c14",
+            "page_range": [
+              17,
+              27
+            ]
+          },
+          {
+            "name": "第三课 订约履约 诚信为本",
+            "section_key": "3a5535cf4f",
+            "page_range": [
+              27,
+              37
+            ]
+          },
+          {
+            "name": "第四课 侵权责任与权利界限",
+            "section_key": "be83446214",
+            "page_range": [
+              37,
+              44
+            ]
+          },
+          {
+            "name": "综合探究 财产制度助力经济社会发展",
+            "section_key": "cf055fcd6f",
+            "page_range": [
+              44,
+              45
+            ]
+          }
+        ],
+        "chapter_key": "888348874b",
+        "metadata": {
+          "volume_id": "ce13872c4c4f",
+          "file_id": "ce13872c4c4f",
+          "volume_title": "高中政治 选择性必修2 法律与生活",
+          "chapter_order": 1,
+          "raw_heading": "第一单元 民事权利与义务"
+        }
+      },
+      {
+        "name": "第二单元 家庭与婚姻",
+        "concepts": [
+          {
+            "name": "家庭",
+            "difficulty": 2,
+            "description": "基于婚姻、血缘等关系组成的共同生活单位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "家庭是人们基于婚姻、血缘等关系，由一定范围亲属组成的共同生活单位。",
+            "example": "父母与子女共同生活组成家庭。"
+          },
+          {
+            "name": "婚姻",
+            "difficulty": 2,
+            "description": "由法律确认的男女两性结合及夫妻关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "婚姻是由法律确认的男女两性的结合以及由此产生的夫妻关系。",
+            "example": "男女双方依法登记结婚形成婚姻关系。"
+          },
+          {
+            "name": "婚姻自由",
+            "difficulty": 3,
+            "description": "包括结婚自由和离婚自由的婚姻制度原则",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻"
+            ],
+            "definition": "婚姻自由是婚姻制度的基本原则，包括结婚自由和离婚自由。",
+            "example": "成年人依法自主决定结婚对象。"
+          },
+          {
+            "name": "父母抚养教育义务",
+            "difficulty": 3,
+            "description": "父母对未成年子女负有抚养和教育责任",
+            "aliases": [],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "父母应当抚养、教育未成年子女，不得虐待、遗弃或阻碍其接受义务教育。",
+            "example": "父母让适龄子女按时入学并完成义务教育。"
+          },
+          {
+            "name": "监护职责",
+            "difficulty": 3,
+            "description": "父母保护未成年子女人身、健康和财产利益",
+            "aliases": [],
+            "prerequisites": [
+              "父母抚养教育义务"
+            ],
+            "definition": "监护职责要求父母保护未成年子女的人身安全、健康及财产利益。",
+            "example": "未成年子女造成他人损害，父母依法承担责任。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "探望权",
+            "difficulty": 3,
+            "description": "离婚后不直接抚养子女一方探望子女的权利",
+            "aliases": [],
+            "prerequisites": [
+              "父母抚养教育义务"
+            ],
+            "definition": "离婚后不直接抚养子女的父或母享有探望子女的权利，另一方有协助义务。",
+            "example": "父亲按约定定期探望离婚后的子女。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "子女赡养义务",
+            "difficulty": 3,
+            "description": "成年子女在经济、生活和精神上照料父母",
+            "aliases": [
+              "赡养义务"
+            ],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "成年子女应当在经济、生活和精神上赡养父母并照顾其特殊需要。",
+            "example": "成年子女支付父母生活费并经常看望问候。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "成年意定监护",
+            "difficulty": 4,
+            "description": "成年人预先书面确定自己丧失行为能力时的监护人",
+            "aliases": [
+              "成年意定监护制度"
+            ],
+            "prerequisites": [
+              "监护职责"
+            ],
+            "definition": "具有完全民事行为能力的成年人可书面预先确定自己未来的监护人。",
+            "example": "老人事先书面指定近亲属担任监护人。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "家庭暴力",
+            "difficulty": 3,
+            "description": "侵犯家庭成员权利、破坏家庭和睦的暴力行为",
+            "aliases": [],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "家庭暴力是家庭成员之间实施的侵犯权利、破坏家庭和睦的暴力行为。",
+            "example": "家庭成员长期殴打、限制另一成员人身自由。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "继承",
+            "difficulty": 3,
+            "description": "自然人死亡后个人合法财产依法转移给他人",
+            "aliases": [],
+            "prerequisites": [
+              "家庭"
+            ],
+            "definition": "继承是将自然人死亡后遗留的个人合法财产依法转移给他人所有。",
+            "example": "子女依法承受去世父亲留下的个人合法财产。"
+          },
+          {
+            "name": "遗产",
+            "difficulty": 3,
+            "description": "被继承人死亡时遗留的个人合法财产",
+            "aliases": [],
+            "prerequisites": [
+              "继承"
+            ],
+            "definition": "遗产是被继承人死亡时遗留的个人合法财产。",
+            "example": "析出夫妻共同财产后，死者名下存款属于遗产。"
+          },
+          {
+            "name": "继承权",
+            "difficulty": 3,
+            "description": "继承人依法享有的承受遗产的财产性权利",
+            "aliases": [],
+            "prerequisites": [
+              "继承",
+              "遗产"
+            ],
+            "definition": "继承权是继承人依法承受被继承人遗产的财产性权利。",
+            "example": "子女依法享有继承父母遗产的权利。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "法定继承",
+            "difficulty": 4,
+            "description": "依据婚姻、血缘或扶养关系取得继承权",
+            "aliases": [],
+            "prerequisites": [
+              "继承权"
+            ],
+            "definition": "法定继承是依据法律直接规定的亲属关系等取得继承权。",
+            "example": "被继承人未立有效遗嘱时，配偶依法继承。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "法定继承顺序",
+            "difficulty": 4,
+            "description": "法律规定的第一、第二顺序继承人范围",
+            "aliases": [],
+            "prerequisites": [
+              "法定继承"
+            ],
+            "definition": "法定继承顺序是法律依亲属关系亲疏规定的继承先后次序。",
+            "example": "有第一顺序继承人时，第二顺序继承人不继承。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "遗嘱",
+            "difficulty": 4,
+            "description": "遗嘱人生前处分个人合法财产的单方意思表示",
+            "aliases": [],
+            "prerequisites": [
+              "遗产"
+            ],
+            "definition": "遗嘱是自然人生前依法处分个人合法财产并于死亡时生效的单方意思表示。",
+            "example": "老人亲笔写下并签名注明日期的自书遗嘱。"
+          },
+          {
+            "name": "遗嘱继承",
+            "difficulty": 4,
+            "description": "依据合法有效遗嘱在法定继承人中指定继承人",
+            "aliases": [],
+            "prerequisites": [
+              "法定继承",
+              "遗嘱"
+            ],
+            "definition": "遗嘱继承是按照合法有效遗嘱在法定继承人范围内确定继承人及份额。",
+            "example": "遗嘱指定其中一名子女继承某处房产。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "遗赠",
+            "difficulty": 4,
+            "description": "遗嘱人将个人财产赠与法定继承人以外主体",
+            "aliases": [],
+            "prerequisites": [
+              "遗嘱",
+              "遗产"
+            ],
+            "definition": "遗赠是自然人通过遗嘱将个人财产赠与法定继承人以外的组织或个人。",
+            "example": "遗嘱将存款赠给侄女。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "遗赠扶养协议",
+            "difficulty": 4,
+            "description": "扶养人承担生养死葬义务并取得受遗赠权利",
+            "aliases": [],
+            "prerequisites": [
+              "遗赠"
+            ],
+            "definition": "遗赠扶养协议是自然人与继承人以外主体约定扶养和遗赠权利义务的协议。",
+            "example": "孤寡老人约定由个人照料晚年并接受遗赠。",
+            "section": "第五课 在和睦家庭中成长"
+          },
+          {
+            "name": "结婚条件",
+            "difficulty": 3,
+            "description": "结婚须自愿、达到婚龄、符合一夫一妻等要求",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻自由"
+            ],
+            "definition": "结婚必须双方完全自愿、达到法定婚龄、符合一夫一妻制且不存在近亲婚姻禁令。",
+            "example": "双方自愿且男满二十二周岁、女满二十周岁。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "一夫一妻",
+            "difficulty": 3,
+            "description": "一男一女结为夫妻，禁止重婚和有配偶同居",
+            "aliases": [
+              "一夫一妻制"
+            ],
+            "prerequisites": [
+              "结婚条件"
+            ],
+            "definition": "一夫一妻是指一男一女结为夫妻，任何人不得同时拥有两个以上配偶。",
+            "example": "已有配偶者不得再登记结婚。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "结婚登记",
+            "difficulty": 3,
+            "description": "确立婚姻关系、明确夫妻权利义务的法律程序",
+            "aliases": [],
+            "prerequisites": [
+              "结婚条件"
+            ],
+            "definition": "结婚登记是男女双方确立婚姻关系必须履行的法律程序。",
+            "example": "双方经申请、审查后领取结婚证。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "离婚冷静期",
+            "difficulty": 3,
+            "description": "协议离婚申请提交后三十日内可撤回申请",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻自由"
+            ],
+            "definition": "离婚冷静期是婚姻登记机关收到协议离婚申请后三十日内的等待期间。",
+            "example": "一方在三十日内不愿离婚，可以撤回申请。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "协议离婚",
+            "difficulty": 4,
+            "description": "夫妻双方协商一致并办理离婚登记解除婚姻关系",
+            "aliases": [],
+            "prerequisites": [
+              "离婚冷静期"
+            ],
+            "definition": "协议离婚要求双方就子女抚养、财产分割等达成协议并依法领取离婚证。",
+            "example": "夫妻协商好财产和子女安排后办理离婚登记。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "裁判离婚",
+            "difficulty": 4,
+            "description": "夫妻感情破裂且调解无效时由法院判决离婚",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻自由"
+            ],
+            "definition": "裁判离婚是人民法院审理离婚案件并在感情确已破裂、调解无效时判决离婚。",
+            "example": "法院调解无效后判决夫妻解除婚姻关系。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "夫妻地位平等",
+            "difficulty": 3,
+            "description": "夫妻平等行使权利、履行义务和承担责任",
+            "aliases": [],
+            "prerequisites": [
+              "婚姻"
+            ],
+            "definition": "夫妻地位平等要求双方在婚姻家庭中平等行使权利、履行义务并承担责任。",
+            "example": "夫妻共同决定家庭重大事项。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "夫妻人身关系",
+            "difficulty": 4,
+            "description": "夫妻之间人格独立、姓名使用和活动自由等关系",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻地位平等"
+            ],
+            "definition": "夫妻人身关系体现为夫妻双方人格独立并享有使用自己姓名等权利。",
+            "example": "夫妻双方均有参加工作、学习和社会活动的自由。",
+            "section": "第六课 珍惜婚姻关系"
+          },
+          {
+            "name": "夫妻共同财产",
+            "difficulty": 4,
+            "description": "婚姻存续期间依法归夫妻共同所有的财产",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻地位平等"
+            ],
+            "definition": "夫妻共同财产是婚姻关系存续期间依法归夫妻双方共同所有的财产。",
+            "example": "婚后工资、奖金和经营收益通常属于共同财产。"
+          },
+          {
+            "name": "夫妻个人财产",
+            "difficulty": 4,
+            "description": "依法归夫妻一方单独所有的财产",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻地位平等"
+            ],
+            "definition": "夫妻个人财产是依法归夫妻一方单独所有的财产。",
+            "example": "一方婚前购买的房屋属于个人财产。"
+          },
+          {
+            "name": "夫妻财产约定",
+            "difficulty": 4,
+            "description": "夫妻以书面形式约定婚前及婚后财产归属",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻共同财产",
+              "夫妻个人财产"
+            ],
+            "definition": "夫妻财产约定是夫妻平等自愿以书面形式约定财产归属及范围。",
+            "example": "夫妻书面约定婚后收入分别归各自所有。"
+          },
+          {
+            "name": "夫妻共同债务",
+            "difficulty": 4,
+            "description": "夫妻共同意思表示或家庭日常生活需要产生的债务",
+            "aliases": [],
+            "prerequisites": [
+              "夫妻共同财产"
+            ],
+            "definition": "夫妻共同债务包括双方共同意思表示所负及一方为家庭日常生活需要所负的债务。",
+            "example": "夫妻共同签名借款用于家庭生活。",
+            "section": "第六课 珍惜婚姻关系"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第五课 在和睦家庭中成长",
+            "section_key": "f97e9e4fc3",
+            "page_range": [
+              47,
+              55
+            ]
+          },
+          {
+            "name": "第六课 珍惜婚姻关系",
+            "section_key": "334fd376b9",
+            "page_range": [
+              55,
+              62
+            ]
+          },
+          {
+            "name": "综合探究 家庭生活 法律守护",
+            "section_key": "f27b7f6c81",
+            "page_range": [
+              62,
+              63
+            ]
+          }
+        ],
+        "chapter_key": "d44effe234",
+        "metadata": {
+          "volume_id": "ce13872c4c4f",
+          "file_id": "ce13872c4c4f",
+          "volume_title": "高中政治 选择性必修2 法律与生活",
+          "chapter_order": 2,
+          "raw_heading": "第二单元 家庭与婚姻"
+        }
+      },
+      {
+        "name": "第三单元 就业与创业",
+        "concepts": [
+          {
+            "name": "劳动者",
+            "difficulty": 1,
+            "description": "具有劳动能力并以劳动收入为主要生活来源的人",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "劳动者是具有劳动能力、以从事社会劳动获得收入为主要生活来源并接受用人单位管理的人。",
+            "example": "在公司管理下工作的员工属于劳动者。"
+          },
+          {
+            "name": "劳动关系",
+            "difficulty": 2,
+            "description": "劳动者与用人单位在劳动过程中形成的社会关系",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "劳动关系是劳动者与用人单位在劳动过程中发生的社会关系。",
+            "example": "员工接受公司管理并获得工资形成劳动关系。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动权利义务",
+            "difficulty": 2,
+            "description": "劳动者依法享有权利并承担相应义务",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "劳动权利义务是劳动者依法享有劳动权益并完成劳动任务、遵守劳动纪律等应承担的责任。",
+            "example": "员工有取得工资的权利，也有完成劳动任务的义务。"
+          },
+          {
+            "name": "劳动法律法规",
+            "difficulty": 2,
+            "description": "规范劳动关系并保护劳动者权益的法律规范",
+            "aliases": [],
+            "prerequisites": [
+              "劳动关系"
+            ],
+            "definition": "劳动法律法规是调整劳动关系、规定劳动者权利和用人单位义务的法律规范。",
+            "example": "劳动法为劳动者维权提供法律依据。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "平等就业",
+            "difficulty": 2,
+            "description": "劳动者享有平等就业和选择职业的权利",
+            "aliases": [
+              "平等就业权"
+            ],
+            "prerequisites": [
+              "劳动者",
+              "劳动法律法规"
+            ],
+            "definition": "平等就业是劳动者不因民族、种族、性别、宗教信仰等不同而受就业歧视。",
+            "example": "招聘不得仅以性别为由拒绝求职者面试。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "特殊劳动保护",
+            "difficulty": 2,
+            "description": "国家对特殊劳动者实施的倾斜性劳动保护",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者",
+              "劳动法律法规"
+            ],
+            "definition": "特殊劳动保护是国家针对未成年工、残疾劳动者等特殊劳动者采取的保护措施。",
+            "example": "不得安排未成年工从事矿山井下劳动。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动合同",
+            "difficulty": 2,
+            "description": "确立劳动关系并明确双方权利义务的协议",
+            "aliases": [],
+            "prerequisites": [
+              "劳动关系"
+            ],
+            "definition": "劳动合同是劳动者与用人单位确立劳动关系、明确双方权利和义务的协议。",
+            "example": "公司与员工签订书面劳动合同。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "合同订立原则",
+            "difficulty": 3,
+            "description": "订立劳动合同应遵循的基本原则",
+            "aliases": [],
+            "prerequisites": [
+              "劳动合同"
+            ],
+            "definition": "合同订立原则包括合法、公平、平等自愿、协商一致和诚实信用。",
+            "example": "双方协商一致后签订劳动合同。"
+          },
+          {
+            "name": "劳动合同效力",
+            "difficulty": 3,
+            "description": "劳动合同依法成立后对双方产生的约束力",
+            "aliases": [],
+            "prerequisites": [
+              "劳动合同",
+              "合同订立原则"
+            ],
+            "definition": "劳动合同符合法律规定的条件才产生法律效力，签字或盖章后对双方形成约束力。",
+            "example": "合同生效后，用人单位不得随意解除合同。"
+          },
+          {
+            "name": "无效劳动合同",
+            "difficulty": 3,
+            "description": "因违法或违背真实意思而不具有法律约束力的合同",
+            "aliases": [],
+            "prerequisites": [
+              "劳动合同效力"
+            ],
+            "definition": "无效劳动合同是因欺诈、胁迫、免除法定责任或违反强制性规定而无效的合同。",
+            "example": "合同排除劳动者权利的，相关条款可能无效。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动报酬权",
+            "difficulty": 2,
+            "description": "劳动者要求获得工资及相关劳动报酬的权利",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者",
+              "劳动合同"
+            ],
+            "definition": "劳动报酬权是劳动者要求用人单位按约定支付工资等劳动报酬的权利。",
+            "example": "用人单位不得无故拖欠员工工资。"
+          },
+          {
+            "name": "休息休假权",
+            "difficulty": 2,
+            "description": "劳动者依法享有休息、休假和带薪年休假的权利",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "休息休假权是劳动者依法享有休息日、法定休假和带薪年休假的权利。",
+            "example": "员工年休假期间应享受正常工资收入。"
+          },
+          {
+            "name": "劳动安全卫生权",
+            "difficulty": 2,
+            "description": "劳动者获得劳动安全卫生条件和保护用品的权利",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者"
+            ],
+            "definition": "劳动安全卫生权是劳动者要求用人单位提供安全卫生条件和必要防护用品的权利。",
+            "example": "企业为有职业危害岗位员工提供防护用品。"
+          },
+          {
+            "name": "社会保险权",
+            "difficulty": 2,
+            "description": "劳动者依法享受社会保险和福利待遇的权利",
+            "aliases": [
+              "社会保险"
+            ],
+            "prerequisites": [
+              "劳动者",
+              "劳动法律法规"
+            ],
+            "definition": "社会保险权是劳动者在年老、患病、工伤、失业、生育等情况下获得基本保障的权利。",
+            "example": "员工因工受伤可依法享受工伤保险待遇。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动者义务",
+            "difficulty": 2,
+            "description": "劳动者完成任务、提升技能并遵守劳动规范的责任",
+            "aliases": [],
+            "prerequisites": [
+              "劳动者",
+              "劳动权利义务"
+            ],
+            "definition": "劳动者义务包括完成劳动任务、提高职业技能、执行安全卫生规程和遵守劳动纪律职业道德。",
+            "example": "员工应按规定执行安全生产操作规程。"
+          },
+          {
+            "name": "劳动争议",
+            "difficulty": 2,
+            "description": "劳动者与用人单位因劳动关系产生的纠纷",
+            "aliases": [],
+            "prerequisites": [
+              "劳动关系",
+              "劳动合同"
+            ],
+            "definition": "劳动争议是劳动者与用人单位因履行劳动合同等问题发生的纠纷。",
+            "example": "双方因工资支付问题发生争议。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动争议调解",
+            "difficulty": 2,
+            "description": "由调解组织促成双方自愿合法解决劳动争议",
+            "aliases": [
+              "劳动调解"
+            ],
+            "prerequisites": [
+              "劳动争议"
+            ],
+            "definition": "劳动争议调解是在自愿、合法基础上由调解组织促成双方达成协议的解决方式。",
+            "example": "员工向企业劳动争议调解委员会申请调解。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "劳动仲裁",
+            "difficulty": 3,
+            "description": "劳动争议仲裁委员会居中裁决劳动争议的活动",
+            "aliases": [
+              "劳动争议仲裁"
+            ],
+            "prerequisites": [
+              "劳动争议"
+            ],
+            "definition": "劳动仲裁是劳动争议仲裁委员会以第三方身份作出具有法律约束力裁决的活动。",
+            "example": "协商调解不成后，劳动者申请劳动仲裁。",
+            "section": "第七课 做个明白的劳动者"
+          },
+          {
+            "name": "企业经营主体",
+            "difficulty": 2,
+            "description": "依法从事经营活动的企业或经营组织形式",
+            "aliases": [
+              "经营主体"
+            ],
+            "prerequisites": [],
+            "definition": "企业经营主体是创业者依法选择并用于开展经营活动的组织形式。",
+            "example": "创业者可选择个体工商户或有限责任公司。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "有限责任",
+            "difficulty": 3,
+            "description": "出资人以认缴出资或认购股份承担责任",
+            "aliases": [],
+            "prerequisites": [
+              "企业经营主体"
+            ],
+            "definition": "有限责任是公司股东以认缴出资或认购股份为限承担企业债务责任。",
+            "example": "有限责任公司股东通常以出资额为限担责。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "企业登记",
+            "difficulty": 2,
+            "description": "企业依法办理设立、变更和终止登记的制度",
+            "aliases": [
+              "企业注册"
+            ],
+            "prerequisites": [
+              "企业经营主体"
+            ],
+            "definition": "企业登记是经营者向相关主管部门办理企业设立、变更或终止手续的行为。",
+            "example": "企业设立后依法领取营业执照。"
+          },
+          {
+            "name": "企业信息公示",
+            "difficulty": 2,
+            "description": "依法向社会公开企业及其经营状况信息",
+            "aliases": [],
+            "prerequisites": [
+              "企业登记"
+            ],
+            "definition": "企业信息公示是企业和政府部门依法通过信用信息公示系统公开相关信息的制度。",
+            "example": "企业依法公示营业执照和经营信息。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "公平竞争",
+            "difficulty": 2,
+            "description": "经营者遵守市场规则并在市场中公平竞争",
+            "aliases": [],
+            "prerequisites": [
+              "企业经营主体"
+            ],
+            "definition": "公平竞争是经营者遵守法律规则、不以不正当手段损害竞争者和市场秩序。",
+            "example": "经营者不得通过仿冒他人标识获取竞争优势。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "混淆行为",
+            "difficulty": 3,
+            "description": "利用仿冒手段使消费者误认商品或经营联系的行为",
+            "aliases": [
+              "搭便车"
+            ],
+            "prerequisites": [
+              "公平竞争"
+            ],
+            "definition": "混淆行为是经营者利用他人商业信誉，使消费者误认为其商品或服务与他人存在特定联系。",
+            "example": "仿冒知名商品包装使消费者误认来源。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "虚假宣传",
+            "difficulty": 3,
+            "description": "对商品信息作虚假或引人误解的商业宣传",
+            "aliases": [],
+            "prerequisites": [
+              "公平竞争"
+            ],
+            "definition": "虚假宣传是经营者对商品性能、质量、销量或评价等作虚假或引人误解的宣传。",
+            "example": "广告虚称平台销量遥遥领先。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "诚信经营",
+            "difficulty": 2,
+            "description": "经营者依法真实经营并保护消费者合法权益",
+            "aliases": [],
+            "prerequisites": [
+              "公平竞争"
+            ],
+            "definition": "诚信经营是经营者遵循自愿、平等、公平、诚信原则，真实提供商品和服务。",
+            "example": "商家如实说明商品质量和有效期限。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "消费者知情权",
+            "difficulty": 2,
+            "description": "消费者了解商品或服务真实信息的权利",
+            "aliases": [
+              "知情权"
+            ],
+            "prerequisites": [
+              "诚信经营"
+            ],
+            "definition": "消费者知情权是消费者了解商品或服务质量、性能、用途和期限等真实全面信息的权利。",
+            "example": "商家应明确标示商品价格和真实名称。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "消费者自主选择权",
+            "difficulty": 2,
+            "description": "消费者自主选择经营者、商品品种和服务方式的权利",
+            "aliases": [
+              "自主选择权"
+            ],
+            "prerequisites": [
+              "诚信经营"
+            ],
+            "definition": "消费者自主选择权是消费者自主选择经营者、商品品种或服务方式并进行比较挑选的权利。",
+            "example": "消费者可比较不同商家的商品后自主购买。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "消费者维权途径",
+            "difficulty": 2,
+            "description": "消费者通过协商、调解、投诉、仲裁或诉讼维权",
+            "aliases": [],
+            "prerequisites": [
+              "消费者知情权",
+              "消费者自主选择权"
+            ],
+            "definition": "消费者维权途径是消费者解决消费争议、维护合法权益的多种法律方式。",
+            "example": "消费者可向消费者协会申请调解。"
+          },
+          {
+            "name": "依法纳税",
+            "difficulty": 2,
+            "description": "个人和企业依法履行纳税义务的行为",
+            "aliases": [
+              "纳税义务"
+            ],
+            "prerequisites": [],
+            "definition": "依法纳税是个人或企业按照法律规定履行纳税义务的行为。",
+            "example": "企业依法缴纳企业所得税。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "增值税",
+            "difficulty": 3,
+            "description": "以商品流转中的增值额为计税依据征收的税",
+            "aliases": [],
+            "prerequisites": [
+              "依法纳税"
+            ],
+            "definition": "增值税是以生产经营者一定期间新创造的增值额为计税依据征收的税。",
+            "example": "商品生产和流转环节的增值额可作为计税依据。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "企业所得税",
+            "difficulty": 3,
+            "description": "对企业生产经营所得和其他所得征收的税",
+            "aliases": [],
+            "prerequisites": [
+              "依法纳税"
+            ],
+            "definition": "企业所得税是对我国境内企业及其他取得收入组织的生产经营所得等征收的税。",
+            "example": "公司年度经营所得依法缴纳企业所得税。",
+            "section": "第八课 自主创业与诚信经营"
+          },
+          {
+            "name": "个人所得税",
+            "difficulty": 3,
+            "description": "对个人取得的相关收入依法征收的税",
+            "aliases": [],
+            "prerequisites": [
+              "依法纳税"
+            ],
+            "definition": "个人所得税是对居民个人境内外收入或非居民个人境内收入依法征收的税。",
+            "example": "个人取得工资收入后依法缴纳个人所得税。",
+            "section": "第八课 自主创业与诚信经营"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第七课 做个明白的劳动者",
+            "section_key": "d17d7db4c3",
+            "page_range": [
+              65,
+              75
+            ]
+          },
+          {
+            "name": "第八课 自主创业与诚信经营",
+            "section_key": "7cac59bb6b",
+            "page_range": [
+              75,
+              84
+            ]
+          },
+          {
+            "name": "综合探究 企业创办之旅",
+            "section_key": "ae102c1187",
+            "page_range": [
+              84,
+              85
+            ]
+          }
+        ],
+        "chapter_key": "0bb906fe5a",
+        "metadata": {
+          "volume_id": "ce13872c4c4f",
+          "file_id": "ce13872c4c4f",
+          "volume_title": "高中政治 选择性必修2 法律与生活",
+          "chapter_order": 3,
+          "raw_heading": "第三单元 就业与创业"
+        }
+      },
+      {
+        "name": "第四单元 社会争议解决",
+        "concepts": [
+          {
+            "name": "和解",
+            "difficulty": 1,
+            "description": "纠纷当事人自行协商并达成合意解决纠纷。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "和解是发生纠纷的当事人通过自行协商达成合意，从而解决纠纷的方式。",
+            "example": "租客与房东协商维修水管并分担费用。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "调解",
+            "difficulty": 2,
+            "description": "第三方排解疏导，促使当事人自愿达成协议。",
+            "aliases": [],
+            "prerequisites": [
+              "和解"
+            ],
+            "definition": "调解是通过第三方排解疏导、说服教育，促使当事人自愿达成协议解决纠纷的活动。",
+            "example": "邻居调解租客与房东的维修赔偿争议。"
+          },
+          {
+            "name": "人民调解",
+            "difficulty": 2,
+            "description": "人民调解委员会组织进行的免费民间纠纷调解。",
+            "aliases": [
+              "东方经验"
+            ],
+            "prerequisites": [
+              "调解"
+            ],
+            "definition": "人民调解是在人民调解委员会组织下进行的民间纠纷调解。",
+            "example": "居民委员会调解邻里之间的噪声纠纷。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "司法确认",
+            "difficulty": 3,
+            "description": "人民法院依法确认调解协议有效并赋予执行效力。",
+            "aliases": [],
+            "prerequisites": [
+              "人民调解"
+            ],
+            "definition": "司法确认是人民法院依法确认有效调解协议并赋予其强制执行效力的制度。",
+            "example": "双方申请法院确认人民调解协议后，一方仍不履行。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "仲裁",
+            "difficulty": 2,
+            "description": "当事人将特定纠纷提交仲裁机构解决的方式。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "仲裁是当事人将符合法定条件的纠纷提交仲裁机构裁决的纠纷解决方式。",
+            "example": "公司依据仲裁条款解决货物买卖合同纠纷。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "仲裁协议",
+            "difficulty": 3,
+            "description": "当事人自愿将纠纷提交仲裁的有效约定。",
+            "aliases": [],
+            "prerequisites": [
+              "仲裁"
+            ],
+            "definition": "仲裁协议是双方自愿约定将合同纠纷或其他财产权益纠纷提交仲裁的协议。",
+            "example": "合同约定争议提交指定仲裁委员会仲裁。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "一裁终局",
+            "difficulty": 3,
+            "description": "仲裁裁决作出后即发生法律效力，不能再申请仲裁。",
+            "aliases": [],
+            "prerequisites": [
+              "仲裁"
+            ],
+            "definition": "一裁终局是指仲裁裁决一经作出即发生法律效力的制度特点。",
+            "example": "仲裁机构作出裁决后，双方不能就同一争议再次仲裁。",
+            "section": "第九课 纠纷的多元解决方式"
+          },
+          {
+            "name": "诉讼",
+            "difficulty": 2,
+            "description": "人民法院依照法定程序解决具体纠纷的活动。",
+            "aliases": [
+              "打官司"
+            ],
+            "prerequisites": [],
+            "definition": "诉讼是在纠纷主体参与下由人民法院依照法定程序解决具体纠纷的活动。",
+            "example": "小莹向人民法院起诉，维护自己的合法权益。"
+          },
+          {
+            "name": "诉讼特点",
+            "difficulty": 3,
+            "description": "诉讼具有公权性、程序性、终局性和强制性。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "诉讼的主要特点是公权性、程序性、终局性和强制性。",
+            "example": "法院依法审判并作出生效裁判，双方须遵守。"
+          },
+          {
+            "name": "民事诉讼",
+            "difficulty": 2,
+            "description": "解决平等主体之间民事权利义务纠纷的诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "民事诉讼是解决平等主体之间民事权利和义务纠纷的诉讼。",
+            "example": "消费者起诉商家赔偿商品造成的损失。"
+          },
+          {
+            "name": "行政诉讼",
+            "difficulty": 2,
+            "description": "解决行政行为是否合法问题的诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "行政诉讼是解决国家行政机关实施的行政行为是否合法问题的诉讼。",
+            "example": "公民起诉行政机关撤销违法罚款决定。"
+          },
+          {
+            "name": "刑事诉讼",
+            "difficulty": 2,
+            "description": "解决涉嫌犯罪者是否犯罪及刑罚问题的诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "刑事诉讼是解决涉嫌犯罪的人是否犯罪、犯何罪及应处何种刑罚的诉讼。",
+            "example": "人民检察院以抢劫罪向法院提起公诉。"
+          },
+          {
+            "name": "行政相对人",
+            "difficulty": 3,
+            "description": "行政法律关系中与行政机关相对应的另一方当事人。",
+            "aliases": [],
+            "prerequisites": [
+              "行政诉讼"
+            ],
+            "definition": "行政相对人是行政法律关系中权益受行政行为影响的公民、法人或其他组织。",
+            "example": "被行政机关罚款的公民提起行政诉讼。"
+          },
+          {
+            "name": "自诉",
+            "difficulty": 3,
+            "description": "被害人等直接向人民法院提起刑事诉讼。",
+            "aliases": [],
+            "prerequisites": [
+              "刑事诉讼"
+            ],
+            "definition": "自诉是被害人或其法定代理人、近亲属直接向人民法院提起刑事诉讼。",
+            "example": "被害人直接向法院追究被告人的刑事责任。"
+          },
+          {
+            "name": "公诉",
+            "difficulty": 3,
+            "description": "人民检察院代表国家向法院追究犯罪责任。",
+            "aliases": [],
+            "prerequisites": [
+              "刑事诉讼"
+            ],
+            "definition": "公诉是人民检察院代表国家向人民法院提起诉讼追究被告人刑事责任。",
+            "example": "检察院对涉嫌抢劫的被告人提起公诉。"
+          },
+          {
+            "name": "诉讼代理人",
+            "difficulty": 3,
+            "description": "在民事、行政诉讼中帮助当事人进行诉讼的人。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "诉讼代理人是民事或行政诉讼中帮助当事人进行诉讼活动的人。",
+            "example": "律师代理消费者参加民事诉讼。"
+          },
+          {
+            "name": "辩护人",
+            "difficulty": 3,
+            "description": "刑事诉讼中帮助犯罪嫌疑人或被告人的人。",
+            "aliases": [],
+            "prerequisites": [
+              "刑事诉讼"
+            ],
+            "definition": "辩护人是刑事诉讼中帮助犯罪嫌疑人、被告人进行诉讼活动的人。",
+            "example": "律师为未成年被告人提出从轻处罚意见。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "回避制度",
+            "difficulty": 3,
+            "description": "有关人员存在法定情形时退出案件审理或诉讼活动。",
+            "aliases": [
+              "回避"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "回避制度是诉讼参与人员具有法定不宜参加情形时退出相关诉讼活动的制度。",
+            "example": "审判人员与案件当事人有利害关系时申请回避。"
+          },
+          {
+            "name": "上诉权",
+            "difficulty": 3,
+            "description": "当事人不服一审裁判时依法提起上诉的权利。",
+            "aliases": [
+              "上诉"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "上诉权是当事人在规定期限内不服一审裁判而提出上诉的诉讼权利。",
+            "example": "当事人不服一审判决，在期限内提起上诉。"
+          },
+          {
+            "name": "两审终审制",
+            "difficulty": 3,
+            "description": "案件经过两级人民法院审理后通常终结。",
+            "aliases": [],
+            "prerequisites": [
+              "上诉权"
+            ],
+            "definition": "两审终审制是除特殊情况外案件经两级人民法院审理便告终结的制度。",
+            "example": "一审判决后上诉，二审裁判成为终审裁判。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "法律援助",
+            "difficulty": 2,
+            "description": "国家为特定当事人无偿提供法律服务的制度。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "法律援助是国家为经济困难公民和特殊案件当事人无偿提供法律服务的制度。",
+            "example": "法律援助律师无偿为未成年被告人辩护。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "起诉",
+            "difficulty": 2,
+            "description": "当事人向有管辖权的法院提出诉讼请求。",
+            "aliases": [
+              "告状"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "起诉是公民、法人或其他组织向有管辖权的人民法院提出诉讼请求的行为。",
+            "example": "消费者提交民事起诉状请求商家赔偿。"
+          },
+          {
+            "name": "管辖制度",
+            "difficulty": 3,
+            "description": "规定不同人民法院受理第一审案件分工和权限的制度。",
+            "aliases": [
+              "管辖"
+            ],
+            "prerequisites": [
+              "起诉"
+            ],
+            "definition": "管辖制度是诉讼法规定的人民法院受理第一审案件分工和权限的制度。",
+            "example": "当事人向有管辖权的基层法院提起诉讼。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "开庭审理",
+            "difficulty": 3,
+            "description": "法院依照法定程序在法庭上审理案件并作出判决。",
+            "aliases": [],
+            "prerequisites": [
+              "起诉"
+            ],
+            "definition": "开庭审理是法院在诉讼参与人参加下依照法定程序审理案件并作出判决的活动。",
+            "example": "法院依法进行法庭调查和法庭辩论。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "公开审判制度",
+            "difficulty": 3,
+            "description": "案件审理原则上公开进行，法律另有规定的除外。",
+            "aliases": [],
+            "prerequisites": [
+              "开庭审理"
+            ],
+            "definition": "公开审判制度是人民法院审理案件除法定情形外一律公开进行的制度。",
+            "example": "公民依法到庭旁听公开审理的案件。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "诉讼证据",
+            "difficulty": 2,
+            "description": "诉讼过程中用来证明案件事实的根据。",
+            "aliases": [
+              "证据"
+            ],
+            "prerequisites": [
+              "诉讼"
+            ],
+            "definition": "诉讼证据是诉讼过程中用来证明案件事实的根据。",
+            "example": "合同、收据和聊天记录用于证明借贷关系。"
+          },
+          {
+            "name": "证据种类",
+            "difficulty": 3,
+            "description": "包括书证、物证、证人证言、电子数据等类型。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "证据种类是法律规定的证明案件事实的不同证据形式。",
+            "example": "手机录音属于视听资料或电子数据相关证据。"
+          },
+          {
+            "name": "谁主张谁举证",
+            "difficulty": 3,
+            "description": "民事诉讼中主张权利的一方对主张承担举证责任。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "谁主张谁举证是民事诉讼中当事人对自己提出的主张承担举证责任的原则。",
+            "example": "原告主张借款未还，应提供借条或转账记录。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "举证责任倒置",
+            "difficulty": 4,
+            "description": "法律规定由提出主张的一方对方承担举证责任。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "举证责任倒置是法律基于公平合理考虑由对方当事人负责举证的原则。",
+            "example": "环境污染纠纷中由行为人证明不存在因果关系。",
+            "section": "第十课 诉讼实现公平正义"
+          },
+          {
+            "name": "证据裁判规则",
+            "difficulty": 4,
+            "description": "以证据认定案件事实并据此作出裁判。",
+            "aliases": [],
+            "prerequisites": [
+              "诉讼证据"
+            ],
+            "definition": "证据裁判规则要求司法机关以证据认定案件事实并作出裁判。",
+            "example": "法院依据银行流水判断借款是否已经偿还。",
+            "section": "第十课 诉讼实现公平正义"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第九课 纠纷的多元解决方式",
+            "section_key": "33c3e491db",
+            "page_range": [
+              87,
+              93
+            ]
+          },
+          {
+            "name": "第十课 诉讼实现公平正义",
+            "section_key": "dab2768345",
+            "page_range": [
+              93,
+              104
+            ]
+          },
+          {
+            "name": "综合探究 感受司法公正",
+            "section_key": "3f9f305de2",
+            "page_range": [
+              104,
+              110
+            ]
+          }
+        ],
+        "chapter_key": "cd87644a15",
+        "metadata": {
+          "volume_id": "ce13872c4c4f",
+          "file_id": "ce13872c4c4f",
+          "volume_title": "高中政治 选择性必修2 法律与生活",
+          "chapter_order": 4,
+          "raw_heading": "第四单元 社会争议解决"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "e5c9c9f4fc": [
+        7,
+        17
+      ],
+      "第一课 在生活中学民法用民法": [
+        7,
+        17
+      ],
+      "a53f6a1c14": [
+        17,
+        27
+      ],
+      "第二课 依法有效保护财产权": [
+        17,
+        27
+      ],
+      "3a5535cf4f": [
+        27,
+        37
+      ],
+      "第三课 订约履约 诚信为本": [
+        27,
+        37
+      ],
+      "be83446214": [
+        37,
+        44
+      ],
+      "第四课 侵权责任与权利界限": [
+        37,
+        44
+      ],
+      "cf055fcd6f": [
+        44,
+        45
+      ],
+      "综合探究 财产制度助力经济社会发展": [
+        44,
+        45
+      ],
+      "f97e9e4fc3": [
+        47,
+        55
+      ],
+      "第五课 在和睦家庭中成长": [
+        47,
+        55
+      ],
+      "334fd376b9": [
+        55,
+        62
+      ],
+      "第六课 珍惜婚姻关系": [
+        55,
+        62
+      ],
+      "f27b7f6c81": [
+        62,
+        63
+      ],
+      "综合探究 家庭生活 法律守护": [
+        62,
+        63
+      ],
+      "d17d7db4c3": [
+        65,
+        75
+      ],
+      "第七课 做个明白的劳动者": [
+        65,
+        75
+      ],
+      "7cac59bb6b": [
+        75,
+        84
+      ],
+      "第八课 自主创业与诚信经营": [
+        75,
+        84
+      ],
+      "ae102c1187": [
+        84,
+        85
+      ],
+      "综合探究 企业创办之旅": [
+        84,
+        85
+      ],
+      "33c3e491db": [
+        87,
+        93
+      ],
+      "第九课 纠纷的多元解决方式": [
+        87,
+        93
+      ],
+      "dab2768345": [
+        93,
+        104
+      ],
+      "第十课 诉讼实现公平正义": [
+        93,
+        104
+      ],
+      "3f9f305de2": [
+        104,
+        110
+      ],
+      "综合探究 感受司法公正": [
+        104,
+        110
+      ]
+    }
+  }
+}

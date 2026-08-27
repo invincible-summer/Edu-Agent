@@ -175,7 +175,22 @@ async def process_textbook_ocr_round(owner_id: str, textbook_id: str, file_id: s
     if total_pages <= 0:
         total_pages = len(page_texts)
     if total_pages <= 0:
-        return TextbookOCRRoundResult("failed", current_text, {})
+        # 探针失败（损坏 PDF/0 页）：写入卷级 failed 状态，让 deferred 出口
+        # 的结算能落 graph_failed 且带错误摘要——无痕返回会把记录定格在
+        # building（无卷状态可依据，重试驱动也不会介入）。书级 status 保持
+        # 原值（与 cancelled 路径一致）：书级终态由 _settle_deferred_book_status
+        # 在构建出口统一裁决，避免与并行兄弟卷的结算互相覆盖。
+        root_pf, state_pf = _state_for(record, file_id)
+        state_pf.update({
+            "status": "failed", "pending_pages": [], "next_retry_at": None,
+            "last_error_code": "probe_failed",
+            "last_error_summary": "PDF 无法解析或页数为 0，OCR 未执行",
+            "updated_at": time.time(),
+        })
+        _save_state(owner_id, textbook_id, file_id, root_pf, state_pf,
+                    status=str(record.get("status") or "building"),
+                    progress=dict(record.get("progress") or {}))
+        return TextbookOCRRoundResult("failed", current_text, state_pf)
     if len(page_texts) < total_pages:
         page_texts.extend([""] * (total_pages - len(page_texts)))
     elif len(page_texts) > total_pages:

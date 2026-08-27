@@ -1,0 +1,2810 @@
+{
+  "file_id": "d6f398952b02",
+  "text_sha256": "1b9811925fd914a3b3f562cc71e7e080571ae426e25e4c1de225ea12c33cdc33",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1 章　原子结构与元素性质",
+        "concepts": [
+          {
+            "name": "原子结构模型",
+            "difficulty": 2,
+            "description": "人类认识原子结构所建立的理论模型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原子结构模型是对原子组成和内部结构的理论描述。",
+            "example": "道尔顿原子论是早期原子结构模型。"
+          },
+          {
+            "name": "玻尔模型",
+            "difficulty": 2,
+            "description": "用量子化轨道解释氢原子光谱的模型",
+            "aliases": [
+              "玻尔原子结构模型"
+            ],
+            "prerequisites": [
+              "原子结构模型"
+            ],
+            "definition": "玻尔模型认为电子处于能量量子化的轨道上并可发生跃迁。",
+            "example": "玻尔模型解释了氢原子线状光谱。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "量子力学模型",
+            "difficulty": 3,
+            "description": "用量子力学描述核外电子运动状态的模型",
+            "aliases": [
+              "量子力学模型"
+            ],
+            "prerequisites": [
+              "玻尔模型"
+            ],
+            "definition": "量子力学模型用电子层、能级和原子轨道描述电子运动状态。",
+            "example": "量子力学模型能解释复杂原子光谱。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "原子光谱",
+            "difficulty": 2,
+            "description": "原子辐射或吸收能量形成并记录的光谱",
+            "aliases": [
+              "光谱"
+            ],
+            "prerequisites": [
+              "玻尔模型"
+            ],
+            "definition": "原子光谱是电子在不同能量状态间跃迁时产生的光谱。",
+            "example": "氢原子光谱由彼此分立的谱线组成。"
+          },
+          {
+            "name": "电子跃迁",
+            "difficulty": 2,
+            "description": "电子在不同能量状态之间发生的转移",
+            "aliases": [
+              "跃迁"
+            ],
+            "prerequisites": [
+              "玻尔模型"
+            ],
+            "definition": "电子跃迁是电子从一个能量状态转移到另一个能量状态的过程。",
+            "example": "电子从高能轨道跃迁到低能轨道会辐射能量。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "线状光谱",
+            "difficulty": 2,
+            "description": "由具有特定波长的分立谱线组成的光谱",
+            "aliases": [],
+            "prerequisites": [
+              "原子光谱",
+              "电子跃迁"
+            ],
+            "definition": "线状光谱是由不连续特征波长谱线构成的光谱。",
+            "example": "氢原子光谱属于线状光谱。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "电子层",
+            "difficulty": 1,
+            "description": "由主量子数n描述的电子运动状态层次",
+            "aliases": [
+              "量子数n"
+            ],
+            "prerequisites": [
+              "量子力学模型"
+            ],
+            "definition": "电子层是量子数n所描述的电子运动状态。",
+            "example": "n=2对应第二电子层L层。"
+          },
+          {
+            "name": "能级",
+            "difficulty": 2,
+            "description": "同一电子层内能量不同的电子状态",
+            "aliases": [],
+            "prerequisites": [
+              "电子层"
+            ],
+            "definition": "能级是电子层中具有不同能量的电子状态。",
+            "example": "n=2电子层包含2s和2p能级。"
+          },
+          {
+            "name": "原子轨道",
+            "difficulty": 2,
+            "description": "描述原子中单个电子空间运动状态的概念",
+            "aliases": [
+              "atomic orbital"
+            ],
+            "prerequisites": [
+              "能级"
+            ],
+            "definition": "原子轨道是用来描述单个电子空间运动状态的区域或状态。",
+            "example": "n=2电子层有2s和三个2p原子轨道。"
+          },
+          {
+            "name": "波函数",
+            "difficulty": 3,
+            "description": "表示电子运动状态并可进行数学处理的函数",
+            "aliases": [],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "波函数是量子力学中表示原子轨道和电子运动状态的数学函数。",
+            "example": "通过波函数可计算电子出现概率。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "电子云图",
+            "difficulty": 2,
+            "description": "形象表示电子在核外空间概率分布的图形",
+            "aliases": [],
+            "prerequisites": [
+              "波函数"
+            ],
+            "definition": "电子云图用点的疏密表示电子在空间某处出现概率的大小。",
+            "example": "1s电子云图呈球形对称。"
+          },
+          {
+            "name": "s轨道",
+            "difficulty": 1,
+            "description": "空间分布呈球形且具有球对称性的轨道",
+            "aliases": [],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "s轨道是空间分布呈球形的原子轨道。",
+            "example": "1s轨道具有球对称性。"
+          },
+          {
+            "name": "p轨道",
+            "difficulty": 1,
+            "description": "沿特定坐标轴方向分布并具有空间取向的轨道",
+            "aliases": [],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "p轨道是具有一定空间取向并沿坐标轴方向分布的原子轨道。",
+            "example": "2p包括2px、2py和2pz三个轨道。"
+          },
+          {
+            "name": "自旋状态",
+            "difficulty": 2,
+            "description": "电子具有的两种量子化运动状态",
+            "aliases": [
+              "自旋"
+            ],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "自旋状态是电子具有的两种量子化状态，通常用↑和↓表示。",
+            "example": "同一轨道中的两个电子自旋状态相反。"
+          },
+          {
+            "name": "能量量子化",
+            "difficulty": 2,
+            "description": "电子只能处于某些确定能量状态的现象",
+            "aliases": [],
+            "prerequisites": [
+              "能级"
+            ],
+            "definition": "能量量子化是指电子的能量只能取特定的不连续数值。",
+            "example": "氢原子光谱的分立谱线体现了能量量子化。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "基态原子",
+            "difficulty": 1,
+            "description": "处于能量最低状态的原子",
+            "aliases": [
+              "基态"
+            ],
+            "prerequisites": [
+              "能量量子化"
+            ],
+            "definition": "基态原子是核外电子处于整个原子最低能量状态的原子。",
+            "example": "基态氢原子的电子排布为1s¹。"
+          },
+          {
+            "name": "能量最低原理",
+            "difficulty": 2,
+            "description": "电子排布应使整个原子体系能量最低",
+            "aliases": [
+              "最低能量原理"
+            ],
+            "prerequisites": [
+              "基态原子"
+            ],
+            "definition": "能量最低原理要求电子在不违反其他原则时使原子总能量最低。",
+            "example": "氢原子的基态电子排布在1s轨道。"
+          },
+          {
+            "name": "泡利不相容原理",
+            "difficulty": 2,
+            "description": "一个原子轨道最多容纳两个自旋相反电子",
+            "aliases": [
+              "泡利原理"
+            ],
+            "prerequisites": [
+              "自旋状态",
+              "原子轨道"
+            ],
+            "definition": "泡利不相容原理规定同一原子轨道最多容纳两个自旋状态相反的电子。",
+            "example": "氦原子的1s轨道排布为↑↓。"
+          },
+          {
+            "name": "洪特规则",
+            "difficulty": 2,
+            "description": "等能轨道中电子优先分占且自旋平行",
+            "aliases": [
+              "洪特规則"
+            ],
+            "prerequisites": [
+              "能级",
+              "自旋状态"
+            ],
+            "definition": "洪特规则规定基态原子中等能轨道的电子尽可能分占不同轨道且自旋相同。",
+            "example": "碳原子的2p²电子先分别占据两个p轨道。"
+          },
+          {
+            "name": "构造原理",
+            "difficulty": 2,
+            "description": "依据轨道能量顺序逐步构建电子排布",
+            "aliases": [],
+            "prerequisites": [
+              "能量最低原理",
+              "泡利不相容原理",
+              "洪特规则"
+            ],
+            "definition": "构造原理是按照轨道能量大小规律安排核外电子排布的原则。",
+            "example": "钾原子的最后一个电子填入4s轨道。",
+            "section": "第 2 节 原子结构与元素周期表"
+          },
+          {
+            "name": "电子排布式",
+            "difficulty": 1,
+            "description": "用能级符号和右上角数字表示电子排布",
+            "aliases": [],
+            "prerequisites": [
+              "构造原理"
+            ],
+            "definition": "电子排布式是在能级符号右上角标出该能级电子数的表示式。",
+            "example": "基态锂原子的电子排布式为1s²2s¹。"
+          },
+          {
+            "name": "轨道表示式",
+            "difficulty": 2,
+            "description": "用方框和箭头表示轨道及电子自旋状态",
+            "aliases": [],
+            "prerequisites": [
+              "电子排布式",
+              "自旋状态"
+            ],
+            "definition": "轨道表示式用图形表示原子轨道并用箭头表示电子及其自旋状态。",
+            "example": "氦原子的1s轨道表示为一个方框内的↑↓。"
+          },
+          {
+            "name": "价电子",
+            "difficulty": 2,
+            "description": "原子中与元素化学性质关系密切的电子",
+            "aliases": [],
+            "prerequisites": [
+              "电子排布式"
+            ],
+            "definition": "价电子是原子中通常参与化学反应并决定部分元素性质的电子。",
+            "example": "主族元素的最外层电子通常是价电子。"
+          },
+          {
+            "name": "能级组",
+            "difficulty": 2,
+            "description": "与元素周期对应的电子能级组合",
+            "aliases": [],
+            "prerequisites": [
+              "电子层",
+              "能级"
+            ],
+            "definition": "能级组是按照电子层和能级关系划分、与周期对应的能级集合。",
+            "example": "第一能级组仅涉及一个s轨道。",
+            "section": "第 2 节 原子结构与元素周期表"
+          },
+          {
+            "name": "元素周期表分区",
+            "difficulty": 2,
+            "description": "按最后填入电子的轨道能级划分的五个区域",
+            "aliases": [
+              "周期表分区"
+            ],
+            "prerequisites": [
+              "价电子",
+              "电子排布式"
+            ],
+            "definition": "元素周期表分区依据元素原子最后填入电子的轨道能级划分为s、p、d、ds、f区。",
+            "example": "镧系和锕系属于f区元素。"
+          },
+          {
+            "name": "原子半径",
+            "difficulty": 2,
+            "description": "用统计方法确定的元素原子大小参数",
+            "aliases": [],
+            "prerequisites": [
+              "电子云图"
+            ],
+            "definition": "原子半径是依据原子核间距等实验数据统计确定的原子大小参数。",
+            "example": "同主族元素原子半径通常自上而下增大。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "电离能",
+            "difficulty": 2,
+            "description": "气态基态原子或离子失去一个电子所需的最小能量",
+            "aliases": [
+              "ionization energy"
+            ],
+            "prerequisites": [
+              "基态原子"
+            ],
+            "definition": "电离能是气态基态原子或离子失去一个电子所需要的最小能量。",
+            "example": "同一元素通常有I₂大于I₁。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "第一电离能",
+            "difficulty": 2,
+            "description": "气态基态原子失去第一个电子所需的能量",
+            "aliases": [
+              "I₁"
+            ],
+            "prerequisites": [
+              "电离能"
+            ],
+            "definition": "第一电离能是气态基态原子失去一个电子形成气态一价阳离子所需的能量。",
+            "example": "同周期碱金属的第一电离能通常较小。"
+          },
+          {
+            "name": "电子亲和能",
+            "difficulty": 3,
+            "description": "气态原子获得一个电子时放出的能量",
+            "aliases": [
+              "electron affinity"
+            ],
+            "prerequisites": [
+              "基态原子"
+            ],
+            "definition": "电子亲和能是元素气态原子或离子获得一个电子所放出的能量。",
+            "example": "氯的电子亲和能数据为正值。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "电负性",
+            "difficulty": 2,
+            "description": "原子在化合物中吸引成键电子的相对能力",
+            "aliases": [
+              "electronegativity"
+            ],
+            "prerequisites": [
+              "价电子",
+              "第一电离能",
+              "电子亲和能"
+            ],
+            "definition": "电负性是元素原子在化合物中吸引成键电子能力的相对大小。",
+            "example": "氟的鲍林电负性取4.0。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "第一电离能趋势",
+            "difficulty": 2,
+            "description": "第一电离能在周期表中的总体变化规律",
+            "aliases": [],
+            "prerequisites": [
+              "第一电离能",
+              "原子半径"
+            ],
+            "definition": "主族元素第一电离能通常同周期从左到右增大、同主族自上而下减小。",
+            "example": "同周期稀有气体第一电离能通常最大。"
+          },
+          {
+            "name": "电负性趋势",
+            "difficulty": 2,
+            "description": "电负性在周期表中的总体变化规律",
+            "aliases": [],
+            "prerequisites": [
+              "电负性",
+              "原子半径"
+            ],
+            "definition": "主族元素电负性通常同周期从左到右增大、同主族自上而下减小。",
+            "example": "氯的电负性大于钠。"
+          },
+          {
+            "name": "金属性递变",
+            "difficulty": 2,
+            "description": "元素原子失去电子能力随位置变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "原子半径",
+              "第一电离能"
+            ],
+            "definition": "金属性递变表现为元素原子失去电子能力在周期表中的规律性变化。",
+            "example": "同周期从左到右金属元素失电子能力通常减弱。"
+          },
+          {
+            "name": "非金属性递变",
+            "difficulty": 2,
+            "description": "元素原子获得电子能力随位置变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "原子半径",
+              "电负性"
+            ],
+            "definition": "非金属性递变表现为元素原子获得电子能力在周期表中的规律性变化。",
+            "example": "同主族非金属自上而下得电子能力通常减弱。"
+          },
+          {
+            "name": "化学键极性",
+            "difficulty": 3,
+            "description": "共价键中成键电子和电荷分布的不均衡性",
+            "aliases": [],
+            "prerequisites": [
+              "电负性"
+            ],
+            "definition": "化学键极性是由于成键原子电负性不同导致共用电子对偏移的性质。",
+            "example": "H—Cl中共用电子对偏向氯原子。"
+          },
+          {
+            "name": "电负性应用",
+            "difficulty": 3,
+            "description": "利用电负性分析电荷分布并预测反应变化",
+            "aliases": [],
+            "prerequisites": [
+              "电负性",
+              "化学键极性"
+            ],
+            "definition": "电负性应用是依据原子吸引电子能力判断键中电荷分布及可能反应重组。",
+            "example": "电负性可用于分析甲醛与蛋白质的反应部位。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 原子结构模型",
+            "page_range": [
+              12,
+              17
+            ]
+          },
+          {
+            "name": "第 2 节 原子结构与元素周期表",
+            "page_range": [
+              17,
+              27
+            ]
+          },
+          {
+            "name": "第 3 节 元素性质及其变化规律",
+            "page_range": [
+              27,
+              44
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2 章　微粒间相互作用与物质性质",
+        "concepts": [
+          {
+            "name": "共价键",
+            "difficulty": 2,
+            "description": "非金属原子间通过共用电子对形成的化学键",
+            "aliases": [
+              "共价键模型"
+            ],
+            "prerequisites": [],
+            "definition": "共价键是原子间通过共用电子对形成的化学键。",
+            "example": "H—H中的氢氢键"
+          },
+          {
+            "name": "共价键饱和性",
+            "difficulty": 3,
+            "description": "原子形成共价键的总数具有一定限度",
+            "aliases": [
+              "饱和性"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "共价键饱和性是指每个原子所能形成的共价键总数一定。",
+            "example": "氮原子最多形成三个共价键"
+          },
+          {
+            "name": "共价键方向性",
+            "difficulty": 3,
+            "description": "共价键沿原子轨道重叠概率最大的方向形成",
+            "aliases": [
+              "方向性"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "共价键方向性是指共价键具有特定的空间取向。",
+            "example": "水分子呈角形结构"
+          },
+          {
+            "name": "σ键",
+            "difficulty": 3,
+            "description": "原子轨道以头碰头方式重叠形成的共价键",
+            "aliases": [
+              "sigma键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "σ键是原子轨道沿核间连线以头碰头方式重叠形成的共价键。",
+            "example": "H—Cl中含有σ键"
+          },
+          {
+            "name": "π键",
+            "difficulty": 3,
+            "description": "原子轨道以肩并肩方式重叠形成的共价键",
+            "aliases": [
+              "pi键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "π键是原子轨道以肩并肩方式重叠形成的共价键。",
+            "example": "N≡N中含有两个π键"
+          },
+          {
+            "name": "极性键",
+            "difficulty": 2,
+            "description": "共用电子偏向电负性较大原子一侧的共价键",
+            "aliases": [
+              "极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "极性键是不同原子成键时共用电子发生偏移而形成的共价键。",
+            "example": "H—Cl是极性键"
+          },
+          {
+            "name": "非极性键",
+            "difficulty": 2,
+            "description": "共用电子不偏向任一原子的共价键",
+            "aliases": [
+              "非极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "非极性键是同种原子成键时共用电子不发生偏移的共价键。",
+            "example": "Cl—Cl是非极性键"
+          },
+          {
+            "name": "键长",
+            "difficulty": 2,
+            "description": "两个成键原子核之间的距离",
+            "aliases": [
+              "核间距"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "键长是两个成键原子的原子核间距离。",
+            "example": "H—H键长为0.074 nm"
+          },
+          {
+            "name": "键角",
+            "difficulty": 2,
+            "description": "多原子分子中两个化学键的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "键角是多原子分子中两个化学键之间的夹角。",
+            "example": "H2O的键角为104.5°"
+          },
+          {
+            "name": "键能",
+            "difficulty": 3,
+            "description": "断开1 mol气态化学键所吸收的能量",
+            "aliases": [
+              "化学键键能"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "键能是断开1 mol气态AB分子中A—B键生成气态原子所吸收的能量。",
+            "example": "H—Cl键能为431 kJ·mol⁻¹"
+          },
+          {
+            "name": "键参数",
+            "difficulty": 2,
+            "description": "表征化学键性质的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "键长",
+              "键角",
+              "键能"
+            ],
+            "definition": "键参数是键长、键角和键能等表征化学键性质的物理量。",
+            "example": "用键能比较键的强弱",
+            "section": "第 1 节 共价键模型"
+          },
+          {
+            "name": "分子轨道理论",
+            "difficulty": 4,
+            "description": "用分子轨道描述分子中电子运动状态的理论",
+            "aliases": [],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "分子轨道理论认为分子中的电子在整个分子中运动并由分子轨道描述。",
+            "example": "解释氧分子的顺磁性"
+          },
+          {
+            "name": "顺磁性",
+            "difficulty": 3,
+            "description": "含有未成对电子的物质被磁场吸引的性质",
+            "aliases": [
+              "顺磁性分子"
+            ],
+            "prerequisites": [
+              "分子轨道理论"
+            ],
+            "definition": "顺磁性是物质因含有未成对电子而被磁场吸引的性质。",
+            "example": "氧分子具有顺磁性",
+            "section": "第 1 节 共价键模型"
+          },
+          {
+            "name": "原子轨道杂化",
+            "difficulty": 4,
+            "description": "能量相近的原子轨道重新组合形成新轨道",
+            "aliases": [
+              "轨道杂化"
+            ],
+            "prerequisites": [
+              "共价键",
+              "原子轨道"
+            ],
+            "definition": "原子轨道杂化是原子内部能量相近的轨道重新组合形成新原子轨道的过程。",
+            "example": "碳原子的2s与2p轨道杂化",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "杂化轨道",
+            "difficulty": 3,
+            "description": "原子轨道杂化后形成的一组新原子轨道",
+            "aliases": [
+              "杂化原子轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "杂化轨道是原子轨道杂化后形成的能量和空间取向改变的新轨道。",
+            "example": "甲烷中碳采用sp³杂化轨道"
+          },
+          {
+            "name": "sp杂化",
+            "difficulty": 3,
+            "description": "一个s轨道与一个p轨道形成两个杂化轨道",
+            "aliases": [
+              "sp杂化轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "sp杂化是一个s轨道和一个p轨道重新组合形成两个杂化轨道。",
+            "example": "乙炔中的碳采用sp杂化",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "sp2杂化",
+            "difficulty": 3,
+            "description": "一个s轨道与两个p轨道形成三个杂化轨道",
+            "aliases": [
+              "sp²杂化轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "sp²杂化是一个s轨道和两个p轨道重新组合形成三个杂化轨道。",
+            "example": "乙烯中的碳采用sp²杂化",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "sp3杂化",
+            "difficulty": 3,
+            "description": "一个s轨道与三个p轨道形成四个杂化轨道",
+            "aliases": [
+              "sp³杂化轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "sp³杂化是一个s轨道和三个p轨道重新组合形成四个杂化轨道。",
+            "example": "甲烷中的碳采用sp³杂化"
+          },
+          {
+            "name": "分子空间结构",
+            "difficulty": 3,
+            "description": "分子中原子和化学键的三维空间排布",
+            "aliases": [
+              "分子立体结构"
+            ],
+            "prerequisites": [
+              "键角",
+              "杂化轨道"
+            ],
+            "definition": "分子空间结构是分子中原子及化学键的空间排布形式。",
+            "example": "CH4呈正四面体形"
+          },
+          {
+            "name": "价电子对互斥理论",
+            "difficulty": 4,
+            "description": "根据中心原子价电子对相互排斥预测分子结构",
+            "aliases": [
+              "价层电子对互斥理论"
+            ],
+            "prerequisites": [
+              "分子空间结构"
+            ],
+            "definition": "价电子对互斥理论认为中心原子的价电子对尽量远离以形成稳定结构。",
+            "example": "预测CO2呈直线形",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "极性分子",
+            "difficulty": 3,
+            "description": "分子正负电荷中心不重合的分子",
+            "aliases": [],
+            "prerequisites": [
+              "极性键",
+              "分子空间结构"
+            ],
+            "definition": "极性分子是分子中正负电荷中心不重合而具有极性的分子。",
+            "example": "H2O是极性分子"
+          },
+          {
+            "name": "非极性分子",
+            "difficulty": 3,
+            "description": "分子正负电荷中心重合的分子",
+            "aliases": [],
+            "prerequisites": [
+              "极性键",
+              "分子空间结构"
+            ],
+            "definition": "非极性分子是分子中正负电荷中心重合而不显极性的分子。",
+            "example": "CO2是非极性分子"
+          },
+          {
+            "name": "离子键",
+            "difficulty": 2,
+            "description": "阴阳离子之间通过静电作用形成的化学键",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "离子键是阴、阳离子之间通过静电作用形成的化学键。",
+            "example": "NaCl中Na⁺与Cl⁻之间的作用"
+          },
+          {
+            "name": "离子键无方向性",
+            "difficulty": 2,
+            "description": "离子可从不同方向吸引异性电荷离子",
+            "aliases": [
+              "离子键的方向性"
+            ],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子键无方向性是指离子能从不同方向吸引带异性电荷的离子。",
+            "example": "Na⁺周围可排列多个Cl⁻"
+          },
+          {
+            "name": "离子键无饱和性",
+            "difficulty": 3,
+            "description": "离子周围可尽可能多排列异性电荷离子",
+            "aliases": [
+              "离子键的饱和性"
+            ],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子键无饱和性是指离子在空间允许时可吸引尽可能多的异性离子。",
+            "example": "CsCl中离子配位数为8"
+          },
+          {
+            "name": "离子极化",
+            "difficulty": 4,
+            "description": "电场作用导致离子中电子分布发生偏移",
+            "aliases": [],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子极化是电场作用下阴、阳离子电子分布发生相对偏移的现象。",
+            "example": "Ag⁺使I⁻发生极化",
+            "section": "第 3 节 离子键、配位键与金属键"
+          },
+          {
+            "name": "配位键",
+            "difficulty": 3,
+            "description": "成键共用电子对由一方单独提供的化学键",
+            "aliases": [
+              "配位共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "配位键是由提供孤电子对的一方与具有空轨道的一方形成的化学键。",
+            "example": "NH3与H⁺形成NH4⁺"
+          },
+          {
+            "name": "配合物",
+            "difficulty": 3,
+            "description": "组成中含有配位键的物质",
+            "aliases": [
+              "配位化合物"
+            ],
+            "prerequisites": [
+              "配位键"
+            ],
+            "definition": "配合物是组成中含有配位键的一类物质。",
+            "example": "[Ag(NH3)2]⁺"
+          },
+          {
+            "name": "中心离子",
+            "difficulty": 2,
+            "description": "配合物中提供空轨道的原子或离子",
+            "aliases": [
+              "中心原子"
+            ],
+            "prerequisites": [
+              "配合物"
+            ],
+            "definition": "中心离子是配合物中能够提供空轨道的中心原子或离子。",
+            "example": "[Cu(H2O)4]²⁺中的Cu²⁺"
+          },
+          {
+            "name": "配体",
+            "difficulty": 2,
+            "description": "配合物中提供孤电子对的分子或离子",
+            "aliases": [],
+            "prerequisites": [
+              "配合物"
+            ],
+            "definition": "配体是配合物中能够提供孤电子对与中心离子结合的分子或离子。",
+            "example": "NH3是二氨合银离子的配体"
+          },
+          {
+            "name": "螯合物",
+            "difficulty": 4,
+            "description": "多齿配体与中心离子形成的稳定配合物",
+            "aliases": [],
+            "prerequisites": [
+              "配合物",
+              "配体"
+            ],
+            "definition": "螯合物是多齿配体通过多个配位原子与中心离子形成的配合物。",
+            "example": "EDTA⁴⁻与金属离子形成螯合物",
+            "section": "第 4 节 分子间作用力"
+          },
+          {
+            "name": "金属键",
+            "difficulty": 2,
+            "description": "金属阳离子与自由电子之间的强相互作用",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "金属键是固态金属中自由电子与金属阳离子之间的强相互作用。",
+            "example": "铜中自由电子与金属阳离子的作用"
+          },
+          {
+            "name": "自由电子",
+            "difficulty": 2,
+            "description": "固态金属中脱离单个原子束缚并运动的电子",
+            "aliases": [],
+            "prerequisites": [
+              "金属键"
+            ],
+            "definition": "自由电子是固态金属中能在金属阳离子之间运动的价电子。",
+            "example": "金属导线中的电子形成电流",
+            "section": "第 3 节 离子键、配位键与金属键"
+          },
+          {
+            "name": "能带理论",
+            "difficulty": 4,
+            "description": "用能带结构解释金属导电等性质的理论",
+            "aliases": [
+              "金属能带理论"
+            ],
+            "prerequisites": [
+              "金属键",
+              "自由电子"
+            ],
+            "definition": "能带理论认为大量原子轨道组合形成能带并据此解释物质导电性。",
+            "example": "金属钠具有导带",
+            "section": "第 3 节 离子键、配位键与金属键"
+          },
+          {
+            "name": "范德华力",
+            "difficulty": 2,
+            "description": "分子间存在的一类相互作用力",
+            "aliases": [
+              "分子间作用力"
+            ],
+            "prerequisites": [],
+            "definition": "范德华力是分子之间存在的相互作用力。",
+            "example": "分子间作用力影响物质沸点",
+            "section": "第 4 节 分子间作用力"
+          },
+          {
+            "name": "氢键",
+            "difficulty": 3,
+            "description": "影响物质性质和生命活动的分子间作用力",
+            "aliases": [],
+            "prerequisites": [
+              "范德华力"
+            ],
+            "definition": "氢键是分子间作用力的一种，对物质性质和生命活动具有重要意义。",
+            "example": "水分子间存在氢键"
+          },
+          {
+            "name": "分子光谱",
+            "difficulty": 3,
+            "description": "分子能级改变时吸收或发射的光谱",
+            "aliases": [],
+            "prerequisites": [
+              "分子轨道理论"
+            ],
+            "definition": "分子光谱是分子从一种能级变到另一种能级时吸收或发射的光谱。",
+            "example": "红外光谱可推测官能团",
+            "section": "第 1 节 共价键模型"
+          },
+          {
+            "name": "比色法",
+            "difficulty": 2,
+            "description": "通过比较颜色深浅测定有色物质浓度的方法",
+            "aliases": [
+              "目视比色法"
+            ],
+            "prerequisites": [
+              "分子光谱"
+            ],
+            "definition": "比色法是通过比较待测溶液与标准色阶颜色深浅确定浓度的方法。",
+            "example": "用邻二氮菲测定Fe²⁺浓度",
+            "section": "第 4 节 分子间作用力"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 共价键模型",
+            "page_range": [
+              46,
+              52
+            ]
+          },
+          {
+            "name": "第 2 节 共价键与分子的空间结构",
+            "page_range": [
+              52,
+              65
+            ]
+          },
+          {
+            "name": "第 3 节 离子键、配位键与金属键",
+            "page_range": [
+              65,
+              76
+            ]
+          },
+          {
+            "name": "第 4 节 分子间作用力",
+            "page_range": [
+              76,
+              94
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3 章　不同聚集状态的物质与性质",
+        "concepts": [
+          {
+            "name": "晶体",
+            "difficulty": 2,
+            "description": "内部微粒按一定规律周期性重复排列的固体物质",
+            "aliases": [
+              "crystal"
+            ],
+            "prerequisites": [],
+            "definition": "晶体是内部微粒在空间按一定规律做周期性重复排列构成的固体物质。",
+            "example": "氯化钠、水晶、金刚石"
+          },
+          {
+            "name": "非晶体",
+            "difficulty": 2,
+            "description": "内部微粒无周期性重复排列的固体物质",
+            "aliases": [
+              "non-crystal"
+            ],
+            "prerequisites": [],
+            "definition": "非晶体是内部微粒无周期性重复排列构成的固体物质。",
+            "example": "玻璃、橡胶、石蜡"
+          },
+          {
+            "name": "各向异性",
+            "difficulty": 3,
+            "description": "物质在不同方向上表现出不同物理性质",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "各向异性是物质因内部排列方向不同而在不同方向表现出不同性质。",
+            "example": "晶体在不同方向折射率不同"
+          },
+          {
+            "name": "X射线衍射",
+            "difficulty": 3,
+            "description": "利用X射线衍射研究物质微观结构的方法",
+            "aliases": [
+              "X射线衍射法"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "X射线衍射是通过分析X射线透过晶体产生的衍射现象来测定结构的方法。",
+            "example": "测定氯化钠晶体结构"
+          },
+          {
+            "name": "晶体分类",
+            "difficulty": 3,
+            "description": "依据构成微粒及其相互作用对晶体进行分类",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶体可按构成微粒及微粒间相互作用分为离子晶体、金属晶体、共价晶体和分子晶体。",
+            "example": "氯化钠属于离子晶体"
+          },
+          {
+            "name": "晶胞",
+            "difficulty": 3,
+            "description": "晶体结构中基本的周期性重复单元",
+            "aliases": [
+              "unit cell"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶胞是晶体结构中基本的重复单元，形状通常为平行六面体。",
+            "example": "铜晶体的晶胞为立方体"
+          },
+          {
+            "name": "切割法",
+            "difficulty": 3,
+            "description": "按微粒被相邻晶胞共有的情况计算晶胞微粒数",
+            "aliases": [],
+            "prerequisites": [
+              "晶胞"
+            ],
+            "definition": "切割法是根据顶点、面、棱和体内微粒的共有情况计算晶胞实际微粒数的方法。",
+            "example": "铜晶胞含有4个铜原子",
+            "section": "第 1 节 认识晶体"
+          },
+          {
+            "name": "晶体缺陷",
+            "difficulty": 3,
+            "description": "晶体中存在的空位、错位或杂质原子等结构缺陷",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶体缺陷是实际晶体偏离理想周期性排列的空位、错位或杂质等结构。",
+            "example": "硫化锌中掺入氯化银形成缺陷",
+            "section": "第 1 节 认识晶体"
+          },
+          {
+            "name": "金属晶体",
+            "difficulty": 3,
+            "description": "金属原子通过金属键形成的晶体",
+            "aliases": [
+              "metallic crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "金属晶体是金属原子通过金属键形成的晶体。",
+            "example": "铜、金、镁"
+          },
+          {
+            "name": "金属键",
+            "difficulty": 2,
+            "description": "金属阳离子与整个金属共有自由电子间的作用",
+            "aliases": [
+              "metallic bond"
+            ],
+            "prerequisites": [],
+            "definition": "金属键是金属阳离子和整个金属所共有的自由电子之间的强相互作用。",
+            "example": "铜晶体中的原子由金属键结合"
+          },
+          {
+            "name": "密置层",
+            "difficulty": 3,
+            "description": "等径圆球在平面上的最紧密堆积层",
+            "aliases": [],
+            "prerequisites": [
+              "金属晶体"
+            ],
+            "definition": "密置层是等径圆球在平面上形成的最紧密堆积排列。",
+            "example": "金属晶体堆积模型中的密置层",
+            "section": "第 2 节 几种简单的晶体结构模型"
+          },
+          {
+            "name": "合金",
+            "difficulty": 3,
+            "description": "由金属与其他金属或非金属组成的金属特性物质",
+            "aliases": [],
+            "prerequisites": [
+              "金属晶体"
+            ],
+            "definition": "合金是由一种金属与其他金属或非金属组成并具有金属特性的物质。",
+            "example": "硬铝、铜锌合金"
+          },
+          {
+            "name": "离子晶体",
+            "difficulty": 3,
+            "description": "阴阳离子在空间周期性重复排列形成的晶体",
+            "aliases": [
+              "ionic crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "离子晶体是阴、阳离子在空间呈周期性重复排列形成的晶体。",
+            "example": "氯化钠、氯化铯、氧化镁"
+          },
+          {
+            "name": "晶格能",
+            "difficulty": 4,
+            "description": "离子晶体完全气化为气态离子所吸收的能量",
+            "aliases": [],
+            "prerequisites": [
+              "离子晶体"
+            ],
+            "definition": "晶格能是1 mol离子晶体完全气化为气态阴、阳离子所吸收的能量。",
+            "example": "MgO晶格能大于NaCl",
+            "section": "第 2 节 几种简单的晶体结构模型"
+          },
+          {
+            "name": "离子液体",
+            "difficulty": 3,
+            "description": "在室温或接近室温时呈液态的盐类物质",
+            "aliases": [],
+            "prerequisites": [
+              "离子晶体"
+            ],
+            "definition": "离子液体是在室温和接近室温时呈液态的盐类物质。",
+            "example": "由有机阳离子和无机阴离子组成的盐",
+            "section": "第 2 节 几种简单的晶体结构模型"
+          },
+          {
+            "name": "共价晶体",
+            "difficulty": 3,
+            "description": "原子间通过共价键形成空间网状结构的晶体",
+            "aliases": [
+              "covalent crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "共价晶体是原子间通过共价键形成空间网状结构的晶体。",
+            "example": "金刚石、二氧化硅、碳化硅"
+          },
+          {
+            "name": "分子晶体",
+            "difficulty": 3,
+            "description": "分子在空间周期性排列形成的晶体",
+            "aliases": [
+              "molecular crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "分子晶体是由分子在空间呈周期性重复排列形成的晶体。",
+            "example": "冰、苯晶体、足球烯晶体"
+          },
+          {
+            "name": "液晶",
+            "difficulty": 3,
+            "description": "兼具液体流动性和晶体各向异性的物质",
+            "aliases": [
+              "liquid crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "液晶是在一定温度范围内具有液体流动性并表现出晶体各向异性的物质。",
+            "example": "液晶显示器中的液晶材料",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "纳米材料",
+            "difficulty": 3,
+            "description": "由纳米颗粒及颗粒间界面组成的材料",
+            "aliases": [
+              "nanomaterial"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "纳米材料是由直径为几或几十纳米的颗粒和颗粒间界面组成的材料。",
+            "example": "纳米陶瓷、纳米金",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "碳纳米管",
+            "difficulty": 3,
+            "description": "石墨片卷绕形成的无缝中空管状纳米材料",
+            "aliases": [],
+            "prerequisites": [
+              "纳米材料"
+            ],
+            "definition": "碳纳米管是石墨片围绕中心轴按一定螺旋角卷绕形成的无缝中空微管。",
+            "example": "可用作强度很高的超级纤维",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "超原子",
+            "difficulty": 4,
+            "description": "具有与某种原子相似性质的金属原子簇",
+            "aliases": [],
+            "prerequisites": [
+              "纳米材料"
+            ],
+            "definition": "超原子是具有与某种原子相似性质的金属原子簇。",
+            "example": "Al13是卤素超原子",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "超分子",
+            "difficulty": 3,
+            "description": "多个分子通过非共价键组合形成的特定聚集体",
+            "aliases": [
+              "supramolecule"
+            ],
+            "prerequisites": [
+              "氢键",
+              "配位键"
+            ],
+            "definition": "超分子是两个或多个分子通过非共价键组合形成并具有特定结构和功能的聚集体。",
+            "example": "DNA双链、冠醚与金属离子聚集体",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "非共价键",
+            "difficulty": 3,
+            "description": "超分子中分子之间形成聚集体的弱相互作用",
+            "aliases": [],
+            "prerequisites": [
+              "超分子"
+            ],
+            "definition": "非共价键是超分子内部促使分子结合的非共价相互作用，包括氢键和静电作用等。",
+            "example": "DNA两条链间的氢键作用",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "分子识别",
+            "difficulty": 4,
+            "description": "分子依据空间结构和作用力选择性结合的过程",
+            "aliases": [],
+            "prerequisites": [
+              "超分子"
+            ],
+            "definition": "分子识别是分子通过空间结构和相互作用实现选择性结合的过程。",
+            "example": "冠醚选择性结合不同金属离子",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "分子组装",
+            "difficulty": 4,
+            "description": "分子通过协同作用有序形成特定结构的过程",
+            "aliases": [],
+            "prerequisites": [
+              "超分子"
+            ],
+            "definition": "分子组装是分子依靠空间结构和相互作用有序形成特定聚集结构的过程。",
+            "example": "磷脂分子形成细胞膜双层结构",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 认识晶体",
+            "page_range": [
+              96,
+              101
+            ]
+          },
+          {
+            "name": "第 2 节 几种简单的晶体结构模型",
+            "page_range": [
+              101,
+              115
+            ]
+          },
+          {
+            "name": "第 3 节 液晶、纳米材料与超分子",
+            "page_range": [
+              115,
+              138
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1 章 原子结构与元素性质",
+        "concepts": [
+          {
+            "name": "原子结构模型",
+            "difficulty": 2,
+            "description": "人类认识原子结构所建立的理论模型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原子结构模型是对原子组成和内部结构的理论描述。",
+            "example": "道尔顿原子论是早期原子结构模型。"
+          },
+          {
+            "name": "玻尔模型",
+            "difficulty": 2,
+            "description": "用量子化轨道解释氢原子光谱的模型",
+            "aliases": [
+              "玻尔原子结构模型"
+            ],
+            "prerequisites": [
+              "原子结构模型"
+            ],
+            "definition": "玻尔模型认为电子处于能量量子化的轨道上并可发生跃迁。",
+            "example": "玻尔模型解释了氢原子线状光谱。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "量子力学模型",
+            "difficulty": 3,
+            "description": "用量子力学描述核外电子运动状态的模型",
+            "aliases": [
+              "量子力学模型"
+            ],
+            "prerequisites": [
+              "玻尔模型"
+            ],
+            "definition": "量子力学模型用电子层、能级和原子轨道描述电子运动状态。",
+            "example": "量子力学模型能解释复杂原子光谱。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "原子光谱",
+            "difficulty": 2,
+            "description": "原子辐射或吸收能量形成并记录的光谱",
+            "aliases": [
+              "光谱"
+            ],
+            "prerequisites": [
+              "玻尔模型"
+            ],
+            "definition": "原子光谱是电子在不同能量状态间跃迁时产生的光谱。",
+            "example": "氢原子光谱由彼此分立的谱线组成。"
+          },
+          {
+            "name": "电子跃迁",
+            "difficulty": 2,
+            "description": "电子在不同能量状态之间发生的转移",
+            "aliases": [
+              "跃迁"
+            ],
+            "prerequisites": [
+              "玻尔模型"
+            ],
+            "definition": "电子跃迁是电子从一个能量状态转移到另一个能量状态的过程。",
+            "example": "电子从高能轨道跃迁到低能轨道会辐射能量。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "线状光谱",
+            "difficulty": 2,
+            "description": "由具有特定波长的分立谱线组成的光谱",
+            "aliases": [],
+            "prerequisites": [
+              "原子光谱",
+              "电子跃迁"
+            ],
+            "definition": "线状光谱是由不连续特征波长谱线构成的光谱。",
+            "example": "氢原子光谱属于线状光谱。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "电子层",
+            "difficulty": 1,
+            "description": "由主量子数n描述的电子运动状态层次",
+            "aliases": [
+              "量子数n"
+            ],
+            "prerequisites": [
+              "量子力学模型"
+            ],
+            "definition": "电子层是量子数n所描述的电子运动状态。",
+            "example": "n=2对应第二电子层L层。"
+          },
+          {
+            "name": "能级",
+            "difficulty": 2,
+            "description": "同一电子层内能量不同的电子状态",
+            "aliases": [],
+            "prerequisites": [
+              "电子层"
+            ],
+            "definition": "能级是电子层中具有不同能量的电子状态。",
+            "example": "n=2电子层包含2s和2p能级。"
+          },
+          {
+            "name": "原子轨道",
+            "difficulty": 2,
+            "description": "描述原子中单个电子空间运动状态的概念",
+            "aliases": [
+              "atomic orbital"
+            ],
+            "prerequisites": [
+              "能级"
+            ],
+            "definition": "原子轨道是用来描述单个电子空间运动状态的区域或状态。",
+            "example": "n=2电子层有2s和三个2p原子轨道。"
+          },
+          {
+            "name": "波函数",
+            "difficulty": 3,
+            "description": "表示电子运动状态并可进行数学处理的函数",
+            "aliases": [],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "波函数是量子力学中表示原子轨道和电子运动状态的数学函数。",
+            "example": "通过波函数可计算电子出现概率。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "电子云图",
+            "difficulty": 2,
+            "description": "形象表示电子在核外空间概率分布的图形",
+            "aliases": [],
+            "prerequisites": [
+              "波函数"
+            ],
+            "definition": "电子云图用点的疏密表示电子在空间某处出现概率的大小。",
+            "example": "1s电子云图呈球形对称。"
+          },
+          {
+            "name": "s轨道",
+            "difficulty": 1,
+            "description": "空间分布呈球形且具有球对称性的轨道",
+            "aliases": [],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "s轨道是空间分布呈球形的原子轨道。",
+            "example": "1s轨道具有球对称性。"
+          },
+          {
+            "name": "p轨道",
+            "difficulty": 1,
+            "description": "沿特定坐标轴方向分布并具有空间取向的轨道",
+            "aliases": [],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "p轨道是具有一定空间取向并沿坐标轴方向分布的原子轨道。",
+            "example": "2p包括2px、2py和2pz三个轨道。"
+          },
+          {
+            "name": "自旋状态",
+            "difficulty": 2,
+            "description": "电子具有的两种量子化运动状态",
+            "aliases": [
+              "自旋"
+            ],
+            "prerequisites": [
+              "原子轨道"
+            ],
+            "definition": "自旋状态是电子具有的两种量子化状态，通常用↑和↓表示。",
+            "example": "同一轨道中的两个电子自旋状态相反。"
+          },
+          {
+            "name": "能量量子化",
+            "difficulty": 2,
+            "description": "电子只能处于某些确定能量状态的现象",
+            "aliases": [],
+            "prerequisites": [
+              "能级"
+            ],
+            "definition": "能量量子化是指电子的能量只能取特定的不连续数值。",
+            "example": "氢原子光谱的分立谱线体现了能量量子化。",
+            "section": "第 1 节 原子结构模型"
+          },
+          {
+            "name": "基态原子",
+            "difficulty": 1,
+            "description": "处于能量最低状态的原子",
+            "aliases": [
+              "基态"
+            ],
+            "prerequisites": [
+              "能量量子化"
+            ],
+            "definition": "基态原子是核外电子处于整个原子最低能量状态的原子。",
+            "example": "基态氢原子的电子排布为1s¹。"
+          },
+          {
+            "name": "能量最低原理",
+            "difficulty": 2,
+            "description": "电子排布应使整个原子体系能量最低",
+            "aliases": [
+              "最低能量原理"
+            ],
+            "prerequisites": [
+              "基态原子"
+            ],
+            "definition": "能量最低原理要求电子在不违反其他原则时使原子总能量最低。",
+            "example": "氢原子的基态电子排布在1s轨道。"
+          },
+          {
+            "name": "泡利不相容原理",
+            "difficulty": 2,
+            "description": "一个原子轨道最多容纳两个自旋相反电子",
+            "aliases": [
+              "泡利原理"
+            ],
+            "prerequisites": [
+              "自旋状态",
+              "原子轨道"
+            ],
+            "definition": "泡利不相容原理规定同一原子轨道最多容纳两个自旋状态相反的电子。",
+            "example": "氦原子的1s轨道排布为↑↓。"
+          },
+          {
+            "name": "洪特规则",
+            "difficulty": 2,
+            "description": "等能轨道中电子优先分占且自旋平行",
+            "aliases": [
+              "洪特规則"
+            ],
+            "prerequisites": [
+              "能级",
+              "自旋状态"
+            ],
+            "definition": "洪特规则规定基态原子中等能轨道的电子尽可能分占不同轨道且自旋相同。",
+            "example": "碳原子的2p²电子先分别占据两个p轨道。"
+          },
+          {
+            "name": "构造原理",
+            "difficulty": 2,
+            "description": "依据轨道能量顺序逐步构建电子排布",
+            "aliases": [],
+            "prerequisites": [
+              "能量最低原理",
+              "泡利不相容原理",
+              "洪特规则"
+            ],
+            "definition": "构造原理是按照轨道能量大小规律安排核外电子排布的原则。",
+            "example": "钾原子的最后一个电子填入4s轨道。",
+            "section": "第 2 节 原子结构与元素周期表"
+          },
+          {
+            "name": "电子排布式",
+            "difficulty": 1,
+            "description": "用能级符号和右上角数字表示电子排布",
+            "aliases": [],
+            "prerequisites": [
+              "构造原理"
+            ],
+            "definition": "电子排布式是在能级符号右上角标出该能级电子数的表示式。",
+            "example": "基态锂原子的电子排布式为1s²2s¹。"
+          },
+          {
+            "name": "轨道表示式",
+            "difficulty": 2,
+            "description": "用方框和箭头表示轨道及电子自旋状态",
+            "aliases": [],
+            "prerequisites": [
+              "电子排布式",
+              "自旋状态"
+            ],
+            "definition": "轨道表示式用图形表示原子轨道并用箭头表示电子及其自旋状态。",
+            "example": "氦原子的1s轨道表示为一个方框内的↑↓。"
+          },
+          {
+            "name": "价电子",
+            "difficulty": 2,
+            "description": "原子中与元素化学性质关系密切的电子",
+            "aliases": [],
+            "prerequisites": [
+              "电子排布式"
+            ],
+            "definition": "价电子是原子中通常参与化学反应并决定部分元素性质的电子。",
+            "example": "主族元素的最外层电子通常是价电子。"
+          },
+          {
+            "name": "能级组",
+            "difficulty": 2,
+            "description": "与元素周期对应的电子能级组合",
+            "aliases": [],
+            "prerequisites": [
+              "电子层",
+              "能级"
+            ],
+            "definition": "能级组是按照电子层和能级关系划分、与周期对应的能级集合。",
+            "example": "第一能级组仅涉及一个s轨道。",
+            "section": "第 2 节 原子结构与元素周期表"
+          },
+          {
+            "name": "元素周期表分区",
+            "difficulty": 2,
+            "description": "按最后填入电子的轨道能级划分的五个区域",
+            "aliases": [
+              "周期表分区"
+            ],
+            "prerequisites": [
+              "价电子",
+              "电子排布式"
+            ],
+            "definition": "元素周期表分区依据元素原子最后填入电子的轨道能级划分为s、p、d、ds、f区。",
+            "example": "镧系和锕系属于f区元素。"
+          },
+          {
+            "name": "原子半径",
+            "difficulty": 2,
+            "description": "用统计方法确定的元素原子大小参数",
+            "aliases": [],
+            "prerequisites": [
+              "电子云图"
+            ],
+            "definition": "原子半径是依据原子核间距等实验数据统计确定的原子大小参数。",
+            "example": "同主族元素原子半径通常自上而下增大。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "电离能",
+            "difficulty": 2,
+            "description": "气态基态原子或离子失去一个电子所需的最小能量",
+            "aliases": [
+              "ionization energy"
+            ],
+            "prerequisites": [
+              "基态原子"
+            ],
+            "definition": "电离能是气态基态原子或离子失去一个电子所需要的最小能量。",
+            "example": "同一元素通常有I₂大于I₁。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "第一电离能",
+            "difficulty": 2,
+            "description": "气态基态原子失去第一个电子所需的能量",
+            "aliases": [
+              "I₁"
+            ],
+            "prerequisites": [
+              "电离能"
+            ],
+            "definition": "第一电离能是气态基态原子失去一个电子形成气态一价阳离子所需的能量。",
+            "example": "同周期碱金属的第一电离能通常较小。"
+          },
+          {
+            "name": "电子亲和能",
+            "difficulty": 3,
+            "description": "气态原子获得一个电子时放出的能量",
+            "aliases": [
+              "electron affinity"
+            ],
+            "prerequisites": [
+              "基态原子"
+            ],
+            "definition": "电子亲和能是元素气态原子或离子获得一个电子所放出的能量。",
+            "example": "氯的电子亲和能数据为正值。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "电负性",
+            "difficulty": 2,
+            "description": "原子在化合物中吸引成键电子的相对能力",
+            "aliases": [
+              "electronegativity"
+            ],
+            "prerequisites": [
+              "价电子",
+              "第一电离能",
+              "电子亲和能"
+            ],
+            "definition": "电负性是元素原子在化合物中吸引成键电子能力的相对大小。",
+            "example": "氟的鲍林电负性取4.0。",
+            "section": "第 3 节 元素性质及其变化规律"
+          },
+          {
+            "name": "第一电离能趋势",
+            "difficulty": 2,
+            "description": "第一电离能在周期表中的总体变化规律",
+            "aliases": [],
+            "prerequisites": [
+              "第一电离能",
+              "原子半径"
+            ],
+            "definition": "主族元素第一电离能通常同周期从左到右增大、同主族自上而下减小。",
+            "example": "同周期稀有气体第一电离能通常最大。"
+          },
+          {
+            "name": "电负性趋势",
+            "difficulty": 2,
+            "description": "电负性在周期表中的总体变化规律",
+            "aliases": [],
+            "prerequisites": [
+              "电负性",
+              "原子半径"
+            ],
+            "definition": "主族元素电负性通常同周期从左到右增大、同主族自上而下减小。",
+            "example": "氯的电负性大于钠。"
+          },
+          {
+            "name": "金属性递变",
+            "difficulty": 2,
+            "description": "元素原子失去电子能力随位置变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "原子半径",
+              "第一电离能"
+            ],
+            "definition": "金属性递变表现为元素原子失去电子能力在周期表中的规律性变化。",
+            "example": "同周期从左到右金属元素失电子能力通常减弱。"
+          },
+          {
+            "name": "非金属性递变",
+            "difficulty": 2,
+            "description": "元素原子获得电子能力随位置变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "原子半径",
+              "电负性"
+            ],
+            "definition": "非金属性递变表现为元素原子获得电子能力在周期表中的规律性变化。",
+            "example": "同主族非金属自上而下得电子能力通常减弱。"
+          },
+          {
+            "name": "化学键极性",
+            "difficulty": 3,
+            "description": "共价键中成键电子和电荷分布的不均衡性",
+            "aliases": [],
+            "prerequisites": [
+              "电负性"
+            ],
+            "definition": "化学键极性是由于成键原子电负性不同导致共用电子对偏移的性质。",
+            "example": "H—Cl中共用电子对偏向氯原子。"
+          },
+          {
+            "name": "电负性应用",
+            "difficulty": 3,
+            "description": "利用电负性分析电荷分布并预测反应变化",
+            "aliases": [],
+            "prerequisites": [
+              "电负性",
+              "化学键极性"
+            ],
+            "definition": "电负性应用是依据原子吸引电子能力判断键中电荷分布及可能反应重组。",
+            "example": "电负性可用于分析甲醛与蛋白质的反应部位。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 原子结构模型",
+            "section_key": "e62569b8d0",
+            "page_range": [
+              12,
+              17
+            ]
+          },
+          {
+            "name": "第 2 节 原子结构与元素周期表",
+            "section_key": "f0f34a8641",
+            "page_range": [
+              17,
+              27
+            ]
+          },
+          {
+            "name": "第 3 节 元素性质及其变化规律",
+            "section_key": "29cfed31f5",
+            "page_range": [
+              27,
+              44
+            ]
+          }
+        ],
+        "chapter_key": "03ef006998",
+        "metadata": {
+          "volume_id": "d6f398952b02",
+          "file_id": "d6f398952b02",
+          "volume_title": "普通高中教科书 化学 选择性必修2 物质结构与性质",
+          "chapter_order": 1,
+          "raw_heading": "第1 章　原子结构与元素性质"
+        }
+      },
+      {
+        "name": "第2 章 微粒间相互作用与物质性质",
+        "concepts": [
+          {
+            "name": "共价键",
+            "difficulty": 2,
+            "description": "非金属原子间通过共用电子对形成的化学键",
+            "aliases": [
+              "共价键模型"
+            ],
+            "prerequisites": [],
+            "definition": "共价键是原子间通过共用电子对形成的化学键。",
+            "example": "H—H中的氢氢键"
+          },
+          {
+            "name": "共价键饱和性",
+            "difficulty": 3,
+            "description": "原子形成共价键的总数具有一定限度",
+            "aliases": [
+              "饱和性"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "共价键饱和性是指每个原子所能形成的共价键总数一定。",
+            "example": "氮原子最多形成三个共价键"
+          },
+          {
+            "name": "共价键方向性",
+            "difficulty": 3,
+            "description": "共价键沿原子轨道重叠概率最大的方向形成",
+            "aliases": [
+              "方向性"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "共价键方向性是指共价键具有特定的空间取向。",
+            "example": "水分子呈角形结构"
+          },
+          {
+            "name": "σ键",
+            "difficulty": 3,
+            "description": "原子轨道以头碰头方式重叠形成的共价键",
+            "aliases": [
+              "sigma键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "σ键是原子轨道沿核间连线以头碰头方式重叠形成的共价键。",
+            "example": "H—Cl中含有σ键"
+          },
+          {
+            "name": "π键",
+            "difficulty": 3,
+            "description": "原子轨道以肩并肩方式重叠形成的共价键",
+            "aliases": [
+              "pi键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "π键是原子轨道以肩并肩方式重叠形成的共价键。",
+            "example": "N≡N中含有两个π键"
+          },
+          {
+            "name": "极性键",
+            "difficulty": 2,
+            "description": "共用电子偏向电负性较大原子一侧的共价键",
+            "aliases": [
+              "极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "极性键是不同原子成键时共用电子发生偏移而形成的共价键。",
+            "example": "H—Cl是极性键"
+          },
+          {
+            "name": "非极性键",
+            "difficulty": 2,
+            "description": "共用电子不偏向任一原子的共价键",
+            "aliases": [
+              "非极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "非极性键是同种原子成键时共用电子不发生偏移的共价键。",
+            "example": "Cl—Cl是非极性键"
+          },
+          {
+            "name": "键长",
+            "difficulty": 2,
+            "description": "两个成键原子核之间的距离",
+            "aliases": [
+              "核间距"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "键长是两个成键原子的原子核间距离。",
+            "example": "H—H键长为0.074 nm"
+          },
+          {
+            "name": "键角",
+            "difficulty": 2,
+            "description": "多原子分子中两个化学键的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "键角是多原子分子中两个化学键之间的夹角。",
+            "example": "H2O的键角为104.5°"
+          },
+          {
+            "name": "键能",
+            "difficulty": 3,
+            "description": "断开1 mol气态化学键所吸收的能量",
+            "aliases": [
+              "化学键键能"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "键能是断开1 mol气态AB分子中A—B键生成气态原子所吸收的能量。",
+            "example": "H—Cl键能为431 kJ·mol⁻¹"
+          },
+          {
+            "name": "键参数",
+            "difficulty": 2,
+            "description": "表征化学键性质的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "键长",
+              "键角",
+              "键能"
+            ],
+            "definition": "键参数是键长、键角和键能等表征化学键性质的物理量。",
+            "example": "用键能比较键的强弱",
+            "section": "第 1 节 共价键模型"
+          },
+          {
+            "name": "分子轨道理论",
+            "difficulty": 4,
+            "description": "用分子轨道描述分子中电子运动状态的理论",
+            "aliases": [],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "分子轨道理论认为分子中的电子在整个分子中运动并由分子轨道描述。",
+            "example": "解释氧分子的顺磁性"
+          },
+          {
+            "name": "顺磁性",
+            "difficulty": 3,
+            "description": "含有未成对电子的物质被磁场吸引的性质",
+            "aliases": [
+              "顺磁性分子"
+            ],
+            "prerequisites": [
+              "分子轨道理论"
+            ],
+            "definition": "顺磁性是物质因含有未成对电子而被磁场吸引的性质。",
+            "example": "氧分子具有顺磁性",
+            "section": "第 1 节 共价键模型"
+          },
+          {
+            "name": "原子轨道杂化",
+            "difficulty": 4,
+            "description": "能量相近的原子轨道重新组合形成新轨道",
+            "aliases": [
+              "轨道杂化"
+            ],
+            "prerequisites": [
+              "共价键",
+              "原子轨道"
+            ],
+            "definition": "原子轨道杂化是原子内部能量相近的轨道重新组合形成新原子轨道的过程。",
+            "example": "碳原子的2s与2p轨道杂化",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "杂化轨道",
+            "difficulty": 3,
+            "description": "原子轨道杂化后形成的一组新原子轨道",
+            "aliases": [
+              "杂化原子轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "杂化轨道是原子轨道杂化后形成的能量和空间取向改变的新轨道。",
+            "example": "甲烷中碳采用sp³杂化轨道"
+          },
+          {
+            "name": "sp杂化",
+            "difficulty": 3,
+            "description": "一个s轨道与一个p轨道形成两个杂化轨道",
+            "aliases": [
+              "sp杂化轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "sp杂化是一个s轨道和一个p轨道重新组合形成两个杂化轨道。",
+            "example": "乙炔中的碳采用sp杂化",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "sp2杂化",
+            "difficulty": 3,
+            "description": "一个s轨道与两个p轨道形成三个杂化轨道",
+            "aliases": [
+              "sp²杂化轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "sp²杂化是一个s轨道和两个p轨道重新组合形成三个杂化轨道。",
+            "example": "乙烯中的碳采用sp²杂化",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "sp3杂化",
+            "difficulty": 3,
+            "description": "一个s轨道与三个p轨道形成四个杂化轨道",
+            "aliases": [
+              "sp³杂化轨道"
+            ],
+            "prerequisites": [
+              "原子轨道杂化"
+            ],
+            "definition": "sp³杂化是一个s轨道和三个p轨道重新组合形成四个杂化轨道。",
+            "example": "甲烷中的碳采用sp³杂化"
+          },
+          {
+            "name": "分子空间结构",
+            "difficulty": 3,
+            "description": "分子中原子和化学键的三维空间排布",
+            "aliases": [
+              "分子立体结构"
+            ],
+            "prerequisites": [
+              "键角",
+              "杂化轨道"
+            ],
+            "definition": "分子空间结构是分子中原子及化学键的空间排布形式。",
+            "example": "CH4呈正四面体形"
+          },
+          {
+            "name": "价电子对互斥理论",
+            "difficulty": 4,
+            "description": "根据中心原子价电子对相互排斥预测分子结构",
+            "aliases": [
+              "价层电子对互斥理论"
+            ],
+            "prerequisites": [
+              "分子空间结构"
+            ],
+            "definition": "价电子对互斥理论认为中心原子的价电子对尽量远离以形成稳定结构。",
+            "example": "预测CO2呈直线形",
+            "section": "第 2 节 共价键与分子的空间结构"
+          },
+          {
+            "name": "极性分子",
+            "difficulty": 3,
+            "description": "分子正负电荷中心不重合的分子",
+            "aliases": [],
+            "prerequisites": [
+              "极性键",
+              "分子空间结构"
+            ],
+            "definition": "极性分子是分子中正负电荷中心不重合而具有极性的分子。",
+            "example": "H2O是极性分子"
+          },
+          {
+            "name": "非极性分子",
+            "difficulty": 3,
+            "description": "分子正负电荷中心重合的分子",
+            "aliases": [],
+            "prerequisites": [
+              "极性键",
+              "分子空间结构"
+            ],
+            "definition": "非极性分子是分子中正负电荷中心重合而不显极性的分子。",
+            "example": "CO2是非极性分子"
+          },
+          {
+            "name": "离子键",
+            "difficulty": 2,
+            "description": "阴阳离子之间通过静电作用形成的化学键",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "离子键是阴、阳离子之间通过静电作用形成的化学键。",
+            "example": "NaCl中Na⁺与Cl⁻之间的作用"
+          },
+          {
+            "name": "离子键无方向性",
+            "difficulty": 2,
+            "description": "离子可从不同方向吸引异性电荷离子",
+            "aliases": [
+              "离子键的方向性"
+            ],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子键无方向性是指离子能从不同方向吸引带异性电荷的离子。",
+            "example": "Na⁺周围可排列多个Cl⁻"
+          },
+          {
+            "name": "离子键无饱和性",
+            "difficulty": 3,
+            "description": "离子周围可尽可能多排列异性电荷离子",
+            "aliases": [
+              "离子键的饱和性"
+            ],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子键无饱和性是指离子在空间允许时可吸引尽可能多的异性离子。",
+            "example": "CsCl中离子配位数为8"
+          },
+          {
+            "name": "离子极化",
+            "difficulty": 4,
+            "description": "电场作用导致离子中电子分布发生偏移",
+            "aliases": [],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子极化是电场作用下阴、阳离子电子分布发生相对偏移的现象。",
+            "example": "Ag⁺使I⁻发生极化",
+            "section": "第 3 节 离子键、配位键与金属键"
+          },
+          {
+            "name": "配位键",
+            "difficulty": 3,
+            "description": "成键共用电子对由一方单独提供的化学键",
+            "aliases": [
+              "配位共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "配位键是由提供孤电子对的一方与具有空轨道的一方形成的化学键。",
+            "example": "NH3与H⁺形成NH4⁺"
+          },
+          {
+            "name": "配合物",
+            "difficulty": 3,
+            "description": "组成中含有配位键的物质",
+            "aliases": [
+              "配位化合物"
+            ],
+            "prerequisites": [
+              "配位键"
+            ],
+            "definition": "配合物是组成中含有配位键的一类物质。",
+            "example": "[Ag(NH3)2]⁺"
+          },
+          {
+            "name": "中心离子",
+            "difficulty": 2,
+            "description": "配合物中提供空轨道的原子或离子",
+            "aliases": [
+              "中心原子"
+            ],
+            "prerequisites": [
+              "配合物"
+            ],
+            "definition": "中心离子是配合物中能够提供空轨道的中心原子或离子。",
+            "example": "[Cu(H2O)4]²⁺中的Cu²⁺"
+          },
+          {
+            "name": "配体",
+            "difficulty": 2,
+            "description": "配合物中提供孤电子对的分子或离子",
+            "aliases": [],
+            "prerequisites": [
+              "配合物"
+            ],
+            "definition": "配体是配合物中能够提供孤电子对与中心离子结合的分子或离子。",
+            "example": "NH3是二氨合银离子的配体"
+          },
+          {
+            "name": "螯合物",
+            "difficulty": 4,
+            "description": "多齿配体与中心离子形成的稳定配合物",
+            "aliases": [],
+            "prerequisites": [
+              "配合物",
+              "配体"
+            ],
+            "definition": "螯合物是多齿配体通过多个配位原子与中心离子形成的配合物。",
+            "example": "EDTA⁴⁻与金属离子形成螯合物",
+            "section": "第 4 节 分子间作用力"
+          },
+          {
+            "name": "金属键",
+            "difficulty": 2,
+            "description": "金属阳离子与自由电子之间的强相互作用",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "金属键是固态金属中自由电子与金属阳离子之间的强相互作用。",
+            "example": "铜中自由电子与金属阳离子的作用"
+          },
+          {
+            "name": "自由电子",
+            "difficulty": 2,
+            "description": "固态金属中脱离单个原子束缚并运动的电子",
+            "aliases": [],
+            "prerequisites": [
+              "金属键"
+            ],
+            "definition": "自由电子是固态金属中能在金属阳离子之间运动的价电子。",
+            "example": "金属导线中的电子形成电流",
+            "section": "第 3 节 离子键、配位键与金属键"
+          },
+          {
+            "name": "能带理论",
+            "difficulty": 4,
+            "description": "用能带结构解释金属导电等性质的理论",
+            "aliases": [
+              "金属能带理论"
+            ],
+            "prerequisites": [
+              "金属键",
+              "自由电子"
+            ],
+            "definition": "能带理论认为大量原子轨道组合形成能带并据此解释物质导电性。",
+            "example": "金属钠具有导带",
+            "section": "第 3 节 离子键、配位键与金属键"
+          },
+          {
+            "name": "范德华力",
+            "difficulty": 2,
+            "description": "分子间存在的一类相互作用力",
+            "aliases": [
+              "分子间作用力"
+            ],
+            "prerequisites": [],
+            "definition": "范德华力是分子之间存在的相互作用力。",
+            "example": "分子间作用力影响物质沸点",
+            "section": "第 4 节 分子间作用力"
+          },
+          {
+            "name": "氢键",
+            "difficulty": 3,
+            "description": "影响物质性质和生命活动的分子间作用力",
+            "aliases": [],
+            "prerequisites": [
+              "范德华力"
+            ],
+            "definition": "氢键是分子间作用力的一种，对物质性质和生命活动具有重要意义。",
+            "example": "水分子间存在氢键"
+          },
+          {
+            "name": "分子光谱",
+            "difficulty": 3,
+            "description": "分子能级改变时吸收或发射的光谱",
+            "aliases": [],
+            "prerequisites": [
+              "分子轨道理论"
+            ],
+            "definition": "分子光谱是分子从一种能级变到另一种能级时吸收或发射的光谱。",
+            "example": "红外光谱可推测官能团",
+            "section": "第 1 节 共价键模型"
+          },
+          {
+            "name": "比色法",
+            "difficulty": 2,
+            "description": "通过比较颜色深浅测定有色物质浓度的方法",
+            "aliases": [
+              "目视比色法"
+            ],
+            "prerequisites": [
+              "分子光谱"
+            ],
+            "definition": "比色法是通过比较待测溶液与标准色阶颜色深浅确定浓度的方法。",
+            "example": "用邻二氮菲测定Fe²⁺浓度",
+            "section": "第 4 节 分子间作用力"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 共价键模型",
+            "section_key": "5d0ca98d2b",
+            "page_range": [
+              46,
+              52
+            ]
+          },
+          {
+            "name": "第 2 节 共价键与分子的空间结构",
+            "section_key": "17813717a0",
+            "page_range": [
+              52,
+              65
+            ]
+          },
+          {
+            "name": "第 3 节 离子键、配位键与金属键",
+            "section_key": "e5616f1898",
+            "page_range": [
+              65,
+              76
+            ]
+          },
+          {
+            "name": "第 4 节 分子间作用力",
+            "section_key": "aca3f22919",
+            "page_range": [
+              76,
+              94
+            ]
+          }
+        ],
+        "chapter_key": "59fdd07307",
+        "metadata": {
+          "volume_id": "d6f398952b02",
+          "file_id": "d6f398952b02",
+          "volume_title": "普通高中教科书 化学 选择性必修2 物质结构与性质",
+          "chapter_order": 2,
+          "raw_heading": "第2 章　微粒间相互作用与物质性质"
+        }
+      },
+      {
+        "name": "第3 章 不同聚集状态的物质与性质",
+        "concepts": [
+          {
+            "name": "晶体",
+            "difficulty": 2,
+            "description": "内部微粒按一定规律周期性重复排列的固体物质",
+            "aliases": [
+              "crystal"
+            ],
+            "prerequisites": [],
+            "definition": "晶体是内部微粒在空间按一定规律做周期性重复排列构成的固体物质。",
+            "example": "氯化钠、水晶、金刚石"
+          },
+          {
+            "name": "非晶体",
+            "difficulty": 2,
+            "description": "内部微粒无周期性重复排列的固体物质",
+            "aliases": [
+              "non-crystal"
+            ],
+            "prerequisites": [],
+            "definition": "非晶体是内部微粒无周期性重复排列构成的固体物质。",
+            "example": "玻璃、橡胶、石蜡"
+          },
+          {
+            "name": "各向异性",
+            "difficulty": 3,
+            "description": "物质在不同方向上表现出不同物理性质",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "各向异性是物质因内部排列方向不同而在不同方向表现出不同性质。",
+            "example": "晶体在不同方向折射率不同"
+          },
+          {
+            "name": "X射线衍射",
+            "difficulty": 3,
+            "description": "利用X射线衍射研究物质微观结构的方法",
+            "aliases": [
+              "X射线衍射法"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "X射线衍射是通过分析X射线透过晶体产生的衍射现象来测定结构的方法。",
+            "example": "测定氯化钠晶体结构"
+          },
+          {
+            "name": "晶体分类",
+            "difficulty": 3,
+            "description": "依据构成微粒及其相互作用对晶体进行分类",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶体可按构成微粒及微粒间相互作用分为离子晶体、金属晶体、共价晶体和分子晶体。",
+            "example": "氯化钠属于离子晶体"
+          },
+          {
+            "name": "晶胞",
+            "difficulty": 3,
+            "description": "晶体结构中基本的周期性重复单元",
+            "aliases": [
+              "unit cell"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶胞是晶体结构中基本的重复单元，形状通常为平行六面体。",
+            "example": "铜晶体的晶胞为立方体"
+          },
+          {
+            "name": "切割法",
+            "difficulty": 3,
+            "description": "按微粒被相邻晶胞共有的情况计算晶胞微粒数",
+            "aliases": [],
+            "prerequisites": [
+              "晶胞"
+            ],
+            "definition": "切割法是根据顶点、面、棱和体内微粒的共有情况计算晶胞实际微粒数的方法。",
+            "example": "铜晶胞含有4个铜原子",
+            "section": "第 1 节 认识晶体"
+          },
+          {
+            "name": "晶体缺陷",
+            "difficulty": 3,
+            "description": "晶体中存在的空位、错位或杂质原子等结构缺陷",
+            "aliases": [],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "晶体缺陷是实际晶体偏离理想周期性排列的空位、错位或杂质等结构。",
+            "example": "硫化锌中掺入氯化银形成缺陷",
+            "section": "第 1 节 认识晶体"
+          },
+          {
+            "name": "金属晶体",
+            "difficulty": 3,
+            "description": "金属原子通过金属键形成的晶体",
+            "aliases": [
+              "metallic crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "金属晶体是金属原子通过金属键形成的晶体。",
+            "example": "铜、金、镁"
+          },
+          {
+            "name": "金属键",
+            "difficulty": 2,
+            "description": "金属阳离子与整个金属共有自由电子间的作用",
+            "aliases": [
+              "metallic bond"
+            ],
+            "prerequisites": [],
+            "definition": "金属键是金属阳离子和整个金属所共有的自由电子之间的强相互作用。",
+            "example": "铜晶体中的原子由金属键结合"
+          },
+          {
+            "name": "密置层",
+            "difficulty": 3,
+            "description": "等径圆球在平面上的最紧密堆积层",
+            "aliases": [],
+            "prerequisites": [
+              "金属晶体"
+            ],
+            "definition": "密置层是等径圆球在平面上形成的最紧密堆积排列。",
+            "example": "金属晶体堆积模型中的密置层",
+            "section": "第 2 节 几种简单的晶体结构模型"
+          },
+          {
+            "name": "合金",
+            "difficulty": 3,
+            "description": "由金属与其他金属或非金属组成的金属特性物质",
+            "aliases": [],
+            "prerequisites": [
+              "金属晶体"
+            ],
+            "definition": "合金是由一种金属与其他金属或非金属组成并具有金属特性的物质。",
+            "example": "硬铝、铜锌合金"
+          },
+          {
+            "name": "离子晶体",
+            "difficulty": 3,
+            "description": "阴阳离子在空间周期性重复排列形成的晶体",
+            "aliases": [
+              "ionic crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "离子晶体是阴、阳离子在空间呈周期性重复排列形成的晶体。",
+            "example": "氯化钠、氯化铯、氧化镁"
+          },
+          {
+            "name": "晶格能",
+            "difficulty": 4,
+            "description": "离子晶体完全气化为气态离子所吸收的能量",
+            "aliases": [],
+            "prerequisites": [
+              "离子晶体"
+            ],
+            "definition": "晶格能是1 mol离子晶体完全气化为气态阴、阳离子所吸收的能量。",
+            "example": "MgO晶格能大于NaCl",
+            "section": "第 2 节 几种简单的晶体结构模型"
+          },
+          {
+            "name": "离子液体",
+            "difficulty": 3,
+            "description": "在室温或接近室温时呈液态的盐类物质",
+            "aliases": [],
+            "prerequisites": [
+              "离子晶体"
+            ],
+            "definition": "离子液体是在室温和接近室温时呈液态的盐类物质。",
+            "example": "由有机阳离子和无机阴离子组成的盐",
+            "section": "第 2 节 几种简单的晶体结构模型"
+          },
+          {
+            "name": "共价晶体",
+            "difficulty": 3,
+            "description": "原子间通过共价键形成空间网状结构的晶体",
+            "aliases": [
+              "covalent crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "共价晶体是原子间通过共价键形成空间网状结构的晶体。",
+            "example": "金刚石、二氧化硅、碳化硅"
+          },
+          {
+            "name": "分子晶体",
+            "difficulty": 3,
+            "description": "分子在空间周期性排列形成的晶体",
+            "aliases": [
+              "molecular crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "分子晶体是由分子在空间呈周期性重复排列形成的晶体。",
+            "example": "冰、苯晶体、足球烯晶体"
+          },
+          {
+            "name": "液晶",
+            "difficulty": 3,
+            "description": "兼具液体流动性和晶体各向异性的物质",
+            "aliases": [
+              "liquid crystal"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "液晶是在一定温度范围内具有液体流动性并表现出晶体各向异性的物质。",
+            "example": "液晶显示器中的液晶材料",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "纳米材料",
+            "difficulty": 3,
+            "description": "由纳米颗粒及颗粒间界面组成的材料",
+            "aliases": [
+              "nanomaterial"
+            ],
+            "prerequisites": [
+              "晶体"
+            ],
+            "definition": "纳米材料是由直径为几或几十纳米的颗粒和颗粒间界面组成的材料。",
+            "example": "纳米陶瓷、纳米金",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "碳纳米管",
+            "difficulty": 3,
+            "description": "石墨片卷绕形成的无缝中空管状纳米材料",
+            "aliases": [],
+            "prerequisites": [
+              "纳米材料"
+            ],
+            "definition": "碳纳米管是石墨片围绕中心轴按一定螺旋角卷绕形成的无缝中空微管。",
+            "example": "可用作强度很高的超级纤维",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "超原子",
+            "difficulty": 4,
+            "description": "具有与某种原子相似性质的金属原子簇",
+            "aliases": [],
+            "prerequisites": [
+              "纳米材料"
+            ],
+            "definition": "超原子是具有与某种原子相似性质的金属原子簇。",
+            "example": "Al13是卤素超原子",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "超分子",
+            "difficulty": 3,
+            "description": "多个分子通过非共价键组合形成的特定聚集体",
+            "aliases": [
+              "supramolecule"
+            ],
+            "prerequisites": [
+              "氢键",
+              "配位键"
+            ],
+            "definition": "超分子是两个或多个分子通过非共价键组合形成并具有特定结构和功能的聚集体。",
+            "example": "DNA双链、冠醚与金属离子聚集体",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "非共价键",
+            "difficulty": 3,
+            "description": "超分子中分子之间形成聚集体的弱相互作用",
+            "aliases": [],
+            "prerequisites": [
+              "超分子"
+            ],
+            "definition": "非共价键是超分子内部促使分子结合的非共价相互作用，包括氢键和静电作用等。",
+            "example": "DNA两条链间的氢键作用",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "分子识别",
+            "difficulty": 4,
+            "description": "分子依据空间结构和作用力选择性结合的过程",
+            "aliases": [],
+            "prerequisites": [
+              "超分子"
+            ],
+            "definition": "分子识别是分子通过空间结构和相互作用实现选择性结合的过程。",
+            "example": "冠醚选择性结合不同金属离子",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          },
+          {
+            "name": "分子组装",
+            "difficulty": 4,
+            "description": "分子通过协同作用有序形成特定结构的过程",
+            "aliases": [],
+            "prerequisites": [
+              "超分子"
+            ],
+            "definition": "分子组装是分子依靠空间结构和相互作用有序形成特定聚集结构的过程。",
+            "example": "磷脂分子形成细胞膜双层结构",
+            "section": "第 3 节 液晶、纳米材料与超分子"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 认识晶体",
+            "section_key": "6b41f54af0",
+            "page_range": [
+              96,
+              101
+            ]
+          },
+          {
+            "name": "第 2 节 几种简单的晶体结构模型",
+            "section_key": "3ca1387c3c",
+            "page_range": [
+              101,
+              115
+            ]
+          },
+          {
+            "name": "第 3 节 液晶、纳米材料与超分子",
+            "section_key": "4cd134596d",
+            "page_range": [
+              115,
+              138
+            ]
+          }
+        ],
+        "chapter_key": "bf607ed88e",
+        "metadata": {
+          "volume_id": "d6f398952b02",
+          "file_id": "d6f398952b02",
+          "volume_title": "普通高中教科书 化学 选择性必修2 物质结构与性质",
+          "chapter_order": 3,
+          "raw_heading": "第3 章　不同聚集状态的物质与性质"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "e62569b8d0": [
+        12,
+        17
+      ],
+      "第 1 节 原子结构模型": [
+        12,
+        17
+      ],
+      "f0f34a8641": [
+        17,
+        27
+      ],
+      "第 2 节 原子结构与元素周期表": [
+        17,
+        27
+      ],
+      "29cfed31f5": [
+        27,
+        44
+      ],
+      "第 3 节 元素性质及其变化规律": [
+        27,
+        44
+      ],
+      "5d0ca98d2b": [
+        46,
+        52
+      ],
+      "第 1 节 共价键模型": [
+        46,
+        52
+      ],
+      "17813717a0": [
+        52,
+        65
+      ],
+      "第 2 节 共价键与分子的空间结构": [
+        52,
+        65
+      ],
+      "e5616f1898": [
+        65,
+        76
+      ],
+      "第 3 节 离子键、配位键与金属键": [
+        65,
+        76
+      ],
+      "aca3f22919": [
+        76,
+        94
+      ],
+      "第 4 节 分子间作用力": [
+        76,
+        94
+      ],
+      "6b41f54af0": [
+        96,
+        101
+      ],
+      "第 1 节 认识晶体": [
+        96,
+        101
+      ],
+      "3ca1387c3c": [
+        101,
+        115
+      ],
+      "第 2 节 几种简单的晶体结构模型": [
+        101,
+        115
+      ],
+      "4cd134596d": [
+        115,
+        138
+      ],
+      "第 3 节 液晶、纳米材料与超分子": [
+        115,
+        138
+      ]
+    }
+  }
+}

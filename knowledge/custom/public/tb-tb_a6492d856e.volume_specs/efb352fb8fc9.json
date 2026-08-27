@@ -1,0 +1,2641 @@
+{
+  "file_id": "efb352fb8fc9",
+  "text_sha256": "131ddd43e979ade5d454ef089c93ab3e11576dcd77e5bdd1d9fd9ec6f549a2c8",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "化学 必修第一册 第1章",
+        "concepts": [
+          {
+            "name": "化学科学",
+            "difficulty": 1,
+            "description": "研究物质组成、结构、性质、转化及应用的基础学科",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "化学科学是在原子、分子水平上研究物质组成、结构、性质、转化及其应用的一门基础学科。",
+            "example": "研究青蒿素的组成、结构和药用价值"
+          },
+          {
+            "name": "化学科学特征",
+            "difficulty": 2,
+            "description": "从宏观和微观认识物质并以符号表征和创造物质",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "化学科学的主要特征是从宏观和微观认识物质、以符号表征物质并在不同层面创造物质。",
+            "example": "用化学式表示水的组成"
+          },
+          {
+            "name": "化学元素概念",
+            "difficulty": 2,
+            "description": "近代化学诞生的重要理论基础",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "化学元素概念是波义耳提出的近代化学重要理论。",
+            "example": "波义耳于1661年提出元素概念"
+          },
+          {
+            "name": "氧化学说",
+            "difficulty": 2,
+            "description": "推动近代化学革命性发展的化学理论",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "氧化学说是拉瓦锡于1777年提出并推动近代化学发展的理论。",
+            "example": "拉瓦锡提出氧化学说"
+          },
+          {
+            "name": "原子论",
+            "difficulty": 2,
+            "description": "为近代化学发展奠定基础的理论",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "原子论是道尔顿于1803年提出的关于物质微观构成的重要理论。",
+            "example": "道尔顿提出原子论"
+          },
+          {
+            "name": "分子学说",
+            "difficulty": 2,
+            "description": "解释物质组成和原子量测定混乱的理论",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "分子学说是阿伏加德罗于1811年提出的物质组成理论。",
+            "example": "分子学说促进了分子组成研究"
+          },
+          {
+            "name": "元素周期律",
+            "difficulty": 2,
+            "description": "将化学元素及其化合物纳入统一体系",
+            "aliases": [],
+            "prerequisites": [
+              "化学元素概念"
+            ],
+            "definition": "元素周期律揭示了化学元素及其化合物性质的周期性规律。",
+            "example": "门捷列夫于1869年发现元素周期律"
+          },
+          {
+            "name": "观察方法",
+            "difficulty": 1,
+            "description": "有计划有目的地运用感官考察研究对象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "观察是有计划、有目的地运用感官或仪器考察研究对象的方法。",
+            "example": "观察金属钠的颜色和状态"
+          },
+          {
+            "name": "实验方法",
+            "difficulty": 1,
+            "description": "控制条件使现象或过程发生或再现",
+            "aliases": [],
+            "prerequisites": [
+              "观察方法"
+            ],
+            "definition": "实验是根据研究目的控制条件并利用仪器使现象或过程发生或再现的方法。",
+            "example": "加热金属钠观察其与氧气反应"
+          },
+          {
+            "name": "分类方法",
+            "difficulty": 1,
+            "description": "依据物质类别或反应规律预测性质",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "分类是根据物质所属类别或相关反应规律研究和预测物质性质的方法。",
+            "example": "依据金属类别预测钠的性质"
+          },
+          {
+            "name": "比较方法",
+            "difficulty": 1,
+            "description": "通过比较归纳物质的共性和差异",
+            "aliases": [],
+            "prerequisites": [
+              "观察方法"
+            ],
+            "definition": "比较是通过对不同物质或现象进行对照来归纳共性和差异的方法。",
+            "example": "比较钠与铁、铜的活泼性"
+          },
+          {
+            "name": "研究物质程序",
+            "difficulty": 2,
+            "description": "预测、实验、分析、结论并形成新预测",
+            "aliases": [],
+            "prerequisites": [
+              "观察方法",
+              "实验方法",
+              "分类方法",
+              "比较方法"
+            ],
+            "definition": "研究物质性质通常经历预测、实验和观察、分析推理、解释结论以及作出新预测等过程。",
+            "example": "先预测氯气与水反应再设计实验验证"
+          },
+          {
+            "name": "条件控制",
+            "difficulty": 2,
+            "description": "控制温度压强浓度等条件以突出主要因素",
+            "aliases": [],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "条件控制是在实验中控制温度、压强和浓度等因素以保证研究有效的方法。",
+            "example": "比较钠在空气中放置和加热的反应"
+          },
+          {
+            "name": "金属钠性质",
+            "difficulty": 2,
+            "description": "银白色质软且能与水和氧气反应的金属",
+            "aliases": [
+              "钠的性质"
+            ],
+            "prerequisites": [
+              "观察方法",
+              "实验方法"
+            ],
+            "definition": "金属钠是银白色、质软、熔点较低且化学性质活泼的金属单质。",
+            "example": "2Na+2H2O反应生成NaOH和H2"
+          },
+          {
+            "name": "氯气性质",
+            "difficulty": 2,
+            "description": "黄绿色有刺激性气味且化学性质活泼的气体",
+            "aliases": [
+              "氯的性质"
+            ],
+            "prerequisites": [
+              "观察方法",
+              "实验方法"
+            ],
+            "definition": "氯气是黄绿色、有刺激性气味、可溶于水并能与多种物质反应的非金属单质。",
+            "example": "氯气与氢气反应生成氯化氢"
+          },
+          {
+            "name": "氯气与水反应",
+            "difficulty": 3,
+            "description": "氯气溶于水并生成盐酸和次氯酸",
+            "aliases": [],
+            "prerequisites": [
+              "氯气性质",
+              "实验方法"
+            ],
+            "definition": "氯气溶于水后部分与水反应生成盐酸和次氯酸。",
+            "example": "Cl2+H2O=HCl+HClO"
+          },
+          {
+            "name": "次氯酸",
+            "difficulty": 2,
+            "description": "具有漂白和消毒作用的不稳定酸",
+            "aliases": [
+              "HClO"
+            ],
+            "prerequisites": [
+              "氯气与水反应"
+            ],
+            "definition": "次氯酸是氯气与水反应生成的不稳定酸，能使有色物质褪色并杀灭细菌。",
+            "example": "新制氯水可使湿润有色布条褪色"
+          },
+          {
+            "name": "物质的量",
+            "difficulty": 2,
+            "description": "联系宏观量与微观粒子数的物理量",
+            "aliases": [
+              "n"
+            ],
+            "prerequisites": [
+              "微观粒子"
+            ],
+            "definition": "物质的量是联系物质宏观量与原子、分子或离子等微观粒子数量的物理量。",
+            "example": "1 mol水含有6.02×10^23个水分子"
+          },
+          {
+            "name": "摩尔",
+            "difficulty": 2,
+            "description": "物质的量的单位，符号为mol",
+            "aliases": [
+              "mol"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "摩尔是物质的量的单位，1 mol含有6.022 140 76×10^23个基本单元。",
+            "example": "1 mol O2含有1 mol氧气分子"
+          },
+          {
+            "name": "阿伏加德罗常数",
+            "difficulty": 2,
+            "description": "一摩尔物质所含基本单元数",
+            "aliases": [
+              "NA"
+            ],
+            "prerequisites": [
+              "物质的量",
+              "摩尔"
+            ],
+            "definition": "阿伏加德罗常数是1 mol物质所含基本单元数，数值为6.022 140 76×10^23 mol^-1。",
+            "example": "N=nNA计算微粒数"
+          },
+          {
+            "name": "摩尔质量",
+            "difficulty": 2,
+            "description": "单位物质的量物质所具有的质量",
+            "aliases": [
+              "M"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "摩尔质量是单位物质的量的物质所具有的质量，常用单位为g·mol^-1。",
+            "example": "氧气的摩尔质量为32 g·mol^-1"
+          },
+          {
+            "name": "气体摩尔体积",
+            "difficulty": 3,
+            "description": "一定温度压强下单位物质的量气体的体积",
+            "aliases": [
+              "Vm"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "气体摩尔体积是一定温度和压强下单位物质的量气体所占有的体积。",
+            "example": "标准状况下气体摩尔体积约为22.4 L·mol^-1"
+          },
+          {
+            "name": "标准状况",
+            "difficulty": 2,
+            "description": "温度0℃、压强101 kPa的气体状态",
+            "aliases": [
+              "STP"
+            ],
+            "prerequisites": [],
+            "definition": "标准状况是温度为0℃、压强为101 kPa的状况。",
+            "example": "标准状况下1 mol气体约占22.4 L"
+          },
+          {
+            "name": "物质的量浓度",
+            "difficulty": 3,
+            "description": "单位体积溶液所含溶质的物质的量",
+            "aliases": [
+              "cB"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "物质的量浓度是单位体积溶液中所含溶质B的物质的量。",
+            "example": "0.1 mol·L^-1 NaCl溶液"
+          },
+          {
+            "name": "容量瓶",
+            "difficulty": 2,
+            "description": "用于配制一定体积和浓度溶液的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "物质的量浓度"
+            ],
+            "definition": "容量瓶是用于准确配制一定体积溶液的细颈梨形玻璃仪器。",
+            "example": "用100 mL容量瓶配制NaCl溶液"
+          },
+          {
+            "name": "膨松剂",
+            "difficulty": 1,
+            "description": "使面胚形成多孔组织的食品加工物质",
+            "aliases": [],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "膨松剂是在食品加工中使面胚发起并形成多孔组织的一类物质。",
+            "example": "碳酸氢钠可用作膨松剂"
+          },
+          {
+            "name": "碳酸氢钠性质",
+            "difficulty": 2,
+            "description": "受热或与酸反应生成二氧化碳的性质",
+            "aliases": [
+              "小苏打性质"
+            ],
+            "prerequisites": [
+              "实验方法",
+              "膨松剂"
+            ],
+            "definition": "碳酸氢钠受热分解或与酸反应均可生成二氧化碳，且其水溶液呈碱性。",
+            "example": "NaHCO3+HCl生成CO2"
+          },
+          {
+            "name": "复合膨松剂",
+            "difficulty": 2,
+            "description": "由碳酸盐、酸性物质和助剂组成",
+            "aliases": [],
+            "prerequisites": [
+              "膨松剂",
+              "碳酸氢钠性质"
+            ],
+            "definition": "复合膨松剂通常由碳酸盐类、酸性物质和助剂三部分组成。",
+            "example": "碳酸氢钠与柠檬酸组成复合膨松剂"
+          },
+          {
+            "name": "微胶囊技术",
+            "difficulty": 3,
+            "description": "用胶囊壁包嵌核心物质并控制其释放",
+            "aliases": [],
+            "prerequisites": [
+              "复合膨松剂"
+            ],
+            "definition": "微胶囊技术是利用胶囊壁包嵌核心物质以隔绝外界并控制释放的技术。",
+            "example": "避免膨松剂储存时提前反应"
+          }
+        ]
+      },
+      {
+        "name": "化学 必修第一册 第2章",
+        "concepts": [
+          {
+            "name": "物质分类",
+            "difficulty": 1,
+            "description": "依据组成、性质或分散质微粒大小认识物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "根据物质的组成、性质或微粒特征将物质划分为不同类别。",
+            "example": "物质可分为混合物和纯净物"
+          },
+          {
+            "name": "纯净物",
+            "difficulty": 1,
+            "description": "由一种物质组成且组成固定的物质",
+            "aliases": [],
+            "prerequisites": [
+              "物质分类"
+            ],
+            "definition": "由一种物质组成的物质称为纯净物。",
+            "example": "氯化钠是纯净物"
+          },
+          {
+            "name": "混合物",
+            "difficulty": 1,
+            "description": "由多种物质组成的物质",
+            "aliases": [],
+            "prerequisites": [
+              "物质分类"
+            ],
+            "definition": "由两种或两种以上物质组成的物质称为混合物。",
+            "example": "粗食盐水是混合物"
+          },
+          {
+            "name": "单质",
+            "difficulty": 1,
+            "description": "只含一种元素的纯净物",
+            "aliases": [],
+            "prerequisites": [
+              "纯净物"
+            ],
+            "definition": "仅由一种元素组成的纯净物称为单质。",
+            "example": "铁和氧气都是单质"
+          },
+          {
+            "name": "化合物",
+            "difficulty": 1,
+            "description": "由两种或两种以上元素组成的纯净物",
+            "aliases": [],
+            "prerequisites": [
+              "纯净物"
+            ],
+            "definition": "由两种或两种以上元素组成的纯净物称为化合物。",
+            "example": "二氧化碳是化合物"
+          },
+          {
+            "name": "金属单质",
+            "difficulty": 1,
+            "description": "由金属元素组成的单质",
+            "aliases": [],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "由金属元素组成的单质称为金属单质。",
+            "example": "钠和铁都是金属单质"
+          },
+          {
+            "name": "非金属单质",
+            "difficulty": 1,
+            "description": "由非金属元素组成的单质",
+            "aliases": [],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "由非金属元素组成的单质称为非金属单质。",
+            "example": "氯气和氧气都是非金属单质"
+          },
+          {
+            "name": "氧化物",
+            "difficulty": 2,
+            "description": "化合物中的一种类别",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "由两种元素组成且其中一种是氧元素的化合物称为氧化物。",
+            "example": "氧化镁和二氧化碳"
+          },
+          {
+            "name": "酸",
+            "difficulty": 2,
+            "description": "电离时生成的阳离子全部是氢离子的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物",
+              "电解质"
+            ],
+            "definition": "溶于水电离时生成的阳离子全部是H+的化合物称为酸。",
+            "example": "HCl电离生成H+"
+          },
+          {
+            "name": "碱",
+            "difficulty": 2,
+            "description": "电离时生成的阴离子全部是氢氧根离子的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物",
+              "电解质"
+            ],
+            "definition": "溶于水电离时生成的阴离子全部是OH-的化合物称为碱。",
+            "example": "NaOH电离生成OH-"
+          },
+          {
+            "name": "盐",
+            "difficulty": 2,
+            "description": "由金属或铵离子和酸根离子组成的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物",
+              "电解质"
+            ],
+            "definition": "能生成金属阳离子或铵离子和酸根离子的化合物称为盐。",
+            "example": "K2SO4属于盐"
+          },
+          {
+            "name": "游离态",
+            "difficulty": 2,
+            "description": "元素以单质形式存在的状态",
+            "aliases": [],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "元素以单质形式存在时，称为元素的游离态。",
+            "example": "铁单质中的铁处于游离态"
+          },
+          {
+            "name": "化合态",
+            "difficulty": 2,
+            "description": "元素以化合物形式存在的状态",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "元素以化合物形式存在时，称为元素的化合态。",
+            "example": "氧化铁中的铁处于化合态"
+          },
+          {
+            "name": "价类二维图",
+            "difficulty": 3,
+            "description": "结合元素化合价和物质类别表示物质关系",
+            "aliases": [
+              "价—类二维图"
+            ],
+            "prerequisites": [
+              "物质分类",
+              "化合价"
+            ],
+            "definition": "以核心元素化合价和物质类别为两个维度表示物质及其转化关系的图示。",
+            "example": "碳及其化合物的价类二维图"
+          },
+          {
+            "name": "酸性氧化物",
+            "difficulty": 2,
+            "description": "能与碱反应生成盐和水的氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化物",
+              "碱"
+            ],
+            "definition": "能与碱反应生成盐和水的氧化物称为酸性氧化物。",
+            "example": "CO2能与NaOH反应"
+          },
+          {
+            "name": "碱性氧化物",
+            "difficulty": 2,
+            "description": "能与酸反应生成盐和水的氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化物",
+              "酸"
+            ],
+            "definition": "能与酸反应生成盐和水的氧化物称为碱性氧化物。",
+            "example": "CaO能与盐酸反应"
+          },
+          {
+            "name": "分散系",
+            "difficulty": 2,
+            "description": "分散质分散到分散剂中形成的体系",
+            "aliases": [],
+            "prerequisites": [
+              "混合物"
+            ],
+            "definition": "一种或几种物质分散到另一种物质中形成的体系称为分散系。",
+            "example": "溶液、浊液和胶体"
+          },
+          {
+            "name": "分散质",
+            "difficulty": 2,
+            "description": "分散系中被分散的物质",
+            "aliases": [],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "在分散系中被分散的物质称为分散质。",
+            "example": "泥水中的泥土"
+          },
+          {
+            "name": "分散剂",
+            "difficulty": 2,
+            "description": "分散系中容纳分散质的物质",
+            "aliases": [],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "在分散系中分散其他物质的物质称为分散剂。",
+            "example": "泥水中的水"
+          },
+          {
+            "name": "溶液",
+            "difficulty": 2,
+            "description": "分散质微粒小于1纳米的分散系",
+            "aliases": [],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "分散质微粒直径小于1 nm的分散系称为溶液。",
+            "example": "KNO3溶液"
+          },
+          {
+            "name": "浊液",
+            "difficulty": 2,
+            "description": "分散质微粒大于100纳米的分散系",
+            "aliases": [
+              "悬浊液",
+              "乳浊液"
+            ],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "分散质微粒直径大于100 nm的分散系称为浊液。",
+            "example": "泥土悬浊液"
+          },
+          {
+            "name": "胶体",
+            "difficulty": 2,
+            "description": "分散质微粒直径介于1至100纳米的分散系",
+            "aliases": [
+              "胶体分散系"
+            ],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "分散质微粒直径介于1～100 nm的分散系称为胶体。",
+            "example": "氢氧化铁胶体"
+          },
+          {
+            "name": "渗析",
+            "difficulty": 3,
+            "description": "利用半透膜分离胶体杂质的方法",
+            "aliases": [],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "利用半透膜分离胶体中杂质分子或离子的提纯方法称为渗析。",
+            "example": "提纯氢氧化铁胶体"
+          },
+          {
+            "name": "丁达尔现象",
+            "difficulty": 2,
+            "description": "胶体微粒散射可见光形成光亮通路",
+            "aliases": [
+              "丁达尔效应"
+            ],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "可见光通过胶体时因分散质微粒散射而出现光亮通路的现象。",
+            "example": "密林中的光束"
+          },
+          {
+            "name": "电泳",
+            "difficulty": 3,
+            "description": "带电胶体微粒在电场中定向移动",
+            "aliases": [],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "胶体带电分散质微粒在外电场作用下发生定向移动的现象。",
+            "example": "氢氧化铁胶体微粒向负极移动"
+          },
+          {
+            "name": "聚沉",
+            "difficulty": 3,
+            "description": "胶体微粒聚集并沉淀析出的现象",
+            "aliases": [],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "胶体分散质微粒聚集成较大微粒并沉淀析出的现象称为聚沉。",
+            "example": "豆浆中加入硫酸钙制豆腐"
+          },
+          {
+            "name": "电解质",
+            "difficulty": 2,
+            "description": "在水溶液或熔融状态下能导电的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "在水溶液中或熔融状态下能够导电的化合物称为电解质。",
+            "example": "氯化钠是电解质"
+          },
+          {
+            "name": "非电解质",
+            "difficulty": 2,
+            "description": "在水溶液或熔融状态下不能导电的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "在水溶液中或熔融状态下不能导电的化合物称为非电解质。",
+            "example": "酒精属于非电解质"
+          },
+          {
+            "name": "电离",
+            "difficulty": 2,
+            "description": "物质溶于水或熔融时解离成自由移动离子",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "物质溶于水或受热熔化时解离成能够自由移动离子的过程称为电离。",
+            "example": "NaCl电离为Na+和Cl-"
+          },
+          {
+            "name": "电离方程式",
+            "difficulty": 3,
+            "description": "表示电解质电离过程的式子",
+            "aliases": [],
+            "prerequisites": [
+              "电离"
+            ],
+            "definition": "用化学式和离子符号表示电解质电离过程的式子称为电离方程式。",
+            "example": "NaCl=Na++Cl-"
+          },
+          {
+            "name": "强电解质",
+            "difficulty": 3,
+            "description": "在水溶液中能完全电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离"
+            ],
+            "definition": "在水溶液中能够完全电离的电解质称为强电解质。",
+            "example": "HCl是强电解质"
+          },
+          {
+            "name": "弱电解质",
+            "difficulty": 3,
+            "description": "在水溶液中只能部分电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离"
+            ],
+            "definition": "在水溶液中只能部分电离的电解质称为弱电解质。",
+            "example": "醋酸是弱电解质"
+          },
+          {
+            "name": "离子反应",
+            "difficulty": 3,
+            "description": "溶液中离子之间发生的化学反应",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离"
+            ],
+            "definition": "电解质在水溶液中以离子为反应微粒发生的化学反应称为离子反应。",
+            "example": "H+与OH-生成水"
+          },
+          {
+            "name": "离子方程式",
+            "difficulty": 3,
+            "description": "表示离子反应实质的化学式",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应"
+            ],
+            "definition": "用实际参加反应的离子或化学式表示离子反应实质的式子。",
+            "example": "H++OH-=H2O"
+          },
+          {
+            "name": "氧化还原反应",
+            "difficulty": 3,
+            "description": "反应中有元素化合价发生变化的反应",
+            "aliases": [
+              "氧化还原反应"
+            ],
+            "prerequisites": [
+              "化合价"
+            ],
+            "definition": "反应过程中有元素化合价发生变化的化学反应称为氧化还原反应。",
+            "example": "Fe与CuSO4反应"
+          },
+          {
+            "name": "氧化反应",
+            "difficulty": 3,
+            "description": "反应物中元素化合价升高的反应",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "反应物所含某种元素化合价升高的反应称为氧化反应。",
+            "example": "氢气还原氧化铜时氢被氧化"
+          },
+          {
+            "name": "还原反应",
+            "difficulty": 3,
+            "description": "反应物中元素化合价降低的反应",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "反应物所含某种元素化合价降低的反应称为还原反应。",
+            "example": "氧化铜中的铜被还原"
+          },
+          {
+            "name": "电子转移",
+            "difficulty": 3,
+            "description": "氧化还原反应中电子发生转移",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "氧化还原反应中电子从一种原子或离子转移到另一种原子或离子的过程。",
+            "example": "钠向氯转移电子"
+          },
+          {
+            "name": "氧化剂",
+            "difficulty": 3,
+            "description": "所含元素化合价降低的反应物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应",
+              "还原反应"
+            ],
+            "definition": "在氧化还原反应中所含元素化合价降低的反应物称为氧化剂。",
+            "example": "CuO是氢气还原氧化铜的氧化剂"
+          },
+          {
+            "name": "还原剂",
+            "difficulty": 3,
+            "description": "所含元素化合价升高的反应物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应",
+              "氧化反应"
+            ],
+            "definition": "在氧化还原反应中所含元素化合价升高的反应物称为还原剂。",
+            "example": "H2是还原剂"
+          }
+        ]
+      },
+      {
+        "name": "化学 必修第一册 第3章",
+        "concepts": [
+          {
+            "name": "物质类别与化合价",
+            "difficulty": 3,
+            "description": "从物质类别和核心元素化合价分析物质性质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质的类别和元素化合价是预测其性质与转化的重要角度。",
+            "example": "由Fe3+判断铁盐具有氧化性"
+          },
+          {
+            "name": "亚铁盐",
+            "difficulty": 2,
+            "description": "含有+2价铁元素的盐类化合物",
+            "aliases": [],
+            "prerequisites": [
+              "盐类"
+            ],
+            "definition": "亚铁盐是含Fe2+的盐，如硫酸亚铁和氯化亚铁。",
+            "example": "FeSO4、FeCl2"
+          },
+          {
+            "name": "铁盐",
+            "difficulty": 2,
+            "description": "含有+3价铁元素的盐类化合物",
+            "aliases": [],
+            "prerequisites": [
+              "盐类"
+            ],
+            "definition": "铁盐是含Fe3+的盐，如硫酸铁和氯化铁。",
+            "example": "FeCl3溶液"
+          },
+          {
+            "name": "Fe3+的检验",
+            "difficulty": 2,
+            "description": "利用Fe3+与SCN−反应显红色进行检验",
+            "aliases": [
+              "铁离子检验"
+            ],
+            "prerequisites": [
+              "铁盐"
+            ],
+            "definition": "Fe3+能与SCN−反应使溶液呈红色，可据此检验。",
+            "example": "FeCl3中滴加KSCN显红色"
+          },
+          {
+            "name": "Fe3+的氧化性",
+            "difficulty": 3,
+            "description": "Fe3+能使铁、铜和碘离子发生氧化还原反应",
+            "aliases": [],
+            "prerequisites": [
+              "铁盐",
+              "氧化还原反应"
+            ],
+            "definition": "Fe3+具有氧化性，反应中可被还原为Fe2+。",
+            "example": "2Fe3++Cu=2Fe2++Cu2+"
+          },
+          {
+            "name": "Fe2+的双重性",
+            "difficulty": 3,
+            "description": "Fe2+既有氧化性又有较强还原性",
+            "aliases": [
+              "亚铁离子的双重性"
+            ],
+            "prerequisites": [
+              "亚铁盐",
+              "氧化还原反应"
+            ],
+            "definition": "Fe2+既可被还原为铁，也可被氧化为Fe3+。",
+            "example": "Fe2+与Zn反应或被氯水氧化"
+          },
+          {
+            "name": "铁单质的还原性",
+            "difficulty": 2,
+            "description": "铁可被氧化性物质氧化并生成亚铁盐等",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "铁单质中铁为0价，能失电子表现还原性。",
+            "example": "Fe与稀盐酸反应生成Fe2+"
+          },
+          {
+            "name": "铁与水蒸气反应",
+            "difficulty": 2,
+            "description": "铁在高温下与水蒸气反应生成四氧化三铁和氢气",
+            "aliases": [],
+            "prerequisites": [
+              "铁单质的还原性"
+            ],
+            "definition": "铁能在高温条件下被水蒸气氧化并放出氢气。",
+            "example": "3Fe+4H2O(g)=Fe3O4+4H2"
+          },
+          {
+            "name": "铁的置换反应",
+            "difficulty": 2,
+            "description": "铁与酸或某些盐溶液反应置换出氢或金属",
+            "aliases": [],
+            "prerequisites": [
+              "铁单质的还原性"
+            ],
+            "definition": "铁可置换稀酸中的氢或盐溶液中的较不活泼金属。",
+            "example": "Fe+CuSO4=FeSO4+Cu"
+          },
+          {
+            "name": "铁的氧化物",
+            "difficulty": 2,
+            "description": "包括FeO、Fe3O4和Fe2O3等含铁氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "物质类别与化合价"
+            ],
+            "definition": "铁的氧化物是铁元素与氧元素形成的氧化物。",
+            "example": "FeO、Fe3O4、Fe2O3"
+          },
+          {
+            "name": "三氧化二铁的氧化性",
+            "difficulty": 3,
+            "description": "Fe2O3中铁为+3价，可作氧化剂",
+            "aliases": [],
+            "prerequisites": [
+              "铁的氧化物",
+              "氧化还原反应"
+            ],
+            "definition": "三氧化二铁中的Fe3+具有降低化合价的趋势，表现氧化性。",
+            "example": "2Al+Fe2O3=2Fe+Al2O3"
+          },
+          {
+            "name": "碱性氧化物",
+            "difficulty": 2,
+            "description": "能与酸反应生成盐和水的氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化物"
+            ],
+            "definition": "碱性氧化物是能与酸反应生成盐和水的氧化物。",
+            "example": "FeO与盐酸反应"
+          },
+          {
+            "name": "氢氧化亚铁",
+            "difficulty": 2,
+            "description": "白色难溶固体，含+2价铁元素",
+            "aliases": [
+              "Fe(OH)2"
+            ],
+            "prerequisites": [
+              "碱"
+            ],
+            "definition": "氢氧化亚铁是难溶于水的白色含铁碱。",
+            "example": "Fe2+与OH−生成白色沉淀"
+          },
+          {
+            "name": "氢氧化铁",
+            "difficulty": 2,
+            "description": "红褐色难溶固体，含+3价铁元素",
+            "aliases": [
+              "Fe(OH)3"
+            ],
+            "prerequisites": [
+              "碱"
+            ],
+            "definition": "氢氧化铁是难溶于水的红褐色含铁碱。",
+            "example": "Fe3+与OH−生成红褐色沉淀"
+          },
+          {
+            "name": "氢氧化亚铁不稳定性",
+            "difficulty": 3,
+            "description": "氢氧化亚铁易被空气中的氧气氧化",
+            "aliases": [],
+            "prerequisites": [
+              "氢氧化亚铁",
+              "氢氧化铁"
+            ],
+            "definition": "氢氧化亚铁在空气中会由白色逐渐转变为红褐色氢氧化铁。",
+            "example": "4Fe(OH)2+O2+2H2O=4Fe(OH)3"
+          },
+          {
+            "name": "铁的价类转化",
+            "difficulty": 3,
+            "description": "铁及其化合物可按价态和类别相互转化",
+            "aliases": [
+              "铁及其化合物转化"
+            ],
+            "prerequisites": [
+              "物质类别与化合价",
+              "氧化还原反应"
+            ],
+            "definition": "相同价态物质可借助复分解反应转化，不同价态可借助氧化还原反应转化。",
+            "example": "Fe2+转化为Fe3+"
+          },
+          {
+            "name": "硫元素价态",
+            "difficulty": 2,
+            "description": "自然界硫主要以−2、0、+4、+6价存在",
+            "aliases": [],
+            "prerequisites": [
+              "物质类别与化合价"
+            ],
+            "definition": "硫及其化合物中的硫元素具有多种化合价。",
+            "example": "H2S、S、SO2、H2SO4"
+          },
+          {
+            "name": "硫的自然转化",
+            "difficulty": 3,
+            "description": "自然界中不同价态硫通过氧化还原等过程转化",
+            "aliases": [],
+            "prerequisites": [
+              "硫元素价态",
+              "氧化还原反应"
+            ],
+            "definition": "硫元素可在火山、空气、水和微生物作用下发生多价态转化。",
+            "example": "SO2被氧化成SO3"
+          },
+          {
+            "name": "二氧化硫",
+            "difficulty": 2,
+            "description": "硫元素为+4价的氧化物，可转化为三氧化硫",
+            "aliases": [
+              "SO2"
+            ],
+            "prerequisites": [
+              "硫元素价态",
+              "氧化物"
+            ],
+            "definition": "二氧化硫是含+4价硫的氧化物，能在一定条件下被氧化。",
+            "example": "SO2在氧气和水蒸气存在下转化"
+          },
+          {
+            "name": "氮的固定",
+            "difficulty": 3,
+            "description": "将氮气转化为氨或氮氧化物的过程",
+            "aliases": [
+              "固氮"
+            ],
+            "prerequisites": [
+              "氮气",
+              "氧化还原反应"
+            ],
+            "definition": "氮的固定是以氮气为核心将游离态氮转化为化合态氮。",
+            "example": "N2与H2合成NH3"
+          },
+          {
+            "name": "氮气",
+            "difficulty": 2,
+            "description": "性质稳定、氧化性和还原性都很弱的单质",
+            "aliases": [
+              "N2"
+            ],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "氮气是由氮元素组成的稳定单质，可参与氮的固定。",
+            "example": "高温高压下合成氨"
+          },
+          {
+            "name": "一氧化氮",
+            "difficulty": 2,
+            "description": "无色难溶于水的气体，能迅速被氧气氧化",
+            "aliases": [
+              "NO"
+            ],
+            "prerequisites": [
+              "氮气",
+              "氧化还原反应"
+            ],
+            "definition": "一氧化氮是氮为+2价的氮氧化物。",
+            "example": "2NO+O2=2NO2"
+          },
+          {
+            "name": "二氧化氮",
+            "difficulty": 2,
+            "description": "红棕色有毒气体，溶于水生成硝酸和一氧化氮",
+            "aliases": [
+              "NO2"
+            ],
+            "prerequisites": [
+              "一氧化氮"
+            ],
+            "definition": "二氧化氮是氮为+4价的有毒氮氧化物。",
+            "example": "3NO2+H2O=2HNO3+NO"
+          },
+          {
+            "name": "氨",
+            "difficulty": 2,
+            "description": "无色刺激性气体，极易溶于水且易液化",
+            "aliases": [
+              "氨气",
+              "NH3"
+            ],
+            "prerequisites": [
+              "氮气"
+            ],
+            "definition": "氨是氮为−3价的氢化物，水溶液呈弱碱性。",
+            "example": "氨可用作制冷剂"
+          },
+          {
+            "name": "氨水",
+            "difficulty": 2,
+            "description": "氨溶于水形成的弱碱性溶液",
+            "aliases": [
+              "一水合氨溶液"
+            ],
+            "prerequisites": [
+              "氨"
+            ],
+            "definition": "氨水是氨与水形成的溶液，其中一水合氨部分电离。",
+            "example": "氨水使酚酞溶液变红"
+          },
+          {
+            "name": "氨的还原性",
+            "difficulty": 3,
+            "description": "氨中氮为最低价，能被氧化性物质氧化",
+            "aliases": [],
+            "prerequisites": [
+              "氨",
+              "氧化还原反应"
+            ],
+            "definition": "氨中的氮元素化合价具有升高趋势，因此氨表现还原性。",
+            "example": "4NH3+5O2=4NO+6H2O"
+          },
+          {
+            "name": "铵盐",
+            "difficulty": 2,
+            "description": "含有NH4+的盐，受热易分解并能与碱反应",
+            "aliases": [
+              "铵态氮肥"
+            ],
+            "prerequisites": [
+              "盐类",
+              "氨"
+            ],
+            "definition": "铵盐是由铵根离子和酸根离子组成的盐。",
+            "example": "NH4Cl与NaOH共热放出NH3"
+          },
+          {
+            "name": "铵离子检验",
+            "difficulty": 2,
+            "description": "铵盐与强碱共热产生氨气，据此检验NH4+",
+            "aliases": [
+              "NH4+检验"
+            ],
+            "prerequisites": [
+              "铵盐",
+              "碱"
+            ],
+            "definition": "向待测液中加碱并共热，检验逸出氨气即可判断NH4+存在。",
+            "example": "湿润红色石蕊试纸变蓝"
+          },
+          {
+            "name": "实验室制氨气",
+            "difficulty": 2,
+            "description": "氯化铵与氢氧化钙共热制取氨气",
+            "aliases": [],
+            "prerequisites": [
+              "铵盐",
+              "铵离子检验"
+            ],
+            "definition": "实验室常用铵盐与碱共热制取氨气并向下排空气法收集。",
+            "example": "2NH4Cl+Ca(OH)2=2NH3+CaCl2+2H2O"
+          },
+          {
+            "name": "硝酸",
+            "difficulty": 3,
+            "description": "具有酸的一般性质和强氧化性的化工原料",
+            "aliases": [
+              "HNO3"
+            ],
+            "prerequisites": [
+              "酸",
+              "氧化还原反应"
+            ],
+            "definition": "硝酸是易挥发、受热或见光易分解的强氧化性酸。",
+            "example": "硝酸与铜反应"
+          },
+          {
+            "name": "硝酸的强氧化性",
+            "difficulty": 3,
+            "description": "硝酸能氧化多数金属及加热条件下的碳",
+            "aliases": [],
+            "prerequisites": [
+              "硝酸",
+              "氧化还原反应"
+            ],
+            "definition": "硝酸中的氮为+5价，能使多数金属或非金属单质被氧化。",
+            "example": "浓硝酸与铜生成NO2"
+          },
+          {
+            "name": "浓硝酸钝化",
+            "difficulty": 3,
+            "description": "冷的浓硝酸使铁、铝表面形成致密氧化膜",
+            "aliases": [
+              "钝化"
+            ],
+            "prerequisites": [
+              "硝酸的强氧化性"
+            ],
+            "definition": "常温下浓硝酸使铁、铝表面形成氧化膜而阻止继续反应。",
+            "example": "冷浓硝酸可用铝容器盛放"
+          },
+          {
+            "name": "氮循环",
+            "difficulty": 3,
+            "description": "自然界和人类活动中氮及其化合物的转化过程",
+            "aliases": [],
+            "prerequisites": [
+              "氮的固定",
+              "氮气"
+            ],
+            "definition": "氮循环是氮元素在自然环境和生物、工业过程中的循环转化。",
+            "example": "固氮、硝化和植物吸收"
+          },
+          {
+            "name": "氮氧化物污染",
+            "difficulty": 3,
+            "description": "氮氧化物排放可导致雾霾、酸雨和光化学烟雾",
+            "aliases": [],
+            "prerequisites": [
+              "一氧化氮",
+              "二氧化氮",
+              "氮循环"
+            ],
+            "definition": "氮氧化物进入环境后可参与形成多种大气污染现象。",
+            "example": "汽车尾气形成光化学烟雾"
+          },
+          {
+            "name": "水体富营养化",
+            "difficulty": 2,
+            "description": "水体氮元素过量导致藻类大量繁殖的现象",
+            "aliases": [],
+            "prerequisites": [
+              "氮循环"
+            ],
+            "definition": "水体中氮等营养元素过量会造成富营养化并引发藻类疯长。",
+            "example": "农田径流导致藻类覆盖水面"
+          },
+          {
+            "name": "绿色化学",
+            "difficulty": 3,
+            "description": "从源头减少有害物质使用和产生的化学理念",
+            "aliases": [
+              "环境友好化学",
+              "清洁化学"
+            ],
+            "prerequisites": [
+              "氮氧化物污染",
+              "水体富营养化"
+            ],
+            "definition": "绿色化学通过改进原料、过程和产物减少对环境及健康的危害。",
+            "example": "回收利用反应副产物"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {
+      "化学 必修第一册 第1章": [
+        7,
+        46
+      ],
+      "化学 必修第一册 第2章": [
+        47,
+        86
+      ],
+      "化学 必修第一册 第3章": [
+        87,
+        145
+      ]
+    },
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "化学 必修第一册 第1章",
+        "concepts": [
+          {
+            "name": "化学科学",
+            "difficulty": 1,
+            "description": "研究物质组成、结构、性质、转化及应用的基础学科",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "化学科学是在原子、分子水平上研究物质组成、结构、性质、转化及其应用的一门基础学科。",
+            "example": "研究青蒿素的组成、结构和药用价值"
+          },
+          {
+            "name": "化学科学特征",
+            "difficulty": 2,
+            "description": "从宏观和微观认识物质并以符号表征和创造物质",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "化学科学的主要特征是从宏观和微观认识物质、以符号表征物质并在不同层面创造物质。",
+            "example": "用化学式表示水的组成"
+          },
+          {
+            "name": "化学元素概念",
+            "difficulty": 2,
+            "description": "近代化学诞生的重要理论基础",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "化学元素概念是波义耳提出的近代化学重要理论。",
+            "example": "波义耳于1661年提出元素概念"
+          },
+          {
+            "name": "氧化学说",
+            "difficulty": 2,
+            "description": "推动近代化学革命性发展的化学理论",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "氧化学说是拉瓦锡于1777年提出并推动近代化学发展的理论。",
+            "example": "拉瓦锡提出氧化学说"
+          },
+          {
+            "name": "原子论",
+            "difficulty": 2,
+            "description": "为近代化学发展奠定基础的理论",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "原子论是道尔顿于1803年提出的关于物质微观构成的重要理论。",
+            "example": "道尔顿提出原子论"
+          },
+          {
+            "name": "分子学说",
+            "difficulty": 2,
+            "description": "解释物质组成和原子量测定混乱的理论",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "分子学说是阿伏加德罗于1811年提出的物质组成理论。",
+            "example": "分子学说促进了分子组成研究"
+          },
+          {
+            "name": "元素周期律",
+            "difficulty": 2,
+            "description": "将化学元素及其化合物纳入统一体系",
+            "aliases": [],
+            "prerequisites": [
+              "化学元素概念"
+            ],
+            "definition": "元素周期律揭示了化学元素及其化合物性质的周期性规律。",
+            "example": "门捷列夫于1869年发现元素周期律"
+          },
+          {
+            "name": "观察方法",
+            "difficulty": 1,
+            "description": "有计划有目的地运用感官考察研究对象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "观察是有计划、有目的地运用感官或仪器考察研究对象的方法。",
+            "example": "观察金属钠的颜色和状态"
+          },
+          {
+            "name": "实验方法",
+            "difficulty": 1,
+            "description": "控制条件使现象或过程发生或再现",
+            "aliases": [],
+            "prerequisites": [
+              "观察方法"
+            ],
+            "definition": "实验是根据研究目的控制条件并利用仪器使现象或过程发生或再现的方法。",
+            "example": "加热金属钠观察其与氧气反应"
+          },
+          {
+            "name": "分类方法",
+            "difficulty": 1,
+            "description": "依据物质类别或反应规律预测性质",
+            "aliases": [],
+            "prerequisites": [
+              "化学科学"
+            ],
+            "definition": "分类是根据物质所属类别或相关反应规律研究和预测物质性质的方法。",
+            "example": "依据金属类别预测钠的性质"
+          },
+          {
+            "name": "比较方法",
+            "difficulty": 1,
+            "description": "通过比较归纳物质的共性和差异",
+            "aliases": [],
+            "prerequisites": [
+              "观察方法"
+            ],
+            "definition": "比较是通过对不同物质或现象进行对照来归纳共性和差异的方法。",
+            "example": "比较钠与铁、铜的活泼性"
+          },
+          {
+            "name": "研究物质程序",
+            "difficulty": 2,
+            "description": "预测、实验、分析、结论并形成新预测",
+            "aliases": [],
+            "prerequisites": [
+              "观察方法",
+              "实验方法",
+              "分类方法",
+              "比较方法"
+            ],
+            "definition": "研究物质性质通常经历预测、实验和观察、分析推理、解释结论以及作出新预测等过程。",
+            "example": "先预测氯气与水反应再设计实验验证"
+          },
+          {
+            "name": "条件控制",
+            "difficulty": 2,
+            "description": "控制温度压强浓度等条件以突出主要因素",
+            "aliases": [],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "条件控制是在实验中控制温度、压强和浓度等因素以保证研究有效的方法。",
+            "example": "比较钠在空气中放置和加热的反应"
+          },
+          {
+            "name": "金属钠性质",
+            "difficulty": 2,
+            "description": "银白色质软且能与水和氧气反应的金属",
+            "aliases": [
+              "钠的性质"
+            ],
+            "prerequisites": [
+              "观察方法",
+              "实验方法"
+            ],
+            "definition": "金属钠是银白色、质软、熔点较低且化学性质活泼的金属单质。",
+            "example": "2Na+2H2O反应生成NaOH和H2"
+          },
+          {
+            "name": "氯气性质",
+            "difficulty": 2,
+            "description": "黄绿色有刺激性气味且化学性质活泼的气体",
+            "aliases": [
+              "氯的性质"
+            ],
+            "prerequisites": [
+              "观察方法",
+              "实验方法"
+            ],
+            "definition": "氯气是黄绿色、有刺激性气味、可溶于水并能与多种物质反应的非金属单质。",
+            "example": "氯气与氢气反应生成氯化氢"
+          },
+          {
+            "name": "氯气与水反应",
+            "difficulty": 3,
+            "description": "氯气溶于水并生成盐酸和次氯酸",
+            "aliases": [],
+            "prerequisites": [
+              "氯气性质",
+              "实验方法"
+            ],
+            "definition": "氯气溶于水后部分与水反应生成盐酸和次氯酸。",
+            "example": "Cl2+H2O=HCl+HClO"
+          },
+          {
+            "name": "次氯酸",
+            "difficulty": 2,
+            "description": "具有漂白和消毒作用的不稳定酸",
+            "aliases": [
+              "HClO"
+            ],
+            "prerequisites": [
+              "氯气与水反应"
+            ],
+            "definition": "次氯酸是氯气与水反应生成的不稳定酸，能使有色物质褪色并杀灭细菌。",
+            "example": "新制氯水可使湿润有色布条褪色"
+          },
+          {
+            "name": "物质的量",
+            "difficulty": 2,
+            "description": "联系宏观量与微观粒子数的物理量",
+            "aliases": [
+              "n"
+            ],
+            "prerequisites": [
+              "微观粒子"
+            ],
+            "definition": "物质的量是联系物质宏观量与原子、分子或离子等微观粒子数量的物理量。",
+            "example": "1 mol水含有6.02×10^23个水分子"
+          },
+          {
+            "name": "摩尔",
+            "difficulty": 2,
+            "description": "物质的量的单位，符号为mol",
+            "aliases": [
+              "mol"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "摩尔是物质的量的单位，1 mol含有6.022 140 76×10^23个基本单元。",
+            "example": "1 mol O2含有1 mol氧气分子"
+          },
+          {
+            "name": "阿伏加德罗常数",
+            "difficulty": 2,
+            "description": "一摩尔物质所含基本单元数",
+            "aliases": [
+              "NA"
+            ],
+            "prerequisites": [
+              "物质的量",
+              "摩尔"
+            ],
+            "definition": "阿伏加德罗常数是1 mol物质所含基本单元数，数值为6.022 140 76×10^23 mol^-1。",
+            "example": "N=nNA计算微粒数"
+          },
+          {
+            "name": "摩尔质量",
+            "difficulty": 2,
+            "description": "单位物质的量物质所具有的质量",
+            "aliases": [
+              "M"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "摩尔质量是单位物质的量的物质所具有的质量，常用单位为g·mol^-1。",
+            "example": "氧气的摩尔质量为32 g·mol^-1"
+          },
+          {
+            "name": "气体摩尔体积",
+            "difficulty": 3,
+            "description": "一定温度压强下单位物质的量气体的体积",
+            "aliases": [
+              "Vm"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "气体摩尔体积是一定温度和压强下单位物质的量气体所占有的体积。",
+            "example": "标准状况下气体摩尔体积约为22.4 L·mol^-1"
+          },
+          {
+            "name": "标准状况",
+            "difficulty": 2,
+            "description": "温度0℃、压强101 kPa的气体状态",
+            "aliases": [
+              "STP"
+            ],
+            "prerequisites": [],
+            "definition": "标准状况是温度为0℃、压强为101 kPa的状况。",
+            "example": "标准状况下1 mol气体约占22.4 L"
+          },
+          {
+            "name": "物质的量浓度",
+            "difficulty": 3,
+            "description": "单位体积溶液所含溶质的物质的量",
+            "aliases": [
+              "cB"
+            ],
+            "prerequisites": [
+              "物质的量"
+            ],
+            "definition": "物质的量浓度是单位体积溶液中所含溶质B的物质的量。",
+            "example": "0.1 mol·L^-1 NaCl溶液"
+          },
+          {
+            "name": "容量瓶",
+            "difficulty": 2,
+            "description": "用于配制一定体积和浓度溶液的仪器",
+            "aliases": [],
+            "prerequisites": [
+              "物质的量浓度"
+            ],
+            "definition": "容量瓶是用于准确配制一定体积溶液的细颈梨形玻璃仪器。",
+            "example": "用100 mL容量瓶配制NaCl溶液"
+          },
+          {
+            "name": "膨松剂",
+            "difficulty": 1,
+            "description": "使面胚形成多孔组织的食品加工物质",
+            "aliases": [],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "膨松剂是在食品加工中使面胚发起并形成多孔组织的一类物质。",
+            "example": "碳酸氢钠可用作膨松剂"
+          },
+          {
+            "name": "碳酸氢钠性质",
+            "difficulty": 2,
+            "description": "受热或与酸反应生成二氧化碳的性质",
+            "aliases": [
+              "小苏打性质"
+            ],
+            "prerequisites": [
+              "实验方法",
+              "膨松剂"
+            ],
+            "definition": "碳酸氢钠受热分解或与酸反应均可生成二氧化碳，且其水溶液呈碱性。",
+            "example": "NaHCO3+HCl生成CO2"
+          },
+          {
+            "name": "复合膨松剂",
+            "difficulty": 2,
+            "description": "由碳酸盐、酸性物质和助剂组成",
+            "aliases": [],
+            "prerequisites": [
+              "膨松剂",
+              "碳酸氢钠性质"
+            ],
+            "definition": "复合膨松剂通常由碳酸盐类、酸性物质和助剂三部分组成。",
+            "example": "碳酸氢钠与柠檬酸组成复合膨松剂"
+          },
+          {
+            "name": "微胶囊技术",
+            "difficulty": 3,
+            "description": "用胶囊壁包嵌核心物质并控制其释放",
+            "aliases": [],
+            "prerequisites": [
+              "复合膨松剂"
+            ],
+            "definition": "微胶囊技术是利用胶囊壁包嵌核心物质以隔绝外界并控制释放的技术。",
+            "example": "避免膨松剂储存时提前反应"
+          }
+        ],
+        "chapter_key": "ab79ff55cc",
+        "metadata": {
+          "volume_id": "efb352fb8fc9",
+          "file_id": "efb352fb8fc9",
+          "volume_title": "普通高中教科书 化学 必修第一册",
+          "chapter_order": 1,
+          "raw_heading": "化学 必修第一册 第1章",
+          "page_range": [
+            7,
+            46
+          ]
+        }
+      },
+      {
+        "name": "化学 必修第一册 第2章",
+        "concepts": [
+          {
+            "name": "物质分类",
+            "difficulty": 1,
+            "description": "依据组成、性质或分散质微粒大小认识物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "根据物质的组成、性质或微粒特征将物质划分为不同类别。",
+            "example": "物质可分为混合物和纯净物"
+          },
+          {
+            "name": "纯净物",
+            "difficulty": 1,
+            "description": "由一种物质组成且组成固定的物质",
+            "aliases": [],
+            "prerequisites": [
+              "物质分类"
+            ],
+            "definition": "由一种物质组成的物质称为纯净物。",
+            "example": "氯化钠是纯净物"
+          },
+          {
+            "name": "混合物",
+            "difficulty": 1,
+            "description": "由多种物质组成的物质",
+            "aliases": [],
+            "prerequisites": [
+              "物质分类"
+            ],
+            "definition": "由两种或两种以上物质组成的物质称为混合物。",
+            "example": "粗食盐水是混合物"
+          },
+          {
+            "name": "单质",
+            "difficulty": 1,
+            "description": "只含一种元素的纯净物",
+            "aliases": [],
+            "prerequisites": [
+              "纯净物"
+            ],
+            "definition": "仅由一种元素组成的纯净物称为单质。",
+            "example": "铁和氧气都是单质"
+          },
+          {
+            "name": "化合物",
+            "difficulty": 1,
+            "description": "由两种或两种以上元素组成的纯净物",
+            "aliases": [],
+            "prerequisites": [
+              "纯净物"
+            ],
+            "definition": "由两种或两种以上元素组成的纯净物称为化合物。",
+            "example": "二氧化碳是化合物"
+          },
+          {
+            "name": "金属单质",
+            "difficulty": 1,
+            "description": "由金属元素组成的单质",
+            "aliases": [],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "由金属元素组成的单质称为金属单质。",
+            "example": "钠和铁都是金属单质"
+          },
+          {
+            "name": "非金属单质",
+            "difficulty": 1,
+            "description": "由非金属元素组成的单质",
+            "aliases": [],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "由非金属元素组成的单质称为非金属单质。",
+            "example": "氯气和氧气都是非金属单质"
+          },
+          {
+            "name": "氧化物",
+            "difficulty": 2,
+            "description": "化合物中的一种类别",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "由两种元素组成且其中一种是氧元素的化合物称为氧化物。",
+            "example": "氧化镁和二氧化碳"
+          },
+          {
+            "name": "酸",
+            "difficulty": 2,
+            "description": "电离时生成的阳离子全部是氢离子的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物",
+              "电解质"
+            ],
+            "definition": "溶于水电离时生成的阳离子全部是H+的化合物称为酸。",
+            "example": "HCl电离生成H+"
+          },
+          {
+            "name": "碱",
+            "difficulty": 2,
+            "description": "电离时生成的阴离子全部是氢氧根离子的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物",
+              "电解质"
+            ],
+            "definition": "溶于水电离时生成的阴离子全部是OH-的化合物称为碱。",
+            "example": "NaOH电离生成OH-"
+          },
+          {
+            "name": "盐",
+            "difficulty": 2,
+            "description": "由金属或铵离子和酸根离子组成的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物",
+              "电解质"
+            ],
+            "definition": "能生成金属阳离子或铵离子和酸根离子的化合物称为盐。",
+            "example": "K2SO4属于盐"
+          },
+          {
+            "name": "游离态",
+            "difficulty": 2,
+            "description": "元素以单质形式存在的状态",
+            "aliases": [],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "元素以单质形式存在时，称为元素的游离态。",
+            "example": "铁单质中的铁处于游离态"
+          },
+          {
+            "name": "化合态",
+            "difficulty": 2,
+            "description": "元素以化合物形式存在的状态",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "元素以化合物形式存在时，称为元素的化合态。",
+            "example": "氧化铁中的铁处于化合态"
+          },
+          {
+            "name": "价类二维图",
+            "difficulty": 3,
+            "description": "结合元素化合价和物质类别表示物质关系",
+            "aliases": [
+              "价—类二维图"
+            ],
+            "prerequisites": [
+              "物质分类",
+              "化合价"
+            ],
+            "definition": "以核心元素化合价和物质类别为两个维度表示物质及其转化关系的图示。",
+            "example": "碳及其化合物的价类二维图"
+          },
+          {
+            "name": "酸性氧化物",
+            "difficulty": 2,
+            "description": "能与碱反应生成盐和水的氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化物",
+              "碱"
+            ],
+            "definition": "能与碱反应生成盐和水的氧化物称为酸性氧化物。",
+            "example": "CO2能与NaOH反应"
+          },
+          {
+            "name": "碱性氧化物",
+            "difficulty": 2,
+            "description": "能与酸反应生成盐和水的氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化物",
+              "酸"
+            ],
+            "definition": "能与酸反应生成盐和水的氧化物称为碱性氧化物。",
+            "example": "CaO能与盐酸反应"
+          },
+          {
+            "name": "分散系",
+            "difficulty": 2,
+            "description": "分散质分散到分散剂中形成的体系",
+            "aliases": [],
+            "prerequisites": [
+              "混合物"
+            ],
+            "definition": "一种或几种物质分散到另一种物质中形成的体系称为分散系。",
+            "example": "溶液、浊液和胶体"
+          },
+          {
+            "name": "分散质",
+            "difficulty": 2,
+            "description": "分散系中被分散的物质",
+            "aliases": [],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "在分散系中被分散的物质称为分散质。",
+            "example": "泥水中的泥土"
+          },
+          {
+            "name": "分散剂",
+            "difficulty": 2,
+            "description": "分散系中容纳分散质的物质",
+            "aliases": [],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "在分散系中分散其他物质的物质称为分散剂。",
+            "example": "泥水中的水"
+          },
+          {
+            "name": "溶液",
+            "difficulty": 2,
+            "description": "分散质微粒小于1纳米的分散系",
+            "aliases": [],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "分散质微粒直径小于1 nm的分散系称为溶液。",
+            "example": "KNO3溶液"
+          },
+          {
+            "name": "浊液",
+            "difficulty": 2,
+            "description": "分散质微粒大于100纳米的分散系",
+            "aliases": [
+              "悬浊液",
+              "乳浊液"
+            ],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "分散质微粒直径大于100 nm的分散系称为浊液。",
+            "example": "泥土悬浊液"
+          },
+          {
+            "name": "胶体",
+            "difficulty": 2,
+            "description": "分散质微粒直径介于1至100纳米的分散系",
+            "aliases": [
+              "胶体分散系"
+            ],
+            "prerequisites": [
+              "分散系"
+            ],
+            "definition": "分散质微粒直径介于1～100 nm的分散系称为胶体。",
+            "example": "氢氧化铁胶体"
+          },
+          {
+            "name": "渗析",
+            "difficulty": 3,
+            "description": "利用半透膜分离胶体杂质的方法",
+            "aliases": [],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "利用半透膜分离胶体中杂质分子或离子的提纯方法称为渗析。",
+            "example": "提纯氢氧化铁胶体"
+          },
+          {
+            "name": "丁达尔现象",
+            "difficulty": 2,
+            "description": "胶体微粒散射可见光形成光亮通路",
+            "aliases": [
+              "丁达尔效应"
+            ],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "可见光通过胶体时因分散质微粒散射而出现光亮通路的现象。",
+            "example": "密林中的光束"
+          },
+          {
+            "name": "电泳",
+            "difficulty": 3,
+            "description": "带电胶体微粒在电场中定向移动",
+            "aliases": [],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "胶体带电分散质微粒在外电场作用下发生定向移动的现象。",
+            "example": "氢氧化铁胶体微粒向负极移动"
+          },
+          {
+            "name": "聚沉",
+            "difficulty": 3,
+            "description": "胶体微粒聚集并沉淀析出的现象",
+            "aliases": [],
+            "prerequisites": [
+              "胶体"
+            ],
+            "definition": "胶体分散质微粒聚集成较大微粒并沉淀析出的现象称为聚沉。",
+            "example": "豆浆中加入硫酸钙制豆腐"
+          },
+          {
+            "name": "电解质",
+            "difficulty": 2,
+            "description": "在水溶液或熔融状态下能导电的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "在水溶液中或熔融状态下能够导电的化合物称为电解质。",
+            "example": "氯化钠是电解质"
+          },
+          {
+            "name": "非电解质",
+            "difficulty": 2,
+            "description": "在水溶液或熔融状态下不能导电的化合物",
+            "aliases": [],
+            "prerequisites": [
+              "化合物"
+            ],
+            "definition": "在水溶液中或熔融状态下不能导电的化合物称为非电解质。",
+            "example": "酒精属于非电解质"
+          },
+          {
+            "name": "电离",
+            "difficulty": 2,
+            "description": "物质溶于水或熔融时解离成自由移动离子",
+            "aliases": [],
+            "prerequisites": [
+              "电解质"
+            ],
+            "definition": "物质溶于水或受热熔化时解离成能够自由移动离子的过程称为电离。",
+            "example": "NaCl电离为Na+和Cl-"
+          },
+          {
+            "name": "电离方程式",
+            "difficulty": 3,
+            "description": "表示电解质电离过程的式子",
+            "aliases": [],
+            "prerequisites": [
+              "电离"
+            ],
+            "definition": "用化学式和离子符号表示电解质电离过程的式子称为电离方程式。",
+            "example": "NaCl=Na++Cl-"
+          },
+          {
+            "name": "强电解质",
+            "difficulty": 3,
+            "description": "在水溶液中能完全电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离"
+            ],
+            "definition": "在水溶液中能够完全电离的电解质称为强电解质。",
+            "example": "HCl是强电解质"
+          },
+          {
+            "name": "弱电解质",
+            "difficulty": 3,
+            "description": "在水溶液中只能部分电离的电解质",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离"
+            ],
+            "definition": "在水溶液中只能部分电离的电解质称为弱电解质。",
+            "example": "醋酸是弱电解质"
+          },
+          {
+            "name": "离子反应",
+            "difficulty": 3,
+            "description": "溶液中离子之间发生的化学反应",
+            "aliases": [],
+            "prerequisites": [
+              "电解质",
+              "电离"
+            ],
+            "definition": "电解质在水溶液中以离子为反应微粒发生的化学反应称为离子反应。",
+            "example": "H+与OH-生成水"
+          },
+          {
+            "name": "离子方程式",
+            "difficulty": 3,
+            "description": "表示离子反应实质的化学式",
+            "aliases": [],
+            "prerequisites": [
+              "离子反应"
+            ],
+            "definition": "用实际参加反应的离子或化学式表示离子反应实质的式子。",
+            "example": "H++OH-=H2O"
+          },
+          {
+            "name": "氧化还原反应",
+            "difficulty": 3,
+            "description": "反应中有元素化合价发生变化的反应",
+            "aliases": [
+              "氧化还原反应"
+            ],
+            "prerequisites": [
+              "化合价"
+            ],
+            "definition": "反应过程中有元素化合价发生变化的化学反应称为氧化还原反应。",
+            "example": "Fe与CuSO4反应"
+          },
+          {
+            "name": "氧化反应",
+            "difficulty": 3,
+            "description": "反应物中元素化合价升高的反应",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "反应物所含某种元素化合价升高的反应称为氧化反应。",
+            "example": "氢气还原氧化铜时氢被氧化"
+          },
+          {
+            "name": "还原反应",
+            "difficulty": 3,
+            "description": "反应物中元素化合价降低的反应",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "反应物所含某种元素化合价降低的反应称为还原反应。",
+            "example": "氧化铜中的铜被还原"
+          },
+          {
+            "name": "电子转移",
+            "difficulty": 3,
+            "description": "氧化还原反应中电子发生转移",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "氧化还原反应中电子从一种原子或离子转移到另一种原子或离子的过程。",
+            "example": "钠向氯转移电子"
+          },
+          {
+            "name": "氧化剂",
+            "difficulty": 3,
+            "description": "所含元素化合价降低的反应物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应",
+              "还原反应"
+            ],
+            "definition": "在氧化还原反应中所含元素化合价降低的反应物称为氧化剂。",
+            "example": "CuO是氢气还原氧化铜的氧化剂"
+          },
+          {
+            "name": "还原剂",
+            "difficulty": 3,
+            "description": "所含元素化合价升高的反应物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应",
+              "氧化反应"
+            ],
+            "definition": "在氧化还原反应中所含元素化合价升高的反应物称为还原剂。",
+            "example": "H2是还原剂"
+          }
+        ],
+        "chapter_key": "86763dd6ef",
+        "metadata": {
+          "volume_id": "efb352fb8fc9",
+          "file_id": "efb352fb8fc9",
+          "volume_title": "普通高中教科书 化学 必修第一册",
+          "chapter_order": 2,
+          "raw_heading": "化学 必修第一册 第2章",
+          "page_range": [
+            47,
+            86
+          ]
+        }
+      },
+      {
+        "name": "化学 必修第一册 第3章",
+        "concepts": [
+          {
+            "name": "物质类别与化合价",
+            "difficulty": 3,
+            "description": "从物质类别和核心元素化合价分析物质性质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物质的类别和元素化合价是预测其性质与转化的重要角度。",
+            "example": "由Fe3+判断铁盐具有氧化性"
+          },
+          {
+            "name": "亚铁盐",
+            "difficulty": 2,
+            "description": "含有+2价铁元素的盐类化合物",
+            "aliases": [],
+            "prerequisites": [
+              "盐类"
+            ],
+            "definition": "亚铁盐是含Fe2+的盐，如硫酸亚铁和氯化亚铁。",
+            "example": "FeSO4、FeCl2"
+          },
+          {
+            "name": "铁盐",
+            "difficulty": 2,
+            "description": "含有+3价铁元素的盐类化合物",
+            "aliases": [],
+            "prerequisites": [
+              "盐类"
+            ],
+            "definition": "铁盐是含Fe3+的盐，如硫酸铁和氯化铁。",
+            "example": "FeCl3溶液"
+          },
+          {
+            "name": "Fe3+的检验",
+            "difficulty": 2,
+            "description": "利用Fe3+与SCN−反应显红色进行检验",
+            "aliases": [
+              "铁离子检验"
+            ],
+            "prerequisites": [
+              "铁盐"
+            ],
+            "definition": "Fe3+能与SCN−反应使溶液呈红色，可据此检验。",
+            "example": "FeCl3中滴加KSCN显红色"
+          },
+          {
+            "name": "Fe3+的氧化性",
+            "difficulty": 3,
+            "description": "Fe3+能使铁、铜和碘离子发生氧化还原反应",
+            "aliases": [],
+            "prerequisites": [
+              "铁盐",
+              "氧化还原反应"
+            ],
+            "definition": "Fe3+具有氧化性，反应中可被还原为Fe2+。",
+            "example": "2Fe3++Cu=2Fe2++Cu2+"
+          },
+          {
+            "name": "Fe2+的双重性",
+            "difficulty": 3,
+            "description": "Fe2+既有氧化性又有较强还原性",
+            "aliases": [
+              "亚铁离子的双重性"
+            ],
+            "prerequisites": [
+              "亚铁盐",
+              "氧化还原反应"
+            ],
+            "definition": "Fe2+既可被还原为铁，也可被氧化为Fe3+。",
+            "example": "Fe2+与Zn反应或被氯水氧化"
+          },
+          {
+            "name": "铁单质的还原性",
+            "difficulty": 2,
+            "description": "铁可被氧化性物质氧化并生成亚铁盐等",
+            "aliases": [],
+            "prerequisites": [
+              "氧化还原反应"
+            ],
+            "definition": "铁单质中铁为0价，能失电子表现还原性。",
+            "example": "Fe与稀盐酸反应生成Fe2+"
+          },
+          {
+            "name": "铁与水蒸气反应",
+            "difficulty": 2,
+            "description": "铁在高温下与水蒸气反应生成四氧化三铁和氢气",
+            "aliases": [],
+            "prerequisites": [
+              "铁单质的还原性"
+            ],
+            "definition": "铁能在高温条件下被水蒸气氧化并放出氢气。",
+            "example": "3Fe+4H2O(g)=Fe3O4+4H2"
+          },
+          {
+            "name": "铁的置换反应",
+            "difficulty": 2,
+            "description": "铁与酸或某些盐溶液反应置换出氢或金属",
+            "aliases": [],
+            "prerequisites": [
+              "铁单质的还原性"
+            ],
+            "definition": "铁可置换稀酸中的氢或盐溶液中的较不活泼金属。",
+            "example": "Fe+CuSO4=FeSO4+Cu"
+          },
+          {
+            "name": "铁的氧化物",
+            "difficulty": 2,
+            "description": "包括FeO、Fe3O4和Fe2O3等含铁氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "物质类别与化合价"
+            ],
+            "definition": "铁的氧化物是铁元素与氧元素形成的氧化物。",
+            "example": "FeO、Fe3O4、Fe2O3"
+          },
+          {
+            "name": "三氧化二铁的氧化性",
+            "difficulty": 3,
+            "description": "Fe2O3中铁为+3价，可作氧化剂",
+            "aliases": [],
+            "prerequisites": [
+              "铁的氧化物",
+              "氧化还原反应"
+            ],
+            "definition": "三氧化二铁中的Fe3+具有降低化合价的趋势，表现氧化性。",
+            "example": "2Al+Fe2O3=2Fe+Al2O3"
+          },
+          {
+            "name": "碱性氧化物",
+            "difficulty": 2,
+            "description": "能与酸反应生成盐和水的氧化物",
+            "aliases": [],
+            "prerequisites": [
+              "氧化物"
+            ],
+            "definition": "碱性氧化物是能与酸反应生成盐和水的氧化物。",
+            "example": "FeO与盐酸反应"
+          },
+          {
+            "name": "氢氧化亚铁",
+            "difficulty": 2,
+            "description": "白色难溶固体，含+2价铁元素",
+            "aliases": [
+              "Fe(OH)2"
+            ],
+            "prerequisites": [
+              "碱"
+            ],
+            "definition": "氢氧化亚铁是难溶于水的白色含铁碱。",
+            "example": "Fe2+与OH−生成白色沉淀"
+          },
+          {
+            "name": "氢氧化铁",
+            "difficulty": 2,
+            "description": "红褐色难溶固体，含+3价铁元素",
+            "aliases": [
+              "Fe(OH)3"
+            ],
+            "prerequisites": [
+              "碱"
+            ],
+            "definition": "氢氧化铁是难溶于水的红褐色含铁碱。",
+            "example": "Fe3+与OH−生成红褐色沉淀"
+          },
+          {
+            "name": "氢氧化亚铁不稳定性",
+            "difficulty": 3,
+            "description": "氢氧化亚铁易被空气中的氧气氧化",
+            "aliases": [],
+            "prerequisites": [
+              "氢氧化亚铁",
+              "氢氧化铁"
+            ],
+            "definition": "氢氧化亚铁在空气中会由白色逐渐转变为红褐色氢氧化铁。",
+            "example": "4Fe(OH)2+O2+2H2O=4Fe(OH)3"
+          },
+          {
+            "name": "铁的价类转化",
+            "difficulty": 3,
+            "description": "铁及其化合物可按价态和类别相互转化",
+            "aliases": [
+              "铁及其化合物转化"
+            ],
+            "prerequisites": [
+              "物质类别与化合价",
+              "氧化还原反应"
+            ],
+            "definition": "相同价态物质可借助复分解反应转化，不同价态可借助氧化还原反应转化。",
+            "example": "Fe2+转化为Fe3+"
+          },
+          {
+            "name": "硫元素价态",
+            "difficulty": 2,
+            "description": "自然界硫主要以−2、0、+4、+6价存在",
+            "aliases": [],
+            "prerequisites": [
+              "物质类别与化合价"
+            ],
+            "definition": "硫及其化合物中的硫元素具有多种化合价。",
+            "example": "H2S、S、SO2、H2SO4"
+          },
+          {
+            "name": "硫的自然转化",
+            "difficulty": 3,
+            "description": "自然界中不同价态硫通过氧化还原等过程转化",
+            "aliases": [],
+            "prerequisites": [
+              "硫元素价态",
+              "氧化还原反应"
+            ],
+            "definition": "硫元素可在火山、空气、水和微生物作用下发生多价态转化。",
+            "example": "SO2被氧化成SO3"
+          },
+          {
+            "name": "二氧化硫",
+            "difficulty": 2,
+            "description": "硫元素为+4价的氧化物，可转化为三氧化硫",
+            "aliases": [
+              "SO2"
+            ],
+            "prerequisites": [
+              "硫元素价态",
+              "氧化物"
+            ],
+            "definition": "二氧化硫是含+4价硫的氧化物，能在一定条件下被氧化。",
+            "example": "SO2在氧气和水蒸气存在下转化"
+          },
+          {
+            "name": "氮的固定",
+            "difficulty": 3,
+            "description": "将氮气转化为氨或氮氧化物的过程",
+            "aliases": [
+              "固氮"
+            ],
+            "prerequisites": [
+              "氮气",
+              "氧化还原反应"
+            ],
+            "definition": "氮的固定是以氮气为核心将游离态氮转化为化合态氮。",
+            "example": "N2与H2合成NH3"
+          },
+          {
+            "name": "氮气",
+            "difficulty": 2,
+            "description": "性质稳定、氧化性和还原性都很弱的单质",
+            "aliases": [
+              "N2"
+            ],
+            "prerequisites": [
+              "单质"
+            ],
+            "definition": "氮气是由氮元素组成的稳定单质，可参与氮的固定。",
+            "example": "高温高压下合成氨"
+          },
+          {
+            "name": "一氧化氮",
+            "difficulty": 2,
+            "description": "无色难溶于水的气体，能迅速被氧气氧化",
+            "aliases": [
+              "NO"
+            ],
+            "prerequisites": [
+              "氮气",
+              "氧化还原反应"
+            ],
+            "definition": "一氧化氮是氮为+2价的氮氧化物。",
+            "example": "2NO+O2=2NO2"
+          },
+          {
+            "name": "二氧化氮",
+            "difficulty": 2,
+            "description": "红棕色有毒气体，溶于水生成硝酸和一氧化氮",
+            "aliases": [
+              "NO2"
+            ],
+            "prerequisites": [
+              "一氧化氮"
+            ],
+            "definition": "二氧化氮是氮为+4价的有毒氮氧化物。",
+            "example": "3NO2+H2O=2HNO3+NO"
+          },
+          {
+            "name": "氨",
+            "difficulty": 2,
+            "description": "无色刺激性气体，极易溶于水且易液化",
+            "aliases": [
+              "氨气",
+              "NH3"
+            ],
+            "prerequisites": [
+              "氮气"
+            ],
+            "definition": "氨是氮为−3价的氢化物，水溶液呈弱碱性。",
+            "example": "氨可用作制冷剂"
+          },
+          {
+            "name": "氨水",
+            "difficulty": 2,
+            "description": "氨溶于水形成的弱碱性溶液",
+            "aliases": [
+              "一水合氨溶液"
+            ],
+            "prerequisites": [
+              "氨"
+            ],
+            "definition": "氨水是氨与水形成的溶液，其中一水合氨部分电离。",
+            "example": "氨水使酚酞溶液变红"
+          },
+          {
+            "name": "氨的还原性",
+            "difficulty": 3,
+            "description": "氨中氮为最低价，能被氧化性物质氧化",
+            "aliases": [],
+            "prerequisites": [
+              "氨",
+              "氧化还原反应"
+            ],
+            "definition": "氨中的氮元素化合价具有升高趋势，因此氨表现还原性。",
+            "example": "4NH3+5O2=4NO+6H2O"
+          },
+          {
+            "name": "铵盐",
+            "difficulty": 2,
+            "description": "含有NH4+的盐，受热易分解并能与碱反应",
+            "aliases": [
+              "铵态氮肥"
+            ],
+            "prerequisites": [
+              "盐类",
+              "氨"
+            ],
+            "definition": "铵盐是由铵根离子和酸根离子组成的盐。",
+            "example": "NH4Cl与NaOH共热放出NH3"
+          },
+          {
+            "name": "铵离子检验",
+            "difficulty": 2,
+            "description": "铵盐与强碱共热产生氨气，据此检验NH4+",
+            "aliases": [
+              "NH4+检验"
+            ],
+            "prerequisites": [
+              "铵盐",
+              "碱"
+            ],
+            "definition": "向待测液中加碱并共热，检验逸出氨气即可判断NH4+存在。",
+            "example": "湿润红色石蕊试纸变蓝"
+          },
+          {
+            "name": "实验室制氨气",
+            "difficulty": 2,
+            "description": "氯化铵与氢氧化钙共热制取氨气",
+            "aliases": [],
+            "prerequisites": [
+              "铵盐",
+              "铵离子检验"
+            ],
+            "definition": "实验室常用铵盐与碱共热制取氨气并向下排空气法收集。",
+            "example": "2NH4Cl+Ca(OH)2=2NH3+CaCl2+2H2O"
+          },
+          {
+            "name": "硝酸",
+            "difficulty": 3,
+            "description": "具有酸的一般性质和强氧化性的化工原料",
+            "aliases": [
+              "HNO3"
+            ],
+            "prerequisites": [
+              "酸",
+              "氧化还原反应"
+            ],
+            "definition": "硝酸是易挥发、受热或见光易分解的强氧化性酸。",
+            "example": "硝酸与铜反应"
+          },
+          {
+            "name": "硝酸的强氧化性",
+            "difficulty": 3,
+            "description": "硝酸能氧化多数金属及加热条件下的碳",
+            "aliases": [],
+            "prerequisites": [
+              "硝酸",
+              "氧化还原反应"
+            ],
+            "definition": "硝酸中的氮为+5价，能使多数金属或非金属单质被氧化。",
+            "example": "浓硝酸与铜生成NO2"
+          },
+          {
+            "name": "浓硝酸钝化",
+            "difficulty": 3,
+            "description": "冷的浓硝酸使铁、铝表面形成致密氧化膜",
+            "aliases": [
+              "钝化"
+            ],
+            "prerequisites": [
+              "硝酸的强氧化性"
+            ],
+            "definition": "常温下浓硝酸使铁、铝表面形成氧化膜而阻止继续反应。",
+            "example": "冷浓硝酸可用铝容器盛放"
+          },
+          {
+            "name": "氮循环",
+            "difficulty": 3,
+            "description": "自然界和人类活动中氮及其化合物的转化过程",
+            "aliases": [],
+            "prerequisites": [
+              "氮的固定",
+              "氮气"
+            ],
+            "definition": "氮循环是氮元素在自然环境和生物、工业过程中的循环转化。",
+            "example": "固氮、硝化和植物吸收"
+          },
+          {
+            "name": "氮氧化物污染",
+            "difficulty": 3,
+            "description": "氮氧化物排放可导致雾霾、酸雨和光化学烟雾",
+            "aliases": [],
+            "prerequisites": [
+              "一氧化氮",
+              "二氧化氮",
+              "氮循环"
+            ],
+            "definition": "氮氧化物进入环境后可参与形成多种大气污染现象。",
+            "example": "汽车尾气形成光化学烟雾"
+          },
+          {
+            "name": "水体富营养化",
+            "difficulty": 2,
+            "description": "水体氮元素过量导致藻类大量繁殖的现象",
+            "aliases": [],
+            "prerequisites": [
+              "氮循环"
+            ],
+            "definition": "水体中氮等营养元素过量会造成富营养化并引发藻类疯长。",
+            "example": "农田径流导致藻类覆盖水面"
+          },
+          {
+            "name": "绿色化学",
+            "difficulty": 3,
+            "description": "从源头减少有害物质使用和产生的化学理念",
+            "aliases": [
+              "环境友好化学",
+              "清洁化学"
+            ],
+            "prerequisites": [
+              "氮氧化物污染",
+              "水体富营养化"
+            ],
+            "definition": "绿色化学通过改进原料、过程和产物减少对环境及健康的危害。",
+            "example": "回收利用反应副产物"
+          }
+        ],
+        "chapter_key": "511f3db27e",
+        "metadata": {
+          "volume_id": "efb352fb8fc9",
+          "file_id": "efb352fb8fc9",
+          "volume_title": "普通高中教科书 化学 必修第一册",
+          "chapter_order": 3,
+          "raw_heading": "化学 必修第一册 第3章",
+          "page_range": [
+            87,
+            145
+          ]
+        }
+      }
+    ],
+    "page_ranges": {
+      "ab79ff55cc": [
+        7,
+        46
+      ],
+      "化学 必修第一册 第1章": [
+        7,
+        46
+      ],
+      "86763dd6ef": [
+        47,
+        86
+      ],
+      "化学 必修第一册 第2章": [
+        47,
+        86
+      ],
+      "511f3db27e": [
+        87,
+        145
+      ],
+      "化学 必修第一册 第3章": [
+        87,
+        145
+      ]
+    },
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

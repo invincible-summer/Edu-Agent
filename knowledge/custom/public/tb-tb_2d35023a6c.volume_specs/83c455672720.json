@@ -1,0 +1,3266 @@
+{
+  "file_id": "83c455672720",
+  "text_sha256": "86e43c0a2d982253d9c3d8aa5a9ad217e5a785f69208126fd83f5444d69503b0",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章　功和机械能",
+        "concepts": [
+          {
+            "name": "机械功",
+            "difficulty": 2,
+            "description": "力使物体沿力的方向发生位移的物理过程",
+            "aliases": [
+              "功",
+              "机械功的含义"
+            ],
+            "prerequisites": [],
+            "definition": "力作用于物体并使物体在力的方向上移动一段距离，就说力对物体做了功。",
+            "example": "人推箱子沿推力方向移动，推力对箱子做功。",
+            "section": "第1节 机械功"
+          },
+          {
+            "name": "功的计算",
+            "difficulty": 2,
+            "description": "恒力与位移成角度时功的计算方法",
+            "aliases": [
+              "功的计算公式"
+            ],
+            "prerequisites": [
+              "机械功"
+            ],
+            "definition": "恒力对物体所做的功等于力、位移及其夹角余弦的乘积。",
+            "example": "斜拉购物篮时，功为W=Fscosα。"
+          },
+          {
+            "name": "正功和负功",
+            "difficulty": 2,
+            "description": "根据力与位移夹角判断功的正负",
+            "aliases": [
+              "正功",
+              "负功"
+            ],
+            "prerequisites": [
+              "功的计算"
+            ],
+            "definition": "力与位移夹角小于90°时做正功，大于90°时做负功。",
+            "example": "减速伞拉力与飞机位移相反，对飞机做负功。"
+          },
+          {
+            "name": "功的图像描述",
+            "difficulty": 3,
+            "description": "用力—位移图像的面积表示功",
+            "aliases": [
+              "功的图像"
+            ],
+            "prerequisites": [
+              "机械功"
+            ],
+            "definition": "力方向与位移方向一致时，力—位移图像下的面积表示功的大小。",
+            "example": "恒力图像下的矩形面积等于功。",
+            "section": "第1节 机械功"
+          },
+          {
+            "name": "总功",
+            "difficulty": 3,
+            "description": "多个力分别做功的代数和",
+            "aliases": [
+              "合外力做功"
+            ],
+            "prerequisites": [
+              "正功和负功",
+              "机械功"
+            ],
+            "definition": "所有外力对物体做的总功等于各力所做功的代数和。",
+            "example": "货物受推力、重力和摩擦力时求各功之和。"
+          },
+          {
+            "name": "功率",
+            "difficulty": 2,
+            "description": "描述做功快慢的物理量",
+            "aliases": [
+              "平均功率"
+            ],
+            "prerequisites": [
+              "机械功"
+            ],
+            "definition": "功率是力所做的功与完成这些功所用时间之比。",
+            "example": "挖掘机与人工做功相同，挖掘机用时更短，功率更大。"
+          },
+          {
+            "name": "额定功率",
+            "difficulty": 2,
+            "description": "动力机械长时间工作的最大允许功率",
+            "aliases": [
+              "机械的额定功率"
+            ],
+            "prerequisites": [
+              "功率"
+            ],
+            "definition": "机械长时间工作时允许达到的最大功率称为额定功率。",
+            "example": "汽车爬陡坡时实际功率可能超过额定功率。",
+            "section": "第2节 功 率"
+          },
+          {
+            "name": "功率与力速度",
+            "difficulty": 3,
+            "description": "力与速度同向时功率等于力乘速度",
+            "aliases": [
+              "P=Fv"
+            ],
+            "prerequisites": [
+              "功率"
+            ],
+            "definition": "力与速度方向一致时，功率等于力的大小与速度的乘积。",
+            "example": "汽车增大输出功率可在一定速度下增大牵引力。",
+            "section": "第2节 功 率"
+          },
+          {
+            "name": "动能",
+            "difficulty": 2,
+            "description": "物体因运动而具有的能量",
+            "aliases": [
+              "运动能量"
+            ],
+            "prerequisites": [],
+            "definition": "物体由于运动而具有的能量叫作动能。",
+            "example": "高速飞行的子弹具有较大的动能。"
+          },
+          {
+            "name": "动能定理",
+            "difficulty": 4,
+            "description": "合外力做功等于物体动能的变化量",
+            "aliases": [
+              "动能定理"
+            ],
+            "prerequisites": [
+              "机械功",
+              "动能",
+              "总功"
+            ],
+            "definition": "合外力对物体所做的功等于物体动能的变化量。",
+            "example": "汽车刹车时阻力做负功，汽车动能减小。"
+          },
+          {
+            "name": "重力势能",
+            "difficulty": 2,
+            "description": "物体因处于一定高度而具有的能量",
+            "aliases": [
+              "重力势能Ep"
+            ],
+            "prerequisites": [],
+            "definition": "物体因为处于一定的高度而具有的能量叫作重力势能。",
+            "example": "高处的石头具有重力势能。"
+          },
+          {
+            "name": "零势能参考面",
+            "difficulty": 3,
+            "description": "规定重力势能为零的参考水平面",
+            "aliases": [
+              "零势能参考平面"
+            ],
+            "prerequisites": [
+              "重力势能"
+            ],
+            "definition": "把重力势能规定为零的水平面称为零势能参考平面。",
+            "example": "可选地面或桌面作为零势能参考平面。"
+          },
+          {
+            "name": "重力做功与势能",
+            "difficulty": 3,
+            "description": "重力做功与重力势能改变的关系",
+            "aliases": [
+              "重力势能改变"
+            ],
+            "prerequisites": [
+              "重力势能",
+              "机械功"
+            ],
+            "definition": "重力做功等于物体重力势能减少量的负值，即WG=-ΔEp。",
+            "example": "物体下落时重力做正功，重力势能减少。"
+          },
+          {
+            "name": "弹性势能",
+            "difficulty": 3,
+            "description": "物体因发生弹性形变而具有的能量",
+            "aliases": [
+              "弹性势能"
+            ],
+            "prerequisites": [],
+            "definition": "物体因为发生弹性形变而具有的能量叫作弹性势能。",
+            "example": "压缩弹簧在恢复原状时释放弹性势能。"
+          },
+          {
+            "name": "势能",
+            "difficulty": 3,
+            "description": "由相互作用物体相对位置决定的能量",
+            "aliases": [
+              "势能"
+            ],
+            "prerequisites": [
+              "重力势能",
+              "弹性势能"
+            ],
+            "definition": "由相互作用物体的相对位置决定并储存在系统内的能量叫势能。",
+            "example": "物体与地球共同具有重力势能。"
+          },
+          {
+            "name": "机械能",
+            "difficulty": 3,
+            "description": "物体动能与势能之和",
+            "aliases": [
+              "机械能E"
+            ],
+            "prerequisites": [
+              "动能",
+              "势能"
+            ],
+            "definition": "物体的动能与重力势能或弹性势能之和称为机械能。",
+            "example": "过山车运行时同时具有动能和重力势能。"
+          },
+          {
+            "name": "机械能守恒定律",
+            "difficulty": 4,
+            "description": "只有重力或弹力做功时机械能保持不变",
+            "aliases": [
+              "机械能守恒"
+            ],
+            "prerequisites": [
+              "机械能",
+              "动能定理",
+              "重力做功与势能"
+            ],
+            "definition": "只有重力或弹力做功时，系统的动能与势能相互转化而机械能总量不变。",
+            "example": "忽略阻力时，过山车下滑过程中机械能守恒。",
+            "section": "第5节 科学验证:机械能守恒定律"
+          },
+          {
+            "name": "机械能守恒实验",
+            "difficulty": 4,
+            "description": "用自由落体纸带验证机械能守恒",
+            "aliases": [
+              "验证机械能守恒定律"
+            ],
+            "prerequisites": [
+              "机械能",
+              "机械能守恒定律"
+            ],
+            "definition": "通过测量重物不同位置的速度和高度，比较其动能与重力势能之和来验证机械能守恒。",
+            "example": "用打点计时器记录重物自由下落过程。",
+            "section": "第5节 科学验证:机械能守恒定律"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　神奇之能",
+            "page_range": [
+              7,
+              8
+            ]
+          },
+          {
+            "name": "第1节　机械功",
+            "page_range": [
+              8,
+              13
+            ]
+          },
+          {
+            "name": "第2节　功　率",
+            "page_range": [
+              13,
+              18
+            ]
+          },
+          {
+            "name": "第3节　动能和动能定理",
+            "page_range": [
+              18,
+              23
+            ]
+          },
+          {
+            "name": "第4节　势能及其改变",
+            "page_range": [
+              23,
+              28
+            ]
+          },
+          {
+            "name": "第5节　科学验证：机械能守恒定律",
+            "page_range": [
+              28,
+              39
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章　抛体运动",
+        "concepts": [
+          {
+            "name": "直线运动",
+            "difficulty": 1,
+            "description": "物体运动轨迹可视为直线的运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体运动轨迹为直线的运动称为直线运动。",
+            "example": "苹果竖直下落"
+          },
+          {
+            "name": "曲线运动",
+            "difficulty": 1,
+            "description": "物体运动轨迹为曲线的运动",
+            "aliases": [
+              "曲线的运动"
+            ],
+            "prerequisites": [],
+            "definition": "物体运动轨迹为曲线的运动称为曲线运动。",
+            "example": "水平扔出的飞镖"
+          },
+          {
+            "name": "速度是矢量",
+            "difficulty": 2,
+            "description": "速度同时具有大小和方向",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "速度是既有大小又有方向的物理量。",
+            "example": "风速具有方向",
+            "section": "第1节 运动的合成与分解"
+          },
+          {
+            "name": "曲线运动速度方向",
+            "difficulty": 2,
+            "description": "曲线上某点速度沿该点切线方向",
+            "aliases": [],
+            "prerequisites": [
+              "曲线运动",
+              "速度是矢量"
+            ],
+            "definition": "做曲线运动的物体在某点的速度方向沿曲线在该点的切线方向。",
+            "example": "笔尖沿曲线运动"
+          },
+          {
+            "name": "曲线运动条件",
+            "difficulty": 3,
+            "description": "合力方向不在速度方向所在直线上",
+            "aliases": [],
+            "prerequisites": [
+              "曲线运动"
+            ],
+            "definition": "物体所受合力方向与速度方向不在同一直线上时，物体做曲线运动。",
+            "example": "磁铁吸引运动中的钢珠"
+          },
+          {
+            "name": "合运动",
+            "difficulty": 2,
+            "description": "物体同时参与多个运动时的实际运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体实际发生的运动称为这几个运动的合运动。",
+            "example": "竹筏随水流和划动前进"
+          },
+          {
+            "name": "分运动",
+            "difficulty": 2,
+            "description": "构成物体实际运动的各个运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体参与的各个运动称为物体实际运动的分运动。",
+            "example": "竹筏划动和随水流运动"
+          },
+          {
+            "name": "运动合成与分解",
+            "difficulty": 3,
+            "description": "把复杂运动分解为简单运动进行研究",
+            "aliases": [],
+            "prerequisites": [
+              "合运动",
+              "分运动",
+              "速度是矢量"
+            ],
+            "definition": "运动的合成与分解是研究复杂运动的基本方法，相关物理量遵循矢量运算法则。",
+            "example": "分解竹筏过河运动",
+            "section": "第4节 生活中的抛体运动"
+          },
+          {
+            "name": "匀速直线运动",
+            "difficulty": 1,
+            "description": "速度大小和方向均保持不变的直线运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体沿直线运动且速度保持不变的运动称为匀速直线运动。",
+            "example": "静水中匀速划船"
+          },
+          {
+            "name": "自由落体运动",
+            "difficulty": 2,
+            "description": "物体只在重力作用下由静止开始下落",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体只在重力作用下从静止开始下落的运动称为自由落体运动。",
+            "example": "松手后下落的石子"
+          },
+          {
+            "name": "抛体运动",
+            "difficulty": 2,
+            "description": "以一定初速度抛出后仅受重力作用的运动",
+            "aliases": [],
+            "prerequisites": [
+              "运动合成与分解"
+            ],
+            "definition": "物体以一定初速度抛出后仅在重力作用下所做的运动称为抛体运动。",
+            "example": "抛出的铅球"
+          },
+          {
+            "name": "平抛运动",
+            "difficulty": 3,
+            "description": "初速度水平且仅受重力作用的抛体运动",
+            "aliases": [
+              "水平抛体运动"
+            ],
+            "prerequisites": [
+              "抛体运动",
+              "匀速直线运动",
+              "自由落体运动"
+            ],
+            "definition": "物体以一定初速度沿水平方向抛出并仅受重力作用的运动称为平抛运动。",
+            "example": "桌面飞出的小球"
+          },
+          {
+            "name": "平抛运动规律",
+            "difficulty": 4,
+            "description": "平抛运动可分解为水平匀速和竖直自由落体",
+            "aliases": [],
+            "prerequisites": [
+              "平抛运动",
+              "运动合成与分解"
+            ],
+            "definition": "平抛运动水平方向做匀速直线运动，竖直方向做自由落体运动。",
+            "example": "分析投放物资的运动"
+          },
+          {
+            "name": "平抛运动轨迹",
+            "difficulty": 4,
+            "description": "平抛物体运动轨迹可通过实验描绘",
+            "aliases": [],
+            "prerequisites": [
+              "平抛运动",
+              "平抛运动规律"
+            ],
+            "definition": "通过记录平抛小球的位置并连线，可以描绘其运动轨迹并研究其特点。",
+            "example": "坐标纸描绘小球轨迹",
+            "section": "第3节 科学探究:平抛运动的特点"
+          },
+          {
+            "name": "斜抛运动",
+            "difficulty": 3,
+            "description": "初速度斜向且仅受重力作用的抛体运动",
+            "aliases": [
+              "斜上抛运动",
+              "斜下抛运动"
+            ],
+            "prerequisites": [
+              "抛体运动",
+              "运动合成与分解"
+            ],
+            "definition": "物体以斜向初速度抛出后仅受重力作用的运动称为斜抛运动。",
+            "example": "投掷出的标枪"
+          },
+          {
+            "name": "抛射角",
+            "difficulty": 2,
+            "description": "抛出方向与水平方向的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "斜抛运动"
+            ],
+            "definition": "物体抛出方向与水平方向正方向之间的夹角称为抛射角。",
+            "example": "斜向上抛球的出手角度"
+          },
+          {
+            "name": "射高",
+            "difficulty": 2,
+            "description": "抛体运动物体能到达的最大高度",
+            "aliases": [],
+            "prerequisites": [
+              "斜抛运动"
+            ],
+            "definition": "抛体运动物体能够到达的最大高度称为射高。",
+            "example": "标枪飞行达到的最高点"
+          },
+          {
+            "name": "射程",
+            "difficulty": 2,
+            "description": "抛出点到落地点的水平距离",
+            "aliases": [],
+            "prerequisites": [
+              "斜抛运动"
+            ],
+            "definition": "抛体从抛出点到落地点的水平距离称为射程。",
+            "example": "铅球落点距投掷点的距离"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　更准、更远",
+            "page_range": [
+              39,
+              40
+            ]
+          },
+          {
+            "name": "第1节　运动的合成与分解",
+            "page_range": [
+              40,
+              45
+            ]
+          },
+          {
+            "name": "第2节　平抛运动",
+            "page_range": [
+              45,
+              50
+            ]
+          },
+          {
+            "name": "第3节　科学探究：平抛运动的特点",
+            "page_range": [
+              50,
+              53
+            ]
+          },
+          {
+            "name": "第4节　生活中的抛体运动",
+            "page_range": [
+              53,
+              57
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章　圆周运动",
+        "concepts": [
+          {
+            "name": "圆周运动",
+            "difficulty": 1,
+            "description": "物体沿圆周轨迹进行的运动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体运动轨迹为圆周的运动称为圆周运动。",
+            "example": "钟表指针上的一点绕表心运动。"
+          },
+          {
+            "name": "匀速圆周运动",
+            "difficulty": 2,
+            "description": "相等时间内通过相等弧长的圆周运动。",
+            "aliases": [],
+            "prerequisites": [
+              "圆周运动"
+            ],
+            "definition": "物体在任意相等时间内通过的弧长都相等的圆周运动称为匀速圆周运动。",
+            "example": "正常转动的光盘上某点的运动。"
+          },
+          {
+            "name": "线速度",
+            "difficulty": 2,
+            "description": "用单位时间通过的弧长描述运动快慢。",
+            "aliases": [],
+            "prerequisites": [
+              "匀速圆周运动"
+            ],
+            "definition": "物体通过的弧长与所用时间之比称为线速度。",
+            "example": "自行车轮缘各点的线速度。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "线速度方向",
+            "difficulty": 2,
+            "description": "圆周运动中沿圆周该点的切线方向。",
+            "aliases": [],
+            "prerequisites": [
+              "线速度"
+            ],
+            "definition": "圆周运动线速度的方向总是沿圆周在该点的切线方向。",
+            "example": "砂轮火星沿切线方向飞出。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "角速度",
+            "difficulty": 2,
+            "description": "用单位时间转过的角度描述转动快慢。",
+            "aliases": [],
+            "prerequisites": [
+              "匀速圆周运动"
+            ],
+            "definition": "半径转过的角度与所用时间之比称为角速度。",
+            "example": "小齿轮的角速度较大。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "周期性运动",
+            "difficulty": 1,
+            "description": "每隔相等时间重复原来运动的运动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "每隔一段相等时间就重复原来运动的运动称为周期性运动。",
+            "example": "人的心跳是周期性运动。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "周期",
+            "difficulty": 2,
+            "description": "周期性运动重复一次所需要的时间。",
+            "aliases": [],
+            "prerequisites": [
+              "周期性运动"
+            ],
+            "definition": "周期性运动每重复一次所需要的时间称为周期。",
+            "example": "地球自转周期为一天。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "频率",
+            "difficulty": 2,
+            "description": "单位时间内运动重复的次数。",
+            "aliases": [],
+            "prerequisites": [
+              "周期性运动"
+            ],
+            "definition": "一段时间内运动重复的次数与这段时间之比称为频率。",
+            "example": "频率越高，周期性运动越快。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "转速",
+            "difficulty": 2,
+            "description": "单位时间内物体转过的圈数。",
+            "aliases": [],
+            "prerequisites": [
+              "匀速圆周运动"
+            ],
+            "definition": "物体一段时间内转过的圈数与这段时间之比称为转速。",
+            "example": "硬盘转速用转每分表示。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "线角速度关系",
+            "difficulty": 3,
+            "description": "匀速圆周运动中线速度等于半径乘角速度。",
+            "aliases": [],
+            "prerequisites": [
+              "线速度",
+              "角速度"
+            ],
+            "definition": "匀速圆周运动中线速度大小与半径、角速度满足v=rω。",
+            "example": "同轴转动时半径越大线速度越大。"
+          },
+          {
+            "name": "传动关系",
+            "difficulty": 3,
+            "description": "皮带不打滑时线速度相等，同轴点角速度相同。",
+            "aliases": [
+              "皮带传动",
+              "同轴转动"
+            ],
+            "prerequisites": [
+              "线角速度关系"
+            ],
+            "definition": "传动装置中皮带接触点线速度相等，同轴转动各点角速度相同。",
+            "example": "不打滑皮带连接的两轮轮缘线速度相等。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "向心力",
+            "difficulty": 3,
+            "description": "使物体保持圆周运动、始终指向圆心的力。",
+            "aliases": [],
+            "prerequisites": [
+              "圆周运动"
+            ],
+            "definition": "物体做圆周运动时受到的指向圆心的力称为向心力。",
+            "example": "绳子拉力提供小球的向心力。"
+          },
+          {
+            "name": "向心力影响因素",
+            "difficulty": 3,
+            "description": "向心力随质量、半径和角速度变化。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力",
+              "角速度"
+            ],
+            "definition": "物体所需向心力与质量、转动半径和角速度有关。",
+            "example": "增大转动物体质量，所需向心力变大。"
+          },
+          {
+            "name": "向心加速度",
+            "difficulty": 3,
+            "description": "由向心力产生且始终指向圆心的加速度。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力"
+            ],
+            "definition": "由向心力产生、方向始终指向圆心的加速度称为向心加速度。",
+            "example": "匀速圆周运动的加速度方向不断改变。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "控制变量法",
+            "difficulty": 2,
+            "description": "研究一个因素时保持其他因素不变的方法。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力影响因素"
+            ],
+            "definition": "改变一个因素并控制其他因素不变以研究其影响的方法称为控制变量法。",
+            "example": "研究半径影响时保持质量和角速度不变。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "竖直圆周运动",
+            "difficulty": 4,
+            "description": "物体在竖直平面内沿圆周运动的情形。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力",
+              "向心加速度"
+            ],
+            "definition": "物体在竖直平面内沿圆周运动时，重力等力共同提供向心力。",
+            "example": "小球沿环形轨道运动。"
+          },
+          {
+            "name": "最高点临界速度",
+            "difficulty": 4,
+            "description": "小球恰好通过竖直圆环最高点的速度。",
+            "aliases": [],
+            "prerequisites": [
+              "竖直圆周运动"
+            ],
+            "definition": "小球在圆环最高点恰好不掉落时的速度满足v=√gr。",
+            "example": "过山车通过环形轨道最高点。"
+          },
+          {
+            "name": "弯道外高内低",
+            "difficulty": 3,
+            "description": "利用重力与支持力合力提供转弯向心力。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力"
+            ],
+            "definition": "弯道外高内低可使重力与支持力的合力指向弯道圆心。",
+            "example": "高速公路弯道采用外高内低设计。"
+          },
+          {
+            "name": "失重与超重",
+            "difficulty": 3,
+            "description": "圆周运动中支持力小于或大于重力的状态。",
+            "aliases": [
+              "失重",
+              "超重"
+            ],
+            "prerequisites": [
+              "向心力"
+            ],
+            "definition": "物体所受支持力小于重力时表现为失重，大于重力时表现为超重。",
+            "example": "汽车过凸形路面顶部易失重。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "离心运动",
+            "difficulty": 3,
+            "description": "合外力消失或不足时物体远离圆心的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力",
+              "线速度方向"
+            ],
+            "definition": "物体受到的合外力消失或不足以提供所需向心力时发生离心运动。",
+            "example": "绳断后小球沿切线方向飞出。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "离心现象",
+            "difficulty": 3,
+            "description": "物体因向心力不足而远离圆心的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "离心运动"
+            ],
+            "definition": "做圆周运动的物体因向心力消失或不足而远离圆心的现象称为离心现象。",
+            "example": "洗衣机脱水时水被甩出。",
+            "section": "第3节 离心现象"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　生活中的圆周运动",
+            "page_range": [
+              57,
+              57
+            ]
+          },
+          {
+            "name": "第1节　匀速圆周运动快慢的描述",
+            "page_range": [
+              57,
+              57
+            ]
+          },
+          {
+            "name": "第2节　科学探究：向心力",
+            "page_range": [
+              57,
+              57
+            ]
+          },
+          {
+            "name": "第3节　离心现象",
+            "page_range": [
+              57,
+              83
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4章　万有引力定律及航天",
+        "concepts": [
+          {
+            "name": "地心说",
+            "difficulty": 1,
+            "description": "认为地球位于宇宙中心，其他天体绕地球运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地心说是以地球为中心解释天体运动的宇宙模型。",
+            "example": "托勒密地心体系用本轮和均轮描述行星运动。",
+            "section": "第3节 人类对太空的不懈探索"
+          },
+          {
+            "name": "日心说",
+            "difficulty": 1,
+            "description": "认为太阳是中心，行星围绕太阳运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "日心说是认为太阳位于中心、行星绕太阳运动的宇宙模型。",
+            "example": "哥白尼用日心说描述行星运动。"
+          },
+          {
+            "name": "开普勒第一定律",
+            "difficulty": 2,
+            "description": "行星轨道是椭圆，太阳位于一个焦点上",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "所有行星绕太阳运动的轨道都是椭圆，太阳位于椭圆的一个焦点上。",
+            "example": "地球绕太阳的轨道可近似看成圆形。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "开普勒第二定律",
+            "difficulty": 2,
+            "description": "相等时间内，行星与太阳连线扫过相等面积",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "任何行星与太阳的连线在相等时间内扫过的面积相等。",
+            "example": "行星近日点附近运行较快。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "开普勒第三定律",
+            "difficulty": 3,
+            "description": "轨道半长轴立方与周期平方成正比",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "行星轨道半长轴的立方与公转周期的平方成正比。",
+            "example": "距离太阳越远的行星，公转周期通常越长。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "椭圆偏心率",
+            "difficulty": 2,
+            "description": "表示椭圆扁平程度，圆的偏心率为零",
+            "aliases": [
+              "偏心率"
+            ],
+            "prerequisites": [],
+            "definition": "偏心率是椭圆两焦点间距离与长轴长度的比值。",
+            "example": "地球轨道偏心率较小，可近似看成圆。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "匀速圆周运动",
+            "difficulty": 2,
+            "description": "物体沿圆周运动且速率大小保持不变",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "匀速圆周运动是物体沿圆周运动且速率不变的运动。",
+            "example": "粗略研究行星运动时常采用此模型。"
+          },
+          {
+            "name": "向心力",
+            "difficulty": 2,
+            "description": "维持物体做圆周运动的指向圆心的力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "向心力是使物体产生指向圆心加速度的合力。",
+            "example": "卫星所需向心力由地球引力提供。"
+          },
+          {
+            "name": "万有引力定律",
+            "difficulty": 3,
+            "description": "任意两物体相互吸引，引力与质量乘积成正比",
+            "aliases": [
+              "万有引力"
+            ],
+            "prerequisites": [
+              "开普勒第三定律",
+              "向心力"
+            ],
+            "definition": "任意两个物体间的引力与质量乘积成正比、与距离平方成反比。",
+            "example": "可用公式计算木星与太阳之间的引力。"
+          },
+          {
+            "name": "引力常量",
+            "difficulty": 2,
+            "description": "万有引力公式中的比例常量，通常取6.67×10⁻¹¹",
+            "aliases": [
+              "G"
+            ],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "引力常量G是确定万有引力大小的物理常量。",
+            "example": "卡文迪许实验测出了引力常量。"
+          },
+          {
+            "name": "月—地检验",
+            "difficulty": 3,
+            "description": "比较月球轨道加速度与地面重力加速度",
+            "aliases": [
+              "牛顿的月—地检验"
+            ],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "月—地检验用同一规律解释月球运动和地面物体下落。",
+            "example": "月球轨道处的加速度约为地面重力加速度的三千六百分之一。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "卡文迪许实验",
+            "difficulty": 2,
+            "description": "利用扭秤测量微小引力并确定引力常量",
+            "aliases": [
+              "卡文迪许扭秤实验"
+            ],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "卡文迪许实验利用铅球间的微小引力测定了引力常量。",
+            "example": "金属丝扭转使平面镜反射光束发生偏转。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "重力与万有引力",
+            "difficulty": 3,
+            "description": "重力主要源于地球引力，严格说是其一个分力",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "物体重力主要由地球吸引产生，考虑自转时不等于万有引力。",
+            "example": "粗略计算中常认为地面重力等于地球引力。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "天体质量计算",
+            "difficulty": 3,
+            "description": "由卫星周期和轨道半径等数据估算中心天体质量",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律",
+              "向心力"
+            ],
+            "definition": "利用万有引力提供向心力建立关系，可求中心天体质量。",
+            "example": "根据月球周期和月地距离估算地球质量。"
+          },
+          {
+            "name": "人造卫星",
+            "difficulty": 2,
+            "description": "由火箭发射并绕地球或其他天体运行的航天器",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律",
+              "向心力"
+            ],
+            "definition": "人造卫星是借助发射获得足够速度并绕天体运行的航天器。",
+            "example": "“墨子号”绕地球做近似匀速圆周运动。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "第一宇宙速度",
+            "difficulty": 3,
+            "description": "物体在地面附近绕地球做圆周运动的最小速度",
+            "aliases": [
+              "环绕速度"
+            ],
+            "prerequisites": [
+              "万有引力定律",
+              "向心力",
+              "匀速圆周运动"
+            ],
+            "definition": "第一宇宙速度是物体在地面附近环绕地球所需的速度，约为7.9千米每秒。",
+            "example": "近地卫星运行速度约为7.9千米每秒。"
+          },
+          {
+            "name": "第二宇宙速度",
+            "difficulty": 3,
+            "description": "物体脱离地球引力束缚所需的最小速度",
+            "aliases": [
+              "脱离速度"
+            ],
+            "prerequisites": [
+              "第一宇宙速度"
+            ],
+            "definition": "第二宇宙速度是物体摆脱地球引力束缚所需的速度，约为11.2千米每秒。",
+            "example": "发射速度达到11.2千米每秒可远离地球。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "第三宇宙速度",
+            "difficulty": 3,
+            "description": "物体挣脱太阳引力束缚、飞出太阳系所需速度",
+            "aliases": [
+              "逃逸速度"
+            ],
+            "prerequisites": [
+              "第二宇宙速度"
+            ],
+            "definition": "第三宇宙速度是物体摆脱太阳引力并飞出太阳系所需的速度，约为16.7千米每秒。",
+            "example": "探测器达到该速度可飞出太阳系。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "地球同步卫星",
+            "difficulty": 3,
+            "description": "周期等于地球自转周期并与地球同步运行的卫星",
+            "aliases": [
+              "静止通信卫星"
+            ],
+            "prerequisites": [
+              "人造卫星",
+              "匀速圆周运动"
+            ],
+            "definition": "地球同步卫星的运行周期与地球自转周期相等，轨道位于赤道平面。",
+            "example": "静止通信卫星可相对地面保持静止。"
+          },
+          {
+            "name": "预测未知天体",
+            "difficulty": 3,
+            "description": "利用万有引力定律计算并预言尚未发现的天体",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律",
+              "开普勒第三定律"
+            ],
+            "definition": "预测未知天体是依据已知天体运动偏差推算其轨道和位置。",
+            "example": "科学家据此预测并发现了海王星。",
+            "section": "第2节 万有引力定律的应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节　天地力的综合：万有引力定律",
+            "page_range": [
+              84,
+              90
+            ]
+          },
+          {
+            "name": "第2节　万有引力定律的应用",
+            "page_range": [
+              90,
+              98
+            ]
+          },
+          {
+            "name": "第3节　人类对太空的不懈探索",
+            "page_range": [
+              98,
+              106
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第5章　科学进步无止境",
+        "concepts": [
+          {
+            "name": "经典时空观",
+            "difficulty": 2,
+            "description": "认为时间和空间绝对且彼此独立，与物质运动无关。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经典时空观认为时间均匀流逝，空间永远不变，二者与物质运动无关。",
+            "example": "牛顿认为绝对时间和绝对空间独立存在。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "经典速度合成",
+            "difficulty": 2,
+            "description": "低速世界中物体速度按方向进行加减。",
+            "aliases": [
+              "运动合成原理"
+            ],
+            "prerequisites": [],
+            "definition": "经典速度合成认为观察到的物体速度等于相对速度与参考系速度的矢量合成。",
+            "example": "同向抛物时速度为v2＋v1。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "以太说",
+            "difficulty": 2,
+            "description": "认为光波依靠充满宇宙的以太传播。",
+            "aliases": [
+              "以太假说"
+            ],
+            "prerequisites": [],
+            "definition": "以太说认为宇宙中存在绝对静止的介质以太，光波在其中传播。",
+            "example": "地球运动应产生可测的以太风。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "迈克尔孙—莫雷实验",
+            "difficulty": 2,
+            "description": "测量不同方向光速以检验以太是否存在。",
+            "aliases": [
+              "迈克尔孙—莫雷实验"
+            ],
+            "prerequisites": [
+              "经典速度合成",
+              "以太说"
+            ],
+            "definition": "迈克尔孙—莫雷实验测得不同方向的光速相同，未发现以太风。",
+            "example": "实验没有支持以太说。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "惯性参考系",
+            "difficulty": 2,
+            "description": "相对性原理适用的参考系，物理规律形式相同。",
+            "aliases": [
+              "惯性系"
+            ],
+            "prerequisites": [],
+            "definition": "惯性参考系是其中物理规律可保持相同形式的参考系。",
+            "example": "匀速飞行的飞机可近似看作惯性系。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "相对性原理",
+            "difficulty": 3,
+            "description": "所有物理规律在一切惯性参考系中形式相同。",
+            "aliases": [
+              "狭义相对性原理"
+            ],
+            "prerequisites": [
+              "惯性参考系"
+            ],
+            "definition": "相对性原理指出所有物理规律在一切惯性参考系中都具有相同形式。",
+            "example": "不同惯性系中上抛小球遵循同样规律。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "光速不变原理",
+            "difficulty": 3,
+            "description": "真空中的光速在一切惯性系中都相同。",
+            "aliases": [],
+            "prerequisites": [
+              "惯性参考系"
+            ],
+            "definition": "光速不变原理指出各惯性参考系测得的真空光速均为c。",
+            "example": "列车内外观察者测得光速都为c。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "狭义相对论",
+            "difficulty": 3,
+            "description": "由两个基本假设建立的高速运动理论。",
+            "aliases": [
+              "狭义相对论"
+            ],
+            "prerequisites": [
+              "相对性原理",
+              "光速不变原理"
+            ],
+            "definition": "狭义相对论是以相对性原理和光速不变原理为基础的高速运动理论。",
+            "example": "它解释了时间延缓和长度收缩。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "相对论时空观",
+            "difficulty": 3,
+            "description": "认为时间、空间与物质运动相互联系并非绝对。",
+            "aliases": [],
+            "prerequisites": [
+              "狭义相对论"
+            ],
+            "definition": "相对论时空观认为时间和空间与物体运动有关且彼此联系。",
+            "example": "不同参考系测得的时间可能不同。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "时间延缓",
+            "difficulty": 3,
+            "description": "高速运动的时钟相对观察者走得更慢。",
+            "aliases": [
+              "运动的时钟变慢"
+            ],
+            "prerequisites": [
+              "相对论时空观",
+              "狭义相对论"
+            ],
+            "definition": "时间延缓是同一过程在相对运动参考系中测得时间变长的效应。",
+            "example": "站台观察者测得列车实验时间更长。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "固有时",
+            "difficulty": 3,
+            "description": "与物理过程相对静止的参考系测得的最短时间。",
+            "aliases": [],
+            "prerequisites": [
+              "时间延缓"
+            ],
+            "definition": "固有时是与所研究物理过程相对静止的参考系测得的时间。",
+            "example": "乘客测得车内实验经历15分钟。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "长度收缩",
+            "difficulty": 3,
+            "description": "沿运动方向高速运动物体的长度变短。",
+            "aliases": [
+              "长度观测效应"
+            ],
+            "prerequisites": [
+              "相对论时空观",
+              "狭义相对论"
+            ],
+            "definition": "长度收缩是运动物体沿运动方向的测量长度小于其静止长度的效应。",
+            "example": "高速飞行器测得运动方向的尺变短。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "固有长度",
+            "difficulty": 3,
+            "description": "物体相对观测者静止时测得的长度。",
+            "aliases": [
+              "静止长度"
+            ],
+            "prerequisites": [
+              "长度收缩"
+            ],
+            "definition": "固有长度是物体相对观测者静止时测得的长度。",
+            "example": "静止刻度尺测得长度为1米。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "质能关系",
+            "difficulty": 3,
+            "description": "质量和能量通过E＝mc²相互联系。",
+            "aliases": [
+              "质能等价关系"
+            ],
+            "prerequisites": [
+              "狭义相对论"
+            ],
+            "definition": "质能关系表明质量和能量是物质不可分离的属性，满足E＝mc²。",
+            "example": "重核裂变释放能量验证了质能关系。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "质速关系",
+            "difficulty": 4,
+            "description": "物体质量随相对运动速度增大而增大。",
+            "aliases": [],
+            "prerequisites": [
+              "狭义相对论"
+            ],
+            "definition": "质速关系指出物体相对惯性系的运动速度越大，测得质量越大。",
+            "example": "接近光速运动的物体质量明显增加。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "广义相对论",
+            "difficulty": 4,
+            "description": "用时空弯曲解释引力作用的理论。",
+            "aliases": [
+              "广义相对论"
+            ],
+            "prerequisites": [
+              "相对论时空观"
+            ],
+            "definition": "广义相对论认为物质使时空弯曲，天体间引力是时空弯曲的表现。",
+            "example": "太阳质量使周围时空发生弯曲。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "时空弯曲",
+            "difficulty": 4,
+            "description": "物质存在会使空间和时间发生弯曲。",
+            "aliases": [],
+            "prerequisites": [
+              "广义相对论"
+            ],
+            "definition": "时空弯曲是物质存在导致时空几何性质改变的现象。",
+            "example": "太阳周围弯曲的时空使星光偏折。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "星光偏折",
+            "difficulty": 3,
+            "description": "光经过太阳附近时因时空弯曲而改变传播方向。",
+            "aliases": [
+              "引力场中光线弯曲"
+            ],
+            "prerequisites": [
+              "时空弯曲"
+            ],
+            "definition": "星光偏折是恒星光线经过太阳附近引力场时发生弯曲的现象。",
+            "example": "日全食观测到星光偏角约为1.75角秒。"
+          },
+          {
+            "name": "宇宙红移",
+            "difficulty": 3,
+            "description": "遥远天体光谱向红光方向偏移的现象。",
+            "aliases": [
+              "光谱红移"
+            ],
+            "prerequisites": [],
+            "definition": "宇宙红移是遥远天体光谱相对于地面同种物质光谱波长变长的现象。",
+            "example": "遥远星系的光谱向红光方向偏移。"
+          },
+          {
+            "name": "宇宙膨胀",
+            "difficulty": 3,
+            "description": "星系普遍远离彼此，且距离越远退行速度越快。",
+            "aliases": [],
+            "prerequisites": [
+              "宇宙红移"
+            ],
+            "definition": "宇宙膨胀是星系间距离随时间整体增大的宇宙运动状态。",
+            "example": "哈勃观测发现远方星系正在远离我们。"
+          },
+          {
+            "name": "大爆炸宇宙模型",
+            "difficulty": 3,
+            "description": "认为宇宙由高温高密度奇点爆炸演化而来。",
+            "aliases": [
+              "大爆炸模型"
+            ],
+            "prerequisites": [
+              "宇宙膨胀"
+            ],
+            "definition": "大爆炸宇宙模型认为宇宙起源于温度无限高、密度无限大的奇点。",
+            "example": "该模型解释宇宙红移并预言背景微波辐射。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "宇宙背景微波辐射",
+            "difficulty": 3,
+            "description": "大爆炸宇宙背景中至今存在的微波辐射。",
+            "aliases": [
+              "宇宙背景辐射",
+              "背景微波辐射"
+            ],
+            "prerequisites": [
+              "大爆炸宇宙模型"
+            ],
+            "definition": "宇宙背景微波辐射是大爆炸模型预言并在宇宙空间观测到的微波辐射。",
+            "example": "1965年威尔森和彭齐亚斯观测到它。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "奇点",
+            "difficulty": 4,
+            "description": "大爆炸模型描述的极高温、极高密度状态。",
+            "aliases": [],
+            "prerequisites": [
+              "大爆炸宇宙模型"
+            ],
+            "definition": "奇点是大爆炸模型中宇宙起始时温度和物质密度趋于无限大的状态。",
+            "example": "宇宙从奇点开始大爆炸。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "宇宙平均密度",
+            "difficulty": 3,
+            "description": "描述宇宙物质总体分布状况的重要物理量。",
+            "aliases": [
+              "物质平均密度"
+            ],
+            "prerequisites": [
+              "宇宙膨胀"
+            ],
+            "definition": "宇宙平均密度是单位宇宙空间内物质平均分布状况的量。",
+            "example": "它决定宇宙膨胀或重新收缩的趋势。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "暗物质",
+            "difficulty": 3,
+            "description": "不能释放电磁辐射但能产生引力作用的物质。",
+            "aliases": [],
+            "prerequisites": [
+              "宇宙平均密度"
+            ],
+            "definition": "暗物质是不能释放任何电磁辐射、但可通过引力效应被推知的物质。",
+            "example": "星系引力效应显示常规物质不足以产生其大小。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "暗能量",
+            "difficulty": 3,
+            "description": "与宇宙加速膨胀有关但本质尚未明确的成分。",
+            "aliases": [],
+            "prerequisites": [
+              "宇宙膨胀"
+            ],
+            "definition": "暗能量是科学家根据宇宙加速膨胀推测存在的宇宙成分。",
+            "example": "遥远超新星观测显示宇宙正在加速膨胀。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "射电望远镜",
+            "difficulty": 2,
+            "description": "主要接收天体射电波段辐射的天文望远镜。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "射电望远镜是接收天体射电波段辐射并据此观测宇宙的设备。",
+            "example": "中国天眼接收来自天体的无线电波。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "引力波",
+            "difficulty": 4,
+            "description": "极端天文事件产生并以光速传播的时空涟漪。",
+            "aliases": [
+              "时空涟漪"
+            ],
+            "prerequisites": [
+              "广义相对论",
+              "时空弯曲"
+            ],
+            "definition": "引力波是大质量天体剧烈运动造成并向外传播的时空扰动。",
+            "example": "双黑洞合并产生了持续不到1秒的信号。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "霍金辐射",
+            "difficulty": 4,
+            "description": "黑洞向外辐射能量并可能最终消失的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "广义相对论"
+            ],
+            "definition": "霍金辐射是黑洞向外发出辐射、温度升高并可能最终爆炸消失的现象。",
+            "example": "黑洞会因辐射而逐渐升温。",
+            "section": "第3节 探索宇宙的奥秘"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入　再次跨越时空的对话",
+            "page_range": [
+              106,
+              106
+            ]
+          },
+          {
+            "name": "第1节　初识相对论",
+            "page_range": [
+              106,
+              106
+            ]
+          },
+          {
+            "name": "第2节　相对论中的神奇时空",
+            "page_range": [
+              106,
+              106
+            ]
+          },
+          {
+            "name": "第3节　探索宇宙的奥秘",
+            "page_range": [
+              106,
+              122
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 功和机械能",
+        "concepts": [
+          {
+            "name": "机械功",
+            "difficulty": 2,
+            "description": "力使物体沿力的方向发生位移的物理过程",
+            "aliases": [
+              "功",
+              "机械功的含义"
+            ],
+            "prerequisites": [],
+            "definition": "力作用于物体并使物体在力的方向上移动一段距离，就说力对物体做了功。",
+            "example": "人推箱子沿推力方向移动，推力对箱子做功。",
+            "section": "第1节 机械功"
+          },
+          {
+            "name": "功的计算",
+            "difficulty": 2,
+            "description": "恒力与位移成角度时功的计算方法",
+            "aliases": [
+              "功的计算公式"
+            ],
+            "prerequisites": [
+              "机械功"
+            ],
+            "definition": "恒力对物体所做的功等于力、位移及其夹角余弦的乘积。",
+            "example": "斜拉购物篮时，功为W=Fscosα。"
+          },
+          {
+            "name": "正功和负功",
+            "difficulty": 2,
+            "description": "根据力与位移夹角判断功的正负",
+            "aliases": [
+              "正功",
+              "负功"
+            ],
+            "prerequisites": [
+              "功的计算"
+            ],
+            "definition": "力与位移夹角小于90°时做正功，大于90°时做负功。",
+            "example": "减速伞拉力与飞机位移相反，对飞机做负功。"
+          },
+          {
+            "name": "功的图像描述",
+            "difficulty": 3,
+            "description": "用力—位移图像的面积表示功",
+            "aliases": [
+              "功的图像"
+            ],
+            "prerequisites": [
+              "机械功"
+            ],
+            "definition": "力方向与位移方向一致时，力—位移图像下的面积表示功的大小。",
+            "example": "恒力图像下的矩形面积等于功。",
+            "section": "第1节 机械功"
+          },
+          {
+            "name": "总功",
+            "difficulty": 3,
+            "description": "多个力分别做功的代数和",
+            "aliases": [
+              "合外力做功"
+            ],
+            "prerequisites": [
+              "正功和负功",
+              "机械功"
+            ],
+            "definition": "所有外力对物体做的总功等于各力所做功的代数和。",
+            "example": "货物受推力、重力和摩擦力时求各功之和。"
+          },
+          {
+            "name": "功率",
+            "difficulty": 2,
+            "description": "描述做功快慢的物理量",
+            "aliases": [
+              "平均功率"
+            ],
+            "prerequisites": [
+              "机械功"
+            ],
+            "definition": "功率是力所做的功与完成这些功所用时间之比。",
+            "example": "挖掘机与人工做功相同，挖掘机用时更短，功率更大。"
+          },
+          {
+            "name": "额定功率",
+            "difficulty": 2,
+            "description": "动力机械长时间工作的最大允许功率",
+            "aliases": [
+              "机械的额定功率"
+            ],
+            "prerequisites": [
+              "功率"
+            ],
+            "definition": "机械长时间工作时允许达到的最大功率称为额定功率。",
+            "example": "汽车爬陡坡时实际功率可能超过额定功率。",
+            "section": "第2节 功 率"
+          },
+          {
+            "name": "功率与力速度",
+            "difficulty": 3,
+            "description": "力与速度同向时功率等于力乘速度",
+            "aliases": [
+              "P=Fv"
+            ],
+            "prerequisites": [
+              "功率"
+            ],
+            "definition": "力与速度方向一致时，功率等于力的大小与速度的乘积。",
+            "example": "汽车增大输出功率可在一定速度下增大牵引力。",
+            "section": "第2节 功 率"
+          },
+          {
+            "name": "动能",
+            "difficulty": 2,
+            "description": "物体因运动而具有的能量",
+            "aliases": [
+              "运动能量"
+            ],
+            "prerequisites": [],
+            "definition": "物体由于运动而具有的能量叫作动能。",
+            "example": "高速飞行的子弹具有较大的动能。"
+          },
+          {
+            "name": "动能定理",
+            "difficulty": 4,
+            "description": "合外力做功等于物体动能的变化量",
+            "aliases": [
+              "动能定理"
+            ],
+            "prerequisites": [
+              "机械功",
+              "动能",
+              "总功"
+            ],
+            "definition": "合外力对物体所做的功等于物体动能的变化量。",
+            "example": "汽车刹车时阻力做负功，汽车动能减小。"
+          },
+          {
+            "name": "重力势能",
+            "difficulty": 2,
+            "description": "物体因处于一定高度而具有的能量",
+            "aliases": [
+              "重力势能Ep"
+            ],
+            "prerequisites": [],
+            "definition": "物体因为处于一定的高度而具有的能量叫作重力势能。",
+            "example": "高处的石头具有重力势能。"
+          },
+          {
+            "name": "零势能参考面",
+            "difficulty": 3,
+            "description": "规定重力势能为零的参考水平面",
+            "aliases": [
+              "零势能参考平面"
+            ],
+            "prerequisites": [
+              "重力势能"
+            ],
+            "definition": "把重力势能规定为零的水平面称为零势能参考平面。",
+            "example": "可选地面或桌面作为零势能参考平面。"
+          },
+          {
+            "name": "重力做功与势能",
+            "difficulty": 3,
+            "description": "重力做功与重力势能改变的关系",
+            "aliases": [
+              "重力势能改变"
+            ],
+            "prerequisites": [
+              "重力势能",
+              "机械功"
+            ],
+            "definition": "重力做功等于物体重力势能减少量的负值，即WG=-ΔEp。",
+            "example": "物体下落时重力做正功，重力势能减少。"
+          },
+          {
+            "name": "弹性势能",
+            "difficulty": 3,
+            "description": "物体因发生弹性形变而具有的能量",
+            "aliases": [
+              "弹性势能"
+            ],
+            "prerequisites": [],
+            "definition": "物体因为发生弹性形变而具有的能量叫作弹性势能。",
+            "example": "压缩弹簧在恢复原状时释放弹性势能。"
+          },
+          {
+            "name": "势能",
+            "difficulty": 3,
+            "description": "由相互作用物体相对位置决定的能量",
+            "aliases": [
+              "势能"
+            ],
+            "prerequisites": [
+              "重力势能",
+              "弹性势能"
+            ],
+            "definition": "由相互作用物体的相对位置决定并储存在系统内的能量叫势能。",
+            "example": "物体与地球共同具有重力势能。"
+          },
+          {
+            "name": "机械能",
+            "difficulty": 3,
+            "description": "物体动能与势能之和",
+            "aliases": [
+              "机械能E"
+            ],
+            "prerequisites": [
+              "动能",
+              "势能"
+            ],
+            "definition": "物体的动能与重力势能或弹性势能之和称为机械能。",
+            "example": "过山车运行时同时具有动能和重力势能。"
+          },
+          {
+            "name": "机械能守恒定律",
+            "difficulty": 4,
+            "description": "只有重力或弹力做功时机械能保持不变",
+            "aliases": [
+              "机械能守恒"
+            ],
+            "prerequisites": [
+              "机械能",
+              "动能定理",
+              "重力做功与势能"
+            ],
+            "definition": "只有重力或弹力做功时，系统的动能与势能相互转化而机械能总量不变。",
+            "example": "忽略阻力时，过山车下滑过程中机械能守恒。",
+            "section": "第5节 科学验证:机械能守恒定律"
+          },
+          {
+            "name": "机械能守恒实验",
+            "difficulty": 4,
+            "description": "用自由落体纸带验证机械能守恒",
+            "aliases": [
+              "验证机械能守恒定律"
+            ],
+            "prerequisites": [
+              "机械能",
+              "机械能守恒定律"
+            ],
+            "definition": "通过测量重物不同位置的速度和高度，比较其动能与重力势能之和来验证机械能守恒。",
+            "example": "用打点计时器记录重物自由下落过程。",
+            "section": "第5节 科学验证:机械能守恒定律"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 神奇之能",
+            "section_key": "f61070e0e7",
+            "page_range": [
+              7,
+              8
+            ]
+          },
+          {
+            "name": "第1节 机械功",
+            "section_key": "3b63e887c5",
+            "page_range": [
+              8,
+              13
+            ]
+          },
+          {
+            "name": "第2节 功 率",
+            "section_key": "72e5aa2d42",
+            "page_range": [
+              13,
+              18
+            ]
+          },
+          {
+            "name": "第3节 动能和动能定理",
+            "section_key": "ce392098c0",
+            "page_range": [
+              18,
+              23
+            ]
+          },
+          {
+            "name": "第4节 势能及其改变",
+            "section_key": "ba56233502",
+            "page_range": [
+              23,
+              28
+            ]
+          },
+          {
+            "name": "第5节 科学验证:机械能守恒定律",
+            "section_key": "e9a0aeda9b",
+            "page_range": [
+              28,
+              39
+            ]
+          }
+        ],
+        "chapter_key": "19aaf7effc",
+        "metadata": {
+          "volume_id": "83c455672720",
+          "file_id": "83c455672720",
+          "volume_title": "普通高中教科书 物理 必修第二册",
+          "chapter_order": 1,
+          "raw_heading": "第1章　功和机械能"
+        }
+      },
+      {
+        "name": "第2章 抛体运动",
+        "concepts": [
+          {
+            "name": "直线运动",
+            "difficulty": 1,
+            "description": "物体运动轨迹可视为直线的运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体运动轨迹为直线的运动称为直线运动。",
+            "example": "苹果竖直下落"
+          },
+          {
+            "name": "曲线运动",
+            "difficulty": 1,
+            "description": "物体运动轨迹为曲线的运动",
+            "aliases": [
+              "曲线的运动"
+            ],
+            "prerequisites": [],
+            "definition": "物体运动轨迹为曲线的运动称为曲线运动。",
+            "example": "水平扔出的飞镖"
+          },
+          {
+            "name": "速度是矢量",
+            "difficulty": 2,
+            "description": "速度同时具有大小和方向",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "速度是既有大小又有方向的物理量。",
+            "example": "风速具有方向",
+            "section": "第1节 运动的合成与分解"
+          },
+          {
+            "name": "曲线运动速度方向",
+            "difficulty": 2,
+            "description": "曲线上某点速度沿该点切线方向",
+            "aliases": [],
+            "prerequisites": [
+              "曲线运动",
+              "速度是矢量"
+            ],
+            "definition": "做曲线运动的物体在某点的速度方向沿曲线在该点的切线方向。",
+            "example": "笔尖沿曲线运动"
+          },
+          {
+            "name": "曲线运动条件",
+            "difficulty": 3,
+            "description": "合力方向不在速度方向所在直线上",
+            "aliases": [],
+            "prerequisites": [
+              "曲线运动"
+            ],
+            "definition": "物体所受合力方向与速度方向不在同一直线上时，物体做曲线运动。",
+            "example": "磁铁吸引运动中的钢珠"
+          },
+          {
+            "name": "合运动",
+            "difficulty": 2,
+            "description": "物体同时参与多个运动时的实际运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体实际发生的运动称为这几个运动的合运动。",
+            "example": "竹筏随水流和划动前进"
+          },
+          {
+            "name": "分运动",
+            "difficulty": 2,
+            "description": "构成物体实际运动的各个运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体参与的各个运动称为物体实际运动的分运动。",
+            "example": "竹筏划动和随水流运动"
+          },
+          {
+            "name": "运动合成与分解",
+            "difficulty": 3,
+            "description": "把复杂运动分解为简单运动进行研究",
+            "aliases": [],
+            "prerequisites": [
+              "合运动",
+              "分运动",
+              "速度是矢量"
+            ],
+            "definition": "运动的合成与分解是研究复杂运动的基本方法，相关物理量遵循矢量运算法则。",
+            "example": "分解竹筏过河运动",
+            "section": "第4节 生活中的抛体运动"
+          },
+          {
+            "name": "匀速直线运动",
+            "difficulty": 1,
+            "description": "速度大小和方向均保持不变的直线运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体沿直线运动且速度保持不变的运动称为匀速直线运动。",
+            "example": "静水中匀速划船"
+          },
+          {
+            "name": "自由落体运动",
+            "difficulty": 2,
+            "description": "物体只在重力作用下由静止开始下落",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体只在重力作用下从静止开始下落的运动称为自由落体运动。",
+            "example": "松手后下落的石子"
+          },
+          {
+            "name": "抛体运动",
+            "difficulty": 2,
+            "description": "以一定初速度抛出后仅受重力作用的运动",
+            "aliases": [],
+            "prerequisites": [
+              "运动合成与分解"
+            ],
+            "definition": "物体以一定初速度抛出后仅在重力作用下所做的运动称为抛体运动。",
+            "example": "抛出的铅球"
+          },
+          {
+            "name": "平抛运动",
+            "difficulty": 3,
+            "description": "初速度水平且仅受重力作用的抛体运动",
+            "aliases": [
+              "水平抛体运动"
+            ],
+            "prerequisites": [
+              "抛体运动",
+              "匀速直线运动",
+              "自由落体运动"
+            ],
+            "definition": "物体以一定初速度沿水平方向抛出并仅受重力作用的运动称为平抛运动。",
+            "example": "桌面飞出的小球"
+          },
+          {
+            "name": "平抛运动规律",
+            "difficulty": 4,
+            "description": "平抛运动可分解为水平匀速和竖直自由落体",
+            "aliases": [],
+            "prerequisites": [
+              "平抛运动",
+              "运动合成与分解"
+            ],
+            "definition": "平抛运动水平方向做匀速直线运动，竖直方向做自由落体运动。",
+            "example": "分析投放物资的运动"
+          },
+          {
+            "name": "平抛运动轨迹",
+            "difficulty": 4,
+            "description": "平抛物体运动轨迹可通过实验描绘",
+            "aliases": [],
+            "prerequisites": [
+              "平抛运动",
+              "平抛运动规律"
+            ],
+            "definition": "通过记录平抛小球的位置并连线，可以描绘其运动轨迹并研究其特点。",
+            "example": "坐标纸描绘小球轨迹",
+            "section": "第3节 科学探究:平抛运动的特点"
+          },
+          {
+            "name": "斜抛运动",
+            "difficulty": 3,
+            "description": "初速度斜向且仅受重力作用的抛体运动",
+            "aliases": [
+              "斜上抛运动",
+              "斜下抛运动"
+            ],
+            "prerequisites": [
+              "抛体运动",
+              "运动合成与分解"
+            ],
+            "definition": "物体以斜向初速度抛出后仅受重力作用的运动称为斜抛运动。",
+            "example": "投掷出的标枪"
+          },
+          {
+            "name": "抛射角",
+            "difficulty": 2,
+            "description": "抛出方向与水平方向的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "斜抛运动"
+            ],
+            "definition": "物体抛出方向与水平方向正方向之间的夹角称为抛射角。",
+            "example": "斜向上抛球的出手角度"
+          },
+          {
+            "name": "射高",
+            "difficulty": 2,
+            "description": "抛体运动物体能到达的最大高度",
+            "aliases": [],
+            "prerequisites": [
+              "斜抛运动"
+            ],
+            "definition": "抛体运动物体能够到达的最大高度称为射高。",
+            "example": "标枪飞行达到的最高点"
+          },
+          {
+            "name": "射程",
+            "difficulty": 2,
+            "description": "抛出点到落地点的水平距离",
+            "aliases": [],
+            "prerequisites": [
+              "斜抛运动"
+            ],
+            "definition": "抛体从抛出点到落地点的水平距离称为射程。",
+            "example": "铅球落点距投掷点的距离"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 更准、更远",
+            "section_key": "ad886f41a2",
+            "page_range": [
+              39,
+              40
+            ]
+          },
+          {
+            "name": "第1节 运动的合成与分解",
+            "section_key": "9a3488d63d",
+            "page_range": [
+              40,
+              45
+            ]
+          },
+          {
+            "name": "第2节 平抛运动",
+            "section_key": "d7d9583753",
+            "page_range": [
+              45,
+              50
+            ]
+          },
+          {
+            "name": "第3节 科学探究:平抛运动的特点",
+            "section_key": "6202c3bdee",
+            "page_range": [
+              50,
+              53
+            ]
+          },
+          {
+            "name": "第4节 生活中的抛体运动",
+            "section_key": "9a1c9bcd3b",
+            "page_range": [
+              53,
+              57
+            ]
+          }
+        ],
+        "chapter_key": "f44bdbba2f",
+        "metadata": {
+          "volume_id": "83c455672720",
+          "file_id": "83c455672720",
+          "volume_title": "普通高中教科书 物理 必修第二册",
+          "chapter_order": 2,
+          "raw_heading": "第2章　抛体运动"
+        }
+      },
+      {
+        "name": "第3章 圆周运动",
+        "concepts": [
+          {
+            "name": "圆周运动",
+            "difficulty": 1,
+            "description": "物体沿圆周轨迹进行的运动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体运动轨迹为圆周的运动称为圆周运动。",
+            "example": "钟表指针上的一点绕表心运动。"
+          },
+          {
+            "name": "匀速圆周运动",
+            "difficulty": 2,
+            "description": "相等时间内通过相等弧长的圆周运动。",
+            "aliases": [],
+            "prerequisites": [
+              "圆周运动"
+            ],
+            "definition": "物体在任意相等时间内通过的弧长都相等的圆周运动称为匀速圆周运动。",
+            "example": "正常转动的光盘上某点的运动。"
+          },
+          {
+            "name": "线速度",
+            "difficulty": 2,
+            "description": "用单位时间通过的弧长描述运动快慢。",
+            "aliases": [],
+            "prerequisites": [
+              "匀速圆周运动"
+            ],
+            "definition": "物体通过的弧长与所用时间之比称为线速度。",
+            "example": "自行车轮缘各点的线速度。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "线速度方向",
+            "difficulty": 2,
+            "description": "圆周运动中沿圆周该点的切线方向。",
+            "aliases": [],
+            "prerequisites": [
+              "线速度"
+            ],
+            "definition": "圆周运动线速度的方向总是沿圆周在该点的切线方向。",
+            "example": "砂轮火星沿切线方向飞出。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "角速度",
+            "difficulty": 2,
+            "description": "用单位时间转过的角度描述转动快慢。",
+            "aliases": [],
+            "prerequisites": [
+              "匀速圆周运动"
+            ],
+            "definition": "半径转过的角度与所用时间之比称为角速度。",
+            "example": "小齿轮的角速度较大。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "周期性运动",
+            "difficulty": 1,
+            "description": "每隔相等时间重复原来运动的运动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "每隔一段相等时间就重复原来运动的运动称为周期性运动。",
+            "example": "人的心跳是周期性运动。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "周期",
+            "difficulty": 2,
+            "description": "周期性运动重复一次所需要的时间。",
+            "aliases": [],
+            "prerequisites": [
+              "周期性运动"
+            ],
+            "definition": "周期性运动每重复一次所需要的时间称为周期。",
+            "example": "地球自转周期为一天。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "频率",
+            "difficulty": 2,
+            "description": "单位时间内运动重复的次数。",
+            "aliases": [],
+            "prerequisites": [
+              "周期性运动"
+            ],
+            "definition": "一段时间内运动重复的次数与这段时间之比称为频率。",
+            "example": "频率越高，周期性运动越快。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "转速",
+            "difficulty": 2,
+            "description": "单位时间内物体转过的圈数。",
+            "aliases": [],
+            "prerequisites": [
+              "匀速圆周运动"
+            ],
+            "definition": "物体一段时间内转过的圈数与这段时间之比称为转速。",
+            "example": "硬盘转速用转每分表示。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "线角速度关系",
+            "difficulty": 3,
+            "description": "匀速圆周运动中线速度等于半径乘角速度。",
+            "aliases": [],
+            "prerequisites": [
+              "线速度",
+              "角速度"
+            ],
+            "definition": "匀速圆周运动中线速度大小与半径、角速度满足v=rω。",
+            "example": "同轴转动时半径越大线速度越大。"
+          },
+          {
+            "name": "传动关系",
+            "difficulty": 3,
+            "description": "皮带不打滑时线速度相等，同轴点角速度相同。",
+            "aliases": [
+              "皮带传动",
+              "同轴转动"
+            ],
+            "prerequisites": [
+              "线角速度关系"
+            ],
+            "definition": "传动装置中皮带接触点线速度相等，同轴转动各点角速度相同。",
+            "example": "不打滑皮带连接的两轮轮缘线速度相等。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "向心力",
+            "difficulty": 3,
+            "description": "使物体保持圆周运动、始终指向圆心的力。",
+            "aliases": [],
+            "prerequisites": [
+              "圆周运动"
+            ],
+            "definition": "物体做圆周运动时受到的指向圆心的力称为向心力。",
+            "example": "绳子拉力提供小球的向心力。"
+          },
+          {
+            "name": "向心力影响因素",
+            "difficulty": 3,
+            "description": "向心力随质量、半径和角速度变化。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力",
+              "角速度"
+            ],
+            "definition": "物体所需向心力与质量、转动半径和角速度有关。",
+            "example": "增大转动物体质量，所需向心力变大。"
+          },
+          {
+            "name": "向心加速度",
+            "difficulty": 3,
+            "description": "由向心力产生且始终指向圆心的加速度。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力"
+            ],
+            "definition": "由向心力产生、方向始终指向圆心的加速度称为向心加速度。",
+            "example": "匀速圆周运动的加速度方向不断改变。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "控制变量法",
+            "difficulty": 2,
+            "description": "研究一个因素时保持其他因素不变的方法。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力影响因素"
+            ],
+            "definition": "改变一个因素并控制其他因素不变以研究其影响的方法称为控制变量法。",
+            "example": "研究半径影响时保持质量和角速度不变。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "竖直圆周运动",
+            "difficulty": 4,
+            "description": "物体在竖直平面内沿圆周运动的情形。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力",
+              "向心加速度"
+            ],
+            "definition": "物体在竖直平面内沿圆周运动时，重力等力共同提供向心力。",
+            "example": "小球沿环形轨道运动。"
+          },
+          {
+            "name": "最高点临界速度",
+            "difficulty": 4,
+            "description": "小球恰好通过竖直圆环最高点的速度。",
+            "aliases": [],
+            "prerequisites": [
+              "竖直圆周运动"
+            ],
+            "definition": "小球在圆环最高点恰好不掉落时的速度满足v=√gr。",
+            "example": "过山车通过环形轨道最高点。"
+          },
+          {
+            "name": "弯道外高内低",
+            "difficulty": 3,
+            "description": "利用重力与支持力合力提供转弯向心力。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力"
+            ],
+            "definition": "弯道外高内低可使重力与支持力的合力指向弯道圆心。",
+            "example": "高速公路弯道采用外高内低设计。"
+          },
+          {
+            "name": "失重与超重",
+            "difficulty": 3,
+            "description": "圆周运动中支持力小于或大于重力的状态。",
+            "aliases": [
+              "失重",
+              "超重"
+            ],
+            "prerequisites": [
+              "向心力"
+            ],
+            "definition": "物体所受支持力小于重力时表现为失重，大于重力时表现为超重。",
+            "example": "汽车过凸形路面顶部易失重。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "离心运动",
+            "difficulty": 3,
+            "description": "合外力消失或不足时物体远离圆心的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "向心力",
+              "线速度方向"
+            ],
+            "definition": "物体受到的合外力消失或不足以提供所需向心力时发生离心运动。",
+            "example": "绳断后小球沿切线方向飞出。",
+            "section": "第3节 离心现象"
+          },
+          {
+            "name": "离心现象",
+            "difficulty": 3,
+            "description": "物体因向心力不足而远离圆心的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "离心运动"
+            ],
+            "definition": "做圆周运动的物体因向心力消失或不足而远离圆心的现象称为离心现象。",
+            "example": "洗衣机脱水时水被甩出。",
+            "section": "第3节 离心现象"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 生活中的圆周运动",
+            "section_key": "707685dfc2",
+            "page_range": [
+              57,
+              57
+            ]
+          },
+          {
+            "name": "第1节 匀速圆周运动快慢的描述",
+            "section_key": "b94b34708b",
+            "page_range": [
+              57,
+              57
+            ]
+          },
+          {
+            "name": "第2节 科学探究:向心力",
+            "section_key": "1ed1a00fea",
+            "page_range": [
+              57,
+              57
+            ]
+          },
+          {
+            "name": "第3节 离心现象",
+            "section_key": "ac089347bc",
+            "page_range": [
+              57,
+              83
+            ]
+          }
+        ],
+        "chapter_key": "09b54e3ce8",
+        "metadata": {
+          "volume_id": "83c455672720",
+          "file_id": "83c455672720",
+          "volume_title": "普通高中教科书 物理 必修第二册",
+          "chapter_order": 3,
+          "raw_heading": "第3章　圆周运动"
+        }
+      },
+      {
+        "name": "第4章 万有引力定律及航天",
+        "concepts": [
+          {
+            "name": "地心说",
+            "difficulty": 1,
+            "description": "认为地球位于宇宙中心，其他天体绕地球运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地心说是以地球为中心解释天体运动的宇宙模型。",
+            "example": "托勒密地心体系用本轮和均轮描述行星运动。",
+            "section": "第3节 人类对太空的不懈探索"
+          },
+          {
+            "name": "日心说",
+            "difficulty": 1,
+            "description": "认为太阳是中心，行星围绕太阳运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "日心说是认为太阳位于中心、行星绕太阳运动的宇宙模型。",
+            "example": "哥白尼用日心说描述行星运动。"
+          },
+          {
+            "name": "开普勒第一定律",
+            "difficulty": 2,
+            "description": "行星轨道是椭圆，太阳位于一个焦点上",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "所有行星绕太阳运动的轨道都是椭圆，太阳位于椭圆的一个焦点上。",
+            "example": "地球绕太阳的轨道可近似看成圆形。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "开普勒第二定律",
+            "difficulty": 2,
+            "description": "相等时间内，行星与太阳连线扫过相等面积",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "任何行星与太阳的连线在相等时间内扫过的面积相等。",
+            "example": "行星近日点附近运行较快。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "开普勒第三定律",
+            "difficulty": 3,
+            "description": "轨道半长轴立方与周期平方成正比",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "行星轨道半长轴的立方与公转周期的平方成正比。",
+            "example": "距离太阳越远的行星，公转周期通常越长。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "椭圆偏心率",
+            "difficulty": 2,
+            "description": "表示椭圆扁平程度，圆的偏心率为零",
+            "aliases": [
+              "偏心率"
+            ],
+            "prerequisites": [],
+            "definition": "偏心率是椭圆两焦点间距离与长轴长度的比值。",
+            "example": "地球轨道偏心率较小，可近似看成圆。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "匀速圆周运动",
+            "difficulty": 2,
+            "description": "物体沿圆周运动且速率大小保持不变",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "匀速圆周运动是物体沿圆周运动且速率不变的运动。",
+            "example": "粗略研究行星运动时常采用此模型。"
+          },
+          {
+            "name": "向心力",
+            "difficulty": 2,
+            "description": "维持物体做圆周运动的指向圆心的力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "向心力是使物体产生指向圆心加速度的合力。",
+            "example": "卫星所需向心力由地球引力提供。"
+          },
+          {
+            "name": "万有引力定律",
+            "difficulty": 3,
+            "description": "任意两物体相互吸引，引力与质量乘积成正比",
+            "aliases": [
+              "万有引力"
+            ],
+            "prerequisites": [
+              "开普勒第三定律",
+              "向心力"
+            ],
+            "definition": "任意两个物体间的引力与质量乘积成正比、与距离平方成反比。",
+            "example": "可用公式计算木星与太阳之间的引力。"
+          },
+          {
+            "name": "引力常量",
+            "difficulty": 2,
+            "description": "万有引力公式中的比例常量，通常取6.67×10⁻¹¹",
+            "aliases": [
+              "G"
+            ],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "引力常量G是确定万有引力大小的物理常量。",
+            "example": "卡文迪许实验测出了引力常量。"
+          },
+          {
+            "name": "月—地检验",
+            "difficulty": 3,
+            "description": "比较月球轨道加速度与地面重力加速度",
+            "aliases": [
+              "牛顿的月—地检验"
+            ],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "月—地检验用同一规律解释月球运动和地面物体下落。",
+            "example": "月球轨道处的加速度约为地面重力加速度的三千六百分之一。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "卡文迪许实验",
+            "difficulty": 2,
+            "description": "利用扭秤测量微小引力并确定引力常量",
+            "aliases": [
+              "卡文迪许扭秤实验"
+            ],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "卡文迪许实验利用铅球间的微小引力测定了引力常量。",
+            "example": "金属丝扭转使平面镜反射光束发生偏转。",
+            "section": "第1节 天地力的综合:万有引力定律"
+          },
+          {
+            "name": "重力与万有引力",
+            "difficulty": 3,
+            "description": "重力主要源于地球引力，严格说是其一个分力",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律"
+            ],
+            "definition": "物体重力主要由地球吸引产生，考虑自转时不等于万有引力。",
+            "example": "粗略计算中常认为地面重力等于地球引力。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "天体质量计算",
+            "difficulty": 3,
+            "description": "由卫星周期和轨道半径等数据估算中心天体质量",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律",
+              "向心力"
+            ],
+            "definition": "利用万有引力提供向心力建立关系，可求中心天体质量。",
+            "example": "根据月球周期和月地距离估算地球质量。"
+          },
+          {
+            "name": "人造卫星",
+            "difficulty": 2,
+            "description": "由火箭发射并绕地球或其他天体运行的航天器",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律",
+              "向心力"
+            ],
+            "definition": "人造卫星是借助发射获得足够速度并绕天体运行的航天器。",
+            "example": "“墨子号”绕地球做近似匀速圆周运动。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "第一宇宙速度",
+            "difficulty": 3,
+            "description": "物体在地面附近绕地球做圆周运动的最小速度",
+            "aliases": [
+              "环绕速度"
+            ],
+            "prerequisites": [
+              "万有引力定律",
+              "向心力",
+              "匀速圆周运动"
+            ],
+            "definition": "第一宇宙速度是物体在地面附近环绕地球所需的速度，约为7.9千米每秒。",
+            "example": "近地卫星运行速度约为7.9千米每秒。"
+          },
+          {
+            "name": "第二宇宙速度",
+            "difficulty": 3,
+            "description": "物体脱离地球引力束缚所需的最小速度",
+            "aliases": [
+              "脱离速度"
+            ],
+            "prerequisites": [
+              "第一宇宙速度"
+            ],
+            "definition": "第二宇宙速度是物体摆脱地球引力束缚所需的速度，约为11.2千米每秒。",
+            "example": "发射速度达到11.2千米每秒可远离地球。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "第三宇宙速度",
+            "difficulty": 3,
+            "description": "物体挣脱太阳引力束缚、飞出太阳系所需速度",
+            "aliases": [
+              "逃逸速度"
+            ],
+            "prerequisites": [
+              "第二宇宙速度"
+            ],
+            "definition": "第三宇宙速度是物体摆脱太阳引力并飞出太阳系所需的速度，约为16.7千米每秒。",
+            "example": "探测器达到该速度可飞出太阳系。",
+            "section": "第2节 万有引力定律的应用"
+          },
+          {
+            "name": "地球同步卫星",
+            "difficulty": 3,
+            "description": "周期等于地球自转周期并与地球同步运行的卫星",
+            "aliases": [
+              "静止通信卫星"
+            ],
+            "prerequisites": [
+              "人造卫星",
+              "匀速圆周运动"
+            ],
+            "definition": "地球同步卫星的运行周期与地球自转周期相等，轨道位于赤道平面。",
+            "example": "静止通信卫星可相对地面保持静止。"
+          },
+          {
+            "name": "预测未知天体",
+            "difficulty": 3,
+            "description": "利用万有引力定律计算并预言尚未发现的天体",
+            "aliases": [],
+            "prerequisites": [
+              "万有引力定律",
+              "开普勒第三定律"
+            ],
+            "definition": "预测未知天体是依据已知天体运动偏差推算其轨道和位置。",
+            "example": "科学家据此预测并发现了海王星。",
+            "section": "第2节 万有引力定律的应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 天地力的综合:万有引力定律",
+            "section_key": "e90e561029",
+            "page_range": [
+              84,
+              90
+            ]
+          },
+          {
+            "name": "第2节 万有引力定律的应用",
+            "section_key": "16126e13f6",
+            "page_range": [
+              90,
+              98
+            ]
+          },
+          {
+            "name": "第3节 人类对太空的不懈探索",
+            "section_key": "41a480bc31",
+            "page_range": [
+              98,
+              106
+            ]
+          }
+        ],
+        "chapter_key": "11aa56ca4a",
+        "metadata": {
+          "volume_id": "83c455672720",
+          "file_id": "83c455672720",
+          "volume_title": "普通高中教科书 物理 必修第二册",
+          "chapter_order": 4,
+          "raw_heading": "第4章　万有引力定律及航天"
+        }
+      },
+      {
+        "name": "第5章 科学进步无止境",
+        "concepts": [
+          {
+            "name": "经典时空观",
+            "difficulty": 2,
+            "description": "认为时间和空间绝对且彼此独立，与物质运动无关。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经典时空观认为时间均匀流逝，空间永远不变，二者与物质运动无关。",
+            "example": "牛顿认为绝对时间和绝对空间独立存在。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "经典速度合成",
+            "difficulty": 2,
+            "description": "低速世界中物体速度按方向进行加减。",
+            "aliases": [
+              "运动合成原理"
+            ],
+            "prerequisites": [],
+            "definition": "经典速度合成认为观察到的物体速度等于相对速度与参考系速度的矢量合成。",
+            "example": "同向抛物时速度为v2＋v1。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "以太说",
+            "difficulty": 2,
+            "description": "认为光波依靠充满宇宙的以太传播。",
+            "aliases": [
+              "以太假说"
+            ],
+            "prerequisites": [],
+            "definition": "以太说认为宇宙中存在绝对静止的介质以太，光波在其中传播。",
+            "example": "地球运动应产生可测的以太风。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "迈克尔孙—莫雷实验",
+            "difficulty": 2,
+            "description": "测量不同方向光速以检验以太是否存在。",
+            "aliases": [
+              "迈克尔孙—莫雷实验"
+            ],
+            "prerequisites": [
+              "经典速度合成",
+              "以太说"
+            ],
+            "definition": "迈克尔孙—莫雷实验测得不同方向的光速相同，未发现以太风。",
+            "example": "实验没有支持以太说。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "惯性参考系",
+            "difficulty": 2,
+            "description": "相对性原理适用的参考系，物理规律形式相同。",
+            "aliases": [
+              "惯性系"
+            ],
+            "prerequisites": [],
+            "definition": "惯性参考系是其中物理规律可保持相同形式的参考系。",
+            "example": "匀速飞行的飞机可近似看作惯性系。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "相对性原理",
+            "difficulty": 3,
+            "description": "所有物理规律在一切惯性参考系中形式相同。",
+            "aliases": [
+              "狭义相对性原理"
+            ],
+            "prerequisites": [
+              "惯性参考系"
+            ],
+            "definition": "相对性原理指出所有物理规律在一切惯性参考系中都具有相同形式。",
+            "example": "不同惯性系中上抛小球遵循同样规律。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "光速不变原理",
+            "difficulty": 3,
+            "description": "真空中的光速在一切惯性系中都相同。",
+            "aliases": [],
+            "prerequisites": [
+              "惯性参考系"
+            ],
+            "definition": "光速不变原理指出各惯性参考系测得的真空光速均为c。",
+            "example": "列车内外观察者测得光速都为c。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "狭义相对论",
+            "difficulty": 3,
+            "description": "由两个基本假设建立的高速运动理论。",
+            "aliases": [
+              "狭义相对论"
+            ],
+            "prerequisites": [
+              "相对性原理",
+              "光速不变原理"
+            ],
+            "definition": "狭义相对论是以相对性原理和光速不变原理为基础的高速运动理论。",
+            "example": "它解释了时间延缓和长度收缩。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "相对论时空观",
+            "difficulty": 3,
+            "description": "认为时间、空间与物质运动相互联系并非绝对。",
+            "aliases": [],
+            "prerequisites": [
+              "狭义相对论"
+            ],
+            "definition": "相对论时空观认为时间和空间与物体运动有关且彼此联系。",
+            "example": "不同参考系测得的时间可能不同。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "时间延缓",
+            "difficulty": 3,
+            "description": "高速运动的时钟相对观察者走得更慢。",
+            "aliases": [
+              "运动的时钟变慢"
+            ],
+            "prerequisites": [
+              "相对论时空观",
+              "狭义相对论"
+            ],
+            "definition": "时间延缓是同一过程在相对运动参考系中测得时间变长的效应。",
+            "example": "站台观察者测得列车实验时间更长。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "固有时",
+            "difficulty": 3,
+            "description": "与物理过程相对静止的参考系测得的最短时间。",
+            "aliases": [],
+            "prerequisites": [
+              "时间延缓"
+            ],
+            "definition": "固有时是与所研究物理过程相对静止的参考系测得的时间。",
+            "example": "乘客测得车内实验经历15分钟。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "长度收缩",
+            "difficulty": 3,
+            "description": "沿运动方向高速运动物体的长度变短。",
+            "aliases": [
+              "长度观测效应"
+            ],
+            "prerequisites": [
+              "相对论时空观",
+              "狭义相对论"
+            ],
+            "definition": "长度收缩是运动物体沿运动方向的测量长度小于其静止长度的效应。",
+            "example": "高速飞行器测得运动方向的尺变短。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "固有长度",
+            "difficulty": 3,
+            "description": "物体相对观测者静止时测得的长度。",
+            "aliases": [
+              "静止长度"
+            ],
+            "prerequisites": [
+              "长度收缩"
+            ],
+            "definition": "固有长度是物体相对观测者静止时测得的长度。",
+            "example": "静止刻度尺测得长度为1米。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "质能关系",
+            "difficulty": 3,
+            "description": "质量和能量通过E＝mc²相互联系。",
+            "aliases": [
+              "质能等价关系"
+            ],
+            "prerequisites": [
+              "狭义相对论"
+            ],
+            "definition": "质能关系表明质量和能量是物质不可分离的属性，满足E＝mc²。",
+            "example": "重核裂变释放能量验证了质能关系。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "质速关系",
+            "difficulty": 4,
+            "description": "物体质量随相对运动速度增大而增大。",
+            "aliases": [],
+            "prerequisites": [
+              "狭义相对论"
+            ],
+            "definition": "质速关系指出物体相对惯性系的运动速度越大，测得质量越大。",
+            "example": "接近光速运动的物体质量明显增加。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "广义相对论",
+            "difficulty": 4,
+            "description": "用时空弯曲解释引力作用的理论。",
+            "aliases": [
+              "广义相对论"
+            ],
+            "prerequisites": [
+              "相对论时空观"
+            ],
+            "definition": "广义相对论认为物质使时空弯曲，天体间引力是时空弯曲的表现。",
+            "example": "太阳质量使周围时空发生弯曲。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "时空弯曲",
+            "difficulty": 4,
+            "description": "物质存在会使空间和时间发生弯曲。",
+            "aliases": [],
+            "prerequisites": [
+              "广义相对论"
+            ],
+            "definition": "时空弯曲是物质存在导致时空几何性质改变的现象。",
+            "example": "太阳周围弯曲的时空使星光偏折。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "星光偏折",
+            "difficulty": 3,
+            "description": "光经过太阳附近时因时空弯曲而改变传播方向。",
+            "aliases": [
+              "引力场中光线弯曲"
+            ],
+            "prerequisites": [
+              "时空弯曲"
+            ],
+            "definition": "星光偏折是恒星光线经过太阳附近引力场时发生弯曲的现象。",
+            "example": "日全食观测到星光偏角约为1.75角秒。"
+          },
+          {
+            "name": "宇宙红移",
+            "difficulty": 3,
+            "description": "遥远天体光谱向红光方向偏移的现象。",
+            "aliases": [
+              "光谱红移"
+            ],
+            "prerequisites": [],
+            "definition": "宇宙红移是遥远天体光谱相对于地面同种物质光谱波长变长的现象。",
+            "example": "遥远星系的光谱向红光方向偏移。"
+          },
+          {
+            "name": "宇宙膨胀",
+            "difficulty": 3,
+            "description": "星系普遍远离彼此，且距离越远退行速度越快。",
+            "aliases": [],
+            "prerequisites": [
+              "宇宙红移"
+            ],
+            "definition": "宇宙膨胀是星系间距离随时间整体增大的宇宙运动状态。",
+            "example": "哈勃观测发现远方星系正在远离我们。"
+          },
+          {
+            "name": "大爆炸宇宙模型",
+            "difficulty": 3,
+            "description": "认为宇宙由高温高密度奇点爆炸演化而来。",
+            "aliases": [
+              "大爆炸模型"
+            ],
+            "prerequisites": [
+              "宇宙膨胀"
+            ],
+            "definition": "大爆炸宇宙模型认为宇宙起源于温度无限高、密度无限大的奇点。",
+            "example": "该模型解释宇宙红移并预言背景微波辐射。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "宇宙背景微波辐射",
+            "difficulty": 3,
+            "description": "大爆炸宇宙背景中至今存在的微波辐射。",
+            "aliases": [
+              "宇宙背景辐射",
+              "背景微波辐射"
+            ],
+            "prerequisites": [
+              "大爆炸宇宙模型"
+            ],
+            "definition": "宇宙背景微波辐射是大爆炸模型预言并在宇宙空间观测到的微波辐射。",
+            "example": "1965年威尔森和彭齐亚斯观测到它。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "奇点",
+            "difficulty": 4,
+            "description": "大爆炸模型描述的极高温、极高密度状态。",
+            "aliases": [],
+            "prerequisites": [
+              "大爆炸宇宙模型"
+            ],
+            "definition": "奇点是大爆炸模型中宇宙起始时温度和物质密度趋于无限大的状态。",
+            "example": "宇宙从奇点开始大爆炸。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "宇宙平均密度",
+            "difficulty": 3,
+            "description": "描述宇宙物质总体分布状况的重要物理量。",
+            "aliases": [
+              "物质平均密度"
+            ],
+            "prerequisites": [
+              "宇宙膨胀"
+            ],
+            "definition": "宇宙平均密度是单位宇宙空间内物质平均分布状况的量。",
+            "example": "它决定宇宙膨胀或重新收缩的趋势。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "暗物质",
+            "difficulty": 3,
+            "description": "不能释放电磁辐射但能产生引力作用的物质。",
+            "aliases": [],
+            "prerequisites": [
+              "宇宙平均密度"
+            ],
+            "definition": "暗物质是不能释放任何电磁辐射、但可通过引力效应被推知的物质。",
+            "example": "星系引力效应显示常规物质不足以产生其大小。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "暗能量",
+            "difficulty": 3,
+            "description": "与宇宙加速膨胀有关但本质尚未明确的成分。",
+            "aliases": [],
+            "prerequisites": [
+              "宇宙膨胀"
+            ],
+            "definition": "暗能量是科学家根据宇宙加速膨胀推测存在的宇宙成分。",
+            "example": "遥远超新星观测显示宇宙正在加速膨胀。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "射电望远镜",
+            "difficulty": 2,
+            "description": "主要接收天体射电波段辐射的天文望远镜。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "射电望远镜是接收天体射电波段辐射并据此观测宇宙的设备。",
+            "example": "中国天眼接收来自天体的无线电波。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "引力波",
+            "difficulty": 4,
+            "description": "极端天文事件产生并以光速传播的时空涟漪。",
+            "aliases": [
+              "时空涟漪"
+            ],
+            "prerequisites": [
+              "广义相对论",
+              "时空弯曲"
+            ],
+            "definition": "引力波是大质量天体剧烈运动造成并向外传播的时空扰动。",
+            "example": "双黑洞合并产生了持续不到1秒的信号。",
+            "section": "第3节 探索宇宙的奥秘"
+          },
+          {
+            "name": "霍金辐射",
+            "difficulty": 4,
+            "description": "黑洞向外辐射能量并可能最终消失的现象。",
+            "aliases": [],
+            "prerequisites": [
+              "广义相对论"
+            ],
+            "definition": "霍金辐射是黑洞向外发出辐射、温度升高并可能最终爆炸消失的现象。",
+            "example": "黑洞会因辐射而逐渐升温。",
+            "section": "第3节 探索宇宙的奥秘"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导入 再次跨越时空的对话",
+            "section_key": "621daa5b84",
+            "page_range": [
+              106,
+              106
+            ]
+          },
+          {
+            "name": "第1节 初识相对论",
+            "section_key": "e55afbf053",
+            "page_range": [
+              106,
+              106
+            ]
+          },
+          {
+            "name": "第2节 相对论中的神奇时空",
+            "section_key": "a92919df94",
+            "page_range": [
+              106,
+              106
+            ]
+          },
+          {
+            "name": "第3节 探索宇宙的奥秘",
+            "section_key": "fa0eead419",
+            "page_range": [
+              106,
+              122
+            ]
+          }
+        ],
+        "chapter_key": "991acaade2",
+        "metadata": {
+          "volume_id": "83c455672720",
+          "file_id": "83c455672720",
+          "volume_title": "普通高中教科书 物理 必修第二册",
+          "chapter_order": 5,
+          "raw_heading": "第5章　科学进步无止境"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "f61070e0e7": [
+        7,
+        8
+      ],
+      "导入 神奇之能": [
+        7,
+        8
+      ],
+      "3b63e887c5": [
+        8,
+        13
+      ],
+      "第1节 机械功": [
+        8,
+        13
+      ],
+      "72e5aa2d42": [
+        13,
+        18
+      ],
+      "第2节 功 率": [
+        13,
+        18
+      ],
+      "ce392098c0": [
+        18,
+        23
+      ],
+      "第3节 动能和动能定理": [
+        18,
+        23
+      ],
+      "ba56233502": [
+        23,
+        28
+      ],
+      "第4节 势能及其改变": [
+        23,
+        28
+      ],
+      "e9a0aeda9b": [
+        28,
+        39
+      ],
+      "第5节 科学验证:机械能守恒定律": [
+        28,
+        39
+      ],
+      "ad886f41a2": [
+        39,
+        40
+      ],
+      "导入 更准、更远": [
+        39,
+        40
+      ],
+      "9a3488d63d": [
+        40,
+        45
+      ],
+      "第1节 运动的合成与分解": [
+        40,
+        45
+      ],
+      "d7d9583753": [
+        45,
+        50
+      ],
+      "第2节 平抛运动": [
+        45,
+        50
+      ],
+      "6202c3bdee": [
+        50,
+        53
+      ],
+      "第3节 科学探究:平抛运动的特点": [
+        50,
+        53
+      ],
+      "9a1c9bcd3b": [
+        53,
+        57
+      ],
+      "第4节 生活中的抛体运动": [
+        53,
+        57
+      ],
+      "707685dfc2": [
+        57,
+        57
+      ],
+      "导入 生活中的圆周运动": [
+        57,
+        57
+      ],
+      "b94b34708b": [
+        57,
+        57
+      ],
+      "第1节 匀速圆周运动快慢的描述": [
+        57,
+        57
+      ],
+      "1ed1a00fea": [
+        57,
+        57
+      ],
+      "第2节 科学探究:向心力": [
+        57,
+        57
+      ],
+      "ac089347bc": [
+        57,
+        83
+      ],
+      "第3节 离心现象": [
+        57,
+        83
+      ],
+      "e90e561029": [
+        84,
+        90
+      ],
+      "第1节 天地力的综合:万有引力定律": [
+        84,
+        90
+      ],
+      "16126e13f6": [
+        90,
+        98
+      ],
+      "第2节 万有引力定律的应用": [
+        90,
+        98
+      ],
+      "41a480bc31": [
+        98,
+        106
+      ],
+      "第3节 人类对太空的不懈探索": [
+        98,
+        106
+      ],
+      "621daa5b84": [
+        106,
+        106
+      ],
+      "导入 再次跨越时空的对话": [
+        106,
+        106
+      ],
+      "e55afbf053": [
+        106,
+        106
+      ],
+      "第1节 初识相对论": [
+        106,
+        106
+      ],
+      "a92919df94": [
+        106,
+        106
+      ],
+      "第2节 相对论中的神奇时空": [
+        106,
+        106
+      ],
+      "fa0eead419": [
+        106,
+        122
+      ],
+      "第3节 探索宇宙的奥秘": [
+        106,
+        122
+      ]
+    }
+  }
+}

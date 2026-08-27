@@ -1,6 +1,6 @@
 {
   "file_id": "655f1295c9e5",
-  "text_sha256": "a5ca7605956436d7509bda5c558df7313e95fbde3acb460363e7cc02a578fdd2",
+  "text_sha256": "ff7f6756bfce6e2b98a345cd6f9869f2cca65aa84490795458597a62cf326f61",
   "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
   "schema_version": "3",
   "chapter_locator_version": "5",
@@ -10,8 +10,33 @@
     "level": "高中",
     "chapters": [
       {
-        "name": "第六章 平面向量及其应用",
+        "name": "数学探究　用向量法研究三角形的性质",
         "concepts": [
+          {
+            "name": "向量法",
+            "difficulty": 3,
+            "description": "运用向量表示和运算研究三角形性质的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "向量法是借助向量的表示、运算和关系研究几何图形性质的方法。",
+            "example": "用向量关系研究三角形的性质"
+          }
+        ]
+      },
+      {
+        "name": "第六章　平面向量及其应用",
+        "concepts": [
+          {
+            "name": "数量",
+            "difficulty": 1,
+            "description": "只有大小而没有方向的量",
+            "aliases": [
+              "标量"
+            ],
+            "prerequisites": [],
+            "definition": "数量是只有大小没有方向、可用实数表示的量。",
+            "example": "长度、质量、面积都是数量"
+          },
           {
             "name": "向量",
             "difficulty": 1,
@@ -21,18 +46,7 @@
             ],
             "prerequisites": [],
             "definition": "向量是既有大小又有方向的量。",
-            "example": "位移、力、速度都是向量。"
-          },
-          {
-            "name": "数量",
-            "difficulty": 1,
-            "description": "只有大小没有方向的量",
-            "aliases": [
-              "标量"
-            ],
-            "prerequisites": [],
-            "definition": "数量是只有大小而没有方向的量。",
-            "example": "长度、质量、面积都是数量。"
+            "example": "力、位移、速度都是向量"
           },
           {
             "name": "有向线段",
@@ -40,11 +54,11 @@
             "description": "具有起点、方向和长度的线段",
             "aliases": [],
             "prerequisites": [],
-            "definition": "具有方向的线段叫做有向线段。",
-            "example": "从A指向B的有向线段记作AB。"
+            "definition": "规定起点和终点顺序并带有方向的线段叫有向线段。",
+            "example": "从A指向B的有向线段记作AB"
           },
           {
-            "name": "向量表示",
+            "name": "向量几何表示",
             "difficulty": 1,
             "description": "用带箭头线段表示向量",
             "aliases": [],
@@ -52,33 +66,33 @@
               "向量",
               "有向线段"
             ],
-            "definition": "向量可用带箭头的有向线段表示其大小和方向。",
-            "example": "有向线段AB表示位移向量。"
+            "definition": "向量可用带箭头的线段表示，长度表示大小，箭头表示方向。",
+            "example": "用AB表示从A到B的位移"
           },
           {
-            "name": "向量的模",
+            "name": "向量长度",
             "difficulty": 1,
-            "description": "向量的大小或长度",
+            "description": "向量的大小，也称向量的模",
             "aliases": [
-              "向量长度"
+              "向量模"
             ],
             "prerequisites": [
               "向量",
               "有向线段"
             ],
             "definition": "向量的大小称为向量的长度或模。",
-            "example": "长度为3的向量，其模为3。"
+            "example": "若AB长为3，则|AB|=3"
           },
           {
             "name": "零向量",
             "difficulty": 1,
-            "description": "长度为零的向量",
+            "description": "长度为0的向量",
             "aliases": [],
             "prerequisites": [
-              "向量的模"
+              "向量长度"
             ],
-            "definition": "长度为0的向量叫做零向量。",
-            "example": "零向量记作0。"
+            "definition": "长度为0的向量叫做零向量，记作0。",
+            "example": "起点和终点重合的向量是零向量"
           },
           {
             "name": "单位向量",
@@ -86,10 +100,10 @@
             "description": "长度等于一个单位长度的向量",
             "aliases": [],
             "prerequisites": [
-              "向量的模"
+              "向量长度"
             ],
             "definition": "长度等于1个单位长度的向量叫做单位向量。",
-            "example": "模为1的向量是单位向量。"
+            "example": "长度为1且方向向东的向量"
           },
           {
             "name": "平行向量",
@@ -102,7 +116,7 @@
               "向量"
             ],
             "definition": "方向相同或相反的非零向量叫做平行向量。",
-            "example": "同一直线方向相反的两个向量平行。"
+            "example": "同一直线上的反向箭头向量平行"
           },
           {
             "name": "相等向量",
@@ -110,73 +124,58 @@
             "description": "长度相等且方向相同的向量",
             "aliases": [],
             "prerequisites": [
-              "向量的模",
+              "向量长度",
               "向量"
             ],
             "definition": "长度相等且方向相同的向量叫做相等向量。",
-            "example": "两个模都为2且同向的向量相等。"
+            "example": "AB与CD方向相同且等长，则两者相等",
+            "section": "6.1 平面向量的概念"
+          },
+          {
+            "name": "相反向量",
+            "difficulty": 2,
+            "description": "长度相等、方向相反的两个向量",
+            "aliases": [],
+            "prerequisites": [
+              "相等向量",
+              "平行向量"
+            ],
+            "definition": "与一个向量长度相等且方向相反的向量叫其相反向量。",
+            "example": "向量a与-a互为相反向量",
+            "section": "6.2 平面向量的运算"
           },
           {
             "name": "向量加法",
             "difficulty": 2,
-            "description": "求两个向量和的运算",
+            "description": "按位移合成定义的向量运算",
             "aliases": [],
             "prerequisites": [
               "向量"
             ],
-            "definition": "求两个向量和的运算叫做向量加法。",
-            "example": "AB向量加BC向量等于AC向量。"
+            "definition": "两个向量相加所得的向量表示它们连续位移的合成。",
+            "example": "AB+BC=AC"
           },
           {
             "name": "三角形法则",
             "difficulty": 2,
-            "description": "首尾相接作向量和的方法",
-            "aliases": [
-              "向量加法三角形法则"
-            ],
+            "description": "首尾相接求向量和的方法",
+            "aliases": [],
             "prerequisites": [
-              "向量加法",
-              "有向线段"
+              "向量加法"
             ],
-            "definition": "将两个向量首尾相接，连接首尾所得向量表示它们的和。",
-            "example": "AB向量+BC向量=AC向量。"
+            "definition": "将两个向量首尾相接，以第一个起点指向第二个终点所得向量为和。",
+            "example": "AB+BC=AC"
           },
           {
             "name": "平行四边形法则",
             "difficulty": 2,
             "description": "同起点向量求和的作图法则",
-            "aliases": [
-              "向量加法平行四边形法则"
-            ],
-            "prerequisites": [
-              "向量加法",
-              "平行四边形"
-            ],
-            "definition": "以同一点为起点的两个向量作邻边，其对角线表示向量的和。",
-            "example": "以OA、OB为邻边，OC表示两者之和。"
-          },
-          {
-            "name": "向量加法运算律",
-            "difficulty": 2,
-            "description": "向量加法满足交换律和结合律",
             "aliases": [],
             "prerequisites": [
               "向量加法"
             ],
-            "definition": "向量加法满足交换律和结合律。",
-            "example": "a+b=b+a。"
-          },
-          {
-            "name": "相反向量",
-            "difficulty": 2,
-            "description": "长度相等、方向相反的向量",
-            "aliases": [],
-            "prerequisites": [
-              "向量的模",
-              "向量"
-            ],
-            "definition": "与向量a长度相等且方向相反的向量叫做a的相反向量。",
-            "example": "a与−a互为相反向量。"
+            "definition": "以两个同起点向量为邻边作平行四边形，对角线向量表示向量和。",
+            "example": "OA+OB等于平行四边形对角线向量"
           },
           {
             "name": "向量减法",
@@ -187,47 +186,32 @@
               "向量加法",
               "相反向量"
             ],
-            "definition": "向量a与b的差定义为a加上b的相反向量。",
-            "example": "a−b=a+(−b)。"
+            "definition": "向量a减向量b等于向量a加上向量b的相反向量。",
+            "example": "a-b=a+(-b)",
+            "section": "6.2 平面向量的运算"
           },
           {
-            "name": "向量数乘",
+            "name": "数乘向量",
             "difficulty": 2,
             "description": "实数与向量相乘的运算",
-            "aliases": [
-              "实数与向量的积"
-            ],
+            "aliases": [],
             "prerequisites": [
               "向量"
             ],
-            "definition": "实数λ与向量a的乘积λa仍是一个向量。",
-            "example": "2a表示a方向上长度加倍的向量。"
+            "definition": "实数λ与向量a的积λa，其长度和方向由λ决定。",
+            "example": "2a表示与a同向且长度加倍的向量",
+            "section": "6.4 平面向量的应用"
           },
           {
-            "name": "向量线性运算",
+            "name": "向量坐标表示",
             "difficulty": 3,
-            "description": "向量加法与数乘的统称",
-            "aliases": [
-              "线性运算"
-            ],
-            "prerequisites": [
-              "向量加法",
-              "向量数乘"
-            ],
-            "definition": "向量的加法和数乘统称为向量的线性运算。",
-            "example": "2a−3b是向量线性运算。"
-          },
-          {
-            "name": "向量共线条件",
-            "difficulty": 3,
-            "description": "两个非零向量共线的充要条件",
+            "description": "用有序数对表示平面向量",
             "aliases": [],
             "prerequisites": [
-              "平行向量",
-              "向量数乘"
+              "向量几何表示"
             ],
-            "definition": "两个非零向量共线的充要条件是存在实数λ使a=λb。",
-            "example": "a=2b时，a与b共线。"
+            "definition": "在平面直角坐标系中，向量可表示为有序数对(x,y)。",
+            "example": "向量a可表示为(2,-1)"
           },
           {
             "name": "基底",
@@ -237,170 +221,222 @@
             "prerequisites": [
               "平行向量"
             ],
-            "definition": "平面内两个不共线的向量可以作为该平面的基底。",
-            "example": "i、j可作为平面直角坐标系的基底。"
+            "definition": "平面内两个不共线的向量组成该平面的一组基底。",
+            "example": "单位向量i、j构成一组基底"
           },
           {
             "name": "平面向量基本定理",
             "difficulty": 3,
-            "description": "平面向量可由一组基底唯一表示",
+            "description": "任一向量可由一组基底唯一线性表示",
             "aliases": [],
             "prerequisites": [
               "基底",
-              "向量数乘",
+              "数乘向量",
               "向量加法"
             ],
-            "definition": "平面内任一向量都能唯一表示为两个不共线向量的线性组合。",
-            "example": "a=xi+yj。"
+            "definition": "平面内任一向量都能唯一表示为一组基底的线性组合。",
+            "example": "a=xi+yj"
           },
           {
-            "name": "向量坐标",
+            "name": "向量共线条件",
             "difficulty": 3,
-            "description": "向量相对于基底的有序数对",
+            "description": "两个向量共线的代数判定条件",
             "aliases": [],
             "prerequisites": [
-              "基底",
-              "平面向量基本定理"
+              "平行向量",
+              "数乘向量"
             ],
-            "definition": "向量在给定基底下的两个线性组合系数构成其坐标。",
-            "example": "a=2i+3j的坐标为(2,3)。"
+            "definition": "向量a与非零向量b共线，当且仅当存在实数λ使a=λb。",
+            "example": "a=(2,4)，b=(1,2)时二者共线"
           },
           {
-            "name": "向量坐标运算",
+            "name": "数量积",
             "difficulty": 3,
-            "description": "按对应坐标进行向量加减和数乘",
-            "aliases": [],
-            "prerequisites": [
-              "向量坐标",
-              "向量加法",
-              "向量减法",
-              "向量数乘"
-            ],
-            "definition": "向量和差及数乘的坐标分别按对应坐标进行加减和数乘。",
-            "example": "(1,2)+(3,4)=(4,6)。"
-          },
-          {
-            "name": "向量数量积",
-            "difficulty": 3,
-            "description": "结果为数量的两个向量乘法",
+            "description": "两个向量相乘得到数量的运算",
             "aliases": [
               "点积"
             ],
             "prerequisites": [
-              "向量的模",
+              "向量长度",
               "向量夹角"
             ],
-            "definition": "两个向量的数量积等于它们模的乘积与夹角余弦的乘积。",
-            "example": "a·b=|a||b|cosθ。"
+            "definition": "两个非零向量的数量积等于它们长度与夹角余弦的乘积。",
+            "example": "a·b=|a||b|cosθ"
+          },
+          {
+            "name": "向量夹角",
+            "difficulty": 2,
+            "description": "两个非零向量方向间的不大于180°的角",
+            "aliases": [],
+            "prerequisites": [
+              "向量"
+            ],
+            "definition": "以同一点为起点的两个非零向量之间的角叫做向量的夹角。",
+            "example": "同向向量夹角为0°",
+            "section": "6.2 平面向量的运算"
+          },
+          {
+            "name": "向量垂直",
+            "difficulty": 3,
+            "description": "夹角为90°的两个向量关系",
+            "aliases": [],
+            "prerequisites": [
+              "向量夹角"
+            ],
+            "definition": "两个非零向量的夹角为90°时，称这两个向量互相垂直。",
+            "example": "i·j=0，所以i⊥j"
           },
           {
             "name": "数量积坐标表示",
             "difficulty": 3,
-            "description": "数量积等于对应坐标乘积之和",
+            "description": "用坐标乘积之和计算数量积",
             "aliases": [],
             "prerequisites": [
-              "向量坐标",
-              "向量数量积"
+              "数量积",
+              "向量坐标表示"
             ],
-            "definition": "坐标为(x1,y1)、(x2,y2)的向量数量积为x1x2+y1y2。",
-            "example": "(1,2)·(3,4)=11。"
+            "definition": "若a=(x1,y1)、b=(x2,y2)，则a·b=x1x2+y1y2。",
+            "example": "(1,2)·(3,4)=11"
           },
           {
-            "name": "向量垂直",
-            "difficulty": 2,
-            "description": "两个向量夹角为直角的关系",
-            "aliases": [
-              "正交向量"
-            ],
-            "prerequisites": [
-              "向量数量积",
-              "向量夹角"
-            ],
-            "definition": "两个向量的夹角为90°时，称它们互相垂直。",
-            "example": "(1,0)与(0,1)垂直。"
-          },
-          {
-            "name": "向量夹角",
+            "name": "数乘坐标表示",
             "difficulty": 3,
-            "description": "两个非零向量方向之间的角",
+            "description": "实数与向量积的坐标计算规则",
             "aliases": [],
             "prerequisites": [
-              "向量",
-              "向量的模"
+              "数乘向量",
+              "向量坐标表示"
             ],
-            "definition": "两个非零向量方向之间的角称为这两个向量的夹角。",
-            "example": "同向向量的夹角为0°。"
+            "definition": "若a=(x,y)，则λa=(λx,λy)。",
+            "example": "3(2,1)=(6,3)"
           },
           {
-            "name": "向量垂直坐标条件",
+            "name": "中点坐标公式",
             "difficulty": 3,
-            "description": "用坐标判断两个向量垂直",
+            "description": "由线段两端点坐标求其中点坐标",
             "aliases": [],
             "prerequisites": [
-              "数量积坐标表示",
-              "向量垂直"
+              "向量坐标表示",
+              "数乘坐标表示"
             ],
-            "definition": "两个向量垂直的充要条件是其对应坐标乘积之和为0。",
-            "example": "(1,2)与(2,−1)垂直。"
-          },
-          {
-            "name": "向量法解几何题",
-            "difficulty": 3,
-            "description": "用向量运算研究几何关系的方法",
-            "aliases": [],
-            "prerequisites": [
-              "向量线性运算",
-              "向量数量积",
-              "平面向量基本定理"
-            ],
-            "definition": "先用向量表示几何元素，再运算并将结果转译为几何关系。",
-            "example": "用向量证明三角形中位线定理。"
-          },
-          {
-            "name": "余弦定理",
-            "difficulty": 4,
-            "description": "三角形边长与角度的关系式",
-            "aliases": [],
-            "prerequisites": [
-              "向量数量积",
-              "向量加法"
-            ],
-            "definition": "三角形一边的平方等于另两边平方和减去两边与夹角余弦乘积的两倍。",
-            "example": "c²=a²+b²−2abcosC。"
+            "definition": "端点为(x1,y1)、(x2,y2)的线段中点坐标为((x1+x2)/2,(y1+y2)/2)。",
+            "example": "(0,0)与(2,4)中点为(1,2)",
+            "section": "6.3 平面向量基本定理及坐标表示"
           },
           {
             "name": "正弦定理",
             "difficulty": 4,
-            "description": "三角形边与其对角正弦成比例",
+            "description": "三角形边与其对角正弦的比例关系",
             "aliases": [],
             "prerequisites": [
-              "向量数量积",
-              "余弦定理"
+              "向量夹角"
             ],
-            "definition": "三角形各边与其对角正弦的比相等。",
-            "example": "a/sinA=b/sinB=c/sinC。"
+            "definition": "三角形中各边与其对角正弦的比相等。",
+            "example": "a/sinA=b/sinB",
+            "section": "6.4 平面向量的应用"
+          },
+          {
+            "name": "余弦定理",
+            "difficulty": 4,
+            "description": "三角形边长与角之间的关系",
+            "aliases": [],
+            "prerequisites": [
+              "数量积",
+              "向量夹角"
+            ],
+            "definition": "三角形一边平方等于另两边平方和减去两边乘积的两倍乘夹角余弦。",
+            "example": "c²=a²+b²-2abcosC",
+            "section": "6.4 平面向量的应用"
+          },
+          {
+            "name": "三角形面积公式",
+            "difficulty": 3,
+            "description": "用两边及其夹角求三角形面积",
+            "aliases": [],
+            "prerequisites": [
+              "向量夹角"
+            ],
+            "definition": "三角形面积等于两边及其夹角正弦乘积的一半。",
+            "example": "S=1/2·ab·sinC"
+          },
+          {
+            "name": "三角形重心",
+            "difficulty": 4,
+            "description": "三角形三条中线的交点",
+            "aliases": [],
+            "prerequisites": [
+              "数乘向量",
+              "向量加法"
+            ],
+            "definition": "三角形三条中线相交于一点，该交点叫三角形的重心。",
+            "example": "重心将每条中线分成1:2两段"
+          }
+        ],
+        "sections": [
+          {
+            "name": "6.1　平面向量的概念",
+            "page_range": [
+              9,
+              14
+            ]
+          },
+          {
+            "name": "6.2　平面向量的运算",
+            "page_range": [
+              14,
+              32
+            ]
+          },
+          {
+            "name": "6.3　平面向量基本定理及坐标表示",
+            "page_range": [
+              32,
+              45
+            ]
+          },
+          {
+            "name": "6.4　平面向量的应用",
+            "page_range": [
+              45,
+              73
+            ]
           }
         ]
       },
       {
-        "name": "第七章 复数",
+        "name": "第七章　复数",
         "concepts": [
           {
+            "name": "数系扩充",
+            "difficulty": 2,
+            "description": "为解决方程无解问题逐步扩大数的范围",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数系扩充是为满足实际需求而引入新数并保持原有运算规律的过程。",
+            "example": "由实数系扩充到复数系",
+            "section": "7.3* 复数的三角表示"
+          },
+          {
             "name": "虚数单位",
-            "difficulty": 1,
-            "description": "满足平方等于−1的新数i",
+            "difficulty": 2,
+            "description": "满足平方等于−1的新数",
             "aliases": [
               "i"
             ],
-            "prerequisites": [],
+            "prerequisites": [
+              "数系扩充"
+            ],
             "definition": "虚数单位i规定为满足i²＝−1的数。",
-            "example": "i²＝−1"
+            "example": "i²＝−1",
+            "section": "7.1 复数的概念"
           },
           {
             "name": "复数",
-            "difficulty": 1,
-            "description": "形如a＋bi的数，其中a、b为实数",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "由实数和虚数单位构成的数",
+            "aliases": [
+              "complex number"
+            ],
             "prerequisites": [
               "虚数单位"
             ],
@@ -409,405 +445,451 @@
           },
           {
             "name": "复数集",
-            "difficulty": 1,
-            "description": "全体复数组成的集合C",
+            "difficulty": 2,
+            "description": "全体复数组成的集合",
             "aliases": [
-              "C"
+              "C",
+              "set of complex numbers"
             ],
             "prerequisites": [
               "复数"
             ],
-            "definition": "全体复数构成的集合叫做复数集，记作C。",
+            "definition": "全体形如a＋bi的复数构成的集合叫复数集C。",
             "example": "R⊂C"
           },
           {
-            "name": "复数的实部",
-            "difficulty": 1,
-            "description": "复数a＋bi中的实数a",
+            "name": "复数代数形式",
+            "difficulty": 2,
+            "description": "用实部与虚部表示复数的形式",
             "aliases": [
-              "实部"
+              "代数表示式"
             ],
             "prerequisites": [
               "复数"
             ],
-            "definition": "复数a＋bi中的实数a叫做该复数的实部。",
-            "example": "3＋2i的实部是3"
+            "definition": "a＋bi是复数的代数表示式，其中a、b为实数。",
+            "example": "−2＋5i",
+            "section": "7.3* 复数的三角表示"
           },
           {
-            "name": "复数的虚部",
-            "difficulty": 1,
-            "description": "复数a＋bi中的实数b",
+            "name": "实部与虚部",
+            "difficulty": 2,
+            "description": "复数中实数项和虚数单位的系数",
             "aliases": [
-              "虚部"
+              "real part",
+              "imaginary part"
             ],
             "prerequisites": [
-              "复数"
+              "复数代数形式"
             ],
-            "definition": "复数a＋bi中的实数b叫做该复数的虚部。",
-            "example": "3＋2i的虚部是2"
+            "definition": "在z＝a＋bi中，a叫实部，b叫虚部。",
+            "example": "3−4i的实部为3、虚部为−4"
           },
           {
             "name": "复数相等",
-            "difficulty": 1,
-            "description": "实部相等且虚部相等的两个复数相等",
-            "aliases": [
-              "复数相等的定义"
-            ],
-            "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
-            ],
-            "definition": "两个复数相等当且仅当它们的实部和虚部分别相等。",
-            "example": "a＋bi＝c＋di⇔a＝c且b＝d"
-          },
-          {
-            "name": "实数",
-            "difficulty": 1,
-            "description": "虚部为零的复数",
+            "difficulty": 2,
+            "description": "两个复数对应实部和虚部分别相等",
             "aliases": [],
             "prerequisites": [
-              "复数的虚部"
+              "复数代数形式"
             ],
-            "definition": "复数a＋bi当且仅当b＝0时是实数。",
-            "example": "2＝2＋0i"
+            "definition": "a＋bi与c＋di相等当且仅当a＝c且b＝d。",
+            "example": "x＋yi＝2＋3i得x＝2、y＝3"
           },
           {
-            "name": "虚数",
-            "difficulty": 1,
-            "description": "虚部不为零的复数",
+            "name": "实数与虚数",
+            "difficulty": 2,
+            "description": "按虚部是否为零对复数进行分类",
             "aliases": [],
             "prerequisites": [
-              "复数的虚部"
+              "实部与虚部"
             ],
-            "definition": "复数a＋bi当且仅当b≠0时叫做虚数。",
-            "example": "1＋i"
+            "definition": "虚部为零的复数是实数，虚部不为零的复数是虚数。",
+            "example": "5是实数，2i是虚数"
           },
           {
             "name": "纯虚数",
-            "difficulty": 1,
+            "difficulty": 2,
             "description": "实部为零且虚部不为零的复数",
-            "aliases": [],
-            "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
-            ],
-            "definition": "实部为零且虚部不为零的复数叫做纯虚数。",
-            "example": "−2i"
-          },
-          {
-            "name": "复平面",
-            "difficulty": 2,
-            "description": "用直角坐标系表示复数的平面",
             "aliases": [
-              "阿尔冈图"
+              "pure imaginary number"
             ],
             "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
+              "实数与虚数"
             ],
-            "definition": "建立直角坐标系表示复数的平面叫做复平面。",
-            "example": "a＋bi对应点(a，b)"
-          },
-          {
-            "name": "实轴与虚轴",
-            "difficulty": 2,
-            "description": "复平面的横轴与纵轴",
-            "aliases": [
-              "实轴",
-              "虚轴"
-            ],
-            "prerequisites": [
-              "复平面",
-              "实数",
-              "纯虚数"
-            ],
-            "definition": "复平面的横轴叫实轴，纵轴叫虚轴。",
-            "example": "点(2，0)在实轴上"
-          },
-          {
-            "name": "复数的向量表示",
-            "difficulty": 2,
-            "description": "复数对应复平面中以原点为起点的向量",
-            "aliases": [],
-            "prerequisites": [
-              "复平面"
-            ],
-            "definition": "复数与复平面内以原点为起点的向量建立一一对应。",
-            "example": "2＋i对应向量(2，1)"
-          },
-          {
-            "name": "复数的模",
-            "difficulty": 2,
-            "description": "对应向量的模，等于√(a²＋b²)",
-            "aliases": [
-              "复数的绝对值"
-            ],
-            "prerequisites": [
-              "复数的向量表示"
-            ],
-            "definition": "复数a＋bi的模定义为√(a²＋b²)。",
-            "example": "|3＋4i|＝5"
-          },
-          {
-            "name": "共轭复数",
-            "difficulty": 2,
-            "description": "实部相等、虚部互为相反数的复数",
-            "aliases": [
-              "共轭虚数"
-            ],
-            "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
-            ],
-            "definition": "实部相等且虚部互为相反数的两个复数互为共轭复数。",
-            "example": "2＋3i与2−3i"
+            "definition": "实部为0而虚部不为0的复数叫做纯虚数。",
+            "example": "−3i"
           },
           {
             "name": "复数加法",
-            "difficulty": 2,
-            "description": "实部与实部相加，虚部与虚部相加",
-            "aliases": [
-              "复数加法法则"
-            ],
+            "difficulty": 3,
+            "description": "实部相加、虚部相加的运算",
+            "aliases": [],
             "prerequisites": [
+              "复数代数形式",
               "复数相等"
             ],
-            "definition": "两个复数相加时分别将实部和虚部相加。",
-            "example": "(2＋i)+(3−i)＝5"
+            "definition": "两个复数相加时分别把实部和虚部相加。",
+            "example": "(2＋i)＋(3−4i)＝5−3i",
+            "section": "7.2 复数的四则运算"
           },
           {
             "name": "复数减法",
-            "difficulty": 2,
-            "description": "复数加法的逆运算",
-            "aliases": [
-              "复数减法法则"
-            ],
+            "difficulty": 3,
+            "description": "实部相减、虚部相减的运算",
+            "aliases": [],
             "prerequisites": [
-              "复数加法"
+              "复数代数形式",
+              "复数相等"
             ],
-            "definition": "复数减法定义为复数加法的逆运算。",
-            "example": "(2＋3i)−(1＋i)＝1＋2i"
+            "definition": "两个复数相减时分别把实部和虚部相减。",
+            "example": "(2＋i)−(3−4i)＝−1＋5i",
+            "section": "7.2 复数的四则运算"
           },
           {
             "name": "复数乘法",
-            "difficulty": 2,
-            "description": "按乘法法则展开并用i²＝−1化简",
+            "difficulty": 3,
+            "description": "按分配律并利用i²＝−1进行运算",
+            "aliases": [],
+            "prerequisites": [
+              "复数代数形式",
+              "虚数单位"
+            ],
+            "definition": "复数相乘按多项式乘法展开并用i²＝−1化简。",
+            "example": "(1＋i)²＝2i",
+            "section": "7.3* 复数的三角表示"
+          },
+          {
+            "name": "共轭复数",
+            "difficulty": 3,
+            "description": "实部相等、虚部互为相反数的复数",
             "aliases": [
-              "复数乘法法则"
+              "conjugate complex number"
             ],
             "prerequisites": [
-              "虚数单位",
-              "复数"
+              "实部与虚部",
+              "复数代数形式"
             ],
-            "definition": "复数乘法按分配律展开并以i²＝−1化简。",
-            "example": "(1＋i)(1−i)＝2"
+            "definition": "a＋bi的共轭复数是a−bi，二者实部相等而虚部相反。",
+            "example": "3＋2i与3−2i"
           },
           {
             "name": "复数除法",
             "difficulty": 3,
-            "description": "利用除数共轭复数使分母实数化",
-            "aliases": [
-              "复数除法法则"
-            ],
+            "description": "借助共轭复数化为实数分母",
+            "aliases": [],
             "prerequisites": [
               "复数乘法",
               "共轭复数"
             ],
-            "definition": "复数除法是乘法的逆运算，通常用除数的共轭复数化简。",
-            "example": "1/(1＋i)＝(1−i)/2"
+            "definition": "复数相除通常分子分母同乘分母的共轭复数。",
+            "example": "1/i＝−i"
           },
           {
-            "name": "复数的三角形式",
-            "difficulty": 3,
-            "description": "用模和辐角表示为r(cosθ＋isinθ)",
+            "name": "复平面",
+            "difficulty": 2,
+            "description": "用平面直角坐标系表示复数的平面",
             "aliases": [
-              "三角形式",
-              "三角表示式"
+              "Argand diagram"
+            ],
+            "prerequisites": [
+              "复数代数形式",
+              "复数相等"
+            ],
+            "definition": "以实轴和虚轴构成的表示复数的平面叫复平面。",
+            "example": "2＋3i对应点(2，3)"
+          },
+          {
+            "name": "复数的几何对应",
+            "difficulty": 3,
+            "description": "复数与复平面点及原点向量一一对应",
+            "aliases": [],
+            "prerequisites": [
+              "复平面"
+            ],
+            "definition": "复数a＋bi分别与复平面点(a，b)及向量OZ一一对应。",
+            "example": "−i对应点(0，−1)"
+          },
+          {
+            "name": "复数的模",
+            "difficulty": 2,
+            "description": "复平面中对应向量的长度",
+            "aliases": [
+              "绝对值",
+              "modulus"
+            ],
+            "prerequisites": [
+              "复数的几何对应"
+            ],
+            "definition": "复数a＋bi的模为|a＋bi|＝√(a²＋b²)。",
+            "example": "|3＋4i|＝5"
+          },
+          {
+            "name": "复数乘除的几何意义",
+            "difficulty": 4,
+            "description": "乘除运算对应向量的旋转与伸缩",
+            "aliases": [],
+            "prerequisites": [
+              "复数的模",
+              "复数的几何对应",
+              "复数乘法",
+              "复数除法"
+            ],
+            "definition": "复数乘法和除法在几何上分别体现向量的旋转与伸缩。",
+            "example": "乘以模为2的复数使长度扩大2倍"
+          },
+          {
+            "name": "复数三角形式",
+            "difficulty": 3,
+            "description": "用模和辐角表示复数的形式",
+            "aliases": [
+              "三角表示式",
+              "三角形式"
             ],
             "prerequisites": [
               "复数的模",
-              "复平面"
+              "复数的几何对应"
             ],
             "definition": "复数可表示为r(cosθ＋isinθ)，称为三角形式。",
-            "example": "1＋i＝√2(cosπ/4＋isinπ/4)"
+            "example": "1−i＝√2(cos7π/4＋isin7π/4)",
+            "section": "7.3* 复数的三角表示"
           },
           {
             "name": "复数的辐角",
             "difficulty": 3,
-            "description": "对应向量与实轴正半轴所成的角",
+            "description": "对应向量与实轴正半轴形成的角",
             "aliases": [
-              "辐角"
+              "argument"
             ],
             "prerequisites": [
-              "复数的向量表示"
+              "复数的几何对应"
             ],
-            "definition": "以实轴正半轴为始边、对应向量所在射线为终边的角叫辐角。",
-            "example": "arg i＝π/2"
+            "definition": "从实轴非负半轴到复数对应向量的有向角叫辐角。",
+            "example": "i的辐角为π/2＋2kπ",
+            "section": "7.3* 复数的三角表示"
           },
           {
             "name": "辐角主值",
             "difficulty": 3,
-            "description": "取值范围为0≤θ＜2π的辐角",
+            "description": "限定在0≤θ＜2π范围内的辐角",
             "aliases": [
-              "主辐角",
               "arg z"
             ],
             "prerequisites": [
               "复数的辐角"
             ],
-            "definition": "在0≤θ＜2π范围内取的辐角值叫辐角主值。",
-            "example": "arg(−1)＝π"
+            "definition": "满足0≤arg z＜2π的辐角值叫辐角主值。",
+            "example": "arg(−i)＝3π/2",
+            "section": "7.3* 复数的三角表示"
           },
           {
-            "name": "三角形式乘法",
-            "difficulty": 3,
-            "description": "积的模相乘，辐角相加",
+            "name": "三角形式乘除法",
+            "difficulty": 4,
+            "description": "乘除时模相乘除、辐角相加减",
             "aliases": [],
             "prerequisites": [
-              "复数的三角形式",
-              "复数乘法"
+              "复数三角形式",
+              "复数的辐角"
             ],
-            "definition": "三角形式复数相乘时，积的模等于模的积，辐角等于辐角之和。",
-            "example": "r₁∠θ₁·r₂∠θ₂＝r₁r₂∠(θ₁＋θ₂)"
-          },
-          {
-            "name": "三角形式除法",
-            "difficulty": 3,
-            "description": "商的模相除，辐角相减",
-            "aliases": [],
-            "prerequisites": [
-              "复数的三角形式",
-              "复数除法"
-            ],
-            "definition": "三角形式复数相除时，商的模等于模的商，辐角等于辐角之差。",
-            "example": "r₁∠θ₁÷r₂∠θ₂＝(r₁/r₂)∠(θ₁−θ₂)"
+            "definition": "三角形式复数相乘除时模分别相乘除，辐角分别相加减。",
+            "example": "辐角θ₁与θ₂相乘后为θ₁＋θ₂"
           },
           {
             "name": "棣莫弗定理",
             "difficulty": 4,
-            "description": "复数n次幂的模与辐角分别乘n",
+            "description": "给出复数三角形式的整数次幂公式",
             "aliases": [
-              "德莫弗定理"
+              "De Moivre定理"
             ],
             "prerequisites": [
-              "复数的三角形式",
-              "三角形式乘法"
+              "三角形式乘除法",
+              "复数三角形式"
             ],
             "definition": "[r(cosθ＋isinθ)]ⁿ＝rⁿ(cosnθ＋isinnθ)。",
-            "example": "(cosθ＋isinθ)²＝cos2θ＋isin2θ"
+            "example": "(cosθ＋isinθ)³＝cos3θ＋isin3θ",
+            "section": "7.3* 复数的三角表示"
           },
           {
-            "name": "单位根",
+            "name": "1的n次方根",
             "difficulty": 4,
-            "description": "满足zⁿ＝1的复数根",
-            "aliases": [
-              "1的n次方根"
-            ],
+            "description": "满足zⁿ＝1的复数及其单位圆分布",
+            "aliases": [],
             "prerequisites": [
               "棣莫弗定理",
-              "复数的三角形式"
+              "复数的模",
+              "复数的辐角"
             ],
             "definition": "满足zⁿ＝1的复数叫做1的n次方根。",
-            "example": "1的三次方根含1、−1/2±√3i/2"
+            "example": "1的三次方根为1、−1/2±√3i/2"
           },
           {
             "name": "代数基本定理",
-            "difficulty": 4,
-            "description": "n次复系数多项式方程至少有一个复根",
-            "aliases": [],
+            "difficulty": 5,
+            "description": "复系数多项式方程至少有一个复根",
+            "aliases": [
+              "fundamental theorem of algebra"
+            ],
             "prerequisites": [
-              "复数集"
+              "复数",
+              "复数乘法"
             ],
             "definition": "任何一元n次复系数多项式方程至少有一个复数根。",
-            "example": "二次复系数方程在C中有根"
+            "example": "n次多项式可分解为n个一次因式",
+            "section": "7.2 复数的四则运算"
           },
           {
             "name": "根与系数关系",
-            "difficulty": 3,
-            "description": "多项式方程的根与系数满足的关系",
-            "aliases": [
-              "韦达关系"
-            ],
+            "difficulty": 4,
+            "description": "多项式方程的根与系数之间的关系",
+            "aliases": [],
             "prerequisites": [
               "代数基本定理",
-              "复数的四则运算"
+              "复数相等"
             ],
-            "definition": "一元多项式方程的根与其系数之间存在由因式分解得到的关系。",
-            "example": "ax²+bx+c的根和为−b/a"
+            "definition": "多项式方程的根的和、积等对称式可由方程系数表示。",
+            "example": "二次方程根和为−a₁/a₂"
+          }
+        ],
+        "sections": [
+          {
+            "name": "7.1　复数的概念",
+            "page_range": [
+              75,
+              82
+            ]
+          },
+          {
+            "name": "7.2　复数的四则运算",
+            "page_range": [
+              82,
+              90
+            ]
+          },
+          {
+            "name": "7.3*　复数的三角表示",
+            "page_range": [
+              90,
+              102
+            ]
           }
         ]
       },
       {
-        "name": "第八章 立体几何初步",
+        "name": "第八章　立体几何初步",
         "concepts": [
+          {
+            "name": "点直线平面",
+            "difficulty": 1,
+            "description": "构成立体图形的基本元素。",
+            "aliases": [
+              "基本元素"
+            ],
+            "prerequisites": [],
+            "definition": "点、直线和平面是空间几何中构成立体图形的基本元素。",
+            "example": "长方体由顶点、棱和面组成。"
+          },
           {
             "name": "空间几何体",
             "difficulty": 1,
-            "description": "由现实物体抽象出的只考虑形状和大小的空间图形",
+            "description": "由现实物体抽象出的空间图形。",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "由物体抽象出的、只考虑形状和大小的空间图形叫空间几何体。",
-            "example": "纸箱抽象成一个长方体。"
+            "prerequisites": [
+              "点直线平面"
+            ],
+            "definition": "只考虑物体的形状和大小而抽象出的空间图形叫空间几何体。",
+            "example": "把纸箱抽象成长方体。"
           },
           {
             "name": "多面体",
             "difficulty": 1,
-            "description": "由若干个平面多边形围成的几何体",
-            "aliases": [],
+            "description": "由若干平面多边形围成的几何体。",
+            "aliases": [
+              "polyhedron"
+            ],
             "prerequisites": [
               "空间几何体"
             ],
             "definition": "由若干个平面多边形围成的几何体叫多面体。",
-            "example": "金字塔具有多面体结构。"
+            "example": "金字塔具有多面体形状。"
           },
           {
-            "name": "多面体的面棱顶点",
+            "name": "多面体的面",
             "difficulty": 1,
-            "description": "多面体的基本组成元素及其公共关系",
+            "description": "围成多面体的各个多边形。",
             "aliases": [],
             "prerequisites": [
               "多面体"
             ],
-            "definition": "多面体的面是围成它的多边形，棱是两面的公共边，顶点是棱的公共点。",
-            "example": "长方体有面、棱和顶点。"
+            "definition": "围成多面体的各个多边形叫做多面体的面。",
+            "example": "长方体的六个矩形面。",
+            "section": "8.1 基本立体图形"
+          },
+          {
+            "name": "多面体的棱",
+            "difficulty": 1,
+            "description": "多面体两个面的公共边。",
+            "aliases": [],
+            "prerequisites": [
+              "多面体的面"
+            ],
+            "definition": "多面体两个面的公共边叫做多面体的棱。",
+            "example": "长方体相邻面的交线是棱。"
+          },
+          {
+            "name": "多面体的顶点",
+            "difficulty": 1,
+            "description": "多面体棱与棱的公共点。",
+            "aliases": [],
+            "prerequisites": [
+              "多面体的棱"
+            ],
+            "definition": "多面体棱与棱的公共点叫做多面体的顶点。",
+            "example": "正方体有八个顶点。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "旋转面",
             "difficulty": 2,
-            "description": "平面曲线绕所在平面内定直线旋转形成的曲面",
+            "description": "平面曲线绕定直线旋转形成的曲面。",
             "aliases": [],
             "prerequisites": [
               "空间几何体"
             ],
-            "definition": "一条平面曲线绕其所在平面内的一条定直线旋转形成的曲面叫旋转面。",
-            "example": "圆锥的侧面属于旋转面。"
+            "definition": "一条平面曲线绕其平面内一条定直线旋转形成的曲面叫旋转面。",
+            "example": "直角三角形一条直角边旋转形成锥面。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "旋转体",
             "difficulty": 2,
-            "description": "封闭旋转面围成的几何体",
-            "aliases": [],
+            "description": "封闭旋转面围成的几何体。",
+            "aliases": [
+              "solid of rotation"
+            ],
             "prerequisites": [
               "旋转面"
             ],
             "definition": "封闭的旋转面围成的几何体叫旋转体。",
-            "example": "圆柱是旋转体。"
+            "example": "圆柱是由矩形旋转形成的旋转体。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "棱柱",
             "difficulty": 2,
-            "description": "两面平行且全等、其余面为平行四边形的多面体",
-            "aliases": [],
+            "description": "有两个平行底面且侧面为平行四边形的多面体。",
+            "aliases": [
+              "prism"
+            ],
             "prerequisites": [
               "多面体"
             ],
-            "definition": "有两个面互相平行且其余各面为四边形，且相邻四边形公共边互相平行的多面体叫棱柱。",
-            "example": "茶叶盒可表示棱柱。"
+            "definition": "有两个面互相平行、其余各面为四边形且相邻侧棱互相平行的多面体叫棱柱。",
+            "example": "茶叶盒可抽象为棱柱。"
           },
           {
             "name": "直棱柱",
             "difficulty": 2,
-            "description": "侧棱垂直于底面的棱柱",
+            "description": "侧棱垂直于底面的棱柱。",
             "aliases": [],
             "prerequisites": [
               "棱柱"
@@ -816,76 +898,98 @@
             "example": "长方体是直棱柱。"
           },
           {
+            "name": "斜棱柱",
+            "difficulty": 2,
+            "description": "侧棱不垂直于底面的棱柱。",
+            "aliases": [],
+            "prerequisites": [
+              "棱柱"
+            ],
+            "definition": "侧棱不垂直于底面的棱柱叫斜棱柱。",
+            "example": "侧棱倾斜的四棱柱。",
+            "section": "8.1 基本立体图形"
+          },
+          {
             "name": "正棱柱",
             "difficulty": 3,
-            "description": "底面为正多边形的直棱柱",
+            "description": "底面为正多边形的直棱柱。",
             "aliases": [],
             "prerequisites": [
               "直棱柱"
             ],
             "definition": "底面是正多边形的直棱柱叫正棱柱。",
-            "example": "底面为正三角形的直三棱柱是正棱柱。"
+            "example": "底面为正三角形的直棱柱。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "平行六面体",
             "difficulty": 2,
-            "description": "底面为平行四边形的四棱柱",
+            "description": "底面为平行四边形的四棱柱。",
             "aliases": [],
             "prerequisites": [
               "棱柱"
             ],
-            "definition": "底面是平行四边形的四棱柱也叫平行六面体。",
-            "example": "由平行四边形底面构成的四棱柱是平行六面体。"
+            "definition": "底面是平行四边形的四棱柱叫平行六面体。",
+            "example": "一般平行六面体有六个平行四边形面。"
           },
           {
             "name": "棱锥",
             "difficulty": 2,
-            "description": "一个多边形底面与有公共顶点的三角形侧面围成的多面体",
-            "aliases": [],
+            "description": "一个多边形底面和公共顶点三角形侧面组成的多面体。",
+            "aliases": [
+              "pyramid"
+            ],
             "prerequisites": [
               "多面体"
             ],
-            "definition": "有一个面是多边形、其余各面是有一个公共顶点的三角形所围成的多面体叫棱锥。",
-            "example": "金字塔是棱锥的实例。"
+            "definition": "有一个多边形面、其余侧面为有公共顶点三角形的多面体叫棱锥。",
+            "example": "金字塔可抽象为四棱锥。"
           },
           {
             "name": "四面体",
             "difficulty": 2,
-            "description": "三棱锥的另一种名称",
-            "aliases": [],
+            "description": "三棱锥，也就是有四个面的棱锥。",
+            "aliases": [
+              "三棱锥"
+            ],
             "prerequisites": [
               "棱锥"
             ],
             "definition": "三棱锥又叫四面体。",
-            "example": "由四个三角形围成的几何体是四面体。"
+            "example": "四个三角形围成一个四面体。"
           },
           {
             "name": "正棱锥",
             "difficulty": 3,
-            "description": "底面为正多边形且顶点到底面中心垂直的棱锥",
+            "description": "底面为正多边形且高过底面中心的棱锥。",
             "aliases": [],
             "prerequisites": [
               "棱锥"
             ],
-            "definition": "底面是正多边形且顶点与底面中心的连线垂直于底面的棱锥叫正棱锥。",
-            "example": "正方形底面且顶点在中心正上方的棱锥是正棱锥。"
+            "definition": "底面是正多边形且顶点与底面中心连线垂直于底面的棱锥叫正棱锥。",
+            "example": "正方形底面、顶点在中心正上方的棱锥。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "棱台",
             "difficulty": 2,
-            "description": "棱锥被平行于底面的平面截得的部分",
-            "aliases": [],
+            "description": "棱锥被平行于底面的平面截得的部分。",
+            "aliases": [
+              "frustum of a pyramid"
+            ],
             "prerequisites": [
               "棱锥"
             ],
             "definition": "用平行于棱锥底面的平面截棱锥所得的底面与截面之间部分叫棱台。",
-            "example": "储物箱可具有棱台结构。"
+            "example": "储物箱可呈棱台结构。"
           },
           {
             "name": "圆柱",
             "difficulty": 2,
-            "description": "矩形绕一边所在直线旋转形成的旋转体",
-            "aliases": [],
+            "description": "矩形绕一边所在直线旋转形成的旋转体。",
+            "aliases": [
+              "circular cylinder"
+            ],
             "prerequisites": [
               "旋转体"
             ],
@@ -895,253 +999,248 @@
           {
             "name": "圆锥",
             "difficulty": 2,
-            "description": "直角三角形绕一条直角边旋转形成的旋转体",
-            "aliases": [],
+            "description": "直角三角形绕一条直角边旋转形成的旋转体。",
+            "aliases": [
+              "circular cone"
+            ],
             "prerequisites": [
               "旋转体"
             ],
             "definition": "直角三角形绕一条直角边所在直线旋转一周形成的旋转体叫圆锥。",
-            "example": "铅锤具有圆锥结构。"
+            "example": "铅锤呈圆锥形。"
           },
           {
             "name": "圆台",
             "difficulty": 2,
-            "description": "圆锥被平行于底面的平面截得的部分",
-            "aliases": [],
+            "description": "圆锥被平行于底面的平面截得的部分。",
+            "aliases": [
+              "circular truncated cone"
+            ],
             "prerequisites": [
               "圆锥"
             ],
             "definition": "用平行于圆锥底面的平面截圆锥所得的底面与截面之间部分叫圆台。",
-            "example": "纸杯可具有圆台结构。"
+            "example": "纸杯具有圆台结构。"
           },
           {
             "name": "球",
             "difficulty": 2,
-            "description": "半圆绕直径所在直线旋转形成的旋转体",
+            "description": "球面所围成的旋转体。",
             "aliases": [
-              "球体"
+              "球体",
+              "spheroid"
             ],
             "prerequisites": [
               "旋转体"
             ],
-            "definition": "半圆绕其直径所在直线旋转一周形成的曲面所围成的旋转体叫球。",
-            "example": "篮球是球的实例。"
+            "definition": "半圆绕其直径所在直线旋转形成球面，球面围成的旋转体简称球。",
+            "example": "篮球可抽象为球。"
+          },
+          {
+            "name": "柱体",
+            "difficulty": 2,
+            "description": "棱柱与圆柱的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "棱柱",
+              "圆柱"
+            ],
+            "definition": "棱柱和圆柱统称为柱体。",
+            "example": "三棱柱和圆柱都属于柱体。"
+          },
+          {
+            "name": "锥体",
+            "difficulty": 2,
+            "description": "棱锥与圆锥的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "棱锥",
+              "圆锥"
+            ],
+            "definition": "棱锥和圆锥统称为锥体。",
+            "example": "四棱锥和圆锥都属于锥体。"
+          },
+          {
+            "name": "台体",
+            "difficulty": 2,
+            "description": "棱台与圆台的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "棱台",
+              "圆台"
+            ],
+            "definition": "棱台和圆台统称为台体。",
+            "example": "四棱台和圆台都属于台体。"
           },
           {
             "name": "简单组合体",
             "difficulty": 2,
-            "description": "由简单几何体拼接或截去部分形成的几何体",
+            "description": "由简单几何体拼接、截去或挖去形成的几何体。",
             "aliases": [],
             "prerequisites": [
-              "空间几何体"
+              "柱体",
+              "锥体",
+              "台体",
+              "球"
             ],
-            "definition": "由简单几何体组合而成的几何体称为简单组合体。",
-            "example": "烟囱顶部可由圆柱和圆台组合。"
+            "definition": "由简单几何体组合而成的几何体叫简单组合体。",
+            "example": "圆柱与圆锥拼接成组合体。"
           },
           {
-            "name": "直观图",
+            "name": "直线与直线平行",
             "difficulty": 2,
-            "description": "在平行投影下表示空间几何体的平面图形",
+            "description": "空间中两条直线方向相同且不相交。",
             "aliases": [],
             "prerequisites": [
-              "空间几何体"
+              "点直线平面"
             ],
-            "definition": "在平行投影下得到的、用于表示立体图形的平面图形叫直观图。",
-            "example": "长方体的斜二测图是其直观图。"
-          },
-          {
-            "name": "斜二测画法",
-            "difficulty": 3,
-            "description": "用特定轴角和长度规则画直观图的方法",
-            "aliases": [],
-            "prerequisites": [
-              "直观图"
-            ],
-            "definition": "按两轴成45°且一轴方向长度减半等规则画直观图的方法叫斜二测画法。",
-            "example": "用斜二测画法画水平正方形。"
-          },
-          {
-            "name": "平行投影",
-            "difficulty": 2,
-            "description": "投影线互相平行的投影方式",
-            "aliases": [],
-            "prerequisites": [
-              "直观图"
-            ],
-            "definition": "投影线互相平行的投影叫平行投影。",
-            "example": "斜二测画法利用平行投影。"
-          },
-          {
-            "name": "点线面基本事实",
-            "difficulty": 3,
-            "description": "刻画平面性质并支撑空间推理的基本命题",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "关于点、直线、平面关系且不需证明的基本命题叫点线面基本事实。",
-            "example": "不在同一直线上的三点确定一个平面。"
-          },
-          {
-            "name": "共面直线",
-            "difficulty": 2,
-            "description": "位于同一个平面内的直线",
-            "aliases": [],
-            "prerequisites": [
-              "平面"
-            ],
-            "definition": "能够位于同一个平面内的直线称为共面直线。",
-            "example": "同一平面内的两条相交直线共面。"
-          },
-          {
-            "name": "异面直线",
-            "difficulty": 3,
-            "description": "既不相交也不平行且不在同一平面的两条直线",
-            "aliases": [],
-            "prerequisites": [
-              "共面直线"
-            ],
-            "definition": "既不相交也不平行的两条直线叫异面直线。",
-            "example": "正方体中某些不相邻棱所在直线是异面直线。"
+            "definition": "空间中两条不重合且不相交、方向相同的直线互相平行。",
+            "example": "长方体的两条对应棱平行。"
           },
           {
             "name": "直线与平面平行",
-            "difficulty": 3,
-            "description": "直线与平面没有公共点的位置关系",
+            "difficulty": 2,
+            "description": "直线与平面没有公共点的位置关系。",
             "aliases": [],
             "prerequisites": [
-              "异面直线"
+              "点直线平面"
             ],
-            "definition": "直线与平面没有公共点时，称直线与平面平行。",
-            "example": "长方体一条上棱与底面平行。"
+            "definition": "直线与平面没有公共点，则称直线与平面平行。",
+            "example": "长方体一条侧棱平行于不含它的底面。"
           },
           {
             "name": "直线面平行判定",
-            "difficulty": 4,
-            "description": "平面外直线平行于平面内直线可判定线面平行",
+            "difficulty": 3,
+            "description": "用平面内一条平行直线判定直线面平行。",
             "aliases": [],
             "prerequisites": [
-              "直线与平面平行",
-              "空间直线平行"
+              "直线与直线平行",
+              "直线与平面平行"
             ],
-            "definition": "平面外一条直线与平面内一条直线平行，则该直线与此平面平行。",
-            "example": "若a∥b且b在α内、a在α外，则a∥α。"
+            "definition": "平面外一条直线若与该平面内一条直线平行，则它与该平面平行。",
+            "example": "证明棱柱侧棱平行于某个侧面。"
           },
           {
-            "name": "平面与平面平行",
+            "name": "直线面平行性质",
             "difficulty": 3,
-            "description": "两个平面没有公共点的位置关系",
+            "description": "过平行于平面的直线作平面可得平行交线。",
             "aliases": [],
             "prerequisites": [
               "直线与平面平行"
             ],
-            "definition": "两个平面没有公共点时，称这两个平面互相平行。",
+            "definition": "直线平行于平面且过直线的平面与该平面相交时，直线平行于交线。",
+            "example": "利用交线作出一条平行线。"
+          },
+          {
+            "name": "平面与平面平行",
+            "difficulty": 2,
+            "description": "两个平面没有公共点的位置关系。",
+            "aliases": [],
+            "prerequisites": [
+              "点直线平面"
+            ],
+            "definition": "两个平面没有公共点，则称这两个平面互相平行。",
             "example": "长方体的上底面与下底面平行。"
           },
           {
             "name": "平面面平行判定",
-            "difficulty": 4,
-            "description": "一个平面内两相交直线均平行另一平面可判定面面平行",
+            "difficulty": 3,
+            "description": "一个平面内两条相交直线均平行于另一平面。",
             "aliases": [],
             "prerequisites": [
-              "平面与平面平行",
-              "直线面平行判定"
+              "直线面平行判定",
+              "平面与平面平行"
             ],
-            "definition": "一个平面内两条相交直线都与另一个平面平行，则两平面平行。",
-            "example": "平面β内相交直线a、b均平行α，则β∥α。"
+            "definition": "一个平面内两条相交直线都平行于另一个平面，则两平面平行。",
+            "example": "用正方体内两条相交对角线证明两面平行。"
           },
           {
-            "name": "直线与直线垂直",
+            "name": "基本概念",
+            "difficulty": 1,
+            "description": "公理化体系中不加定义的原始概念。",
+            "aliases": [
+              "原始概念"
+            ],
+            "prerequisites": [],
+            "definition": "基本概念是不加定义且无法用更基本概念定义的概念。",
+            "example": "点、直线、平面是基本概念。",
+            "section": "8.6 空间直线、平面的垂直"
+          },
+          {
+            "name": "公理",
             "difficulty": 2,
-            "description": "两条相交直线所成角为直角的位置关系",
-            "aliases": [],
-            "prerequisites": [
-              "空间直线位置关系"
+            "description": "关于基本概念关系和性质的不加证明命题。",
+            "aliases": [
+              "公设"
             ],
-            "definition": "两条相交直线所成的角为直角时，称两直线互相垂直。",
-            "example": "正方体同一顶点的三条棱两两垂直。"
+            "prerequisites": [
+              "基本概念"
+            ],
+            "definition": "公理是对基本概念间关系和基本性质作出的不加证明的规定。",
+            "example": "两点确定一条直线。",
+            "section": "8.6 空间直线、平面的垂直"
           },
           {
-            "name": "直线与平面垂直",
+            "name": "公理化方法",
             "difficulty": 3,
-            "description": "直线垂直于平面内所有直线的位置关系",
+            "description": "由公理经逻辑推理建立演绎体系的方法。",
             "aliases": [],
             "prerequisites": [
-              "直线与直线垂直"
+              "基本概念",
+              "公理"
             ],
-            "definition": "一条直线与平面内任意一条直线都垂直时，称直线与平面垂直。",
-            "example": "长方体的侧棱垂直于底面。"
+            "definition": "从少量基本概念和公理出发经严格推理推出其余命题的方法。",
+            "example": "欧几里得用公理化方法建立几何体系。",
+            "section": "8.6 空间直线、平面的垂直"
+          }
+        ],
+        "sections": [
+          {
+            "name": "8.1　基本立体图形",
+            "page_range": [
+              104,
+              114
+            ]
           },
           {
-            "name": "线面垂直判定",
-            "difficulty": 4,
-            "description": "直线垂直于平面内两相交直线可判定线面垂直",
-            "aliases": [],
-            "prerequisites": [
-              "直线与直线垂直",
-              "直线与平面垂直"
-            ],
-            "definition": "一条直线与平面内两条相交直线都垂直，则该直线垂直于此平面。",
-            "example": "若l⊥a、l⊥b且a、b在α内相交，则l⊥α。"
+            "name": "8.2　立体图形的直观图",
+            "page_range": [
+              114,
+              121
+            ]
           },
           {
-            "name": "平面与平面垂直",
-            "difficulty": 3,
-            "description": "两个平面所成二面角为直二面角的位置关系",
-            "aliases": [],
-            "prerequisites": [
-              "直线与平面垂直"
-            ],
-            "definition": "两个平面相交且所成二面角为直二面角时，称两平面互相垂直。",
-            "example": "墙面与地面通常构成垂直平面。"
+            "name": "8.3　简单几何体的表面积与体积",
+            "page_range": [
+              121,
+              131
+            ]
           },
           {
-            "name": "二面角",
-            "difficulty": 3,
-            "description": "从一条公共直线出发的两个半平面组成的图形",
-            "aliases": [],
-            "prerequisites": [
-              "平面"
-            ],
-            "definition": "从一条公共直线出发的两个半平面所组成的图形叫二面角。",
-            "example": "墙面与地面组成一个二面角。"
+            "name": "8.4　空间点、直线、平面之间的位置关系",
+            "page_range": [
+              131,
+              140
+            ]
           },
           {
-            "name": "二面角的平面角",
-            "difficulty": 4,
-            "description": "在二面角棱上取点作两侧垂线形成的角",
-            "aliases": [],
-            "prerequisites": [
-              "二面角"
-            ],
-            "definition": "在二面角棱上取一点，分别在两半平面内作棱的垂线，两垂线所成的角叫平面角。",
-            "example": "作二面角棱的两条垂线可得到平面角。"
+            "name": "8.5　空间直线、平面的平行",
+            "page_range": [
+              140,
+              153
+            ]
           },
           {
-            "name": "空间角",
-            "difficulty": 3,
-            "description": "空间中两条相交直线所成的角",
-            "aliases": [],
-            "prerequisites": [
-              "直线与直线垂直"
-            ],
-            "definition": "空间中两条相交直线所成的角叫空间角。",
-            "example": "两条异面直线的平行线所成角可表示其夹角。"
-          },
-          {
-            "name": "直线与平面所成角",
-            "difficulty": 4,
-            "description": "直线与其在平面上射影所成的锐角或直角",
-            "aliases": [],
-            "prerequisites": [
-              "直线与平面平行",
-              "直线与平面垂直"
-            ],
-            "definition": "直线与平面所成的角是该直线与其在平面内射影所成的锐角或直角。",
-            "example": "斜棱与底面可形成线面角。"
+            "name": "8.6　空间直线、平面的垂直",
+            "page_range": [
+              153,
+              178
+            ]
           }
         ]
       },
       {
-        "name": "第九章 统计",
+        "name": "第九章　统计",
         "concepts": [
           {
             "name": "统计学",
@@ -1150,14 +1249,14 @@
             "aliases": [],
             "prerequisites": [],
             "definition": "统计学是通过收集数据和分析数据来认识未知现象的一门科学。",
-            "example": "利用抽样数据估计全校学生平均身高"
+            "example": "分析居民用水量并制定用水标准"
           },
           {
             "name": "总体",
             "difficulty": 1,
-            "description": "调查对象全体或所关注指标值的全体",
+            "description": "调查对象全体或某项指标的全体",
             "aliases": [
-              "总体population"
+              "总体 population"
             ],
             "prerequisites": [],
             "definition": "总体是在一个调查中调查对象的全体。",
@@ -1168,31 +1267,31 @@
             "difficulty": 1,
             "description": "组成总体的每一个调查对象",
             "aliases": [
-              "个体individual"
+              "个体 individual"
             ],
             "prerequisites": [
               "总体"
             ],
             "definition": "个体是组成总体的每一个调查对象。",
-            "example": "一名学生是总体中的个体"
+            "example": "总体中的每一名学生"
           },
           {
             "name": "变量",
             "difficulty": 1,
-            "description": "调查对象指标中取值会变化的量",
+            "description": "调查对象指标中取值变化的量",
             "aliases": [
-              "调查变量"
+              "调查指标"
             ],
             "prerequisites": [
               "个体"
             ],
-            "definition": "变量是调查对象的指标值因对象不同而变化的量。",
+            "definition": "变量是调查对象的指标值会发生变化的量。",
             "example": "学生的身高是变量"
           },
           {
             "name": "全面调查",
             "difficulty": 1,
-            "description": "对每一个调查对象都进行调查的方法",
+            "description": "对每一个调查对象都进行调查",
             "aliases": [
               "普查"
             ],
@@ -1202,36 +1301,37 @@
               "变量"
             ],
             "definition": "全面调查是对总体中的每一个个体都进行调查的方法。",
-            "example": "全国人口普查"
+            "example": "逐户逐人开展人口普查"
           },
           {
             "name": "抽样调查",
-            "difficulty": 2,
-            "description": "抽取部分个体并据此推断总体的方法",
+            "difficulty": 1,
+            "description": "抽取部分个体推断总体情况的调查",
             "aliases": [
-              "sampling survey"
+              "抽样"
             ],
             "prerequisites": [
               "总体",
               "个体",
               "变量"
             ],
-            "definition": "抽样调查是从总体中抽取部分个体调查并估计推断总体的方法。",
-            "example": "抽查居民估计全市用水量"
+            "definition": "抽样调查是从总体中抽取部分个体并据此估计和推断总体情况的方法。",
+            "example": "抽查部分牛奶检测细菌数"
           },
           {
             "name": "样本",
             "difficulty": 1,
-            "description": "从总体中抽取的那部分个体",
+            "description": "从总体中抽取的部分个体",
             "aliases": [
-              "sample"
+              "样本 sample"
             ],
             "prerequisites": [
               "总体",
-              "个体"
+              "个体",
+              "抽样调查"
             ],
-            "definition": "样本是从总体中抽取的部分个体。",
-            "example": "抽取的100户居民构成样本"
+            "definition": "样本是从总体中抽取的那部分个体。",
+            "example": "抽取的50名学生"
           },
           {
             "name": "样本量",
@@ -1244,11 +1344,11 @@
               "样本"
             ],
             "definition": "样本量是样本中包含的个体数。",
-            "example": "抽取50名学生时样本量为50"
+            "example": "样本含50名学生时样本量为50"
           },
           {
             "name": "样本数据",
-            "difficulty": 2,
+            "difficulty": 1,
             "description": "调查样本获得的变量值",
             "aliases": [
               "样本观测数据"
@@ -1257,85 +1357,95 @@
               "样本",
               "变量"
             ],
-            "definition": "样本数据是对样本调查后获得的变量值。",
-            "example": "抽取学生的身高数据"
+            "definition": "样本数据是调查样本获得的变量值。",
+            "example": "50名学生的身高数据"
           },
           {
             "name": "简单随机抽样",
             "difficulty": 2,
-            "description": "各个体按相等机会被抽取的抽样方法",
+            "description": "每次抽取时个体被抽到机会相等",
             "aliases": [
-              "simple random sampling"
+              "简单随机抽样法"
             ],
             "prerequisites": [
               "抽样调查",
-              "样本量"
+              "总体",
+              "样本"
             ],
-            "definition": "简单随机抽样使总体中个体按规定具有相等的抽取机会。",
-            "example": "从学生编号中随机抽取50个"
-          },
-          {
-            "name": "放回简单随机抽样",
-            "difficulty": 2,
-            "description": "每次抽取后放回且个体等概率被抽取",
-            "aliases": [],
-            "prerequisites": [
-              "简单随机抽样"
-            ],
-            "definition": "放回简单随机抽样是每次抽取后放回且各个体被抽到概率相等的抽样。",
-            "example": "摸球记录后放回再摸"
+            "definition": "简单随机抽样是按等可能原则从总体中抽取样本的方法。",
+            "example": "用随机数抽取50名学生"
           },
           {
             "name": "不放回抽样",
             "difficulty": 2,
-            "description": "抽取个体后不再放回总体的抽样",
+            "description": "抽取个体后不再放回总体",
             "aliases": [
               "不放回简单随机抽样"
             ],
             "prerequisites": [
               "简单随机抽样"
             ],
-            "definition": "不放回抽样是抽出的个体不再返回总体且未入样个体等概率抽取的方法。",
-            "example": "抽签后不放回签条"
+            "definition": "不放回抽样是抽取个体后不将其放回总体的抽样方式。",
+            "example": "抽中的学生不再重复抽取",
+            "section": "9.1 随机抽样"
+          },
+          {
+            "name": "放回抽样",
+            "difficulty": 2,
+            "description": "每次抽取后将个体放回总体",
+            "aliases": [
+              "放回简单随机抽样"
+            ],
+            "prerequisites": [
+              "简单随机抽样"
+            ],
+            "definition": "放回抽样是每次抽取后将个体放回总体再抽取的方式。",
+            "example": "摸球记录后放回并摇匀",
+            "section": "9.1 随机抽样"
           },
           {
             "name": "抽签法",
             "difficulty": 1,
-            "description": "通过混合号签随机抽取样本的方法",
+            "description": "利用无差别号签随机抽取样本",
             "aliases": [],
             "prerequisites": [
               "不放回抽样"
             ],
-            "definition": "抽签法是将个体编号并随机抽取对应号签的方法。",
-            "example": "从混合的学生编号签中抽取样本"
+            "definition": "抽签法是将个体编号制成无差别号签后随机抽取的方法。",
+            "example": "从编号纸签中抽取学生",
+            "section": "9.1 随机抽样"
           },
           {
             "name": "随机数法",
             "difficulty": 2,
-            "description": "利用随机数对应编号抽取样本的方法",
+            "description": "利用随机数对应编号抽取样本",
             "aliases": [],
             "prerequisites": [
               "简单随机抽样"
             ],
-            "definition": "随机数法是用随机数产生器生成编号并抽取对应个体的方法。",
-            "example": "生成1至712的随机编号"
+            "definition": "随机数法是用随机数产生器抽取总体编号对应个体的方法。",
+            "example": "生成1至712的随机编号",
+            "section": "9.1 随机抽样"
           },
           {
             "name": "分层随机抽样",
-            "difficulty": 3,
-            "description": "分层后在各层随机抽取样本的方法",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "分层后在各层分别进行随机抽样",
+            "aliases": [
+              "分层抽样"
+            ],
             "prerequisites": [
               "抽样调查",
+              "总体",
               "简单随机抽样"
             ],
-            "definition": "分层随机抽样是先将总体分成若干层再在各层随机抽样的方法。",
-            "example": "按男女员工分层抽样"
+            "definition": "分层随机抽样是将总体分成若干层后分别随机抽取样本的方法。",
+            "example": "按性别分层抽取员工"
           },
           {
             "name": "比例分配",
-            "difficulty": 3,
-            "description": "按各层个体数占总体比例分配样本量",
+            "difficulty": 2,
+            "description": "按各层个体数占总体比例分配样本",
             "aliases": [
               "样本量比例分配"
             ],
@@ -1343,27 +1453,108 @@
               "分层随机抽样",
               "样本量"
             ],
-            "definition": "比例分配是按照各层规模占总体规模的比例确定各层样本量。",
-            "example": "员工多的部门抽取更多样本"
+            "definition": "比例分配是按各层个体数占总体个体数的比例分配样本量。",
+            "example": "男女员工按人数比例抽样"
           },
           {
             "name": "样本代表性",
             "difficulty": 2,
-            "description": "样本反映总体基本信息的程度",
-            "aliases": [
-              "代表性"
-            ],
+            "description": "样本数据反映总体特征的程度",
+            "aliases": [],
             "prerequisites": [
               "样本",
               "总体"
             ],
-            "definition": "样本代表性是样本数据包含总体基本信息的程度。",
-            "example": "随机样本较好反映总体身高"
+            "definition": "样本代表性是样本所含信息与总体基本相同的程度。",
+            "example": "随机样本较能反映全校身高"
+          },
+          {
+            "name": "频数",
+            "difficulty": 1,
+            "description": "数据落在某组中的个数",
+            "aliases": [],
+            "prerequisites": [
+              "样本数据"
+            ],
+            "definition": "频数是数据落在某个类别或分组中的个数。",
+            "example": "30天中空气质量为良的天数"
+          },
+          {
+            "name": "频率",
+            "difficulty": 1,
+            "description": "频数占数据总数的比例",
+            "aliases": [],
+            "prerequisites": [
+              "频数"
+            ],
+            "definition": "频率是某组频数与数据总数的比值。",
+            "example": "良天天数占整月天数的比例"
+          },
+          {
+            "name": "频率分布表",
+            "difficulty": 1,
+            "description": "列出各组频数或频率的统计表",
+            "aliases": [],
+            "prerequisites": [
+              "频数",
+              "频率"
+            ],
+            "definition": "频率分布表是按分组列示数据频数和频率的表格。",
+            "example": "列出各空气质量等级比例"
+          },
+          {
+            "name": "频率分布直方图",
+            "difficulty": 2,
+            "description": "用面积表示各组频率的直方图",
+            "aliases": [],
+            "prerequisites": [
+              "频率",
+              "频数分布直方图"
+            ],
+            "definition": "频率分布直方图用各小长方形面积表示相应分组的频率。",
+            "example": "展示居民月均用水量分布"
+          },
+          {
+            "name": "条形图",
+            "difficulty": 1,
+            "description": "用条形直观表示类别数据频数或频率",
+            "aliases": [],
+            "prerequisites": [
+              "频数",
+              "频率"
+            ],
+            "definition": "条形图用条形的高低表示不同类别数据的频数或频率。",
+            "example": "比较各空气等级天数",
+            "section": "9.2 用样本估计总体"
+          },
+          {
+            "name": "扇形图",
+            "difficulty": 1,
+            "description": "直观表示各类数据占总数的比例",
+            "aliases": [],
+            "prerequisites": [
+              "频率"
+            ],
+            "definition": "扇形图用扇形面积或圆心角表示各类数据所占比例。",
+            "example": "表示空气等级比例",
+            "section": "9.2 用样本估计总体"
+          },
+          {
+            "name": "折线图",
+            "difficulty": 1,
+            "description": "表示数据随时间变化的趋势",
+            "aliases": [],
+            "prerequisites": [
+              "样本数据"
+            ],
+            "definition": "折线图用折线描述数据随时间的变化趋势。",
+            "example": "表示每日空气质量指数变化",
+            "section": "9.2 用样本估计总体"
           },
           {
             "name": "总体均值",
             "difficulty": 2,
-            "description": "总体所有变量值的平均数",
+            "description": "总体全部变量值的算术平均数",
             "aliases": [
               "总体平均数"
             ],
@@ -1371,367 +1562,320 @@
               "总体",
               "变量"
             ],
-            "definition": "总体均值是总体全部变量值的算术平均数。",
+            "definition": "总体均值是总体中全部变量值之和除以总体个体数。",
             "example": "全体学生身高的平均数"
           },
           {
             "name": "样本均值",
             "difficulty": 2,
-            "description": "样本中变量值的平均数",
+            "description": "样本变量值的算术平均数",
             "aliases": [
               "样本平均数"
             ],
             "prerequisites": [
               "样本数据"
             ],
-            "definition": "样本均值是样本变量值的算术平均数。",
+            "definition": "样本均值是样本中各变量值之和除以样本量。",
             "example": "50名学生身高平均为164.3厘米"
           },
           {
-            "name": "加权平均数",
-            "difficulty": 2,
-            "description": "按各值出现频数加权计算的平均数",
-            "aliases": [],
-            "prerequisites": [
-              "总体均值",
-              "频数"
-            ],
-            "definition": "加权平均数是按各数据值的频数进行加权求得的平均数。",
-            "example": "按各组人数计算总体平均数"
-          },
-          {
-            "name": "总体比例",
-            "difficulty": 2,
-            "description": "某类个体数占总体个体数的比例",
-            "aliases": [],
-            "prerequisites": [
-              "总体",
-              "变量"
-            ],
-            "definition": "总体比例是总体中某类个体数占总体个体总数的比例。",
-            "example": "全校视力不低于5.0的学生比例"
-          },
-          {
-            "name": "样本比例",
-            "difficulty": 2,
-            "description": "样本中某类个体所占的比例",
-            "aliases": [],
-            "prerequisites": [
-              "样本",
-              "样本数据"
-            ],
-            "definition": "样本比例是样本中某类个体数占样本量的比例。",
-            "example": "样本中视力达标者占54%"
-          },
-          {
-            "name": "样本估计总体",
-            "difficulty": 3,
-            "description": "用样本信息推测总体特征的方法",
-            "aliases": [],
-            "prerequisites": [
-              "抽样调查",
-              "样本均值",
-              "样本比例"
-            ],
-            "definition": "样本估计总体是利用样本数据估计总体取值规律或特征的方法。",
-            "example": "用样本均值估计全年级平均身高"
-          },
-          {
-            "name": "频数",
-            "difficulty": 1,
-            "description": "数据落在某类别或小组中的个数",
-            "aliases": [],
-            "prerequisites": [
-              "样本数据"
-            ],
-            "definition": "频数是数据落在某个类别或小组中的数量。",
-            "example": "某组有23个数据"
-          },
-          {
-            "name": "频率",
-            "difficulty": 1,
-            "description": "频数与数据总数的比值",
-            "aliases": [],
-            "prerequisites": [
-              "频数"
-            ],
-            "definition": "频率是某类别或小组频数与数据总数的比值。",
-            "example": "23个数据占总体的0.23"
-          },
-          {
-            "name": "极差",
-            "difficulty": 1,
-            "description": "一组数据最大值与最小值的差",
-            "aliases": [],
-            "prerequisites": [
-              "样本数据"
-            ],
-            "definition": "极差是一组数据中最大值与最小值的差。",
-            "example": "最大值28、最小值1.3时极差为26.7"
-          },
-          {
-            "name": "频率分布表",
-            "difficulty": 2,
-            "description": "按小组列示频数和频率的数据表",
-            "aliases": [
-              "frequency distribution table"
-            ],
-            "prerequisites": [
-              "频数",
-              "频率"
-            ],
-            "definition": "频率分布表是按数据分组列出各组频数和频率的表格。",
-            "example": "列出各用水量区间的频率"
-          },
-          {
-            "name": "频率分布直方图",
-            "difficulty": 3,
-            "description": "用矩形面积表示各组频率的统计图",
-            "aliases": [
-              "frequency distribution histogram"
-            ],
-            "prerequisites": [
-              "频率",
-              "极差"
-            ],
-            "definition": "频率分布直方图用各小矩形的面积表示相应小组的频率。",
-            "example": "展示居民月均用水量分布"
-          },
-          {
-            "name": "条形图",
-            "difficulty": 1,
-            "description": "用条形高低表示类别数据的统计图",
-            "aliases": [],
-            "prerequisites": [
-              "频数",
-              "频率"
-            ],
-            "definition": "条形图主要用条形直观表示不同类别数据的频数或频率。",
-            "example": "比较各空气质量等级天数"
-          },
-          {
-            "name": "扇形图",
-            "difficulty": 1,
-            "description": "用扇形面积表示各类数据比例的统计图",
-            "aliases": [],
-            "prerequisites": [
-              "频率"
-            ],
-            "definition": "扇形图主要用扇形直观描述各类数据占总数的比例。",
-            "example": "表示空气质量等级比例"
-          },
-          {
-            "name": "折线图",
-            "difficulty": 1,
-            "description": "描述数据随时间变化趋势的统计图",
-            "aliases": [],
-            "prerequisites": [
-              "样本数据"
-            ],
-            "definition": "折线图主要用于描述数据随时间变化的趋势。",
-            "example": "展示每日空气质量指数变化"
-          },
-          {
             "name": "百分位数",
-            "difficulty": 3,
-            "description": "按数据位置划分比例的代表数值",
+            "difficulty": 2,
+            "description": "按比例划分排序数据的位置数值",
             "aliases": [
-              "percentile"
+              "分位数"
             ],
             "prerequisites": [
-              "频率",
-              "中位数"
+              "样本数据"
             ],
-            "definition": "第p百分位数使至少p%的数据不大于它且至少(100-p)%不小于它。",
-            "example": "第80百分位数用于确定用水标准"
+            "definition": "第p百分位数使至少p%的数据不超过它且至少(100-p)%的数据不小于它。",
+            "example": "第80百分位数为13.7"
           },
           {
             "name": "四分位数",
-            "difficulty": 3,
-            "description": "将排序数据分成四等份的三个分位数",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "第25、50、75百分位数的统称",
+            "aliases": [
+              "四分位点"
+            ],
             "prerequisites": [
               "百分位数"
             ],
-            "definition": "四分位数由第25、50、75百分位数组成。",
-            "example": "第一和第三四分位数描述收入分布"
+            "definition": "四分位数是第25、50、75百分位数，将排序数据分成四等份。",
+            "example": "第一四分位数为第25百分位数",
+            "section": "9.2 用样本估计总体"
           },
           {
             "name": "中位数",
-            "difficulty": 2,
-            "description": "排序数据的中间位置代表值",
-            "aliases": [],
+            "difficulty": 1,
+            "description": "排序数据居中的代表性数值",
+            "aliases": [
+              "第50百分位数"
+            ],
             "prerequisites": [
               "百分位数"
             ],
-            "definition": "中位数是按大小排列数据后居于中间位置的数值。",
-            "example": "中位数是第50百分位数"
+            "definition": "中位数是将数据排序后处于中间位置的数值。",
+            "example": "9个数据的第5项"
           },
           {
             "name": "众数",
-            "difficulty": 2,
-            "description": "一组数据中出现次数最多的值",
+            "difficulty": 1,
+            "description": "数据中出现次数最多的值",
             "aliases": [],
             "prerequisites": [
               "频数"
             ],
-            "definition": "众数是一组数据中出现次数最多的数据值。",
+            "definition": "众数是一组数据中出现次数最多的数值。",
             "example": "鞋号中出现最多的号码"
           },
           {
             "name": "方差",
-            "difficulty": 3,
-            "description": "刻画数据相对平均数离散程度的量",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "衡量数据偏离平均数程度的量",
+            "aliases": [
+              "样本方差"
+            ],
             "prerequisites": [
               "样本均值"
             ],
             "definition": "方差是各数据与平均数差的平方的平均值。",
-            "example": "比较两个班成绩波动大小"
+            "example": "比较两组评委评分波动"
           },
           {
             "name": "标准差",
-            "difficulty": 3,
+            "difficulty": 2,
             "description": "方差的算术平方根",
-            "aliases": [],
+            "aliases": [
+              "样本标准差"
+            ],
             "prerequisites": [
               "方差"
             ],
             "definition": "标准差是方差的算术平方根，用于刻画数据离散程度。",
-            "example": "计算鱼类汞含量的标准差"
+            "example": "标准差较小表示评分更集中"
           },
           {
-            "name": "集中趋势参数",
-            "difficulty": 2,
-            "description": "刻画数据集中位置的统计量",
+            "name": "极差",
+            "difficulty": 1,
+            "description": "最大值与最小值的差",
             "aliases": [],
             "prerequisites": [
-              "样本均值",
+              "样本数据"
+            ],
+            "definition": "极差是一组数据最大值与最小值的差。",
+            "example": "销售量最大值减最小值"
+          },
+          {
+            "name": "集中趋势",
+            "difficulty": 2,
+            "description": "反映数据集中位置的总体特征",
+            "aliases": [
+              "集中趋势参数"
+            ],
+            "prerequisites": [
+              "总体均值",
               "中位数",
               "众数"
             ],
-            "definition": "集中趋势参数用于描述数据分布集中位置的特征。",
-            "example": "用均值和中位数描述收入"
+            "definition": "集中趋势是用代表性数值描述数据集中位置的特征。",
+            "example": "用均值概括员工BMI水平"
           },
           {
-            "name": "离散程度参数",
+            "name": "离散程度",
             "difficulty": 2,
-            "description": "刻画数据分散程度的统计量",
-            "aliases": [],
+            "description": "反映数据波动大小的总体特征",
+            "aliases": [
+              "离散程度参数"
+            ],
             "prerequisites": [
               "方差",
               "标准差",
               "极差"
             ],
-            "definition": "离散程度参数用于描述数据相对于集中位置的分散程度。",
-            "example": "用标准差比较成绩波动"
+            "definition": "离散程度是用统计量描述数据波动或分散大小的特征。",
+            "example": "用标准差比较两组评分稳定性"
+          },
+          {
+            "name": "BMI",
+            "difficulty": 2,
+            "description": "用体重与身高衡量胖瘦的指标",
+            "aliases": [
+              "身体质量指数"
+            ],
+            "prerequisites": [
+              "变量"
+            ],
+            "definition": "BMI等于体重除以身高平方，用于衡量人体胖瘦程度及健康状况。",
+            "example": "体重70千克、身高1.75米",
+            "section": "9.3 统计案例 公司员工的肥胖情况调查分析"
+          },
+          {
+            "name": "统计分析报告",
+            "difficulty": 2,
+            "description": "系统呈现调查数据分析过程与结论",
+            "aliases": [],
+            "prerequisites": [
+              "抽样调查",
+              "样本数据",
+              "频率分布表"
+            ],
+            "definition": "统计分析报告是围绕调查目的展示数据分析并提出结论建议的文本。",
+            "example": "撰写员工肥胖情况分析报告",
+            "section": "9.3 统计案例 公司员工的肥胖情况调查分析"
           },
           {
             "name": "统计推断",
             "difficulty": 3,
-            "description": "依据样本信息推断总体情况的过程",
-            "aliases": [],
-            "prerequisites": [
+            "description": "依据样本信息推断总体情况",
+            "aliases": [
               "样本估计总体"
             ],
-            "definition": "统计推断是根据样本数据对总体特征作出估计和判断的过程。",
-            "example": "由样本分布推测全市用水分布"
+            "prerequisites": [
+              "抽样调查",
+              "样本代表性",
+              "样本均值"
+            ],
+            "definition": "统计推断是根据样本数据对总体特征和规律作出估计与判断。",
+            "example": "用样本均值估计全校平均身高"
+          },
+          {
+            "name": "统计推断的或然性",
+            "difficulty": 3,
+            "description": "样本推断总体的结论具有不确定性",
+            "aliases": [
+              "推断的或然性"
+            ],
+            "prerequisites": [
+              "统计推断",
+              "样本代表性"
+            ],
+            "definition": "统计推断的或然性是指由随机样本得到的总体结论可能存在误差。",
+            "example": "样本均值不一定等于总体均值"
+          }
+        ],
+        "sections": [
+          {
+            "name": "9.1　随机抽样",
+            "page_range": [
+              180,
+              200
+            ]
+          },
+          {
+            "name": "9.2　用样本估计总体",
+            "page_range": [
+              200,
+              227
+            ]
+          },
+          {
+            "name": "9.3　统计案例　公司员工的肥胖情况调查分析",
+            "page_range": [
+              227,
+              233
+            ]
           }
         ]
       },
       {
-        "name": "第十章 概率",
+        "name": "第十章　概率",
         "concepts": [
           {
             "name": "随机现象",
             "difficulty": 1,
-            "description": "单次结果偶然但大量观测频率稳定的现象",
+            "description": "一次结果有偶然性，大量观测下频率具有稳定性",
             "aliases": [],
             "prerequisites": [],
-            "definition": "随机现象是在一定条件下不能事先预知结果但频率具有稳定性的现象。",
-            "example": "每天上学所需时间具有随机性。"
+            "definition": "在一定条件下不能事先预知结果但频率具有稳定性的现象称为随机现象。",
+            "example": "每天上学所需时间不同但长期分布较稳定"
           },
           {
             "name": "随机试验",
             "difficulty": 1,
-            "description": "可重复、结果明确且每次出现一个结果的试验",
+            "description": "可重复、结果明确且每次出现一个但事先不可确定",
             "aliases": [
               "试验"
             ],
-            "prerequisites": [],
-            "definition": "随机试验是对随机现象的实现和观察。",
-            "example": "抛掷一枚硬币观察朝上的面。"
+            "prerequisites": [
+              "随机现象"
+            ],
+            "definition": "在相同条件下可重复且结果明确而不能事先确定的随机现象实现与观察称为随机试验。",
+            "example": "抛掷一枚骰子观察朝上的点数"
           },
           {
             "name": "样本点",
             "difficulty": 1,
-            "description": "随机试验的一个可能的基本结果",
+            "description": "随机试验的一个基本可能结果",
             "aliases": [],
             "prerequisites": [
               "随机试验"
             ],
-            "definition": "样本点是随机试验的每个可能的基本结果。",
-            "example": "掷骰子出现点数3。"
+            "definition": "随机试验的每个可能的基本结果称为样本点。",
+            "example": "掷骰子得到点数4"
           },
           {
             "name": "样本空间",
             "difficulty": 2,
-            "description": "随机试验全部样本点组成的集合",
-            "aliases": [],
+            "description": "全体样本点组成的集合",
+            "aliases": [
+              "有限样本空间"
+            ],
             "prerequisites": [
-              "随机试验",
               "样本点"
             ],
-            "definition": "样本空间是全体样本点组成的集合。",
-            "example": "掷骰子的样本空间为{1,2,3,4,5,6}。"
+            "definition": "随机试验的全体样本点组成的集合称为样本空间。",
+            "example": "掷骰子的样本空间为{1,2,3,4,5,6}"
           },
           {
             "name": "有限样本空间",
             "difficulty": 2,
-            "description": "只含有限个样本点的样本空间",
+            "description": "样本点个数有限的样本空间",
             "aliases": [],
             "prerequisites": [
               "样本空间"
             ],
-            "definition": "有限样本空间是包含有限个可能结果的样本空间。",
-            "example": "抛掷两枚硬币的样本空间含4个结果。"
+            "definition": "含有有限个样本点的样本空间称为有限样本空间。",
+            "example": "抛掷两枚硬币的样本空间有4个样本点"
           },
           {
             "name": "随机事件",
             "difficulty": 2,
-            "description": "样本空间的子集，样本点出现时事件发生",
+            "description": "样本空间的一个子集",
             "aliases": [
               "事件"
             ],
             "prerequisites": [
               "样本空间"
             ],
-            "definition": "随机事件是样本空间的子集。",
-            "example": "掷骰子点数为奇数表示为{1,3,5}。"
+            "definition": "样本空间的子集称为随机事件，事件发生当且仅当其中某个样本点出现。",
+            "example": "掷骰子点数为偶数"
           },
           {
             "name": "基本事件",
             "difficulty": 2,
             "description": "只包含一个样本点的事件",
-            "aliases": [],
+            "aliases": [
+              "基本事件"
+            ],
             "prerequisites": [
               "随机事件",
               "样本点"
             ],
-            "definition": "基本事件是只包含一个样本点的随机事件。",
-            "example": "掷骰子点数为1。"
+            "definition": "只包含一个样本点的事件称为基本事件。",
+            "example": "掷骰子点数为3"
           },
           {
             "name": "必然事件",
             "difficulty": 1,
-            "description": "每次试验都会发生的事件",
+            "description": "每次试验都一定发生的事件",
             "aliases": [],
             "prerequisites": [
               "随机事件",
               "样本空间"
             ],
-            "definition": "必然事件是每次试验中总会发生的事件。",
-            "example": "掷骰子的点数不超过6。"
+            "definition": "包含样本空间全部样本点的事件称为必然事件。",
+            "example": "掷骰子点数为1至6之一"
           },
           {
             "name": "不可能事件",
@@ -1739,24 +1883,24 @@
             "description": "每次试验都不会发生的事件",
             "aliases": [],
             "prerequisites": [
-              "随机事件",
-              "样本空间"
+              "随机事件"
             ],
-            "definition": "不可能事件是每次试验中都不会发生的事件。",
-            "example": "掷骰子出现点数7。"
+            "definition": "不包含任何样本点的空集事件称为不可能事件。",
+            "example": "掷骰子点数为7"
           },
           {
             "name": "事件包含",
             "difficulty": 2,
-            "description": "一个事件发生必然导致另一个事件发生的关系",
+            "description": "一个事件发生必导致另一个事件发生",
             "aliases": [
-              "包含关系"
+              "事件的包含关系"
             ],
             "prerequisites": [
               "随机事件"
             ],
-            "definition": "若事件A发生时事件B一定发生，则称B包含A。",
-            "example": "点数为1的事件包含于点数为奇数的事件。"
+            "definition": "若事件A发生时事件B一定发生，则称B包含A，记作A⊆B。",
+            "example": "点数为1包含于点数为奇数",
+            "section": "10.1 随机事件与概率"
           },
           {
             "name": "并事件",
@@ -1768,8 +1912,8 @@
             "prerequisites": [
               "随机事件"
             ],
-            "definition": "并事件是两个事件中至少一个发生所形成的事件。",
-            "example": "点数为1或2表示两个事件的并。"
+            "definition": "事件A与B至少有一个发生所形成的事件称为并事件，记作A∪B。",
+            "example": "点数为1或2"
           },
           {
             "name": "交事件",
@@ -1781,173 +1925,193 @@
             "prerequisites": [
               "随机事件"
             ],
-            "definition": "交事件是两个事件同时发生所形成的事件。",
-            "example": "点数既为偶数又大于3。"
+            "definition": "事件A与B同时发生所形成的事件称为交事件，记作A∩B或AB。",
+            "example": "点数既为偶数又大于3"
           },
           {
             "name": "互斥事件",
             "difficulty": 2,
             "description": "不能同时发生的两个事件",
             "aliases": [
-              "互不相容"
+              "互不相容事件"
             ],
             "prerequisites": [
               "交事件"
             ],
-            "definition": "若两个事件不能同时发生，则称它们互斥。",
-            "example": "掷骰子点数为3与点数为4。"
+            "definition": "若两个事件不能同时发生，即交事件是不可能事件，则称它们互斥。",
+            "example": "掷骰子点数为3与点数为4"
           },
           {
             "name": "对立事件",
             "difficulty": 2,
             "description": "有且仅有一个发生的两个事件",
-            "aliases": [
-              "互为对立事件"
-            ],
+            "aliases": [],
             "prerequisites": [
               "并事件",
               "交事件",
               "互斥事件"
             ],
-            "definition": "若两个事件有且仅有一个发生，则称它们互为对立事件。",
-            "example": "至少一次中靶与两次都不中靶。"
-          },
-          {
-            "name": "古典概型",
-            "difficulty": 3,
-            "description": "结果有限且各样本点等可能的概率模型",
-            "aliases": [],
-            "prerequisites": [
-              "有限样本空间",
-              "基本事件"
-            ],
-            "definition": "古典概型是样本点有限且每个样本点出现等可能的概率模型。",
-            "example": "质地均匀骰子的点数试验。"
-          },
-          {
-            "name": "古典概率",
-            "difficulty": 3,
-            "description": "古典概型中用样本点个数计算事件概率",
-            "aliases": [],
-            "prerequisites": [
-              "古典概型",
-              "随机事件"
-            ],
-            "definition": "古典概率等于事件包含的样本点数与样本空间样本点数之比。",
-            "example": "掷骰子得偶数的概率为3/6。"
+            "definition": "若两个事件并为必然事件且互斥，则称它们互为对立事件。",
+            "example": "骰子点数为偶数与点数为奇数"
           },
           {
             "name": "概率",
             "difficulty": 2,
-            "description": "度量随机事件发生可能性大小的数值",
+            "description": "度量随机事件发生可能性大小的数",
             "aliases": [],
             "prerequisites": [
               "随机事件"
             ],
             "definition": "概率是对随机事件发生可能性大小的度量。",
-            "example": "均匀硬币正面朝上的概率为1/2。"
+            "example": "均匀骰子点数为偶数的概率为1/2"
+          },
+          {
+            "name": "古典概型",
+            "difficulty": 3,
+            "description": "结果有限且每个结果等可能的概率模型",
+            "aliases": [
+              "古典概率模型"
+            ],
+            "prerequisites": [
+              "有限样本空间",
+              "概率"
+            ],
+            "definition": "样本空间有限且各样本点出现等可能的随机试验模型称为古典概型。",
+            "example": "从标号球中随机抽取一个"
+          },
+          {
+            "name": "古典概率",
+            "difficulty": 3,
+            "description": "古典概型中事件概率等于有利结果数除以总结果数",
+            "aliases": [
+              "古典概型概率"
+            ],
+            "prerequisites": [
+              "古典概型"
+            ],
+            "definition": "在古典概型中，事件概率等于事件包含的样本点数与样本空间样本点数之比。",
+            "example": "骰子点数为偶数的概率为3/6"
           },
           {
             "name": "概率基本性质",
             "difficulty": 3,
-            "description": "概率满足非负、有界及特殊事件等性质",
+            "description": "概率取值、特殊事件及事件关系满足的性质",
             "aliases": [],
             "prerequisites": [
               "概率",
-              "必然事件",
-              "不可能事件"
+              "随机事件"
             ],
-            "definition": "事件概率满足0≤P(A)≤1、P(Ω)=1且P(∅)=0等性质。",
-            "example": "任何事件的概率都不超过1。"
-          },
-          {
-            "name": "概率单调性",
-            "difficulty": 3,
-            "description": "事件包含关系导致概率大小规律",
-            "aliases": [],
-            "prerequisites": [
-              "事件包含",
-              "概率"
-            ],
-            "definition": "若A包含于B，则P(A)不大于P(B)。",
-            "example": "点数为1的概率不大于点数为奇数的概率。"
-          },
-          {
-            "name": "互斥概率加法",
-            "difficulty": 3,
-            "description": "互斥事件并事件的概率等于概率之和",
-            "aliases": [],
-            "prerequisites": [
-              "互斥事件",
-              "概率",
-              "并事件"
-            ],
-            "definition": "互斥事件A、B满足P(A∪B)=P(A)+P(B)。",
-            "example": "骰子得1或2的概率为1/6+1/6。"
+            "definition": "概率满足取值范围、必然事件与不可能事件概率及事件运算等基本规律。",
+            "example": "P(Ω)=1，P(∅)=0"
           },
           {
             "name": "概率加法公式",
             "difficulty": 3,
-            "description": "任意两个事件并事件的概率计算公式",
-            "aliases": [],
+            "description": "互斥事件并事件的概率等于各自概率之和",
+            "aliases": [
+              "互斥事件加法公式"
+            ],
             "prerequisites": [
               "并事件",
-              "交事件",
-              "概率"
+              "互斥事件",
+              "概率基本性质"
             ],
-            "definition": "任意事件A、B满足P(A∪B)=P(A)+P(B)-P(A∩B)。",
-            "example": "两个事件有重合部分时扣除交事件概率。"
+            "definition": "互斥事件A、B满足P(A∪B)=P(A)+P(B)。",
+            "example": "红心或方片的概率为1/4+1/4"
           },
           {
-            "name": "事件相互独立",
+            "name": "事件独立性",
             "difficulty": 4,
-            "description": "一个事件是否发生不影响另一个事件概率的关系",
+            "description": "一个事件发生与否不影响另一个事件发生的概率",
             "aliases": [
-              "独立"
+              "相互独立",
+              "独立事件"
             ],
             "prerequisites": [
               "交事件",
               "概率"
             ],
-            "definition": "若P(A∩B)=P(A)P(B)，则称事件A与B相互独立。",
-            "example": "分别抛掷两枚硬币的结果相互独立。"
+            "definition": "若P(AB)=P(A)P(B)，则称事件A与B相互独立。",
+            "example": "分别抛掷两枚硬币的结果事件"
           },
           {
             "name": "频率稳定性",
-            "difficulty": 2,
-            "description": "重复试验次数增多时频率逐渐趋于稳定",
+            "difficulty": 3,
+            "description": "重复试验次数增大时频率逐渐稳定于概率",
             "aliases": [],
             "prerequisites": [
-              "随机试验"
+              "随机现象",
+              "概率"
             ],
-            "definition": "随机事件发生的频率在大量重复试验中会逐渐呈现稳定性。",
-            "example": "硬币抛掷次数增多，正面频率趋近稳定。"
+            "definition": "随机事件发生的频率在大量重复试验中呈现逐渐稳定的性质。",
+            "example": "硬币抛掷次数增加时正面频率趋近1/2"
           },
           {
             "name": "频率估计概率",
             "difficulty": 3,
-            "description": "用大量重复试验中的频率近似事件概率",
-            "aliases": [],
+            "description": "用大量试验所得频率近似随机事件概率",
+            "aliases": [
+              "用频率估计概率"
+            ],
             "prerequisites": [
               "频率稳定性",
               "概率"
             ],
-            "definition": "当概率难以直接计算时，可用大量试验中的频率估计概率。",
-            "example": "用维修记录估计计算机需要维修的概率。"
+            "definition": "当概率难以直接计算时，可利用大量重复试验的稳定频率估计概率。",
+            "example": "用维修记录估计计算机需维修的概率",
+            "section": "10.3 频率与概率"
           },
           {
-            "name": "随机模拟",
+            "name": "随机模拟试验",
             "difficulty": 3,
-            "description": "用计算器或计算机模拟随机试验估计概率",
+            "description": "用随机数或计算机模拟随机试验以获得频率",
             "aliases": [
-              "随机模拟方法"
+              "随机模拟"
             ],
             "prerequisites": [
               "随机试验",
               "频率估计概率"
             ],
-            "definition": "随机模拟是利用随机数等工具重复模拟试验并用频率估计概率的方法。",
-            "example": "模拟掷骰子120次估计点数和为7的概率。"
+            "definition": "利用随机数或计算机重复模拟随机试验并统计频率的方法称为随机模拟试验。",
+            "example": "用计算机模拟骰子连续投掷",
+            "section": "10.3 频率与概率"
+          },
+          {
+            "name": "概率模型",
+            "difficulty": 3,
+            "description": "描述随机现象及其概率规律的数学模型",
+            "aliases": [
+              "遗传机理概率模型"
+            ],
+            "prerequisites": [
+              "随机现象",
+              "概率"
+            ],
+            "definition": "用样本空间、事件及其概率关系描述随机现象的数学模型称为概率模型。",
+            "example": "用概率模型解释豌豆性状约3∶1的比例"
+          }
+        ],
+        "sections": [
+          {
+            "name": "10.1　随机事件与概率",
+            "page_range": [
+              235,
+              256
+            ]
+          },
+          {
+            "name": "10.2　事件的相互独立性",
+            "page_range": [
+              256,
+              261
+            ]
+          },
+          {
+            "name": "10.3　频率与概率",
+            "page_range": [
+              261,
+              282
+            ]
           }
         ]
       }
@@ -1963,8 +2127,41 @@
     "level": "高中",
     "chapters": [
       {
+        "name": "数学探究 用向量法研究三角形的性质",
+        "concepts": [
+          {
+            "name": "向量法",
+            "difficulty": 3,
+            "description": "运用向量表示和运算研究三角形性质的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "向量法是借助向量的表示、运算和关系研究几何图形性质的方法。",
+            "example": "用向量关系研究三角形的性质"
+          }
+        ],
+        "chapter_key": "536c0073c7",
+        "metadata": {
+          "volume_id": "655f1295c9e5",
+          "file_id": "655f1295c9e5",
+          "volume_title": "A版 必修第2册",
+          "chapter_order": 1,
+          "raw_heading": "数学探究　用向量法研究三角形的性质"
+        }
+      },
+      {
         "name": "第六章 平面向量及其应用",
         "concepts": [
+          {
+            "name": "数量",
+            "difficulty": 1,
+            "description": "只有大小而没有方向的量",
+            "aliases": [
+              "标量"
+            ],
+            "prerequisites": [],
+            "definition": "数量是只有大小没有方向、可用实数表示的量。",
+            "example": "长度、质量、面积都是数量"
+          },
           {
             "name": "向量",
             "difficulty": 1,
@@ -1974,18 +2171,7 @@
             ],
             "prerequisites": [],
             "definition": "向量是既有大小又有方向的量。",
-            "example": "位移、力、速度都是向量。"
-          },
-          {
-            "name": "数量",
-            "difficulty": 1,
-            "description": "只有大小没有方向的量",
-            "aliases": [
-              "标量"
-            ],
-            "prerequisites": [],
-            "definition": "数量是只有大小而没有方向的量。",
-            "example": "长度、质量、面积都是数量。"
+            "example": "力、位移、速度都是向量"
           },
           {
             "name": "有向线段",
@@ -1993,11 +2179,11 @@
             "description": "具有起点、方向和长度的线段",
             "aliases": [],
             "prerequisites": [],
-            "definition": "具有方向的线段叫做有向线段。",
-            "example": "从A指向B的有向线段记作AB。"
+            "definition": "规定起点和终点顺序并带有方向的线段叫有向线段。",
+            "example": "从A指向B的有向线段记作AB"
           },
           {
-            "name": "向量表示",
+            "name": "向量几何表示",
             "difficulty": 1,
             "description": "用带箭头线段表示向量",
             "aliases": [],
@@ -2005,33 +2191,33 @@
               "向量",
               "有向线段"
             ],
-            "definition": "向量可用带箭头的有向线段表示其大小和方向。",
-            "example": "有向线段AB表示位移向量。"
+            "definition": "向量可用带箭头的线段表示，长度表示大小，箭头表示方向。",
+            "example": "用AB表示从A到B的位移"
           },
           {
-            "name": "向量的模",
+            "name": "向量长度",
             "difficulty": 1,
-            "description": "向量的大小或长度",
+            "description": "向量的大小，也称向量的模",
             "aliases": [
-              "向量长度"
+              "向量模"
             ],
             "prerequisites": [
               "向量",
               "有向线段"
             ],
             "definition": "向量的大小称为向量的长度或模。",
-            "example": "长度为3的向量，其模为3。"
+            "example": "若AB长为3，则|AB|=3"
           },
           {
             "name": "零向量",
             "difficulty": 1,
-            "description": "长度为零的向量",
+            "description": "长度为0的向量",
             "aliases": [],
             "prerequisites": [
-              "向量的模"
+              "向量长度"
             ],
-            "definition": "长度为0的向量叫做零向量。",
-            "example": "零向量记作0。"
+            "definition": "长度为0的向量叫做零向量，记作0。",
+            "example": "起点和终点重合的向量是零向量"
           },
           {
             "name": "单位向量",
@@ -2039,10 +2225,10 @@
             "description": "长度等于一个单位长度的向量",
             "aliases": [],
             "prerequisites": [
-              "向量的模"
+              "向量长度"
             ],
             "definition": "长度等于1个单位长度的向量叫做单位向量。",
-            "example": "模为1的向量是单位向量。"
+            "example": "长度为1且方向向东的向量"
           },
           {
             "name": "平行向量",
@@ -2055,7 +2241,7 @@
               "向量"
             ],
             "definition": "方向相同或相反的非零向量叫做平行向量。",
-            "example": "同一直线方向相反的两个向量平行。"
+            "example": "同一直线上的反向箭头向量平行"
           },
           {
             "name": "相等向量",
@@ -2063,73 +2249,58 @@
             "description": "长度相等且方向相同的向量",
             "aliases": [],
             "prerequisites": [
-              "向量的模",
+              "向量长度",
               "向量"
             ],
             "definition": "长度相等且方向相同的向量叫做相等向量。",
-            "example": "两个模都为2且同向的向量相等。"
+            "example": "AB与CD方向相同且等长，则两者相等",
+            "section": "6.1 平面向量的概念"
+          },
+          {
+            "name": "相反向量",
+            "difficulty": 2,
+            "description": "长度相等、方向相反的两个向量",
+            "aliases": [],
+            "prerequisites": [
+              "相等向量",
+              "平行向量"
+            ],
+            "definition": "与一个向量长度相等且方向相反的向量叫其相反向量。",
+            "example": "向量a与-a互为相反向量",
+            "section": "6.2 平面向量的运算"
           },
           {
             "name": "向量加法",
             "difficulty": 2,
-            "description": "求两个向量和的运算",
+            "description": "按位移合成定义的向量运算",
             "aliases": [],
             "prerequisites": [
               "向量"
             ],
-            "definition": "求两个向量和的运算叫做向量加法。",
-            "example": "AB向量加BC向量等于AC向量。"
+            "definition": "两个向量相加所得的向量表示它们连续位移的合成。",
+            "example": "AB+BC=AC"
           },
           {
             "name": "三角形法则",
             "difficulty": 2,
-            "description": "首尾相接作向量和的方法",
-            "aliases": [
-              "向量加法三角形法则"
-            ],
+            "description": "首尾相接求向量和的方法",
+            "aliases": [],
             "prerequisites": [
-              "向量加法",
-              "有向线段"
+              "向量加法"
             ],
-            "definition": "将两个向量首尾相接，连接首尾所得向量表示它们的和。",
-            "example": "AB向量+BC向量=AC向量。"
+            "definition": "将两个向量首尾相接，以第一个起点指向第二个终点所得向量为和。",
+            "example": "AB+BC=AC"
           },
           {
             "name": "平行四边形法则",
             "difficulty": 2,
             "description": "同起点向量求和的作图法则",
-            "aliases": [
-              "向量加法平行四边形法则"
-            ],
-            "prerequisites": [
-              "向量加法",
-              "平行四边形"
-            ],
-            "definition": "以同一点为起点的两个向量作邻边，其对角线表示向量的和。",
-            "example": "以OA、OB为邻边，OC表示两者之和。"
-          },
-          {
-            "name": "向量加法运算律",
-            "difficulty": 2,
-            "description": "向量加法满足交换律和结合律",
             "aliases": [],
             "prerequisites": [
               "向量加法"
             ],
-            "definition": "向量加法满足交换律和结合律。",
-            "example": "a+b=b+a。"
-          },
-          {
-            "name": "相反向量",
-            "difficulty": 2,
-            "description": "长度相等、方向相反的向量",
-            "aliases": [],
-            "prerequisites": [
-              "向量的模",
-              "向量"
-            ],
-            "definition": "与向量a长度相等且方向相反的向量叫做a的相反向量。",
-            "example": "a与−a互为相反向量。"
+            "definition": "以两个同起点向量为邻边作平行四边形，对角线向量表示向量和。",
+            "example": "OA+OB等于平行四边形对角线向量"
           },
           {
             "name": "向量减法",
@@ -2140,47 +2311,32 @@
               "向量加法",
               "相反向量"
             ],
-            "definition": "向量a与b的差定义为a加上b的相反向量。",
-            "example": "a−b=a+(−b)。"
+            "definition": "向量a减向量b等于向量a加上向量b的相反向量。",
+            "example": "a-b=a+(-b)",
+            "section": "6.2 平面向量的运算"
           },
           {
-            "name": "向量数乘",
+            "name": "数乘向量",
             "difficulty": 2,
             "description": "实数与向量相乘的运算",
-            "aliases": [
-              "实数与向量的积"
-            ],
+            "aliases": [],
             "prerequisites": [
               "向量"
             ],
-            "definition": "实数λ与向量a的乘积λa仍是一个向量。",
-            "example": "2a表示a方向上长度加倍的向量。"
+            "definition": "实数λ与向量a的积λa，其长度和方向由λ决定。",
+            "example": "2a表示与a同向且长度加倍的向量",
+            "section": "6.4 平面向量的应用"
           },
           {
-            "name": "向量线性运算",
+            "name": "向量坐标表示",
             "difficulty": 3,
-            "description": "向量加法与数乘的统称",
-            "aliases": [
-              "线性运算"
-            ],
-            "prerequisites": [
-              "向量加法",
-              "向量数乘"
-            ],
-            "definition": "向量的加法和数乘统称为向量的线性运算。",
-            "example": "2a−3b是向量线性运算。"
-          },
-          {
-            "name": "向量共线条件",
-            "difficulty": 3,
-            "description": "两个非零向量共线的充要条件",
+            "description": "用有序数对表示平面向量",
             "aliases": [],
             "prerequisites": [
-              "平行向量",
-              "向量数乘"
+              "向量几何表示"
             ],
-            "definition": "两个非零向量共线的充要条件是存在实数λ使a=λb。",
-            "example": "a=2b时，a与b共线。"
+            "definition": "在平面直角坐标系中，向量可表示为有序数对(x,y)。",
+            "example": "向量a可表示为(2,-1)"
           },
           {
             "name": "基底",
@@ -2190,178 +2346,234 @@
             "prerequisites": [
               "平行向量"
             ],
-            "definition": "平面内两个不共线的向量可以作为该平面的基底。",
-            "example": "i、j可作为平面直角坐标系的基底。"
+            "definition": "平面内两个不共线的向量组成该平面的一组基底。",
+            "example": "单位向量i、j构成一组基底"
           },
           {
             "name": "平面向量基本定理",
             "difficulty": 3,
-            "description": "平面向量可由一组基底唯一表示",
+            "description": "任一向量可由一组基底唯一线性表示",
             "aliases": [],
             "prerequisites": [
               "基底",
-              "向量数乘",
+              "数乘向量",
               "向量加法"
             ],
-            "definition": "平面内任一向量都能唯一表示为两个不共线向量的线性组合。",
-            "example": "a=xi+yj。"
+            "definition": "平面内任一向量都能唯一表示为一组基底的线性组合。",
+            "example": "a=xi+yj"
           },
           {
-            "name": "向量坐标",
+            "name": "向量共线条件",
             "difficulty": 3,
-            "description": "向量相对于基底的有序数对",
+            "description": "两个向量共线的代数判定条件",
             "aliases": [],
             "prerequisites": [
-              "基底",
-              "平面向量基本定理"
+              "平行向量",
+              "数乘向量"
             ],
-            "definition": "向量在给定基底下的两个线性组合系数构成其坐标。",
-            "example": "a=2i+3j的坐标为(2,3)。"
+            "definition": "向量a与非零向量b共线，当且仅当存在实数λ使a=λb。",
+            "example": "a=(2,4)，b=(1,2)时二者共线"
           },
           {
-            "name": "向量坐标运算",
+            "name": "数量积",
             "difficulty": 3,
-            "description": "按对应坐标进行向量加减和数乘",
-            "aliases": [],
-            "prerequisites": [
-              "向量坐标",
-              "向量加法",
-              "向量减法",
-              "向量数乘"
-            ],
-            "definition": "向量和差及数乘的坐标分别按对应坐标进行加减和数乘。",
-            "example": "(1,2)+(3,4)=(4,6)。"
-          },
-          {
-            "name": "向量数量积",
-            "difficulty": 3,
-            "description": "结果为数量的两个向量乘法",
+            "description": "两个向量相乘得到数量的运算",
             "aliases": [
               "点积"
             ],
             "prerequisites": [
-              "向量的模",
+              "向量长度",
               "向量夹角"
             ],
-            "definition": "两个向量的数量积等于它们模的乘积与夹角余弦的乘积。",
-            "example": "a·b=|a||b|cosθ。"
+            "definition": "两个非零向量的数量积等于它们长度与夹角余弦的乘积。",
+            "example": "a·b=|a||b|cosθ"
+          },
+          {
+            "name": "向量夹角",
+            "difficulty": 2,
+            "description": "两个非零向量方向间的不大于180°的角",
+            "aliases": [],
+            "prerequisites": [
+              "向量"
+            ],
+            "definition": "以同一点为起点的两个非零向量之间的角叫做向量的夹角。",
+            "example": "同向向量夹角为0°",
+            "section": "6.2 平面向量的运算"
+          },
+          {
+            "name": "向量垂直",
+            "difficulty": 3,
+            "description": "夹角为90°的两个向量关系",
+            "aliases": [],
+            "prerequisites": [
+              "向量夹角"
+            ],
+            "definition": "两个非零向量的夹角为90°时，称这两个向量互相垂直。",
+            "example": "i·j=0，所以i⊥j"
           },
           {
             "name": "数量积坐标表示",
             "difficulty": 3,
-            "description": "数量积等于对应坐标乘积之和",
+            "description": "用坐标乘积之和计算数量积",
             "aliases": [],
             "prerequisites": [
-              "向量坐标",
-              "向量数量积"
+              "数量积",
+              "向量坐标表示"
             ],
-            "definition": "坐标为(x1,y1)、(x2,y2)的向量数量积为x1x2+y1y2。",
-            "example": "(1,2)·(3,4)=11。"
+            "definition": "若a=(x1,y1)、b=(x2,y2)，则a·b=x1x2+y1y2。",
+            "example": "(1,2)·(3,4)=11"
           },
           {
-            "name": "向量垂直",
-            "difficulty": 2,
-            "description": "两个向量夹角为直角的关系",
-            "aliases": [
-              "正交向量"
-            ],
-            "prerequisites": [
-              "向量数量积",
-              "向量夹角"
-            ],
-            "definition": "两个向量的夹角为90°时，称它们互相垂直。",
-            "example": "(1,0)与(0,1)垂直。"
-          },
-          {
-            "name": "向量夹角",
+            "name": "数乘坐标表示",
             "difficulty": 3,
-            "description": "两个非零向量方向之间的角",
+            "description": "实数与向量积的坐标计算规则",
             "aliases": [],
             "prerequisites": [
-              "向量",
-              "向量的模"
+              "数乘向量",
+              "向量坐标表示"
             ],
-            "definition": "两个非零向量方向之间的角称为这两个向量的夹角。",
-            "example": "同向向量的夹角为0°。"
+            "definition": "若a=(x,y)，则λa=(λx,λy)。",
+            "example": "3(2,1)=(6,3)"
           },
           {
-            "name": "向量垂直坐标条件",
+            "name": "中点坐标公式",
             "difficulty": 3,
-            "description": "用坐标判断两个向量垂直",
+            "description": "由线段两端点坐标求其中点坐标",
             "aliases": [],
             "prerequisites": [
-              "数量积坐标表示",
-              "向量垂直"
+              "向量坐标表示",
+              "数乘坐标表示"
             ],
-            "definition": "两个向量垂直的充要条件是其对应坐标乘积之和为0。",
-            "example": "(1,2)与(2,−1)垂直。"
-          },
-          {
-            "name": "向量法解几何题",
-            "difficulty": 3,
-            "description": "用向量运算研究几何关系的方法",
-            "aliases": [],
-            "prerequisites": [
-              "向量线性运算",
-              "向量数量积",
-              "平面向量基本定理"
-            ],
-            "definition": "先用向量表示几何元素，再运算并将结果转译为几何关系。",
-            "example": "用向量证明三角形中位线定理。"
-          },
-          {
-            "name": "余弦定理",
-            "difficulty": 4,
-            "description": "三角形边长与角度的关系式",
-            "aliases": [],
-            "prerequisites": [
-              "向量数量积",
-              "向量加法"
-            ],
-            "definition": "三角形一边的平方等于另两边平方和减去两边与夹角余弦乘积的两倍。",
-            "example": "c²=a²+b²−2abcosC。"
+            "definition": "端点为(x1,y1)、(x2,y2)的线段中点坐标为((x1+x2)/2,(y1+y2)/2)。",
+            "example": "(0,0)与(2,4)中点为(1,2)",
+            "section": "6.3 平面向量基本定理及坐标表示"
           },
           {
             "name": "正弦定理",
             "difficulty": 4,
-            "description": "三角形边与其对角正弦成比例",
+            "description": "三角形边与其对角正弦的比例关系",
             "aliases": [],
             "prerequisites": [
-              "向量数量积",
-              "余弦定理"
+              "向量夹角"
             ],
-            "definition": "三角形各边与其对角正弦的比相等。",
-            "example": "a/sinA=b/sinB=c/sinC。"
+            "definition": "三角形中各边与其对角正弦的比相等。",
+            "example": "a/sinA=b/sinB",
+            "section": "6.4 平面向量的应用"
+          },
+          {
+            "name": "余弦定理",
+            "difficulty": 4,
+            "description": "三角形边长与角之间的关系",
+            "aliases": [],
+            "prerequisites": [
+              "数量积",
+              "向量夹角"
+            ],
+            "definition": "三角形一边平方等于另两边平方和减去两边乘积的两倍乘夹角余弦。",
+            "example": "c²=a²+b²-2abcosC",
+            "section": "6.4 平面向量的应用"
+          },
+          {
+            "name": "三角形面积公式",
+            "difficulty": 3,
+            "description": "用两边及其夹角求三角形面积",
+            "aliases": [],
+            "prerequisites": [
+              "向量夹角"
+            ],
+            "definition": "三角形面积等于两边及其夹角正弦乘积的一半。",
+            "example": "S=1/2·ab·sinC"
+          },
+          {
+            "name": "三角形重心",
+            "difficulty": 4,
+            "description": "三角形三条中线的交点",
+            "aliases": [],
+            "prerequisites": [
+              "数乘向量",
+              "向量加法"
+            ],
+            "definition": "三角形三条中线相交于一点，该交点叫三角形的重心。",
+            "example": "重心将每条中线分成1:2两段"
           }
         ],
-        "chapter_key": "b860b53333",
+        "sections": [
+          {
+            "name": "6.1 平面向量的概念",
+            "section_key": "9806c28609",
+            "page_range": [
+              9,
+              14
+            ]
+          },
+          {
+            "name": "6.2 平面向量的运算",
+            "section_key": "b2806dea42",
+            "page_range": [
+              14,
+              32
+            ]
+          },
+          {
+            "name": "6.3 平面向量基本定理及坐标表示",
+            "section_key": "faa6e4c511",
+            "page_range": [
+              32,
+              45
+            ]
+          },
+          {
+            "name": "6.4 平面向量的应用",
+            "section_key": "295fe5f963",
+            "page_range": [
+              45,
+              73
+            ]
+          }
+        ],
+        "chapter_key": "b68e3acdcd",
         "metadata": {
           "volume_id": "655f1295c9e5",
           "file_id": "655f1295c9e5",
           "volume_title": "A版 必修第2册",
-          "chapter_order": 1,
-          "raw_heading": "第六章 平面向量及其应用"
+          "chapter_order": 2,
+          "raw_heading": "第六章　平面向量及其应用"
         }
       },
       {
         "name": "第七章 复数",
         "concepts": [
           {
+            "name": "数系扩充",
+            "difficulty": 2,
+            "description": "为解决方程无解问题逐步扩大数的范围",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "数系扩充是为满足实际需求而引入新数并保持原有运算规律的过程。",
+            "example": "由实数系扩充到复数系",
+            "section": "7.3* 复数的三角表示"
+          },
+          {
             "name": "虚数单位",
-            "difficulty": 1,
-            "description": "满足平方等于−1的新数i",
+            "difficulty": 2,
+            "description": "满足平方等于−1的新数",
             "aliases": [
               "i"
             ],
-            "prerequisites": [],
+            "prerequisites": [
+              "数系扩充"
+            ],
             "definition": "虚数单位i规定为满足i²＝−1的数。",
-            "example": "i²＝−1"
+            "example": "i²＝−1",
+            "section": "7.1 复数的概念"
           },
           {
             "name": "复数",
-            "difficulty": 1,
-            "description": "形如a＋bi的数，其中a、b为实数",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "由实数和虚数单位构成的数",
+            "aliases": [
+              "complex number"
+            ],
             "prerequisites": [
               "虚数单位"
             ],
@@ -2370,413 +2582,462 @@
           },
           {
             "name": "复数集",
-            "difficulty": 1,
-            "description": "全体复数组成的集合C",
+            "difficulty": 2,
+            "description": "全体复数组成的集合",
             "aliases": [
-              "C"
+              "C",
+              "set of complex numbers"
             ],
             "prerequisites": [
               "复数"
             ],
-            "definition": "全体复数构成的集合叫做复数集，记作C。",
+            "definition": "全体形如a＋bi的复数构成的集合叫复数集C。",
             "example": "R⊂C"
           },
           {
-            "name": "复数的实部",
-            "difficulty": 1,
-            "description": "复数a＋bi中的实数a",
+            "name": "复数代数形式",
+            "difficulty": 2,
+            "description": "用实部与虚部表示复数的形式",
             "aliases": [
-              "实部"
+              "代数表示式"
             ],
             "prerequisites": [
               "复数"
             ],
-            "definition": "复数a＋bi中的实数a叫做该复数的实部。",
-            "example": "3＋2i的实部是3"
+            "definition": "a＋bi是复数的代数表示式，其中a、b为实数。",
+            "example": "−2＋5i",
+            "section": "7.3* 复数的三角表示"
           },
           {
-            "name": "复数的虚部",
-            "difficulty": 1,
-            "description": "复数a＋bi中的实数b",
+            "name": "实部与虚部",
+            "difficulty": 2,
+            "description": "复数中实数项和虚数单位的系数",
             "aliases": [
-              "虚部"
+              "real part",
+              "imaginary part"
             ],
             "prerequisites": [
-              "复数"
+              "复数代数形式"
             ],
-            "definition": "复数a＋bi中的实数b叫做该复数的虚部。",
-            "example": "3＋2i的虚部是2"
+            "definition": "在z＝a＋bi中，a叫实部，b叫虚部。",
+            "example": "3−4i的实部为3、虚部为−4"
           },
           {
             "name": "复数相等",
-            "difficulty": 1,
-            "description": "实部相等且虚部相等的两个复数相等",
-            "aliases": [
-              "复数相等的定义"
-            ],
-            "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
-            ],
-            "definition": "两个复数相等当且仅当它们的实部和虚部分别相等。",
-            "example": "a＋bi＝c＋di⇔a＝c且b＝d"
-          },
-          {
-            "name": "实数",
-            "difficulty": 1,
-            "description": "虚部为零的复数",
+            "difficulty": 2,
+            "description": "两个复数对应实部和虚部分别相等",
             "aliases": [],
             "prerequisites": [
-              "复数的虚部"
+              "复数代数形式"
             ],
-            "definition": "复数a＋bi当且仅当b＝0时是实数。",
-            "example": "2＝2＋0i"
+            "definition": "a＋bi与c＋di相等当且仅当a＝c且b＝d。",
+            "example": "x＋yi＝2＋3i得x＝2、y＝3"
           },
           {
-            "name": "虚数",
-            "difficulty": 1,
-            "description": "虚部不为零的复数",
+            "name": "实数与虚数",
+            "difficulty": 2,
+            "description": "按虚部是否为零对复数进行分类",
             "aliases": [],
             "prerequisites": [
-              "复数的虚部"
+              "实部与虚部"
             ],
-            "definition": "复数a＋bi当且仅当b≠0时叫做虚数。",
-            "example": "1＋i"
+            "definition": "虚部为零的复数是实数，虚部不为零的复数是虚数。",
+            "example": "5是实数，2i是虚数"
           },
           {
             "name": "纯虚数",
-            "difficulty": 1,
+            "difficulty": 2,
             "description": "实部为零且虚部不为零的复数",
-            "aliases": [],
-            "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
-            ],
-            "definition": "实部为零且虚部不为零的复数叫做纯虚数。",
-            "example": "−2i"
-          },
-          {
-            "name": "复平面",
-            "difficulty": 2,
-            "description": "用直角坐标系表示复数的平面",
             "aliases": [
-              "阿尔冈图"
+              "pure imaginary number"
             ],
             "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
+              "实数与虚数"
             ],
-            "definition": "建立直角坐标系表示复数的平面叫做复平面。",
-            "example": "a＋bi对应点(a，b)"
-          },
-          {
-            "name": "实轴与虚轴",
-            "difficulty": 2,
-            "description": "复平面的横轴与纵轴",
-            "aliases": [
-              "实轴",
-              "虚轴"
-            ],
-            "prerequisites": [
-              "复平面",
-              "实数",
-              "纯虚数"
-            ],
-            "definition": "复平面的横轴叫实轴，纵轴叫虚轴。",
-            "example": "点(2，0)在实轴上"
-          },
-          {
-            "name": "复数的向量表示",
-            "difficulty": 2,
-            "description": "复数对应复平面中以原点为起点的向量",
-            "aliases": [],
-            "prerequisites": [
-              "复平面"
-            ],
-            "definition": "复数与复平面内以原点为起点的向量建立一一对应。",
-            "example": "2＋i对应向量(2，1)"
-          },
-          {
-            "name": "复数的模",
-            "difficulty": 2,
-            "description": "对应向量的模，等于√(a²＋b²)",
-            "aliases": [
-              "复数的绝对值"
-            ],
-            "prerequisites": [
-              "复数的向量表示"
-            ],
-            "definition": "复数a＋bi的模定义为√(a²＋b²)。",
-            "example": "|3＋4i|＝5"
-          },
-          {
-            "name": "共轭复数",
-            "difficulty": 2,
-            "description": "实部相等、虚部互为相反数的复数",
-            "aliases": [
-              "共轭虚数"
-            ],
-            "prerequisites": [
-              "复数的实部",
-              "复数的虚部"
-            ],
-            "definition": "实部相等且虚部互为相反数的两个复数互为共轭复数。",
-            "example": "2＋3i与2−3i"
+            "definition": "实部为0而虚部不为0的复数叫做纯虚数。",
+            "example": "−3i"
           },
           {
             "name": "复数加法",
-            "difficulty": 2,
-            "description": "实部与实部相加，虚部与虚部相加",
-            "aliases": [
-              "复数加法法则"
-            ],
+            "difficulty": 3,
+            "description": "实部相加、虚部相加的运算",
+            "aliases": [],
             "prerequisites": [
+              "复数代数形式",
               "复数相等"
             ],
-            "definition": "两个复数相加时分别将实部和虚部相加。",
-            "example": "(2＋i)+(3−i)＝5"
+            "definition": "两个复数相加时分别把实部和虚部相加。",
+            "example": "(2＋i)＋(3−4i)＝5−3i",
+            "section": "7.2 复数的四则运算"
           },
           {
             "name": "复数减法",
-            "difficulty": 2,
-            "description": "复数加法的逆运算",
-            "aliases": [
-              "复数减法法则"
-            ],
+            "difficulty": 3,
+            "description": "实部相减、虚部相减的运算",
+            "aliases": [],
             "prerequisites": [
-              "复数加法"
+              "复数代数形式",
+              "复数相等"
             ],
-            "definition": "复数减法定义为复数加法的逆运算。",
-            "example": "(2＋3i)−(1＋i)＝1＋2i"
+            "definition": "两个复数相减时分别把实部和虚部相减。",
+            "example": "(2＋i)−(3−4i)＝−1＋5i",
+            "section": "7.2 复数的四则运算"
           },
           {
             "name": "复数乘法",
-            "difficulty": 2,
-            "description": "按乘法法则展开并用i²＝−1化简",
+            "difficulty": 3,
+            "description": "按分配律并利用i²＝−1进行运算",
+            "aliases": [],
+            "prerequisites": [
+              "复数代数形式",
+              "虚数单位"
+            ],
+            "definition": "复数相乘按多项式乘法展开并用i²＝−1化简。",
+            "example": "(1＋i)²＝2i",
+            "section": "7.3* 复数的三角表示"
+          },
+          {
+            "name": "共轭复数",
+            "difficulty": 3,
+            "description": "实部相等、虚部互为相反数的复数",
             "aliases": [
-              "复数乘法法则"
+              "conjugate complex number"
             ],
             "prerequisites": [
-              "虚数单位",
-              "复数"
+              "实部与虚部",
+              "复数代数形式"
             ],
-            "definition": "复数乘法按分配律展开并以i²＝−1化简。",
-            "example": "(1＋i)(1−i)＝2"
+            "definition": "a＋bi的共轭复数是a−bi，二者实部相等而虚部相反。",
+            "example": "3＋2i与3−2i"
           },
           {
             "name": "复数除法",
             "difficulty": 3,
-            "description": "利用除数共轭复数使分母实数化",
-            "aliases": [
-              "复数除法法则"
-            ],
+            "description": "借助共轭复数化为实数分母",
+            "aliases": [],
             "prerequisites": [
               "复数乘法",
               "共轭复数"
             ],
-            "definition": "复数除法是乘法的逆运算，通常用除数的共轭复数化简。",
-            "example": "1/(1＋i)＝(1−i)/2"
+            "definition": "复数相除通常分子分母同乘分母的共轭复数。",
+            "example": "1/i＝−i"
           },
           {
-            "name": "复数的三角形式",
-            "difficulty": 3,
-            "description": "用模和辐角表示为r(cosθ＋isinθ)",
+            "name": "复平面",
+            "difficulty": 2,
+            "description": "用平面直角坐标系表示复数的平面",
             "aliases": [
-              "三角形式",
-              "三角表示式"
+              "Argand diagram"
+            ],
+            "prerequisites": [
+              "复数代数形式",
+              "复数相等"
+            ],
+            "definition": "以实轴和虚轴构成的表示复数的平面叫复平面。",
+            "example": "2＋3i对应点(2，3)"
+          },
+          {
+            "name": "复数的几何对应",
+            "difficulty": 3,
+            "description": "复数与复平面点及原点向量一一对应",
+            "aliases": [],
+            "prerequisites": [
+              "复平面"
+            ],
+            "definition": "复数a＋bi分别与复平面点(a，b)及向量OZ一一对应。",
+            "example": "−i对应点(0，−1)"
+          },
+          {
+            "name": "复数的模",
+            "difficulty": 2,
+            "description": "复平面中对应向量的长度",
+            "aliases": [
+              "绝对值",
+              "modulus"
+            ],
+            "prerequisites": [
+              "复数的几何对应"
+            ],
+            "definition": "复数a＋bi的模为|a＋bi|＝√(a²＋b²)。",
+            "example": "|3＋4i|＝5"
+          },
+          {
+            "name": "复数乘除的几何意义",
+            "difficulty": 4,
+            "description": "乘除运算对应向量的旋转与伸缩",
+            "aliases": [],
+            "prerequisites": [
+              "复数的模",
+              "复数的几何对应",
+              "复数乘法",
+              "复数除法"
+            ],
+            "definition": "复数乘法和除法在几何上分别体现向量的旋转与伸缩。",
+            "example": "乘以模为2的复数使长度扩大2倍"
+          },
+          {
+            "name": "复数三角形式",
+            "difficulty": 3,
+            "description": "用模和辐角表示复数的形式",
+            "aliases": [
+              "三角表示式",
+              "三角形式"
             ],
             "prerequisites": [
               "复数的模",
-              "复平面"
+              "复数的几何对应"
             ],
             "definition": "复数可表示为r(cosθ＋isinθ)，称为三角形式。",
-            "example": "1＋i＝√2(cosπ/4＋isinπ/4)"
+            "example": "1−i＝√2(cos7π/4＋isin7π/4)",
+            "section": "7.3* 复数的三角表示"
           },
           {
             "name": "复数的辐角",
             "difficulty": 3,
-            "description": "对应向量与实轴正半轴所成的角",
+            "description": "对应向量与实轴正半轴形成的角",
             "aliases": [
-              "辐角"
+              "argument"
             ],
             "prerequisites": [
-              "复数的向量表示"
+              "复数的几何对应"
             ],
-            "definition": "以实轴正半轴为始边、对应向量所在射线为终边的角叫辐角。",
-            "example": "arg i＝π/2"
+            "definition": "从实轴非负半轴到复数对应向量的有向角叫辐角。",
+            "example": "i的辐角为π/2＋2kπ",
+            "section": "7.3* 复数的三角表示"
           },
           {
             "name": "辐角主值",
             "difficulty": 3,
-            "description": "取值范围为0≤θ＜2π的辐角",
+            "description": "限定在0≤θ＜2π范围内的辐角",
             "aliases": [
-              "主辐角",
               "arg z"
             ],
             "prerequisites": [
               "复数的辐角"
             ],
-            "definition": "在0≤θ＜2π范围内取的辐角值叫辐角主值。",
-            "example": "arg(−1)＝π"
+            "definition": "满足0≤arg z＜2π的辐角值叫辐角主值。",
+            "example": "arg(−i)＝3π/2",
+            "section": "7.3* 复数的三角表示"
           },
           {
-            "name": "三角形式乘法",
-            "difficulty": 3,
-            "description": "积的模相乘，辐角相加",
+            "name": "三角形式乘除法",
+            "difficulty": 4,
+            "description": "乘除时模相乘除、辐角相加减",
             "aliases": [],
             "prerequisites": [
-              "复数的三角形式",
-              "复数乘法"
+              "复数三角形式",
+              "复数的辐角"
             ],
-            "definition": "三角形式复数相乘时，积的模等于模的积，辐角等于辐角之和。",
-            "example": "r₁∠θ₁·r₂∠θ₂＝r₁r₂∠(θ₁＋θ₂)"
-          },
-          {
-            "name": "三角形式除法",
-            "difficulty": 3,
-            "description": "商的模相除，辐角相减",
-            "aliases": [],
-            "prerequisites": [
-              "复数的三角形式",
-              "复数除法"
-            ],
-            "definition": "三角形式复数相除时，商的模等于模的商，辐角等于辐角之差。",
-            "example": "r₁∠θ₁÷r₂∠θ₂＝(r₁/r₂)∠(θ₁−θ₂)"
+            "definition": "三角形式复数相乘除时模分别相乘除，辐角分别相加减。",
+            "example": "辐角θ₁与θ₂相乘后为θ₁＋θ₂"
           },
           {
             "name": "棣莫弗定理",
             "difficulty": 4,
-            "description": "复数n次幂的模与辐角分别乘n",
+            "description": "给出复数三角形式的整数次幂公式",
             "aliases": [
-              "德莫弗定理"
+              "De Moivre定理"
             ],
             "prerequisites": [
-              "复数的三角形式",
-              "三角形式乘法"
+              "三角形式乘除法",
+              "复数三角形式"
             ],
             "definition": "[r(cosθ＋isinθ)]ⁿ＝rⁿ(cosnθ＋isinnθ)。",
-            "example": "(cosθ＋isinθ)²＝cos2θ＋isin2θ"
+            "example": "(cosθ＋isinθ)³＝cos3θ＋isin3θ",
+            "section": "7.3* 复数的三角表示"
           },
           {
-            "name": "单位根",
+            "name": "1的n次方根",
             "difficulty": 4,
-            "description": "满足zⁿ＝1的复数根",
-            "aliases": [
-              "1的n次方根"
-            ],
+            "description": "满足zⁿ＝1的复数及其单位圆分布",
+            "aliases": [],
             "prerequisites": [
               "棣莫弗定理",
-              "复数的三角形式"
+              "复数的模",
+              "复数的辐角"
             ],
             "definition": "满足zⁿ＝1的复数叫做1的n次方根。",
-            "example": "1的三次方根含1、−1/2±√3i/2"
+            "example": "1的三次方根为1、−1/2±√3i/2"
           },
           {
             "name": "代数基本定理",
-            "difficulty": 4,
-            "description": "n次复系数多项式方程至少有一个复根",
-            "aliases": [],
+            "difficulty": 5,
+            "description": "复系数多项式方程至少有一个复根",
+            "aliases": [
+              "fundamental theorem of algebra"
+            ],
             "prerequisites": [
-              "复数集"
+              "复数",
+              "复数乘法"
             ],
             "definition": "任何一元n次复系数多项式方程至少有一个复数根。",
-            "example": "二次复系数方程在C中有根"
+            "example": "n次多项式可分解为n个一次因式",
+            "section": "7.2 复数的四则运算"
           },
           {
             "name": "根与系数关系",
-            "difficulty": 3,
-            "description": "多项式方程的根与系数满足的关系",
-            "aliases": [
-              "韦达关系"
-            ],
+            "difficulty": 4,
+            "description": "多项式方程的根与系数之间的关系",
+            "aliases": [],
             "prerequisites": [
               "代数基本定理",
-              "复数的四则运算"
+              "复数相等"
             ],
-            "definition": "一元多项式方程的根与其系数之间存在由因式分解得到的关系。",
-            "example": "ax²+bx+c的根和为−b/a"
+            "definition": "多项式方程的根的和、积等对称式可由方程系数表示。",
+            "example": "二次方程根和为−a₁/a₂"
           }
         ],
-        "chapter_key": "9087654835",
+        "sections": [
+          {
+            "name": "7.1 复数的概念",
+            "section_key": "81a5d24eea",
+            "page_range": [
+              75,
+              82
+            ]
+          },
+          {
+            "name": "7.2 复数的四则运算",
+            "section_key": "c8da3b34ee",
+            "page_range": [
+              82,
+              90
+            ]
+          },
+          {
+            "name": "7.3* 复数的三角表示",
+            "section_key": "70eb2266cd",
+            "page_range": [
+              90,
+              102
+            ]
+          }
+        ],
+        "chapter_key": "d271b5e2c5",
         "metadata": {
           "volume_id": "655f1295c9e5",
           "file_id": "655f1295c9e5",
           "volume_title": "A版 必修第2册",
-          "chapter_order": 2,
-          "raw_heading": "第七章 复数"
+          "chapter_order": 3,
+          "raw_heading": "第七章　复数"
         }
       },
       {
         "name": "第八章 立体几何初步",
         "concepts": [
           {
+            "name": "点直线平面",
+            "difficulty": 1,
+            "description": "构成立体图形的基本元素。",
+            "aliases": [
+              "基本元素"
+            ],
+            "prerequisites": [],
+            "definition": "点、直线和平面是空间几何中构成立体图形的基本元素。",
+            "example": "长方体由顶点、棱和面组成。"
+          },
+          {
             "name": "空间几何体",
             "difficulty": 1,
-            "description": "由现实物体抽象出的只考虑形状和大小的空间图形",
+            "description": "由现实物体抽象出的空间图形。",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "由物体抽象出的、只考虑形状和大小的空间图形叫空间几何体。",
-            "example": "纸箱抽象成一个长方体。"
+            "prerequisites": [
+              "点直线平面"
+            ],
+            "definition": "只考虑物体的形状和大小而抽象出的空间图形叫空间几何体。",
+            "example": "把纸箱抽象成长方体。"
           },
           {
             "name": "多面体",
             "difficulty": 1,
-            "description": "由若干个平面多边形围成的几何体",
-            "aliases": [],
+            "description": "由若干平面多边形围成的几何体。",
+            "aliases": [
+              "polyhedron"
+            ],
             "prerequisites": [
               "空间几何体"
             ],
             "definition": "由若干个平面多边形围成的几何体叫多面体。",
-            "example": "金字塔具有多面体结构。"
+            "example": "金字塔具有多面体形状。"
           },
           {
-            "name": "多面体的面棱顶点",
+            "name": "多面体的面",
             "difficulty": 1,
-            "description": "多面体的基本组成元素及其公共关系",
+            "description": "围成多面体的各个多边形。",
             "aliases": [],
             "prerequisites": [
               "多面体"
             ],
-            "definition": "多面体的面是围成它的多边形，棱是两面的公共边，顶点是棱的公共点。",
-            "example": "长方体有面、棱和顶点。"
+            "definition": "围成多面体的各个多边形叫做多面体的面。",
+            "example": "长方体的六个矩形面。",
+            "section": "8.1 基本立体图形"
+          },
+          {
+            "name": "多面体的棱",
+            "difficulty": 1,
+            "description": "多面体两个面的公共边。",
+            "aliases": [],
+            "prerequisites": [
+              "多面体的面"
+            ],
+            "definition": "多面体两个面的公共边叫做多面体的棱。",
+            "example": "长方体相邻面的交线是棱。"
+          },
+          {
+            "name": "多面体的顶点",
+            "difficulty": 1,
+            "description": "多面体棱与棱的公共点。",
+            "aliases": [],
+            "prerequisites": [
+              "多面体的棱"
+            ],
+            "definition": "多面体棱与棱的公共点叫做多面体的顶点。",
+            "example": "正方体有八个顶点。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "旋转面",
             "difficulty": 2,
-            "description": "平面曲线绕所在平面内定直线旋转形成的曲面",
+            "description": "平面曲线绕定直线旋转形成的曲面。",
             "aliases": [],
             "prerequisites": [
               "空间几何体"
             ],
-            "definition": "一条平面曲线绕其所在平面内的一条定直线旋转形成的曲面叫旋转面。",
-            "example": "圆锥的侧面属于旋转面。"
+            "definition": "一条平面曲线绕其平面内一条定直线旋转形成的曲面叫旋转面。",
+            "example": "直角三角形一条直角边旋转形成锥面。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "旋转体",
             "difficulty": 2,
-            "description": "封闭旋转面围成的几何体",
-            "aliases": [],
+            "description": "封闭旋转面围成的几何体。",
+            "aliases": [
+              "solid of rotation"
+            ],
             "prerequisites": [
               "旋转面"
             ],
             "definition": "封闭的旋转面围成的几何体叫旋转体。",
-            "example": "圆柱是旋转体。"
+            "example": "圆柱是由矩形旋转形成的旋转体。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "棱柱",
             "difficulty": 2,
-            "description": "两面平行且全等、其余面为平行四边形的多面体",
-            "aliases": [],
+            "description": "有两个平行底面且侧面为平行四边形的多面体。",
+            "aliases": [
+              "prism"
+            ],
             "prerequisites": [
               "多面体"
             ],
-            "definition": "有两个面互相平行且其余各面为四边形，且相邻四边形公共边互相平行的多面体叫棱柱。",
-            "example": "茶叶盒可表示棱柱。"
+            "definition": "有两个面互相平行、其余各面为四边形且相邻侧棱互相平行的多面体叫棱柱。",
+            "example": "茶叶盒可抽象为棱柱。"
           },
           {
             "name": "直棱柱",
             "difficulty": 2,
-            "description": "侧棱垂直于底面的棱柱",
+            "description": "侧棱垂直于底面的棱柱。",
             "aliases": [],
             "prerequisites": [
               "棱柱"
@@ -2785,76 +3046,98 @@
             "example": "长方体是直棱柱。"
           },
           {
+            "name": "斜棱柱",
+            "difficulty": 2,
+            "description": "侧棱不垂直于底面的棱柱。",
+            "aliases": [],
+            "prerequisites": [
+              "棱柱"
+            ],
+            "definition": "侧棱不垂直于底面的棱柱叫斜棱柱。",
+            "example": "侧棱倾斜的四棱柱。",
+            "section": "8.1 基本立体图形"
+          },
+          {
             "name": "正棱柱",
             "difficulty": 3,
-            "description": "底面为正多边形的直棱柱",
+            "description": "底面为正多边形的直棱柱。",
             "aliases": [],
             "prerequisites": [
               "直棱柱"
             ],
             "definition": "底面是正多边形的直棱柱叫正棱柱。",
-            "example": "底面为正三角形的直三棱柱是正棱柱。"
+            "example": "底面为正三角形的直棱柱。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "平行六面体",
             "difficulty": 2,
-            "description": "底面为平行四边形的四棱柱",
+            "description": "底面为平行四边形的四棱柱。",
             "aliases": [],
             "prerequisites": [
               "棱柱"
             ],
-            "definition": "底面是平行四边形的四棱柱也叫平行六面体。",
-            "example": "由平行四边形底面构成的四棱柱是平行六面体。"
+            "definition": "底面是平行四边形的四棱柱叫平行六面体。",
+            "example": "一般平行六面体有六个平行四边形面。"
           },
           {
             "name": "棱锥",
             "difficulty": 2,
-            "description": "一个多边形底面与有公共顶点的三角形侧面围成的多面体",
-            "aliases": [],
+            "description": "一个多边形底面和公共顶点三角形侧面组成的多面体。",
+            "aliases": [
+              "pyramid"
+            ],
             "prerequisites": [
               "多面体"
             ],
-            "definition": "有一个面是多边形、其余各面是有一个公共顶点的三角形所围成的多面体叫棱锥。",
-            "example": "金字塔是棱锥的实例。"
+            "definition": "有一个多边形面、其余侧面为有公共顶点三角形的多面体叫棱锥。",
+            "example": "金字塔可抽象为四棱锥。"
           },
           {
             "name": "四面体",
             "difficulty": 2,
-            "description": "三棱锥的另一种名称",
-            "aliases": [],
+            "description": "三棱锥，也就是有四个面的棱锥。",
+            "aliases": [
+              "三棱锥"
+            ],
             "prerequisites": [
               "棱锥"
             ],
             "definition": "三棱锥又叫四面体。",
-            "example": "由四个三角形围成的几何体是四面体。"
+            "example": "四个三角形围成一个四面体。"
           },
           {
             "name": "正棱锥",
             "difficulty": 3,
-            "description": "底面为正多边形且顶点到底面中心垂直的棱锥",
+            "description": "底面为正多边形且高过底面中心的棱锥。",
             "aliases": [],
             "prerequisites": [
               "棱锥"
             ],
-            "definition": "底面是正多边形且顶点与底面中心的连线垂直于底面的棱锥叫正棱锥。",
-            "example": "正方形底面且顶点在中心正上方的棱锥是正棱锥。"
+            "definition": "底面是正多边形且顶点与底面中心连线垂直于底面的棱锥叫正棱锥。",
+            "example": "正方形底面、顶点在中心正上方的棱锥。",
+            "section": "8.1 基本立体图形"
           },
           {
             "name": "棱台",
             "difficulty": 2,
-            "description": "棱锥被平行于底面的平面截得的部分",
-            "aliases": [],
+            "description": "棱锥被平行于底面的平面截得的部分。",
+            "aliases": [
+              "frustum of a pyramid"
+            ],
             "prerequisites": [
               "棱锥"
             ],
             "definition": "用平行于棱锥底面的平面截棱锥所得的底面与截面之间部分叫棱台。",
-            "example": "储物箱可具有棱台结构。"
+            "example": "储物箱可呈棱台结构。"
           },
           {
             "name": "圆柱",
             "difficulty": 2,
-            "description": "矩形绕一边所在直线旋转形成的旋转体",
-            "aliases": [],
+            "description": "矩形绕一边所在直线旋转形成的旋转体。",
+            "aliases": [
+              "circular cylinder"
+            ],
             "prerequisites": [
               "旋转体"
             ],
@@ -2864,257 +3147,258 @@
           {
             "name": "圆锥",
             "difficulty": 2,
-            "description": "直角三角形绕一条直角边旋转形成的旋转体",
-            "aliases": [],
+            "description": "直角三角形绕一条直角边旋转形成的旋转体。",
+            "aliases": [
+              "circular cone"
+            ],
             "prerequisites": [
               "旋转体"
             ],
             "definition": "直角三角形绕一条直角边所在直线旋转一周形成的旋转体叫圆锥。",
-            "example": "铅锤具有圆锥结构。"
+            "example": "铅锤呈圆锥形。"
           },
           {
             "name": "圆台",
             "difficulty": 2,
-            "description": "圆锥被平行于底面的平面截得的部分",
-            "aliases": [],
+            "description": "圆锥被平行于底面的平面截得的部分。",
+            "aliases": [
+              "circular truncated cone"
+            ],
             "prerequisites": [
               "圆锥"
             ],
             "definition": "用平行于圆锥底面的平面截圆锥所得的底面与截面之间部分叫圆台。",
-            "example": "纸杯可具有圆台结构。"
+            "example": "纸杯具有圆台结构。"
           },
           {
             "name": "球",
             "difficulty": 2,
-            "description": "半圆绕直径所在直线旋转形成的旋转体",
+            "description": "球面所围成的旋转体。",
             "aliases": [
-              "球体"
+              "球体",
+              "spheroid"
             ],
             "prerequisites": [
               "旋转体"
             ],
-            "definition": "半圆绕其直径所在直线旋转一周形成的曲面所围成的旋转体叫球。",
-            "example": "篮球是球的实例。"
+            "definition": "半圆绕其直径所在直线旋转形成球面，球面围成的旋转体简称球。",
+            "example": "篮球可抽象为球。"
+          },
+          {
+            "name": "柱体",
+            "difficulty": 2,
+            "description": "棱柱与圆柱的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "棱柱",
+              "圆柱"
+            ],
+            "definition": "棱柱和圆柱统称为柱体。",
+            "example": "三棱柱和圆柱都属于柱体。"
+          },
+          {
+            "name": "锥体",
+            "difficulty": 2,
+            "description": "棱锥与圆锥的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "棱锥",
+              "圆锥"
+            ],
+            "definition": "棱锥和圆锥统称为锥体。",
+            "example": "四棱锥和圆锥都属于锥体。"
+          },
+          {
+            "name": "台体",
+            "difficulty": 2,
+            "description": "棱台与圆台的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "棱台",
+              "圆台"
+            ],
+            "definition": "棱台和圆台统称为台体。",
+            "example": "四棱台和圆台都属于台体。"
           },
           {
             "name": "简单组合体",
             "difficulty": 2,
-            "description": "由简单几何体拼接或截去部分形成的几何体",
+            "description": "由简单几何体拼接、截去或挖去形成的几何体。",
             "aliases": [],
             "prerequisites": [
-              "空间几何体"
+              "柱体",
+              "锥体",
+              "台体",
+              "球"
             ],
-            "definition": "由简单几何体组合而成的几何体称为简单组合体。",
-            "example": "烟囱顶部可由圆柱和圆台组合。"
+            "definition": "由简单几何体组合而成的几何体叫简单组合体。",
+            "example": "圆柱与圆锥拼接成组合体。"
           },
           {
-            "name": "直观图",
+            "name": "直线与直线平行",
             "difficulty": 2,
-            "description": "在平行投影下表示空间几何体的平面图形",
+            "description": "空间中两条直线方向相同且不相交。",
             "aliases": [],
             "prerequisites": [
-              "空间几何体"
+              "点直线平面"
             ],
-            "definition": "在平行投影下得到的、用于表示立体图形的平面图形叫直观图。",
-            "example": "长方体的斜二测图是其直观图。"
-          },
-          {
-            "name": "斜二测画法",
-            "difficulty": 3,
-            "description": "用特定轴角和长度规则画直观图的方法",
-            "aliases": [],
-            "prerequisites": [
-              "直观图"
-            ],
-            "definition": "按两轴成45°且一轴方向长度减半等规则画直观图的方法叫斜二测画法。",
-            "example": "用斜二测画法画水平正方形。"
-          },
-          {
-            "name": "平行投影",
-            "difficulty": 2,
-            "description": "投影线互相平行的投影方式",
-            "aliases": [],
-            "prerequisites": [
-              "直观图"
-            ],
-            "definition": "投影线互相平行的投影叫平行投影。",
-            "example": "斜二测画法利用平行投影。"
-          },
-          {
-            "name": "点线面基本事实",
-            "difficulty": 3,
-            "description": "刻画平面性质并支撑空间推理的基本命题",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "关于点、直线、平面关系且不需证明的基本命题叫点线面基本事实。",
-            "example": "不在同一直线上的三点确定一个平面。"
-          },
-          {
-            "name": "共面直线",
-            "difficulty": 2,
-            "description": "位于同一个平面内的直线",
-            "aliases": [],
-            "prerequisites": [
-              "平面"
-            ],
-            "definition": "能够位于同一个平面内的直线称为共面直线。",
-            "example": "同一平面内的两条相交直线共面。"
-          },
-          {
-            "name": "异面直线",
-            "difficulty": 3,
-            "description": "既不相交也不平行且不在同一平面的两条直线",
-            "aliases": [],
-            "prerequisites": [
-              "共面直线"
-            ],
-            "definition": "既不相交也不平行的两条直线叫异面直线。",
-            "example": "正方体中某些不相邻棱所在直线是异面直线。"
+            "definition": "空间中两条不重合且不相交、方向相同的直线互相平行。",
+            "example": "长方体的两条对应棱平行。"
           },
           {
             "name": "直线与平面平行",
-            "difficulty": 3,
-            "description": "直线与平面没有公共点的位置关系",
+            "difficulty": 2,
+            "description": "直线与平面没有公共点的位置关系。",
             "aliases": [],
             "prerequisites": [
-              "异面直线"
+              "点直线平面"
             ],
-            "definition": "直线与平面没有公共点时，称直线与平面平行。",
-            "example": "长方体一条上棱与底面平行。"
+            "definition": "直线与平面没有公共点，则称直线与平面平行。",
+            "example": "长方体一条侧棱平行于不含它的底面。"
           },
           {
             "name": "直线面平行判定",
-            "difficulty": 4,
-            "description": "平面外直线平行于平面内直线可判定线面平行",
+            "difficulty": 3,
+            "description": "用平面内一条平行直线判定直线面平行。",
             "aliases": [],
             "prerequisites": [
-              "直线与平面平行",
-              "空间直线平行"
+              "直线与直线平行",
+              "直线与平面平行"
             ],
-            "definition": "平面外一条直线与平面内一条直线平行，则该直线与此平面平行。",
-            "example": "若a∥b且b在α内、a在α外，则a∥α。"
+            "definition": "平面外一条直线若与该平面内一条直线平行，则它与该平面平行。",
+            "example": "证明棱柱侧棱平行于某个侧面。"
           },
           {
-            "name": "平面与平面平行",
+            "name": "直线面平行性质",
             "difficulty": 3,
-            "description": "两个平面没有公共点的位置关系",
+            "description": "过平行于平面的直线作平面可得平行交线。",
             "aliases": [],
             "prerequisites": [
               "直线与平面平行"
             ],
-            "definition": "两个平面没有公共点时，称这两个平面互相平行。",
+            "definition": "直线平行于平面且过直线的平面与该平面相交时，直线平行于交线。",
+            "example": "利用交线作出一条平行线。"
+          },
+          {
+            "name": "平面与平面平行",
+            "difficulty": 2,
+            "description": "两个平面没有公共点的位置关系。",
+            "aliases": [],
+            "prerequisites": [
+              "点直线平面"
+            ],
+            "definition": "两个平面没有公共点，则称这两个平面互相平行。",
             "example": "长方体的上底面与下底面平行。"
           },
           {
             "name": "平面面平行判定",
-            "difficulty": 4,
-            "description": "一个平面内两相交直线均平行另一平面可判定面面平行",
+            "difficulty": 3,
+            "description": "一个平面内两条相交直线均平行于另一平面。",
             "aliases": [],
             "prerequisites": [
-              "平面与平面平行",
-              "直线面平行判定"
+              "直线面平行判定",
+              "平面与平面平行"
             ],
-            "definition": "一个平面内两条相交直线都与另一个平面平行，则两平面平行。",
-            "example": "平面β内相交直线a、b均平行α，则β∥α。"
+            "definition": "一个平面内两条相交直线都平行于另一个平面，则两平面平行。",
+            "example": "用正方体内两条相交对角线证明两面平行。"
           },
           {
-            "name": "直线与直线垂直",
+            "name": "基本概念",
+            "difficulty": 1,
+            "description": "公理化体系中不加定义的原始概念。",
+            "aliases": [
+              "原始概念"
+            ],
+            "prerequisites": [],
+            "definition": "基本概念是不加定义且无法用更基本概念定义的概念。",
+            "example": "点、直线、平面是基本概念。",
+            "section": "8.6 空间直线、平面的垂直"
+          },
+          {
+            "name": "公理",
             "difficulty": 2,
-            "description": "两条相交直线所成角为直角的位置关系",
-            "aliases": [],
-            "prerequisites": [
-              "空间直线位置关系"
+            "description": "关于基本概念关系和性质的不加证明命题。",
+            "aliases": [
+              "公设"
             ],
-            "definition": "两条相交直线所成的角为直角时，称两直线互相垂直。",
-            "example": "正方体同一顶点的三条棱两两垂直。"
+            "prerequisites": [
+              "基本概念"
+            ],
+            "definition": "公理是对基本概念间关系和基本性质作出的不加证明的规定。",
+            "example": "两点确定一条直线。",
+            "section": "8.6 空间直线、平面的垂直"
           },
           {
-            "name": "直线与平面垂直",
+            "name": "公理化方法",
             "difficulty": 3,
-            "description": "直线垂直于平面内所有直线的位置关系",
+            "description": "由公理经逻辑推理建立演绎体系的方法。",
             "aliases": [],
             "prerequisites": [
-              "直线与直线垂直"
+              "基本概念",
+              "公理"
             ],
-            "definition": "一条直线与平面内任意一条直线都垂直时，称直线与平面垂直。",
-            "example": "长方体的侧棱垂直于底面。"
-          },
-          {
-            "name": "线面垂直判定",
-            "difficulty": 4,
-            "description": "直线垂直于平面内两相交直线可判定线面垂直",
-            "aliases": [],
-            "prerequisites": [
-              "直线与直线垂直",
-              "直线与平面垂直"
-            ],
-            "definition": "一条直线与平面内两条相交直线都垂直，则该直线垂直于此平面。",
-            "example": "若l⊥a、l⊥b且a、b在α内相交，则l⊥α。"
-          },
-          {
-            "name": "平面与平面垂直",
-            "difficulty": 3,
-            "description": "两个平面所成二面角为直二面角的位置关系",
-            "aliases": [],
-            "prerequisites": [
-              "直线与平面垂直"
-            ],
-            "definition": "两个平面相交且所成二面角为直二面角时，称两平面互相垂直。",
-            "example": "墙面与地面通常构成垂直平面。"
-          },
-          {
-            "name": "二面角",
-            "difficulty": 3,
-            "description": "从一条公共直线出发的两个半平面组成的图形",
-            "aliases": [],
-            "prerequisites": [
-              "平面"
-            ],
-            "definition": "从一条公共直线出发的两个半平面所组成的图形叫二面角。",
-            "example": "墙面与地面组成一个二面角。"
-          },
-          {
-            "name": "二面角的平面角",
-            "difficulty": 4,
-            "description": "在二面角棱上取点作两侧垂线形成的角",
-            "aliases": [],
-            "prerequisites": [
-              "二面角"
-            ],
-            "definition": "在二面角棱上取一点，分别在两半平面内作棱的垂线，两垂线所成的角叫平面角。",
-            "example": "作二面角棱的两条垂线可得到平面角。"
-          },
-          {
-            "name": "空间角",
-            "difficulty": 3,
-            "description": "空间中两条相交直线所成的角",
-            "aliases": [],
-            "prerequisites": [
-              "直线与直线垂直"
-            ],
-            "definition": "空间中两条相交直线所成的角叫空间角。",
-            "example": "两条异面直线的平行线所成角可表示其夹角。"
-          },
-          {
-            "name": "直线与平面所成角",
-            "difficulty": 4,
-            "description": "直线与其在平面上射影所成的锐角或直角",
-            "aliases": [],
-            "prerequisites": [
-              "直线与平面平行",
-              "直线与平面垂直"
-            ],
-            "definition": "直线与平面所成的角是该直线与其在平面内射影所成的锐角或直角。",
-            "example": "斜棱与底面可形成线面角。"
+            "definition": "从少量基本概念和公理出发经严格推理推出其余命题的方法。",
+            "example": "欧几里得用公理化方法建立几何体系。",
+            "section": "8.6 空间直线、平面的垂直"
           }
         ],
-        "chapter_key": "7877d063db",
+        "sections": [
+          {
+            "name": "8.1 基本立体图形",
+            "section_key": "03104bd15f",
+            "page_range": [
+              104,
+              114
+            ]
+          },
+          {
+            "name": "8.2 立体图形的直观图",
+            "section_key": "4ec3641960",
+            "page_range": [
+              114,
+              121
+            ]
+          },
+          {
+            "name": "8.3 简单几何体的表面积与体积",
+            "section_key": "51c9bbb0af",
+            "page_range": [
+              121,
+              131
+            ]
+          },
+          {
+            "name": "8.4 空间点、直线、平面之间的位置关系",
+            "section_key": "a538b16282",
+            "page_range": [
+              131,
+              140
+            ]
+          },
+          {
+            "name": "8.5 空间直线、平面的平行",
+            "section_key": "2d17147264",
+            "page_range": [
+              140,
+              153
+            ]
+          },
+          {
+            "name": "8.6 空间直线、平面的垂直",
+            "section_key": "1f71fb9e03",
+            "page_range": [
+              153,
+              178
+            ]
+          }
+        ],
+        "chapter_key": "3126dd113d",
         "metadata": {
           "volume_id": "655f1295c9e5",
           "file_id": "655f1295c9e5",
           "volume_title": "A版 必修第2册",
-          "chapter_order": 3,
-          "raw_heading": "第八章 立体几何初步"
+          "chapter_order": 4,
+          "raw_heading": "第八章　立体几何初步"
         }
       },
       {
@@ -3127,14 +3411,14 @@
             "aliases": [],
             "prerequisites": [],
             "definition": "统计学是通过收集数据和分析数据来认识未知现象的一门科学。",
-            "example": "利用抽样数据估计全校学生平均身高"
+            "example": "分析居民用水量并制定用水标准"
           },
           {
             "name": "总体",
             "difficulty": 1,
-            "description": "调查对象全体或所关注指标值的全体",
+            "description": "调查对象全体或某项指标的全体",
             "aliases": [
-              "总体population"
+              "总体 population"
             ],
             "prerequisites": [],
             "definition": "总体是在一个调查中调查对象的全体。",
@@ -3145,31 +3429,31 @@
             "difficulty": 1,
             "description": "组成总体的每一个调查对象",
             "aliases": [
-              "个体individual"
+              "个体 individual"
             ],
             "prerequisites": [
               "总体"
             ],
             "definition": "个体是组成总体的每一个调查对象。",
-            "example": "一名学生是总体中的个体"
+            "example": "总体中的每一名学生"
           },
           {
             "name": "变量",
             "difficulty": 1,
-            "description": "调查对象指标中取值会变化的量",
+            "description": "调查对象指标中取值变化的量",
             "aliases": [
-              "调查变量"
+              "调查指标"
             ],
             "prerequisites": [
               "个体"
             ],
-            "definition": "变量是调查对象的指标值因对象不同而变化的量。",
+            "definition": "变量是调查对象的指标值会发生变化的量。",
             "example": "学生的身高是变量"
           },
           {
             "name": "全面调查",
             "difficulty": 1,
-            "description": "对每一个调查对象都进行调查的方法",
+            "description": "对每一个调查对象都进行调查",
             "aliases": [
               "普查"
             ],
@@ -3179,36 +3463,37 @@
               "变量"
             ],
             "definition": "全面调查是对总体中的每一个个体都进行调查的方法。",
-            "example": "全国人口普查"
+            "example": "逐户逐人开展人口普查"
           },
           {
             "name": "抽样调查",
-            "difficulty": 2,
-            "description": "抽取部分个体并据此推断总体的方法",
+            "difficulty": 1,
+            "description": "抽取部分个体推断总体情况的调查",
             "aliases": [
-              "sampling survey"
+              "抽样"
             ],
             "prerequisites": [
               "总体",
               "个体",
               "变量"
             ],
-            "definition": "抽样调查是从总体中抽取部分个体调查并估计推断总体的方法。",
-            "example": "抽查居民估计全市用水量"
+            "definition": "抽样调查是从总体中抽取部分个体并据此估计和推断总体情况的方法。",
+            "example": "抽查部分牛奶检测细菌数"
           },
           {
             "name": "样本",
             "difficulty": 1,
-            "description": "从总体中抽取的那部分个体",
+            "description": "从总体中抽取的部分个体",
             "aliases": [
-              "sample"
+              "样本 sample"
             ],
             "prerequisites": [
               "总体",
-              "个体"
+              "个体",
+              "抽样调查"
             ],
-            "definition": "样本是从总体中抽取的部分个体。",
-            "example": "抽取的100户居民构成样本"
+            "definition": "样本是从总体中抽取的那部分个体。",
+            "example": "抽取的50名学生"
           },
           {
             "name": "样本量",
@@ -3221,11 +3506,11 @@
               "样本"
             ],
             "definition": "样本量是样本中包含的个体数。",
-            "example": "抽取50名学生时样本量为50"
+            "example": "样本含50名学生时样本量为50"
           },
           {
             "name": "样本数据",
-            "difficulty": 2,
+            "difficulty": 1,
             "description": "调查样本获得的变量值",
             "aliases": [
               "样本观测数据"
@@ -3234,85 +3519,95 @@
               "样本",
               "变量"
             ],
-            "definition": "样本数据是对样本调查后获得的变量值。",
-            "example": "抽取学生的身高数据"
+            "definition": "样本数据是调查样本获得的变量值。",
+            "example": "50名学生的身高数据"
           },
           {
             "name": "简单随机抽样",
             "difficulty": 2,
-            "description": "各个体按相等机会被抽取的抽样方法",
+            "description": "每次抽取时个体被抽到机会相等",
             "aliases": [
-              "simple random sampling"
+              "简单随机抽样法"
             ],
             "prerequisites": [
               "抽样调查",
-              "样本量"
+              "总体",
+              "样本"
             ],
-            "definition": "简单随机抽样使总体中个体按规定具有相等的抽取机会。",
-            "example": "从学生编号中随机抽取50个"
-          },
-          {
-            "name": "放回简单随机抽样",
-            "difficulty": 2,
-            "description": "每次抽取后放回且个体等概率被抽取",
-            "aliases": [],
-            "prerequisites": [
-              "简单随机抽样"
-            ],
-            "definition": "放回简单随机抽样是每次抽取后放回且各个体被抽到概率相等的抽样。",
-            "example": "摸球记录后放回再摸"
+            "definition": "简单随机抽样是按等可能原则从总体中抽取样本的方法。",
+            "example": "用随机数抽取50名学生"
           },
           {
             "name": "不放回抽样",
             "difficulty": 2,
-            "description": "抽取个体后不再放回总体的抽样",
+            "description": "抽取个体后不再放回总体",
             "aliases": [
               "不放回简单随机抽样"
             ],
             "prerequisites": [
               "简单随机抽样"
             ],
-            "definition": "不放回抽样是抽出的个体不再返回总体且未入样个体等概率抽取的方法。",
-            "example": "抽签后不放回签条"
+            "definition": "不放回抽样是抽取个体后不将其放回总体的抽样方式。",
+            "example": "抽中的学生不再重复抽取",
+            "section": "9.1 随机抽样"
+          },
+          {
+            "name": "放回抽样",
+            "difficulty": 2,
+            "description": "每次抽取后将个体放回总体",
+            "aliases": [
+              "放回简单随机抽样"
+            ],
+            "prerequisites": [
+              "简单随机抽样"
+            ],
+            "definition": "放回抽样是每次抽取后将个体放回总体再抽取的方式。",
+            "example": "摸球记录后放回并摇匀",
+            "section": "9.1 随机抽样"
           },
           {
             "name": "抽签法",
             "difficulty": 1,
-            "description": "通过混合号签随机抽取样本的方法",
+            "description": "利用无差别号签随机抽取样本",
             "aliases": [],
             "prerequisites": [
               "不放回抽样"
             ],
-            "definition": "抽签法是将个体编号并随机抽取对应号签的方法。",
-            "example": "从混合的学生编号签中抽取样本"
+            "definition": "抽签法是将个体编号制成无差别号签后随机抽取的方法。",
+            "example": "从编号纸签中抽取学生",
+            "section": "9.1 随机抽样"
           },
           {
             "name": "随机数法",
             "difficulty": 2,
-            "description": "利用随机数对应编号抽取样本的方法",
+            "description": "利用随机数对应编号抽取样本",
             "aliases": [],
             "prerequisites": [
               "简单随机抽样"
             ],
-            "definition": "随机数法是用随机数产生器生成编号并抽取对应个体的方法。",
-            "example": "生成1至712的随机编号"
+            "definition": "随机数法是用随机数产生器抽取总体编号对应个体的方法。",
+            "example": "生成1至712的随机编号",
+            "section": "9.1 随机抽样"
           },
           {
             "name": "分层随机抽样",
-            "difficulty": 3,
-            "description": "分层后在各层随机抽取样本的方法",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "分层后在各层分别进行随机抽样",
+            "aliases": [
+              "分层抽样"
+            ],
             "prerequisites": [
               "抽样调查",
+              "总体",
               "简单随机抽样"
             ],
-            "definition": "分层随机抽样是先将总体分成若干层再在各层随机抽样的方法。",
-            "example": "按男女员工分层抽样"
+            "definition": "分层随机抽样是将总体分成若干层后分别随机抽取样本的方法。",
+            "example": "按性别分层抽取员工"
           },
           {
             "name": "比例分配",
-            "difficulty": 3,
-            "description": "按各层个体数占总体比例分配样本量",
+            "difficulty": 2,
+            "description": "按各层个体数占总体比例分配样本",
             "aliases": [
               "样本量比例分配"
             ],
@@ -3320,27 +3615,108 @@
               "分层随机抽样",
               "样本量"
             ],
-            "definition": "比例分配是按照各层规模占总体规模的比例确定各层样本量。",
-            "example": "员工多的部门抽取更多样本"
+            "definition": "比例分配是按各层个体数占总体个体数的比例分配样本量。",
+            "example": "男女员工按人数比例抽样"
           },
           {
             "name": "样本代表性",
             "difficulty": 2,
-            "description": "样本反映总体基本信息的程度",
-            "aliases": [
-              "代表性"
-            ],
+            "description": "样本数据反映总体特征的程度",
+            "aliases": [],
             "prerequisites": [
               "样本",
               "总体"
             ],
-            "definition": "样本代表性是样本数据包含总体基本信息的程度。",
-            "example": "随机样本较好反映总体身高"
+            "definition": "样本代表性是样本所含信息与总体基本相同的程度。",
+            "example": "随机样本较能反映全校身高"
+          },
+          {
+            "name": "频数",
+            "difficulty": 1,
+            "description": "数据落在某组中的个数",
+            "aliases": [],
+            "prerequisites": [
+              "样本数据"
+            ],
+            "definition": "频数是数据落在某个类别或分组中的个数。",
+            "example": "30天中空气质量为良的天数"
+          },
+          {
+            "name": "频率",
+            "difficulty": 1,
+            "description": "频数占数据总数的比例",
+            "aliases": [],
+            "prerequisites": [
+              "频数"
+            ],
+            "definition": "频率是某组频数与数据总数的比值。",
+            "example": "良天天数占整月天数的比例"
+          },
+          {
+            "name": "频率分布表",
+            "difficulty": 1,
+            "description": "列出各组频数或频率的统计表",
+            "aliases": [],
+            "prerequisites": [
+              "频数",
+              "频率"
+            ],
+            "definition": "频率分布表是按分组列示数据频数和频率的表格。",
+            "example": "列出各空气质量等级比例"
+          },
+          {
+            "name": "频率分布直方图",
+            "difficulty": 2,
+            "description": "用面积表示各组频率的直方图",
+            "aliases": [],
+            "prerequisites": [
+              "频率",
+              "频数分布直方图"
+            ],
+            "definition": "频率分布直方图用各小长方形面积表示相应分组的频率。",
+            "example": "展示居民月均用水量分布"
+          },
+          {
+            "name": "条形图",
+            "difficulty": 1,
+            "description": "用条形直观表示类别数据频数或频率",
+            "aliases": [],
+            "prerequisites": [
+              "频数",
+              "频率"
+            ],
+            "definition": "条形图用条形的高低表示不同类别数据的频数或频率。",
+            "example": "比较各空气等级天数",
+            "section": "9.2 用样本估计总体"
+          },
+          {
+            "name": "扇形图",
+            "difficulty": 1,
+            "description": "直观表示各类数据占总数的比例",
+            "aliases": [],
+            "prerequisites": [
+              "频率"
+            ],
+            "definition": "扇形图用扇形面积或圆心角表示各类数据所占比例。",
+            "example": "表示空气等级比例",
+            "section": "9.2 用样本估计总体"
+          },
+          {
+            "name": "折线图",
+            "difficulty": 1,
+            "description": "表示数据随时间变化的趋势",
+            "aliases": [],
+            "prerequisites": [
+              "样本数据"
+            ],
+            "definition": "折线图用折线描述数据随时间的变化趋势。",
+            "example": "表示每日空气质量指数变化",
+            "section": "9.2 用样本估计总体"
           },
           {
             "name": "总体均值",
             "difficulty": 2,
-            "description": "总体所有变量值的平均数",
+            "description": "总体全部变量值的算术平均数",
             "aliases": [
               "总体平均数"
             ],
@@ -3348,280 +3724,231 @@
               "总体",
               "变量"
             ],
-            "definition": "总体均值是总体全部变量值的算术平均数。",
+            "definition": "总体均值是总体中全部变量值之和除以总体个体数。",
             "example": "全体学生身高的平均数"
           },
           {
             "name": "样本均值",
             "difficulty": 2,
-            "description": "样本中变量值的平均数",
+            "description": "样本变量值的算术平均数",
             "aliases": [
               "样本平均数"
             ],
             "prerequisites": [
               "样本数据"
             ],
-            "definition": "样本均值是样本变量值的算术平均数。",
+            "definition": "样本均值是样本中各变量值之和除以样本量。",
             "example": "50名学生身高平均为164.3厘米"
           },
           {
-            "name": "加权平均数",
-            "difficulty": 2,
-            "description": "按各值出现频数加权计算的平均数",
-            "aliases": [],
-            "prerequisites": [
-              "总体均值",
-              "频数"
-            ],
-            "definition": "加权平均数是按各数据值的频数进行加权求得的平均数。",
-            "example": "按各组人数计算总体平均数"
-          },
-          {
-            "name": "总体比例",
-            "difficulty": 2,
-            "description": "某类个体数占总体个体数的比例",
-            "aliases": [],
-            "prerequisites": [
-              "总体",
-              "变量"
-            ],
-            "definition": "总体比例是总体中某类个体数占总体个体总数的比例。",
-            "example": "全校视力不低于5.0的学生比例"
-          },
-          {
-            "name": "样本比例",
-            "difficulty": 2,
-            "description": "样本中某类个体所占的比例",
-            "aliases": [],
-            "prerequisites": [
-              "样本",
-              "样本数据"
-            ],
-            "definition": "样本比例是样本中某类个体数占样本量的比例。",
-            "example": "样本中视力达标者占54%"
-          },
-          {
-            "name": "样本估计总体",
-            "difficulty": 3,
-            "description": "用样本信息推测总体特征的方法",
-            "aliases": [],
-            "prerequisites": [
-              "抽样调查",
-              "样本均值",
-              "样本比例"
-            ],
-            "definition": "样本估计总体是利用样本数据估计总体取值规律或特征的方法。",
-            "example": "用样本均值估计全年级平均身高"
-          },
-          {
-            "name": "频数",
-            "difficulty": 1,
-            "description": "数据落在某类别或小组中的个数",
-            "aliases": [],
-            "prerequisites": [
-              "样本数据"
-            ],
-            "definition": "频数是数据落在某个类别或小组中的数量。",
-            "example": "某组有23个数据"
-          },
-          {
-            "name": "频率",
-            "difficulty": 1,
-            "description": "频数与数据总数的比值",
-            "aliases": [],
-            "prerequisites": [
-              "频数"
-            ],
-            "definition": "频率是某类别或小组频数与数据总数的比值。",
-            "example": "23个数据占总体的0.23"
-          },
-          {
-            "name": "极差",
-            "difficulty": 1,
-            "description": "一组数据最大值与最小值的差",
-            "aliases": [],
-            "prerequisites": [
-              "样本数据"
-            ],
-            "definition": "极差是一组数据中最大值与最小值的差。",
-            "example": "最大值28、最小值1.3时极差为26.7"
-          },
-          {
-            "name": "频率分布表",
-            "difficulty": 2,
-            "description": "按小组列示频数和频率的数据表",
-            "aliases": [
-              "frequency distribution table"
-            ],
-            "prerequisites": [
-              "频数",
-              "频率"
-            ],
-            "definition": "频率分布表是按数据分组列出各组频数和频率的表格。",
-            "example": "列出各用水量区间的频率"
-          },
-          {
-            "name": "频率分布直方图",
-            "difficulty": 3,
-            "description": "用矩形面积表示各组频率的统计图",
-            "aliases": [
-              "frequency distribution histogram"
-            ],
-            "prerequisites": [
-              "频率",
-              "极差"
-            ],
-            "definition": "频率分布直方图用各小矩形的面积表示相应小组的频率。",
-            "example": "展示居民月均用水量分布"
-          },
-          {
-            "name": "条形图",
-            "difficulty": 1,
-            "description": "用条形高低表示类别数据的统计图",
-            "aliases": [],
-            "prerequisites": [
-              "频数",
-              "频率"
-            ],
-            "definition": "条形图主要用条形直观表示不同类别数据的频数或频率。",
-            "example": "比较各空气质量等级天数"
-          },
-          {
-            "name": "扇形图",
-            "difficulty": 1,
-            "description": "用扇形面积表示各类数据比例的统计图",
-            "aliases": [],
-            "prerequisites": [
-              "频率"
-            ],
-            "definition": "扇形图主要用扇形直观描述各类数据占总数的比例。",
-            "example": "表示空气质量等级比例"
-          },
-          {
-            "name": "折线图",
-            "difficulty": 1,
-            "description": "描述数据随时间变化趋势的统计图",
-            "aliases": [],
-            "prerequisites": [
-              "样本数据"
-            ],
-            "definition": "折线图主要用于描述数据随时间变化的趋势。",
-            "example": "展示每日空气质量指数变化"
-          },
-          {
             "name": "百分位数",
-            "difficulty": 3,
-            "description": "按数据位置划分比例的代表数值",
+            "difficulty": 2,
+            "description": "按比例划分排序数据的位置数值",
             "aliases": [
-              "percentile"
+              "分位数"
             ],
             "prerequisites": [
-              "频率",
-              "中位数"
+              "样本数据"
             ],
-            "definition": "第p百分位数使至少p%的数据不大于它且至少(100-p)%不小于它。",
-            "example": "第80百分位数用于确定用水标准"
+            "definition": "第p百分位数使至少p%的数据不超过它且至少(100-p)%的数据不小于它。",
+            "example": "第80百分位数为13.7"
           },
           {
             "name": "四分位数",
-            "difficulty": 3,
-            "description": "将排序数据分成四等份的三个分位数",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "第25、50、75百分位数的统称",
+            "aliases": [
+              "四分位点"
+            ],
             "prerequisites": [
               "百分位数"
             ],
-            "definition": "四分位数由第25、50、75百分位数组成。",
-            "example": "第一和第三四分位数描述收入分布"
+            "definition": "四分位数是第25、50、75百分位数，将排序数据分成四等份。",
+            "example": "第一四分位数为第25百分位数",
+            "section": "9.2 用样本估计总体"
           },
           {
             "name": "中位数",
-            "difficulty": 2,
-            "description": "排序数据的中间位置代表值",
-            "aliases": [],
+            "difficulty": 1,
+            "description": "排序数据居中的代表性数值",
+            "aliases": [
+              "第50百分位数"
+            ],
             "prerequisites": [
               "百分位数"
             ],
-            "definition": "中位数是按大小排列数据后居于中间位置的数值。",
-            "example": "中位数是第50百分位数"
+            "definition": "中位数是将数据排序后处于中间位置的数值。",
+            "example": "9个数据的第5项"
           },
           {
             "name": "众数",
-            "difficulty": 2,
-            "description": "一组数据中出现次数最多的值",
+            "difficulty": 1,
+            "description": "数据中出现次数最多的值",
             "aliases": [],
             "prerequisites": [
               "频数"
             ],
-            "definition": "众数是一组数据中出现次数最多的数据值。",
+            "definition": "众数是一组数据中出现次数最多的数值。",
             "example": "鞋号中出现最多的号码"
           },
           {
             "name": "方差",
-            "difficulty": 3,
-            "description": "刻画数据相对平均数离散程度的量",
-            "aliases": [],
+            "difficulty": 2,
+            "description": "衡量数据偏离平均数程度的量",
+            "aliases": [
+              "样本方差"
+            ],
             "prerequisites": [
               "样本均值"
             ],
             "definition": "方差是各数据与平均数差的平方的平均值。",
-            "example": "比较两个班成绩波动大小"
+            "example": "比较两组评委评分波动"
           },
           {
             "name": "标准差",
-            "difficulty": 3,
+            "difficulty": 2,
             "description": "方差的算术平方根",
-            "aliases": [],
+            "aliases": [
+              "样本标准差"
+            ],
             "prerequisites": [
               "方差"
             ],
             "definition": "标准差是方差的算术平方根，用于刻画数据离散程度。",
-            "example": "计算鱼类汞含量的标准差"
+            "example": "标准差较小表示评分更集中"
           },
           {
-            "name": "集中趋势参数",
-            "difficulty": 2,
-            "description": "刻画数据集中位置的统计量",
+            "name": "极差",
+            "difficulty": 1,
+            "description": "最大值与最小值的差",
             "aliases": [],
             "prerequisites": [
-              "样本均值",
+              "样本数据"
+            ],
+            "definition": "极差是一组数据最大值与最小值的差。",
+            "example": "销售量最大值减最小值"
+          },
+          {
+            "name": "集中趋势",
+            "difficulty": 2,
+            "description": "反映数据集中位置的总体特征",
+            "aliases": [
+              "集中趋势参数"
+            ],
+            "prerequisites": [
+              "总体均值",
               "中位数",
               "众数"
             ],
-            "definition": "集中趋势参数用于描述数据分布集中位置的特征。",
-            "example": "用均值和中位数描述收入"
+            "definition": "集中趋势是用代表性数值描述数据集中位置的特征。",
+            "example": "用均值概括员工BMI水平"
           },
           {
-            "name": "离散程度参数",
+            "name": "离散程度",
             "difficulty": 2,
-            "description": "刻画数据分散程度的统计量",
-            "aliases": [],
+            "description": "反映数据波动大小的总体特征",
+            "aliases": [
+              "离散程度参数"
+            ],
             "prerequisites": [
               "方差",
               "标准差",
               "极差"
             ],
-            "definition": "离散程度参数用于描述数据相对于集中位置的分散程度。",
-            "example": "用标准差比较成绩波动"
+            "definition": "离散程度是用统计量描述数据波动或分散大小的特征。",
+            "example": "用标准差比较两组评分稳定性"
+          },
+          {
+            "name": "BMI",
+            "difficulty": 2,
+            "description": "用体重与身高衡量胖瘦的指标",
+            "aliases": [
+              "身体质量指数"
+            ],
+            "prerequisites": [
+              "变量"
+            ],
+            "definition": "BMI等于体重除以身高平方，用于衡量人体胖瘦程度及健康状况。",
+            "example": "体重70千克、身高1.75米",
+            "section": "9.3 统计案例 公司员工的肥胖情况调查分析"
+          },
+          {
+            "name": "统计分析报告",
+            "difficulty": 2,
+            "description": "系统呈现调查数据分析过程与结论",
+            "aliases": [],
+            "prerequisites": [
+              "抽样调查",
+              "样本数据",
+              "频率分布表"
+            ],
+            "definition": "统计分析报告是围绕调查目的展示数据分析并提出结论建议的文本。",
+            "example": "撰写员工肥胖情况分析报告",
+            "section": "9.3 统计案例 公司员工的肥胖情况调查分析"
           },
           {
             "name": "统计推断",
             "difficulty": 3,
-            "description": "依据样本信息推断总体情况的过程",
-            "aliases": [],
-            "prerequisites": [
+            "description": "依据样本信息推断总体情况",
+            "aliases": [
               "样本估计总体"
             ],
-            "definition": "统计推断是根据样本数据对总体特征作出估计和判断的过程。",
-            "example": "由样本分布推测全市用水分布"
+            "prerequisites": [
+              "抽样调查",
+              "样本代表性",
+              "样本均值"
+            ],
+            "definition": "统计推断是根据样本数据对总体特征和规律作出估计与判断。",
+            "example": "用样本均值估计全校平均身高"
+          },
+          {
+            "name": "统计推断的或然性",
+            "difficulty": 3,
+            "description": "样本推断总体的结论具有不确定性",
+            "aliases": [
+              "推断的或然性"
+            ],
+            "prerequisites": [
+              "统计推断",
+              "样本代表性"
+            ],
+            "definition": "统计推断的或然性是指由随机样本得到的总体结论可能存在误差。",
+            "example": "样本均值不一定等于总体均值"
           }
         ],
-        "chapter_key": "cecbfa409b",
+        "sections": [
+          {
+            "name": "9.1 随机抽样",
+            "section_key": "5920c8e20a",
+            "page_range": [
+              180,
+              200
+            ]
+          },
+          {
+            "name": "9.2 用样本估计总体",
+            "section_key": "8434bac7ab",
+            "page_range": [
+              200,
+              227
+            ]
+          },
+          {
+            "name": "9.3 统计案例 公司员工的肥胖情况调查分析",
+            "section_key": "af38d8ef7f",
+            "page_range": [
+              227,
+              233
+            ]
+          }
+        ],
+        "chapter_key": "effe2f9d1e",
         "metadata": {
           "volume_id": "655f1295c9e5",
           "file_id": "655f1295c9e5",
           "volume_title": "A版 必修第2册",
-          "chapter_order": 4,
-          "raw_heading": "第九章 统计"
+          "chapter_order": 5,
+          "raw_heading": "第九章　统计"
         }
       },
       {
@@ -3630,93 +3957,98 @@
           {
             "name": "随机现象",
             "difficulty": 1,
-            "description": "单次结果偶然但大量观测频率稳定的现象",
+            "description": "一次结果有偶然性，大量观测下频率具有稳定性",
             "aliases": [],
             "prerequisites": [],
-            "definition": "随机现象是在一定条件下不能事先预知结果但频率具有稳定性的现象。",
-            "example": "每天上学所需时间具有随机性。"
+            "definition": "在一定条件下不能事先预知结果但频率具有稳定性的现象称为随机现象。",
+            "example": "每天上学所需时间不同但长期分布较稳定"
           },
           {
             "name": "随机试验",
             "difficulty": 1,
-            "description": "可重复、结果明确且每次出现一个结果的试验",
+            "description": "可重复、结果明确且每次出现一个但事先不可确定",
             "aliases": [
               "试验"
             ],
-            "prerequisites": [],
-            "definition": "随机试验是对随机现象的实现和观察。",
-            "example": "抛掷一枚硬币观察朝上的面。"
+            "prerequisites": [
+              "随机现象"
+            ],
+            "definition": "在相同条件下可重复且结果明确而不能事先确定的随机现象实现与观察称为随机试验。",
+            "example": "抛掷一枚骰子观察朝上的点数"
           },
           {
             "name": "样本点",
             "difficulty": 1,
-            "description": "随机试验的一个可能的基本结果",
+            "description": "随机试验的一个基本可能结果",
             "aliases": [],
             "prerequisites": [
               "随机试验"
             ],
-            "definition": "样本点是随机试验的每个可能的基本结果。",
-            "example": "掷骰子出现点数3。"
+            "definition": "随机试验的每个可能的基本结果称为样本点。",
+            "example": "掷骰子得到点数4"
           },
           {
             "name": "样本空间",
             "difficulty": 2,
-            "description": "随机试验全部样本点组成的集合",
-            "aliases": [],
+            "description": "全体样本点组成的集合",
+            "aliases": [
+              "有限样本空间"
+            ],
             "prerequisites": [
-              "随机试验",
               "样本点"
             ],
-            "definition": "样本空间是全体样本点组成的集合。",
-            "example": "掷骰子的样本空间为{1,2,3,4,5,6}。"
+            "definition": "随机试验的全体样本点组成的集合称为样本空间。",
+            "example": "掷骰子的样本空间为{1,2,3,4,5,6}"
           },
           {
             "name": "有限样本空间",
             "difficulty": 2,
-            "description": "只含有限个样本点的样本空间",
+            "description": "样本点个数有限的样本空间",
             "aliases": [],
             "prerequisites": [
               "样本空间"
             ],
-            "definition": "有限样本空间是包含有限个可能结果的样本空间。",
-            "example": "抛掷两枚硬币的样本空间含4个结果。"
+            "definition": "含有有限个样本点的样本空间称为有限样本空间。",
+            "example": "抛掷两枚硬币的样本空间有4个样本点"
           },
           {
             "name": "随机事件",
             "difficulty": 2,
-            "description": "样本空间的子集，样本点出现时事件发生",
+            "description": "样本空间的一个子集",
             "aliases": [
               "事件"
             ],
             "prerequisites": [
               "样本空间"
             ],
-            "definition": "随机事件是样本空间的子集。",
-            "example": "掷骰子点数为奇数表示为{1,3,5}。"
+            "definition": "样本空间的子集称为随机事件，事件发生当且仅当其中某个样本点出现。",
+            "example": "掷骰子点数为偶数"
           },
           {
             "name": "基本事件",
             "difficulty": 2,
             "description": "只包含一个样本点的事件",
-            "aliases": [],
+            "aliases": [
+              "基本事件"
+            ],
             "prerequisites": [
               "随机事件",
               "样本点"
             ],
-            "definition": "基本事件是只包含一个样本点的随机事件。",
-            "example": "掷骰子点数为1。"
+            "definition": "只包含一个样本点的事件称为基本事件。",
+            "example": "掷骰子点数为3"
           },
           {
             "name": "必然事件",
             "difficulty": 1,
-            "description": "每次试验都会发生的事件",
+            "description": "每次试验都一定发生的事件",
             "aliases": [],
             "prerequisites": [
               "随机事件",
               "样本空间"
             ],
-            "definition": "必然事件是每次试验中总会发生的事件。",
-            "example": "掷骰子的点数不超过6。"
+            "definition": "包含样本空间全部样本点的事件称为必然事件。",
+            "example": "掷骰子点数为1至6之一"
           },
           {
             "name": "不可能事件",
@@ -3724,24 +4056,24 @@
             "description": "每次试验都不会发生的事件",
             "aliases": [],
             "prerequisites": [
-              "随机事件",
-              "样本空间"
+              "随机事件"
             ],
-            "definition": "不可能事件是每次试验中都不会发生的事件。",
-            "example": "掷骰子出现点数7。"
+            "definition": "不包含任何样本点的空集事件称为不可能事件。",
+            "example": "掷骰子点数为7"
           },
           {
             "name": "事件包含",
             "difficulty": 2,
-            "description": "一个事件发生必然导致另一个事件发生的关系",
+            "description": "一个事件发生必导致另一个事件发生",
             "aliases": [
-              "包含关系"
+              "事件的包含关系"
             ],
             "prerequisites": [
               "随机事件"
             ],
-            "definition": "若事件A发生时事件B一定发生，则称B包含A。",
-            "example": "点数为1的事件包含于点数为奇数的事件。"
+            "definition": "若事件A发生时事件B一定发生，则称B包含A，记作A⊆B。",
+            "example": "点数为1包含于点数为奇数",
+            "section": "10.1 随机事件与概率"
           },
           {
             "name": "并事件",
@@ -3753,8 +4085,8 @@
             "prerequisites": [
               "随机事件"
             ],
-            "definition": "并事件是两个事件中至少一个发生所形成的事件。",
-            "example": "点数为1或2表示两个事件的并。"
+            "definition": "事件A与B至少有一个发生所形成的事件称为并事件，记作A∪B。",
+            "example": "点数为1或2"
           },
           {
             "name": "交事件",
@@ -3766,182 +4098,205 @@
             "prerequisites": [
               "随机事件"
             ],
-            "definition": "交事件是两个事件同时发生所形成的事件。",
-            "example": "点数既为偶数又大于3。"
+            "definition": "事件A与B同时发生所形成的事件称为交事件，记作A∩B或AB。",
+            "example": "点数既为偶数又大于3"
           },
           {
             "name": "互斥事件",
             "difficulty": 2,
             "description": "不能同时发生的两个事件",
             "aliases": [
-              "互不相容"
+              "互不相容事件"
             ],
             "prerequisites": [
               "交事件"
             ],
-            "definition": "若两个事件不能同时发生，则称它们互斥。",
-            "example": "掷骰子点数为3与点数为4。"
+            "definition": "若两个事件不能同时发生，即交事件是不可能事件，则称它们互斥。",
+            "example": "掷骰子点数为3与点数为4"
           },
           {
             "name": "对立事件",
             "difficulty": 2,
             "description": "有且仅有一个发生的两个事件",
-            "aliases": [
-              "互为对立事件"
-            ],
+            "aliases": [],
             "prerequisites": [
               "并事件",
               "交事件",
               "互斥事件"
             ],
-            "definition": "若两个事件有且仅有一个发生，则称它们互为对立事件。",
-            "example": "至少一次中靶与两次都不中靶。"
-          },
-          {
-            "name": "古典概型",
-            "difficulty": 3,
-            "description": "结果有限且各样本点等可能的概率模型",
-            "aliases": [],
-            "prerequisites": [
-              "有限样本空间",
-              "基本事件"
-            ],
-            "definition": "古典概型是样本点有限且每个样本点出现等可能的概率模型。",
-            "example": "质地均匀骰子的点数试验。"
-          },
-          {
-            "name": "古典概率",
-            "difficulty": 3,
-            "description": "古典概型中用样本点个数计算事件概率",
-            "aliases": [],
-            "prerequisites": [
-              "古典概型",
-              "随机事件"
-            ],
-            "definition": "古典概率等于事件包含的样本点数与样本空间样本点数之比。",
-            "example": "掷骰子得偶数的概率为3/6。"
+            "definition": "若两个事件并为必然事件且互斥，则称它们互为对立事件。",
+            "example": "骰子点数为偶数与点数为奇数"
           },
           {
             "name": "概率",
             "difficulty": 2,
-            "description": "度量随机事件发生可能性大小的数值",
+            "description": "度量随机事件发生可能性大小的数",
             "aliases": [],
             "prerequisites": [
               "随机事件"
             ],
             "definition": "概率是对随机事件发生可能性大小的度量。",
-            "example": "均匀硬币正面朝上的概率为1/2。"
+            "example": "均匀骰子点数为偶数的概率为1/2"
+          },
+          {
+            "name": "古典概型",
+            "difficulty": 3,
+            "description": "结果有限且每个结果等可能的概率模型",
+            "aliases": [
+              "古典概率模型"
+            ],
+            "prerequisites": [
+              "有限样本空间",
+              "概率"
+            ],
+            "definition": "样本空间有限且各样本点出现等可能的随机试验模型称为古典概型。",
+            "example": "从标号球中随机抽取一个"
+          },
+          {
+            "name": "古典概率",
+            "difficulty": 3,
+            "description": "古典概型中事件概率等于有利结果数除以总结果数",
+            "aliases": [
+              "古典概型概率"
+            ],
+            "prerequisites": [
+              "古典概型"
+            ],
+            "definition": "在古典概型中，事件概率等于事件包含的样本点数与样本空间样本点数之比。",
+            "example": "骰子点数为偶数的概率为3/6"
           },
           {
             "name": "概率基本性质",
             "difficulty": 3,
-            "description": "概率满足非负、有界及特殊事件等性质",
+            "description": "概率取值、特殊事件及事件关系满足的性质",
             "aliases": [],
             "prerequisites": [
               "概率",
-              "必然事件",
-              "不可能事件"
+              "随机事件"
             ],
-            "definition": "事件概率满足0≤P(A)≤1、P(Ω)=1且P(∅)=0等性质。",
-            "example": "任何事件的概率都不超过1。"
-          },
-          {
-            "name": "概率单调性",
-            "difficulty": 3,
-            "description": "事件包含关系导致概率大小规律",
-            "aliases": [],
-            "prerequisites": [
-              "事件包含",
-              "概率"
-            ],
-            "definition": "若A包含于B，则P(A)不大于P(B)。",
-            "example": "点数为1的概率不大于点数为奇数的概率。"
-          },
-          {
-            "name": "互斥概率加法",
-            "difficulty": 3,
-            "description": "互斥事件并事件的概率等于概率之和",
-            "aliases": [],
-            "prerequisites": [
-              "互斥事件",
-              "概率",
-              "并事件"
-            ],
-            "definition": "互斥事件A、B满足P(A∪B)=P(A)+P(B)。",
-            "example": "骰子得1或2的概率为1/6+1/6。"
+            "definition": "概率满足取值范围、必然事件与不可能事件概率及事件运算等基本规律。",
+            "example": "P(Ω)=1，P(∅)=0"
           },
           {
             "name": "概率加法公式",
             "difficulty": 3,
-            "description": "任意两个事件并事件的概率计算公式",
-            "aliases": [],
+            "description": "互斥事件并事件的概率等于各自概率之和",
+            "aliases": [
+              "互斥事件加法公式"
+            ],
             "prerequisites": [
               "并事件",
-              "交事件",
-              "概率"
+              "互斥事件",
+              "概率基本性质"
             ],
-            "definition": "任意事件A、B满足P(A∪B)=P(A)+P(B)-P(A∩B)。",
-            "example": "两个事件有重合部分时扣除交事件概率。"
+            "definition": "互斥事件A、B满足P(A∪B)=P(A)+P(B)。",
+            "example": "红心或方片的概率为1/4+1/4"
           },
           {
-            "name": "事件相互独立",
+            "name": "事件独立性",
             "difficulty": 4,
-            "description": "一个事件是否发生不影响另一个事件概率的关系",
+            "description": "一个事件发生与否不影响另一个事件发生的概率",
             "aliases": [
-              "独立"
+              "相互独立",
+              "独立事件"
             ],
             "prerequisites": [
               "交事件",
               "概率"
             ],
-            "definition": "若P(A∩B)=P(A)P(B)，则称事件A与B相互独立。",
-            "example": "分别抛掷两枚硬币的结果相互独立。"
+            "definition": "若P(AB)=P(A)P(B)，则称事件A与B相互独立。",
+            "example": "分别抛掷两枚硬币的结果事件"
           },
           {
             "name": "频率稳定性",
-            "difficulty": 2,
-            "description": "重复试验次数增多时频率逐渐趋于稳定",
+            "difficulty": 3,
+            "description": "重复试验次数增大时频率逐渐稳定于概率",
             "aliases": [],
             "prerequisites": [
-              "随机试验"
+              "随机现象",
+              "概率"
             ],
-            "definition": "随机事件发生的频率在大量重复试验中会逐渐呈现稳定性。",
-            "example": "硬币抛掷次数增多，正面频率趋近稳定。"
+            "definition": "随机事件发生的频率在大量重复试验中呈现逐渐稳定的性质。",
+            "example": "硬币抛掷次数增加时正面频率趋近1/2"
           },
           {
             "name": "频率估计概率",
             "difficulty": 3,
-            "description": "用大量重复试验中的频率近似事件概率",
-            "aliases": [],
+            "description": "用大量试验所得频率近似随机事件概率",
+            "aliases": [
+              "用频率估计概率"
+            ],
             "prerequisites": [
               "频率稳定性",
               "概率"
             ],
-            "definition": "当概率难以直接计算时，可用大量试验中的频率估计概率。",
-            "example": "用维修记录估计计算机需要维修的概率。"
+            "definition": "当概率难以直接计算时，可利用大量重复试验的稳定频率估计概率。",
+            "example": "用维修记录估计计算机需维修的概率",
+            "section": "10.3 频率与概率"
           },
           {
-            "name": "随机模拟",
+            "name": "随机模拟试验",
             "difficulty": 3,
-            "description": "用计算器或计算机模拟随机试验估计概率",
+            "description": "用随机数或计算机模拟随机试验以获得频率",
             "aliases": [
-              "随机模拟方法"
+              "随机模拟"
             ],
             "prerequisites": [
               "随机试验",
               "频率估计概率"
             ],
-            "definition": "随机模拟是利用随机数等工具重复模拟试验并用频率估计概率的方法。",
-            "example": "模拟掷骰子120次估计点数和为7的概率。"
+            "definition": "利用随机数或计算机重复模拟随机试验并统计频率的方法称为随机模拟试验。",
+            "example": "用计算机模拟骰子连续投掷",
+            "section": "10.3 频率与概率"
+          },
+          {
+            "name": "概率模型",
+            "difficulty": 3,
+            "description": "描述随机现象及其概率规律的数学模型",
+            "aliases": [
+              "遗传机理概率模型"
+            ],
+            "prerequisites": [
+              "随机现象",
+              "概率"
+            ],
+            "definition": "用样本空间、事件及其概率关系描述随机现象的数学模型称为概率模型。",
+            "example": "用概率模型解释豌豆性状约3∶1的比例"
           }
         ],
-        "chapter_key": "7ef3124472",
+        "sections": [
+          {
+            "name": "10.1 随机事件与概率",
+            "section_key": "f844c1888a",
+            "page_range": [
+              235,
+              256
+            ]
+          },
+          {
+            "name": "10.2 事件的相互独立性",
+            "section_key": "fb36a0147c",
+            "page_range": [
+              256,
+              261
+            ]
+          },
+          {
+            "name": "10.3 频率与概率",
+            "section_key": "b5af392db2",
+            "page_range": [
+              261,
+              282
+            ]
+          }
+        ],
+        "chapter_key": "a760b27eab",
         "metadata": {
           "volume_id": "655f1295c9e5",
           "file_id": "655f1295c9e5",
           "volume_title": "A版 必修第2册",
-          "chapter_order": 5,
-          "raw_heading": "第十章 概率"
+          "chapter_order": 6,
+          "raw_heading": "第十章　概率"
         }
       }
     ],
@@ -3950,6 +4305,159 @@
       "degraded": false,
       "reason": ""
     },
-    "section_ranges": {}
+    "section_ranges": {
+      "9806c28609": [
+        9,
+        14
+      ],
+      "6.1 平面向量的概念": [
+        9,
+        14
+      ],
+      "b2806dea42": [
+        14,
+        32
+      ],
+      "6.2 平面向量的运算": [
+        14,
+        32
+      ],
+      "faa6e4c511": [
+        32,
+        45
+      ],
+      "6.3 平面向量基本定理及坐标表示": [
+        32,
+        45
+      ],
+      "295fe5f963": [
+        45,
+        73
+      ],
+      "6.4 平面向量的应用": [
+        45,
+        73
+      ],
+      "81a5d24eea": [
+        75,
+        82
+      ],
+      "7.1 复数的概念": [
+        75,
+        82
+      ],
+      "c8da3b34ee": [
+        82,
+        90
+      ],
+      "7.2 复数的四则运算": [
+        82,
+        90
+      ],
+      "70eb2266cd": [
+        90,
+        102
+      ],
+      "7.3* 复数的三角表示": [
+        90,
+        102
+      ],
+      "03104bd15f": [
+        104,
+        114
+      ],
+      "8.1 基本立体图形": [
+        104,
+        114
+      ],
+      "4ec3641960": [
+        114,
+        121
+      ],
+      "8.2 立体图形的直观图": [
+        114,
+        121
+      ],
+      "51c9bbb0af": [
+        121,
+        131
+      ],
+      "8.3 简单几何体的表面积与体积": [
+        121,
+        131
+      ],
+      "a538b16282": [
+        131,
+        140
+      ],
+      "8.4 空间点、直线、平面之间的位置关系": [
+        131,
+        140
+      ],
+      "2d17147264": [
+        140,
+        153
+      ],
+      "8.5 空间直线、平面的平行": [
+        140,
+        153
+      ],
+      "1f71fb9e03": [
+        153,
+        178
+      ],
+      "8.6 空间直线、平面的垂直": [
+        153,
+        178
+      ],
+      "5920c8e20a": [
+        180,
+        200
+      ],
+      "9.1 随机抽样": [
+        180,
+        200
+      ],
+      "8434bac7ab": [
+        200,
+        227
+      ],
+      "9.2 用样本估计总体": [
+        200,
+        227
+      ],
+      "af38d8ef7f": [
+        227,
+        233
+      ],
+      "9.3 统计案例 公司员工的肥胖情况调查分析": [
+        227,
+        233
+      ],
+      "f844c1888a": [
+        235,
+        256
+      ],
+      "10.1 随机事件与概率": [
+        235,
+        256
+      ],
+      "fb36a0147c": [
+        256,
+        261
+      ],
+      "10.2 事件的相互独立性": [
+        256,
+        261
+      ],
+      "b5af392db2": [
+        261,
+        282
+      ],
+      "10.3 频率与概率": [
+        261,
+        282
+      ]
+    }
   }
 }

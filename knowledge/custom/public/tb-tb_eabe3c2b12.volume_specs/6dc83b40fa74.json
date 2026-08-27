@@ -1,0 +1,3461 @@
+{
+  "file_id": "6dc83b40fa74",
+  "text_sha256": "8e28ae83bc8e2667232d962be46b6cab622e1d6caadd73411d9dcfd51df761f5",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 树立科学思维观念",
+        "concepts": [
+          {
+            "name": "思维",
+            "difficulty": 1,
+            "description": "人脑对客观事物的反映活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "思维是人脑对客观事物的反映。",
+            "example": "面对难题时分析解决办法"
+          },
+          {
+            "name": "感性认识",
+            "difficulty": 2,
+            "description": "对客观事物现象和外部联系的反映",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "感性认识是人脑对客观事物的现象和外部联系的反映。",
+            "example": "看到树木的高矮和粗细",
+            "section": "第一课 走进思维世界"
+          },
+          {
+            "name": "理性认识",
+            "difficulty": 2,
+            "description": "对事物本质及其规律的认识",
+            "aliases": [],
+            "prerequisites": [
+              "感性认识"
+            ],
+            "definition": "理性认识是认识的高级阶段，反映事物的本质及其规律。",
+            "example": "认识树木共同的本质属性",
+            "section": "第一课 走进思维世界"
+          },
+          {
+            "name": "思维的概括性",
+            "difficulty": 2,
+            "description": "舍弃非本质属性，把握事物共同本质",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "思维能够从多种事物中抽取共同的本质属性。",
+            "example": "用“树”概括不同种类的树"
+          },
+          {
+            "name": "思维的能动性",
+            "difficulty": 2,
+            "description": "对感性材料进行提炼加工形成认识",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "思维不是对认识对象的机械反映，而是能动地加工材料。",
+            "example": "根据材料形成对问题的判断"
+          },
+          {
+            "name": "思维的间接性",
+            "difficulty": 2,
+            "description": "凭借经验知识透过现象认识本质规律",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "思维能够借助感性材料、经验和知识间接揭示事物本质。",
+            "example": "依据科学知识理解光速"
+          },
+          {
+            "name": "抽象思维",
+            "difficulty": 2,
+            "description": "以概念、判断和推理反映认识对象",
+            "aliases": [],
+            "prerequisites": [
+              "理性认识"
+            ],
+            "definition": "抽象思维是以概念、判断和推理等反映事物本质和规律的思维。",
+            "example": "根据前提推导出科学结论"
+          },
+          {
+            "name": "形象思维",
+            "difficulty": 2,
+            "description": "运用联想想象和幻想反映认识对象",
+            "aliases": [],
+            "prerequisites": [
+              "理性认识"
+            ],
+            "definition": "形象思维是在感觉、知觉和表象基础上运用形象反映对象的思维。",
+            "example": "用和平鸽表达和平愿望"
+          },
+          {
+            "name": "抽象思维特征",
+            "difficulty": 3,
+            "description": "具有概念性、推导性和表达严谨性",
+            "aliases": [],
+            "prerequisites": [
+              "抽象思维"
+            ],
+            "definition": "抽象思维的特征是基本单元概念性、运行方式推导性和表达严谨性。",
+            "example": "由两个前提推出一个结论"
+          },
+          {
+            "name": "形象思维特征",
+            "difficulty": 3,
+            "description": "具有形象性、想象性和表达情感性",
+            "aliases": [],
+            "prerequisites": [
+              "形象思维"
+            ],
+            "definition": "形象思维的特征是基本单元形象性、运行方式想象性和表达情感性。",
+            "example": "借助诗歌意象表现和平"
+          },
+          {
+            "name": "概念",
+            "difficulty": 2,
+            "description": "反映事物本质属性的思维基本单元",
+            "aliases": [],
+            "prerequisites": [
+              "抽象思维"
+            ],
+            "definition": "概念是抽象思维反映事物本质属性的基本单元。",
+            "example": "“树”概括木本植物的共同属性"
+          },
+          {
+            "name": "判断",
+            "difficulty": 2,
+            "description": "对认识对象有所断定的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "判断是抽象思维对认识对象作出断定的思维形式。",
+            "example": "所有金属都是导电的"
+          },
+          {
+            "name": "推理",
+            "difficulty": 3,
+            "description": "由前提推导结论的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "推理是由前提推导结论的抽象思维形式。",
+            "example": "白马是马所以白马是动物"
+          },
+          {
+            "name": "逻辑",
+            "difficulty": 2,
+            "description": "规律、规则、思维方法或逻辑学的统称",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "逻辑可指规律、逻辑规则、思维方法或逻辑学。",
+            "example": "判断文章是否逻辑清晰"
+          },
+          {
+            "name": "形式逻辑",
+            "difficulty": 3,
+            "description": "研究思维形式结构及其规律的逻辑学",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑"
+            ],
+            "definition": "形式逻辑是研究思维形式结构及其规律的狭义逻辑学。",
+            "example": "比较不同判断的形式结构",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "思维形式结构",
+            "difficulty": 3,
+            "description": "不同思维形式之间的联系方式",
+            "aliases": [],
+            "prerequisites": [
+              "判断",
+              "推理"
+            ],
+            "definition": "思维形式结构是逻辑学对不同思维形式联系方式的概括。",
+            "example": "比较“所有……都是……”的结构",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "同一律",
+            "difficulty": 3,
+            "description": "要求同一思维中的思想保持自身同一性",
+            "aliases": [],
+            "prerequisites": [
+              "形式逻辑"
+            ],
+            "definition": "同一律要求在同一思维过程中不能混淆概念或转移论题。",
+            "example": "不能把两种“好茶”混为一谈",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "偷换概念",
+            "difficulty": 3,
+            "description": "故意违反同一律而混淆概念的错误",
+            "aliases": [],
+            "prerequisites": [
+              "同一律"
+            ],
+            "definition": "偷换概念是在同一思维过程中故意改变概念含义的错误。",
+            "example": "将品质好的茶偷换成未变质的茶",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "矛盾律",
+            "difficulty": 3,
+            "description": "要求同一论断与其否定不能同真",
+            "aliases": [],
+            "prerequisites": [
+              "形式逻辑"
+            ],
+            "definition": "矛盾律要求同一时间同一方面同一对象的A和非A不能同真。",
+            "example": "不能同时说盾不可破、矛无不破",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "自相矛盾",
+            "difficulty": 3,
+            "description": "违反矛盾律而使论断不一致的错误",
+            "aliases": [],
+            "prerequisites": [
+              "矛盾律"
+            ],
+            "definition": "自相矛盾是对同一对象作出不能同真的相互冲突论断。",
+            "example": "坚称不要相信任何人的话",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "排中律",
+            "difficulty": 3,
+            "description": "要求同一论断与其否定不能同假",
+            "aliases": [],
+            "prerequisites": [
+              "形式逻辑"
+            ],
+            "definition": "排中律要求同一时间同一方面同一对象的A和非A不能同假。",
+            "example": "不能既不承认去也不承认不去",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "两不可",
+            "difficulty": 3,
+            "description": "同时否认矛盾关系双方的逻辑错误",
+            "aliases": [],
+            "prerequisites": [
+              "排中律"
+            ],
+            "definition": "两不可是同时否认A和非A、在是与非之间骑墙的错误。",
+            "example": "对作品优秀与否都表示反对",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "科学思维",
+            "difficulty": 3,
+            "description": "符合认识规律并遵循逻辑规则的思维",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑"
+            ],
+            "definition": "科学思维是符合认识规律、遵循逻辑规则并能获得正确结果的思维。",
+            "example": "用实践检验并修正理论预言"
+          },
+          {
+            "name": "科学思维客观性",
+            "difficulty": 3,
+            "description": "从实际出发如实反映认识对象",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学思维追求认识的客观性，尊重实践检验并把握客观规律。",
+            "example": "不盲从权威而依据观测结果"
+          },
+          {
+            "name": "科学思维预见性",
+            "difficulty": 3,
+            "description": "依据规律推断事物发展趋势和前景",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学思维能够根据历史和现实材料推断事物的发展趋势。",
+            "example": "预言星光经过太阳会发生偏转"
+          },
+          {
+            "name": "科学思维可检验性",
+            "difficulty": 3,
+            "description": "思维结果必须接受实践的检验",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学思维的结果要接受实践检验并在错误时及时修正。",
+            "example": "观测检验爱因斯坦的理论预言"
+          },
+          {
+            "name": "科学精神",
+            "difficulty": 3,
+            "description": "以事实为依据、以实践检验真理的求真精神",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学精神是认识和改造世界中表现出的求真务实精神。",
+            "example": "依据事实和实践作出判断"
+          },
+          {
+            "name": "论证",
+            "difficulty": 3,
+            "description": "把推理理由作为论据来说明论点",
+            "aliases": [],
+            "prerequisites": [
+              "推理"
+            ],
+            "definition": "论证是把推理的理由讲出来作为论据以支持论点。",
+            "example": "用事实和理由证明观点"
+          },
+          {
+            "name": "论辩",
+            "difficulty": 3,
+            "description": "运用论证说服或反驳他人的活动",
+            "aliases": [],
+            "prerequisites": [
+              "论证"
+            ],
+            "definition": "论辩是运用论证说服他人接受观点或反驳他人观点。",
+            "example": "在讨论中用理由反驳错误观点",
+            "section": "第二课 把握逻辑要义"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一课 走进思维世界",
+            "page_range": [
+              7,
+              12
+            ]
+          },
+          {
+            "name": "第二课 把握逻辑要义",
+            "page_range": [
+              12,
+              19
+            ]
+          },
+          {
+            "name": "第三课 领会科学思维",
+            "page_range": [
+              19,
+              24
+            ]
+          },
+          {
+            "name": "综合探究 学会科学思维 提升思维品质",
+            "page_range": [
+              24,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二单元 遵循逻辑思维规则",
+        "concepts": [
+          {
+            "name": "属性",
+            "difficulty": 1,
+            "description": "事物的性质和关系的总称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "属性是事物所具有的性质和关系。",
+            "example": "人的能思维能力是一种属性。"
+          },
+          {
+            "name": "本质属性",
+            "difficulty": 2,
+            "description": "使事物成为自身并区别于他物的内部规定性",
+            "aliases": [],
+            "prerequisites": [
+              "属性"
+            ],
+            "definition": "本质属性是一事物成为自身并区别于其他事物的内部规定性。",
+            "example": "能思维并制造工具是人的本质属性。"
+          },
+          {
+            "name": "概念",
+            "difficulty": 2,
+            "description": "通过揭示本质属性反映事物的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "本质属性"
+            ],
+            "definition": "概念是通过揭示事物本质属性而反映事物的思维形式。",
+            "example": "“人”是反映人的概念。"
+          },
+          {
+            "name": "概念的抽象性",
+            "difficulty": 2,
+            "description": "舍去个性特征，概括事物共同本质属性",
+            "aliases": [
+              "抽象性和概括性"
+            ],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "概念的抽象性是指概念舍去对象个性而把握其共同本质属性。",
+            "example": "“人”不区分男女老少。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "语词",
+            "difficulty": 1,
+            "description": "表达概念的语言形式",
+            "aliases": [],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "语词是表达概念的语言形式。",
+            "example": "“白头翁”可表达不同概念。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "内涵",
+            "difficulty": 2,
+            "description": "概念所反映事物的本质属性",
+            "aliases": [
+              "概念的内涵"
+            ],
+            "prerequisites": [
+              "概念",
+              "本质属性"
+            ],
+            "definition": "概念的内涵是概念所反映的事物的本质属性。",
+            "example": "“人”的内涵包括能思维并制造工具。"
+          },
+          {
+            "name": "外延",
+            "difficulty": 2,
+            "description": "具有概念本质属性的事物范围",
+            "aliases": [
+              "概念的外延"
+            ],
+            "prerequisites": [
+              "概念",
+              "本质属性"
+            ],
+            "definition": "概念的外延是具有概念所反映本质属性的事物范围。",
+            "example": "“人”的外延包括张三和李四。"
+          },
+          {
+            "name": "相容关系",
+            "difficulty": 2,
+            "description": "两个概念的外延具有相同部分",
+            "aliases": [],
+            "prerequisites": [
+              "外延"
+            ],
+            "definition": "相容关系是两个概念在所指范围上具有相同部分的关系。",
+            "example": "“中学生”和“球迷”有交集。"
+          },
+          {
+            "name": "全同关系",
+            "difficulty": 2,
+            "description": "两个概念的外延完全相同",
+            "aliases": [],
+            "prerequisites": [
+              "相容关系"
+            ],
+            "definition": "全同关系是两个概念外延完全相同的关系。",
+            "example": "《史记》的作者与司马迁。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "属种关系",
+            "difficulty": 2,
+            "description": "一个概念外延包含另一个概念的全部外延",
+            "aliases": [
+              "种属关系"
+            ],
+            "prerequisites": [
+              "相容关系",
+              "外延"
+            ],
+            "definition": "属种关系是外延大的概念包含外延小的概念的关系。",
+            "example": "动物与马是属种关系。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "交叉关系",
+            "difficulty": 2,
+            "description": "两个概念的外延只有部分相同",
+            "aliases": [],
+            "prerequisites": [
+              "相容关系"
+            ],
+            "definition": "交叉关系是两个概念外延有且只有一部分相同的关系。",
+            "example": "中学生与球迷存在交叉。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "不相容关系",
+            "difficulty": 2,
+            "description": "两个概念的外延没有相同部分",
+            "aliases": [
+              "全异关系"
+            ],
+            "prerequisites": [
+              "外延"
+            ],
+            "definition": "不相容关系是两个概念在所指范围上没有相同部分的关系。",
+            "example": "有效合同与无效合同。"
+          },
+          {
+            "name": "矛盾关系",
+            "difficulty": 3,
+            "description": "同属概念下外延全异且合起来等于属概念",
+            "aliases": [],
+            "prerequisites": [
+              "不相容关系",
+              "属种关系"
+            ],
+            "definition": "矛盾关系是同一属概念下两个外延全异且外延之和等于属概念的关系。",
+            "example": "正义战争与非正义战争。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "反对关系",
+            "difficulty": 3,
+            "description": "同属概念下外延全异且合起来小于属概念",
+            "aliases": [],
+            "prerequisites": [
+              "不相容关系",
+              "属种关系"
+            ],
+            "definition": "反对关系是同一属概念下两个外延全异且外延之和小于属概念的关系。",
+            "example": "黑色与白色不是全部颜色。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "定义",
+            "difficulty": 2,
+            "description": "从内涵方面明确概念的逻辑方法",
+            "aliases": [],
+            "prerequisites": [
+              "内涵",
+              "外延"
+            ],
+            "definition": "定义是从内涵方面揭示概念本质属性的逻辑方法。",
+            "example": "文学就是反映客观现实的艺术。"
+          },
+          {
+            "name": "种差加属",
+            "difficulty": 3,
+            "description": "用种差和属概念构成定义项的方法",
+            "aliases": [
+              "种差加属概念"
+            ],
+            "prerequisites": [
+              "定义",
+              "属种关系"
+            ],
+            "definition": "种差加属是以种差和属概念相加构成定义项的方法。",
+            "example": "文学以语言文字为工具加艺术。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "定义规则",
+            "difficulty": 3,
+            "description": "保证定义准确揭示概念内涵的逻辑要求",
+            "aliases": [],
+            "prerequisites": [
+              "定义"
+            ],
+            "definition": "定义规则是正确下定义时必须遵循的逻辑要求。",
+            "example": "定义项与被定义项外延必须全同。"
+          },
+          {
+            "name": "划分",
+            "difficulty": 2,
+            "description": "从外延方面明确概念的逻辑方法",
+            "aliases": [],
+            "prerequisites": [
+              "外延",
+              "属种关系"
+            ],
+            "definition": "划分是依据标准把一个概念的外延分为几个小类的逻辑方法。",
+            "example": "战争分为正义战争和非正义战争。"
+          },
+          {
+            "name": "划分规则",
+            "difficulty": 3,
+            "description": "保证概念外延划分正确的逻辑要求",
+            "aliases": [],
+            "prerequisites": [
+              "划分"
+            ],
+            "definition": "划分规则是正确划分概念外延时必须遵循的逻辑要求。",
+            "example": "子项外延之和必须等于母项外延。"
+          },
+          {
+            "name": "判断",
+            "difficulty": 2,
+            "description": "对认识对象有所断定的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "判断是对认识对象有所断定的思维形式。",
+            "example": "“这里没有污染企业”是否定判断。"
+          },
+          {
+            "name": "判断的真假",
+            "difficulty": 2,
+            "description": "判断断定与认识对象实际情况是否符合",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "判断的真假取决于其断定是否符合认识对象的实际情况。",
+            "example": "符合事实的判断是真的。",
+            "section": "第五课 正确运用判断"
+          },
+          {
+            "name": "简单判断",
+            "difficulty": 2,
+            "description": "直接由概念构成且不包含其他判断",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "简单判断是直接由概念构成而不包含其他判断的判断。",
+            "example": "“他是中学校长。”"
+          },
+          {
+            "name": "复合判断",
+            "difficulty": 2,
+            "description": "本身包含其他判断的判断",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "复合判断是本身包含其他判断的判断。",
+            "example": "“如果下雨，地面就湿。”"
+          },
+          {
+            "name": "性质判断",
+            "difficulty": 2,
+            "description": "断定对象具有或不具有某种性质",
+            "aliases": [
+              "直言判断"
+            ],
+            "prerequisites": [
+              "简单判断"
+            ],
+            "definition": "性质判断是断定认识对象具有或不具有某种性质的简单判断。",
+            "example": "所有商品都是劳动产品。"
+          },
+          {
+            "name": "关系判断",
+            "difficulty": 2,
+            "description": "断定认识对象之间关系的判断",
+            "aliases": [],
+            "prerequisites": [
+              "简单判断"
+            ],
+            "definition": "关系判断是断定认识对象之间关系的判断。",
+            "example": "小明与小华是同学。",
+            "section": "第五课 正确运用判断"
+          },
+          {
+            "name": "联言判断",
+            "difficulty": 2,
+            "description": "断定几个事物情况同时存在",
+            "aliases": [],
+            "prerequisites": [
+              "复合判断"
+            ],
+            "definition": "联言判断是断定几个联言支同时成立的复合判断。",
+            "example": "既要努力奋斗，也要知足常乐。"
+          },
+          {
+            "name": "选言判断",
+            "difficulty": 2,
+            "description": "断定事物存在多种可能情况中的一种或多种",
+            "aliases": [],
+            "prerequisites": [
+              "复合判断"
+            ],
+            "definition": "选言判断是断定若干可能情况中至少一种成立的复合判断。",
+            "example": "错误或是不合语法，或是不合实际。"
+          },
+          {
+            "name": "假言判断",
+            "difficulty": 2,
+            "description": "反映事物情况之间条件关系",
+            "aliases": [],
+            "prerequisites": [
+              "复合判断"
+            ],
+            "definition": "假言判断是反映事物情况之间条件关系的复合判断。",
+            "example": "如果学习方法不当，就不能提高效率。"
+          },
+          {
+            "name": "充分条件",
+            "difficulty": 3,
+            "description": "有前一种情况就必有后一种情况",
+            "aliases": [],
+            "prerequisites": [
+              "假言判断"
+            ],
+            "definition": "充分条件是有前一种事物情况就必然有后一种事物情况的条件。",
+            "example": "学习方法不当会导致效率不能提高。"
+          },
+          {
+            "name": "必要条件",
+            "difficulty": 3,
+            "description": "产生某种情况不可缺少的条件",
+            "aliases": [],
+            "prerequisites": [
+              "假言判断"
+            ],
+            "definition": "必要条件是产生某种事物情况不可缺少的条件。",
+            "example": "年满十八周岁是有选举权的必要条件。"
+          },
+          {
+            "name": "充分必要条件",
+            "difficulty": 3,
+            "description": "同时具备充分条件和必要条件",
+            "aliases": [],
+            "prerequisites": [
+              "充分条件",
+              "必要条件"
+            ],
+            "definition": "充分必要条件是有此情况必有彼情况且无此情况必无彼情况的条件。",
+            "example": "数为偶数当且仅当能被2整除。"
+          },
+          {
+            "name": "推理",
+            "difficulty": 2,
+            "description": "由已有判断推出新判断的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "推理是从一个或几个已有判断推出新判断的思维形式。",
+            "example": "由张思德为人民利益而死推出其死重于泰山。"
+          },
+          {
+            "name": "推理结构",
+            "difficulty": 3,
+            "description": "推理前提与结论之间的逻辑联系方式",
+            "aliases": [],
+            "prerequisites": [
+              "推理"
+            ],
+            "definition": "推理结构是推理前提和结论之间的逻辑联系方式。",
+            "example": "三段论具有固定的项与判断结构。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "演绎推理",
+            "difficulty": 3,
+            "description": "从一般性前提推出个别性结论的必然推理",
+            "aliases": [],
+            "prerequisites": [
+              "推理",
+              "推理结构"
+            ],
+            "definition": "演绎推理是从一般性前提推出个别性结论的必然推理。",
+            "example": "所有经济规律客观，经济规律属于客观规律，所以经济规律客观。"
+          },
+          {
+            "name": "换质推理",
+            "difficulty": 3,
+            "description": "改变性质判断的质而得出新判断",
+            "aliases": [
+              "换质法"
+            ],
+            "prerequisites": [
+              "性质判断",
+              "演绎推理"
+            ],
+            "definition": "换质推理是通过改变已知性质判断的质而得出新判断的推理。",
+            "example": "所有金属导电，所以所有金属不是不导电。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "换位推理",
+            "difficulty": 3,
+            "description": "交换性质判断主项和谓项位置",
+            "aliases": [
+              "换位法"
+            ],
+            "prerequisites": [
+              "性质判断",
+              "演绎推理"
+            ],
+            "definition": "换位推理是通过交换性质判断主项和谓项位置而得出新判断的推理。",
+            "example": "所有马不是狗，所以所有狗不是马。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "周延",
+            "difficulty": 3,
+            "description": "判断断定主项或谓项所反映的全部对象",
+            "aliases": [],
+            "prerequisites": [
+              "性质判断",
+              "外延"
+            ],
+            "definition": "周延是指判断断定了某项所反映的全部对象。",
+            "example": "全称判断的主项周延。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "三段论",
+            "difficulty": 3,
+            "description": "以两个性质判断为前提借共同项推出结论",
+            "aliases": [],
+            "prerequisites": [
+              "性质判断",
+              "演绎推理"
+            ],
+            "definition": "三段论是以两个性质判断为前提并借助共同项推出新判断的推理。",
+            "example": "公共场所禁烟，展览厅是公共场所，所以展览厅禁烟。"
+          },
+          {
+            "name": "联言推理",
+            "difficulty": 3,
+            "description": "依据联言判断逻辑性质进行的推理",
+            "aliases": [],
+            "prerequisites": [
+              "联言判断",
+              "演绎推理"
+            ],
+            "definition": "联言推理是依据联言判断逻辑性质进行的推理。",
+            "example": "我、你、他都需努力，所以我们共同努力。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "选言推理",
+            "difficulty": 3,
+            "description": "依据选言判断逻辑性质进行的推理",
+            "aliases": [],
+            "prerequisites": [
+              "选言判断",
+              "演绎推理"
+            ],
+            "definition": "选言推理是依据选言判断逻辑性质进行的推理。",
+            "example": "错误或不合语法或不合实际，排除语法错误后指向其余情况。",
+            "section": "第六课 掌握演绎推理方法"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第四课 准确把握概念",
+            "page_range": [
+              27,
+              35
+            ]
+          },
+          {
+            "name": "第五课 正确运用判断",
+            "page_range": [
+              35,
+              48
+            ]
+          },
+          {
+            "name": "第六课 掌握演绎推理方法",
+            "page_range": [
+              48,
+              64
+            ]
+          },
+          {
+            "name": "第七课 学会归纳与类比推理",
+            "page_range": [
+              64,
+              74
+            ]
+          },
+          {
+            "name": "综合探究 把握逻辑规则 纠正逻辑错误",
+            "page_range": [
+              74,
+              75
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三单元 运用辩证思维方法",
+        "concepts": [
+          {
+            "name": "辩证思维",
+            "difficulty": 2,
+            "description": "用联系、发展、全面的观点认识和思考问题",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "辩证思维是用联系、发展、全面的观点看待事物和思考问题的思维方式。",
+            "example": "根据水势变化调整渡河方案"
+          },
+          {
+            "name": "矛盾分析方法",
+            "difficulty": 3,
+            "description": "在对立统一中把握事物本质和规律的方法",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "矛盾分析方法是通过认识矛盾及其对立统一关系把握事物的方法。",
+            "example": "区分主要矛盾和次要矛盾",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "形而上学思维",
+            "difficulty": 2,
+            "description": "割裂联系、静止片面看待事物的思维方式",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "形而上学思维是把事物及其联系看成绝对固定和一成不变的思维方式。",
+            "example": "认为河流永远按旧水位渡河"
+          },
+          {
+            "name": "整体性",
+            "difficulty": 3,
+            "description": "从整体角度再现要素及其联系并思考问题",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "整体性是辩证思维把认识对象各要素及其联系作为有机整体考察的特征。",
+            "example": "统筹载人航天工程八大系统",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "动态性",
+            "difficulty": 3,
+            "description": "用变化发展和矛盾运动的观点认识事物",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "动态性是辩证思维按照事物发生、发展和变化的过程考察对象的特征。",
+            "example": "分析鹿群数量变化及其后果",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "分析",
+            "difficulty": 2,
+            "description": "分解对象的部分、要素、层次或发展阶段",
+            "aliases": [],
+            "prerequisites": [
+              "整体性"
+            ],
+            "definition": "分析是把认识对象分解为部分、要素、层次或阶段分别认识的思维方法。",
+            "example": "分析血液中的血细胞和血浆"
+          },
+          {
+            "name": "定性分析",
+            "difficulty": 2,
+            "description": "确定对象是否具有某种性质或成分",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "定性分析是确定研究对象是否具有某种性质或成分的分析方法。",
+            "example": "判断血液是否含有某种凝集原",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "定量分析",
+            "difficulty": 2,
+            "description": "确定对象在某方面的数量或程度",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "定量分析是确定研究对象在某个方面有多少的分析方法。",
+            "example": "测定水坝下游盐分含量",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "功能分析",
+            "difficulty": 2,
+            "description": "确定研究对象具有什么作用或功能",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "功能分析是确定研究对象具有何种功能或作用的分析方法。",
+            "example": "分析水坝的防洪和灌溉功能",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "因果分析",
+            "difficulty": 2,
+            "description": "确定引起某一现象发生或变化的原因",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "因果分析是确定引起某一现象发生或变化原因的分析方法。",
+            "example": "分析土地盐碱化的成因",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "综合",
+            "difficulty": 2,
+            "description": "按固有联系联结各部分形成整体认识",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "综合是把对象的各部分、要素、层次和阶段按固有联系统一考察的方法。",
+            "example": "综合各元素性质发现周期规律"
+          },
+          {
+            "name": "分析与综合关系",
+            "difficulty": 4,
+            "description": "分析与综合相互依赖、相辅相成、不断转化",
+            "aliases": [
+              "分析与综合的辩证关系"
+            ],
+            "prerequisites": [
+              "分析",
+              "综合"
+            ],
+            "definition": "分析是综合的基础，综合是分析的先导，二者在对立统一中推动认识发展。",
+            "example": "先分解延安各部分再形成整体认识"
+          },
+          {
+            "name": "质",
+            "difficulty": 2,
+            "description": "使事物成为自身并区别于他物的规定性",
+            "aliases": [
+              "质的规定性"
+            ],
+            "prerequisites": [],
+            "definition": "质是一事物成为自身并区别于他事物的内部固有规定性。",
+            "example": "水保持液态时具有液体的质"
+          },
+          {
+            "name": "量",
+            "difficulty": 2,
+            "description": "事物规模、程度、速度等可量化规定性",
+            "aliases": [
+              "量的规定性"
+            ],
+            "prerequisites": [],
+            "definition": "量是事物存在和发展的规模、程度、速度及构成因素排列组合等规定性。",
+            "example": "水温从20℃升至90℃"
+          },
+          {
+            "name": "量变",
+            "difficulty": 2,
+            "description": "事物量的变化，通常保持原有性质",
+            "aliases": [],
+            "prerequisites": [
+              "质",
+              "量"
+            ],
+            "definition": "量变是事物在量上的变化，是事物发展的一种基本状态。",
+            "example": "持续积累知识但尚未形成飞跃"
+          },
+          {
+            "name": "质变",
+            "difficulty": 2,
+            "description": "事物质的变化，表现为从旧质到新质的飞跃",
+            "aliases": [],
+            "prerequisites": [
+              "质",
+              "量"
+            ],
+            "definition": "质变是事物根本性质的变化，是事物发展的一种基本状态。",
+            "example": "水超过100℃变成水蒸气"
+          },
+          {
+            "name": "质量互变规律",
+            "difficulty": 4,
+            "description": "量变与质变相互区别、联系并相互转化",
+            "aliases": [
+              "量变与质变规律"
+            ],
+            "prerequisites": [
+              "量变",
+              "质变"
+            ],
+            "definition": "质量互变规律揭示量变是质变前提，质变是量变必然结果并开启新的量变。",
+            "example": "日积月累最终取得学习突破"
+          },
+          {
+            "name": "渐进性与飞跃性",
+            "difficulty": 4,
+            "description": "事物发展中渐进积累与阶段飞跃的统一",
+            "aliases": [],
+            "prerequisites": [
+              "量变",
+              "质变"
+            ],
+            "definition": "渐进性与飞跃性是事物发展过程中相互区别又相互包含的两种形式。",
+            "example": "长期积累后实现技术突破",
+            "section": "第九课 理解质量互变"
+          },
+          {
+            "name": "度",
+            "difficulty": 3,
+            "description": "事物保持自身质稳定性的量的限度",
+            "aliases": [],
+            "prerequisites": [
+              "质",
+              "量"
+            ],
+            "definition": "度是一事物保持自身质的稳定性的量的限度。",
+            "example": "水在0℃到100℃内保持液态"
+          },
+          {
+            "name": "关节点",
+            "difficulty": 3,
+            "description": "量变达到极限并引起质变的节点",
+            "aliases": [
+              "临界点"
+            ],
+            "prerequisites": [
+              "度",
+              "量变",
+              "质变"
+            ],
+            "definition": "关节点是事物量变达到极限并引起质变的节点。",
+            "example": "100℃是水沸腾的关节点",
+            "section": "第九课 理解质量互变"
+          },
+          {
+            "name": "适度原则",
+            "difficulty": 3,
+            "description": "在度的范围内把握事物发展的适当程度",
+            "aliases": [],
+            "prerequisites": [
+              "度",
+              "质量互变规律"
+            ],
+            "definition": "适度原则要求把握分寸，将事物变化控制在度的范围内并防止极端化。",
+            "example": "服药剂量既不能过少也不能过多"
+          },
+          {
+            "name": "肯定方面",
+            "difficulty": 3,
+            "description": "保持事物自身存在和性质的方面",
+            "aliases": [],
+            "prerequisites": [
+              "质"
+            ],
+            "definition": "肯定方面是事物保持自身存在、肯定其为自身的方面。",
+            "example": "传统文化中有益的思想内容",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "否定方面",
+            "difficulty": 3,
+            "description": "促使事物灭亡并转化为他物的方面",
+            "aliases": [],
+            "prerequisites": [
+              "质"
+            ],
+            "definition": "否定方面是促使事物灭亡并转化为他事物的方面。",
+            "example": "旧制度中阻碍发展的因素",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "辩证否定",
+            "difficulty": 3,
+            "description": "包含肯定、在自我否定中实现更新的否定",
+            "aliases": [],
+            "prerequisites": [
+              "肯定方面",
+              "否定方面"
+            ],
+            "definition": "辩证否定是包含肯定因素、通过自我否定实现自我更新的否定。",
+            "example": "批判继承传统文化"
+          },
+          {
+            "name": "扬弃",
+            "difficulty": 4,
+            "description": "既取消舍弃又保持保存的辩证否定",
+            "aliases": [],
+            "prerequisites": [
+              "辩证否定"
+            ],
+            "definition": "扬弃是对旧事物合理因素加以保留并对其改造发展的辩证否定。",
+            "example": "取传统文化精华并创新转化"
+          },
+          {
+            "name": "感性具体",
+            "difficulty": 2,
+            "description": "通过感官形成的事物外部形象和整体表象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "感性具体是事物多种现象和外部联系在头脑中的直观整体反映。",
+            "example": "初到学校形成的整体印象"
+          },
+          {
+            "name": "思维抽象",
+            "difficulty": 3,
+            "description": "从整体或个性中抽取本质规定或共性",
+            "aliases": [],
+            "prerequisites": [
+              "感性具体",
+              "分析"
+            ],
+            "definition": "思维抽象是从多样性统一的整体中抽取某方面本质或共性的思维活动。",
+            "example": "从不同商品中抽取共同属性"
+          },
+          {
+            "name": "分离",
+            "difficulty": 2,
+            "description": "暂时抽离对象与其他对象的联系进行考察",
+            "aliases": [],
+            "prerequisites": [
+              "思维抽象"
+            ],
+            "definition": "分离是思维抽象中暂不考虑对象与其他对象联系的起始环节。",
+            "example": "单独研究理想气体性质",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "提纯",
+            "difficulty": 3,
+            "description": "排除干扰因素以研究对象某方面规律",
+            "aliases": [],
+            "prerequisites": [
+              "分离"
+            ],
+            "definition": "提纯是在思想中排除干扰因素以研究事物某一方面性质和规律的环节。",
+            "example": "忽略摩擦研究理想运动",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "简略化",
+            "difficulty": 2,
+            "description": "对抽象结果作简要表达或处理",
+            "aliases": [],
+            "prerequisites": [
+              "提纯"
+            ],
+            "definition": "简略化是对单一状态下认识结果进行简要化处理或表达的环节。",
+            "example": "用符号表示一般数量关系",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "理想化",
+            "difficulty": 3,
+            "description": "在思维中对对象存在状态进行纯然构想",
+            "aliases": [],
+            "prerequisites": [
+              "思维抽象"
+            ],
+            "definition": "理想化是在思维中对认识对象存在状态进行纯然构想的抽象形式。",
+            "example": "设想没有黏滞性的理想液体",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "思维具体",
+            "difficulty": 4,
+            "description": "在理性层次再现事物具体整体及其规律",
+            "aliases": [],
+            "prerequisites": [
+              "思维抽象",
+              "综合"
+            ],
+            "definition": "思维具体是把事物各方面本质规定按内在联系综合起来形成的整体认识。",
+            "example": "从商品出发把握资本主义社会规律"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第八课 把握辩证分合",
+            "page_range": [
+              77,
+              85
+            ]
+          },
+          {
+            "name": "第九课 理解质量互变",
+            "page_range": [
+              85,
+              90
+            ]
+          },
+          {
+            "name": "第十课 推动认识发展",
+            "page_range": [
+              90,
+              98
+            ]
+          },
+          {
+            "name": "综合探究 领悟辩证精髓 处理复杂问题",
+            "page_range": [
+              98,
+              99
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四单元 提高创新思维能力",
+        "concepts": [
+          {
+            "name": "创新思维",
+            "difficulty": 3,
+            "description": "在实践中破除迷信、超越陈规并有所创新的思维活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "创新思维是人们在实践中破除迷信、超越陈规，有所发现、有所发明的思维活动。",
+            "example": "蔡伦继承前人经验改进造纸材料和工艺。"
+          },
+          {
+            "name": "创新思维多向性",
+            "difficulty": 3,
+            "description": "从不同角度、层次和条件构思多种设想",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "创新思维多向性是指思维能够从不同方向探索多个设想和答案。",
+            "example": "灯泡容积难以计算时改用水测量。"
+          },
+          {
+            "name": "创新思维跨越性",
+            "difficulty": 3,
+            "description": "思维过程中常表现为省略或跨越推理步骤",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "创新思维跨越性是指思维活动不排斥逻辑推导但常对推理步骤进行省略或跨越。",
+            "example": "爱迪生用水快速测出灯泡容积。"
+          },
+          {
+            "name": "创新思维独特性",
+            "difficulty": 3,
+            "description": "用独特巧妙的方法解决没有现成答案的问题",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "创新思维独特性是指针对复杂问题形成常规方法难以得到的独特结果。",
+            "example": "移动支付改变了传统支付方式。"
+          },
+          {
+            "name": "联想思维",
+            "difficulty": 3,
+            "description": "联结记忆中不同事物的认识并进行思考",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "联想思维是将记忆中对不同事物的认识进行联结与思考的思维活动。",
+            "example": "由炒菜锅倒扣在头上联想到军用钢盔。"
+          },
+          {
+            "name": "联想思维跨越性",
+            "difficulty": 3,
+            "description": "把相关或看似不相关的对象建立新的关联",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "联想思维跨越性是指其联结方式能够跨越事物之间的表面关联。",
+            "example": "由少女和鱼的形象联结成美人鱼。"
+          },
+          {
+            "name": "联想思维畅想性",
+            "difficulty": 3,
+            "description": "突破逻辑限制展开构想、想象甚至幻想",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "联想思维畅想性是指思维能够非逻辑地畅想多种可能形象和情景。",
+            "example": "畅想没有货币的世界会怎样。"
+          },
+          {
+            "name": "迁移",
+            "difficulty": 3,
+            "description": "将已有认识对象的性质或作用移用于新对象",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "迁移是将不同认识对象的性质、作用等进行位置变迁与功能移植。",
+            "example": "把精准滴灌方式迁移到精准扶贫中。"
+          },
+          {
+            "name": "想象",
+            "difficulty": 3,
+            "description": "加工改造已有表象并重新组合产生新形象",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "想象是在头脑中对已有事物表象进行加工、改造和重新组合的思维过程。",
+            "example": "根据云朵形状想象出小兔子。"
+          },
+          {
+            "name": "形象化想象",
+            "difficulty": 3,
+            "description": "把抽象思想或概念按照目的转化为具体形象",
+            "aliases": [],
+            "prerequisites": [
+              "想象"
+            ],
+            "definition": "形象化想象是把抽象的思想、概念形象化而形成创造性新形象的想象。",
+            "example": "用生动比喻表现革命发展的前景。"
+          },
+          {
+            "name": "有意想象",
+            "difficulty": 2,
+            "description": "在意识控制下按照一定目的自觉展开想象",
+            "aliases": [],
+            "prerequisites": [
+              "想象"
+            ],
+            "definition": "有意想象是在意识控制下，按照一定目的自觉进行的想象。",
+            "example": "为解决问题而设想多种方案。",
+            "section": "第十一课 创新思维要善于联想"
+          },
+          {
+            "name": "发散思维",
+            "difficulty": 3,
+            "description": "从不同角度和方向寻求多样性答案",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "发散思维是根据已知信息，从不同角度和方向寻求多样性答案的思维方式。",
+            "example": "围绕清除电话线积雪提出36个设想。"
+          },
+          {
+            "name": "检核表法",
+            "difficulty": 3,
+            "description": "逐项检查事物的多个方面寻找创新突破口",
+            "aliases": [],
+            "prerequisites": [
+              "发散思维"
+            ],
+            "definition": "检核表法是通过详细检查设想问题的多个方面来产生创新思路的方法。",
+            "example": "检查物品能否扩大、缩小、组合或代替。",
+            "section": "第十二课 创新思维要多路探索"
+          },
+          {
+            "name": "信息交合法",
+            "difficulty": 4,
+            "description": "有目的地组合不同信息以产生新思路",
+            "aliases": [],
+            "prerequisites": [
+              "发散思维"
+            ],
+            "definition": "信息交合法是列举并组合已有或引进的不同事物信息以产生新思路的方法。",
+            "example": "组合杯子的材料、结构和功能设计新杯子。",
+            "section": "第十二课 创新思维要多路探索"
+          },
+          {
+            "name": "头脑风暴法",
+            "difficulty": 4,
+            "description": "通过群体自由畅想和相互激励产生新设想",
+            "aliases": [
+              "智力激励法"
+            ],
+            "prerequisites": [
+              "发散思维"
+            ],
+            "definition": "头脑风暴法是以会议形式集思广益的群体思维发散技法。",
+            "example": "会议中遵循延迟评判、以量求质原则。"
+          },
+          {
+            "name": "聚合思维",
+            "difficulty": 3,
+            "description": "集中多种信息形成条理化的最优方案",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "聚合思维是利用知识和经验将众多信息引导到逻辑思路中以解决问题的思维方式。",
+            "example": "从多个候选人中选定最值得尊敬的人。"
+          },
+          {
+            "name": "正向思维",
+            "difficulty": 2,
+            "description": "依据已有常规认识沿原有方向思考",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "正向思维是依据人们已有的事物常规认识进行思考的思维方式。",
+            "example": "按热源在下、食物在上的方式设计烤炉。"
+          },
+          {
+            "name": "逆向思维",
+            "difficulty": 4,
+            "description": "从原理、构成、功能等反面反向求索",
+            "aliases": [
+              "反向法"
+            ],
+            "prerequisites": [
+              "正向思维"
+            ],
+            "definition": "逆向思维是从已有认识的反面去思考和求索以实现创新的方法。",
+            "example": "把电烤炉热源改到食物上方。"
+          },
+          {
+            "name": "正逆思维互补",
+            "difficulty": 4,
+            "description": "联系正向与逆向思维以避免片面和僵化",
+            "aliases": [],
+            "prerequisites": [
+              "正向思维",
+              "逆向思维"
+            ],
+            "definition": "正逆思维互补是将正向思维与逆向思维联系起来、相互补充的思维方式。",
+            "example": "拍摄和放映时结合正负畸变制作宽银幕电影。"
+          },
+          {
+            "name": "超前思维",
+            "difficulty": 4,
+            "description": "依据历史现实推测并把握事物未来趋势",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "超前思维是从事物发展现实出发，运用推理和想象判断未来趋势的思维形态。",
+            "example": "诸葛亮分析形势提出三分天下的规划。"
+          },
+          {
+            "name": "超前意识",
+            "difficulty": 3,
+            "description": "不满足现状、居安思危并主动追求更好发展",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "超前意识是不满足现状、居安思危并自觉站得更高看得更远的意识。",
+            "example": "国家制定中长期发展规划。"
+          },
+          {
+            "name": "矛盾分析方法",
+            "difficulty": 4,
+            "description": "通过分析和解决矛盾把握事物发展方向",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "矛盾分析方法是分析矛盾、解决矛盾并据此认识事物发展趋势的方法。",
+            "example": "《论持久战》分析中日双方矛盾预测战争进程。",
+            "section": "第十三课 创新思维要力求超前"
+          },
+          {
+            "name": "调查研究",
+            "difficulty": 3,
+            "description": "有计划了解真实情况并分析其本质和规律",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "调查研究是通过调查获取材料并加以分析综合以认识本质和规律的过程。",
+            "example": "深入基层群众了解情况后作出决策。",
+            "section": "第十三课 创新思维要力求超前"
+          },
+          {
+            "name": "定性预测",
+            "difficulty": 3,
+            "description": "对事物发展状况作直观估计和评价",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "定性预测是对事物未来发展状况进行直观估计和评价的预测方法。",
+            "example": "通过历史类比推测事件走势。",
+            "section": "第十三课 创新思维要力求超前"
+          },
+          {
+            "name": "定量预测",
+            "difficulty": 4,
+            "description": "运用数据、变量和数学模型预测未来发展",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "定量预测是利用统计数据和数学方法构建模型以预测未来发展的方法。",
+            "example": "用回归分析预测经济变量变化。",
+            "section": "第十三课 创新思维要力求超前"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十一课 创新思维要善于联想",
+            "page_range": [
+              101,
+              109
+            ]
+          },
+          {
+            "name": "第十二课 创新思维要多路探索",
+            "page_range": [
+              109,
+              118
+            ]
+          },
+          {
+            "name": "第十三课 创新思维要力求超前",
+            "page_range": [
+              118,
+              124
+            ]
+          },
+          {
+            "name": "综合探究 结合社会实践 勇于开拓创新",
+            "page_range": [
+              124,
+              130
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 树立科学思维观念",
+        "concepts": [
+          {
+            "name": "思维",
+            "difficulty": 1,
+            "description": "人脑对客观事物的反映活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "思维是人脑对客观事物的反映。",
+            "example": "面对难题时分析解决办法"
+          },
+          {
+            "name": "感性认识",
+            "difficulty": 2,
+            "description": "对客观事物现象和外部联系的反映",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "感性认识是人脑对客观事物的现象和外部联系的反映。",
+            "example": "看到树木的高矮和粗细",
+            "section": "第一课 走进思维世界"
+          },
+          {
+            "name": "理性认识",
+            "difficulty": 2,
+            "description": "对事物本质及其规律的认识",
+            "aliases": [],
+            "prerequisites": [
+              "感性认识"
+            ],
+            "definition": "理性认识是认识的高级阶段，反映事物的本质及其规律。",
+            "example": "认识树木共同的本质属性",
+            "section": "第一课 走进思维世界"
+          },
+          {
+            "name": "思维的概括性",
+            "difficulty": 2,
+            "description": "舍弃非本质属性，把握事物共同本质",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "思维能够从多种事物中抽取共同的本质属性。",
+            "example": "用“树”概括不同种类的树"
+          },
+          {
+            "name": "思维的能动性",
+            "difficulty": 2,
+            "description": "对感性材料进行提炼加工形成认识",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "思维不是对认识对象的机械反映，而是能动地加工材料。",
+            "example": "根据材料形成对问题的判断"
+          },
+          {
+            "name": "思维的间接性",
+            "difficulty": 2,
+            "description": "凭借经验知识透过现象认识本质规律",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "思维能够借助感性材料、经验和知识间接揭示事物本质。",
+            "example": "依据科学知识理解光速"
+          },
+          {
+            "name": "抽象思维",
+            "difficulty": 2,
+            "description": "以概念、判断和推理反映认识对象",
+            "aliases": [],
+            "prerequisites": [
+              "理性认识"
+            ],
+            "definition": "抽象思维是以概念、判断和推理等反映事物本质和规律的思维。",
+            "example": "根据前提推导出科学结论"
+          },
+          {
+            "name": "形象思维",
+            "difficulty": 2,
+            "description": "运用联想想象和幻想反映认识对象",
+            "aliases": [],
+            "prerequisites": [
+              "理性认识"
+            ],
+            "definition": "形象思维是在感觉、知觉和表象基础上运用形象反映对象的思维。",
+            "example": "用和平鸽表达和平愿望"
+          },
+          {
+            "name": "抽象思维特征",
+            "difficulty": 3,
+            "description": "具有概念性、推导性和表达严谨性",
+            "aliases": [],
+            "prerequisites": [
+              "抽象思维"
+            ],
+            "definition": "抽象思维的特征是基本单元概念性、运行方式推导性和表达严谨性。",
+            "example": "由两个前提推出一个结论"
+          },
+          {
+            "name": "形象思维特征",
+            "difficulty": 3,
+            "description": "具有形象性、想象性和表达情感性",
+            "aliases": [],
+            "prerequisites": [
+              "形象思维"
+            ],
+            "definition": "形象思维的特征是基本单元形象性、运行方式想象性和表达情感性。",
+            "example": "借助诗歌意象表现和平"
+          },
+          {
+            "name": "概念",
+            "difficulty": 2,
+            "description": "反映事物本质属性的思维基本单元",
+            "aliases": [],
+            "prerequisites": [
+              "抽象思维"
+            ],
+            "definition": "概念是抽象思维反映事物本质属性的基本单元。",
+            "example": "“树”概括木本植物的共同属性"
+          },
+          {
+            "name": "判断",
+            "difficulty": 2,
+            "description": "对认识对象有所断定的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "判断是抽象思维对认识对象作出断定的思维形式。",
+            "example": "所有金属都是导电的"
+          },
+          {
+            "name": "推理",
+            "difficulty": 3,
+            "description": "由前提推导结论的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "推理是由前提推导结论的抽象思维形式。",
+            "example": "白马是马所以白马是动物"
+          },
+          {
+            "name": "逻辑",
+            "difficulty": 2,
+            "description": "规律、规则、思维方法或逻辑学的统称",
+            "aliases": [],
+            "prerequisites": [
+              "思维"
+            ],
+            "definition": "逻辑可指规律、逻辑规则、思维方法或逻辑学。",
+            "example": "判断文章是否逻辑清晰"
+          },
+          {
+            "name": "形式逻辑",
+            "difficulty": 3,
+            "description": "研究思维形式结构及其规律的逻辑学",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑"
+            ],
+            "definition": "形式逻辑是研究思维形式结构及其规律的狭义逻辑学。",
+            "example": "比较不同判断的形式结构",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "思维形式结构",
+            "difficulty": 3,
+            "description": "不同思维形式之间的联系方式",
+            "aliases": [],
+            "prerequisites": [
+              "判断",
+              "推理"
+            ],
+            "definition": "思维形式结构是逻辑学对不同思维形式联系方式的概括。",
+            "example": "比较“所有……都是……”的结构",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "同一律",
+            "difficulty": 3,
+            "description": "要求同一思维中的思想保持自身同一性",
+            "aliases": [],
+            "prerequisites": [
+              "形式逻辑"
+            ],
+            "definition": "同一律要求在同一思维过程中不能混淆概念或转移论题。",
+            "example": "不能把两种“好茶”混为一谈",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "偷换概念",
+            "difficulty": 3,
+            "description": "故意违反同一律而混淆概念的错误",
+            "aliases": [],
+            "prerequisites": [
+              "同一律"
+            ],
+            "definition": "偷换概念是在同一思维过程中故意改变概念含义的错误。",
+            "example": "将品质好的茶偷换成未变质的茶",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "矛盾律",
+            "difficulty": 3,
+            "description": "要求同一论断与其否定不能同真",
+            "aliases": [],
+            "prerequisites": [
+              "形式逻辑"
+            ],
+            "definition": "矛盾律要求同一时间同一方面同一对象的A和非A不能同真。",
+            "example": "不能同时说盾不可破、矛无不破",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "自相矛盾",
+            "difficulty": 3,
+            "description": "违反矛盾律而使论断不一致的错误",
+            "aliases": [],
+            "prerequisites": [
+              "矛盾律"
+            ],
+            "definition": "自相矛盾是对同一对象作出不能同真的相互冲突论断。",
+            "example": "坚称不要相信任何人的话",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "排中律",
+            "difficulty": 3,
+            "description": "要求同一论断与其否定不能同假",
+            "aliases": [],
+            "prerequisites": [
+              "形式逻辑"
+            ],
+            "definition": "排中律要求同一时间同一方面同一对象的A和非A不能同假。",
+            "example": "不能既不承认去也不承认不去",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "两不可",
+            "difficulty": 3,
+            "description": "同时否认矛盾关系双方的逻辑错误",
+            "aliases": [],
+            "prerequisites": [
+              "排中律"
+            ],
+            "definition": "两不可是同时否认A和非A、在是与非之间骑墙的错误。",
+            "example": "对作品优秀与否都表示反对",
+            "section": "第二课 把握逻辑要义"
+          },
+          {
+            "name": "科学思维",
+            "difficulty": 3,
+            "description": "符合认识规律并遵循逻辑规则的思维",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑"
+            ],
+            "definition": "科学思维是符合认识规律、遵循逻辑规则并能获得正确结果的思维。",
+            "example": "用实践检验并修正理论预言"
+          },
+          {
+            "name": "科学思维客观性",
+            "difficulty": 3,
+            "description": "从实际出发如实反映认识对象",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学思维追求认识的客观性，尊重实践检验并把握客观规律。",
+            "example": "不盲从权威而依据观测结果"
+          },
+          {
+            "name": "科学思维预见性",
+            "difficulty": 3,
+            "description": "依据规律推断事物发展趋势和前景",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学思维能够根据历史和现实材料推断事物的发展趋势。",
+            "example": "预言星光经过太阳会发生偏转"
+          },
+          {
+            "name": "科学思维可检验性",
+            "difficulty": 3,
+            "description": "思维结果必须接受实践的检验",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学思维的结果要接受实践检验并在错误时及时修正。",
+            "example": "观测检验爱因斯坦的理论预言"
+          },
+          {
+            "name": "科学精神",
+            "difficulty": 3,
+            "description": "以事实为依据、以实践检验真理的求真精神",
+            "aliases": [],
+            "prerequisites": [
+              "科学思维"
+            ],
+            "definition": "科学精神是认识和改造世界中表现出的求真务实精神。",
+            "example": "依据事实和实践作出判断"
+          },
+          {
+            "name": "论证",
+            "difficulty": 3,
+            "description": "把推理理由作为论据来说明论点",
+            "aliases": [],
+            "prerequisites": [
+              "推理"
+            ],
+            "definition": "论证是把推理的理由讲出来作为论据以支持论点。",
+            "example": "用事实和理由证明观点"
+          },
+          {
+            "name": "论辩",
+            "difficulty": 3,
+            "description": "运用论证说服或反驳他人的活动",
+            "aliases": [],
+            "prerequisites": [
+              "论证"
+            ],
+            "definition": "论辩是运用论证说服他人接受观点或反驳他人观点。",
+            "example": "在讨论中用理由反驳错误观点",
+            "section": "第二课 把握逻辑要义"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一课 走进思维世界",
+            "section_key": "81cea2d845",
+            "page_range": [
+              7,
+              12
+            ]
+          },
+          {
+            "name": "第二课 把握逻辑要义",
+            "section_key": "c6bf0bd667",
+            "page_range": [
+              12,
+              19
+            ]
+          },
+          {
+            "name": "第三课 领会科学思维",
+            "section_key": "7e5f0c2a85",
+            "page_range": [
+              19,
+              24
+            ]
+          },
+          {
+            "name": "综合探究 学会科学思维 提升思维品质",
+            "section_key": "3d0e0021e2",
+            "page_range": [
+              24,
+              25
+            ]
+          }
+        ],
+        "chapter_key": "0605201635",
+        "metadata": {
+          "volume_id": "6dc83b40fa74",
+          "file_id": "6dc83b40fa74",
+          "volume_title": "高中政治 选择性必修3 逻辑与思维",
+          "chapter_order": 1,
+          "raw_heading": "第一单元 树立科学思维观念"
+        }
+      },
+      {
+        "name": "第二单元 遵循逻辑思维规则",
+        "concepts": [
+          {
+            "name": "属性",
+            "difficulty": 1,
+            "description": "事物的性质和关系的总称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "属性是事物所具有的性质和关系。",
+            "example": "人的能思维能力是一种属性。"
+          },
+          {
+            "name": "本质属性",
+            "difficulty": 2,
+            "description": "使事物成为自身并区别于他物的内部规定性",
+            "aliases": [],
+            "prerequisites": [
+              "属性"
+            ],
+            "definition": "本质属性是一事物成为自身并区别于其他事物的内部规定性。",
+            "example": "能思维并制造工具是人的本质属性。"
+          },
+          {
+            "name": "概念",
+            "difficulty": 2,
+            "description": "通过揭示本质属性反映事物的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "本质属性"
+            ],
+            "definition": "概念是通过揭示事物本质属性而反映事物的思维形式。",
+            "example": "“人”是反映人的概念。"
+          },
+          {
+            "name": "概念的抽象性",
+            "difficulty": 2,
+            "description": "舍去个性特征，概括事物共同本质属性",
+            "aliases": [
+              "抽象性和概括性"
+            ],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "概念的抽象性是指概念舍去对象个性而把握其共同本质属性。",
+            "example": "“人”不区分男女老少。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "语词",
+            "difficulty": 1,
+            "description": "表达概念的语言形式",
+            "aliases": [],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "语词是表达概念的语言形式。",
+            "example": "“白头翁”可表达不同概念。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "内涵",
+            "difficulty": 2,
+            "description": "概念所反映事物的本质属性",
+            "aliases": [
+              "概念的内涵"
+            ],
+            "prerequisites": [
+              "概念",
+              "本质属性"
+            ],
+            "definition": "概念的内涵是概念所反映的事物的本质属性。",
+            "example": "“人”的内涵包括能思维并制造工具。"
+          },
+          {
+            "name": "外延",
+            "difficulty": 2,
+            "description": "具有概念本质属性的事物范围",
+            "aliases": [
+              "概念的外延"
+            ],
+            "prerequisites": [
+              "概念",
+              "本质属性"
+            ],
+            "definition": "概念的外延是具有概念所反映本质属性的事物范围。",
+            "example": "“人”的外延包括张三和李四。"
+          },
+          {
+            "name": "相容关系",
+            "difficulty": 2,
+            "description": "两个概念的外延具有相同部分",
+            "aliases": [],
+            "prerequisites": [
+              "外延"
+            ],
+            "definition": "相容关系是两个概念在所指范围上具有相同部分的关系。",
+            "example": "“中学生”和“球迷”有交集。"
+          },
+          {
+            "name": "全同关系",
+            "difficulty": 2,
+            "description": "两个概念的外延完全相同",
+            "aliases": [],
+            "prerequisites": [
+              "相容关系"
+            ],
+            "definition": "全同关系是两个概念外延完全相同的关系。",
+            "example": "《史记》的作者与司马迁。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "属种关系",
+            "difficulty": 2,
+            "description": "一个概念外延包含另一个概念的全部外延",
+            "aliases": [
+              "种属关系"
+            ],
+            "prerequisites": [
+              "相容关系",
+              "外延"
+            ],
+            "definition": "属种关系是外延大的概念包含外延小的概念的关系。",
+            "example": "动物与马是属种关系。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "交叉关系",
+            "difficulty": 2,
+            "description": "两个概念的外延只有部分相同",
+            "aliases": [],
+            "prerequisites": [
+              "相容关系"
+            ],
+            "definition": "交叉关系是两个概念外延有且只有一部分相同的关系。",
+            "example": "中学生与球迷存在交叉。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "不相容关系",
+            "difficulty": 2,
+            "description": "两个概念的外延没有相同部分",
+            "aliases": [
+              "全异关系"
+            ],
+            "prerequisites": [
+              "外延"
+            ],
+            "definition": "不相容关系是两个概念在所指范围上没有相同部分的关系。",
+            "example": "有效合同与无效合同。"
+          },
+          {
+            "name": "矛盾关系",
+            "difficulty": 3,
+            "description": "同属概念下外延全异且合起来等于属概念",
+            "aliases": [],
+            "prerequisites": [
+              "不相容关系",
+              "属种关系"
+            ],
+            "definition": "矛盾关系是同一属概念下两个外延全异且外延之和等于属概念的关系。",
+            "example": "正义战争与非正义战争。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "反对关系",
+            "difficulty": 3,
+            "description": "同属概念下外延全异且合起来小于属概念",
+            "aliases": [],
+            "prerequisites": [
+              "不相容关系",
+              "属种关系"
+            ],
+            "definition": "反对关系是同一属概念下两个外延全异且外延之和小于属概念的关系。",
+            "example": "黑色与白色不是全部颜色。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "定义",
+            "difficulty": 2,
+            "description": "从内涵方面明确概念的逻辑方法",
+            "aliases": [],
+            "prerequisites": [
+              "内涵",
+              "外延"
+            ],
+            "definition": "定义是从内涵方面揭示概念本质属性的逻辑方法。",
+            "example": "文学就是反映客观现实的艺术。"
+          },
+          {
+            "name": "种差加属",
+            "difficulty": 3,
+            "description": "用种差和属概念构成定义项的方法",
+            "aliases": [
+              "种差加属概念"
+            ],
+            "prerequisites": [
+              "定义",
+              "属种关系"
+            ],
+            "definition": "种差加属是以种差和属概念相加构成定义项的方法。",
+            "example": "文学以语言文字为工具加艺术。",
+            "section": "第四课 准确把握概念"
+          },
+          {
+            "name": "定义规则",
+            "difficulty": 3,
+            "description": "保证定义准确揭示概念内涵的逻辑要求",
+            "aliases": [],
+            "prerequisites": [
+              "定义"
+            ],
+            "definition": "定义规则是正确下定义时必须遵循的逻辑要求。",
+            "example": "定义项与被定义项外延必须全同。"
+          },
+          {
+            "name": "划分",
+            "difficulty": 2,
+            "description": "从外延方面明确概念的逻辑方法",
+            "aliases": [],
+            "prerequisites": [
+              "外延",
+              "属种关系"
+            ],
+            "definition": "划分是依据标准把一个概念的外延分为几个小类的逻辑方法。",
+            "example": "战争分为正义战争和非正义战争。"
+          },
+          {
+            "name": "划分规则",
+            "difficulty": 3,
+            "description": "保证概念外延划分正确的逻辑要求",
+            "aliases": [],
+            "prerequisites": [
+              "划分"
+            ],
+            "definition": "划分规则是正确划分概念外延时必须遵循的逻辑要求。",
+            "example": "子项外延之和必须等于母项外延。"
+          },
+          {
+            "name": "判断",
+            "difficulty": 2,
+            "description": "对认识对象有所断定的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "概念"
+            ],
+            "definition": "判断是对认识对象有所断定的思维形式。",
+            "example": "“这里没有污染企业”是否定判断。"
+          },
+          {
+            "name": "判断的真假",
+            "difficulty": 2,
+            "description": "判断断定与认识对象实际情况是否符合",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "判断的真假取决于其断定是否符合认识对象的实际情况。",
+            "example": "符合事实的判断是真的。",
+            "section": "第五课 正确运用判断"
+          },
+          {
+            "name": "简单判断",
+            "difficulty": 2,
+            "description": "直接由概念构成且不包含其他判断",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "简单判断是直接由概念构成而不包含其他判断的判断。",
+            "example": "“他是中学校长。”"
+          },
+          {
+            "name": "复合判断",
+            "difficulty": 2,
+            "description": "本身包含其他判断的判断",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "复合判断是本身包含其他判断的判断。",
+            "example": "“如果下雨，地面就湿。”"
+          },
+          {
+            "name": "性质判断",
+            "difficulty": 2,
+            "description": "断定对象具有或不具有某种性质",
+            "aliases": [
+              "直言判断"
+            ],
+            "prerequisites": [
+              "简单判断"
+            ],
+            "definition": "性质判断是断定认识对象具有或不具有某种性质的简单判断。",
+            "example": "所有商品都是劳动产品。"
+          },
+          {
+            "name": "关系判断",
+            "difficulty": 2,
+            "description": "断定认识对象之间关系的判断",
+            "aliases": [],
+            "prerequisites": [
+              "简单判断"
+            ],
+            "definition": "关系判断是断定认识对象之间关系的判断。",
+            "example": "小明与小华是同学。",
+            "section": "第五课 正确运用判断"
+          },
+          {
+            "name": "联言判断",
+            "difficulty": 2,
+            "description": "断定几个事物情况同时存在",
+            "aliases": [],
+            "prerequisites": [
+              "复合判断"
+            ],
+            "definition": "联言判断是断定几个联言支同时成立的复合判断。",
+            "example": "既要努力奋斗，也要知足常乐。"
+          },
+          {
+            "name": "选言判断",
+            "difficulty": 2,
+            "description": "断定事物存在多种可能情况中的一种或多种",
+            "aliases": [],
+            "prerequisites": [
+              "复合判断"
+            ],
+            "definition": "选言判断是断定若干可能情况中至少一种成立的复合判断。",
+            "example": "错误或是不合语法，或是不合实际。"
+          },
+          {
+            "name": "假言判断",
+            "difficulty": 2,
+            "description": "反映事物情况之间条件关系",
+            "aliases": [],
+            "prerequisites": [
+              "复合判断"
+            ],
+            "definition": "假言判断是反映事物情况之间条件关系的复合判断。",
+            "example": "如果学习方法不当，就不能提高效率。"
+          },
+          {
+            "name": "充分条件",
+            "difficulty": 3,
+            "description": "有前一种情况就必有后一种情况",
+            "aliases": [],
+            "prerequisites": [
+              "假言判断"
+            ],
+            "definition": "充分条件是有前一种事物情况就必然有后一种事物情况的条件。",
+            "example": "学习方法不当会导致效率不能提高。"
+          },
+          {
+            "name": "必要条件",
+            "difficulty": 3,
+            "description": "产生某种情况不可缺少的条件",
+            "aliases": [],
+            "prerequisites": [
+              "假言判断"
+            ],
+            "definition": "必要条件是产生某种事物情况不可缺少的条件。",
+            "example": "年满十八周岁是有选举权的必要条件。"
+          },
+          {
+            "name": "充分必要条件",
+            "difficulty": 3,
+            "description": "同时具备充分条件和必要条件",
+            "aliases": [],
+            "prerequisites": [
+              "充分条件",
+              "必要条件"
+            ],
+            "definition": "充分必要条件是有此情况必有彼情况且无此情况必无彼情况的条件。",
+            "example": "数为偶数当且仅当能被2整除。"
+          },
+          {
+            "name": "推理",
+            "difficulty": 2,
+            "description": "由已有判断推出新判断的思维形式",
+            "aliases": [],
+            "prerequisites": [
+              "判断"
+            ],
+            "definition": "推理是从一个或几个已有判断推出新判断的思维形式。",
+            "example": "由张思德为人民利益而死推出其死重于泰山。"
+          },
+          {
+            "name": "推理结构",
+            "difficulty": 3,
+            "description": "推理前提与结论之间的逻辑联系方式",
+            "aliases": [],
+            "prerequisites": [
+              "推理"
+            ],
+            "definition": "推理结构是推理前提和结论之间的逻辑联系方式。",
+            "example": "三段论具有固定的项与判断结构。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "演绎推理",
+            "difficulty": 3,
+            "description": "从一般性前提推出个别性结论的必然推理",
+            "aliases": [],
+            "prerequisites": [
+              "推理",
+              "推理结构"
+            ],
+            "definition": "演绎推理是从一般性前提推出个别性结论的必然推理。",
+            "example": "所有经济规律客观，经济规律属于客观规律，所以经济规律客观。"
+          },
+          {
+            "name": "换质推理",
+            "difficulty": 3,
+            "description": "改变性质判断的质而得出新判断",
+            "aliases": [
+              "换质法"
+            ],
+            "prerequisites": [
+              "性质判断",
+              "演绎推理"
+            ],
+            "definition": "换质推理是通过改变已知性质判断的质而得出新判断的推理。",
+            "example": "所有金属导电，所以所有金属不是不导电。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "换位推理",
+            "difficulty": 3,
+            "description": "交换性质判断主项和谓项位置",
+            "aliases": [
+              "换位法"
+            ],
+            "prerequisites": [
+              "性质判断",
+              "演绎推理"
+            ],
+            "definition": "换位推理是通过交换性质判断主项和谓项位置而得出新判断的推理。",
+            "example": "所有马不是狗，所以所有狗不是马。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "周延",
+            "difficulty": 3,
+            "description": "判断断定主项或谓项所反映的全部对象",
+            "aliases": [],
+            "prerequisites": [
+              "性质判断",
+              "外延"
+            ],
+            "definition": "周延是指判断断定了某项所反映的全部对象。",
+            "example": "全称判断的主项周延。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "三段论",
+            "difficulty": 3,
+            "description": "以两个性质判断为前提借共同项推出结论",
+            "aliases": [],
+            "prerequisites": [
+              "性质判断",
+              "演绎推理"
+            ],
+            "definition": "三段论是以两个性质判断为前提并借助共同项推出新判断的推理。",
+            "example": "公共场所禁烟，展览厅是公共场所，所以展览厅禁烟。"
+          },
+          {
+            "name": "联言推理",
+            "difficulty": 3,
+            "description": "依据联言判断逻辑性质进行的推理",
+            "aliases": [],
+            "prerequisites": [
+              "联言判断",
+              "演绎推理"
+            ],
+            "definition": "联言推理是依据联言判断逻辑性质进行的推理。",
+            "example": "我、你、他都需努力，所以我们共同努力。",
+            "section": "第六课 掌握演绎推理方法"
+          },
+          {
+            "name": "选言推理",
+            "difficulty": 3,
+            "description": "依据选言判断逻辑性质进行的推理",
+            "aliases": [],
+            "prerequisites": [
+              "选言判断",
+              "演绎推理"
+            ],
+            "definition": "选言推理是依据选言判断逻辑性质进行的推理。",
+            "example": "错误或不合语法或不合实际，排除语法错误后指向其余情况。",
+            "section": "第六课 掌握演绎推理方法"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第四课 准确把握概念",
+            "section_key": "70bd3e00fe",
+            "page_range": [
+              27,
+              35
+            ]
+          },
+          {
+            "name": "第五课 正确运用判断",
+            "section_key": "ee05e8e25b",
+            "page_range": [
+              35,
+              48
+            ]
+          },
+          {
+            "name": "第六课 掌握演绎推理方法",
+            "section_key": "9a9cf76f1e",
+            "page_range": [
+              48,
+              64
+            ]
+          },
+          {
+            "name": "第七课 学会归纳与类比推理",
+            "section_key": "3dbdddd0c6",
+            "page_range": [
+              64,
+              74
+            ]
+          },
+          {
+            "name": "综合探究 把握逻辑规则 纠正逻辑错误",
+            "section_key": "94ef56579c",
+            "page_range": [
+              74,
+              75
+            ]
+          }
+        ],
+        "chapter_key": "3f719bd004",
+        "metadata": {
+          "volume_id": "6dc83b40fa74",
+          "file_id": "6dc83b40fa74",
+          "volume_title": "高中政治 选择性必修3 逻辑与思维",
+          "chapter_order": 2,
+          "raw_heading": "第二单元 遵循逻辑思维规则"
+        }
+      },
+      {
+        "name": "第三单元 运用辩证思维方法",
+        "concepts": [
+          {
+            "name": "辩证思维",
+            "difficulty": 2,
+            "description": "用联系、发展、全面的观点认识和思考问题",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "辩证思维是用联系、发展、全面的观点看待事物和思考问题的思维方式。",
+            "example": "根据水势变化调整渡河方案"
+          },
+          {
+            "name": "矛盾分析方法",
+            "difficulty": 3,
+            "description": "在对立统一中把握事物本质和规律的方法",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "矛盾分析方法是通过认识矛盾及其对立统一关系把握事物的方法。",
+            "example": "区分主要矛盾和次要矛盾",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "形而上学思维",
+            "difficulty": 2,
+            "description": "割裂联系、静止片面看待事物的思维方式",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "形而上学思维是把事物及其联系看成绝对固定和一成不变的思维方式。",
+            "example": "认为河流永远按旧水位渡河"
+          },
+          {
+            "name": "整体性",
+            "difficulty": 3,
+            "description": "从整体角度再现要素及其联系并思考问题",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "整体性是辩证思维把认识对象各要素及其联系作为有机整体考察的特征。",
+            "example": "统筹载人航天工程八大系统",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "动态性",
+            "difficulty": 3,
+            "description": "用变化发展和矛盾运动的观点认识事物",
+            "aliases": [],
+            "prerequisites": [
+              "辩证思维"
+            ],
+            "definition": "动态性是辩证思维按照事物发生、发展和变化的过程考察对象的特征。",
+            "example": "分析鹿群数量变化及其后果",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "分析",
+            "difficulty": 2,
+            "description": "分解对象的部分、要素、层次或发展阶段",
+            "aliases": [],
+            "prerequisites": [
+              "整体性"
+            ],
+            "definition": "分析是把认识对象分解为部分、要素、层次或阶段分别认识的思维方法。",
+            "example": "分析血液中的血细胞和血浆"
+          },
+          {
+            "name": "定性分析",
+            "difficulty": 2,
+            "description": "确定对象是否具有某种性质或成分",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "定性分析是确定研究对象是否具有某种性质或成分的分析方法。",
+            "example": "判断血液是否含有某种凝集原",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "定量分析",
+            "difficulty": 2,
+            "description": "确定对象在某方面的数量或程度",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "定量分析是确定研究对象在某个方面有多少的分析方法。",
+            "example": "测定水坝下游盐分含量",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "功能分析",
+            "difficulty": 2,
+            "description": "确定研究对象具有什么作用或功能",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "功能分析是确定研究对象具有何种功能或作用的分析方法。",
+            "example": "分析水坝的防洪和灌溉功能",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "因果分析",
+            "difficulty": 2,
+            "description": "确定引起某一现象发生或变化的原因",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "因果分析是确定引起某一现象发生或变化原因的分析方法。",
+            "example": "分析土地盐碱化的成因",
+            "section": "第八课 把握辩证分合"
+          },
+          {
+            "name": "综合",
+            "difficulty": 2,
+            "description": "按固有联系联结各部分形成整体认识",
+            "aliases": [],
+            "prerequisites": [
+              "分析"
+            ],
+            "definition": "综合是把对象的各部分、要素、层次和阶段按固有联系统一考察的方法。",
+            "example": "综合各元素性质发现周期规律"
+          },
+          {
+            "name": "分析与综合关系",
+            "difficulty": 4,
+            "description": "分析与综合相互依赖、相辅相成、不断转化",
+            "aliases": [
+              "分析与综合的辩证关系"
+            ],
+            "prerequisites": [
+              "分析",
+              "综合"
+            ],
+            "definition": "分析是综合的基础，综合是分析的先导，二者在对立统一中推动认识发展。",
+            "example": "先分解延安各部分再形成整体认识"
+          },
+          {
+            "name": "质",
+            "difficulty": 2,
+            "description": "使事物成为自身并区别于他物的规定性",
+            "aliases": [
+              "质的规定性"
+            ],
+            "prerequisites": [],
+            "definition": "质是一事物成为自身并区别于他事物的内部固有规定性。",
+            "example": "水保持液态时具有液体的质"
+          },
+          {
+            "name": "量",
+            "difficulty": 2,
+            "description": "事物规模、程度、速度等可量化规定性",
+            "aliases": [
+              "量的规定性"
+            ],
+            "prerequisites": [],
+            "definition": "量是事物存在和发展的规模、程度、速度及构成因素排列组合等规定性。",
+            "example": "水温从20℃升至90℃"
+          },
+          {
+            "name": "量变",
+            "difficulty": 2,
+            "description": "事物量的变化，通常保持原有性质",
+            "aliases": [],
+            "prerequisites": [
+              "质",
+              "量"
+            ],
+            "definition": "量变是事物在量上的变化，是事物发展的一种基本状态。",
+            "example": "持续积累知识但尚未形成飞跃"
+          },
+          {
+            "name": "质变",
+            "difficulty": 2,
+            "description": "事物质的变化，表现为从旧质到新质的飞跃",
+            "aliases": [],
+            "prerequisites": [
+              "质",
+              "量"
+            ],
+            "definition": "质变是事物根本性质的变化，是事物发展的一种基本状态。",
+            "example": "水超过100℃变成水蒸气"
+          },
+          {
+            "name": "质量互变规律",
+            "difficulty": 4,
+            "description": "量变与质变相互区别、联系并相互转化",
+            "aliases": [
+              "量变与质变规律"
+            ],
+            "prerequisites": [
+              "量变",
+              "质变"
+            ],
+            "definition": "质量互变规律揭示量变是质变前提，质变是量变必然结果并开启新的量变。",
+            "example": "日积月累最终取得学习突破"
+          },
+          {
+            "name": "渐进性与飞跃性",
+            "difficulty": 4,
+            "description": "事物发展中渐进积累与阶段飞跃的统一",
+            "aliases": [],
+            "prerequisites": [
+              "量变",
+              "质变"
+            ],
+            "definition": "渐进性与飞跃性是事物发展过程中相互区别又相互包含的两种形式。",
+            "example": "长期积累后实现技术突破",
+            "section": "第九课 理解质量互变"
+          },
+          {
+            "name": "度",
+            "difficulty": 3,
+            "description": "事物保持自身质稳定性的量的限度",
+            "aliases": [],
+            "prerequisites": [
+              "质",
+              "量"
+            ],
+            "definition": "度是一事物保持自身质的稳定性的量的限度。",
+            "example": "水在0℃到100℃内保持液态"
+          },
+          {
+            "name": "关节点",
+            "difficulty": 3,
+            "description": "量变达到极限并引起质变的节点",
+            "aliases": [
+              "临界点"
+            ],
+            "prerequisites": [
+              "度",
+              "量变",
+              "质变"
+            ],
+            "definition": "关节点是事物量变达到极限并引起质变的节点。",
+            "example": "100℃是水沸腾的关节点",
+            "section": "第九课 理解质量互变"
+          },
+          {
+            "name": "适度原则",
+            "difficulty": 3,
+            "description": "在度的范围内把握事物发展的适当程度",
+            "aliases": [],
+            "prerequisites": [
+              "度",
+              "质量互变规律"
+            ],
+            "definition": "适度原则要求把握分寸，将事物变化控制在度的范围内并防止极端化。",
+            "example": "服药剂量既不能过少也不能过多"
+          },
+          {
+            "name": "肯定方面",
+            "difficulty": 3,
+            "description": "保持事物自身存在和性质的方面",
+            "aliases": [],
+            "prerequisites": [
+              "质"
+            ],
+            "definition": "肯定方面是事物保持自身存在、肯定其为自身的方面。",
+            "example": "传统文化中有益的思想内容",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "否定方面",
+            "difficulty": 3,
+            "description": "促使事物灭亡并转化为他物的方面",
+            "aliases": [],
+            "prerequisites": [
+              "质"
+            ],
+            "definition": "否定方面是促使事物灭亡并转化为他事物的方面。",
+            "example": "旧制度中阻碍发展的因素",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "辩证否定",
+            "difficulty": 3,
+            "description": "包含肯定、在自我否定中实现更新的否定",
+            "aliases": [],
+            "prerequisites": [
+              "肯定方面",
+              "否定方面"
+            ],
+            "definition": "辩证否定是包含肯定因素、通过自我否定实现自我更新的否定。",
+            "example": "批判继承传统文化"
+          },
+          {
+            "name": "扬弃",
+            "difficulty": 4,
+            "description": "既取消舍弃又保持保存的辩证否定",
+            "aliases": [],
+            "prerequisites": [
+              "辩证否定"
+            ],
+            "definition": "扬弃是对旧事物合理因素加以保留并对其改造发展的辩证否定。",
+            "example": "取传统文化精华并创新转化"
+          },
+          {
+            "name": "感性具体",
+            "difficulty": 2,
+            "description": "通过感官形成的事物外部形象和整体表象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "感性具体是事物多种现象和外部联系在头脑中的直观整体反映。",
+            "example": "初到学校形成的整体印象"
+          },
+          {
+            "name": "思维抽象",
+            "difficulty": 3,
+            "description": "从整体或个性中抽取本质规定或共性",
+            "aliases": [],
+            "prerequisites": [
+              "感性具体",
+              "分析"
+            ],
+            "definition": "思维抽象是从多样性统一的整体中抽取某方面本质或共性的思维活动。",
+            "example": "从不同商品中抽取共同属性"
+          },
+          {
+            "name": "分离",
+            "difficulty": 2,
+            "description": "暂时抽离对象与其他对象的联系进行考察",
+            "aliases": [],
+            "prerequisites": [
+              "思维抽象"
+            ],
+            "definition": "分离是思维抽象中暂不考虑对象与其他对象联系的起始环节。",
+            "example": "单独研究理想气体性质",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "提纯",
+            "difficulty": 3,
+            "description": "排除干扰因素以研究对象某方面规律",
+            "aliases": [],
+            "prerequisites": [
+              "分离"
+            ],
+            "definition": "提纯是在思想中排除干扰因素以研究事物某一方面性质和规律的环节。",
+            "example": "忽略摩擦研究理想运动",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "简略化",
+            "difficulty": 2,
+            "description": "对抽象结果作简要表达或处理",
+            "aliases": [],
+            "prerequisites": [
+              "提纯"
+            ],
+            "definition": "简略化是对单一状态下认识结果进行简要化处理或表达的环节。",
+            "example": "用符号表示一般数量关系",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "理想化",
+            "difficulty": 3,
+            "description": "在思维中对对象存在状态进行纯然构想",
+            "aliases": [],
+            "prerequisites": [
+              "思维抽象"
+            ],
+            "definition": "理想化是在思维中对认识对象存在状态进行纯然构想的抽象形式。",
+            "example": "设想没有黏滞性的理想液体",
+            "section": "第十课 推动认识发展"
+          },
+          {
+            "name": "思维具体",
+            "difficulty": 4,
+            "description": "在理性层次再现事物具体整体及其规律",
+            "aliases": [],
+            "prerequisites": [
+              "思维抽象",
+              "综合"
+            ],
+            "definition": "思维具体是把事物各方面本质规定按内在联系综合起来形成的整体认识。",
+            "example": "从商品出发把握资本主义社会规律"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第八课 把握辩证分合",
+            "section_key": "994ef3e135",
+            "page_range": [
+              77,
+              85
+            ]
+          },
+          {
+            "name": "第九课 理解质量互变",
+            "section_key": "6bc5f14e96",
+            "page_range": [
+              85,
+              90
+            ]
+          },
+          {
+            "name": "第十课 推动认识发展",
+            "section_key": "cc55445606",
+            "page_range": [
+              90,
+              98
+            ]
+          },
+          {
+            "name": "综合探究 领悟辩证精髓 处理复杂问题",
+            "section_key": "9194862893",
+            "page_range": [
+              98,
+              99
+            ]
+          }
+        ],
+        "chapter_key": "887031b6ea",
+        "metadata": {
+          "volume_id": "6dc83b40fa74",
+          "file_id": "6dc83b40fa74",
+          "volume_title": "高中政治 选择性必修3 逻辑与思维",
+          "chapter_order": 3,
+          "raw_heading": "第三单元 运用辩证思维方法"
+        }
+      },
+      {
+        "name": "第四单元 提高创新思维能力",
+        "concepts": [
+          {
+            "name": "创新思维",
+            "difficulty": 3,
+            "description": "在实践中破除迷信、超越陈规并有所创新的思维活动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "创新思维是人们在实践中破除迷信、超越陈规，有所发现、有所发明的思维活动。",
+            "example": "蔡伦继承前人经验改进造纸材料和工艺。"
+          },
+          {
+            "name": "创新思维多向性",
+            "difficulty": 3,
+            "description": "从不同角度、层次和条件构思多种设想",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "创新思维多向性是指思维能够从不同方向探索多个设想和答案。",
+            "example": "灯泡容积难以计算时改用水测量。"
+          },
+          {
+            "name": "创新思维跨越性",
+            "difficulty": 3,
+            "description": "思维过程中常表现为省略或跨越推理步骤",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "创新思维跨越性是指思维活动不排斥逻辑推导但常对推理步骤进行省略或跨越。",
+            "example": "爱迪生用水快速测出灯泡容积。"
+          },
+          {
+            "name": "创新思维独特性",
+            "difficulty": 3,
+            "description": "用独特巧妙的方法解决没有现成答案的问题",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "创新思维独特性是指针对复杂问题形成常规方法难以得到的独特结果。",
+            "example": "移动支付改变了传统支付方式。"
+          },
+          {
+            "name": "联想思维",
+            "difficulty": 3,
+            "description": "联结记忆中不同事物的认识并进行思考",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "联想思维是将记忆中对不同事物的认识进行联结与思考的思维活动。",
+            "example": "由炒菜锅倒扣在头上联想到军用钢盔。"
+          },
+          {
+            "name": "联想思维跨越性",
+            "difficulty": 3,
+            "description": "把相关或看似不相关的对象建立新的关联",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "联想思维跨越性是指其联结方式能够跨越事物之间的表面关联。",
+            "example": "由少女和鱼的形象联结成美人鱼。"
+          },
+          {
+            "name": "联想思维畅想性",
+            "difficulty": 3,
+            "description": "突破逻辑限制展开构想、想象甚至幻想",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "联想思维畅想性是指思维能够非逻辑地畅想多种可能形象和情景。",
+            "example": "畅想没有货币的世界会怎样。"
+          },
+          {
+            "name": "迁移",
+            "difficulty": 3,
+            "description": "将已有认识对象的性质或作用移用于新对象",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "迁移是将不同认识对象的性质、作用等进行位置变迁与功能移植。",
+            "example": "把精准滴灌方式迁移到精准扶贫中。"
+          },
+          {
+            "name": "想象",
+            "difficulty": 3,
+            "description": "加工改造已有表象并重新组合产生新形象",
+            "aliases": [],
+            "prerequisites": [
+              "联想思维"
+            ],
+            "definition": "想象是在头脑中对已有事物表象进行加工、改造和重新组合的思维过程。",
+            "example": "根据云朵形状想象出小兔子。"
+          },
+          {
+            "name": "形象化想象",
+            "difficulty": 3,
+            "description": "把抽象思想或概念按照目的转化为具体形象",
+            "aliases": [],
+            "prerequisites": [
+              "想象"
+            ],
+            "definition": "形象化想象是把抽象的思想、概念形象化而形成创造性新形象的想象。",
+            "example": "用生动比喻表现革命发展的前景。"
+          },
+          {
+            "name": "有意想象",
+            "difficulty": 2,
+            "description": "在意识控制下按照一定目的自觉展开想象",
+            "aliases": [],
+            "prerequisites": [
+              "想象"
+            ],
+            "definition": "有意想象是在意识控制下，按照一定目的自觉进行的想象。",
+            "example": "为解决问题而设想多种方案。",
+            "section": "第十一课 创新思维要善于联想"
+          },
+          {
+            "name": "发散思维",
+            "difficulty": 3,
+            "description": "从不同角度和方向寻求多样性答案",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "发散思维是根据已知信息，从不同角度和方向寻求多样性答案的思维方式。",
+            "example": "围绕清除电话线积雪提出36个设想。"
+          },
+          {
+            "name": "检核表法",
+            "difficulty": 3,
+            "description": "逐项检查事物的多个方面寻找创新突破口",
+            "aliases": [],
+            "prerequisites": [
+              "发散思维"
+            ],
+            "definition": "检核表法是通过详细检查设想问题的多个方面来产生创新思路的方法。",
+            "example": "检查物品能否扩大、缩小、组合或代替。",
+            "section": "第十二课 创新思维要多路探索"
+          },
+          {
+            "name": "信息交合法",
+            "difficulty": 4,
+            "description": "有目的地组合不同信息以产生新思路",
+            "aliases": [],
+            "prerequisites": [
+              "发散思维"
+            ],
+            "definition": "信息交合法是列举并组合已有或引进的不同事物信息以产生新思路的方法。",
+            "example": "组合杯子的材料、结构和功能设计新杯子。",
+            "section": "第十二课 创新思维要多路探索"
+          },
+          {
+            "name": "头脑风暴法",
+            "difficulty": 4,
+            "description": "通过群体自由畅想和相互激励产生新设想",
+            "aliases": [
+              "智力激励法"
+            ],
+            "prerequisites": [
+              "发散思维"
+            ],
+            "definition": "头脑风暴法是以会议形式集思广益的群体思维发散技法。",
+            "example": "会议中遵循延迟评判、以量求质原则。"
+          },
+          {
+            "name": "聚合思维",
+            "difficulty": 3,
+            "description": "集中多种信息形成条理化的最优方案",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "聚合思维是利用知识和经验将众多信息引导到逻辑思路中以解决问题的思维方式。",
+            "example": "从多个候选人中选定最值得尊敬的人。"
+          },
+          {
+            "name": "正向思维",
+            "difficulty": 2,
+            "description": "依据已有常规认识沿原有方向思考",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "正向思维是依据人们已有的事物常规认识进行思考的思维方式。",
+            "example": "按热源在下、食物在上的方式设计烤炉。"
+          },
+          {
+            "name": "逆向思维",
+            "difficulty": 4,
+            "description": "从原理、构成、功能等反面反向求索",
+            "aliases": [
+              "反向法"
+            ],
+            "prerequisites": [
+              "正向思维"
+            ],
+            "definition": "逆向思维是从已有认识的反面去思考和求索以实现创新的方法。",
+            "example": "把电烤炉热源改到食物上方。"
+          },
+          {
+            "name": "正逆思维互补",
+            "difficulty": 4,
+            "description": "联系正向与逆向思维以避免片面和僵化",
+            "aliases": [],
+            "prerequisites": [
+              "正向思维",
+              "逆向思维"
+            ],
+            "definition": "正逆思维互补是将正向思维与逆向思维联系起来、相互补充的思维方式。",
+            "example": "拍摄和放映时结合正负畸变制作宽银幕电影。"
+          },
+          {
+            "name": "超前思维",
+            "difficulty": 4,
+            "description": "依据历史现实推测并把握事物未来趋势",
+            "aliases": [],
+            "prerequisites": [
+              "创新思维"
+            ],
+            "definition": "超前思维是从事物发展现实出发，运用推理和想象判断未来趋势的思维形态。",
+            "example": "诸葛亮分析形势提出三分天下的规划。"
+          },
+          {
+            "name": "超前意识",
+            "difficulty": 3,
+            "description": "不满足现状、居安思危并主动追求更好发展",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "超前意识是不满足现状、居安思危并自觉站得更高看得更远的意识。",
+            "example": "国家制定中长期发展规划。"
+          },
+          {
+            "name": "矛盾分析方法",
+            "difficulty": 4,
+            "description": "通过分析和解决矛盾把握事物发展方向",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "矛盾分析方法是分析矛盾、解决矛盾并据此认识事物发展趋势的方法。",
+            "example": "《论持久战》分析中日双方矛盾预测战争进程。",
+            "section": "第十三课 创新思维要力求超前"
+          },
+          {
+            "name": "调查研究",
+            "difficulty": 3,
+            "description": "有计划了解真实情况并分析其本质和规律",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "调查研究是通过调查获取材料并加以分析综合以认识本质和规律的过程。",
+            "example": "深入基层群众了解情况后作出决策。",
+            "section": "第十三课 创新思维要力求超前"
+          },
+          {
+            "name": "定性预测",
+            "difficulty": 3,
+            "description": "对事物发展状况作直观估计和评价",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "定性预测是对事物未来发展状况进行直观估计和评价的预测方法。",
+            "example": "通过历史类比推测事件走势。",
+            "section": "第十三课 创新思维要力求超前"
+          },
+          {
+            "name": "定量预测",
+            "difficulty": 4,
+            "description": "运用数据、变量和数学模型预测未来发展",
+            "aliases": [],
+            "prerequisites": [
+              "超前思维"
+            ],
+            "definition": "定量预测是利用统计数据和数学方法构建模型以预测未来发展的方法。",
+            "example": "用回归分析预测经济变量变化。",
+            "section": "第十三课 创新思维要力求超前"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第十一课 创新思维要善于联想",
+            "section_key": "c2384121c2",
+            "page_range": [
+              101,
+              109
+            ]
+          },
+          {
+            "name": "第十二课 创新思维要多路探索",
+            "section_key": "60410c590c",
+            "page_range": [
+              109,
+              118
+            ]
+          },
+          {
+            "name": "第十三课 创新思维要力求超前",
+            "section_key": "c0a4bb51ee",
+            "page_range": [
+              118,
+              124
+            ]
+          },
+          {
+            "name": "综合探究 结合社会实践 勇于开拓创新",
+            "section_key": "086e1127ae",
+            "page_range": [
+              124,
+              130
+            ]
+          }
+        ],
+        "chapter_key": "6cf25a5f07",
+        "metadata": {
+          "volume_id": "6dc83b40fa74",
+          "file_id": "6dc83b40fa74",
+          "volume_title": "高中政治 选择性必修3 逻辑与思维",
+          "chapter_order": 4,
+          "raw_heading": "第四单元 提高创新思维能力"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "81cea2d845": [
+        7,
+        12
+      ],
+      "第一课 走进思维世界": [
+        7,
+        12
+      ],
+      "c6bf0bd667": [
+        12,
+        19
+      ],
+      "第二课 把握逻辑要义": [
+        12,
+        19
+      ],
+      "7e5f0c2a85": [
+        19,
+        24
+      ],
+      "第三课 领会科学思维": [
+        19,
+        24
+      ],
+      "3d0e0021e2": [
+        24,
+        25
+      ],
+      "综合探究 学会科学思维 提升思维品质": [
+        24,
+        25
+      ],
+      "70bd3e00fe": [
+        27,
+        35
+      ],
+      "第四课 准确把握概念": [
+        27,
+        35
+      ],
+      "ee05e8e25b": [
+        35,
+        48
+      ],
+      "第五课 正确运用判断": [
+        35,
+        48
+      ],
+      "9a9cf76f1e": [
+        48,
+        64
+      ],
+      "第六课 掌握演绎推理方法": [
+        48,
+        64
+      ],
+      "3dbdddd0c6": [
+        64,
+        74
+      ],
+      "第七课 学会归纳与类比推理": [
+        64,
+        74
+      ],
+      "94ef56579c": [
+        74,
+        75
+      ],
+      "综合探究 把握逻辑规则 纠正逻辑错误": [
+        74,
+        75
+      ],
+      "994ef3e135": [
+        77,
+        85
+      ],
+      "第八课 把握辩证分合": [
+        77,
+        85
+      ],
+      "6bc5f14e96": [
+        85,
+        90
+      ],
+      "第九课 理解质量互变": [
+        85,
+        90
+      ],
+      "cc55445606": [
+        90,
+        98
+      ],
+      "第十课 推动认识发展": [
+        90,
+        98
+      ],
+      "9194862893": [
+        98,
+        99
+      ],
+      "综合探究 领悟辩证精髓 处理复杂问题": [
+        98,
+        99
+      ],
+      "c2384121c2": [
+        101,
+        109
+      ],
+      "第十一课 创新思维要善于联想": [
+        101,
+        109
+      ],
+      "60410c590c": [
+        109,
+        118
+      ],
+      "第十二课 创新思维要多路探索": [
+        109,
+        118
+      ],
+      "c0a4bb51ee": [
+        118,
+        124
+      ],
+      "第十三课 创新思维要力求超前": [
+        118,
+        124
+      ],
+      "086e1127ae": [
+        124,
+        130
+      ],
+      "综合探究 结合社会实践 勇于开拓创新": [
+        124,
+        130
+      ]
+    }
+  }
+}

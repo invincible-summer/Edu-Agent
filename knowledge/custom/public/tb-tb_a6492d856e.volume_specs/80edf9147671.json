@@ -1,0 +1,916 @@
+{
+  "file_id": "80edf9147671",
+  "text_sha256": "9208e953845dde8389df78795b4c047e4127eba56157acb4496d071d3829a0db",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章　原子结构　元素周期律",
+        "concepts": [
+          {
+            "name": "原子结构",
+            "difficulty": 2,
+            "description": "研究原子的组成及其内部结构。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原子结构是指原子中各组成微粒及其排列关系。",
+            "example": "原子由原子核和核外电子构成。",
+            "section": "第 1 节 原子结构与元素性质"
+          },
+          {
+            "name": "元素性质",
+            "difficulty": 2,
+            "description": "描述元素及其形成物质所表现出的性质。",
+            "aliases": [],
+            "prerequisites": [
+              "原子结构"
+            ],
+            "definition": "元素性质是元素在组成物质和发生变化时表现出的特征。",
+            "example": "不同元素具有不同的性质。"
+          },
+          {
+            "name": "元素周期律",
+            "difficulty": 3,
+            "description": "元素性质随核电荷数递增呈周期性变化的规律。",
+            "aliases": [],
+            "prerequisites": [
+              "原子结构",
+              "元素性质"
+            ],
+            "definition": "元素周期律是元素性质随元素核电荷数递增而呈周期性变化的规律。",
+            "example": "元素性质会随核电荷数增加而呈现周期性变化。",
+            "section": "第 2 节 元素周期律和元素周期表"
+          },
+          {
+            "name": "元素周期表",
+            "difficulty": 3,
+            "description": "按原子序数递增排列元素并体现周期律的表格。",
+            "aliases": [],
+            "prerequisites": [
+              "元素周期律"
+            ],
+            "definition": "元素周期表是按照原子序数递增顺序排列元素的表格。",
+            "example": "同一周期的元素按原子序数递增排列。"
+          },
+          {
+            "name": "元素性质递变",
+            "difficulty": 3,
+            "description": "元素性质在周期和族中呈现的有规律变化。",
+            "aliases": [],
+            "prerequisites": [
+              "元素周期律",
+              "元素周期表"
+            ],
+            "definition": "元素性质递变是元素性质沿周期或族方向发生的规律性变化。",
+            "example": "同周期元素的性质随原子序数变化而递变。",
+            "section": "微项目 海带提碘与海水提溴——体验元素性质递变规律的实际应用"
+          },
+          {
+            "name": "周期表应用",
+            "difficulty": 3,
+            "description": "利用元素周期表预测元素性质并指导实际应用。",
+            "aliases": [],
+            "prerequisites": [
+              "元素周期表",
+              "元素性质递变"
+            ],
+            "definition": "周期表应用是依据元素位置和性质递变规律分析、预测元素性质。",
+            "example": "根据元素在周期表中的位置推测其性质。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节　原子结构与元素性质",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 2 节　元素周期律和元素周期表",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 3 节　元素周期表的应用",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "微项目　海带提碘与海水提溴——体验元素性质递变规律的实际应用",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "本章自我评价",
+            "page_range": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章　简单的有机化合物",
+        "concepts": [],
+        "sections": [
+          {
+            "name": "第 1 节　认识有机化合物",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 2 节　从化石燃料中获取有机化合物",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 3 节　饮食中的有机化合物",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "微项目　自制米酒——领略我国传统酿造工艺的魅力",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "本章自我评价",
+            "page_range": [
+              6,
+              46
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章　化学键　化学反应规律",
+        "concepts": [
+          {
+            "name": "化学键",
+            "difficulty": 2,
+            "description": "相邻原子间存在的强相互作用。",
+            "aliases": [
+              "chemical bond"
+            ],
+            "prerequisites": [],
+            "definition": "化学键是相邻原子间的强相互作用。",
+            "example": "水分子中氢原子与氧原子之间存在化学键。"
+          },
+          {
+            "name": "化学反应实质",
+            "difficulty": 2,
+            "description": "反应中旧化学键断裂并形成新化学键。",
+            "aliases": [],
+            "prerequisites": [
+              "化学键"
+            ],
+            "definition": "化学反应的实质是旧化学键断裂和新化学键形成。",
+            "example": "水分解时氢氧键断裂并形成氢氢键、氧氧键。"
+          },
+          {
+            "name": "离子键",
+            "difficulty": 2,
+            "description": "阴、阳离子间通过静电作用形成的化学键。",
+            "aliases": [
+              "ionic bond"
+            ],
+            "prerequisites": [
+              "化学键"
+            ],
+            "definition": "离子键是阴、阳离子之间通过静电作用形成的化学键。",
+            "example": "氯化钠中Na+与Cl-之间存在离子键。"
+          },
+          {
+            "name": "共价键",
+            "difficulty": 2,
+            "description": "原子之间通过共用电子形成的化学键。",
+            "aliases": [
+              "covalent bond"
+            ],
+            "prerequisites": [
+              "化学键"
+            ],
+            "definition": "共价键是原子之间通过共用电子形成的化学键。",
+            "example": "氯化氢分子中氢原子与氯原子形成共价键。"
+          },
+          {
+            "name": "电子式",
+            "difficulty": 2,
+            "description": "用元素符号和符号表示原子最外层电子的式子。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电子式是由元素符号及表示最外层电子的点或叉组成的式子。",
+            "example": "用电子式表示氯化钠中钠、氯离子的形成。",
+            "section": "第 1 节 化学键与物质构成"
+          },
+          {
+            "name": "离子化合物",
+            "difficulty": 2,
+            "description": "由阳离子与阴离子构成的化合物。",
+            "aliases": [
+              "ionic compound"
+            ],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子化合物是由阳离子与阴离子构成的化合物。",
+            "example": "NaCl、KOH和CaO都是离子化合物。"
+          },
+          {
+            "name": "共价化合物",
+            "difficulty": 2,
+            "description": "由原子通过共价键构成的化合物。",
+            "aliases": [
+              "covalent compound"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "共价化合物是由原子通过共价键构成的化合物。",
+            "example": "HCl、H2O和CO2都是共价化合物。"
+          },
+          {
+            "name": "极性键",
+            "difficulty": 3,
+            "description": "共用电子偏向吸引电子能力较强一方的共价键。",
+            "aliases": [
+              "极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "极性键是不同元素原子形成且共用电子偏向一方的共价键。",
+            "example": "乙醇分子中的碳氧键具有极性。",
+            "section": "第 1 节 化学键与物质构成"
+          },
+          {
+            "name": "非极性键",
+            "difficulty": 3,
+            "description": "同种元素原子间共用电子的共价键。",
+            "aliases": [
+              "非极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "非极性键是同种元素原子形成且共用电子不偏向一方的共价键。",
+            "example": "氢气分子中的氢氢键是非极性键。",
+            "section": "第 1 节 化学键与物质构成"
+          },
+          {
+            "name": "化学反应能量变化",
+            "difficulty": 3,
+            "description": "化学键断裂和形成伴随的能量吸收或释放。",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应实质"
+            ],
+            "definition": "化学反应中的能量变化源于破坏旧键吸能和形成新键放能。",
+            "example": "木炭燃烧时化学能转化为热能和光能。"
+          },
+          {
+            "name": "吸热反应",
+            "difficulty": 2,
+            "description": "最终表现为吸收热量的化学反应。",
+            "aliases": [
+              "endothermic reaction"
+            ],
+            "prerequisites": [
+              "化学反应能量变化"
+            ],
+            "definition": "吸热反应是最终表现为吸收热量的化学反应。",
+            "example": "碳酸钙受热分解属于吸热反应。"
+          },
+          {
+            "name": "放热反应",
+            "difficulty": 2,
+            "description": "最终表现为释放热量的化学反应。",
+            "aliases": [
+              "exothermic reaction"
+            ],
+            "prerequisites": [
+              "化学反应能量变化"
+            ],
+            "definition": "放热反应是最终表现为释放热量的化学反应。",
+            "example": "燃烧、金属与酸反应属于放热反应。"
+          },
+          {
+            "name": "化学电池",
+            "difficulty": 3,
+            "description": "利用化学反应将化学能转化为电能的装置。",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应能量变化"
+            ],
+            "definition": "化学电池是利用化学反应将化学能直接转化为电能的装置。",
+            "example": "氢氧燃料电池利用氢气和氧气反应产生电能。",
+            "section": "第 2 节 化学反应与能量转化"
+          },
+          {
+            "name": "原电池",
+            "difficulty": 3,
+            "description": "依据原电池原理制成的化学电池装置。",
+            "aliases": [],
+            "prerequisites": [
+              "化学电池"
+            ],
+            "definition": "原电池是利用氧化还原反应将化学能直接转化为电能的装置。",
+            "example": "锌片、铜片和稀硫酸可组成简单原电池。"
+          },
+          {
+            "name": "原电池闭合回路",
+            "difficulty": 3,
+            "description": "通过离子导体和电子导体形成导电回路。",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "原电池需由离子导体和电子导体形成闭合回路以产生电流。",
+            "example": "稀硫酸传导离子，导线传导电子。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节　化学键与物质构成",
+            "page_range": [
+              47,
+              53
+            ]
+          },
+          {
+            "name": "第 2 节　化学反应与能量转化",
+            "page_range": [
+              53,
+              63
+            ]
+          },
+          {
+            "name": "第 3 节　化学反应的快慢和限度",
+            "page_range": [
+              63,
+              75
+            ]
+          },
+          {
+            "name": "本章自我评价",
+            "page_range": [
+              76,
+              138
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 原子结构 元素周期律",
+        "concepts": [
+          {
+            "name": "原子结构",
+            "difficulty": 2,
+            "description": "研究原子的组成及其内部结构。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原子结构是指原子中各组成微粒及其排列关系。",
+            "example": "原子由原子核和核外电子构成。",
+            "section": "第 1 节 原子结构与元素性质"
+          },
+          {
+            "name": "元素性质",
+            "difficulty": 2,
+            "description": "描述元素及其形成物质所表现出的性质。",
+            "aliases": [],
+            "prerequisites": [
+              "原子结构"
+            ],
+            "definition": "元素性质是元素在组成物质和发生变化时表现出的特征。",
+            "example": "不同元素具有不同的性质。"
+          },
+          {
+            "name": "元素周期律",
+            "difficulty": 3,
+            "description": "元素性质随核电荷数递增呈周期性变化的规律。",
+            "aliases": [],
+            "prerequisites": [
+              "原子结构",
+              "元素性质"
+            ],
+            "definition": "元素周期律是元素性质随元素核电荷数递增而呈周期性变化的规律。",
+            "example": "元素性质会随核电荷数增加而呈现周期性变化。",
+            "section": "第 2 节 元素周期律和元素周期表"
+          },
+          {
+            "name": "元素周期表",
+            "difficulty": 3,
+            "description": "按原子序数递增排列元素并体现周期律的表格。",
+            "aliases": [],
+            "prerequisites": [
+              "元素周期律"
+            ],
+            "definition": "元素周期表是按照原子序数递增顺序排列元素的表格。",
+            "example": "同一周期的元素按原子序数递增排列。"
+          },
+          {
+            "name": "元素性质递变",
+            "difficulty": 3,
+            "description": "元素性质在周期和族中呈现的有规律变化。",
+            "aliases": [],
+            "prerequisites": [
+              "元素周期律",
+              "元素周期表"
+            ],
+            "definition": "元素性质递变是元素性质沿周期或族方向发生的规律性变化。",
+            "example": "同周期元素的性质随原子序数变化而递变。",
+            "section": "微项目 海带提碘与海水提溴——体验元素性质递变规律的实际应用"
+          },
+          {
+            "name": "周期表应用",
+            "difficulty": 3,
+            "description": "利用元素周期表预测元素性质并指导实际应用。",
+            "aliases": [],
+            "prerequisites": [
+              "元素周期表",
+              "元素性质递变"
+            ],
+            "definition": "周期表应用是依据元素位置和性质递变规律分析、预测元素性质。",
+            "example": "根据元素在周期表中的位置推测其性质。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 原子结构与元素性质",
+            "section_key": "b7abad05f3",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 2 节 元素周期律和元素周期表",
+            "section_key": "cc7cfe4e31",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 3 节 元素周期表的应用",
+            "section_key": "edef32d0ca",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "微项目 海带提碘与海水提溴——体验元素性质递变规律的实际应用",
+            "section_key": "26263bfd69",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "本章自我评价",
+            "section_key": "a752375fb7",
+            "page_range": [
+              6,
+              6
+            ]
+          }
+        ],
+        "chapter_key": "c674df78f8",
+        "metadata": {
+          "volume_id": "80edf9147671",
+          "file_id": "80edf9147671",
+          "volume_title": "普通高中教科书 化学 必修第二册",
+          "chapter_order": 1,
+          "raw_heading": "第1章　原子结构　元素周期律"
+        }
+      },
+      {
+        "name": "第3章 简单的有机化合物",
+        "concepts": [],
+        "sections": [
+          {
+            "name": "第 1 节 认识有机化合物",
+            "section_key": "6a11f62e7e",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 2 节 从化石燃料中获取有机化合物",
+            "section_key": "4e6501a905",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "第 3 节 饮食中的有机化合物",
+            "section_key": "d87440197f",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "微项目 自制米酒——领略我国传统酿造工艺的魅力",
+            "section_key": "e67857ba15",
+            "page_range": [
+              6,
+              6
+            ]
+          },
+          {
+            "name": "本章自我评价",
+            "section_key": "9e3b4db1e9",
+            "page_range": [
+              6,
+              46
+            ]
+          }
+        ],
+        "chapter_key": "b6d488c0e9",
+        "metadata": {
+          "volume_id": "80edf9147671",
+          "file_id": "80edf9147671",
+          "volume_title": "普通高中教科书 化学 必修第二册",
+          "chapter_order": 2,
+          "raw_heading": "第3章　简单的有机化合物"
+        }
+      },
+      {
+        "name": "第2章 化学键 化学反应规律",
+        "concepts": [
+          {
+            "name": "化学键",
+            "difficulty": 2,
+            "description": "相邻原子间存在的强相互作用。",
+            "aliases": [
+              "chemical bond"
+            ],
+            "prerequisites": [],
+            "definition": "化学键是相邻原子间的强相互作用。",
+            "example": "水分子中氢原子与氧原子之间存在化学键。"
+          },
+          {
+            "name": "化学反应实质",
+            "difficulty": 2,
+            "description": "反应中旧化学键断裂并形成新化学键。",
+            "aliases": [],
+            "prerequisites": [
+              "化学键"
+            ],
+            "definition": "化学反应的实质是旧化学键断裂和新化学键形成。",
+            "example": "水分解时氢氧键断裂并形成氢氢键、氧氧键。"
+          },
+          {
+            "name": "离子键",
+            "difficulty": 2,
+            "description": "阴、阳离子间通过静电作用形成的化学键。",
+            "aliases": [
+              "ionic bond"
+            ],
+            "prerequisites": [
+              "化学键"
+            ],
+            "definition": "离子键是阴、阳离子之间通过静电作用形成的化学键。",
+            "example": "氯化钠中Na+与Cl-之间存在离子键。"
+          },
+          {
+            "name": "共价键",
+            "difficulty": 2,
+            "description": "原子之间通过共用电子形成的化学键。",
+            "aliases": [
+              "covalent bond"
+            ],
+            "prerequisites": [
+              "化学键"
+            ],
+            "definition": "共价键是原子之间通过共用电子形成的化学键。",
+            "example": "氯化氢分子中氢原子与氯原子形成共价键。"
+          },
+          {
+            "name": "电子式",
+            "difficulty": 2,
+            "description": "用元素符号和符号表示原子最外层电子的式子。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "电子式是由元素符号及表示最外层电子的点或叉组成的式子。",
+            "example": "用电子式表示氯化钠中钠、氯离子的形成。",
+            "section": "第 1 节 化学键与物质构成"
+          },
+          {
+            "name": "离子化合物",
+            "difficulty": 2,
+            "description": "由阳离子与阴离子构成的化合物。",
+            "aliases": [
+              "ionic compound"
+            ],
+            "prerequisites": [
+              "离子键"
+            ],
+            "definition": "离子化合物是由阳离子与阴离子构成的化合物。",
+            "example": "NaCl、KOH和CaO都是离子化合物。"
+          },
+          {
+            "name": "共价化合物",
+            "difficulty": 2,
+            "description": "由原子通过共价键构成的化合物。",
+            "aliases": [
+              "covalent compound"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "共价化合物是由原子通过共价键构成的化合物。",
+            "example": "HCl、H2O和CO2都是共价化合物。"
+          },
+          {
+            "name": "极性键",
+            "difficulty": 3,
+            "description": "共用电子偏向吸引电子能力较强一方的共价键。",
+            "aliases": [
+              "极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "极性键是不同元素原子形成且共用电子偏向一方的共价键。",
+            "example": "乙醇分子中的碳氧键具有极性。",
+            "section": "第 1 节 化学键与物质构成"
+          },
+          {
+            "name": "非极性键",
+            "difficulty": 3,
+            "description": "同种元素原子间共用电子的共价键。",
+            "aliases": [
+              "非极性共价键"
+            ],
+            "prerequisites": [
+              "共价键"
+            ],
+            "definition": "非极性键是同种元素原子形成且共用电子不偏向一方的共价键。",
+            "example": "氢气分子中的氢氢键是非极性键。",
+            "section": "第 1 节 化学键与物质构成"
+          },
+          {
+            "name": "化学反应能量变化",
+            "difficulty": 3,
+            "description": "化学键断裂和形成伴随的能量吸收或释放。",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应实质"
+            ],
+            "definition": "化学反应中的能量变化源于破坏旧键吸能和形成新键放能。",
+            "example": "木炭燃烧时化学能转化为热能和光能。"
+          },
+          {
+            "name": "吸热反应",
+            "difficulty": 2,
+            "description": "最终表现为吸收热量的化学反应。",
+            "aliases": [
+              "endothermic reaction"
+            ],
+            "prerequisites": [
+              "化学反应能量变化"
+            ],
+            "definition": "吸热反应是最终表现为吸收热量的化学反应。",
+            "example": "碳酸钙受热分解属于吸热反应。"
+          },
+          {
+            "name": "放热反应",
+            "difficulty": 2,
+            "description": "最终表现为释放热量的化学反应。",
+            "aliases": [
+              "exothermic reaction"
+            ],
+            "prerequisites": [
+              "化学反应能量变化"
+            ],
+            "definition": "放热反应是最终表现为释放热量的化学反应。",
+            "example": "燃烧、金属与酸反应属于放热反应。"
+          },
+          {
+            "name": "化学电池",
+            "difficulty": 3,
+            "description": "利用化学反应将化学能转化为电能的装置。",
+            "aliases": [],
+            "prerequisites": [
+              "化学反应能量变化"
+            ],
+            "definition": "化学电池是利用化学反应将化学能直接转化为电能的装置。",
+            "example": "氢氧燃料电池利用氢气和氧气反应产生电能。",
+            "section": "第 2 节 化学反应与能量转化"
+          },
+          {
+            "name": "原电池",
+            "difficulty": 3,
+            "description": "依据原电池原理制成的化学电池装置。",
+            "aliases": [],
+            "prerequisites": [
+              "化学电池"
+            ],
+            "definition": "原电池是利用氧化还原反应将化学能直接转化为电能的装置。",
+            "example": "锌片、铜片和稀硫酸可组成简单原电池。"
+          },
+          {
+            "name": "原电池闭合回路",
+            "difficulty": 3,
+            "description": "通过离子导体和电子导体形成导电回路。",
+            "aliases": [],
+            "prerequisites": [
+              "原电池"
+            ],
+            "definition": "原电池需由离子导体和电子导体形成闭合回路以产生电流。",
+            "example": "稀硫酸传导离子，导线传导电子。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 化学键与物质构成",
+            "section_key": "a99c3fba75",
+            "page_range": [
+              47,
+              53
+            ]
+          },
+          {
+            "name": "第 2 节 化学反应与能量转化",
+            "section_key": "2b1b7525a5",
+            "page_range": [
+              53,
+              63
+            ]
+          },
+          {
+            "name": "第 3 节 化学反应的快慢和限度",
+            "section_key": "7b8106e3d0",
+            "page_range": [
+              63,
+              75
+            ]
+          },
+          {
+            "name": "本章自我评价",
+            "section_key": "4a609936c5",
+            "page_range": [
+              76,
+              138
+            ]
+          }
+        ],
+        "chapter_key": "dcc9414341",
+        "metadata": {
+          "volume_id": "80edf9147671",
+          "file_id": "80edf9147671",
+          "volume_title": "普通高中教科书 化学 必修第二册",
+          "chapter_order": 3,
+          "raw_heading": "第2章　化学键　化学反应规律"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "b7abad05f3": [
+        6,
+        6
+      ],
+      "第 1 节 原子结构与元素性质": [
+        6,
+        6
+      ],
+      "cc7cfe4e31": [
+        6,
+        6
+      ],
+      "第 2 节 元素周期律和元素周期表": [
+        6,
+        6
+      ],
+      "edef32d0ca": [
+        6,
+        6
+      ],
+      "第 3 节 元素周期表的应用": [
+        6,
+        6
+      ],
+      "26263bfd69": [
+        6,
+        6
+      ],
+      "微项目 海带提碘与海水提溴——体验元素性质递变规律的实际应用": [
+        6,
+        6
+      ],
+      "a752375fb7": [
+        6,
+        6
+      ],
+      "本章自我评价": [
+        6,
+        6
+      ],
+      "6a11f62e7e": [
+        6,
+        6
+      ],
+      "第 1 节 认识有机化合物": [
+        6,
+        6
+      ],
+      "4e6501a905": [
+        6,
+        6
+      ],
+      "第 2 节 从化石燃料中获取有机化合物": [
+        6,
+        6
+      ],
+      "d87440197f": [
+        6,
+        6
+      ],
+      "第 3 节 饮食中的有机化合物": [
+        6,
+        6
+      ],
+      "e67857ba15": [
+        6,
+        6
+      ],
+      "微项目 自制米酒——领略我国传统酿造工艺的魅力": [
+        6,
+        6
+      ],
+      "9e3b4db1e9": [
+        6,
+        46
+      ],
+      "a99c3fba75": [
+        47,
+        53
+      ],
+      "第 1 节 化学键与物质构成": [
+        47,
+        53
+      ],
+      "2b1b7525a5": [
+        53,
+        63
+      ],
+      "第 2 节 化学反应与能量转化": [
+        53,
+        63
+      ],
+      "7b8106e3d0": [
+        63,
+        75
+      ],
+      "第 3 节 化学反应的快慢和限度": [
+        63,
+        75
+      ],
+      "4a609936c5": [
+        76,
+        138
+      ]
+    }
+  }
+}

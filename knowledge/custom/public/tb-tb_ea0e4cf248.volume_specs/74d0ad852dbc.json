@@ -1,6 +1,6 @@
 {
   "file_id": "74d0ad852dbc",
-  "text_sha256": "9e4840b4d00d5add380f7df4e01ceb59e2664b37d79c7905bab1b2073d388672",
+  "text_sha256": "d0c01215f974f7fb3ede7ab8d212f289c5539c2f5ccbeca2ce81080464a5d23b",
   "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
   "schema_version": "3",
   "chapter_locator_version": "5",
@@ -10,290 +10,7 @@
     "level": "高中",
     "chapters": [
       {
-        "name": "第一章 空间向量与立体几何 ........................................ 1",
-        "concepts": [
-          {
-            "name": "空间向量",
-            "difficulty": 2,
-            "description": "表示空间中具有方向和大小的量",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "空间向量是由空间中有向线段表示的向量。",
-            "example": "用有向线段表示从点A到点B的位移"
-          },
-          {
-            "name": "空间向量运算",
-            "difficulty": 3,
-            "description": "空间向量的加法、减法与数乘运算",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量"
-            ],
-            "definition": "空间向量运算是按照向量规则进行加法、减法和数乘的运算。",
-            "example": "计算两个空间向量的和或差"
-          },
-          {
-            "name": "空间向量基本定理",
-            "difficulty": 4,
-            "description": "用三个不共面的向量表示空间向量",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量运算"
-            ],
-            "definition": "空间向量基本定理说明空间中任一向量可由三个不共面向量唯一线性表示。",
-            "example": "用三个基向量表示任意空间向量"
-          },
-          {
-            "name": "空间向量坐标表示",
-            "difficulty": 4,
-            "description": "用有序数组表示空间向量及其运算",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量运算",
-              "空间向量基本定理"
-            ],
-            "definition": "空间向量的坐标表示是相对于空间基底用有序数组表示向量。",
-            "example": "用三元数组表示空间向量的方向和大小"
-          },
-          {
-            "name": "空间向量的应用",
-            "difficulty": 5,
-            "description": "运用空间向量研究立体几何问题",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量坐标表示",
-              "空间向量基本定理"
-            ],
-            "definition": "空间向量的应用是利用向量及其坐标表示解决空间位置关系与几何问题。",
-            "example": "用向量表示空间中的位置关系"
-          }
-        ]
-      },
-      {
-        "name": "第二章 直线和圆的方程 ........................................... 50",
-        "concepts": [
-          {
-            "name": "直线倾斜角",
-            "difficulty": 2,
-            "description": "直线与x轴正方向所成的角。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "在平面直角坐标系中，直线向上的方向与x轴正方向所成的角称为倾斜角。",
-            "example": "直线向右上方延伸时，倾斜角为锐角。"
-          },
-          {
-            "name": "斜率",
-            "difficulty": 2,
-            "description": "表示直线倾斜程度的数值。",
-            "aliases": [],
-            "prerequisites": [
-              "直线倾斜角"
-            ],
-            "definition": "直线倾斜角的正切值称为这条直线的斜率。",
-            "example": "倾斜角为45°的直线斜率为1。"
-          },
-          {
-            "name": "直线方程",
-            "difficulty": 3,
-            "description": "表示平面内直线位置的代数方程。",
-            "aliases": [],
-            "prerequisites": [
-              "斜率"
-            ],
-            "definition": "以坐标变量的等式表示直线上所有点的关系，称为直线方程。",
-            "example": "斜率为2且过点(1,0)的直线方程为y=2x-2。"
-          },
-          {
-            "name": "方向向量",
-            "difficulty": 3,
-            "description": "表示直线方向的非零向量。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "与直线平行的非零向量称为该直线的方向向量。",
-            "example": "向量(1,2)可作为斜率为2的直线的方向向量。"
-          },
-          {
-            "name": "直线参数方程",
-            "difficulty": 3,
-            "description": "用参数表示直线上点坐标的方程。",
-            "aliases": [],
-            "prerequisites": [
-              "方向向量"
-            ],
-            "definition": "利用一个参数和直线上的定点、方向向量表示直线上点坐标的方程。",
-            "example": "过(1,0)、方向向量(2,1)的直线可参数表示。"
-          },
-          {
-            "name": "直线交点坐标",
-            "difficulty": 3,
-            "description": "两条相交直线公共点的坐标。",
-            "aliases": [],
-            "prerequisites": [
-              "直线方程"
-            ],
-            "definition": "同时满足两条相交直线方程的点的坐标称为它们的交点坐标。",
-            "example": "联立两条直线方程可求交点坐标。"
-          },
-          {
-            "name": "距离公式",
-            "difficulty": 3,
-            "description": "用于计算点、线或相关对象间的距离。",
-            "aliases": [],
-            "prerequisites": [
-              "直线方程"
-            ],
-            "definition": "利用坐标和方程计算几何对象之间距离的公式。",
-            "example": "可用点到直线的距离公式计算点到直线的距离。"
-          },
-          {
-            "name": "圆的方程",
-            "difficulty": 3,
-            "description": "表示平面内圆上点坐标关系的方程。",
-            "aliases": [],
-            "prerequisites": [
-              "距离公式"
-            ],
-            "definition": "以圆心和半径为依据表示圆上所有点坐标关系的方程。",
-            "example": "圆心为(0,0)、半径为2的圆方程是x²+y²=4。"
-          },
-          {
-            "name": "直线与圆位置关系",
-            "difficulty": 4,
-            "description": "描述直线与圆相交、相切或相离。",
-            "aliases": [],
-            "prerequisites": [
-              "直线方程",
-              "圆的方程",
-              "距离公式"
-            ],
-            "definition": "根据直线与圆的公共点情况判断二者相交、相切或相离的关系。",
-            "example": "直线与圆有两个公共点时称为相交。"
-          },
-          {
-            "name": "圆与圆位置关系",
-            "difficulty": 4,
-            "description": "描述两个圆相交、相切或相离。",
-            "aliases": [],
-            "prerequisites": [
-              "圆的方程",
-              "距离公式"
-            ],
-            "definition": "根据两个圆的公共点情况判断它们相交、相切或相离的关系。",
-            "example": "两个圆只有一个公共点时称为相切。"
-          }
-        ]
-      },
-      {
-        "name": "第三章 圆锥曲线的方程 ......................................... 104",
-        "concepts": [
-          {
-            "name": "椭圆",
-            "difficulty": 2,
-            "description": "到两个定点距离之和为定值的点的轨迹",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "椭圆是平面内到两个定点的距离之和等于常数的点的轨迹。",
-            "example": "以F₁、F₂为焦点，PF₁+PF₂=2a。"
-          },
-          {
-            "name": "椭圆标准方程",
-            "difficulty": 3,
-            "description": "椭圆在平面直角坐标系中的规范方程",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆"
-            ],
-            "definition": "椭圆的标准方程是x²/a²+y²/b²=1（a>b>0）。",
-            "example": "x²/25+y²/9=1。"
-          },
-          {
-            "name": "双曲线",
-            "difficulty": 2,
-            "description": "到两个定点距离之差的绝对值为定值的轨迹",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "双曲线是平面内到两个定点距离之差的绝对值等于常数的点的轨迹。",
-            "example": "以F₁、F₂为焦点，|PF₁-PF₂|=2a。"
-          },
-          {
-            "name": "双曲线标准方程",
-            "difficulty": 3,
-            "description": "双曲线在平面直角坐标系中的规范方程",
-            "aliases": [],
-            "prerequisites": [
-              "双曲线"
-            ],
-            "definition": "双曲线的一种标准方程是x²/a²-y²/b²=1（a>0，b>0）。",
-            "example": "x²/16-y²/9=1。"
-          },
-          {
-            "name": "双曲线渐近线",
-            "difficulty": 4,
-            "description": "双曲线趋近但不相交的直线",
-            "aliases": [],
-            "prerequisites": [
-              "双曲线"
-            ],
-            "definition": "双曲线的渐近线是曲线上的点无限远离原点时逐渐接近的直线。",
-            "example": "x²/a²-y²/b²=1的渐近线为y=±b/a·x。"
-          },
-          {
-            "name": "抛物线",
-            "difficulty": 2,
-            "description": "到定点与定直线距离相等的点的轨迹",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "抛物线是平面内到一个定点和一条定直线距离相等的点的轨迹。",
-            "example": "到焦点F和准线l等距的点组成抛物线。"
-          },
-          {
-            "name": "抛物线标准方程",
-            "difficulty": 3,
-            "description": "抛物线在平面直角坐标系中的规范方程",
-            "aliases": [],
-            "prerequisites": [
-              "抛物线"
-            ],
-            "definition": "以坐标轴为对称轴的抛物线可表示为y²=2px或x²=2py。",
-            "example": "y²=4x是一条抛物线。"
-          },
-          {
-            "name": "二次函数图象",
-            "difficulty": 3,
-            "description": "二次函数图象与抛物线之间的对应关系",
-            "aliases": [],
-            "prerequisites": [
-              "抛物线"
-            ],
-            "definition": "二次函数y=ax²+bx+c（a≠0）的图象是一条抛物线。",
-            "example": "y=x²-2x+1的图象是抛物线。"
-          },
-          {
-            "name": "圆锥曲线光学性质",
-            "difficulty": 4,
-            "description": "圆锥曲线反射性质及其光学应用",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆",
-              "双曲线",
-              "抛物线"
-            ],
-            "definition": "圆锥曲线具有与焦点、切线和反射方向相关的光学性质。",
-            "example": "抛物面可将平行光反射并汇聚到焦点。"
-          },
-          {
-            "name": "解析几何发展",
-            "difficulty": 2,
-            "description": "解析几何的形成与发展过程",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "解析几何是用坐标和方程研究几何图形的方法体系。",
-            "example": "用方程表示曲线是解析几何的基本思想。"
-          }
-        ]
-      },
-      {
-        "name": "第一章",
+        "name": "第一章　空间向量与立体几何",
         "concepts": [
           {
             "name": "空间向量",
@@ -303,214 +20,1202 @@
               "space vector"
             ],
             "prerequisites": [],
-            "definition": "空间中具有大小和方向的量叫做空间向量。",
-            "example": "物体在空间中的速度可用空间向量表示"
+            "definition": "具有大小和方向的空间量叫做空间向量。",
+            "example": "空间中物体受到的力可用空间向量表示。"
           },
           {
             "name": "空间向量的模",
             "difficulty": 1,
-            "description": "空间向量的长度",
+            "description": "空间向量的大小或长度",
             "aliases": [
-              "长度",
-              "模",
-              "modulus"
+              "向量长度",
+              "模"
             ],
             "prerequisites": [
               "空间向量"
             ],
             "definition": "空间向量的大小叫做空间向量的长度或模。",
-            "example": "有向线段AB的长度表示向量AB的模"
+            "example": "若向量a长度为3，则|a|=3。"
           },
           {
             "name": "零向量",
             "difficulty": 1,
             "description": "长度为零的空间向量",
             "aliases": [
-              "zero vector"
+              "零向量0"
             ],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "长度为0的向量叫做零向量，记为0。",
-            "example": "起点与终点重合时，AB=0"
+            "example": "当点A与点B重合时，向量AB为零向量。"
           },
           {
             "name": "单位向量",
             "difficulty": 1,
             "description": "模为1的空间向量",
-            "aliases": [
-              "unit vector"
-            ],
+            "aliases": [],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "模为1的向量叫做单位向量。",
-            "example": "模为1的向量a是单位向量"
+            "example": "模为1且沿x轴正方向的向量是单位向量。"
           },
           {
             "name": "相反向量",
             "difficulty": 1,
-            "description": "与原向量等长反向的向量",
+            "description": "长度相等而方向相反的向量",
             "aliases": [],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "与向量a长度相等而方向相反的向量叫做a的相反向量。",
-            "example": "向量a的相反向量记为-a"
+            "example": "向量a的相反向量记为−a。"
           },
           {
             "name": "共线向量",
-            "difficulty": 2,
-            "description": "表示线段所在直线平行或重合的向量",
+            "difficulty": 1,
+            "description": "所在直线平行或重合的向量",
             "aliases": [
-              "平行向量",
-              "collinear vectors",
-              "parallel vectors"
+              "平行向量"
             ],
             "prerequisites": [
               "空间向量"
             ],
-            "definition": "表示空间向量的有向线段所在直线互相平行或重合时，这些向量叫做共线向量。",
-            "example": "同一直线方向上的两个向量是共线向量"
+            "definition": "表示向量的有向线段所在直线平行或重合的向量叫做共线向量。",
+            "example": "同一直线上的两个方向相同向量是共线向量。"
           },
           {
             "name": "相等向量",
-            "difficulty": 2,
+            "difficulty": 1,
             "description": "方向相同且模相等的向量",
-            "aliases": [
-              "equal vectors"
-            ],
+            "aliases": [],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "方向相同且模相等的向量叫做相等向量。",
-            "example": "同向且等长的有向线段表示相等向量"
+            "example": "同向且等长的AB与CD表示相等向量。",
+            "section": "1.1 空间向量及其运算"
           },
           {
-            "name": "空间向量加法",
+            "name": "空间向量线性运算",
             "difficulty": 2,
-            "description": "将两个空间向量相加的运算",
+            "description": "空间向量的加法、减法和数乘",
             "aliases": [
-              "向量加法"
+              "线性运算"
             ],
             "prerequisites": [
-              "空间向量"
+              "空间向量",
+              "相反向量"
             ],
-            "definition": "空间向量加法按平面向量加法推广定义，满足首尾相接法则。",
-            "example": "OA+AB=OB"
+            "definition": "空间向量的加法、减法及实数与向量的乘法统称线性运算。",
+            "example": "a−b=a+(−b)，2a表示a的数乘。"
           },
           {
-            "name": "空间向量减法",
+            "name": "共面向量",
             "difficulty": 2,
-            "description": "将两个空间向量相减的运算",
-            "aliases": [
-              "向量减法"
-            ],
+            "description": "平行于同一平面的向量",
+            "aliases": [],
             "prerequisites": [
-              "空间向量加法"
+              "空间向量",
+              "共线向量"
             ],
-            "definition": "空间向量减法按平面向量减法推广定义。",
-            "example": "OA-OC=CA"
+            "definition": "平行于同一个平面的向量叫做共面向量。",
+            "example": "同一平面内的三个向量一定共面。"
           },
           {
-            "name": "空间向量数乘",
-            "difficulty": 2,
-            "description": "实数与空间向量相乘的运算",
-            "aliases": [
-              "数乘运算"
-            ],
-            "prerequisites": [
-              "空间向量"
-            ],
-            "definition": "实数λ与空间向量a的乘积λa称为空间向量的数乘。",
-            "example": "2a与a同向，-a与a反向"
-          },
-          {
-            "name": "空间向量线性运算律",
+            "name": "向量共面条件",
             "difficulty": 3,
-            "description": "加法和数乘满足的交换、结合、分配规律",
+            "description": "用两个不共线向量表示共面向量",
             "aliases": [
-              "线性运算律"
+              "共面充要条件"
             ],
             "prerequisites": [
-              "空间向量加法",
-              "空间向量数乘"
+              "共面向量",
+              "空间向量线性运算"
             ],
-            "definition": "空间向量的加法和数乘满足交换律、结合律与分配律。",
-            "example": "a+b=b+a"
+            "definition": "若a、b不共线，则p与它们共面的充要条件是p=xa+yb。",
+            "example": "p=2a−3b时，p与a、b共面。"
           },
           {
             "name": "方向向量",
             "difficulty": 2,
             "description": "与直线平行的非零向量",
             "aliases": [
-              "direction vector"
+              "直线方向向量"
             ],
             "prerequisites": [
               "共线向量"
             ],
-            "definition": "与向量a平行的非零向量称为直线l的方向向量。",
-            "example": "直线l上非零向量a可作为l的方向向量"
+            "definition": "与直线l平行的非零向量称为直线l的方向向量。",
+            "example": "直线AB的非零向量AB可作为其方向向量。"
           },
           {
-            "name": "向量平行直线",
+            "name": "空间向量数量积",
             "difficulty": 2,
-            "description": "向量所在直线与给定直线平行或重合",
-            "aliases": [],
-            "prerequisites": [
-              "方向向量"
+            "description": "由两向量模与夹角定义的乘积",
+            "aliases": [
+              "数量积",
+              "点积"
             ],
-            "definition": "表示向量的有向线段所在直线与直线l平行或重合时，称向量平行于直线l。",
-            "example": "OA所在直线与l平行，则a平行于l"
+            "prerequisites": [
+              "空间向量的模",
+              "空间向量夹角"
+            ],
+            "definition": "两个空间向量的数量积等于它们模的乘积与夹角余弦的乘积。",
+            "example": "a·b=|a||b|cosθ。"
           },
           {
-            "name": "向量平行平面",
+            "name": "空间向量夹角",
             "difficulty": 2,
-            "description": "向量所在直线平行或位于给定平面",
-            "aliases": [],
+            "description": "两个非零空间向量的夹角",
+            "aliases": [
+              "向量夹角"
+            ],
             "prerequisites": [
               "空间向量"
             ],
-            "definition": "表示向量的有向线段所在直线与平面α平行或在平面α内时，称向量平行于平面α。",
-            "example": "向量a位于平面α内，则a平行于α"
+            "definition": "两个非零空间向量平移至同一起点后所成的不大于π的角叫其夹角。",
+            "example": "若a与b垂直，则它们的夹角为π/2。",
+            "section": "1.1 空间向量及其运算"
           },
           {
-            "name": "共面向量",
-            "difficulty": 3,
-            "description": "平行于同一个平面的向量",
+            "name": "向量垂直条件",
+            "difficulty": 2,
+            "description": "数量积为零刻画向量垂直",
             "aliases": [
-              "coplanar vectors"
+              "垂直判定"
             ],
             "prerequisites": [
-              "向量平行平面"
+              "空间向量数量积"
             ],
-            "definition": "平行于同一个平面的向量叫做共面向量。",
-            "example": "两个空间向量总是共面"
+            "definition": "两个非零空间向量垂直的充要条件是它们的数量积为零。",
+            "example": "a·b=0，则a⊥b。"
           },
           {
-            "name": "向量共线充要条件",
+            "name": "向量投影",
             "difficulty": 3,
-            "description": "用数乘关系刻画两个向量共线",
-            "aliases": [],
-            "prerequisites": [
-              "共线向量",
-              "空间向量数乘"
+            "description": "一个向量在另一个向量方向上的投影",
+            "aliases": [
+              "投影向量"
             ],
-            "definition": "对b≠0，a∥b的充要条件是存在实数λ使a=λb。",
-            "example": "a=3b说明a与b共线"
+            "prerequisites": [
+              "空间向量数量积",
+              "空间向量夹角"
+            ],
+            "definition": "向量a在向量b方向上的投影向量是与b共线且长度带方向的分量。",
+            "example": "a在b方向的投影长度为|a|cosθ。"
           },
           {
-            "name": "向量共面充要条件",
-            "difficulty": 4,
-            "description": "用线性组合刻画三个向量共面",
+            "name": "空间向量基本定理",
+            "difficulty": 3,
+            "description": "用三个不共面向量唯一表示任意向量",
             "aliases": [],
             "prerequisites": [
               "共面向量",
-              "空间向量加法",
-              "空间向量数乘"
+              "空间向量线性运算"
             ],
-            "definition": "当a、b不共线时，p与a、b共面的充要条件是p=xa+yb。",
-            "example": "p=2a-3b则p与a、b共面"
+            "definition": "空间任意三个不共面向量都可作为基底，任意向量可唯一表示为它们的线性组合。",
+            "example": "p=xa+yb+zc，其中x、y、z唯一确定。"
+          },
+          {
+            "name": "空间向量基底",
+            "difficulty": 3,
+            "description": "三个不共面的空间向量",
+            "aliases": [
+              "空间基底"
+            ],
+            "prerequisites": [
+              "空间向量基本定理"
+            ],
+            "definition": "空间中三个不共面的向量构成空间向量的一个基底。",
+            "example": "正方体同一顶点出发的三条棱向量可作基底。",
+            "section": "1.3 空间向量及其运算的坐标表示"
+          },
+          {
+            "name": "空间直角坐标系",
+            "difficulty": 2,
+            "description": "由三条两两垂直坐标轴建立的坐标系",
+            "aliases": [
+              "Oxyz坐标系"
+            ],
+            "prerequisites": [
+              "空间向量基底"
+            ],
+            "definition": "以同一点为原点、三条两两垂直直线为坐标轴建立空间直角坐标系。",
+            "example": "取正方体一个顶点为原点可建立Oxyz。"
+          },
+          {
+            "name": "空间向量坐标",
+            "difficulty": 2,
+            "description": "向量在空间基底下的有序数组表示",
+            "aliases": [
+              "三维坐标"
+            ],
+            "prerequisites": [
+              "空间向量基底",
+              "空间直角坐标系"
+            ],
+            "definition": "空间向量在给定基底下可用三个有序实数组表示。",
+            "example": "a=(2,−1,3)表示一个空间向量。"
+          },
+          {
+            "name": "坐标数量积",
+            "difficulty": 3,
+            "description": "按对应坐标乘积求和计算数量积",
+            "aliases": [],
+            "prerequisites": [
+              "空间向量坐标",
+              "空间向量数量积"
+            ],
+            "definition": "若a=(a1,a2,a3)、b=(b1,b2,b3)，则a·b=a1b1+a2b2+a3b3。",
+            "example": "(1,2,3)·(2,0,1)=5。"
+          },
+          {
+            "name": "空间距离公式",
+            "difficulty": 2,
+            "description": "由三维坐标计算两点间距离",
+            "aliases": [
+              "两点间距离"
+            ],
+            "prerequisites": [
+              "空间直角坐标系",
+              "空间向量坐标"
+            ],
+            "definition": "两点间距离等于其坐标差平方和的平方根。",
+            "example": "A(1,0,0)、B(1,2,2)的距离为√8。",
+            "section": "1.3 空间向量及其运算的坐标表示"
+          },
+          {
+            "name": "位置向量",
+            "difficulty": 2,
+            "description": "以定点为起点表示空间点的向量",
+            "aliases": [
+              "点的位置向量"
+            ],
+            "prerequisites": [
+              "空间向量"
+            ],
+            "definition": "取定基点O后，向量OP称为点P的位置向量。",
+            "example": "点P的位置向量为OP。",
+            "section": "1.4 空间向量的应用"
+          },
+          {
+            "name": "空间直线表示式",
+            "difficulty": 3,
+            "description": "用一点和方向向量表示空间直线",
+            "aliases": [
+              "直线向量表示式"
+            ],
+            "prerequisites": [
+              "位置向量",
+              "方向向量",
+              "空间向量线性运算"
+            ],
+            "definition": "直线l上点P满足OP=OA+t a，其中A在l上且a为l的方向向量。",
+            "example": "OP=OA+tAB表示过A且沿AB方向的直线。"
+          },
+          {
+            "name": "空间平面表示式",
+            "difficulty": 3,
+            "description": "用一点和两个不共线向量表示平面",
+            "aliases": [
+              "平面向量表示式"
+            ],
+            "prerequisites": [
+              "位置向量",
+              "向量共面条件"
+            ],
+            "definition": "平面ABC上点P满足OP=OA+xAB+yAC。",
+            "example": "OP=OA+xAB+yAC表示平面ABC内的点。"
+          },
+          {
+            "name": "法向量",
+            "difficulty": 2,
+            "description": "垂直于平面的非零向量",
+            "aliases": [
+              "平面法向量"
+            ],
+            "prerequisites": [
+              "向量垂直条件"
+            ],
+            "definition": "垂直于平面的非零向量称为该平面的法向量。",
+            "example": "若a为平面α的法向量，则a·AP=0。",
+            "section": "1.4 空间向量的应用"
+          },
+          {
+            "name": "平面法向量表示式",
+            "difficulty": 3,
+            "description": "用一点和法向量确定平面",
+            "aliases": [],
+            "prerequisites": [
+              "法向量",
+              "位置向量",
+              "空间向量数量积"
+            ],
+            "definition": "过点A且以a为法向量的平面是满足a·AP=0的点集。",
+            "example": "a·(OP−OA)=0表示该平面。"
+          },
+          {
+            "name": "直线平面位置关系",
+            "difficulty": 3,
+            "description": "用方向向量和法向量判断平行垂直",
+            "aliases": [],
+            "prerequisites": [
+              "方向向量",
+              "法向量",
+              "空间向量数量积"
+            ],
+            "definition": "通过比较直线方向向量与平面法向量的关系研究直线和平面的位置关系。",
+            "example": "直线方向向量与平面法向量垂直时，直线平行于平面。"
+          },
+          {
+            "name": "空间直线夹角",
+            "difficulty": 3,
+            "description": "两直线方向向量夹角的锐角或直角",
+            "aliases": [
+              "异面直线所成角"
+            ],
+            "prerequisites": [
+              "方向向量",
+              "空间向量夹角"
+            ],
+            "definition": "两条空间直线所成角可转化为其方向向量所成的锐角或直角。",
+            "example": "用两直线方向向量的数量积求所成角余弦。"
+          },
+          {
+            "name": "直线平面夹角",
+            "difficulty": 3,
+            "description": "直线与其在平面上投影所成的角",
+            "aliases": [
+              "线面角"
+            ],
+            "prerequisites": [
+              "方向向量",
+              "法向量",
+              "空间向量夹角"
+            ],
+            "definition": "直线与平面所成的角等于直线方向向量与平面法向量夹角的余角。",
+            "example": "若方向向量与法向量夹角为θ，则线面角为π/2−θ。"
+          },
+          {
+            "name": "二面角",
+            "difficulty": 3,
+            "description": "两个相交平面所成的角",
+            "aliases": [
+              "面面角"
+            ],
+            "prerequisites": [
+              "法向量",
+              "空间向量夹角"
+            ],
+            "definition": "两个相交平面所成的角可转化为它们法向量所成角的适当角度。",
+            "example": "用两平面的法向量数量积求二面角余弦。",
+            "section": "1.4 空间向量的应用"
+          },
+          {
+            "name": "投影距离",
+            "difficulty": 4,
+            "description": "利用投影向量长度求空间距离",
+            "aliases": [
+              "点面距离",
+              "点线距离"
+            ],
+            "prerequisites": [
+              "向量投影",
+              "空间向量数量积"
+            ],
+            "definition": "点到直线或平面的距离可转化为相关向量投影的长度。",
+            "example": "用点与平面上一点的向量在法向量上的投影求点面距离。"
+          },
+          {
+            "name": "向量法三步曲",
+            "difficulty": 3,
+            "description": "表示元素、向量运算、翻译结论",
+            "aliases": [
+              "空间向量解题过程"
+            ],
+            "prerequisites": [
+              "空间直线表示式",
+              "空间平面表示式",
+              "空间向量数量积"
+            ],
+            "definition": "用空间向量解立体几何依次经历表示几何元素、运算研究关系、翻译几何结论。",
+            "example": "先设方向向量，再用数量积证明两直线垂直。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "1.1　空间向量及其运算",
+            "page_range": [
+              7,
+              16
+            ]
+          },
+          {
+            "name": "1.2　空间向量基本定理",
+            "page_range": [
+              16,
+              21
+            ]
+          },
+          {
+            "name": "1.3　空间向量及其运算的坐标表示",
+            "page_range": [
+              21,
+              31
+            ]
+          },
+          {
+            "name": "1.4　空间向量的应用",
+            "page_range": [
+              31,
+              54
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二章　直线和圆的方程",
+        "concepts": [
+          {
+            "name": "坐标法",
+            "difficulty": 2,
+            "description": "用坐标和方程把几何问题转化为代数问题。",
+            "aliases": [
+              "解析几何方法"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "坐标法是在坐标系中表示几何对象并用代数运算研究其性质的方法。",
+            "example": "用坐标证明平行四边形对角线性质。"
+          },
+          {
+            "name": "平面直角坐标系",
+            "difficulty": 1,
+            "description": "用横纵坐标表示平面内点的位置。",
+            "aliases": [
+              "直角坐标系"
+            ],
+            "prerequisites": [],
+            "definition": "平面直角坐标系由互相垂直且有公共原点的两条数轴构成。",
+            "example": "点P(2,-1)表示横坐标为2、纵坐标为-1。"
+          },
+          {
+            "name": "直线的方向向量",
+            "difficulty": 2,
+            "description": "表示直线方向的非零向量。",
+            "aliases": [
+              "方向向量"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "与直线平行的任意非零向量都可作为该直线的方向向量。",
+            "example": "经过A、B的直线可取向量AB为方向向量。"
+          },
+          {
+            "name": "直线束",
+            "difficulty": 2,
+            "description": "经过同一点的所有直线组成的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "直线的方向向量"
+            ],
+            "definition": "经过平面内同一点的无数条直线组成直线束。",
+            "example": "经过点P的直线l1、l2、l3构成直线束。",
+            "section": "2.1 直线的倾斜角与斜率"
+          },
+          {
+            "name": "倾斜角",
+            "difficulty": 2,
+            "description": "直线向上方向与x轴正向所成的角。",
+            "aliases": [
+              "直线倾斜角"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "直线向上方向与x轴正方向之间的角α称为直线的倾斜角。",
+            "example": "水平直线的倾斜角规定为0°。"
+          },
+          {
+            "name": "斜率",
+            "difficulty": 2,
+            "description": "直线倾斜角的正切值。",
+            "aliases": [
+              "直线斜率"
+            ],
+            "prerequisites": [
+              "倾斜角"
+            ],
+            "definition": "直线倾斜角α的正切值k=tanα称为该直线的斜率。",
+            "example": "倾斜角为45°的直线斜率为1。"
+          },
+          {
+            "name": "斜率公式",
+            "difficulty": 2,
+            "description": "由直线上两点坐标计算斜率的公式。",
+            "aliases": [
+              "两点斜率公式"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "经过P1(x1,y1)、P2(x2,y2)且x1≠x2的直线斜率为(y2-y1)/(x2-x1)。",
+            "example": "A(1,2)、B(3,5)的斜率为3/2。"
+          },
+          {
+            "name": "直线点斜式",
+            "difficulty": 3,
+            "description": "由一点和斜率表示直线的方程形式。",
+            "aliases": [
+              "点斜式方程"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "过点(x0,y0)且斜率为k的直线方程是y-y0=k(x-x0)。",
+            "example": "过(1,2)、斜率3的直线为y-2=3(x-1)。"
+          },
+          {
+            "name": "直线斜截式",
+            "difficulty": 3,
+            "description": "用斜率和纵截距表示直线的方程形式。",
+            "aliases": [
+              "斜截式方程"
+            ],
+            "prerequisites": [
+              "直线点斜式"
+            ],
+            "definition": "斜率为k且在y轴上的截距为b的直线方程是y=kx+b。",
+            "example": "y=2x-1的斜率为2，纵截距为-1。",
+            "section": "2.2 直线的方程"
+          },
+          {
+            "name": "直线两点式",
+            "difficulty": 3,
+            "description": "由直线上两个点表示直线的方程形式。",
+            "aliases": [
+              "两点式方程"
+            ],
+            "prerequisites": [
+              "斜率公式"
+            ],
+            "definition": "经过两个不同点的直线可由两点坐标建立两点式方程。",
+            "example": "经过(1,2)和(3,4)可建立其两点式方程。"
+          },
+          {
+            "name": "直线截距式",
+            "difficulty": 3,
+            "description": "用直线在两坐标轴上的截距表示方程。",
+            "aliases": [
+              "截距式方程"
+            ],
+            "prerequisites": [
+              "直线两点式"
+            ],
+            "definition": "直线在x轴、y轴上的截距分别为a、b时，可写成x/a+y/b=1。",
+            "example": "截距为2和3的直线为x/2+y/3=1。"
+          },
+          {
+            "name": "直线一般式",
+            "difficulty": 3,
+            "description": "直线方程的一般代数表示形式。",
+            "aliases": [
+              "一般式方程"
+            ],
+            "prerequisites": [
+              "直线点斜式"
+            ],
+            "definition": "形如Ax+By+C=0且A、B不同时为零的方程表示一条直线。",
+            "example": "2x-3y+1=0是直线的一般式方程。"
+          },
+          {
+            "name": "两直线平行判定",
+            "difficulty": 3,
+            "description": "利用斜率判断两条直线是否平行。",
+            "aliases": [
+              "平行直线判定"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "两条不重合且斜率存在的直线平行，当且仅当它们斜率相等。",
+            "example": "斜率均为1且不重合的两直线平行。"
+          },
+          {
+            "name": "两直线垂直判定",
+            "difficulty": 3,
+            "description": "利用斜率乘积判断两条直线垂直。",
+            "aliases": [
+              "垂直直线判定"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "两条斜率均存在的直线垂直，当且仅当斜率乘积为-1。",
+            "example": "斜率为2和-1/2的直线互相垂直。"
+          },
+          {
+            "name": "两直线交点",
+            "difficulty": 3,
+            "description": "两条相交直线公共点的坐标。",
+            "aliases": [
+              "交点坐标"
+            ],
+            "prerequisites": [
+              "直线一般式"
+            ],
+            "definition": "两条相交直线的交点坐标是其方程组的唯一解。",
+            "example": "联立两直线方程可求出交点。"
+          },
+          {
+            "name": "两点间距离公式",
+            "difficulty": 2,
+            "description": "计算坐标平面内两点间距离的公式。",
+            "aliases": [
+              "距离公式"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "两点P1(x1,y1)、P2(x2,y2)间距离为√[(x2-x1)²+(y2-y1)²]。",
+            "example": "(0,0)与(3,4)的距离为5。"
+          },
+          {
+            "name": "点到直线距离",
+            "difficulty": 3,
+            "description": "点到直线垂线段的长度公式。",
+            "aliases": [
+              "点到直线的距离公式"
+            ],
+            "prerequisites": [
+              "两点间距离公式",
+              "直线一般式"
+            ],
+            "definition": "点P(x0,y0)到Ax+By+C=0的距离为|Ax0+By0+C|/√(A²+B²)。",
+            "example": "原点到3x+4y-5=0的距离为1。"
+          },
+          {
+            "name": "平行线间距离",
+            "difficulty": 3,
+            "description": "两条平行直线公垂线段的长度。",
+            "aliases": [
+              "两条平行直线间的距离"
+            ],
+            "prerequisites": [
+              "点到直线距离"
+            ],
+            "definition": "两条平行直线间的距离是夹在它们之间的公垂线段长度。",
+            "example": "可取一条直线上的点求其到另一条的距离。",
+            "section": "2.3 直线的交点坐标与距离公式"
+          },
+          {
+            "name": "圆的几何要素",
+            "difficulty": 2,
+            "description": "确定圆位置和大小的圆心与半径。",
+            "aliases": [
+              "圆心和半径"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "圆由圆心的位置和半径大小两个几何要素确定。",
+            "example": "圆心(1,2)、半径3确定一个圆。"
+          },
+          {
+            "name": "圆的标准方程",
+            "difficulty": 2,
+            "description": "由圆心和半径直接表示圆的方程。",
+            "aliases": [
+              "标准方程"
+            ],
+            "prerequisites": [
+              "圆的几何要素",
+              "两点间距离公式"
+            ],
+            "definition": "圆心(a,b)、半径r的圆的标准方程为(x-a)²+(y-b)²=r²。",
+            "example": "圆心(1,-2)、半径2的方程为(x-1)²+(y+2)²=4。"
+          },
+          {
+            "name": "圆的一般方程",
+            "difficulty": 3,
+            "description": "圆方程的一般代数表示形式。",
+            "aliases": [
+              "一般方程"
+            ],
+            "prerequisites": [
+              "圆的标准方程"
+            ],
+            "definition": "圆可表示为x²+y²+Dx+Ey+F=0的方程形式。",
+            "example": "x²+y²-2x+4y-4=0表示一个圆。"
+          },
+          {
+            "name": "轨迹方程",
+            "difficulty": 3,
+            "description": "动点运动形成的曲线所满足的方程。",
+            "aliases": [
+              "点的轨迹方程"
+            ],
+            "prerequisites": [
+              "坐标法",
+              "两点间距离公式"
+            ],
+            "definition": "动点坐标满足的关系式称为该点运动轨迹的方程。",
+            "example": "到两定点距离比固定的点可形成圆的轨迹。"
+          },
+          {
+            "name": "直线与圆位置关系",
+            "difficulty": 3,
+            "description": "直线与圆相交、相切或相离的关系。",
+            "aliases": [
+              "直线和圆的位置关系"
+            ],
+            "prerequisites": [
+              "直线一般式",
+              "圆的标准方程",
+              "点到直线距离"
+            ],
+            "definition": "直线与圆按公共点个数分为相交、相切和相离。",
+            "example": "圆心到直线距离小于半径时相交。"
+          },
+          {
+            "name": "圆与圆位置关系",
+            "difficulty": 4,
+            "description": "两圆相交、相切或相离的关系。",
+            "aliases": [
+              "两圆位置关系"
+            ],
+            "prerequisites": [
+              "圆的标准方程",
+              "两点间距离公式"
+            ],
+            "definition": "两圆按公共点个数分为相交、相切和相离。",
+            "example": "圆心距介于两半径差的绝对值与半径和之间时相交。"
+          },
+          {
+            "name": "公共弦所在直线",
+            "difficulty": 4,
+            "description": "相交两圆公共弦所在的直线。",
+            "aliases": [
+              "两圆公共弦"
+            ],
+            "prerequisites": [
+              "圆与圆位置关系",
+              "直线一般式"
+            ],
+            "definition": "相交两圆公共弦的两个端点所在直线称为公共弦所在直线。",
+            "example": "联立两圆方程相减可得到公共弦直线。",
+            "section": "2.5 直线与圆、圆与圆的位置关系"
+          }
+        ],
+        "sections": [
+          {
+            "name": "2.1　直线的倾斜角与斜率",
+            "page_range": [
+              56,
+              64
+            ]
+          },
+          {
+            "name": "2.2　直线的方程",
+            "page_range": [
+              64,
+              75
+            ]
+          },
+          {
+            "name": "2.3　直线的交点坐标与距离公式",
+            "page_range": [
+              75,
+              87
+            ]
+          },
+          {
+            "name": "2.4　圆的方程",
+            "page_range": [
+              87,
+              96
+            ]
+          },
+          {
+            "name": "2.5　直线与圆、圆与圆的位置关系",
+            "page_range": [
+              96,
+              108
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三章　圆锥曲线的方程",
+        "concepts": [
+          {
+            "name": "圆锥曲线",
+            "difficulty": 1,
+            "description": "椭圆、抛物线和双曲线的统称",
+            "aliases": [
+              "圆锥截线"
+            ],
+            "prerequisites": [],
+            "definition": "圆锥曲线是用平面截圆锥得到的椭圆、抛物线和双曲线的统称。",
+            "example": "改变截平面方向可得到椭圆。"
+          },
+          {
+            "name": "坐标法",
+            "difficulty": 2,
+            "description": "用坐标和方程研究几何图形的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "坐标法是建立坐标系并用代数方程表示、研究几何关系的方法。",
+            "example": "用焦点坐标建立椭圆方程。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "轨迹方程",
+            "difficulty": 3,
+            "description": "表示动点轨迹的方程",
+            "aliases": [],
+            "prerequisites": [
+              "坐标法"
+            ],
+            "definition": "轨迹方程是动点坐标满足且其解集恰好表示该轨迹的方程。",
+            "example": "由圆上点的坐标关系消元得到椭圆方程。"
+          },
+          {
+            "name": "椭圆",
+            "difficulty": 1,
+            "description": "到两个定点距离之和为定长的点的轨迹",
+            "aliases": [
+              "ellipse"
+            ],
+            "prerequisites": [],
+            "definition": "椭圆是平面内到两个定点的距离之和等于大于两定点距离的常数的点的轨迹。",
+            "example": "行星绕太阳运行的轨道近似是椭圆。"
+          },
+          {
+            "name": "焦点",
+            "difficulty": 2,
+            "description": "定义椭圆或双曲线的重要定点",
+            "aliases": [
+              "focus"
+            ],
+            "prerequisites": [
+              "椭圆"
+            ],
+            "definition": "焦点是椭圆或双曲线定义中所涉及的两个定点。",
+            "example": "椭圆焦点为F₁、F₂。"
+          },
+          {
+            "name": "焦距",
+            "difficulty": 2,
+            "description": "椭圆或双曲线两焦点间的距离",
+            "aliases": [
+              "focus distance"
+            ],
+            "prerequisites": [
+              "焦点"
+            ],
+            "definition": "焦距是椭圆或双曲线两个焦点之间的距离。",
+            "example": "焦点为(-c,0)、(c,0)时焦距为2c。"
+          },
+          {
+            "name": "半焦距",
+            "difficulty": 2,
+            "description": "焦距的一半，通常记为c",
+            "aliases": [],
+            "prerequisites": [
+              "焦距"
+            ],
+            "definition": "半焦距是椭圆焦距的一半，记作c。",
+            "example": "焦距为6时半焦距c=3。",
+            "section": "3.1 椭圆"
+          },
+          {
+            "name": "椭圆标准方程",
+            "difficulty": 3,
+            "description": "表示标准位置椭圆的规范方程",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆",
+              "坐标法"
+            ],
+            "definition": "焦点在x轴上的椭圆标准方程为x²/a²+y²/b²=1，且a>b>0。",
+            "example": "x²/25+y²/16=1。"
+          },
+          {
+            "name": "长半轴长",
+            "difficulty": 2,
+            "description": "椭圆长轴长度的一半，记为a",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程"
+            ],
+            "definition": "长半轴长a是椭圆长轴长度的一半。",
+            "example": "x²/25+y²/9=1中a=5。",
+            "section": "3.1 椭圆"
+          },
+          {
+            "name": "短半轴长",
+            "difficulty": 2,
+            "description": "椭圆短轴长度的一半，记为b",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程"
+            ],
+            "definition": "短半轴长b是椭圆短轴长度的一半。",
+            "example": "x²/25+y²/9=1中b=3。",
+            "section": "3.1 椭圆"
+          },
+          {
+            "name": "椭圆顶点",
+            "difficulty": 2,
+            "description": "椭圆与其对称轴的四个交点",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程",
+              "椭圆对称性"
+            ],
+            "definition": "椭圆顶点是椭圆与两条对称轴的四个交点。",
+            "example": "标准方程的顶点为(±a,0)、(0,±b)。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "椭圆对称性",
+            "difficulty": 2,
+            "description": "椭圆关于两坐标轴和原点对称",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程"
+            ],
+            "definition": "标准位置椭圆关于x轴、y轴及原点都对称。",
+            "example": "点(x,y)在椭圆上，则(-x,-y)也在椭圆上。"
+          },
+          {
+            "name": "椭圆离心率",
+            "difficulty": 3,
+            "description": "刻画椭圆扁平程度的比值",
+            "aliases": [
+              "椭圆偏心率"
+            ],
+            "prerequisites": [
+              "半焦距",
+              "长半轴长"
+            ],
+            "definition": "椭圆离心率是半焦距与长半轴长之比，即e=c/a。",
+            "example": "a=5、c=4时e=4/5。"
+          },
+          {
+            "name": "双曲线",
+            "difficulty": 1,
+            "description": "到两个定点距离之差的绝对值为定长的轨迹",
+            "aliases": [
+              "hyperbola"
+            ],
+            "prerequisites": [
+              "焦点"
+            ],
+            "definition": "双曲线是平面内到两个定点距离之差的绝对值等于常数的点的轨迹。",
+            "example": "双曲线可用于描述冷却塔外形线。"
+          },
+          {
+            "name": "双曲线标准方程",
+            "difficulty": 3,
+            "description": "表示标准位置双曲线的规范方程",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线",
+              "坐标法"
+            ],
+            "definition": "焦点在x轴上的双曲线标准方程为x²/a²-y²/b²=1。",
+            "example": "x²/9-y²/16=1。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "双曲线实轴",
+            "difficulty": 2,
+            "description": "连接双曲线两个顶点的线段",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程",
+              "双曲线顶点"
+            ],
+            "definition": "双曲线实轴是连接两个顶点的线段，长度为2a。",
+            "example": "顶点为(±4,0)时实轴长为8。"
+          },
+          {
+            "name": "双曲线虚轴",
+            "difficulty": 2,
+            "description": "表示双曲线辅助位置的线段",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "双曲线虚轴是以虚轴端点为端点的线段，长度为2b。",
+            "example": "b=3时虚轴长为6。"
+          },
+          {
+            "name": "双曲线顶点",
+            "difficulty": 2,
+            "description": "双曲线与实轴的两个交点",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "双曲线顶点是双曲线与其对称轴的两个交点。",
+            "example": "x²/a²-y²/b²=1的顶点为(±a,0)。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "双曲线中心",
+            "difficulty": 2,
+            "description": "双曲线的对称中心，通常为原点",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "双曲线中心是使双曲线关于该点中心对称的点。",
+            "example": "标准位置双曲线的中心是原点O。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "渐近线",
+            "difficulty": 3,
+            "description": "双曲线无限接近但不相交的直线",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "渐近线是双曲线两支向外延伸时无限接近但永不相交的直线。",
+            "example": "x²/a²-y²/b²=1的渐近线为x/a±y/b=0。"
+          },
+          {
+            "name": "等轴双曲线",
+            "difficulty": 3,
+            "description": "实轴和虚轴等长的双曲线",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线实轴",
+              "双曲线虚轴"
+            ],
+            "definition": "等轴双曲线是实轴与虚轴长度相等的双曲线。",
+            "example": "x²-y²=a²是等轴双曲线。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "双曲线离心率",
+            "difficulty": 3,
+            "description": "刻画双曲线张口大小的比值",
+            "aliases": [
+              "双曲线偏心率"
+            ],
+            "prerequisites": [
+              "半焦距",
+              "双曲线实轴"
+            ],
+            "definition": "双曲线离心率是半焦距与实半轴长之比，即e=c/a且e>1。",
+            "example": "a=4、c=5时e=5/4。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "抛物线",
+            "difficulty": 1,
+            "description": "到定点和定直线距离相等的点的轨迹",
+            "aliases": [
+              "parabola"
+            ],
+            "prerequisites": [],
+            "definition": "抛物线是平面内到一个定点和一条定直线距离相等的点的轨迹。",
+            "example": "物体在重力作用下的轨迹可近似为抛物线。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "抛物线标准方程",
+            "difficulty": 3,
+            "description": "表示标准位置抛物线的规范方程",
+            "aliases": [],
+            "prerequisites": [
+              "抛物线",
+              "坐标法"
+            ],
+            "definition": "顶点在原点且开口向右的抛物线标准方程为y²=2px，p>0。",
+            "example": "y²=4x是一条抛物线。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "抛物线焦点",
+            "difficulty": 2,
+            "description": "抛物线定义中的定点",
+            "aliases": [],
+            "prerequisites": [
+              "抛物线",
+              "抛物线标准方程"
+            ],
+            "definition": "抛物线焦点是抛物线上各点到定直线距离相等的那个定点。",
+            "example": "y²=2px的焦点为(p/2,0)。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "抛物线准线",
+            "difficulty": 2,
+            "description": "抛物线定义中的定直线",
+            "aliases": [],
+            "prerequisites": [
+              "抛物线",
+              "抛物线标准方程"
+            ],
+            "definition": "抛物线准线是抛物线上各点到焦点和该直线距离相等的定直线。",
+            "example": "y²=2px的准线为x=-p/2。"
+          },
+          {
+            "name": "圆锥曲线光学性质",
+            "difficulty": 3,
+            "description": "圆锥曲线反射光线的几何性质",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆",
+              "双曲线",
+              "抛物线"
+            ],
+            "definition": "圆锥曲线光学性质描述光线经其反射后的聚集、发散或平行现象。",
+            "example": "抛物线焦点发出的光线反射后平行于对称轴。"
+          },
+          {
+            "name": "数形结合",
+            "difficulty": 2,
+            "description": "结合代数方程与几何图形研究问题",
+            "aliases": [],
+            "prerequisites": [
+              "坐标法"
+            ],
+            "definition": "数形结合是利用方程与图形之间的对应关系解决几何问题的思想方法。",
+            "example": "由标准方程判断曲线的范围和顶点。",
+            "section": "3.3 抛物线"
+          }
+        ],
+        "sections": [
+          {
+            "name": "3.1　椭圆",
+            "page_range": [
+              110,
+              123
+            ]
+          },
+          {
+            "name": "3.2　双曲线",
+            "page_range": [
+              123,
+              135
+            ]
+          },
+          {
+            "name": "3.3　抛物线",
+            "page_range": [
+              135,
+              154
+            ]
           }
         ]
       }
@@ -526,314 +1231,7 @@
     "level": "高中",
     "chapters": [
       {
-        "name": "第一章 空间向量与立体几何 ........................................ 1",
-        "concepts": [
-          {
-            "name": "空间向量",
-            "difficulty": 2,
-            "description": "表示空间中具有方向和大小的量",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "空间向量是由空间中有向线段表示的向量。",
-            "example": "用有向线段表示从点A到点B的位移"
-          },
-          {
-            "name": "空间向量运算",
-            "difficulty": 3,
-            "description": "空间向量的加法、减法与数乘运算",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量"
-            ],
-            "definition": "空间向量运算是按照向量规则进行加法、减法和数乘的运算。",
-            "example": "计算两个空间向量的和或差"
-          },
-          {
-            "name": "空间向量基本定理",
-            "difficulty": 4,
-            "description": "用三个不共面的向量表示空间向量",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量运算"
-            ],
-            "definition": "空间向量基本定理说明空间中任一向量可由三个不共面向量唯一线性表示。",
-            "example": "用三个基向量表示任意空间向量"
-          },
-          {
-            "name": "空间向量坐标表示",
-            "difficulty": 4,
-            "description": "用有序数组表示空间向量及其运算",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量运算",
-              "空间向量基本定理"
-            ],
-            "definition": "空间向量的坐标表示是相对于空间基底用有序数组表示向量。",
-            "example": "用三元数组表示空间向量的方向和大小"
-          },
-          {
-            "name": "空间向量的应用",
-            "difficulty": 5,
-            "description": "运用空间向量研究立体几何问题",
-            "aliases": [],
-            "prerequisites": [
-              "空间向量坐标表示",
-              "空间向量基本定理"
-            ],
-            "definition": "空间向量的应用是利用向量及其坐标表示解决空间位置关系与几何问题。",
-            "example": "用向量表示空间中的位置关系"
-          }
-        ],
-        "chapter_key": "c1e2282439",
-        "metadata": {
-          "volume_id": "74d0ad852dbc",
-          "file_id": "74d0ad852dbc",
-          "volume_title": "A版 选必第1册",
-          "chapter_order": 1,
-          "raw_heading": "第一章 空间向量与立体几何 ........................................ 1"
-        }
-      },
-      {
-        "name": "第二章 直线和圆的方程 ........................................... 50",
-        "concepts": [
-          {
-            "name": "直线倾斜角",
-            "difficulty": 2,
-            "description": "直线与x轴正方向所成的角。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "在平面直角坐标系中，直线向上的方向与x轴正方向所成的角称为倾斜角。",
-            "example": "直线向右上方延伸时，倾斜角为锐角。"
-          },
-          {
-            "name": "斜率",
-            "difficulty": 2,
-            "description": "表示直线倾斜程度的数值。",
-            "aliases": [],
-            "prerequisites": [
-              "直线倾斜角"
-            ],
-            "definition": "直线倾斜角的正切值称为这条直线的斜率。",
-            "example": "倾斜角为45°的直线斜率为1。"
-          },
-          {
-            "name": "直线方程",
-            "difficulty": 3,
-            "description": "表示平面内直线位置的代数方程。",
-            "aliases": [],
-            "prerequisites": [
-              "斜率"
-            ],
-            "definition": "以坐标变量的等式表示直线上所有点的关系，称为直线方程。",
-            "example": "斜率为2且过点(1,0)的直线方程为y=2x-2。"
-          },
-          {
-            "name": "方向向量",
-            "difficulty": 3,
-            "description": "表示直线方向的非零向量。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "与直线平行的非零向量称为该直线的方向向量。",
-            "example": "向量(1,2)可作为斜率为2的直线的方向向量。"
-          },
-          {
-            "name": "直线参数方程",
-            "difficulty": 3,
-            "description": "用参数表示直线上点坐标的方程。",
-            "aliases": [],
-            "prerequisites": [
-              "方向向量"
-            ],
-            "definition": "利用一个参数和直线上的定点、方向向量表示直线上点坐标的方程。",
-            "example": "过(1,0)、方向向量(2,1)的直线可参数表示。"
-          },
-          {
-            "name": "直线交点坐标",
-            "difficulty": 3,
-            "description": "两条相交直线公共点的坐标。",
-            "aliases": [],
-            "prerequisites": [
-              "直线方程"
-            ],
-            "definition": "同时满足两条相交直线方程的点的坐标称为它们的交点坐标。",
-            "example": "联立两条直线方程可求交点坐标。"
-          },
-          {
-            "name": "距离公式",
-            "difficulty": 3,
-            "description": "用于计算点、线或相关对象间的距离。",
-            "aliases": [],
-            "prerequisites": [
-              "直线方程"
-            ],
-            "definition": "利用坐标和方程计算几何对象之间距离的公式。",
-            "example": "可用点到直线的距离公式计算点到直线的距离。"
-          },
-          {
-            "name": "圆的方程",
-            "difficulty": 3,
-            "description": "表示平面内圆上点坐标关系的方程。",
-            "aliases": [],
-            "prerequisites": [
-              "距离公式"
-            ],
-            "definition": "以圆心和半径为依据表示圆上所有点坐标关系的方程。",
-            "example": "圆心为(0,0)、半径为2的圆方程是x²+y²=4。"
-          },
-          {
-            "name": "直线与圆位置关系",
-            "difficulty": 4,
-            "description": "描述直线与圆相交、相切或相离。",
-            "aliases": [],
-            "prerequisites": [
-              "直线方程",
-              "圆的方程",
-              "距离公式"
-            ],
-            "definition": "根据直线与圆的公共点情况判断二者相交、相切或相离的关系。",
-            "example": "直线与圆有两个公共点时称为相交。"
-          },
-          {
-            "name": "圆与圆位置关系",
-            "difficulty": 4,
-            "description": "描述两个圆相交、相切或相离。",
-            "aliases": [],
-            "prerequisites": [
-              "圆的方程",
-              "距离公式"
-            ],
-            "definition": "根据两个圆的公共点情况判断它们相交、相切或相离的关系。",
-            "example": "两个圆只有一个公共点时称为相切。"
-          }
-        ],
-        "chapter_key": "e6e21791a0",
-        "metadata": {
-          "volume_id": "74d0ad852dbc",
-          "file_id": "74d0ad852dbc",
-          "volume_title": "A版 选必第1册",
-          "chapter_order": 2,
-          "raw_heading": "第二章 直线和圆的方程 ........................................... 50"
-        }
-      },
-      {
-        "name": "第三章 圆锥曲线的方程 ......................................... 104",
-        "concepts": [
-          {
-            "name": "椭圆",
-            "difficulty": 2,
-            "description": "到两个定点距离之和为定值的点的轨迹",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "椭圆是平面内到两个定点的距离之和等于常数的点的轨迹。",
-            "example": "以F₁、F₂为焦点，PF₁+PF₂=2a。"
-          },
-          {
-            "name": "椭圆标准方程",
-            "difficulty": 3,
-            "description": "椭圆在平面直角坐标系中的规范方程",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆"
-            ],
-            "definition": "椭圆的标准方程是x²/a²+y²/b²=1（a>b>0）。",
-            "example": "x²/25+y²/9=1。"
-          },
-          {
-            "name": "双曲线",
-            "difficulty": 2,
-            "description": "到两个定点距离之差的绝对值为定值的轨迹",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "双曲线是平面内到两个定点距离之差的绝对值等于常数的点的轨迹。",
-            "example": "以F₁、F₂为焦点，|PF₁-PF₂|=2a。"
-          },
-          {
-            "name": "双曲线标准方程",
-            "difficulty": 3,
-            "description": "双曲线在平面直角坐标系中的规范方程",
-            "aliases": [],
-            "prerequisites": [
-              "双曲线"
-            ],
-            "definition": "双曲线的一种标准方程是x²/a²-y²/b²=1（a>0，b>0）。",
-            "example": "x²/16-y²/9=1。"
-          },
-          {
-            "name": "双曲线渐近线",
-            "difficulty": 4,
-            "description": "双曲线趋近但不相交的直线",
-            "aliases": [],
-            "prerequisites": [
-              "双曲线"
-            ],
-            "definition": "双曲线的渐近线是曲线上的点无限远离原点时逐渐接近的直线。",
-            "example": "x²/a²-y²/b²=1的渐近线为y=±b/a·x。"
-          },
-          {
-            "name": "抛物线",
-            "difficulty": 2,
-            "description": "到定点与定直线距离相等的点的轨迹",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "抛物线是平面内到一个定点和一条定直线距离相等的点的轨迹。",
-            "example": "到焦点F和准线l等距的点组成抛物线。"
-          },
-          {
-            "name": "抛物线标准方程",
-            "difficulty": 3,
-            "description": "抛物线在平面直角坐标系中的规范方程",
-            "aliases": [],
-            "prerequisites": [
-              "抛物线"
-            ],
-            "definition": "以坐标轴为对称轴的抛物线可表示为y²=2px或x²=2py。",
-            "example": "y²=4x是一条抛物线。"
-          },
-          {
-            "name": "二次函数图象",
-            "difficulty": 3,
-            "description": "二次函数图象与抛物线之间的对应关系",
-            "aliases": [],
-            "prerequisites": [
-              "抛物线"
-            ],
-            "definition": "二次函数y=ax²+bx+c（a≠0）的图象是一条抛物线。",
-            "example": "y=x²-2x+1的图象是抛物线。"
-          },
-          {
-            "name": "圆锥曲线光学性质",
-            "difficulty": 4,
-            "description": "圆锥曲线反射性质及其光学应用",
-            "aliases": [],
-            "prerequisites": [
-              "椭圆",
-              "双曲线",
-              "抛物线"
-            ],
-            "definition": "圆锥曲线具有与焦点、切线和反射方向相关的光学性质。",
-            "example": "抛物面可将平行光反射并汇聚到焦点。"
-          },
-          {
-            "name": "解析几何发展",
-            "difficulty": 2,
-            "description": "解析几何的形成与发展过程",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "解析几何是用坐标和方程研究几何图形的方法体系。",
-            "example": "用方程表示曲线是解析几何的基本思想。"
-          }
-        ],
-        "chapter_key": "e0e2d7a9e4",
-        "metadata": {
-          "volume_id": "74d0ad852dbc",
-          "file_id": "74d0ad852dbc",
-          "volume_title": "A版 选必第1册",
-          "chapter_order": 3,
-          "raw_heading": "第三章 圆锥曲线的方程 ......................................... 104"
-        }
-      },
-      {
-        "name": "第一章",
+        "name": "第一章 空间向量与立体几何",
         "concepts": [
           {
             "name": "空间向量",
@@ -843,223 +1241,1239 @@
               "space vector"
             ],
             "prerequisites": [],
-            "definition": "空间中具有大小和方向的量叫做空间向量。",
-            "example": "物体在空间中的速度可用空间向量表示"
+            "definition": "具有大小和方向的空间量叫做空间向量。",
+            "example": "空间中物体受到的力可用空间向量表示。"
           },
           {
             "name": "空间向量的模",
             "difficulty": 1,
-            "description": "空间向量的长度",
+            "description": "空间向量的大小或长度",
             "aliases": [
-              "长度",
-              "模",
-              "modulus"
+              "向量长度",
+              "模"
             ],
             "prerequisites": [
               "空间向量"
             ],
             "definition": "空间向量的大小叫做空间向量的长度或模。",
-            "example": "有向线段AB的长度表示向量AB的模"
+            "example": "若向量a长度为3，则|a|=3。"
           },
           {
             "name": "零向量",
             "difficulty": 1,
             "description": "长度为零的空间向量",
             "aliases": [
-              "zero vector"
+              "零向量0"
             ],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "长度为0的向量叫做零向量，记为0。",
-            "example": "起点与终点重合时，AB=0"
+            "example": "当点A与点B重合时，向量AB为零向量。"
           },
           {
             "name": "单位向量",
             "difficulty": 1,
             "description": "模为1的空间向量",
-            "aliases": [
-              "unit vector"
-            ],
+            "aliases": [],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "模为1的向量叫做单位向量。",
-            "example": "模为1的向量a是单位向量"
+            "example": "模为1且沿x轴正方向的向量是单位向量。"
           },
           {
             "name": "相反向量",
             "difficulty": 1,
-            "description": "与原向量等长反向的向量",
+            "description": "长度相等而方向相反的向量",
             "aliases": [],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "与向量a长度相等而方向相反的向量叫做a的相反向量。",
-            "example": "向量a的相反向量记为-a"
+            "example": "向量a的相反向量记为−a。"
           },
           {
             "name": "共线向量",
-            "difficulty": 2,
-            "description": "表示线段所在直线平行或重合的向量",
+            "difficulty": 1,
+            "description": "所在直线平行或重合的向量",
             "aliases": [
-              "平行向量",
-              "collinear vectors",
-              "parallel vectors"
+              "平行向量"
             ],
             "prerequisites": [
               "空间向量"
             ],
-            "definition": "表示空间向量的有向线段所在直线互相平行或重合时，这些向量叫做共线向量。",
-            "example": "同一直线方向上的两个向量是共线向量"
+            "definition": "表示向量的有向线段所在直线平行或重合的向量叫做共线向量。",
+            "example": "同一直线上的两个方向相同向量是共线向量。"
           },
           {
             "name": "相等向量",
-            "difficulty": 2,
+            "difficulty": 1,
             "description": "方向相同且模相等的向量",
-            "aliases": [
-              "equal vectors"
-            ],
+            "aliases": [],
             "prerequisites": [
               "空间向量的模"
             ],
             "definition": "方向相同且模相等的向量叫做相等向量。",
-            "example": "同向且等长的有向线段表示相等向量"
+            "example": "同向且等长的AB与CD表示相等向量。",
+            "section": "1.1 空间向量及其运算"
           },
           {
-            "name": "空间向量加法",
+            "name": "空间向量线性运算",
             "difficulty": 2,
-            "description": "将两个空间向量相加的运算",
+            "description": "空间向量的加法、减法和数乘",
             "aliases": [
-              "向量加法"
+              "线性运算"
             ],
             "prerequisites": [
-              "空间向量"
+              "空间向量",
+              "相反向量"
             ],
-            "definition": "空间向量加法按平面向量加法推广定义，满足首尾相接法则。",
-            "example": "OA+AB=OB"
+            "definition": "空间向量的加法、减法及实数与向量的乘法统称线性运算。",
+            "example": "a−b=a+(−b)，2a表示a的数乘。"
           },
           {
-            "name": "空间向量减法",
+            "name": "共面向量",
             "difficulty": 2,
-            "description": "将两个空间向量相减的运算",
-            "aliases": [
-              "向量减法"
-            ],
+            "description": "平行于同一平面的向量",
+            "aliases": [],
             "prerequisites": [
-              "空间向量加法"
+              "空间向量",
+              "共线向量"
             ],
-            "definition": "空间向量减法按平面向量减法推广定义。",
-            "example": "OA-OC=CA"
+            "definition": "平行于同一个平面的向量叫做共面向量。",
+            "example": "同一平面内的三个向量一定共面。"
           },
           {
-            "name": "空间向量数乘",
-            "difficulty": 2,
-            "description": "实数与空间向量相乘的运算",
-            "aliases": [
-              "数乘运算"
-            ],
-            "prerequisites": [
-              "空间向量"
-            ],
-            "definition": "实数λ与空间向量a的乘积λa称为空间向量的数乘。",
-            "example": "2a与a同向，-a与a反向"
-          },
-          {
-            "name": "空间向量线性运算律",
+            "name": "向量共面条件",
             "difficulty": 3,
-            "description": "加法和数乘满足的交换、结合、分配规律",
+            "description": "用两个不共线向量表示共面向量",
             "aliases": [
-              "线性运算律"
+              "共面充要条件"
             ],
             "prerequisites": [
-              "空间向量加法",
-              "空间向量数乘"
+              "共面向量",
+              "空间向量线性运算"
             ],
-            "definition": "空间向量的加法和数乘满足交换律、结合律与分配律。",
-            "example": "a+b=b+a"
+            "definition": "若a、b不共线，则p与它们共面的充要条件是p=xa+yb。",
+            "example": "p=2a−3b时，p与a、b共面。"
           },
           {
             "name": "方向向量",
             "difficulty": 2,
             "description": "与直线平行的非零向量",
             "aliases": [
-              "direction vector"
+              "直线方向向量"
             ],
             "prerequisites": [
               "共线向量"
             ],
-            "definition": "与向量a平行的非零向量称为直线l的方向向量。",
-            "example": "直线l上非零向量a可作为l的方向向量"
+            "definition": "与直线l平行的非零向量称为直线l的方向向量。",
+            "example": "直线AB的非零向量AB可作为其方向向量。"
           },
           {
-            "name": "向量平行直线",
+            "name": "空间向量数量积",
             "difficulty": 2,
-            "description": "向量所在直线与给定直线平行或重合",
-            "aliases": [],
-            "prerequisites": [
-              "方向向量"
+            "description": "由两向量模与夹角定义的乘积",
+            "aliases": [
+              "数量积",
+              "点积"
             ],
-            "definition": "表示向量的有向线段所在直线与直线l平行或重合时，称向量平行于直线l。",
-            "example": "OA所在直线与l平行，则a平行于l"
+            "prerequisites": [
+              "空间向量的模",
+              "空间向量夹角"
+            ],
+            "definition": "两个空间向量的数量积等于它们模的乘积与夹角余弦的乘积。",
+            "example": "a·b=|a||b|cosθ。"
           },
           {
-            "name": "向量平行平面",
+            "name": "空间向量夹角",
             "difficulty": 2,
-            "description": "向量所在直线平行或位于给定平面",
-            "aliases": [],
+            "description": "两个非零空间向量的夹角",
+            "aliases": [
+              "向量夹角"
+            ],
             "prerequisites": [
               "空间向量"
             ],
-            "definition": "表示向量的有向线段所在直线与平面α平行或在平面α内时，称向量平行于平面α。",
-            "example": "向量a位于平面α内，则a平行于α"
+            "definition": "两个非零空间向量平移至同一起点后所成的不大于π的角叫其夹角。",
+            "example": "若a与b垂直，则它们的夹角为π/2。",
+            "section": "1.1 空间向量及其运算"
           },
           {
-            "name": "共面向量",
-            "difficulty": 3,
-            "description": "平行于同一个平面的向量",
+            "name": "向量垂直条件",
+            "difficulty": 2,
+            "description": "数量积为零刻画向量垂直",
             "aliases": [
-              "coplanar vectors"
+              "垂直判定"
             ],
             "prerequisites": [
-              "向量平行平面"
+              "空间向量数量积"
             ],
-            "definition": "平行于同一个平面的向量叫做共面向量。",
-            "example": "两个空间向量总是共面"
+            "definition": "两个非零空间向量垂直的充要条件是它们的数量积为零。",
+            "example": "a·b=0，则a⊥b。"
           },
           {
-            "name": "向量共线充要条件",
+            "name": "向量投影",
             "difficulty": 3,
-            "description": "用数乘关系刻画两个向量共线",
-            "aliases": [],
-            "prerequisites": [
-              "共线向量",
-              "空间向量数乘"
+            "description": "一个向量在另一个向量方向上的投影",
+            "aliases": [
+              "投影向量"
             ],
-            "definition": "对b≠0，a∥b的充要条件是存在实数λ使a=λb。",
-            "example": "a=3b说明a与b共线"
+            "prerequisites": [
+              "空间向量数量积",
+              "空间向量夹角"
+            ],
+            "definition": "向量a在向量b方向上的投影向量是与b共线且长度带方向的分量。",
+            "example": "a在b方向的投影长度为|a|cosθ。"
           },
           {
-            "name": "向量共面充要条件",
-            "difficulty": 4,
-            "description": "用线性组合刻画三个向量共面",
+            "name": "空间向量基本定理",
+            "difficulty": 3,
+            "description": "用三个不共面向量唯一表示任意向量",
             "aliases": [],
             "prerequisites": [
               "共面向量",
-              "空间向量加法",
-              "空间向量数乘"
+              "空间向量线性运算"
             ],
-            "definition": "当a、b不共线时，p与a、b共面的充要条件是p=xa+yb。",
-            "example": "p=2a-3b则p与a、b共面"
+            "definition": "空间任意三个不共面向量都可作为基底，任意向量可唯一表示为它们的线性组合。",
+            "example": "p=xa+yb+zc，其中x、y、z唯一确定。"
+          },
+          {
+            "name": "空间向量基底",
+            "difficulty": 3,
+            "description": "三个不共面的空间向量",
+            "aliases": [
+              "空间基底"
+            ],
+            "prerequisites": [
+              "空间向量基本定理"
+            ],
+            "definition": "空间中三个不共面的向量构成空间向量的一个基底。",
+            "example": "正方体同一顶点出发的三条棱向量可作基底。",
+            "section": "1.3 空间向量及其运算的坐标表示"
+          },
+          {
+            "name": "空间直角坐标系",
+            "difficulty": 2,
+            "description": "由三条两两垂直坐标轴建立的坐标系",
+            "aliases": [
+              "Oxyz坐标系"
+            ],
+            "prerequisites": [
+              "空间向量基底"
+            ],
+            "definition": "以同一点为原点、三条两两垂直直线为坐标轴建立空间直角坐标系。",
+            "example": "取正方体一个顶点为原点可建立Oxyz。"
+          },
+          {
+            "name": "空间向量坐标",
+            "difficulty": 2,
+            "description": "向量在空间基底下的有序数组表示",
+            "aliases": [
+              "三维坐标"
+            ],
+            "prerequisites": [
+              "空间向量基底",
+              "空间直角坐标系"
+            ],
+            "definition": "空间向量在给定基底下可用三个有序实数组表示。",
+            "example": "a=(2,−1,3)表示一个空间向量。"
+          },
+          {
+            "name": "坐标数量积",
+            "difficulty": 3,
+            "description": "按对应坐标乘积求和计算数量积",
+            "aliases": [],
+            "prerequisites": [
+              "空间向量坐标",
+              "空间向量数量积"
+            ],
+            "definition": "若a=(a1,a2,a3)、b=(b1,b2,b3)，则a·b=a1b1+a2b2+a3b3。",
+            "example": "(1,2,3)·(2,0,1)=5。"
+          },
+          {
+            "name": "空间距离公式",
+            "difficulty": 2,
+            "description": "由三维坐标计算两点间距离",
+            "aliases": [
+              "两点间距离"
+            ],
+            "prerequisites": [
+              "空间直角坐标系",
+              "空间向量坐标"
+            ],
+            "definition": "两点间距离等于其坐标差平方和的平方根。",
+            "example": "A(1,0,0)、B(1,2,2)的距离为√8。",
+            "section": "1.3 空间向量及其运算的坐标表示"
+          },
+          {
+            "name": "位置向量",
+            "difficulty": 2,
+            "description": "以定点为起点表示空间点的向量",
+            "aliases": [
+              "点的位置向量"
+            ],
+            "prerequisites": [
+              "空间向量"
+            ],
+            "definition": "取定基点O后，向量OP称为点P的位置向量。",
+            "example": "点P的位置向量为OP。",
+            "section": "1.4 空间向量的应用"
+          },
+          {
+            "name": "空间直线表示式",
+            "difficulty": 3,
+            "description": "用一点和方向向量表示空间直线",
+            "aliases": [
+              "直线向量表示式"
+            ],
+            "prerequisites": [
+              "位置向量",
+              "方向向量",
+              "空间向量线性运算"
+            ],
+            "definition": "直线l上点P满足OP=OA+t a，其中A在l上且a为l的方向向量。",
+            "example": "OP=OA+tAB表示过A且沿AB方向的直线。"
+          },
+          {
+            "name": "空间平面表示式",
+            "difficulty": 3,
+            "description": "用一点和两个不共线向量表示平面",
+            "aliases": [
+              "平面向量表示式"
+            ],
+            "prerequisites": [
+              "位置向量",
+              "向量共面条件"
+            ],
+            "definition": "平面ABC上点P满足OP=OA+xAB+yAC。",
+            "example": "OP=OA+xAB+yAC表示平面ABC内的点。"
+          },
+          {
+            "name": "法向量",
+            "difficulty": 2,
+            "description": "垂直于平面的非零向量",
+            "aliases": [
+              "平面法向量"
+            ],
+            "prerequisites": [
+              "向量垂直条件"
+            ],
+            "definition": "垂直于平面的非零向量称为该平面的法向量。",
+            "example": "若a为平面α的法向量，则a·AP=0。",
+            "section": "1.4 空间向量的应用"
+          },
+          {
+            "name": "平面法向量表示式",
+            "difficulty": 3,
+            "description": "用一点和法向量确定平面",
+            "aliases": [],
+            "prerequisites": [
+              "法向量",
+              "位置向量",
+              "空间向量数量积"
+            ],
+            "definition": "过点A且以a为法向量的平面是满足a·AP=0的点集。",
+            "example": "a·(OP−OA)=0表示该平面。"
+          },
+          {
+            "name": "直线平面位置关系",
+            "difficulty": 3,
+            "description": "用方向向量和法向量判断平行垂直",
+            "aliases": [],
+            "prerequisites": [
+              "方向向量",
+              "法向量",
+              "空间向量数量积"
+            ],
+            "definition": "通过比较直线方向向量与平面法向量的关系研究直线和平面的位置关系。",
+            "example": "直线方向向量与平面法向量垂直时，直线平行于平面。"
+          },
+          {
+            "name": "空间直线夹角",
+            "difficulty": 3,
+            "description": "两直线方向向量夹角的锐角或直角",
+            "aliases": [
+              "异面直线所成角"
+            ],
+            "prerequisites": [
+              "方向向量",
+              "空间向量夹角"
+            ],
+            "definition": "两条空间直线所成角可转化为其方向向量所成的锐角或直角。",
+            "example": "用两直线方向向量的数量积求所成角余弦。"
+          },
+          {
+            "name": "直线平面夹角",
+            "difficulty": 3,
+            "description": "直线与其在平面上投影所成的角",
+            "aliases": [
+              "线面角"
+            ],
+            "prerequisites": [
+              "方向向量",
+              "法向量",
+              "空间向量夹角"
+            ],
+            "definition": "直线与平面所成的角等于直线方向向量与平面法向量夹角的余角。",
+            "example": "若方向向量与法向量夹角为θ，则线面角为π/2−θ。"
+          },
+          {
+            "name": "二面角",
+            "difficulty": 3,
+            "description": "两个相交平面所成的角",
+            "aliases": [
+              "面面角"
+            ],
+            "prerequisites": [
+              "法向量",
+              "空间向量夹角"
+            ],
+            "definition": "两个相交平面所成的角可转化为它们法向量所成角的适当角度。",
+            "example": "用两平面的法向量数量积求二面角余弦。",
+            "section": "1.4 空间向量的应用"
+          },
+          {
+            "name": "投影距离",
+            "difficulty": 4,
+            "description": "利用投影向量长度求空间距离",
+            "aliases": [
+              "点面距离",
+              "点线距离"
+            ],
+            "prerequisites": [
+              "向量投影",
+              "空间向量数量积"
+            ],
+            "definition": "点到直线或平面的距离可转化为相关向量投影的长度。",
+            "example": "用点与平面上一点的向量在法向量上的投影求点面距离。"
+          },
+          {
+            "name": "向量法三步曲",
+            "difficulty": 3,
+            "description": "表示元素、向量运算、翻译结论",
+            "aliases": [
+              "空间向量解题过程"
+            ],
+            "prerequisites": [
+              "空间直线表示式",
+              "空间平面表示式",
+              "空间向量数量积"
+            ],
+            "definition": "用空间向量解立体几何依次经历表示几何元素、运算研究关系、翻译几何结论。",
+            "example": "先设方向向量，再用数量积证明两直线垂直。"
           }
         ],
-        "chapter_key": "707b3d6ab1",
+        "sections": [
+          {
+            "name": "1.1 空间向量及其运算",
+            "section_key": "15db72ff09",
+            "page_range": [
+              7,
+              16
+            ]
+          },
+          {
+            "name": "1.2 空间向量基本定理",
+            "section_key": "f2b49f9e66",
+            "page_range": [
+              16,
+              21
+            ]
+          },
+          {
+            "name": "1.3 空间向量及其运算的坐标表示",
+            "section_key": "82bc737eee",
+            "page_range": [
+              21,
+              31
+            ]
+          },
+          {
+            "name": "1.4 空间向量的应用",
+            "section_key": "1ea7a3abd2",
+            "page_range": [
+              31,
+              54
+            ]
+          }
+        ],
+        "chapter_key": "95e3009361",
         "metadata": {
           "volume_id": "74d0ad852dbc",
           "file_id": "74d0ad852dbc",
           "volume_title": "A版 选必第1册",
-          "chapter_order": 4,
-          "raw_heading": "第一章"
+          "chapter_order": 1,
+          "raw_heading": "第一章　空间向量与立体几何"
+        }
+      },
+      {
+        "name": "第二章 直线和圆的方程",
+        "concepts": [
+          {
+            "name": "坐标法",
+            "difficulty": 2,
+            "description": "用坐标和方程把几何问题转化为代数问题。",
+            "aliases": [
+              "解析几何方法"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "坐标法是在坐标系中表示几何对象并用代数运算研究其性质的方法。",
+            "example": "用坐标证明平行四边形对角线性质。"
+          },
+          {
+            "name": "平面直角坐标系",
+            "difficulty": 1,
+            "description": "用横纵坐标表示平面内点的位置。",
+            "aliases": [
+              "直角坐标系"
+            ],
+            "prerequisites": [],
+            "definition": "平面直角坐标系由互相垂直且有公共原点的两条数轴构成。",
+            "example": "点P(2,-1)表示横坐标为2、纵坐标为-1。"
+          },
+          {
+            "name": "直线的方向向量",
+            "difficulty": 2,
+            "description": "表示直线方向的非零向量。",
+            "aliases": [
+              "方向向量"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "与直线平行的任意非零向量都可作为该直线的方向向量。",
+            "example": "经过A、B的直线可取向量AB为方向向量。"
+          },
+          {
+            "name": "直线束",
+            "difficulty": 2,
+            "description": "经过同一点的所有直线组成的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "直线的方向向量"
+            ],
+            "definition": "经过平面内同一点的无数条直线组成直线束。",
+            "example": "经过点P的直线l1、l2、l3构成直线束。",
+            "section": "2.1 直线的倾斜角与斜率"
+          },
+          {
+            "name": "倾斜角",
+            "difficulty": 2,
+            "description": "直线向上方向与x轴正向所成的角。",
+            "aliases": [
+              "直线倾斜角"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "直线向上方向与x轴正方向之间的角α称为直线的倾斜角。",
+            "example": "水平直线的倾斜角规定为0°。"
+          },
+          {
+            "name": "斜率",
+            "difficulty": 2,
+            "description": "直线倾斜角的正切值。",
+            "aliases": [
+              "直线斜率"
+            ],
+            "prerequisites": [
+              "倾斜角"
+            ],
+            "definition": "直线倾斜角α的正切值k=tanα称为该直线的斜率。",
+            "example": "倾斜角为45°的直线斜率为1。"
+          },
+          {
+            "name": "斜率公式",
+            "difficulty": 2,
+            "description": "由直线上两点坐标计算斜率的公式。",
+            "aliases": [
+              "两点斜率公式"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "经过P1(x1,y1)、P2(x2,y2)且x1≠x2的直线斜率为(y2-y1)/(x2-x1)。",
+            "example": "A(1,2)、B(3,5)的斜率为3/2。"
+          },
+          {
+            "name": "直线点斜式",
+            "difficulty": 3,
+            "description": "由一点和斜率表示直线的方程形式。",
+            "aliases": [
+              "点斜式方程"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "过点(x0,y0)且斜率为k的直线方程是y-y0=k(x-x0)。",
+            "example": "过(1,2)、斜率3的直线为y-2=3(x-1)。"
+          },
+          {
+            "name": "直线斜截式",
+            "difficulty": 3,
+            "description": "用斜率和纵截距表示直线的方程形式。",
+            "aliases": [
+              "斜截式方程"
+            ],
+            "prerequisites": [
+              "直线点斜式"
+            ],
+            "definition": "斜率为k且在y轴上的截距为b的直线方程是y=kx+b。",
+            "example": "y=2x-1的斜率为2，纵截距为-1。",
+            "section": "2.2 直线的方程"
+          },
+          {
+            "name": "直线两点式",
+            "difficulty": 3,
+            "description": "由直线上两个点表示直线的方程形式。",
+            "aliases": [
+              "两点式方程"
+            ],
+            "prerequisites": [
+              "斜率公式"
+            ],
+            "definition": "经过两个不同点的直线可由两点坐标建立两点式方程。",
+            "example": "经过(1,2)和(3,4)可建立其两点式方程。"
+          },
+          {
+            "name": "直线截距式",
+            "difficulty": 3,
+            "description": "用直线在两坐标轴上的截距表示方程。",
+            "aliases": [
+              "截距式方程"
+            ],
+            "prerequisites": [
+              "直线两点式"
+            ],
+            "definition": "直线在x轴、y轴上的截距分别为a、b时，可写成x/a+y/b=1。",
+            "example": "截距为2和3的直线为x/2+y/3=1。"
+          },
+          {
+            "name": "直线一般式",
+            "difficulty": 3,
+            "description": "直线方程的一般代数表示形式。",
+            "aliases": [
+              "一般式方程"
+            ],
+            "prerequisites": [
+              "直线点斜式"
+            ],
+            "definition": "形如Ax+By+C=0且A、B不同时为零的方程表示一条直线。",
+            "example": "2x-3y+1=0是直线的一般式方程。"
+          },
+          {
+            "name": "两直线平行判定",
+            "difficulty": 3,
+            "description": "利用斜率判断两条直线是否平行。",
+            "aliases": [
+              "平行直线判定"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "两条不重合且斜率存在的直线平行，当且仅当它们斜率相等。",
+            "example": "斜率均为1且不重合的两直线平行。"
+          },
+          {
+            "name": "两直线垂直判定",
+            "difficulty": 3,
+            "description": "利用斜率乘积判断两条直线垂直。",
+            "aliases": [
+              "垂直直线判定"
+            ],
+            "prerequisites": [
+              "斜率"
+            ],
+            "definition": "两条斜率均存在的直线垂直，当且仅当斜率乘积为-1。",
+            "example": "斜率为2和-1/2的直线互相垂直。"
+          },
+          {
+            "name": "两直线交点",
+            "difficulty": 3,
+            "description": "两条相交直线公共点的坐标。",
+            "aliases": [
+              "交点坐标"
+            ],
+            "prerequisites": [
+              "直线一般式"
+            ],
+            "definition": "两条相交直线的交点坐标是其方程组的唯一解。",
+            "example": "联立两直线方程可求出交点。"
+          },
+          {
+            "name": "两点间距离公式",
+            "difficulty": 2,
+            "description": "计算坐标平面内两点间距离的公式。",
+            "aliases": [
+              "距离公式"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "两点P1(x1,y1)、P2(x2,y2)间距离为√[(x2-x1)²+(y2-y1)²]。",
+            "example": "(0,0)与(3,4)的距离为5。"
+          },
+          {
+            "name": "点到直线距离",
+            "difficulty": 3,
+            "description": "点到直线垂线段的长度公式。",
+            "aliases": [
+              "点到直线的距离公式"
+            ],
+            "prerequisites": [
+              "两点间距离公式",
+              "直线一般式"
+            ],
+            "definition": "点P(x0,y0)到Ax+By+C=0的距离为|Ax0+By0+C|/√(A²+B²)。",
+            "example": "原点到3x+4y-5=0的距离为1。"
+          },
+          {
+            "name": "平行线间距离",
+            "difficulty": 3,
+            "description": "两条平行直线公垂线段的长度。",
+            "aliases": [
+              "两条平行直线间的距离"
+            ],
+            "prerequisites": [
+              "点到直线距离"
+            ],
+            "definition": "两条平行直线间的距离是夹在它们之间的公垂线段长度。",
+            "example": "可取一条直线上的点求其到另一条的距离。",
+            "section": "2.3 直线的交点坐标与距离公式"
+          },
+          {
+            "name": "圆的几何要素",
+            "difficulty": 2,
+            "description": "确定圆位置和大小的圆心与半径。",
+            "aliases": [
+              "圆心和半径"
+            ],
+            "prerequisites": [
+              "平面直角坐标系"
+            ],
+            "definition": "圆由圆心的位置和半径大小两个几何要素确定。",
+            "example": "圆心(1,2)、半径3确定一个圆。"
+          },
+          {
+            "name": "圆的标准方程",
+            "difficulty": 2,
+            "description": "由圆心和半径直接表示圆的方程。",
+            "aliases": [
+              "标准方程"
+            ],
+            "prerequisites": [
+              "圆的几何要素",
+              "两点间距离公式"
+            ],
+            "definition": "圆心(a,b)、半径r的圆的标准方程为(x-a)²+(y-b)²=r²。",
+            "example": "圆心(1,-2)、半径2的方程为(x-1)²+(y+2)²=4。"
+          },
+          {
+            "name": "圆的一般方程",
+            "difficulty": 3,
+            "description": "圆方程的一般代数表示形式。",
+            "aliases": [
+              "一般方程"
+            ],
+            "prerequisites": [
+              "圆的标准方程"
+            ],
+            "definition": "圆可表示为x²+y²+Dx+Ey+F=0的方程形式。",
+            "example": "x²+y²-2x+4y-4=0表示一个圆。"
+          },
+          {
+            "name": "轨迹方程",
+            "difficulty": 3,
+            "description": "动点运动形成的曲线所满足的方程。",
+            "aliases": [
+              "点的轨迹方程"
+            ],
+            "prerequisites": [
+              "坐标法",
+              "两点间距离公式"
+            ],
+            "definition": "动点坐标满足的关系式称为该点运动轨迹的方程。",
+            "example": "到两定点距离比固定的点可形成圆的轨迹。"
+          },
+          {
+            "name": "直线与圆位置关系",
+            "difficulty": 3,
+            "description": "直线与圆相交、相切或相离的关系。",
+            "aliases": [
+              "直线和圆的位置关系"
+            ],
+            "prerequisites": [
+              "直线一般式",
+              "圆的标准方程",
+              "点到直线距离"
+            ],
+            "definition": "直线与圆按公共点个数分为相交、相切和相离。",
+            "example": "圆心到直线距离小于半径时相交。"
+          },
+          {
+            "name": "圆与圆位置关系",
+            "difficulty": 4,
+            "description": "两圆相交、相切或相离的关系。",
+            "aliases": [
+              "两圆位置关系"
+            ],
+            "prerequisites": [
+              "圆的标准方程",
+              "两点间距离公式"
+            ],
+            "definition": "两圆按公共点个数分为相交、相切和相离。",
+            "example": "圆心距介于两半径差的绝对值与半径和之间时相交。"
+          },
+          {
+            "name": "公共弦所在直线",
+            "difficulty": 4,
+            "description": "相交两圆公共弦所在的直线。",
+            "aliases": [
+              "两圆公共弦"
+            ],
+            "prerequisites": [
+              "圆与圆位置关系",
+              "直线一般式"
+            ],
+            "definition": "相交两圆公共弦的两个端点所在直线称为公共弦所在直线。",
+            "example": "联立两圆方程相减可得到公共弦直线。",
+            "section": "2.5 直线与圆、圆与圆的位置关系"
+          }
+        ],
+        "sections": [
+          {
+            "name": "2.1 直线的倾斜角与斜率",
+            "section_key": "fb8c37e0e8",
+            "page_range": [
+              56,
+              64
+            ]
+          },
+          {
+            "name": "2.2 直线的方程",
+            "section_key": "7ab7f335bb",
+            "page_range": [
+              64,
+              75
+            ]
+          },
+          {
+            "name": "2.3 直线的交点坐标与距离公式",
+            "section_key": "c62ff18f44",
+            "page_range": [
+              75,
+              87
+            ]
+          },
+          {
+            "name": "2.4 圆的方程",
+            "section_key": "1525c523a2",
+            "page_range": [
+              87,
+              96
+            ]
+          },
+          {
+            "name": "2.5 直线与圆、圆与圆的位置关系",
+            "section_key": "4eb7763694",
+            "page_range": [
+              96,
+              108
+            ]
+          }
+        ],
+        "chapter_key": "44db5c2787",
+        "metadata": {
+          "volume_id": "74d0ad852dbc",
+          "file_id": "74d0ad852dbc",
+          "volume_title": "A版 选必第1册",
+          "chapter_order": 2,
+          "raw_heading": "第二章　直线和圆的方程"
+        }
+      },
+      {
+        "name": "第三章 圆锥曲线的方程",
+        "concepts": [
+          {
+            "name": "圆锥曲线",
+            "difficulty": 1,
+            "description": "椭圆、抛物线和双曲线的统称",
+            "aliases": [
+              "圆锥截线"
+            ],
+            "prerequisites": [],
+            "definition": "圆锥曲线是用平面截圆锥得到的椭圆、抛物线和双曲线的统称。",
+            "example": "改变截平面方向可得到椭圆。"
+          },
+          {
+            "name": "坐标法",
+            "difficulty": 2,
+            "description": "用坐标和方程研究几何图形的方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "坐标法是建立坐标系并用代数方程表示、研究几何关系的方法。",
+            "example": "用焦点坐标建立椭圆方程。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "轨迹方程",
+            "difficulty": 3,
+            "description": "表示动点轨迹的方程",
+            "aliases": [],
+            "prerequisites": [
+              "坐标法"
+            ],
+            "definition": "轨迹方程是动点坐标满足且其解集恰好表示该轨迹的方程。",
+            "example": "由圆上点的坐标关系消元得到椭圆方程。"
+          },
+          {
+            "name": "椭圆",
+            "difficulty": 1,
+            "description": "到两个定点距离之和为定长的点的轨迹",
+            "aliases": [
+              "ellipse"
+            ],
+            "prerequisites": [],
+            "definition": "椭圆是平面内到两个定点的距离之和等于大于两定点距离的常数的点的轨迹。",
+            "example": "行星绕太阳运行的轨道近似是椭圆。"
+          },
+          {
+            "name": "焦点",
+            "difficulty": 2,
+            "description": "定义椭圆或双曲线的重要定点",
+            "aliases": [
+              "focus"
+            ],
+            "prerequisites": [
+              "椭圆"
+            ],
+            "definition": "焦点是椭圆或双曲线定义中所涉及的两个定点。",
+            "example": "椭圆焦点为F₁、F₂。"
+          },
+          {
+            "name": "焦距",
+            "difficulty": 2,
+            "description": "椭圆或双曲线两焦点间的距离",
+            "aliases": [
+              "focus distance"
+            ],
+            "prerequisites": [
+              "焦点"
+            ],
+            "definition": "焦距是椭圆或双曲线两个焦点之间的距离。",
+            "example": "焦点为(-c,0)、(c,0)时焦距为2c。"
+          },
+          {
+            "name": "半焦距",
+            "difficulty": 2,
+            "description": "焦距的一半，通常记为c",
+            "aliases": [],
+            "prerequisites": [
+              "焦距"
+            ],
+            "definition": "半焦距是椭圆焦距的一半，记作c。",
+            "example": "焦距为6时半焦距c=3。",
+            "section": "3.1 椭圆"
+          },
+          {
+            "name": "椭圆标准方程",
+            "difficulty": 3,
+            "description": "表示标准位置椭圆的规范方程",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆",
+              "坐标法"
+            ],
+            "definition": "焦点在x轴上的椭圆标准方程为x²/a²+y²/b²=1，且a>b>0。",
+            "example": "x²/25+y²/16=1。"
+          },
+          {
+            "name": "长半轴长",
+            "difficulty": 2,
+            "description": "椭圆长轴长度的一半，记为a",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程"
+            ],
+            "definition": "长半轴长a是椭圆长轴长度的一半。",
+            "example": "x²/25+y²/9=1中a=5。",
+            "section": "3.1 椭圆"
+          },
+          {
+            "name": "短半轴长",
+            "difficulty": 2,
+            "description": "椭圆短轴长度的一半，记为b",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程"
+            ],
+            "definition": "短半轴长b是椭圆短轴长度的一半。",
+            "example": "x²/25+y²/9=1中b=3。",
+            "section": "3.1 椭圆"
+          },
+          {
+            "name": "椭圆顶点",
+            "difficulty": 2,
+            "description": "椭圆与其对称轴的四个交点",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程",
+              "椭圆对称性"
+            ],
+            "definition": "椭圆顶点是椭圆与两条对称轴的四个交点。",
+            "example": "标准方程的顶点为(±a,0)、(0,±b)。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "椭圆对称性",
+            "difficulty": 2,
+            "description": "椭圆关于两坐标轴和原点对称",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆标准方程"
+            ],
+            "definition": "标准位置椭圆关于x轴、y轴及原点都对称。",
+            "example": "点(x,y)在椭圆上，则(-x,-y)也在椭圆上。"
+          },
+          {
+            "name": "椭圆离心率",
+            "difficulty": 3,
+            "description": "刻画椭圆扁平程度的比值",
+            "aliases": [
+              "椭圆偏心率"
+            ],
+            "prerequisites": [
+              "半焦距",
+              "长半轴长"
+            ],
+            "definition": "椭圆离心率是半焦距与长半轴长之比，即e=c/a。",
+            "example": "a=5、c=4时e=4/5。"
+          },
+          {
+            "name": "双曲线",
+            "difficulty": 1,
+            "description": "到两个定点距离之差的绝对值为定长的轨迹",
+            "aliases": [
+              "hyperbola"
+            ],
+            "prerequisites": [
+              "焦点"
+            ],
+            "definition": "双曲线是平面内到两个定点距离之差的绝对值等于常数的点的轨迹。",
+            "example": "双曲线可用于描述冷却塔外形线。"
+          },
+          {
+            "name": "双曲线标准方程",
+            "difficulty": 3,
+            "description": "表示标准位置双曲线的规范方程",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线",
+              "坐标法"
+            ],
+            "definition": "焦点在x轴上的双曲线标准方程为x²/a²-y²/b²=1。",
+            "example": "x²/9-y²/16=1。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "双曲线实轴",
+            "difficulty": 2,
+            "description": "连接双曲线两个顶点的线段",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程",
+              "双曲线顶点"
+            ],
+            "definition": "双曲线实轴是连接两个顶点的线段，长度为2a。",
+            "example": "顶点为(±4,0)时实轴长为8。"
+          },
+          {
+            "name": "双曲线虚轴",
+            "difficulty": 2,
+            "description": "表示双曲线辅助位置的线段",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "双曲线虚轴是以虚轴端点为端点的线段，长度为2b。",
+            "example": "b=3时虚轴长为6。"
+          },
+          {
+            "name": "双曲线顶点",
+            "difficulty": 2,
+            "description": "双曲线与实轴的两个交点",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "双曲线顶点是双曲线与其对称轴的两个交点。",
+            "example": "x²/a²-y²/b²=1的顶点为(±a,0)。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "双曲线中心",
+            "difficulty": 2,
+            "description": "双曲线的对称中心，通常为原点",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "双曲线中心是使双曲线关于该点中心对称的点。",
+            "example": "标准位置双曲线的中心是原点O。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "渐近线",
+            "difficulty": 3,
+            "description": "双曲线无限接近但不相交的直线",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线标准方程"
+            ],
+            "definition": "渐近线是双曲线两支向外延伸时无限接近但永不相交的直线。",
+            "example": "x²/a²-y²/b²=1的渐近线为x/a±y/b=0。"
+          },
+          {
+            "name": "等轴双曲线",
+            "difficulty": 3,
+            "description": "实轴和虚轴等长的双曲线",
+            "aliases": [],
+            "prerequisites": [
+              "双曲线实轴",
+              "双曲线虚轴"
+            ],
+            "definition": "等轴双曲线是实轴与虚轴长度相等的双曲线。",
+            "example": "x²-y²=a²是等轴双曲线。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "双曲线离心率",
+            "difficulty": 3,
+            "description": "刻画双曲线张口大小的比值",
+            "aliases": [
+              "双曲线偏心率"
+            ],
+            "prerequisites": [
+              "半焦距",
+              "双曲线实轴"
+            ],
+            "definition": "双曲线离心率是半焦距与实半轴长之比，即e=c/a且e>1。",
+            "example": "a=4、c=5时e=5/4。",
+            "section": "3.2 双曲线"
+          },
+          {
+            "name": "抛物线",
+            "difficulty": 1,
+            "description": "到定点和定直线距离相等的点的轨迹",
+            "aliases": [
+              "parabola"
+            ],
+            "prerequisites": [],
+            "definition": "抛物线是平面内到一个定点和一条定直线距离相等的点的轨迹。",
+            "example": "物体在重力作用下的轨迹可近似为抛物线。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "抛物线标准方程",
+            "difficulty": 3,
+            "description": "表示标准位置抛物线的规范方程",
+            "aliases": [],
+            "prerequisites": [
+              "抛物线",
+              "坐标法"
+            ],
+            "definition": "顶点在原点且开口向右的抛物线标准方程为y²=2px，p>0。",
+            "example": "y²=4x是一条抛物线。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "抛物线焦点",
+            "difficulty": 2,
+            "description": "抛物线定义中的定点",
+            "aliases": [],
+            "prerequisites": [
+              "抛物线",
+              "抛物线标准方程"
+            ],
+            "definition": "抛物线焦点是抛物线上各点到定直线距离相等的那个定点。",
+            "example": "y²=2px的焦点为(p/2,0)。",
+            "section": "3.3 抛物线"
+          },
+          {
+            "name": "抛物线准线",
+            "difficulty": 2,
+            "description": "抛物线定义中的定直线",
+            "aliases": [],
+            "prerequisites": [
+              "抛物线",
+              "抛物线标准方程"
+            ],
+            "definition": "抛物线准线是抛物线上各点到焦点和该直线距离相等的定直线。",
+            "example": "y²=2px的准线为x=-p/2。"
+          },
+          {
+            "name": "圆锥曲线光学性质",
+            "difficulty": 3,
+            "description": "圆锥曲线反射光线的几何性质",
+            "aliases": [],
+            "prerequisites": [
+              "椭圆",
+              "双曲线",
+              "抛物线"
+            ],
+            "definition": "圆锥曲线光学性质描述光线经其反射后的聚集、发散或平行现象。",
+            "example": "抛物线焦点发出的光线反射后平行于对称轴。"
+          },
+          {
+            "name": "数形结合",
+            "difficulty": 2,
+            "description": "结合代数方程与几何图形研究问题",
+            "aliases": [],
+            "prerequisites": [
+              "坐标法"
+            ],
+            "definition": "数形结合是利用方程与图形之间的对应关系解决几何问题的思想方法。",
+            "example": "由标准方程判断曲线的范围和顶点。",
+            "section": "3.3 抛物线"
+          }
+        ],
+        "sections": [
+          {
+            "name": "3.1 椭圆",
+            "section_key": "7a84668b16",
+            "page_range": [
+              110,
+              123
+            ]
+          },
+          {
+            "name": "3.2 双曲线",
+            "section_key": "d8ee5dc8b1",
+            "page_range": [
+              123,
+              135
+            ]
+          },
+          {
+            "name": "3.3 抛物线",
+            "section_key": "f40af51528",
+            "page_range": [
+              135,
+              154
+            ]
+          }
+        ],
+        "chapter_key": "0bdee84b2e",
+        "metadata": {
+          "volume_id": "74d0ad852dbc",
+          "file_id": "74d0ad852dbc",
+          "volume_title": "A版 选必第1册",
+          "chapter_order": 3,
+          "raw_heading": "第三章　圆锥曲线的方程"
         }
       }
     ],
@@ -1068,6 +2482,103 @@
       "degraded": false,
       "reason": ""
     },
-    "section_ranges": {}
+    "section_ranges": {
+      "15db72ff09": [
+        7,
+        16
+      ],
+      "1.1 空间向量及其运算": [
+        7,
+        16
+      ],
+      "f2b49f9e66": [
+        16,
+        21
+      ],
+      "1.2 空间向量基本定理": [
+        16,
+        21
+      ],
+      "82bc737eee": [
+        21,
+        31
+      ],
+      "1.3 空间向量及其运算的坐标表示": [
+        21,
+        31
+      ],
+      "1ea7a3abd2": [
+        31,
+        54
+      ],
+      "1.4 空间向量的应用": [
+        31,
+        54
+      ],
+      "fb8c37e0e8": [
+        56,
+        64
+      ],
+      "2.1 直线的倾斜角与斜率": [
+        56,
+        64
+      ],
+      "7ab7f335bb": [
+        64,
+        75
+      ],
+      "2.2 直线的方程": [
+        64,
+        75
+      ],
+      "c62ff18f44": [
+        75,
+        87
+      ],
+      "2.3 直线的交点坐标与距离公式": [
+        75,
+        87
+      ],
+      "1525c523a2": [
+        87,
+        96
+      ],
+      "2.4 圆的方程": [
+        87,
+        96
+      ],
+      "4eb7763694": [
+        96,
+        108
+      ],
+      "2.5 直线与圆、圆与圆的位置关系": [
+        96,
+        108
+      ],
+      "7a84668b16": [
+        110,
+        123
+      ],
+      "3.1 椭圆": [
+        110,
+        123
+      ],
+      "d8ee5dc8b1": [
+        123,
+        135
+      ],
+      "3.2 双曲线": [
+        123,
+        135
+      ],
+      "f40af51528": [
+        135,
+        154
+      ],
+      "3.3 抛物线": [
+        135,
+        154
+      ]
+    }
   }
 }

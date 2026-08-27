@@ -1,0 +1,3602 @@
+{
+  "file_id": "b33361a0a77e",
+  "text_sha256": "3c600b75947427652b219b74a164911dd3f354322d38cbe6247256649e50b23d",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "绪论 撩开物理学的神秘面纱",
+        "concepts": [
+          {
+            "name": "万有引力定律",
+            "difficulty": 2,
+            "description": "解释天体运动、潮汐和物体下落等现象的自然定律",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "万有引力定律是制约天体运行、潮汐和物体下落等现象的自然定律。",
+            "example": "苹果下落和天体周而复始运动都可由其解释。",
+            "section": "四、启智慧之迪"
+          },
+          {
+            "name": "静电",
+            "difficulty": 2,
+            "description": "解释闪电、梳子吸纸屑等现象的自然秘密",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "静电是隐藏在闪电、梳子吸起纸屑等现象背后的自然现象。",
+            "example": "梳过头发的塑料梳子能吸起纸屑。"
+          },
+          {
+            "name": "物理学",
+            "difficulty": 1,
+            "description": "研究物质基本结构、相互作用和运动规律的学科",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物理学是研究自然界物质的基本结构、相互作用和运动规律的一门学科。",
+            "example": "研究石头和苹果下落的共同规律。"
+          },
+          {
+            "name": "物理自然观",
+            "difficulty": 2,
+            "description": "基于物理学体系认识和解释自然形成的观念",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "物理自然观是人们基于物理学体系认识自然、解释自然而形成的观念。",
+            "example": "用物理规律统一解释不同的自然现象。"
+          },
+          {
+            "name": "观察",
+            "difficulty": 1,
+            "description": "通过直接或借助仪器考察自然现象的探索方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "观察是人们直接或利用仪器考察自然现象以认识规律的方式。",
+            "example": "伽利略用望远镜观察天体运动。"
+          },
+          {
+            "name": "实验方法",
+            "difficulty": 2,
+            "description": "通过实验获取证据并探究自然规律的方法",
+            "aliases": [],
+            "prerequisites": [
+              "观察"
+            ],
+            "definition": "实验方法是通过实验获得证据、探究自然规律的重要手段。",
+            "example": "牛顿用三棱镜进行色散实验。"
+          },
+          {
+            "name": "白光色散",
+            "difficulty": 2,
+            "description": "白光经三棱镜分解为多种不同颜色的光",
+            "aliases": [
+              "色散实验"
+            ],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "白光色散是白光通过三棱镜后分解成各种不同颜色光的现象。",
+            "example": "牛顿利用三棱镜发现白光由多种颜色组成。",
+            "section": "一、源自然之问"
+          },
+          {
+            "name": "经典物理学",
+            "difficulty": 2,
+            "description": "以牛顿等人的研究为基础建立的物理学体系",
+            "aliases": [
+              "经典物理学体系"
+            ],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "经典物理学是牛顿等物理学家在大量实验基础上建立的物理学体系。",
+            "example": "牛顿力学体系能够解释周围的宏观世界。",
+            "section": "一、源自然之问"
+          },
+          {
+            "name": "现代物理学",
+            "difficulty": 2,
+            "description": "进一步揭示高速或微观层面自然奥秘的物理学",
+            "aliases": [],
+            "prerequisites": [
+              "经典物理学"
+            ],
+            "definition": "现代物理学是进一步揭示高速或微观层面大自然奥秘的物理学。",
+            "example": "相对论和量子论推动了现代物理学的发展。",
+            "section": "一、源自然之问"
+          },
+          {
+            "name": "相对论",
+            "difficulty": 3,
+            "description": "爱因斯坦提出并改变时间、空间等概念的理论",
+            "aliases": [],
+            "prerequisites": [
+              "经典物理学"
+            ],
+            "definition": "相对论是爱因斯坦提出、从根本上冲击经典力学体系的理论。",
+            "example": "相对论改变了人们熟悉的时间与空间概念。",
+            "section": "二、探万物之秘"
+          },
+          {
+            "name": "量子论",
+            "difficulty": 3,
+            "description": "揭示微观世界与宏观世界物理规律差异的理论",
+            "aliases": [],
+            "prerequisites": [
+              "经典物理学"
+            ],
+            "definition": "量子论是研究微观规律并揭示其与宏观规律差异的理论。",
+            "example": "普朗克和玻尔是量子论的主要奠基人。",
+            "section": "二、探万物之秘"
+          },
+          {
+            "name": "引力波",
+            "difficulty": 3,
+            "description": "科学家利用激光干涉设备探测到的宇宙现象",
+            "aliases": [],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "引力波是科学家利用激光干涉引力波天文台探测到的宇宙现象。",
+            "example": "2016年科学家宣布首次探测到引力波。",
+            "section": "二、探万物之秘"
+          },
+          {
+            "name": "电磁技术",
+            "difficulty": 2,
+            "description": "电磁技术的应用推动社会进入电气时代",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "电磁技术是将电磁现象和规律应用于生产生活的技术。",
+            "example": "电磁技术的应用带来了城市的万家灯火。",
+            "section": "三、采科学之益"
+          },
+          {
+            "name": "物理学技术应用",
+            "difficulty": 2,
+            "description": "利用物理学知识改变生产生活并推动社会发展",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "物理学技术应用是利用物理学知识和规律服务生产生活与社会发展的实践。",
+            "example": "蒸汽机发明推动了第一次工业革命。"
+          },
+          {
+            "name": "科学思维",
+            "difficulty": 2,
+            "description": "运用物理知识解决问题并进行探索的思维品质",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "科学思维是运用物理知识解释现象、解决问题并开展探索的思维方式。",
+            "example": "分析吹气使热水降温的原因。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "一、源自然之问",
+            "page_range": [
+              7,
+              9
+            ]
+          },
+          {
+            "name": "二、探万物之秘",
+            "page_range": [
+              9,
+              11
+            ]
+          },
+          {
+            "name": "三、采科学之益",
+            "page_range": [
+              11,
+              13
+            ]
+          },
+          {
+            "name": "四、启智慧之迪",
+            "page_range": [
+              13,
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第1章 运动的描述",
+        "concepts": [
+          {
+            "name": "机械运动",
+            "difficulty": 1,
+            "description": "物体相对于其他物体的位置随时间变化",
+            "aliases": [
+              "运动"
+            ],
+            "prerequisites": [],
+            "definition": "机械运动是物体相对于其他物体的位置随时间的变化。",
+            "example": "运行电梯中的人相对地面在运动。"
+          },
+          {
+            "name": "参考系",
+            "difficulty": 1,
+            "description": "描述物体运动时选定的参照物体",
+            "aliases": [],
+            "prerequisites": [
+              "机械运动"
+            ],
+            "definition": "用来描述物体运动的参照物体称为参考系。",
+            "example": "以电梯为参考系，乘客是静止的。",
+            "section": "第1节 空间和时间"
+          },
+          {
+            "name": "参考点",
+            "difficulty": 1,
+            "description": "描述物体位置时选定的地面标志物",
+            "aliases": [],
+            "prerequisites": [
+              "参考系"
+            ],
+            "definition": "参考点是描述物体空间位置时选定的具体位置标志。",
+            "example": "以市中心为参考点描述汽车位置。",
+            "section": "第1节 空间和时间"
+          },
+          {
+            "name": "空间位置",
+            "difficulty": 2,
+            "description": "物体在空间中相对于参考系的位置",
+            "aliases": [],
+            "prerequisites": [
+              "参考系",
+              "参考点"
+            ],
+            "definition": "空间位置表示物体相对于参考系所处的具体位置。",
+            "example": "汽车位于市中心正东500米处。",
+            "section": "第1节 空间和时间"
+          },
+          {
+            "name": "坐标系",
+            "difficulty": 2,
+            "description": "用坐标定量描述物体空间位置的数学工具",
+            "aliases": [],
+            "prerequisites": [
+              "空间位置"
+            ],
+            "definition": "坐标系是用坐标定量描述物体位置的数学方法。",
+            "example": "用一维坐标系表示汽车的位置为x=500米。"
+          },
+          {
+            "name": "时刻",
+            "difficulty": 1,
+            "description": "表示某一瞬时，在时间轴上用点表示",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "时刻是指某一个瞬时。",
+            "example": "火箭点火时刻为15日9时。"
+          },
+          {
+            "name": "时间",
+            "difficulty": 1,
+            "description": "两个时刻之间的间隔，在时间轴上用线段表示",
+            "aliases": [
+              "时间间隔"
+            ],
+            "prerequisites": [
+              "时刻"
+            ],
+            "definition": "时间是两个时刻之间的间隔。",
+            "example": "火箭点火到展示旗帜经历9小时40分。"
+          },
+          {
+            "name": "理想模型",
+            "difficulty": 2,
+            "description": "突出主要因素并忽略次要因素的抽象模型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "理想模型是为简化研究而对实际物体或过程进行的合理抽象。",
+            "example": "研究篮球轨迹时忽略球上各点运动差异。",
+            "section": "第2节 质点和位移"
+          },
+          {
+            "name": "质点",
+            "difficulty": 2,
+            "description": "具有质量而没有大小的理想化物理模型",
+            "aliases": [],
+            "prerequisites": [
+              "理想模型"
+            ],
+            "definition": "质点是用来代替物体的具有质量的点。",
+            "example": "研究地球绕太阳公转时可将地球视为质点。"
+          },
+          {
+            "name": "路程",
+            "difficulty": 2,
+            "description": "物体运动轨迹的长度，用于描述经过的距离",
+            "aliases": [],
+            "prerequisites": [
+              "空间位置"
+            ],
+            "definition": "路程是物体沿运动路径通过的长度。",
+            "example": "运动员跑一圈400米，路程为400米。"
+          },
+          {
+            "name": "位移",
+            "difficulty": 3,
+            "description": "描述物体位置变化的有向物理量",
+            "aliases": [],
+            "prerequisites": [
+              "空间位置",
+              "坐标系"
+            ],
+            "definition": "位移是从初位置指向末位置的有向线段。",
+            "example": "小球上行5米后下行8米，位移为负3米。"
+          },
+          {
+            "name": "标量",
+            "difficulty": 2,
+            "description": "只用大小就能描述的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "标量是只需要用大小即可完整描述的物理量。",
+            "example": "质量是标量。"
+          },
+          {
+            "name": "矢量",
+            "difficulty": 2,
+            "description": "既有大小又有方向的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "矢量是既要说明大小又要指明方向的物理量。",
+            "example": "位移是矢量。"
+          },
+          {
+            "name": "位移—时间图像",
+            "difficulty": 3,
+            "description": "表示物体位移随时间变化关系的图像",
+            "aliases": [
+              "s-t图像"
+            ],
+            "prerequisites": [
+              "位移",
+              "时间"
+            ],
+            "definition": "位移—时间图像以时间为横轴、位移为纵轴表示运动变化。",
+            "example": "匀速直线运动的s-t图像是一条直线。"
+          },
+          {
+            "name": "平均速度",
+            "difficulty": 3,
+            "description": "一段位移与对应时间之比的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "位移",
+              "时间"
+            ],
+            "definition": "平均速度等于一段位移与通过这段位移所用时间之比。",
+            "example": "汽车5秒位移25米，平均速度为5米每秒。"
+          },
+          {
+            "name": "瞬时速度",
+            "difficulty": 3,
+            "description": "物体在某位置或某时刻的速度",
+            "aliases": [],
+            "prerequisites": [
+              "平均速度"
+            ],
+            "definition": "瞬时速度是物体在某一位置或某一时刻的速度。",
+            "example": "速度计读出汽车在某时刻的瞬时速度。"
+          },
+          {
+            "name": "速率",
+            "difficulty": 2,
+            "description": "瞬时速度的大小，只表示运动快慢",
+            "aliases": [
+              "瞬时速率"
+            ],
+            "prerequisites": [
+              "瞬时速度"
+            ],
+            "definition": "速率是瞬时速度的大小。",
+            "example": "汽车速度计显示瞬时速率。"
+          },
+          {
+            "name": "平均速率",
+            "difficulty": 3,
+            "description": "物体运动路程与所用时间之比",
+            "aliases": [],
+            "prerequisites": [
+              "路程",
+              "时间"
+            ],
+            "definition": "平均速率等于物体运动的路程与所经历时间之比。",
+            "example": "区间测速可测量车辆的平均速率。"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 4,
+            "description": "描述物体速度变化快慢的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "瞬时速度",
+              "时间"
+            ],
+            "definition": "加速度是物体速度的变化与发生该变化所用时间之比。",
+            "example": "轿车起动时加速度较大。"
+          },
+          {
+            "name": "平均加速度",
+            "difficulty": 4,
+            "description": "一段时间内速度变化量与时间之比",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "时间"
+            ],
+            "definition": "平均加速度是一定时间内速度变化量与该时间之比。",
+            "example": "猎豹两秒内速度由0.56米每秒增至20米每秒。",
+            "section": "第4节 加速度"
+          },
+          {
+            "name": "匀变速运动",
+            "difficulty": 4,
+            "description": "瞬时加速度始终保持不变的运动",
+            "aliases": [],
+            "prerequisites": [
+              "加速度"
+            ],
+            "definition": "匀变速运动是瞬时加速度保持不变的运动。",
+            "example": "加速度恒定的直线运动属于匀变速运动。",
+            "section": "第4节 加速度"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 空间和时间",
+            "page_range": [
+              18,
+              24
+            ]
+          },
+          {
+            "name": "第2节 质点和位移",
+            "page_range": [
+              24,
+              29
+            ]
+          },
+          {
+            "name": "第3节 速度",
+            "page_range": [
+              29,
+              33
+            ]
+          },
+          {
+            "name": "第4节 加速度",
+            "page_range": [
+              33,
+              39
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章 匀变速直线运动",
+        "concepts": [
+          {
+            "name": "变速运动",
+            "difficulty": 1,
+            "description": "物体速度发生变化的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "速度"
+            ],
+            "definition": "物体速度发生变化的运动称为变速运动。",
+            "example": "汽车刹车时速度不断减小。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移",
+            "difficulty": 2,
+            "description": "描述物体位置变化的物理量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "位移是物体相对于起始位置的位置变化量。",
+            "example": "汽车前进5米，位移为5米。"
+          },
+          {
+            "name": "速度",
+            "difficulty": 2,
+            "description": "描述物体运动快慢和方向的物理量。",
+            "aliases": [],
+            "prerequisites": [
+              "位移"
+            ],
+            "definition": "速度表示物体单位时间内位移的变化。",
+            "example": "汽车速度为10 m/s。"
+          },
+          {
+            "name": "平均速度",
+            "difficulty": 2,
+            "description": "一段时间内位移与时间的比值。",
+            "aliases": [],
+            "prerequisites": [
+              "位移",
+              "速度"
+            ],
+            "definition": "平均速度等于一段时间内的位移与这段时间的比值。",
+            "example": "10秒位移50米，平均速度为5 m/s。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 3,
+            "description": "描述速度变化快慢和方向的物理量。",
+            "aliases": [],
+            "prerequisites": [
+              "速度"
+            ],
+            "definition": "加速度是速度变化量与发生这一变化所用时间的比值。",
+            "example": "速度每秒增加2 m/s，加速度为2 m/s²。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "匀变速直线运动",
+            "difficulty": 3,
+            "description": "加速度大小和方向均保持不变的直线运动。",
+            "aliases": [
+              "匀变速运动"
+            ],
+            "prerequisites": [
+              "加速度",
+              "变速运动"
+            ],
+            "definition": "物体加速度保持不变的直线运动称为匀变速直线运动。",
+            "example": "汽车沿直线以恒定加速度加速。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "匀加速直线运动",
+            "difficulty": 2,
+            "description": "加速度与速度同向的匀变速直线运动。",
+            "aliases": [],
+            "prerequisites": [
+              "匀变速直线运动"
+            ],
+            "definition": "加速度与速度同向时，物体做匀加速直线运动。",
+            "example": "汽车由静止沿直线加速。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "匀减速直线运动",
+            "difficulty": 2,
+            "description": "加速度与速度反向的匀变速直线运动。",
+            "aliases": [],
+            "prerequisites": [
+              "匀变速直线运动"
+            ],
+            "definition": "加速度与速度反向时，物体做匀减速直线运动。",
+            "example": "汽车刹车后速度逐渐减小。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "速度公式",
+            "difficulty": 3,
+            "description": "描述匀变速运动速度随时间变化的公式。",
+            "aliases": [
+              "速度—时间关系"
+            ],
+            "prerequisites": [
+              "匀变速直线运动",
+              "加速度",
+              "速度"
+            ],
+            "definition": "匀变速直线运动中末速度满足vt＝v0＋at。",
+            "example": "由初速度和加速度求4秒末速度。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "速度—时间图像",
+            "difficulty": 3,
+            "description": "直观表示速度随时间变化关系的图像。",
+            "aliases": [
+              "v-t图像"
+            ],
+            "prerequisites": [
+              "速度",
+              "时间",
+              "匀变速直线运动"
+            ],
+            "definition": "以时间为横轴、速度为纵轴绘制的图像称为速度—时间图像。",
+            "example": "匀变速运动的图像是一条倾斜直线。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "加速度—时间图像",
+            "difficulty": 3,
+            "description": "表示加速度随时间变化关系的图像。",
+            "aliases": [
+              "a-t图像"
+            ],
+            "prerequisites": [
+              "加速度",
+              "时间",
+              "匀变速直线运动"
+            ],
+            "definition": "以时间为横轴、加速度为纵轴绘制的图像称为加速度—时间图像。",
+            "example": "匀变速运动的图像平行于时间轴。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移公式",
+            "difficulty": 3,
+            "description": "描述匀变速运动位移随时间变化的公式。",
+            "aliases": [
+              "位移—时间关系"
+            ],
+            "prerequisites": [
+              "速度公式",
+              "位移",
+              "加速度"
+            ],
+            "definition": "匀变速直线运动中位移满足s＝v0t＋½at²。",
+            "example": "由初速度、加速度和时间求位移。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移—时间图像",
+            "difficulty": 3,
+            "description": "直观表示位移随时间变化关系的图像。",
+            "aliases": [
+              "s-t图像"
+            ],
+            "prerequisites": [
+              "位移",
+              "时间",
+              "位移公式"
+            ],
+            "definition": "以时间为横轴、位移为纵轴绘制的图像称为位移—时间图像。",
+            "example": "根据图像读出某时刻的位移。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移—速度关系",
+            "difficulty": 4,
+            "description": "不含时间量的匀变速运动位移关系。",
+            "aliases": [
+              "s-v关系式"
+            ],
+            "prerequisites": [
+              "速度公式",
+              "位移公式",
+              "位移",
+              "加速度"
+            ],
+            "definition": "匀变速直线运动中满足vt²－v0²＝2as。",
+            "example": "已知初末速度和加速度求位移。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "测量值",
+            "difficulty": 1,
+            "description": "通过测量得到的物理量数值。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "测量值是用测量工具或方法获得的物理量数值。",
+            "example": "刻度尺测得长度为3.46 cm。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "真实值",
+            "difficulty": 1,
+            "description": "被测物理量实际具有的数值。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "真实值是被测物理量在实际情况下的真实数值。",
+            "example": "某长度的实际长度值。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "绝对误差",
+            "difficulty": 2,
+            "description": "测量值与真实值之差。",
+            "aliases": [],
+            "prerequisites": [
+              "测量值",
+              "真实值"
+            ],
+            "definition": "绝对误差等于测量值与真实值之差。",
+            "example": "测量值偏离真实值0.01 cm。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "相对误差",
+            "difficulty": 2,
+            "description": "绝对误差与真实值的比值，常用百分数表示。",
+            "aliases": [
+              "百分误差"
+            ],
+            "prerequisites": [
+              "绝对误差",
+              "真实值"
+            ],
+            "definition": "相对误差是绝对误差与真实值的比值。",
+            "example": "绝对误差0.01 cm对应0.29%。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "系统误差",
+            "difficulty": 2,
+            "description": "由原理不完善或仪器缺陷造成的误差。",
+            "aliases": [],
+            "prerequisites": [
+              "绝对误差"
+            ],
+            "definition": "系统误差是由测量原理不完善或仪器缺陷等造成的误差。",
+            "example": "刻度尺刻度不均匀造成的偏差。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "偶然误差",
+            "difficulty": 2,
+            "description": "由偶然因素造成、方向不固定的误差。",
+            "aliases": [],
+            "prerequisites": [
+              "绝对误差"
+            ],
+            "definition": "偶然误差是多次测量中由各种偶然因素产生的误差。",
+            "example": "读数时人眼位置变化造成的误差。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "有效数字",
+            "difficulty": 2,
+            "description": "测量结果中含一位估读数字的全部数字。",
+            "aliases": [],
+            "prerequisites": [
+              "测量值"
+            ],
+            "definition": "有效数字是测量结果中能反映被测量大小且带一位估读数字的全部数字。",
+            "example": "10.40 cm有4位有效数字。"
+          },
+          {
+            "name": "瞬时速度",
+            "difficulty": 3,
+            "description": "物体在某一时刻或某一位置的速度。",
+            "aliases": [],
+            "prerequisites": [
+              "平均速度",
+              "速度"
+            ],
+            "definition": "瞬时速度是物体在某一时刻或某一位置的速度。",
+            "example": "用相邻点间平均速度估算点1速度。"
+          },
+          {
+            "name": "打点计时器",
+            "difficulty": 2,
+            "description": "同时记录运动时间和位移信息的实验仪器。",
+            "aliases": [],
+            "prerequisites": [
+              "位移",
+              "时间"
+            ],
+            "definition": "打点计时器利用周期性打点记录物体运动的时间和位移。",
+            "example": "用纸带记录小车下滑运动。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "自由落体运动",
+            "difficulty": 3,
+            "description": "物体只在重力作用下从静止开始下落的运动。",
+            "aliases": [
+              "自由落体"
+            ],
+            "prerequisites": [
+              "匀变速直线运动"
+            ],
+            "definition": "物体只在重力作用下从静止开始下落的运动称为自由落体运动。",
+            "example": "忽略空气阻力时花盆竖直下落。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "重力加速度",
+            "difficulty": 3,
+            "description": "物体自由下落时具有的加速度。",
+            "aliases": [
+              "g"
+            ],
+            "prerequisites": [
+              "自由落体运动",
+              "加速度"
+            ],
+            "definition": "物体自由下落时由重力作用产生的加速度称为重力加速度。",
+            "example": "通常取g＝9.8 m/s²。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "伽利略斜面实验",
+            "difficulty": 3,
+            "description": "利用斜面研究自由落体规律的实验方法。",
+            "aliases": [
+              "斜面实验"
+            ],
+            "prerequisites": [
+              "自由落体运动",
+              "匀变速直线运动"
+            ],
+            "definition": "伽利略通过研究小球沿斜面运动间接探索自由落体规律。",
+            "example": "观察位移与时间平方的比值是否不变。",
+            "section": "第5节 自由落体运动"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 速度变化规律",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第2节 位移变化规律",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第3节 实验中的误差和有效数字",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第4节 科学测量：做直线运动物体的瞬时速度",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第5节 自由落体运动",
+            "page_range": [
+              39,
+              71
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章 相互作用",
+        "concepts": [
+          {
+            "name": "力",
+            "difficulty": 1,
+            "description": "物体之间的相互作用，可改变形状或运动状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "力是物体和物体之间的相互作用。",
+            "example": "球拍击打网球使球改变形状和运动方向"
+          },
+          {
+            "name": "矢量",
+            "difficulty": 2,
+            "description": "既有大小又有方向的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "矢量是既具有大小又具有方向的物理量。",
+            "example": "同样大小但方向不同的力作用效果不同",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "力的三要素",
+            "difficulty": 2,
+            "description": "描述力大小、方向和作用点的三个要素",
+            "aliases": [],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "力的大小、方向和作用点称为力的三要素。",
+            "example": "手托书的力大小为3 N且竖直向上",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "力的图示",
+            "difficulty": 2,
+            "description": "用带箭头线段表示力的方法",
+            "aliases": [],
+            "prerequisites": [
+              "力的三要素"
+            ],
+            "definition": "力的图示是用带箭头的线段表示力的方法。",
+            "example": "用线段表示书受到的竖直向上支持力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "四种基本相互作用",
+            "difficulty": 3,
+            "description": "自然界作用力本质上可归结的四类相互作用",
+            "aliases": [
+              "基本相互作用"
+            ],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "自然界中的作用力本质上可归结为引力、电磁力、强力和弱力相互作用。",
+            "example": "重力属于引力相互作用",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "重力",
+            "difficulty": 2,
+            "description": "地球吸引物体产生的力，方向竖直向下",
+            "aliases": [
+              "物重"
+            ],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "因地球的吸引而使物体受到的力称为重力。",
+            "example": "落叶最终落回地面"
+          },
+          {
+            "name": "重心",
+            "difficulty": 3,
+            "description": "物体所受重力的等效作用点",
+            "aliases": [],
+            "prerequisites": [
+              "重力"
+            ],
+            "definition": "重心是物体所受重力的等效作用点。",
+            "example": "均匀圆球的重心在球心"
+          },
+          {
+            "name": "形变",
+            "difficulty": 1,
+            "description": "物体伸长、缩短、弯曲等形状变化",
+            "aliases": [
+              "变形"
+            ],
+            "prerequisites": [],
+            "definition": "物体发生的伸长、缩短和弯曲等形状变化称为形变。",
+            "example": "压扁面包会发生形变",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "弹性形变",
+            "difficulty": 2,
+            "description": "撤去外力后能够恢复原状的形变",
+            "aliases": [],
+            "prerequisites": [
+              "形变"
+            ],
+            "definition": "物体撤去外力后能够恢复原状的形变称为弹性形变。",
+            "example": "压缩弹簧后松手恢复原状",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "范性形变",
+            "difficulty": 2,
+            "description": "撤去外力后不能恢复原状的形变",
+            "aliases": [
+              "塑性形变"
+            ],
+            "prerequisites": [
+              "形变"
+            ],
+            "definition": "物体发生形变后不能恢复原状的形变称为范性形变。",
+            "example": "压扁的面包不能恢复原状",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "弹性限度",
+            "difficulty": 3,
+            "description": "弹性体保持恢复原状能力的形变限度",
+            "aliases": [],
+            "prerequisites": [
+              "弹性形变"
+            ],
+            "definition": "弹性限度是弹性体形变不超过时仍能恢复原状的限度。",
+            "example": "弹簧挂码不能超过弹性限度",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "弹力",
+            "difficulty": 2,
+            "description": "接触物体因弹性形变产生的相互作用力",
+            "aliases": [],
+            "prerequisites": [
+              "弹性形变"
+            ],
+            "definition": "发生弹性形变的物体对接触物体产生的力称为弹力。",
+            "example": "蹦极绳被拉伸后对人产生向上的拉力"
+          },
+          {
+            "name": "支持力",
+            "difficulty": 2,
+            "description": "接触面因形变对物体产生的支撑作用力",
+            "aliases": [],
+            "prerequisites": [
+              "弹力"
+            ],
+            "definition": "接触面发生形变后对接触物体产生的弹力称为支持力。",
+            "example": "桌面对书产生竖直向上的支持力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "胡克定律",
+            "difficulty": 3,
+            "description": "弹性限度内弹簧弹力与形变量成正比",
+            "aliases": [],
+            "prerequisites": [
+              "弹力",
+              "形变",
+              "弹性限度"
+            ],
+            "definition": "在弹性限度内，弹簧弹力大小与伸长或压缩量成正比。",
+            "example": "弹簧形变量加倍，弹力也加倍",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "劲度系数",
+            "difficulty": 3,
+            "description": "表示弹簧软硬程度的比例系数，单位为N/m",
+            "aliases": [
+              "弹簧劲度系数"
+            ],
+            "prerequisites": [
+              "胡克定律"
+            ],
+            "definition": "劲度系数是胡克定律中弹力与形变量的比例系数。",
+            "example": "劲度系数越大的弹簧越硬",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "摩擦力",
+            "difficulty": 2,
+            "description": "接触面上阻碍相对运动或运动趋势的力",
+            "aliases": [],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "摩擦力是接触面上阻碍物体相对运动或相对运动趋势的力。",
+            "example": "鞋底与地面间的摩擦力帮助人行走",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "滑动摩擦力",
+            "difficulty": 2,
+            "description": "接触面发生相对滑动时产生的摩擦力",
+            "aliases": [],
+            "prerequisites": [
+              "摩擦力"
+            ],
+            "definition": "两个接触并挤压的物体发生相对滑动时产生的摩擦力称为滑动摩擦力。",
+            "example": "橡皮擦在纸面上移动受到滑动摩擦力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "动摩擦因数",
+            "difficulty": 3,
+            "description": "滑动摩擦力与压力之比的无量纲系数",
+            "aliases": [],
+            "prerequisites": [
+              "滑动摩擦力"
+            ],
+            "definition": "动摩擦因数是滑动摩擦力与压力的比值。",
+            "example": "钢与冰之间的动摩擦因数较小",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "静摩擦力",
+            "difficulty": 2,
+            "description": "接触物体无相对运动但有相对运动趋势时的摩擦力",
+            "aliases": [],
+            "prerequisites": [
+              "摩擦力"
+            ],
+            "definition": "接触并挤压的物体没有相对运动但有运动趋势时产生的摩擦力称为静摩擦力。",
+            "example": "未被推动的木箱受到静摩擦力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "最大静摩擦力",
+            "difficulty": 3,
+            "description": "静摩擦力达到的最大值，超过后物体开始滑动",
+            "aliases": [],
+            "prerequisites": [
+              "静摩擦力"
+            ],
+            "definition": "静摩擦力达到的最大值称为最大静摩擦力。",
+            "example": "拉力超过最大静摩擦力后木箱开始滑动",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "光滑物体",
+            "difficulty": 2,
+            "description": "摩擦力小到对研究问题可忽略的物体模型",
+            "aliases": [],
+            "prerequisites": [
+              "摩擦力"
+            ],
+            "definition": "摩擦力小到对所研究问题可以忽略的物体称为光滑物体。",
+            "example": "光滑水平桌面上的物体可忽略摩擦力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "摩擦力调控",
+            "difficulty": 2,
+            "description": "通过改变压力或材料等方法增大或减小摩擦力",
+            "aliases": [],
+            "prerequisites": [
+              "滑动摩擦力",
+              "静摩擦力"
+            ],
+            "definition": "摩擦力调控是根据需要改变压力或接触材料等来改变摩擦力。",
+            "example": "刷冰可减小冰壶与冰面的摩擦力"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 重力与重心",
+            "page_range": [
+              71,
+              71
+            ]
+          },
+          {
+            "name": "第2节 科学探究：弹力",
+            "page_range": [
+              71,
+              71
+            ]
+          },
+          {
+            "name": "第3节 摩擦力",
+            "page_range": [
+              71,
+              93
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4章 力与平衡",
+        "concepts": [
+          {
+            "name": "共点力",
+            "difficulty": 2,
+            "description": "作用于同一点或作用线相交于同一点的力",
+            "aliases": [
+              "共点力系统"
+            ],
+            "prerequisites": [],
+            "definition": "几个力同时作用于物体同一点或作用线相交于同一点时称为共点力。",
+            "example": "两人提购物篮时的两个拉力是共点力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "合力",
+            "difficulty": 2,
+            "description": "作用效果等同于几个力共同作用的一个力",
+            "aliases": [
+              "resultant force"
+            ],
+            "prerequisites": [
+              "共点力"
+            ],
+            "definition": "能产生与几个分力共同作用相同效果的力叫作合力。",
+            "example": "一个人提篮子的力可作为两人拉力的合力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "分力",
+            "difficulty": 2,
+            "description": "共同产生某个合力作用效果的各个力",
+            "aliases": [
+              "component force"
+            ],
+            "prerequisites": [
+              "合力"
+            ],
+            "definition": "组成合力并与其作用效果等效的各个力叫作分力。",
+            "example": "提箱子的力可分解为竖直和水平两个分力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "力的合成",
+            "difficulty": 2,
+            "description": "求几个力合力的过程",
+            "aliases": [
+              "合力求解"
+            ],
+            "prerequisites": [
+              "合力",
+              "共点力"
+            ],
+            "definition": "求几个力的合力的过程称为力的合成。",
+            "example": "用平行四边形定则求两个拉力的合力。"
+          },
+          {
+            "name": "平行四边形定则",
+            "difficulty": 3,
+            "description": "用平行四边形对角线表示合力的规律",
+            "aliases": [
+              "平行四边形法则"
+            ],
+            "prerequisites": [
+              "合力",
+              "共点力"
+            ],
+            "definition": "以两个共点力为邻边作平行四边形，其对角线表示合力的大小和方向。",
+            "example": "以两个拉力的有向线段为邻边作平行四边形。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "三角形定则",
+            "difficulty": 3,
+            "description": "将矢量有向线段首尾相接求合力的方法",
+            "aliases": [
+              "矢量三角形定则"
+            ],
+            "prerequisites": [
+              "平行四边形定则"
+            ],
+            "definition": "将表示两个力的有向线段首尾相接，连接首端与末端的有向线段表示合力。",
+            "example": "把三个力依次首尾相接，首末连线表示合力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "矢量",
+            "difficulty": 2,
+            "description": "相加时遵循平行四边形定则的物理量",
+            "aliases": [
+              "向量"
+            ],
+            "prerequisites": [
+              "平行四边形定则"
+            ],
+            "definition": "相加时遵循平行四边形定则的物理量称为矢量。",
+            "example": "力和加速度都是矢量。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "标量",
+            "difficulty": 2,
+            "description": "相加时遵循代数相加法则的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "相加时遵循代数相加法则的物理量称为标量。",
+            "example": "时间和路程都是标量。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "力的分解",
+            "difficulty": 2,
+            "description": "求一个力各分力的过程",
+            "aliases": [
+              "力分解"
+            ],
+            "prerequisites": [
+              "合力",
+              "平行四边形定则"
+            ],
+            "definition": "求一个已知力的分力的过程称为力的分解。",
+            "example": "将重力分解为沿斜面和垂直斜面的两个分力。"
+          },
+          {
+            "name": "正交分解",
+            "difficulty": 3,
+            "description": "把一个力分解为两个互相垂直分力的方法",
+            "aliases": [
+              "力的正交分解"
+            ],
+            "prerequisites": [
+              "力的分解"
+            ],
+            "definition": "把一个力分解为两个互相垂直的分力称为力的正交分解。",
+            "example": "将斜面上的重力分解到平行和垂直斜面的方向。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "平衡状态",
+            "difficulty": 2,
+            "description": "物体静止或做匀速直线运动的状态",
+            "aliases": [
+              "平衡"
+            ],
+            "prerequisites": [
+              "合力"
+            ],
+            "definition": "物体静止或做匀速直线运动时所处的状态称为平衡状态。",
+            "example": "静止在桌面上的书处于平衡状态。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "共点力平衡条件",
+            "difficulty": 3,
+            "description": "共点力作用下物体平衡时合力为零",
+            "aliases": [
+              "力的平衡条件"
+            ],
+            "prerequisites": [
+              "共点力",
+              "合力",
+              "平衡状态"
+            ],
+            "definition": "共点力作用下物体处于平衡状态的条件是所受合力为零。",
+            "example": "静止鸟笼的绳拉力与重力合力为零。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "封闭多边形法则",
+            "difficulty": 4,
+            "description": "多个共点力首尾相接形成封闭多边形",
+            "aliases": [
+              "力的封闭多边形"
+            ],
+            "prerequisites": [
+              "三角形定则",
+              "共点力平衡条件"
+            ],
+            "definition": "平衡时将各共点力首尾相接，表示它们的有向线段必构成封闭多边形。",
+            "example": "三个平衡力首尾相接可构成封闭三角形。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 科学探究：力的合成",
+            "page_range": [
+              93,
+              93
+            ]
+          },
+          {
+            "name": "第2节 力的分解",
+            "page_range": [
+              93,
+              93
+            ]
+          },
+          {
+            "name": "第3节 共点力的平衡",
+            "page_range": [
+              93,
+              113
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第5章 牛顿运动定律",
+        "concepts": [
+          {
+            "name": "运动状态",
+            "difficulty": 1,
+            "description": "物体速度的大小或方向所表示的运动情况",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体的运动状态由其速度大小和方向共同描述。",
+            "example": "汽车转弯时速度方向改变，运动状态发生变化。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 2,
+            "description": "描述物体速度变化快慢和方向的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "运动状态"
+            ],
+            "definition": "加速度是描述物体速度变化快慢和方向的物理量。",
+            "example": "汽车启动时速度增大，具有加速度。"
+          },
+          {
+            "name": "质量",
+            "difficulty": 1,
+            "description": "描述物体惯性大小的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "质量是描述物体惯性大小的物理量。",
+            "example": "质量越大的车辆，运动状态越不易改变。"
+          },
+          {
+            "name": "合外力",
+            "difficulty": 2,
+            "description": "物体所受各个外力的合力",
+            "aliases": [
+              "合力"
+            ],
+            "prerequisites": [],
+            "definition": "合外力是物体同时受到多个外力时这些力的合力。",
+            "example": "物体受拉力和摩擦力时，二者的合力是合外力。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "理想实验",
+            "difficulty": 2,
+            "description": "在理想条件下进行科学推理的实验方法",
+            "aliases": [
+              "理想化实验"
+            ],
+            "prerequisites": [
+              "运动状态"
+            ],
+            "definition": "理想实验是在现实难以实现的理想条件下进行科学推理的方法。",
+            "example": "伽利略设想小球在光滑斜面和水平面上的运动。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "力与运动关系",
+            "difficulty": 2,
+            "description": "力是改变物体运动状态的原因",
+            "aliases": [],
+            "prerequisites": [
+              "运动状态",
+              "合外力"
+            ],
+            "definition": "物体所受合外力不为零时，其运动状态会发生改变。",
+            "example": "汽车受到制动力后速度逐渐减小。"
+          },
+          {
+            "name": "牛顿第一定律",
+            "difficulty": 3,
+            "description": "物体无合外力时保持静止或匀速直线运动",
+            "aliases": [
+              "惯性定律"
+            ],
+            "prerequisites": [
+              "运动状态",
+              "合外力"
+            ],
+            "definition": "一切物体总保持静止或匀速直线运动状态，除非有外力迫使其改变。",
+            "example": "气垫导轨上的滑块可近似保持匀速直线运动。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "惯性",
+            "difficulty": 2,
+            "description": "物体保持原有运动状态不变的属性",
+            "aliases": [],
+            "prerequisites": [
+              "质量",
+              "牛顿第一定律"
+            ],
+            "definition": "惯性是物体保持静止或匀速直线运动状态不变的属性。",
+            "example": "汽车急刹车时，乘客身体会向前倾。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "控制变量法",
+            "difficulty": 2,
+            "description": "控制其他因素不变研究单一因素影响的方法",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "质量"
+            ],
+            "definition": "控制变量法是先保持其他物理量不变，再研究某一因素影响的方法。",
+            "example": "研究加速度与力关系时保持小车质量不变。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿第二定律",
+            "difficulty": 4,
+            "description": "加速度与合外力成正比、与质量成反比",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "质量",
+              "合外力"
+            ],
+            "definition": "物体加速度与合外力成正比、与质量成反比，方向与合外力相同。",
+            "example": "同样的力作用在质量较小的物体上，加速度较大。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿第二定律公式",
+            "difficulty": 3,
+            "description": "用F=ma定量表示力、质量和加速度关系",
+            "aliases": [
+              "F=ma"
+            ],
+            "prerequisites": [
+              "牛顿第二定律"
+            ],
+            "definition": "在国际单位制中，合外力、质量和加速度满足F=ma。",
+            "example": "质量2千克、加速度3米每二次方秒时合力为6牛。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿",
+            "difficulty": 2,
+            "description": "国际单位制中的力的单位",
+            "aliases": [
+              "N"
+            ],
+            "prerequisites": [
+              "牛顿第二定律公式",
+              "国际单位制"
+            ],
+            "definition": "牛顿是使1千克物体产生1米每二次方秒加速度的力的单位。",
+            "example": "1牛等于1千克·米每二次方秒。"
+          },
+          {
+            "name": "国际单位制",
+            "difficulty": 2,
+            "description": "由基本单位和导出单位组成的统一单位体系",
+            "aliases": [
+              "SI"
+            ],
+            "prerequisites": [],
+            "definition": "国际单位制是国际统一采用的由基本单位和导出单位组成的单位体系。",
+            "example": "力学中米、千克和秒是基本单位。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "惯性参考系",
+            "difficulty": 3,
+            "description": "牛顿运动定律成立的参考系",
+            "aliases": [
+              "惯性系"
+            ],
+            "prerequisites": [
+              "牛顿第一定律"
+            ],
+            "definition": "惯性参考系是牛顿运动定律成立的参考系。",
+            "example": "研究地面附近物体运动时，通常把地面视为惯性系。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "作用力与反作用力",
+            "difficulty": 2,
+            "description": "物体相互作用时同时产生的一对力",
+            "aliases": [
+              "相互作用力"
+            ],
+            "prerequisites": [
+              "合外力"
+            ],
+            "definition": "作用力与反作用力是相互作用的两个物体彼此施加的一对力。",
+            "example": "拍桌子时手对桌子的力与桌子对手的力互为作用反作用力。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿第三定律",
+            "difficulty": 3,
+            "description": "相互作用的两力大小相等、方向相反",
+            "aliases": [
+              "作用反作用定律"
+            ],
+            "prerequisites": [
+              "作用力与反作用力"
+            ],
+            "definition": "两个物体之间的作用力与反作用力大小相等、方向相反且共线。",
+            "example": "火箭喷出气体，气体对火箭产生反作用力。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "超重",
+            "difficulty": 3,
+            "description": "物体对支持物压力大于重力的现象",
+            "aliases": [],
+            "prerequisites": [
+              "牛顿第二定律"
+            ],
+            "definition": "超重是物体对悬挂物的拉力或对支持物的压力大于其重力的现象。",
+            "example": "电梯加速上升时，体重计示数变大。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "失重",
+            "difficulty": 3,
+            "description": "物体对支持物压力小于重力的现象",
+            "aliases": [],
+            "prerequisites": [
+              "牛顿第二定律"
+            ],
+            "definition": "失重是物体对悬挂物的拉力或对支持物的压力小于其重力的现象。",
+            "example": "电梯加速下降时，人的体重计示数变小。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "竖直上抛运动",
+            "difficulty": 3,
+            "description": "物体以初速度竖直向上抛出后的运动",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "牛顿第二定律"
+            ],
+            "definition": "竖直上抛运动是物体以初速度竖直向上抛出且只受重力作用的运动。",
+            "example": "石子竖直上抛后先减速上升，再自由落体下降。",
+            "section": "第5节 超重与失重"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 牛顿第一运动定律",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第2节 科学探究：加速度与力、质量的关系",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第3节 牛顿第二运动定律",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第4节 牛顿第三运动定律",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第5节 超重与失重",
+            "page_range": [
+              113,
+              146
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "绪论 撩开物理学的神秘面纱",
+        "concepts": [
+          {
+            "name": "万有引力定律",
+            "difficulty": 2,
+            "description": "解释天体运动、潮汐和物体下落等现象的自然定律",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "万有引力定律是制约天体运行、潮汐和物体下落等现象的自然定律。",
+            "example": "苹果下落和天体周而复始运动都可由其解释。",
+            "section": "四、启智慧之迪"
+          },
+          {
+            "name": "静电",
+            "difficulty": 2,
+            "description": "解释闪电、梳子吸纸屑等现象的自然秘密",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "静电是隐藏在闪电、梳子吸起纸屑等现象背后的自然现象。",
+            "example": "梳过头发的塑料梳子能吸起纸屑。"
+          },
+          {
+            "name": "物理学",
+            "difficulty": 1,
+            "description": "研究物质基本结构、相互作用和运动规律的学科",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物理学是研究自然界物质的基本结构、相互作用和运动规律的一门学科。",
+            "example": "研究石头和苹果下落的共同规律。"
+          },
+          {
+            "name": "物理自然观",
+            "difficulty": 2,
+            "description": "基于物理学体系认识和解释自然形成的观念",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "物理自然观是人们基于物理学体系认识自然、解释自然而形成的观念。",
+            "example": "用物理规律统一解释不同的自然现象。"
+          },
+          {
+            "name": "观察",
+            "difficulty": 1,
+            "description": "通过直接或借助仪器考察自然现象的探索方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "观察是人们直接或利用仪器考察自然现象以认识规律的方式。",
+            "example": "伽利略用望远镜观察天体运动。"
+          },
+          {
+            "name": "实验方法",
+            "difficulty": 2,
+            "description": "通过实验获取证据并探究自然规律的方法",
+            "aliases": [],
+            "prerequisites": [
+              "观察"
+            ],
+            "definition": "实验方法是通过实验获得证据、探究自然规律的重要手段。",
+            "example": "牛顿用三棱镜进行色散实验。"
+          },
+          {
+            "name": "白光色散",
+            "difficulty": 2,
+            "description": "白光经三棱镜分解为多种不同颜色的光",
+            "aliases": [
+              "色散实验"
+            ],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "白光色散是白光通过三棱镜后分解成各种不同颜色光的现象。",
+            "example": "牛顿利用三棱镜发现白光由多种颜色组成。",
+            "section": "一、源自然之问"
+          },
+          {
+            "name": "经典物理学",
+            "difficulty": 2,
+            "description": "以牛顿等人的研究为基础建立的物理学体系",
+            "aliases": [
+              "经典物理学体系"
+            ],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "经典物理学是牛顿等物理学家在大量实验基础上建立的物理学体系。",
+            "example": "牛顿力学体系能够解释周围的宏观世界。",
+            "section": "一、源自然之问"
+          },
+          {
+            "name": "现代物理学",
+            "difficulty": 2,
+            "description": "进一步揭示高速或微观层面自然奥秘的物理学",
+            "aliases": [],
+            "prerequisites": [
+              "经典物理学"
+            ],
+            "definition": "现代物理学是进一步揭示高速或微观层面大自然奥秘的物理学。",
+            "example": "相对论和量子论推动了现代物理学的发展。",
+            "section": "一、源自然之问"
+          },
+          {
+            "name": "相对论",
+            "difficulty": 3,
+            "description": "爱因斯坦提出并改变时间、空间等概念的理论",
+            "aliases": [],
+            "prerequisites": [
+              "经典物理学"
+            ],
+            "definition": "相对论是爱因斯坦提出、从根本上冲击经典力学体系的理论。",
+            "example": "相对论改变了人们熟悉的时间与空间概念。",
+            "section": "二、探万物之秘"
+          },
+          {
+            "name": "量子论",
+            "difficulty": 3,
+            "description": "揭示微观世界与宏观世界物理规律差异的理论",
+            "aliases": [],
+            "prerequisites": [
+              "经典物理学"
+            ],
+            "definition": "量子论是研究微观规律并揭示其与宏观规律差异的理论。",
+            "example": "普朗克和玻尔是量子论的主要奠基人。",
+            "section": "二、探万物之秘"
+          },
+          {
+            "name": "引力波",
+            "difficulty": 3,
+            "description": "科学家利用激光干涉设备探测到的宇宙现象",
+            "aliases": [],
+            "prerequisites": [
+              "实验方法"
+            ],
+            "definition": "引力波是科学家利用激光干涉引力波天文台探测到的宇宙现象。",
+            "example": "2016年科学家宣布首次探测到引力波。",
+            "section": "二、探万物之秘"
+          },
+          {
+            "name": "电磁技术",
+            "difficulty": 2,
+            "description": "电磁技术的应用推动社会进入电气时代",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "电磁技术是将电磁现象和规律应用于生产生活的技术。",
+            "example": "电磁技术的应用带来了城市的万家灯火。",
+            "section": "三、采科学之益"
+          },
+          {
+            "name": "物理学技术应用",
+            "difficulty": 2,
+            "description": "利用物理学知识改变生产生活并推动社会发展",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "物理学技术应用是利用物理学知识和规律服务生产生活与社会发展的实践。",
+            "example": "蒸汽机发明推动了第一次工业革命。"
+          },
+          {
+            "name": "科学思维",
+            "difficulty": 2,
+            "description": "运用物理知识解决问题并进行探索的思维品质",
+            "aliases": [],
+            "prerequisites": [
+              "物理学"
+            ],
+            "definition": "科学思维是运用物理知识解释现象、解决问题并开展探索的思维方式。",
+            "example": "分析吹气使热水降温的原因。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "一、源自然之问",
+            "section_key": "af0f78aea4",
+            "page_range": [
+              7,
+              9
+            ]
+          },
+          {
+            "name": "二、探万物之秘",
+            "section_key": "5ade1994eb",
+            "page_range": [
+              9,
+              11
+            ]
+          },
+          {
+            "name": "三、采科学之益",
+            "section_key": "9157bb56bb",
+            "page_range": [
+              11,
+              13
+            ]
+          },
+          {
+            "name": "四、启智慧之迪",
+            "section_key": "83a4301f24",
+            "page_range": [
+              13,
+              17
+            ]
+          }
+        ],
+        "chapter_key": "d8a6de919e",
+        "metadata": {
+          "volume_id": "b33361a0a77e",
+          "file_id": "b33361a0a77e",
+          "volume_title": "普通高中教科书 物理 必修第一册",
+          "chapter_order": 1,
+          "raw_heading": "绪论 撩开物理学的神秘面纱"
+        }
+      },
+      {
+        "name": "第1章 运动的描述",
+        "concepts": [
+          {
+            "name": "机械运动",
+            "difficulty": 1,
+            "description": "物体相对于其他物体的位置随时间变化",
+            "aliases": [
+              "运动"
+            ],
+            "prerequisites": [],
+            "definition": "机械运动是物体相对于其他物体的位置随时间的变化。",
+            "example": "运行电梯中的人相对地面在运动。"
+          },
+          {
+            "name": "参考系",
+            "difficulty": 1,
+            "description": "描述物体运动时选定的参照物体",
+            "aliases": [],
+            "prerequisites": [
+              "机械运动"
+            ],
+            "definition": "用来描述物体运动的参照物体称为参考系。",
+            "example": "以电梯为参考系，乘客是静止的。",
+            "section": "第1节 空间和时间"
+          },
+          {
+            "name": "参考点",
+            "difficulty": 1,
+            "description": "描述物体位置时选定的地面标志物",
+            "aliases": [],
+            "prerequisites": [
+              "参考系"
+            ],
+            "definition": "参考点是描述物体空间位置时选定的具体位置标志。",
+            "example": "以市中心为参考点描述汽车位置。",
+            "section": "第1节 空间和时间"
+          },
+          {
+            "name": "空间位置",
+            "difficulty": 2,
+            "description": "物体在空间中相对于参考系的位置",
+            "aliases": [],
+            "prerequisites": [
+              "参考系",
+              "参考点"
+            ],
+            "definition": "空间位置表示物体相对于参考系所处的具体位置。",
+            "example": "汽车位于市中心正东500米处。",
+            "section": "第1节 空间和时间"
+          },
+          {
+            "name": "坐标系",
+            "difficulty": 2,
+            "description": "用坐标定量描述物体空间位置的数学工具",
+            "aliases": [],
+            "prerequisites": [
+              "空间位置"
+            ],
+            "definition": "坐标系是用坐标定量描述物体位置的数学方法。",
+            "example": "用一维坐标系表示汽车的位置为x=500米。"
+          },
+          {
+            "name": "时刻",
+            "difficulty": 1,
+            "description": "表示某一瞬时，在时间轴上用点表示",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "时刻是指某一个瞬时。",
+            "example": "火箭点火时刻为15日9时。"
+          },
+          {
+            "name": "时间",
+            "difficulty": 1,
+            "description": "两个时刻之间的间隔，在时间轴上用线段表示",
+            "aliases": [
+              "时间间隔"
+            ],
+            "prerequisites": [
+              "时刻"
+            ],
+            "definition": "时间是两个时刻之间的间隔。",
+            "example": "火箭点火到展示旗帜经历9小时40分。"
+          },
+          {
+            "name": "理想模型",
+            "difficulty": 2,
+            "description": "突出主要因素并忽略次要因素的抽象模型",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "理想模型是为简化研究而对实际物体或过程进行的合理抽象。",
+            "example": "研究篮球轨迹时忽略球上各点运动差异。",
+            "section": "第2节 质点和位移"
+          },
+          {
+            "name": "质点",
+            "difficulty": 2,
+            "description": "具有质量而没有大小的理想化物理模型",
+            "aliases": [],
+            "prerequisites": [
+              "理想模型"
+            ],
+            "definition": "质点是用来代替物体的具有质量的点。",
+            "example": "研究地球绕太阳公转时可将地球视为质点。"
+          },
+          {
+            "name": "路程",
+            "difficulty": 2,
+            "description": "物体运动轨迹的长度，用于描述经过的距离",
+            "aliases": [],
+            "prerequisites": [
+              "空间位置"
+            ],
+            "definition": "路程是物体沿运动路径通过的长度。",
+            "example": "运动员跑一圈400米，路程为400米。"
+          },
+          {
+            "name": "位移",
+            "difficulty": 3,
+            "description": "描述物体位置变化的有向物理量",
+            "aliases": [],
+            "prerequisites": [
+              "空间位置",
+              "坐标系"
+            ],
+            "definition": "位移是从初位置指向末位置的有向线段。",
+            "example": "小球上行5米后下行8米，位移为负3米。"
+          },
+          {
+            "name": "标量",
+            "difficulty": 2,
+            "description": "只用大小就能描述的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "标量是只需要用大小即可完整描述的物理量。",
+            "example": "质量是标量。"
+          },
+          {
+            "name": "矢量",
+            "difficulty": 2,
+            "description": "既有大小又有方向的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "矢量是既要说明大小又要指明方向的物理量。",
+            "example": "位移是矢量。"
+          },
+          {
+            "name": "位移—时间图像",
+            "difficulty": 3,
+            "description": "表示物体位移随时间变化关系的图像",
+            "aliases": [
+              "s-t图像"
+            ],
+            "prerequisites": [
+              "位移",
+              "时间"
+            ],
+            "definition": "位移—时间图像以时间为横轴、位移为纵轴表示运动变化。",
+            "example": "匀速直线运动的s-t图像是一条直线。"
+          },
+          {
+            "name": "平均速度",
+            "difficulty": 3,
+            "description": "一段位移与对应时间之比的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "位移",
+              "时间"
+            ],
+            "definition": "平均速度等于一段位移与通过这段位移所用时间之比。",
+            "example": "汽车5秒位移25米，平均速度为5米每秒。"
+          },
+          {
+            "name": "瞬时速度",
+            "difficulty": 3,
+            "description": "物体在某位置或某时刻的速度",
+            "aliases": [],
+            "prerequisites": [
+              "平均速度"
+            ],
+            "definition": "瞬时速度是物体在某一位置或某一时刻的速度。",
+            "example": "速度计读出汽车在某时刻的瞬时速度。"
+          },
+          {
+            "name": "速率",
+            "difficulty": 2,
+            "description": "瞬时速度的大小，只表示运动快慢",
+            "aliases": [
+              "瞬时速率"
+            ],
+            "prerequisites": [
+              "瞬时速度"
+            ],
+            "definition": "速率是瞬时速度的大小。",
+            "example": "汽车速度计显示瞬时速率。"
+          },
+          {
+            "name": "平均速率",
+            "difficulty": 3,
+            "description": "物体运动路程与所用时间之比",
+            "aliases": [],
+            "prerequisites": [
+              "路程",
+              "时间"
+            ],
+            "definition": "平均速率等于物体运动的路程与所经历时间之比。",
+            "example": "区间测速可测量车辆的平均速率。"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 4,
+            "description": "描述物体速度变化快慢的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "瞬时速度",
+              "时间"
+            ],
+            "definition": "加速度是物体速度的变化与发生该变化所用时间之比。",
+            "example": "轿车起动时加速度较大。"
+          },
+          {
+            "name": "平均加速度",
+            "difficulty": 4,
+            "description": "一段时间内速度变化量与时间之比",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "时间"
+            ],
+            "definition": "平均加速度是一定时间内速度变化量与该时间之比。",
+            "example": "猎豹两秒内速度由0.56米每秒增至20米每秒。",
+            "section": "第4节 加速度"
+          },
+          {
+            "name": "匀变速运动",
+            "difficulty": 4,
+            "description": "瞬时加速度始终保持不变的运动",
+            "aliases": [],
+            "prerequisites": [
+              "加速度"
+            ],
+            "definition": "匀变速运动是瞬时加速度保持不变的运动。",
+            "example": "加速度恒定的直线运动属于匀变速运动。",
+            "section": "第4节 加速度"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 空间和时间",
+            "section_key": "7f56b81834",
+            "page_range": [
+              18,
+              24
+            ]
+          },
+          {
+            "name": "第2节 质点和位移",
+            "section_key": "ec39fe1df7",
+            "page_range": [
+              24,
+              29
+            ]
+          },
+          {
+            "name": "第3节 速度",
+            "section_key": "cf0e6dda05",
+            "page_range": [
+              29,
+              33
+            ]
+          },
+          {
+            "name": "第4节 加速度",
+            "section_key": "2a3a72f2ae",
+            "page_range": [
+              33,
+              39
+            ]
+          }
+        ],
+        "chapter_key": "560daaf524",
+        "metadata": {
+          "volume_id": "b33361a0a77e",
+          "file_id": "b33361a0a77e",
+          "volume_title": "普通高中教科书 物理 必修第一册",
+          "chapter_order": 2,
+          "raw_heading": "第1章 运动的描述"
+        }
+      },
+      {
+        "name": "第2章 匀变速直线运动",
+        "concepts": [
+          {
+            "name": "变速运动",
+            "difficulty": 1,
+            "description": "物体速度发生变化的运动。",
+            "aliases": [],
+            "prerequisites": [
+              "速度"
+            ],
+            "definition": "物体速度发生变化的运动称为变速运动。",
+            "example": "汽车刹车时速度不断减小。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移",
+            "difficulty": 2,
+            "description": "描述物体位置变化的物理量。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "位移是物体相对于起始位置的位置变化量。",
+            "example": "汽车前进5米，位移为5米。"
+          },
+          {
+            "name": "速度",
+            "difficulty": 2,
+            "description": "描述物体运动快慢和方向的物理量。",
+            "aliases": [],
+            "prerequisites": [
+              "位移"
+            ],
+            "definition": "速度表示物体单位时间内位移的变化。",
+            "example": "汽车速度为10 m/s。"
+          },
+          {
+            "name": "平均速度",
+            "difficulty": 2,
+            "description": "一段时间内位移与时间的比值。",
+            "aliases": [],
+            "prerequisites": [
+              "位移",
+              "速度"
+            ],
+            "definition": "平均速度等于一段时间内的位移与这段时间的比值。",
+            "example": "10秒位移50米，平均速度为5 m/s。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 3,
+            "description": "描述速度变化快慢和方向的物理量。",
+            "aliases": [],
+            "prerequisites": [
+              "速度"
+            ],
+            "definition": "加速度是速度变化量与发生这一变化所用时间的比值。",
+            "example": "速度每秒增加2 m/s，加速度为2 m/s²。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "匀变速直线运动",
+            "difficulty": 3,
+            "description": "加速度大小和方向均保持不变的直线运动。",
+            "aliases": [
+              "匀变速运动"
+            ],
+            "prerequisites": [
+              "加速度",
+              "变速运动"
+            ],
+            "definition": "物体加速度保持不变的直线运动称为匀变速直线运动。",
+            "example": "汽车沿直线以恒定加速度加速。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "匀加速直线运动",
+            "difficulty": 2,
+            "description": "加速度与速度同向的匀变速直线运动。",
+            "aliases": [],
+            "prerequisites": [
+              "匀变速直线运动"
+            ],
+            "definition": "加速度与速度同向时，物体做匀加速直线运动。",
+            "example": "汽车由静止沿直线加速。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "匀减速直线运动",
+            "difficulty": 2,
+            "description": "加速度与速度反向的匀变速直线运动。",
+            "aliases": [],
+            "prerequisites": [
+              "匀变速直线运动"
+            ],
+            "definition": "加速度与速度反向时，物体做匀减速直线运动。",
+            "example": "汽车刹车后速度逐渐减小。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "速度公式",
+            "difficulty": 3,
+            "description": "描述匀变速运动速度随时间变化的公式。",
+            "aliases": [
+              "速度—时间关系"
+            ],
+            "prerequisites": [
+              "匀变速直线运动",
+              "加速度",
+              "速度"
+            ],
+            "definition": "匀变速直线运动中末速度满足vt＝v0＋at。",
+            "example": "由初速度和加速度求4秒末速度。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "速度—时间图像",
+            "difficulty": 3,
+            "description": "直观表示速度随时间变化关系的图像。",
+            "aliases": [
+              "v-t图像"
+            ],
+            "prerequisites": [
+              "速度",
+              "时间",
+              "匀变速直线运动"
+            ],
+            "definition": "以时间为横轴、速度为纵轴绘制的图像称为速度—时间图像。",
+            "example": "匀变速运动的图像是一条倾斜直线。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "加速度—时间图像",
+            "difficulty": 3,
+            "description": "表示加速度随时间变化关系的图像。",
+            "aliases": [
+              "a-t图像"
+            ],
+            "prerequisites": [
+              "加速度",
+              "时间",
+              "匀变速直线运动"
+            ],
+            "definition": "以时间为横轴、加速度为纵轴绘制的图像称为加速度—时间图像。",
+            "example": "匀变速运动的图像平行于时间轴。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移公式",
+            "difficulty": 3,
+            "description": "描述匀变速运动位移随时间变化的公式。",
+            "aliases": [
+              "位移—时间关系"
+            ],
+            "prerequisites": [
+              "速度公式",
+              "位移",
+              "加速度"
+            ],
+            "definition": "匀变速直线运动中位移满足s＝v0t＋½at²。",
+            "example": "由初速度、加速度和时间求位移。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移—时间图像",
+            "difficulty": 3,
+            "description": "直观表示位移随时间变化关系的图像。",
+            "aliases": [
+              "s-t图像"
+            ],
+            "prerequisites": [
+              "位移",
+              "时间",
+              "位移公式"
+            ],
+            "definition": "以时间为横轴、位移为纵轴绘制的图像称为位移—时间图像。",
+            "example": "根据图像读出某时刻的位移。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "位移—速度关系",
+            "difficulty": 4,
+            "description": "不含时间量的匀变速运动位移关系。",
+            "aliases": [
+              "s-v关系式"
+            ],
+            "prerequisites": [
+              "速度公式",
+              "位移公式",
+              "位移",
+              "加速度"
+            ],
+            "definition": "匀变速直线运动中满足vt²－v0²＝2as。",
+            "example": "已知初末速度和加速度求位移。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "测量值",
+            "difficulty": 1,
+            "description": "通过测量得到的物理量数值。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "测量值是用测量工具或方法获得的物理量数值。",
+            "example": "刻度尺测得长度为3.46 cm。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "真实值",
+            "difficulty": 1,
+            "description": "被测物理量实际具有的数值。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "真实值是被测物理量在实际情况下的真实数值。",
+            "example": "某长度的实际长度值。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "绝对误差",
+            "difficulty": 2,
+            "description": "测量值与真实值之差。",
+            "aliases": [],
+            "prerequisites": [
+              "测量值",
+              "真实值"
+            ],
+            "definition": "绝对误差等于测量值与真实值之差。",
+            "example": "测量值偏离真实值0.01 cm。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "相对误差",
+            "difficulty": 2,
+            "description": "绝对误差与真实值的比值，常用百分数表示。",
+            "aliases": [
+              "百分误差"
+            ],
+            "prerequisites": [
+              "绝对误差",
+              "真实值"
+            ],
+            "definition": "相对误差是绝对误差与真实值的比值。",
+            "example": "绝对误差0.01 cm对应0.29%。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "系统误差",
+            "difficulty": 2,
+            "description": "由原理不完善或仪器缺陷造成的误差。",
+            "aliases": [],
+            "prerequisites": [
+              "绝对误差"
+            ],
+            "definition": "系统误差是由测量原理不完善或仪器缺陷等造成的误差。",
+            "example": "刻度尺刻度不均匀造成的偏差。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "偶然误差",
+            "difficulty": 2,
+            "description": "由偶然因素造成、方向不固定的误差。",
+            "aliases": [],
+            "prerequisites": [
+              "绝对误差"
+            ],
+            "definition": "偶然误差是多次测量中由各种偶然因素产生的误差。",
+            "example": "读数时人眼位置变化造成的误差。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "有效数字",
+            "difficulty": 2,
+            "description": "测量结果中含一位估读数字的全部数字。",
+            "aliases": [],
+            "prerequisites": [
+              "测量值"
+            ],
+            "definition": "有效数字是测量结果中能反映被测量大小且带一位估读数字的全部数字。",
+            "example": "10.40 cm有4位有效数字。"
+          },
+          {
+            "name": "瞬时速度",
+            "difficulty": 3,
+            "description": "物体在某一时刻或某一位置的速度。",
+            "aliases": [],
+            "prerequisites": [
+              "平均速度",
+              "速度"
+            ],
+            "definition": "瞬时速度是物体在某一时刻或某一位置的速度。",
+            "example": "用相邻点间平均速度估算点1速度。"
+          },
+          {
+            "name": "打点计时器",
+            "difficulty": 2,
+            "description": "同时记录运动时间和位移信息的实验仪器。",
+            "aliases": [],
+            "prerequisites": [
+              "位移",
+              "时间"
+            ],
+            "definition": "打点计时器利用周期性打点记录物体运动的时间和位移。",
+            "example": "用纸带记录小车下滑运动。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "自由落体运动",
+            "difficulty": 3,
+            "description": "物体只在重力作用下从静止开始下落的运动。",
+            "aliases": [
+              "自由落体"
+            ],
+            "prerequisites": [
+              "匀变速直线运动"
+            ],
+            "definition": "物体只在重力作用下从静止开始下落的运动称为自由落体运动。",
+            "example": "忽略空气阻力时花盆竖直下落。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "重力加速度",
+            "difficulty": 3,
+            "description": "物体自由下落时具有的加速度。",
+            "aliases": [
+              "g"
+            ],
+            "prerequisites": [
+              "自由落体运动",
+              "加速度"
+            ],
+            "definition": "物体自由下落时由重力作用产生的加速度称为重力加速度。",
+            "example": "通常取g＝9.8 m/s²。",
+            "section": "第5节 自由落体运动"
+          },
+          {
+            "name": "伽利略斜面实验",
+            "difficulty": 3,
+            "description": "利用斜面研究自由落体规律的实验方法。",
+            "aliases": [
+              "斜面实验"
+            ],
+            "prerequisites": [
+              "自由落体运动",
+              "匀变速直线运动"
+            ],
+            "definition": "伽利略通过研究小球沿斜面运动间接探索自由落体规律。",
+            "example": "观察位移与时间平方的比值是否不变。",
+            "section": "第5节 自由落体运动"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 速度变化规律",
+            "section_key": "dc4308aab6",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第2节 位移变化规律",
+            "section_key": "f4915568d3",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第3节 实验中的误差和有效数字",
+            "section_key": "34fee858f4",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第4节 科学测量:做直线运动物体的瞬时速度",
+            "section_key": "c7f3d0ef9f",
+            "page_range": [
+              39,
+              39
+            ]
+          },
+          {
+            "name": "第5节 自由落体运动",
+            "section_key": "f272a88e0b",
+            "page_range": [
+              39,
+              71
+            ]
+          }
+        ],
+        "chapter_key": "b162136da0",
+        "metadata": {
+          "volume_id": "b33361a0a77e",
+          "file_id": "b33361a0a77e",
+          "volume_title": "普通高中教科书 物理 必修第一册",
+          "chapter_order": 3,
+          "raw_heading": "第2章 匀变速直线运动"
+        }
+      },
+      {
+        "name": "第3章 相互作用",
+        "concepts": [
+          {
+            "name": "力",
+            "difficulty": 1,
+            "description": "物体之间的相互作用，可改变形状或运动状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "力是物体和物体之间的相互作用。",
+            "example": "球拍击打网球使球改变形状和运动方向"
+          },
+          {
+            "name": "矢量",
+            "difficulty": 2,
+            "description": "既有大小又有方向的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "矢量是既具有大小又具有方向的物理量。",
+            "example": "同样大小但方向不同的力作用效果不同",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "力的三要素",
+            "difficulty": 2,
+            "description": "描述力大小、方向和作用点的三个要素",
+            "aliases": [],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "力的大小、方向和作用点称为力的三要素。",
+            "example": "手托书的力大小为3 N且竖直向上",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "力的图示",
+            "difficulty": 2,
+            "description": "用带箭头线段表示力的方法",
+            "aliases": [],
+            "prerequisites": [
+              "力的三要素"
+            ],
+            "definition": "力的图示是用带箭头的线段表示力的方法。",
+            "example": "用线段表示书受到的竖直向上支持力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "四种基本相互作用",
+            "difficulty": 3,
+            "description": "自然界作用力本质上可归结的四类相互作用",
+            "aliases": [
+              "基本相互作用"
+            ],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "自然界中的作用力本质上可归结为引力、电磁力、强力和弱力相互作用。",
+            "example": "重力属于引力相互作用",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "重力",
+            "difficulty": 2,
+            "description": "地球吸引物体产生的力，方向竖直向下",
+            "aliases": [
+              "物重"
+            ],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "因地球的吸引而使物体受到的力称为重力。",
+            "example": "落叶最终落回地面"
+          },
+          {
+            "name": "重心",
+            "difficulty": 3,
+            "description": "物体所受重力的等效作用点",
+            "aliases": [],
+            "prerequisites": [
+              "重力"
+            ],
+            "definition": "重心是物体所受重力的等效作用点。",
+            "example": "均匀圆球的重心在球心"
+          },
+          {
+            "name": "形变",
+            "difficulty": 1,
+            "description": "物体伸长、缩短、弯曲等形状变化",
+            "aliases": [
+              "变形"
+            ],
+            "prerequisites": [],
+            "definition": "物体发生的伸长、缩短和弯曲等形状变化称为形变。",
+            "example": "压扁面包会发生形变",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "弹性形变",
+            "difficulty": 2,
+            "description": "撤去外力后能够恢复原状的形变",
+            "aliases": [],
+            "prerequisites": [
+              "形变"
+            ],
+            "definition": "物体撤去外力后能够恢复原状的形变称为弹性形变。",
+            "example": "压缩弹簧后松手恢复原状",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "范性形变",
+            "difficulty": 2,
+            "description": "撤去外力后不能恢复原状的形变",
+            "aliases": [
+              "塑性形变"
+            ],
+            "prerequisites": [
+              "形变"
+            ],
+            "definition": "物体发生形变后不能恢复原状的形变称为范性形变。",
+            "example": "压扁的面包不能恢复原状",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "弹性限度",
+            "difficulty": 3,
+            "description": "弹性体保持恢复原状能力的形变限度",
+            "aliases": [],
+            "prerequisites": [
+              "弹性形变"
+            ],
+            "definition": "弹性限度是弹性体形变不超过时仍能恢复原状的限度。",
+            "example": "弹簧挂码不能超过弹性限度",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "弹力",
+            "difficulty": 2,
+            "description": "接触物体因弹性形变产生的相互作用力",
+            "aliases": [],
+            "prerequisites": [
+              "弹性形变"
+            ],
+            "definition": "发生弹性形变的物体对接触物体产生的力称为弹力。",
+            "example": "蹦极绳被拉伸后对人产生向上的拉力"
+          },
+          {
+            "name": "支持力",
+            "difficulty": 2,
+            "description": "接触面因形变对物体产生的支撑作用力",
+            "aliases": [],
+            "prerequisites": [
+              "弹力"
+            ],
+            "definition": "接触面发生形变后对接触物体产生的弹力称为支持力。",
+            "example": "桌面对书产生竖直向上的支持力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "胡克定律",
+            "difficulty": 3,
+            "description": "弹性限度内弹簧弹力与形变量成正比",
+            "aliases": [],
+            "prerequisites": [
+              "弹力",
+              "形变",
+              "弹性限度"
+            ],
+            "definition": "在弹性限度内，弹簧弹力大小与伸长或压缩量成正比。",
+            "example": "弹簧形变量加倍，弹力也加倍",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "劲度系数",
+            "difficulty": 3,
+            "description": "表示弹簧软硬程度的比例系数，单位为N/m",
+            "aliases": [
+              "弹簧劲度系数"
+            ],
+            "prerequisites": [
+              "胡克定律"
+            ],
+            "definition": "劲度系数是胡克定律中弹力与形变量的比例系数。",
+            "example": "劲度系数越大的弹簧越硬",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "摩擦力",
+            "difficulty": 2,
+            "description": "接触面上阻碍相对运动或运动趋势的力",
+            "aliases": [],
+            "prerequisites": [
+              "力"
+            ],
+            "definition": "摩擦力是接触面上阻碍物体相对运动或相对运动趋势的力。",
+            "example": "鞋底与地面间的摩擦力帮助人行走",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "滑动摩擦力",
+            "difficulty": 2,
+            "description": "接触面发生相对滑动时产生的摩擦力",
+            "aliases": [],
+            "prerequisites": [
+              "摩擦力"
+            ],
+            "definition": "两个接触并挤压的物体发生相对滑动时产生的摩擦力称为滑动摩擦力。",
+            "example": "橡皮擦在纸面上移动受到滑动摩擦力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "动摩擦因数",
+            "difficulty": 3,
+            "description": "滑动摩擦力与压力之比的无量纲系数",
+            "aliases": [],
+            "prerequisites": [
+              "滑动摩擦力"
+            ],
+            "definition": "动摩擦因数是滑动摩擦力与压力的比值。",
+            "example": "钢与冰之间的动摩擦因数较小",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "静摩擦力",
+            "difficulty": 2,
+            "description": "接触物体无相对运动但有相对运动趋势时的摩擦力",
+            "aliases": [],
+            "prerequisites": [
+              "摩擦力"
+            ],
+            "definition": "接触并挤压的物体没有相对运动但有运动趋势时产生的摩擦力称为静摩擦力。",
+            "example": "未被推动的木箱受到静摩擦力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "最大静摩擦力",
+            "difficulty": 3,
+            "description": "静摩擦力达到的最大值，超过后物体开始滑动",
+            "aliases": [],
+            "prerequisites": [
+              "静摩擦力"
+            ],
+            "definition": "静摩擦力达到的最大值称为最大静摩擦力。",
+            "example": "拉力超过最大静摩擦力后木箱开始滑动",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "光滑物体",
+            "difficulty": 2,
+            "description": "摩擦力小到对研究问题可忽略的物体模型",
+            "aliases": [],
+            "prerequisites": [
+              "摩擦力"
+            ],
+            "definition": "摩擦力小到对所研究问题可以忽略的物体称为光滑物体。",
+            "example": "光滑水平桌面上的物体可忽略摩擦力",
+            "section": "第3节 摩擦力"
+          },
+          {
+            "name": "摩擦力调控",
+            "difficulty": 2,
+            "description": "通过改变压力或材料等方法增大或减小摩擦力",
+            "aliases": [],
+            "prerequisites": [
+              "滑动摩擦力",
+              "静摩擦力"
+            ],
+            "definition": "摩擦力调控是根据需要改变压力或接触材料等来改变摩擦力。",
+            "example": "刷冰可减小冰壶与冰面的摩擦力"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 重力与重心",
+            "section_key": "7f1733d201",
+            "page_range": [
+              71,
+              71
+            ]
+          },
+          {
+            "name": "第2节 科学探究:弹力",
+            "section_key": "620aed9af3",
+            "page_range": [
+              71,
+              71
+            ]
+          },
+          {
+            "name": "第3节 摩擦力",
+            "section_key": "04aae5b40a",
+            "page_range": [
+              71,
+              93
+            ]
+          }
+        ],
+        "chapter_key": "96fb97c786",
+        "metadata": {
+          "volume_id": "b33361a0a77e",
+          "file_id": "b33361a0a77e",
+          "volume_title": "普通高中教科书 物理 必修第一册",
+          "chapter_order": 4,
+          "raw_heading": "第3章 相互作用"
+        }
+      },
+      {
+        "name": "第4章 力与平衡",
+        "concepts": [
+          {
+            "name": "共点力",
+            "difficulty": 2,
+            "description": "作用于同一点或作用线相交于同一点的力",
+            "aliases": [
+              "共点力系统"
+            ],
+            "prerequisites": [],
+            "definition": "几个力同时作用于物体同一点或作用线相交于同一点时称为共点力。",
+            "example": "两人提购物篮时的两个拉力是共点力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "合力",
+            "difficulty": 2,
+            "description": "作用效果等同于几个力共同作用的一个力",
+            "aliases": [
+              "resultant force"
+            ],
+            "prerequisites": [
+              "共点力"
+            ],
+            "definition": "能产生与几个分力共同作用相同效果的力叫作合力。",
+            "example": "一个人提篮子的力可作为两人拉力的合力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "分力",
+            "difficulty": 2,
+            "description": "共同产生某个合力作用效果的各个力",
+            "aliases": [
+              "component force"
+            ],
+            "prerequisites": [
+              "合力"
+            ],
+            "definition": "组成合力并与其作用效果等效的各个力叫作分力。",
+            "example": "提箱子的力可分解为竖直和水平两个分力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "力的合成",
+            "difficulty": 2,
+            "description": "求几个力合力的过程",
+            "aliases": [
+              "合力求解"
+            ],
+            "prerequisites": [
+              "合力",
+              "共点力"
+            ],
+            "definition": "求几个力的合力的过程称为力的合成。",
+            "example": "用平行四边形定则求两个拉力的合力。"
+          },
+          {
+            "name": "平行四边形定则",
+            "difficulty": 3,
+            "description": "用平行四边形对角线表示合力的规律",
+            "aliases": [
+              "平行四边形法则"
+            ],
+            "prerequisites": [
+              "合力",
+              "共点力"
+            ],
+            "definition": "以两个共点力为邻边作平行四边形，其对角线表示合力的大小和方向。",
+            "example": "以两个拉力的有向线段为邻边作平行四边形。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "三角形定则",
+            "difficulty": 3,
+            "description": "将矢量有向线段首尾相接求合力的方法",
+            "aliases": [
+              "矢量三角形定则"
+            ],
+            "prerequisites": [
+              "平行四边形定则"
+            ],
+            "definition": "将表示两个力的有向线段首尾相接，连接首端与末端的有向线段表示合力。",
+            "example": "把三个力依次首尾相接，首末连线表示合力。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "矢量",
+            "difficulty": 2,
+            "description": "相加时遵循平行四边形定则的物理量",
+            "aliases": [
+              "向量"
+            ],
+            "prerequisites": [
+              "平行四边形定则"
+            ],
+            "definition": "相加时遵循平行四边形定则的物理量称为矢量。",
+            "example": "力和加速度都是矢量。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "标量",
+            "difficulty": 2,
+            "description": "相加时遵循代数相加法则的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "相加时遵循代数相加法则的物理量称为标量。",
+            "example": "时间和路程都是标量。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "力的分解",
+            "difficulty": 2,
+            "description": "求一个力各分力的过程",
+            "aliases": [
+              "力分解"
+            ],
+            "prerequisites": [
+              "合力",
+              "平行四边形定则"
+            ],
+            "definition": "求一个已知力的分力的过程称为力的分解。",
+            "example": "将重力分解为沿斜面和垂直斜面的两个分力。"
+          },
+          {
+            "name": "正交分解",
+            "difficulty": 3,
+            "description": "把一个力分解为两个互相垂直分力的方法",
+            "aliases": [
+              "力的正交分解"
+            ],
+            "prerequisites": [
+              "力的分解"
+            ],
+            "definition": "把一个力分解为两个互相垂直的分力称为力的正交分解。",
+            "example": "将斜面上的重力分解到平行和垂直斜面的方向。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "平衡状态",
+            "difficulty": 2,
+            "description": "物体静止或做匀速直线运动的状态",
+            "aliases": [
+              "平衡"
+            ],
+            "prerequisites": [
+              "合力"
+            ],
+            "definition": "物体静止或做匀速直线运动时所处的状态称为平衡状态。",
+            "example": "静止在桌面上的书处于平衡状态。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "共点力平衡条件",
+            "difficulty": 3,
+            "description": "共点力作用下物体平衡时合力为零",
+            "aliases": [
+              "力的平衡条件"
+            ],
+            "prerequisites": [
+              "共点力",
+              "合力",
+              "平衡状态"
+            ],
+            "definition": "共点力作用下物体处于平衡状态的条件是所受合力为零。",
+            "example": "静止鸟笼的绳拉力与重力合力为零。",
+            "section": "第3节 共点力的平衡"
+          },
+          {
+            "name": "封闭多边形法则",
+            "difficulty": 4,
+            "description": "多个共点力首尾相接形成封闭多边形",
+            "aliases": [
+              "力的封闭多边形"
+            ],
+            "prerequisites": [
+              "三角形定则",
+              "共点力平衡条件"
+            ],
+            "definition": "平衡时将各共点力首尾相接，表示它们的有向线段必构成封闭多边形。",
+            "example": "三个平衡力首尾相接可构成封闭三角形。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 科学探究:力的合成",
+            "section_key": "1b485d29c9",
+            "page_range": [
+              93,
+              93
+            ]
+          },
+          {
+            "name": "第2节 力的分解",
+            "section_key": "f37ab87da8",
+            "page_range": [
+              93,
+              93
+            ]
+          },
+          {
+            "name": "第3节 共点力的平衡",
+            "section_key": "ddc03ae2e1",
+            "page_range": [
+              93,
+              113
+            ]
+          }
+        ],
+        "chapter_key": "955130dd68",
+        "metadata": {
+          "volume_id": "b33361a0a77e",
+          "file_id": "b33361a0a77e",
+          "volume_title": "普通高中教科书 物理 必修第一册",
+          "chapter_order": 5,
+          "raw_heading": "第4章 力与平衡"
+        }
+      },
+      {
+        "name": "第5章 牛顿运动定律",
+        "concepts": [
+          {
+            "name": "运动状态",
+            "difficulty": 1,
+            "description": "物体速度的大小或方向所表示的运动情况",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "物体的运动状态由其速度大小和方向共同描述。",
+            "example": "汽车转弯时速度方向改变，运动状态发生变化。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "加速度",
+            "difficulty": 2,
+            "description": "描述物体速度变化快慢和方向的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "运动状态"
+            ],
+            "definition": "加速度是描述物体速度变化快慢和方向的物理量。",
+            "example": "汽车启动时速度增大，具有加速度。"
+          },
+          {
+            "name": "质量",
+            "difficulty": 1,
+            "description": "描述物体惯性大小的物理量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "质量是描述物体惯性大小的物理量。",
+            "example": "质量越大的车辆，运动状态越不易改变。"
+          },
+          {
+            "name": "合外力",
+            "difficulty": 2,
+            "description": "物体所受各个外力的合力",
+            "aliases": [
+              "合力"
+            ],
+            "prerequisites": [],
+            "definition": "合外力是物体同时受到多个外力时这些力的合力。",
+            "example": "物体受拉力和摩擦力时，二者的合力是合外力。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "理想实验",
+            "difficulty": 2,
+            "description": "在理想条件下进行科学推理的实验方法",
+            "aliases": [
+              "理想化实验"
+            ],
+            "prerequisites": [
+              "运动状态"
+            ],
+            "definition": "理想实验是在现实难以实现的理想条件下进行科学推理的方法。",
+            "example": "伽利略设想小球在光滑斜面和水平面上的运动。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "力与运动关系",
+            "difficulty": 2,
+            "description": "力是改变物体运动状态的原因",
+            "aliases": [],
+            "prerequisites": [
+              "运动状态",
+              "合外力"
+            ],
+            "definition": "物体所受合外力不为零时，其运动状态会发生改变。",
+            "example": "汽车受到制动力后速度逐渐减小。"
+          },
+          {
+            "name": "牛顿第一定律",
+            "difficulty": 3,
+            "description": "物体无合外力时保持静止或匀速直线运动",
+            "aliases": [
+              "惯性定律"
+            ],
+            "prerequisites": [
+              "运动状态",
+              "合外力"
+            ],
+            "definition": "一切物体总保持静止或匀速直线运动状态，除非有外力迫使其改变。",
+            "example": "气垫导轨上的滑块可近似保持匀速直线运动。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "惯性",
+            "difficulty": 2,
+            "description": "物体保持原有运动状态不变的属性",
+            "aliases": [],
+            "prerequisites": [
+              "质量",
+              "牛顿第一定律"
+            ],
+            "definition": "惯性是物体保持静止或匀速直线运动状态不变的属性。",
+            "example": "汽车急刹车时，乘客身体会向前倾。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "控制变量法",
+            "difficulty": 2,
+            "description": "控制其他因素不变研究单一因素影响的方法",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "质量"
+            ],
+            "definition": "控制变量法是先保持其他物理量不变，再研究某一因素影响的方法。",
+            "example": "研究加速度与力关系时保持小车质量不变。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿第二定律",
+            "difficulty": 4,
+            "description": "加速度与合外力成正比、与质量成反比",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "质量",
+              "合外力"
+            ],
+            "definition": "物体加速度与合外力成正比、与质量成反比，方向与合外力相同。",
+            "example": "同样的力作用在质量较小的物体上，加速度较大。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿第二定律公式",
+            "difficulty": 3,
+            "description": "用F=ma定量表示力、质量和加速度关系",
+            "aliases": [
+              "F=ma"
+            ],
+            "prerequisites": [
+              "牛顿第二定律"
+            ],
+            "definition": "在国际单位制中，合外力、质量和加速度满足F=ma。",
+            "example": "质量2千克、加速度3米每二次方秒时合力为6牛。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿",
+            "difficulty": 2,
+            "description": "国际单位制中的力的单位",
+            "aliases": [
+              "N"
+            ],
+            "prerequisites": [
+              "牛顿第二定律公式",
+              "国际单位制"
+            ],
+            "definition": "牛顿是使1千克物体产生1米每二次方秒加速度的力的单位。",
+            "example": "1牛等于1千克·米每二次方秒。"
+          },
+          {
+            "name": "国际单位制",
+            "difficulty": 2,
+            "description": "由基本单位和导出单位组成的统一单位体系",
+            "aliases": [
+              "SI"
+            ],
+            "prerequisites": [],
+            "definition": "国际单位制是国际统一采用的由基本单位和导出单位组成的单位体系。",
+            "example": "力学中米、千克和秒是基本单位。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "惯性参考系",
+            "difficulty": 3,
+            "description": "牛顿运动定律成立的参考系",
+            "aliases": [
+              "惯性系"
+            ],
+            "prerequisites": [
+              "牛顿第一定律"
+            ],
+            "definition": "惯性参考系是牛顿运动定律成立的参考系。",
+            "example": "研究地面附近物体运动时，通常把地面视为惯性系。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "作用力与反作用力",
+            "difficulty": 2,
+            "description": "物体相互作用时同时产生的一对力",
+            "aliases": [
+              "相互作用力"
+            ],
+            "prerequisites": [
+              "合外力"
+            ],
+            "definition": "作用力与反作用力是相互作用的两个物体彼此施加的一对力。",
+            "example": "拍桌子时手对桌子的力与桌子对手的力互为作用反作用力。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "牛顿第三定律",
+            "difficulty": 3,
+            "description": "相互作用的两力大小相等、方向相反",
+            "aliases": [
+              "作用反作用定律"
+            ],
+            "prerequisites": [
+              "作用力与反作用力"
+            ],
+            "definition": "两个物体之间的作用力与反作用力大小相等、方向相反且共线。",
+            "example": "火箭喷出气体，气体对火箭产生反作用力。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "超重",
+            "difficulty": 3,
+            "description": "物体对支持物压力大于重力的现象",
+            "aliases": [],
+            "prerequisites": [
+              "牛顿第二定律"
+            ],
+            "definition": "超重是物体对悬挂物的拉力或对支持物的压力大于其重力的现象。",
+            "example": "电梯加速上升时，体重计示数变大。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "失重",
+            "difficulty": 3,
+            "description": "物体对支持物压力小于重力的现象",
+            "aliases": [],
+            "prerequisites": [
+              "牛顿第二定律"
+            ],
+            "definition": "失重是物体对悬挂物的拉力或对支持物的压力小于其重力的现象。",
+            "example": "电梯加速下降时，人的体重计示数变小。",
+            "section": "第5节 超重与失重"
+          },
+          {
+            "name": "竖直上抛运动",
+            "difficulty": 3,
+            "description": "物体以初速度竖直向上抛出后的运动",
+            "aliases": [],
+            "prerequisites": [
+              "加速度",
+              "牛顿第二定律"
+            ],
+            "definition": "竖直上抛运动是物体以初速度竖直向上抛出且只受重力作用的运动。",
+            "example": "石子竖直上抛后先减速上升，再自由落体下降。",
+            "section": "第5节 超重与失重"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 牛顿第一运动定律",
+            "section_key": "a4d2db962b",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第2节 科学探究:加速度与力、质量的关系",
+            "section_key": "d0992e4138",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第3节 牛顿第二运动定律",
+            "section_key": "3767937317",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第4节 牛顿第三运动定律",
+            "section_key": "77e2b97fdb",
+            "page_range": [
+              113,
+              113
+            ]
+          },
+          {
+            "name": "第5节 超重与失重",
+            "section_key": "95819ba7db",
+            "page_range": [
+              113,
+              146
+            ]
+          }
+        ],
+        "chapter_key": "391ee9cadb",
+        "metadata": {
+          "volume_id": "b33361a0a77e",
+          "file_id": "b33361a0a77e",
+          "volume_title": "普通高中教科书 物理 必修第一册",
+          "chapter_order": 6,
+          "raw_heading": "第5章 牛顿运动定律"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "af0f78aea4": [
+        7,
+        9
+      ],
+      "一、源自然之问": [
+        7,
+        9
+      ],
+      "5ade1994eb": [
+        9,
+        11
+      ],
+      "二、探万物之秘": [
+        9,
+        11
+      ],
+      "9157bb56bb": [
+        11,
+        13
+      ],
+      "三、采科学之益": [
+        11,
+        13
+      ],
+      "83a4301f24": [
+        13,
+        17
+      ],
+      "四、启智慧之迪": [
+        13,
+        17
+      ],
+      "7f56b81834": [
+        18,
+        24
+      ],
+      "第1节 空间和时间": [
+        18,
+        24
+      ],
+      "ec39fe1df7": [
+        24,
+        29
+      ],
+      "第2节 质点和位移": [
+        24,
+        29
+      ],
+      "cf0e6dda05": [
+        29,
+        33
+      ],
+      "第3节 速度": [
+        29,
+        33
+      ],
+      "2a3a72f2ae": [
+        33,
+        39
+      ],
+      "第4节 加速度": [
+        33,
+        39
+      ],
+      "dc4308aab6": [
+        39,
+        39
+      ],
+      "第1节 速度变化规律": [
+        39,
+        39
+      ],
+      "f4915568d3": [
+        39,
+        39
+      ],
+      "第2节 位移变化规律": [
+        39,
+        39
+      ],
+      "34fee858f4": [
+        39,
+        39
+      ],
+      "第3节 实验中的误差和有效数字": [
+        39,
+        39
+      ],
+      "c7f3d0ef9f": [
+        39,
+        39
+      ],
+      "第4节 科学测量:做直线运动物体的瞬时速度": [
+        39,
+        39
+      ],
+      "f272a88e0b": [
+        39,
+        71
+      ],
+      "第5节 自由落体运动": [
+        39,
+        71
+      ],
+      "7f1733d201": [
+        71,
+        71
+      ],
+      "第1节 重力与重心": [
+        71,
+        71
+      ],
+      "620aed9af3": [
+        71,
+        71
+      ],
+      "第2节 科学探究:弹力": [
+        71,
+        71
+      ],
+      "04aae5b40a": [
+        71,
+        93
+      ],
+      "第3节 摩擦力": [
+        71,
+        93
+      ],
+      "1b485d29c9": [
+        93,
+        93
+      ],
+      "第1节 科学探究:力的合成": [
+        93,
+        93
+      ],
+      "f37ab87da8": [
+        93,
+        93
+      ],
+      "第2节 力的分解": [
+        93,
+        93
+      ],
+      "ddc03ae2e1": [
+        93,
+        113
+      ],
+      "第3节 共点力的平衡": [
+        93,
+        113
+      ],
+      "a4d2db962b": [
+        113,
+        113
+      ],
+      "第1节 牛顿第一运动定律": [
+        113,
+        113
+      ],
+      "d0992e4138": [
+        113,
+        113
+      ],
+      "第2节 科学探究:加速度与力、质量的关系": [
+        113,
+        113
+      ],
+      "3767937317": [
+        113,
+        113
+      ],
+      "第3节 牛顿第二运动定律": [
+        113,
+        113
+      ],
+      "77e2b97fdb": [
+        113,
+        113
+      ],
+      "第4节 牛顿第三运动定律": [
+        113,
+        113
+      ],
+      "95819ba7db": [
+        113,
+        146
+      ],
+      "第5节 超重与失重": [
+        113,
+        146
+      ]
+    }
+  }
+}

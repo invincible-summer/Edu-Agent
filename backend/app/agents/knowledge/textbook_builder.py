@@ -17,6 +17,7 @@ import asyncio
 import copy
 import hashlib
 import json
+import logging
 import re
 import time
 import unicodedata
@@ -33,6 +34,8 @@ from . import store as kg_store
 from .manager import get_knowledge_service
 from .taxonomy_normalizer import normalize_textbook_spec, graph_quality, is_back_matter
 from ...prompts.registry import get as get_prompt
+
+logger = logging.getLogger(__name__)
 
 # 每章概念抽取喂给 LLM 的文本上限。 dense 教材一章 20-30 页可达 3 万字符，
 # 24000 在 64K 窗口下仍留足输出空间（输入约 2.4 万 token + 输出 8000）。
@@ -82,6 +85,11 @@ async def _lock_for(student_id: str, tb_id: str) -> asyncio.Lock:
 _BUILD_QUEUES: dict[str, dict[str, Any]] = {}
 #: 队列 worker 轮询非终态记录的间隔（测试可调小）。
 QUEUE_POLL_SECONDS = 5.0
+#: 停滞看门狗窗口：门控等待中的非终态记录超过该时长无任何写入、无在途
+#: 构建（per-book 锁空闲）且无计划内 OCR 重试时，结算 graph_failed 释放
+#: 并发名额——防御任何未知路径留下的僵尸 building（运行期的重启收割对
+#: 应物）。在途构建（锁被持有）与慢 LLM 调用链不受影响。测试可调小。
+BUILD_STALL_SECONDS = 1800.0
 _TERMINAL_STATUSES = {"ready", "partial", "graph_failed", "failed", "ocr_paused"}
 
 
@@ -123,6 +131,7 @@ async def run_textbook_build(student_id: str, tb_id: str, *,
                 skip_harvest=skip_harvest, force_full_ocr=force_full_ocr)
     except Exception as exc:
         from ...core.textbook_ocr import TextbookParseCancelled
+        logger.warning("textbook build %s/%s crashed: %s", student_id, tb_id, exc)
         try:
             if isinstance(exc, TextbookParseCancelled):
                 tb_store.settle_cancelled_parse(student_id, tb_id)
@@ -164,6 +173,63 @@ def enqueue_textbook_build(student_id: str, tb_id: str, **build_kwargs) \
     if worker is None or worker.done():
         queue["worker"] = loop.create_task(_queue_worker(student_id, queue))
     return future
+
+
+def _settle_deferred_book_status(student_id: str, tb_id: str, exc_status: str,
+                                 warnings: list[str] | None = None) -> None:
+    """TextbookOCRDeferred 出口的权威结算：按 ocr_state.volumes 卷级状态
+    重写书级 status/progress。
+
+    并行建卷时书级 status 是后写者赢：waiting 卷的 ocr_waiting 结算可能被
+    兄弟卷完成结算覆盖回 building（_merge_volume_state 只保护卷级
+    ocr_state，不保护书级 status/progress）。若在此处裸 return，记录会定格
+    在 building+chapters N/N，重试驱动与前端展示全部失真 → 队列项永久占用
+    并发名额（实测卡死形态：抽取概念 3/3 三小时不动）。
+    """
+    try:
+        rec = tb_store.find_textbook(student_id, tb_id)
+    except Exception:
+        return
+    if rec is None:
+        return
+    volumes = [v for v in ((rec.get("ocr_state") or {}).get("volumes") or {}).values()
+               if isinstance(v, dict)]
+    waiting = [v for v in volumes if v.get("status") == "waiting"]
+    paused = [v for v in volumes if v.get("status") == "paused"]
+
+    def _pages(states: list[dict[str, Any]]) -> dict[str, int]:
+        return {"done": sum(len(v.get("successful_pages") or []) for v in states),
+                "total": max(1, sum(len(v.get("target_pages") or []) or 1
+                                    for v in states))}
+
+    if waiting:
+        tb_store.update_textbook(
+            student_id, tb_id, status="ocr_waiting",
+            progress={"stage": "ocr_waiting", **_pages(waiting)},
+            error=str(waiting[0].get("last_error_summary") or "等待多模态 OCR 重试"))
+        logger.warning("textbook %s/%s OCR deferred (%s) -> ocr_waiting",
+                       student_id, tb_id, exc_status)
+        return
+    if paused:
+        tb_store.update_textbook(
+            student_id, tb_id, status="ocr_paused",
+            progress={"stage": "ocr_paused", **_pages(paused)},
+            error=str(paused[0].get("last_error_summary") or "部分页面 OCR 已暂停"))
+        logger.warning("textbook %s/%s OCR deferred (%s) -> ocr_paused",
+                       student_id, tb_id, exc_status)
+        return
+    # 无 waiting/paused：OCR 轮以 failed（如 PDF 探针失败）或异常状态退出 →
+    # 落终态失败释放名额；错误摘要优先取卷级 last_error_summary。
+    err = next((str(v.get("last_error_summary") or "") for v in volumes
+                if str(v.get("last_error_summary") or "")), "")
+    tb_store.update_textbook(
+        student_id, tb_id, status="graph_failed",
+        error=(err or f"OCR 轮以 {exc_status or 'unknown'} 退出且无待重试页，"
+                      "可点击「重建图谱」重试"),
+        warnings=list(warnings or []),
+        progress={"stage": "merge", "done": 0, "total": 1})
+    logger.warning("textbook %s/%s OCR deferred (%s) -> graph_failed: %s",
+                   student_id, tb_id, exc_status, err)
 
 
 async def _run_queued_item(student_id: str, item: dict[str, Any]) -> None:
@@ -231,9 +297,14 @@ async def _wait_book_terminal(student_id: str, tb_id: str) -> None:
     per-book 锁组合成不可控的双驱动）。重试是轻量的：
     force_reextract=False（spec 缓存有效即复用，失效条件由 prompt 指纹/文本
     hash 独立保证），重试周期不再被整书 LLM 重抽 gating；重试完成全书 ready
-    则就地补 RAG 收尾。无在途等待卷信息的 ocr_waiting 保持被动轮询（防御
-    人为/异常状态，重启后由收割逻辑处置）。
+    则就地补 RAG 收尾。无在途等待卷信息的非终态记录走停滞看门狗（见
+    BUILD_STALL_SECONDS），不再无限被动轮询。
+
+    重试判定看卷级 waiting 状态而非书级 status：并行建卷时书级 status 后写
+    者赢（见 _settle_deferred_book_status），只认书级 ocr_waiting 会漏驱动。
     """
+    last_updated: float | None = None
+    stalled_since: float | None = None
     while True:
         await asyncio.sleep(QUEUE_POLL_SECONDS)
         try:
@@ -245,14 +316,40 @@ async def _wait_book_terminal(student_id: str, tb_id: str) -> None:
         status = str(rec.get("status") or "")
         if status not in {"building", "ocr_waiting"}:
             return  # 终态：下一本开建
-        if status != "ocr_waiting":
-            continue
         volumes = ((rec.get("ocr_state") or {}).get("volumes") or {})
         retry_ats = [float(v.get("next_retry_at") or 0)
                      for v in volumes.values()
                      if isinstance(v, dict) and v.get("status") == "waiting"]
+        now = time.time()
+        updated = float(rec.get("updated_at") or 0.0)
+        if retry_ats and now < min(retry_ats):
+            stalled_since = None  # 计划内的 OCR 休眠（重试间隔可达小时级）
+        elif updated != last_updated:
+            stalled_since = None  # 记录有新写入：重置停滞计时
+            last_updated = updated
+        elif stalled_since is None:
+            stalled_since = now
+        elif now - stalled_since >= BUILD_STALL_SECONDS:
+            if (await _lock_for(student_id, tb_id)).locked():
+                # 有在途构建（如手动刷新绕过队列）在推进：慢 LLM 调用链静默
+                # 一小时以上是合法的，不误杀。
+                stalled_since = None
+            else:
+                logger.warning(
+                    "textbook %s/%s stalled in %s for %.0fs without progress; "
+                    "settling graph_failed to release queue slot",
+                    student_id, tb_id, status, now - stalled_since)
+                try:
+                    tb_store.update_textbook(
+                        student_id, tb_id, status="graph_failed",
+                        error=(f"构建停滞：{int(BUILD_STALL_SECONDS // 60)} 分钟"
+                               "无进度，可点击「重建图谱」重试"),
+                        progress={"stage": "merge", "done": 0, "total": 1})
+                except Exception:
+                    pass
+                return
         if not retry_ats:
-            continue  # 无在途等待卷信息：被动轮询（防御异常/人为状态）
+            continue  # 无在途等待卷信息：被动轮询，由停滞看门狗兜底
         if time.time() < min(retry_ats):
             continue
         force_full = any(bool(v.get("force_full"))
@@ -1619,6 +1716,8 @@ async def _build_inner(student_id: str, tb: dict[str, Any], llm: Any | None,
     except Exception as e:  # 任何异常 → graph_failed，绝不抛出
         from ...core.textbook_ocr import TextbookOCRDeferred, TextbookParseCancelled
         if isinstance(e, TextbookOCRDeferred):
+            _settle_deferred_book_status(student_id, tb["id"], str(e.status or ""),
+                                         warnings)
             return
         if isinstance(e, TextbookParseCancelled):
             try:
@@ -1626,6 +1725,8 @@ async def _build_inner(student_id: str, tb: dict[str, Any], llm: Any | None,
             except Exception:
                 pass
             return
+        logger.warning("textbook %s/%s build failed: %s",
+                       student_id, tb["id"], e)
         try:
             tb_store.update_textbook(student_id, tb["id"], status="graph_failed",
                                      error=f"构建异常：{e}",
@@ -2047,6 +2148,8 @@ async def _build_group_inner(student_id: str, grp: dict[str, Any],
     except Exception as e:  # 任何异常 → graph_failed，绝不抛出
         from ...core.textbook_ocr import TextbookOCRDeferred, TextbookParseCancelled
         if isinstance(e, TextbookOCRDeferred):
+            _settle_deferred_book_status(student_id, gid, str(e.status or ""),
+                                         warnings)
             return
         if isinstance(e, TextbookParseCancelled):
             try:
@@ -2054,6 +2157,8 @@ async def _build_group_inner(student_id: str, grp: dict[str, Any],
             except Exception:
                 pass
             return
+        logger.warning("textbook group %s/%s build failed: %s",
+                       student_id, gid, e)
         try:
             tb_store.update_textbook(student_id, gid, status="graph_failed",
                                      error=f"构建异常：{e}",

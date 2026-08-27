@@ -1,6 +1,6 @@
 {
   "file_id": "71ced0f4d382",
-  "text_sha256": "e6598102a89fac8f49737004660c78781f83d721792932b7b401a156e60b358a",
+  "text_sha256": "e32a12feb73d6c7cc7d1dd38d1c60d45d4545eea1710ec2b4f7abe02c63ff80c",
   "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
   "schema_version": "3",
   "chapter_locator_version": "5",
@@ -15,149 +15,932 @@
           {
             "name": "集合",
             "difficulty": 1,
-            "description": "研究对象的总体，通常用大写字母表示",
+            "description": "具有某种确定性质的对象的总体。",
             "aliases": [],
             "prerequisites": [],
             "definition": "集合是由一些确定的、互不相同的对象组成的总体。",
-            "example": "全体自然数构成集合N"
+            "example": "所有小于5的正整数构成集合。"
           },
           {
             "name": "元素",
             "difficulty": 1,
-            "description": "集合中的每个对象称为该集合的元素",
+            "description": "集合中的每个对象称为元素。",
             "aliases": [],
             "prerequisites": [
               "集合"
             ],
-            "definition": "元素是构成集合的一个个对象。",
-            "example": "3是集合{1,2,3}的元素"
+            "definition": "组成集合的每个对象叫作这个集合的元素。",
+            "example": "集合{1,2,3}中，1是元素。"
+          },
+          {
+            "name": "空集",
+            "difficulty": 1,
+            "description": "不含任何元素的集合。",
+            "aliases": [
+              "∅"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "不含任何元素的集合叫作空集。",
+            "example": "方程x²+1=0在实数范围内的解集是空集。"
+          },
+          {
+            "name": "全集",
+            "difficulty": 2,
+            "description": "研究问题中所涉及对象的全体。",
+            "aliases": [
+              "全体"
+            ],
+            "prerequisites": [
+              "集合"
+            ],
+            "definition": "在一定范围内，包含所研究问题中全部对象的集合叫作全集。",
+            "example": "研究实数性质时，可取实数集为全集。"
+          },
+          {
+            "name": "集合表示法",
+            "difficulty": 2,
+            "description": "表示集合及其元素关系的方法。",
+            "aliases": [],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "用列举法或描述法等方式表示集合的方法叫集合表示法。",
+            "example": "{1,2,3}是列举法表示。"
+          },
+          {
+            "name": "集合相等",
+            "difficulty": 2,
+            "description": "两个集合含有完全相同的元素。",
+            "aliases": [
+              "相等集合"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "若两个集合的元素完全相同，则称这两个集合相等。",
+            "example": "{1,2,3}={3,2,1}。"
+          },
+          {
+            "name": "子集",
+            "difficulty": 2,
+            "description": "一个集合的所有元素都属于另一个集合。",
+            "aliases": [
+              "包含关系"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "若集合A的任意一个元素都是集合B的元素，则称A是B的子集。",
+            "example": "{1,2}⊆{1,2,3}。"
+          },
+          {
+            "name": "真子集",
+            "difficulty": 2,
+            "description": "是子集但不与原集合相等的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "子集",
+              "集合相等"
+            ],
+            "definition": "若A是B的子集且A不等于B，则称A是B的真子集。",
+            "example": "{1,2}是{1,2,3}的真子集。"
+          },
+          {
+            "name": "交集",
+            "difficulty": 2,
+            "description": "两个集合中共同元素组成的集合。",
+            "aliases": [
+              "A∩B"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "由属于集合A且属于集合B的所有元素组成的集合叫作A与B的交集。",
+            "example": "{1,2}∩{2,3}={2}。"
+          },
+          {
+            "name": "并集",
+            "difficulty": 2,
+            "description": "两个集合中全部元素组成的集合。",
+            "aliases": [
+              "A∪B"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "由属于集合A或属于集合B的所有元素组成的集合叫作A与B的并集。",
+            "example": "{1,2}∪{2,3}={1,2,3}。"
+          },
+          {
+            "name": "补集",
+            "difficulty": 3,
+            "description": "全集中不属于某集合的元素组成的集合。",
+            "aliases": [
+              "集合的补集"
+            ],
+            "prerequisites": [
+              "全集",
+              "集合",
+              "子集"
+            ],
+            "definition": "在全集U中，由不属于集合A的所有元素组成的集合叫作A在U中的补集。",
+            "example": "U={1,2,3}，A={1}，则∁UA={2,3}。"
+          },
+          {
+            "name": "命题",
+            "difficulty": 2,
+            "description": "能够判断真假的陈述句。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "可以判断真假的陈述句叫作命题。",
+            "example": "“2是偶数”是真命题。"
+          },
+          {
+            "name": "充分条件",
+            "difficulty": 3,
+            "description": "能推出结论成立的条件。",
+            "aliases": [],
+            "prerequisites": [
+              "命题"
+            ],
+            "definition": "若条件p成立可以推出结论q成立，则p是q的充分条件。",
+            "example": "“x=1”是“x²=1”的充分条件。"
+          },
+          {
+            "name": "必要条件",
+            "difficulty": 3,
+            "description": "结论成立所必须具备的条件。",
+            "aliases": [],
+            "prerequisites": [
+              "命题"
+            ],
+            "definition": "若结论q成立可以推出条件p成立，则p是q的必要条件。",
+            "example": "“x²=1”是“x=1”的必要条件。"
+          },
+          {
+            "name": "全称量词",
+            "difficulty": 3,
+            "description": "表示对所有对象都成立的量词。",
+            "aliases": [
+              "∀"
+            ],
+            "prerequisites": [
+              "命题"
+            ],
+            "definition": "表示所述性质对研究范围内所有对象都成立的量词叫作全称量词。",
+            "example": "“任意x∈R，x²≥0”。"
+          },
+          {
+            "name": "存在量词",
+            "difficulty": 3,
+            "description": "表示至少存在一个对象的量词。",
+            "aliases": [
+              "∃"
+            ],
+            "prerequisites": [
+              "命题"
+            ],
+            "definition": "表示研究范围内至少存在一个对象使所述性质成立的量词叫作存在量词。",
+            "example": "“存在x∈R，使x²=1”。"
+          }
+        ]
+      },
+      {
+        "name": "第二章 一元二次函数、方程和不等式........................ 36",
+        "concepts": [
+          {
+            "name": "等式性质",
+            "difficulty": 1,
+            "description": "研究等式两边同时进行运算时的关系。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "等式两边同时加、减同一个数或同时乘、除同一个非零数，等式仍成立。",
+            "example": "若a=b，则a+2=b+2。"
+          },
+          {
+            "name": "不等式性质",
+            "difficulty": 2,
+            "description": "研究不等式两边运算后的大小关系。",
+            "aliases": [],
+            "prerequisites": [
+              "等式性质"
+            ],
+            "definition": "不等式两边同加或同减一个数方向不变，同乘或同除负数方向改变。",
+            "example": "若a>b，则-2a<-2b。"
+          },
+          {
+            "name": "基本不等式",
+            "difficulty": 2,
+            "description": "正数和与积之间的重要不等关系。",
+            "aliases": [],
+            "prerequisites": [
+              "不等式性质"
+            ],
+            "definition": "当a、b为正数时，a+b≥2√ab，且a=b时等号成立。",
+            "example": "x>0时，x+1/x≥2。"
+          },
+          {
+            "name": "二次函数",
+            "difficulty": 2,
+            "description": "解析式最高次数为二次的函数。",
+            "aliases": [
+              "一元二次函数"
+            ],
+            "prerequisites": [],
+            "definition": "形如y=ax²+bx+c且a≠0的函数叫作二次函数。",
+            "example": "y=x²-2x+1。"
+          },
+          {
+            "name": "一元二次方程",
+            "difficulty": 2,
+            "description": "含一个未知数且次数为二次的方程。",
+            "aliases": [],
+            "prerequisites": [
+              "二次函数"
+            ],
+            "definition": "形如ax²+bx+c=0且a≠0的方程叫作一元二次方程。",
+            "example": "x²-3x+2=0。"
+          },
+          {
+            "name": "一元二次不等式",
+            "difficulty": 3,
+            "description": "含一个未知数且次数为二次的不等式。",
+            "aliases": [],
+            "prerequisites": [
+              "二次函数",
+              "一元二次方程",
+              "不等式性质"
+            ],
+            "definition": "形如ax²+bx+c>0或<0且a≠0的不等式叫作一元二次不等式。",
+            "example": "x²-3x+2>0。"
+          }
+        ]
+      },
+      {
+        "name": "第三章 函数的概念与性质....................................... 59",
+        "concepts": [
+          {
+            "name": "函数的概念",
+            "difficulty": 2,
+            "description": "两个非空数集间确定的对应关系。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "设集合A、B，若对A中每个元素x都有唯一确定的y与之对应，则称这种对应为函数。",
+            "example": "y=2x+1把每个实数x对应到唯一实数y。"
+          },
+          {
+            "name": "函数的定义域",
+            "difficulty": 1,
+            "description": "函数中自变量允许取值的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "函数关系式中自变量x的所有允许取值组成的集合叫做定义域。",
+            "example": "y=√x的定义域为[0,+∞)。"
+          },
+          {
+            "name": "函数的值域",
+            "difficulty": 1,
+            "description": "函数值构成的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "函数中所有函数值y组成的集合叫做值域。",
+            "example": "y=x²的值域为[0,+∞)。"
+          },
+          {
+            "name": "函数的三要素",
+            "difficulty": 2,
+            "description": "定义域、对应关系和值域。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念",
+              "函数的定义域",
+              "函数的值域"
+            ],
+            "definition": "函数由定义域、对应关系和值域三个要素构成。",
+            "example": "y=x²的三要素包括实数域、平方对应和值域。"
+          },
+          {
+            "name": "函数的表示法",
+            "difficulty": 2,
+            "description": "表示函数对应关系的常用方式。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "函数通常可用解析法、列表法和图象法表示。",
+            "example": "y=2x可用解析式、数值表或图象表示。"
+          },
+          {
+            "name": "函数图象",
+            "difficulty": 2,
+            "description": "函数值对应点组成的平面图形。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念",
+              "函数的表示法"
+            ],
+            "definition": "在平面直角坐标系中，以函数自变量和函数值为坐标的点集叫做函数图象。",
+            "example": "y=x²的图象是一条开口向上的抛物线。"
+          },
+          {
+            "name": "分段函数",
+            "difficulty": 3,
+            "description": "在不同区间用不同解析式表示的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念",
+              "函数的表示法"
+            ],
+            "definition": "在定义域的不同部分分别用不同解析式表示的函数叫做分段函数。",
+            "example": "f(x)=x（x≥0），-x（x<0）。"
+          },
+          {
+            "name": "同一函数",
+            "difficulty": 3,
+            "description": "定义域和对应关系都相同的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的三要素"
+            ],
+            "definition": "若两个函数的定义域和对应关系完全相同，则它们是同一函数。",
+            "example": "f(x)=x²与g(t)=t²在实数域上是同一函数。"
+          },
+          {
+            "name": "函数的单调性",
+            "difficulty": 3,
+            "description": "函数值随自变量变化的增减规律。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "在给定区间内，函数值随自变量增大而增大或减小的性质叫做单调性。",
+            "example": "y=2x+1在R上是增函数。"
+          },
+          {
+            "name": "增函数",
+            "difficulty": 3,
+            "description": "自变量增大时函数值也增大的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的单调性"
+            ],
+            "definition": "若区间内任意x₁<x₂都有f(x₁)<f(x₂)，则函数在该区间上是增函数。",
+            "example": "y=x³在R上是增函数。"
+          },
+          {
+            "name": "减函数",
+            "difficulty": 3,
+            "description": "自变量增大时函数值减小的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的单调性"
+            ],
+            "definition": "若区间内任意x₁<x₂都有f(x₁)>f(x₂)，则函数在该区间上是减函数。",
+            "example": "y=-x在R上是减函数。"
+          },
+          {
+            "name": "函数的最值",
+            "difficulty": 3,
+            "description": "函数在指定范围内达到的最大或最小值。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "函数在给定区间内所有函数值中最大或最小的值叫做函数的最值。",
+            "example": "y=x²在[-1,2]上的最小值为0。"
+          },
+          {
+            "name": "奇函数",
+            "difficulty": 3,
+            "description": "图象关于原点对称的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "定义域关于原点对称且满足f(-x)=-f(x)的函数叫做奇函数。",
+            "example": "f(x)=x³是奇函数。"
+          },
+          {
+            "name": "偶函数",
+            "difficulty": 3,
+            "description": "图象关于y轴对称的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "定义域关于原点对称且满足f(-x)=f(x)的函数叫做偶函数。",
+            "example": "f(x)=x²是偶函数。"
+          },
+          {
+            "name": "幂函数",
+            "difficulty": 2,
+            "description": "形如y=xᵃ的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "一般地，形如y=xᵃ的函数叫做幂函数，其中a为常数。",
+            "example": "y=x²、y=x、y=√x都是幂函数。"
+          },
+          {
+            "name": "函数模型",
+            "difficulty": 3,
+            "description": "描述实际问题中数量关系的函数关系。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念",
+              "函数的表示法"
+            ],
+            "definition": "用函数关系刻画实际问题中变量之间对应关系的数学模型叫做函数模型。",
+            "example": "用一次函数模型描述匀速变化的路程。"
+          }
+        ]
+      },
+      {
+        "name": "第四章 指数函数与对数函数 ........................................ 103",
+        "concepts": [
+          {
+            "name": "指数",
+            "difficulty": 2,
+            "description": "研究指数及其运算的基本概念与性质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "指数表示相同因数相乘的次数，并可推广到不同数域。",
+            "example": "2^3=8"
+          },
+          {
+            "name": "指数函数",
+            "difficulty": 3,
+            "description": "以指数为自变量相关量的基本函数",
+            "aliases": [],
+            "prerequisites": [
+              "指数"
+            ],
+            "definition": "形如y=a^x的函数，其中a>0且a≠1。",
+            "example": "y=2^x"
+          },
+          {
+            "name": "放射性衰减",
+            "difficulty": 3,
+            "description": "用指数函数描述放射性物质随时间的衰减",
+            "aliases": [
+              "放射性物质的衰减"
+            ],
+            "prerequisites": [
+              "指数函数"
+            ],
+            "definition": "放射性物质的数量随时间按一定规律减少的现象。",
+            "example": "剩余质量随时间指数减少"
+          },
+          {
+            "name": "对数",
+            "difficulty": 2,
+            "description": "研究指数运算的逆运算及其基本性质",
+            "aliases": [],
+            "prerequisites": [
+              "指数"
+            ],
+            "definition": "若a^b=N，则b叫作以a为底N的对数。",
+            "example": "log_2 8=3"
+          },
+          {
+            "name": "对数函数",
+            "difficulty": 3,
+            "description": "以对数为函数表达式的基本函数",
+            "aliases": [],
+            "prerequisites": [
+              "对数"
+            ],
+            "definition": "形如y=log_a x的函数，其中a>0且a≠1。",
+            "example": "y=log_2 x"
+          },
+          {
+            "name": "反函数图象关系",
+            "difficulty": 3,
+            "description": "探究互为反函数的两个函数图象之间的关系",
+            "aliases": [
+              "互为反函数的图象关系"
+            ],
+            "prerequisites": [
+              "指数函数",
+              "对数函数"
+            ],
+            "definition": "互为反函数的两个函数图象关于直线y=x对称。",
+            "example": "y=2^x与y=log_2 x"
+          },
+          {
+            "name": "函数模型应用",
+            "difficulty": 3,
+            "description": "利用函数模型分析和解决实际问题",
+            "aliases": [
+              "函数的应用"
+            ],
+            "prerequisites": [
+              "指数函数",
+              "对数函数"
+            ],
+            "definition": "根据实际问题建立函数关系并利用函数进行分析求解。",
+            "example": "用指数模型描述衰减过程"
+          }
+        ]
+      },
+      {
+        "name": "第五章 三角函数................................................ 167",
+        "concepts": [
+          {
+            "name": "任意角",
+            "difficulty": 2,
+            "description": "按旋转方向和旋转量定义的角。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "角可以看作平面内一条射线绕端点旋转形成的图形，旋转方向和圈数不受限制。",
+            "example": "旋转两周再逆时针转30°得到750°。"
+          },
+          {
+            "name": "弧度制",
+            "difficulty": 2,
+            "description": "用弧长与半径之比表示角的制度。",
+            "aliases": [
+              "弧度"
+            ],
+            "prerequisites": [
+              "任意角"
+            ],
+            "definition": "以弧长等于半径的圆弧所对的圆心角为1弧度来度量角。",
+            "example": "平角等于π弧度。"
+          },
+          {
+            "name": "单位圆",
+            "difficulty": 2,
+            "description": "半径为1且圆心位于坐标原点的圆。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "在平面直角坐标系中，圆心为原点、半径为1的圆称为单位圆。",
+            "example": "单位圆的方程为x²+y²=1。"
+          },
+          {
+            "name": "三角函数",
+            "difficulty": 3,
+            "description": "由角的大小确定数值的函数。",
+            "aliases": [],
+            "prerequisites": [
+              "任意角",
+              "单位圆"
+            ],
+            "definition": "以角为自变量，并通过单位圆上点的坐标等关系确定函数值的函数。",
+            "example": "角α对应的正弦值记作sinα。"
+          },
+          {
+            "name": "正弦函数",
+            "difficulty": 3,
+            "description": "以角为自变量的正弦值函数。",
+            "aliases": [
+              "y=sin x"
+            ],
+            "prerequisites": [
+              "三角函数"
+            ],
+            "definition": "对每个角x，取其正弦值所得到的函数称为正弦函数。",
+            "example": "sin(π/2)=1。"
+          },
+          {
+            "name": "余弦函数",
+            "difficulty": 3,
+            "description": "以角为自变量的余弦值函数。",
+            "aliases": [
+              "y=cos x"
+            ],
+            "prerequisites": [
+              "三角函数"
+            ],
+            "definition": "对每个角x，取其余弦值所得到的函数称为余弦函数。",
+            "example": "cos0=1。"
+          },
+          {
+            "name": "诱导公式",
+            "difficulty": 3,
+            "description": "将相关角的三角函数值相互转化的公式。",
+            "aliases": [],
+            "prerequisites": [
+              "三角函数"
+            ],
+            "definition": "利用角之间的关系，把任意角的三角函数值化为相关角函数值的公式。",
+            "example": "sin(π−α)=sinα。"
+          },
+          {
+            "name": "三角函数图象",
+            "difficulty": 3,
+            "description": "表示三角函数对应关系的平面图形。",
+            "aliases": [],
+            "prerequisites": [
+              "正弦函数",
+              "余弦函数"
+            ],
+            "definition": "在平面直角坐标系中描出三角函数自变量与函数值对应点形成的图形。",
+            "example": "y=sinx的图象呈周期性波形。"
+          },
+          {
+            "name": "三角函数性质",
+            "difficulty": 3,
+            "description": "三角函数具有的定义域、值域和周期等特征。",
+            "aliases": [],
+            "prerequisites": [
+              "正弦函数",
+              "余弦函数"
+            ],
+            "definition": "三角函数在定义域、值域、周期性和奇偶性等方面表现出的规律。",
+            "example": "正弦函数的值域为[-1,1]。"
+          },
+          {
+            "name": "周期",
+            "difficulty": 2,
+            "description": "函数值按固定长度重复出现的特征。",
+            "aliases": [
+              "周期性"
+            ],
+            "prerequisites": [
+              "三角函数性质"
+            ],
+            "definition": "若函数值在自变量增加某个正数后保持不变，则该正数可称为函数的一个周期。",
+            "example": "正弦函数的周期为2π。"
+          },
+          {
+            "name": "振幅",
+            "difficulty": 2,
+            "description": "周期变化量偏离平衡位置的最大幅度。",
+            "aliases": [],
+            "prerequisites": [
+              "正弦函数"
+            ],
+            "definition": "在正弦型或余弦型变化中，振幅是函数值相对平衡位置的最大偏离量。",
+            "example": "y=3sinx的振幅为3。"
+          },
+          {
+            "name": "频率",
+            "difficulty": 2,
+            "description": "单位时间内周期变化重复的次数。",
+            "aliases": [],
+            "prerequisites": [
+              "周期"
+            ],
+            "definition": "频率表示周期性变化在单位时间内重复出现的次数。",
+            "example": "周期为2π时，频率为1/(2π)。"
+          },
+          {
+            "name": "相位",
+            "difficulty": 3,
+            "description": "反映周期函数位置状态的角量。",
+            "aliases": [],
+            "prerequisites": [
+              "周期"
+            ],
+            "definition": "在周期函数中，用于表示变化所处状态或位置的量称为相位。",
+            "example": "y=sin(x+π/3)中的x+π/3为相位。"
+          },
+          {
+            "name": "正弦型函数",
+            "difficulty": 3,
+            "description": "形如A sin(ωx+φ)的函数。",
+            "aliases": [
+              "y=A sin(ωx+φ)"
+            ],
+            "prerequisites": [
+              "正弦函数",
+              "振幅",
+              "周期",
+              "相位"
+            ],
+            "definition": "形如y=A sin(ωx+φ)的函数称为正弦型函数。",
+            "example": "y=2sin(3x+π/4)是正弦型函数。"
+          },
+          {
+            "name": "三角恒等变换",
+            "difficulty": 4,
+            "description": "利用恒等式变换三角函数式的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "诱导公式",
+              "正弦函数",
+              "余弦函数"
+            ],
+            "definition": "利用三角恒等式对三角函数式进行等价变形和化简。",
+            "example": "将sin²x+cos²x化为1。"
+          },
+          {
+            "name": "三角函数的应用",
+            "difficulty": 3,
+            "description": "利用三角函数解决周期和测量等问题。",
+            "aliases": [],
+            "prerequisites": [
+              "三角函数图象",
+              "三角恒等变换"
+            ],
+            "definition": "把三角函数的概念、性质和变换用于分析实际问题的过程。",
+            "example": "用正弦函数描述潮汐水位变化。"
+          }
+        ]
+      },
+      {
+        "name": "第一章",
+        "concepts": [
+          {
+            "name": "元素",
+            "difficulty": 1,
+            "description": "组成集合的研究对象",
+            "aliases": [
+              "集合元素"
+            ],
+            "prerequisites": [],
+            "definition": "研究对象统称为元素。",
+            "example": "数2是偶数集的元素"
+          },
+          {
+            "name": "集合",
+            "difficulty": 1,
+            "description": "由一些元素组成的总体",
+            "aliases": [
+              "集"
+            ],
+            "prerequisites": [
+              "元素"
+            ],
+            "definition": "一些元素组成的总体叫做集合。",
+            "example": "1至10之间的偶数组成集合"
+          },
+          {
+            "name": "集合相等",
+            "difficulty": 2,
+            "description": "两个集合的元素完全相同",
+            "aliases": [
+              "相等集合"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "两个集合的元素完全相同，则称它们相等。",
+            "example": "{1,2}={2,1}"
+          },
+          {
+            "name": "属于关系",
+            "difficulty": 1,
+            "description": "表示元素是否属于某个集合",
+            "aliases": [
+              "元素关系"
+            ],
+            "prerequisites": [
+              "元素",
+              "集合"
+            ],
+            "definition": "元素属于集合记作a∈A，不属于记作a∉A。",
+            "example": "2∈{1,2,3}"
+          },
+          {
+            "name": "数集",
+            "difficulty": 1,
+            "description": "由某类数构成的集合",
+            "aliases": [
+              "常用数集"
+            ],
+            "prerequisites": [
+              "集合"
+            ],
+            "definition": "由具有某类数的全部数构成的集合叫数集。",
+            "example": "整数集记作ℤ"
           },
           {
             "name": "列举法",
             "difficulty": 1,
-            "description": "把集合中的元素一一列出表示集合",
+            "description": "逐一列出集合全部元素",
             "aliases": [],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "列举法是把集合的元素逐一列举出来表示集合的方法。",
-            "example": "{1,2,3}表示三个元素组成的集合"
+            "definition": "把集合的所有元素一一列出并用花括号表示的方法叫列举法。",
+            "example": "{0,1,2,3}"
           },
           {
             "name": "描述法",
             "difficulty": 2,
-            "description": "用元素的共同特征描述集合",
+            "description": "用元素共同特征表示集合",
             "aliases": [],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "描述法是用集合中元素的共同特征表示集合的方法。",
-            "example": "{x|x>0}表示正数集合"
+            "definition": "用集合中元素的共同特征表示集合的方法叫描述法。",
+            "example": "{x∈ℝ|x<10}"
+          },
+          {
+            "name": "子集",
+            "difficulty": 2,
+            "description": "集合间的全部元素包含关系",
+            "aliases": [
+              "包含关系"
+            ],
+            "prerequisites": [
+              "集合",
+              "属于关系"
+            ],
+            "definition": "若集合A中任意元素都是集合B的元素，则A是B的子集。",
+            "example": "{1,2}⊆{1,2,3}"
+          },
+          {
+            "name": "真子集",
+            "difficulty": 2,
+            "description": "不等于原集合的子集",
+            "aliases": [
+              "真包含关系"
+            ],
+            "prerequisites": [
+              "子集",
+              "集合相等"
+            ],
+            "definition": "集合A是B的子集且A不等于B时，A是B的真子集。",
+            "example": "{1}⊊{1,2}"
           },
           {
             "name": "空集",
             "difficulty": 1,
             "description": "不含任何元素的集合",
-            "aliases": [],
+            "aliases": [
+              "空集合"
+            ],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "空集是不含任何元素的集合，记作∅。",
-            "example": "方程x²+1=0的实数解集是∅"
-          },
-          {
-            "name": "子集",
-            "difficulty": 2,
-            "description": "集合中的元素都属于另一个集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "若集合A的任意元素都属于集合B，则称A是B的子集。",
-            "example": "{1,2}是{1,2,3}的子集"
-          },
-          {
-            "name": "真子集",
-            "difficulty": 2,
-            "description": "是子集但不等于原集合的集合",
-            "aliases": [],
-            "prerequisites": [
-              "子集"
-            ],
-            "definition": "若A是B的子集且A不等于B，则称A是B的真子集。",
-            "example": "{1,2}是{1,2,3}的真子集"
-          },
-          {
-            "name": "集合相等",
-            "difficulty": 2,
-            "description": "两个集合互为子集时相等",
-            "aliases": [],
-            "prerequisites": [
-              "子集"
-            ],
-            "definition": "若两个集合的元素完全相同，则称这两个集合相等。",
-            "example": "{1,2,3}={3,2,1}"
+            "definition": "不含任何元素的集合叫做空集，记作∅。",
+            "example": "方程x²+1=0的实根集是∅"
           },
           {
             "name": "并集",
             "difficulty": 2,
-            "description": "由两个集合所有元素组成的集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合"
+            "description": "属于至少一个集合的元素组成的集",
+            "aliases": [
+              "集合并"
             ],
-            "definition": "由属于集合A或属于集合B的所有元素组成的集合叫作A与B的并集。",
+            "prerequisites": [
+              "集合",
+              "属于关系"
+            ],
+            "definition": "由属于集合A或属于集合B的所有元素组成的集合叫A与B的并集。",
             "example": "{1,2}∪{2,3}={1,2,3}"
           },
           {
             "name": "交集",
             "difficulty": 2,
-            "description": "由两个集合公共元素组成的集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合"
+            "description": "同时属于两个集合的元素组成的集",
+            "aliases": [
+              "集合交"
             ],
-            "definition": "由既属于集合A又属于集合B的所有元素组成的集合叫作A与B的交集。",
+            "prerequisites": [
+              "集合",
+              "属于关系"
+            ],
+            "definition": "由同时属于集合A和集合B的所有元素组成的集合叫交集。",
             "example": "{1,2}∩{2,3}={2}"
           },
           {
             "name": "全集",
             "difficulty": 2,
-            "description": "研究问题中涉及的所有对象组成的集合",
-            "aliases": [],
+            "description": "研究问题中涉及的所有对象",
+            "aliases": [
+              "全体集合"
+            ],
             "prerequisites": [
               "集合"
             ],
-            "definition": "全集是包含所研究问题中所有对象的集合。",
-            "example": "研究整数时可取整数集为全集"
+            "definition": "在研究问题中，包含所研究对象的集合叫全集。",
+            "example": "研究整数时可取ℤ为全集"
           },
           {
             "name": "补集",
             "difficulty": 2,
-            "description": "全集中不属于指定集合的元素组成的集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "全集"
+            "description": "全集中不属于给定集合的元素集",
+            "aliases": [
+              "集合补集"
             ],
-            "definition": "在全集U中，由不属于集合A的所有元素组成的集合称为A的补集。",
+            "prerequisites": [
+              "全集",
+              "集合",
+              "属于关系"
+            ],
+            "definition": "全集U中不属于集合A的所有元素组成的集合叫A在U中的补集。",
             "example": "U={1,2,3},A={1}时，∁UA={2,3}"
-          },
-          {
-            "name": "元素个数",
-            "difficulty": 2,
-            "description": "有限集合中元素的数量",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "有限集合中不同元素的个数称为该集合的元素个数。",
-            "example": "集合{a,b,c}的元素个数为3"
           },
           {
             "name": "命题",
@@ -165,19 +948,19 @@
             "description": "能够判断真假的陈述句",
             "aliases": [],
             "prerequisites": [],
-            "definition": "命题是能够判断真假的陈述句。",
+            "definition": "能够判断真假的陈述句叫做命题。",
             "example": "2是偶数是真命题"
           },
           {
             "name": "充分条件",
             "difficulty": 3,
-            "description": "能保证结论成立的条件",
+            "description": "能推出结论成立的条件",
             "aliases": [],
             "prerequisites": [
               "命题"
             ],
             "definition": "若条件p成立能推出结论q成立，则p是q的充分条件。",
-            "example": "x=1是x²=1的充分条件"
+            "example": "x=2是x²=4的充分条件"
           },
           {
             "name": "必要条件",
@@ -188,994 +971,47 @@
               "命题"
             ],
             "definition": "若结论q成立能推出条件p成立，则p是q的必要条件。",
-            "example": "x²=1是x=1的必要条件"
+            "example": "x²=4是x=2的必要条件"
           },
           {
             "name": "充要条件",
             "difficulty": 3,
-            "description": "既是充分条件又是必要条件",
-            "aliases": [],
+            "description": "条件与结论可以相互推出",
+            "aliases": [
+              "充分必要条件"
+            ],
             "prerequisites": [
               "充分条件",
               "必要条件"
             ],
             "definition": "若p能推出q且q也能推出p，则p是q的充要条件。",
-            "example": "x=1是x²=1且x>0的充要条件"
+            "example": "x=0是|x|=0的充要条件"
           },
           {
             "name": "全称量词",
-            "difficulty": 2,
-            "description": "表示对所有对象都成立的量词",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "表示对所有对象都成立",
+            "aliases": [
+              "任意量词"
+            ],
             "prerequisites": [
               "命题"
             ],
-            "definition": "全称量词表示所研究范围内的所有对象，常用“任意”“所有”表示。",
-            "example": "任意x∈R，x²≥0"
+            "definition": "表示所述性质对研究范围内所有对象都成立的量词叫全称量词。",
+            "example": "任意x∈ℝ，x²≥0"
           },
           {
             "name": "存在量词",
-            "difficulty": 2,
-            "description": "表示至少存在一个对象的量词",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "表示至少存在一个对象成立",
+            "aliases": [
+              "存在性量词"
+            ],
             "prerequisites": [
               "命题"
             ],
-            "definition": "存在量词表示所研究范围内至少有一个对象，常用“存在”表示。",
-            "example": "存在x∈R，使x²=4"
-          },
-          {
-            "name": "全称命题",
-            "difficulty": 3,
-            "description": "含全称量词的命题",
-            "aliases": [],
-            "prerequisites": [
-              "全称量词",
-              "命题"
-            ],
-            "definition": "含有全称量词并对所有对象作出判断的命题叫全称命题。",
-            "example": "任意实数x都有x²≥0"
-          },
-          {
-            "name": "存在命题",
-            "difficulty": 3,
-            "description": "含存在量词的命题",
-            "aliases": [],
-            "prerequisites": [
-              "存在量词",
-              "命题"
-            ],
-            "definition": "含有存在量词并断言至少一个对象满足条件的命题叫存在命题。",
-            "example": "存在实数x使x²=1"
-          }
-        ]
-      },
-      {
-        "name": "第二章 一元二次函数、方程和不等式..................... 36",
-        "concepts": [
-          {
-            "name": "等式性质",
-            "difficulty": 1,
-            "description": "研究等式两边同时进行相同运算时的关系。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "等式两边同时加、减、乘或除以同一适当数，所得结果仍相等。",
-            "example": "若a=b，则a+3=b+3。"
-          },
-          {
-            "name": "不等式性质",
-            "difficulty": 2,
-            "description": "研究不等式两边运算后大小关系的变化。",
-            "aliases": [],
-            "prerequisites": [
-              "等式性质"
-            ],
-            "definition": "不等式两边同加减同一数时方向不变，乘除负数时方向改变。",
-            "example": "若a>b，则-2a<-2b。"
-          },
-          {
-            "name": "基本不等式",
-            "difficulty": 2,
-            "description": "比较两个正数的和与其积的平方根。",
-            "aliases": [
-              "均值不等式"
-            ],
-            "prerequisites": [
-              "不等式性质"
-            ],
-            "definition": "对任意正数a、b，有a+b≥2√ab，等号当且仅当a=b。",
-            "example": "x>0时，x+1/x≥2。"
-          },
-          {
-            "name": "二次函数",
-            "difficulty": 2,
-            "description": "研究自变量最高次数为二的函数及其图象性质。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "形如y=ax²+bx+c且a≠0的函数叫作二次函数。",
-            "example": "y=x²-2x+1是二次函数。"
-          },
-          {
-            "name": "一元二次方程",
-            "difficulty": 2,
-            "description": "研究含有一个未知数且次数为二的方程。",
-            "aliases": [],
-            "prerequisites": [
-              "等式性质"
-            ],
-            "definition": "只含一个未知数且未知数最高次数为二的整式方程叫作一元二次方程。",
-            "example": "x²-5x+6=0是一元二次方程。"
-          },
-          {
-            "name": "一元二次不等式",
-            "difficulty": 3,
-            "description": "研究含一个未知数且次数为二的不等式。",
-            "aliases": [],
-            "prerequisites": [
-              "二次函数",
-              "一元二次方程",
-              "不等式性质"
-            ],
-            "definition": "只含一个未知数且未知数最高次数为二的不等式叫作一元二次不等式。",
-            "example": "x²-5x+6≤0的解集为[2,3]。"
-          },
-          {
-            "name": "二次函数与方程关系",
-            "difficulty": 3,
-            "description": "利用二次函数图象研究一元二次方程的根。",
-            "aliases": [],
-            "prerequisites": [
-              "二次函数",
-              "一元二次方程"
-            ],
-            "definition": "一元二次方程的实根对应二次函数图象与x轴的交点横坐标。",
-            "example": "y=x²-1与x轴交于x=±1。"
-          }
-        ]
-      },
-      {
-        "name": "第三章 函数的概念与性质.................................... 59",
-        "concepts": [
-          {
-            "name": "函数",
-            "difficulty": 2,
-            "description": "描述两个变量之间依赖关系的数学对应",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "设集合A、B，若对A中每个元素x都有B中唯一确定的元素y与之对应，则称这种对应为函数。",
-            "example": "y=2x+1表示x与y之间的函数关系"
-          },
-          {
-            "name": "定义域",
-            "difficulty": 2,
-            "description": "函数中自变量允许取值的集合",
-            "aliases": [],
-            "prerequisites": [
-              "函数"
-            ],
-            "definition": "函数关系式中自变量允许取值的集合叫作函数的定义域。",
-            "example": "y=√x的定义域为x≥0"
-          },
-          {
-            "name": "值域",
-            "difficulty": 2,
-            "description": "函数值构成的集合",
-            "aliases": [
-              "函数的值域"
-            ],
-            "prerequisites": [
-              "函数"
-            ],
-            "definition": "函数中所有函数值构成的集合叫作函数的值域。",
-            "example": "y=x²的值域为y≥0"
-          },
-          {
-            "name": "对应关系",
-            "difficulty": 2,
-            "description": "确定自变量与函数值对应方式的规则",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "把定义域中的每个自变量对应到唯一函数值的规则叫作对应关系。",
-            "example": "对应关系f:x→2x+1"
-          },
-          {
-            "name": "函数表示法",
-            "difficulty": 2,
-            "description": "表示函数关系的常用方式",
-            "aliases": [],
-            "prerequisites": [
-              "函数"
-            ],
-            "definition": "用解析式、图象或表格表示函数关系的方法统称为函数表示法。",
-            "example": "函数可用y=x²、图象或数值表表示"
-          },
-          {
-            "name": "函数图象",
-            "difficulty": 2,
-            "description": "平面直角坐标系中函数值组成的图形",
-            "aliases": [],
-            "prerequisites": [
-              "函数",
-              "函数表示法"
-            ],
-            "definition": "以定义域中的自变量为横坐标、对应函数值为纵坐标的点集叫作函数图象。",
-            "example": "y=x²的图象是开口向上的抛物线"
-          },
-          {
-            "name": "分段函数",
-            "difficulty": 3,
-            "description": "在不同区间采用不同解析式的函数",
-            "aliases": [],
-            "prerequisites": [
-              "函数",
-              "定义域",
-              "函数表示法"
-            ],
-            "definition": "在定义域的不同部分分别用不同解析式表示的函数叫作分段函数。",
-            "example": "f(x)=x（x≥0），f(x)=-x（x<0）"
-          },
-          {
-            "name": "区间",
-            "difficulty": 2,
-            "description": "表示实数连续取值范围的记号",
-            "aliases": [
-              "数轴区间"
-            ],
-            "prerequisites": [],
-            "definition": "由两个实数确定并表示一段连续实数范围的集合叫作区间。",
-            "example": "[1,3)表示1≤x<3"
-          },
-          {
-            "name": "单调性",
-            "difficulty": 3,
-            "description": "函数值随自变量变化而变化的规律",
-            "aliases": [
-              "函数的单调性"
-            ],
-            "prerequisites": [
-              "函数",
-              "区间"
-            ],
-            "definition": "函数在某区间内函数值随自变量增大而增大或减小的性质叫作单调性。",
-            "example": "y=2x在R上是增函数"
-          },
-          {
-            "name": "增函数",
-            "difficulty": 3,
-            "description": "自变量增大时函数值也增大的函数",
-            "aliases": [
-              "单调递增函数"
-            ],
-            "prerequisites": [
-              "函数",
-              "单调性"
-            ],
-            "definition": "在给定区间内，任取较大自变量所得函数值也较大的函数叫增函数。",
-            "example": "y=x³在R上是增函数"
-          },
-          {
-            "name": "减函数",
-            "difficulty": 3,
-            "description": "自变量增大时函数值减小的函数",
-            "aliases": [
-              "单调递减函数"
-            ],
-            "prerequisites": [
-              "函数",
-              "单调性"
-            ],
-            "definition": "在给定区间内，任取较大自变量所得函数值较小的函数叫减函数。",
-            "example": "y=-x在R上是减函数"
-          },
-          {
-            "name": "最大值",
-            "difficulty": 3,
-            "description": "函数在给定范围内取得的最大函数值",
-            "aliases": [
-              "函数最大值"
-            ],
-            "prerequisites": [
-              "函数",
-              "值域"
-            ],
-            "definition": "若函数在给定范围内所有函数值都不大于某个值且能取到该值，则该值为最大值。",
-            "example": "f(x)=1-x²在R上的最大值是1"
-          },
-          {
-            "name": "最小值",
-            "difficulty": 3,
-            "description": "函数在给定范围内取得的最小函数值",
-            "aliases": [
-              "函数最小值"
-            ],
-            "prerequisites": [
-              "函数",
-              "值域"
-            ],
-            "definition": "若函数在给定范围内所有函数值都不小于某个值且能取到该值，则该值为最小值。",
-            "example": "f(x)=x²在R上的最小值是0"
-          },
-          {
-            "name": "奇偶性",
-            "difficulty": 3,
-            "description": "函数图象关于坐标轴或原点的对称性质",
-            "aliases": [
-              "函数的奇偶性"
-            ],
-            "prerequisites": [
-              "函数",
-              "定义域"
-            ],
-            "definition": "根据定义域和函数值满足的对称关系判断函数图象对称性的性质叫奇偶性。",
-            "example": "f(x)=x²是偶函数"
-          },
-          {
-            "name": "奇函数",
-            "difficulty": 3,
-            "description": "图象关于原点对称的函数",
-            "aliases": [],
-            "prerequisites": [
-              "函数",
-              "奇偶性"
-            ],
-            "definition": "定义域关于原点对称且满足f(-x)=-f(x)的函数叫奇函数。",
-            "example": "f(x)=x³是奇函数"
-          },
-          {
-            "name": "偶函数",
-            "difficulty": 3,
-            "description": "图象关于y轴对称的函数",
-            "aliases": [],
-            "prerequisites": [
-              "函数",
-              "奇偶性"
-            ],
-            "definition": "定义域关于原点对称且满足f(-x)=f(x)的函数叫偶函数。",
-            "example": "f(x)=x²是偶函数"
-          },
-          {
-            "name": "幂函数",
-            "difficulty": 3,
-            "description": "形如y=x^α的函数",
-            "aliases": [],
-            "prerequisites": [
-              "函数"
-            ],
-            "definition": "形如y=x^α的函数叫幂函数，其中α为常数。",
-            "example": "y=x²和y=√x都是幂函数"
-          },
-          {
-            "name": "函数模型",
-            "difficulty": 3,
-            "description": "刻画实际问题中变量关系的函数关系",
-            "aliases": [
-              "函数模型的应用"
-            ],
-            "prerequisites": [
-              "函数",
-              "函数图象"
-            ],
-            "definition": "用函数关系刻画实际问题中变量之间对应关系的数学模型叫函数模型。",
-            "example": "用一次函数模型描述匀速变化关系"
-          }
-        ]
-      },
-      {
-        "name": "第四章 指数函数与对数函数 .......................................... 103",
-        "concepts": [
-          {
-            "name": "根式",
-            "difficulty": 2,
-            "description": "表示方程xⁿ=a的根的式子",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "根式是含有根号、表示数的n次方根的式子。",
-            "example": "√9=3"
-          },
-          {
-            "name": "分数指数幂",
-            "difficulty": 2,
-            "description": "指数为分数的幂",
-            "aliases": [],
-            "prerequisites": [
-              "根式"
-            ],
-            "definition": "分数指数幂是指数为有理数的幂，并可用根式表示。",
-            "example": "8^(1/3)=2"
-          },
-          {
-            "name": "有理数指数幂",
-            "difficulty": 3,
-            "description": "指数为有理数的幂",
-            "aliases": [
-              "有理指数幂"
-            ],
-            "prerequisites": [
-              "分数指数幂"
-            ],
-            "definition": "有理数指数幂是指数为整数或分数的幂。",
-            "example": "16^(-1/2)=1/4"
-          },
-          {
-            "name": "无理数指数幂",
-            "difficulty": 4,
-            "description": "指数为无理数的幂",
-            "aliases": [
-              "实数指数幂"
-            ],
-            "prerequisites": [
-              "有理数指数幂"
-            ],
-            "definition": "无理数指数幂是指数为无理数时幂的推广定义。",
-            "example": "2^√2"
-          },
-          {
-            "name": "指数幂运算性质",
-            "difficulty": 3,
-            "description": "指数幂进行乘除和乘方的法则",
-            "aliases": [
-              "幂的运算性质"
-            ],
-            "prerequisites": [
-              "有理数指数幂"
-            ],
-            "definition": "指数幂运算性质包括同底幂相乘、相除及幂的乘方等法则。",
-            "example": "a^m·a^n=a^(m+n)"
-          },
-          {
-            "name": "指数函数",
-            "difficulty": 2,
-            "description": "形如y=aˣ的函数",
-            "aliases": [],
-            "prerequisites": [
-              "有理数指数幂"
-            ],
-            "definition": "指数函数是形如y=aˣ且a>0、a≠1的函数。",
-            "example": "y=2ˣ"
-          },
-          {
-            "name": "指数函数性质",
-            "difficulty": 3,
-            "description": "指数函数的定义域、值域和单调性",
-            "aliases": [
-              "指数函数图象与性质"
-            ],
-            "prerequisites": [
-              "指数函数"
-            ],
-            "definition": "指数函数的图象和性质由底数a大于1或小于1决定。",
-            "example": "y=2ˣ在R上递增"
-          },
-          {
-            "name": "对数",
-            "difficulty": 2,
-            "description": "指数式中求指数的运算",
-            "aliases": [
-              "对数概念"
-            ],
-            "prerequisites": [
-              "指数函数"
-            ],
-            "definition": "若a^b=N，则b叫作以a为底N的对数，记作logₐN=b。",
-            "example": "log₂8=3"
-          },
-          {
-            "name": "对数的运算性质",
-            "difficulty": 3,
-            "description": "对数进行加减和乘方运算的法则",
-            "aliases": [],
-            "prerequisites": [
-              "对数"
-            ],
-            "definition": "对数运算性质把积、商和幂的对数分别化为和、差及倍数。",
-            "example": "logₐ(xy)=logₐx+logₐy"
-          },
-          {
-            "name": "常用对数",
-            "difficulty": 2,
-            "description": "以10为底的对数",
-            "aliases": [
-              "十进制对数"
-            ],
-            "prerequisites": [
-              "对数"
-            ],
-            "definition": "常用对数是以10为底的对数，通常省略底数10。",
-            "example": "lg100=2"
-          },
-          {
-            "name": "自然对数",
-            "difficulty": 2,
-            "description": "以无理数e为底的对数",
-            "aliases": [
-              "ln"
-            ],
-            "prerequisites": [
-              "对数"
-            ],
-            "definition": "自然对数是以e为底的对数，记作ln x。",
-            "example": "ln e=1"
-          },
-          {
-            "name": "对数函数",
-            "difficulty": 2,
-            "description": "形如y=logₐx的函数",
-            "aliases": [],
-            "prerequisites": [
-              "对数"
-            ],
-            "definition": "对数函数是形如y=logₐx且a>0、a≠1的函数。",
-            "example": "y=log₂x"
-          },
-          {
-            "name": "对数函数性质",
-            "difficulty": 3,
-            "description": "对数函数的定义域、值域和单调性",
-            "aliases": [
-              "对数函数图象与性质"
-            ],
-            "prerequisites": [
-              "对数函数"
-            ],
-            "definition": "对数函数的图象和性质由底数a大于1或小于1决定。",
-            "example": "y=log₂x在(0,+∞)上递增"
-          },
-          {
-            "name": "反函数",
-            "difficulty": 3,
-            "description": "交换函数自变量与因变量所得的函数",
-            "aliases": [],
-            "prerequisites": [
-              "指数函数",
-              "对数函数"
-            ],
-            "definition": "若两个函数的对应关系互相逆转，则它们互为反函数。",
-            "example": "y=2ˣ与y=log₂x"
-          },
-          {
-            "name": "反函数图象关系",
-            "difficulty": 3,
-            "description": "互为反函数的图象关于y=x对称",
-            "aliases": [],
-            "prerequisites": [
-              "反函数"
-            ],
-            "definition": "互为反函数的两个函数图象关于直线y=x对称。",
-            "example": "y=2ˣ与y=log₂x的图象对称"
-          },
-          {
-            "name": "指数方程",
-            "difficulty": 3,
-            "description": "未知数出现在指数位置的方程",
-            "aliases": [],
-            "prerequisites": [
-              "指数函数性质",
-              "指数幂运算性质"
-            ],
-            "definition": "指数方程是未知数出现在指数位置的方程。",
-            "example": "2ˣ=8的解为x=3"
-          },
-          {
-            "name": "对数方程",
-            "difficulty": 3,
-            "description": "未知数出现在对数中的方程",
-            "aliases": [],
-            "prerequisites": [
-              "对数的运算性质",
-              "对数函数性质"
-            ],
-            "definition": "对数方程是含有对数且未知数出现在真数或底数中的方程。",
-            "example": "log₂x=3的解为x=8"
-          },
-          {
-            "name": "指数模型",
-            "difficulty": 3,
-            "description": "用指数函数描述变化规律的数学模型",
-            "aliases": [],
-            "prerequisites": [
-              "指数函数"
-            ],
-            "definition": "指数模型是用指数函数表示数量随自变量变化关系的模型。",
-            "example": "y=100·1.05ˣ"
-          },
-          {
-            "name": "对数模型",
-            "difficulty": 3,
-            "description": "用对数函数描述变化规律的数学模型",
-            "aliases": [],
-            "prerequisites": [
-              "对数函数"
-            ],
-            "definition": "对数模型是用对数函数表示数量随自变量变化关系的模型。",
-            "example": "y=log₂x"
-          },
-          {
-            "name": "函数模型应用",
-            "difficulty": 4,
-            "description": "建立函数模型解决实际问题",
-            "aliases": [
-              "函数模型的应用"
-            ],
-            "prerequisites": [
-              "指数模型",
-              "对数模型"
-            ],
-            "definition": "函数模型应用是根据实际问题建立并解释函数关系的过程。",
-            "example": "用指数模型估计人口增长"
-          }
-        ]
-      },
-      {
-        "name": "第五章 三角函数 ......................................................... 167",
-        "concepts": [
-          {
-            "name": "任意角",
-            "difficulty": 2,
-            "description": "角的大小不受旋转方向和旋转圈数限制。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "任意角是由角的始边绕顶点按指定方向旋转形成的角。",
-            "example": "逆时针旋转一周得到360°角。"
-          },
-          {
-            "name": "弧度制",
-            "difficulty": 2,
-            "description": "用弧长与半径之比表示角的大小。",
-            "aliases": [],
-            "prerequisites": [
-              "任意角"
-            ],
-            "definition": "弧度制以圆心角所对弧长与半径的比值作为角的度量。",
-            "example": "半径为1的圆中，弧长为π对应π弧度。"
-          },
-          {
-            "name": "单位圆",
-            "difficulty": 2,
-            "description": "圆心在原点、半径为1的圆。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "单位圆是直角坐标系中圆心为原点且半径为1的圆。",
-            "example": "单位圆方程为x²+y²=1。"
-          },
-          {
-            "name": "三角函数",
-            "difficulty": 3,
-            "description": "以角为自变量的函数关系。",
-            "aliases": [],
-            "prerequisites": [
-              "任意角",
-              "弧度制",
-              "单位圆"
-            ],
-            "definition": "三角函数是由角的大小确定正弦、余弦等函数值的函数。",
-            "example": "函数y=sin x是三角函数。"
-          },
-          {
-            "name": "正弦函数",
-            "difficulty": 2,
-            "description": "用正弦值表示的基本三角函数。",
-            "aliases": [],
-            "prerequisites": [
-              "三角函数"
-            ],
-            "definition": "正弦函数是对应任意角的正弦值所确定的函数，记作y=sin x。",
-            "example": "sin(π/2)=1。"
-          },
-          {
-            "name": "余弦函数",
-            "difficulty": 2,
-            "description": "用余弦值表示的基本三角函数。",
-            "aliases": [],
-            "prerequisites": [
-              "三角函数"
-            ],
-            "definition": "余弦函数是对应任意角的余弦值所确定的函数，记作y=cos x。",
-            "example": "cos 0=1。"
-          },
-          {
-            "name": "正切函数",
-            "difficulty": 3,
-            "description": "用正切值表示的基本三角函数。",
-            "aliases": [],
-            "prerequisites": [
-              "三角函数"
-            ],
-            "definition": "正切函数是正弦与余弦之比确定的函数，记作y=tan x。",
-            "example": "tan(π/4)=1。"
-          },
-          {
-            "name": "诱导公式",
-            "difficulty": 3,
-            "description": "把相关角的三角函数值相互转化的公式。",
-            "aliases": [],
-            "prerequisites": [
-              "三角函数"
-            ],
-            "definition": "诱导公式用于将不同角的三角函数值转化为便于计算的形式。",
-            "example": "sin(π-α)=sin α。"
-          },
-          {
-            "name": "三角函数图象",
-            "difficulty": 3,
-            "description": "三角函数在坐标系中的图形表示。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦函数",
-              "余弦函数"
-            ],
-            "definition": "三角函数图象是函数自变量与函数值对应点组成的图形。",
-            "example": "y=sin x的图象呈周期性波动。"
-          },
-          {
-            "name": "三角函数性质",
-            "difficulty": 3,
-            "description": "三角函数的定义域、值域和变化规律。",
-            "aliases": [],
-            "prerequisites": [
-              "三角函数图象"
-            ],
-            "definition": "三角函数性质包括定义域、值域、单调性和奇偶性等特征。",
-            "example": "正弦函数的值域为[-1,1]。"
-          },
-          {
-            "name": "周期",
-            "difficulty": 3,
-            "description": "函数值重复出现所对应的自变量间隔。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦函数"
-            ],
-            "definition": "若函数满足f(x+T)=f(x)，则T是它的一个周期。",
-            "example": "正弦函数的周期为2π。"
-          },
-          {
-            "name": "三角恒等变换",
-            "difficulty": 4,
-            "description": "利用恒等关系改写和化简三角式。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦函数",
-              "余弦函数",
-              "诱导公式"
-            ],
-            "definition": "三角恒等变换是在保持值不变的条件下变换三角式的过程。",
-            "example": "sin²x+cos²x可化为1。"
-          },
-          {
-            "name": "正弦型函数",
-            "difficulty": 4,
-            "description": "形如y=A sin(ωx+φ)的函数。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦函数",
-              "三角函数图象"
-            ],
-            "definition": "正弦型函数是由正弦函数经过伸缩和平移得到的函数。",
-            "example": "y=2sin(3x+π/4)是正弦型函数。"
-          },
-          {
-            "name": "振幅",
-            "difficulty": 3,
-            "description": "周期函数偏离平衡位置的最大幅度。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦型函数"
-            ],
-            "definition": "正弦型函数中的振幅是其振荡幅度，通常等于|A|。",
-            "example": "y=3sin x的振幅为3。"
-          },
-          {
-            "name": "频率",
-            "difficulty": 3,
-            "description": "单位时间内周期性变化的次数。",
-            "aliases": [],
-            "prerequisites": [
-              "周期"
-            ],
-            "definition": "频率表示周期性现象在单位时间内重复出现的次数。",
-            "example": "周期为2π时，频率为1/(2π)。"
-          },
-          {
-            "name": "相位",
-            "difficulty": 3,
-            "description": "描述周期函数位置状态的角量。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦型函数"
-            ],
-            "definition": "正弦型函数中ωx+φ所表示的角量称为相位。",
-            "example": "y=sin(x+π/3)的相位为x+π/3。"
-          },
-          {
-            "name": "三角函数应用",
-            "difficulty": 4,
-            "description": "运用三角函数解决周期变化和测量问题。",
-            "aliases": [],
-            "prerequisites": [
-              "三角函数",
-              "正弦型函数"
-            ],
-            "definition": "三角函数应用是建立三角函数模型解决实际问题的方法。",
-            "example": "用正弦型函数描述潮汐水位变化。"
-          }
-        ]
-      },
-      {
-        "name": "第一章",
-        "concepts": [
-          {
-            "name": "集合",
-            "difficulty": 1,
-            "description": "由一些元素组成的总体",
-            "aliases": [
-              "集"
-            ],
-            "prerequisites": [],
-            "definition": "集合是由一些元素组成的总体。",
-            "example": "所有正方形组成的集合"
-          },
-          {
-            "name": "元素",
-            "difficulty": 1,
-            "description": "集合中的研究对象",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "元素是研究对象的统称，也是集合的组成对象。",
-            "example": "集合{1,2,3}中的2"
-          },
-          {
-            "name": "集合相等",
-            "difficulty": 2,
-            "description": "两个集合的元素完全相同",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "两个集合的元素完全相同，则称这两个集合相等。",
-            "example": "{1,2}={2,1}"
-          },
-          {
-            "name": "属于关系",
-            "difficulty": 1,
-            "description": "表示元素是否在集合中",
-            "aliases": [
-              "属于",
-              "不属于"
-            ],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "元素在集合中记作属于，不在集合中记作不属于。",
-            "example": "2∈{1,2,3}"
-          },
-          {
-            "name": "常用数集",
-            "difficulty": 1,
-            "description": "自然数、整数、有理数等数集",
-            "aliases": [
-              "数集"
-            ],
-            "prerequisites": [
-              "集合"
-            ],
-            "definition": "常用数集是按数的范围划分并约定记号的集合。",
-            "example": "整数集记作ℤ"
-          },
-          {
-            "name": "列举法",
-            "difficulty": 2,
-            "description": "逐一列出集合元素表示集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "列举法是把集合的所有元素一一列举并用花括号括起来的方法。",
-            "example": "{0,1,2,3}"
-          },
-          {
-            "name": "描述法",
-            "difficulty": 2,
-            "description": "按元素共同特征表示集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "描述法是用集合中元素具有的共同特征表示集合的方法。",
-            "example": "{x∈ℝ|x<10}"
-          },
-          {
-            "name": "子集",
-            "difficulty": 2,
-            "description": "集合间的包含关系",
-            "aliases": [
-              "包含于",
-              "包含"
-            ],
-            "prerequisites": [
-              "集合",
-              "属于关系"
-            ],
-            "definition": "若集合A中任意一个元素都是集合B的元素，则A是B的子集。",
-            "example": "{1,2}⊆{1,2,3}"
-          },
-          {
-            "name": "集合相等判定",
-            "difficulty": 2,
-            "description": "利用双向包含判断集合相等",
-            "aliases": [],
-            "prerequisites": [
-              "子集",
-              "集合相等"
-            ],
-            "definition": "若A⊆B且B⊆A，则A与B相等。",
-            "example": "A⊆B且B⊆A所以A=B"
-          },
-          {
-            "name": "真子集",
-            "difficulty": 2,
-            "description": "严格包含于另一个集合的集合",
-            "aliases": [
-              "真包含于",
-              "真包含"
-            ],
-            "prerequisites": [
-              "子集"
-            ],
-            "definition": "若A⊆B且B中存在不属于A的元素，则A是B的真子集。",
-            "example": "{1}⊊{1,2}"
-          },
-          {
-            "name": "空集",
-            "difficulty": 1,
-            "description": "不含任何元素的集合",
-            "aliases": [
-              "∅"
-            ],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "空集是不含任何元素的集合，记作∅。",
-            "example": "方程x²+1=0的实数根集"
-          },
-          {
-            "name": "Venn图",
-            "difficulty": 2,
-            "description": "用封闭曲线表示集合关系的图",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "子集"
-            ],
-            "definition": "Venn图是用平面上的封闭曲线内部表示集合的图。",
-            "example": "用内外椭圆表示A⊆B"
-          },
-          {
-            "name": "子集传递性",
-            "difficulty": 2,
-            "description": "子集关系具有传递性",
-            "aliases": [],
-            "prerequisites": [
-              "子集"
-            ],
-            "definition": "若A⊆B且B⊆C，则A⊆C。",
-            "example": "A⊆B、B⊆C推出A⊆C"
-          },
-          {
-            "name": "空集子集性质",
-            "difficulty": 1,
-            "description": "空集是任何集合的子集",
-            "aliases": [],
-            "prerequisites": [
-              "空集",
-              "子集"
-            ],
-            "definition": "空集是任何集合的子集。",
-            "example": "∅⊆{1,2}"
+            "definition": "表示研究范围内至少存在一个对象使性质成立的量词叫存在量词。",
+            "example": "存在x∈ℝ使x²=2"
           }
         ]
       }
@@ -1196,238 +1032,201 @@
           {
             "name": "集合",
             "difficulty": 1,
-            "description": "研究对象的总体，通常用大写字母表示",
+            "description": "具有某种确定性质的对象的总体。",
             "aliases": [],
             "prerequisites": [],
             "definition": "集合是由一些确定的、互不相同的对象组成的总体。",
-            "example": "全体自然数构成集合N"
+            "example": "所有小于5的正整数构成集合。"
           },
           {
             "name": "元素",
             "difficulty": 1,
-            "description": "集合中的每个对象称为该集合的元素",
+            "description": "集合中的每个对象称为元素。",
             "aliases": [],
             "prerequisites": [
               "集合"
             ],
-            "definition": "元素是构成集合的一个个对象。",
-            "example": "3是集合{1,2,3}的元素"
-          },
-          {
-            "name": "列举法",
-            "difficulty": 1,
-            "description": "把集合中的元素一一列出表示集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "列举法是把集合的元素逐一列举出来表示集合的方法。",
-            "example": "{1,2,3}表示三个元素组成的集合"
-          },
-          {
-            "name": "描述法",
-            "difficulty": 2,
-            "description": "用元素的共同特征描述集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "描述法是用集合中元素的共同特征表示集合的方法。",
-            "example": "{x|x>0}表示正数集合"
+            "definition": "组成集合的每个对象叫作这个集合的元素。",
+            "example": "集合{1,2,3}中，1是元素。"
           },
           {
             "name": "空集",
             "difficulty": 1,
-            "description": "不含任何元素的集合",
-            "aliases": [],
+            "description": "不含任何元素的集合。",
+            "aliases": [
+              "∅"
+            ],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "空集是不含任何元素的集合，记作∅。",
-            "example": "方程x²+1=0的实数解集是∅"
-          },
-          {
-            "name": "子集",
-            "difficulty": 2,
-            "description": "集合中的元素都属于另一个集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "元素"
-            ],
-            "definition": "若集合A的任意元素都属于集合B，则称A是B的子集。",
-            "example": "{1,2}是{1,2,3}的子集"
-          },
-          {
-            "name": "真子集",
-            "difficulty": 2,
-            "description": "是子集但不等于原集合的集合",
-            "aliases": [],
-            "prerequisites": [
-              "子集"
-            ],
-            "definition": "若A是B的子集且A不等于B，则称A是B的真子集。",
-            "example": "{1,2}是{1,2,3}的真子集"
-          },
-          {
-            "name": "集合相等",
-            "difficulty": 2,
-            "description": "两个集合互为子集时相等",
-            "aliases": [],
-            "prerequisites": [
-              "子集"
-            ],
-            "definition": "若两个集合的元素完全相同，则称这两个集合相等。",
-            "example": "{1,2,3}={3,2,1}"
-          },
-          {
-            "name": "并集",
-            "difficulty": 2,
-            "description": "由两个集合所有元素组成的集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合"
-            ],
-            "definition": "由属于集合A或属于集合B的所有元素组成的集合叫作A与B的并集。",
-            "example": "{1,2}∪{2,3}={1,2,3}"
-          },
-          {
-            "name": "交集",
-            "difficulty": 2,
-            "description": "由两个集合公共元素组成的集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合"
-            ],
-            "definition": "由既属于集合A又属于集合B的所有元素组成的集合叫作A与B的交集。",
-            "example": "{1,2}∩{2,3}={2}"
+            "definition": "不含任何元素的集合叫作空集。",
+            "example": "方程x²+1=0在实数范围内的解集是空集。"
           },
           {
             "name": "全集",
             "difficulty": 2,
-            "description": "研究问题中涉及的所有对象组成的集合",
-            "aliases": [],
+            "description": "研究问题中所涉及对象的全体。",
+            "aliases": [
+              "全体"
+            ],
             "prerequisites": [
               "集合"
             ],
-            "definition": "全集是包含所研究问题中所有对象的集合。",
-            "example": "研究整数时可取整数集为全集"
+            "definition": "在一定范围内，包含所研究问题中全部对象的集合叫作全集。",
+            "example": "研究实数性质时，可取实数集为全集。"
           },
           {
-            "name": "补集",
+            "name": "集合表示法",
             "difficulty": 2,
-            "description": "全集中不属于指定集合的元素组成的集合",
-            "aliases": [],
-            "prerequisites": [
-              "集合",
-              "全集"
-            ],
-            "definition": "在全集U中，由不属于集合A的所有元素组成的集合称为A的补集。",
-            "example": "U={1,2,3},A={1}时，∁UA={2,3}"
-          },
-          {
-            "name": "元素个数",
-            "difficulty": 2,
-            "description": "有限集合中元素的数量",
+            "description": "表示集合及其元素关系的方法。",
             "aliases": [],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "有限集合中不同元素的个数称为该集合的元素个数。",
-            "example": "集合{a,b,c}的元素个数为3"
+            "definition": "用列举法或描述法等方式表示集合的方法叫集合表示法。",
+            "example": "{1,2,3}是列举法表示。"
+          },
+          {
+            "name": "集合相等",
+            "difficulty": 2,
+            "description": "两个集合含有完全相同的元素。",
+            "aliases": [
+              "相等集合"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "若两个集合的元素完全相同，则称这两个集合相等。",
+            "example": "{1,2,3}={3,2,1}。"
+          },
+          {
+            "name": "子集",
+            "difficulty": 2,
+            "description": "一个集合的所有元素都属于另一个集合。",
+            "aliases": [
+              "包含关系"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "若集合A的任意一个元素都是集合B的元素，则称A是B的子集。",
+            "example": "{1,2}⊆{1,2,3}。"
+          },
+          {
+            "name": "真子集",
+            "difficulty": 2,
+            "description": "是子集但不与原集合相等的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "子集",
+              "集合相等"
+            ],
+            "definition": "若A是B的子集且A不等于B，则称A是B的真子集。",
+            "example": "{1,2}是{1,2,3}的真子集。"
+          },
+          {
+            "name": "交集",
+            "difficulty": 2,
+            "description": "两个集合中共同元素组成的集合。",
+            "aliases": [
+              "A∩B"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "由属于集合A且属于集合B的所有元素组成的集合叫作A与B的交集。",
+            "example": "{1,2}∩{2,3}={2}。"
+          },
+          {
+            "name": "并集",
+            "difficulty": 2,
+            "description": "两个集合中全部元素组成的集合。",
+            "aliases": [
+              "A∪B"
+            ],
+            "prerequisites": [
+              "集合",
+              "元素"
+            ],
+            "definition": "由属于集合A或属于集合B的所有元素组成的集合叫作A与B的并集。",
+            "example": "{1,2}∪{2,3}={1,2,3}。"
+          },
+          {
+            "name": "补集",
+            "difficulty": 3,
+            "description": "全集中不属于某集合的元素组成的集合。",
+            "aliases": [
+              "集合的补集"
+            ],
+            "prerequisites": [
+              "全集",
+              "集合",
+              "子集"
+            ],
+            "definition": "在全集U中，由不属于集合A的所有元素组成的集合叫作A在U中的补集。",
+            "example": "U={1,2,3}，A={1}，则∁UA={2,3}。"
           },
           {
             "name": "命题",
             "difficulty": 2,
-            "description": "能够判断真假的陈述句",
+            "description": "能够判断真假的陈述句。",
             "aliases": [],
             "prerequisites": [],
-            "definition": "命题是能够判断真假的陈述句。",
-            "example": "2是偶数是真命题"
+            "definition": "可以判断真假的陈述句叫作命题。",
+            "example": "“2是偶数”是真命题。"
           },
           {
             "name": "充分条件",
             "difficulty": 3,
-            "description": "能保证结论成立的条件",
+            "description": "能推出结论成立的条件。",
             "aliases": [],
             "prerequisites": [
               "命题"
             ],
-            "definition": "若条件p成立能推出结论q成立，则p是q的充分条件。",
-            "example": "x=1是x²=1的充分条件"
+            "definition": "若条件p成立可以推出结论q成立，则p是q的充分条件。",
+            "example": "“x=1”是“x²=1”的充分条件。"
           },
           {
             "name": "必要条件",
             "difficulty": 3,
-            "description": "结论成立所必须具备的条件",
+            "description": "结论成立所必须具备的条件。",
             "aliases": [],
             "prerequisites": [
               "命题"
             ],
-            "definition": "若结论q成立能推出条件p成立，则p是q的必要条件。",
-            "example": "x²=1是x=1的必要条件"
-          },
-          {
-            "name": "充要条件",
-            "difficulty": 3,
-            "description": "既是充分条件又是必要条件",
-            "aliases": [],
-            "prerequisites": [
-              "充分条件",
-              "必要条件"
-            ],
-            "definition": "若p能推出q且q也能推出p，则p是q的充要条件。",
-            "example": "x=1是x²=1且x>0的充要条件"
+            "definition": "若结论q成立可以推出条件p成立，则p是q的必要条件。",
+            "example": "“x²=1”是“x=1”的必要条件。"
           },
           {
             "name": "全称量词",
-            "difficulty": 2,
-            "description": "表示对所有对象都成立的量词",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "表示对所有对象都成立的量词。",
+            "aliases": [
+              "∀"
+            ],
             "prerequisites": [
               "命题"
             ],
-            "definition": "全称量词表示所研究范围内的所有对象，常用“任意”“所有”表示。",
-            "example": "任意x∈R，x²≥0"
+            "definition": "表示所述性质对研究范围内所有对象都成立的量词叫作全称量词。",
+            "example": "“任意x∈R，x²≥0”。"
           },
           {
             "name": "存在量词",
-            "difficulty": 2,
-            "description": "表示至少存在一个对象的量词",
-            "aliases": [],
-            "prerequisites": [
-              "命题"
-            ],
-            "definition": "存在量词表示所研究范围内至少有一个对象，常用“存在”表示。",
-            "example": "存在x∈R，使x²=4"
-          },
-          {
-            "name": "全称命题",
             "difficulty": 3,
-            "description": "含全称量词的命题",
-            "aliases": [],
+            "description": "表示至少存在一个对象的量词。",
+            "aliases": [
+              "∃"
+            ],
             "prerequisites": [
-              "全称量词",
               "命题"
             ],
-            "definition": "含有全称量词并对所有对象作出判断的命题叫全称命题。",
-            "example": "任意实数x都有x²≥0"
-          },
-          {
-            "name": "存在命题",
-            "difficulty": 3,
-            "description": "含存在量词的命题",
-            "aliases": [],
-            "prerequisites": [
-              "存在量词",
-              "命题"
-            ],
-            "definition": "含有存在量词并断言至少一个对象满足条件的命题叫存在命题。",
-            "example": "存在实数x使x²=1"
+            "definition": "表示研究范围内至少存在一个对象使所述性质成立的量词叫作存在量词。",
+            "example": "“存在x∈R，使x²=1”。"
           }
         ],
         "chapter_key": "6aa86ca511",
@@ -1440,790 +1239,590 @@
         }
       },
       {
-        "name": "第二章 一元二次函数、方程和不等式..................... 36",
+        "name": "第二章 一元二次函数、方程和不等式........................ 36",
         "concepts": [
           {
             "name": "等式性质",
             "difficulty": 1,
-            "description": "研究等式两边同时进行相同运算时的关系。",
+            "description": "研究等式两边同时进行运算时的关系。",
             "aliases": [],
             "prerequisites": [],
-            "definition": "等式两边同时加、减、乘或除以同一适当数，所得结果仍相等。",
-            "example": "若a=b，则a+3=b+3。"
+            "definition": "等式两边同时加、减同一个数或同时乘、除同一个非零数，等式仍成立。",
+            "example": "若a=b，则a+2=b+2。"
           },
           {
             "name": "不等式性质",
             "difficulty": 2,
-            "description": "研究不等式两边运算后大小关系的变化。",
+            "description": "研究不等式两边运算后的大小关系。",
             "aliases": [],
             "prerequisites": [
               "等式性质"
             ],
-            "definition": "不等式两边同加减同一数时方向不变，乘除负数时方向改变。",
+            "definition": "不等式两边同加或同减一个数方向不变，同乘或同除负数方向改变。",
             "example": "若a>b，则-2a<-2b。"
           },
           {
             "name": "基本不等式",
             "difficulty": 2,
-            "description": "比较两个正数的和与其积的平方根。",
-            "aliases": [
-              "均值不等式"
-            ],
+            "description": "正数和与积之间的重要不等关系。",
+            "aliases": [],
             "prerequisites": [
               "不等式性质"
             ],
-            "definition": "对任意正数a、b，有a+b≥2√ab，等号当且仅当a=b。",
+            "definition": "当a、b为正数时，a+b≥2√ab，且a=b时等号成立。",
             "example": "x>0时，x+1/x≥2。"
           },
           {
             "name": "二次函数",
             "difficulty": 2,
-            "description": "研究自变量最高次数为二的函数及其图象性质。",
-            "aliases": [],
+            "description": "解析式最高次数为二次的函数。",
+            "aliases": [
+              "一元二次函数"
+            ],
             "prerequisites": [],
             "definition": "形如y=ax²+bx+c且a≠0的函数叫作二次函数。",
-            "example": "y=x²-2x+1是二次函数。"
+            "example": "y=x²-2x+1。"
           },
           {
             "name": "一元二次方程",
             "difficulty": 2,
-            "description": "研究含有一个未知数且次数为二的方程。",
+            "description": "含一个未知数且次数为二次的方程。",
             "aliases": [],
             "prerequisites": [
-              "等式性质"
+              "二次函数"
             ],
-            "definition": "只含一个未知数且未知数最高次数为二的整式方程叫作一元二次方程。",
-            "example": "x²-5x+6=0是一元二次方程。"
+            "definition": "形如ax²+bx+c=0且a≠0的方程叫作一元二次方程。",
+            "example": "x²-3x+2=0。"
           },
           {
             "name": "一元二次不等式",
             "difficulty": 3,
-            "description": "研究含一个未知数且次数为二的不等式。",
+            "description": "含一个未知数且次数为二次的不等式。",
             "aliases": [],
             "prerequisites": [
               "二次函数",
               "一元二次方程",
               "不等式性质"
             ],
-            "definition": "只含一个未知数且未知数最高次数为二的不等式叫作一元二次不等式。",
-            "example": "x²-5x+6≤0的解集为[2,3]。"
-          },
-          {
-            "name": "二次函数与方程关系",
-            "difficulty": 3,
-            "description": "利用二次函数图象研究一元二次方程的根。",
-            "aliases": [],
-            "prerequisites": [
-              "二次函数",
-              "一元二次方程"
-            ],
-            "definition": "一元二次方程的实根对应二次函数图象与x轴的交点横坐标。",
-            "example": "y=x²-1与x轴交于x=±1。"
+            "definition": "形如ax²+bx+c>0或<0且a≠0的不等式叫作一元二次不等式。",
+            "example": "x²-3x+2>0。"
           }
         ],
-        "chapter_key": "bd1fc06ecb",
+        "chapter_key": "839def37d9",
         "metadata": {
           "volume_id": "71ced0f4d382",
           "file_id": "71ced0f4d382",
           "volume_title": "A版 必修第1册",
           "chapter_order": 2,
-          "raw_heading": "第二章 一元二次函数、方程和不等式..................... 36"
+          "raw_heading": "第二章 一元二次函数、方程和不等式........................ 36"
         }
       },
       {
-        "name": "第三章 函数的概念与性质.................................... 59",
+        "name": "第三章 函数的概念与性质....................................... 59",
         "concepts": [
           {
-            "name": "函数",
+            "name": "函数的概念",
             "difficulty": 2,
-            "description": "描述两个变量之间依赖关系的数学对应",
+            "description": "两个非空数集间确定的对应关系。",
             "aliases": [],
             "prerequisites": [],
-            "definition": "设集合A、B，若对A中每个元素x都有B中唯一确定的元素y与之对应，则称这种对应为函数。",
-            "example": "y=2x+1表示x与y之间的函数关系"
+            "definition": "设集合A、B，若对A中每个元素x都有唯一确定的y与之对应，则称这种对应为函数。",
+            "example": "y=2x+1把每个实数x对应到唯一实数y。"
           },
           {
-            "name": "定义域",
-            "difficulty": 2,
-            "description": "函数中自变量允许取值的集合",
+            "name": "函数的定义域",
+            "difficulty": 1,
+            "description": "函数中自变量允许取值的集合。",
             "aliases": [],
             "prerequisites": [
-              "函数"
+              "函数的概念"
             ],
-            "definition": "函数关系式中自变量允许取值的集合叫作函数的定义域。",
-            "example": "y=√x的定义域为x≥0"
+            "definition": "函数关系式中自变量x的所有允许取值组成的集合叫做定义域。",
+            "example": "y=√x的定义域为[0,+∞)。"
           },
           {
-            "name": "值域",
+            "name": "函数的值域",
+            "difficulty": 1,
+            "description": "函数值构成的集合。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "函数中所有函数值y组成的集合叫做值域。",
+            "example": "y=x²的值域为[0,+∞)。"
+          },
+          {
+            "name": "函数的三要素",
             "difficulty": 2,
-            "description": "函数值构成的集合",
-            "aliases": [
+            "description": "定义域、对应关系和值域。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念",
+              "函数的定义域",
               "函数的值域"
             ],
-            "prerequisites": [
-              "函数"
-            ],
-            "definition": "函数中所有函数值构成的集合叫作函数的值域。",
-            "example": "y=x²的值域为y≥0"
+            "definition": "函数由定义域、对应关系和值域三个要素构成。",
+            "example": "y=x²的三要素包括实数域、平方对应和值域。"
           },
           {
-            "name": "对应关系",
+            "name": "函数的表示法",
             "difficulty": 2,
-            "description": "确定自变量与函数值对应方式的规则",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "把定义域中的每个自变量对应到唯一函数值的规则叫作对应关系。",
-            "example": "对应关系f:x→2x+1"
-          },
-          {
-            "name": "函数表示法",
-            "difficulty": 2,
-            "description": "表示函数关系的常用方式",
+            "description": "表示函数对应关系的常用方式。",
             "aliases": [],
             "prerequisites": [
-              "函数"
+              "函数的概念"
             ],
-            "definition": "用解析式、图象或表格表示函数关系的方法统称为函数表示法。",
-            "example": "函数可用y=x²、图象或数值表表示"
+            "definition": "函数通常可用解析法、列表法和图象法表示。",
+            "example": "y=2x可用解析式、数值表或图象表示。"
           },
           {
             "name": "函数图象",
             "difficulty": 2,
-            "description": "平面直角坐标系中函数值组成的图形",
+            "description": "函数值对应点组成的平面图形。",
             "aliases": [],
             "prerequisites": [
-              "函数",
-              "函数表示法"
+              "函数的概念",
+              "函数的表示法"
             ],
-            "definition": "以定义域中的自变量为横坐标、对应函数值为纵坐标的点集叫作函数图象。",
-            "example": "y=x²的图象是开口向上的抛物线"
+            "definition": "在平面直角坐标系中，以函数自变量和函数值为坐标的点集叫做函数图象。",
+            "example": "y=x²的图象是一条开口向上的抛物线。"
           },
           {
             "name": "分段函数",
             "difficulty": 3,
-            "description": "在不同区间采用不同解析式的函数",
+            "description": "在不同区间用不同解析式表示的函数。",
             "aliases": [],
             "prerequisites": [
-              "函数",
-              "定义域",
-              "函数表示法"
+              "函数的概念",
+              "函数的表示法"
             ],
-            "definition": "在定义域的不同部分分别用不同解析式表示的函数叫作分段函数。",
-            "example": "f(x)=x（x≥0），f(x)=-x（x<0）"
+            "definition": "在定义域的不同部分分别用不同解析式表示的函数叫做分段函数。",
+            "example": "f(x)=x（x≥0），-x（x<0）。"
           },
           {
-            "name": "区间",
-            "difficulty": 2,
-            "description": "表示实数连续取值范围的记号",
-            "aliases": [
-              "数轴区间"
-            ],
-            "prerequisites": [],
-            "definition": "由两个实数确定并表示一段连续实数范围的集合叫作区间。",
-            "example": "[1,3)表示1≤x<3"
-          },
-          {
-            "name": "单调性",
+            "name": "同一函数",
             "difficulty": 3,
-            "description": "函数值随自变量变化而变化的规律",
-            "aliases": [
-              "函数的单调性"
-            ],
+            "description": "定义域和对应关系都相同的函数。",
+            "aliases": [],
             "prerequisites": [
-              "函数",
-              "区间"
+              "函数的三要素"
             ],
-            "definition": "函数在某区间内函数值随自变量增大而增大或减小的性质叫作单调性。",
-            "example": "y=2x在R上是增函数"
+            "definition": "若两个函数的定义域和对应关系完全相同，则它们是同一函数。",
+            "example": "f(x)=x²与g(t)=t²在实数域上是同一函数。"
+          },
+          {
+            "name": "函数的单调性",
+            "difficulty": 3,
+            "description": "函数值随自变量变化的增减规律。",
+            "aliases": [],
+            "prerequisites": [
+              "函数的概念"
+            ],
+            "definition": "在给定区间内，函数值随自变量增大而增大或减小的性质叫做单调性。",
+            "example": "y=2x+1在R上是增函数。"
           },
           {
             "name": "增函数",
             "difficulty": 3,
-            "description": "自变量增大时函数值也增大的函数",
-            "aliases": [
-              "单调递增函数"
-            ],
+            "description": "自变量增大时函数值也增大的函数。",
+            "aliases": [],
             "prerequisites": [
-              "函数",
-              "单调性"
+              "函数的单调性"
             ],
-            "definition": "在给定区间内，任取较大自变量所得函数值也较大的函数叫增函数。",
-            "example": "y=x³在R上是增函数"
+            "definition": "若区间内任意x₁<x₂都有f(x₁)<f(x₂)，则函数在该区间上是增函数。",
+            "example": "y=x³在R上是增函数。"
           },
           {
             "name": "减函数",
             "difficulty": 3,
-            "description": "自变量增大时函数值减小的函数",
-            "aliases": [
-              "单调递减函数"
-            ],
+            "description": "自变量增大时函数值减小的函数。",
+            "aliases": [],
             "prerequisites": [
-              "函数",
-              "单调性"
+              "函数的单调性"
             ],
-            "definition": "在给定区间内，任取较大自变量所得函数值较小的函数叫减函数。",
-            "example": "y=-x在R上是减函数"
+            "definition": "若区间内任意x₁<x₂都有f(x₁)>f(x₂)，则函数在该区间上是减函数。",
+            "example": "y=-x在R上是减函数。"
           },
           {
-            "name": "最大值",
+            "name": "函数的最值",
             "difficulty": 3,
-            "description": "函数在给定范围内取得的最大函数值",
-            "aliases": [
-              "函数最大值"
-            ],
+            "description": "函数在指定范围内达到的最大或最小值。",
+            "aliases": [],
             "prerequisites": [
-              "函数",
-              "值域"
+              "函数的概念"
             ],
-            "definition": "若函数在给定范围内所有函数值都不大于某个值且能取到该值，则该值为最大值。",
-            "example": "f(x)=1-x²在R上的最大值是1"
-          },
-          {
-            "name": "最小值",
-            "difficulty": 3,
-            "description": "函数在给定范围内取得的最小函数值",
-            "aliases": [
-              "函数最小值"
-            ],
-            "prerequisites": [
-              "函数",
-              "值域"
-            ],
-            "definition": "若函数在给定范围内所有函数值都不小于某个值且能取到该值，则该值为最小值。",
-            "example": "f(x)=x²在R上的最小值是0"
-          },
-          {
-            "name": "奇偶性",
-            "difficulty": 3,
-            "description": "函数图象关于坐标轴或原点的对称性质",
-            "aliases": [
-              "函数的奇偶性"
-            ],
-            "prerequisites": [
-              "函数",
-              "定义域"
-            ],
-            "definition": "根据定义域和函数值满足的对称关系判断函数图象对称性的性质叫奇偶性。",
-            "example": "f(x)=x²是偶函数"
+            "definition": "函数在给定区间内所有函数值中最大或最小的值叫做函数的最值。",
+            "example": "y=x²在[-1,2]上的最小值为0。"
           },
           {
             "name": "奇函数",
             "difficulty": 3,
-            "description": "图象关于原点对称的函数",
+            "description": "图象关于原点对称的函数。",
             "aliases": [],
             "prerequisites": [
-              "函数",
-              "奇偶性"
+              "函数的概念"
             ],
-            "definition": "定义域关于原点对称且满足f(-x)=-f(x)的函数叫奇函数。",
-            "example": "f(x)=x³是奇函数"
+            "definition": "定义域关于原点对称且满足f(-x)=-f(x)的函数叫做奇函数。",
+            "example": "f(x)=x³是奇函数。"
           },
           {
             "name": "偶函数",
             "difficulty": 3,
-            "description": "图象关于y轴对称的函数",
+            "description": "图象关于y轴对称的函数。",
             "aliases": [],
             "prerequisites": [
-              "函数",
-              "奇偶性"
+              "函数的概念"
             ],
-            "definition": "定义域关于原点对称且满足f(-x)=f(x)的函数叫偶函数。",
-            "example": "f(x)=x²是偶函数"
+            "definition": "定义域关于原点对称且满足f(-x)=f(x)的函数叫做偶函数。",
+            "example": "f(x)=x²是偶函数。"
           },
           {
             "name": "幂函数",
-            "difficulty": 3,
-            "description": "形如y=x^α的函数",
+            "difficulty": 2,
+            "description": "形如y=xᵃ的函数。",
             "aliases": [],
             "prerequisites": [
-              "函数"
+              "函数的概念"
             ],
-            "definition": "形如y=x^α的函数叫幂函数，其中α为常数。",
-            "example": "y=x²和y=√x都是幂函数"
+            "definition": "一般地，形如y=xᵃ的函数叫做幂函数，其中a为常数。",
+            "example": "y=x²、y=x、y=√x都是幂函数。"
           },
           {
             "name": "函数模型",
             "difficulty": 3,
-            "description": "刻画实际问题中变量关系的函数关系",
-            "aliases": [
-              "函数模型的应用"
-            ],
+            "description": "描述实际问题中数量关系的函数关系。",
+            "aliases": [],
             "prerequisites": [
-              "函数",
-              "函数图象"
+              "函数的概念",
+              "函数的表示法"
             ],
-            "definition": "用函数关系刻画实际问题中变量之间对应关系的数学模型叫函数模型。",
-            "example": "用一次函数模型描述匀速变化关系"
+            "definition": "用函数关系刻画实际问题中变量之间对应关系的数学模型叫做函数模型。",
+            "example": "用一次函数模型描述匀速变化的路程。"
           }
         ],
-        "chapter_key": "449dd43bf6",
+        "chapter_key": "e51a739cfc",
         "metadata": {
           "volume_id": "71ced0f4d382",
           "file_id": "71ced0f4d382",
           "volume_title": "A版 必修第1册",
           "chapter_order": 3,
-          "raw_heading": "第三章 函数的概念与性质.................................... 59"
+          "raw_heading": "第三章 函数的概念与性质....................................... 59"
         }
       },
       {
-        "name": "第四章 指数函数与对数函数 .......................................... 103",
+        "name": "第四章 指数函数与对数函数 ........................................ 103",
         "concepts": [
           {
-            "name": "根式",
+            "name": "指数",
             "difficulty": 2,
-            "description": "表示方程xⁿ=a的根的式子",
+            "description": "研究指数及其运算的基本概念与性质",
             "aliases": [],
             "prerequisites": [],
-            "definition": "根式是含有根号、表示数的n次方根的式子。",
-            "example": "√9=3"
-          },
-          {
-            "name": "分数指数幂",
-            "difficulty": 2,
-            "description": "指数为分数的幂",
-            "aliases": [],
-            "prerequisites": [
-              "根式"
-            ],
-            "definition": "分数指数幂是指数为有理数的幂，并可用根式表示。",
-            "example": "8^(1/3)=2"
-          },
-          {
-            "name": "有理数指数幂",
-            "difficulty": 3,
-            "description": "指数为有理数的幂",
-            "aliases": [
-              "有理指数幂"
-            ],
-            "prerequisites": [
-              "分数指数幂"
-            ],
-            "definition": "有理数指数幂是指数为整数或分数的幂。",
-            "example": "16^(-1/2)=1/4"
-          },
-          {
-            "name": "无理数指数幂",
-            "difficulty": 4,
-            "description": "指数为无理数的幂",
-            "aliases": [
-              "实数指数幂"
-            ],
-            "prerequisites": [
-              "有理数指数幂"
-            ],
-            "definition": "无理数指数幂是指数为无理数时幂的推广定义。",
-            "example": "2^√2"
-          },
-          {
-            "name": "指数幂运算性质",
-            "difficulty": 3,
-            "description": "指数幂进行乘除和乘方的法则",
-            "aliases": [
-              "幂的运算性质"
-            ],
-            "prerequisites": [
-              "有理数指数幂"
-            ],
-            "definition": "指数幂运算性质包括同底幂相乘、相除及幂的乘方等法则。",
-            "example": "a^m·a^n=a^(m+n)"
+            "definition": "指数表示相同因数相乘的次数，并可推广到不同数域。",
+            "example": "2^3=8"
           },
           {
             "name": "指数函数",
-            "difficulty": 2,
-            "description": "形如y=aˣ的函数",
+            "difficulty": 3,
+            "description": "以指数为自变量相关量的基本函数",
             "aliases": [],
             "prerequisites": [
-              "有理数指数幂"
+              "指数"
             ],
-            "definition": "指数函数是形如y=aˣ且a>0、a≠1的函数。",
-            "example": "y=2ˣ"
+            "definition": "形如y=a^x的函数，其中a>0且a≠1。",
+            "example": "y=2^x"
           },
           {
-            "name": "指数函数性质",
+            "name": "放射性衰减",
             "difficulty": 3,
-            "description": "指数函数的定义域、值域和单调性",
+            "description": "用指数函数描述放射性物质随时间的衰减",
             "aliases": [
-              "指数函数图象与性质"
+              "放射性物质的衰减"
             ],
             "prerequisites": [
               "指数函数"
             ],
-            "definition": "指数函数的图象和性质由底数a大于1或小于1决定。",
-            "example": "y=2ˣ在R上递增"
+            "definition": "放射性物质的数量随时间按一定规律减少的现象。",
+            "example": "剩余质量随时间指数减少"
           },
           {
             "name": "对数",
             "difficulty": 2,
-            "description": "指数式中求指数的运算",
-            "aliases": [
-              "对数概念"
-            ],
-            "prerequisites": [
-              "指数函数"
-            ],
-            "definition": "若a^b=N，则b叫作以a为底N的对数，记作logₐN=b。",
-            "example": "log₂8=3"
-          },
-          {
-            "name": "对数的运算性质",
-            "difficulty": 3,
-            "description": "对数进行加减和乘方运算的法则",
+            "description": "研究指数运算的逆运算及其基本性质",
             "aliases": [],
             "prerequisites": [
-              "对数"
+              "指数"
             ],
-            "definition": "对数运算性质把积、商和幂的对数分别化为和、差及倍数。",
-            "example": "logₐ(xy)=logₐx+logₐy"
-          },
-          {
-            "name": "常用对数",
-            "difficulty": 2,
-            "description": "以10为底的对数",
-            "aliases": [
-              "十进制对数"
-            ],
-            "prerequisites": [
-              "对数"
-            ],
-            "definition": "常用对数是以10为底的对数，通常省略底数10。",
-            "example": "lg100=2"
-          },
-          {
-            "name": "自然对数",
-            "difficulty": 2,
-            "description": "以无理数e为底的对数",
-            "aliases": [
-              "ln"
-            ],
-            "prerequisites": [
-              "对数"
-            ],
-            "definition": "自然对数是以e为底的对数，记作ln x。",
-            "example": "ln e=1"
+            "definition": "若a^b=N，则b叫作以a为底N的对数。",
+            "example": "log_2 8=3"
           },
           {
             "name": "对数函数",
-            "difficulty": 2,
-            "description": "形如y=logₐx的函数",
+            "difficulty": 3,
+            "description": "以对数为函数表达式的基本函数",
             "aliases": [],
             "prerequisites": [
               "对数"
             ],
-            "definition": "对数函数是形如y=logₐx且a>0、a≠1的函数。",
-            "example": "y=log₂x"
-          },
-          {
-            "name": "对数函数性质",
-            "difficulty": 3,
-            "description": "对数函数的定义域、值域和单调性",
-            "aliases": [
-              "对数函数图象与性质"
-            ],
-            "prerequisites": [
-              "对数函数"
-            ],
-            "definition": "对数函数的图象和性质由底数a大于1或小于1决定。",
-            "example": "y=log₂x在(0,+∞)上递增"
-          },
-          {
-            "name": "反函数",
-            "difficulty": 3,
-            "description": "交换函数自变量与因变量所得的函数",
-            "aliases": [],
-            "prerequisites": [
-              "指数函数",
-              "对数函数"
-            ],
-            "definition": "若两个函数的对应关系互相逆转，则它们互为反函数。",
-            "example": "y=2ˣ与y=log₂x"
+            "definition": "形如y=log_a x的函数，其中a>0且a≠1。",
+            "example": "y=log_2 x"
           },
           {
             "name": "反函数图象关系",
             "difficulty": 3,
-            "description": "互为反函数的图象关于y=x对称",
-            "aliases": [],
-            "prerequisites": [
-              "反函数"
+            "description": "探究互为反函数的两个函数图象之间的关系",
+            "aliases": [
+              "互为反函数的图象关系"
             ],
-            "definition": "互为反函数的两个函数图象关于直线y=x对称。",
-            "example": "y=2ˣ与y=log₂x的图象对称"
-          },
-          {
-            "name": "指数方程",
-            "difficulty": 3,
-            "description": "未知数出现在指数位置的方程",
-            "aliases": [],
             "prerequisites": [
-              "指数函数性质",
-              "指数幂运算性质"
-            ],
-            "definition": "指数方程是未知数出现在指数位置的方程。",
-            "example": "2ˣ=8的解为x=3"
-          },
-          {
-            "name": "对数方程",
-            "difficulty": 3,
-            "description": "未知数出现在对数中的方程",
-            "aliases": [],
-            "prerequisites": [
-              "对数的运算性质",
-              "对数函数性质"
-            ],
-            "definition": "对数方程是含有对数且未知数出现在真数或底数中的方程。",
-            "example": "log₂x=3的解为x=8"
-          },
-          {
-            "name": "指数模型",
-            "difficulty": 3,
-            "description": "用指数函数描述变化规律的数学模型",
-            "aliases": [],
-            "prerequisites": [
-              "指数函数"
-            ],
-            "definition": "指数模型是用指数函数表示数量随自变量变化关系的模型。",
-            "example": "y=100·1.05ˣ"
-          },
-          {
-            "name": "对数模型",
-            "difficulty": 3,
-            "description": "用对数函数描述变化规律的数学模型",
-            "aliases": [],
-            "prerequisites": [
+              "指数函数",
               "对数函数"
             ],
-            "definition": "对数模型是用对数函数表示数量随自变量变化关系的模型。",
-            "example": "y=log₂x"
+            "definition": "互为反函数的两个函数图象关于直线y=x对称。",
+            "example": "y=2^x与y=log_2 x"
           },
           {
             "name": "函数模型应用",
-            "difficulty": 4,
-            "description": "建立函数模型解决实际问题",
+            "difficulty": 3,
+            "description": "利用函数模型分析和解决实际问题",
             "aliases": [
-              "函数模型的应用"
+              "函数的应用"
             ],
             "prerequisites": [
-              "指数模型",
-              "对数模型"
+              "指数函数",
+              "对数函数"
             ],
-            "definition": "函数模型应用是根据实际问题建立并解释函数关系的过程。",
-            "example": "用指数模型估计人口增长"
+            "definition": "根据实际问题建立函数关系并利用函数进行分析求解。",
+            "example": "用指数模型描述衰减过程"
           }
         ],
-        "chapter_key": "f2161c9a29",
+        "chapter_key": "c1f30cde76",
         "metadata": {
           "volume_id": "71ced0f4d382",
           "file_id": "71ced0f4d382",
           "volume_title": "A版 必修第1册",
           "chapter_order": 4,
-          "raw_heading": "第四章 指数函数与对数函数 .......................................... 103"
+          "raw_heading": "第四章 指数函数与对数函数 ........................................ 103"
         }
       },
       {
-        "name": "第五章 三角函数 ......................................................... 167",
+        "name": "第五章 三角函数................................................ 167",
         "concepts": [
           {
             "name": "任意角",
             "difficulty": 2,
-            "description": "角的大小不受旋转方向和旋转圈数限制。",
+            "description": "按旋转方向和旋转量定义的角。",
             "aliases": [],
             "prerequisites": [],
-            "definition": "任意角是由角的始边绕顶点按指定方向旋转形成的角。",
-            "example": "逆时针旋转一周得到360°角。"
+            "definition": "角可以看作平面内一条射线绕端点旋转形成的图形，旋转方向和圈数不受限制。",
+            "example": "旋转两周再逆时针转30°得到750°。"
           },
           {
             "name": "弧度制",
             "difficulty": 2,
-            "description": "用弧长与半径之比表示角的大小。",
-            "aliases": [],
+            "description": "用弧长与半径之比表示角的制度。",
+            "aliases": [
+              "弧度"
+            ],
             "prerequisites": [
               "任意角"
             ],
-            "definition": "弧度制以圆心角所对弧长与半径的比值作为角的度量。",
-            "example": "半径为1的圆中，弧长为π对应π弧度。"
+            "definition": "以弧长等于半径的圆弧所对的圆心角为1弧度来度量角。",
+            "example": "平角等于π弧度。"
           },
           {
             "name": "单位圆",
             "difficulty": 2,
-            "description": "圆心在原点、半径为1的圆。",
+            "description": "半径为1且圆心位于坐标原点的圆。",
             "aliases": [],
             "prerequisites": [],
-            "definition": "单位圆是直角坐标系中圆心为原点且半径为1的圆。",
-            "example": "单位圆方程为x²+y²=1。"
+            "definition": "在平面直角坐标系中，圆心为原点、半径为1的圆称为单位圆。",
+            "example": "单位圆的方程为x²+y²=1。"
           },
           {
             "name": "三角函数",
             "difficulty": 3,
-            "description": "以角为自变量的函数关系。",
+            "description": "由角的大小确定数值的函数。",
             "aliases": [],
             "prerequisites": [
               "任意角",
-              "弧度制",
               "单位圆"
             ],
-            "definition": "三角函数是由角的大小确定正弦、余弦等函数值的函数。",
-            "example": "函数y=sin x是三角函数。"
+            "definition": "以角为自变量，并通过单位圆上点的坐标等关系确定函数值的函数。",
+            "example": "角α对应的正弦值记作sinα。"
           },
           {
             "name": "正弦函数",
-            "difficulty": 2,
-            "description": "用正弦值表示的基本三角函数。",
-            "aliases": [],
+            "difficulty": 3,
+            "description": "以角为自变量的正弦值函数。",
+            "aliases": [
+              "y=sin x"
+            ],
             "prerequisites": [
               "三角函数"
             ],
-            "definition": "正弦函数是对应任意角的正弦值所确定的函数，记作y=sin x。",
+            "definition": "对每个角x，取其正弦值所得到的函数称为正弦函数。",
             "example": "sin(π/2)=1。"
           },
           {
             "name": "余弦函数",
-            "difficulty": 2,
-            "description": "用余弦值表示的基本三角函数。",
-            "aliases": [],
-            "prerequisites": [
-              "三角函数"
-            ],
-            "definition": "余弦函数是对应任意角的余弦值所确定的函数，记作y=cos x。",
-            "example": "cos 0=1。"
-          },
-          {
-            "name": "正切函数",
             "difficulty": 3,
-            "description": "用正切值表示的基本三角函数。",
-            "aliases": [],
+            "description": "以角为自变量的余弦值函数。",
+            "aliases": [
+              "y=cos x"
+            ],
             "prerequisites": [
               "三角函数"
             ],
-            "definition": "正切函数是正弦与余弦之比确定的函数，记作y=tan x。",
-            "example": "tan(π/4)=1。"
+            "definition": "对每个角x，取其余弦值所得到的函数称为余弦函数。",
+            "example": "cos0=1。"
           },
           {
             "name": "诱导公式",
             "difficulty": 3,
-            "description": "把相关角的三角函数值相互转化的公式。",
+            "description": "将相关角的三角函数值相互转化的公式。",
             "aliases": [],
             "prerequisites": [
               "三角函数"
             ],
-            "definition": "诱导公式用于将不同角的三角函数值转化为便于计算的形式。",
-            "example": "sin(π-α)=sin α。"
+            "definition": "利用角之间的关系，把任意角的三角函数值化为相关角函数值的公式。",
+            "example": "sin(π−α)=sinα。"
           },
           {
             "name": "三角函数图象",
             "difficulty": 3,
-            "description": "三角函数在坐标系中的图形表示。",
+            "description": "表示三角函数对应关系的平面图形。",
             "aliases": [],
             "prerequisites": [
               "正弦函数",
               "余弦函数"
             ],
-            "definition": "三角函数图象是函数自变量与函数值对应点组成的图形。",
-            "example": "y=sin x的图象呈周期性波动。"
+            "definition": "在平面直角坐标系中描出三角函数自变量与函数值对应点形成的图形。",
+            "example": "y=sinx的图象呈周期性波形。"
           },
           {
             "name": "三角函数性质",
             "difficulty": 3,
-            "description": "三角函数的定义域、值域和变化规律。",
+            "description": "三角函数具有的定义域、值域和周期等特征。",
             "aliases": [],
             "prerequisites": [
-              "三角函数图象"
+              "正弦函数",
+              "余弦函数"
             ],
-            "definition": "三角函数性质包括定义域、值域、单调性和奇偶性等特征。",
+            "definition": "三角函数在定义域、值域、周期性和奇偶性等方面表现出的规律。",
             "example": "正弦函数的值域为[-1,1]。"
           },
           {
             "name": "周期",
-            "difficulty": 3,
-            "description": "函数值重复出现所对应的自变量间隔。",
+            "difficulty": 2,
+            "description": "函数值按固定长度重复出现的特征。",
+            "aliases": [
+              "周期性"
+            ],
+            "prerequisites": [
+              "三角函数性质"
+            ],
+            "definition": "若函数值在自变量增加某个正数后保持不变，则该正数可称为函数的一个周期。",
+            "example": "正弦函数的周期为2π。"
+          },
+          {
+            "name": "振幅",
+            "difficulty": 2,
+            "description": "周期变化量偏离平衡位置的最大幅度。",
             "aliases": [],
             "prerequisites": [
               "正弦函数"
             ],
-            "definition": "若函数满足f(x+T)=f(x)，则T是它的一个周期。",
-            "example": "正弦函数的周期为2π。"
-          },
-          {
-            "name": "三角恒等变换",
-            "difficulty": 4,
-            "description": "利用恒等关系改写和化简三角式。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦函数",
-              "余弦函数",
-              "诱导公式"
-            ],
-            "definition": "三角恒等变换是在保持值不变的条件下变换三角式的过程。",
-            "example": "sin²x+cos²x可化为1。"
-          },
-          {
-            "name": "正弦型函数",
-            "difficulty": 4,
-            "description": "形如y=A sin(ωx+φ)的函数。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦函数",
-              "三角函数图象"
-            ],
-            "definition": "正弦型函数是由正弦函数经过伸缩和平移得到的函数。",
-            "example": "y=2sin(3x+π/4)是正弦型函数。"
-          },
-          {
-            "name": "振幅",
-            "difficulty": 3,
-            "description": "周期函数偏离平衡位置的最大幅度。",
-            "aliases": [],
-            "prerequisites": [
-              "正弦型函数"
-            ],
-            "definition": "正弦型函数中的振幅是其振荡幅度，通常等于|A|。",
-            "example": "y=3sin x的振幅为3。"
+            "definition": "在正弦型或余弦型变化中，振幅是函数值相对平衡位置的最大偏离量。",
+            "example": "y=3sinx的振幅为3。"
           },
           {
             "name": "频率",
-            "difficulty": 3,
-            "description": "单位时间内周期性变化的次数。",
+            "difficulty": 2,
+            "description": "单位时间内周期变化重复的次数。",
             "aliases": [],
             "prerequisites": [
               "周期"
             ],
-            "definition": "频率表示周期性现象在单位时间内重复出现的次数。",
+            "definition": "频率表示周期性变化在单位时间内重复出现的次数。",
             "example": "周期为2π时，频率为1/(2π)。"
           },
           {
             "name": "相位",
             "difficulty": 3,
-            "description": "描述周期函数位置状态的角量。",
+            "description": "反映周期函数位置状态的角量。",
             "aliases": [],
             "prerequisites": [
-              "正弦型函数"
+              "周期"
             ],
-            "definition": "正弦型函数中ωx+φ所表示的角量称为相位。",
-            "example": "y=sin(x+π/3)的相位为x+π/3。"
+            "definition": "在周期函数中，用于表示变化所处状态或位置的量称为相位。",
+            "example": "y=sin(x+π/3)中的x+π/3为相位。"
           },
           {
-            "name": "三角函数应用",
+            "name": "正弦型函数",
+            "difficulty": 3,
+            "description": "形如A sin(ωx+φ)的函数。",
+            "aliases": [
+              "y=A sin(ωx+φ)"
+            ],
+            "prerequisites": [
+              "正弦函数",
+              "振幅",
+              "周期",
+              "相位"
+            ],
+            "definition": "形如y=A sin(ωx+φ)的函数称为正弦型函数。",
+            "example": "y=2sin(3x+π/4)是正弦型函数。"
+          },
+          {
+            "name": "三角恒等变换",
             "difficulty": 4,
-            "description": "运用三角函数解决周期变化和测量问题。",
+            "description": "利用恒等式变换三角函数式的过程。",
             "aliases": [],
             "prerequisites": [
-              "三角函数",
-              "正弦型函数"
+              "诱导公式",
+              "正弦函数",
+              "余弦函数"
             ],
-            "definition": "三角函数应用是建立三角函数模型解决实际问题的方法。",
-            "example": "用正弦型函数描述潮汐水位变化。"
+            "definition": "利用三角恒等式对三角函数式进行等价变形和化简。",
+            "example": "将sin²x+cos²x化为1。"
+          },
+          {
+            "name": "三角函数的应用",
+            "difficulty": 3,
+            "description": "利用三角函数解决周期和测量等问题。",
+            "aliases": [],
+            "prerequisites": [
+              "三角函数图象",
+              "三角恒等变换"
+            ],
+            "definition": "把三角函数的概念、性质和变换用于分析实际问题的过程。",
+            "example": "用正弦函数描述潮汐水位变化。"
           }
         ],
-        "chapter_key": "843713c060",
+        "chapter_key": "0a4dd17506",
         "metadata": {
           "volume_id": "71ced0f4d382",
           "file_id": "71ced0f4d382",
           "volume_title": "A版 必修第1册",
           "chapter_order": 5,
-          "raw_heading": "第五章 三角函数 ......................................................... 167"
+          "raw_heading": "第五章 三角函数................................................ 167"
         }
       },
       {
         "name": "第一章",
         "concepts": [
+          {
+            "name": "元素",
+            "difficulty": 1,
+            "description": "组成集合的研究对象",
+            "aliases": [
+              "集合元素"
+            ],
+            "prerequisites": [],
+            "definition": "研究对象统称为元素。",
+            "example": "数2是偶数集的元素"
+          },
           {
             "name": "集合",
             "difficulty": 1,
@@ -2231,122 +1830,103 @@
             "aliases": [
               "集"
             ],
-            "prerequisites": [],
-            "definition": "集合是由一些元素组成的总体。",
-            "example": "所有正方形组成的集合"
-          },
-          {
-            "name": "元素",
-            "difficulty": 1,
-            "description": "集合中的研究对象",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "元素是研究对象的统称，也是集合的组成对象。",
-            "example": "集合{1,2,3}中的2"
+            "prerequisites": [
+              "元素"
+            ],
+            "definition": "一些元素组成的总体叫做集合。",
+            "example": "1至10之间的偶数组成集合"
           },
           {
             "name": "集合相等",
             "difficulty": 2,
             "description": "两个集合的元素完全相同",
-            "aliases": [],
+            "aliases": [
+              "相等集合"
+            ],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "两个集合的元素完全相同，则称这两个集合相等。",
+            "definition": "两个集合的元素完全相同，则称它们相等。",
             "example": "{1,2}={2,1}"
           },
           {
             "name": "属于关系",
             "difficulty": 1,
-            "description": "表示元素是否在集合中",
+            "description": "表示元素是否属于某个集合",
             "aliases": [
-              "属于",
-              "不属于"
+              "元素关系"
             ],
             "prerequisites": [
-              "集合",
-              "元素"
+              "元素",
+              "集合"
             ],
-            "definition": "元素在集合中记作属于，不在集合中记作不属于。",
+            "definition": "元素属于集合记作a∈A，不属于记作a∉A。",
             "example": "2∈{1,2,3}"
           },
           {
-            "name": "常用数集",
+            "name": "数集",
             "difficulty": 1,
-            "description": "自然数、整数、有理数等数集",
+            "description": "由某类数构成的集合",
             "aliases": [
-              "数集"
+              "常用数集"
             ],
             "prerequisites": [
               "集合"
             ],
-            "definition": "常用数集是按数的范围划分并约定记号的集合。",
+            "definition": "由具有某类数的全部数构成的集合叫数集。",
             "example": "整数集记作ℤ"
           },
           {
             "name": "列举法",
-            "difficulty": 2,
-            "description": "逐一列出集合元素表示集合",
+            "difficulty": 1,
+            "description": "逐一列出集合全部元素",
             "aliases": [],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "列举法是把集合的所有元素一一列举并用花括号括起来的方法。",
+            "definition": "把集合的所有元素一一列出并用花括号表示的方法叫列举法。",
             "example": "{0,1,2,3}"
           },
           {
             "name": "描述法",
             "difficulty": 2,
-            "description": "按元素共同特征表示集合",
+            "description": "用元素共同特征表示集合",
             "aliases": [],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "描述法是用集合中元素具有的共同特征表示集合的方法。",
+            "definition": "用集合中元素的共同特征表示集合的方法叫描述法。",
             "example": "{x∈ℝ|x<10}"
           },
           {
             "name": "子集",
             "difficulty": 2,
-            "description": "集合间的包含关系",
+            "description": "集合间的全部元素包含关系",
             "aliases": [
-              "包含于",
-              "包含"
+              "包含关系"
             ],
             "prerequisites": [
               "集合",
               "属于关系"
             ],
-            "definition": "若集合A中任意一个元素都是集合B的元素，则A是B的子集。",
+            "definition": "若集合A中任意元素都是集合B的元素，则A是B的子集。",
             "example": "{1,2}⊆{1,2,3}"
-          },
-          {
-            "name": "集合相等判定",
-            "difficulty": 2,
-            "description": "利用双向包含判断集合相等",
-            "aliases": [],
-            "prerequisites": [
-              "子集",
-              "集合相等"
-            ],
-            "definition": "若A⊆B且B⊆A，则A与B相等。",
-            "example": "A⊆B且B⊆A所以A=B"
           },
           {
             "name": "真子集",
             "difficulty": 2,
-            "description": "严格包含于另一个集合的集合",
+            "description": "不等于原集合的子集",
             "aliases": [
-              "真包含于",
-              "真包含"
+              "真包含关系"
             ],
             "prerequisites": [
-              "子集"
+              "子集",
+              "集合相等"
             ],
-            "definition": "若A⊆B且B中存在不属于A的元素，则A是B的真子集。",
+            "definition": "集合A是B的子集且A不等于B时，A是B的真子集。",
             "example": "{1}⊊{1,2}"
           },
           {
@@ -2354,49 +1934,141 @@
             "difficulty": 1,
             "description": "不含任何元素的集合",
             "aliases": [
-              "∅"
+              "空集合"
             ],
             "prerequisites": [
               "集合",
               "元素"
             ],
-            "definition": "空集是不含任何元素的集合，记作∅。",
-            "example": "方程x²+1=0的实数根集"
+            "definition": "不含任何元素的集合叫做空集，记作∅。",
+            "example": "方程x²+1=0的实根集是∅"
           },
           {
-            "name": "Venn图",
+            "name": "并集",
             "difficulty": 2,
-            "description": "用封闭曲线表示集合关系的图",
-            "aliases": [],
+            "description": "属于至少一个集合的元素组成的集",
+            "aliases": [
+              "集合并"
+            ],
             "prerequisites": [
               "集合",
-              "子集"
+              "属于关系"
             ],
-            "definition": "Venn图是用平面上的封闭曲线内部表示集合的图。",
-            "example": "用内外椭圆表示A⊆B"
+            "definition": "由属于集合A或属于集合B的所有元素组成的集合叫A与B的并集。",
+            "example": "{1,2}∪{2,3}={1,2,3}"
           },
           {
-            "name": "子集传递性",
+            "name": "交集",
             "difficulty": 2,
-            "description": "子集关系具有传递性",
-            "aliases": [],
-            "prerequisites": [
-              "子集"
+            "description": "同时属于两个集合的元素组成的集",
+            "aliases": [
+              "集合交"
             ],
-            "definition": "若A⊆B且B⊆C，则A⊆C。",
-            "example": "A⊆B、B⊆C推出A⊆C"
+            "prerequisites": [
+              "集合",
+              "属于关系"
+            ],
+            "definition": "由同时属于集合A和集合B的所有元素组成的集合叫交集。",
+            "example": "{1,2}∩{2,3}={2}"
           },
           {
-            "name": "空集子集性质",
-            "difficulty": 1,
-            "description": "空集是任何集合的子集",
+            "name": "全集",
+            "difficulty": 2,
+            "description": "研究问题中涉及的所有对象",
+            "aliases": [
+              "全体集合"
+            ],
+            "prerequisites": [
+              "集合"
+            ],
+            "definition": "在研究问题中，包含所研究对象的集合叫全集。",
+            "example": "研究整数时可取ℤ为全集"
+          },
+          {
+            "name": "补集",
+            "difficulty": 2,
+            "description": "全集中不属于给定集合的元素集",
+            "aliases": [
+              "集合补集"
+            ],
+            "prerequisites": [
+              "全集",
+              "集合",
+              "属于关系"
+            ],
+            "definition": "全集U中不属于集合A的所有元素组成的集合叫A在U中的补集。",
+            "example": "U={1,2,3},A={1}时，∁UA={2,3}"
+          },
+          {
+            "name": "命题",
+            "difficulty": 2,
+            "description": "能够判断真假的陈述句",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "能够判断真假的陈述句叫做命题。",
+            "example": "2是偶数是真命题"
+          },
+          {
+            "name": "充分条件",
+            "difficulty": 3,
+            "description": "能推出结论成立的条件",
             "aliases": [],
             "prerequisites": [
-              "空集",
-              "子集"
+              "命题"
             ],
-            "definition": "空集是任何集合的子集。",
-            "example": "∅⊆{1,2}"
+            "definition": "若条件p成立能推出结论q成立，则p是q的充分条件。",
+            "example": "x=2是x²=4的充分条件"
+          },
+          {
+            "name": "必要条件",
+            "difficulty": 3,
+            "description": "结论成立所必须具备的条件",
+            "aliases": [],
+            "prerequisites": [
+              "命题"
+            ],
+            "definition": "若结论q成立能推出条件p成立，则p是q的必要条件。",
+            "example": "x²=4是x=2的必要条件"
+          },
+          {
+            "name": "充要条件",
+            "difficulty": 3,
+            "description": "条件与结论可以相互推出",
+            "aliases": [
+              "充分必要条件"
+            ],
+            "prerequisites": [
+              "充分条件",
+              "必要条件"
+            ],
+            "definition": "若p能推出q且q也能推出p，则p是q的充要条件。",
+            "example": "x=0是|x|=0的充要条件"
+          },
+          {
+            "name": "全称量词",
+            "difficulty": 3,
+            "description": "表示对所有对象都成立",
+            "aliases": [
+              "任意量词"
+            ],
+            "prerequisites": [
+              "命题"
+            ],
+            "definition": "表示所述性质对研究范围内所有对象都成立的量词叫全称量词。",
+            "example": "任意x∈ℝ，x²≥0"
+          },
+          {
+            "name": "存在量词",
+            "difficulty": 3,
+            "description": "表示至少存在一个对象成立",
+            "aliases": [
+              "存在性量词"
+            ],
+            "prerequisites": [
+              "命题"
+            ],
+            "definition": "表示研究范围内至少存在一个对象使性质成立的量词叫存在量词。",
+            "example": "存在x∈ℝ使x²=2"
           }
         ],
         "chapter_key": "c021871f4f",

@@ -1,0 +1,919 @@
+{
+  "file_id": "8449e956261e",
+  "text_sha256": "f2ecacb60f88c2d7562a7aaa9bc92ccec9efe58cc62c8c3b98caf751c4c4b53e",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第5 章 植物生命活动的调节................................ 89",
+        "concepts": [
+          {
+            "name": "植物细胞全能性",
+            "difficulty": 3,
+            "description": "植物细胞具有再生为完整植株的潜能",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植物细胞在适宜条件下能够回到原始状态并再生为植株。",
+            "example": "叶肉细胞经组织培养再生为植株"
+          },
+          {
+            "name": "组织培养",
+            "difficulty": 3,
+            "description": "探索植物细胞全能性的技术",
+            "aliases": [],
+            "prerequisites": [
+              "植物细胞全能性"
+            ],
+            "definition": "组织培养是利用离体植物组织或细胞培养并促进其分裂、分化和再生的技术。",
+            "example": "用幼嫩子叶培养豆科植物原生质体"
+          },
+          {
+            "name": "原生质体",
+            "difficulty": 3,
+            "description": "植物发育和细胞工程的理想材料",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原生质体是可用于研究植物发育和植物细胞工程的材料。",
+            "example": "从发芽绿豆根尖分离原生质体"
+          },
+          {
+            "name": "植物激素",
+            "difficulty": 2,
+            "description": "调节植物生命活动的重要物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植物激素是植物体内调节生长、发育、开花和结果等生命活动的重要物质。",
+            "example": "环境因素通过植物激素调节植物生命活动"
+          },
+          {
+            "name": "生长素",
+            "difficulty": 2,
+            "description": "最早发现的一类植物激素",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "生长素是最早发现的植物激素，参与植物生命活动的调节。",
+            "example": "生长素参与植物生长发育调节"
+          },
+          {
+            "name": "细胞分裂素",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "细胞分裂素是植物六大类激素之一。",
+            "example": "细胞分裂素参与植物生命活动调节"
+          },
+          {
+            "name": "脱落酸",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "脱落酸是植物六大类激素之一。",
+            "example": "脱落酸与其他激素共同调节植物生命活动"
+          },
+          {
+            "name": "赤霉素",
+            "difficulty": 2,
+            "description": "可用于农业生产的植物激素",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "赤霉素是植物六大类激素之一，并可应用于农业生产。",
+            "example": "赤霉素用于无子葡萄生产"
+          },
+          {
+            "name": "乙烯",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "乙烯是植物六大类激素之一。",
+            "example": "乙烯与其他激素共同调节植物生命活动"
+          },
+          {
+            "name": "油菜素内酯",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "油菜素内酯是植物六大类激素之一。",
+            "example": "油菜素内酯参与植物生命活动调节"
+          },
+          {
+            "name": "独脚金内酯",
+            "difficulty": 3,
+            "description": "科学家不断发现的新植物激素",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "独脚金内酯是科学家发现的一种新植物激素，其受体由我国科学家发现。",
+            "example": "研究独脚金内酯及其受体"
+          },
+          {
+            "name": "激素共同调节",
+            "difficulty": 3,
+            "description": "多种植物激素相互影响并协同作用",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "植物激素彼此影响并共同调节植物的生命活动。",
+            "example": "多种激素共同调节植物开花和结果"
+          },
+          {
+            "name": "反馈调节",
+            "difficulty": 3,
+            "description": "生命活动中的重要调控方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "反馈调节是调控系统依据活动结果反过来调节活动过程的方式。",
+            "example": "生命活动调控中存在正反馈和负反馈"
+          },
+          {
+            "name": "正反馈",
+            "difficulty": 2,
+            "description": "反馈调节的一种类型",
+            "aliases": [],
+            "prerequisites": [
+              "反馈调节"
+            ],
+            "definition": "正反馈是反馈结果促进原有活动继续增强的调节方式。",
+            "example": "调控过程中的正反馈"
+          },
+          {
+            "name": "负反馈",
+            "difficulty": 2,
+            "description": "反馈调节的一种类型",
+            "aliases": [],
+            "prerequisites": [
+              "反馈调节"
+            ],
+            "definition": "负反馈是反馈结果抑制原有活动的调节方式。",
+            "example": "调控过程中的负反馈"
+          },
+          {
+            "name": "植物发育可塑性",
+            "difficulty": 3,
+            "description": "植物适应环境变化的发育特征",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植物发育可塑性是植物通过发育调控适应环境变化的能力。",
+            "example": "植物通过形成种子休眠适应寒冷"
+          },
+          {
+            "name": "胚后发育模式",
+            "difficulty": 3,
+            "description": "植物胚胎后继续形成器官的发育模式",
+            "aliases": [],
+            "prerequisites": [
+              "器官原基"
+            ],
+            "definition": "胚后发育模式是植物胚胎期仅形成少数组织和器官原基，花等结构在后期形成的模式。",
+            "example": "植物长到生殖生长阶段才出现花"
+          },
+          {
+            "name": "器官原基",
+            "difficulty": 2,
+            "description": "将来发育为器官的原始细胞团",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "器官原基是将来能够发育为某一器官的原始细胞团。",
+            "example": "植物胚胎发育时产生器官原基"
+          },
+          {
+            "name": "营养生长",
+            "difficulty": 2,
+            "description": "植物生长发育的一种阶段",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "营养生长是植物进行营养器官生长的阶段。",
+            "example": "植物先进行营养生长"
+          },
+          {
+            "name": "生殖生长",
+            "difficulty": 2,
+            "description": "植物形成花等生殖结构的阶段",
+            "aliases": [],
+            "prerequisites": [
+              "营养生长"
+            ],
+            "definition": "生殖生长是植物进入形成花等生殖结构的生长阶段。",
+            "example": "植物进入生殖生长阶段后出现花"
+          },
+          {
+            "name": "植物激素应用",
+            "difficulty": 3,
+            "description": "利用激素或类似物调控作物生长发育",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "植物激素应用是利用植物激素或其类似物调控植株生长发育的实践。",
+            "example": "利用赤霉素进行无子葡萄生产"
+          },
+          {
+            "name": "基因水平调控",
+            "difficulty": 3,
+            "description": "生命活动调控的一个层次",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基因水平调控是发生在基因层面的生命活动调控。",
+            "example": "生物体内存在基因水平的调控"
+          },
+          {
+            "name": "蛋白质水平调控",
+            "difficulty": 3,
+            "description": "生命活动调控的一个层次",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "蛋白质水平调控是发生在蛋白质层面的生命活动调控。",
+            "example": "生物体内存在蛋白质水平的调控"
+          }
+        ]
+      },
+      {
+        "name": "第1章",
+        "concepts": [
+          {
+            "name": "细胞",
+            "difficulty": 1,
+            "description": "生命活动的基本单位，与环境进行物质和能量交换",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞是生命活动的基本单位。",
+            "example": "草履虫直接从水中获取养料和氧气"
+          },
+          {
+            "name": "体液",
+            "difficulty": 1,
+            "description": "体内以水为基础并含有离子和化合物的液体总称",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "体液是体内以水为基础并含有许多离子和化合物的液体总称。",
+            "example": "体液包括细胞内液和细胞外液"
+          },
+          {
+            "name": "细胞内液",
+            "difficulty": 1,
+            "description": "存在于细胞内的体液，约占体液的三分之二",
+            "aliases": [],
+            "prerequisites": [
+              "体液"
+            ],
+            "definition": "细胞内液是存在于细胞内的体液。",
+            "example": "细胞质基质中的液体属于细胞内液"
+          },
+          {
+            "name": "细胞外液",
+            "difficulty": 2,
+            "description": "存在于细胞外的体液，构成细胞直接生活的液体环境",
+            "aliases": [],
+            "prerequisites": [
+              "体液"
+            ],
+            "definition": "细胞外液是存在于细胞外、由血浆等液体组成的体液。",
+            "example": "绝大多数组织细胞浸浴在组织液中"
+          },
+          {
+            "name": "血浆",
+            "difficulty": 2,
+            "description": "血细胞直接生活的环境，主要成分是水",
+            "aliases": [],
+            "prerequisites": [
+              "细胞外液"
+            ],
+            "definition": "血浆是血液中的液体部分，也是血细胞直接生活的环境。",
+            "example": "血浆约90%是水"
+          },
+          {
+            "name": "组织液",
+            "difficulty": 2,
+            "description": "存在于组织细胞间隙，为绝大多数细胞提供生存环境",
+            "aliases": [
+              "组织间隙液"
+            ],
+            "prerequisites": [
+              "细胞外液",
+              "血浆"
+            ],
+            "definition": "组织液是存在于组织细胞间隙、主要由血浆渗出形成的液体。",
+            "example": "水疱中的液体主要是组织液"
+          },
+          {
+            "name": "淋巴液",
+            "difficulty": 2,
+            "description": "由部分组织液进入毛细淋巴管形成的液体",
+            "aliases": [],
+            "prerequisites": [
+              "组织液"
+            ],
+            "definition": "淋巴液是部分组织液经毛细淋巴管进入淋巴管后形成的液体。",
+            "example": "淋巴液最终汇入血浆"
+          },
+          {
+            "name": "内环境",
+            "difficulty": 2,
+            "description": "由细胞外液构成的机体内细胞直接生活的液体环境",
+            "aliases": [
+              "内环境液体环境"
+            ],
+            "prerequisites": [
+              "细胞外液",
+              "血浆",
+              "组织液",
+              "淋巴液"
+            ],
+            "definition": "内环境是由细胞外液构成的、区别于外界环境的液体环境。",
+            "example": "组织液是体内绝大多数细胞的内环境"
+          },
+          {
+            "name": "细胞外液成分",
+            "difficulty": 2,
+            "description": "细胞外液中水、蛋白质、无机盐和运输物质等成分",
+            "aliases": [],
+            "prerequisites": [
+              "细胞外液"
+            ],
+            "definition": "细胞外液成分是构成血浆、组织液和淋巴液的各种物质。",
+            "example": "血浆含有水、蛋白质、无机盐和葡萄糖"
+          },
+          {
+            "name": "渗透压",
+            "difficulty": 3,
+            "description": "溶质微粒对水的吸引力，大小取决于溶质微粒数目",
+            "aliases": [],
+            "prerequisites": [
+              "细胞外液成分"
+            ],
+            "definition": "渗透压是溶液中溶质微粒对水的吸引力。",
+            "example": "血浆渗透压主要与无机盐和蛋白质含量有关"
+          },
+          {
+            "name": "酸碱度",
+            "difficulty": 3,
+            "description": "反映溶液酸碱性的理化性质，常用pH表示",
+            "aliases": [
+              "pH"
+            ],
+            "prerequisites": [
+              "细胞外液成分"
+            ],
+            "definition": "酸碱度是反映溶液酸碱性的性质，通常用pH表示。",
+            "example": "正常血浆pH为7.35～7.45"
+          },
+          {
+            "name": "缓冲对",
+            "difficulty": 3,
+            "description": "能减弱酸或碱加入后溶液pH变化的物质组合",
+            "aliases": [
+              "缓冲物质"
+            ],
+            "prerequisites": [
+              "酸碱度"
+            ],
+            "definition": "缓冲对是在加入一定量酸或碱后能减弱溶液pH变化的物质组合。",
+            "example": "HCO3−/H2CO3是内环境中重要的缓冲对"
+          },
+          {
+            "name": "内环境物质交换",
+            "difficulty": 3,
+            "description": "细胞通过内环境与外界环境进行物质交换的过程",
+            "aliases": [],
+            "prerequisites": [
+              "内环境"
+            ],
+            "definition": "内环境物质交换是细胞获取所需物质并排出代谢废物的过程。",
+            "example": "消化系统吸收营养物质进入内环境"
+          },
+          {
+            "name": "稳态",
+            "difficulty": 3,
+            "description": "机体通过调节作用维持内环境相对稳定的状态",
+            "aliases": [
+              "内环境稳态"
+            ],
+            "prerequisites": [
+              "内环境",
+              "内环境物质交换"
+            ],
+            "definition": "稳态是正常机体通过调节作用使内环境保持相对稳定的状态。",
+            "example": "健康人的体温通常维持在37℃左右"
+          },
+          {
+            "name": "神经—体液—免疫调节网络",
+            "difficulty": 4,
+            "description": "神经、体液和免疫调节共同维持机体稳态的机制",
+            "aliases": [],
+            "prerequisites": [
+              "稳态"
+            ],
+            "definition": "神经—体液—免疫调节网络是机体维持稳态的主要调节机制。",
+            "example": "神经调节、体液调节和免疫调节共同作用"
+          },
+          {
+            "name": "稳态失调",
+            "difficulty": 3,
+            "description": "调节能力受限或功能障碍导致内环境稳定状态被破坏",
+            "aliases": [
+              "内环境稳态失调"
+            ],
+            "prerequisites": [
+              "稳态"
+            ],
+            "definition": "稳态失调是内环境相对稳定状态因调节异常而遭到破坏。",
+            "example": "肾功能衰竭可引起水和无机盐代谢紊乱"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第5 章 植物生命活动的调节................................ 89",
+        "concepts": [
+          {
+            "name": "植物细胞全能性",
+            "difficulty": 3,
+            "description": "植物细胞具有再生为完整植株的潜能",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植物细胞在适宜条件下能够回到原始状态并再生为植株。",
+            "example": "叶肉细胞经组织培养再生为植株"
+          },
+          {
+            "name": "组织培养",
+            "difficulty": 3,
+            "description": "探索植物细胞全能性的技术",
+            "aliases": [],
+            "prerequisites": [
+              "植物细胞全能性"
+            ],
+            "definition": "组织培养是利用离体植物组织或细胞培养并促进其分裂、分化和再生的技术。",
+            "example": "用幼嫩子叶培养豆科植物原生质体"
+          },
+          {
+            "name": "原生质体",
+            "difficulty": 3,
+            "description": "植物发育和细胞工程的理想材料",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "原生质体是可用于研究植物发育和植物细胞工程的材料。",
+            "example": "从发芽绿豆根尖分离原生质体"
+          },
+          {
+            "name": "植物激素",
+            "difficulty": 2,
+            "description": "调节植物生命活动的重要物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植物激素是植物体内调节生长、发育、开花和结果等生命活动的重要物质。",
+            "example": "环境因素通过植物激素调节植物生命活动"
+          },
+          {
+            "name": "生长素",
+            "difficulty": 2,
+            "description": "最早发现的一类植物激素",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "生长素是最早发现的植物激素，参与植物生命活动的调节。",
+            "example": "生长素参与植物生长发育调节"
+          },
+          {
+            "name": "细胞分裂素",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "细胞分裂素是植物六大类激素之一。",
+            "example": "细胞分裂素参与植物生命活动调节"
+          },
+          {
+            "name": "脱落酸",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "脱落酸是植物六大类激素之一。",
+            "example": "脱落酸与其他激素共同调节植物生命活动"
+          },
+          {
+            "name": "赤霉素",
+            "difficulty": 2,
+            "description": "可用于农业生产的植物激素",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "赤霉素是植物六大类激素之一，并可应用于农业生产。",
+            "example": "赤霉素用于无子葡萄生产"
+          },
+          {
+            "name": "乙烯",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "乙烯是植物六大类激素之一。",
+            "example": "乙烯与其他激素共同调节植物生命活动"
+          },
+          {
+            "name": "油菜素内酯",
+            "difficulty": 2,
+            "description": "六大类植物激素之一",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "油菜素内酯是植物六大类激素之一。",
+            "example": "油菜素内酯参与植物生命活动调节"
+          },
+          {
+            "name": "独脚金内酯",
+            "difficulty": 3,
+            "description": "科学家不断发现的新植物激素",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "独脚金内酯是科学家发现的一种新植物激素，其受体由我国科学家发现。",
+            "example": "研究独脚金内酯及其受体"
+          },
+          {
+            "name": "激素共同调节",
+            "difficulty": 3,
+            "description": "多种植物激素相互影响并协同作用",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "植物激素彼此影响并共同调节植物的生命活动。",
+            "example": "多种激素共同调节植物开花和结果"
+          },
+          {
+            "name": "反馈调节",
+            "difficulty": 3,
+            "description": "生命活动中的重要调控方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "反馈调节是调控系统依据活动结果反过来调节活动过程的方式。",
+            "example": "生命活动调控中存在正反馈和负反馈"
+          },
+          {
+            "name": "正反馈",
+            "difficulty": 2,
+            "description": "反馈调节的一种类型",
+            "aliases": [],
+            "prerequisites": [
+              "反馈调节"
+            ],
+            "definition": "正反馈是反馈结果促进原有活动继续增强的调节方式。",
+            "example": "调控过程中的正反馈"
+          },
+          {
+            "name": "负反馈",
+            "difficulty": 2,
+            "description": "反馈调节的一种类型",
+            "aliases": [],
+            "prerequisites": [
+              "反馈调节"
+            ],
+            "definition": "负反馈是反馈结果抑制原有活动的调节方式。",
+            "example": "调控过程中的负反馈"
+          },
+          {
+            "name": "植物发育可塑性",
+            "difficulty": 3,
+            "description": "植物适应环境变化的发育特征",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "植物发育可塑性是植物通过发育调控适应环境变化的能力。",
+            "example": "植物通过形成种子休眠适应寒冷"
+          },
+          {
+            "name": "胚后发育模式",
+            "difficulty": 3,
+            "description": "植物胚胎后继续形成器官的发育模式",
+            "aliases": [],
+            "prerequisites": [
+              "器官原基"
+            ],
+            "definition": "胚后发育模式是植物胚胎期仅形成少数组织和器官原基，花等结构在后期形成的模式。",
+            "example": "植物长到生殖生长阶段才出现花"
+          },
+          {
+            "name": "器官原基",
+            "difficulty": 2,
+            "description": "将来发育为器官的原始细胞团",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "器官原基是将来能够发育为某一器官的原始细胞团。",
+            "example": "植物胚胎发育时产生器官原基"
+          },
+          {
+            "name": "营养生长",
+            "difficulty": 2,
+            "description": "植物生长发育的一种阶段",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "营养生长是植物进行营养器官生长的阶段。",
+            "example": "植物先进行营养生长"
+          },
+          {
+            "name": "生殖生长",
+            "difficulty": 2,
+            "description": "植物形成花等生殖结构的阶段",
+            "aliases": [],
+            "prerequisites": [
+              "营养生长"
+            ],
+            "definition": "生殖生长是植物进入形成花等生殖结构的生长阶段。",
+            "example": "植物进入生殖生长阶段后出现花"
+          },
+          {
+            "name": "植物激素应用",
+            "difficulty": 3,
+            "description": "利用激素或类似物调控作物生长发育",
+            "aliases": [],
+            "prerequisites": [
+              "植物激素"
+            ],
+            "definition": "植物激素应用是利用植物激素或其类似物调控植株生长发育的实践。",
+            "example": "利用赤霉素进行无子葡萄生产"
+          },
+          {
+            "name": "基因水平调控",
+            "difficulty": 3,
+            "description": "生命活动调控的一个层次",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基因水平调控是发生在基因层面的生命活动调控。",
+            "example": "生物体内存在基因水平的调控"
+          },
+          {
+            "name": "蛋白质水平调控",
+            "difficulty": 3,
+            "description": "生命活动调控的一个层次",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "蛋白质水平调控是发生在蛋白质层面的生命活动调控。",
+            "example": "生物体内存在蛋白质水平的调控"
+          }
+        ],
+        "chapter_key": "5480582f01",
+        "metadata": {
+          "volume_id": "8449e956261e",
+          "file_id": "8449e956261e",
+          "volume_title": "高中生物 选择性必修1",
+          "chapter_order": 1,
+          "raw_heading": "第5 章 植物生命活动的调节................................ 89"
+        }
+      },
+      {
+        "name": "第1章",
+        "concepts": [
+          {
+            "name": "细胞",
+            "difficulty": 1,
+            "description": "生命活动的基本单位，与环境进行物质和能量交换",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞是生命活动的基本单位。",
+            "example": "草履虫直接从水中获取养料和氧气"
+          },
+          {
+            "name": "体液",
+            "difficulty": 1,
+            "description": "体内以水为基础并含有离子和化合物的液体总称",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "体液是体内以水为基础并含有许多离子和化合物的液体总称。",
+            "example": "体液包括细胞内液和细胞外液"
+          },
+          {
+            "name": "细胞内液",
+            "difficulty": 1,
+            "description": "存在于细胞内的体液，约占体液的三分之二",
+            "aliases": [],
+            "prerequisites": [
+              "体液"
+            ],
+            "definition": "细胞内液是存在于细胞内的体液。",
+            "example": "细胞质基质中的液体属于细胞内液"
+          },
+          {
+            "name": "细胞外液",
+            "difficulty": 2,
+            "description": "存在于细胞外的体液，构成细胞直接生活的液体环境",
+            "aliases": [],
+            "prerequisites": [
+              "体液"
+            ],
+            "definition": "细胞外液是存在于细胞外、由血浆等液体组成的体液。",
+            "example": "绝大多数组织细胞浸浴在组织液中"
+          },
+          {
+            "name": "血浆",
+            "difficulty": 2,
+            "description": "血细胞直接生活的环境，主要成分是水",
+            "aliases": [],
+            "prerequisites": [
+              "细胞外液"
+            ],
+            "definition": "血浆是血液中的液体部分，也是血细胞直接生活的环境。",
+            "example": "血浆约90%是水"
+          },
+          {
+            "name": "组织液",
+            "difficulty": 2,
+            "description": "存在于组织细胞间隙，为绝大多数细胞提供生存环境",
+            "aliases": [
+              "组织间隙液"
+            ],
+            "prerequisites": [
+              "细胞外液",
+              "血浆"
+            ],
+            "definition": "组织液是存在于组织细胞间隙、主要由血浆渗出形成的液体。",
+            "example": "水疱中的液体主要是组织液"
+          },
+          {
+            "name": "淋巴液",
+            "difficulty": 2,
+            "description": "由部分组织液进入毛细淋巴管形成的液体",
+            "aliases": [],
+            "prerequisites": [
+              "组织液"
+            ],
+            "definition": "淋巴液是部分组织液经毛细淋巴管进入淋巴管后形成的液体。",
+            "example": "淋巴液最终汇入血浆"
+          },
+          {
+            "name": "内环境",
+            "difficulty": 2,
+            "description": "由细胞外液构成的机体内细胞直接生活的液体环境",
+            "aliases": [
+              "内环境液体环境"
+            ],
+            "prerequisites": [
+              "细胞外液",
+              "血浆",
+              "组织液",
+              "淋巴液"
+            ],
+            "definition": "内环境是由细胞外液构成的、区别于外界环境的液体环境。",
+            "example": "组织液是体内绝大多数细胞的内环境"
+          },
+          {
+            "name": "细胞外液成分",
+            "difficulty": 2,
+            "description": "细胞外液中水、蛋白质、无机盐和运输物质等成分",
+            "aliases": [],
+            "prerequisites": [
+              "细胞外液"
+            ],
+            "definition": "细胞外液成分是构成血浆、组织液和淋巴液的各种物质。",
+            "example": "血浆含有水、蛋白质、无机盐和葡萄糖"
+          },
+          {
+            "name": "渗透压",
+            "difficulty": 3,
+            "description": "溶质微粒对水的吸引力，大小取决于溶质微粒数目",
+            "aliases": [],
+            "prerequisites": [
+              "细胞外液成分"
+            ],
+            "definition": "渗透压是溶液中溶质微粒对水的吸引力。",
+            "example": "血浆渗透压主要与无机盐和蛋白质含量有关"
+          },
+          {
+            "name": "酸碱度",
+            "difficulty": 3,
+            "description": "反映溶液酸碱性的理化性质，常用pH表示",
+            "aliases": [
+              "pH"
+            ],
+            "prerequisites": [
+              "细胞外液成分"
+            ],
+            "definition": "酸碱度是反映溶液酸碱性的性质，通常用pH表示。",
+            "example": "正常血浆pH为7.35～7.45"
+          },
+          {
+            "name": "缓冲对",
+            "difficulty": 3,
+            "description": "能减弱酸或碱加入后溶液pH变化的物质组合",
+            "aliases": [
+              "缓冲物质"
+            ],
+            "prerequisites": [
+              "酸碱度"
+            ],
+            "definition": "缓冲对是在加入一定量酸或碱后能减弱溶液pH变化的物质组合。",
+            "example": "HCO3−/H2CO3是内环境中重要的缓冲对"
+          },
+          {
+            "name": "内环境物质交换",
+            "difficulty": 3,
+            "description": "细胞通过内环境与外界环境进行物质交换的过程",
+            "aliases": [],
+            "prerequisites": [
+              "内环境"
+            ],
+            "definition": "内环境物质交换是细胞获取所需物质并排出代谢废物的过程。",
+            "example": "消化系统吸收营养物质进入内环境"
+          },
+          {
+            "name": "稳态",
+            "difficulty": 3,
+            "description": "机体通过调节作用维持内环境相对稳定的状态",
+            "aliases": [
+              "内环境稳态"
+            ],
+            "prerequisites": [
+              "内环境",
+              "内环境物质交换"
+            ],
+            "definition": "稳态是正常机体通过调节作用使内环境保持相对稳定的状态。",
+            "example": "健康人的体温通常维持在37℃左右"
+          },
+          {
+            "name": "神经—体液—免疫调节网络",
+            "difficulty": 4,
+            "description": "神经、体液和免疫调节共同维持机体稳态的机制",
+            "aliases": [],
+            "prerequisites": [
+              "稳态"
+            ],
+            "definition": "神经—体液—免疫调节网络是机体维持稳态的主要调节机制。",
+            "example": "神经调节、体液调节和免疫调节共同作用"
+          },
+          {
+            "name": "稳态失调",
+            "difficulty": 3,
+            "description": "调节能力受限或功能障碍导致内环境稳定状态被破坏",
+            "aliases": [
+              "内环境稳态失调"
+            ],
+            "prerequisites": [
+              "稳态"
+            ],
+            "definition": "稳态失调是内环境相对稳定状态因调节异常而遭到破坏。",
+            "example": "肾功能衰竭可引起水和无机盐代谢紊乱"
+          }
+        ],
+        "chapter_key": "bbf71bdcd6",
+        "metadata": {
+          "volume_id": "8449e956261e",
+          "file_id": "8449e956261e",
+          "volume_title": "高中生物 选择性必修1",
+          "chapter_order": 2,
+          "raw_heading": "第1章"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

@@ -1,0 +1,2495 @@
+{
+  "file_id": "028267549471",
+  "text_sha256": "a64736d90c8b57b79e6bcc90fb53b8a092ebfb1ecb478451e99884c55c1aa0fb",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 区域与区域发展",
+        "concepts": [
+          {
+            "name": "区域",
+            "difficulty": 1,
+            "description": "按一定目的和标准划定的地球表面空间单元",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "区域是人们在地球表面按照一定目的和标准划定的空间单元。",
+            "example": "长江三角洲城市群"
+          },
+          {
+            "name": "区域划分",
+            "difficulty": 2,
+            "description": "依据目的、标准和地域差异划定区域",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域划分是人们基于地域差异和实践需要，采用不同指标与方法划定区域。",
+            "example": "划定基本农田保护区"
+          },
+          {
+            "name": "自然区域",
+            "difficulty": 2,
+            "description": "主要依据自然特征划分的区域",
+            "aliases": [],
+            "prerequisites": [
+              "区域",
+              "区域划分"
+            ],
+            "definition": "自然区域是主要按照地质、地貌、气候等自然特征划分的区域。",
+            "example": "中国东部季风区",
+            "section": "第一节 多种多样的区域"
+          },
+          {
+            "name": "人文区域",
+            "difficulty": 2,
+            "description": "主要依据人文特征划分的区域",
+            "aliases": [],
+            "prerequisites": [
+              "区域",
+              "区域划分"
+            ],
+            "definition": "人文区域是主要按照人口、文化或经济等人文特征划分的区域。",
+            "example": "汉语北方方言区"
+          },
+          {
+            "name": "综合区域",
+            "difficulty": 3,
+            "description": "综合自然和人文特征划分的区域",
+            "aliases": [],
+            "prerequisites": [
+              "自然区域",
+              "人文区域"
+            ],
+            "definition": "综合区域是同时依据自然特征和人文特征划分的区域。",
+            "example": "中国主体功能区"
+          },
+          {
+            "name": "区域边界",
+            "difficulty": 2,
+            "description": "区域与相邻区域之间的界限",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域边界是划分区域范围的界限，可以明确也可以具有过渡性质。",
+            "example": "行政区边界较明确",
+            "section": "第一节 多种多样的区域"
+          },
+          {
+            "name": "区域空间尺度",
+            "difficulty": 2,
+            "description": "区域范围大小及其层级高低",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域空间尺度体现区域层级高低，较大尺度区域可包含较小尺度区域。",
+            "example": "国家包含省、市等行政区"
+          },
+          {
+            "name": "区域要素",
+            "difficulty": 2,
+            "description": "构成区域特征的自然和人文要素",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域要素是构成区域特征的自然要素和人文要素。",
+            "example": "培田村的山地、村落和农田",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "自然要素",
+            "difficulty": 1,
+            "description": "区域中的自然环境组成要素",
+            "aliases": [],
+            "prerequisites": [
+              "区域要素"
+            ],
+            "definition": "自然要素包括地质、地貌、气候、水文、生物和土壤等。",
+            "example": "长江三角洲的河网",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "人文要素",
+            "difficulty": 1,
+            "description": "区域中的人口文化经济等要素",
+            "aliases": [],
+            "prerequisites": [
+              "区域要素"
+            ],
+            "definition": "人文要素包括人口、文化、经济等人类活动及其成果。",
+            "example": "培田村的传统民居",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区域整体性",
+            "difficulty": 3,
+            "description": "区域各要素相互作用形成的整体特征",
+            "aliases": [],
+            "prerequisites": [
+              "区域要素",
+              "自然要素",
+              "人文要素"
+            ],
+            "definition": "区域整体性是区域内各类要素相互作用、相互制约形成的整体特征。",
+            "example": "稻鱼共生系统",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区域差异",
+            "difficulty": 2,
+            "description": "不同区域在地理条件等方面的差别",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域差异是不同区域在地理位置、自然条件、发展水平和文化习俗等方面的差别。",
+            "example": "长江三角洲与松嫩平原的差异",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区域关联性",
+            "difficulty": 3,
+            "description": "区域之间相互联系和相互影响的特征",
+            "aliases": [],
+            "prerequisites": [
+              "区域差异"
+            ],
+            "definition": "区域关联性是区域在发展过程中通过要素流动与其他区域发生联系和影响的特征。",
+            "example": "京津冀协同发展",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区际要素流动",
+            "difficulty": 3,
+            "description": "自然或人文要素在区域之间的流动",
+            "aliases": [],
+            "prerequisites": [
+              "区域关联性",
+              "自然要素",
+              "人文要素"
+            ],
+            "definition": "区际要素流动是自然要素和人文要素在不同区域之间的流动。",
+            "example": "人口迁移和产业转移"
+          },
+          {
+            "name": "区域发展",
+            "difficulty": 2,
+            "description": "区域生产、生活和经济社会的变化过程",
+            "aliases": [],
+            "prerequisites": [
+              "区域整体性",
+              "区域关联性"
+            ],
+            "definition": "区域发展是区域内部条件与区际联系共同作用下生产生活及社会经济的变化过程。",
+            "example": "松嫩平原发展重化工业"
+          },
+          {
+            "name": "地理条件",
+            "difficulty": 2,
+            "description": "影响区域发展的人地环境条件",
+            "aliases": [],
+            "prerequisites": [
+              "自然要素",
+              "人文要素"
+            ],
+            "definition": "地理条件是区域发展所依托的自然环境和社会经济等条件。",
+            "example": "毛里求斯的海域渔业资源"
+          },
+          {
+            "name": "因地制宜",
+            "difficulty": 3,
+            "description": "依据区域条件合理安排人类活动",
+            "aliases": [],
+            "prerequisites": [
+              "地理条件",
+              "区域整体性",
+              "区域关联性"
+            ],
+            "definition": "因地制宜是根据自身地理条件及其变化合理安排并调整人类活动。",
+            "example": "干旱地区发展节水技术",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "兼顾区域发展与资源环境保护",
+            "aliases": [],
+            "prerequisites": [
+              "区域整体性",
+              "区域关联性"
+            ],
+            "definition": "可持续发展是协调区域发展、资源利用和生态环境保护的长期发展方式。",
+            "example": "划定生态保护区"
+          },
+          {
+            "name": "区域地理",
+            "difficulty": 3,
+            "description": "研究特定区域人地关系及发展变化的学科",
+            "aliases": [],
+            "prerequisites": [
+              "区域整体性",
+              "区域关联性",
+              "区域发展"
+            ],
+            "definition": "区域地理是研究区域地理环境、人地关系、区域差异和区域关联的地理学分支。",
+            "example": "开展京津冀区域研究",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "支柱产业",
+            "difficulty": 3,
+            "description": "一定发展阶段支撑区域经济的主要产业",
+            "aliases": [],
+            "prerequisites": [
+              "区域发展",
+              "地理条件"
+            ],
+            "definition": "支柱产业是在一定发展阶段对区域经济发展具有重要支撑作用的产业。",
+            "example": "毛里求斯曾以制糖业为经济基础",
+            "section": "问题研究 毛里求斯的发展模式可以复制吗"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 多种多样的区域",
+            "page_range": [
+              7,
+              12
+            ]
+          },
+          {
+            "name": "第二节 区域整体性和关联性",
+            "page_range": [
+              12,
+              19
+            ]
+          },
+          {
+            "name": "问题研究 毛里求斯的发展模式可以复制吗",
+            "page_range": [
+              19,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二章 资源、环境与区域发展",
+        "concepts": [
+          {
+            "name": "自然条件",
+            "difficulty": 1,
+            "description": "影响区域发展的地理位置和自然要素等条件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然条件是区域发展所依赖的地理位置和自然要素条件。",
+            "example": "河流中下游平原便于古代农耕"
+          },
+          {
+            "name": "自然资源",
+            "difficulty": 1,
+            "description": "能够为区域发展提供物质基础的自然要素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然资源是区域发展的物质基础，其种类、储量和利用方式影响区域发展。",
+            "example": "沙特阿拉伯依靠石油发展经济"
+          },
+          {
+            "name": "比较优势",
+            "difficulty": 2,
+            "description": "区域利用自身有利条件形成的发展优势",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "比较优势是区域凭借自身较有利的资源或社会条件取得发展的优势。",
+            "example": "瑞士依靠技术和金融发展高端产业",
+            "section": "第一节 区域发展的自然环境基础"
+          },
+          {
+            "name": "人地和谐",
+            "difficulty": 2,
+            "description": "人类利用自然并遵循自然规律协调发展",
+            "aliases": [],
+            "prerequisites": [
+              "自然条件"
+            ],
+            "definition": "人地和谐是人类改造自然时遵循自然规律、实现人与自然协调相处。",
+            "example": "都江堰利用自然规律分洪灌溉"
+          },
+          {
+            "name": "自然资源开发",
+            "difficulty": 2,
+            "description": "对自然资源进行开采、利用和加工的活动",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源开发是人类对自然资源进行开采、利用和加工以服务发展的活动。",
+            "example": "澳大利亚开采煤炭和铁矿",
+            "section": "第一节 区域发展的自然环境基础"
+          },
+          {
+            "name": "资源诅咒",
+            "difficulty": 3,
+            "description": "资源丰富地区因过度依赖资源而发展受限",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源",
+              "自然资源开发"
+            ],
+            "definition": "资源诅咒是自然资源丰富的地区因过度依赖资源开发而经济发展受限的现象。",
+            "example": "荷兰过度发展油气工业后经济增长乏力",
+            "section": "第一节 区域发展的自然环境基础"
+          },
+          {
+            "name": "生态脆弱区",
+            "difficulty": 2,
+            "description": "生态系统抗干扰弱、易退化且难恢复的地区",
+            "aliases": [],
+            "prerequisites": [
+              "自然条件"
+            ],
+            "definition": "生态脆弱区是生态系统抗干扰能力弱、易于退化且难以恢复的地区。",
+            "example": "我国北方农牧交错带"
+          },
+          {
+            "name": "土地退化",
+            "difficulty": 2,
+            "description": "土地质量下降、生产力降低的过程",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "土地退化是自然因素和人类活动导致土地质量下降、生产力降低的过程。",
+            "example": "草场退化使畜牧业生产力下降"
+          },
+          {
+            "name": "土地沙化",
+            "difficulty": 2,
+            "description": "土地逐渐失去植被并呈现沙质化的退化现象",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "土地沙化是土地退化的一种表现，指土地逐渐失去植被并向沙质地表转变。",
+            "example": "过度放牧导致草场变成沙地",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "石漠化",
+            "difficulty": 3,
+            "description": "喀斯特地区土层流失、石灰岩大面积裸露",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "石漠化是喀斯特地区土层流失、石灰岩裸露并形成类似荒漠景观的过程。",
+            "example": "贵州喀斯特山区暴雨后石灰岩裸露",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "荒漠化",
+            "difficulty": 2,
+            "description": "土地退化并逐渐形成荒漠景观的过程",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "荒漠化是土地退化的一种表现形式，指土地生产力下降并向荒漠状态发展的过程。",
+            "example": "萨赫勒地区因过垦过牧荒漠化加剧",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "北方农牧交错带",
+            "difficulty": 2,
+            "description": "农区与牧区、半湿润与半干旱区的过渡地带",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "北方农牧交错带是农区与牧区、半湿润地区与半干旱地区的过渡地带。",
+            "example": "内蒙古部分地区位于该过渡带",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "过度开垦",
+            "difficulty": 2,
+            "description": "超出土地承载能力持续扩大耕地面积",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "过度开垦是在人口压力等因素下不合理扩大耕地面积并造成土地退化的行为。",
+            "example": "将年降水量约300毫米的草场开垦为农田",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "过度放牧",
+            "difficulty": 2,
+            "description": "牲畜数量超过草场承载能力的放牧方式",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "过度放牧是牲畜数量超过草场承载力而导致草场退化的放牧行为。",
+            "example": "盲目提高载畜量使草场植被减少",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "草场承载力",
+            "difficulty": 3,
+            "description": "草场能够持续承载的牲畜数量和生产压力",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "草场承载力是草场在不发生持续退化的条件下能够承载的牲畜数量。",
+            "example": "将牲畜数量控制在草场承载力范围内",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "土地利用结构",
+            "difficulty": 3,
+            "description": "农地、草地、林地等土地用途的组成关系",
+            "aliases": [],
+            "prerequisites": [
+              "自然条件"
+            ],
+            "definition": "土地利用结构是区域内不同土地用途及其比例的组成关系。",
+            "example": "退耕后乌兰察布耕地减少、林地增加",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "综合治理",
+            "difficulty": 2,
+            "description": "综合运用多种措施治理生态环境问题",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "综合治理是在保护自然环境基础上综合运用生物、工程、经济和社会措施。",
+            "example": "北方农牧交错带开展小流域综合治理"
+          },
+          {
+            "name": "防护体系",
+            "difficulty": 3,
+            "description": "通过生物和工程措施固沙防沙的保护系统",
+            "aliases": [],
+            "prerequisites": [
+              "综合治理"
+            ],
+            "definition": "防护体系是利用生物与工程措施减少风蚀、水蚀并保护土地的系统。",
+            "example": "灌草结合并人工补种植物固沙",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "自然恢复",
+            "difficulty": 2,
+            "description": "减少人为干扰后生态系统依靠自身逐步恢复",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "自然恢复是通过减少人类干扰使退化生态系统依靠自身条件逐步恢复。",
+            "example": "浑善达克沙地围栏后草被自然恢复",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "退耕还林（草）",
+            "difficulty": 2,
+            "description": "将不适宜耕作的农田恢复为林地或草地",
+            "aliases": [
+              "退耕还林还草"
+            ],
+            "prerequisites": [
+              "土地利用结构",
+              "综合治理"
+            ],
+            "definition": "退耕还林（草）是把不适宜耕作的农田恢复为林地或草地的治理措施。",
+            "example": "乌兰察布将低产农田退耕还草",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "资源型城市",
+            "difficulty": 2,
+            "description": "以资源开采和加工业为主导产业而兴起的城市",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源开发",
+              "主导产业"
+            ],
+            "definition": "资源型城市是因大规模开采自然资源兴起并以资源开采和加工业为主导产业的城市。",
+            "example": "阜新市曾因煤炭资源成为煤电之城",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "资源枯竭型城市",
+            "difficulty": 3,
+            "description": "资源枯竭或需求下降后经济发展趋缓的城市",
+            "aliases": [],
+            "prerequisites": [
+              "资源型城市"
+            ],
+            "definition": "资源枯竭型城市是所依托资源开采殆尽或市场需求大幅减少后经济发展趋缓的资源型城市。",
+            "example": "煤炭资源枯竭后的焦作市",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "主导产业",
+            "difficulty": 2,
+            "description": "在国民经济中支配地位突出、关联度较高的产业",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "主导产业是在国民经济中支配地位突出、比重较大且关联度较高的产业。",
+            "example": "煤炭工业曾是山西省主导产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "资源型城市生命周期",
+            "difficulty": 3,
+            "description": "资源型城市经历兴起、繁荣、衰退和新生的过程",
+            "aliases": [],
+            "prerequisites": [
+              "资源型城市"
+            ],
+            "definition": "资源型城市生命周期是城市随资源开发经历兴起期、繁荣期、衰退期并可能进入新生期的过程。",
+            "example": "大庆资源产业衰退后发展石化产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "产业链延长",
+            "difficulty": 3,
+            "description": "对原有资源进行深加工以提高利用价值和附加值",
+            "aliases": [
+              "延长产业链"
+            ],
+            "prerequisites": [
+              "资源型城市",
+              "自然资源开发"
+            ],
+            "definition": "产业链延长是对原有资源进行深度开发和加工以提高综合利用程度及附加值。",
+            "example": "大庆利用油气资源发展石化产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "工业多元化",
+            "difficulty": 3,
+            "description": "发展多个工业门类以降低对单一资源依赖",
+            "aliases": [
+              "推动工业多元化发展"
+            ],
+            "prerequisites": [
+              "资源枯竭型城市",
+              "主导产业"
+            ],
+            "definition": "工业多元化是改造传统产业并培育多个工业产业以调整产业结构的方式。",
+            "example": "焦作发展汽车零部件和医药等产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 2,
+            "description": "兼顾发展与环境保护、实现长期协调发展的道路",
+            "aliases": [],
+            "prerequisites": [
+              "人地和谐"
+            ],
+            "definition": "可持续发展是在保护自然环境基础上实现经济、社会和资源环境长期协调发展的发展方式。",
+            "example": "资源枯竭型城市转型实现持续发展"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 区域发展的自然环境基础",
+            "page_range": [
+              23,
+              28
+            ]
+          },
+          {
+            "name": "第二节 生态脆弱区的综合治理",
+            "page_range": [
+              28,
+              36
+            ]
+          },
+          {
+            "name": "第三节 资源枯竭型城市的转型发展",
+            "page_range": [
+              36,
+              42
+            ]
+          },
+          {
+            "name": "问题研究 景德镇还要不要走“世界瓷都”之路",
+            "page_range": [
+              42,
+              43
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三章 城市、产业与区域发展",
+        "concepts": [
+          {
+            "name": "城市功能",
+            "difficulty": 2,
+            "description": "城市在一定区域社会经济生活中发挥的作用。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "城市功能是城市在一定区域范围内社会经济生活中所能发挥的作用。",
+            "example": "省会城市通常具有政治、经济、文化和交通功能。"
+          },
+          {
+            "name": "城市腹地",
+            "difficulty": 2,
+            "description": "与城市联系紧密的周围毗邻地区。",
+            "aliases": [
+              "腹地"
+            ],
+            "prerequisites": [],
+            "definition": "城市腹地是指城市周围与城市具有紧密经济、文化联系的毗邻地区。",
+            "example": "郑州腹地包括河南及周边部分地区。"
+          },
+          {
+            "name": "城市辐射功能",
+            "difficulty": 3,
+            "description": "城市功能对所在区域的综合影响力和发展带动力。",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能",
+              "城市腹地"
+            ],
+            "definition": "城市辐射功能是城市各项功能对其所在区域的综合影响力和发展带动力。",
+            "example": "郑州通过交通枢纽作用带动开封等城市发展。"
+          },
+          {
+            "name": "城市体系",
+            "difficulty": 3,
+            "description": "不同规模等级城市组成的功能与结构体系。",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能"
+            ],
+            "definition": "城市体系是一定区域内不同规模等级城市构成的具有一定功能和结构的系统。",
+            "example": "郑州、开封、洛阳等构成区域城市体系。"
+          },
+          {
+            "name": "城市关联网络",
+            "difficulty": 3,
+            "description": "城市间通过多种流形成的区域联系网络。",
+            "aliases": [
+              "关联网络"
+            ],
+            "prerequisites": [
+              "城市体系"
+            ],
+            "definition": "城市关联网络是城市之间通过人流、物流、资本流和信息流形成的联系网络。",
+            "example": "郑州与周边城市通过铁路和高速公路加强联系。"
+          },
+          {
+            "name": "大都市",
+            "difficulty": 2,
+            "description": "规模较大的区域政治、经济、文化中心。",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能"
+            ],
+            "definition": "大都市通常是规模较大的区域政治、经济、文化中心。",
+            "example": "纽约是国际大都市的典型代表。"
+          },
+          {
+            "name": "增长点与增长轴",
+            "difficulty": 3,
+            "description": "城市增长点与交通干线增长轴构成的区域发展结构。",
+            "aliases": [
+              "点—轴结构"
+            ],
+            "prerequisites": [
+              "城市体系"
+            ],
+            "definition": "交通干线连接的城市是区域经济增长点，交通干线沿线是区域经济增长轴。",
+            "example": "沿海开放城市和沿海经济带形成点轴结构。",
+            "section": "第一节 城市的辐射功能"
+          },
+          {
+            "name": "地区产业结构",
+            "difficulty": 2,
+            "description": "一个地区不同类型产业之间的比例关系。",
+            "aliases": [
+              "产业结构"
+            ],
+            "prerequisites": [],
+            "definition": "地区产业结构是一个国家或地区不同类型产业之间的比例关系。",
+            "example": "新加坡产业结构以服务业为主。"
+          },
+          {
+            "name": "产业结构升级",
+            "difficulty": 3,
+            "description": "产业结构随经济发展由低层次向高层次转变。",
+            "aliases": [
+              "产业升级"
+            ],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "产业结构升级是经济发展过程中产业结构不断变化并提高层次的过程。",
+            "example": "深圳由劳动密集型加工业转向高新技术产业和金融服务业。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "产业结构变化",
+            "difficulty": 3,
+            "description": "劳动力和经济重心在三次产业间转移的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "产业结构变化通常表现为劳动力由第一产业转向第二、第三产业，经济重心依次转移。",
+            "example": "地区经济发展后，第三产业比重逐步提高。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "比较优势",
+            "difficulty": 3,
+            "description": "地区相对于其他地区具有的资源、技术或成本优势。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "比较优势是一个国家或地区相对于其他国家或地区所具有的经济发展优势。",
+            "example": "珠江三角洲曾具有劳动力价格较低的优势。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "政策引导",
+            "difficulty": 2,
+            "description": "政府通过政策促进地区产业结构调整升级。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "政策引导是国家或地区政府利用政策推动产业结构升级的作用方式。",
+            "example": "国家开发开放浦东政策促进上海产业升级。"
+          },
+          {
+            "name": "技术创新",
+            "difficulty": 3,
+            "description": "推动新兴产业产生和产业持续升级的创新活动。",
+            "aliases": [],
+            "prerequisites": [
+              "产业结构升级"
+            ],
+            "definition": "技术创新是从全球范围看推动产业不断升级的根本原因。",
+            "example": "技术创新推动高新技术产业在相关地区发展。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "产业链",
+            "difficulty": 3,
+            "description": "产业从原材料、零部件到生产销售及服务的链条。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "产业链是相关产业围绕产品生产、销售和服务形成的连续联系。",
+            "example": "汽车产业链包括原材料、零部件、整车和销售服务。"
+          },
+          {
+            "name": "全球生产体系",
+            "difficulty": 4,
+            "description": "企业利用全球不同地区优势组织生产的体系。",
+            "aliases": [
+              "汽车工业全球生产体系"
+            ],
+            "prerequisites": [
+              "产业链"
+            ],
+            "definition": "全球生产体系是企业为降低成本并利用各地优势而形成的跨区域生产组织体系。",
+            "example": "汽车企业在全球采购零部件并分设组装厂。",
+            "section": "问题研究 汽车工业能否带动家乡的发展"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 城市的辐射功能",
+            "page_range": [
+              45,
+              54
+            ]
+          },
+          {
+            "name": "第二节 地区产业结构变化",
+            "page_range": [
+              54,
+              62
+            ]
+          },
+          {
+            "name": "问题研究 汽车工业能否带动家乡的发展",
+            "page_range": [
+              62,
+              63
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四章 区际联系与区域协调发展",
+        "concepts": [
+          {
+            "name": "水系",
+            "difficulty": 1,
+            "description": "干流、支流及连通湖泊沼泽构成的水体系统",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水系是由河流干流、各级支流以及连通的湖泊和沼泽组成的系统。",
+            "example": "黄河干流及其支流构成黄河水系"
+          },
+          {
+            "name": "流域",
+            "difficulty": 1,
+            "description": "由分水岭包围的河流或水系集水区域",
+            "aliases": [],
+            "prerequisites": [
+              "水系"
+            ],
+            "definition": "流域是由分水岭所包围的河流或水系的集水区域。",
+            "example": "黄河流域跨越多个省级行政区"
+          },
+          {
+            "name": "流域整体性",
+            "difficulty": 2,
+            "description": "流域内部各区域通过水流相互联系和影响",
+            "aliases": [
+              "流域关联度"
+            ],
+            "prerequisites": [
+              "流域"
+            ],
+            "definition": "流域整体性是指流域各部分通过水流相互连接并形成统一自然区域的特征。",
+            "example": "上游排污会影响下游水质"
+          },
+          {
+            "name": "水资源协作开发",
+            "difficulty": 2,
+            "description": "流域内各主体共同开发和综合利用水资源",
+            "aliases": [
+              "流域协作"
+            ],
+            "prerequisites": [
+              "流域",
+              "流域整体性"
+            ],
+            "definition": "水资源协作开发是流域内不同区域、行业和部门协调开发利用水资源的方式。",
+            "example": "上下游共同调配水量",
+            "section": "第一节 流域内协调发展"
+          },
+          {
+            "name": "流域统筹管理",
+            "difficulty": 3,
+            "description": "以流域为单元协调水资源利用和环境保护",
+            "aliases": [],
+            "prerequisites": [
+              "流域整体性",
+              "水资源协作开发"
+            ],
+            "definition": "流域统筹管理是综合运用工程、行政、法律和市场手段管理整个流域。",
+            "example": "统一规划水量分配和排污治理"
+          },
+          {
+            "name": "河长制",
+            "difficulty": 2,
+            "description": "构建多级河长体系的河湖管理保护机制",
+            "aliases": [],
+            "prerequisites": [
+              "流域统筹管理"
+            ],
+            "definition": "河长制是由多级河长负责协调河湖管理保护的流域管理机制。",
+            "example": "无锡实行河长制治理太湖污染",
+            "section": "第一节 流域内协调发展"
+          },
+          {
+            "name": "水土保持措施",
+            "difficulty": 2,
+            "description": "减少水土流失和入河泥沙的综合治理措施",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水土保持措施是通过生物、耕作和工程手段减少土壤侵蚀与水土流失的措施。",
+            "example": "黄土高原修建梯田并退耕还林"
+          },
+          {
+            "name": "调水调沙",
+            "difficulty": 3,
+            "description": "利用水库调度水量冲刷河道淤积泥沙",
+            "aliases": [],
+            "prerequisites": [
+              "水资源协作开发"
+            ],
+            "definition": "调水调沙是通过水库联动调度形成较大流量以提高河道输沙能力的工程措施。",
+            "example": "小浪底水库形成“人造洪峰”冲沙",
+            "section": "第一节 流域内协调发展"
+          },
+          {
+            "name": "资源跨区域调配",
+            "difficulty": 2,
+            "description": "在资源生产地和消费地之间进行资源空间转移",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源跨区域调配是为解决资源生产与消费空间不匹配而实施的资源转移。",
+            "example": "南水北调将汉江水输往华北"
+          },
+          {
+            "name": "资源调出区",
+            "difficulty": 2,
+            "description": "资源富集且资源供给大于需求的区域",
+            "aliases": [],
+            "prerequisites": [
+              "资源跨区域调配"
+            ],
+            "definition": "资源调出区是资源储量较大、资源供给超过本地需求并向外输出资源的区域。",
+            "example": "西气东输中的新疆属于资源调出区",
+            "section": "第二节 资源跨区域调配"
+          },
+          {
+            "name": "资源调入区",
+            "difficulty": 2,
+            "description": "资源贫乏或需求量大的资源接受区域",
+            "aliases": [],
+            "prerequisites": [
+              "资源跨区域调配"
+            ],
+            "definition": "资源调入区是资源相对短缺、需求量较大并接受外部资源输入的区域。",
+            "example": "华北是南水北调的资源调入区",
+            "section": "第二节 资源跨区域调配"
+          },
+          {
+            "name": "资源调配条件",
+            "difficulty": 3,
+            "description": "区域资源调配需要互补性、可达性及设施政策保障",
+            "aliases": [
+              "互补性和可达性"
+            ],
+            "prerequisites": [
+              "资源跨区域调配"
+            ],
+            "definition": "资源调配条件是区域间存在资源供需互补和运输可达，并有基础设施与政策保障。",
+            "example": "南水北调依靠输水工程和统一规划",
+            "section": "第二节 资源跨区域调配"
+          },
+          {
+            "name": "西气东输",
+            "difficulty": 2,
+            "description": "将西部天然气输送到东部地区的资源调配工程",
+            "aliases": [
+              "西气东输工程"
+            ],
+            "prerequisites": [
+              "资源跨区域调配",
+              "资源调出区",
+              "资源调入区"
+            ],
+            "definition": "西气东输是通过管道把西部天然气输送到东部沿海地区的工程。",
+            "example": "新疆天然气经管道输往上海"
+          },
+          {
+            "name": "产业转移",
+            "difficulty": 2,
+            "description": "企业将部分或全部生产地转移到其他地区",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "产业转移是企业将产品生产的部分或全部由原生产地转移到其他地区的经济现象。",
+            "example": "制鞋业由中国转移到越南"
+          },
+          {
+            "name": "产业转出区",
+            "difficulty": 2,
+            "description": "产业向其他地区转移的原生产区域",
+            "aliases": [],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业转出区是企业将部分或全部生产活动迁出的原生产地区。",
+            "example": "产业转移前的中国东部沿海地区"
+          },
+          {
+            "name": "产业承接区",
+            "difficulty": 2,
+            "description": "接受其他地区产业转入的生产区域",
+            "aliases": [],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业承接区是接受其他地区产业生产活动转入的地区。",
+            "example": "越南成为制鞋业承接区"
+          },
+          {
+            "name": "产业转移因素",
+            "difficulty": 3,
+            "description": "劳动力、市场和政策是产业转移主要影响因素",
+            "aliases": [
+              "影响产业转移的因素"
+            ],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业转移因素主要包括劳动力、市场和政策，此外还包括地价、原材料和运输成本等。",
+            "example": "低廉劳动力吸引制鞋企业迁入",
+            "section": "第三节 产业转移"
+          },
+          {
+            "name": "产业结构调整",
+            "difficulty": 3,
+            "description": "产业转移推动区域主导产业和工业部门转换",
+            "aliases": [
+              "区域产业结构调整"
+            ],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业结构调整是区域通过产业转出和新产业发展实现产业组成与主导部门的变化。",
+            "example": "日本转出纺织业并发展重化工业"
+          },
+          {
+            "name": "产业分工合作",
+            "difficulty": 3,
+            "description": "不同区域依据优势分担产品生产环节并协作",
+            "aliases": [
+              "区域产业分工与合作"
+            ],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业分工合作是不同国家或地区依据自身优势分担产业或产品生产环节。",
+            "example": "一国负责加工，另一国负责设计",
+            "section": "第三节 产业转移"
+          },
+          {
+            "name": "经济全球化",
+            "difficulty": 2,
+            "description": "跨国经济活动使各国经济相互依赖不断加深",
+            "aliases": [],
+            "prerequisites": [
+              "产业分工合作"
+            ],
+            "definition": "经济全球化是跨国界经济活动推动各国经济相互依赖程度不断加深的过程。",
+            "example": "手机零部件来自多个国家"
+          },
+          {
+            "name": "全球生产网络",
+            "difficulty": 3,
+            "description": "生产组装、零部件采购和销售在全球配置",
+            "aliases": [],
+            "prerequisites": [
+              "经济全球化"
+            ],
+            "definition": "全球生产网络是企业在世界范围内组织生产、采购零部件和销售产品形成的网络。",
+            "example": "手机在中国组装并销往全球"
+          },
+          {
+            "name": "国际合作",
+            "difficulty": 2,
+            "description": "国家间通过协商实现优势互补和共同发展",
+            "aliases": [],
+            "prerequisites": [
+              "经济全球化"
+            ],
+            "definition": "国际合作是国家之间加强联系、推动要素流动并实现互利共赢的合作方式。",
+            "example": "多国协商保障中欧班列运行"
+          },
+          {
+            "name": "一带一路建设",
+            "difficulty": 3,
+            "description": "推进基础设施互联互通和多领域国际合作的平台",
+            "aliases": [
+              "一带一路"
+            ],
+            "prerequisites": [
+              "国际合作"
+            ],
+            "definition": "“一带一路”建设是坚持共商共建共享、深化国际合作并促进共同发展的平台。",
+            "example": "瓜达尔港自由区促进中巴产业对接"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 流域内协调发展",
+            "page_range": [
+              65,
+              74
+            ]
+          },
+          {
+            "name": "第二节 资源跨区域调配",
+            "page_range": [
+              74,
+              81
+            ]
+          },
+          {
+            "name": "第三节 产业转移",
+            "page_range": [
+              81,
+              88
+            ]
+          },
+          {
+            "name": "第四节 国际合作",
+            "page_range": [
+              88,
+              94
+            ]
+          },
+          {
+            "name": "问题研究 该不该引藏水入疆",
+            "page_range": [
+              94,
+              102
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 区域与区域发展",
+        "concepts": [
+          {
+            "name": "区域",
+            "difficulty": 1,
+            "description": "按一定目的和标准划定的地球表面空间单元",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "区域是人们在地球表面按照一定目的和标准划定的空间单元。",
+            "example": "长江三角洲城市群"
+          },
+          {
+            "name": "区域划分",
+            "difficulty": 2,
+            "description": "依据目的、标准和地域差异划定区域",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域划分是人们基于地域差异和实践需要，采用不同指标与方法划定区域。",
+            "example": "划定基本农田保护区"
+          },
+          {
+            "name": "自然区域",
+            "difficulty": 2,
+            "description": "主要依据自然特征划分的区域",
+            "aliases": [],
+            "prerequisites": [
+              "区域",
+              "区域划分"
+            ],
+            "definition": "自然区域是主要按照地质、地貌、气候等自然特征划分的区域。",
+            "example": "中国东部季风区",
+            "section": "第一节 多种多样的区域"
+          },
+          {
+            "name": "人文区域",
+            "difficulty": 2,
+            "description": "主要依据人文特征划分的区域",
+            "aliases": [],
+            "prerequisites": [
+              "区域",
+              "区域划分"
+            ],
+            "definition": "人文区域是主要按照人口、文化或经济等人文特征划分的区域。",
+            "example": "汉语北方方言区"
+          },
+          {
+            "name": "综合区域",
+            "difficulty": 3,
+            "description": "综合自然和人文特征划分的区域",
+            "aliases": [],
+            "prerequisites": [
+              "自然区域",
+              "人文区域"
+            ],
+            "definition": "综合区域是同时依据自然特征和人文特征划分的区域。",
+            "example": "中国主体功能区"
+          },
+          {
+            "name": "区域边界",
+            "difficulty": 2,
+            "description": "区域与相邻区域之间的界限",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域边界是划分区域范围的界限，可以明确也可以具有过渡性质。",
+            "example": "行政区边界较明确",
+            "section": "第一节 多种多样的区域"
+          },
+          {
+            "name": "区域空间尺度",
+            "difficulty": 2,
+            "description": "区域范围大小及其层级高低",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域空间尺度体现区域层级高低，较大尺度区域可包含较小尺度区域。",
+            "example": "国家包含省、市等行政区"
+          },
+          {
+            "name": "区域要素",
+            "difficulty": 2,
+            "description": "构成区域特征的自然和人文要素",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域要素是构成区域特征的自然要素和人文要素。",
+            "example": "培田村的山地、村落和农田",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "自然要素",
+            "difficulty": 1,
+            "description": "区域中的自然环境组成要素",
+            "aliases": [],
+            "prerequisites": [
+              "区域要素"
+            ],
+            "definition": "自然要素包括地质、地貌、气候、水文、生物和土壤等。",
+            "example": "长江三角洲的河网",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "人文要素",
+            "difficulty": 1,
+            "description": "区域中的人口文化经济等要素",
+            "aliases": [],
+            "prerequisites": [
+              "区域要素"
+            ],
+            "definition": "人文要素包括人口、文化、经济等人类活动及其成果。",
+            "example": "培田村的传统民居",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区域整体性",
+            "difficulty": 3,
+            "description": "区域各要素相互作用形成的整体特征",
+            "aliases": [],
+            "prerequisites": [
+              "区域要素",
+              "自然要素",
+              "人文要素"
+            ],
+            "definition": "区域整体性是区域内各类要素相互作用、相互制约形成的整体特征。",
+            "example": "稻鱼共生系统",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区域差异",
+            "difficulty": 2,
+            "description": "不同区域在地理条件等方面的差别",
+            "aliases": [],
+            "prerequisites": [
+              "区域"
+            ],
+            "definition": "区域差异是不同区域在地理位置、自然条件、发展水平和文化习俗等方面的差别。",
+            "example": "长江三角洲与松嫩平原的差异",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区域关联性",
+            "difficulty": 3,
+            "description": "区域之间相互联系和相互影响的特征",
+            "aliases": [],
+            "prerequisites": [
+              "区域差异"
+            ],
+            "definition": "区域关联性是区域在发展过程中通过要素流动与其他区域发生联系和影响的特征。",
+            "example": "京津冀协同发展",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "区际要素流动",
+            "difficulty": 3,
+            "description": "自然或人文要素在区域之间的流动",
+            "aliases": [],
+            "prerequisites": [
+              "区域关联性",
+              "自然要素",
+              "人文要素"
+            ],
+            "definition": "区际要素流动是自然要素和人文要素在不同区域之间的流动。",
+            "example": "人口迁移和产业转移"
+          },
+          {
+            "name": "区域发展",
+            "difficulty": 2,
+            "description": "区域生产、生活和经济社会的变化过程",
+            "aliases": [],
+            "prerequisites": [
+              "区域整体性",
+              "区域关联性"
+            ],
+            "definition": "区域发展是区域内部条件与区际联系共同作用下生产生活及社会经济的变化过程。",
+            "example": "松嫩平原发展重化工业"
+          },
+          {
+            "name": "地理条件",
+            "difficulty": 2,
+            "description": "影响区域发展的人地环境条件",
+            "aliases": [],
+            "prerequisites": [
+              "自然要素",
+              "人文要素"
+            ],
+            "definition": "地理条件是区域发展所依托的自然环境和社会经济等条件。",
+            "example": "毛里求斯的海域渔业资源"
+          },
+          {
+            "name": "因地制宜",
+            "difficulty": 3,
+            "description": "依据区域条件合理安排人类活动",
+            "aliases": [],
+            "prerequisites": [
+              "地理条件",
+              "区域整体性",
+              "区域关联性"
+            ],
+            "definition": "因地制宜是根据自身地理条件及其变化合理安排并调整人类活动。",
+            "example": "干旱地区发展节水技术",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "兼顾区域发展与资源环境保护",
+            "aliases": [],
+            "prerequisites": [
+              "区域整体性",
+              "区域关联性"
+            ],
+            "definition": "可持续发展是协调区域发展、资源利用和生态环境保护的长期发展方式。",
+            "example": "划定生态保护区"
+          },
+          {
+            "name": "区域地理",
+            "difficulty": 3,
+            "description": "研究特定区域人地关系及发展变化的学科",
+            "aliases": [],
+            "prerequisites": [
+              "区域整体性",
+              "区域关联性",
+              "区域发展"
+            ],
+            "definition": "区域地理是研究区域地理环境、人地关系、区域差异和区域关联的地理学分支。",
+            "example": "开展京津冀区域研究",
+            "section": "第二节 区域整体性和关联性"
+          },
+          {
+            "name": "支柱产业",
+            "difficulty": 3,
+            "description": "一定发展阶段支撑区域经济的主要产业",
+            "aliases": [],
+            "prerequisites": [
+              "区域发展",
+              "地理条件"
+            ],
+            "definition": "支柱产业是在一定发展阶段对区域经济发展具有重要支撑作用的产业。",
+            "example": "毛里求斯曾以制糖业为经济基础",
+            "section": "问题研究 毛里求斯的发展模式可以复制吗"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 多种多样的区域",
+            "section_key": "7cb1ab1522",
+            "page_range": [
+              7,
+              12
+            ]
+          },
+          {
+            "name": "第二节 区域整体性和关联性",
+            "section_key": "48e0ddb1ea",
+            "page_range": [
+              12,
+              19
+            ]
+          },
+          {
+            "name": "问题研究 毛里求斯的发展模式可以复制吗",
+            "section_key": "b2e4c86b9d",
+            "page_range": [
+              19,
+              21
+            ]
+          }
+        ],
+        "chapter_key": "fc624c2172",
+        "metadata": {
+          "volume_id": "028267549471",
+          "file_id": "028267549471",
+          "volume_title": "高中地理 选择性必修2",
+          "chapter_order": 1,
+          "raw_heading": "第一章 区域与区域发展"
+        }
+      },
+      {
+        "name": "第二章 资源、环境与区域发展",
+        "concepts": [
+          {
+            "name": "自然条件",
+            "difficulty": 1,
+            "description": "影响区域发展的地理位置和自然要素等条件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然条件是区域发展所依赖的地理位置和自然要素条件。",
+            "example": "河流中下游平原便于古代农耕"
+          },
+          {
+            "name": "自然资源",
+            "difficulty": 1,
+            "description": "能够为区域发展提供物质基础的自然要素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然资源是区域发展的物质基础，其种类、储量和利用方式影响区域发展。",
+            "example": "沙特阿拉伯依靠石油发展经济"
+          },
+          {
+            "name": "比较优势",
+            "difficulty": 2,
+            "description": "区域利用自身有利条件形成的发展优势",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "比较优势是区域凭借自身较有利的资源或社会条件取得发展的优势。",
+            "example": "瑞士依靠技术和金融发展高端产业",
+            "section": "第一节 区域发展的自然环境基础"
+          },
+          {
+            "name": "人地和谐",
+            "difficulty": 2,
+            "description": "人类利用自然并遵循自然规律协调发展",
+            "aliases": [],
+            "prerequisites": [
+              "自然条件"
+            ],
+            "definition": "人地和谐是人类改造自然时遵循自然规律、实现人与自然协调相处。",
+            "example": "都江堰利用自然规律分洪灌溉"
+          },
+          {
+            "name": "自然资源开发",
+            "difficulty": 2,
+            "description": "对自然资源进行开采、利用和加工的活动",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源"
+            ],
+            "definition": "自然资源开发是人类对自然资源进行开采、利用和加工以服务发展的活动。",
+            "example": "澳大利亚开采煤炭和铁矿",
+            "section": "第一节 区域发展的自然环境基础"
+          },
+          {
+            "name": "资源诅咒",
+            "difficulty": 3,
+            "description": "资源丰富地区因过度依赖资源而发展受限",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源",
+              "自然资源开发"
+            ],
+            "definition": "资源诅咒是自然资源丰富的地区因过度依赖资源开发而经济发展受限的现象。",
+            "example": "荷兰过度发展油气工业后经济增长乏力",
+            "section": "第一节 区域发展的自然环境基础"
+          },
+          {
+            "name": "生态脆弱区",
+            "difficulty": 2,
+            "description": "生态系统抗干扰弱、易退化且难恢复的地区",
+            "aliases": [],
+            "prerequisites": [
+              "自然条件"
+            ],
+            "definition": "生态脆弱区是生态系统抗干扰能力弱、易于退化且难以恢复的地区。",
+            "example": "我国北方农牧交错带"
+          },
+          {
+            "name": "土地退化",
+            "difficulty": 2,
+            "description": "土地质量下降、生产力降低的过程",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "土地退化是自然因素和人类活动导致土地质量下降、生产力降低的过程。",
+            "example": "草场退化使畜牧业生产力下降"
+          },
+          {
+            "name": "土地沙化",
+            "difficulty": 2,
+            "description": "土地逐渐失去植被并呈现沙质化的退化现象",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "土地沙化是土地退化的一种表现，指土地逐渐失去植被并向沙质地表转变。",
+            "example": "过度放牧导致草场变成沙地",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "石漠化",
+            "difficulty": 3,
+            "description": "喀斯特地区土层流失、石灰岩大面积裸露",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "石漠化是喀斯特地区土层流失、石灰岩裸露并形成类似荒漠景观的过程。",
+            "example": "贵州喀斯特山区暴雨后石灰岩裸露",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "荒漠化",
+            "difficulty": 2,
+            "description": "土地退化并逐渐形成荒漠景观的过程",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "荒漠化是土地退化的一种表现形式，指土地生产力下降并向荒漠状态发展的过程。",
+            "example": "萨赫勒地区因过垦过牧荒漠化加剧",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "北方农牧交错带",
+            "difficulty": 2,
+            "description": "农区与牧区、半湿润与半干旱区的过渡地带",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "北方农牧交错带是农区与牧区、半湿润地区与半干旱地区的过渡地带。",
+            "example": "内蒙古部分地区位于该过渡带",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "过度开垦",
+            "difficulty": 2,
+            "description": "超出土地承载能力持续扩大耕地面积",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "过度开垦是在人口压力等因素下不合理扩大耕地面积并造成土地退化的行为。",
+            "example": "将年降水量约300毫米的草场开垦为农田",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "过度放牧",
+            "difficulty": 2,
+            "description": "牲畜数量超过草场承载能力的放牧方式",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "过度放牧是牲畜数量超过草场承载力而导致草场退化的放牧行为。",
+            "example": "盲目提高载畜量使草场植被减少",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "草场承载力",
+            "difficulty": 3,
+            "description": "草场能够持续承载的牲畜数量和生产压力",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "草场承载力是草场在不发生持续退化的条件下能够承载的牲畜数量。",
+            "example": "将牲畜数量控制在草场承载力范围内",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "土地利用结构",
+            "difficulty": 3,
+            "description": "农地、草地、林地等土地用途的组成关系",
+            "aliases": [],
+            "prerequisites": [
+              "自然条件"
+            ],
+            "definition": "土地利用结构是区域内不同土地用途及其比例的组成关系。",
+            "example": "退耕后乌兰察布耕地减少、林地增加",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "综合治理",
+            "difficulty": 2,
+            "description": "综合运用多种措施治理生态环境问题",
+            "aliases": [],
+            "prerequisites": [
+              "土地退化"
+            ],
+            "definition": "综合治理是在保护自然环境基础上综合运用生物、工程、经济和社会措施。",
+            "example": "北方农牧交错带开展小流域综合治理"
+          },
+          {
+            "name": "防护体系",
+            "difficulty": 3,
+            "description": "通过生物和工程措施固沙防沙的保护系统",
+            "aliases": [],
+            "prerequisites": [
+              "综合治理"
+            ],
+            "definition": "防护体系是利用生物与工程措施减少风蚀、水蚀并保护土地的系统。",
+            "example": "灌草结合并人工补种植物固沙",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "自然恢复",
+            "difficulty": 2,
+            "description": "减少人为干扰后生态系统依靠自身逐步恢复",
+            "aliases": [],
+            "prerequisites": [
+              "生态脆弱区"
+            ],
+            "definition": "自然恢复是通过减少人类干扰使退化生态系统依靠自身条件逐步恢复。",
+            "example": "浑善达克沙地围栏后草被自然恢复",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "退耕还林（草）",
+            "difficulty": 2,
+            "description": "将不适宜耕作的农田恢复为林地或草地",
+            "aliases": [
+              "退耕还林还草"
+            ],
+            "prerequisites": [
+              "土地利用结构",
+              "综合治理"
+            ],
+            "definition": "退耕还林（草）是把不适宜耕作的农田恢复为林地或草地的治理措施。",
+            "example": "乌兰察布将低产农田退耕还草",
+            "section": "第二节 生态脆弱区的综合治理"
+          },
+          {
+            "name": "资源型城市",
+            "difficulty": 2,
+            "description": "以资源开采和加工业为主导产业而兴起的城市",
+            "aliases": [],
+            "prerequisites": [
+              "自然资源开发",
+              "主导产业"
+            ],
+            "definition": "资源型城市是因大规模开采自然资源兴起并以资源开采和加工业为主导产业的城市。",
+            "example": "阜新市曾因煤炭资源成为煤电之城",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "资源枯竭型城市",
+            "difficulty": 3,
+            "description": "资源枯竭或需求下降后经济发展趋缓的城市",
+            "aliases": [],
+            "prerequisites": [
+              "资源型城市"
+            ],
+            "definition": "资源枯竭型城市是所依托资源开采殆尽或市场需求大幅减少后经济发展趋缓的资源型城市。",
+            "example": "煤炭资源枯竭后的焦作市",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "主导产业",
+            "difficulty": 2,
+            "description": "在国民经济中支配地位突出、关联度较高的产业",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "主导产业是在国民经济中支配地位突出、比重较大且关联度较高的产业。",
+            "example": "煤炭工业曾是山西省主导产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "资源型城市生命周期",
+            "difficulty": 3,
+            "description": "资源型城市经历兴起、繁荣、衰退和新生的过程",
+            "aliases": [],
+            "prerequisites": [
+              "资源型城市"
+            ],
+            "definition": "资源型城市生命周期是城市随资源开发经历兴起期、繁荣期、衰退期并可能进入新生期的过程。",
+            "example": "大庆资源产业衰退后发展石化产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "产业链延长",
+            "difficulty": 3,
+            "description": "对原有资源进行深加工以提高利用价值和附加值",
+            "aliases": [
+              "延长产业链"
+            ],
+            "prerequisites": [
+              "资源型城市",
+              "自然资源开发"
+            ],
+            "definition": "产业链延长是对原有资源进行深度开发和加工以提高综合利用程度及附加值。",
+            "example": "大庆利用油气资源发展石化产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "工业多元化",
+            "difficulty": 3,
+            "description": "发展多个工业门类以降低对单一资源依赖",
+            "aliases": [
+              "推动工业多元化发展"
+            ],
+            "prerequisites": [
+              "资源枯竭型城市",
+              "主导产业"
+            ],
+            "definition": "工业多元化是改造传统产业并培育多个工业产业以调整产业结构的方式。",
+            "example": "焦作发展汽车零部件和医药等产业",
+            "section": "第三节 资源枯竭型城市的转型发展"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 2,
+            "description": "兼顾发展与环境保护、实现长期协调发展的道路",
+            "aliases": [],
+            "prerequisites": [
+              "人地和谐"
+            ],
+            "definition": "可持续发展是在保护自然环境基础上实现经济、社会和资源环境长期协调发展的发展方式。",
+            "example": "资源枯竭型城市转型实现持续发展"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 区域发展的自然环境基础",
+            "section_key": "6207ffca1e",
+            "page_range": [
+              23,
+              28
+            ]
+          },
+          {
+            "name": "第二节 生态脆弱区的综合治理",
+            "section_key": "221ffcf1e4",
+            "page_range": [
+              28,
+              36
+            ]
+          },
+          {
+            "name": "第三节 资源枯竭型城市的转型发展",
+            "section_key": "efdf8080b5",
+            "page_range": [
+              36,
+              42
+            ]
+          },
+          {
+            "name": "问题研究 景德镇还要不要走“世界瓷都”之路",
+            "section_key": "1f19610c47",
+            "page_range": [
+              42,
+              43
+            ]
+          }
+        ],
+        "chapter_key": "6963349209",
+        "metadata": {
+          "volume_id": "028267549471",
+          "file_id": "028267549471",
+          "volume_title": "高中地理 选择性必修2",
+          "chapter_order": 2,
+          "raw_heading": "第二章 资源、环境与区域发展"
+        }
+      },
+      {
+        "name": "第三章 城市、产业与区域发展",
+        "concepts": [
+          {
+            "name": "城市功能",
+            "difficulty": 2,
+            "description": "城市在一定区域社会经济生活中发挥的作用。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "城市功能是城市在一定区域范围内社会经济生活中所能发挥的作用。",
+            "example": "省会城市通常具有政治、经济、文化和交通功能。"
+          },
+          {
+            "name": "城市腹地",
+            "difficulty": 2,
+            "description": "与城市联系紧密的周围毗邻地区。",
+            "aliases": [
+              "腹地"
+            ],
+            "prerequisites": [],
+            "definition": "城市腹地是指城市周围与城市具有紧密经济、文化联系的毗邻地区。",
+            "example": "郑州腹地包括河南及周边部分地区。"
+          },
+          {
+            "name": "城市辐射功能",
+            "difficulty": 3,
+            "description": "城市功能对所在区域的综合影响力和发展带动力。",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能",
+              "城市腹地"
+            ],
+            "definition": "城市辐射功能是城市各项功能对其所在区域的综合影响力和发展带动力。",
+            "example": "郑州通过交通枢纽作用带动开封等城市发展。"
+          },
+          {
+            "name": "城市体系",
+            "difficulty": 3,
+            "description": "不同规模等级城市组成的功能与结构体系。",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能"
+            ],
+            "definition": "城市体系是一定区域内不同规模等级城市构成的具有一定功能和结构的系统。",
+            "example": "郑州、开封、洛阳等构成区域城市体系。"
+          },
+          {
+            "name": "城市关联网络",
+            "difficulty": 3,
+            "description": "城市间通过多种流形成的区域联系网络。",
+            "aliases": [
+              "关联网络"
+            ],
+            "prerequisites": [
+              "城市体系"
+            ],
+            "definition": "城市关联网络是城市之间通过人流、物流、资本流和信息流形成的联系网络。",
+            "example": "郑州与周边城市通过铁路和高速公路加强联系。"
+          },
+          {
+            "name": "大都市",
+            "difficulty": 2,
+            "description": "规模较大的区域政治、经济、文化中心。",
+            "aliases": [],
+            "prerequisites": [
+              "城市功能"
+            ],
+            "definition": "大都市通常是规模较大的区域政治、经济、文化中心。",
+            "example": "纽约是国际大都市的典型代表。"
+          },
+          {
+            "name": "增长点与增长轴",
+            "difficulty": 3,
+            "description": "城市增长点与交通干线增长轴构成的区域发展结构。",
+            "aliases": [
+              "点—轴结构"
+            ],
+            "prerequisites": [
+              "城市体系"
+            ],
+            "definition": "交通干线连接的城市是区域经济增长点，交通干线沿线是区域经济增长轴。",
+            "example": "沿海开放城市和沿海经济带形成点轴结构。",
+            "section": "第一节 城市的辐射功能"
+          },
+          {
+            "name": "地区产业结构",
+            "difficulty": 2,
+            "description": "一个地区不同类型产业之间的比例关系。",
+            "aliases": [
+              "产业结构"
+            ],
+            "prerequisites": [],
+            "definition": "地区产业结构是一个国家或地区不同类型产业之间的比例关系。",
+            "example": "新加坡产业结构以服务业为主。"
+          },
+          {
+            "name": "产业结构升级",
+            "difficulty": 3,
+            "description": "产业结构随经济发展由低层次向高层次转变。",
+            "aliases": [
+              "产业升级"
+            ],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "产业结构升级是经济发展过程中产业结构不断变化并提高层次的过程。",
+            "example": "深圳由劳动密集型加工业转向高新技术产业和金融服务业。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "产业结构变化",
+            "difficulty": 3,
+            "description": "劳动力和经济重心在三次产业间转移的过程。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "产业结构变化通常表现为劳动力由第一产业转向第二、第三产业，经济重心依次转移。",
+            "example": "地区经济发展后，第三产业比重逐步提高。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "比较优势",
+            "difficulty": 3,
+            "description": "地区相对于其他地区具有的资源、技术或成本优势。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "比较优势是一个国家或地区相对于其他国家或地区所具有的经济发展优势。",
+            "example": "珠江三角洲曾具有劳动力价格较低的优势。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "政策引导",
+            "difficulty": 2,
+            "description": "政府通过政策促进地区产业结构调整升级。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "政策引导是国家或地区政府利用政策推动产业结构升级的作用方式。",
+            "example": "国家开发开放浦东政策促进上海产业升级。"
+          },
+          {
+            "name": "技术创新",
+            "difficulty": 3,
+            "description": "推动新兴产业产生和产业持续升级的创新活动。",
+            "aliases": [],
+            "prerequisites": [
+              "产业结构升级"
+            ],
+            "definition": "技术创新是从全球范围看推动产业不断升级的根本原因。",
+            "example": "技术创新推动高新技术产业在相关地区发展。",
+            "section": "第二节 地区产业结构变化"
+          },
+          {
+            "name": "产业链",
+            "difficulty": 3,
+            "description": "产业从原材料、零部件到生产销售及服务的链条。",
+            "aliases": [],
+            "prerequisites": [
+              "地区产业结构"
+            ],
+            "definition": "产业链是相关产业围绕产品生产、销售和服务形成的连续联系。",
+            "example": "汽车产业链包括原材料、零部件、整车和销售服务。"
+          },
+          {
+            "name": "全球生产体系",
+            "difficulty": 4,
+            "description": "企业利用全球不同地区优势组织生产的体系。",
+            "aliases": [
+              "汽车工业全球生产体系"
+            ],
+            "prerequisites": [
+              "产业链"
+            ],
+            "definition": "全球生产体系是企业为降低成本并利用各地优势而形成的跨区域生产组织体系。",
+            "example": "汽车企业在全球采购零部件并分设组装厂。",
+            "section": "问题研究 汽车工业能否带动家乡的发展"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 城市的辐射功能",
+            "section_key": "1b444b8a0a",
+            "page_range": [
+              45,
+              54
+            ]
+          },
+          {
+            "name": "第二节 地区产业结构变化",
+            "section_key": "d0fe99f65f",
+            "page_range": [
+              54,
+              62
+            ]
+          },
+          {
+            "name": "问题研究 汽车工业能否带动家乡的发展",
+            "section_key": "fdcb5eca69",
+            "page_range": [
+              62,
+              63
+            ]
+          }
+        ],
+        "chapter_key": "bbf171cfb3",
+        "metadata": {
+          "volume_id": "028267549471",
+          "file_id": "028267549471",
+          "volume_title": "高中地理 选择性必修2",
+          "chapter_order": 3,
+          "raw_heading": "第三章 城市、产业与区域发展"
+        }
+      },
+      {
+        "name": "第四章 区际联系与区域协调发展",
+        "concepts": [
+          {
+            "name": "水系",
+            "difficulty": 1,
+            "description": "干流、支流及连通湖泊沼泽构成的水体系统",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水系是由河流干流、各级支流以及连通的湖泊和沼泽组成的系统。",
+            "example": "黄河干流及其支流构成黄河水系"
+          },
+          {
+            "name": "流域",
+            "difficulty": 1,
+            "description": "由分水岭包围的河流或水系集水区域",
+            "aliases": [],
+            "prerequisites": [
+              "水系"
+            ],
+            "definition": "流域是由分水岭所包围的河流或水系的集水区域。",
+            "example": "黄河流域跨越多个省级行政区"
+          },
+          {
+            "name": "流域整体性",
+            "difficulty": 2,
+            "description": "流域内部各区域通过水流相互联系和影响",
+            "aliases": [
+              "流域关联度"
+            ],
+            "prerequisites": [
+              "流域"
+            ],
+            "definition": "流域整体性是指流域各部分通过水流相互连接并形成统一自然区域的特征。",
+            "example": "上游排污会影响下游水质"
+          },
+          {
+            "name": "水资源协作开发",
+            "difficulty": 2,
+            "description": "流域内各主体共同开发和综合利用水资源",
+            "aliases": [
+              "流域协作"
+            ],
+            "prerequisites": [
+              "流域",
+              "流域整体性"
+            ],
+            "definition": "水资源协作开发是流域内不同区域、行业和部门协调开发利用水资源的方式。",
+            "example": "上下游共同调配水量",
+            "section": "第一节 流域内协调发展"
+          },
+          {
+            "name": "流域统筹管理",
+            "difficulty": 3,
+            "description": "以流域为单元协调水资源利用和环境保护",
+            "aliases": [],
+            "prerequisites": [
+              "流域整体性",
+              "水资源协作开发"
+            ],
+            "definition": "流域统筹管理是综合运用工程、行政、法律和市场手段管理整个流域。",
+            "example": "统一规划水量分配和排污治理"
+          },
+          {
+            "name": "河长制",
+            "difficulty": 2,
+            "description": "构建多级河长体系的河湖管理保护机制",
+            "aliases": [],
+            "prerequisites": [
+              "流域统筹管理"
+            ],
+            "definition": "河长制是由多级河长负责协调河湖管理保护的流域管理机制。",
+            "example": "无锡实行河长制治理太湖污染",
+            "section": "第一节 流域内协调发展"
+          },
+          {
+            "name": "水土保持措施",
+            "difficulty": 2,
+            "description": "减少水土流失和入河泥沙的综合治理措施",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水土保持措施是通过生物、耕作和工程手段减少土壤侵蚀与水土流失的措施。",
+            "example": "黄土高原修建梯田并退耕还林"
+          },
+          {
+            "name": "调水调沙",
+            "difficulty": 3,
+            "description": "利用水库调度水量冲刷河道淤积泥沙",
+            "aliases": [],
+            "prerequisites": [
+              "水资源协作开发"
+            ],
+            "definition": "调水调沙是通过水库联动调度形成较大流量以提高河道输沙能力的工程措施。",
+            "example": "小浪底水库形成“人造洪峰”冲沙",
+            "section": "第一节 流域内协调发展"
+          },
+          {
+            "name": "资源跨区域调配",
+            "difficulty": 2,
+            "description": "在资源生产地和消费地之间进行资源空间转移",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "资源跨区域调配是为解决资源生产与消费空间不匹配而实施的资源转移。",
+            "example": "南水北调将汉江水输往华北"
+          },
+          {
+            "name": "资源调出区",
+            "difficulty": 2,
+            "description": "资源富集且资源供给大于需求的区域",
+            "aliases": [],
+            "prerequisites": [
+              "资源跨区域调配"
+            ],
+            "definition": "资源调出区是资源储量较大、资源供给超过本地需求并向外输出资源的区域。",
+            "example": "西气东输中的新疆属于资源调出区",
+            "section": "第二节 资源跨区域调配"
+          },
+          {
+            "name": "资源调入区",
+            "difficulty": 2,
+            "description": "资源贫乏或需求量大的资源接受区域",
+            "aliases": [],
+            "prerequisites": [
+              "资源跨区域调配"
+            ],
+            "definition": "资源调入区是资源相对短缺、需求量较大并接受外部资源输入的区域。",
+            "example": "华北是南水北调的资源调入区",
+            "section": "第二节 资源跨区域调配"
+          },
+          {
+            "name": "资源调配条件",
+            "difficulty": 3,
+            "description": "区域资源调配需要互补性、可达性及设施政策保障",
+            "aliases": [
+              "互补性和可达性"
+            ],
+            "prerequisites": [
+              "资源跨区域调配"
+            ],
+            "definition": "资源调配条件是区域间存在资源供需互补和运输可达，并有基础设施与政策保障。",
+            "example": "南水北调依靠输水工程和统一规划",
+            "section": "第二节 资源跨区域调配"
+          },
+          {
+            "name": "西气东输",
+            "difficulty": 2,
+            "description": "将西部天然气输送到东部地区的资源调配工程",
+            "aliases": [
+              "西气东输工程"
+            ],
+            "prerequisites": [
+              "资源跨区域调配",
+              "资源调出区",
+              "资源调入区"
+            ],
+            "definition": "西气东输是通过管道把西部天然气输送到东部沿海地区的工程。",
+            "example": "新疆天然气经管道输往上海"
+          },
+          {
+            "name": "产业转移",
+            "difficulty": 2,
+            "description": "企业将部分或全部生产地转移到其他地区",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "产业转移是企业将产品生产的部分或全部由原生产地转移到其他地区的经济现象。",
+            "example": "制鞋业由中国转移到越南"
+          },
+          {
+            "name": "产业转出区",
+            "difficulty": 2,
+            "description": "产业向其他地区转移的原生产区域",
+            "aliases": [],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业转出区是企业将部分或全部生产活动迁出的原生产地区。",
+            "example": "产业转移前的中国东部沿海地区"
+          },
+          {
+            "name": "产业承接区",
+            "difficulty": 2,
+            "description": "接受其他地区产业转入的生产区域",
+            "aliases": [],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业承接区是接受其他地区产业生产活动转入的地区。",
+            "example": "越南成为制鞋业承接区"
+          },
+          {
+            "name": "产业转移因素",
+            "difficulty": 3,
+            "description": "劳动力、市场和政策是产业转移主要影响因素",
+            "aliases": [
+              "影响产业转移的因素"
+            ],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业转移因素主要包括劳动力、市场和政策，此外还包括地价、原材料和运输成本等。",
+            "example": "低廉劳动力吸引制鞋企业迁入",
+            "section": "第三节 产业转移"
+          },
+          {
+            "name": "产业结构调整",
+            "difficulty": 3,
+            "description": "产业转移推动区域主导产业和工业部门转换",
+            "aliases": [
+              "区域产业结构调整"
+            ],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业结构调整是区域通过产业转出和新产业发展实现产业组成与主导部门的变化。",
+            "example": "日本转出纺织业并发展重化工业"
+          },
+          {
+            "name": "产业分工合作",
+            "difficulty": 3,
+            "description": "不同区域依据优势分担产品生产环节并协作",
+            "aliases": [
+              "区域产业分工与合作"
+            ],
+            "prerequisites": [
+              "产业转移"
+            ],
+            "definition": "产业分工合作是不同国家或地区依据自身优势分担产业或产品生产环节。",
+            "example": "一国负责加工，另一国负责设计",
+            "section": "第三节 产业转移"
+          },
+          {
+            "name": "经济全球化",
+            "difficulty": 2,
+            "description": "跨国经济活动使各国经济相互依赖不断加深",
+            "aliases": [],
+            "prerequisites": [
+              "产业分工合作"
+            ],
+            "definition": "经济全球化是跨国界经济活动推动各国经济相互依赖程度不断加深的过程。",
+            "example": "手机零部件来自多个国家"
+          },
+          {
+            "name": "全球生产网络",
+            "difficulty": 3,
+            "description": "生产组装、零部件采购和销售在全球配置",
+            "aliases": [],
+            "prerequisites": [
+              "经济全球化"
+            ],
+            "definition": "全球生产网络是企业在世界范围内组织生产、采购零部件和销售产品形成的网络。",
+            "example": "手机在中国组装并销往全球"
+          },
+          {
+            "name": "国际合作",
+            "difficulty": 2,
+            "description": "国家间通过协商实现优势互补和共同发展",
+            "aliases": [],
+            "prerequisites": [
+              "经济全球化"
+            ],
+            "definition": "国际合作是国家之间加强联系、推动要素流动并实现互利共赢的合作方式。",
+            "example": "多国协商保障中欧班列运行"
+          },
+          {
+            "name": "一带一路建设",
+            "difficulty": 3,
+            "description": "推进基础设施互联互通和多领域国际合作的平台",
+            "aliases": [
+              "一带一路"
+            ],
+            "prerequisites": [
+              "国际合作"
+            ],
+            "definition": "“一带一路”建设是坚持共商共建共享、深化国际合作并促进共同发展的平台。",
+            "example": "瓜达尔港自由区促进中巴产业对接"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 流域内协调发展",
+            "section_key": "99db543765",
+            "page_range": [
+              65,
+              74
+            ]
+          },
+          {
+            "name": "第二节 资源跨区域调配",
+            "section_key": "a628cc002f",
+            "page_range": [
+              74,
+              81
+            ]
+          },
+          {
+            "name": "第三节 产业转移",
+            "section_key": "97a35d5ec1",
+            "page_range": [
+              81,
+              88
+            ]
+          },
+          {
+            "name": "第四节 国际合作",
+            "section_key": "90402f23b8",
+            "page_range": [
+              88,
+              94
+            ]
+          },
+          {
+            "name": "问题研究 该不该引藏水入疆",
+            "section_key": "aa490eacdd",
+            "page_range": [
+              94,
+              102
+            ]
+          }
+        ],
+        "chapter_key": "06e03470e1",
+        "metadata": {
+          "volume_id": "028267549471",
+          "file_id": "028267549471",
+          "volume_title": "高中地理 选择性必修2",
+          "chapter_order": 4,
+          "raw_heading": "第四章 区际联系与区域协调发展"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "7cb1ab1522": [
+        7,
+        12
+      ],
+      "第一节 多种多样的区域": [
+        7,
+        12
+      ],
+      "48e0ddb1ea": [
+        12,
+        19
+      ],
+      "第二节 区域整体性和关联性": [
+        12,
+        19
+      ],
+      "b2e4c86b9d": [
+        19,
+        21
+      ],
+      "问题研究 毛里求斯的发展模式可以复制吗": [
+        19,
+        21
+      ],
+      "6207ffca1e": [
+        23,
+        28
+      ],
+      "第一节 区域发展的自然环境基础": [
+        23,
+        28
+      ],
+      "221ffcf1e4": [
+        28,
+        36
+      ],
+      "第二节 生态脆弱区的综合治理": [
+        28,
+        36
+      ],
+      "efdf8080b5": [
+        36,
+        42
+      ],
+      "第三节 资源枯竭型城市的转型发展": [
+        36,
+        42
+      ],
+      "1f19610c47": [
+        42,
+        43
+      ],
+      "问题研究 景德镇还要不要走“世界瓷都”之路": [
+        42,
+        43
+      ],
+      "1b444b8a0a": [
+        45,
+        54
+      ],
+      "第一节 城市的辐射功能": [
+        45,
+        54
+      ],
+      "d0fe99f65f": [
+        54,
+        62
+      ],
+      "第二节 地区产业结构变化": [
+        54,
+        62
+      ],
+      "fdcb5eca69": [
+        62,
+        63
+      ],
+      "问题研究 汽车工业能否带动家乡的发展": [
+        62,
+        63
+      ],
+      "99db543765": [
+        65,
+        74
+      ],
+      "第一节 流域内协调发展": [
+        65,
+        74
+      ],
+      "a628cc002f": [
+        74,
+        81
+      ],
+      "第二节 资源跨区域调配": [
+        74,
+        81
+      ],
+      "97a35d5ec1": [
+        81,
+        88
+      ],
+      "第三节 产业转移": [
+        81,
+        88
+      ],
+      "90402f23b8": [
+        88,
+        94
+      ],
+      "第四节 国际合作": [
+        88,
+        94
+      ],
+      "aa490eacdd": [
+        94,
+        102
+      ],
+      "问题研究 该不该引藏水入疆": [
+        94,
+        102
+      ]
+    }
+  }
+}

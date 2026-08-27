@@ -1,0 +1,773 @@
+{
+  "file_id": "6cc3d5384754",
+  "text_sha256": "3e77228d24b122adcb40e56ddfc558163c6c30aa5fc45c2e7cca20cbbcf04a44",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第6 章 细胞的生命历程...................................................... 109",
+        "concepts": [
+          {
+            "name": "细胞",
+            "difficulty": 1,
+            "description": "生命活动依赖的基本结构单位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞是生命活动所依赖的基本结构和功能单位。",
+            "example": "单细胞生物依靠一个细胞独立生活"
+          },
+          {
+            "name": "生命活动依赖细胞",
+            "difficulty": 2,
+            "description": "生命活动需要以细胞为基础",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "生物的生命活动离不开细胞的存在和作用。",
+            "example": "多细胞动物依靠细胞完成生命活动"
+          },
+          {
+            "name": "单细胞生物",
+            "difficulty": 1,
+            "description": "由一个细胞构成并能独立生活的生物",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "单细胞生物由一个细胞组成，并能独立完成生命活动。",
+            "example": "一个细胞即可完成其全部生命活动"
+          },
+          {
+            "name": "多细胞生物",
+            "difficulty": 1,
+            "description": "由多个细胞组成的生物",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "多细胞生物由多个细胞组成，依赖细胞间合作完成复杂生命活动。",
+            "example": "动植物依赖各种细胞的密切合作"
+          },
+          {
+            "name": "分化细胞",
+            "difficulty": 2,
+            "description": "多细胞生物中承担不同功能的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "细胞",
+              "多细胞生物"
+            ],
+            "definition": "分化细胞是多细胞生物中形态和功能具有差异的细胞。",
+            "example": "不同分化细胞协同完成复杂生命活动"
+          },
+          {
+            "name": "体细胞克隆",
+            "difficulty": 3,
+            "description": "利用体细胞获得遗传相同个体的技术",
+            "aliases": [
+              "体细胞核移植克隆"
+            ],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "体细胞克隆是利用体细胞克隆出遗传上相同个体的技术。",
+            "example": "我国科学家利用该技术获得克隆猴"
+          },
+          {
+            "name": "克隆猴",
+            "difficulty": 2,
+            "description": "通过克隆技术获得的猴",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞克隆"
+            ],
+            "definition": "克隆猴是利用体细胞克隆技术获得的猴个体。",
+            "example": "世界上首个体细胞克隆猴于2017年诞生"
+          },
+          {
+            "name": "遗传相同",
+            "difficulty": 2,
+            "description": "克隆个体之间遗传特征相同",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞克隆",
+              "克隆猴"
+            ],
+            "definition": "遗传相同是指克隆所得个体具有相同的遗传特征。",
+            "example": "遗传上相同的克隆猴可用于药物对照实验"
+          }
+        ]
+      },
+      {
+        "name": "第1章",
+        "concepts": [
+          {
+            "name": "细胞",
+            "difficulty": 1,
+            "description": "构成生物体并承担生命活动的基本结构单位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞是生物体结构和生命活动的基本单位。",
+            "example": "大熊猫和冷箭竹的基本单位都是细胞"
+          },
+          {
+            "name": "细胞学说",
+            "difficulty": 2,
+            "description": "概括细胞与动植物及新细胞来源关系的学说",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "细胞学说认为动植物由细胞和细胞产物构成，新细胞由原有细胞分裂产生。",
+            "example": "细胞学说揭示了动植物的统一性"
+          },
+          {
+            "name": "细胞学说建立过程",
+            "difficulty": 3,
+            "description": "由观察积累、归纳概括和修正形成理论的过程",
+            "aliases": [],
+            "prerequisites": [
+              "细胞学说",
+              "归纳法"
+            ],
+            "definition": "细胞学说是在解剖观察、显微观察、科学归纳和后续修正中建立的。",
+            "example": "魏尔肖修正了新细胞来源的认识"
+          },
+          {
+            "name": "归纳法",
+            "difficulty": 2,
+            "description": "由具体事实推出一般结论的思维方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "归纳法是从一系列具体事实中概括出一般结论的方法。",
+            "example": "观察多种植物细胞后归纳其共同结构"
+          },
+          {
+            "name": "生命系统",
+            "difficulty": 2,
+            "description": "由相互作用的组分形成并能进行生命活动的整体",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "生命系统是具有生命活动并由相互作用组分构成的系统。",
+            "example": "细胞、组织和生态系统都是生命系统"
+          },
+          {
+            "name": "生命系统结构层次",
+            "difficulty": 3,
+            "description": "从细胞到生物圈逐级形成的生命系统层次",
+            "aliases": [],
+            "prerequisites": [
+              "生命系统"
+            ],
+            "definition": "生命系统结构层次包括细胞、组织、器官、个体、种群、群落、生态系统和生物圈。",
+            "example": "细胞构成组织，组织构成器官"
+          },
+          {
+            "name": "组织",
+            "difficulty": 1,
+            "description": "形态相似、结构和功能相同的细胞群体",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "组织是由形态相似、结构和功能相同的细胞联合形成的结构层次。",
+            "example": "心肌细胞构成肌肉组织"
+          },
+          {
+            "name": "器官",
+            "difficulty": 1,
+            "description": "由多种组织按照一定次序联合形成的结构",
+            "aliases": [],
+            "prerequisites": [
+              "组织"
+            ],
+            "definition": "器官是由多种组织按照一定次序联合形成的结构。",
+            "example": "心脏由肌肉组织、神经组织和结缔组织构成"
+          },
+          {
+            "name": "个体",
+            "difficulty": 1,
+            "description": "能够独立生活的生物体层次",
+            "aliases": [],
+            "prerequisites": [
+              "器官"
+            ],
+            "definition": "个体是由器官或系统构成并能完成生命活动的生物整体。",
+            "example": "一只大熊猫是一个生物个体"
+          },
+          {
+            "name": "种群",
+            "difficulty": 1,
+            "description": "一定区域内同种生物所有个体的集合",
+            "aliases": [],
+            "prerequisites": [
+              "个体"
+            ],
+            "definition": "种群是在一定空间范围内同种生物所有个体形成的整体。",
+            "example": "某区域内所有大熊猫构成一个种群"
+          },
+          {
+            "name": "群落",
+            "difficulty": 1,
+            "description": "一定区域内不同种群相互作用形成的整体",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "群落是一定区域内不同种群相互作用形成的生物整体。",
+            "example": "大熊猫、冷箭竹和其他生物共同形成群落"
+          },
+          {
+            "name": "生态系统",
+            "difficulty": 2,
+            "description": "群落与无机环境相互作用形成的统一整体",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "生态系统是群落与无机环境相互关联形成的统一整体。",
+            "example": "池塘中的生物和水体环境组成生态系统"
+          },
+          {
+            "name": "生物圈",
+            "difficulty": 2,
+            "description": "地球上所有生态系统相互关联形成的整体",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生物圈是地球上所有生态系统相互关联构成的最大生命系统。",
+            "example": "地球上全部生态系统共同构成生物圈"
+          },
+          {
+            "name": "细胞统一性",
+            "difficulty": 2,
+            "description": "不同细胞具有相似基本结构和共同遗传物质",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "细胞统一性表现为不同细胞具有相似基本结构并都以DNA为遗传物质。",
+            "example": "原核细胞和真核细胞都有细胞膜和细胞质"
+          },
+          {
+            "name": "细胞多样性",
+            "difficulty": 2,
+            "description": "不同细胞在形态、结构和功能上存在差异",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "细胞多样性是不同种类细胞在形态、结构和功能上的差异。",
+            "example": "心肌细胞和叶的表皮细胞形态功能不同"
+          },
+          {
+            "name": "原核细胞",
+            "difficulty": 2,
+            "description": "没有由核膜包被的细胞核的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "原核细胞是没有以核膜为界限的成形细胞核的细胞。",
+            "example": "大肠杆菌细胞属于原核细胞"
+          },
+          {
+            "name": "真核细胞",
+            "difficulty": 2,
+            "description": "具有由核膜包被的细胞核的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "真核细胞是具有以核膜为界限的细胞核的细胞。",
+            "example": "植物细胞和动物细胞属于真核细胞"
+          },
+          {
+            "name": "原核生物",
+            "difficulty": 2,
+            "description": "由原核细胞构成的生物",
+            "aliases": [],
+            "prerequisites": [
+              "原核细胞"
+            ],
+            "definition": "原核生物是由原核细胞构成的生物。",
+            "example": "细菌属于原核生物"
+          },
+          {
+            "name": "真核生物",
+            "difficulty": 2,
+            "description": "由真核细胞构成的生物",
+            "aliases": [],
+            "prerequisites": [
+              "真核细胞"
+            ],
+            "definition": "真核生物是由真核细胞构成的生物。",
+            "example": "动物、植物和真菌属于真核生物"
+          },
+          {
+            "name": "拟核",
+            "difficulty": 2,
+            "description": "原核细胞中环状DNA所在的特定区域",
+            "aliases": [],
+            "prerequisites": [
+              "原核细胞"
+            ],
+            "definition": "拟核是原核细胞内环状DNA分子所在的特定区域。",
+            "example": "大肠杆菌的DNA位于拟核区域"
+          },
+          {
+            "name": "蓝细菌",
+            "difficulty": 2,
+            "description": "含藻蓝素和叶绿素并能进行光合作用的细菌",
+            "aliases": [
+              "蓝藻"
+            ],
+            "prerequisites": [
+              "原核细胞"
+            ],
+            "definition": "蓝细菌是能进行光合作用的原核生物。",
+            "example": "蓝细菌大量繁殖可形成水华"
+          },
+          {
+            "name": "水华",
+            "difficulty": 2,
+            "description": "水体富营养化后蓝细菌等大量繁殖的现象",
+            "aliases": [],
+            "prerequisites": [
+              "蓝细菌"
+            ],
+            "definition": "水华是淡水水域富营养化后蓝细菌和绿藻等大量繁殖形成的现象。",
+            "example": "池塘污染后可能出现水华"
+          },
+          {
+            "name": "高倍显微镜观察",
+            "difficulty": 2,
+            "description": "使用高倍镜观察并比较不同细胞的实验方法",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "高倍显微镜观察是先用低倍镜定位，再换高倍镜观察细胞的方法。",
+            "example": "先将物像移至视野中央再换高倍物镜"
+          },
+          {
+            "name": "临时装片",
+            "difficulty": 1,
+            "description": "将新鲜生物材料制成供显微镜观察的玻片",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "临时装片是将材料置于载玻片和盖玻片之间制成的临时观察标本。",
+            "example": "用洋葱鳞片叶制作临时装片"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第6 章 细胞的生命历程...................................................... 109",
+        "concepts": [
+          {
+            "name": "细胞",
+            "difficulty": 1,
+            "description": "生命活动依赖的基本结构单位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞是生命活动所依赖的基本结构和功能单位。",
+            "example": "单细胞生物依靠一个细胞独立生活"
+          },
+          {
+            "name": "生命活动依赖细胞",
+            "difficulty": 2,
+            "description": "生命活动需要以细胞为基础",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "生物的生命活动离不开细胞的存在和作用。",
+            "example": "多细胞动物依靠细胞完成生命活动"
+          },
+          {
+            "name": "单细胞生物",
+            "difficulty": 1,
+            "description": "由一个细胞构成并能独立生活的生物",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "单细胞生物由一个细胞组成，并能独立完成生命活动。",
+            "example": "一个细胞即可完成其全部生命活动"
+          },
+          {
+            "name": "多细胞生物",
+            "difficulty": 1,
+            "description": "由多个细胞组成的生物",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "多细胞生物由多个细胞组成，依赖细胞间合作完成复杂生命活动。",
+            "example": "动植物依赖各种细胞的密切合作"
+          },
+          {
+            "name": "分化细胞",
+            "difficulty": 2,
+            "description": "多细胞生物中承担不同功能的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "细胞",
+              "多细胞生物"
+            ],
+            "definition": "分化细胞是多细胞生物中形态和功能具有差异的细胞。",
+            "example": "不同分化细胞协同完成复杂生命活动"
+          },
+          {
+            "name": "体细胞克隆",
+            "difficulty": 3,
+            "description": "利用体细胞获得遗传相同个体的技术",
+            "aliases": [
+              "体细胞核移植克隆"
+            ],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "体细胞克隆是利用体细胞克隆出遗传上相同个体的技术。",
+            "example": "我国科学家利用该技术获得克隆猴"
+          },
+          {
+            "name": "克隆猴",
+            "difficulty": 2,
+            "description": "通过克隆技术获得的猴",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞克隆"
+            ],
+            "definition": "克隆猴是利用体细胞克隆技术获得的猴个体。",
+            "example": "世界上首个体细胞克隆猴于2017年诞生"
+          },
+          {
+            "name": "遗传相同",
+            "difficulty": 2,
+            "description": "克隆个体之间遗传特征相同",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞克隆",
+              "克隆猴"
+            ],
+            "definition": "遗传相同是指克隆所得个体具有相同的遗传特征。",
+            "example": "遗传上相同的克隆猴可用于药物对照实验"
+          }
+        ],
+        "chapter_key": "35e469c990",
+        "metadata": {
+          "volume_id": "6cc3d5384754",
+          "file_id": "6cc3d5384754",
+          "volume_title": "高中生物 必修1",
+          "chapter_order": 1,
+          "raw_heading": "第6 章 细胞的生命历程...................................................... 109"
+        }
+      },
+      {
+        "name": "第1章",
+        "concepts": [
+          {
+            "name": "细胞",
+            "difficulty": 1,
+            "description": "构成生物体并承担生命活动的基本结构单位",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞是生物体结构和生命活动的基本单位。",
+            "example": "大熊猫和冷箭竹的基本单位都是细胞"
+          },
+          {
+            "name": "细胞学说",
+            "difficulty": 2,
+            "description": "概括细胞与动植物及新细胞来源关系的学说",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "细胞学说认为动植物由细胞和细胞产物构成，新细胞由原有细胞分裂产生。",
+            "example": "细胞学说揭示了动植物的统一性"
+          },
+          {
+            "name": "细胞学说建立过程",
+            "difficulty": 3,
+            "description": "由观察积累、归纳概括和修正形成理论的过程",
+            "aliases": [],
+            "prerequisites": [
+              "细胞学说",
+              "归纳法"
+            ],
+            "definition": "细胞学说是在解剖观察、显微观察、科学归纳和后续修正中建立的。",
+            "example": "魏尔肖修正了新细胞来源的认识"
+          },
+          {
+            "name": "归纳法",
+            "difficulty": 2,
+            "description": "由具体事实推出一般结论的思维方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "归纳法是从一系列具体事实中概括出一般结论的方法。",
+            "example": "观察多种植物细胞后归纳其共同结构"
+          },
+          {
+            "name": "生命系统",
+            "difficulty": 2,
+            "description": "由相互作用的组分形成并能进行生命活动的整体",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "生命系统是具有生命活动并由相互作用组分构成的系统。",
+            "example": "细胞、组织和生态系统都是生命系统"
+          },
+          {
+            "name": "生命系统结构层次",
+            "difficulty": 3,
+            "description": "从细胞到生物圈逐级形成的生命系统层次",
+            "aliases": [],
+            "prerequisites": [
+              "生命系统"
+            ],
+            "definition": "生命系统结构层次包括细胞、组织、器官、个体、种群、群落、生态系统和生物圈。",
+            "example": "细胞构成组织，组织构成器官"
+          },
+          {
+            "name": "组织",
+            "difficulty": 1,
+            "description": "形态相似、结构和功能相同的细胞群体",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "组织是由形态相似、结构和功能相同的细胞联合形成的结构层次。",
+            "example": "心肌细胞构成肌肉组织"
+          },
+          {
+            "name": "器官",
+            "difficulty": 1,
+            "description": "由多种组织按照一定次序联合形成的结构",
+            "aliases": [],
+            "prerequisites": [
+              "组织"
+            ],
+            "definition": "器官是由多种组织按照一定次序联合形成的结构。",
+            "example": "心脏由肌肉组织、神经组织和结缔组织构成"
+          },
+          {
+            "name": "个体",
+            "difficulty": 1,
+            "description": "能够独立生活的生物体层次",
+            "aliases": [],
+            "prerequisites": [
+              "器官"
+            ],
+            "definition": "个体是由器官或系统构成并能完成生命活动的生物整体。",
+            "example": "一只大熊猫是一个生物个体"
+          },
+          {
+            "name": "种群",
+            "difficulty": 1,
+            "description": "一定区域内同种生物所有个体的集合",
+            "aliases": [],
+            "prerequisites": [
+              "个体"
+            ],
+            "definition": "种群是在一定空间范围内同种生物所有个体形成的整体。",
+            "example": "某区域内所有大熊猫构成一个种群"
+          },
+          {
+            "name": "群落",
+            "difficulty": 1,
+            "description": "一定区域内不同种群相互作用形成的整体",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "群落是一定区域内不同种群相互作用形成的生物整体。",
+            "example": "大熊猫、冷箭竹和其他生物共同形成群落"
+          },
+          {
+            "name": "生态系统",
+            "difficulty": 2,
+            "description": "群落与无机环境相互作用形成的统一整体",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "生态系统是群落与无机环境相互关联形成的统一整体。",
+            "example": "池塘中的生物和水体环境组成生态系统"
+          },
+          {
+            "name": "生物圈",
+            "difficulty": 2,
+            "description": "地球上所有生态系统相互关联形成的整体",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生物圈是地球上所有生态系统相互关联构成的最大生命系统。",
+            "example": "地球上全部生态系统共同构成生物圈"
+          },
+          {
+            "name": "细胞统一性",
+            "difficulty": 2,
+            "description": "不同细胞具有相似基本结构和共同遗传物质",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "细胞统一性表现为不同细胞具有相似基本结构并都以DNA为遗传物质。",
+            "example": "原核细胞和真核细胞都有细胞膜和细胞质"
+          },
+          {
+            "name": "细胞多样性",
+            "difficulty": 2,
+            "description": "不同细胞在形态、结构和功能上存在差异",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "细胞多样性是不同种类细胞在形态、结构和功能上的差异。",
+            "example": "心肌细胞和叶的表皮细胞形态功能不同"
+          },
+          {
+            "name": "原核细胞",
+            "difficulty": 2,
+            "description": "没有由核膜包被的细胞核的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "原核细胞是没有以核膜为界限的成形细胞核的细胞。",
+            "example": "大肠杆菌细胞属于原核细胞"
+          },
+          {
+            "name": "真核细胞",
+            "difficulty": 2,
+            "description": "具有由核膜包被的细胞核的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "真核细胞是具有以核膜为界限的细胞核的细胞。",
+            "example": "植物细胞和动物细胞属于真核细胞"
+          },
+          {
+            "name": "原核生物",
+            "difficulty": 2,
+            "description": "由原核细胞构成的生物",
+            "aliases": [],
+            "prerequisites": [
+              "原核细胞"
+            ],
+            "definition": "原核生物是由原核细胞构成的生物。",
+            "example": "细菌属于原核生物"
+          },
+          {
+            "name": "真核生物",
+            "difficulty": 2,
+            "description": "由真核细胞构成的生物",
+            "aliases": [],
+            "prerequisites": [
+              "真核细胞"
+            ],
+            "definition": "真核生物是由真核细胞构成的生物。",
+            "example": "动物、植物和真菌属于真核生物"
+          },
+          {
+            "name": "拟核",
+            "difficulty": 2,
+            "description": "原核细胞中环状DNA所在的特定区域",
+            "aliases": [],
+            "prerequisites": [
+              "原核细胞"
+            ],
+            "definition": "拟核是原核细胞内环状DNA分子所在的特定区域。",
+            "example": "大肠杆菌的DNA位于拟核区域"
+          },
+          {
+            "name": "蓝细菌",
+            "difficulty": 2,
+            "description": "含藻蓝素和叶绿素并能进行光合作用的细菌",
+            "aliases": [
+              "蓝藻"
+            ],
+            "prerequisites": [
+              "原核细胞"
+            ],
+            "definition": "蓝细菌是能进行光合作用的原核生物。",
+            "example": "蓝细菌大量繁殖可形成水华"
+          },
+          {
+            "name": "水华",
+            "difficulty": 2,
+            "description": "水体富营养化后蓝细菌等大量繁殖的现象",
+            "aliases": [],
+            "prerequisites": [
+              "蓝细菌"
+            ],
+            "definition": "水华是淡水水域富营养化后蓝细菌和绿藻等大量繁殖形成的现象。",
+            "example": "池塘污染后可能出现水华"
+          },
+          {
+            "name": "高倍显微镜观察",
+            "difficulty": 2,
+            "description": "使用高倍镜观察并比较不同细胞的实验方法",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "高倍显微镜观察是先用低倍镜定位，再换高倍镜观察细胞的方法。",
+            "example": "先将物像移至视野中央再换高倍物镜"
+          },
+          {
+            "name": "临时装片",
+            "difficulty": 1,
+            "description": "将新鲜生物材料制成供显微镜观察的玻片",
+            "aliases": [],
+            "prerequisites": [
+              "细胞"
+            ],
+            "definition": "临时装片是将材料置于载玻片和盖玻片之间制成的临时观察标本。",
+            "example": "用洋葱鳞片叶制作临时装片"
+          }
+        ],
+        "chapter_key": "ae519a7ec5",
+        "metadata": {
+          "volume_id": "6cc3d5384754",
+          "file_id": "6cc3d5384754",
+          "volume_title": "高中生物 必修1",
+          "chapter_order": 2,
+          "raw_heading": "第1章"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

@@ -1,6 +1,6 @@
 {
   "file_id": "378208d1532a",
-  "text_sha256": "229f9fad31ff3d13368de18547ad4a4c268e899f0b7931561c912159dd6c9f46",
+  "text_sha256": "146b92c208f7850164597a1911ad7cca622dc84b44531b02f463da4bd7e85932",
   "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
   "schema_version": "3",
   "chapter_locator_version": "5",
@@ -13,169 +13,152 @@
         "name": "WELCOME UNIT",
         "concepts": [
           {
-            "name": "自我介绍与问候",
+            "name": "自我介绍",
             "difficulty": 1,
-            "description": "用于课堂、校园等场合介绍自己并问候他人",
+            "description": "用于介绍自己或他人的基本表达",
             "aliases": [
-              "introductions and greetings"
+              "introductions"
             ],
             "prerequisites": [],
-            "definition": "自我介绍与问候是初次交流时说明身份、认识他人和回应问候的表达方式。",
-            "example": "My name is Amy. Nice to meet you."
+            "definition": "自我介绍是用姓名、身份等信息让他人了解自己的表达方式。",
+            "example": "My name is Amy. I’m an exchange student.",
+            "section": "Registering"
           },
           {
-            "name": "正式场合礼貌表达",
+            "name": "问候与回应",
+            "difficulty": 1,
+            "description": "日常见面时使用的问候及回应表达",
+            "aliases": [
+              "greetings",
+              "responses"
+            ],
+            "prerequisites": [],
+            "definition": "问候与回应是交谈双方在见面时表达礼貌和关心的语言。",
+            "example": "How are you?—I’m fine, and you?",
+            "section": "Registering"
+          },
+          {
+            "name": "正式礼貌表达",
             "difficulty": 2,
-            "description": "正式情境中使用更礼貌、得体的交际语言",
+            "description": "正式场合中更加得体、礼貌的表达方式",
             "aliases": [
               "polite expressions"
             ],
             "prerequisites": [
-              "自我介绍与问候"
+              "问候与回应"
             ],
-            "definition": "正式场合礼貌表达是根据交际情境选择得体、客气的英语表达。",
-            "example": "I’d like to have a student ID card, please."
-          },
-          {
-            "name": "个人信息表达",
-            "difficulty": 1,
-            "description": "表达姓名、性别、年级、国籍和联系方式等信息",
-            "aliases": [
-              "personal information"
-            ],
-            "prerequisites": [],
-            "definition": "个人信息表达是用英语介绍或登记个人基本情况的语言形式。",
-            "example": "My name is Amy. I’m in Grade 10."
+            "definition": "正式礼貌表达是在正式情境中使用的更尊重、更得体的语言。",
+            "example": "Good morning. Nice to meet you."
           },
           {
             "name": "课程选择与注册",
             "difficulty": 2,
-            "description": "围绕选课、注册课程和未来职业进行交流",
+            "description": "围绕课程登记和未来学习方向进行交流",
             "aliases": [
-              "course selection and registration"
+              "course registration"
             ],
             "prerequisites": [
-              "个人信息表达",
-              "自我介绍与问候"
+              "自我介绍"
             ],
-            "definition": "课程选择与注册是讨论课程兴趣、未来计划并办理课程登记的校园交际活动。",
-            "example": "What course will you probably choose?"
+            "definition": "课程选择与注册是根据兴趣或未来规划选择并登记课程的过程。",
+            "example": "I’d like to register for an English class."
           },
           {
-            "name": "元音字母发音",
+            "name": "元音发音",
             "difficulty": 2,
-            "description": "学习A、E、I、O、U在单词中的常见发音",
+            "description": "辨析字母A、E、I、O、U的常见元音音素",
             "aliases": [
               "vowel pronunciation"
             ],
             "prerequisites": [],
-            "definition": "元音字母发音关注A、E、I、O、U在不同单词中的音标和读音。",
+            "definition": "元音发音学习字母A、E、I、O、U在单词中的不同读音。",
             "example": "grade /eɪ/; map /æ/"
           },
           {
-            "name": "校园第一天经历",
+            "name": "首日情感变化",
             "difficulty": 2,
-            "description": "描述高中第一天的时间、课程、感受和经历",
+            "description": "描述高中第一天从焦虑到自信的情绪变化",
             "aliases": [
-              "first-day experience"
-            ],
-            "prerequisites": [
-              "情绪形容词"
-            ],
-            "definition": "校园第一天经历是按时间描述新生在高中首日的活动、感受及变化。",
-            "example": "I felt anxious in the morning but confident at night."
-          },
-          {
-            "name": "情绪形容词",
-            "difficulty": 1,
-            "description": "表达焦虑、兴奋、自信、害怕等情绪状态",
-            "aliases": [
-              "emotion adjectives"
+              "first-day feelings"
             ],
             "prerequisites": [],
-            "definition": "情绪形容词用于描述人在特定情境中的心理感受或情绪状态。",
-            "example": "I was excited on my first day."
+            "definition": "首日情感变化表现为学生在新学校经历的焦虑、开心、恼怒和自信等情绪转变。",
+            "example": "She felt anxious in the morning but confident at night."
+          },
+          {
+            "name": "情感形容词",
+            "difficulty": 2,
+            "description": "表达焦虑、兴奋、害怕、自信等心理感受",
+            "aliases": [
+              "feeling adjectives"
+            ],
+            "prerequisites": [],
+            "definition": "情感形容词用于描述人物在特定情境下的心理状态。",
+            "example": "I feel excited and curious."
           },
           {
             "name": "基本句子结构",
             "difficulty": 3,
-            "description": "识别SV、SVO、SP、SVOA等基本英语句型",
+            "description": "分析SV、SVO、SP等英语句子成分结构",
             "aliases": [
               "basic sentence structures"
             ],
             "prerequisites": [],
-            "definition": "基本句子结构依据主语、谓语、宾语、表语和状语分析句子成分及组合方式。",
+            "definition": "基本句子结构说明主语、谓语、宾语、表语和状语等成分的组合方式。",
             "example": "The teacher was kind and friendly.（SP）",
-            "section": "First Impressions"
+            "section": "Basic sentence structures"
           },
           {
-            "name": "There be句型",
+            "name": "学习方式",
             "difficulty": 2,
-            "description": "用There be结构表示某处存在某人或某物",
+            "description": "描述个人偏好的学习活动和学习习惯",
             "aliases": [
-              "There be structure"
+              "learning styles"
             ],
-            "prerequisites": [
-              "基本句子结构"
-            ],
-            "definition": "There be句型用于说明某个地方或情境中存在某人、某物或某种情况。",
-            "example": "There’s a lot to explore at senior high."
+            "prerequisites": [],
+            "definition": "学习方式是学习者进行学习时偏好的活动形式或习惯。",
+            "example": "I learn best by doing."
           },
           {
             "name": "学习策略",
-            "difficulty": 2,
-            "description": "运用小组学习、记笔记、视频和学习日志等方法",
+            "difficulty": 3,
+            "description": "通过计划、笔记、词卡等方法提高学习效果",
             "aliases": [
               "learning strategies"
             ],
-            "prerequisites": [],
-            "definition": "学习策略是为提高英语学习效果而选择和使用的具体方法。",
-            "example": "I work in groups and take notes.",
-            "section": "First Impressions"
+            "prerequisites": [
+              "学习方式"
+            ],
+            "definition": "学习策略是学习者为实现学习目标而采用的具体方法。",
+            "example": "I take notes while listening and reading.",
+            "section": "Learning styles"
           },
           {
             "name": "学习目标与计划",
             "difficulty": 2,
-            "description": "先确定学习目标，再为英语学习制订计划",
+            "description": "先确定学习目标，再安排具体学习计划",
             "aliases": [
               "learning goals and plans"
             ],
-            "prerequisites": [
-              "学习策略"
-            ],
-            "definition": "学习目标与计划是明确想学的内容并安排实现目标的学习步骤。",
-            "example": "I make plans for my English studies."
-          },
-          {
-            "name": "思维导图",
-            "difficulty": 2,
-            "description": "用图示方式组织学习中的想法和笔记",
-            "aliases": [
-              "mind map"
-            ],
-            "prerequisites": [
-              "学习策略"
-            ],
-            "definition": "思维导图是以图形和层次关系整理思想或笔记的学习方法。",
-            "example": "I use a mind map to organise my thoughts."
+            "prerequisites": [],
+            "definition": "学习目标与计划是明确想学的内容并据此安排学习步骤。",
+            "example": "I set learning goals and make plans."
           },
           {
             "name": "学生档案结构",
             "difficulty": 2,
-            "description": "掌握学生档案应包含的六类基本信息",
+            "description": "学生档案包含身份、个性、学习方式和未来规划",
             "aliases": [
-              "student profile organisation"
+              "student profile structure"
             ],
-            "prerequisites": [
-              "个人信息表达"
-            ],
-            "definition": "学生档案结构包括姓名年龄年级学校、性格、学科、学习方式、爱好和未来计划。",
-            "example": "Name, age, grade, school, hobbies and future plans."
+            "prerequisites": [],
+            "definition": "学生档案结构是组织姓名、年龄、年级、个性、爱好及梦想等信息的框架。",
+            "example": "Name, age, school, hobbies and future plans."
           },
           {
             "name": "学生档案写作",
             "difficulty": 3,
-            "description": "按合理顺序写个人背景、性格、爱好和未来计划",
+            "description": "按合理顺序撰写介绍个人信息的短文",
             "aliases": [
               "student profile writing"
             ],
@@ -183,26 +166,58 @@
               "学生档案结构",
               "基本句子结构"
             ],
-            "definition": "学生档案写作是用连贯准确的英语介绍个人学习和生活情况的写作任务。",
-            "example": "I’m curious and I learn best by doing."
+            "definition": "学生档案写作是按照档案结构用英语介绍个人情况的写作任务。",
+            "example": "My name is Ann Wells and I’m a Grade 10 student."
           },
           {
             "name": "动词名词搭配",
             "difficulty": 2,
-            "description": "掌握exchange ideas、take notes等常用动名搭配",
+            "description": "掌握exchange、register、explore等动词搭配",
             "aliases": [
               "verb-noun collocations"
             ],
             "prerequisites": [],
-            "definition": "动词名词搭配是英语中动词与特定名词自然组合形成的常用表达。",
-            "example": "take notes; exchange ideas"
+            "definition": "动词名词搭配是英语中动词与特定名词形成的常用组合。",
+            "example": "exchange ideas; explore the world"
+          },
+          {
+            "name": "课堂与校园词汇",
+            "difficulty": 1,
+            "description": "学习学校、课程、实验和校园活动相关词语",
+            "aliases": [
+              "school vocabulary"
+            ],
+            "prerequisites": [],
+            "definition": "课堂与校园词汇用于描述学校场所、课程学习和校园生活。",
+            "example": "science lab, lecture hall, chemistry class"
           }
         ],
         "sections": [
           {
+            "name": "Registering",
+            "page_range": [
+              8,
+              11
+            ]
+          },
+          {
             "name": "First Impressions",
             "page_range": [
               11,
+              13
+            ]
+          },
+          {
+            "name": "Basic sentence structures",
+            "page_range": [
+              13,
+              14
+            ]
+          },
+          {
+            "name": "Learning styles",
+            "page_range": [
+              14,
               15
             ]
           },
@@ -210,7 +225,14 @@
             "name": "Student Profiles",
             "page_range": [
               15,
-              17
+              16
+            ]
+          },
+          {
+            "name": "A student profile",
+            "page_range": [
+              16,
+              18
             ]
           }
         ]
@@ -219,154 +241,181 @@
         "name": "UNIT 1 TEENAGE LIFE",
         "concepts": [
           {
-            "name": "课外活动俱乐部",
+            "name": "学校社团选择",
             "difficulty": 2,
-            "description": "围绕兴趣、服务和交流开展的校园活动。",
+            "description": "根据兴趣和特长选择适合的学校社团",
             "aliases": [
-              "school clubs",
-              "extra-curricular activities"
+              "选择学校社团"
             ],
             "prerequisites": [],
-            "definition": "课外活动俱乐部是高中生在课堂之外参与兴趣或志愿活动的组织。",
-            "example": "Adam joined a volunteer club.",
-            "section": "The Freshman Challenge"
+            "definition": "学校社团选择是依据个人兴趣、能力和交友需求决定参加的社团。",
+            "example": "Adam选择志愿者社团。"
           },
           {
-            "name": "预测听力内容",
-            "difficulty": 2,
-            "description": "听前通过问题和选项推测录音内容。",
+            "name": "课外活动",
+            "difficulty": 1,
+            "description": "学生在课堂之外参加的活动",
             "aliases": [
-              "predict content"
+              "课外社团活动"
             ],
             "prerequisites": [],
-            "definition": "预测听力内容是利用听前信息推断可能听到的主题和答案。",
-            "example": "先读问题和选项，再预测录音内容。"
+            "definition": "课外活动是学生在正常课程之外参与的学习、服务或兴趣活动。",
+            "example": "参加芭蕾社团是课外活动。"
           },
           {
-            "name": "校园生活挑战",
+            "name": "高中生活挑战",
             "difficulty": 2,
-            "description": "高中阶段在课程、活动和责任方面面临的困难。",
+            "description": "进入高中后面临的课程、学习和责任变化",
             "aliases": [
-              "senior high school challenge"
+              "高中适应挑战"
             ],
             "prerequisites": [],
-            "definition": "校园生活挑战指学生升入高中后在学习适应和自我管理方面遇到的问题。",
-            "example": "Choosing courses was a challenge for Adam."
+            "definition": "高中生活挑战包括选择课程、适应作业和承担更多责任等问题。",
+            "example": "Adam担心跟不上高级课程。"
           },
           {
-            "name": "快速浏览寻主旨",
+            "name": "略读",
             "difficulty": 2,
-            "description": "通过标题、图片、关键词和主题句寻找段落大意。",
+            "description": "通过标题、图片和主题句快速理解大意",
             "aliases": [
-              "skim",
-              "skimming"
+              "快速浏览"
             ],
             "prerequisites": [],
-            "definition": "快速浏览寻主旨是快速阅读文本以确定其主要内容的方法。",
-            "example": "先看标题和主题句，再概括段落大意。",
-            "section": "A Letter of Advice"
+            "definition": "略读是快速查看文本关键信息以获取段落或全文主旨的阅读方法。",
+            "example": "先看标题和主题句来判断主旨。"
           },
           {
             "name": "名词短语",
-            "difficulty": 3,
-            "description": "以名词为中心词的词组，在句中充当名词成分。",
+            "difficulty": 2,
+            "description": "以名词为中心词的词组",
             "aliases": [
-              "noun phrase",
               "NP"
             ],
             "prerequisites": [],
-            "definition": "名词短语是以名词为中心词构成的词组。",
-            "example": "the first week"
+            "definition": "名词短语是以名词为中心词、可在句中充当名词成分的词组。",
+            "example": "two clubs"
           },
           {
             "name": "形容词短语",
-            "difficulty": 3,
-            "description": "以形容词为中心词的词组，用于描述性质或状态。",
+            "difficulty": 2,
+            "description": "以形容词为中心词的词组",
             "aliases": [
-              "adjective phrase",
               "AdjP"
             ],
             "prerequisites": [],
-            "definition": "形容词短语是以形容词为中心词构成的词组。",
+            "definition": "形容词短语是以形容词为中心词、用于描述人或事物特征的词组。",
             "example": "very nice and patient",
             "section": "The Freshman Challenge"
           },
           {
             "name": "副词短语",
-            "difficulty": 3,
-            "description": "以副词为中心词的词组，用于修饰动作或状态。",
+            "difficulty": 2,
+            "description": "以副词为中心词的词组",
             "aliases": [
-              "adverb phrase",
               "AdvP"
             ],
             "prerequisites": [],
-            "definition": "副词短语是以副词为中心词构成的词组。",
-            "example": "quite quickly"
-          },
-          {
-            "name": "将来活动表达",
-            "difficulty": 3,
-            "description": "使用多种结构表达将来计划、安排和愿望。",
-            "aliases": [
-              "talking about future activities"
-            ],
-            "prerequisites": [],
-            "definition": "将来活动表达用于说明将要进行的活动及相关计划或希望。",
-            "example": "We’re going to learn about wildlife.",
+            "definition": "副词短语是以副词为中心词、用于修饰动作或状态的词组。",
+            "example": "quite quickly",
             "section": "The Freshman Challenge"
           },
           {
-            "name": "建议表达",
-            "difficulty": 3,
-            "description": "用推荐、应该和为什么不等结构提出建议。",
+            "name": "将来活动表达",
+            "difficulty": 2,
+            "description": "用多种结构谈论将来的计划和安排",
             "aliases": [
-              "expressions for suggestions"
+              "谈论未来活动"
             ],
             "prerequisites": [],
-            "definition": "建议表达是用于向他人提出做法和行动建议的语言形式。",
-            "example": "Why not discuss the problem together?"
+            "definition": "将来活动表达使用will、be going to、plan to等结构说明未来计划或预测。",
+            "example": "I plan to improve my spoken English."
           },
           {
             "name": "建议信结构",
-            "difficulty": 3,
-            "description": "建议信包括问题、感受、建议、理由和预期帮助。",
-            "aliases": [
-              "letter of advice"
-            ],
-            "prerequisites": [],
-            "definition": "建议信结构是按照固定部分向有问题的人提供建议的书信组织方式。",
-            "example": "I think you should encourage your friend to try new hobbies.",
-            "section": "A Letter of Advice"
-          },
-          {
-            "name": "书信基本格式",
             "difficulty": 2,
-            "description": "书信通常包括日期、称呼、正文、结束语和署名。",
+            "description": "按固定部分组织一封针对问题的建议邮件",
             "aliases": [
-              "letter format"
+              "建议信写作"
             ],
             "prerequisites": [],
-            "definition": "书信基本格式是正式或非正式书信常用的组成与排列方式。",
+            "definition": "建议信通常包括日期、称呼、问题理解、建议及理由、结尾和署名。",
             "example": "Dear Worried Friend, Best wishes"
           },
           {
-            "name": "成长经历比较",
+            "name": "建议表达",
             "difficulty": 2,
-            "description": "比较不同国家及不同代际青少年的生活经历。",
+            "description": "用恰当语言提出建议并说明理由",
             "aliases": [
-              "learning across generations"
+              "提出建议"
+            ],
+            "prerequisites": [
+              "建议信结构"
+            ],
+            "definition": "建议表达用于针对他人的问题提出做法，并解释建议可能带来的帮助。",
+            "example": "I recommend that you talk to your friend."
+          },
+          {
+            "name": "问题解决思路",
+            "difficulty": 2,
+            "description": "针对青少年问题提出可行做法和理由",
+            "aliases": [
+              "问题与解决方案"
+            ],
+            "prerequisites": [
+              "建议表达"
+            ],
+            "definition": "问题解决思路是先明确青少年面临的问题，再提出建议并说明原因。",
+            "example": "尝试新爱好以减少上网时间。"
+          },
+          {
+            "name": "元音组合发音",
+            "difficulty": 3,
+            "description": "辨识字母组合在单词中的常见元音发音",
+            "aliases": [
+              "元音字母组合"
             ],
             "prerequisites": [],
-            "definition": "成长经历比较是从学校、家庭和社会环境等方面比较青少年生活。",
-            "example": "比较Mamorena与母亲年轻时的生活。",
-            "section": "A Letter of Advice"
+            "definition": "元音组合发音关注字母组合如ay、ea、ou在不同单词中的读音。",
+            "example": "day中的ay与pay同音。"
+          },
+          {
+            "name": "代际生活比较",
+            "difficulty": 2,
+            "description": "比较青少年与父母年轻时的生活异同",
+            "aliases": [
+              "跨代生活比较"
+            ],
+            "prerequisites": [],
+            "definition": "代际生活比较是从教育、成长环境和生活经历等方面比较不同年代的生活。",
+            "example": "比较Mamorena与母亲Tandi的成长经历。"
           }
         ],
         "sections": [
           {
+            "name": "Predict content",
+            "page_range": [
+              19,
+              21
+            ]
+          },
+          {
+            "name": "Skim",
+            "page_range": [
+              21,
+              21
+            ]
+          },
+          {
             "name": "The Freshman Challenge",
             "page_range": [
               21,
+              24
+            ]
+          },
+          {
+            "name": "Talking about future activities",
+            "page_range": [
+              24,
               25
             ]
           },
@@ -374,7 +423,28 @@
             "name": "A Letter of Advice",
             "page_range": [
               25,
+              25
+            ]
+          },
+          {
+            "name": "A letter of advice",
+            "page_range": [
+              25,
+              28
+            ]
+          },
+          {
+            "name": "Set up a student club",
+            "page_range": [
+              28,
               29
+            ]
+          },
+          {
+            "name": "Learning Across Generations",
+            "page_range": [
+              29,
+              30
             ]
           }
         ]
@@ -384,220 +454,253 @@
         "concepts": [
           {
             "name": "旅行准备事项",
-            "difficulty": 2,
-            "description": "出行前办理证件、交通住宿和物品准备。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "旅行准备事项是为顺利出行而完成的各项准备工作。",
-            "example": "申请签证、订机票、预订酒店。"
-          },
-          {
-            "name": "旅行计划表达",
-            "difficulty": 2,
-            "description": "用英语谈论目的地、原因、交通和行程安排。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "旅行计划表达是对未来旅行安排进行说明和交流。",
-            "example": "I’m planning to travel to Jiuzhaigou."
-          },
-          {
-            "name": "现在进行时",
-            "difficulty": 3,
-            "description": "由be和现在分词构成的时态。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "现在进行时表示正在进行的动作或状态。",
-            "example": "We’re renting a car."
-          },
-          {
-            "name": "现在进行时表将来",
-            "difficulty": 4,
-            "description": "用现在进行时表示已经安排好的将来活动。",
-            "aliases": [],
-            "prerequisites": [
-              "现在进行时",
-              "旅行计划表达"
+            "difficulty": 1,
+            "description": "旅行前办理证件、订票、订房并准备物品。",
+            "aliases": [
+              "travel preparations"
             ],
-            "definition": "现在进行时表将来是用该时态表达确定的未来计划。",
-            "example": "We’re meeting at 10:00 a.m."
+            "prerequisites": [],
+            "definition": "旅行准备事项是出行前需要完成的证件、交通、住宿和物品准备。",
+            "example": "I need to get a passport and book a hotel room.",
+            "section": "Focus on key words"
           },
           {
             "name": "关键词听力策略",
             "difficulty": 2,
-            "description": "听对话时抓住关键词和短语以理解大意。",
-            "aliases": [],
+            "description": "通过关键词和短语理解对话主要意思。",
+            "aliases": [
+              "focus on key words"
+            ],
             "prerequisites": [],
-            "definition": "关键词听力策略是通过识别关键信息而非逐词理解来把握听力内容。",
-            "example": "重点听travel date等关键信息。"
+            "definition": "关键词听力策略是重点捕捉关键词和短语而非每个单词。",
+            "example": "Listen for “France” and “by air”.",
+            "section": "Focus on key words"
           },
           {
-            "name": "旅行预订信息",
-            "difficulty": 3,
-            "description": "预订时确认日期、时间、人数、类型和特殊要求。",
-            "aliases": [],
+            "name": "旅行计划表达",
+            "difficulty": 2,
+            "description": "围绕目的地、原因、交通和活动谈旅行安排。",
+            "aliases": [
+              "travel plans"
+            ],
             "prerequisites": [
               "旅行准备事项"
             ],
-            "definition": "旅行预订信息是完成交通、住宿或餐饮预订所需的具体内容。",
-            "example": "入住日期、房型和早餐要求。"
+            "definition": "旅行计划表达是说明旅行目的、地点、时间、交通及活动安排。",
+            "example": "I’m planning to travel to Jiuzhaigou.",
+            "section": "Focus on key words"
           },
           {
-            "name": "预订酒店",
+            "name": "现在进行时表将来",
             "difficulty": 3,
-            "description": "围绕入住退房、房型和特殊要求预订房间。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订酒店是通过交流确定住宿时间、房间类型及服务要求。",
-            "example": "I’d like to book a room with a view."
-          },
-          {
-            "name": "预订机票",
-            "difficulty": 3,
-            "description": "确认旅行日期、航班时间、往返方式和舱位。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订机票是根据出行需求选择并购买合适的航班票。",
-            "example": "I’d like to book a return flight."
-          },
-          {
-            "name": "预订餐桌",
-            "difficulty": 3,
-            "description": "确定用餐日期、时间、人数及特殊需求。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订餐桌是提前为特定时间和人数安排用餐位置。",
-            "example": "A table for four, please."
-          },
-          {
-            "name": "预订交际表达",
-            "difficulty": 3,
-            "description": "用于询问、选择、确认和支付预订服务的表达。",
+            "description": "用现在进行时表示已经安排好的将来活动。",
             "aliases": [
-              "预订对话"
-            ],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订交际表达是在电话预订中说明需求并完成确认的语言。",
-            "example": "Which flight would you prefer?"
-          },
-          {
-            "name": "旅游宣传册",
-            "difficulty": 3,
-            "description": "介绍旅游目的地、路线、活动和特色的宣传文本。",
-            "aliases": [
-              "旅游手册"
+              "present continuous for future plans"
             ],
             "prerequisites": [],
-            "definition": "旅游宣传册是用来推广旅游目的地或套餐路线的文本。",
-            "example": "Travel Peru介绍多种套餐路线。"
+            "definition": "现在进行时表将来指用现在进行时表达确定的未来计划或安排。",
+            "example": "We’re taking the train tomorrow."
+          },
+          {
+            "name": "旅游预订表达",
+            "difficulty": 3,
+            "description": "在电话中预订机票、房间或餐桌并确认信息。",
+            "aliases": [
+              "making reservations"
+            ],
+            "prerequisites": [
+              "旅行计划表达"
+            ],
+            "definition": "旅游预订表达是围绕时间、偏好、姓名和付款方式完成预订沟通。",
+            "example": "What time are you travelling?",
+            "section": "Making reservations"
+          },
+          {
+            "name": "旅行交通与住宿",
+            "difficulty": 2,
+            "description": "描述旅行中的出行方式、住宿地点及相关安排。",
+            "aliases": [
+              "transport and accommodation"
+            ],
+            "prerequisites": [
+              "旅行计划表达"
+            ],
+            "definition": "旅行交通与住宿是旅游计划中关于如何到达和在哪里居住的信息。",
+            "example": "We travelled by boat and stayed with a local family."
           },
           {
             "name": "文本类型识别",
             "difficulty": 2,
-            "description": "根据标题、图片和版式判断文本属于哪种类型。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "文本类型识别是利用文本外部特征判断其体裁或用途。",
-            "example": "判断文本是百科全书还是宣传册。"
-          },
-          {
-            "name": "旅游套餐路线",
-            "difficulty": 3,
-            "description": "由目的地、天数、住宿、交通和活动组成的旅行安排。",
+            "description": "根据标题、图片和版式判断文本所属类型。",
             "aliases": [
-              "旅行路线"
+              "recognising text type"
             ],
-            "prerequisites": [
-              "旅行准备事项"
-            ],
-            "definition": "旅游套餐路线是旅行机构为游客设计的完整行程方案。",
-            "example": "四天马丘比丘徒步之旅。"
-          },
-          {
-            "name": "旅游目的地信息",
-            "difficulty": 2,
-            "description": "介绍景点位置、历史、特色和最佳参观时间。",
-            "aliases": [],
             "prerequisites": [],
-            "definition": "旅游目的地信息是帮助游客了解并选择旅行地点的资料。",
-            "example": "九寨沟以瀑布、彩色湖泊和山景闻名。"
+            "definition": "文本类型识别是利用文本外部特征判断其为百科全书或宣传册等类型。",
+            "example": "Titles and pictures show that it is a brochure."
           },
           {
-            "name": "旅游计划邮件结构",
-            "difficulty": 4,
-            "description": "按目的、其他安排、交通和结尾组织旅行计划邮件。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行计划表达"
+            "name": "百科全书文本",
+            "difficulty": 2,
+            "description": "客观介绍国家的地理、历史和语言等信息。",
+            "aliases": [
+              "encyclopedia"
             ],
-            "definition": "旅游计划邮件结构是书面介绍旅行安排时采用的段落组织方式。",
-            "example": "第一段说明去西安的主要目的。"
+            "prerequisites": [
+              "文本类型识别"
+            ],
+            "definition": "百科全书文本以客观说明为主，介绍较系统的事实信息。",
+            "example": "Peru has three main geographical areas.",
+            "section": "Focus on key words"
           },
           {
-            "name": "情感表达",
+            "name": "旅游宣传册文本",
             "difficulty": 3,
-            "description": "使用固定表达说明旅行中的惊讶、期待和感受。",
-            "aliases": [],
+            "description": "介绍旅游线路、景点、活动和住宿等信息。",
+            "aliases": [
+              "travel brochure"
+            ],
             "prerequisites": [
+              "文本类型识别"
+            ],
+            "definition": "旅游宣传册文本是为吸引游客而提供旅游产品和目的地信息的文本。",
+            "example": "The tour includes boating and exploring the rainforest."
+          },
+          {
+            "name": "秘鲁地理与历史",
+            "difficulty": 2,
+            "description": "了解秘鲁的地理区域、印加帝国和官方语言。",
+            "aliases": [
+              "Peru geography and history"
+            ],
+            "prerequisites": [],
+            "definition": "秘鲁地理与历史包括其三大区域、印加帝国历史及西班牙语地位。",
+            "example": "The Andes Mountains are in Peru."
+          },
+          {
+            "name": "印加文明",
+            "difficulty": 3,
+            "description": "了解印加帝国、道路、建筑和马丘比丘遗址。",
+            "aliases": [
+              "Inca civilisation"
+            ],
+            "prerequisites": [
+              "秘鲁地理与历史"
+            ],
+            "definition": "印加文明是曾在秘鲁发展并留下城市、道路和建筑遗产的古代文明。",
+            "example": "The Incas built roads across the mountains."
+          },
+          {
+            "name": "旅行计划邮件",
+            "difficulty": 3,
+            "description": "用邮件说明旅行目的、安排、交通和个人感受。",
+            "aliases": [
+              "travel plan email"
+            ],
+            "prerequisites": [
+              "现在进行时表将来",
               "旅行计划表达"
             ],
-            "definition": "情感表达是用语言传达对旅行经历或景物的情绪反应。",
+            "definition": "旅行计划邮件是按段落介绍旅行目的、活动安排、交通和结尾问候的邮件。",
+            "example": "My parents and I are planning to go to Xi’an."
+          },
+          {
+            "name": "邮件段落组织",
+            "difficulty": 3,
+            "description": "按主要目的、其他计划、交通和结尾组织邮件。",
+            "aliases": [
+              "email organisation"
+            ],
+            "prerequisites": [
+              "旅行计划邮件"
+            ],
+            "definition": "邮件段落组织是为每段安排清晰主题并补充相关细节。",
+            "example": "The third paragraph explains the transport."
+          },
+          {
+            "name": "情感表达语言",
+            "difficulty": 2,
+            "description": "用amazing、unbelievable等表达惊讶和期待。",
+            "aliases": [
+              "expressing emotion"
+            ],
+            "prerequisites": [],
+            "definition": "情感表达语言是描述旅行体验和个人感受的词语或短语。",
             "example": "I can’t wait to go."
           },
           {
-            "name": "旅游宣传册设计",
-            "difficulty": 4,
-            "description": "通过调研、规划和版面设计制作旅游宣传册。",
-            "aliases": [],
-            "prerequisites": [
-              "旅游宣传册",
-              "旅游套餐路线"
-            ],
-            "definition": "旅游宣传册设计是将旅游路线和特色组织成具有吸引力的宣传材料。",
-            "example": "设计一周文化主题旅游宣传册。"
-          },
-          {
-            "name": "旅游主题类型",
+            "name": "旅游主题分类",
             "difficulty": 2,
-            "description": "根据旅行目的划分教育、历史、冒险、文化和美食旅游。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "旅游主题类型是依据旅行者兴趣和主要活动形成的路线类别。",
-            "example": "历史旅游、文化旅游和美食旅游。"
+            "description": "按教育、历史、探险、文化和美食设计旅游线路。",
+            "aliases": [
+              "types of tours"
+            ],
+            "prerequisites": [
+              "旅行计划表达"
+            ],
+            "definition": "旅游主题分类是依据游客兴趣确定旅游线路的主要主题。",
+            "example": "A history tour may include the Great Wall.",
+            "section": "A Travel Plan to Xi’an"
           },
           {
             "name": "字母组合发音",
             "difficulty": 3,
-            "description": "识别英语单词中常见字母组合的发音规律。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "字母组合发音是字母组合在单词中的常见语音表现。",
-            "example": "ticket中的ck，photo中的ph。"
-          },
-          {
-            "name": "可持续旅游讨论",
-            "difficulty": 4,
-            "description": "讨论旅游对环境、当地居民和经济的影响。",
-            "aliases": [],
-            "prerequisites": [
-              "旅游目的地信息"
+            "description": "辨识英语字母组合在词中的常见发音。",
+            "aliases": [
+              "letter combinations pronunciation"
             ],
-            "definition": "可持续旅游讨论是围绕旅游发展与环境及社区关系进行思考。",
-            "example": "讨论游客过多是否会破坏马丘比丘环境。"
+            "prerequisites": [],
+            "definition": "字母组合发音是根据字母组合读出其在单词中的语音。",
+            "example": "“ph” is pronounced in “photo”."
           }
         ],
         "sections": [
           {
+            "name": "A travel plan",
+            "page_range": [
+              30,
+              31
+            ]
+          },
+          {
+            "name": "Focus on key words",
+            "page_range": [
+              31,
+              33
+            ]
+          },
+          {
+            "name": "Recognise text type",
+            "page_range": [
+              33,
+              33
+            ]
+          },
+          {
             "name": "Travel Peru",
             "page_range": [
               33,
+              33
+            ]
+          },
+          {
+            "name": "Machu Picchu",
+            "page_range": [
+              33,
+              36
+            ]
+          },
+          {
+            "name": "Making reservations",
+            "page_range": [
+              36,
+              36
+            ]
+          },
+          {
+            "name": "Booking air tickets",
+            "page_range": [
+              36,
               37
             ]
           },
@@ -605,7 +708,14 @@
             "name": "A Travel Plan to Xi’an",
             "page_range": [
               37,
-              41
+              40
+            ]
+          },
+          {
+            "name": "Design a travel brochure",
+            "page_range": [
+              40,
+              42
             ]
           }
         ]
@@ -614,200 +724,319 @@
         "name": "UNIT 3 SPORTS AND FITNESS",
         "concepts": [
           {
-            "name": "主旨听辨",
-            "difficulty": 2,
-            "description": "听对话时抓住主要意思而非逐词翻译",
+            "name": "体育项目海报",
+            "difficulty": 1,
+            "description": "获取比赛时间、地点和项目等活动信息",
             "aliases": [
-              "listen for main ideas"
+              "sports event poster"
             ],
             "prerequisites": [],
-            "definition": "主旨听辨是通过捕捉关键信息理解听力材料中心内容的方法。",
-            "example": "听出对话的主要目的是邀请朋友看比赛。"
+            "definition": "体育项目海报是用于介绍体育活动安排和邀请参与者的图文信息。",
+            "example": "海报写明比赛时间、地点和对阵双方。"
           },
           {
             "name": "体育活动邀请",
             "difficulty": 2,
-            "description": "使用得体表达邀请朋友参加体育活动",
+            "description": "用英语邀请朋友观看或参加体育活动",
             "aliases": [
               "invite a friend to a sports event"
             ],
-            "prerequisites": [],
-            "definition": "体育活动邀请是向他人提出参加比赛、跑步等活动的建议。",
-            "example": "Would you like to go to the soccer game?"
+            "prerequisites": [
+              "体育项目海报"
+            ],
+            "definition": "体育活动邀请是向他人提出观看或参加体育活动的建议。",
+            "example": "Would you like to go to the soccer game?",
+            "section": "Sportsmanship"
           },
           {
-            "name": "重读与强调",
-            "difficulty": 3,
-            "description": "通过重读突出句子中的关键信息",
+            "name": "听力主旨",
+            "difficulty": 2,
+            "description": "听对话时抓住说话者的主要意图",
             "aliases": [
-              "sentence stress"
+              "main ideas"
             ],
             "prerequisites": [],
-            "definition": "重读与强调是用更突出的语音表现重要词语或信息。",
+            "definition": "听力主旨是听者对语音材料中心内容或主要目的的理解。",
+            "example": "判断说话者是在邀请朋友参加比赛。",
+            "section": "Listen for main ideas"
+          },
+          {
+            "name": "重读识别",
+            "difficulty": 2,
+            "description": "识别说话者为突出重点而强调的词语",
+            "aliases": [
+              "word stress"
+            ],
+            "prerequisites": [
+              "听力主旨"
+            ],
+            "definition": "重读识别是通过辨听被强调的词语来理解话语重点。",
             "example": "Would you like to come along?"
           },
           {
             "name": "附加疑问句",
             "difficulty": 3,
-            "description": "在陈述句后添加简短疑问以确认信息",
+            "description": "用陈述句加简短问句寻求确认",
             "aliases": [
               "tag questions"
             ],
             "prerequisites": [],
-            "definition": "附加疑问句是在陈述句后加简短问句进行确认或征询意见的结构。",
+            "definition": "附加疑问句是在陈述句后加简短疑问部分以确认信息或征求同意。",
             "example": "It’s a beautiful day, isn’t it?"
           },
           {
             "name": "附加疑问句语调",
             "difficulty": 3,
-            "description": "根据交际目的使用升调或降调",
+            "description": "根据语境使用附加疑问句的升降调",
             "aliases": [
               "intonation of tag questions"
             ],
             "prerequisites": [
               "附加疑问句"
             ],
-            "definition": "附加疑问句语调是通过升调或降调表达疑问、确认等语气。",
-            "example": "Wonderful gym, isn’t it?"
+            "definition": "附加疑问句语调体现说话者是在真正提问还是期待对方认同。",
+            "example": "You come here often, don’t you?"
           },
           {
-            "name": "运动精神",
-            "difficulty": 3,
-            "description": "强调公平竞争、诚信和尊重他人",
+            "name": "体育精神",
+            "difficulty": 2,
+            "description": "讨论努力、荣誉、互助和胜负观念",
             "aliases": [
               "sportsmanship"
             ],
             "prerequisites": [],
-            "definition": "运动精神是在体育活动中遵守公平规则并重视荣誉与他人的品质。",
-            "example": "You should never cheat.",
-            "section": "Living Legends"
+            "definition": "体育精神是运动中重视努力、荣誉、帮助他人和正确行为的态度。",
+            "example": "Good sportsmanship is more important than winning."
           },
           {
-            "name": "同意与异议表达",
+            "name": "同意与异议",
             "difficulty": 2,
             "description": "用英语表达赞同、反对及保留意见",
             "aliases": [
               "agreeing and disagreeing"
             ],
-            "prerequisites": [],
-            "definition": "同意与异议表达是对他人观点表示赞成、反对或部分认同的交际方式。",
+            "prerequisites": [
+              "体育精神"
+            ],
+            "definition": "同意与异议表达用于回应他人观点并说明自己的立场。",
             "example": "I agree. / I don’t think so."
           },
           {
-            "name": "运动员榜样标准",
-            "difficulty": 3,
-            "description": "从竞技成就和社会示范作用评价运动员",
-            "aliases": [
-              "living legends of sports"
-            ],
-            "prerequisites": [],
-            "definition": "运动员榜样标准要求运动员既精通所从事的运动又能为他人树立良好榜样。",
-            "example": "Lang Ping led her team to Olympic gold.",
-            "section": "Living Legends"
-          },
-          {
-            "name": "坚毅与心理力量",
-            "difficulty": 3,
-            "description": "面对伤病、失败和困难仍坚持努力",
-            "aliases": [
-              "determination",
-              "mental strength"
-            ],
-            "prerequisites": [],
-            "definition": "坚毅与心理力量是运动员面对挫折时保持信念并持续行动的能力。",
-            "example": "Jordan learnt from his failures and never gave up.",
-            "section": "Living Legends"
-          },
-          {
-            "name": "健身目标设定",
+            "name": "阅读内容预测",
             "difficulty": 2,
-            "description": "用具体运动表现而非体重设定健康目标",
-            "aliases": [
-              "fitness goals"
-            ],
-            "prerequisites": [],
-            "definition": "健身目标设定是围绕跑步、俯卧撑等可执行的运动表现制定目标。",
-            "example": "I want to run two kilometres in eight minutes."
-          },
-          {
-            "name": "积极自我评价",
-            "difficulty": 2,
-            "description": "关注自身优点并停止消极身体比较",
-            "aliases": [
-              "positive self-image"
-            ],
-            "prerequisites": [],
-            "definition": "积极自我评价是肯定自己的身体和优点，而不是持续与他人比较。",
-            "example": "I made a list of the things I liked about myself."
-          },
-          {
-            "name": "相似与差异表达",
-            "difficulty": 3,
-            "description": "使用连接词和短语比较事物的相同与不同",
-            "aliases": [
-              "similarities and differences"
-            ],
-            "prerequisites": [],
-            "definition": "相似与差异表达是用特定词语说明两个事物的共同点和区别。",
-            "example": "Instead of dieting, I added healthy foods.",
-            "section": "Going Positive"
-          },
-          {
-            "name": "健康生活改变",
-            "difficulty": 2,
-            "description": "通过饮食、运动和自我态度改善生活",
-            "aliases": [
-              "positive changes in health and fitness"
-            ],
-            "prerequisites": [
-              "健身目标设定",
-              "积极自我评价"
-            ],
-            "definition": "健康生活改变是为提升身心健康而调整日常行为和思维方式。",
-            "example": "I added a salad or an apple to my meal."
-          },
-          {
-            "name": "体育兴趣调查",
-            "difficulty": 2,
-            "description": "调查同学对运动项目和锻炼习惯的兴趣需求",
-            "aliases": [
-              "survey on sports interests and needs"
-            ],
-            "prerequisites": [],
-            "definition": "体育兴趣调查是通过问题收集学生运动偏好、时间和频率等信息。",
-            "example": "What is your favourite sport?",
-            "section": "Going Positive"
-          },
-          {
-            "name": "调查结果报告",
-            "difficulty": 3,
-            "description": "整理调查数据并提出基于结果的建议",
-            "aliases": [
-              "survey report"
-            ],
-            "prerequisites": [
-              "体育兴趣调查"
-            ],
-            "definition": "调查结果报告是呈现调查问题、数据结果及相关建议的书面文本。",
-            "example": "Eight out of 15 students preferred one-on-one sports."
-          },
-          {
-            "name": "预测阅读",
-            "difficulty": 2,
-            "description": "根据标题和图片预测文章内容以辅助理解",
+            "description": "借助标题和图片预测阅读材料内容",
             "aliases": [
               "make predictions"
             ],
             "prerequisites": [],
-            "definition": "预测阅读是阅读前利用标题和图片推测文本内容的策略。",
-            "example": "根据运动员图片预测文章主题。"
+            "definition": "阅读内容预测是阅读前根据标题和图片推测文章主题与信息。",
+            "example": "根据运动员图片预测文章介绍著名运动员。",
+            "section": "Make predictions"
+          },
+          {
+            "name": "运动员榜样",
+            "difficulty": 2,
+            "description": "理解优秀运动员的成就、品质和社会影响",
+            "aliases": [
+              "living legends of sports"
+            ],
+            "prerequisites": [
+              "阅读内容预测"
+            ],
+            "definition": "运动员榜样是既精通运动项目又能为他人树立良好示范的运动员。",
+            "example": "郎平带领中国女排获得奥运金牌。"
+          },
+          {
+            "name": "决心与坚持",
+            "difficulty": 2,
+            "description": "理解面对困难、失败时不气馁并持续努力",
+            "aliases": [
+              "determination",
+              "never give up"
+            ],
+            "prerequisites": [
+              "运动员榜样"
+            ],
+            "definition": "决心与坚持是面对挑战或失败时继续努力而不放弃的品质。",
+            "example": "Jordan learned from failure and practised harder.",
+            "section": "Make predictions"
+          },
+          {
+            "name": "健康与健身",
+            "difficulty": 1,
+            "description": "关注身体健康、体能状态和规律锻炼",
+            "aliases": [
+              "health and fitness"
+            ],
+            "prerequisites": [],
+            "definition": "健康与健身关注身体状态、运动能力及促进健康的生活方式。",
+            "example": "I want to run two kilometres in eight minutes."
+          },
+          {
+            "name": "运动目标设定",
+            "difficulty": 2,
+            "description": "用具体运动表现目标替代单纯体重目标",
+            "aliases": [
+              "fitness goals"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "运动目标设定是为跑步、俯卧撑等运动表现制定具体目标。",
+            "example": "I want to be able to do 30 push-ups."
+          },
+          {
+            "name": "积极自我认知",
+            "difficulty": 2,
+            "description": "减少外貌比较，关注并肯定自身优点",
+            "aliases": [
+              "being positive about oneself"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "积极自我认知是接纳自己的身体并关注自身积极特征的态度。",
+            "example": "I made a list of the things I liked about myself."
+          },
+          {
+            "name": "健康饮食调整",
+            "difficulty": 2,
+            "description": "增加健康食物而非简单排除喜欢的食物",
+            "aliases": [
+              "healthy eating"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "健康饮食调整是通过搭配健康食物改善饮食结构的做法。",
+            "example": "Add a salad or an apple to a burger."
+          },
+          {
+            "name": "相似与差异表达",
+            "difficulty": 3,
+            "description": "使用连接词和短语比较过去、现在及未来变化",
+            "aliases": [
+              "similarities and differences"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "相似与差异表达用于说明事物或情况之间的相同点和不同点。",
+            "example": "Instead of dieting, I added healthy foods.",
+            "section": "Going Positive"
+          },
+          {
+            "name": "健康日志写作",
+            "difficulty": 3,
+            "description": "在健康日志中说明问题、变化及积极结果",
+            "aliases": [
+              "wellness book writing"
+            ],
+            "prerequisites": [
+              "相似与差异表达"
+            ],
+            "definition": "健康日志写作是围绕健康或健身经历说明改变原因、过程和结果。",
+            "example": "By being positive, I became happier and healthier."
+          },
+          {
+            "name": "体育兴趣调查",
+            "difficulty": 3,
+            "description": "调查同学喜欢的运动、时间、频率和时长",
+            "aliases": [
+              "survey on sports interests and needs"
+            ],
+            "prerequisites": [],
+            "definition": "体育兴趣调查是收集学生运动偏好与需求并据此提出建议的活动。",
+            "example": "调查同学最喜欢的运动项目。",
+            "section": "Make a survey on sports interests and needs"
+          },
+          {
+            "name": "调查结果报告",
+            "difficulty": 3,
+            "description": "整理调查数据并提出开设体育社团的建议",
+            "aliases": [
+              "survey results report"
+            ],
+            "prerequisites": [
+              "体育兴趣调查"
+            ],
+            "definition": "调查结果报告是呈现调查问题、数据结果和相关建议的书面报告。",
+            "example": "Eight out of 15 students preferred one-on-one sports."
+          },
+          {
+            "name": "喀斯特地貌",
+            "difficulty": 2,
+            "description": "了解石灰岩经风、水和侵蚀形成的地貌",
+            "aliases": [
+              "karsts"
+            ],
+            "prerequisites": [],
+            "definition": "喀斯特地貌是石灰岩经过风、水和长期侵蚀塑造形成的自然景观。",
+            "example": "桂林的喀斯特地貌适合攀岩。",
+            "section": "The Karsts of China: A Vertical Journey"
+          },
+          {
+            "name": "攀岩挑战",
+            "difficulty": 2,
+            "description": "理解攀岩带来的身心挑战和探索体验",
+            "aliases": [
+              "rock climbing"
+            ],
+            "prerequisites": [
+              "喀斯特地貌"
+            ],
+            "definition": "攀岩挑战是攀登岩壁并在自然环境中挑战身心能力的运动体验。",
+            "example": "Climbers push themselves mentally and physically.",
+            "section": "The Karsts of China: A Vertical Journey"
           }
         ],
         "sections": [
           {
+            "name": "Sportsmanship",
+            "page_range": [
+              42,
+              43
+            ]
+          },
+          {
+            "name": "Listen for main ideas",
+            "page_range": [
+              43,
+              44
+            ]
+          },
+          {
+            "name": "Intonation",
+            "page_range": [
+              44,
+              44
+            ]
+          },
+          {
+            "name": "Tag questions",
+            "page_range": [
+              44,
+              45
+            ]
+          },
+          {
             "name": "Living Legends",
             "page_range": [
               45,
+              45
+            ]
+          },
+          {
+            "name": "Make predictions",
+            "page_range": [
+              45,
+              49
+            ]
+          },
+          {
+            "name": "A page in a wellness book",
+            "page_range": [
+              49,
               49
             ]
           },
@@ -815,7 +1044,21 @@
             "name": "Going Positive",
             "page_range": [
               49,
+              52
+            ]
+          },
+          {
+            "name": "Make a survey on sports interests and needs",
+            "page_range": [
+              52,
               53
+            ]
+          },
+          {
+            "name": "The Karsts of China: A Vertical Journey",
+            "page_range": [
+              53,
+              54
             ]
           }
         ]
@@ -826,242 +1069,242 @@
           {
             "name": "自然灾害类型",
             "difficulty": 1,
-            "description": "识别地震、洪水、海啸等自然灾害。",
+            "description": "本单元涉及地震、海啸、洪水等灾害名称。",
             "aliases": [
               "natural disasters"
             ],
             "prerequisites": [],
-            "definition": "自然灾害是由自然因素引发并造成破坏的灾害事件。",
-            "example": "earthquake, flood, wildfire"
-          },
-          {
-            "name": "地震",
-            "difficulty": 1,
-            "description": "学习地震的震级、破坏及救援信息。",
-            "aliases": [
-              "earthquake"
-            ],
-            "prerequisites": [
-              "自然灾害类型"
-            ],
-            "definition": "地震是地面发生剧烈震动并可能造成严重破坏的自然灾害。",
-            "example": "A magnitude 7.8 earthquake hit Wenchuan."
-          },
-          {
-            "name": "海啸",
-            "difficulty": 1,
-            "description": "了解海啸的成因、波浪特征和危害。",
-            "aliases": [
-              "tsunami"
-            ],
-            "prerequisites": [
-              "自然灾害类型"
-            ],
-            "definition": "海啸是通常由海底强震引发并冲击海岸的巨大波浪。",
-            "example": "The earthquake caused a tsunami."
-          },
-          {
-            "name": "灾害预警迹象",
-            "difficulty": 2,
-            "description": "识别灾害发生前可能出现的异常现象。",
-            "aliases": [
-              "warning signs"
-            ],
-            "prerequisites": [
-              "地震"
-            ],
-            "definition": "灾害预警迹象是灾害发生前出现的异常自然或动物现象。",
-            "example": "Fish jumped out of the water."
-          },
-          {
-            "name": "灾害影响",
-            "difficulty": 2,
-            "description": "描述灾害造成的人员、建筑和生活损失。",
-            "aliases": [
-              "disaster effects"
-            ],
-            "prerequisites": [
-              "自然灾害类型"
-            ],
-            "definition": "灾害影响是灾害对人员、设施、环境和日常生活造成的后果。",
-            "example": "Many homes were destroyed."
+            "definition": "自然灾害类型是教材中介绍的由自然因素造成的灾害类别。",
+            "example": "Earthquake, tsunami, flood and wildfire are natural disasters."
           },
           {
             "name": "灾害新闻报道",
             "difficulty": 2,
-            "description": "按时间、地点和后果等信息报道灾害。",
+            "description": "围绕灾害时间、地点、伤亡和救援进行报道。",
             "aliases": [
               "news report"
             ],
             "prerequisites": [
               "自然灾害类型"
             ],
-            "definition": "灾害新闻报道是对灾害事件及其相关事实进行简洁播报的文本。",
-            "example": "A flood began in May in Colombo."
+            "definition": "灾害新闻报道是按关键信息简要介绍灾害事件及其影响的口头或书面报道。",
+            "example": "A huge earthquake hit Wenchuan yesterday afternoon."
           },
           {
             "name": "灾害信息要素",
             "difficulty": 2,
-            "description": "关注数字、日期、时间、地点和原因等细节。",
+            "description": "听取灾害报道中的数字、时间、地点和原因等信息。",
             "aliases": [
               "key information"
             ],
             "prerequisites": [
-              "灾害新闻报道"
+              "自然灾害类型"
             ],
-            "definition": "灾害信息要素包括事件的时间、地点、原因、影响及后续情况。",
-            "example": "time, place, cause, effect"
+            "definition": "灾害信息要素是灾害报道中需要重点识别的时间、地点、数字、人物和原因等内容。",
+            "example": "The earthquake had a magnitude of 7.8."
           },
           {
-            "name": "灾害救援",
+            "name": "灾害预警信号",
             "difficulty": 2,
-            "description": "了解军队、医护人员和志愿者的救援工作。",
+            "description": "地震前可能出现井水变化、动物异常等现象。",
             "aliases": [
-              "disaster relief"
-            ],
-            "prerequisites": [
-              "灾害影响"
-            ],
-            "definition": "灾害救援是灾害发生后为营救、救治和安置受灾者提供的帮助。",
-            "example": "Doctors provided medical care."
-          },
-          {
-            "name": "应急物资",
-            "difficulty": 1,
-            "description": "掌握灾害中应准备的水、食物和急救用品。",
-            "aliases": [
-              "emergency supplies"
-            ],
-            "prerequisites": [
-              "灾害安全措施"
-            ],
-            "definition": "应急物资是灾害期间维持生活和求助所需的基本用品。",
-            "example": "Keep water, food, and a flashlight.",
-            "section": "The Night the Earth Didn’t Sleep"
-          },
-          {
-            "name": "灾害安全措施",
-            "difficulty": 2,
-            "description": "学习灾害前中后的避险和求助方法。",
-            "aliases": [
-              "disaster safety measures"
+              "warning signs"
             ],
             "prerequisites": [
               "自然灾害类型"
             ],
-            "definition": "灾害安全措施是人们为减少伤害而采取的预防、避险和求助行动。",
-            "example": "Stay calm and move to a safe place."
+            "definition": "灾害预警信号是灾害发生前可能观察到的异常自然或动物现象。",
+            "example": "The water in the wells rose and fell before the earthquake."
+          },
+          {
+            "name": "地震破坏影响",
+            "difficulty": 2,
+            "description": "地震会摧毁建筑、道路、桥梁并造成伤亡。",
+            "aliases": [
+              "earthquake damage"
+            ],
+            "prerequisites": [
+              "自然灾害类型"
+            ],
+            "definition": "地震破坏影响是强烈地面震动对人员、建筑、交通和基础设施造成的后果。",
+            "example": "Most bridges had fallen and many buildings were destroyed."
+          },
+          {
+            "name": "灾害救援工作",
+            "difficulty": 2,
+            "description": "军队、医护人员和志愿者搜救、救治并安置幸存者。",
+            "aliases": [
+              "disaster relief work"
+            ],
+            "prerequisites": [
+              "灾害信息要素"
+            ],
+            "definition": "灾害救援工作是灾害发生后为搜救、医疗救助和安置幸存者开展的行动。",
+            "example": "Rescue workers dug out people trapped under the ruins."
+          },
+          {
+            "name": "灾后重建",
+            "difficulty": 2,
+            "description": "灾区在政府和民众支持下恢复城市生活与发展。",
+            "aliases": [
+              "rebuilding",
+              "revival"
+            ],
+            "prerequisites": [
+              "灾害救援工作",
+              "地震破坏影响"
+            ],
+            "definition": "灾后重建是灾区恢复基础设施、社会生活并建设新家园的过程。",
+            "example": "A new Tangshan was built upon the earthquake ruins."
           },
           {
             "name": "限制性定语从句",
             "difficulty": 3,
             "description": "用从句限定先行词，说明具体的人或事物。",
             "aliases": [
-              "restrictive relative clauses"
+              "restrictive relative clause"
             ],
             "prerequisites": [],
-            "definition": "限制性定语从句用于限定先行词的范围，去掉后句意通常不完整。",
-            "example": "The boy who survived was rescued.",
-            "section": "The Night the Earth Didn’t Sleep"
+            "definition": "限制性定语从句是修饰并限定先行词范围、不可随意删去的定语从句。",
+            "example": "The supplies which were provided were collected nationwide.",
+            "section": "Use context to understand new words"
           },
           {
             "name": "关系代词",
             "difficulty": 3,
-            "description": "学习that、which、who、whose和whom的用法。",
+            "description": "that、which、who等在定语从句中指代先行词。",
             "aliases": [
               "relative pronouns"
             ],
             "prerequisites": [
               "限制性定语从句"
             ],
-            "definition": "关系代词连接定语从句并在从句中充当相应的句子成分。",
-            "example": "the soldier by whom she was rescued",
+            "definition": "关系代词是在定语从句中连接主句与从句并充当从句成分的代词。",
+            "example": "The boy who saved others was praised.",
             "section": "Tsunami Hits Asia: Over 6,500 Dead"
           },
           {
-            "name": "总结",
+            "name": "摘要写作",
             "difficulty": 3,
-            "description": "提炼长篇报道的主旨和最重要信息。",
-            "aliases": [
-              "summary"
-            ],
-            "prerequisites": [
-              "灾害信息要素"
-            ],
-            "definition": "总结是对较长文本主要观点和关键信息的简短陈述。",
-            "example": "A tsunami killed thousands in Asia."
-          },
-          {
-            "name": "总结写作原则",
-            "difficulty": 3,
-            "description": "概括重点，删去细节，控制篇幅并准确改写。",
+            "description": "提炼原文主旨和要点，删去次要细节并控制篇幅。",
             "aliases": [
               "summary writing"
             ],
             "prerequisites": [
-              "总结"
+              "灾害信息要素"
             ],
-            "definition": "总结写作原则要求保留主要信息、删除次要细节并使篇幅约为原文三分之一。",
-            "example": "Include the cause and main effects."
+            "definition": "摘要写作是用较短篇幅概括较长文本主要观点和重要信息的写作方式。",
+            "example": "The summary explains the earthquake, its damage and the rescue work."
           },
           {
-            "name": "语境猜词",
+            "name": "灾害安全措施",
             "difficulty": 2,
-            "description": "根据上下文推测生词含义而非立即查词典。",
+            "description": "灾前、灾中和受困后的避险与求救方法。",
             "aliases": [
-              "context clues"
-            ],
-            "prerequisites": [],
-            "definition": "语境猜词是利用词语所在句子和段落的信息推断其意义。",
-            "example": "Guess “ruin” from the description of destruction."
-          },
-          {
-            "name": "过去式-ed发音",
-            "difficulty": 2,
-            "description": "区分-ed结尾的/t/、/d/和/ɪd/三种发音。",
-            "aliases": [
-              "-ed endings"
-            ],
-            "prerequisites": [],
-            "definition": "规则动词过去式-ed根据词尾音的不同读作/t/、/d/或/ɪd/。",
-            "example": "helped /t/, viewed /d/, wanted /ɪd/"
-          },
-          {
-            "name": "灾害主题演讲",
-            "difficulty": 3,
-            "description": "围绕灾害成因、准备和应对组织演讲。",
-            "aliases": [
-              "presentation on natural disasters"
+              "disaster safety measures"
             ],
             "prerequisites": [
-              "自然灾害类型",
+              "自然灾害类型"
+            ],
+            "definition": "灾害安全措施是人们为降低灾害伤害而采取的预防、避险和求救行动。",
+            "example": "During an earthquake, drop, cover and hold on."
+          },
+          {
+            "name": "应急物资",
+            "difficulty": 1,
+            "description": "灾害中维持生活和求救所需的水、食物等物品。",
+            "aliases": [
+              "emergency supplies",
+              "emergency kit"
+            ],
+            "prerequisites": [
               "灾害安全措施"
             ],
-            "definition": "灾害主题演讲是以灾害知识和安全应对为内容的口头展示。",
-            "example": "Explain how to stay safe in a wildfire.",
-            "section": "Tsunami Hits Asia: Over 6,500 Dead"
+            "definition": "应急物资是灾害期间用于基本生活、通信照明和急救的备用物品。",
+            "example": "Keep water, food, a radio, a flashlight and a whistle.",
+            "section": "Giving instructions"
+          },
+          {
+            "name": "海啸形成机制",
+            "difficulty": 3,
+            "description": "板块运动引发地震，海水波浪向各方向扩散。",
+            "aliases": [
+              "tsunami formation"
+            ],
+            "prerequisites": [
+              "自然灾害类型"
+            ],
+            "definition": "海啸形成机制是海底地震等运动引起海水大规模波动并传播的过程。",
+            "example": "Tectonic plates push together and cause an undersea earthquake."
+          },
+          {
+            "name": "海啸传播特征",
+            "difficulty": 3,
+            "description": "海啸深海传播速度快，进入浅水区后速度减慢并增高。",
+            "aliases": [
+              "tsunami wave features"
+            ],
+            "prerequisites": [
+              "海啸形成机制"
+            ],
+            "definition": "海啸传播特征是波浪在深海快速移动，进入浅水区后速度降低且波高增大。",
+            "example": "The waves slow down and rise in shallow water."
           },
           {
             "name": "海啸监测预警",
-            "difficulty": 3,
-            "description": "了解科学家监测地球运动以追踪并预警海啸。",
+            "difficulty": 2,
+            "description": "科学家持续监测地球运动以追踪海啸并及时预警。",
             "aliases": [
               "tsunami warning"
             ],
             "prerequisites": [
-              "海啸",
-              "灾害预警迹象"
+              "海啸形成机制"
             ],
-            "definition": "海啸监测预警是通过持续监测地球运动追踪海啸并提醒公众。",
-            "example": "Scientists monitor earth movements 24 hours a day.",
-            "section": "Tsunami Hits Asia: Over 6,500 Dead"
+            "definition": "海啸监测预警是通过持续观测地球运动来追踪海啸并提醒公众。",
+            "example": "Scientists monitor the earth’s movements 24 hours a day.",
+            "section": "Tsunami: Killer Wave"
+          },
+          {
+            "name": "灾害演示报告",
+            "difficulty": 3,
+            "description": "围绕灾害成因、准备措施和灾中救助进行小组展示。",
+            "aliases": [
+              "disaster presentation"
+            ],
+            "prerequisites": [
+              "灾害新闻报道",
+              "灾害安全措施"
+            ],
+            "definition": "灾害演示报告是整合灾害信息并以口头展示形式说明灾害及应对方法的任务。",
+            "example": "The presentation explains causes, preparation and safety actions."
           }
         ],
         "sections": [
           {
+            "name": "Listen for details",
+            "page_range": [
+              55,
+              57
+            ]
+          },
+          {
             "name": "The Night the Earth Didn’t Sleep",
             "page_range": [
               57,
+              58
+            ]
+          },
+          {
+            "name": "Use context to understand new words",
+            "page_range": [
+              58,
+              60
+            ]
+          },
+          {
+            "name": "Giving instructions",
+            "page_range": [
+              60,
               61
             ]
           },
@@ -1069,7 +1312,21 @@
             "name": "Tsunami Hits Asia: Over 6,500 Dead",
             "page_range": [
               61,
+              64
+            ]
+          },
+          {
+            "name": "Give a presentation on natural disasters",
+            "page_range": [
+              64,
               65
+            ]
+          },
+          {
+            "name": "Tsunami: Killer Wave",
+            "page_range": [
+              65,
+              66
             ]
           }
         ]
@@ -1078,191 +1335,221 @@
         "name": "UNIT 5 LANGUAGES AROUND THE WORLD",
         "concepts": [
           {
-            "name": "中文书写系统",
-            "difficulty": 3,
-            "description": "汉语书写符号及其历史发展的整体系统",
-            "aliases": [
-              "Chinese writing system"
-            ],
-            "prerequisites": [
-              "书写符号"
-            ],
-            "definition": "中文书写系统是以汉字为核心并不断发展形成的书写体系。",
-            "example": "中文书写系统帮助不同方言区的人进行书面交流。"
-          },
-          {
-            "name": "书写符号",
-            "difficulty": 2,
-            "description": "用于记录和表达意义的书写标记",
-            "aliases": [
-              "symbols"
-            ],
+            "name": "世界语言",
+            "difficulty": 1,
+            "description": "世界各地使用的不同语言及其分布",
+            "aliases": [],
             "prerequisites": [],
-            "definition": "书写符号是用来表示意义或语言内容的标记。",
-            "example": "古人把符号刻在兽骨和贝壳上。"
-          },
-          {
-            "name": "图画文字",
-            "difficulty": 2,
-            "description": "以图形方式表示事物意义的文字形式",
-            "aliases": [
-              "picture-based language"
-            ],
-            "prerequisites": [
-              "书写符号"
-            ],
-            "definition": "图画文字是最初通过图形表达事物意义的书写形式。",
-            "example": "早期中文是一种以图画为基础的语言。",
-            "section": "The Chinese Writing System: Connecting the Past and the Pres"
-          },
-          {
-            "name": "汉字",
-            "difficulty": 3,
-            "description": "中文书写系统使用的文字单位",
-            "aliases": [
-              "Chinese characters",
-              "hanzi"
-            ],
-            "prerequisites": [
-              "书写符号"
-            ],
-            "definition": "汉字是中文书写系统中用来记录语言和意义的文字。",
-            "example": "今天仍能看到一些古代符号演变而来的汉字。"
-          },
-          {
-            "name": "方言与文字变体",
-            "difficulty": 3,
-            "description": "地域差异形成的多种方言和文字形式",
-            "aliases": [
-              "varieties of dialects and characters"
-            ],
-            "prerequisites": [
-              "汉字"
-            ],
-            "definition": "方言与文字变体是地理分隔造成的语言和文字多样形式。",
-            "example": "各地长期分隔曾导致多种方言和文字形式。",
-            "section": "The Chinese Writing System: Connecting the Past and the Pres"
-          },
-          {
-            "name": "文字统一",
-            "difficulty": 4,
-            "description": "不同地区采用趋于一致的书写系统",
-            "aliases": [
-              "unified writing system"
-            ],
-            "prerequisites": [
-              "中文书写系统",
-              "方言与文字变体"
-            ],
-            "definition": "文字统一是不同地区使用共同书写系统以加强交流和团结的过程。",
-            "example": "秦始皇统一国家后，中文书写系统开始朝一个方向发展。"
-          },
-          {
-            "name": "文字的沟通功能",
-            "difficulty": 3,
-            "description": "文字跨越方言差异实现书面交流的作用",
-            "aliases": [
-              "written communication"
-            ],
-            "prerequisites": [
-              "汉字",
-              "方言与文字变体"
-            ],
-            "definition": "文字的沟通功能是使使用不同方言的人能够通过书面形式交流。",
-            "example": "无论住在哪里或说什么方言，中国人都能书面交流。"
-          },
-          {
-            "name": "文字连接古今",
-            "difficulty": 3,
-            "description": "现代文字帮助人们阅读古代经典作品",
-            "aliases": [
-              "connecting the past and present"
-            ],
-            "prerequisites": [
-              "中文书写系统",
-              "汉字"
-            ],
-            "definition": "文字连接古今指现代人借助延续的书写系统理解古代文化。",
-            "example": "现代人可以阅读古代中国人写的经典作品。"
-          },
-          {
-            "name": "中国书法",
-            "difficulty": 3,
-            "description": "以汉字书写为基础发展的艺术形式",
-            "aliases": [
-              "Chinese calligraphy"
-            ],
-            "prerequisites": [
-              "汉字",
-              "中文书写系统"
-            ],
-            "definition": "中国书法是汉字书写发展形成的重要艺术形式和文化组成部分。",
-            "example": "人们用毛笔练习中国书法。"
+            "definition": "世界语言是人们在不同国家和地区使用的语言。",
+            "example": "法语、俄语、西班牙语"
           },
           {
             "name": "联合国官方语言",
             "difficulty": 2,
             "description": "联合国正式使用的六种语言",
-            "aliases": [
-              "official languages of the UN"
+            "aliases": [],
+            "prerequisites": [
+              "世界语言"
             ],
-            "prerequisites": [],
-            "definition": "联合国官方语言是联合国正式使用的阿拉伯语、汉语、英语、法语、俄语和西班牙语。",
-            "example": "Chinese and English are official languages of the United Nations."
+            "definition": "联合国官方语言是联合国正式使用的阿拉伯语、中文、英语、法语、俄语和西班牙语。",
+            "example": "English is a UN official language."
+          },
+          {
+            "name": "母语与第二语言",
+            "difficulty": 2,
+            "description": "语言学习者掌握语言的两种身份",
+            "aliases": [],
+            "prerequisites": [
+              "世界语言"
+            ],
+            "definition": "母语是个人最初习得的语言，第二语言是在母语之外使用或学习的语言。",
+            "example": "Some people speak English as a second language."
           },
           {
             "name": "外语学习动机",
-            "difficulty": 3,
+            "difficulty": 2,
             "description": "人们学习外语的原因和态度",
-            "aliases": [
-              "reasons for foreign language learning"
+            "aliases": [],
+            "prerequisites": [
+              "母语与第二语言"
             ],
-            "prerequisites": [],
-            "definition": "外语学习动机是促使人们学习外语的工作、兴趣或交流等原因。",
-            "example": "有人为了将来获得更好的工作机会而学外语。"
+            "definition": "外语学习动机是促使人们学习外语的目标、需要或兴趣。",
+            "example": "Better job chances can motivate language learning."
           },
           {
-            "name": "英美口音",
-            "difficulty": 3,
-            "description": "英国英语和美国英语在发音上的差异",
-            "aliases": [
-              "British and American accents"
-            ],
+            "name": "书写系统",
+            "difficulty": 2,
+            "description": "用符号记录语言的规则体系",
+            "aliases": [],
             "prerequisites": [],
-            "definition": "英美口音是英国英语与美国英语在部分词语发音上的不同。",
-            "example": "schedule在英式和美式英语中可能有不同发音。"
+            "definition": "书写系统是使用一套符号和规则记录语言的体系。",
+            "example": "Chinese and English have different writing systems.",
+            "section": "Create your own word bank"
+          },
+          {
+            "name": "图画文字",
+            "difficulty": 2,
+            "description": "以图形或象形符号为基础的文字",
+            "aliases": [],
+            "prerequisites": [
+              "书写系统"
+            ],
+            "definition": "图画文字是最初借助图形来表示事物或意义的文字形式。",
+            "example": "Early written Chinese was picture-based."
+          },
+          {
+            "name": "汉字演变",
+            "difficulty": 3,
+            "description": "汉字由古代符号逐步发展为统一文字",
+            "aliases": [],
+            "prerequisites": [
+              "图画文字",
+              "书写系统"
+            ],
+            "definition": "汉字演变是汉字从早期刻画符号发展为多种形式并逐渐统一的过程。",
+            "example": "The character for “马” changed over time."
+          },
+          {
+            "name": "方言与文字多样性",
+            "difficulty": 3,
+            "description": "地域分隔造成方言和文字形式的多样",
+            "aliases": [],
+            "prerequisites": [
+              "汉字演变"
+            ],
+            "definition": "地域分隔会使语言产生不同方言和文字形式。",
+            "example": "Geographical division led to varieties of dialects and characters."
+          },
+          {
+            "name": "文字统一作用",
+            "difficulty": 3,
+            "description": "统一文字促进人民和文化的联系",
+            "aliases": [],
+            "prerequisites": [
+              "汉字演变",
+              "方言与文字多样性"
+            ],
+            "definition": "统一文字能够跨越地域和方言差异，促进人民与文化的统一。",
+            "example": "People could communicate in writing despite different dialects."
+          },
+          {
+            "name": "文字连接古今",
+            "difficulty": 3,
+            "description": "现代人借助书面汉语阅读古代经典",
+            "aliases": [],
+            "prerequisites": [
+              "书写系统",
+              "汉字演变"
+            ],
+            "definition": "书面汉语使现代人能够阅读古代经典，从而连接中国的过去与现在。",
+            "example": "Modern readers can read classic Chinese works."
+          },
+          {
+            "name": "中国书法",
+            "difficulty": 3,
+            "description": "汉字发展形成的书写艺术和文化形式",
+            "aliases": [
+              "书法"
+            ],
+            "prerequisites": [
+              "书写系统",
+              "汉字演变"
+            ],
+            "definition": "中国书法是以汉字书写为基础、使用毛笔表现美感的艺术形式。",
+            "example": "People practise calligraphy with a brush."
           },
           {
             "name": "代词指称",
-            "difficulty": 3,
-            "description": "根据上下文确定代词所指的人或事物",
+            "difficulty": 2,
+            "description": "根据语境确定代词所指的人或事物",
             "aliases": [
-              "pronoun reference",
-              "reference"
+              "指称关系"
             ],
             "prerequisites": [],
-            "definition": "代词指称是通过语境判断it、they、she等代词具体所指的内容。",
-            "example": "理解They的指代对象要结合前文语境。",
+            "definition": "代词指称是代词回指前文已提到的人或事物的语言现象。",
+            "example": "They refers to the people mentioned earlier.",
+            "section": "Polyglots: What Are They and Who Can Be One?"
+          },
+          {
+            "name": "关系代词与副词",
+            "difficulty": 3,
+            "description": "引导定语从句并连接先行词和从句",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "关系代词与副词用于引导从句并说明其与前面名词的关系。",
+            "example": "who, whose, when, where, why"
+          },
+          {
+            "name": "限制性定语从句",
+            "difficulty": 4,
+            "description": "对名词作必要限定的定语从句",
+            "aliases": [],
+            "prerequisites": [
+              "关系代词与副词"
+            ],
+            "definition": "限制性定语从句提供识别或限定先行词所必需的信息。",
+            "example": "the place where German was spoken",
             "section": "Polyglots: What Are They and Who Can Be One?"
           },
           {
             "name": "扫描阅读",
             "difficulty": 2,
-            "description": "快速查找日期、数字等特定信息的阅读方法",
+            "description": "快速查找日期、数字等特定信息",
             "aliases": [
-              "scanning"
+              "寻读"
             ],
             "prerequisites": [],
-            "definition": "扫描阅读是快速浏览文本以寻找特定信息的阅读方式。",
-            "example": "扫描文章可以快速找到重要年份和数字。",
-            "section": "The Chinese Writing System: Connecting the Past and the Pres"
+            "definition": "扫描阅读是快速浏览文本以寻找特定信息的阅读方法。",
+            "example": "Scan the text for dates and numbers."
           }
         ],
         "sections": [
           {
+            "name": "Languages around the world",
+            "page_range": [
+              66,
+              67
+            ]
+          },
+          {
+            "name": "Reference",
+            "page_range": [
+              67,
+              69
+            ]
+          },
+          {
             "name": "The Chinese Writing System: Connecting the Past and the Present",
             "page_range": [
               69,
+              70
+            ]
+          },
+          {
+            "name": "Scan",
+            "page_range": [
+              70,
+              72
+            ]
+          },
+          {
+            "name": "Different kinds of English",
+            "page_range": [
+              72,
+              72
+            ]
+          },
+          {
+            "name": "Asking for clarification",
+            "page_range": [
+              72,
+              73
+            ]
+          },
+          {
+            "name": "A blog about English study",
+            "page_range": [
+              73,
               73
             ]
           },
@@ -1270,6 +1557,20 @@
             "name": "Learning English",
             "page_range": [
               73,
+              76
+            ]
+          },
+          {
+            "name": "Create your own word bank",
+            "page_range": [
+              76,
+              77
+            ]
+          },
+          {
+            "name": "Chinese Characters",
+            "page_range": [
+              77,
               105
             ]
           },
@@ -1297,169 +1598,152 @@
         "name": "WELCOME UNIT",
         "concepts": [
           {
-            "name": "自我介绍与问候",
+            "name": "自我介绍",
             "difficulty": 1,
-            "description": "用于课堂、校园等场合介绍自己并问候他人",
+            "description": "用于介绍自己或他人的基本表达",
             "aliases": [
-              "introductions and greetings"
+              "introductions"
             ],
             "prerequisites": [],
-            "definition": "自我介绍与问候是初次交流时说明身份、认识他人和回应问候的表达方式。",
-            "example": "My name is Amy. Nice to meet you."
+            "definition": "自我介绍是用姓名、身份等信息让他人了解自己的表达方式。",
+            "example": "My name is Amy. I’m an exchange student.",
+            "section": "Registering"
           },
           {
-            "name": "正式场合礼貌表达",
+            "name": "问候与回应",
+            "difficulty": 1,
+            "description": "日常见面时使用的问候及回应表达",
+            "aliases": [
+              "greetings",
+              "responses"
+            ],
+            "prerequisites": [],
+            "definition": "问候与回应是交谈双方在见面时表达礼貌和关心的语言。",
+            "example": "How are you?—I’m fine, and you?",
+            "section": "Registering"
+          },
+          {
+            "name": "正式礼貌表达",
             "difficulty": 2,
-            "description": "正式情境中使用更礼貌、得体的交际语言",
+            "description": "正式场合中更加得体、礼貌的表达方式",
             "aliases": [
               "polite expressions"
             ],
             "prerequisites": [
-              "自我介绍与问候"
+              "问候与回应"
             ],
-            "definition": "正式场合礼貌表达是根据交际情境选择得体、客气的英语表达。",
-            "example": "I’d like to have a student ID card, please."
-          },
-          {
-            "name": "个人信息表达",
-            "difficulty": 1,
-            "description": "表达姓名、性别、年级、国籍和联系方式等信息",
-            "aliases": [
-              "personal information"
-            ],
-            "prerequisites": [],
-            "definition": "个人信息表达是用英语介绍或登记个人基本情况的语言形式。",
-            "example": "My name is Amy. I’m in Grade 10."
+            "definition": "正式礼貌表达是在正式情境中使用的更尊重、更得体的语言。",
+            "example": "Good morning. Nice to meet you."
           },
           {
             "name": "课程选择与注册",
             "difficulty": 2,
-            "description": "围绕选课、注册课程和未来职业进行交流",
+            "description": "围绕课程登记和未来学习方向进行交流",
             "aliases": [
-              "course selection and registration"
+              "course registration"
             ],
             "prerequisites": [
-              "个人信息表达",
-              "自我介绍与问候"
+              "自我介绍"
             ],
-            "definition": "课程选择与注册是讨论课程兴趣、未来计划并办理课程登记的校园交际活动。",
-            "example": "What course will you probably choose?"
+            "definition": "课程选择与注册是根据兴趣或未来规划选择并登记课程的过程。",
+            "example": "I’d like to register for an English class."
           },
           {
-            "name": "元音字母发音",
+            "name": "元音发音",
             "difficulty": 2,
-            "description": "学习A、E、I、O、U在单词中的常见发音",
+            "description": "辨析字母A、E、I、O、U的常见元音音素",
             "aliases": [
               "vowel pronunciation"
             ],
             "prerequisites": [],
-            "definition": "元音字母发音关注A、E、I、O、U在不同单词中的音标和读音。",
+            "definition": "元音发音学习字母A、E、I、O、U在单词中的不同读音。",
             "example": "grade /eɪ/; map /æ/"
           },
           {
-            "name": "校园第一天经历",
+            "name": "首日情感变化",
             "difficulty": 2,
-            "description": "描述高中第一天的时间、课程、感受和经历",
+            "description": "描述高中第一天从焦虑到自信的情绪变化",
             "aliases": [
-              "first-day experience"
-            ],
-            "prerequisites": [
-              "情绪形容词"
-            ],
-            "definition": "校园第一天经历是按时间描述新生在高中首日的活动、感受及变化。",
-            "example": "I felt anxious in the morning but confident at night."
-          },
-          {
-            "name": "情绪形容词",
-            "difficulty": 1,
-            "description": "表达焦虑、兴奋、自信、害怕等情绪状态",
-            "aliases": [
-              "emotion adjectives"
+              "first-day feelings"
             ],
             "prerequisites": [],
-            "definition": "情绪形容词用于描述人在特定情境中的心理感受或情绪状态。",
-            "example": "I was excited on my first day."
+            "definition": "首日情感变化表现为学生在新学校经历的焦虑、开心、恼怒和自信等情绪转变。",
+            "example": "She felt anxious in the morning but confident at night."
+          },
+          {
+            "name": "情感形容词",
+            "difficulty": 2,
+            "description": "表达焦虑、兴奋、害怕、自信等心理感受",
+            "aliases": [
+              "feeling adjectives"
+            ],
+            "prerequisites": [],
+            "definition": "情感形容词用于描述人物在特定情境下的心理状态。",
+            "example": "I feel excited and curious."
           },
           {
             "name": "基本句子结构",
             "difficulty": 3,
-            "description": "识别SV、SVO、SP、SVOA等基本英语句型",
+            "description": "分析SV、SVO、SP等英语句子成分结构",
             "aliases": [
               "basic sentence structures"
             ],
             "prerequisites": [],
-            "definition": "基本句子结构依据主语、谓语、宾语、表语和状语分析句子成分及组合方式。",
+            "definition": "基本句子结构说明主语、谓语、宾语、表语和状语等成分的组合方式。",
             "example": "The teacher was kind and friendly.（SP）",
-            "section": "First Impressions"
+            "section": "Basic sentence structures"
           },
           {
-            "name": "There be句型",
+            "name": "学习方式",
             "difficulty": 2,
-            "description": "用There be结构表示某处存在某人或某物",
+            "description": "描述个人偏好的学习活动和学习习惯",
             "aliases": [
-              "There be structure"
+              "learning styles"
             ],
-            "prerequisites": [
-              "基本句子结构"
-            ],
-            "definition": "There be句型用于说明某个地方或情境中存在某人、某物或某种情况。",
-            "example": "There’s a lot to explore at senior high."
+            "prerequisites": [],
+            "definition": "学习方式是学习者进行学习时偏好的活动形式或习惯。",
+            "example": "I learn best by doing."
           },
           {
             "name": "学习策略",
-            "difficulty": 2,
-            "description": "运用小组学习、记笔记、视频和学习日志等方法",
+            "difficulty": 3,
+            "description": "通过计划、笔记、词卡等方法提高学习效果",
             "aliases": [
               "learning strategies"
             ],
-            "prerequisites": [],
-            "definition": "学习策略是为提高英语学习效果而选择和使用的具体方法。",
-            "example": "I work in groups and take notes.",
-            "section": "First Impressions"
+            "prerequisites": [
+              "学习方式"
+            ],
+            "definition": "学习策略是学习者为实现学习目标而采用的具体方法。",
+            "example": "I take notes while listening and reading.",
+            "section": "Learning styles"
           },
           {
             "name": "学习目标与计划",
             "difficulty": 2,
-            "description": "先确定学习目标，再为英语学习制订计划",
+            "description": "先确定学习目标，再安排具体学习计划",
             "aliases": [
               "learning goals and plans"
             ],
-            "prerequisites": [
-              "学习策略"
-            ],
-            "definition": "学习目标与计划是明确想学的内容并安排实现目标的学习步骤。",
-            "example": "I make plans for my English studies."
-          },
-          {
-            "name": "思维导图",
-            "difficulty": 2,
-            "description": "用图示方式组织学习中的想法和笔记",
-            "aliases": [
-              "mind map"
-            ],
-            "prerequisites": [
-              "学习策略"
-            ],
-            "definition": "思维导图是以图形和层次关系整理思想或笔记的学习方法。",
-            "example": "I use a mind map to organise my thoughts."
+            "prerequisites": [],
+            "definition": "学习目标与计划是明确想学的内容并据此安排学习步骤。",
+            "example": "I set learning goals and make plans."
           },
           {
             "name": "学生档案结构",
             "difficulty": 2,
-            "description": "掌握学生档案应包含的六类基本信息",
+            "description": "学生档案包含身份、个性、学习方式和未来规划",
             "aliases": [
-              "student profile organisation"
+              "student profile structure"
             ],
-            "prerequisites": [
-              "个人信息表达"
-            ],
-            "definition": "学生档案结构包括姓名年龄年级学校、性格、学科、学习方式、爱好和未来计划。",
-            "example": "Name, age, grade, school, hobbies and future plans."
+            "prerequisites": [],
+            "definition": "学生档案结构是组织姓名、年龄、年级、个性、爱好及梦想等信息的框架。",
+            "example": "Name, age, school, hobbies and future plans."
           },
           {
             "name": "学生档案写作",
             "difficulty": 3,
-            "description": "按合理顺序写个人背景、性格、爱好和未来计划",
+            "description": "按合理顺序撰写介绍个人信息的短文",
             "aliases": [
               "student profile writing"
             ],
@@ -1467,36 +1751,79 @@
               "学生档案结构",
               "基本句子结构"
             ],
-            "definition": "学生档案写作是用连贯准确的英语介绍个人学习和生活情况的写作任务。",
-            "example": "I’m curious and I learn best by doing."
+            "definition": "学生档案写作是按照档案结构用英语介绍个人情况的写作任务。",
+            "example": "My name is Ann Wells and I’m a Grade 10 student."
           },
           {
             "name": "动词名词搭配",
             "difficulty": 2,
-            "description": "掌握exchange ideas、take notes等常用动名搭配",
+            "description": "掌握exchange、register、explore等动词搭配",
             "aliases": [
               "verb-noun collocations"
             ],
             "prerequisites": [],
-            "definition": "动词名词搭配是英语中动词与特定名词自然组合形成的常用表达。",
-            "example": "take notes; exchange ideas"
+            "definition": "动词名词搭配是英语中动词与特定名词形成的常用组合。",
+            "example": "exchange ideas; explore the world"
+          },
+          {
+            "name": "课堂与校园词汇",
+            "difficulty": 1,
+            "description": "学习学校、课程、实验和校园活动相关词语",
+            "aliases": [
+              "school vocabulary"
+            ],
+            "prerequisites": [],
+            "definition": "课堂与校园词汇用于描述学校场所、课程学习和校园生活。",
+            "example": "science lab, lecture hall, chemistry class"
           }
         ],
         "sections": [
           {
+            "name": "Registering",
+            "section_key": "463e356392",
+            "page_range": [
+              8,
+              11
+            ]
+          },
+          {
             "name": "First Impressions",
-            "section_key": "712fb044df",
+            "section_key": "82dec61af8",
             "page_range": [
               11,
+              13
+            ]
+          },
+          {
+            "name": "Basic sentence structures",
+            "section_key": "214dde226e",
+            "page_range": [
+              13,
+              14
+            ]
+          },
+          {
+            "name": "Learning styles",
+            "section_key": "8e4231e4cc",
+            "page_range": [
+              14,
               15
             ]
           },
           {
             "name": "Student Profiles",
-            "section_key": "3ff2b615c3",
+            "section_key": "3b7f7c5dac",
             "page_range": [
               15,
-              17
+              16
+            ]
+          },
+          {
+            "name": "A student profile",
+            "section_key": "feea49ddf2",
+            "page_range": [
+              16,
+              18
             ]
           }
         ],
@@ -1513,164 +1840,218 @@
         "name": "UNIT 1 TEENAGE LIFE",
         "concepts": [
           {
-            "name": "课外活动俱乐部",
+            "name": "学校社团选择",
             "difficulty": 2,
-            "description": "围绕兴趣、服务和交流开展的校园活动。",
+            "description": "根据兴趣和特长选择适合的学校社团",
             "aliases": [
-              "school clubs",
-              "extra-curricular activities"
+              "选择学校社团"
             ],
             "prerequisites": [],
-            "definition": "课外活动俱乐部是高中生在课堂之外参与兴趣或志愿活动的组织。",
-            "example": "Adam joined a volunteer club.",
-            "section": "The Freshman Challenge"
+            "definition": "学校社团选择是依据个人兴趣、能力和交友需求决定参加的社团。",
+            "example": "Adam选择志愿者社团。"
           },
           {
-            "name": "预测听力内容",
-            "difficulty": 2,
-            "description": "听前通过问题和选项推测录音内容。",
+            "name": "课外活动",
+            "difficulty": 1,
+            "description": "学生在课堂之外参加的活动",
             "aliases": [
-              "predict content"
+              "课外社团活动"
             ],
             "prerequisites": [],
-            "definition": "预测听力内容是利用听前信息推断可能听到的主题和答案。",
-            "example": "先读问题和选项，再预测录音内容。"
+            "definition": "课外活动是学生在正常课程之外参与的学习、服务或兴趣活动。",
+            "example": "参加芭蕾社团是课外活动。"
           },
           {
-            "name": "校园生活挑战",
+            "name": "高中生活挑战",
             "difficulty": 2,
-            "description": "高中阶段在课程、活动和责任方面面临的困难。",
+            "description": "进入高中后面临的课程、学习和责任变化",
             "aliases": [
-              "senior high school challenge"
+              "高中适应挑战"
             ],
             "prerequisites": [],
-            "definition": "校园生活挑战指学生升入高中后在学习适应和自我管理方面遇到的问题。",
-            "example": "Choosing courses was a challenge for Adam."
+            "definition": "高中生活挑战包括选择课程、适应作业和承担更多责任等问题。",
+            "example": "Adam担心跟不上高级课程。"
           },
           {
-            "name": "快速浏览寻主旨",
+            "name": "略读",
             "difficulty": 2,
-            "description": "通过标题、图片、关键词和主题句寻找段落大意。",
+            "description": "通过标题、图片和主题句快速理解大意",
             "aliases": [
-              "skim",
-              "skimming"
+              "快速浏览"
             ],
             "prerequisites": [],
-            "definition": "快速浏览寻主旨是快速阅读文本以确定其主要内容的方法。",
-            "example": "先看标题和主题句，再概括段落大意。",
-            "section": "A Letter of Advice"
+            "definition": "略读是快速查看文本关键信息以获取段落或全文主旨的阅读方法。",
+            "example": "先看标题和主题句来判断主旨。"
           },
           {
             "name": "名词短语",
-            "difficulty": 3,
-            "description": "以名词为中心词的词组，在句中充当名词成分。",
+            "difficulty": 2,
+            "description": "以名词为中心词的词组",
             "aliases": [
-              "noun phrase",
               "NP"
             ],
             "prerequisites": [],
-            "definition": "名词短语是以名词为中心词构成的词组。",
-            "example": "the first week"
+            "definition": "名词短语是以名词为中心词、可在句中充当名词成分的词组。",
+            "example": "two clubs"
           },
           {
             "name": "形容词短语",
-            "difficulty": 3,
-            "description": "以形容词为中心词的词组，用于描述性质或状态。",
+            "difficulty": 2,
+            "description": "以形容词为中心词的词组",
             "aliases": [
-              "adjective phrase",
               "AdjP"
             ],
             "prerequisites": [],
-            "definition": "形容词短语是以形容词为中心词构成的词组。",
+            "definition": "形容词短语是以形容词为中心词、用于描述人或事物特征的词组。",
             "example": "very nice and patient",
             "section": "The Freshman Challenge"
           },
           {
             "name": "副词短语",
-            "difficulty": 3,
-            "description": "以副词为中心词的词组，用于修饰动作或状态。",
+            "difficulty": 2,
+            "description": "以副词为中心词的词组",
             "aliases": [
-              "adverb phrase",
               "AdvP"
             ],
             "prerequisites": [],
-            "definition": "副词短语是以副词为中心词构成的词组。",
-            "example": "quite quickly"
-          },
-          {
-            "name": "将来活动表达",
-            "difficulty": 3,
-            "description": "使用多种结构表达将来计划、安排和愿望。",
-            "aliases": [
-              "talking about future activities"
-            ],
-            "prerequisites": [],
-            "definition": "将来活动表达用于说明将要进行的活动及相关计划或希望。",
-            "example": "We’re going to learn about wildlife.",
+            "definition": "副词短语是以副词为中心词、用于修饰动作或状态的词组。",
+            "example": "quite quickly",
             "section": "The Freshman Challenge"
           },
           {
-            "name": "建议表达",
-            "difficulty": 3,
-            "description": "用推荐、应该和为什么不等结构提出建议。",
+            "name": "将来活动表达",
+            "difficulty": 2,
+            "description": "用多种结构谈论将来的计划和安排",
             "aliases": [
-              "expressions for suggestions"
+              "谈论未来活动"
             ],
             "prerequisites": [],
-            "definition": "建议表达是用于向他人提出做法和行动建议的语言形式。",
-            "example": "Why not discuss the problem together?"
+            "definition": "将来活动表达使用will、be going to、plan to等结构说明未来计划或预测。",
+            "example": "I plan to improve my spoken English."
           },
           {
             "name": "建议信结构",
-            "difficulty": 3,
-            "description": "建议信包括问题、感受、建议、理由和预期帮助。",
-            "aliases": [
-              "letter of advice"
-            ],
-            "prerequisites": [],
-            "definition": "建议信结构是按照固定部分向有问题的人提供建议的书信组织方式。",
-            "example": "I think you should encourage your friend to try new hobbies.",
-            "section": "A Letter of Advice"
-          },
-          {
-            "name": "书信基本格式",
             "difficulty": 2,
-            "description": "书信通常包括日期、称呼、正文、结束语和署名。",
+            "description": "按固定部分组织一封针对问题的建议邮件",
             "aliases": [
-              "letter format"
+              "建议信写作"
             ],
             "prerequisites": [],
-            "definition": "书信基本格式是正式或非正式书信常用的组成与排列方式。",
+            "definition": "建议信通常包括日期、称呼、问题理解、建议及理由、结尾和署名。",
             "example": "Dear Worried Friend, Best wishes"
           },
           {
-            "name": "成长经历比较",
+            "name": "建议表达",
             "difficulty": 2,
-            "description": "比较不同国家及不同代际青少年的生活经历。",
+            "description": "用恰当语言提出建议并说明理由",
             "aliases": [
-              "learning across generations"
+              "提出建议"
+            ],
+            "prerequisites": [
+              "建议信结构"
+            ],
+            "definition": "建议表达用于针对他人的问题提出做法，并解释建议可能带来的帮助。",
+            "example": "I recommend that you talk to your friend."
+          },
+          {
+            "name": "问题解决思路",
+            "difficulty": 2,
+            "description": "针对青少年问题提出可行做法和理由",
+            "aliases": [
+              "问题与解决方案"
+            ],
+            "prerequisites": [
+              "建议表达"
+            ],
+            "definition": "问题解决思路是先明确青少年面临的问题，再提出建议并说明原因。",
+            "example": "尝试新爱好以减少上网时间。"
+          },
+          {
+            "name": "元音组合发音",
+            "difficulty": 3,
+            "description": "辨识字母组合在单词中的常见元音发音",
+            "aliases": [
+              "元音字母组合"
             ],
             "prerequisites": [],
-            "definition": "成长经历比较是从学校、家庭和社会环境等方面比较青少年生活。",
-            "example": "比较Mamorena与母亲年轻时的生活。",
-            "section": "A Letter of Advice"
+            "definition": "元音组合发音关注字母组合如ay、ea、ou在不同单词中的读音。",
+            "example": "day中的ay与pay同音。"
+          },
+          {
+            "name": "代际生活比较",
+            "difficulty": 2,
+            "description": "比较青少年与父母年轻时的生活异同",
+            "aliases": [
+              "跨代生活比较"
+            ],
+            "prerequisites": [],
+            "definition": "代际生活比较是从教育、成长环境和生活经历等方面比较不同年代的生活。",
+            "example": "比较Mamorena与母亲Tandi的成长经历。"
           }
         ],
         "sections": [
           {
-            "name": "The Freshman Challenge",
-            "section_key": "8204463941",
+            "name": "Predict content",
+            "section_key": "84eb397197",
+            "page_range": [
+              19,
+              21
+            ]
+          },
+          {
+            "name": "Skim",
+            "section_key": "390162dd80",
             "page_range": [
               21,
+              21
+            ]
+          },
+          {
+            "name": "The Freshman Challenge",
+            "section_key": "a5345bf025",
+            "page_range": [
+              21,
+              24
+            ]
+          },
+          {
+            "name": "Talking about future activities",
+            "section_key": "136d988553",
+            "page_range": [
+              24,
               25
             ]
           },
           {
             "name": "A Letter of Advice",
-            "section_key": "e6be0767ad",
+            "section_key": "0a44a59b58",
             "page_range": [
               25,
+              25
+            ]
+          },
+          {
+            "name": "A letter of advice（2）",
+            "section_key": "2ff206f0fa",
+            "page_range": [
+              25,
+              28
+            ]
+          },
+          {
+            "name": "Set up a student club",
+            "section_key": "b9d341fd35",
+            "page_range": [
+              28,
               29
+            ]
+          },
+          {
+            "name": "Learning Across Generations",
+            "section_key": "6082870d03",
+            "page_range": [
+              29,
+              30
             ]
           }
         ],
@@ -1688,230 +2069,277 @@
         "concepts": [
           {
             "name": "旅行准备事项",
-            "difficulty": 2,
-            "description": "出行前办理证件、交通住宿和物品准备。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "旅行准备事项是为顺利出行而完成的各项准备工作。",
-            "example": "申请签证、订机票、预订酒店。"
-          },
-          {
-            "name": "旅行计划表达",
-            "difficulty": 2,
-            "description": "用英语谈论目的地、原因、交通和行程安排。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "旅行计划表达是对未来旅行安排进行说明和交流。",
-            "example": "I’m planning to travel to Jiuzhaigou."
-          },
-          {
-            "name": "现在进行时",
-            "difficulty": 3,
-            "description": "由be和现在分词构成的时态。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "现在进行时表示正在进行的动作或状态。",
-            "example": "We’re renting a car."
-          },
-          {
-            "name": "现在进行时表将来",
-            "difficulty": 4,
-            "description": "用现在进行时表示已经安排好的将来活动。",
-            "aliases": [],
-            "prerequisites": [
-              "现在进行时",
-              "旅行计划表达"
+            "difficulty": 1,
+            "description": "旅行前办理证件、订票、订房并准备物品。",
+            "aliases": [
+              "travel preparations"
             ],
-            "definition": "现在进行时表将来是用该时态表达确定的未来计划。",
-            "example": "We’re meeting at 10:00 a.m."
+            "prerequisites": [],
+            "definition": "旅行准备事项是出行前需要完成的证件、交通、住宿和物品准备。",
+            "example": "I need to get a passport and book a hotel room.",
+            "section": "Focus on key words"
           },
           {
             "name": "关键词听力策略",
             "difficulty": 2,
-            "description": "听对话时抓住关键词和短语以理解大意。",
-            "aliases": [],
+            "description": "通过关键词和短语理解对话主要意思。",
+            "aliases": [
+              "focus on key words"
+            ],
             "prerequisites": [],
-            "definition": "关键词听力策略是通过识别关键信息而非逐词理解来把握听力内容。",
-            "example": "重点听travel date等关键信息。"
+            "definition": "关键词听力策略是重点捕捉关键词和短语而非每个单词。",
+            "example": "Listen for “France” and “by air”.",
+            "section": "Focus on key words"
           },
           {
-            "name": "旅行预订信息",
-            "difficulty": 3,
-            "description": "预订时确认日期、时间、人数、类型和特殊要求。",
-            "aliases": [],
+            "name": "旅行计划表达",
+            "difficulty": 2,
+            "description": "围绕目的地、原因、交通和活动谈旅行安排。",
+            "aliases": [
+              "travel plans"
+            ],
             "prerequisites": [
               "旅行准备事项"
             ],
-            "definition": "旅行预订信息是完成交通、住宿或餐饮预订所需的具体内容。",
-            "example": "入住日期、房型和早餐要求。"
+            "definition": "旅行计划表达是说明旅行目的、地点、时间、交通及活动安排。",
+            "example": "I’m planning to travel to Jiuzhaigou.",
+            "section": "Focus on key words"
           },
           {
-            "name": "预订酒店",
+            "name": "现在进行时表将来",
             "difficulty": 3,
-            "description": "围绕入住退房、房型和特殊要求预订房间。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订酒店是通过交流确定住宿时间、房间类型及服务要求。",
-            "example": "I’d like to book a room with a view."
-          },
-          {
-            "name": "预订机票",
-            "difficulty": 3,
-            "description": "确认旅行日期、航班时间、往返方式和舱位。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订机票是根据出行需求选择并购买合适的航班票。",
-            "example": "I’d like to book a return flight."
-          },
-          {
-            "name": "预订餐桌",
-            "difficulty": 3,
-            "description": "确定用餐日期、时间、人数及特殊需求。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订餐桌是提前为特定时间和人数安排用餐位置。",
-            "example": "A table for four, please."
-          },
-          {
-            "name": "预订交际表达",
-            "difficulty": 3,
-            "description": "用于询问、选择、确认和支付预订服务的表达。",
+            "description": "用现在进行时表示已经安排好的将来活动。",
             "aliases": [
-              "预订对话"
-            ],
-            "prerequisites": [
-              "旅行预订信息"
-            ],
-            "definition": "预订交际表达是在电话预订中说明需求并完成确认的语言。",
-            "example": "Which flight would you prefer?"
-          },
-          {
-            "name": "旅游宣传册",
-            "difficulty": 3,
-            "description": "介绍旅游目的地、路线、活动和特色的宣传文本。",
-            "aliases": [
-              "旅游手册"
+              "present continuous for future plans"
             ],
             "prerequisites": [],
-            "definition": "旅游宣传册是用来推广旅游目的地或套餐路线的文本。",
-            "example": "Travel Peru介绍多种套餐路线。"
+            "definition": "现在进行时表将来指用现在进行时表达确定的未来计划或安排。",
+            "example": "We’re taking the train tomorrow."
+          },
+          {
+            "name": "旅游预订表达",
+            "difficulty": 3,
+            "description": "在电话中预订机票、房间或餐桌并确认信息。",
+            "aliases": [
+              "making reservations"
+            ],
+            "prerequisites": [
+              "旅行计划表达"
+            ],
+            "definition": "旅游预订表达是围绕时间、偏好、姓名和付款方式完成预订沟通。",
+            "example": "What time are you travelling?",
+            "section": "Making reservations"
+          },
+          {
+            "name": "旅行交通与住宿",
+            "difficulty": 2,
+            "description": "描述旅行中的出行方式、住宿地点及相关安排。",
+            "aliases": [
+              "transport and accommodation"
+            ],
+            "prerequisites": [
+              "旅行计划表达"
+            ],
+            "definition": "旅行交通与住宿是旅游计划中关于如何到达和在哪里居住的信息。",
+            "example": "We travelled by boat and stayed with a local family."
           },
           {
             "name": "文本类型识别",
             "difficulty": 2,
-            "description": "根据标题、图片和版式判断文本属于哪种类型。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "文本类型识别是利用文本外部特征判断其体裁或用途。",
-            "example": "判断文本是百科全书还是宣传册。"
-          },
-          {
-            "name": "旅游套餐路线",
-            "difficulty": 3,
-            "description": "由目的地、天数、住宿、交通和活动组成的旅行安排。",
+            "description": "根据标题、图片和版式判断文本所属类型。",
             "aliases": [
-              "旅行路线"
+              "recognising text type"
             ],
-            "prerequisites": [
-              "旅行准备事项"
-            ],
-            "definition": "旅游套餐路线是旅行机构为游客设计的完整行程方案。",
-            "example": "四天马丘比丘徒步之旅。"
-          },
-          {
-            "name": "旅游目的地信息",
-            "difficulty": 2,
-            "description": "介绍景点位置、历史、特色和最佳参观时间。",
-            "aliases": [],
             "prerequisites": [],
-            "definition": "旅游目的地信息是帮助游客了解并选择旅行地点的资料。",
-            "example": "九寨沟以瀑布、彩色湖泊和山景闻名。"
+            "definition": "文本类型识别是利用文本外部特征判断其为百科全书或宣传册等类型。",
+            "example": "Titles and pictures show that it is a brochure."
           },
           {
-            "name": "旅游计划邮件结构",
-            "difficulty": 4,
-            "description": "按目的、其他安排、交通和结尾组织旅行计划邮件。",
-            "aliases": [],
-            "prerequisites": [
-              "旅行计划表达"
+            "name": "百科全书文本",
+            "difficulty": 2,
+            "description": "客观介绍国家的地理、历史和语言等信息。",
+            "aliases": [
+              "encyclopedia"
             ],
-            "definition": "旅游计划邮件结构是书面介绍旅行安排时采用的段落组织方式。",
-            "example": "第一段说明去西安的主要目的。"
+            "prerequisites": [
+              "文本类型识别"
+            ],
+            "definition": "百科全书文本以客观说明为主，介绍较系统的事实信息。",
+            "example": "Peru has three main geographical areas.",
+            "section": "Focus on key words"
           },
           {
-            "name": "情感表达",
+            "name": "旅游宣传册文本",
             "difficulty": 3,
-            "description": "使用固定表达说明旅行中的惊讶、期待和感受。",
-            "aliases": [],
+            "description": "介绍旅游线路、景点、活动和住宿等信息。",
+            "aliases": [
+              "travel brochure"
+            ],
             "prerequisites": [
+              "文本类型识别"
+            ],
+            "definition": "旅游宣传册文本是为吸引游客而提供旅游产品和目的地信息的文本。",
+            "example": "The tour includes boating and exploring the rainforest."
+          },
+          {
+            "name": "秘鲁地理与历史",
+            "difficulty": 2,
+            "description": "了解秘鲁的地理区域、印加帝国和官方语言。",
+            "aliases": [
+              "Peru geography and history"
+            ],
+            "prerequisites": [],
+            "definition": "秘鲁地理与历史包括其三大区域、印加帝国历史及西班牙语地位。",
+            "example": "The Andes Mountains are in Peru."
+          },
+          {
+            "name": "印加文明",
+            "difficulty": 3,
+            "description": "了解印加帝国、道路、建筑和马丘比丘遗址。",
+            "aliases": [
+              "Inca civilisation"
+            ],
+            "prerequisites": [
+              "秘鲁地理与历史"
+            ],
+            "definition": "印加文明是曾在秘鲁发展并留下城市、道路和建筑遗产的古代文明。",
+            "example": "The Incas built roads across the mountains."
+          },
+          {
+            "name": "旅行计划邮件",
+            "difficulty": 3,
+            "description": "用邮件说明旅行目的、安排、交通和个人感受。",
+            "aliases": [
+              "travel plan email"
+            ],
+            "prerequisites": [
+              "现在进行时表将来",
               "旅行计划表达"
             ],
-            "definition": "情感表达是用语言传达对旅行经历或景物的情绪反应。",
+            "definition": "旅行计划邮件是按段落介绍旅行目的、活动安排、交通和结尾问候的邮件。",
+            "example": "My parents and I are planning to go to Xi’an."
+          },
+          {
+            "name": "邮件段落组织",
+            "difficulty": 3,
+            "description": "按主要目的、其他计划、交通和结尾组织邮件。",
+            "aliases": [
+              "email organisation"
+            ],
+            "prerequisites": [
+              "旅行计划邮件"
+            ],
+            "definition": "邮件段落组织是为每段安排清晰主题并补充相关细节。",
+            "example": "The third paragraph explains the transport."
+          },
+          {
+            "name": "情感表达语言",
+            "difficulty": 2,
+            "description": "用amazing、unbelievable等表达惊讶和期待。",
+            "aliases": [
+              "expressing emotion"
+            ],
+            "prerequisites": [],
+            "definition": "情感表达语言是描述旅行体验和个人感受的词语或短语。",
             "example": "I can’t wait to go."
           },
           {
-            "name": "旅游宣传册设计",
-            "difficulty": 4,
-            "description": "通过调研、规划和版面设计制作旅游宣传册。",
-            "aliases": [],
-            "prerequisites": [
-              "旅游宣传册",
-              "旅游套餐路线"
-            ],
-            "definition": "旅游宣传册设计是将旅游路线和特色组织成具有吸引力的宣传材料。",
-            "example": "设计一周文化主题旅游宣传册。"
-          },
-          {
-            "name": "旅游主题类型",
+            "name": "旅游主题分类",
             "difficulty": 2,
-            "description": "根据旅行目的划分教育、历史、冒险、文化和美食旅游。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "旅游主题类型是依据旅行者兴趣和主要活动形成的路线类别。",
-            "example": "历史旅游、文化旅游和美食旅游。"
+            "description": "按教育、历史、探险、文化和美食设计旅游线路。",
+            "aliases": [
+              "types of tours"
+            ],
+            "prerequisites": [
+              "旅行计划表达"
+            ],
+            "definition": "旅游主题分类是依据游客兴趣确定旅游线路的主要主题。",
+            "example": "A history tour may include the Great Wall.",
+            "section": "A Travel Plan to Xi’an"
           },
           {
             "name": "字母组合发音",
             "difficulty": 3,
-            "description": "识别英语单词中常见字母组合的发音规律。",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "字母组合发音是字母组合在单词中的常见语音表现。",
-            "example": "ticket中的ck，photo中的ph。"
-          },
-          {
-            "name": "可持续旅游讨论",
-            "difficulty": 4,
-            "description": "讨论旅游对环境、当地居民和经济的影响。",
-            "aliases": [],
-            "prerequisites": [
-              "旅游目的地信息"
+            "description": "辨识英语字母组合在词中的常见发音。",
+            "aliases": [
+              "letter combinations pronunciation"
             ],
-            "definition": "可持续旅游讨论是围绕旅游发展与环境及社区关系进行思考。",
-            "example": "讨论游客过多是否会破坏马丘比丘环境。"
+            "prerequisites": [],
+            "definition": "字母组合发音是根据字母组合读出其在单词中的语音。",
+            "example": "“ph” is pronounced in “photo”."
           }
         ],
         "sections": [
           {
-            "name": "Travel Peru",
-            "section_key": "52b106866e",
+            "name": "A travel plan",
+            "section_key": "9b681775fe",
+            "page_range": [
+              30,
+              31
+            ]
+          },
+          {
+            "name": "Focus on key words",
+            "section_key": "4167e2e9c7",
+            "page_range": [
+              31,
+              33
+            ]
+          },
+          {
+            "name": "Recognise text type",
+            "section_key": "db5eb74f83",
             "page_range": [
               33,
+              33
+            ]
+          },
+          {
+            "name": "Travel Peru",
+            "section_key": "ef451cb79a",
+            "page_range": [
+              33,
+              33
+            ]
+          },
+          {
+            "name": "Machu Picchu",
+            "section_key": "ed8588ba33",
+            "page_range": [
+              33,
+              36
+            ]
+          },
+          {
+            "name": "Making reservations",
+            "section_key": "3312dd8c3c",
+            "page_range": [
+              36,
+              36
+            ]
+          },
+          {
+            "name": "Booking air tickets",
+            "section_key": "c2988a3cd3",
+            "page_range": [
+              36,
               37
             ]
           },
           {
             "name": "A Travel Plan to Xi’an",
-            "section_key": "f4a5dc4884",
+            "section_key": "f41b39909e",
             "page_range": [
               37,
-              41
+              40
+            ]
+          },
+          {
+            "name": "Design a travel brochure",
+            "section_key": "fd002d607d",
+            "page_range": [
+              40,
+              42
             ]
           }
         ],
@@ -1928,210 +2356,351 @@
         "name": "UNIT 3 SPORTS AND FITNESS",
         "concepts": [
           {
-            "name": "主旨听辨",
-            "difficulty": 2,
-            "description": "听对话时抓住主要意思而非逐词翻译",
+            "name": "体育项目海报",
+            "difficulty": 1,
+            "description": "获取比赛时间、地点和项目等活动信息",
             "aliases": [
-              "listen for main ideas"
+              "sports event poster"
             ],
             "prerequisites": [],
-            "definition": "主旨听辨是通过捕捉关键信息理解听力材料中心内容的方法。",
-            "example": "听出对话的主要目的是邀请朋友看比赛。"
+            "definition": "体育项目海报是用于介绍体育活动安排和邀请参与者的图文信息。",
+            "example": "海报写明比赛时间、地点和对阵双方。"
           },
           {
             "name": "体育活动邀请",
             "difficulty": 2,
-            "description": "使用得体表达邀请朋友参加体育活动",
+            "description": "用英语邀请朋友观看或参加体育活动",
             "aliases": [
               "invite a friend to a sports event"
             ],
-            "prerequisites": [],
-            "definition": "体育活动邀请是向他人提出参加比赛、跑步等活动的建议。",
-            "example": "Would you like to go to the soccer game?"
+            "prerequisites": [
+              "体育项目海报"
+            ],
+            "definition": "体育活动邀请是向他人提出观看或参加体育活动的建议。",
+            "example": "Would you like to go to the soccer game?",
+            "section": "Sportsmanship"
           },
           {
-            "name": "重读与强调",
-            "difficulty": 3,
-            "description": "通过重读突出句子中的关键信息",
+            "name": "听力主旨",
+            "difficulty": 2,
+            "description": "听对话时抓住说话者的主要意图",
             "aliases": [
-              "sentence stress"
+              "main ideas"
             ],
             "prerequisites": [],
-            "definition": "重读与强调是用更突出的语音表现重要词语或信息。",
+            "definition": "听力主旨是听者对语音材料中心内容或主要目的的理解。",
+            "example": "判断说话者是在邀请朋友参加比赛。",
+            "section": "Listen for main ideas"
+          },
+          {
+            "name": "重读识别",
+            "difficulty": 2,
+            "description": "识别说话者为突出重点而强调的词语",
+            "aliases": [
+              "word stress"
+            ],
+            "prerequisites": [
+              "听力主旨"
+            ],
+            "definition": "重读识别是通过辨听被强调的词语来理解话语重点。",
             "example": "Would you like to come along?"
           },
           {
             "name": "附加疑问句",
             "difficulty": 3,
-            "description": "在陈述句后添加简短疑问以确认信息",
+            "description": "用陈述句加简短问句寻求确认",
             "aliases": [
               "tag questions"
             ],
             "prerequisites": [],
-            "definition": "附加疑问句是在陈述句后加简短问句进行确认或征询意见的结构。",
+            "definition": "附加疑问句是在陈述句后加简短疑问部分以确认信息或征求同意。",
             "example": "It’s a beautiful day, isn’t it?"
           },
           {
             "name": "附加疑问句语调",
             "difficulty": 3,
-            "description": "根据交际目的使用升调或降调",
+            "description": "根据语境使用附加疑问句的升降调",
             "aliases": [
               "intonation of tag questions"
             ],
             "prerequisites": [
               "附加疑问句"
             ],
-            "definition": "附加疑问句语调是通过升调或降调表达疑问、确认等语气。",
-            "example": "Wonderful gym, isn’t it?"
+            "definition": "附加疑问句语调体现说话者是在真正提问还是期待对方认同。",
+            "example": "You come here often, don’t you?"
           },
           {
-            "name": "运动精神",
-            "difficulty": 3,
-            "description": "强调公平竞争、诚信和尊重他人",
+            "name": "体育精神",
+            "difficulty": 2,
+            "description": "讨论努力、荣誉、互助和胜负观念",
             "aliases": [
               "sportsmanship"
             ],
             "prerequisites": [],
-            "definition": "运动精神是在体育活动中遵守公平规则并重视荣誉与他人的品质。",
-            "example": "You should never cheat.",
-            "section": "Living Legends"
+            "definition": "体育精神是运动中重视努力、荣誉、帮助他人和正确行为的态度。",
+            "example": "Good sportsmanship is more important than winning."
           },
           {
-            "name": "同意与异议表达",
+            "name": "同意与异议",
             "difficulty": 2,
             "description": "用英语表达赞同、反对及保留意见",
             "aliases": [
               "agreeing and disagreeing"
             ],
-            "prerequisites": [],
-            "definition": "同意与异议表达是对他人观点表示赞成、反对或部分认同的交际方式。",
+            "prerequisites": [
+              "体育精神"
+            ],
+            "definition": "同意与异议表达用于回应他人观点并说明自己的立场。",
             "example": "I agree. / I don’t think so."
           },
           {
-            "name": "运动员榜样标准",
-            "difficulty": 3,
-            "description": "从竞技成就和社会示范作用评价运动员",
-            "aliases": [
-              "living legends of sports"
-            ],
-            "prerequisites": [],
-            "definition": "运动员榜样标准要求运动员既精通所从事的运动又能为他人树立良好榜样。",
-            "example": "Lang Ping led her team to Olympic gold.",
-            "section": "Living Legends"
-          },
-          {
-            "name": "坚毅与心理力量",
-            "difficulty": 3,
-            "description": "面对伤病、失败和困难仍坚持努力",
-            "aliases": [
-              "determination",
-              "mental strength"
-            ],
-            "prerequisites": [],
-            "definition": "坚毅与心理力量是运动员面对挫折时保持信念并持续行动的能力。",
-            "example": "Jordan learnt from his failures and never gave up.",
-            "section": "Living Legends"
-          },
-          {
-            "name": "健身目标设定",
+            "name": "阅读内容预测",
             "difficulty": 2,
-            "description": "用具体运动表现而非体重设定健康目标",
-            "aliases": [
-              "fitness goals"
-            ],
-            "prerequisites": [],
-            "definition": "健身目标设定是围绕跑步、俯卧撑等可执行的运动表现制定目标。",
-            "example": "I want to run two kilometres in eight minutes."
-          },
-          {
-            "name": "积极自我评价",
-            "difficulty": 2,
-            "description": "关注自身优点并停止消极身体比较",
-            "aliases": [
-              "positive self-image"
-            ],
-            "prerequisites": [],
-            "definition": "积极自我评价是肯定自己的身体和优点，而不是持续与他人比较。",
-            "example": "I made a list of the things I liked about myself."
-          },
-          {
-            "name": "相似与差异表达",
-            "difficulty": 3,
-            "description": "使用连接词和短语比较事物的相同与不同",
-            "aliases": [
-              "similarities and differences"
-            ],
-            "prerequisites": [],
-            "definition": "相似与差异表达是用特定词语说明两个事物的共同点和区别。",
-            "example": "Instead of dieting, I added healthy foods.",
-            "section": "Going Positive"
-          },
-          {
-            "name": "健康生活改变",
-            "difficulty": 2,
-            "description": "通过饮食、运动和自我态度改善生活",
-            "aliases": [
-              "positive changes in health and fitness"
-            ],
-            "prerequisites": [
-              "健身目标设定",
-              "积极自我评价"
-            ],
-            "definition": "健康生活改变是为提升身心健康而调整日常行为和思维方式。",
-            "example": "I added a salad or an apple to my meal."
-          },
-          {
-            "name": "体育兴趣调查",
-            "difficulty": 2,
-            "description": "调查同学对运动项目和锻炼习惯的兴趣需求",
-            "aliases": [
-              "survey on sports interests and needs"
-            ],
-            "prerequisites": [],
-            "definition": "体育兴趣调查是通过问题收集学生运动偏好、时间和频率等信息。",
-            "example": "What is your favourite sport?",
-            "section": "Going Positive"
-          },
-          {
-            "name": "调查结果报告",
-            "difficulty": 3,
-            "description": "整理调查数据并提出基于结果的建议",
-            "aliases": [
-              "survey report"
-            ],
-            "prerequisites": [
-              "体育兴趣调查"
-            ],
-            "definition": "调查结果报告是呈现调查问题、数据结果及相关建议的书面文本。",
-            "example": "Eight out of 15 students preferred one-on-one sports."
-          },
-          {
-            "name": "预测阅读",
-            "difficulty": 2,
-            "description": "根据标题和图片预测文章内容以辅助理解",
+            "description": "借助标题和图片预测阅读材料内容",
             "aliases": [
               "make predictions"
             ],
             "prerequisites": [],
-            "definition": "预测阅读是阅读前利用标题和图片推测文本内容的策略。",
-            "example": "根据运动员图片预测文章主题。"
+            "definition": "阅读内容预测是阅读前根据标题和图片推测文章主题与信息。",
+            "example": "根据运动员图片预测文章介绍著名运动员。",
+            "section": "Make predictions"
+          },
+          {
+            "name": "运动员榜样",
+            "difficulty": 2,
+            "description": "理解优秀运动员的成就、品质和社会影响",
+            "aliases": [
+              "living legends of sports"
+            ],
+            "prerequisites": [
+              "阅读内容预测"
+            ],
+            "definition": "运动员榜样是既精通运动项目又能为他人树立良好示范的运动员。",
+            "example": "郎平带领中国女排获得奥运金牌。"
+          },
+          {
+            "name": "决心与坚持",
+            "difficulty": 2,
+            "description": "理解面对困难、失败时不气馁并持续努力",
+            "aliases": [
+              "determination",
+              "never give up"
+            ],
+            "prerequisites": [
+              "运动员榜样"
+            ],
+            "definition": "决心与坚持是面对挑战或失败时继续努力而不放弃的品质。",
+            "example": "Jordan learned from failure and practised harder.",
+            "section": "Make predictions"
+          },
+          {
+            "name": "健康与健身",
+            "difficulty": 1,
+            "description": "关注身体健康、体能状态和规律锻炼",
+            "aliases": [
+              "health and fitness"
+            ],
+            "prerequisites": [],
+            "definition": "健康与健身关注身体状态、运动能力及促进健康的生活方式。",
+            "example": "I want to run two kilometres in eight minutes."
+          },
+          {
+            "name": "运动目标设定",
+            "difficulty": 2,
+            "description": "用具体运动表现目标替代单纯体重目标",
+            "aliases": [
+              "fitness goals"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "运动目标设定是为跑步、俯卧撑等运动表现制定具体目标。",
+            "example": "I want to be able to do 30 push-ups."
+          },
+          {
+            "name": "积极自我认知",
+            "difficulty": 2,
+            "description": "减少外貌比较，关注并肯定自身优点",
+            "aliases": [
+              "being positive about oneself"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "积极自我认知是接纳自己的身体并关注自身积极特征的态度。",
+            "example": "I made a list of the things I liked about myself."
+          },
+          {
+            "name": "健康饮食调整",
+            "difficulty": 2,
+            "description": "增加健康食物而非简单排除喜欢的食物",
+            "aliases": [
+              "healthy eating"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "健康饮食调整是通过搭配健康食物改善饮食结构的做法。",
+            "example": "Add a salad or an apple to a burger."
+          },
+          {
+            "name": "相似与差异表达",
+            "difficulty": 3,
+            "description": "使用连接词和短语比较过去、现在及未来变化",
+            "aliases": [
+              "similarities and differences"
+            ],
+            "prerequisites": [
+              "健康与健身"
+            ],
+            "definition": "相似与差异表达用于说明事物或情况之间的相同点和不同点。",
+            "example": "Instead of dieting, I added healthy foods.",
+            "section": "Going Positive"
+          },
+          {
+            "name": "健康日志写作",
+            "difficulty": 3,
+            "description": "在健康日志中说明问题、变化及积极结果",
+            "aliases": [
+              "wellness book writing"
+            ],
+            "prerequisites": [
+              "相似与差异表达"
+            ],
+            "definition": "健康日志写作是围绕健康或健身经历说明改变原因、过程和结果。",
+            "example": "By being positive, I became happier and healthier."
+          },
+          {
+            "name": "体育兴趣调查",
+            "difficulty": 3,
+            "description": "调查同学喜欢的运动、时间、频率和时长",
+            "aliases": [
+              "survey on sports interests and needs"
+            ],
+            "prerequisites": [],
+            "definition": "体育兴趣调查是收集学生运动偏好与需求并据此提出建议的活动。",
+            "example": "调查同学最喜欢的运动项目。",
+            "section": "Make a survey on sports interests and needs"
+          },
+          {
+            "name": "调查结果报告",
+            "difficulty": 3,
+            "description": "整理调查数据并提出开设体育社团的建议",
+            "aliases": [
+              "survey results report"
+            ],
+            "prerequisites": [
+              "体育兴趣调查"
+            ],
+            "definition": "调查结果报告是呈现调查问题、数据结果和相关建议的书面报告。",
+            "example": "Eight out of 15 students preferred one-on-one sports."
+          },
+          {
+            "name": "喀斯特地貌",
+            "difficulty": 2,
+            "description": "了解石灰岩经风、水和侵蚀形成的地貌",
+            "aliases": [
+              "karsts"
+            ],
+            "prerequisites": [],
+            "definition": "喀斯特地貌是石灰岩经过风、水和长期侵蚀塑造形成的自然景观。",
+            "example": "桂林的喀斯特地貌适合攀岩。",
+            "section": "The Karsts of China: A Vertical Journey"
+          },
+          {
+            "name": "攀岩挑战",
+            "difficulty": 2,
+            "description": "理解攀岩带来的身心挑战和探索体验",
+            "aliases": [
+              "rock climbing"
+            ],
+            "prerequisites": [
+              "喀斯特地貌"
+            ],
+            "definition": "攀岩挑战是攀登岩壁并在自然环境中挑战身心能力的运动体验。",
+            "example": "Climbers push themselves mentally and physically.",
+            "section": "The Karsts of China: A Vertical Journey"
           }
         ],
         "sections": [
           {
+            "name": "Sportsmanship",
+            "section_key": "3b0d1b1020",
+            "page_range": [
+              42,
+              43
+            ]
+          },
+          {
+            "name": "Listen for main ideas",
+            "section_key": "bdf9275112",
+            "page_range": [
+              43,
+              44
+            ]
+          },
+          {
+            "name": "Intonation",
+            "section_key": "c7efea8372",
+            "page_range": [
+              44,
+              44
+            ]
+          },
+          {
+            "name": "Tag questions",
+            "section_key": "f23d02b42b",
+            "page_range": [
+              44,
+              45
+            ]
+          },
+          {
             "name": "Living Legends",
-            "section_key": "d507fedc4b",
+            "section_key": "516bda3310",
+            "page_range": [
+              45,
+              45
+            ]
+          },
+          {
+            "name": "Make predictions",
+            "section_key": "6e88665010",
             "page_range": [
               45,
               49
             ]
           },
           {
-            "name": "Going Positive",
-            "section_key": "a5f7b9f795",
+            "name": "A page in a wellness book",
+            "section_key": "52f5ccee3e",
             "page_range": [
               49,
+              49
+            ]
+          },
+          {
+            "name": "Going Positive",
+            "section_key": "e9f0003549",
+            "page_range": [
+              49,
+              52
+            ]
+          },
+          {
+            "name": "Make a survey on sports interests and needs",
+            "section_key": "dd2bc9a96f",
+            "page_range": [
+              52,
               53
+            ]
+          },
+          {
+            "name": "The Karsts of China: A Vertical Journey",
+            "section_key": "7e24e3f7f7",
+            "page_range": [
+              53,
+              54
             ]
           }
         ],
@@ -2150,252 +2719,271 @@
           {
             "name": "自然灾害类型",
             "difficulty": 1,
-            "description": "识别地震、洪水、海啸等自然灾害。",
+            "description": "本单元涉及地震、海啸、洪水等灾害名称。",
             "aliases": [
               "natural disasters"
             ],
             "prerequisites": [],
-            "definition": "自然灾害是由自然因素引发并造成破坏的灾害事件。",
-            "example": "earthquake, flood, wildfire"
-          },
-          {
-            "name": "地震",
-            "difficulty": 1,
-            "description": "学习地震的震级、破坏及救援信息。",
-            "aliases": [
-              "earthquake"
-            ],
-            "prerequisites": [
-              "自然灾害类型"
-            ],
-            "definition": "地震是地面发生剧烈震动并可能造成严重破坏的自然灾害。",
-            "example": "A magnitude 7.8 earthquake hit Wenchuan."
-          },
-          {
-            "name": "海啸",
-            "difficulty": 1,
-            "description": "了解海啸的成因、波浪特征和危害。",
-            "aliases": [
-              "tsunami"
-            ],
-            "prerequisites": [
-              "自然灾害类型"
-            ],
-            "definition": "海啸是通常由海底强震引发并冲击海岸的巨大波浪。",
-            "example": "The earthquake caused a tsunami."
-          },
-          {
-            "name": "灾害预警迹象",
-            "difficulty": 2,
-            "description": "识别灾害发生前可能出现的异常现象。",
-            "aliases": [
-              "warning signs"
-            ],
-            "prerequisites": [
-              "地震"
-            ],
-            "definition": "灾害预警迹象是灾害发生前出现的异常自然或动物现象。",
-            "example": "Fish jumped out of the water."
-          },
-          {
-            "name": "灾害影响",
-            "difficulty": 2,
-            "description": "描述灾害造成的人员、建筑和生活损失。",
-            "aliases": [
-              "disaster effects"
-            ],
-            "prerequisites": [
-              "自然灾害类型"
-            ],
-            "definition": "灾害影响是灾害对人员、设施、环境和日常生活造成的后果。",
-            "example": "Many homes were destroyed."
+            "definition": "自然灾害类型是教材中介绍的由自然因素造成的灾害类别。",
+            "example": "Earthquake, tsunami, flood and wildfire are natural disasters."
           },
           {
             "name": "灾害新闻报道",
             "difficulty": 2,
-            "description": "按时间、地点和后果等信息报道灾害。",
+            "description": "围绕灾害时间、地点、伤亡和救援进行报道。",
             "aliases": [
               "news report"
             ],
             "prerequisites": [
               "自然灾害类型"
             ],
-            "definition": "灾害新闻报道是对灾害事件及其相关事实进行简洁播报的文本。",
-            "example": "A flood began in May in Colombo."
+            "definition": "灾害新闻报道是按关键信息简要介绍灾害事件及其影响的口头或书面报道。",
+            "example": "A huge earthquake hit Wenchuan yesterday afternoon."
           },
           {
             "name": "灾害信息要素",
             "difficulty": 2,
-            "description": "关注数字、日期、时间、地点和原因等细节。",
+            "description": "听取灾害报道中的数字、时间、地点和原因等信息。",
             "aliases": [
               "key information"
             ],
             "prerequisites": [
-              "灾害新闻报道"
+              "自然灾害类型"
             ],
-            "definition": "灾害信息要素包括事件的时间、地点、原因、影响及后续情况。",
-            "example": "time, place, cause, effect"
+            "definition": "灾害信息要素是灾害报道中需要重点识别的时间、地点、数字、人物和原因等内容。",
+            "example": "The earthquake had a magnitude of 7.8."
           },
           {
-            "name": "灾害救援",
+            "name": "灾害预警信号",
             "difficulty": 2,
-            "description": "了解军队、医护人员和志愿者的救援工作。",
+            "description": "地震前可能出现井水变化、动物异常等现象。",
             "aliases": [
-              "disaster relief"
-            ],
-            "prerequisites": [
-              "灾害影响"
-            ],
-            "definition": "灾害救援是灾害发生后为营救、救治和安置受灾者提供的帮助。",
-            "example": "Doctors provided medical care."
-          },
-          {
-            "name": "应急物资",
-            "difficulty": 1,
-            "description": "掌握灾害中应准备的水、食物和急救用品。",
-            "aliases": [
-              "emergency supplies"
-            ],
-            "prerequisites": [
-              "灾害安全措施"
-            ],
-            "definition": "应急物资是灾害期间维持生活和求助所需的基本用品。",
-            "example": "Keep water, food, and a flashlight.",
-            "section": "The Night the Earth Didn’t Sleep"
-          },
-          {
-            "name": "灾害安全措施",
-            "difficulty": 2,
-            "description": "学习灾害前中后的避险和求助方法。",
-            "aliases": [
-              "disaster safety measures"
+              "warning signs"
             ],
             "prerequisites": [
               "自然灾害类型"
             ],
-            "definition": "灾害安全措施是人们为减少伤害而采取的预防、避险和求助行动。",
-            "example": "Stay calm and move to a safe place."
+            "definition": "灾害预警信号是灾害发生前可能观察到的异常自然或动物现象。",
+            "example": "The water in the wells rose and fell before the earthquake."
+          },
+          {
+            "name": "地震破坏影响",
+            "difficulty": 2,
+            "description": "地震会摧毁建筑、道路、桥梁并造成伤亡。",
+            "aliases": [
+              "earthquake damage"
+            ],
+            "prerequisites": [
+              "自然灾害类型"
+            ],
+            "definition": "地震破坏影响是强烈地面震动对人员、建筑、交通和基础设施造成的后果。",
+            "example": "Most bridges had fallen and many buildings were destroyed."
+          },
+          {
+            "name": "灾害救援工作",
+            "difficulty": 2,
+            "description": "军队、医护人员和志愿者搜救、救治并安置幸存者。",
+            "aliases": [
+              "disaster relief work"
+            ],
+            "prerequisites": [
+              "灾害信息要素"
+            ],
+            "definition": "灾害救援工作是灾害发生后为搜救、医疗救助和安置幸存者开展的行动。",
+            "example": "Rescue workers dug out people trapped under the ruins."
+          },
+          {
+            "name": "灾后重建",
+            "difficulty": 2,
+            "description": "灾区在政府和民众支持下恢复城市生活与发展。",
+            "aliases": [
+              "rebuilding",
+              "revival"
+            ],
+            "prerequisites": [
+              "灾害救援工作",
+              "地震破坏影响"
+            ],
+            "definition": "灾后重建是灾区恢复基础设施、社会生活并建设新家园的过程。",
+            "example": "A new Tangshan was built upon the earthquake ruins."
           },
           {
             "name": "限制性定语从句",
             "difficulty": 3,
             "description": "用从句限定先行词，说明具体的人或事物。",
             "aliases": [
-              "restrictive relative clauses"
+              "restrictive relative clause"
             ],
             "prerequisites": [],
-            "definition": "限制性定语从句用于限定先行词的范围，去掉后句意通常不完整。",
-            "example": "The boy who survived was rescued.",
-            "section": "The Night the Earth Didn’t Sleep"
+            "definition": "限制性定语从句是修饰并限定先行词范围、不可随意删去的定语从句。",
+            "example": "The supplies which were provided were collected nationwide.",
+            "section": "Use context to understand new words"
           },
           {
             "name": "关系代词",
             "difficulty": 3,
-            "description": "学习that、which、who、whose和whom的用法。",
+            "description": "that、which、who等在定语从句中指代先行词。",
             "aliases": [
               "relative pronouns"
             ],
             "prerequisites": [
               "限制性定语从句"
             ],
-            "definition": "关系代词连接定语从句并在从句中充当相应的句子成分。",
-            "example": "the soldier by whom she was rescued",
+            "definition": "关系代词是在定语从句中连接主句与从句并充当从句成分的代词。",
+            "example": "The boy who saved others was praised.",
             "section": "Tsunami Hits Asia: Over 6,500 Dead"
           },
           {
-            "name": "总结",
+            "name": "摘要写作",
             "difficulty": 3,
-            "description": "提炼长篇报道的主旨和最重要信息。",
-            "aliases": [
-              "summary"
-            ],
-            "prerequisites": [
-              "灾害信息要素"
-            ],
-            "definition": "总结是对较长文本主要观点和关键信息的简短陈述。",
-            "example": "A tsunami killed thousands in Asia."
-          },
-          {
-            "name": "总结写作原则",
-            "difficulty": 3,
-            "description": "概括重点，删去细节，控制篇幅并准确改写。",
+            "description": "提炼原文主旨和要点，删去次要细节并控制篇幅。",
             "aliases": [
               "summary writing"
             ],
             "prerequisites": [
-              "总结"
+              "灾害信息要素"
             ],
-            "definition": "总结写作原则要求保留主要信息、删除次要细节并使篇幅约为原文三分之一。",
-            "example": "Include the cause and main effects."
+            "definition": "摘要写作是用较短篇幅概括较长文本主要观点和重要信息的写作方式。",
+            "example": "The summary explains the earthquake, its damage and the rescue work."
           },
           {
-            "name": "语境猜词",
+            "name": "灾害安全措施",
             "difficulty": 2,
-            "description": "根据上下文推测生词含义而非立即查词典。",
+            "description": "灾前、灾中和受困后的避险与求救方法。",
             "aliases": [
-              "context clues"
-            ],
-            "prerequisites": [],
-            "definition": "语境猜词是利用词语所在句子和段落的信息推断其意义。",
-            "example": "Guess “ruin” from the description of destruction."
-          },
-          {
-            "name": "过去式-ed发音",
-            "difficulty": 2,
-            "description": "区分-ed结尾的/t/、/d/和/ɪd/三种发音。",
-            "aliases": [
-              "-ed endings"
-            ],
-            "prerequisites": [],
-            "definition": "规则动词过去式-ed根据词尾音的不同读作/t/、/d/或/ɪd/。",
-            "example": "helped /t/, viewed /d/, wanted /ɪd/"
-          },
-          {
-            "name": "灾害主题演讲",
-            "difficulty": 3,
-            "description": "围绕灾害成因、准备和应对组织演讲。",
-            "aliases": [
-              "presentation on natural disasters"
+              "disaster safety measures"
             ],
             "prerequisites": [
-              "自然灾害类型",
+              "自然灾害类型"
+            ],
+            "definition": "灾害安全措施是人们为降低灾害伤害而采取的预防、避险和求救行动。",
+            "example": "During an earthquake, drop, cover and hold on."
+          },
+          {
+            "name": "应急物资",
+            "difficulty": 1,
+            "description": "灾害中维持生活和求救所需的水、食物等物品。",
+            "aliases": [
+              "emergency supplies",
+              "emergency kit"
+            ],
+            "prerequisites": [
               "灾害安全措施"
             ],
-            "definition": "灾害主题演讲是以灾害知识和安全应对为内容的口头展示。",
-            "example": "Explain how to stay safe in a wildfire.",
-            "section": "Tsunami Hits Asia: Over 6,500 Dead"
+            "definition": "应急物资是灾害期间用于基本生活、通信照明和急救的备用物品。",
+            "example": "Keep water, food, a radio, a flashlight and a whistle.",
+            "section": "Giving instructions"
+          },
+          {
+            "name": "海啸形成机制",
+            "difficulty": 3,
+            "description": "板块运动引发地震，海水波浪向各方向扩散。",
+            "aliases": [
+              "tsunami formation"
+            ],
+            "prerequisites": [
+              "自然灾害类型"
+            ],
+            "definition": "海啸形成机制是海底地震等运动引起海水大规模波动并传播的过程。",
+            "example": "Tectonic plates push together and cause an undersea earthquake."
+          },
+          {
+            "name": "海啸传播特征",
+            "difficulty": 3,
+            "description": "海啸深海传播速度快，进入浅水区后速度减慢并增高。",
+            "aliases": [
+              "tsunami wave features"
+            ],
+            "prerequisites": [
+              "海啸形成机制"
+            ],
+            "definition": "海啸传播特征是波浪在深海快速移动，进入浅水区后速度降低且波高增大。",
+            "example": "The waves slow down and rise in shallow water."
           },
           {
             "name": "海啸监测预警",
-            "difficulty": 3,
-            "description": "了解科学家监测地球运动以追踪并预警海啸。",
+            "difficulty": 2,
+            "description": "科学家持续监测地球运动以追踪海啸并及时预警。",
             "aliases": [
               "tsunami warning"
             ],
             "prerequisites": [
-              "海啸",
-              "灾害预警迹象"
+              "海啸形成机制"
             ],
-            "definition": "海啸监测预警是通过持续监测地球运动追踪海啸并提醒公众。",
-            "example": "Scientists monitor earth movements 24 hours a day.",
-            "section": "Tsunami Hits Asia: Over 6,500 Dead"
+            "definition": "海啸监测预警是通过持续观测地球运动来追踪海啸并提醒公众。",
+            "example": "Scientists monitor the earth’s movements 24 hours a day.",
+            "section": "Tsunami: Killer Wave"
+          },
+          {
+            "name": "灾害演示报告",
+            "difficulty": 3,
+            "description": "围绕灾害成因、准备措施和灾中救助进行小组展示。",
+            "aliases": [
+              "disaster presentation"
+            ],
+            "prerequisites": [
+              "灾害新闻报道",
+              "灾害安全措施"
+            ],
+            "definition": "灾害演示报告是整合灾害信息并以口头展示形式说明灾害及应对方法的任务。",
+            "example": "The presentation explains causes, preparation and safety actions."
           }
         ],
         "sections": [
           {
+            "name": "Listen for details",
+            "section_key": "292a77878a",
+            "page_range": [
+              55,
+              57
+            ]
+          },
+          {
             "name": "The Night the Earth Didn’t Sleep",
-            "section_key": "f983815875",
+            "section_key": "384d0ddcc5",
             "page_range": [
               57,
+              58
+            ]
+          },
+          {
+            "name": "Use context to understand new words",
+            "section_key": "d5f49184ac",
+            "page_range": [
+              58,
+              60
+            ]
+          },
+          {
+            "name": "Giving instructions",
+            "section_key": "a617a77b2b",
+            "page_range": [
+              60,
               61
             ]
           },
           {
             "name": "Tsunami Hits Asia: Over 6,500 Dead",
-            "section_key": "ac299b286b",
+            "section_key": "267fd87aa7",
             "page_range": [
               61,
+              64
+            ]
+          },
+          {
+            "name": "Give a presentation on natural disasters",
+            "section_key": "d1753042b5",
+            "page_range": [
+              64,
               65
+            ]
+          },
+          {
+            "name": "Tsunami: Killer Wave",
+            "section_key": "29e5cfc221",
+            "page_range": [
+              65,
+              66
             ]
           }
         ],
@@ -2412,206 +3000,258 @@
         "name": "UNIT 5 LANGUAGES AROUND THE WORLD",
         "concepts": [
           {
-            "name": "中文书写系统",
-            "difficulty": 3,
-            "description": "汉语书写符号及其历史发展的整体系统",
-            "aliases": [
-              "Chinese writing system"
-            ],
-            "prerequisites": [
-              "书写符号"
-            ],
-            "definition": "中文书写系统是以汉字为核心并不断发展形成的书写体系。",
-            "example": "中文书写系统帮助不同方言区的人进行书面交流。"
-          },
-          {
-            "name": "书写符号",
-            "difficulty": 2,
-            "description": "用于记录和表达意义的书写标记",
-            "aliases": [
-              "symbols"
-            ],
+            "name": "世界语言",
+            "difficulty": 1,
+            "description": "世界各地使用的不同语言及其分布",
+            "aliases": [],
             "prerequisites": [],
-            "definition": "书写符号是用来表示意义或语言内容的标记。",
-            "example": "古人把符号刻在兽骨和贝壳上。"
-          },
-          {
-            "name": "图画文字",
-            "difficulty": 2,
-            "description": "以图形方式表示事物意义的文字形式",
-            "aliases": [
-              "picture-based language"
-            ],
-            "prerequisites": [
-              "书写符号"
-            ],
-            "definition": "图画文字是最初通过图形表达事物意义的书写形式。",
-            "example": "早期中文是一种以图画为基础的语言。",
-            "section": "The Chinese Writing System: Connecting the Past and the Pres"
-          },
-          {
-            "name": "汉字",
-            "difficulty": 3,
-            "description": "中文书写系统使用的文字单位",
-            "aliases": [
-              "Chinese characters",
-              "hanzi"
-            ],
-            "prerequisites": [
-              "书写符号"
-            ],
-            "definition": "汉字是中文书写系统中用来记录语言和意义的文字。",
-            "example": "今天仍能看到一些古代符号演变而来的汉字。"
-          },
-          {
-            "name": "方言与文字变体",
-            "difficulty": 3,
-            "description": "地域差异形成的多种方言和文字形式",
-            "aliases": [
-              "varieties of dialects and characters"
-            ],
-            "prerequisites": [
-              "汉字"
-            ],
-            "definition": "方言与文字变体是地理分隔造成的语言和文字多样形式。",
-            "example": "各地长期分隔曾导致多种方言和文字形式。",
-            "section": "The Chinese Writing System: Connecting the Past and the Pres"
-          },
-          {
-            "name": "文字统一",
-            "difficulty": 4,
-            "description": "不同地区采用趋于一致的书写系统",
-            "aliases": [
-              "unified writing system"
-            ],
-            "prerequisites": [
-              "中文书写系统",
-              "方言与文字变体"
-            ],
-            "definition": "文字统一是不同地区使用共同书写系统以加强交流和团结的过程。",
-            "example": "秦始皇统一国家后，中文书写系统开始朝一个方向发展。"
-          },
-          {
-            "name": "文字的沟通功能",
-            "difficulty": 3,
-            "description": "文字跨越方言差异实现书面交流的作用",
-            "aliases": [
-              "written communication"
-            ],
-            "prerequisites": [
-              "汉字",
-              "方言与文字变体"
-            ],
-            "definition": "文字的沟通功能是使使用不同方言的人能够通过书面形式交流。",
-            "example": "无论住在哪里或说什么方言，中国人都能书面交流。"
-          },
-          {
-            "name": "文字连接古今",
-            "difficulty": 3,
-            "description": "现代文字帮助人们阅读古代经典作品",
-            "aliases": [
-              "connecting the past and present"
-            ],
-            "prerequisites": [
-              "中文书写系统",
-              "汉字"
-            ],
-            "definition": "文字连接古今指现代人借助延续的书写系统理解古代文化。",
-            "example": "现代人可以阅读古代中国人写的经典作品。"
-          },
-          {
-            "name": "中国书法",
-            "difficulty": 3,
-            "description": "以汉字书写为基础发展的艺术形式",
-            "aliases": [
-              "Chinese calligraphy"
-            ],
-            "prerequisites": [
-              "汉字",
-              "中文书写系统"
-            ],
-            "definition": "中国书法是汉字书写发展形成的重要艺术形式和文化组成部分。",
-            "example": "人们用毛笔练习中国书法。"
+            "definition": "世界语言是人们在不同国家和地区使用的语言。",
+            "example": "法语、俄语、西班牙语"
           },
           {
             "name": "联合国官方语言",
             "difficulty": 2,
             "description": "联合国正式使用的六种语言",
-            "aliases": [
-              "official languages of the UN"
+            "aliases": [],
+            "prerequisites": [
+              "世界语言"
             ],
-            "prerequisites": [],
-            "definition": "联合国官方语言是联合国正式使用的阿拉伯语、汉语、英语、法语、俄语和西班牙语。",
-            "example": "Chinese and English are official languages of the United Nations."
+            "definition": "联合国官方语言是联合国正式使用的阿拉伯语、中文、英语、法语、俄语和西班牙语。",
+            "example": "English is a UN official language."
+          },
+          {
+            "name": "母语与第二语言",
+            "difficulty": 2,
+            "description": "语言学习者掌握语言的两种身份",
+            "aliases": [],
+            "prerequisites": [
+              "世界语言"
+            ],
+            "definition": "母语是个人最初习得的语言，第二语言是在母语之外使用或学习的语言。",
+            "example": "Some people speak English as a second language."
           },
           {
             "name": "外语学习动机",
-            "difficulty": 3,
+            "difficulty": 2,
             "description": "人们学习外语的原因和态度",
-            "aliases": [
-              "reasons for foreign language learning"
+            "aliases": [],
+            "prerequisites": [
+              "母语与第二语言"
             ],
-            "prerequisites": [],
-            "definition": "外语学习动机是促使人们学习外语的工作、兴趣或交流等原因。",
-            "example": "有人为了将来获得更好的工作机会而学外语。"
+            "definition": "外语学习动机是促使人们学习外语的目标、需要或兴趣。",
+            "example": "Better job chances can motivate language learning."
           },
           {
-            "name": "英美口音",
-            "difficulty": 3,
-            "description": "英国英语和美国英语在发音上的差异",
-            "aliases": [
-              "British and American accents"
-            ],
+            "name": "书写系统",
+            "difficulty": 2,
+            "description": "用符号记录语言的规则体系",
+            "aliases": [],
             "prerequisites": [],
-            "definition": "英美口音是英国英语与美国英语在部分词语发音上的不同。",
-            "example": "schedule在英式和美式英语中可能有不同发音。"
+            "definition": "书写系统是使用一套符号和规则记录语言的体系。",
+            "example": "Chinese and English have different writing systems.",
+            "section": "Create your own word bank"
+          },
+          {
+            "name": "图画文字",
+            "difficulty": 2,
+            "description": "以图形或象形符号为基础的文字",
+            "aliases": [],
+            "prerequisites": [
+              "书写系统"
+            ],
+            "definition": "图画文字是最初借助图形来表示事物或意义的文字形式。",
+            "example": "Early written Chinese was picture-based."
+          },
+          {
+            "name": "汉字演变",
+            "difficulty": 3,
+            "description": "汉字由古代符号逐步发展为统一文字",
+            "aliases": [],
+            "prerequisites": [
+              "图画文字",
+              "书写系统"
+            ],
+            "definition": "汉字演变是汉字从早期刻画符号发展为多种形式并逐渐统一的过程。",
+            "example": "The character for “马” changed over time."
+          },
+          {
+            "name": "方言与文字多样性",
+            "difficulty": 3,
+            "description": "地域分隔造成方言和文字形式的多样",
+            "aliases": [],
+            "prerequisites": [
+              "汉字演变"
+            ],
+            "definition": "地域分隔会使语言产生不同方言和文字形式。",
+            "example": "Geographical division led to varieties of dialects and characters."
+          },
+          {
+            "name": "文字统一作用",
+            "difficulty": 3,
+            "description": "统一文字促进人民和文化的联系",
+            "aliases": [],
+            "prerequisites": [
+              "汉字演变",
+              "方言与文字多样性"
+            ],
+            "definition": "统一文字能够跨越地域和方言差异，促进人民与文化的统一。",
+            "example": "People could communicate in writing despite different dialects."
+          },
+          {
+            "name": "文字连接古今",
+            "difficulty": 3,
+            "description": "现代人借助书面汉语阅读古代经典",
+            "aliases": [],
+            "prerequisites": [
+              "书写系统",
+              "汉字演变"
+            ],
+            "definition": "书面汉语使现代人能够阅读古代经典，从而连接中国的过去与现在。",
+            "example": "Modern readers can read classic Chinese works."
+          },
+          {
+            "name": "中国书法",
+            "difficulty": 3,
+            "description": "汉字发展形成的书写艺术和文化形式",
+            "aliases": [
+              "书法"
+            ],
+            "prerequisites": [
+              "书写系统",
+              "汉字演变"
+            ],
+            "definition": "中国书法是以汉字书写为基础、使用毛笔表现美感的艺术形式。",
+            "example": "People practise calligraphy with a brush."
           },
           {
             "name": "代词指称",
-            "difficulty": 3,
-            "description": "根据上下文确定代词所指的人或事物",
+            "difficulty": 2,
+            "description": "根据语境确定代词所指的人或事物",
             "aliases": [
-              "pronoun reference",
-              "reference"
+              "指称关系"
             ],
             "prerequisites": [],
-            "definition": "代词指称是通过语境判断it、they、she等代词具体所指的内容。",
-            "example": "理解They的指代对象要结合前文语境。",
+            "definition": "代词指称是代词回指前文已提到的人或事物的语言现象。",
+            "example": "They refers to the people mentioned earlier.",
+            "section": "Polyglots: What Are They and Who Can Be One?"
+          },
+          {
+            "name": "关系代词与副词",
+            "difficulty": 3,
+            "description": "引导定语从句并连接先行词和从句",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "关系代词与副词用于引导从句并说明其与前面名词的关系。",
+            "example": "who, whose, when, where, why"
+          },
+          {
+            "name": "限制性定语从句",
+            "difficulty": 4,
+            "description": "对名词作必要限定的定语从句",
+            "aliases": [],
+            "prerequisites": [
+              "关系代词与副词"
+            ],
+            "definition": "限制性定语从句提供识别或限定先行词所必需的信息。",
+            "example": "the place where German was spoken",
             "section": "Polyglots: What Are They and Who Can Be One?"
           },
           {
             "name": "扫描阅读",
             "difficulty": 2,
-            "description": "快速查找日期、数字等特定信息的阅读方法",
+            "description": "快速查找日期、数字等特定信息",
             "aliases": [
-              "scanning"
+              "寻读"
             ],
             "prerequisites": [],
-            "definition": "扫描阅读是快速浏览文本以寻找特定信息的阅读方式。",
-            "example": "扫描文章可以快速找到重要年份和数字。",
-            "section": "The Chinese Writing System: Connecting the Past and the Pres"
+            "definition": "扫描阅读是快速浏览文本以寻找特定信息的阅读方法。",
+            "example": "Scan the text for dates and numbers."
           }
         ],
         "sections": [
           {
+            "name": "Languages around the world",
+            "section_key": "a6610255e6",
+            "page_range": [
+              66,
+              67
+            ]
+          },
+          {
+            "name": "Reference",
+            "section_key": "1596a0ed17",
+            "page_range": [
+              67,
+              69
+            ]
+          },
+          {
             "name": "The Chinese Writing System: Connecting the Past and the Pres",
-            "section_key": "7c0f2f0cb6",
+            "section_key": "7c09416f96",
             "page_range": [
               69,
+              70
+            ]
+          },
+          {
+            "name": "Scan",
+            "section_key": "0a39a0d522",
+            "page_range": [
+              70,
+              72
+            ]
+          },
+          {
+            "name": "Different kinds of English",
+            "section_key": "ad73b3e0c7",
+            "page_range": [
+              72,
+              72
+            ]
+          },
+          {
+            "name": "Asking for clarification",
+            "section_key": "875ca4f1ec",
+            "page_range": [
+              72,
+              73
+            ]
+          },
+          {
+            "name": "A blog about English study",
+            "section_key": "36c5b3a209",
+            "page_range": [
+              73,
               73
             ]
           },
           {
             "name": "Learning English",
-            "section_key": "5af9fe2cce",
+            "section_key": "dbd4d3333f",
             "page_range": [
               73,
+              76
+            ]
+          },
+          {
+            "name": "Create your own word bank",
+            "section_key": "65cb7d52a5",
+            "page_range": [
+              76,
+              77
+            ]
+          },
+          {
+            "name": "Chinese Characters",
+            "section_key": "db276c4afe",
+            "page_range": [
+              77,
               105
             ]
           },
           {
             "name": "Polyglots: What Are They and Who Can Be One?",
-            "section_key": "b2ce18f90a",
+            "section_key": "79bd8578ca",
             "page_range": [
               105,
               138
@@ -2634,103 +3274,407 @@
       "reason": ""
     },
     "section_ranges": {
-      "712fb044df": [
+      "463e356392": [
+        8,
+        11
+      ],
+      "Registering": [
+        8,
+        11
+      ],
+      "82dec61af8": [
         11,
-        15
+        13
       ],
       "First Impressions": [
         11,
+        13
+      ],
+      "214dde226e": [
+        13,
+        14
+      ],
+      "Basic sentence structures": [
+        13,
+        14
+      ],
+      "8e4231e4cc": [
+        14,
         15
       ],
-      "3ff2b615c3": [
+      "Learning styles": [
+        14,
+        15
+      ],
+      "3b7f7c5dac": [
         15,
-        17
+        16
       ],
       "Student Profiles": [
         15,
-        17
+        16
       ],
-      "8204463941": [
+      "feea49ddf2": [
+        16,
+        18
+      ],
+      "A student profile": [
+        16,
+        18
+      ],
+      "84eb397197": [
+        19,
+        21
+      ],
+      "Predict content": [
+        19,
+        21
+      ],
+      "390162dd80": [
         21,
-        25
+        21
+      ],
+      "Skim": [
+        21,
+        21
+      ],
+      "a5345bf025": [
+        21,
+        24
       ],
       "The Freshman Challenge": [
         21,
+        24
+      ],
+      "136d988553": [
+        24,
         25
       ],
-      "e6be0767ad": [
+      "Talking about future activities": [
+        24,
+        25
+      ],
+      "0a44a59b58": [
         25,
-        29
+        25
       ],
       "A Letter of Advice": [
         25,
+        25
+      ],
+      "2ff206f0fa": [
+        25,
+        28
+      ],
+      "A letter of advice（2）": [
+        25,
+        28
+      ],
+      "b9d341fd35": [
+        28,
         29
       ],
-      "52b106866e": [
+      "Set up a student club": [
+        28,
+        29
+      ],
+      "6082870d03": [
+        29,
+        30
+      ],
+      "Learning Across Generations": [
+        29,
+        30
+      ],
+      "9b681775fe": [
+        30,
+        31
+      ],
+      "A travel plan": [
+        30,
+        31
+      ],
+      "4167e2e9c7": [
+        31,
+        33
+      ],
+      "Focus on key words": [
+        31,
+        33
+      ],
+      "db5eb74f83": [
         33,
-        37
+        33
+      ],
+      "Recognise text type": [
+        33,
+        33
+      ],
+      "ef451cb79a": [
+        33,
+        33
       ],
       "Travel Peru": [
         33,
+        33
+      ],
+      "ed8588ba33": [
+        33,
+        36
+      ],
+      "Machu Picchu": [
+        33,
+        36
+      ],
+      "3312dd8c3c": [
+        36,
+        36
+      ],
+      "Making reservations": [
+        36,
+        36
+      ],
+      "c2988a3cd3": [
+        36,
         37
       ],
-      "f4a5dc4884": [
+      "Booking air tickets": [
+        36,
+        37
+      ],
+      "f41b39909e": [
         37,
-        41
+        40
       ],
       "A Travel Plan to Xi’an": [
         37,
-        41
+        40
       ],
-      "d507fedc4b": [
+      "fd002d607d": [
+        40,
+        42
+      ],
+      "Design a travel brochure": [
+        40,
+        42
+      ],
+      "3b0d1b1020": [
+        42,
+        43
+      ],
+      "Sportsmanship": [
+        42,
+        43
+      ],
+      "bdf9275112": [
+        43,
+        44
+      ],
+      "Listen for main ideas": [
+        43,
+        44
+      ],
+      "c7efea8372": [
+        44,
+        44
+      ],
+      "Intonation": [
+        44,
+        44
+      ],
+      "f23d02b42b": [
+        44,
+        45
+      ],
+      "Tag questions": [
+        44,
+        45
+      ],
+      "516bda3310": [
         45,
-        49
+        45
       ],
       "Living Legends": [
         45,
+        45
+      ],
+      "6e88665010": [
+        45,
         49
       ],
-      "a5f7b9f795": [
+      "Make predictions": [
+        45,
+        49
+      ],
+      "52f5ccee3e": [
         49,
-        53
+        49
+      ],
+      "A page in a wellness book": [
+        49,
+        49
+      ],
+      "e9f0003549": [
+        49,
+        52
       ],
       "Going Positive": [
         49,
+        52
+      ],
+      "dd2bc9a96f": [
+        52,
         53
       ],
-      "f983815875": [
+      "Make a survey on sports interests and needs": [
+        52,
+        53
+      ],
+      "7e24e3f7f7": [
+        53,
+        54
+      ],
+      "The Karsts of China: A Vertical Journey": [
+        53,
+        54
+      ],
+      "292a77878a": [
+        55,
+        57
+      ],
+      "Listen for details": [
+        55,
+        57
+      ],
+      "384d0ddcc5": [
         57,
-        61
+        58
       ],
       "The Night the Earth Didn’t Sleep": [
         57,
+        58
+      ],
+      "d5f49184ac": [
+        58,
+        60
+      ],
+      "Use context to understand new words": [
+        58,
+        60
+      ],
+      "a617a77b2b": [
+        60,
         61
       ],
-      "ac299b286b": [
+      "Giving instructions": [
+        60,
+        61
+      ],
+      "267fd87aa7": [
         61,
-        65
+        64
       ],
       "Tsunami Hits Asia: Over 6,500 Dead": [
         61,
+        64
+      ],
+      "d1753042b5": [
+        64,
         65
       ],
-      "7c0f2f0cb6": [
+      "Give a presentation on natural disasters": [
+        64,
+        65
+      ],
+      "29e5cfc221": [
+        65,
+        66
+      ],
+      "Tsunami: Killer Wave": [
+        65,
+        66
+      ],
+      "a6610255e6": [
+        66,
+        67
+      ],
+      "Languages around the world": [
+        66,
+        67
+      ],
+      "1596a0ed17": [
+        67,
+        69
+      ],
+      "Reference": [
+        67,
+        69
+      ],
+      "7c09416f96": [
         69,
-        73
+        70
       ],
       "The Chinese Writing System: Connecting the Past and the Pres": [
         69,
+        70
+      ],
+      "0a39a0d522": [
+        70,
+        72
+      ],
+      "Scan": [
+        70,
+        72
+      ],
+      "ad73b3e0c7": [
+        72,
+        72
+      ],
+      "Different kinds of English": [
+        72,
+        72
+      ],
+      "875ca4f1ec": [
+        72,
         73
       ],
-      "5af9fe2cce": [
+      "Asking for clarification": [
+        72,
+        73
+      ],
+      "36c5b3a209": [
         73,
-        105
+        73
+      ],
+      "A blog about English study": [
+        73,
+        73
+      ],
+      "dbd4d3333f": [
+        73,
+        76
       ],
       "Learning English": [
         73,
+        76
+      ],
+      "65cb7d52a5": [
+        76,
+        77
+      ],
+      "Create your own word bank": [
+        76,
+        77
+      ],
+      "db276c4afe": [
+        77,
         105
       ],
-      "b2ce18f90a": [
+      "Chinese Characters": [
+        77,
+        105
+      ],
+      "79bd8578ca": [
         105,
         138
       ],

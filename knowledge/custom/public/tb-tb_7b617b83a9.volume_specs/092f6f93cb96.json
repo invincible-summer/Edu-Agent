@@ -1,0 +1,4270 @@
+{
+  "file_id": "092f6f93cb96",
+  "text_sha256": "745258bfc629137763b17ffc00c090a473242c3dfadefa1a74512d0cf95a42e9",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 地球的运动",
+        "concepts": [
+          {
+            "name": "地球自转",
+            "difficulty": 1,
+            "description": "地球绕自转轴进行的旋转运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地球绕其自转轴的旋转运动叫作地球的自转。",
+            "example": "地球自西向东自转"
+          },
+          {
+            "name": "地轴",
+            "difficulty": 1,
+            "description": "地球自转所围绕的轴",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地球自转所围绕的轴叫作地轴。",
+            "example": "地轴北端指向北极星附近"
+          },
+          {
+            "name": "太阳日",
+            "difficulty": 2,
+            "description": "以太阳为参照物的自转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "以太阳为参照物，地球自转一周的时间为24时，称为太阳日。",
+            "example": "昼夜交替周期为一个太阳日"
+          },
+          {
+            "name": "恒星日",
+            "difficulty": 2,
+            "description": "以遥远恒星为参照物的自转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "以遥远恒星为参照物，地球自转一周的时间为23时56分4秒，称为恒星日。",
+            "example": "恒星日是地球自转的真正周期",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "自转角速度",
+            "difficulty": 2,
+            "description": "地球自转时单位时间转过的角度",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "地球自转角速度是地球单位时间内转过的角度，约为每时15°。",
+            "example": "除两极点外各地角速度相等",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "自转线速度",
+            "difficulty": 2,
+            "description": "地球表面各点自转运动的线速度",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "自转线速度是地球表面各点随地球自转运动的线速度。",
+            "example": "线速度由赤道向两极递减",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "地球公转",
+            "difficulty": 1,
+            "description": "地球绕太阳进行的运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地球绕太阳的运动叫作地球的公转。",
+            "example": "地球公转方向为自西向东"
+          },
+          {
+            "name": "回归年",
+            "difficulty": 2,
+            "description": "以太阳为参照物的公转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转"
+            ],
+            "definition": "以太阳为参照物，地球公转一周的时间称为回归年。",
+            "example": "回归年约为365日5时48分46秒"
+          },
+          {
+            "name": "恒星年",
+            "difficulty": 2,
+            "description": "以其他恒星为参照物的公转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转"
+            ],
+            "definition": "以其他恒星为参照物，地球公转一周的时间称为恒星年。",
+            "example": "恒星年是地球公转的真正周期",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "公转轨道",
+            "difficulty": 2,
+            "description": "地球绕太阳运行的轨迹",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转"
+            ],
+            "definition": "地球公转的轨迹叫作公转轨道，是近似正圆的椭圆轨道。",
+            "example": "太阳位于椭圆轨道的一个焦点上"
+          },
+          {
+            "name": "近日点",
+            "difficulty": 2,
+            "description": "地球距离太阳最近的轨道位置",
+            "aliases": [],
+            "prerequisites": [
+              "公转轨道"
+            ],
+            "definition": "地球公转时距离太阳最近的位置叫作近日点。",
+            "example": "每年1月初经过近日点"
+          },
+          {
+            "name": "远日点",
+            "difficulty": 2,
+            "description": "地球距离太阳最远的轨道位置",
+            "aliases": [],
+            "prerequisites": [
+              "公转轨道"
+            ],
+            "definition": "地球公转时距离太阳最远的位置叫作远日点。",
+            "example": "每年7月初经过远日点"
+          },
+          {
+            "name": "赤道平面",
+            "difficulty": 2,
+            "description": "过地心且垂直于地轴的平面",
+            "aliases": [],
+            "prerequisites": [
+              "地轴"
+            ],
+            "definition": "过地心并与地轴垂直的平面称为赤道平面。",
+            "example": "赤道平面与黄道平面存在交角"
+          },
+          {
+            "name": "黄道平面",
+            "difficulty": 2,
+            "description": "地球公转轨道所在的平面",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转",
+              "公转轨道"
+            ],
+            "definition": "地球公转轨道所在的平面称为黄道平面。",
+            "example": "黄道平面是地球公转轨道平面"
+          },
+          {
+            "name": "黄赤交角",
+            "difficulty": 2,
+            "description": "赤道平面与黄道平面的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "赤道平面",
+              "黄道平面"
+            ],
+            "definition": "赤道平面与黄道平面之间的交角叫作黄赤交角。",
+            "example": "目前黄赤交角为23°26′"
+          },
+          {
+            "name": "太阳直射点",
+            "difficulty": 2,
+            "description": "地表接受太阳垂直照射的点",
+            "aliases": [],
+            "prerequisites": [
+              "黄赤交角"
+            ],
+            "definition": "地表接受太阳垂直照射的点简称太阳直射点。",
+            "example": "夏至日直射北纬23°26′"
+          },
+          {
+            "name": "北回归线",
+            "difficulty": 2,
+            "description": "太阳直射点到达的最北纬线",
+            "aliases": [],
+            "prerequisites": [
+              "太阳直射点"
+            ],
+            "definition": "北纬23°26′称为北回归线。",
+            "example": "夏至日太阳直射北回归线"
+          },
+          {
+            "name": "南回归线",
+            "difficulty": 2,
+            "description": "太阳直射点到达的最南纬线",
+            "aliases": [],
+            "prerequisites": [
+              "太阳直射点"
+            ],
+            "definition": "南纬23°26′称为南回归线。",
+            "example": "冬至日太阳直射南回归线"
+          },
+          {
+            "name": "太阳直射点回归运动",
+            "difficulty": 2,
+            "description": "太阳直射点在南北回归线间往返运动",
+            "aliases": [
+              "回归运动"
+            ],
+            "prerequisites": [
+              "太阳直射点",
+              "北回归线",
+              "南回归线"
+            ],
+            "definition": "太阳直射点在南北纬23°26′之间以一年为周期的往返运动称为回归运动。",
+            "example": "春分日直射点位于赤道",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "昼半球和夜半球",
+            "difficulty": 1,
+            "description": "地球表面向阳与背阳的两个半球",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "向着太阳的半球是昼半球，背着太阳的半球是夜半球。",
+            "example": "同一时间昼夜半球各约占一半",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "晨昏线",
+            "difficulty": 2,
+            "description": "昼半球与夜半球的分界线",
+            "aliases": [
+              "晨昏圈"
+            ],
+            "prerequisites": [
+              "昼半球和夜半球"
+            ],
+            "definition": "昼半球和夜半球的分界线叫作晨昏线。",
+            "example": "晨昏线上的太阳高度为0°",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "昼夜交替",
+            "difficulty": 1,
+            "description": "昼半球和夜半球周期性转换的现象",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转",
+              "昼半球和夜半球"
+            ],
+            "definition": "地球自转使地球表面的昼半球和夜半球不断交替。",
+            "example": "昼夜交替周期为一个太阳日",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "地方时",
+            "difficulty": 2,
+            "description": "不同经度地点因太阳位置形成的时间",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "同一瞬间因经度不同而不同的时间叫作地方时。",
+            "example": "经度相差15°地方时相差1小时",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "时区",
+            "difficulty": 2,
+            "description": "按经度划分的全球计时区域",
+            "aliases": [],
+            "prerequisites": [
+              "地方时"
+            ],
+            "definition": "全球按统一标准划分的计时区域叫作时区。",
+            "example": "全球共分为24个时区",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "区时",
+            "difficulty": 2,
+            "description": "以时区中央经线地方时为标准的时间",
+            "aliases": [],
+            "prerequisites": [
+              "时区",
+              "地方时"
+            ],
+            "definition": "各时区以本时区中央经线的地方时作为本时区的区时。",
+            "example": "相邻时区区时相差1小时",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "国际日界线",
+            "difficulty": 2,
+            "description": "地球上今天与昨天的日期分界线",
+            "aliases": [
+              "国际日期变更线"
+            ],
+            "prerequisites": [
+              "时区",
+              "区时"
+            ],
+            "definition": "原则上以180°经线为地球上今天和昨天分界的线叫作国际日界线。",
+            "example": "向东跨越日界线日期减一天",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "地转偏向力",
+            "difficulty": 3,
+            "description": "使水平运动物体方向发生偏转的力",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "促使地表水平运动物体运动方向产生偏转的力称为地转偏向力。",
+            "example": "北半球水平运动向右偏转",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "太阳高度角",
+            "difficulty": 2,
+            "description": "太阳光线与当地地平面的交角",
+            "aliases": [
+              "太阳高度"
+            ],
+            "prerequisites": [
+              "太阳直射点"
+            ],
+            "definition": "太阳光线与地平面的交角叫作太阳高度角。",
+            "example": "太阳直射点太阳高度为90°",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "正午太阳高度",
+            "difficulty": 2,
+            "description": "一日内最大的太阳高度",
+            "aliases": [],
+            "prerequisites": [
+              "太阳高度角"
+            ],
+            "definition": "正午太阳高度是一日内最大的太阳高度，反映太阳辐射强弱。",
+            "example": "北京夏至日正午太阳高度为73°26′",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "昼夜长短",
+            "difficulty": 2,
+            "description": "白昼与黑夜持续时间的长短",
+            "aliases": [],
+            "prerequisites": [
+              "晨昏线",
+              "太阳直射点"
+            ],
+            "definition": "昼夜长短是白昼和黑夜持续时间的长短。",
+            "example": "春分日全球昼夜均为12时",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "四季更替",
+            "difficulty": 2,
+            "description": "一年中春夏秋冬有规律的交替",
+            "aliases": [],
+            "prerequisites": [
+              "昼夜长短",
+              "正午太阳高度"
+            ],
+            "definition": "昼夜长短和正午太阳高度的周年变化形成四季更替。",
+            "example": "南北半球季节相反",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "南北极圈",
+            "difficulty": 2,
+            "description": "划分温带与寒带的南北界线",
+            "aliases": [],
+            "prerequisites": [
+              "黄赤交角"
+            ],
+            "definition": "南北极圈是划分温带和寒带的重要纬线界线。",
+            "example": "北极圈及其以北可出现极昼",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "五带划分",
+            "difficulty": 2,
+            "description": "依据回归线和极圈划分地球温度带",
+            "aliases": [],
+            "prerequisites": [
+              "北回归线",
+              "南回归线",
+              "南北极圈"
+            ],
+            "definition": "以南北回归线和南北极圈为界划分热带、温带和寒带。",
+            "example": "地球表面分为五个温度带",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "二十四节气",
+            "difficulty": 2,
+            "description": "按太阳在黄道位置划分的节气制度",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转",
+              "回归年"
+            ],
+            "definition": "将黄道一周每隔15°划定一个节气形成二十四节气。",
+            "example": "春分、夏至、秋分、冬至属于二十四节气",
+            "section": "第二节 地球运动的地理意义"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 地球的自转和公转",
+            "page_range": [
+              7,
+              12
+            ]
+          },
+          {
+            "name": "第二节 地球运动的地理意义",
+            "page_range": [
+              12,
+              20
+            ]
+          },
+          {
+            "name": "问题研究 人类是否需要人造月亮",
+            "page_range": [
+              20,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二章 地表形态的塑造",
+        "concepts": [
+          {
+            "name": "地表形态",
+            "difficulty": 1,
+            "description": "地球表面各种地形地貌的总称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地表形态是地球表面高低起伏及其形态特征的总和。",
+            "example": "山地、平原和河流地貌"
+          },
+          {
+            "name": "内力作用",
+            "difficulty": 2,
+            "description": "来自地球内部热能的地质作用",
+            "aliases": [],
+            "prerequisites": [
+              "地表形态"
+            ],
+            "definition": "内力作用是能量主要来自地球内部热能的地质作用。",
+            "example": "地震使地面瞬间变形"
+          },
+          {
+            "name": "地壳运动",
+            "difficulty": 2,
+            "description": "岩石圈发生变位或变形的运动",
+            "aliases": [
+              "构造运动"
+            ],
+            "prerequisites": [
+              "内力作用"
+            ],
+            "definition": "地壳运动是岩石圈因内力作用发生变位或变形的过程。",
+            "example": "青藏高原大幅度抬升"
+          },
+          {
+            "name": "岩浆活动",
+            "difficulty": 2,
+            "description": "岩浆侵入岩石圈或喷出地表的过程",
+            "aliases": [],
+            "prerequisites": [
+              "内力作用"
+            ],
+            "definition": "岩浆活动是岩浆沿岩石圈破裂带上升并侵入或喷出的过程。",
+            "example": "基拉韦厄火山喷发"
+          },
+          {
+            "name": "变质作用",
+            "difficulty": 2,
+            "description": "岩石成分和结构发生改变的过程",
+            "aliases": [],
+            "prerequisites": [
+              "内力作用"
+            ],
+            "definition": "变质作用是岩石受温度、压力等影响而发生改变的过程。",
+            "example": "页岩变质成为板岩"
+          },
+          {
+            "name": "外力作用",
+            "difficulty": 2,
+            "description": "主要由太阳辐射能驱动的地质作用",
+            "aliases": [],
+            "prerequisites": [
+              "地表形态"
+            ],
+            "definition": "外力作用是能量主要来自地球外部、以太阳辐射能为主的地质作用。",
+            "example": "流水冲刷河岸"
+          },
+          {
+            "name": "风化作用",
+            "difficulty": 2,
+            "description": "地表岩石破碎或分解的过程",
+            "aliases": [],
+            "prerequisites": [
+              "外力作用"
+            ],
+            "definition": "风化作用是岩石在温度、水、大气和生物等作用下破碎或分解的过程。",
+            "example": "岩石受冻融而崩解",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "物理风化",
+            "difficulty": 2,
+            "description": "岩石破碎但化学成分基本不变",
+            "aliases": [],
+            "prerequisites": [
+              "风化作用"
+            ],
+            "definition": "物理风化是岩石因温度变化、冻融或根系作用而破碎的风化类型。",
+            "example": "岩石表层受热不均而崩裂",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "化学风化",
+            "difficulty": 2,
+            "description": "岩石发生化学分解的风化类型",
+            "aliases": [],
+            "prerequisites": [
+              "风化作用"
+            ],
+            "definition": "化学风化是岩石在水等因素作用下发生化学分解的风化类型。",
+            "example": "岩石被水逐渐分解",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "侵蚀作用",
+            "difficulty": 2,
+            "description": "流水、波浪、风和冰川破坏地表",
+            "aliases": [],
+            "prerequisites": [
+              "外力作用"
+            ],
+            "definition": "侵蚀作用是流水、波浪、风、冰川等外力对地表进行破坏的过程。",
+            "example": "海浪侵蚀海岸岩柱"
+          },
+          {
+            "name": "搬运作用",
+            "difficulty": 2,
+            "description": "风化或侵蚀产物被外力带离原地",
+            "aliases": [],
+            "prerequisites": [
+              "侵蚀作用"
+            ],
+            "definition": "搬运作用是风化或侵蚀产物在流水、风、波浪和冰川作用下移动的过程。",
+            "example": "河流搬运泥沙入海"
+          },
+          {
+            "name": "堆积作用",
+            "difficulty": 2,
+            "description": "被搬运物质因动力减弱而沉积",
+            "aliases": [],
+            "prerequisites": [
+              "搬运作用"
+            ],
+            "definition": "堆积作用是被搬运物质因流速、风力减小或冰川融化而沉积的过程。",
+            "example": "河口泥沙沉积形成三角洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "冰川作用",
+            "difficulty": 3,
+            "description": "冰川侵蚀、搬运和堆积地表物质",
+            "aliases": [],
+            "prerequisites": [
+              "侵蚀作用",
+              "搬运作用",
+              "堆积作用"
+            ],
+            "definition": "冰川作用是冰川运动过程中对地表进行侵蚀、搬运和堆积的作用。",
+            "example": "冰川形成U形谷",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "岩石圈物质循环",
+            "difficulty": 3,
+            "description": "三类岩石与岩浆之间循环转化",
+            "aliases": [],
+            "prerequisites": [
+              "岩浆岩",
+              "沉积岩",
+              "变质岩"
+            ],
+            "definition": "岩石圈物质循环是岩浆和三类岩石在地质作用下不断相互转化的过程。",
+            "example": "岩石熔化后重新形成岩浆",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "岩浆岩",
+            "difficulty": 2,
+            "description": "岩浆或熔岩冷却凝固形成的岩石",
+            "aliases": [],
+            "prerequisites": [
+              "岩浆活动"
+            ],
+            "definition": "岩浆岩是岩浆或熔岩冷却凝固形成的岩石。",
+            "example": "花岗岩、玄武岩"
+          },
+          {
+            "name": "喷出岩",
+            "difficulty": 2,
+            "description": "岩浆喷出地表冷却形成的岩浆岩",
+            "aliases": [
+              "火山岩"
+            ],
+            "prerequisites": [
+              "岩浆岩"
+            ],
+            "definition": "喷出岩是岩浆喷出地表后冷却形成的岩浆岩。",
+            "example": "玄武岩形成高原、台地",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "侵入岩",
+            "difficulty": 2,
+            "description": "岩浆侵入地下冷却形成的岩浆岩",
+            "aliases": [],
+            "prerequisites": [
+              "岩浆岩"
+            ],
+            "definition": "侵入岩是岩浆侵入岩石圈后冷却变硬形成的岩浆岩。",
+            "example": "花岗岩常构成山脉核心",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "沉积岩",
+            "difficulty": 2,
+            "description": "沉积物经压实固结形成的岩石",
+            "aliases": [],
+            "prerequisites": [
+              "风化作用",
+              "搬运作用",
+              "堆积作用"
+            ],
+            "definition": "沉积岩是碎屑物质或化学沉淀物、生物遗体堆积后压实固结形成的岩石。",
+            "example": "砾岩、砂岩、页岩"
+          },
+          {
+            "name": "变质岩",
+            "difficulty": 2,
+            "description": "原有岩石在高温高压下改变形成",
+            "aliases": [],
+            "prerequisites": [
+              "变质作用"
+            ],
+            "definition": "变质岩是原有岩石在高温、高压等条件下成分和性质改变形成的岩石。",
+            "example": "石灰岩变质成为大理岩"
+          },
+          {
+            "name": "将今论古",
+            "difficulty": 3,
+            "description": "用现在的地质作用解释地质历史",
+            "aliases": [
+              "现在是了解过去的一把钥匙"
+            ],
+            "prerequisites": [
+              "外力作用",
+              "内力作用"
+            ],
+            "definition": "将今论古是通过研究现在的地质作用推断过去地质过程的方法。",
+            "example": "依据珊瑚化石推断古海洋环境",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "地质构造",
+            "difficulty": 2,
+            "description": "岩层受地壳运动形成的变形和变位",
+            "aliases": [],
+            "prerequisites": [
+              "地壳运动"
+            ],
+            "definition": "地质构造是岩层在地壳运动作用下产生的变形和变位。",
+            "example": "褶皱岩层和断裂岩层"
+          },
+          {
+            "name": "褶皱",
+            "difficulty": 2,
+            "description": "岩层受挤压产生的波状弯曲",
+            "aliases": [],
+            "prerequisites": [
+              "地质构造"
+            ],
+            "definition": "褶皱是岩层在强大挤压力下发生塑性变形而形成的波状弯曲。",
+            "example": "喜马拉雅山的褶皱山系"
+          },
+          {
+            "name": "背斜",
+            "difficulty": 2,
+            "description": "岩层一般向上拱起的褶皱",
+            "aliases": [],
+            "prerequisites": [
+              "褶皱"
+            ],
+            "definition": "背斜是褶皱中岩层一般向上拱起的构造形态。",
+            "example": "背斜通常形成山岭",
+            "section": "第二节 构造地貌的形成"
+          },
+          {
+            "name": "向斜",
+            "difficulty": 2,
+            "description": "岩层一般向下弯曲的褶皱",
+            "aliases": [],
+            "prerequisites": [
+              "褶皱"
+            ],
+            "definition": "向斜是褶皱中岩层一般向下弯曲的构造形态。",
+            "example": "向斜通常形成谷地",
+            "section": "第二节 构造地貌的形成"
+          },
+          {
+            "name": "断层",
+            "difficulty": 2,
+            "description": "岩层断裂并沿断裂面明显位移",
+            "aliases": [],
+            "prerequisites": [
+              "地质构造"
+            ],
+            "definition": "断层是岩层断裂并沿断裂面发生明显位移的构造。",
+            "example": "圣安德列斯断层"
+          },
+          {
+            "name": "板块构造学说",
+            "difficulty": 3,
+            "description": "解释板块运动及其地貌影响的学说",
+            "aliases": [],
+            "prerequisites": [
+              "地壳运动",
+              "地质构造"
+            ],
+            "definition": "板块构造学说认为岩石圈破碎成多个板块并持续缓慢运动。",
+            "example": "用板块碰撞解释青藏高原抬升",
+            "section": "第二节 构造地貌的形成"
+          },
+          {
+            "name": "板块运动",
+            "difficulty": 3,
+            "description": "板块之间相向或相离的运动",
+            "aliases": [],
+            "prerequisites": [
+              "板块构造学说"
+            ],
+            "definition": "板块运动是岩石圈板块在软流层之上进行的缓慢持续运动。",
+            "example": "板块相离形成裂谷"
+          },
+          {
+            "name": "山地交通布局",
+            "difficulty": 3,
+            "description": "依据山地地形合理安排交通线路",
+            "aliases": [],
+            "prerequisites": [
+              "地表形态"
+            ],
+            "definition": "山地交通布局是在考虑地形、地质和灾害等因素基础上安排交通方式与线路。",
+            "example": "沿河谷修建盘山公路"
+          },
+          {
+            "name": "河流地貌",
+            "difficulty": 2,
+            "description": "河流侵蚀和堆积形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "侵蚀作用",
+              "堆积作用"
+            ],
+            "definition": "河流地貌是河流在流动过程中通过侵蚀、搬运和堆积塑造的地貌。",
+            "example": "河谷、冲积扇和三角洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "河谷演变",
+            "difficulty": 3,
+            "description": "河谷由深窄向宽浅发展的过程",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "河谷演变是河流侵蚀和堆积作用使河谷逐渐加深、拓宽和延长的过程。",
+            "example": "河谷横剖面由V形变为槽形"
+          },
+          {
+            "name": "V形河谷",
+            "difficulty": 2,
+            "description": "河流初期形成的深窄陡峭河谷",
+            "aliases": [],
+            "prerequisites": [
+              "河谷演变"
+            ],
+            "definition": "V形河谷是河流发育初期以下切和溯源侵蚀为主形成的深窄河谷。",
+            "example": "金沙江虎跳峡",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "曲流",
+            "difficulty": 2,
+            "description": "平坦地区河道形成的弯曲形态",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "曲流是河流在地势平坦地区发育形成的弯曲河道。",
+            "example": "黄河中游多弯曲河道",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "凹岸侵蚀",
+            "difficulty": 2,
+            "description": "河曲凹岸水流冲刷加强的现象",
+            "aliases": [],
+            "prerequisites": [
+              "曲流",
+              "侵蚀作用"
+            ],
+            "definition": "凹岸侵蚀是弯曲河道凹岸一侧受水流冲刷而不断后退的过程。",
+            "example": "镇江段南岸持续后退",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "凸岸堆积",
+            "difficulty": 2,
+            "description": "河曲凸岸泥沙沉积增强的现象",
+            "aliases": [],
+            "prerequisites": [
+              "曲流",
+              "堆积作用"
+            ],
+            "definition": "凸岸堆积是弯曲河道凸岸一侧因水流较缓而沉积泥沙的过程。",
+            "example": "凸岸形成沙洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "冲积平原",
+            "difficulty": 2,
+            "description": "河流堆积作用形成的平原地貌",
+            "aliases": [],
+            "prerequisites": [
+              "堆积作用",
+              "河流地貌"
+            ],
+            "definition": "冲积平原是河流搬运物质沉积形成的典型河流堆积地貌。",
+            "example": "华北平原",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "冲积扇",
+            "difficulty": 2,
+            "description": "河流出山口形成的扇状堆积地貌",
+            "aliases": [],
+            "prerequisites": [
+              "冲积平原",
+              "堆积作用"
+            ],
+            "definition": "冲积扇是河流流出山区后因流速减慢在山前形成的扇状堆积地貌。",
+            "example": "太行山山前冲积扇",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "河漫滩平原",
+            "difficulty": 2,
+            "description": "废弃河漫滩连接形成的平原",
+            "aliases": [],
+            "prerequisites": [
+              "冲积平原",
+              "曲流"
+            ],
+            "definition": "河漫滩平原是多个被废弃的河漫滩连接形成的宽广平原。",
+            "example": "卢瓦尔河河漫滩平原",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "三角洲平原",
+            "difficulty": 2,
+            "description": "河口泥沙沉积扩展形成的平原",
+            "aliases": [],
+            "prerequisites": [
+              "冲积平原",
+              "堆积作用"
+            ],
+            "definition": "三角洲平原是河流入海口泥沙沉积体不断向海扩展形成的平原。",
+            "example": "尼罗河三角洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "河流聚落分布",
+            "difficulty": 3,
+            "description": "聚落受河流地貌和水文条件影响",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌",
+              "冲积平原"
+            ],
+            "definition": "河流聚落分布是聚落因用水、交通、耕作和防洪等条件而沿河分布的现象。",
+            "example": "中下游城市较为密集"
+          },
+          {
+            "name": "侵蚀循环学说",
+            "difficulty": 3,
+            "description": "将河流发育分为三个阶段的学说",
+            "aliases": [],
+            "prerequisites": [
+              "河谷演变"
+            ],
+            "definition": "侵蚀循环学说认为河流发育可经历幼年期、壮年期和老年期。",
+            "example": "密西西比河中游属壮年期特征",
+            "section": "第三节 河流地貌的发育"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 塑造地表形态的力量",
+            "page_range": [
+              23,
+              31
+            ]
+          },
+          {
+            "name": "第二节 构造地貌的形成",
+            "page_range": [
+              31,
+              38
+            ]
+          },
+          {
+            "name": "第三节 河流地貌的发育",
+            "page_range": [
+              38,
+              44
+            ]
+          },
+          {
+            "name": "问题研究 崇明岛的未来是什么样子",
+            "page_range": [
+              44,
+              45
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三章 大气的运动",
+        "concepts": [
+          {
+            "name": "太阳辐射",
+            "difficulty": 1,
+            "description": "驱使大气运动的根本动力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "太阳辐射是地球大气运动的根本动力。",
+            "example": "不同纬度太阳辐射存在差异"
+          },
+          {
+            "name": "气压",
+            "difficulty": 1,
+            "description": "空气作用在单位面积上的压力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "气压是描述大气压力大小的物理量。",
+            "example": "低压中心气压低于四周"
+          },
+          {
+            "name": "等压线",
+            "difficulty": 2,
+            "description": "表示气压相等各点的连线",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "等压线是等压线分布图上气压值相等各点的连线。",
+            "example": "闭合等压线可表示高压或低压"
+          },
+          {
+            "name": "气团",
+            "difficulty": 2,
+            "description": "物理性质较均匀的大范围空气",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "气团是水平方向和垂直方向物理性质较均匀的大范围空气。",
+            "example": "冷气团和暖气团"
+          },
+          {
+            "name": "锋面",
+            "difficulty": 2,
+            "description": "冷暖气团之间的交界面",
+            "aliases": [],
+            "prerequisites": [
+              "气团"
+            ],
+            "definition": "锋面是性质不同的冷暖气团接触时形成的交界面。",
+            "example": "锋面附近常有云雨天气"
+          },
+          {
+            "name": "锋线",
+            "difficulty": 2,
+            "description": "锋面与地面相交形成的线",
+            "aliases": [],
+            "prerequisites": [
+              "锋面"
+            ],
+            "definition": "锋线是锋面与地面相交而成的线。",
+            "example": "天气图上用线表示锋线"
+          },
+          {
+            "name": "锋",
+            "difficulty": 2,
+            "description": "锋面和锋线的统称",
+            "aliases": [],
+            "prerequisites": [
+              "锋面",
+              "锋线"
+            ],
+            "definition": "锋是锋面和锋线的统称。",
+            "example": "锋可分为冷锋和暖锋"
+          },
+          {
+            "name": "冷锋",
+            "difficulty": 2,
+            "description": "冷气团主动向暖气团移动的锋",
+            "aliases": [],
+            "prerequisites": [
+              "锋"
+            ],
+            "definition": "冷锋是冷气团主动向暖气团移动形成的锋。",
+            "example": "冷锋过境常有大风、雨雪"
+          },
+          {
+            "name": "暖锋",
+            "difficulty": 2,
+            "description": "暖气团主动向冷气团移动的锋",
+            "aliases": [],
+            "prerequisites": [
+              "锋"
+            ],
+            "definition": "暖锋是暖气团主动向冷气团移动形成的锋。",
+            "example": "暖锋过境多形成连续性降水"
+          },
+          {
+            "name": "准静止锋",
+            "difficulty": 3,
+            "description": "冷暖气团势均力敌而移动缓慢的锋",
+            "aliases": [],
+            "prerequisites": [
+              "锋"
+            ],
+            "definition": "准静止锋是冷暖气团势均力敌或受地形阻挡而移动缓慢的锋。",
+            "example": "江淮准静止锋带来梅雨"
+          },
+          {
+            "name": "低气压",
+            "difficulty": 2,
+            "description": "中心气压低于四周的闭合区域",
+            "aliases": [
+              "低压"
+            ],
+            "prerequisites": [
+              "等压线",
+              "气压"
+            ],
+            "definition": "低气压是等压线闭合且中心气压低于四周的区域。",
+            "example": "低压中心形成上升气流"
+          },
+          {
+            "name": "气旋",
+            "difficulty": 2,
+            "description": "气流由四周向中心辐合的系统",
+            "aliases": [],
+            "prerequisites": [
+              "低气压"
+            ],
+            "definition": "气旋是低压气流由四周向中心辐合形成的环流系统。",
+            "example": "北半球气旋呈逆时针旋转"
+          },
+          {
+            "name": "高气压",
+            "difficulty": 2,
+            "description": "中心气压高于四周的闭合区域",
+            "aliases": [
+              "高压"
+            ],
+            "prerequisites": [
+              "等压线",
+              "气压"
+            ],
+            "definition": "高气压是等压线闭合且中心气压高于四周的区域。",
+            "example": "高压中心形成下沉气流"
+          },
+          {
+            "name": "反气旋",
+            "difficulty": 2,
+            "description": "气流由中心向四周辐散的系统",
+            "aliases": [],
+            "prerequisites": [
+              "高气压"
+            ],
+            "definition": "反气旋是高压气流由中心向四周辐散形成的环流系统。",
+            "example": "北半球反气旋顺时针流出"
+          },
+          {
+            "name": "高压脊",
+            "difficulty": 3,
+            "description": "从高压伸展出来的狭长区域",
+            "aliases": [],
+            "prerequisites": [
+              "高气压"
+            ],
+            "definition": "高压脊是从高压中心向外伸展的狭长高压区域。",
+            "example": "等压线图上高压向外延伸",
+            "section": "第一节 常见天气系统"
+          },
+          {
+            "name": "低压槽",
+            "difficulty": 3,
+            "description": "从低压延伸出来的狭长区域",
+            "aliases": [],
+            "prerequisites": [
+              "低气压"
+            ],
+            "definition": "低压槽是从低压中心向外延伸的狭长低压区域。",
+            "example": "低压槽形似地形上的山谷",
+            "section": "第一节 常见天气系统"
+          },
+          {
+            "name": "气压梯度力",
+            "difficulty": 3,
+            "description": "促使空气由高压流向低压的力",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "气压梯度力是促使空气由高压区流向低压区的力。",
+            "example": "低压气流在其作用下向中心流动",
+            "section": "第一节 常见天气系统"
+          },
+          {
+            "name": "地转偏向力",
+            "difficulty": 3,
+            "description": "使水平运动气流发生偏转的力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地转偏向力会使运动中的气流发生方向偏转。",
+            "example": "北半球气流向右偏转"
+          },
+          {
+            "name": "热带气旋",
+            "difficulty": 3,
+            "description": "生成于热带海洋的气旋系统",
+            "aliases": [],
+            "prerequisites": [
+              "气旋"
+            ],
+            "definition": "热带气旋是生成于热带海洋并具有强烈旋转上升气流的气旋。",
+            "example": "影响我国东南沿海的热带气旋"
+          },
+          {
+            "name": "台风",
+            "difficulty": 3,
+            "description": "强烈发展的热带气旋",
+            "aliases": [],
+            "prerequisites": [
+              "热带气旋"
+            ],
+            "definition": "台风是强烈发展的热带气旋。",
+            "example": "台风登陆后逐渐减弱"
+          },
+          {
+            "name": "大气环流",
+            "difficulty": 2,
+            "description": "全球性有规律的大气运动",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射",
+              "地转偏向力"
+            ],
+            "definition": "大气环流是具有全球性和规律性的大气运动。",
+            "example": "输送热量和水汽"
+          },
+          {
+            "name": "气压带",
+            "difficulty": 2,
+            "description": "沿纬度方向分布的气压区域",
+            "aliases": [],
+            "prerequisites": [
+              "大气环流"
+            ],
+            "definition": "气压带是全球大气环流中呈带状分布的高、低气压区域。",
+            "example": "赤道低压带"
+          },
+          {
+            "name": "风带",
+            "difficulty": 2,
+            "description": "沿纬度方向分布的盛行风区域",
+            "aliases": [],
+            "prerequisites": [
+              "大气环流"
+            ],
+            "definition": "风带是全球大气环流中呈带状分布的盛行风区域。",
+            "example": "盛行西风带"
+          },
+          {
+            "name": "赤道低压带",
+            "difficulty": 3,
+            "description": "赤道附近空气受热上升形成的低压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "赤道低压带是赤道地区空气受热上升形成的低压带。",
+            "example": "全年控制热带雨林气候区"
+          },
+          {
+            "name": "副热带高压带",
+            "difficulty": 3,
+            "description": "约南北纬30°附近的高压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "副热带高压带是赤道高空气流堆积下沉形成的高压带。",
+            "example": "控制夏季地中海地区"
+          },
+          {
+            "name": "副极地低压带",
+            "difficulty": 3,
+            "description": "约南北纬60°附近的低压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "副极地低压带是暖湿西风与冷重极地东风相遇形成的低压带。",
+            "example": "位于副热带高压带和极地高压带之间"
+          },
+          {
+            "name": "极地高压带",
+            "difficulty": 3,
+            "description": "极地寒冷空气下沉形成的高压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "极地高压带是极地空气寒冷堆积下沉形成的高压带。",
+            "example": "北极附近形成极地高压带"
+          },
+          {
+            "name": "信风带",
+            "difficulty": 3,
+            "description": "副热带高压流向赤道的近地面风带",
+            "aliases": [
+              "低纬信风带"
+            ],
+            "prerequisites": [
+              "风带",
+              "副热带高压带",
+              "赤道低压带"
+            ],
+            "definition": "信风带是副热带高压带流向赤道低压带并发生偏转的风带。",
+            "example": "东北信风和东南信风"
+          },
+          {
+            "name": "盛行西风",
+            "difficulty": 2,
+            "description": "副热带高压流向高纬的西风",
+            "aliases": [
+              "中纬西风带"
+            ],
+            "prerequisites": [
+              "风带",
+              "副热带高压带"
+            ],
+            "definition": "盛行西风是副热带高压带流向高纬并偏转形成的西风。",
+            "example": "南美洲南端受盛行西风影响"
+          },
+          {
+            "name": "极地东风",
+            "difficulty": 3,
+            "description": "极地高压流向低纬的东风",
+            "aliases": [
+              "极地东风带"
+            ],
+            "prerequisites": [
+              "风带",
+              "极地高压带"
+            ],
+            "definition": "极地东风是极地高压带向低纬流动并偏转形成的东风。",
+            "example": "与盛行西风在高纬相遇"
+          },
+          {
+            "name": "气压带风带季移",
+            "difficulty": 3,
+            "description": "气压带和风带随太阳直射点季节移动",
+            "aliases": [
+              "气压带和风带的季节移动"
+            ],
+            "prerequisites": [
+              "气压带",
+              "风带"
+            ],
+            "definition": "气压带和风带季移是其随太阳直射点南北移动而发生的周期性移动。",
+            "example": "北半球夏季大致偏北"
+          },
+          {
+            "name": "海陆热力差异",
+            "difficulty": 2,
+            "description": "海洋和陆地受热、降温速度不同",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射"
+            ],
+            "definition": "海陆热力差异是海洋与陆地增温和降温快慢不同造成的热力差别。",
+            "example": "冬季陆地降温比海洋快"
+          },
+          {
+            "name": "冷高压",
+            "difficulty": 2,
+            "description": "冬季陆地降温形成的高压",
+            "aliases": [],
+            "prerequisites": [
+              "海陆热力差异",
+              "高气压"
+            ],
+            "definition": "冷高压是冬季陆地气温较低而形成的高压中心。",
+            "example": "亚洲高压"
+          },
+          {
+            "name": "热低压",
+            "difficulty": 2,
+            "description": "夏季陆地增温形成的低压",
+            "aliases": [],
+            "prerequisites": [
+              "海陆热力差异",
+              "低气压"
+            ],
+            "definition": "热低压是夏季陆地气温较高而形成的低压中心。",
+            "example": "亚洲低压",
+            "section": "第二节 气压带和风带"
+          },
+          {
+            "name": "季风",
+            "difficulty": 3,
+            "description": "盛行风向随季节有规律变换",
+            "aliases": [],
+            "prerequisites": [
+              "海陆热力差异",
+              "气压带风带季移"
+            ],
+            "definition": "季风是盛行风向随季节发生有规律变换的风。",
+            "example": "亚洲东部季风"
+          },
+          {
+            "name": "气候",
+            "difficulty": 2,
+            "description": "一个地区长期的大气状况特征",
+            "aliases": [],
+            "prerequisites": [
+              "气压带",
+              "风带"
+            ],
+            "definition": "气候是一个地区长期天气状况的综合特征。",
+            "example": "热带雨林气候"
+          },
+          {
+            "name": "水热条件",
+            "difficulty": 2,
+            "description": "一个地区水分和热量的组合状况",
+            "aliases": [],
+            "prerequisites": [
+              "气候"
+            ],
+            "definition": "水热条件是一个地区水分与热量的组合状况。",
+            "example": "热带雨林气候水热丰富",
+            "section": "第三节 气压带和风带对气候的影响"
+          },
+          {
+            "name": "热带雨林气候",
+            "difficulty": 3,
+            "description": "全年高温多雨的气候类型",
+            "aliases": [],
+            "prerequisites": [
+              "赤道低压带",
+              "气候"
+            ],
+            "definition": "热带雨林气候是全年受赤道低压带控制而形成的高温多雨气候。",
+            "example": "亚马孙平原",
+            "section": "第三节 气压带和风带对气候的影响"
+          },
+          {
+            "name": "热带草原气候",
+            "difficulty": 3,
+            "description": "具有明显干湿季的热带气候",
+            "aliases": [],
+            "prerequisites": [
+              "气候",
+              "气压带风带季移"
+            ],
+            "definition": "热带草原气候是干季和湿季交替明显的热带气候。",
+            "example": "塞伦盖蒂地区",
+            "section": "第三节 气压带和风带对气候的影响"
+          },
+          {
+            "name": "温带海洋性气候",
+            "difficulty": 3,
+            "description": "冬季湿润、年温差较小的气候",
+            "aliases": [],
+            "prerequisites": [
+              "盛行西风",
+              "气候"
+            ],
+            "definition": "温带海洋性气候是在中纬度大陆西岸受全年西风和海洋影响形成的气候。",
+            "example": "欧洲西部",
+            "section": "第三节 气压带和风带对气候的影响"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 常见天气系统",
+            "page_range": [
+              47,
+              53
+            ]
+          },
+          {
+            "name": "第二节 气压带和风带",
+            "page_range": [
+              53,
+              59
+            ]
+          },
+          {
+            "name": "第三节 气压带和风带对气候的影响",
+            "page_range": [
+              59,
+              66
+            ]
+          },
+          {
+            "name": "问题研究 阿联酋“造山引雨”是否可行",
+            "page_range": [
+              66,
+              67
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四章 水的运动",
+        "concepts": [
+          {
+            "name": "水循环",
+            "difficulty": 1,
+            "description": "地球表层水体之间持续进行的循环运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水循环是地球表层水体之间通过蒸发、降水和径流等方式进行的循环运动。",
+            "example": "降水形成河流并汇入海洋"
+          },
+          {
+            "name": "陆地水体",
+            "difficulty": 1,
+            "description": "分布在陆地上的各种水体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "陆地水体包括河流、湖泊、冰川、沼泽和地下水等。",
+            "example": "贝加尔湖属于陆地水体"
+          },
+          {
+            "name": "河流",
+            "difficulty": 1,
+            "description": "呈线状且具有较强流动性的陆地水体",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "河流是沿地表沟槽连续或间歇流动的水体。",
+            "example": "湄公河是东南亚重要河流"
+          },
+          {
+            "name": "湖泊",
+            "difficulty": 1,
+            "description": "陆地表面较为封闭的蓄水水体",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "湖泊是陆地表面由天然或人工形成的蓄水水体。",
+            "example": "洞里萨湖可调节湄公河水量"
+          },
+          {
+            "name": "地下水",
+            "difficulty": 2,
+            "description": "储存并运动于地下岩土空隙中的水",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "地下水是埋藏并运动于地表以下岩土空隙中的水。",
+            "example": "枯水期地下水补给河流"
+          },
+          {
+            "name": "冰川与积雪",
+            "difficulty": 2,
+            "description": "寒冷地区储存于冰体和积雪中的水体",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "冰川与积雪是寒冷地区以固态形式储存的陆地水体。",
+            "example": "春季积雪融化形成春汛"
+          },
+          {
+            "name": "河流补给",
+            "difficulty": 2,
+            "description": "为河流径流提供水量的来源",
+            "aliases": [],
+            "prerequisites": [
+              "河流",
+              "冰川与积雪"
+            ],
+            "definition": "河流补给是降水、冰雪融水、湖泊水或地下水等进入河流的过程。",
+            "example": "阿克苏河主要受冰雪融水补给",
+            "section": "第一节 陆地水体及其相互关系"
+          },
+          {
+            "name": "陆地水体关系",
+            "difficulty": 2,
+            "description": "陆地不同水体间的水量交换与相互转化",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体",
+              "水循环"
+            ],
+            "definition": "陆地水体关系是河流、湖泊、地下水和冰川等之间发生水的交换和转化。",
+            "example": "河流与地下水能够相互补给"
+          },
+          {
+            "name": "湖泊调节径流",
+            "difficulty": 2,
+            "description": "湖泊削减洪峰并补给枯水期河流",
+            "aliases": [],
+            "prerequisites": [
+              "湖泊",
+              "河流"
+            ],
+            "definition": "湖泊调节径流是湖泊蓄洪并在枯水期向河流补水的作用。",
+            "example": "洞里萨湖减轻湄公河洪水"
+          },
+          {
+            "name": "盛行风",
+            "difficulty": 2,
+            "description": "在一定区域和季节内占优势的风",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "盛行风是在一定区域和时期内经常出现并占主导地位的风。",
+            "example": "信风推动赤道海水向西流动",
+            "section": "第二节 洋流"
+          },
+          {
+            "name": "洋流",
+            "difficulty": 2,
+            "description": "海洋中大规模的海水定向流动",
+            "aliases": [],
+            "prerequisites": [
+              "盛行风"
+            ],
+            "definition": "洋流是海水在盛行风、海陆分布和地转偏向力等作用下形成的定向流动。",
+            "example": "玩具鸭随洋流漂到不同海岸"
+          },
+          {
+            "name": "大洋环流",
+            "difficulty": 3,
+            "description": "大洋中具有环状结构的洋流系统",
+            "aliases": [],
+            "prerequisites": [
+              "洋流",
+              "盛行风"
+            ],
+            "definition": "大洋环流是大洋中多支洋流共同构成的环状运动系统。",
+            "example": "北半球中低纬环流呈顺时针"
+          },
+          {
+            "name": "季风洋流",
+            "difficulty": 3,
+            "description": "受季风影响而随季节改变方向的洋流",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "季风洋流是受季风季节变化影响而改变流向的洋流。",
+            "example": "北印度洋洋流冬夏方向相反",
+            "section": "第二节 洋流"
+          },
+          {
+            "name": "暖流和寒流",
+            "difficulty": 2,
+            "description": "按海水温度相对差异划分的洋流类型",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "暖流是由低纬流向高纬的较暖洋流，寒流是由高纬流向低纬的较冷洋流。",
+            "example": "北大西洋暖流影响欧洲西北部"
+          },
+          {
+            "name": "洋流环境影响",
+            "difficulty": 3,
+            "description": "洋流对气候和海洋生物分布的影响",
+            "aliases": [],
+            "prerequisites": [
+              "暖流和寒流",
+              "洋流"
+            ],
+            "definition": "洋流环境影响是洋流通过输送热量和营养物质改变气候及海洋生物分布。",
+            "example": "寒暖流交汇处形成大渔场"
+          },
+          {
+            "name": "海—气相互作用",
+            "difficulty": 3,
+            "description": "海洋与大气之间的物质和能量交换",
+            "aliases": [],
+            "prerequisites": [
+              "洋流",
+              "水循环"
+            ],
+            "definition": "海—气相互作用是海洋和大气之间持续进行的水分、热量和动能交换。",
+            "example": "海洋蒸发为大气提供水汽",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "海—气水热交换",
+            "difficulty": 3,
+            "description": "海洋与大气之间的水分和热量交换",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用"
+            ],
+            "definition": "海—气水热交换是海洋与大气通过蒸发、降水和辐射等过程交换水分与热量。",
+            "example": "水汽凝结向大气释放潜热"
+          },
+          {
+            "name": "潜热",
+            "difficulty": 3,
+            "description": "物质状态变化时吸收或释放的热量",
+            "aliases": [],
+            "prerequisites": [
+              "海—气水热交换"
+            ],
+            "definition": "潜热是海水蒸发吸收的热量或水汽凝结释放的热量。",
+            "example": "水汽凝结释放潜热",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "水量平衡原理",
+            "difficulty": 3,
+            "description": "区域储水变化等于水量收入与支出的差额",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "水量平衡原理指出一定时期内区域储水变化量等于水量收入与支出的差额。",
+            "example": "降水减少会导致区域储水量下降",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "大气热力环流",
+            "difficulty": 3,
+            "description": "因海陆或海面温度差异形成的大气环流",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用"
+            ],
+            "definition": "大气热力环流是因海面温度差异引起空气升降和水平运动形成的环流。",
+            "example": "太平洋东西部温差形成热力环流",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "厄尔尼诺现象",
+            "difficulty": 3,
+            "description": "赤道太平洋中东部海温异常升高的现象",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用",
+              "大气热力环流"
+            ],
+            "definition": "厄尔尼诺现象是赤道附近太平洋中东部表层海水温度异常升高的现象。",
+            "example": "秘鲁沿海可能由干旱转为多雨",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "拉尼娜现象",
+            "difficulty": 3,
+            "description": "赤道太平洋中东部海温异常降低的现象",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用",
+              "大气热力环流"
+            ],
+            "definition": "拉尼娜现象是赤道附近太平洋中东部海面温度异常降低的现象。",
+            "example": "其气候影响与厄尔尼诺相反",
+            "section": "第三节 海—气相互作用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 陆地水体及其相互关系",
+            "page_range": [
+              69,
+              73
+            ]
+          },
+          {
+            "name": "第二节 洋流",
+            "page_range": [
+              73,
+              77
+            ]
+          },
+          {
+            "name": "第三节 海—气相互作用",
+            "page_range": [
+              77,
+              82
+            ]
+          },
+          {
+            "name": "问题研究 能否利用南极冰山解决沙特阿拉伯的缺水问题",
+            "page_range": [
+              82,
+              83
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第五章 自然环境的整体性与差异性",
+        "concepts": [
+          {
+            "name": "自然环境",
+            "difficulty": 1,
+            "description": "由大气、水、土壤、生物、岩石及地貌等要素组成的整体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然环境是由多种自然环境要素组成并相互联系的系统。",
+            "example": "湖泊、平原、森林和雪山共同构成自然景观。"
+          },
+          {
+            "name": "自然环境要素",
+            "difficulty": 1,
+            "description": "组成自然环境的基本成分",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境"
+            ],
+            "definition": "自然环境要素包括大气、水、土壤、生物、岩石及地貌等。",
+            "example": "大气、水和生物都是自然环境要素。"
+          },
+          {
+            "name": "物质迁移",
+            "difficulty": 2,
+            "description": "自然环境要素之间物质转移的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境要素"
+            ],
+            "definition": "物质迁移是自然环境要素通过循环等过程发生物质转移的现象。",
+            "example": "降水为土壤、河湖和生物补给水分。"
+          },
+          {
+            "name": "能量交换",
+            "difficulty": 2,
+            "description": "自然环境要素之间能量传递和转换的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境要素"
+            ],
+            "definition": "能量交换是自然环境要素之间进行能量传递和转换的过程。",
+            "example": "太阳辐射影响水分蒸发和生物生长。"
+          },
+          {
+            "name": "自然环境整体性",
+            "difficulty": 2,
+            "description": "自然环境各要素相互联系、相互作用形成的整体特征",
+            "aliases": [],
+            "prerequisites": [
+              "物质迁移",
+              "能量交换"
+            ],
+            "definition": "自然环境整体性是自然环境要素通过物质迁移和能量交换形成的整体特征。",
+            "example": "黄山的奇松、怪石、云海和温泉相互联系。",
+            "section": "第一节 自然环境的整体性"
+          },
+          {
+            "name": "生物循环",
+            "difficulty": 2,
+            "description": "生态系统中生物和环境间物质周而复始的流动过程",
+            "aliases": [],
+            "prerequisites": [
+              "物质迁移"
+            ],
+            "definition": "生物循环是生态系统中生物和环境间物质流动并周而复始的过程。",
+            "example": "植物残体进入土壤，为土壤提供有机质。"
+          },
+          {
+            "name": "整体功能",
+            "difficulty": 2,
+            "description": "自然环境作为系统在要素共同作用下形成的功能",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境整体性"
+            ],
+            "definition": "整体功能是自然环境各要素共同作用形成的系统功能。",
+            "example": "自然环境具有生产功能和稳定功能。"
+          },
+          {
+            "name": "生产功能",
+            "difficulty": 2,
+            "description": "自然环境合成有机物的功能",
+            "aliases": [],
+            "prerequisites": [
+              "整体功能"
+            ],
+            "definition": "生产功能是自然环境依靠光合作用合成有机物的功能。",
+            "example": "坡地和平地的生产功能强弱存在差异。"
+          },
+          {
+            "name": "稳定功能",
+            "difficulty": 3,
+            "description": "自然环境自我调节并保持性质相对稳定的功能",
+            "aliases": [],
+            "prerequisites": [
+              "整体功能"
+            ],
+            "definition": "稳定功能是自然环境通过要素间交换自我调节并保持性质稳定的功能。",
+            "example": "植物和海水交换有助于保持大气二氧化碳相对稳定。"
+          },
+          {
+            "name": "统一演化",
+            "difficulty": 3,
+            "description": "自然环境各要素在演化过程中同步协调变化",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境整体性",
+              "物质迁移"
+            ],
+            "definition": "统一演化是自然环境一个要素演化时其他要素也随之协调变化的过程。",
+            "example": "山地演化为丘陵时，土壤变厚、植被发育。",
+            "section": "第一节 自然环境的整体性"
+          },
+          {
+            "name": "要素组合",
+            "difficulty": 2,
+            "description": "自然环境演化阶段形成的要素组合状态",
+            "aliases": [],
+            "prerequisites": [
+              "统一演化"
+            ],
+            "definition": "要素组合是自然环境统一演化过程中形成的阶段性要素配置。",
+            "example": "黄山“四绝”是特定演化阶段的要素组合。"
+          },
+          {
+            "name": "整体响应",
+            "difficulty": 3,
+            "description": "自然环境受外部干扰后各要素发生连锁变化",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境整体性"
+            ],
+            "definition": "整体响应是一个要素受干扰后引发其他要素连锁变化并影响整体环境的现象。",
+            "example": "森林采伐导致水土流失、洪水和土层变薄。",
+            "section": "第一节 自然环境的整体性"
+          },
+          {
+            "name": "地域差异",
+            "difficulty": 2,
+            "description": "不同地域自然环境特征存在的差别",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境"
+            ],
+            "definition": "地域差异是不同地域自然环境特征因条件和运动不同而形成的差别。",
+            "example": "沿海地区较湿润，内陆地区趋向干旱。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "空间尺度",
+            "difficulty": 2,
+            "description": "地域差异所涉及的空间范围大小",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "空间尺度是地域差异表现范围的大小，具有全球、区域和局地等差别。",
+            "example": "温度带分异属于全球性地域差异。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "温度带分异",
+            "difficulty": 2,
+            "description": "因纬度和太阳辐射差异形成的全球地域分异",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "温度带分异是不同纬度太阳辐射量差异导致的地域分异。",
+            "example": "低纬形成热带，高纬形成寒带。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "海陆分异",
+            "difficulty": 2,
+            "description": "因距海远近不同形成的地域分异",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "海陆分异是沿海与内陆物质迁移和能量交换不同形成的地域分异。",
+            "example": "中纬度由沿海向内陆呈森林带、草原带、荒漠带变化。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "陆地地域分异规律",
+            "difficulty": 3,
+            "description": "陆地自然环境由赤道向两极及沿海向内陆变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异",
+              "温度带分异",
+              "海陆分异"
+            ],
+            "definition": "陆地地域分异规律表现为自然地带随纬度和海陆位置发生规律性变化。",
+            "example": "自然环境由赤道向两极呈规律性变化。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "垂直地域分异规律",
+            "difficulty": 3,
+            "description": "山地自然景观随海拔升高发生垂直变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "垂直地域分异规律是山地水热状况随海拔变化而形成的景观垂直变化规律。",
+            "example": "喜马拉雅山南坡由常绿阔叶林向高寒荒漠变化。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "垂直带谱",
+            "difficulty": 2,
+            "description": "山地从山麓到山顶依次分布的不同景观带",
+            "aliases": [],
+            "prerequisites": [
+              "垂直地域分异规律"
+            ],
+            "definition": "垂直带谱是山地从山麓到山顶由不同景观带组成的垂直序列。",
+            "example": "喜马拉雅山南坡具有多种植被带。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "地方性分异规律",
+            "difficulty": 3,
+            "description": "受地形和岩石风化物等地方因素形成的小尺度地域分异",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异",
+              "物质迁移"
+            ],
+            "definition": "地方性分异规律是地方性因素通过物质与能量再分配形成的地域分异规律。",
+            "example": "山坡、平地和河谷分别发育不同植被。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "自然地带",
+            "difficulty": 2,
+            "description": "自然环境特征相对一致并呈带状分布的地域",
+            "aliases": [],
+            "prerequisites": [
+              "陆地地域分异规律"
+            ],
+            "definition": "自然地带是自然环境各要素组合具有相对一致性的带状地域。",
+            "example": "热带雨林带和苔原带都是自然地带。",
+            "section": "第二节 自然环境的地域差异性"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 自然环境的整体性",
+            "page_range": [
+              85,
+              91
+            ]
+          },
+          {
+            "name": "第二节 自然环境的地域差异性",
+            "page_range": [
+              91,
+              97
+            ]
+          },
+          {
+            "name": "问题研究 如何看待我国西北地区城市引进欧洲冷季型草坪",
+            "page_range": [
+              97,
+              106
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 地球的运动",
+        "concepts": [
+          {
+            "name": "地球自转",
+            "difficulty": 1,
+            "description": "地球绕自转轴进行的旋转运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地球绕其自转轴的旋转运动叫作地球的自转。",
+            "example": "地球自西向东自转"
+          },
+          {
+            "name": "地轴",
+            "difficulty": 1,
+            "description": "地球自转所围绕的轴",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地球自转所围绕的轴叫作地轴。",
+            "example": "地轴北端指向北极星附近"
+          },
+          {
+            "name": "太阳日",
+            "difficulty": 2,
+            "description": "以太阳为参照物的自转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "以太阳为参照物，地球自转一周的时间为24时，称为太阳日。",
+            "example": "昼夜交替周期为一个太阳日"
+          },
+          {
+            "name": "恒星日",
+            "difficulty": 2,
+            "description": "以遥远恒星为参照物的自转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "以遥远恒星为参照物，地球自转一周的时间为23时56分4秒，称为恒星日。",
+            "example": "恒星日是地球自转的真正周期",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "自转角速度",
+            "difficulty": 2,
+            "description": "地球自转时单位时间转过的角度",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "地球自转角速度是地球单位时间内转过的角度，约为每时15°。",
+            "example": "除两极点外各地角速度相等",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "自转线速度",
+            "difficulty": 2,
+            "description": "地球表面各点自转运动的线速度",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "自转线速度是地球表面各点随地球自转运动的线速度。",
+            "example": "线速度由赤道向两极递减",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "地球公转",
+            "difficulty": 1,
+            "description": "地球绕太阳进行的运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地球绕太阳的运动叫作地球的公转。",
+            "example": "地球公转方向为自西向东"
+          },
+          {
+            "name": "回归年",
+            "difficulty": 2,
+            "description": "以太阳为参照物的公转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转"
+            ],
+            "definition": "以太阳为参照物，地球公转一周的时间称为回归年。",
+            "example": "回归年约为365日5时48分46秒"
+          },
+          {
+            "name": "恒星年",
+            "difficulty": 2,
+            "description": "以其他恒星为参照物的公转周期",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转"
+            ],
+            "definition": "以其他恒星为参照物，地球公转一周的时间称为恒星年。",
+            "example": "恒星年是地球公转的真正周期",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "公转轨道",
+            "difficulty": 2,
+            "description": "地球绕太阳运行的轨迹",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转"
+            ],
+            "definition": "地球公转的轨迹叫作公转轨道，是近似正圆的椭圆轨道。",
+            "example": "太阳位于椭圆轨道的一个焦点上"
+          },
+          {
+            "name": "近日点",
+            "difficulty": 2,
+            "description": "地球距离太阳最近的轨道位置",
+            "aliases": [],
+            "prerequisites": [
+              "公转轨道"
+            ],
+            "definition": "地球公转时距离太阳最近的位置叫作近日点。",
+            "example": "每年1月初经过近日点"
+          },
+          {
+            "name": "远日点",
+            "difficulty": 2,
+            "description": "地球距离太阳最远的轨道位置",
+            "aliases": [],
+            "prerequisites": [
+              "公转轨道"
+            ],
+            "definition": "地球公转时距离太阳最远的位置叫作远日点。",
+            "example": "每年7月初经过远日点"
+          },
+          {
+            "name": "赤道平面",
+            "difficulty": 2,
+            "description": "过地心且垂直于地轴的平面",
+            "aliases": [],
+            "prerequisites": [
+              "地轴"
+            ],
+            "definition": "过地心并与地轴垂直的平面称为赤道平面。",
+            "example": "赤道平面与黄道平面存在交角"
+          },
+          {
+            "name": "黄道平面",
+            "difficulty": 2,
+            "description": "地球公转轨道所在的平面",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转",
+              "公转轨道"
+            ],
+            "definition": "地球公转轨道所在的平面称为黄道平面。",
+            "example": "黄道平面是地球公转轨道平面"
+          },
+          {
+            "name": "黄赤交角",
+            "difficulty": 2,
+            "description": "赤道平面与黄道平面的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "赤道平面",
+              "黄道平面"
+            ],
+            "definition": "赤道平面与黄道平面之间的交角叫作黄赤交角。",
+            "example": "目前黄赤交角为23°26′"
+          },
+          {
+            "name": "太阳直射点",
+            "difficulty": 2,
+            "description": "地表接受太阳垂直照射的点",
+            "aliases": [],
+            "prerequisites": [
+              "黄赤交角"
+            ],
+            "definition": "地表接受太阳垂直照射的点简称太阳直射点。",
+            "example": "夏至日直射北纬23°26′"
+          },
+          {
+            "name": "北回归线",
+            "difficulty": 2,
+            "description": "太阳直射点到达的最北纬线",
+            "aliases": [],
+            "prerequisites": [
+              "太阳直射点"
+            ],
+            "definition": "北纬23°26′称为北回归线。",
+            "example": "夏至日太阳直射北回归线"
+          },
+          {
+            "name": "南回归线",
+            "difficulty": 2,
+            "description": "太阳直射点到达的最南纬线",
+            "aliases": [],
+            "prerequisites": [
+              "太阳直射点"
+            ],
+            "definition": "南纬23°26′称为南回归线。",
+            "example": "冬至日太阳直射南回归线"
+          },
+          {
+            "name": "太阳直射点回归运动",
+            "difficulty": 2,
+            "description": "太阳直射点在南北回归线间往返运动",
+            "aliases": [
+              "回归运动"
+            ],
+            "prerequisites": [
+              "太阳直射点",
+              "北回归线",
+              "南回归线"
+            ],
+            "definition": "太阳直射点在南北纬23°26′之间以一年为周期的往返运动称为回归运动。",
+            "example": "春分日直射点位于赤道",
+            "section": "第一节 地球的自转和公转"
+          },
+          {
+            "name": "昼半球和夜半球",
+            "difficulty": 1,
+            "description": "地球表面向阳与背阳的两个半球",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "向着太阳的半球是昼半球，背着太阳的半球是夜半球。",
+            "example": "同一时间昼夜半球各约占一半",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "晨昏线",
+            "difficulty": 2,
+            "description": "昼半球与夜半球的分界线",
+            "aliases": [
+              "晨昏圈"
+            ],
+            "prerequisites": [
+              "昼半球和夜半球"
+            ],
+            "definition": "昼半球和夜半球的分界线叫作晨昏线。",
+            "example": "晨昏线上的太阳高度为0°",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "昼夜交替",
+            "difficulty": 1,
+            "description": "昼半球和夜半球周期性转换的现象",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转",
+              "昼半球和夜半球"
+            ],
+            "definition": "地球自转使地球表面的昼半球和夜半球不断交替。",
+            "example": "昼夜交替周期为一个太阳日",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "地方时",
+            "difficulty": 2,
+            "description": "不同经度地点因太阳位置形成的时间",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "同一瞬间因经度不同而不同的时间叫作地方时。",
+            "example": "经度相差15°地方时相差1小时",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "时区",
+            "difficulty": 2,
+            "description": "按经度划分的全球计时区域",
+            "aliases": [],
+            "prerequisites": [
+              "地方时"
+            ],
+            "definition": "全球按统一标准划分的计时区域叫作时区。",
+            "example": "全球共分为24个时区",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "区时",
+            "difficulty": 2,
+            "description": "以时区中央经线地方时为标准的时间",
+            "aliases": [],
+            "prerequisites": [
+              "时区",
+              "地方时"
+            ],
+            "definition": "各时区以本时区中央经线的地方时作为本时区的区时。",
+            "example": "相邻时区区时相差1小时",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "国际日界线",
+            "difficulty": 2,
+            "description": "地球上今天与昨天的日期分界线",
+            "aliases": [
+              "国际日期变更线"
+            ],
+            "prerequisites": [
+              "时区",
+              "区时"
+            ],
+            "definition": "原则上以180°经线为地球上今天和昨天分界的线叫作国际日界线。",
+            "example": "向东跨越日界线日期减一天",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "地转偏向力",
+            "difficulty": 3,
+            "description": "使水平运动物体方向发生偏转的力",
+            "aliases": [],
+            "prerequisites": [
+              "地球自转"
+            ],
+            "definition": "促使地表水平运动物体运动方向产生偏转的力称为地转偏向力。",
+            "example": "北半球水平运动向右偏转",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "太阳高度角",
+            "difficulty": 2,
+            "description": "太阳光线与当地地平面的交角",
+            "aliases": [
+              "太阳高度"
+            ],
+            "prerequisites": [
+              "太阳直射点"
+            ],
+            "definition": "太阳光线与地平面的交角叫作太阳高度角。",
+            "example": "太阳直射点太阳高度为90°",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "正午太阳高度",
+            "difficulty": 2,
+            "description": "一日内最大的太阳高度",
+            "aliases": [],
+            "prerequisites": [
+              "太阳高度角"
+            ],
+            "definition": "正午太阳高度是一日内最大的太阳高度，反映太阳辐射强弱。",
+            "example": "北京夏至日正午太阳高度为73°26′",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "昼夜长短",
+            "difficulty": 2,
+            "description": "白昼与黑夜持续时间的长短",
+            "aliases": [],
+            "prerequisites": [
+              "晨昏线",
+              "太阳直射点"
+            ],
+            "definition": "昼夜长短是白昼和黑夜持续时间的长短。",
+            "example": "春分日全球昼夜均为12时",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "四季更替",
+            "difficulty": 2,
+            "description": "一年中春夏秋冬有规律的交替",
+            "aliases": [],
+            "prerequisites": [
+              "昼夜长短",
+              "正午太阳高度"
+            ],
+            "definition": "昼夜长短和正午太阳高度的周年变化形成四季更替。",
+            "example": "南北半球季节相反",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "南北极圈",
+            "difficulty": 2,
+            "description": "划分温带与寒带的南北界线",
+            "aliases": [],
+            "prerequisites": [
+              "黄赤交角"
+            ],
+            "definition": "南北极圈是划分温带和寒带的重要纬线界线。",
+            "example": "北极圈及其以北可出现极昼",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "五带划分",
+            "difficulty": 2,
+            "description": "依据回归线和极圈划分地球温度带",
+            "aliases": [],
+            "prerequisites": [
+              "北回归线",
+              "南回归线",
+              "南北极圈"
+            ],
+            "definition": "以南北回归线和南北极圈为界划分热带、温带和寒带。",
+            "example": "地球表面分为五个温度带",
+            "section": "第二节 地球运动的地理意义"
+          },
+          {
+            "name": "二十四节气",
+            "difficulty": 2,
+            "description": "按太阳在黄道位置划分的节气制度",
+            "aliases": [],
+            "prerequisites": [
+              "地球公转",
+              "回归年"
+            ],
+            "definition": "将黄道一周每隔15°划定一个节气形成二十四节气。",
+            "example": "春分、夏至、秋分、冬至属于二十四节气",
+            "section": "第二节 地球运动的地理意义"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 地球的自转和公转",
+            "section_key": "e0d621e920",
+            "page_range": [
+              7,
+              12
+            ]
+          },
+          {
+            "name": "第二节 地球运动的地理意义",
+            "section_key": "f44371ac4b",
+            "page_range": [
+              12,
+              20
+            ]
+          },
+          {
+            "name": "问题研究 人类是否需要人造月亮",
+            "section_key": "459eb380e0",
+            "page_range": [
+              20,
+              21
+            ]
+          }
+        ],
+        "chapter_key": "31a89cb6bb",
+        "metadata": {
+          "volume_id": "092f6f93cb96",
+          "file_id": "092f6f93cb96",
+          "volume_title": "高中地理 选择性必修1",
+          "chapter_order": 1,
+          "raw_heading": "第一章 地球的运动"
+        }
+      },
+      {
+        "name": "第二章 地表形态的塑造",
+        "concepts": [
+          {
+            "name": "地表形态",
+            "difficulty": 1,
+            "description": "地球表面各种地形地貌的总称",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地表形态是地球表面高低起伏及其形态特征的总和。",
+            "example": "山地、平原和河流地貌"
+          },
+          {
+            "name": "内力作用",
+            "difficulty": 2,
+            "description": "来自地球内部热能的地质作用",
+            "aliases": [],
+            "prerequisites": [
+              "地表形态"
+            ],
+            "definition": "内力作用是能量主要来自地球内部热能的地质作用。",
+            "example": "地震使地面瞬间变形"
+          },
+          {
+            "name": "地壳运动",
+            "difficulty": 2,
+            "description": "岩石圈发生变位或变形的运动",
+            "aliases": [
+              "构造运动"
+            ],
+            "prerequisites": [
+              "内力作用"
+            ],
+            "definition": "地壳运动是岩石圈因内力作用发生变位或变形的过程。",
+            "example": "青藏高原大幅度抬升"
+          },
+          {
+            "name": "岩浆活动",
+            "difficulty": 2,
+            "description": "岩浆侵入岩石圈或喷出地表的过程",
+            "aliases": [],
+            "prerequisites": [
+              "内力作用"
+            ],
+            "definition": "岩浆活动是岩浆沿岩石圈破裂带上升并侵入或喷出的过程。",
+            "example": "基拉韦厄火山喷发"
+          },
+          {
+            "name": "变质作用",
+            "difficulty": 2,
+            "description": "岩石成分和结构发生改变的过程",
+            "aliases": [],
+            "prerequisites": [
+              "内力作用"
+            ],
+            "definition": "变质作用是岩石受温度、压力等影响而发生改变的过程。",
+            "example": "页岩变质成为板岩"
+          },
+          {
+            "name": "外力作用",
+            "difficulty": 2,
+            "description": "主要由太阳辐射能驱动的地质作用",
+            "aliases": [],
+            "prerequisites": [
+              "地表形态"
+            ],
+            "definition": "外力作用是能量主要来自地球外部、以太阳辐射能为主的地质作用。",
+            "example": "流水冲刷河岸"
+          },
+          {
+            "name": "风化作用",
+            "difficulty": 2,
+            "description": "地表岩石破碎或分解的过程",
+            "aliases": [],
+            "prerequisites": [
+              "外力作用"
+            ],
+            "definition": "风化作用是岩石在温度、水、大气和生物等作用下破碎或分解的过程。",
+            "example": "岩石受冻融而崩解",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "物理风化",
+            "difficulty": 2,
+            "description": "岩石破碎但化学成分基本不变",
+            "aliases": [],
+            "prerequisites": [
+              "风化作用"
+            ],
+            "definition": "物理风化是岩石因温度变化、冻融或根系作用而破碎的风化类型。",
+            "example": "岩石表层受热不均而崩裂",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "化学风化",
+            "difficulty": 2,
+            "description": "岩石发生化学分解的风化类型",
+            "aliases": [],
+            "prerequisites": [
+              "风化作用"
+            ],
+            "definition": "化学风化是岩石在水等因素作用下发生化学分解的风化类型。",
+            "example": "岩石被水逐渐分解",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "侵蚀作用",
+            "difficulty": 2,
+            "description": "流水、波浪、风和冰川破坏地表",
+            "aliases": [],
+            "prerequisites": [
+              "外力作用"
+            ],
+            "definition": "侵蚀作用是流水、波浪、风、冰川等外力对地表进行破坏的过程。",
+            "example": "海浪侵蚀海岸岩柱"
+          },
+          {
+            "name": "搬运作用",
+            "difficulty": 2,
+            "description": "风化或侵蚀产物被外力带离原地",
+            "aliases": [],
+            "prerequisites": [
+              "侵蚀作用"
+            ],
+            "definition": "搬运作用是风化或侵蚀产物在流水、风、波浪和冰川作用下移动的过程。",
+            "example": "河流搬运泥沙入海"
+          },
+          {
+            "name": "堆积作用",
+            "difficulty": 2,
+            "description": "被搬运物质因动力减弱而沉积",
+            "aliases": [],
+            "prerequisites": [
+              "搬运作用"
+            ],
+            "definition": "堆积作用是被搬运物质因流速、风力减小或冰川融化而沉积的过程。",
+            "example": "河口泥沙沉积形成三角洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "冰川作用",
+            "difficulty": 3,
+            "description": "冰川侵蚀、搬运和堆积地表物质",
+            "aliases": [],
+            "prerequisites": [
+              "侵蚀作用",
+              "搬运作用",
+              "堆积作用"
+            ],
+            "definition": "冰川作用是冰川运动过程中对地表进行侵蚀、搬运和堆积的作用。",
+            "example": "冰川形成U形谷",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "岩石圈物质循环",
+            "difficulty": 3,
+            "description": "三类岩石与岩浆之间循环转化",
+            "aliases": [],
+            "prerequisites": [
+              "岩浆岩",
+              "沉积岩",
+              "变质岩"
+            ],
+            "definition": "岩石圈物质循环是岩浆和三类岩石在地质作用下不断相互转化的过程。",
+            "example": "岩石熔化后重新形成岩浆",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "岩浆岩",
+            "difficulty": 2,
+            "description": "岩浆或熔岩冷却凝固形成的岩石",
+            "aliases": [],
+            "prerequisites": [
+              "岩浆活动"
+            ],
+            "definition": "岩浆岩是岩浆或熔岩冷却凝固形成的岩石。",
+            "example": "花岗岩、玄武岩"
+          },
+          {
+            "name": "喷出岩",
+            "difficulty": 2,
+            "description": "岩浆喷出地表冷却形成的岩浆岩",
+            "aliases": [
+              "火山岩"
+            ],
+            "prerequisites": [
+              "岩浆岩"
+            ],
+            "definition": "喷出岩是岩浆喷出地表后冷却形成的岩浆岩。",
+            "example": "玄武岩形成高原、台地",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "侵入岩",
+            "difficulty": 2,
+            "description": "岩浆侵入地下冷却形成的岩浆岩",
+            "aliases": [],
+            "prerequisites": [
+              "岩浆岩"
+            ],
+            "definition": "侵入岩是岩浆侵入岩石圈后冷却变硬形成的岩浆岩。",
+            "example": "花岗岩常构成山脉核心",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "沉积岩",
+            "difficulty": 2,
+            "description": "沉积物经压实固结形成的岩石",
+            "aliases": [],
+            "prerequisites": [
+              "风化作用",
+              "搬运作用",
+              "堆积作用"
+            ],
+            "definition": "沉积岩是碎屑物质或化学沉淀物、生物遗体堆积后压实固结形成的岩石。",
+            "example": "砾岩、砂岩、页岩"
+          },
+          {
+            "name": "变质岩",
+            "difficulty": 2,
+            "description": "原有岩石在高温高压下改变形成",
+            "aliases": [],
+            "prerequisites": [
+              "变质作用"
+            ],
+            "definition": "变质岩是原有岩石在高温、高压等条件下成分和性质改变形成的岩石。",
+            "example": "石灰岩变质成为大理岩"
+          },
+          {
+            "name": "将今论古",
+            "difficulty": 3,
+            "description": "用现在的地质作用解释地质历史",
+            "aliases": [
+              "现在是了解过去的一把钥匙"
+            ],
+            "prerequisites": [
+              "外力作用",
+              "内力作用"
+            ],
+            "definition": "将今论古是通过研究现在的地质作用推断过去地质过程的方法。",
+            "example": "依据珊瑚化石推断古海洋环境",
+            "section": "第一节 塑造地表形态的力量"
+          },
+          {
+            "name": "地质构造",
+            "difficulty": 2,
+            "description": "岩层受地壳运动形成的变形和变位",
+            "aliases": [],
+            "prerequisites": [
+              "地壳运动"
+            ],
+            "definition": "地质构造是岩层在地壳运动作用下产生的变形和变位。",
+            "example": "褶皱岩层和断裂岩层"
+          },
+          {
+            "name": "褶皱",
+            "difficulty": 2,
+            "description": "岩层受挤压产生的波状弯曲",
+            "aliases": [],
+            "prerequisites": [
+              "地质构造"
+            ],
+            "definition": "褶皱是岩层在强大挤压力下发生塑性变形而形成的波状弯曲。",
+            "example": "喜马拉雅山的褶皱山系"
+          },
+          {
+            "name": "背斜",
+            "difficulty": 2,
+            "description": "岩层一般向上拱起的褶皱",
+            "aliases": [],
+            "prerequisites": [
+              "褶皱"
+            ],
+            "definition": "背斜是褶皱中岩层一般向上拱起的构造形态。",
+            "example": "背斜通常形成山岭",
+            "section": "第二节 构造地貌的形成"
+          },
+          {
+            "name": "向斜",
+            "difficulty": 2,
+            "description": "岩层一般向下弯曲的褶皱",
+            "aliases": [],
+            "prerequisites": [
+              "褶皱"
+            ],
+            "definition": "向斜是褶皱中岩层一般向下弯曲的构造形态。",
+            "example": "向斜通常形成谷地",
+            "section": "第二节 构造地貌的形成"
+          },
+          {
+            "name": "断层",
+            "difficulty": 2,
+            "description": "岩层断裂并沿断裂面明显位移",
+            "aliases": [],
+            "prerequisites": [
+              "地质构造"
+            ],
+            "definition": "断层是岩层断裂并沿断裂面发生明显位移的构造。",
+            "example": "圣安德列斯断层"
+          },
+          {
+            "name": "板块构造学说",
+            "difficulty": 3,
+            "description": "解释板块运动及其地貌影响的学说",
+            "aliases": [],
+            "prerequisites": [
+              "地壳运动",
+              "地质构造"
+            ],
+            "definition": "板块构造学说认为岩石圈破碎成多个板块并持续缓慢运动。",
+            "example": "用板块碰撞解释青藏高原抬升",
+            "section": "第二节 构造地貌的形成"
+          },
+          {
+            "name": "板块运动",
+            "difficulty": 3,
+            "description": "板块之间相向或相离的运动",
+            "aliases": [],
+            "prerequisites": [
+              "板块构造学说"
+            ],
+            "definition": "板块运动是岩石圈板块在软流层之上进行的缓慢持续运动。",
+            "example": "板块相离形成裂谷"
+          },
+          {
+            "name": "山地交通布局",
+            "difficulty": 3,
+            "description": "依据山地地形合理安排交通线路",
+            "aliases": [],
+            "prerequisites": [
+              "地表形态"
+            ],
+            "definition": "山地交通布局是在考虑地形、地质和灾害等因素基础上安排交通方式与线路。",
+            "example": "沿河谷修建盘山公路"
+          },
+          {
+            "name": "河流地貌",
+            "difficulty": 2,
+            "description": "河流侵蚀和堆积形成的地貌",
+            "aliases": [],
+            "prerequisites": [
+              "侵蚀作用",
+              "堆积作用"
+            ],
+            "definition": "河流地貌是河流在流动过程中通过侵蚀、搬运和堆积塑造的地貌。",
+            "example": "河谷、冲积扇和三角洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "河谷演变",
+            "difficulty": 3,
+            "description": "河谷由深窄向宽浅发展的过程",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "河谷演变是河流侵蚀和堆积作用使河谷逐渐加深、拓宽和延长的过程。",
+            "example": "河谷横剖面由V形变为槽形"
+          },
+          {
+            "name": "V形河谷",
+            "difficulty": 2,
+            "description": "河流初期形成的深窄陡峭河谷",
+            "aliases": [],
+            "prerequisites": [
+              "河谷演变"
+            ],
+            "definition": "V形河谷是河流发育初期以下切和溯源侵蚀为主形成的深窄河谷。",
+            "example": "金沙江虎跳峡",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "曲流",
+            "difficulty": 2,
+            "description": "平坦地区河道形成的弯曲形态",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌"
+            ],
+            "definition": "曲流是河流在地势平坦地区发育形成的弯曲河道。",
+            "example": "黄河中游多弯曲河道",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "凹岸侵蚀",
+            "difficulty": 2,
+            "description": "河曲凹岸水流冲刷加强的现象",
+            "aliases": [],
+            "prerequisites": [
+              "曲流",
+              "侵蚀作用"
+            ],
+            "definition": "凹岸侵蚀是弯曲河道凹岸一侧受水流冲刷而不断后退的过程。",
+            "example": "镇江段南岸持续后退",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "凸岸堆积",
+            "difficulty": 2,
+            "description": "河曲凸岸泥沙沉积增强的现象",
+            "aliases": [],
+            "prerequisites": [
+              "曲流",
+              "堆积作用"
+            ],
+            "definition": "凸岸堆积是弯曲河道凸岸一侧因水流较缓而沉积泥沙的过程。",
+            "example": "凸岸形成沙洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "冲积平原",
+            "difficulty": 2,
+            "description": "河流堆积作用形成的平原地貌",
+            "aliases": [],
+            "prerequisites": [
+              "堆积作用",
+              "河流地貌"
+            ],
+            "definition": "冲积平原是河流搬运物质沉积形成的典型河流堆积地貌。",
+            "example": "华北平原",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "冲积扇",
+            "difficulty": 2,
+            "description": "河流出山口形成的扇状堆积地貌",
+            "aliases": [],
+            "prerequisites": [
+              "冲积平原",
+              "堆积作用"
+            ],
+            "definition": "冲积扇是河流流出山区后因流速减慢在山前形成的扇状堆积地貌。",
+            "example": "太行山山前冲积扇",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "河漫滩平原",
+            "difficulty": 2,
+            "description": "废弃河漫滩连接形成的平原",
+            "aliases": [],
+            "prerequisites": [
+              "冲积平原",
+              "曲流"
+            ],
+            "definition": "河漫滩平原是多个被废弃的河漫滩连接形成的宽广平原。",
+            "example": "卢瓦尔河河漫滩平原",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "三角洲平原",
+            "difficulty": 2,
+            "description": "河口泥沙沉积扩展形成的平原",
+            "aliases": [],
+            "prerequisites": [
+              "冲积平原",
+              "堆积作用"
+            ],
+            "definition": "三角洲平原是河流入海口泥沙沉积体不断向海扩展形成的平原。",
+            "example": "尼罗河三角洲",
+            "section": "第三节 河流地貌的发育"
+          },
+          {
+            "name": "河流聚落分布",
+            "difficulty": 3,
+            "description": "聚落受河流地貌和水文条件影响",
+            "aliases": [],
+            "prerequisites": [
+              "河流地貌",
+              "冲积平原"
+            ],
+            "definition": "河流聚落分布是聚落因用水、交通、耕作和防洪等条件而沿河分布的现象。",
+            "example": "中下游城市较为密集"
+          },
+          {
+            "name": "侵蚀循环学说",
+            "difficulty": 3,
+            "description": "将河流发育分为三个阶段的学说",
+            "aliases": [],
+            "prerequisites": [
+              "河谷演变"
+            ],
+            "definition": "侵蚀循环学说认为河流发育可经历幼年期、壮年期和老年期。",
+            "example": "密西西比河中游属壮年期特征",
+            "section": "第三节 河流地貌的发育"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 塑造地表形态的力量",
+            "section_key": "1ec57918df",
+            "page_range": [
+              23,
+              31
+            ]
+          },
+          {
+            "name": "第二节 构造地貌的形成",
+            "section_key": "eeaecde2c0",
+            "page_range": [
+              31,
+              38
+            ]
+          },
+          {
+            "name": "第三节 河流地貌的发育",
+            "section_key": "f06f1253c6",
+            "page_range": [
+              38,
+              44
+            ]
+          },
+          {
+            "name": "问题研究 崇明岛的未来是什么样子",
+            "section_key": "d8865eecd8",
+            "page_range": [
+              44,
+              45
+            ]
+          }
+        ],
+        "chapter_key": "09f92def63",
+        "metadata": {
+          "volume_id": "092f6f93cb96",
+          "file_id": "092f6f93cb96",
+          "volume_title": "高中地理 选择性必修1",
+          "chapter_order": 2,
+          "raw_heading": "第二章 地表形态的塑造"
+        }
+      },
+      {
+        "name": "第三章 大气的运动",
+        "concepts": [
+          {
+            "name": "太阳辐射",
+            "difficulty": 1,
+            "description": "驱使大气运动的根本动力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "太阳辐射是地球大气运动的根本动力。",
+            "example": "不同纬度太阳辐射存在差异"
+          },
+          {
+            "name": "气压",
+            "difficulty": 1,
+            "description": "空气作用在单位面积上的压力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "气压是描述大气压力大小的物理量。",
+            "example": "低压中心气压低于四周"
+          },
+          {
+            "name": "等压线",
+            "difficulty": 2,
+            "description": "表示气压相等各点的连线",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "等压线是等压线分布图上气压值相等各点的连线。",
+            "example": "闭合等压线可表示高压或低压"
+          },
+          {
+            "name": "气团",
+            "difficulty": 2,
+            "description": "物理性质较均匀的大范围空气",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "气团是水平方向和垂直方向物理性质较均匀的大范围空气。",
+            "example": "冷气团和暖气团"
+          },
+          {
+            "name": "锋面",
+            "difficulty": 2,
+            "description": "冷暖气团之间的交界面",
+            "aliases": [],
+            "prerequisites": [
+              "气团"
+            ],
+            "definition": "锋面是性质不同的冷暖气团接触时形成的交界面。",
+            "example": "锋面附近常有云雨天气"
+          },
+          {
+            "name": "锋线",
+            "difficulty": 2,
+            "description": "锋面与地面相交形成的线",
+            "aliases": [],
+            "prerequisites": [
+              "锋面"
+            ],
+            "definition": "锋线是锋面与地面相交而成的线。",
+            "example": "天气图上用线表示锋线"
+          },
+          {
+            "name": "锋",
+            "difficulty": 2,
+            "description": "锋面和锋线的统称",
+            "aliases": [],
+            "prerequisites": [
+              "锋面",
+              "锋线"
+            ],
+            "definition": "锋是锋面和锋线的统称。",
+            "example": "锋可分为冷锋和暖锋"
+          },
+          {
+            "name": "冷锋",
+            "difficulty": 2,
+            "description": "冷气团主动向暖气团移动的锋",
+            "aliases": [],
+            "prerequisites": [
+              "锋"
+            ],
+            "definition": "冷锋是冷气团主动向暖气团移动形成的锋。",
+            "example": "冷锋过境常有大风、雨雪"
+          },
+          {
+            "name": "暖锋",
+            "difficulty": 2,
+            "description": "暖气团主动向冷气团移动的锋",
+            "aliases": [],
+            "prerequisites": [
+              "锋"
+            ],
+            "definition": "暖锋是暖气团主动向冷气团移动形成的锋。",
+            "example": "暖锋过境多形成连续性降水"
+          },
+          {
+            "name": "准静止锋",
+            "difficulty": 3,
+            "description": "冷暖气团势均力敌而移动缓慢的锋",
+            "aliases": [],
+            "prerequisites": [
+              "锋"
+            ],
+            "definition": "准静止锋是冷暖气团势均力敌或受地形阻挡而移动缓慢的锋。",
+            "example": "江淮准静止锋带来梅雨"
+          },
+          {
+            "name": "低气压",
+            "difficulty": 2,
+            "description": "中心气压低于四周的闭合区域",
+            "aliases": [
+              "低压"
+            ],
+            "prerequisites": [
+              "等压线",
+              "气压"
+            ],
+            "definition": "低气压是等压线闭合且中心气压低于四周的区域。",
+            "example": "低压中心形成上升气流"
+          },
+          {
+            "name": "气旋",
+            "difficulty": 2,
+            "description": "气流由四周向中心辐合的系统",
+            "aliases": [],
+            "prerequisites": [
+              "低气压"
+            ],
+            "definition": "气旋是低压气流由四周向中心辐合形成的环流系统。",
+            "example": "北半球气旋呈逆时针旋转"
+          },
+          {
+            "name": "高气压",
+            "difficulty": 2,
+            "description": "中心气压高于四周的闭合区域",
+            "aliases": [
+              "高压"
+            ],
+            "prerequisites": [
+              "等压线",
+              "气压"
+            ],
+            "definition": "高气压是等压线闭合且中心气压高于四周的区域。",
+            "example": "高压中心形成下沉气流"
+          },
+          {
+            "name": "反气旋",
+            "difficulty": 2,
+            "description": "气流由中心向四周辐散的系统",
+            "aliases": [],
+            "prerequisites": [
+              "高气压"
+            ],
+            "definition": "反气旋是高压气流由中心向四周辐散形成的环流系统。",
+            "example": "北半球反气旋顺时针流出"
+          },
+          {
+            "name": "高压脊",
+            "difficulty": 3,
+            "description": "从高压伸展出来的狭长区域",
+            "aliases": [],
+            "prerequisites": [
+              "高气压"
+            ],
+            "definition": "高压脊是从高压中心向外伸展的狭长高压区域。",
+            "example": "等压线图上高压向外延伸",
+            "section": "第一节 常见天气系统"
+          },
+          {
+            "name": "低压槽",
+            "difficulty": 3,
+            "description": "从低压延伸出来的狭长区域",
+            "aliases": [],
+            "prerequisites": [
+              "低气压"
+            ],
+            "definition": "低压槽是从低压中心向外延伸的狭长低压区域。",
+            "example": "低压槽形似地形上的山谷",
+            "section": "第一节 常见天气系统"
+          },
+          {
+            "name": "气压梯度力",
+            "difficulty": 3,
+            "description": "促使空气由高压流向低压的力",
+            "aliases": [],
+            "prerequisites": [
+              "气压"
+            ],
+            "definition": "气压梯度力是促使空气由高压区流向低压区的力。",
+            "example": "低压气流在其作用下向中心流动",
+            "section": "第一节 常见天气系统"
+          },
+          {
+            "name": "地转偏向力",
+            "difficulty": 3,
+            "description": "使水平运动气流发生偏转的力",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地转偏向力会使运动中的气流发生方向偏转。",
+            "example": "北半球气流向右偏转"
+          },
+          {
+            "name": "热带气旋",
+            "difficulty": 3,
+            "description": "生成于热带海洋的气旋系统",
+            "aliases": [],
+            "prerequisites": [
+              "气旋"
+            ],
+            "definition": "热带气旋是生成于热带海洋并具有强烈旋转上升气流的气旋。",
+            "example": "影响我国东南沿海的热带气旋"
+          },
+          {
+            "name": "台风",
+            "difficulty": 3,
+            "description": "强烈发展的热带气旋",
+            "aliases": [],
+            "prerequisites": [
+              "热带气旋"
+            ],
+            "definition": "台风是强烈发展的热带气旋。",
+            "example": "台风登陆后逐渐减弱"
+          },
+          {
+            "name": "大气环流",
+            "difficulty": 2,
+            "description": "全球性有规律的大气运动",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射",
+              "地转偏向力"
+            ],
+            "definition": "大气环流是具有全球性和规律性的大气运动。",
+            "example": "输送热量和水汽"
+          },
+          {
+            "name": "气压带",
+            "difficulty": 2,
+            "description": "沿纬度方向分布的气压区域",
+            "aliases": [],
+            "prerequisites": [
+              "大气环流"
+            ],
+            "definition": "气压带是全球大气环流中呈带状分布的高、低气压区域。",
+            "example": "赤道低压带"
+          },
+          {
+            "name": "风带",
+            "difficulty": 2,
+            "description": "沿纬度方向分布的盛行风区域",
+            "aliases": [],
+            "prerequisites": [
+              "大气环流"
+            ],
+            "definition": "风带是全球大气环流中呈带状分布的盛行风区域。",
+            "example": "盛行西风带"
+          },
+          {
+            "name": "赤道低压带",
+            "difficulty": 3,
+            "description": "赤道附近空气受热上升形成的低压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "赤道低压带是赤道地区空气受热上升形成的低压带。",
+            "example": "全年控制热带雨林气候区"
+          },
+          {
+            "name": "副热带高压带",
+            "difficulty": 3,
+            "description": "约南北纬30°附近的高压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "副热带高压带是赤道高空气流堆积下沉形成的高压带。",
+            "example": "控制夏季地中海地区"
+          },
+          {
+            "name": "副极地低压带",
+            "difficulty": 3,
+            "description": "约南北纬60°附近的低压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "副极地低压带是暖湿西风与冷重极地东风相遇形成的低压带。",
+            "example": "位于副热带高压带和极地高压带之间"
+          },
+          {
+            "name": "极地高压带",
+            "difficulty": 3,
+            "description": "极地寒冷空气下沉形成的高压带",
+            "aliases": [],
+            "prerequisites": [
+              "气压带"
+            ],
+            "definition": "极地高压带是极地空气寒冷堆积下沉形成的高压带。",
+            "example": "北极附近形成极地高压带"
+          },
+          {
+            "name": "信风带",
+            "difficulty": 3,
+            "description": "副热带高压流向赤道的近地面风带",
+            "aliases": [
+              "低纬信风带"
+            ],
+            "prerequisites": [
+              "风带",
+              "副热带高压带",
+              "赤道低压带"
+            ],
+            "definition": "信风带是副热带高压带流向赤道低压带并发生偏转的风带。",
+            "example": "东北信风和东南信风"
+          },
+          {
+            "name": "盛行西风",
+            "difficulty": 2,
+            "description": "副热带高压流向高纬的西风",
+            "aliases": [
+              "中纬西风带"
+            ],
+            "prerequisites": [
+              "风带",
+              "副热带高压带"
+            ],
+            "definition": "盛行西风是副热带高压带流向高纬并偏转形成的西风。",
+            "example": "南美洲南端受盛行西风影响"
+          },
+          {
+            "name": "极地东风",
+            "difficulty": 3,
+            "description": "极地高压流向低纬的东风",
+            "aliases": [
+              "极地东风带"
+            ],
+            "prerequisites": [
+              "风带",
+              "极地高压带"
+            ],
+            "definition": "极地东风是极地高压带向低纬流动并偏转形成的东风。",
+            "example": "与盛行西风在高纬相遇"
+          },
+          {
+            "name": "气压带风带季移",
+            "difficulty": 3,
+            "description": "气压带和风带随太阳直射点季节移动",
+            "aliases": [
+              "气压带和风带的季节移动"
+            ],
+            "prerequisites": [
+              "气压带",
+              "风带"
+            ],
+            "definition": "气压带和风带季移是其随太阳直射点南北移动而发生的周期性移动。",
+            "example": "北半球夏季大致偏北"
+          },
+          {
+            "name": "海陆热力差异",
+            "difficulty": 2,
+            "description": "海洋和陆地受热、降温速度不同",
+            "aliases": [],
+            "prerequisites": [
+              "太阳辐射"
+            ],
+            "definition": "海陆热力差异是海洋与陆地增温和降温快慢不同造成的热力差别。",
+            "example": "冬季陆地降温比海洋快"
+          },
+          {
+            "name": "冷高压",
+            "difficulty": 2,
+            "description": "冬季陆地降温形成的高压",
+            "aliases": [],
+            "prerequisites": [
+              "海陆热力差异",
+              "高气压"
+            ],
+            "definition": "冷高压是冬季陆地气温较低而形成的高压中心。",
+            "example": "亚洲高压"
+          },
+          {
+            "name": "热低压",
+            "difficulty": 2,
+            "description": "夏季陆地增温形成的低压",
+            "aliases": [],
+            "prerequisites": [
+              "海陆热力差异",
+              "低气压"
+            ],
+            "definition": "热低压是夏季陆地气温较高而形成的低压中心。",
+            "example": "亚洲低压",
+            "section": "第二节 气压带和风带"
+          },
+          {
+            "name": "季风",
+            "difficulty": 3,
+            "description": "盛行风向随季节有规律变换",
+            "aliases": [],
+            "prerequisites": [
+              "海陆热力差异",
+              "气压带风带季移"
+            ],
+            "definition": "季风是盛行风向随季节发生有规律变换的风。",
+            "example": "亚洲东部季风"
+          },
+          {
+            "name": "气候",
+            "difficulty": 2,
+            "description": "一个地区长期的大气状况特征",
+            "aliases": [],
+            "prerequisites": [
+              "气压带",
+              "风带"
+            ],
+            "definition": "气候是一个地区长期天气状况的综合特征。",
+            "example": "热带雨林气候"
+          },
+          {
+            "name": "水热条件",
+            "difficulty": 2,
+            "description": "一个地区水分和热量的组合状况",
+            "aliases": [],
+            "prerequisites": [
+              "气候"
+            ],
+            "definition": "水热条件是一个地区水分与热量的组合状况。",
+            "example": "热带雨林气候水热丰富",
+            "section": "第三节 气压带和风带对气候的影响"
+          },
+          {
+            "name": "热带雨林气候",
+            "difficulty": 3,
+            "description": "全年高温多雨的气候类型",
+            "aliases": [],
+            "prerequisites": [
+              "赤道低压带",
+              "气候"
+            ],
+            "definition": "热带雨林气候是全年受赤道低压带控制而形成的高温多雨气候。",
+            "example": "亚马孙平原",
+            "section": "第三节 气压带和风带对气候的影响"
+          },
+          {
+            "name": "热带草原气候",
+            "difficulty": 3,
+            "description": "具有明显干湿季的热带气候",
+            "aliases": [],
+            "prerequisites": [
+              "气候",
+              "气压带风带季移"
+            ],
+            "definition": "热带草原气候是干季和湿季交替明显的热带气候。",
+            "example": "塞伦盖蒂地区",
+            "section": "第三节 气压带和风带对气候的影响"
+          },
+          {
+            "name": "温带海洋性气候",
+            "difficulty": 3,
+            "description": "冬季湿润、年温差较小的气候",
+            "aliases": [],
+            "prerequisites": [
+              "盛行西风",
+              "气候"
+            ],
+            "definition": "温带海洋性气候是在中纬度大陆西岸受全年西风和海洋影响形成的气候。",
+            "example": "欧洲西部",
+            "section": "第三节 气压带和风带对气候的影响"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 常见天气系统",
+            "section_key": "87f79434ff",
+            "page_range": [
+              47,
+              53
+            ]
+          },
+          {
+            "name": "第二节 气压带和风带",
+            "section_key": "7e5ff521e9",
+            "page_range": [
+              53,
+              59
+            ]
+          },
+          {
+            "name": "第三节 气压带和风带对气候的影响",
+            "section_key": "e1235fcce0",
+            "page_range": [
+              59,
+              66
+            ]
+          },
+          {
+            "name": "问题研究 阿联酋“造山引雨”是否可行",
+            "section_key": "50f402711d",
+            "page_range": [
+              66,
+              67
+            ]
+          }
+        ],
+        "chapter_key": "d1f0d856b3",
+        "metadata": {
+          "volume_id": "092f6f93cb96",
+          "file_id": "092f6f93cb96",
+          "volume_title": "高中地理 选择性必修1",
+          "chapter_order": 3,
+          "raw_heading": "第三章 大气的运动"
+        }
+      },
+      {
+        "name": "第四章 水的运动",
+        "concepts": [
+          {
+            "name": "水循环",
+            "difficulty": 1,
+            "description": "地球表层水体之间持续进行的循环运动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "水循环是地球表层水体之间通过蒸发、降水和径流等方式进行的循环运动。",
+            "example": "降水形成河流并汇入海洋"
+          },
+          {
+            "name": "陆地水体",
+            "difficulty": 1,
+            "description": "分布在陆地上的各种水体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "陆地水体包括河流、湖泊、冰川、沼泽和地下水等。",
+            "example": "贝加尔湖属于陆地水体"
+          },
+          {
+            "name": "河流",
+            "difficulty": 1,
+            "description": "呈线状且具有较强流动性的陆地水体",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "河流是沿地表沟槽连续或间歇流动的水体。",
+            "example": "湄公河是东南亚重要河流"
+          },
+          {
+            "name": "湖泊",
+            "difficulty": 1,
+            "description": "陆地表面较为封闭的蓄水水体",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "湖泊是陆地表面由天然或人工形成的蓄水水体。",
+            "example": "洞里萨湖可调节湄公河水量"
+          },
+          {
+            "name": "地下水",
+            "difficulty": 2,
+            "description": "储存并运动于地下岩土空隙中的水",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "地下水是埋藏并运动于地表以下岩土空隙中的水。",
+            "example": "枯水期地下水补给河流"
+          },
+          {
+            "name": "冰川与积雪",
+            "difficulty": 2,
+            "description": "寒冷地区储存于冰体和积雪中的水体",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体"
+            ],
+            "definition": "冰川与积雪是寒冷地区以固态形式储存的陆地水体。",
+            "example": "春季积雪融化形成春汛"
+          },
+          {
+            "name": "河流补给",
+            "difficulty": 2,
+            "description": "为河流径流提供水量的来源",
+            "aliases": [],
+            "prerequisites": [
+              "河流",
+              "冰川与积雪"
+            ],
+            "definition": "河流补给是降水、冰雪融水、湖泊水或地下水等进入河流的过程。",
+            "example": "阿克苏河主要受冰雪融水补给",
+            "section": "第一节 陆地水体及其相互关系"
+          },
+          {
+            "name": "陆地水体关系",
+            "difficulty": 2,
+            "description": "陆地不同水体间的水量交换与相互转化",
+            "aliases": [],
+            "prerequisites": [
+              "陆地水体",
+              "水循环"
+            ],
+            "definition": "陆地水体关系是河流、湖泊、地下水和冰川等之间发生水的交换和转化。",
+            "example": "河流与地下水能够相互补给"
+          },
+          {
+            "name": "湖泊调节径流",
+            "difficulty": 2,
+            "description": "湖泊削减洪峰并补给枯水期河流",
+            "aliases": [],
+            "prerequisites": [
+              "湖泊",
+              "河流"
+            ],
+            "definition": "湖泊调节径流是湖泊蓄洪并在枯水期向河流补水的作用。",
+            "example": "洞里萨湖减轻湄公河洪水"
+          },
+          {
+            "name": "盛行风",
+            "difficulty": 2,
+            "description": "在一定区域和季节内占优势的风",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "盛行风是在一定区域和时期内经常出现并占主导地位的风。",
+            "example": "信风推动赤道海水向西流动",
+            "section": "第二节 洋流"
+          },
+          {
+            "name": "洋流",
+            "difficulty": 2,
+            "description": "海洋中大规模的海水定向流动",
+            "aliases": [],
+            "prerequisites": [
+              "盛行风"
+            ],
+            "definition": "洋流是海水在盛行风、海陆分布和地转偏向力等作用下形成的定向流动。",
+            "example": "玩具鸭随洋流漂到不同海岸"
+          },
+          {
+            "name": "大洋环流",
+            "difficulty": 3,
+            "description": "大洋中具有环状结构的洋流系统",
+            "aliases": [],
+            "prerequisites": [
+              "洋流",
+              "盛行风"
+            ],
+            "definition": "大洋环流是大洋中多支洋流共同构成的环状运动系统。",
+            "example": "北半球中低纬环流呈顺时针"
+          },
+          {
+            "name": "季风洋流",
+            "difficulty": 3,
+            "description": "受季风影响而随季节改变方向的洋流",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "季风洋流是受季风季节变化影响而改变流向的洋流。",
+            "example": "北印度洋洋流冬夏方向相反",
+            "section": "第二节 洋流"
+          },
+          {
+            "name": "暖流和寒流",
+            "difficulty": 2,
+            "description": "按海水温度相对差异划分的洋流类型",
+            "aliases": [],
+            "prerequisites": [
+              "洋流"
+            ],
+            "definition": "暖流是由低纬流向高纬的较暖洋流，寒流是由高纬流向低纬的较冷洋流。",
+            "example": "北大西洋暖流影响欧洲西北部"
+          },
+          {
+            "name": "洋流环境影响",
+            "difficulty": 3,
+            "description": "洋流对气候和海洋生物分布的影响",
+            "aliases": [],
+            "prerequisites": [
+              "暖流和寒流",
+              "洋流"
+            ],
+            "definition": "洋流环境影响是洋流通过输送热量和营养物质改变气候及海洋生物分布。",
+            "example": "寒暖流交汇处形成大渔场"
+          },
+          {
+            "name": "海—气相互作用",
+            "difficulty": 3,
+            "description": "海洋与大气之间的物质和能量交换",
+            "aliases": [],
+            "prerequisites": [
+              "洋流",
+              "水循环"
+            ],
+            "definition": "海—气相互作用是海洋和大气之间持续进行的水分、热量和动能交换。",
+            "example": "海洋蒸发为大气提供水汽",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "海—气水热交换",
+            "difficulty": 3,
+            "description": "海洋与大气之间的水分和热量交换",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用"
+            ],
+            "definition": "海—气水热交换是海洋与大气通过蒸发、降水和辐射等过程交换水分与热量。",
+            "example": "水汽凝结向大气释放潜热"
+          },
+          {
+            "name": "潜热",
+            "difficulty": 3,
+            "description": "物质状态变化时吸收或释放的热量",
+            "aliases": [],
+            "prerequisites": [
+              "海—气水热交换"
+            ],
+            "definition": "潜热是海水蒸发吸收的热量或水汽凝结释放的热量。",
+            "example": "水汽凝结释放潜热",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "水量平衡原理",
+            "difficulty": 3,
+            "description": "区域储水变化等于水量收入与支出的差额",
+            "aliases": [],
+            "prerequisites": [
+              "水循环"
+            ],
+            "definition": "水量平衡原理指出一定时期内区域储水变化量等于水量收入与支出的差额。",
+            "example": "降水减少会导致区域储水量下降",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "大气热力环流",
+            "difficulty": 3,
+            "description": "因海陆或海面温度差异形成的大气环流",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用"
+            ],
+            "definition": "大气热力环流是因海面温度差异引起空气升降和水平运动形成的环流。",
+            "example": "太平洋东西部温差形成热力环流",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "厄尔尼诺现象",
+            "difficulty": 3,
+            "description": "赤道太平洋中东部海温异常升高的现象",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用",
+              "大气热力环流"
+            ],
+            "definition": "厄尔尼诺现象是赤道附近太平洋中东部表层海水温度异常升高的现象。",
+            "example": "秘鲁沿海可能由干旱转为多雨",
+            "section": "第三节 海—气相互作用"
+          },
+          {
+            "name": "拉尼娜现象",
+            "difficulty": 3,
+            "description": "赤道太平洋中东部海温异常降低的现象",
+            "aliases": [],
+            "prerequisites": [
+              "海—气相互作用",
+              "大气热力环流"
+            ],
+            "definition": "拉尼娜现象是赤道附近太平洋中东部海面温度异常降低的现象。",
+            "example": "其气候影响与厄尔尼诺相反",
+            "section": "第三节 海—气相互作用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 陆地水体及其相互关系",
+            "section_key": "0c886fccc1",
+            "page_range": [
+              69,
+              73
+            ]
+          },
+          {
+            "name": "第二节 洋流",
+            "section_key": "673236d835",
+            "page_range": [
+              73,
+              77
+            ]
+          },
+          {
+            "name": "第三节 海—气相互作用",
+            "section_key": "fb86189f5c",
+            "page_range": [
+              77,
+              82
+            ]
+          },
+          {
+            "name": "问题研究 能否利用南极冰山解决沙特阿拉伯的缺水问题",
+            "section_key": "aa16adec9f",
+            "page_range": [
+              82,
+              83
+            ]
+          }
+        ],
+        "chapter_key": "e94789e7e5",
+        "metadata": {
+          "volume_id": "092f6f93cb96",
+          "file_id": "092f6f93cb96",
+          "volume_title": "高中地理 选择性必修1",
+          "chapter_order": 4,
+          "raw_heading": "第四章 水的运动"
+        }
+      },
+      {
+        "name": "第五章 自然环境的整体性与差异性",
+        "concepts": [
+          {
+            "name": "自然环境",
+            "difficulty": 1,
+            "description": "由大气、水、土壤、生物、岩石及地貌等要素组成的整体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然环境是由多种自然环境要素组成并相互联系的系统。",
+            "example": "湖泊、平原、森林和雪山共同构成自然景观。"
+          },
+          {
+            "name": "自然环境要素",
+            "difficulty": 1,
+            "description": "组成自然环境的基本成分",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境"
+            ],
+            "definition": "自然环境要素包括大气、水、土壤、生物、岩石及地貌等。",
+            "example": "大气、水和生物都是自然环境要素。"
+          },
+          {
+            "name": "物质迁移",
+            "difficulty": 2,
+            "description": "自然环境要素之间物质转移的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境要素"
+            ],
+            "definition": "物质迁移是自然环境要素通过循环等过程发生物质转移的现象。",
+            "example": "降水为土壤、河湖和生物补给水分。"
+          },
+          {
+            "name": "能量交换",
+            "difficulty": 2,
+            "description": "自然环境要素之间能量传递和转换的过程",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境要素"
+            ],
+            "definition": "能量交换是自然环境要素之间进行能量传递和转换的过程。",
+            "example": "太阳辐射影响水分蒸发和生物生长。"
+          },
+          {
+            "name": "自然环境整体性",
+            "difficulty": 2,
+            "description": "自然环境各要素相互联系、相互作用形成的整体特征",
+            "aliases": [],
+            "prerequisites": [
+              "物质迁移",
+              "能量交换"
+            ],
+            "definition": "自然环境整体性是自然环境要素通过物质迁移和能量交换形成的整体特征。",
+            "example": "黄山的奇松、怪石、云海和温泉相互联系。",
+            "section": "第一节 自然环境的整体性"
+          },
+          {
+            "name": "生物循环",
+            "difficulty": 2,
+            "description": "生态系统中生物和环境间物质周而复始的流动过程",
+            "aliases": [],
+            "prerequisites": [
+              "物质迁移"
+            ],
+            "definition": "生物循环是生态系统中生物和环境间物质流动并周而复始的过程。",
+            "example": "植物残体进入土壤，为土壤提供有机质。"
+          },
+          {
+            "name": "整体功能",
+            "difficulty": 2,
+            "description": "自然环境作为系统在要素共同作用下形成的功能",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境整体性"
+            ],
+            "definition": "整体功能是自然环境各要素共同作用形成的系统功能。",
+            "example": "自然环境具有生产功能和稳定功能。"
+          },
+          {
+            "name": "生产功能",
+            "difficulty": 2,
+            "description": "自然环境合成有机物的功能",
+            "aliases": [],
+            "prerequisites": [
+              "整体功能"
+            ],
+            "definition": "生产功能是自然环境依靠光合作用合成有机物的功能。",
+            "example": "坡地和平地的生产功能强弱存在差异。"
+          },
+          {
+            "name": "稳定功能",
+            "difficulty": 3,
+            "description": "自然环境自我调节并保持性质相对稳定的功能",
+            "aliases": [],
+            "prerequisites": [
+              "整体功能"
+            ],
+            "definition": "稳定功能是自然环境通过要素间交换自我调节并保持性质稳定的功能。",
+            "example": "植物和海水交换有助于保持大气二氧化碳相对稳定。"
+          },
+          {
+            "name": "统一演化",
+            "difficulty": 3,
+            "description": "自然环境各要素在演化过程中同步协调变化",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境整体性",
+              "物质迁移"
+            ],
+            "definition": "统一演化是自然环境一个要素演化时其他要素也随之协调变化的过程。",
+            "example": "山地演化为丘陵时，土壤变厚、植被发育。",
+            "section": "第一节 自然环境的整体性"
+          },
+          {
+            "name": "要素组合",
+            "difficulty": 2,
+            "description": "自然环境演化阶段形成的要素组合状态",
+            "aliases": [],
+            "prerequisites": [
+              "统一演化"
+            ],
+            "definition": "要素组合是自然环境统一演化过程中形成的阶段性要素配置。",
+            "example": "黄山“四绝”是特定演化阶段的要素组合。"
+          },
+          {
+            "name": "整体响应",
+            "difficulty": 3,
+            "description": "自然环境受外部干扰后各要素发生连锁变化",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境整体性"
+            ],
+            "definition": "整体响应是一个要素受干扰后引发其他要素连锁变化并影响整体环境的现象。",
+            "example": "森林采伐导致水土流失、洪水和土层变薄。",
+            "section": "第一节 自然环境的整体性"
+          },
+          {
+            "name": "地域差异",
+            "difficulty": 2,
+            "description": "不同地域自然环境特征存在的差别",
+            "aliases": [],
+            "prerequisites": [
+              "自然环境"
+            ],
+            "definition": "地域差异是不同地域自然环境特征因条件和运动不同而形成的差别。",
+            "example": "沿海地区较湿润，内陆地区趋向干旱。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "空间尺度",
+            "difficulty": 2,
+            "description": "地域差异所涉及的空间范围大小",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "空间尺度是地域差异表现范围的大小，具有全球、区域和局地等差别。",
+            "example": "温度带分异属于全球性地域差异。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "温度带分异",
+            "difficulty": 2,
+            "description": "因纬度和太阳辐射差异形成的全球地域分异",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "温度带分异是不同纬度太阳辐射量差异导致的地域分异。",
+            "example": "低纬形成热带，高纬形成寒带。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "海陆分异",
+            "difficulty": 2,
+            "description": "因距海远近不同形成的地域分异",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "海陆分异是沿海与内陆物质迁移和能量交换不同形成的地域分异。",
+            "example": "中纬度由沿海向内陆呈森林带、草原带、荒漠带变化。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "陆地地域分异规律",
+            "difficulty": 3,
+            "description": "陆地自然环境由赤道向两极及沿海向内陆变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异",
+              "温度带分异",
+              "海陆分异"
+            ],
+            "definition": "陆地地域分异规律表现为自然地带随纬度和海陆位置发生规律性变化。",
+            "example": "自然环境由赤道向两极呈规律性变化。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "垂直地域分异规律",
+            "difficulty": 3,
+            "description": "山地自然景观随海拔升高发生垂直变化的规律",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异"
+            ],
+            "definition": "垂直地域分异规律是山地水热状况随海拔变化而形成的景观垂直变化规律。",
+            "example": "喜马拉雅山南坡由常绿阔叶林向高寒荒漠变化。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "垂直带谱",
+            "difficulty": 2,
+            "description": "山地从山麓到山顶依次分布的不同景观带",
+            "aliases": [],
+            "prerequisites": [
+              "垂直地域分异规律"
+            ],
+            "definition": "垂直带谱是山地从山麓到山顶由不同景观带组成的垂直序列。",
+            "example": "喜马拉雅山南坡具有多种植被带。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "地方性分异规律",
+            "difficulty": 3,
+            "description": "受地形和岩石风化物等地方因素形成的小尺度地域分异",
+            "aliases": [],
+            "prerequisites": [
+              "地域差异",
+              "物质迁移"
+            ],
+            "definition": "地方性分异规律是地方性因素通过物质与能量再分配形成的地域分异规律。",
+            "example": "山坡、平地和河谷分别发育不同植被。",
+            "section": "第二节 自然环境的地域差异性"
+          },
+          {
+            "name": "自然地带",
+            "difficulty": 2,
+            "description": "自然环境特征相对一致并呈带状分布的地域",
+            "aliases": [],
+            "prerequisites": [
+              "陆地地域分异规律"
+            ],
+            "definition": "自然地带是自然环境各要素组合具有相对一致性的带状地域。",
+            "example": "热带雨林带和苔原带都是自然地带。",
+            "section": "第二节 自然环境的地域差异性"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 自然环境的整体性",
+            "section_key": "328bbb7cc2",
+            "page_range": [
+              85,
+              91
+            ]
+          },
+          {
+            "name": "第二节 自然环境的地域差异性",
+            "section_key": "09b35ddc9b",
+            "page_range": [
+              91,
+              97
+            ]
+          },
+          {
+            "name": "问题研究 如何看待我国西北地区城市引进欧洲冷季型草坪",
+            "section_key": "94249cb87f",
+            "page_range": [
+              97,
+              106
+            ]
+          }
+        ],
+        "chapter_key": "8753844c40",
+        "metadata": {
+          "volume_id": "092f6f93cb96",
+          "file_id": "092f6f93cb96",
+          "volume_title": "高中地理 选择性必修1",
+          "chapter_order": 5,
+          "raw_heading": "第五章 自然环境的整体性与差异性"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "e0d621e920": [
+        7,
+        12
+      ],
+      "第一节 地球的自转和公转": [
+        7,
+        12
+      ],
+      "f44371ac4b": [
+        12,
+        20
+      ],
+      "第二节 地球运动的地理意义": [
+        12,
+        20
+      ],
+      "459eb380e0": [
+        20,
+        21
+      ],
+      "问题研究 人类是否需要人造月亮": [
+        20,
+        21
+      ],
+      "1ec57918df": [
+        23,
+        31
+      ],
+      "第一节 塑造地表形态的力量": [
+        23,
+        31
+      ],
+      "eeaecde2c0": [
+        31,
+        38
+      ],
+      "第二节 构造地貌的形成": [
+        31,
+        38
+      ],
+      "f06f1253c6": [
+        38,
+        44
+      ],
+      "第三节 河流地貌的发育": [
+        38,
+        44
+      ],
+      "d8865eecd8": [
+        44,
+        45
+      ],
+      "问题研究 崇明岛的未来是什么样子": [
+        44,
+        45
+      ],
+      "87f79434ff": [
+        47,
+        53
+      ],
+      "第一节 常见天气系统": [
+        47,
+        53
+      ],
+      "7e5ff521e9": [
+        53,
+        59
+      ],
+      "第二节 气压带和风带": [
+        53,
+        59
+      ],
+      "e1235fcce0": [
+        59,
+        66
+      ],
+      "第三节 气压带和风带对气候的影响": [
+        59,
+        66
+      ],
+      "50f402711d": [
+        66,
+        67
+      ],
+      "问题研究 阿联酋“造山引雨”是否可行": [
+        66,
+        67
+      ],
+      "0c886fccc1": [
+        69,
+        73
+      ],
+      "第一节 陆地水体及其相互关系": [
+        69,
+        73
+      ],
+      "673236d835": [
+        73,
+        77
+      ],
+      "第二节 洋流": [
+        73,
+        77
+      ],
+      "fb86189f5c": [
+        77,
+        82
+      ],
+      "第三节 海—气相互作用": [
+        77,
+        82
+      ],
+      "aa16adec9f": [
+        82,
+        83
+      ],
+      "问题研究 能否利用南极冰山解决沙特阿拉伯的缺水问题": [
+        82,
+        83
+      ],
+      "328bbb7cc2": [
+        85,
+        91
+      ],
+      "第一节 自然环境的整体性": [
+        85,
+        91
+      ],
+      "09b35ddc9b": [
+        91,
+        97
+      ],
+      "第二节 自然环境的地域差异性": [
+        91,
+        97
+      ],
+      "94249cb87f": [
+        97,
+        106
+      ],
+      "问题研究 如何看待我国西北地区城市引进欧洲冷季型草坪": [
+        97,
+        106
+      ]
+    }
+  }
+}

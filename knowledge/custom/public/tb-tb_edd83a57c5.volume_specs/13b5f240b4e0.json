@@ -1,0 +1,2940 @@
+{
+  "file_id": "13b5f240b4e0",
+  "text_sha256": "c8d648e45694dca38d253cdfc42a354d9971b5de8762c2d7a2203c36e71fe929",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 有机化合物的结构与性质 烃",
+        "concepts": [
+          {
+            "name": "有机化合物",
+            "difficulty": 1,
+            "description": "含碳元素的化合物，种类繁多、结构多样",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "有机化合物是以碳原子结合形成的化合物。",
+            "example": "甲烷、乙烯、苯"
+          },
+          {
+            "name": "烃",
+            "difficulty": 1,
+            "description": "只由碳、氢两种元素组成的有机化合物",
+            "aliases": [
+              "碳氢化合物"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "烃是只由碳、氢两种元素组成的有机化合物。",
+            "example": "甲烷、乙烯、苯"
+          },
+          {
+            "name": "链烃",
+            "difficulty": 2,
+            "description": "碳原子之间结合成链的烃",
+            "aliases": [
+              "脂肪烃"
+            ],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "链烃是分子中碳原子之间结合成链的烃。",
+            "example": "丙烷"
+          },
+          {
+            "name": "环烃",
+            "difficulty": 2,
+            "description": "分子中含有碳环的烃",
+            "aliases": [],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "环烃是分子中含有碳环的烃。",
+            "example": "环己烷"
+          },
+          {
+            "name": "烷烃",
+            "difficulty": 2,
+            "description": "碳原子之间均以单键相连的链烃",
+            "aliases": [
+              "alkane"
+            ],
+            "prerequisites": [
+              "链烃",
+              "单键"
+            ],
+            "definition": "烷烃是分子中碳原子之间都以单键相连的链烃。",
+            "example": "甲烷、丙烷"
+          },
+          {
+            "name": "烯烃",
+            "difficulty": 2,
+            "description": "分子中含有碳碳双键的链烃",
+            "aliases": [
+              "alkene"
+            ],
+            "prerequisites": [
+              "链烃",
+              "双键"
+            ],
+            "definition": "烯烃是分子中含有碳碳双键的链烃。",
+            "example": "乙烯、丙烯"
+          },
+          {
+            "name": "炔烃",
+            "difficulty": 2,
+            "description": "分子中含有碳碳三键的链烃",
+            "aliases": [
+              "alkyne"
+            ],
+            "prerequisites": [
+              "链烃",
+              "三键"
+            ],
+            "definition": "炔烃是分子中含有碳碳三键的链烃。",
+            "example": "乙炔、丙炔"
+          },
+          {
+            "name": "芳香烃",
+            "difficulty": 2,
+            "description": "分子中含有苯环的环烃",
+            "aliases": [
+              "aromatic hydrocarbon"
+            ],
+            "prerequisites": [
+              "环烃"
+            ],
+            "definition": "芳香烃是分子中含有苯环的环烃。",
+            "example": "苯、甲苯、萘"
+          },
+          {
+            "name": "脂环烃",
+            "difficulty": 2,
+            "description": "分子中没有苯环的环烃",
+            "aliases": [],
+            "prerequisites": [
+              "环烃"
+            ],
+            "definition": "脂环烃是分子中含有碳环但没有苯环的烃。",
+            "example": "环己烷、环己烯"
+          },
+          {
+            "name": "烃的衍生物",
+            "difficulty": 2,
+            "description": "烃分子中的氢被其他原子或原子团取代形成的化合物",
+            "aliases": [
+              "derivative of hydrocarbon"
+            ],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "烃的衍生物是烃分子中的氢原子被其他原子或原子团取代形成的化合物。",
+            "example": "乙醇、一氯甲烷"
+          },
+          {
+            "name": "官能团",
+            "difficulty": 2,
+            "description": "决定某类有机化合物共同特性的原子或原子团",
+            "aliases": [
+              "functional group"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "官能团是决定某类有机化合物化学特性的原子或原子团。",
+            "example": "乙醇中的羟基"
+          },
+          {
+            "name": "键线式",
+            "difficulty": 2,
+            "description": "省略碳氢键和碳氢原子后表示结构的方式",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "键线式是省略碳氢键、碳原子及其相连氢原子并保留骨架的结构表示式。",
+            "example": "环己烷的折线表示"
+          },
+          {
+            "name": "同系列",
+            "difficulty": 2,
+            "description": "结构相似且组成相差一个或若干个CH₂的系列",
+            "aliases": [
+              "homologous series"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "同系列是分子结构相似、组成上彼此相差一个或若干个CH₂的有机化合物系列。",
+            "example": "甲烷、乙烷、丙烷",
+            "section": "第 1 节 认识有机化学"
+          },
+          {
+            "name": "同系物",
+            "difficulty": 2,
+            "description": "同系列中相互具有同系关系的化合物",
+            "aliases": [
+              "homologous compound"
+            ],
+            "prerequisites": [
+              "同系列"
+            ],
+            "definition": "同系物是同系列中结构相似且组成相差一个或若干个CH₂的化合物。",
+            "example": "乙烯和丙烯"
+          },
+          {
+            "name": "烃基",
+            "difficulty": 2,
+            "description": "烃分子去掉一个或多个氢原子后的剩余部分",
+            "aliases": [],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "烃基是烃分子去掉一个或多个氢原子后剩余的部分。",
+            "example": "甲基、乙基"
+          },
+          {
+            "name": "取代基",
+            "difficulty": 2,
+            "description": "连接在有机化合物主链上的原子或原子团",
+            "aliases": [],
+            "prerequisites": [
+              "烃基"
+            ],
+            "definition": "取代基是连接在有机化合物分子主链上的原子或原子团。",
+            "example": "2-甲基丁烷中的甲基"
+          },
+          {
+            "name": "系统命名法",
+            "difficulty": 3,
+            "description": "按统一规则对有机化合物进行命名的方法",
+            "aliases": [
+              "IUPAC命名法",
+              "CCS法"
+            ],
+            "prerequisites": [
+              "取代基"
+            ],
+            "definition": "系统命名法是依据主链、编号和取代基等规则命名有机化合物的方法。",
+            "example": "2,4-二甲基-3-乙基庚烷",
+            "section": "第 1 节 认识有机化学"
+          },
+          {
+            "name": "组成通式",
+            "difficulty": 3,
+            "description": "表示同系列有机化合物组成规律的通式",
+            "aliases": [],
+            "prerequisites": [
+              "同系列"
+            ],
+            "definition": "组成通式是表示同系列有机化合物分子组成规律的式子。",
+            "example": "烷烃为CnH₂n+₂"
+          },
+          {
+            "name": "单键",
+            "difficulty": 1,
+            "description": "成键原子之间共用一对电子形成的共价键",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "单键是两个原子之间共用一对电子形成的共价键。",
+            "example": "甲烷中的碳氢键"
+          },
+          {
+            "name": "双键",
+            "difficulty": 1,
+            "description": "成键原子之间共用两对电子形成的共价键",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "双键是两个原子之间共用两对电子形成的共价键。",
+            "example": "乙烯中的碳碳双键"
+          },
+          {
+            "name": "三键",
+            "difficulty": 1,
+            "description": "成键原子之间共用三对电子形成的共价键",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "三键是两个原子之间共用三对电子形成的共价键。",
+            "example": "乙炔中的碳碳三键"
+          },
+          {
+            "name": "不饱和键",
+            "difficulty": 2,
+            "description": "有机分子中的碳碳双键或碳碳三键",
+            "aliases": [],
+            "prerequisites": [
+              "双键",
+              "三键"
+            ],
+            "definition": "不饱和键是有机化合物分子中的碳碳双键或碳碳三键。",
+            "example": "乙烯中的碳碳双键"
+          },
+          {
+            "name": "构造异构",
+            "difficulty": 3,
+            "description": "原子连接顺序不同形成的同分异构现象",
+            "aliases": [],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "构造异构是分子中原子或原子团连接顺序不同形成的异构。",
+            "example": "正丁烷和异丁烷",
+            "section": "第 2 节 有机化合物的结构与性质"
+          },
+          {
+            "name": "碳骨架异构",
+            "difficulty": 3,
+            "description": "碳骨架形状不同形成的构造异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构"
+            ],
+            "definition": "碳骨架异构是因分子中碳骨架形状不同而产生的构造异构。",
+            "example": "正戊烷和异戊烷"
+          },
+          {
+            "name": "位置异构",
+            "difficulty": 3,
+            "description": "官能团或不饱和键位置不同形成的异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构",
+              "官能团"
+            ],
+            "definition": "位置异构是官能团或不饱和键在碳骨架上的位置不同形成的异构。",
+            "example": "1-丁烯和2-丁烯"
+          },
+          {
+            "name": "官能团异构",
+            "difficulty": 3,
+            "description": "官能团类型不同形成的构造异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构",
+              "官能团"
+            ],
+            "definition": "官能团异构是分子组成相同而官能团类型不同形成的异构。",
+            "example": "乙醇和二甲醚",
+            "section": "第 2 节 有机化合物的结构与性质"
+          },
+          {
+            "name": "立体异构",
+            "difficulty": 3,
+            "description": "原子连接顺序相同而空间排布不同的异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构"
+            ],
+            "definition": "立体异构是原子或原子团连接顺序相同而空间排布不同的异构。",
+            "example": "顺-2-丁烯和反-2-丁烯"
+          },
+          {
+            "name": "顺反异构",
+            "difficulty": 3,
+            "description": "双键两侧基团空间位置不同形成的立体异构",
+            "aliases": [],
+            "prerequisites": [
+              "立体异构",
+              "双键"
+            ],
+            "definition": "顺反异构是因碳碳双键两侧基团空间排布不同产生的立体异构。",
+            "example": "顺-2-丁烯和反-2-丁烯",
+            "section": "第 2 节 有机化合物的结构与性质"
+          },
+          {
+            "name": "对映异构",
+            "difficulty": 3,
+            "description": "互为镜像且不能完全重叠的立体异构",
+            "aliases": [],
+            "prerequisites": [
+              "立体异构"
+            ],
+            "definition": "对映异构是分子呈镜像关系且彼此不能完全重叠的立体异构。",
+            "example": "丙氨酸的一对对映异构体"
+          },
+          {
+            "name": "结构决定性质",
+            "difficulty": 2,
+            "description": "有机化合物结构特点决定其化学性质",
+            "aliases": [],
+            "prerequisites": [
+              "官能团",
+              "不饱和键"
+            ],
+            "definition": "结构决定性质是指有机化合物的结构特点影响其化学性质的规律。",
+            "example": "烯烃因双键易发生加成"
+          },
+          {
+            "name": "烷烃燃烧",
+            "difficulty": 2,
+            "description": "烷烃完全燃烧生成二氧化碳和水并放热",
+            "aliases": [],
+            "prerequisites": [
+              "烷烃"
+            ],
+            "definition": "烷烃燃烧是烷烃与氧气反应生成二氧化碳和水的反应。",
+            "example": "甲烷完全燃烧",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "取代反应",
+            "difficulty": 2,
+            "description": "烷烃中的氢原子被卤素原子取代的反应",
+            "aliases": [],
+            "prerequisites": [
+              "烷烃"
+            ],
+            "definition": "取代反应是有机分子中的原子或原子团被其他原子或原子团取代的反应。",
+            "example": "甲烷与氯气光照反应"
+          },
+          {
+            "name": "自由基反应",
+            "difficulty": 3,
+            "description": "由含未成对电子的自由基参与的反应",
+            "aliases": [],
+            "prerequisites": [
+              "取代反应"
+            ],
+            "definition": "自由基反应是由含有未成对电子的原子或基团参与的反应。",
+            "example": "甲烷的氯代反应",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "加成反应",
+            "difficulty": 2,
+            "description": "不饱和键两端原子与其他原子或原子团结合的反应",
+            "aliases": [],
+            "prerequisites": [
+              "不饱和键"
+            ],
+            "definition": "加成反应是不饱和键两端的原子与其他原子或原子团结合生成新化合物的反应。",
+            "example": "乙烯与溴反应"
+          },
+          {
+            "name": "烯烃氧化",
+            "difficulty": 3,
+            "description": "烯烃被氧化剂氧化并使碳碳双键断裂的反应",
+            "aliases": [],
+            "prerequisites": [
+              "烯烃",
+              "氧化反应"
+            ],
+            "definition": "烯烃氧化是烯烃的不饱和键在氧化剂作用下发生断裂并生成含氧化合物的反应。",
+            "example": "乙烯使酸性KMnO₄褪色"
+          },
+          {
+            "name": "共轭二烯烃",
+            "difficulty": 3,
+            "description": "含两个双键且双键只相隔一个单键的烯烃",
+            "aliases": [],
+            "prerequisites": [
+              "烯烃",
+              "双键"
+            ],
+            "definition": "共轭二烯烃是分子中两个碳碳双键只相隔一个单键的烯烃。",
+            "example": "1,3-丁二烯",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "加成聚合",
+            "difficulty": 3,
+            "description": "烯烃分子间加成聚合生成高分子化合物",
+            "aliases": [],
+            "prerequisites": [
+              "加成反应",
+              "烯烃"
+            ],
+            "definition": "加成聚合是含不饱和键的分子彼此加成形成高分子化合物的反应。",
+            "example": "乙烯聚合生成聚乙烯",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "红外光谱",
+            "difficulty": 3,
+            "description": "通过红外吸收峰判断有机物官能团的方法",
+            "aliases": [
+              "IR"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "红外光谱是依据分子吸收红外光产生的信号分析官能团的方法。",
+            "example": "3630 cm⁻¹峰提示羟基",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "核磁共振氢谱",
+            "difficulty": 3,
+            "description": "根据氢原子化学环境和峰面积分析分子结构的方法",
+            "aliases": [
+              "NMR氢谱"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "核磁共振氢谱通过信号位置和峰面积反映氢原子的化学环境及数目比例。",
+            "example": "不同峰面积表示氢数比",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "质谱",
+            "difficulty": 3,
+            "description": "利用质谱获得有机化合物相对分子质量的方法",
+            "aliases": [
+              "MS"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "质谱是通过样品产生的质谱信号获得有机化合物相对分子质量的方法。",
+            "example": "测定未知有机物相对分子质量",
+            "section": "第 3 节 烃"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 认识有机化学",
+            "page_range": [
+              12,
+              20
+            ]
+          },
+          {
+            "name": "第 2 节 有机化合物的结构与性质",
+            "page_range": [
+              20,
+              32
+            ]
+          },
+          {
+            "name": "第 3 节 烃",
+            "page_range": [
+              32,
+              56
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章 官能团与有机化学反应 烃的衍生物",
+        "concepts": [
+          {
+            "name": "官能团",
+            "difficulty": 2,
+            "description": "决定有机化合物特殊性质的原子或原子团",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "官能团是有机化合物分子中决定其特殊性质的原子或原子团。",
+            "example": "羟基是醇的官能团"
+          },
+          {
+            "name": "取代反应",
+            "difficulty": 2,
+            "description": "有机分子中的原子或原子团被其他基团替代",
+            "aliases": [
+              "substitution reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "取代反应是有机化合物分子中的原子或原子团被其他原子或原子团代替的反应。",
+            "example": "乙醇与氢溴酸生成溴乙烷"
+          },
+          {
+            "name": "加成反应",
+            "difficulty": 2,
+            "description": "不饱和键两端与试剂原子结合生成产物",
+            "aliases": [
+              "addition reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "加成反应是含双键或三键的有机物与试剂结合生成新产物的反应。",
+            "example": "丙烯与氯化氢生成2-氯丙烷"
+          },
+          {
+            "name": "消去反应",
+            "difficulty": 2,
+            "description": "脱去小分子并生成不饱和键的反应",
+            "aliases": [
+              "elimination reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "消去反应是有机化合物脱去小分子物质并生成不饱和键的反应。",
+            "example": "乙醇脱水生成乙烯"
+          },
+          {
+            "name": "氧化反应",
+            "difficulty": 2,
+            "description": "有机分子增加氧原子或减少氢原子的反应",
+            "aliases": [
+              "oxidation reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "氧化反应是有机化合物分子中增加氧原子或减少氢原子的反应。",
+            "example": "乙醇氧化生成乙醛"
+          },
+          {
+            "name": "还原反应",
+            "difficulty": 2,
+            "description": "有机分子增加氢原子或减少氧原子的反应",
+            "aliases": [
+              "reduction reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "还原反应是有机化合物分子中增加氢原子或减少氧原子的反应。",
+            "example": "丙酮加氢生成醇"
+          },
+          {
+            "name": "α-C与α-H",
+            "difficulty": 3,
+            "description": "官能团相邻碳及其所连氢原子的名称",
+            "aliases": [
+              "α-C",
+              "α-H"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "与官能团直接相连的碳原子是α-C，其上的氢原子是α-H。",
+            "example": "丙烯中甲基上的氢可作α-H"
+          },
+          {
+            "name": "β-C与β-H",
+            "difficulty": 3,
+            "description": "与α-C相连的碳及其所连氢原子的名称",
+            "aliases": [
+              "β-C",
+              "β-H"
+            ],
+            "prerequisites": [
+              "α-C与α-H"
+            ],
+            "definition": "与α-C相连的碳原子是β-C，其上的氢原子是β-H。",
+            "example": "1-溴丙烷中邻位碳上的氢是β-H"
+          },
+          {
+            "name": "卤代烃",
+            "difficulty": 2,
+            "description": "烃中氢原子被卤素原子取代形成的化合物",
+            "aliases": [
+              "halohydrocarbon"
+            ],
+            "prerequisites": [
+              "取代反应"
+            ],
+            "definition": "卤代烃是烃分子中一个或多个氢原子被卤素原子取代生成的化合物。",
+            "example": "1-溴丙烷属于卤代烃"
+          },
+          {
+            "name": "卤代烃取代",
+            "difficulty": 3,
+            "description": "卤素原子被羟基等基团取代的反应",
+            "aliases": [],
+            "prerequisites": [
+              "卤代烃",
+              "取代反应"
+            ],
+            "definition": "卤代烃取代是卤代烃中的卤素原子被其他原子或原子团取代的反应。",
+            "example": "1-溴丙烷与NaOH水溶液生成丙醇"
+          },
+          {
+            "name": "卤代烃消去",
+            "difficulty": 3,
+            "description": "卤代烃脱去氢卤酸生成不饱和烃",
+            "aliases": [],
+            "prerequisites": [
+              "卤代烃",
+              "消去反应",
+              "β-C与β-H"
+            ],
+            "definition": "卤代烃消去是卤代烃脱去氢卤酸并生成不饱和烃的反应。",
+            "example": "1-溴丙烷生成丙烯"
+          },
+          {
+            "name": "醇",
+            "difficulty": 2,
+            "description": "脂肪烃或芳香烃侧链氢被羟基取代的化合物",
+            "aliases": [
+              "alcohol"
+            ],
+            "prerequisites": [
+              "官能团",
+              "取代反应"
+            ],
+            "definition": "醇是脂肪烃分子中的氢或芳香烃侧链氢被羟基取代形成的化合物。",
+            "example": "乙醇含有醇羟基",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "酚",
+            "difficulty": 2,
+            "description": "芳香烃苯环上的氢被羟基取代的化合物",
+            "aliases": [
+              "phenol"
+            ],
+            "prerequisites": [
+              "官能团",
+              "取代反应"
+            ],
+            "definition": "酚是芳香烃分子中苯环上的氢被羟基取代形成的化合物。",
+            "example": "苯酚属于酚",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "一元醇",
+            "difficulty": 2,
+            "description": "分子中含有一个羟基的醇",
+            "aliases": [],
+            "prerequisites": [
+              "醇"
+            ],
+            "definition": "一元醇是分子中只含有一个羟基的醇。",
+            "example": "甲醇是一元醇"
+          },
+          {
+            "name": "多元醇",
+            "difficulty": 2,
+            "description": "分子中含有两个或更多羟基的醇",
+            "aliases": [],
+            "prerequisites": [
+              "醇"
+            ],
+            "definition": "多元醇是分子中含有两个或更多羟基的醇。",
+            "example": "乙二醇是二元醇",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "醇的氢键",
+            "difficulty": 3,
+            "description": "醇分子间羟基氢氧相互吸引形成的作用",
+            "aliases": [
+              "hydrogen bond"
+            ],
+            "prerequisites": [
+              "醇"
+            ],
+            "definition": "醇分子间可通过羟基氢与氧的相互吸引形成氢键。",
+            "example": "乙醇分子间存在氢键",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "醛",
+            "difficulty": 2,
+            "description": "分子中含有醛基的有机化合物",
+            "aliases": [],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "醛是分子中含有醛基的有机化合物。",
+            "example": "乙醛含有醛基"
+          },
+          {
+            "name": "酮",
+            "difficulty": 2,
+            "description": "分子中含有酮羰基的有机化合物",
+            "aliases": [],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "酮是分子中含有酮羰基的有机化合物。",
+            "example": "丙酮属于酮"
+          },
+          {
+            "name": "醛基检验",
+            "difficulty": 3,
+            "description": "利用银氨溶液或新制氢氧化铜检验醛基",
+            "aliases": [],
+            "prerequisites": [
+              "醛",
+              "氧化反应"
+            ],
+            "definition": "醛基可通过银氨溶液或新制氢氧化铜的反应进行检验。",
+            "example": "葡萄糖产生银镜"
+          },
+          {
+            "name": "羧酸",
+            "difficulty": 2,
+            "description": "分子由烃基或氢与羧基相连形成的化合物",
+            "aliases": [
+              "carboxylic acid"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "羧酸是由烃基或氢原子与羧基相连构成的有机化合物。",
+            "example": "乙酸属于羧酸"
+          },
+          {
+            "name": "羧基",
+            "difficulty": 2,
+            "description": "羧酸的官能团，结构为—COOH",
+            "aliases": [
+              "—COOH"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "羧基是羧酸的特征官能团，结构简式为—COOH。",
+            "example": "乙酸含有羧基",
+            "section": "第 4 节 羧酸 氨基酸和蛋白质"
+          },
+          {
+            "name": "糖类",
+            "difficulty": 3,
+            "description": "含多个羟基的醛酮及其水解产物",
+            "aliases": [
+              "saccharide"
+            ],
+            "prerequisites": [
+              "醇",
+              "醛",
+              "酮"
+            ],
+            "definition": "糖类是含两个或以上羟基的醛或酮及其水解产物。",
+            "example": "葡萄糖属于糖类"
+          },
+          {
+            "name": "单糖",
+            "difficulty": 2,
+            "description": "不能水解为更小糖分子的糖类",
+            "aliases": [
+              "monosaccharide"
+            ],
+            "prerequisites": [
+              "糖类"
+            ],
+            "definition": "单糖是不能水解为更小糖分子的糖类。",
+            "example": "葡萄糖是单糖"
+          },
+          {
+            "name": "双糖",
+            "difficulty": 2,
+            "description": "水解能生成两摩尔单糖的糖类",
+            "aliases": [
+              "二糖",
+              "disaccharide"
+            ],
+            "prerequisites": [
+              "单糖"
+            ],
+            "definition": "双糖是1摩尔糖水解后能产生2摩尔单糖的糖类。",
+            "example": "蔗糖是双糖"
+          },
+          {
+            "name": "多糖",
+            "difficulty": 2,
+            "description": "水解能生成超过十摩尔单糖的糖类",
+            "aliases": [
+              "polysaccharide"
+            ],
+            "prerequisites": [
+              "单糖"
+            ],
+            "definition": "多糖是1摩尔糖水解后能产生超过10摩尔单糖的糖类。",
+            "example": "淀粉属于多糖"
+          },
+          {
+            "name": "葡萄糖",
+            "difficulty": 3,
+            "description": "含醛基和多个羟基的六碳醛糖",
+            "aliases": [
+              "glucose"
+            ],
+            "prerequisites": [
+              "单糖",
+              "醛基检验"
+            ],
+            "definition": "葡萄糖是含一个醛基和五个羟基的六碳醛糖。",
+            "example": "葡萄糖能发生银镜反应"
+          },
+          {
+            "name": "果糖",
+            "difficulty": 3,
+            "description": "分子式为C6H12O6的六碳酮糖",
+            "aliases": [
+              "fructose"
+            ],
+            "prerequisites": [
+              "单糖",
+              "酮"
+            ],
+            "definition": "果糖是一种分子式为C6H12O6的六碳酮糖。",
+            "example": "果糖与葡萄糖互为同分异构体",
+            "section": "第 3 节 醛和酮 糖类和核酸"
+          },
+          {
+            "name": "麦芽糖",
+            "difficulty": 3,
+            "description": "含醛基并具有还原性的双糖",
+            "aliases": [
+              "maltose"
+            ],
+            "prerequisites": [
+              "双糖",
+              "醛基"
+            ],
+            "definition": "麦芽糖是含有醛基并具有还原性的双糖。",
+            "example": "麦芽糖水解生成葡萄糖"
+          },
+          {
+            "name": "蔗糖",
+            "difficulty": 3,
+            "description": "不含醛基且不具有还原性的双糖",
+            "aliases": [
+              "sucrose"
+            ],
+            "prerequisites": [
+              "双糖",
+              "醛基"
+            ],
+            "definition": "蔗糖是不含醛基且不具有还原性的双糖。",
+            "example": "蔗糖水解生成葡萄糖和果糖"
+          },
+          {
+            "name": "淀粉",
+            "difficulty": 3,
+            "description": "由葡萄糖单元组成的天然多糖",
+            "aliases": [
+              "starch"
+            ],
+            "prerequisites": [
+              "多糖",
+              "葡萄糖"
+            ],
+            "definition": "淀粉是由大量葡萄糖单元连接形成的天然有机高分子。",
+            "example": "淀粉遇碘变蓝"
+          },
+          {
+            "name": "纤维素",
+            "difficulty": 3,
+            "description": "由葡萄糖单元组成的天然高分子多糖",
+            "aliases": [
+              "cellulose"
+            ],
+            "prerequisites": [
+              "多糖",
+              "葡萄糖"
+            ],
+            "definition": "纤维素是由大量葡萄糖单元连接形成的天然高分子化合物。",
+            "example": "棉花的主要成分是纤维素"
+          },
+          {
+            "name": "五碳醛糖",
+            "difficulty": 3,
+            "description": "含五个碳原子的醛糖，如核糖和脱氧核糖",
+            "aliases": [],
+            "prerequisites": [
+              "单糖",
+              "醛"
+            ],
+            "definition": "五碳醛糖是分子中含五个碳原子的醛糖。",
+            "example": "核糖是五碳醛糖",
+            "section": "第 3 节 醛和酮 糖类和核酸"
+          },
+          {
+            "name": "核酸",
+            "difficulty": 3,
+            "description": "由核苷酸链构成的遗传信息分子",
+            "aliases": [],
+            "prerequisites": [
+              "五碳醛糖"
+            ],
+            "definition": "核酸是由核糖核苷酸链或脱氧核糖核苷酸链构成的遗传信息分子。",
+            "example": "DNA和RNA统称核酸"
+          },
+          {
+            "name": "DNA",
+            "difficulty": 3,
+            "description": "由脱氧核糖核苷酸链组成的脱氧核糖核酸",
+            "aliases": [
+              "脱氧核糖核酸"
+            ],
+            "prerequisites": [
+              "核酸",
+              "五碳醛糖"
+            ],
+            "definition": "DNA是由脱氧核糖核苷酸通过磷酯键聚合形成的核酸。",
+            "example": "DNA储存遗传信息"
+          },
+          {
+            "name": "RNA",
+            "difficulty": 3,
+            "description": "由核糖核苷酸链组成的核糖核酸",
+            "aliases": [
+              "核糖核酸"
+            ],
+            "prerequisites": [
+              "核酸",
+              "五碳醛糖"
+            ],
+            "definition": "RNA是由核糖核苷酸通过磷酯键聚合形成的核酸。",
+            "example": "RNA参与遗传信息传递"
+          },
+          {
+            "name": "碱基互补配对",
+            "difficulty": 3,
+            "description": "DNA中碱基按特定规则通过氢键配对",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "氢键"
+            ],
+            "definition": "碱基互补配对是碱基间按特定关系通过氢键结合的原则。",
+            "example": "G与C配对，A与T配对",
+            "section": "第 3 节 醛和酮 糖类和核酸"
+          },
+          {
+            "name": "磷酯键",
+            "difficulty": 3,
+            "description": "核苷酸分子间脱水形成的连接键",
+            "aliases": [],
+            "prerequisites": [
+              "核酸"
+            ],
+            "definition": "磷酯键是核苷酸分子间脱水聚合形成的化学键。",
+            "example": "DNA链中含有磷酯键"
+          },
+          {
+            "name": "加聚反应",
+            "difficulty": 3,
+            "description": "含双键单体聚合生成高分子的反应",
+            "aliases": [],
+            "prerequisites": [
+              "加成反应"
+            ],
+            "definition": "加聚反应是含不饱和键的小分子相互加成聚合成高分子的反应。",
+            "example": "氰基丙烯酸酯形成医用胶",
+            "section": "第 4 节 羧酸 氨基酸和蛋白质"
+          },
+          {
+            "name": "酯交换反应",
+            "difficulty": 3,
+            "description": "酯与醇反应生成新酯和新醇的反应",
+            "aliases": [],
+            "prerequisites": [
+              "羧酸"
+            ],
+            "definition": "酯交换反应是羧酸酯在催化剂存在下与醇交换烃基生成新酯的反应。",
+            "example": "酯与醇催化生成另一种酯",
+            "section": "第 4 节 羧酸 氨基酸和蛋白质"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 有机化学反应类型",
+            "page_range": [
+              58,
+              66
+            ]
+          },
+          {
+            "name": "第 2 节 醇和酚",
+            "page_range": [
+              66,
+              79
+            ]
+          },
+          {
+            "name": "第 3 节 醛和酮 糖类和核酸",
+            "page_range": [
+              79,
+              94
+            ]
+          },
+          {
+            "name": "第 4 节 羧酸 氨基酸和蛋白质",
+            "page_range": [
+              94,
+              120
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章 有机合成及其应用 合成高分子化合物",
+        "concepts": [
+          {
+            "name": "官能团",
+            "difficulty": 2,
+            "description": "决定有机化合物特征性质的原子或原子团",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "官能团是决定有机化合物特殊性质的原子或原子团。",
+            "example": "羟基、羧基和羰基"
+          },
+          {
+            "name": "碳骨架",
+            "difficulty": 2,
+            "description": "有机化合物分子中碳原子连接形成的骨架",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "碳骨架是有机化合物分子中碳原子相互连接形成的结构框架。",
+            "example": "乙烯合成路线中的碳链"
+          },
+          {
+            "name": "官能团转化",
+            "difficulty": 3,
+            "description": "通过化学反应实现不同官能团之间的转变",
+            "aliases": [],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "官能团转化是利用取代、消去、加成、氧化或还原反应改变官能团的过程。",
+            "example": "乙醇氧化为乙醛",
+            "section": "第 1 节 有机化合物的合成"
+          },
+          {
+            "name": "有机合成路线",
+            "difficulty": 3,
+            "description": "由原料经多步反应制得目标有机化合物的路径",
+            "aliases": [],
+            "prerequisites": [
+              "官能团转化",
+              "碳骨架"
+            ],
+            "definition": "有机合成路线是从原料出发经碳骨架构建和官能团转化得到目标物的反应路径。",
+            "example": "乙烯合成医用胶单体"
+          },
+          {
+            "name": "羟醛缩合反应",
+            "difficulty": 3,
+            "description": "含α-H的醛发生分子间加成并可脱水的反应",
+            "aliases": [],
+            "prerequisites": [
+              "官能团",
+              "碳骨架"
+            ],
+            "definition": "羟醛缩合反应是含α-H的醛在一定条件下先加成并形成含羟基和醛基产物的反应。",
+            "example": "乙醛反应生成羟基醛"
+          },
+          {
+            "name": "逆合成分析法",
+            "difficulty": 4,
+            "description": "从目标化合物逆推原料并设计合成路线的方法",
+            "aliases": [],
+            "prerequisites": [
+              "有机合成路线",
+              "官能团转化"
+            ],
+            "definition": "逆合成分析法是从目标产物逐步逆向寻找中间体和起始原料的方法。",
+            "example": "由苯甲酸苯甲酯逆推苯甲酸和苯甲醇",
+            "section": "第 1 节 有机化合物的合成"
+          },
+          {
+            "name": "绿色合成思想",
+            "difficulty": 3,
+            "description": "以绿色化和无公害为指导优选合成路线",
+            "aliases": [],
+            "prerequisites": [
+              "有机合成路线"
+            ],
+            "definition": "绿色合成思想强调原子经济性、原料绿色化及试剂和催化剂无公害。",
+            "example": "减少氯气使用并降低污染",
+            "section": "第 1 节 有机化合物的合成"
+          },
+          {
+            "name": "原子经济性",
+            "difficulty": 3,
+            "description": "最大限度利用原料分子各原子并减少废物生成",
+            "aliases": [],
+            "prerequisites": [
+              "绿色合成思想"
+            ],
+            "definition": "原子经济性表示反应物原子进入预期产物的利用程度。",
+            "example": "原子利用率为预期产物相对分子质量与反应物总和之比"
+          },
+          {
+            "name": "结构测定",
+            "difficulty": 3,
+            "description": "通过分析确定有机化合物分子结构的过程",
+            "aliases": [],
+            "prerequisites": [
+              "官能团",
+              "碳骨架"
+            ],
+            "definition": "有机化合物结构测定的核心是确定分子式及官能团在碳骨架上的位置。",
+            "example": "结合质谱和核磁共振氢谱确定结构"
+          },
+          {
+            "name": "燃烧分析法",
+            "difficulty": 3,
+            "description": "通过测定燃烧生成物确定碳氢元素含量的方法",
+            "aliases": [],
+            "prerequisites": [
+              "结构测定"
+            ],
+            "definition": "燃烧分析法是燃烧样品并测定生成水和二氧化碳的质量以计算碳氢含量的方法。",
+            "example": "燃烧样品后分别吸收水和二氧化碳",
+            "section": "第 2 节 有机化合物结构的测定"
+          },
+          {
+            "name": "质谱分析",
+            "difficulty": 3,
+            "description": "利用质谱仪测定有机化合物相对分子质量的方法",
+            "aliases": [],
+            "prerequisites": [
+              "结构测定"
+            ],
+            "definition": "质谱分析是利用质谱仪测定有机化合物相对分子质量的分析方法。",
+            "example": "质谱图确定相对分子质量128",
+            "section": "第 2 节 有机化合物结构的测定"
+          },
+          {
+            "name": "核磁共振氢谱",
+            "difficulty": 4,
+            "description": "依据氢原子化学环境分析分子结构的谱图方法",
+            "aliases": [
+              "核磁共振氢谱图"
+            ],
+            "prerequisites": [
+              "结构测定"
+            ],
+            "definition": "核磁共振氢谱通过峰的种类和面积比反映分子中不同化学环境氢原子的情况。",
+            "example": "峰面积比为2∶1∶2∶3"
+          },
+          {
+            "name": "高分子化合物",
+            "difficulty": 2,
+            "description": "由大量原子以共价键连接且相对分子质量很大的化合物",
+            "aliases": [
+              "大分子化合物",
+              "高聚物",
+              "聚合物"
+            ],
+            "prerequisites": [],
+            "definition": "高分子化合物是由成千上万个原子以共价键连接形成的相对分子质量很大的化合物。",
+            "example": "聚苯乙烯"
+          },
+          {
+            "name": "单体",
+            "difficulty": 2,
+            "description": "能够通过聚合反应合成高分子化合物的小分子",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "单体是能够用来合成高分子化合物的小分子化合物。",
+            "example": "苯乙烯是聚苯乙烯的单体",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "链节",
+            "difficulty": 3,
+            "description": "高分子链中化学组成和结构重复的最小单位",
+            "aliases": [
+              "重复结构单元"
+            ],
+            "prerequisites": [
+              "高分子化合物",
+              "单体"
+            ],
+            "definition": "链节是高分子分子链中化学组成和结构均可重复的最小单位。",
+            "example": "聚苯乙烯中的重复结构单元",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "聚合度",
+            "difficulty": 3,
+            "description": "高分子中结构单元的总数",
+            "aliases": [],
+            "prerequisites": [
+              "单体",
+              "链节"
+            ],
+            "definition": "聚合度是形成高分子化合物时反应掉的单体所对应的结构单元总数。",
+            "example": "尼龙-66的聚合度为2n",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "聚合反应",
+            "difficulty": 2,
+            "description": "由小分子物质合成高分子化合物的化学反应",
+            "aliases": [
+              "聚合"
+            ],
+            "prerequisites": [
+              "高分子化合物",
+              "单体"
+            ],
+            "definition": "聚合反应是由小分子物质合成高分子化合物的化学反应。",
+            "example": "苯乙烯生成聚苯乙烯"
+          },
+          {
+            "name": "加成聚合反应",
+            "difficulty": 3,
+            "description": "单体通过加成生成高分子且不产生小分子的反应",
+            "aliases": [
+              "加聚反应"
+            ],
+            "prerequisites": [
+              "聚合反应"
+            ],
+            "definition": "加成聚合反应是单体通过加成方式生成高分子且过程中没有小分子化合物产生的反应。",
+            "example": "乙烯加聚生成聚乙烯"
+          },
+          {
+            "name": "缩合聚合反应",
+            "difficulty": 3,
+            "description": "单体缩合生成高分子并伴随小分子产生的反应",
+            "aliases": [
+              "缩聚反应"
+            ],
+            "prerequisites": [
+              "聚合反应"
+            ],
+            "definition": "缩合聚合反应是单体分子间缩合生成高分子并伴随水等小分子产生的反应。",
+            "example": "己二酸与己二胺合成尼龙-66",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "高分子化学反应",
+            "difficulty": 4,
+            "description": "有高分子化合物参与并改变其结构或聚合度的反应",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物",
+              "聚合反应"
+            ],
+            "definition": "高分子化学反应是有高分子化合物参与的化学反应。",
+            "example": "聚醋酸乙烯酯转化为聚乙烯醇",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "合成高分子材料",
+            "difficulty": 3,
+            "description": "以合成高分子为原料并加入助剂加工制成的材料",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "合成高分子材料是以合成高分子化合物为基本原料并经助剂和加工制成的材料。",
+            "example": "塑料、合成橡胶和合成纤维",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "树脂",
+            "difficulty": 3,
+            "description": "人工合成且未经加工处理的聚合物的俗称",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "树脂是人工合成的、未经加工处理的聚合物的俗称。",
+            "example": "酚醛树脂"
+          },
+          {
+            "name": "功能高分子",
+            "difficulty": 3,
+            "description": "除一般力学性能外还具有特殊功能的高分子",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "功能高分子是除一般高分子力学性能外还具有特殊物理、化学或生物功能的高分子。",
+            "example": "导电高分子",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "离子交换树脂",
+            "difficulty": 4,
+            "description": "能与溶液中相应离子发生交换的功能高分子",
+            "aliases": [],
+            "prerequisites": [
+              "功能高分子"
+            ],
+            "definition": "离子交换树脂是含有可交换基团并能与溶液中离子进行交换的功能高分子。",
+            "example": "阳离子交换树脂交换Ca²⁺",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "医用高分子",
+            "difficulty": 3,
+            "description": "用于医疗部件、诊疗或替代人体组织器官的材料",
+            "aliases": [
+              "医用高分子材料"
+            ],
+            "prerequisites": [
+              "合成高分子材料",
+              "功能高分子"
+            ],
+            "definition": "医用高分子是用于制作医疗部件装置或进行诊断治疗的高分子材料。",
+            "example": "聚乳酸用于可吸收缝合线",
+            "section": "第 3 节 合成高分子化合物"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 有机化合物的合成",
+            "page_range": [
+              122,
+              130
+            ]
+          },
+          {
+            "name": "第 2 节 有机化合物结构的测定",
+            "page_range": [
+              130,
+              142
+            ]
+          },
+          {
+            "name": "第 3 节 合成高分子化合物",
+            "page_range": [
+              142,
+              166
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "化学",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 有机化合物的结构与性质 烃",
+        "concepts": [
+          {
+            "name": "有机化合物",
+            "difficulty": 1,
+            "description": "含碳元素的化合物，种类繁多、结构多样",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "有机化合物是以碳原子结合形成的化合物。",
+            "example": "甲烷、乙烯、苯"
+          },
+          {
+            "name": "烃",
+            "difficulty": 1,
+            "description": "只由碳、氢两种元素组成的有机化合物",
+            "aliases": [
+              "碳氢化合物"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "烃是只由碳、氢两种元素组成的有机化合物。",
+            "example": "甲烷、乙烯、苯"
+          },
+          {
+            "name": "链烃",
+            "difficulty": 2,
+            "description": "碳原子之间结合成链的烃",
+            "aliases": [
+              "脂肪烃"
+            ],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "链烃是分子中碳原子之间结合成链的烃。",
+            "example": "丙烷"
+          },
+          {
+            "name": "环烃",
+            "difficulty": 2,
+            "description": "分子中含有碳环的烃",
+            "aliases": [],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "环烃是分子中含有碳环的烃。",
+            "example": "环己烷"
+          },
+          {
+            "name": "烷烃",
+            "difficulty": 2,
+            "description": "碳原子之间均以单键相连的链烃",
+            "aliases": [
+              "alkane"
+            ],
+            "prerequisites": [
+              "链烃",
+              "单键"
+            ],
+            "definition": "烷烃是分子中碳原子之间都以单键相连的链烃。",
+            "example": "甲烷、丙烷"
+          },
+          {
+            "name": "烯烃",
+            "difficulty": 2,
+            "description": "分子中含有碳碳双键的链烃",
+            "aliases": [
+              "alkene"
+            ],
+            "prerequisites": [
+              "链烃",
+              "双键"
+            ],
+            "definition": "烯烃是分子中含有碳碳双键的链烃。",
+            "example": "乙烯、丙烯"
+          },
+          {
+            "name": "炔烃",
+            "difficulty": 2,
+            "description": "分子中含有碳碳三键的链烃",
+            "aliases": [
+              "alkyne"
+            ],
+            "prerequisites": [
+              "链烃",
+              "三键"
+            ],
+            "definition": "炔烃是分子中含有碳碳三键的链烃。",
+            "example": "乙炔、丙炔"
+          },
+          {
+            "name": "芳香烃",
+            "difficulty": 2,
+            "description": "分子中含有苯环的环烃",
+            "aliases": [
+              "aromatic hydrocarbon"
+            ],
+            "prerequisites": [
+              "环烃"
+            ],
+            "definition": "芳香烃是分子中含有苯环的环烃。",
+            "example": "苯、甲苯、萘"
+          },
+          {
+            "name": "脂环烃",
+            "difficulty": 2,
+            "description": "分子中没有苯环的环烃",
+            "aliases": [],
+            "prerequisites": [
+              "环烃"
+            ],
+            "definition": "脂环烃是分子中含有碳环但没有苯环的烃。",
+            "example": "环己烷、环己烯"
+          },
+          {
+            "name": "烃的衍生物",
+            "difficulty": 2,
+            "description": "烃分子中的氢被其他原子或原子团取代形成的化合物",
+            "aliases": [
+              "derivative of hydrocarbon"
+            ],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "烃的衍生物是烃分子中的氢原子被其他原子或原子团取代形成的化合物。",
+            "example": "乙醇、一氯甲烷"
+          },
+          {
+            "name": "官能团",
+            "difficulty": 2,
+            "description": "决定某类有机化合物共同特性的原子或原子团",
+            "aliases": [
+              "functional group"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "官能团是决定某类有机化合物化学特性的原子或原子团。",
+            "example": "乙醇中的羟基"
+          },
+          {
+            "name": "键线式",
+            "difficulty": 2,
+            "description": "省略碳氢键和碳氢原子后表示结构的方式",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "键线式是省略碳氢键、碳原子及其相连氢原子并保留骨架的结构表示式。",
+            "example": "环己烷的折线表示"
+          },
+          {
+            "name": "同系列",
+            "difficulty": 2,
+            "description": "结构相似且组成相差一个或若干个CH₂的系列",
+            "aliases": [
+              "homologous series"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "同系列是分子结构相似、组成上彼此相差一个或若干个CH₂的有机化合物系列。",
+            "example": "甲烷、乙烷、丙烷",
+            "section": "第 1 节 认识有机化学"
+          },
+          {
+            "name": "同系物",
+            "difficulty": 2,
+            "description": "同系列中相互具有同系关系的化合物",
+            "aliases": [
+              "homologous compound"
+            ],
+            "prerequisites": [
+              "同系列"
+            ],
+            "definition": "同系物是同系列中结构相似且组成相差一个或若干个CH₂的化合物。",
+            "example": "乙烯和丙烯"
+          },
+          {
+            "name": "烃基",
+            "difficulty": 2,
+            "description": "烃分子去掉一个或多个氢原子后的剩余部分",
+            "aliases": [],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "烃基是烃分子去掉一个或多个氢原子后剩余的部分。",
+            "example": "甲基、乙基"
+          },
+          {
+            "name": "取代基",
+            "difficulty": 2,
+            "description": "连接在有机化合物主链上的原子或原子团",
+            "aliases": [],
+            "prerequisites": [
+              "烃基"
+            ],
+            "definition": "取代基是连接在有机化合物分子主链上的原子或原子团。",
+            "example": "2-甲基丁烷中的甲基"
+          },
+          {
+            "name": "系统命名法",
+            "difficulty": 3,
+            "description": "按统一规则对有机化合物进行命名的方法",
+            "aliases": [
+              "IUPAC命名法",
+              "CCS法"
+            ],
+            "prerequisites": [
+              "取代基"
+            ],
+            "definition": "系统命名法是依据主链、编号和取代基等规则命名有机化合物的方法。",
+            "example": "2,4-二甲基-3-乙基庚烷",
+            "section": "第 1 节 认识有机化学"
+          },
+          {
+            "name": "组成通式",
+            "difficulty": 3,
+            "description": "表示同系列有机化合物组成规律的通式",
+            "aliases": [],
+            "prerequisites": [
+              "同系列"
+            ],
+            "definition": "组成通式是表示同系列有机化合物分子组成规律的式子。",
+            "example": "烷烃为CnH₂n+₂"
+          },
+          {
+            "name": "单键",
+            "difficulty": 1,
+            "description": "成键原子之间共用一对电子形成的共价键",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "单键是两个原子之间共用一对电子形成的共价键。",
+            "example": "甲烷中的碳氢键"
+          },
+          {
+            "name": "双键",
+            "difficulty": 1,
+            "description": "成键原子之间共用两对电子形成的共价键",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "双键是两个原子之间共用两对电子形成的共价键。",
+            "example": "乙烯中的碳碳双键"
+          },
+          {
+            "name": "三键",
+            "difficulty": 1,
+            "description": "成键原子之间共用三对电子形成的共价键",
+            "aliases": [],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "三键是两个原子之间共用三对电子形成的共价键。",
+            "example": "乙炔中的碳碳三键"
+          },
+          {
+            "name": "不饱和键",
+            "difficulty": 2,
+            "description": "有机分子中的碳碳双键或碳碳三键",
+            "aliases": [],
+            "prerequisites": [
+              "双键",
+              "三键"
+            ],
+            "definition": "不饱和键是有机化合物分子中的碳碳双键或碳碳三键。",
+            "example": "乙烯中的碳碳双键"
+          },
+          {
+            "name": "构造异构",
+            "difficulty": 3,
+            "description": "原子连接顺序不同形成的同分异构现象",
+            "aliases": [],
+            "prerequisites": [
+              "烃"
+            ],
+            "definition": "构造异构是分子中原子或原子团连接顺序不同形成的异构。",
+            "example": "正丁烷和异丁烷",
+            "section": "第 2 节 有机化合物的结构与性质"
+          },
+          {
+            "name": "碳骨架异构",
+            "difficulty": 3,
+            "description": "碳骨架形状不同形成的构造异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构"
+            ],
+            "definition": "碳骨架异构是因分子中碳骨架形状不同而产生的构造异构。",
+            "example": "正戊烷和异戊烷"
+          },
+          {
+            "name": "位置异构",
+            "difficulty": 3,
+            "description": "官能团或不饱和键位置不同形成的异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构",
+              "官能团"
+            ],
+            "definition": "位置异构是官能团或不饱和键在碳骨架上的位置不同形成的异构。",
+            "example": "1-丁烯和2-丁烯"
+          },
+          {
+            "name": "官能团异构",
+            "difficulty": 3,
+            "description": "官能团类型不同形成的构造异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构",
+              "官能团"
+            ],
+            "definition": "官能团异构是分子组成相同而官能团类型不同形成的异构。",
+            "example": "乙醇和二甲醚",
+            "section": "第 2 节 有机化合物的结构与性质"
+          },
+          {
+            "name": "立体异构",
+            "difficulty": 3,
+            "description": "原子连接顺序相同而空间排布不同的异构",
+            "aliases": [],
+            "prerequisites": [
+              "构造异构"
+            ],
+            "definition": "立体异构是原子或原子团连接顺序相同而空间排布不同的异构。",
+            "example": "顺-2-丁烯和反-2-丁烯"
+          },
+          {
+            "name": "顺反异构",
+            "difficulty": 3,
+            "description": "双键两侧基团空间位置不同形成的立体异构",
+            "aliases": [],
+            "prerequisites": [
+              "立体异构",
+              "双键"
+            ],
+            "definition": "顺反异构是因碳碳双键两侧基团空间排布不同产生的立体异构。",
+            "example": "顺-2-丁烯和反-2-丁烯",
+            "section": "第 2 节 有机化合物的结构与性质"
+          },
+          {
+            "name": "对映异构",
+            "difficulty": 3,
+            "description": "互为镜像且不能完全重叠的立体异构",
+            "aliases": [],
+            "prerequisites": [
+              "立体异构"
+            ],
+            "definition": "对映异构是分子呈镜像关系且彼此不能完全重叠的立体异构。",
+            "example": "丙氨酸的一对对映异构体"
+          },
+          {
+            "name": "结构决定性质",
+            "difficulty": 2,
+            "description": "有机化合物结构特点决定其化学性质",
+            "aliases": [],
+            "prerequisites": [
+              "官能团",
+              "不饱和键"
+            ],
+            "definition": "结构决定性质是指有机化合物的结构特点影响其化学性质的规律。",
+            "example": "烯烃因双键易发生加成"
+          },
+          {
+            "name": "烷烃燃烧",
+            "difficulty": 2,
+            "description": "烷烃完全燃烧生成二氧化碳和水并放热",
+            "aliases": [],
+            "prerequisites": [
+              "烷烃"
+            ],
+            "definition": "烷烃燃烧是烷烃与氧气反应生成二氧化碳和水的反应。",
+            "example": "甲烷完全燃烧",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "取代反应",
+            "difficulty": 2,
+            "description": "烷烃中的氢原子被卤素原子取代的反应",
+            "aliases": [],
+            "prerequisites": [
+              "烷烃"
+            ],
+            "definition": "取代反应是有机分子中的原子或原子团被其他原子或原子团取代的反应。",
+            "example": "甲烷与氯气光照反应"
+          },
+          {
+            "name": "自由基反应",
+            "difficulty": 3,
+            "description": "由含未成对电子的自由基参与的反应",
+            "aliases": [],
+            "prerequisites": [
+              "取代反应"
+            ],
+            "definition": "自由基反应是由含有未成对电子的原子或基团参与的反应。",
+            "example": "甲烷的氯代反应",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "加成反应",
+            "difficulty": 2,
+            "description": "不饱和键两端原子与其他原子或原子团结合的反应",
+            "aliases": [],
+            "prerequisites": [
+              "不饱和键"
+            ],
+            "definition": "加成反应是不饱和键两端的原子与其他原子或原子团结合生成新化合物的反应。",
+            "example": "乙烯与溴反应"
+          },
+          {
+            "name": "烯烃氧化",
+            "difficulty": 3,
+            "description": "烯烃被氧化剂氧化并使碳碳双键断裂的反应",
+            "aliases": [],
+            "prerequisites": [
+              "烯烃",
+              "氧化反应"
+            ],
+            "definition": "烯烃氧化是烯烃的不饱和键在氧化剂作用下发生断裂并生成含氧化合物的反应。",
+            "example": "乙烯使酸性KMnO₄褪色"
+          },
+          {
+            "name": "共轭二烯烃",
+            "difficulty": 3,
+            "description": "含两个双键且双键只相隔一个单键的烯烃",
+            "aliases": [],
+            "prerequisites": [
+              "烯烃",
+              "双键"
+            ],
+            "definition": "共轭二烯烃是分子中两个碳碳双键只相隔一个单键的烯烃。",
+            "example": "1,3-丁二烯",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "加成聚合",
+            "difficulty": 3,
+            "description": "烯烃分子间加成聚合生成高分子化合物",
+            "aliases": [],
+            "prerequisites": [
+              "加成反应",
+              "烯烃"
+            ],
+            "definition": "加成聚合是含不饱和键的分子彼此加成形成高分子化合物的反应。",
+            "example": "乙烯聚合生成聚乙烯",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "红外光谱",
+            "difficulty": 3,
+            "description": "通过红外吸收峰判断有机物官能团的方法",
+            "aliases": [
+              "IR"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "红外光谱是依据分子吸收红外光产生的信号分析官能团的方法。",
+            "example": "3630 cm⁻¹峰提示羟基",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "核磁共振氢谱",
+            "difficulty": 3,
+            "description": "根据氢原子化学环境和峰面积分析分子结构的方法",
+            "aliases": [
+              "NMR氢谱"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "核磁共振氢谱通过信号位置和峰面积反映氢原子的化学环境及数目比例。",
+            "example": "不同峰面积表示氢数比",
+            "section": "第 3 节 烃"
+          },
+          {
+            "name": "质谱",
+            "difficulty": 3,
+            "description": "利用质谱获得有机化合物相对分子质量的方法",
+            "aliases": [
+              "MS"
+            ],
+            "prerequisites": [
+              "有机化合物"
+            ],
+            "definition": "质谱是通过样品产生的质谱信号获得有机化合物相对分子质量的方法。",
+            "example": "测定未知有机物相对分子质量",
+            "section": "第 3 节 烃"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 认识有机化学",
+            "section_key": "f4fb56b27c",
+            "page_range": [
+              12,
+              20
+            ]
+          },
+          {
+            "name": "第 2 节 有机化合物的结构与性质",
+            "section_key": "2e5cdd0323",
+            "page_range": [
+              20,
+              32
+            ]
+          },
+          {
+            "name": "第 3 节 烃",
+            "section_key": "a680e7f47f",
+            "page_range": [
+              32,
+              56
+            ]
+          }
+        ],
+        "chapter_key": "a3ce0580b8",
+        "metadata": {
+          "volume_id": "13b5f240b4e0",
+          "file_id": "13b5f240b4e0",
+          "volume_title": "普通高中教科书 化学 选择性必修3 有机化学基础",
+          "chapter_order": 1,
+          "raw_heading": "第1章 有机化合物的结构与性质 烃"
+        }
+      },
+      {
+        "name": "第2章 官能团与有机化学反应 烃的衍生物",
+        "concepts": [
+          {
+            "name": "官能团",
+            "difficulty": 2,
+            "description": "决定有机化合物特殊性质的原子或原子团",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "官能团是有机化合物分子中决定其特殊性质的原子或原子团。",
+            "example": "羟基是醇的官能团"
+          },
+          {
+            "name": "取代反应",
+            "difficulty": 2,
+            "description": "有机分子中的原子或原子团被其他基团替代",
+            "aliases": [
+              "substitution reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "取代反应是有机化合物分子中的原子或原子团被其他原子或原子团代替的反应。",
+            "example": "乙醇与氢溴酸生成溴乙烷"
+          },
+          {
+            "name": "加成反应",
+            "difficulty": 2,
+            "description": "不饱和键两端与试剂原子结合生成产物",
+            "aliases": [
+              "addition reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "加成反应是含双键或三键的有机物与试剂结合生成新产物的反应。",
+            "example": "丙烯与氯化氢生成2-氯丙烷"
+          },
+          {
+            "name": "消去反应",
+            "difficulty": 2,
+            "description": "脱去小分子并生成不饱和键的反应",
+            "aliases": [
+              "elimination reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "消去反应是有机化合物脱去小分子物质并生成不饱和键的反应。",
+            "example": "乙醇脱水生成乙烯"
+          },
+          {
+            "name": "氧化反应",
+            "difficulty": 2,
+            "description": "有机分子增加氧原子或减少氢原子的反应",
+            "aliases": [
+              "oxidation reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "氧化反应是有机化合物分子中增加氧原子或减少氢原子的反应。",
+            "example": "乙醇氧化生成乙醛"
+          },
+          {
+            "name": "还原反应",
+            "difficulty": 2,
+            "description": "有机分子增加氢原子或减少氧原子的反应",
+            "aliases": [
+              "reduction reaction"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "还原反应是有机化合物分子中增加氢原子或减少氧原子的反应。",
+            "example": "丙酮加氢生成醇"
+          },
+          {
+            "name": "α-C与α-H",
+            "difficulty": 3,
+            "description": "官能团相邻碳及其所连氢原子的名称",
+            "aliases": [
+              "α-C",
+              "α-H"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "与官能团直接相连的碳原子是α-C，其上的氢原子是α-H。",
+            "example": "丙烯中甲基上的氢可作α-H"
+          },
+          {
+            "name": "β-C与β-H",
+            "difficulty": 3,
+            "description": "与α-C相连的碳及其所连氢原子的名称",
+            "aliases": [
+              "β-C",
+              "β-H"
+            ],
+            "prerequisites": [
+              "α-C与α-H"
+            ],
+            "definition": "与α-C相连的碳原子是β-C，其上的氢原子是β-H。",
+            "example": "1-溴丙烷中邻位碳上的氢是β-H"
+          },
+          {
+            "name": "卤代烃",
+            "difficulty": 2,
+            "description": "烃中氢原子被卤素原子取代形成的化合物",
+            "aliases": [
+              "halohydrocarbon"
+            ],
+            "prerequisites": [
+              "取代反应"
+            ],
+            "definition": "卤代烃是烃分子中一个或多个氢原子被卤素原子取代生成的化合物。",
+            "example": "1-溴丙烷属于卤代烃"
+          },
+          {
+            "name": "卤代烃取代",
+            "difficulty": 3,
+            "description": "卤素原子被羟基等基团取代的反应",
+            "aliases": [],
+            "prerequisites": [
+              "卤代烃",
+              "取代反应"
+            ],
+            "definition": "卤代烃取代是卤代烃中的卤素原子被其他原子或原子团取代的反应。",
+            "example": "1-溴丙烷与NaOH水溶液生成丙醇"
+          },
+          {
+            "name": "卤代烃消去",
+            "difficulty": 3,
+            "description": "卤代烃脱去氢卤酸生成不饱和烃",
+            "aliases": [],
+            "prerequisites": [
+              "卤代烃",
+              "消去反应",
+              "β-C与β-H"
+            ],
+            "definition": "卤代烃消去是卤代烃脱去氢卤酸并生成不饱和烃的反应。",
+            "example": "1-溴丙烷生成丙烯"
+          },
+          {
+            "name": "醇",
+            "difficulty": 2,
+            "description": "脂肪烃或芳香烃侧链氢被羟基取代的化合物",
+            "aliases": [
+              "alcohol"
+            ],
+            "prerequisites": [
+              "官能团",
+              "取代反应"
+            ],
+            "definition": "醇是脂肪烃分子中的氢或芳香烃侧链氢被羟基取代形成的化合物。",
+            "example": "乙醇含有醇羟基",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "酚",
+            "difficulty": 2,
+            "description": "芳香烃苯环上的氢被羟基取代的化合物",
+            "aliases": [
+              "phenol"
+            ],
+            "prerequisites": [
+              "官能团",
+              "取代反应"
+            ],
+            "definition": "酚是芳香烃分子中苯环上的氢被羟基取代形成的化合物。",
+            "example": "苯酚属于酚",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "一元醇",
+            "difficulty": 2,
+            "description": "分子中含有一个羟基的醇",
+            "aliases": [],
+            "prerequisites": [
+              "醇"
+            ],
+            "definition": "一元醇是分子中只含有一个羟基的醇。",
+            "example": "甲醇是一元醇"
+          },
+          {
+            "name": "多元醇",
+            "difficulty": 2,
+            "description": "分子中含有两个或更多羟基的醇",
+            "aliases": [],
+            "prerequisites": [
+              "醇"
+            ],
+            "definition": "多元醇是分子中含有两个或更多羟基的醇。",
+            "example": "乙二醇是二元醇",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "醇的氢键",
+            "difficulty": 3,
+            "description": "醇分子间羟基氢氧相互吸引形成的作用",
+            "aliases": [
+              "hydrogen bond"
+            ],
+            "prerequisites": [
+              "醇"
+            ],
+            "definition": "醇分子间可通过羟基氢与氧的相互吸引形成氢键。",
+            "example": "乙醇分子间存在氢键",
+            "section": "第 2 节 醇和酚"
+          },
+          {
+            "name": "醛",
+            "difficulty": 2,
+            "description": "分子中含有醛基的有机化合物",
+            "aliases": [],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "醛是分子中含有醛基的有机化合物。",
+            "example": "乙醛含有醛基"
+          },
+          {
+            "name": "酮",
+            "difficulty": 2,
+            "description": "分子中含有酮羰基的有机化合物",
+            "aliases": [],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "酮是分子中含有酮羰基的有机化合物。",
+            "example": "丙酮属于酮"
+          },
+          {
+            "name": "醛基检验",
+            "difficulty": 3,
+            "description": "利用银氨溶液或新制氢氧化铜检验醛基",
+            "aliases": [],
+            "prerequisites": [
+              "醛",
+              "氧化反应"
+            ],
+            "definition": "醛基可通过银氨溶液或新制氢氧化铜的反应进行检验。",
+            "example": "葡萄糖产生银镜"
+          },
+          {
+            "name": "羧酸",
+            "difficulty": 2,
+            "description": "分子由烃基或氢与羧基相连形成的化合物",
+            "aliases": [
+              "carboxylic acid"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "羧酸是由烃基或氢原子与羧基相连构成的有机化合物。",
+            "example": "乙酸属于羧酸"
+          },
+          {
+            "name": "羧基",
+            "difficulty": 2,
+            "description": "羧酸的官能团，结构为—COOH",
+            "aliases": [
+              "—COOH"
+            ],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "羧基是羧酸的特征官能团，结构简式为—COOH。",
+            "example": "乙酸含有羧基",
+            "section": "第 4 节 羧酸 氨基酸和蛋白质"
+          },
+          {
+            "name": "糖类",
+            "difficulty": 3,
+            "description": "含多个羟基的醛酮及其水解产物",
+            "aliases": [
+              "saccharide"
+            ],
+            "prerequisites": [
+              "醇",
+              "醛",
+              "酮"
+            ],
+            "definition": "糖类是含两个或以上羟基的醛或酮及其水解产物。",
+            "example": "葡萄糖属于糖类"
+          },
+          {
+            "name": "单糖",
+            "difficulty": 2,
+            "description": "不能水解为更小糖分子的糖类",
+            "aliases": [
+              "monosaccharide"
+            ],
+            "prerequisites": [
+              "糖类"
+            ],
+            "definition": "单糖是不能水解为更小糖分子的糖类。",
+            "example": "葡萄糖是单糖"
+          },
+          {
+            "name": "双糖",
+            "difficulty": 2,
+            "description": "水解能生成两摩尔单糖的糖类",
+            "aliases": [
+              "二糖",
+              "disaccharide"
+            ],
+            "prerequisites": [
+              "单糖"
+            ],
+            "definition": "双糖是1摩尔糖水解后能产生2摩尔单糖的糖类。",
+            "example": "蔗糖是双糖"
+          },
+          {
+            "name": "多糖",
+            "difficulty": 2,
+            "description": "水解能生成超过十摩尔单糖的糖类",
+            "aliases": [
+              "polysaccharide"
+            ],
+            "prerequisites": [
+              "单糖"
+            ],
+            "definition": "多糖是1摩尔糖水解后能产生超过10摩尔单糖的糖类。",
+            "example": "淀粉属于多糖"
+          },
+          {
+            "name": "葡萄糖",
+            "difficulty": 3,
+            "description": "含醛基和多个羟基的六碳醛糖",
+            "aliases": [
+              "glucose"
+            ],
+            "prerequisites": [
+              "单糖",
+              "醛基检验"
+            ],
+            "definition": "葡萄糖是含一个醛基和五个羟基的六碳醛糖。",
+            "example": "葡萄糖能发生银镜反应"
+          },
+          {
+            "name": "果糖",
+            "difficulty": 3,
+            "description": "分子式为C6H12O6的六碳酮糖",
+            "aliases": [
+              "fructose"
+            ],
+            "prerequisites": [
+              "单糖",
+              "酮"
+            ],
+            "definition": "果糖是一种分子式为C6H12O6的六碳酮糖。",
+            "example": "果糖与葡萄糖互为同分异构体",
+            "section": "第 3 节 醛和酮 糖类和核酸"
+          },
+          {
+            "name": "麦芽糖",
+            "difficulty": 3,
+            "description": "含醛基并具有还原性的双糖",
+            "aliases": [
+              "maltose"
+            ],
+            "prerequisites": [
+              "双糖",
+              "醛基"
+            ],
+            "definition": "麦芽糖是含有醛基并具有还原性的双糖。",
+            "example": "麦芽糖水解生成葡萄糖"
+          },
+          {
+            "name": "蔗糖",
+            "difficulty": 3,
+            "description": "不含醛基且不具有还原性的双糖",
+            "aliases": [
+              "sucrose"
+            ],
+            "prerequisites": [
+              "双糖",
+              "醛基"
+            ],
+            "definition": "蔗糖是不含醛基且不具有还原性的双糖。",
+            "example": "蔗糖水解生成葡萄糖和果糖"
+          },
+          {
+            "name": "淀粉",
+            "difficulty": 3,
+            "description": "由葡萄糖单元组成的天然多糖",
+            "aliases": [
+              "starch"
+            ],
+            "prerequisites": [
+              "多糖",
+              "葡萄糖"
+            ],
+            "definition": "淀粉是由大量葡萄糖单元连接形成的天然有机高分子。",
+            "example": "淀粉遇碘变蓝"
+          },
+          {
+            "name": "纤维素",
+            "difficulty": 3,
+            "description": "由葡萄糖单元组成的天然高分子多糖",
+            "aliases": [
+              "cellulose"
+            ],
+            "prerequisites": [
+              "多糖",
+              "葡萄糖"
+            ],
+            "definition": "纤维素是由大量葡萄糖单元连接形成的天然高分子化合物。",
+            "example": "棉花的主要成分是纤维素"
+          },
+          {
+            "name": "五碳醛糖",
+            "difficulty": 3,
+            "description": "含五个碳原子的醛糖，如核糖和脱氧核糖",
+            "aliases": [],
+            "prerequisites": [
+              "单糖",
+              "醛"
+            ],
+            "definition": "五碳醛糖是分子中含五个碳原子的醛糖。",
+            "example": "核糖是五碳醛糖",
+            "section": "第 3 节 醛和酮 糖类和核酸"
+          },
+          {
+            "name": "核酸",
+            "difficulty": 3,
+            "description": "由核苷酸链构成的遗传信息分子",
+            "aliases": [],
+            "prerequisites": [
+              "五碳醛糖"
+            ],
+            "definition": "核酸是由核糖核苷酸链或脱氧核糖核苷酸链构成的遗传信息分子。",
+            "example": "DNA和RNA统称核酸"
+          },
+          {
+            "name": "DNA",
+            "difficulty": 3,
+            "description": "由脱氧核糖核苷酸链组成的脱氧核糖核酸",
+            "aliases": [
+              "脱氧核糖核酸"
+            ],
+            "prerequisites": [
+              "核酸",
+              "五碳醛糖"
+            ],
+            "definition": "DNA是由脱氧核糖核苷酸通过磷酯键聚合形成的核酸。",
+            "example": "DNA储存遗传信息"
+          },
+          {
+            "name": "RNA",
+            "difficulty": 3,
+            "description": "由核糖核苷酸链组成的核糖核酸",
+            "aliases": [
+              "核糖核酸"
+            ],
+            "prerequisites": [
+              "核酸",
+              "五碳醛糖"
+            ],
+            "definition": "RNA是由核糖核苷酸通过磷酯键聚合形成的核酸。",
+            "example": "RNA参与遗传信息传递"
+          },
+          {
+            "name": "碱基互补配对",
+            "difficulty": 3,
+            "description": "DNA中碱基按特定规则通过氢键配对",
+            "aliases": [],
+            "prerequisites": [
+              "DNA",
+              "氢键"
+            ],
+            "definition": "碱基互补配对是碱基间按特定关系通过氢键结合的原则。",
+            "example": "G与C配对，A与T配对",
+            "section": "第 3 节 醛和酮 糖类和核酸"
+          },
+          {
+            "name": "磷酯键",
+            "difficulty": 3,
+            "description": "核苷酸分子间脱水形成的连接键",
+            "aliases": [],
+            "prerequisites": [
+              "核酸"
+            ],
+            "definition": "磷酯键是核苷酸分子间脱水聚合形成的化学键。",
+            "example": "DNA链中含有磷酯键"
+          },
+          {
+            "name": "加聚反应",
+            "difficulty": 3,
+            "description": "含双键单体聚合生成高分子的反应",
+            "aliases": [],
+            "prerequisites": [
+              "加成反应"
+            ],
+            "definition": "加聚反应是含不饱和键的小分子相互加成聚合成高分子的反应。",
+            "example": "氰基丙烯酸酯形成医用胶",
+            "section": "第 4 节 羧酸 氨基酸和蛋白质"
+          },
+          {
+            "name": "酯交换反应",
+            "difficulty": 3,
+            "description": "酯与醇反应生成新酯和新醇的反应",
+            "aliases": [],
+            "prerequisites": [
+              "羧酸"
+            ],
+            "definition": "酯交换反应是羧酸酯在催化剂存在下与醇交换烃基生成新酯的反应。",
+            "example": "酯与醇催化生成另一种酯",
+            "section": "第 4 节 羧酸 氨基酸和蛋白质"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 有机化学反应类型",
+            "section_key": "bff7d2d029",
+            "page_range": [
+              58,
+              66
+            ]
+          },
+          {
+            "name": "第 2 节 醇和酚",
+            "section_key": "70c28ac8a2",
+            "page_range": [
+              66,
+              79
+            ]
+          },
+          {
+            "name": "第 3 节 醛和酮 糖类和核酸",
+            "section_key": "25812181f9",
+            "page_range": [
+              79,
+              94
+            ]
+          },
+          {
+            "name": "第 4 节 羧酸 氨基酸和蛋白质",
+            "section_key": "7624c86b30",
+            "page_range": [
+              94,
+              120
+            ]
+          }
+        ],
+        "chapter_key": "a443d9c61f",
+        "metadata": {
+          "volume_id": "13b5f240b4e0",
+          "file_id": "13b5f240b4e0",
+          "volume_title": "普通高中教科书 化学 选择性必修3 有机化学基础",
+          "chapter_order": 2,
+          "raw_heading": "第2章 官能团与有机化学反应 烃的衍生物"
+        }
+      },
+      {
+        "name": "第3章 有机合成及其应用 合成高分子化合物",
+        "concepts": [
+          {
+            "name": "官能团",
+            "difficulty": 2,
+            "description": "决定有机化合物特征性质的原子或原子团",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "官能团是决定有机化合物特殊性质的原子或原子团。",
+            "example": "羟基、羧基和羰基"
+          },
+          {
+            "name": "碳骨架",
+            "difficulty": 2,
+            "description": "有机化合物分子中碳原子连接形成的骨架",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "碳骨架是有机化合物分子中碳原子相互连接形成的结构框架。",
+            "example": "乙烯合成路线中的碳链"
+          },
+          {
+            "name": "官能团转化",
+            "difficulty": 3,
+            "description": "通过化学反应实现不同官能团之间的转变",
+            "aliases": [],
+            "prerequisites": [
+              "官能团"
+            ],
+            "definition": "官能团转化是利用取代、消去、加成、氧化或还原反应改变官能团的过程。",
+            "example": "乙醇氧化为乙醛",
+            "section": "第 1 节 有机化合物的合成"
+          },
+          {
+            "name": "有机合成路线",
+            "difficulty": 3,
+            "description": "由原料经多步反应制得目标有机化合物的路径",
+            "aliases": [],
+            "prerequisites": [
+              "官能团转化",
+              "碳骨架"
+            ],
+            "definition": "有机合成路线是从原料出发经碳骨架构建和官能团转化得到目标物的反应路径。",
+            "example": "乙烯合成医用胶单体"
+          },
+          {
+            "name": "羟醛缩合反应",
+            "difficulty": 3,
+            "description": "含α-H的醛发生分子间加成并可脱水的反应",
+            "aliases": [],
+            "prerequisites": [
+              "官能团",
+              "碳骨架"
+            ],
+            "definition": "羟醛缩合反应是含α-H的醛在一定条件下先加成并形成含羟基和醛基产物的反应。",
+            "example": "乙醛反应生成羟基醛"
+          },
+          {
+            "name": "逆合成分析法",
+            "difficulty": 4,
+            "description": "从目标化合物逆推原料并设计合成路线的方法",
+            "aliases": [],
+            "prerequisites": [
+              "有机合成路线",
+              "官能团转化"
+            ],
+            "definition": "逆合成分析法是从目标产物逐步逆向寻找中间体和起始原料的方法。",
+            "example": "由苯甲酸苯甲酯逆推苯甲酸和苯甲醇",
+            "section": "第 1 节 有机化合物的合成"
+          },
+          {
+            "name": "绿色合成思想",
+            "difficulty": 3,
+            "description": "以绿色化和无公害为指导优选合成路线",
+            "aliases": [],
+            "prerequisites": [
+              "有机合成路线"
+            ],
+            "definition": "绿色合成思想强调原子经济性、原料绿色化及试剂和催化剂无公害。",
+            "example": "减少氯气使用并降低污染",
+            "section": "第 1 节 有机化合物的合成"
+          },
+          {
+            "name": "原子经济性",
+            "difficulty": 3,
+            "description": "最大限度利用原料分子各原子并减少废物生成",
+            "aliases": [],
+            "prerequisites": [
+              "绿色合成思想"
+            ],
+            "definition": "原子经济性表示反应物原子进入预期产物的利用程度。",
+            "example": "原子利用率为预期产物相对分子质量与反应物总和之比"
+          },
+          {
+            "name": "结构测定",
+            "difficulty": 3,
+            "description": "通过分析确定有机化合物分子结构的过程",
+            "aliases": [],
+            "prerequisites": [
+              "官能团",
+              "碳骨架"
+            ],
+            "definition": "有机化合物结构测定的核心是确定分子式及官能团在碳骨架上的位置。",
+            "example": "结合质谱和核磁共振氢谱确定结构"
+          },
+          {
+            "name": "燃烧分析法",
+            "difficulty": 3,
+            "description": "通过测定燃烧生成物确定碳氢元素含量的方法",
+            "aliases": [],
+            "prerequisites": [
+              "结构测定"
+            ],
+            "definition": "燃烧分析法是燃烧样品并测定生成水和二氧化碳的质量以计算碳氢含量的方法。",
+            "example": "燃烧样品后分别吸收水和二氧化碳",
+            "section": "第 2 节 有机化合物结构的测定"
+          },
+          {
+            "name": "质谱分析",
+            "difficulty": 3,
+            "description": "利用质谱仪测定有机化合物相对分子质量的方法",
+            "aliases": [],
+            "prerequisites": [
+              "结构测定"
+            ],
+            "definition": "质谱分析是利用质谱仪测定有机化合物相对分子质量的分析方法。",
+            "example": "质谱图确定相对分子质量128",
+            "section": "第 2 节 有机化合物结构的测定"
+          },
+          {
+            "name": "核磁共振氢谱",
+            "difficulty": 4,
+            "description": "依据氢原子化学环境分析分子结构的谱图方法",
+            "aliases": [
+              "核磁共振氢谱图"
+            ],
+            "prerequisites": [
+              "结构测定"
+            ],
+            "definition": "核磁共振氢谱通过峰的种类和面积比反映分子中不同化学环境氢原子的情况。",
+            "example": "峰面积比为2∶1∶2∶3"
+          },
+          {
+            "name": "高分子化合物",
+            "difficulty": 2,
+            "description": "由大量原子以共价键连接且相对分子质量很大的化合物",
+            "aliases": [
+              "大分子化合物",
+              "高聚物",
+              "聚合物"
+            ],
+            "prerequisites": [],
+            "definition": "高分子化合物是由成千上万个原子以共价键连接形成的相对分子质量很大的化合物。",
+            "example": "聚苯乙烯"
+          },
+          {
+            "name": "单体",
+            "difficulty": 2,
+            "description": "能够通过聚合反应合成高分子化合物的小分子",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "单体是能够用来合成高分子化合物的小分子化合物。",
+            "example": "苯乙烯是聚苯乙烯的单体",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "链节",
+            "difficulty": 3,
+            "description": "高分子链中化学组成和结构重复的最小单位",
+            "aliases": [
+              "重复结构单元"
+            ],
+            "prerequisites": [
+              "高分子化合物",
+              "单体"
+            ],
+            "definition": "链节是高分子分子链中化学组成和结构均可重复的最小单位。",
+            "example": "聚苯乙烯中的重复结构单元",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "聚合度",
+            "difficulty": 3,
+            "description": "高分子中结构单元的总数",
+            "aliases": [],
+            "prerequisites": [
+              "单体",
+              "链节"
+            ],
+            "definition": "聚合度是形成高分子化合物时反应掉的单体所对应的结构单元总数。",
+            "example": "尼龙-66的聚合度为2n",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "聚合反应",
+            "difficulty": 2,
+            "description": "由小分子物质合成高分子化合物的化学反应",
+            "aliases": [
+              "聚合"
+            ],
+            "prerequisites": [
+              "高分子化合物",
+              "单体"
+            ],
+            "definition": "聚合反应是由小分子物质合成高分子化合物的化学反应。",
+            "example": "苯乙烯生成聚苯乙烯"
+          },
+          {
+            "name": "加成聚合反应",
+            "difficulty": 3,
+            "description": "单体通过加成生成高分子且不产生小分子的反应",
+            "aliases": [
+              "加聚反应"
+            ],
+            "prerequisites": [
+              "聚合反应"
+            ],
+            "definition": "加成聚合反应是单体通过加成方式生成高分子且过程中没有小分子化合物产生的反应。",
+            "example": "乙烯加聚生成聚乙烯"
+          },
+          {
+            "name": "缩合聚合反应",
+            "difficulty": 3,
+            "description": "单体缩合生成高分子并伴随小分子产生的反应",
+            "aliases": [
+              "缩聚反应"
+            ],
+            "prerequisites": [
+              "聚合反应"
+            ],
+            "definition": "缩合聚合反应是单体分子间缩合生成高分子并伴随水等小分子产生的反应。",
+            "example": "己二酸与己二胺合成尼龙-66",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "高分子化学反应",
+            "difficulty": 4,
+            "description": "有高分子化合物参与并改变其结构或聚合度的反应",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物",
+              "聚合反应"
+            ],
+            "definition": "高分子化学反应是有高分子化合物参与的化学反应。",
+            "example": "聚醋酸乙烯酯转化为聚乙烯醇",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "合成高分子材料",
+            "difficulty": 3,
+            "description": "以合成高分子为原料并加入助剂加工制成的材料",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "合成高分子材料是以合成高分子化合物为基本原料并经助剂和加工制成的材料。",
+            "example": "塑料、合成橡胶和合成纤维",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "树脂",
+            "difficulty": 3,
+            "description": "人工合成且未经加工处理的聚合物的俗称",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "树脂是人工合成的、未经加工处理的聚合物的俗称。",
+            "example": "酚醛树脂"
+          },
+          {
+            "name": "功能高分子",
+            "difficulty": 3,
+            "description": "除一般力学性能外还具有特殊功能的高分子",
+            "aliases": [],
+            "prerequisites": [
+              "高分子化合物"
+            ],
+            "definition": "功能高分子是除一般高分子力学性能外还具有特殊物理、化学或生物功能的高分子。",
+            "example": "导电高分子",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "离子交换树脂",
+            "difficulty": 4,
+            "description": "能与溶液中相应离子发生交换的功能高分子",
+            "aliases": [],
+            "prerequisites": [
+              "功能高分子"
+            ],
+            "definition": "离子交换树脂是含有可交换基团并能与溶液中离子进行交换的功能高分子。",
+            "example": "阳离子交换树脂交换Ca²⁺",
+            "section": "第 3 节 合成高分子化合物"
+          },
+          {
+            "name": "医用高分子",
+            "difficulty": 3,
+            "description": "用于医疗部件、诊疗或替代人体组织器官的材料",
+            "aliases": [
+              "医用高分子材料"
+            ],
+            "prerequisites": [
+              "合成高分子材料",
+              "功能高分子"
+            ],
+            "definition": "医用高分子是用于制作医疗部件装置或进行诊断治疗的高分子材料。",
+            "example": "聚乳酸用于可吸收缝合线",
+            "section": "第 3 节 合成高分子化合物"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第 1 节 有机化合物的合成",
+            "section_key": "ed4bd3d1a1",
+            "page_range": [
+              122,
+              130
+            ]
+          },
+          {
+            "name": "第 2 节 有机化合物结构的测定",
+            "section_key": "d7eadf8df4",
+            "page_range": [
+              130,
+              142
+            ]
+          },
+          {
+            "name": "第 3 节 合成高分子化合物",
+            "section_key": "08ce5406a5",
+            "page_range": [
+              142,
+              166
+            ]
+          }
+        ],
+        "chapter_key": "e2e2f89f34",
+        "metadata": {
+          "volume_id": "13b5f240b4e0",
+          "file_id": "13b5f240b4e0",
+          "volume_title": "普通高中教科书 化学 选择性必修3 有机化学基础",
+          "chapter_order": 3,
+          "raw_heading": "第3章 有机合成及其应用 合成高分子化合物"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "f4fb56b27c": [
+        12,
+        20
+      ],
+      "第 1 节 认识有机化学": [
+        12,
+        20
+      ],
+      "2e5cdd0323": [
+        20,
+        32
+      ],
+      "第 2 节 有机化合物的结构与性质": [
+        20,
+        32
+      ],
+      "a680e7f47f": [
+        32,
+        56
+      ],
+      "第 3 节 烃": [
+        32,
+        56
+      ],
+      "bff7d2d029": [
+        58,
+        66
+      ],
+      "第 1 节 有机化学反应类型": [
+        58,
+        66
+      ],
+      "70c28ac8a2": [
+        66,
+        79
+      ],
+      "第 2 节 醇和酚": [
+        66,
+        79
+      ],
+      "25812181f9": [
+        79,
+        94
+      ],
+      "第 3 节 醛和酮 糖类和核酸": [
+        79,
+        94
+      ],
+      "7624c86b30": [
+        94,
+        120
+      ],
+      "第 4 节 羧酸 氨基酸和蛋白质": [
+        94,
+        120
+      ],
+      "ed4bd3d1a1": [
+        122,
+        130
+      ],
+      "第 1 节 有机化合物的合成": [
+        122,
+        130
+      ],
+      "d7eadf8df4": [
+        130,
+        142
+      ],
+      "第 2 节 有机化合物结构的测定": [
+        130,
+        142
+      ],
+      "08ce5406a5": [
+        142,
+        166
+      ],
+      "第 3 节 合成高分子化合物": [
+        142,
+        166
+      ]
+    }
+  }
+}

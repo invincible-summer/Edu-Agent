@@ -1,0 +1,3343 @@
+{
+  "file_id": "53e75f5c6120",
+  "text_sha256": "566461ff1cfb83071f5e8c0e98b06b4599a7727f2d8a103e73a8e4dfc684beff",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 发酵工程",
+        "concepts": [
+          {
+            "name": "微生物",
+            "difficulty": 1,
+            "description": "包括细菌、真菌、病毒及一些原生生物等",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "微生物是难以用肉眼观察的微小生物的统称。",
+            "example": "乳酸菌和酵母菌都属于微生物。"
+          },
+          {
+            "name": "发酵",
+            "difficulty": 2,
+            "description": "微生物在适宜条件下将原料转化为所需产物",
+            "aliases": [
+              "微生物发酵"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "发酵是利用微生物将原料通过代谢转化为所需产物的过程。",
+            "example": "酵母菌将葡萄汁发酵成果酒。"
+          },
+          {
+            "name": "传统发酵技术",
+            "difficulty": 2,
+            "description": "利用天然或传代微生物制作传统食品的技术",
+            "aliases": [],
+            "prerequisites": [
+              "发酵"
+            ],
+            "definition": "传统发酵技术是利用天然微生物或发酵物中的微生物制作食品的技术。",
+            "example": "利用天然乳酸菌制作泡菜。"
+          },
+          {
+            "name": "发酵工程",
+            "difficulty": 3,
+            "description": "利用微生物特定功能规模化生产有用产品",
+            "aliases": [],
+            "prerequisites": [
+              "发酵"
+            ],
+            "definition": "发酵工程是利用微生物的特定功能，通过现代工程技术规模化生产有用产品的技术。",
+            "example": "利用微生物发酵大规模生产青霉素。"
+          },
+          {
+            "name": "乳酸菌",
+            "difficulty": 2,
+            "description": "无氧时将葡萄糖分解成乳酸的厌氧细菌",
+            "aliases": [
+              "乳酸杆菌",
+              "乳酸链球菌"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "乳酸菌是一类在无氧条件下能将葡萄糖分解成乳酸的厌氧细菌。",
+            "example": "乳酸菌用于泡菜腌制和乳制品发酵。"
+          },
+          {
+            "name": "酵母菌",
+            "difficulty": 2,
+            "description": "能进行酒精发酵的单细胞真菌",
+            "aliases": [
+              "酿酒酵母"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "酵母菌是一类能利用多种糖类并在无氧条件下进行酒精发酵的单细胞真菌。",
+            "example": "酵母菌用于酿酒和制作面包。"
+          },
+          {
+            "name": "醋酸菌",
+            "difficulty": 2,
+            "description": "有氧时将糖或乙醇转化为乙酸的细菌",
+            "aliases": [],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "醋酸菌是能在有氧条件下将糖或乙醇转化为乙酸的好氧细菌。",
+            "example": "醋酸菌将葡萄酒进一步发酵成果醋。",
+            "section": "第1节 传统发酵技术的应用"
+          },
+          {
+            "name": "酒精发酵",
+            "difficulty": 2,
+            "description": "酵母菌无氧分解葡萄糖产生酒精和二氧化碳",
+            "aliases": [],
+            "prerequisites": [
+              "酵母菌"
+            ],
+            "definition": "酒精发酵是酵母菌在无氧条件下将葡萄糖转化为酒精和二氧化碳的过程。",
+            "example": "葡萄汁经酒精发酵形成葡萄酒。",
+            "section": "第1节 传统发酵技术的应用"
+          },
+          {
+            "name": "醋酸发酵",
+            "difficulty": 2,
+            "description": "醋酸菌有氧将糖或乙醇转化为乙酸",
+            "aliases": [],
+            "prerequisites": [
+              "醋酸菌"
+            ],
+            "definition": "醋酸发酵是醋酸菌在有氧条件下生成乙酸的发酵过程。",
+            "example": "醋酸菌将乙醇转化为乙酸。"
+          },
+          {
+            "name": "泡菜制作",
+            "difficulty": 2,
+            "description": "利用植物表面天然乳酸菌进行无氧发酵",
+            "aliases": [],
+            "prerequisites": [
+              "乳酸菌",
+              "传统发酵技术"
+            ],
+            "definition": "泡菜制作是利用植物体表面的天然乳酸菌进行发酵的过程。",
+            "example": "蔬菜浸没在盐水中密封腌制成泡菜。",
+            "section": "第1节 传统发酵技术的应用"
+          },
+          {
+            "name": "腐乳发酵",
+            "difficulty": 2,
+            "description": "毛霉等微生物分解豆腐蛋白质制作腐乳",
+            "aliases": [],
+            "prerequisites": [
+              "传统发酵技术"
+            ],
+            "definition": "腐乳发酵是利用毛霉等微生物分解豆腐蛋白质制作腐乳的过程。",
+            "example": "毛霉将豆腐蛋白质分解成肽和氨基酸。"
+          },
+          {
+            "name": "培养基",
+            "difficulty": 2,
+            "description": "供微生物生长、分离、鉴定或保存的营养基质",
+            "aliases": [],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "培养基是按照微生物营养需求配制的培养微生物的营养基质。",
+            "example": "牛肉膏蛋白胨培养基用于培养细菌。"
+          },
+          {
+            "name": "液体培养基",
+            "difficulty": 1,
+            "description": "不含凝固剂、呈液体状态的培养基",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "液体培养基是不含凝固剂且呈液体状态的培养基。",
+            "example": "锥形瓶中的液体培养基用于扩大培养。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "固体培养基",
+            "difficulty": 1,
+            "description": "呈固体状态、可供微生物形成菌落的培养基",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "固体培养基是呈固体状态并可支持微生物生长的培养基。",
+            "example": "琼脂固体培养基用于分离酵母菌。"
+          },
+          {
+            "name": "无菌技术",
+            "difficulty": 3,
+            "description": "防止杂菌污染并获得纯净培养物的技术",
+            "aliases": [],
+            "prerequisites": [
+              "微生物",
+              "培养基"
+            ],
+            "definition": "无菌技术是围绕避免杂菌污染而采取的操作技术。",
+            "example": "接种在酒精灯火焰附近进行。"
+          },
+          {
+            "name": "消毒",
+            "difficulty": 2,
+            "description": "杀死物体内外一部分微生物的方法",
+            "aliases": [],
+            "prerequisites": [
+              "无菌技术"
+            ],
+            "definition": "消毒是使用较温和的方法杀死物体表面或内部一部分微生物。",
+            "example": "用酒精擦拭双手。"
+          },
+          {
+            "name": "灭菌",
+            "difficulty": 2,
+            "description": "杀死物体内外所有微生物的方法",
+            "aliases": [],
+            "prerequisites": [
+              "无菌技术"
+            ],
+            "definition": "灭菌是使用强烈理化方法杀死物体内外所有微生物的方法。",
+            "example": "培养基采用高压蒸汽灭菌。"
+          },
+          {
+            "name": "培养物",
+            "difficulty": 2,
+            "description": "接种于培养基并适宜培养后形成的微生物群体",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "培养物是接种于培养基内并在适宜条件下形成的微生物群体。",
+            "example": "培养液中的酵母菌群体是培养物。"
+          },
+          {
+            "name": "纯培养物",
+            "difficulty": 3,
+            "description": "由单一个体繁殖形成的特定微生物群体",
+            "aliases": [],
+            "prerequisites": [
+              "培养物"
+            ],
+            "definition": "纯培养物是由单一个体繁殖获得的含特定种类微生物的群体。",
+            "example": "由单菌落培养得到酵母菌纯培养物。"
+          },
+          {
+            "name": "菌落",
+            "difficulty": 2,
+            "description": "微生物在固体培养基上形成的肉眼可见群体",
+            "aliases": [],
+            "prerequisites": [
+              "固体培养基"
+            ],
+            "definition": "菌落是分散微生物在固体培养基上繁殖形成的肉眼可见群体。",
+            "example": "培养皿表面的圆形酵母菌菌落。"
+          },
+          {
+            "name": "平板划线法",
+            "difficulty": 2,
+            "description": "通过连续划线逐步稀释分散菌种的方法",
+            "aliases": [],
+            "prerequisites": [
+              "固体培养基",
+              "无菌技术"
+            ],
+            "definition": "平板划线法是通过在固体培养基表面连续划线使菌种逐步分散的方法。",
+            "example": "连续划线后获得分离的酵母菌单菌落。"
+          },
+          {
+            "name": "稀释涂布平板法",
+            "difficulty": 3,
+            "description": "将稀释菌液均匀涂布在固体培养基表面",
+            "aliases": [],
+            "prerequisites": [
+              "固体培养基",
+              "无菌技术"
+            ],
+            "definition": "稀释涂布平板法是将稀释后的菌液均匀涂布于固体培养基表面的接种方法。",
+            "example": "将土壤稀释液涂布在选择培养基上。"
+          },
+          {
+            "name": "选择培养基",
+            "difficulty": 3,
+            "description": "促进目的微生物生长并抑制其他微生物",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "选择培养基是允许特定微生物生长并抑制其他微生物生长的培养基。",
+            "example": "以尿素为唯一氮源筛选分解尿素的细菌。"
+          },
+          {
+            "name": "活菌计数",
+            "difficulty": 3,
+            "description": "通过菌落数推测样品中活菌数量的方法",
+            "aliases": [],
+            "prerequisites": [
+              "菌落",
+              "稀释涂布平板法"
+            ],
+            "definition": "活菌计数是利用平板上的菌落数推测样品中活菌数量的方法。",
+            "example": "选择菌落数30到300的平板进行计数。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "直接计数",
+            "difficulty": 2,
+            "description": "借助计数板和显微镜直接统计微生物数量",
+            "aliases": [
+              "显微镜直接计数"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "直接计数是利用计数板在显微镜下观察并统计一定体积样品中微生物数量的方法。",
+            "example": "用血细胞计数板计数酵母菌。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "高通量筛选",
+            "difficulty": 4,
+            "description": "自动化同时筛选大量微生物样品的技术",
+            "aliases": [
+              "微生物菌种高通量筛选"
+            ],
+            "prerequisites": [
+              "选择培养基"
+            ],
+            "definition": "高通量筛选是借助微孔板、自动化系统和检测仪器同时筛选大量样品的技术。",
+            "example": "从上千份诱变菌液中筛选高产菌株。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "菌种选育",
+            "difficulty": 3,
+            "description": "筛选或改造获得性状优良生产菌种",
+            "aliases": [
+              "菌种育种"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "菌种选育是通过自然筛选、诱变育种或基因工程育种获得优良菌种的过程。",
+            "example": "选育产酸量高的黑曲霉。",
+            "section": "第3节 发酵工程及其应用"
+          },
+          {
+            "name": "扩大培养",
+            "difficulty": 2,
+            "description": "在发酵前增加接入生产所需菌种体积",
+            "aliases": [],
+            "prerequisites": [
+              "菌种选育"
+            ],
+            "definition": "扩大培养是在发酵前逐步培养菌种以获得足够接种体积的过程。",
+            "example": "将少量菌种培养至可接入大型发酵罐。"
+          },
+          {
+            "name": "发酵条件控制",
+            "difficulty": 4,
+            "description": "对温度、pH、溶解氧等参数进行监测调节",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "发酵条件控制是对发酵过程中的环境参数进行监测和调节以维持最佳状态。",
+            "example": "计算机反馈控制发酵罐的温度和pH。"
+          },
+          {
+            "name": "产物分离提纯",
+            "difficulty": 3,
+            "description": "从发酵液中分离并纯化目标产品",
+            "aliases": [
+              "产品的分离和提纯"
+            ],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "产物分离提纯是根据产品性质从发酵液中提取、分离和纯化产品的过程。",
+            "example": "过滤分离菌体并对代谢物进行纯化。"
+          },
+          {
+            "name": "微生物肥料",
+            "difficulty": 2,
+            "description": "利用微生物或其代谢物改善土壤和促进植物生长",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "微生物肥料是利用微生物代谢产生的物质增进土壤肥力并促进植物生长的产品。",
+            "example": "根瘤菌肥促进豆科植物生长。",
+            "section": "第3节 发酵工程及其应用"
+          },
+          {
+            "name": "微生物农药",
+            "difficulty": 2,
+            "description": "利用微生物或其代谢物防治病虫害",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "微生物农药是利用微生物或其代谢物防治农业病虫害的产品。",
+            "example": "苏云金杆菌防治农林害虫。",
+            "section": "第3节 发酵工程及其应用"
+          },
+          {
+            "name": "单细胞蛋白",
+            "difficulty": 3,
+            "description": "由微生物菌体制成的富含蛋白质的产品",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "单细胞蛋白是以微生物菌体为原料获得的富含蛋白质的产品。",
+            "example": "用酵母菌生产微生物饲料。",
+            "section": "第3节 发酵工程及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 传统发酵技术的应用",
+            "page_range": [
+              13,
+              17
+            ]
+          },
+          {
+            "name": "第2节 微生物的培养技术及应用",
+            "page_range": [
+              18,
+              31
+            ]
+          },
+          {
+            "name": "第3节 发酵工程及其应用",
+            "page_range": [
+              31,
+              40
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章 细胞工程",
+        "concepts": [
+          {
+            "name": "细胞工程",
+            "difficulty": 2,
+            "description": "在细胞或组织水平进行有目的操作的综合工程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞工程是利用多学科原理和方法，通过细胞器、细胞或组织水平操作获得特定生物材料或产品的工程。",
+            "example": "利用组织培养快速繁殖兰花"
+          },
+          {
+            "name": "细胞全能性",
+            "difficulty": 3,
+            "description": "细胞具有形成完整生物体或其他细胞的潜能",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞全能性是指细胞经分裂和分化后仍具有形成完整生物体或分化成其他细胞的潜能。",
+            "example": "植物花瓣细胞培养成完整植株",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "基因选择性表达",
+            "difficulty": 3,
+            "description": "细胞因时空条件不同而选择表达部分基因",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基因选择性表达是指细胞在特定时间和空间条件下只表达部分基因。",
+            "example": "芽原基细胞发育为芽"
+          },
+          {
+            "name": "脱分化",
+            "difficulty": 3,
+            "description": "已分化细胞失去特有结构和功能",
+            "aliases": [],
+            "prerequisites": [
+              "细胞全能性"
+            ],
+            "definition": "脱分化是指已分化的植物细胞在适宜条件下失去特有结构和功能，转变为未分化细胞的过程。",
+            "example": "菊花茎段细胞形成愈伤组织"
+          },
+          {
+            "name": "愈伤组织",
+            "difficulty": 2,
+            "description": "脱分化形成的不定形薄壁组织团块",
+            "aliases": [],
+            "prerequisites": [
+              "脱分化"
+            ],
+            "definition": "愈伤组织是植物细胞脱分化后形成的不定形薄壁组织团块。",
+            "example": "外植体切口处形成愈伤组织"
+          },
+          {
+            "name": "再分化",
+            "difficulty": 3,
+            "description": "愈伤组织重新分化形成芽、根等器官",
+            "aliases": [],
+            "prerequisites": [
+              "愈伤组织"
+            ],
+            "definition": "再分化是指愈伤组织在适宜条件下重新分化形成芽、根等器官的过程。",
+            "example": "愈伤组织先长芽后生根"
+          },
+          {
+            "name": "植物组织培养",
+            "difficulty": 2,
+            "description": "离体植物材料在培养基上形成完整植株",
+            "aliases": [
+              "植物组织培养技术",
+              "plant tissue culture"
+            ],
+            "prerequisites": [
+              "细胞全能性"
+            ],
+            "definition": "植物组织培养是将离体植物器官、组织或细胞培养在适宜培养基上并诱导形成完整植株的技术。",
+            "example": "用菊花茎段培育试管苗"
+          },
+          {
+            "name": "外植体",
+            "difficulty": 2,
+            "description": "用于离体培养的植物器官、组织或细胞",
+            "aliases": [],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "外植体是指用于离体培养的植物器官、组织或细胞。",
+            "example": "菊花幼嫩茎段可作外植体",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "植物体细胞杂交",
+            "difficulty": 3,
+            "description": "不同植物体细胞融合并培育成新植株",
+            "aliases": [
+              "植物体细胞杂交技术",
+              "plant somatic hybridization"
+            ],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "植物体细胞杂交是将不同来源的植物体细胞融合成杂种细胞并培育成新植物体的技术。",
+            "example": "培育白菜—甘蓝杂种植株"
+          },
+          {
+            "name": "原生质体",
+            "difficulty": 3,
+            "description": "去除植物细胞壁后获得的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "植物体细胞杂交"
+            ],
+            "definition": "原生质体是利用纤维素酶和果胶酶去除植物细胞壁后获得的细胞。",
+            "example": "烟草叶肉细胞原生质体"
+          },
+          {
+            "name": "原生质体融合",
+            "difficulty": 3,
+            "description": "不同原生质体在诱导下融合成杂种细胞",
+            "aliases": [],
+            "prerequisites": [
+              "原生质体"
+            ],
+            "definition": "原生质体融合是借助物理或化学方法使不同植物原生质体融合形成杂种细胞的过程。",
+            "example": "用PEG诱导烟草原生质体融合"
+          },
+          {
+            "name": "快速繁殖",
+            "difficulty": 2,
+            "description": "利用组织培养快速大量繁殖优良品种",
+            "aliases": [
+              "微型繁殖",
+              "植物快速繁殖技术"
+            ],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "快速繁殖是利用植物组织培养高效、快速、大量繁殖优良品种并保持其遗传特性的技术。",
+            "example": "规模化繁殖名贵兰花"
+          },
+          {
+            "name": "作物脱毒",
+            "difficulty": 2,
+            "description": "通过茎尖培养获得可能不带病毒的植株",
+            "aliases": [
+              "脱毒苗"
+            ],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "作物脱毒是切取病毒较少的茎尖等组织进行培养，以获得不带病毒再生植株的技术。",
+            "example": "茎尖培养获得脱毒马铃薯"
+          },
+          {
+            "name": "单倍体育种",
+            "difficulty": 3,
+            "description": "花药或花粉培养并加倍染色体培育新品种",
+            "aliases": [],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "单倍体育种是先由花药或花粉培养获得单倍体植株，再诱导染色体加倍培育稳定纯合植株的方法。",
+            "example": "花药培养培育单育1号烟草",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "突变体利用",
+            "difficulty": 3,
+            "description": "筛选培养和诱变产生的有利突变体育种",
+            "aliases": [],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "突变体利用是从组织培养细胞产生的突变个体中筛选有利突变体并培育新品种的方法。",
+            "example": "筛选抗盐碱烟草突变体"
+          },
+          {
+            "name": "次生代谢物",
+            "difficulty": 3,
+            "description": "非植物基本生命活动必需的小分子有机物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "次生代谢物是植物产生的、通常不是其基本生命活动所必需的小分子有机化合物。",
+            "example": "紫草宁和紫杉醇",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "植物细胞培养",
+            "difficulty": 3,
+            "description": "离体培养植物细胞或细胞团使其增殖",
+            "aliases": [],
+            "prerequisites": [
+              "次生代谢物"
+            ],
+            "definition": "植物细胞培养是在离体条件下培养单个植物细胞或细胞团使其增殖的技术。",
+            "example": "培养人参细胞生产人参皂苷",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "动物细胞培养",
+            "difficulty": 2,
+            "description": "动物组织分散成细胞后在体外培养增殖",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "动物细胞培养是将动物组织处理成细胞悬液后，在适宜体外条件下培养细胞的技术。",
+            "example": "体外培养蝌蚪神经元"
+          },
+          {
+            "name": "原代培养",
+            "difficulty": 2,
+            "description": "动物组织经处理后的初次细胞培养",
+            "aliases": [],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "原代培养是指动物组织经处理后进行的第一次细胞培养。",
+            "example": "组织制成细胞悬液后首次培养",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "传代培养",
+            "difficulty": 2,
+            "description": "分瓶后继续进行的动物细胞培养",
+            "aliases": [],
+            "prerequisites": [
+              "原代培养"
+            ],
+            "definition": "传代培养是将原代培养中增殖到一定程度的细胞分瓶后继续培养的过程。",
+            "example": "贴壁细胞经胰蛋白酶处理后分瓶",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "干细胞",
+            "difficulty": 2,
+            "description": "具有自我更新能力和分化潜能的细胞",
+            "aliases": [
+              "stem cell"
+            ],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "干细胞是具有自我更新能力并能在一定条件下分化成其他类型细胞的细胞。",
+            "example": "骨髓中的造血干细胞"
+          },
+          {
+            "name": "胚胎干细胞",
+            "difficulty": 3,
+            "description": "来源于早期胚胎且具有广泛分化潜能的细胞",
+            "aliases": [
+              "ES细胞",
+              "embryonic stem cell"
+            ],
+            "prerequisites": [
+              "干细胞"
+            ],
+            "definition": "胚胎干细胞是存在于早期胚胎中、能够分化为成年动物各种细胞并形成组织器官的细胞。",
+            "example": "小鼠ES细胞分化为神经元"
+          },
+          {
+            "name": "成体干细胞",
+            "difficulty": 3,
+            "description": "存在于成体组织且具有组织特异性的干细胞",
+            "aliases": [],
+            "prerequisites": [
+              "干细胞"
+            ],
+            "definition": "成体干细胞是存在于成体组织或器官中、通常只能分化成特定细胞或组织的干细胞。",
+            "example": "骨髓造血干细胞",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "诱导多能干细胞",
+            "difficulty": 3,
+            "description": "体细胞经体外诱导形成的类似胚胎干细胞",
+            "aliases": [
+              "iPS细胞",
+              "iPS细胞"
+            ],
+            "prerequisites": [
+              "干细胞"
+            ],
+            "definition": "诱导多能干细胞是已分化体细胞经体外诱导形成的、具有类似胚胎干细胞分化能力的细胞。",
+            "example": "成纤维细胞诱导为iPS细胞",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "动物细胞融合",
+            "difficulty": 2,
+            "description": "两个或多个动物细胞结合形成一个细胞",
+            "aliases": [
+              "动物细胞融合技术",
+              "cell fusion technique"
+            ],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "动物细胞融合是使两个或多个动物细胞结合形成一个细胞的技术。",
+            "example": "用PEG诱导骨髓瘤细胞融合"
+          },
+          {
+            "name": "杂交瘤",
+            "difficulty": 3,
+            "description": "融合B淋巴细胞与骨髓瘤细胞形成的细胞",
+            "aliases": [
+              "杂交瘤技术",
+              "hybridoma"
+            ],
+            "prerequisites": [
+              "动物细胞融合"
+            ],
+            "definition": "杂交瘤是B淋巴细胞与骨髓瘤细胞融合形成的、兼具抗体分泌和大量增殖能力的细胞。",
+            "example": "筛选能分泌特异抗体的杂交瘤",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "单克隆抗体",
+            "difficulty": 3,
+            "description": "由单一B淋巴细胞克隆产生的特异抗体",
+            "aliases": [
+              "单克隆抗体技术"
+            ],
+            "prerequisites": [
+              "杂交瘤"
+            ],
+            "definition": "单克隆抗体是由单一B淋巴细胞克隆产生、能特异性识别同一抗原的抗体。",
+            "example": "早早孕诊断试剂盒"
+          },
+          {
+            "name": "抗体药物偶联物",
+            "difficulty": 3,
+            "description": "抗体、接头和药物组成的靶向药物",
+            "aliases": [
+              "ADC",
+              "抗体—药物偶联物"
+            ],
+            "prerequisites": [
+              "单克隆抗体"
+            ],
+            "definition": "抗体药物偶联物是将细胞毒素等药物通过接头连接到特异性抗体上的药物。",
+            "example": "利用ADC选择性杀伤肿瘤细胞",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "动物细胞核移植",
+            "difficulty": 3,
+            "description": "将细胞核移入去核卵母细胞形成新胚胎",
+            "aliases": [
+              "核移植",
+              "nuclear transplantation"
+            ],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "动物细胞核移植是将一个动物细胞的细胞核移入去核卵母细胞并使其发育成个体的技术。",
+            "example": "培育克隆牛"
+          },
+          {
+            "name": "体细胞核移植",
+            "difficulty": 3,
+            "description": "以动物体细胞细胞核为供体进行核移植",
+            "aliases": [
+              "动物体细胞核移植技术"
+            ],
+            "prerequisites": [
+              "动物细胞核移植"
+            ],
+            "definition": "体细胞核移植是将动物体细胞的细胞核移入去核卵母细胞并培育克隆动物的技术。",
+            "example": "体细胞克隆猴",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "重构胚",
+            "difficulty": 3,
+            "description": "供体细胞核与去核卵母细胞重组形成的胚胎",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞核移植"
+            ],
+            "definition": "重构胚是供体细胞核进入去核卵母细胞后经融合和激活人工重新构建的胚胎。",
+            "example": "激活重构胚后移入受体"
+          },
+          {
+            "name": "克隆动物",
+            "difficulty": 2,
+            "description": "通过无性繁殖技术获得的遗传物质相近动物",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞核移植"
+            ],
+            "definition": "克隆动物是通过核移植或胚胎分割等无性繁殖技术获得的动物。",
+            "example": "克隆羊多莉"
+          },
+          {
+            "name": "精子获能",
+            "difficulty": 3,
+            "description": "精子获得与卵子受精能力的过程",
+            "aliases": [
+              "获能"
+            ],
+            "prerequisites": [],
+            "definition": "精子获能是精子在雌性生殖道或体外处理后获得受精能力的过程。",
+            "example": "体外处理精液使精子获能",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "体外受精",
+            "difficulty": 2,
+            "description": "在体外促使成熟卵子和获能精子完成受精",
+            "aliases": [
+              "体外受精技术"
+            ],
+            "prerequisites": [
+              "精子获能"
+            ],
+            "definition": "体外受精是将成熟卵子和获能精子置于适宜培养液中使其完成受精的技术。",
+            "example": "培育试管牛"
+          },
+          {
+            "name": "胚胎工程",
+            "difficulty": 2,
+            "description": "围绕配子、早期胚胎进行操作的综合技术",
+            "aliases": [],
+            "prerequisites": [
+              "体外受精"
+            ],
+            "definition": "胚胎工程是以动物受精和早期胚胎发育规律为基础，对胚胎进行操作并应用的技术体系。",
+            "example": "体外受精后进行胚胎移植",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "卵裂",
+            "difficulty": 2,
+            "description": "受精卵早期细胞数增加而总体积不变的分裂",
+            "aliases": [],
+            "prerequisites": [
+              "体外受精"
+            ],
+            "definition": "卵裂是受精卵在透明带内进行的早期有丝分裂过程，其细胞数增加而胚胎总体积不增加。",
+            "example": "受精卵连续分裂形成八细胞胚",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "桑葚胚",
+            "difficulty": 2,
+            "description": "卵裂细胞形成致密细胞团的胚胎阶段",
+            "aliases": [],
+            "prerequisites": [
+              "卵裂"
+            ],
+            "definition": "桑葚胚是卵裂产生的子细胞逐渐形成致密细胞团、形似桑葚时的胚胎阶段。",
+            "example": "小鼠胚胎发育至桑葚胚",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "囊胚",
+            "difficulty": 3,
+            "description": "具有囊胚腔并出现内细胞团的胚胎阶段",
+            "aliases": [],
+            "prerequisites": [
+              "桑葚胚"
+            ],
+            "definition": "囊胚是胚胎内部形成囊胚腔并分化出内细胞团和滋养层细胞的阶段。",
+            "example": "囊胚内细胞团将形成胎儿组织",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "胚胎移植",
+            "difficulty": 2,
+            "description": "将胚胎移入同种同期受体体内继续发育",
+            "aliases": [
+              "embryo transfer"
+            ],
+            "prerequisites": [
+              "胚胎工程"
+            ],
+            "definition": "胚胎移植是将获得的胚胎移植到同种且生理状态相同的雌性动物体内使其继续发育的技术。",
+            "example": "将良种牛胚胎移入受体母牛",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "超数排卵",
+            "difficulty": 3,
+            "description": "诱导雌性动物排出更多成熟卵子的处理",
+            "aliases": [],
+            "prerequisites": [
+              "胚胎移植"
+            ],
+            "definition": "超数排卵是应用外源促性腺激素诱发卵巢排出多于自然情况的成熟卵子的处理。",
+            "example": "供体母牛接受超数排卵处理",
+            "section": "第3节 胚胎工程"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 植物细胞工程",
+            "page_range": [
+              43,
+              51
+            ]
+          },
+          {
+            "name": "第2节 动物细胞工程",
+            "page_range": [
+              52,
+              65
+            ]
+          },
+          {
+            "name": "第3节 胚胎工程",
+            "page_range": [
+              65,
+              76
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章 基因工程",
+        "concepts": [
+          {
+            "name": "基因工程",
+            "difficulty": 2,
+            "description": "按人们愿望改造生物遗传特性并获得产品",
+            "aliases": [
+              "重组DNA技术"
+            ],
+            "prerequisites": [],
+            "definition": "基因工程是通过转基因等技术赋予生物新的遗传特性，创造新生物类型和产品的工程。",
+            "example": "将抗虫基因导入棉花培育抗虫棉"
+          },
+          {
+            "name": "限制性内切核酸酶",
+            "difficulty": 2,
+            "description": "识别特定序列并切断DNA磷酸二酯键",
+            "aliases": [
+              "限制酶"
+            ],
+            "prerequisites": [],
+            "definition": "限制酶能识别双链DNA中特定核苷酸序列并切断特定位置的磷酸二酯键。",
+            "example": "EcoRⅠ切割含特定识别序列的DNA"
+          },
+          {
+            "name": "黏性末端",
+            "difficulty": 2,
+            "description": "限制酶错位切割形成的单链突出末端",
+            "aliases": [],
+            "prerequisites": [
+              "限制性内切核酸酶"
+            ],
+            "definition": "黏性末端是限制酶在识别序列中轴线两侧错位切割DNA形成的末端。",
+            "example": "EcoRⅠ切割DNA产生黏性末端",
+            "section": "第1节 重组DNA技术的基本工具"
+          },
+          {
+            "name": "平末端",
+            "difficulty": 2,
+            "description": "限制酶在中轴线处切割形成的平齐末端",
+            "aliases": [],
+            "prerequisites": [
+              "限制性内切核酸酶"
+            ],
+            "definition": "平末端是限制酶在识别序列中心轴线处切割DNA形成的末端。",
+            "example": "SmaⅠ切割DNA产生平末端",
+            "section": "第1节 重组DNA技术的基本工具"
+          },
+          {
+            "name": "DNA连接酶",
+            "difficulty": 2,
+            "description": "连接DNA片段并恢复磷酸二酯键",
+            "aliases": [],
+            "prerequisites": [
+              "限制性内切核酸酶"
+            ],
+            "definition": "DNA连接酶能将DNA片段连接起来并恢复被切开的磷酸二酯键。",
+            "example": "连接目的基因与质粒的切口"
+          },
+          {
+            "name": "质粒",
+            "difficulty": 2,
+            "description": "细胞中独立存在且能自我复制的环状DNA",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "质粒是独立于细胞核或拟核DNA之外并具有自我复制能力的环状双链DNA分子。",
+            "example": "大肠杆菌中的质粒"
+          },
+          {
+            "name": "基因工程载体",
+            "difficulty": 2,
+            "description": "将外源基因导入受体细胞的运输工具",
+            "aliases": [
+              "载体"
+            ],
+            "prerequisites": [
+              "质粒"
+            ],
+            "definition": "基因工程载体是携带外源DNA并将其导入受体细胞的DNA分子。",
+            "example": "用质粒将目的基因导入大肠杆菌"
+          },
+          {
+            "name": "目的基因",
+            "difficulty": 2,
+            "description": "用于改变性状或获得预期产物的基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因工程"
+            ],
+            "definition": "目的基因是用于改变受体细胞性状或获得预期表达产物的基因。",
+            "example": "Bt抗虫蛋白基因是抗虫棉的目的基因"
+          },
+          {
+            "name": "基因表达载体",
+            "difficulty": 3,
+            "description": "含目的基因及调控元件的重组载体",
+            "aliases": [],
+            "prerequisites": [
+              "目的基因",
+              "基因工程载体",
+              "DNA连接酶"
+            ],
+            "definition": "基因表达载体是在载体中加入目的基因、启动子、终止子等元件而形成的载体。",
+            "example": "含Bt基因、启动子和终止子的重组质粒"
+          },
+          {
+            "name": "启动子",
+            "difficulty": 3,
+            "description": "位于基因上游并驱动转录的DNA片段",
+            "aliases": [],
+            "prerequisites": [
+              "基因表达载体"
+            ],
+            "definition": "启动子是位于基因上游、供RNA聚合酶识别和结合并驱动转录的DNA片段。",
+            "example": "在目的基因上游加入植物启动子"
+          },
+          {
+            "name": "终止子",
+            "difficulty": 3,
+            "description": "使转录在特定位置停止的DNA片段",
+            "aliases": [],
+            "prerequisites": [
+              "基因表达载体"
+            ],
+            "definition": "终止子是位于基因下游并使转录在所需位置停止的特殊DNA片段。",
+            "example": "在目的基因下游设置终止子",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR",
+            "difficulty": 3,
+            "description": "在体外大量扩增特定DNA片段的技术",
+            "aliases": [
+              "聚合酶链式反应"
+            ],
+            "prerequisites": [
+              "DNA半保留复制"
+            ],
+            "definition": "PCR是在体外提供复制条件并通过循环反应大量复制目的基因的技术。",
+            "example": "用PCR扩增Bt抗虫基因",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "引物",
+            "difficulty": 3,
+            "description": "与DNA模板互补配对的短单链核酸",
+            "aliases": [],
+            "prerequisites": [
+              "PCR"
+            ],
+            "definition": "引物是能与DNA母链特定序列互补配对并为DNA合成提供起点的短单链核酸。",
+            "example": "PCR中分别结合两条模板链的两种引物",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR变性",
+            "difficulty": 2,
+            "description": "高温使双链DNA解聚为单链的过程",
+            "aliases": [
+              "变性"
+            ],
+            "prerequisites": [
+              "PCR"
+            ],
+            "definition": "PCR变性是温度超过90℃时双链DNA解聚成两条单链的过程。",
+            "example": "PCR循环中94℃处理使DNA变性",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR复性",
+            "difficulty": 2,
+            "description": "引物与单链DNA互补结合的过程",
+            "aliases": [
+              "复性"
+            ],
+            "prerequisites": [
+              "PCR",
+              "引物"
+            ],
+            "definition": "PCR复性是温度降低后引物通过碱基互补配对与模板单链结合的过程。",
+            "example": "约50℃时引物结合模板",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR延伸",
+            "difficulty": 2,
+            "description": "DNA聚合酶合成新DNA链的过程",
+            "aliases": [
+              "延伸"
+            ],
+            "prerequisites": [
+              "PCR",
+              "引物"
+            ],
+            "definition": "PCR延伸是耐高温DNA聚合酶根据碱基互补配对合成新DNA链的过程。",
+            "example": "约72℃时聚合酶延伸合成子链"
+          },
+          {
+            "name": "转化",
+            "difficulty": 3,
+            "description": "目的基因进入细胞并稳定表达的过程",
+            "aliases": [
+              "基因转化"
+            ],
+            "prerequisites": [
+              "目的基因",
+              "基因表达载体"
+            ],
+            "definition": "转化是目的基因进入受体细胞并在其中稳定维持和表达的过程。",
+            "example": "农杆菌将目的基因导入植物细胞"
+          },
+          {
+            "name": "农杆菌转化法",
+            "difficulty": 3,
+            "description": "利用农杆菌将目的基因导入植物细胞",
+            "aliases": [],
+            "prerequisites": [
+              "转化",
+              "基因表达载体"
+            ],
+            "definition": "农杆菌转化法是利用农杆菌Ti质粒上的T-DNA将目的基因导入植物细胞的方法。",
+            "example": "用农杆菌转化法培育转基因烟草",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "目的基因检测",
+            "difficulty": 3,
+            "description": "检测目的基因是否稳定维持并表达",
+            "aliases": [],
+            "prerequisites": [
+              "转化",
+              "PCR"
+            ],
+            "definition": "目的基因检测是从分子和个体生物学层面确认目的基因遗传特性的方法。",
+            "example": "PCR检测染色体上是否插入Bt基因"
+          },
+          {
+            "name": "琼脂糖凝胶电泳",
+            "difficulty": 3,
+            "description": "利用电场分离并鉴定DNA片段",
+            "aliases": [
+              "电泳鉴定"
+            ],
+            "prerequisites": [
+              "PCR"
+            ],
+            "definition": "琼脂糖凝胶电泳是利用DNA带电性质在电场中迁移来分离和鉴定DNA片段的方法。",
+            "example": "用电泳观察PCR产物条带",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "基因工程菌",
+            "difficulty": 2,
+            "description": "经基因改造并高效表达外源基因的菌类",
+            "aliases": [],
+            "prerequisites": [
+              "基因工程",
+              "转化"
+            ],
+            "definition": "基因工程菌是利用基因工程使外源基因得到高效表达的菌类。",
+            "example": "生产重组人胰岛素的大肠杆菌",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "乳腺生物反应器",
+            "difficulty": 3,
+            "description": "利用转基因哺乳动物乳汁生产药物",
+            "aliases": [
+              "乳房生物反应器"
+            ],
+            "prerequisites": [
+              "基因工程",
+              "基因表达载体"
+            ],
+            "definition": "乳腺生物反应器是利用转基因哺乳动物乳腺特异表达药用蛋白的系统。",
+            "example": "转基因山羊乳汁生产抗凝血酶",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "蛋白质工程",
+            "difficulty": 3,
+            "description": "根据需求改造或合成基因以获得新蛋白质",
+            "aliases": [
+              "第二代基因工程"
+            ],
+            "prerequisites": [
+              "基因工程"
+            ],
+            "definition": "蛋白质工程以蛋白质结构与功能关系为基础，通过改造或合成基因获得所需蛋白质。",
+            "example": "改造胰岛素基因制备速效胰岛素",
+            "section": "第4节 蛋白质工程的原理和应用"
+          },
+          {
+            "name": "蛋白质工程思路",
+            "difficulty": 3,
+            "description": "从预期功能反向设计结构、序列和基因",
+            "aliases": [],
+            "prerequisites": [
+              "蛋白质工程"
+            ],
+            "definition": "蛋白质工程思路是从预期功能出发设计结构，推测氨基酸序列并改造或合成相应基因。",
+            "example": "为降低胰岛素聚合作用改造其基因"
+          },
+          {
+            "name": "转基因抗虫植物",
+            "difficulty": 2,
+            "description": "导入抗虫基因后获得抗虫性的植物",
+            "aliases": [],
+            "prerequisites": [
+              "目的基因",
+              "转化"
+            ],
+            "definition": "转基因抗虫植物是导入具有抗虫功能基因并表现抗虫性的植物。",
+            "example": "转基因抗虫棉",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "转基因抗病植物",
+            "difficulty": 2,
+            "description": "导入抗病基因后获得抗病性的植物",
+            "aliases": [],
+            "prerequisites": [
+              "目的基因",
+              "转化"
+            ],
+            "definition": "转基因抗病植物是导入抗病基因并表现抗病性的新植物品种。",
+            "example": "转基因抗病毒番木瓜",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "DNA粗提取",
+            "difficulty": 2,
+            "description": "利用DNA性质从材料中初步分离DNA",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "DNA粗提取是利用DNA在酒精和不同浓度氯化钠溶液中溶解度差异进行初步分离的方法。",
+            "example": "从洋葱研磨液中析出白色DNA丝状物",
+            "section": "第1节 重组DNA技术的基本工具"
+          },
+          {
+            "name": "二苯胺鉴定DNA",
+            "difficulty": 2,
+            "description": "利用二苯胺遇DNA呈蓝色鉴定DNA",
+            "aliases": [],
+            "prerequisites": [
+              "DNA粗提取"
+            ],
+            "definition": "二苯胺鉴定DNA是利用DNA与二苯胺试剂反应呈蓝色来确认DNA的方法。",
+            "example": "粗提取物加二苯胺并水浴后呈蓝色"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 重组DNA技术的基本工具",
+            "page_range": [
+              79,
+              85
+            ]
+          },
+          {
+            "name": "第2节 基因工程的基本操作程序",
+            "page_range": [
+              85,
+              95
+            ]
+          },
+          {
+            "name": "第3节 基因工程的应用",
+            "page_range": [
+              96,
+              101
+            ]
+          },
+          {
+            "name": "第4节 蛋白质工程的原理和应用",
+            "page_range": [
+              102,
+              108
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4章 生物技术的安全性与伦理问题",
+        "concepts": [
+          {
+            "name": "伦理",
+            "difficulty": 1,
+            "description": "人与人之间的道德准则和规则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "伦理是特指人与人之间的道德准则。",
+            "example": "讨论克隆人是否符合伦理"
+          },
+          {
+            "name": "生物技术双刃剑",
+            "difficulty": 2,
+            "description": "生物技术既能造福人类也可能带来危害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物技术在造福人类的同时，使用不当也可能带来潜在危害。",
+            "example": "转基因技术促进农业生产，也引发安全担忧"
+          },
+          {
+            "name": "转基因技术",
+            "difficulty": 2,
+            "description": "通过基因工程改造生物遗传特征的技术",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "转基因技术是利用基因工程改变生物遗传特征的技术。",
+            "example": "培育抗虫转基因作物"
+          },
+          {
+            "name": "转基因产品",
+            "difficulty": 2,
+            "description": "由转基因生物或其成分形成的产品",
+            "aliases": [
+              "农业转基因生物产品"
+            ],
+            "prerequisites": [
+              "转基因技术"
+            ],
+            "definition": "转基因产品是利用基因工程改变基因组构成并用于生产或加工的生物及其产品。",
+            "example": "转基因棉花和转基因番木瓜"
+          },
+          {
+            "name": "安全性评价",
+            "difficulty": 3,
+            "description": "上市前对转基因产品安全性的系统评估",
+            "aliases": [
+              "转基因安全评价"
+            ],
+            "prerequisites": [
+              "转基因产品"
+            ],
+            "definition": "安全性评价是转基因产品上市前依据相关标准进行的安全评估。",
+            "example": "产品通过安全性评价后才能上市",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "基因污染",
+            "difficulty": 3,
+            "description": "转基因生物的遗传物质扩散造成的影响",
+            "aliases": [],
+            "prerequisites": [
+              "转基因技术"
+            ],
+            "definition": "基因污染是转基因生物的遗传物质向其他生物或环境传播的现象。",
+            "example": "转基因花粉传播到非转基因植物",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "转基因标识",
+            "difficulty": 2,
+            "description": "对转基因产品及其加工品进行信息标注",
+            "aliases": [
+              "标识制度"
+            ],
+            "prerequisites": [
+              "转基因产品"
+            ],
+            "definition": "转基因标识是按规定标注产品是否含有转基因生物或其成分的制度。",
+            "example": "标注“转基因××加工品”",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "理性看待转基因",
+            "difficulty": 3,
+            "description": "依据确凿证据和严谨逻辑分析转基因问题",
+            "aliases": [],
+            "prerequisites": [
+              "转基因技术",
+              "安全性评价"
+            ],
+            "definition": "理性看待转基因要求了解技术原理，依据证据和逻辑思考与讨论。",
+            "example": "区分转基因食品争论中的事实与观点",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "生殖性克隆",
+            "difficulty": 3,
+            "description": "通过克隆技术产生独立生存的新个体",
+            "aliases": [
+              "生殖性克隆人"
+            ],
+            "prerequisites": [],
+            "definition": "生殖性克隆是通过克隆技术产生独立生存新个体的技术。",
+            "example": "克隆羊多莉属于生殖性克隆"
+          },
+          {
+            "name": "治疗性克隆",
+            "difficulty": 3,
+            "description": "利用克隆产生细胞组织或器官用于治疗",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "治疗性克隆是利用克隆技术产生特定细胞、组织和器官以治疗疾病。",
+            "example": "产生组织修复所需的细胞",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "体细胞核移植",
+            "difficulty": 3,
+            "description": "将体细胞核移入去核卵母细胞形成重构胚",
+            "aliases": [
+              "核移植"
+            ],
+            "prerequisites": [],
+            "definition": "体细胞核移植是将体细胞的细胞核移入去核卵母细胞中的技术。",
+            "example": "克隆羊多莉的培育过程",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "人类尊严",
+            "difficulty": 3,
+            "description": "人的生命价值和人格不可侵犯的伦理原则",
+            "aliases": [],
+            "prerequisites": [
+              "伦理"
+            ],
+            "definition": "人类尊严强调人的生命价值和人格不应受到侵犯。",
+            "example": "将人像产品一样制造被认为侵犯尊严",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "克隆人伦理问题",
+            "difficulty": 3,
+            "description": "生殖性克隆人引发的尊严家庭和安全问题",
+            "aliases": [],
+            "prerequisites": [
+              "生殖性克隆",
+              "伦理",
+              "人类尊严"
+            ],
+            "definition": "克隆人伦理问题是生殖性克隆人对尊严、家庭关系和社会伦理造成的挑战。",
+            "example": "克隆人的家庭地位难以认定"
+          },
+          {
+            "name": "四不原则",
+            "difficulty": 2,
+            "description": "我国对生殖性克隆人实验的明确立场",
+            "aliases": [],
+            "prerequisites": [
+              "生殖性克隆",
+              "伦理"
+            ],
+            "definition": "四不原则是我国对生殖性克隆人实验不赞成、不允许、不支持、不接受。",
+            "example": "我国禁止任何生殖性克隆人实验",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "iPS细胞",
+            "difficulty": 3,
+            "description": "由体细胞诱导形成的多能干细胞",
+            "aliases": [
+              "诱导多能干细胞",
+              "化学诱导多能干细胞"
+            ],
+            "prerequisites": [],
+            "definition": "iPS细胞是由体细胞经诱导转变而来的多能干细胞。",
+            "example": "用小分子化合物诱导小鼠成纤维细胞",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "设计试管婴儿",
+            "difficulty": 3,
+            "description": "植入前对胚胎进行遗传学诊断的生育方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "设计试管婴儿是通过植入前遗传学诊断选择适合移植的胚胎。",
+            "example": "选择与患病亲属骨髓配型相合的婴儿",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "伦理委员会",
+            "difficulty": 2,
+            "description": "对涉及人的生物医学研究进行伦理审查的机构",
+            "aliases": [
+              "国家医学伦理专家委员会"
+            ],
+            "prerequisites": [
+              "伦理"
+            ],
+            "definition": "伦理委员会负责保护受试者权益、维护尊严并审查研究伦理。",
+            "example": "审查干细胞临床研究方案",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "生物武器",
+            "difficulty": 2,
+            "description": "利用病原体或生化毒剂造成大规模伤害的武器",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物武器包括利用致病菌、病毒和生化毒剂制造的武器。",
+            "example": "炭疽杆菌粉末可被用于制造生物武器",
+            "section": "第3节 禁止生物武器"
+          },
+          {
+            "name": "生物安全",
+            "difficulty": 3,
+            "description": "防范危险生物因子并维护生命与生态安全",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物安全是防范和应对危险生物因子威胁，保障生命健康和生态系统安全。",
+            "example": "加强口岸核生化有害因子防控"
+          },
+          {
+            "name": "禁止生物武器公约",
+            "difficulty": 2,
+            "description": "禁止发展生产储存并要求销毁生物武器的国际公约",
+            "aliases": [
+              "《禁止生物武器公约》"
+            ],
+            "prerequisites": [
+              "生物武器"
+            ],
+            "definition": "禁止生物武器公约要求各方不发展、不生产、不储存并销毁生物武器。",
+            "example": "我国于1984年加入该公约",
+            "section": "第3节 禁止生物武器"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 转基因产品的安全性",
+            "page_range": [
+              110,
+              115
+            ]
+          },
+          {
+            "name": "第2节 关注生殖性克隆人",
+            "page_range": [
+              115,
+              119
+            ]
+          },
+          {
+            "name": "第3节 禁止生物武器",
+            "page_range": [
+              120,
+              130
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 发酵工程",
+        "concepts": [
+          {
+            "name": "微生物",
+            "difficulty": 1,
+            "description": "包括细菌、真菌、病毒及一些原生生物等",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "微生物是难以用肉眼观察的微小生物的统称。",
+            "example": "乳酸菌和酵母菌都属于微生物。"
+          },
+          {
+            "name": "发酵",
+            "difficulty": 2,
+            "description": "微生物在适宜条件下将原料转化为所需产物",
+            "aliases": [
+              "微生物发酵"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "发酵是利用微生物将原料通过代谢转化为所需产物的过程。",
+            "example": "酵母菌将葡萄汁发酵成果酒。"
+          },
+          {
+            "name": "传统发酵技术",
+            "difficulty": 2,
+            "description": "利用天然或传代微生物制作传统食品的技术",
+            "aliases": [],
+            "prerequisites": [
+              "发酵"
+            ],
+            "definition": "传统发酵技术是利用天然微生物或发酵物中的微生物制作食品的技术。",
+            "example": "利用天然乳酸菌制作泡菜。"
+          },
+          {
+            "name": "发酵工程",
+            "difficulty": 3,
+            "description": "利用微生物特定功能规模化生产有用产品",
+            "aliases": [],
+            "prerequisites": [
+              "发酵"
+            ],
+            "definition": "发酵工程是利用微生物的特定功能，通过现代工程技术规模化生产有用产品的技术。",
+            "example": "利用微生物发酵大规模生产青霉素。"
+          },
+          {
+            "name": "乳酸菌",
+            "difficulty": 2,
+            "description": "无氧时将葡萄糖分解成乳酸的厌氧细菌",
+            "aliases": [
+              "乳酸杆菌",
+              "乳酸链球菌"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "乳酸菌是一类在无氧条件下能将葡萄糖分解成乳酸的厌氧细菌。",
+            "example": "乳酸菌用于泡菜腌制和乳制品发酵。"
+          },
+          {
+            "name": "酵母菌",
+            "difficulty": 2,
+            "description": "能进行酒精发酵的单细胞真菌",
+            "aliases": [
+              "酿酒酵母"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "酵母菌是一类能利用多种糖类并在无氧条件下进行酒精发酵的单细胞真菌。",
+            "example": "酵母菌用于酿酒和制作面包。"
+          },
+          {
+            "name": "醋酸菌",
+            "difficulty": 2,
+            "description": "有氧时将糖或乙醇转化为乙酸的细菌",
+            "aliases": [],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "醋酸菌是能在有氧条件下将糖或乙醇转化为乙酸的好氧细菌。",
+            "example": "醋酸菌将葡萄酒进一步发酵成果醋。",
+            "section": "第1节 传统发酵技术的应用"
+          },
+          {
+            "name": "酒精发酵",
+            "difficulty": 2,
+            "description": "酵母菌无氧分解葡萄糖产生酒精和二氧化碳",
+            "aliases": [],
+            "prerequisites": [
+              "酵母菌"
+            ],
+            "definition": "酒精发酵是酵母菌在无氧条件下将葡萄糖转化为酒精和二氧化碳的过程。",
+            "example": "葡萄汁经酒精发酵形成葡萄酒。",
+            "section": "第1节 传统发酵技术的应用"
+          },
+          {
+            "name": "醋酸发酵",
+            "difficulty": 2,
+            "description": "醋酸菌有氧将糖或乙醇转化为乙酸",
+            "aliases": [],
+            "prerequisites": [
+              "醋酸菌"
+            ],
+            "definition": "醋酸发酵是醋酸菌在有氧条件下生成乙酸的发酵过程。",
+            "example": "醋酸菌将乙醇转化为乙酸。"
+          },
+          {
+            "name": "泡菜制作",
+            "difficulty": 2,
+            "description": "利用植物表面天然乳酸菌进行无氧发酵",
+            "aliases": [],
+            "prerequisites": [
+              "乳酸菌",
+              "传统发酵技术"
+            ],
+            "definition": "泡菜制作是利用植物体表面的天然乳酸菌进行发酵的过程。",
+            "example": "蔬菜浸没在盐水中密封腌制成泡菜。",
+            "section": "第1节 传统发酵技术的应用"
+          },
+          {
+            "name": "腐乳发酵",
+            "difficulty": 2,
+            "description": "毛霉等微生物分解豆腐蛋白质制作腐乳",
+            "aliases": [],
+            "prerequisites": [
+              "传统发酵技术"
+            ],
+            "definition": "腐乳发酵是利用毛霉等微生物分解豆腐蛋白质制作腐乳的过程。",
+            "example": "毛霉将豆腐蛋白质分解成肽和氨基酸。"
+          },
+          {
+            "name": "培养基",
+            "difficulty": 2,
+            "description": "供微生物生长、分离、鉴定或保存的营养基质",
+            "aliases": [],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "培养基是按照微生物营养需求配制的培养微生物的营养基质。",
+            "example": "牛肉膏蛋白胨培养基用于培养细菌。"
+          },
+          {
+            "name": "液体培养基",
+            "difficulty": 1,
+            "description": "不含凝固剂、呈液体状态的培养基",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "液体培养基是不含凝固剂且呈液体状态的培养基。",
+            "example": "锥形瓶中的液体培养基用于扩大培养。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "固体培养基",
+            "difficulty": 1,
+            "description": "呈固体状态、可供微生物形成菌落的培养基",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "固体培养基是呈固体状态并可支持微生物生长的培养基。",
+            "example": "琼脂固体培养基用于分离酵母菌。"
+          },
+          {
+            "name": "无菌技术",
+            "difficulty": 3,
+            "description": "防止杂菌污染并获得纯净培养物的技术",
+            "aliases": [],
+            "prerequisites": [
+              "微生物",
+              "培养基"
+            ],
+            "definition": "无菌技术是围绕避免杂菌污染而采取的操作技术。",
+            "example": "接种在酒精灯火焰附近进行。"
+          },
+          {
+            "name": "消毒",
+            "difficulty": 2,
+            "description": "杀死物体内外一部分微生物的方法",
+            "aliases": [],
+            "prerequisites": [
+              "无菌技术"
+            ],
+            "definition": "消毒是使用较温和的方法杀死物体表面或内部一部分微生物。",
+            "example": "用酒精擦拭双手。"
+          },
+          {
+            "name": "灭菌",
+            "difficulty": 2,
+            "description": "杀死物体内外所有微生物的方法",
+            "aliases": [],
+            "prerequisites": [
+              "无菌技术"
+            ],
+            "definition": "灭菌是使用强烈理化方法杀死物体内外所有微生物的方法。",
+            "example": "培养基采用高压蒸汽灭菌。"
+          },
+          {
+            "name": "培养物",
+            "difficulty": 2,
+            "description": "接种于培养基并适宜培养后形成的微生物群体",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "培养物是接种于培养基内并在适宜条件下形成的微生物群体。",
+            "example": "培养液中的酵母菌群体是培养物。"
+          },
+          {
+            "name": "纯培养物",
+            "difficulty": 3,
+            "description": "由单一个体繁殖形成的特定微生物群体",
+            "aliases": [],
+            "prerequisites": [
+              "培养物"
+            ],
+            "definition": "纯培养物是由单一个体繁殖获得的含特定种类微生物的群体。",
+            "example": "由单菌落培养得到酵母菌纯培养物。"
+          },
+          {
+            "name": "菌落",
+            "difficulty": 2,
+            "description": "微生物在固体培养基上形成的肉眼可见群体",
+            "aliases": [],
+            "prerequisites": [
+              "固体培养基"
+            ],
+            "definition": "菌落是分散微生物在固体培养基上繁殖形成的肉眼可见群体。",
+            "example": "培养皿表面的圆形酵母菌菌落。"
+          },
+          {
+            "name": "平板划线法",
+            "difficulty": 2,
+            "description": "通过连续划线逐步稀释分散菌种的方法",
+            "aliases": [],
+            "prerequisites": [
+              "固体培养基",
+              "无菌技术"
+            ],
+            "definition": "平板划线法是通过在固体培养基表面连续划线使菌种逐步分散的方法。",
+            "example": "连续划线后获得分离的酵母菌单菌落。"
+          },
+          {
+            "name": "稀释涂布平板法",
+            "difficulty": 3,
+            "description": "将稀释菌液均匀涂布在固体培养基表面",
+            "aliases": [],
+            "prerequisites": [
+              "固体培养基",
+              "无菌技术"
+            ],
+            "definition": "稀释涂布平板法是将稀释后的菌液均匀涂布于固体培养基表面的接种方法。",
+            "example": "将土壤稀释液涂布在选择培养基上。"
+          },
+          {
+            "name": "选择培养基",
+            "difficulty": 3,
+            "description": "促进目的微生物生长并抑制其他微生物",
+            "aliases": [],
+            "prerequisites": [
+              "培养基"
+            ],
+            "definition": "选择培养基是允许特定微生物生长并抑制其他微生物生长的培养基。",
+            "example": "以尿素为唯一氮源筛选分解尿素的细菌。"
+          },
+          {
+            "name": "活菌计数",
+            "difficulty": 3,
+            "description": "通过菌落数推测样品中活菌数量的方法",
+            "aliases": [],
+            "prerequisites": [
+              "菌落",
+              "稀释涂布平板法"
+            ],
+            "definition": "活菌计数是利用平板上的菌落数推测样品中活菌数量的方法。",
+            "example": "选择菌落数30到300的平板进行计数。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "直接计数",
+            "difficulty": 2,
+            "description": "借助计数板和显微镜直接统计微生物数量",
+            "aliases": [
+              "显微镜直接计数"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "直接计数是利用计数板在显微镜下观察并统计一定体积样品中微生物数量的方法。",
+            "example": "用血细胞计数板计数酵母菌。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "高通量筛选",
+            "difficulty": 4,
+            "description": "自动化同时筛选大量微生物样品的技术",
+            "aliases": [
+              "微生物菌种高通量筛选"
+            ],
+            "prerequisites": [
+              "选择培养基"
+            ],
+            "definition": "高通量筛选是借助微孔板、自动化系统和检测仪器同时筛选大量样品的技术。",
+            "example": "从上千份诱变菌液中筛选高产菌株。",
+            "section": "第2节 微生物的培养技术及应用"
+          },
+          {
+            "name": "菌种选育",
+            "difficulty": 3,
+            "description": "筛选或改造获得性状优良生产菌种",
+            "aliases": [
+              "菌种育种"
+            ],
+            "prerequisites": [
+              "微生物"
+            ],
+            "definition": "菌种选育是通过自然筛选、诱变育种或基因工程育种获得优良菌种的过程。",
+            "example": "选育产酸量高的黑曲霉。",
+            "section": "第3节 发酵工程及其应用"
+          },
+          {
+            "name": "扩大培养",
+            "difficulty": 2,
+            "description": "在发酵前增加接入生产所需菌种体积",
+            "aliases": [],
+            "prerequisites": [
+              "菌种选育"
+            ],
+            "definition": "扩大培养是在发酵前逐步培养菌种以获得足够接种体积的过程。",
+            "example": "将少量菌种培养至可接入大型发酵罐。"
+          },
+          {
+            "name": "发酵条件控制",
+            "difficulty": 4,
+            "description": "对温度、pH、溶解氧等参数进行监测调节",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "发酵条件控制是对发酵过程中的环境参数进行监测和调节以维持最佳状态。",
+            "example": "计算机反馈控制发酵罐的温度和pH。"
+          },
+          {
+            "name": "产物分离提纯",
+            "difficulty": 3,
+            "description": "从发酵液中分离并纯化目标产品",
+            "aliases": [
+              "产品的分离和提纯"
+            ],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "产物分离提纯是根据产品性质从发酵液中提取、分离和纯化产品的过程。",
+            "example": "过滤分离菌体并对代谢物进行纯化。"
+          },
+          {
+            "name": "微生物肥料",
+            "difficulty": 2,
+            "description": "利用微生物或其代谢物改善土壤和促进植物生长",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "微生物肥料是利用微生物代谢产生的物质增进土壤肥力并促进植物生长的产品。",
+            "example": "根瘤菌肥促进豆科植物生长。",
+            "section": "第3节 发酵工程及其应用"
+          },
+          {
+            "name": "微生物农药",
+            "difficulty": 2,
+            "description": "利用微生物或其代谢物防治病虫害",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "微生物农药是利用微生物或其代谢物防治农业病虫害的产品。",
+            "example": "苏云金杆菌防治农林害虫。",
+            "section": "第3节 发酵工程及其应用"
+          },
+          {
+            "name": "单细胞蛋白",
+            "difficulty": 3,
+            "description": "由微生物菌体制成的富含蛋白质的产品",
+            "aliases": [],
+            "prerequisites": [
+              "发酵工程"
+            ],
+            "definition": "单细胞蛋白是以微生物菌体为原料获得的富含蛋白质的产品。",
+            "example": "用酵母菌生产微生物饲料。",
+            "section": "第3节 发酵工程及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 传统发酵技术的应用",
+            "section_key": "ed9657484e",
+            "page_range": [
+              13,
+              17
+            ]
+          },
+          {
+            "name": "第2节 微生物的培养技术及应用",
+            "section_key": "bbcdf07f08",
+            "page_range": [
+              18,
+              31
+            ]
+          },
+          {
+            "name": "第3节 发酵工程及其应用",
+            "section_key": "ddbf59361f",
+            "page_range": [
+              31,
+              40
+            ]
+          }
+        ],
+        "chapter_key": "a0a2dd32c3",
+        "metadata": {
+          "volume_id": "53e75f5c6120",
+          "file_id": "53e75f5c6120",
+          "volume_title": "高中生物 选择性必修3",
+          "chapter_order": 1,
+          "raw_heading": "第1章 发酵工程"
+        }
+      },
+      {
+        "name": "第2章 细胞工程",
+        "concepts": [
+          {
+            "name": "细胞工程",
+            "difficulty": 2,
+            "description": "在细胞或组织水平进行有目的操作的综合工程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞工程是利用多学科原理和方法，通过细胞器、细胞或组织水平操作获得特定生物材料或产品的工程。",
+            "example": "利用组织培养快速繁殖兰花"
+          },
+          {
+            "name": "细胞全能性",
+            "difficulty": 3,
+            "description": "细胞具有形成完整生物体或其他细胞的潜能",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细胞全能性是指细胞经分裂和分化后仍具有形成完整生物体或分化成其他细胞的潜能。",
+            "example": "植物花瓣细胞培养成完整植株",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "基因选择性表达",
+            "difficulty": 3,
+            "description": "细胞因时空条件不同而选择表达部分基因",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "基因选择性表达是指细胞在特定时间和空间条件下只表达部分基因。",
+            "example": "芽原基细胞发育为芽"
+          },
+          {
+            "name": "脱分化",
+            "difficulty": 3,
+            "description": "已分化细胞失去特有结构和功能",
+            "aliases": [],
+            "prerequisites": [
+              "细胞全能性"
+            ],
+            "definition": "脱分化是指已分化的植物细胞在适宜条件下失去特有结构和功能，转变为未分化细胞的过程。",
+            "example": "菊花茎段细胞形成愈伤组织"
+          },
+          {
+            "name": "愈伤组织",
+            "difficulty": 2,
+            "description": "脱分化形成的不定形薄壁组织团块",
+            "aliases": [],
+            "prerequisites": [
+              "脱分化"
+            ],
+            "definition": "愈伤组织是植物细胞脱分化后形成的不定形薄壁组织团块。",
+            "example": "外植体切口处形成愈伤组织"
+          },
+          {
+            "name": "再分化",
+            "difficulty": 3,
+            "description": "愈伤组织重新分化形成芽、根等器官",
+            "aliases": [],
+            "prerequisites": [
+              "愈伤组织"
+            ],
+            "definition": "再分化是指愈伤组织在适宜条件下重新分化形成芽、根等器官的过程。",
+            "example": "愈伤组织先长芽后生根"
+          },
+          {
+            "name": "植物组织培养",
+            "difficulty": 2,
+            "description": "离体植物材料在培养基上形成完整植株",
+            "aliases": [
+              "植物组织培养技术",
+              "plant tissue culture"
+            ],
+            "prerequisites": [
+              "细胞全能性"
+            ],
+            "definition": "植物组织培养是将离体植物器官、组织或细胞培养在适宜培养基上并诱导形成完整植株的技术。",
+            "example": "用菊花茎段培育试管苗"
+          },
+          {
+            "name": "外植体",
+            "difficulty": 2,
+            "description": "用于离体培养的植物器官、组织或细胞",
+            "aliases": [],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "外植体是指用于离体培养的植物器官、组织或细胞。",
+            "example": "菊花幼嫩茎段可作外植体",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "植物体细胞杂交",
+            "difficulty": 3,
+            "description": "不同植物体细胞融合并培育成新植株",
+            "aliases": [
+              "植物体细胞杂交技术",
+              "plant somatic hybridization"
+            ],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "植物体细胞杂交是将不同来源的植物体细胞融合成杂种细胞并培育成新植物体的技术。",
+            "example": "培育白菜—甘蓝杂种植株"
+          },
+          {
+            "name": "原生质体",
+            "difficulty": 3,
+            "description": "去除植物细胞壁后获得的细胞",
+            "aliases": [],
+            "prerequisites": [
+              "植物体细胞杂交"
+            ],
+            "definition": "原生质体是利用纤维素酶和果胶酶去除植物细胞壁后获得的细胞。",
+            "example": "烟草叶肉细胞原生质体"
+          },
+          {
+            "name": "原生质体融合",
+            "difficulty": 3,
+            "description": "不同原生质体在诱导下融合成杂种细胞",
+            "aliases": [],
+            "prerequisites": [
+              "原生质体"
+            ],
+            "definition": "原生质体融合是借助物理或化学方法使不同植物原生质体融合形成杂种细胞的过程。",
+            "example": "用PEG诱导烟草原生质体融合"
+          },
+          {
+            "name": "快速繁殖",
+            "difficulty": 2,
+            "description": "利用组织培养快速大量繁殖优良品种",
+            "aliases": [
+              "微型繁殖",
+              "植物快速繁殖技术"
+            ],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "快速繁殖是利用植物组织培养高效、快速、大量繁殖优良品种并保持其遗传特性的技术。",
+            "example": "规模化繁殖名贵兰花"
+          },
+          {
+            "name": "作物脱毒",
+            "difficulty": 2,
+            "description": "通过茎尖培养获得可能不带病毒的植株",
+            "aliases": [
+              "脱毒苗"
+            ],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "作物脱毒是切取病毒较少的茎尖等组织进行培养，以获得不带病毒再生植株的技术。",
+            "example": "茎尖培养获得脱毒马铃薯"
+          },
+          {
+            "name": "单倍体育种",
+            "difficulty": 3,
+            "description": "花药或花粉培养并加倍染色体培育新品种",
+            "aliases": [],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "单倍体育种是先由花药或花粉培养获得单倍体植株，再诱导染色体加倍培育稳定纯合植株的方法。",
+            "example": "花药培养培育单育1号烟草",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "突变体利用",
+            "difficulty": 3,
+            "description": "筛选培养和诱变产生的有利突变体育种",
+            "aliases": [],
+            "prerequisites": [
+              "植物组织培养"
+            ],
+            "definition": "突变体利用是从组织培养细胞产生的突变个体中筛选有利突变体并培育新品种的方法。",
+            "example": "筛选抗盐碱烟草突变体"
+          },
+          {
+            "name": "次生代谢物",
+            "difficulty": 3,
+            "description": "非植物基本生命活动必需的小分子有机物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "次生代谢物是植物产生的、通常不是其基本生命活动所必需的小分子有机化合物。",
+            "example": "紫草宁和紫杉醇",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "植物细胞培养",
+            "difficulty": 3,
+            "description": "离体培养植物细胞或细胞团使其增殖",
+            "aliases": [],
+            "prerequisites": [
+              "次生代谢物"
+            ],
+            "definition": "植物细胞培养是在离体条件下培养单个植物细胞或细胞团使其增殖的技术。",
+            "example": "培养人参细胞生产人参皂苷",
+            "section": "第1节 植物细胞工程"
+          },
+          {
+            "name": "动物细胞培养",
+            "difficulty": 2,
+            "description": "动物组织分散成细胞后在体外培养增殖",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "动物细胞培养是将动物组织处理成细胞悬液后，在适宜体外条件下培养细胞的技术。",
+            "example": "体外培养蝌蚪神经元"
+          },
+          {
+            "name": "原代培养",
+            "difficulty": 2,
+            "description": "动物组织经处理后的初次细胞培养",
+            "aliases": [],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "原代培养是指动物组织经处理后进行的第一次细胞培养。",
+            "example": "组织制成细胞悬液后首次培养",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "传代培养",
+            "difficulty": 2,
+            "description": "分瓶后继续进行的动物细胞培养",
+            "aliases": [],
+            "prerequisites": [
+              "原代培养"
+            ],
+            "definition": "传代培养是将原代培养中增殖到一定程度的细胞分瓶后继续培养的过程。",
+            "example": "贴壁细胞经胰蛋白酶处理后分瓶",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "干细胞",
+            "difficulty": 2,
+            "description": "具有自我更新能力和分化潜能的细胞",
+            "aliases": [
+              "stem cell"
+            ],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "干细胞是具有自我更新能力并能在一定条件下分化成其他类型细胞的细胞。",
+            "example": "骨髓中的造血干细胞"
+          },
+          {
+            "name": "胚胎干细胞",
+            "difficulty": 3,
+            "description": "来源于早期胚胎且具有广泛分化潜能的细胞",
+            "aliases": [
+              "ES细胞",
+              "embryonic stem cell"
+            ],
+            "prerequisites": [
+              "干细胞"
+            ],
+            "definition": "胚胎干细胞是存在于早期胚胎中、能够分化为成年动物各种细胞并形成组织器官的细胞。",
+            "example": "小鼠ES细胞分化为神经元"
+          },
+          {
+            "name": "成体干细胞",
+            "difficulty": 3,
+            "description": "存在于成体组织且具有组织特异性的干细胞",
+            "aliases": [],
+            "prerequisites": [
+              "干细胞"
+            ],
+            "definition": "成体干细胞是存在于成体组织或器官中、通常只能分化成特定细胞或组织的干细胞。",
+            "example": "骨髓造血干细胞",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "诱导多能干细胞",
+            "difficulty": 3,
+            "description": "体细胞经体外诱导形成的类似胚胎干细胞",
+            "aliases": [
+              "iPS细胞",
+              "iPS细胞"
+            ],
+            "prerequisites": [
+              "干细胞"
+            ],
+            "definition": "诱导多能干细胞是已分化体细胞经体外诱导形成的、具有类似胚胎干细胞分化能力的细胞。",
+            "example": "成纤维细胞诱导为iPS细胞",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "动物细胞融合",
+            "difficulty": 2,
+            "description": "两个或多个动物细胞结合形成一个细胞",
+            "aliases": [
+              "动物细胞融合技术",
+              "cell fusion technique"
+            ],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "动物细胞融合是使两个或多个动物细胞结合形成一个细胞的技术。",
+            "example": "用PEG诱导骨髓瘤细胞融合"
+          },
+          {
+            "name": "杂交瘤",
+            "difficulty": 3,
+            "description": "融合B淋巴细胞与骨髓瘤细胞形成的细胞",
+            "aliases": [
+              "杂交瘤技术",
+              "hybridoma"
+            ],
+            "prerequisites": [
+              "动物细胞融合"
+            ],
+            "definition": "杂交瘤是B淋巴细胞与骨髓瘤细胞融合形成的、兼具抗体分泌和大量增殖能力的细胞。",
+            "example": "筛选能分泌特异抗体的杂交瘤",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "单克隆抗体",
+            "difficulty": 3,
+            "description": "由单一B淋巴细胞克隆产生的特异抗体",
+            "aliases": [
+              "单克隆抗体技术"
+            ],
+            "prerequisites": [
+              "杂交瘤"
+            ],
+            "definition": "单克隆抗体是由单一B淋巴细胞克隆产生、能特异性识别同一抗原的抗体。",
+            "example": "早早孕诊断试剂盒"
+          },
+          {
+            "name": "抗体药物偶联物",
+            "difficulty": 3,
+            "description": "抗体、接头和药物组成的靶向药物",
+            "aliases": [
+              "ADC",
+              "抗体—药物偶联物"
+            ],
+            "prerequisites": [
+              "单克隆抗体"
+            ],
+            "definition": "抗体药物偶联物是将细胞毒素等药物通过接头连接到特异性抗体上的药物。",
+            "example": "利用ADC选择性杀伤肿瘤细胞",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "动物细胞核移植",
+            "difficulty": 3,
+            "description": "将细胞核移入去核卵母细胞形成新胚胎",
+            "aliases": [
+              "核移植",
+              "nuclear transplantation"
+            ],
+            "prerequisites": [
+              "动物细胞培养"
+            ],
+            "definition": "动物细胞核移植是将一个动物细胞的细胞核移入去核卵母细胞并使其发育成个体的技术。",
+            "example": "培育克隆牛"
+          },
+          {
+            "name": "体细胞核移植",
+            "difficulty": 3,
+            "description": "以动物体细胞细胞核为供体进行核移植",
+            "aliases": [
+              "动物体细胞核移植技术"
+            ],
+            "prerequisites": [
+              "动物细胞核移植"
+            ],
+            "definition": "体细胞核移植是将动物体细胞的细胞核移入去核卵母细胞并培育克隆动物的技术。",
+            "example": "体细胞克隆猴",
+            "section": "第2节 动物细胞工程"
+          },
+          {
+            "name": "重构胚",
+            "difficulty": 3,
+            "description": "供体细胞核与去核卵母细胞重组形成的胚胎",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞核移植"
+            ],
+            "definition": "重构胚是供体细胞核进入去核卵母细胞后经融合和激活人工重新构建的胚胎。",
+            "example": "激活重构胚后移入受体"
+          },
+          {
+            "name": "克隆动物",
+            "difficulty": 2,
+            "description": "通过无性繁殖技术获得的遗传物质相近动物",
+            "aliases": [],
+            "prerequisites": [
+              "体细胞核移植"
+            ],
+            "definition": "克隆动物是通过核移植或胚胎分割等无性繁殖技术获得的动物。",
+            "example": "克隆羊多莉"
+          },
+          {
+            "name": "精子获能",
+            "difficulty": 3,
+            "description": "精子获得与卵子受精能力的过程",
+            "aliases": [
+              "获能"
+            ],
+            "prerequisites": [],
+            "definition": "精子获能是精子在雌性生殖道或体外处理后获得受精能力的过程。",
+            "example": "体外处理精液使精子获能",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "体外受精",
+            "difficulty": 2,
+            "description": "在体外促使成熟卵子和获能精子完成受精",
+            "aliases": [
+              "体外受精技术"
+            ],
+            "prerequisites": [
+              "精子获能"
+            ],
+            "definition": "体外受精是将成熟卵子和获能精子置于适宜培养液中使其完成受精的技术。",
+            "example": "培育试管牛"
+          },
+          {
+            "name": "胚胎工程",
+            "difficulty": 2,
+            "description": "围绕配子、早期胚胎进行操作的综合技术",
+            "aliases": [],
+            "prerequisites": [
+              "体外受精"
+            ],
+            "definition": "胚胎工程是以动物受精和早期胚胎发育规律为基础，对胚胎进行操作并应用的技术体系。",
+            "example": "体外受精后进行胚胎移植",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "卵裂",
+            "difficulty": 2,
+            "description": "受精卵早期细胞数增加而总体积不变的分裂",
+            "aliases": [],
+            "prerequisites": [
+              "体外受精"
+            ],
+            "definition": "卵裂是受精卵在透明带内进行的早期有丝分裂过程，其细胞数增加而胚胎总体积不增加。",
+            "example": "受精卵连续分裂形成八细胞胚",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "桑葚胚",
+            "difficulty": 2,
+            "description": "卵裂细胞形成致密细胞团的胚胎阶段",
+            "aliases": [],
+            "prerequisites": [
+              "卵裂"
+            ],
+            "definition": "桑葚胚是卵裂产生的子细胞逐渐形成致密细胞团、形似桑葚时的胚胎阶段。",
+            "example": "小鼠胚胎发育至桑葚胚",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "囊胚",
+            "difficulty": 3,
+            "description": "具有囊胚腔并出现内细胞团的胚胎阶段",
+            "aliases": [],
+            "prerequisites": [
+              "桑葚胚"
+            ],
+            "definition": "囊胚是胚胎内部形成囊胚腔并分化出内细胞团和滋养层细胞的阶段。",
+            "example": "囊胚内细胞团将形成胎儿组织",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "胚胎移植",
+            "difficulty": 2,
+            "description": "将胚胎移入同种同期受体体内继续发育",
+            "aliases": [
+              "embryo transfer"
+            ],
+            "prerequisites": [
+              "胚胎工程"
+            ],
+            "definition": "胚胎移植是将获得的胚胎移植到同种且生理状态相同的雌性动物体内使其继续发育的技术。",
+            "example": "将良种牛胚胎移入受体母牛",
+            "section": "第3节 胚胎工程"
+          },
+          {
+            "name": "超数排卵",
+            "difficulty": 3,
+            "description": "诱导雌性动物排出更多成熟卵子的处理",
+            "aliases": [],
+            "prerequisites": [
+              "胚胎移植"
+            ],
+            "definition": "超数排卵是应用外源促性腺激素诱发卵巢排出多于自然情况的成熟卵子的处理。",
+            "example": "供体母牛接受超数排卵处理",
+            "section": "第3节 胚胎工程"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 植物细胞工程",
+            "section_key": "e236a66b96",
+            "page_range": [
+              43,
+              51
+            ]
+          },
+          {
+            "name": "第2节 动物细胞工程",
+            "section_key": "fdd075ab3f",
+            "page_range": [
+              52,
+              65
+            ]
+          },
+          {
+            "name": "第3节 胚胎工程",
+            "section_key": "e03796293f",
+            "page_range": [
+              65,
+              76
+            ]
+          }
+        ],
+        "chapter_key": "877895bea7",
+        "metadata": {
+          "volume_id": "53e75f5c6120",
+          "file_id": "53e75f5c6120",
+          "volume_title": "高中生物 选择性必修3",
+          "chapter_order": 2,
+          "raw_heading": "第2章 细胞工程"
+        }
+      },
+      {
+        "name": "第3章 基因工程",
+        "concepts": [
+          {
+            "name": "基因工程",
+            "difficulty": 2,
+            "description": "按人们愿望改造生物遗传特性并获得产品",
+            "aliases": [
+              "重组DNA技术"
+            ],
+            "prerequisites": [],
+            "definition": "基因工程是通过转基因等技术赋予生物新的遗传特性，创造新生物类型和产品的工程。",
+            "example": "将抗虫基因导入棉花培育抗虫棉"
+          },
+          {
+            "name": "限制性内切核酸酶",
+            "difficulty": 2,
+            "description": "识别特定序列并切断DNA磷酸二酯键",
+            "aliases": [
+              "限制酶"
+            ],
+            "prerequisites": [],
+            "definition": "限制酶能识别双链DNA中特定核苷酸序列并切断特定位置的磷酸二酯键。",
+            "example": "EcoRⅠ切割含特定识别序列的DNA"
+          },
+          {
+            "name": "黏性末端",
+            "difficulty": 2,
+            "description": "限制酶错位切割形成的单链突出末端",
+            "aliases": [],
+            "prerequisites": [
+              "限制性内切核酸酶"
+            ],
+            "definition": "黏性末端是限制酶在识别序列中轴线两侧错位切割DNA形成的末端。",
+            "example": "EcoRⅠ切割DNA产生黏性末端",
+            "section": "第1节 重组DNA技术的基本工具"
+          },
+          {
+            "name": "平末端",
+            "difficulty": 2,
+            "description": "限制酶在中轴线处切割形成的平齐末端",
+            "aliases": [],
+            "prerequisites": [
+              "限制性内切核酸酶"
+            ],
+            "definition": "平末端是限制酶在识别序列中心轴线处切割DNA形成的末端。",
+            "example": "SmaⅠ切割DNA产生平末端",
+            "section": "第1节 重组DNA技术的基本工具"
+          },
+          {
+            "name": "DNA连接酶",
+            "difficulty": 2,
+            "description": "连接DNA片段并恢复磷酸二酯键",
+            "aliases": [],
+            "prerequisites": [
+              "限制性内切核酸酶"
+            ],
+            "definition": "DNA连接酶能将DNA片段连接起来并恢复被切开的磷酸二酯键。",
+            "example": "连接目的基因与质粒的切口"
+          },
+          {
+            "name": "质粒",
+            "difficulty": 2,
+            "description": "细胞中独立存在且能自我复制的环状DNA",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "质粒是独立于细胞核或拟核DNA之外并具有自我复制能力的环状双链DNA分子。",
+            "example": "大肠杆菌中的质粒"
+          },
+          {
+            "name": "基因工程载体",
+            "difficulty": 2,
+            "description": "将外源基因导入受体细胞的运输工具",
+            "aliases": [
+              "载体"
+            ],
+            "prerequisites": [
+              "质粒"
+            ],
+            "definition": "基因工程载体是携带外源DNA并将其导入受体细胞的DNA分子。",
+            "example": "用质粒将目的基因导入大肠杆菌"
+          },
+          {
+            "name": "目的基因",
+            "difficulty": 2,
+            "description": "用于改变性状或获得预期产物的基因",
+            "aliases": [],
+            "prerequisites": [
+              "基因工程"
+            ],
+            "definition": "目的基因是用于改变受体细胞性状或获得预期表达产物的基因。",
+            "example": "Bt抗虫蛋白基因是抗虫棉的目的基因"
+          },
+          {
+            "name": "基因表达载体",
+            "difficulty": 3,
+            "description": "含目的基因及调控元件的重组载体",
+            "aliases": [],
+            "prerequisites": [
+              "目的基因",
+              "基因工程载体",
+              "DNA连接酶"
+            ],
+            "definition": "基因表达载体是在载体中加入目的基因、启动子、终止子等元件而形成的载体。",
+            "example": "含Bt基因、启动子和终止子的重组质粒"
+          },
+          {
+            "name": "启动子",
+            "difficulty": 3,
+            "description": "位于基因上游并驱动转录的DNA片段",
+            "aliases": [],
+            "prerequisites": [
+              "基因表达载体"
+            ],
+            "definition": "启动子是位于基因上游、供RNA聚合酶识别和结合并驱动转录的DNA片段。",
+            "example": "在目的基因上游加入植物启动子"
+          },
+          {
+            "name": "终止子",
+            "difficulty": 3,
+            "description": "使转录在特定位置停止的DNA片段",
+            "aliases": [],
+            "prerequisites": [
+              "基因表达载体"
+            ],
+            "definition": "终止子是位于基因下游并使转录在所需位置停止的特殊DNA片段。",
+            "example": "在目的基因下游设置终止子",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR",
+            "difficulty": 3,
+            "description": "在体外大量扩增特定DNA片段的技术",
+            "aliases": [
+              "聚合酶链式反应"
+            ],
+            "prerequisites": [
+              "DNA半保留复制"
+            ],
+            "definition": "PCR是在体外提供复制条件并通过循环反应大量复制目的基因的技术。",
+            "example": "用PCR扩增Bt抗虫基因",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "引物",
+            "difficulty": 3,
+            "description": "与DNA模板互补配对的短单链核酸",
+            "aliases": [],
+            "prerequisites": [
+              "PCR"
+            ],
+            "definition": "引物是能与DNA母链特定序列互补配对并为DNA合成提供起点的短单链核酸。",
+            "example": "PCR中分别结合两条模板链的两种引物",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR变性",
+            "difficulty": 2,
+            "description": "高温使双链DNA解聚为单链的过程",
+            "aliases": [
+              "变性"
+            ],
+            "prerequisites": [
+              "PCR"
+            ],
+            "definition": "PCR变性是温度超过90℃时双链DNA解聚成两条单链的过程。",
+            "example": "PCR循环中94℃处理使DNA变性",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR复性",
+            "difficulty": 2,
+            "description": "引物与单链DNA互补结合的过程",
+            "aliases": [
+              "复性"
+            ],
+            "prerequisites": [
+              "PCR",
+              "引物"
+            ],
+            "definition": "PCR复性是温度降低后引物通过碱基互补配对与模板单链结合的过程。",
+            "example": "约50℃时引物结合模板",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "PCR延伸",
+            "difficulty": 2,
+            "description": "DNA聚合酶合成新DNA链的过程",
+            "aliases": [
+              "延伸"
+            ],
+            "prerequisites": [
+              "PCR",
+              "引物"
+            ],
+            "definition": "PCR延伸是耐高温DNA聚合酶根据碱基互补配对合成新DNA链的过程。",
+            "example": "约72℃时聚合酶延伸合成子链"
+          },
+          {
+            "name": "转化",
+            "difficulty": 3,
+            "description": "目的基因进入细胞并稳定表达的过程",
+            "aliases": [
+              "基因转化"
+            ],
+            "prerequisites": [
+              "目的基因",
+              "基因表达载体"
+            ],
+            "definition": "转化是目的基因进入受体细胞并在其中稳定维持和表达的过程。",
+            "example": "农杆菌将目的基因导入植物细胞"
+          },
+          {
+            "name": "农杆菌转化法",
+            "difficulty": 3,
+            "description": "利用农杆菌将目的基因导入植物细胞",
+            "aliases": [],
+            "prerequisites": [
+              "转化",
+              "基因表达载体"
+            ],
+            "definition": "农杆菌转化法是利用农杆菌Ti质粒上的T-DNA将目的基因导入植物细胞的方法。",
+            "example": "用农杆菌转化法培育转基因烟草",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "目的基因检测",
+            "difficulty": 3,
+            "description": "检测目的基因是否稳定维持并表达",
+            "aliases": [],
+            "prerequisites": [
+              "转化",
+              "PCR"
+            ],
+            "definition": "目的基因检测是从分子和个体生物学层面确认目的基因遗传特性的方法。",
+            "example": "PCR检测染色体上是否插入Bt基因"
+          },
+          {
+            "name": "琼脂糖凝胶电泳",
+            "difficulty": 3,
+            "description": "利用电场分离并鉴定DNA片段",
+            "aliases": [
+              "电泳鉴定"
+            ],
+            "prerequisites": [
+              "PCR"
+            ],
+            "definition": "琼脂糖凝胶电泳是利用DNA带电性质在电场中迁移来分离和鉴定DNA片段的方法。",
+            "example": "用电泳观察PCR产物条带",
+            "section": "第2节 基因工程的基本操作程序"
+          },
+          {
+            "name": "基因工程菌",
+            "difficulty": 2,
+            "description": "经基因改造并高效表达外源基因的菌类",
+            "aliases": [],
+            "prerequisites": [
+              "基因工程",
+              "转化"
+            ],
+            "definition": "基因工程菌是利用基因工程使外源基因得到高效表达的菌类。",
+            "example": "生产重组人胰岛素的大肠杆菌",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "乳腺生物反应器",
+            "difficulty": 3,
+            "description": "利用转基因哺乳动物乳汁生产药物",
+            "aliases": [
+              "乳房生物反应器"
+            ],
+            "prerequisites": [
+              "基因工程",
+              "基因表达载体"
+            ],
+            "definition": "乳腺生物反应器是利用转基因哺乳动物乳腺特异表达药用蛋白的系统。",
+            "example": "转基因山羊乳汁生产抗凝血酶",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "蛋白质工程",
+            "difficulty": 3,
+            "description": "根据需求改造或合成基因以获得新蛋白质",
+            "aliases": [
+              "第二代基因工程"
+            ],
+            "prerequisites": [
+              "基因工程"
+            ],
+            "definition": "蛋白质工程以蛋白质结构与功能关系为基础，通过改造或合成基因获得所需蛋白质。",
+            "example": "改造胰岛素基因制备速效胰岛素",
+            "section": "第4节 蛋白质工程的原理和应用"
+          },
+          {
+            "name": "蛋白质工程思路",
+            "difficulty": 3,
+            "description": "从预期功能反向设计结构、序列和基因",
+            "aliases": [],
+            "prerequisites": [
+              "蛋白质工程"
+            ],
+            "definition": "蛋白质工程思路是从预期功能出发设计结构，推测氨基酸序列并改造或合成相应基因。",
+            "example": "为降低胰岛素聚合作用改造其基因"
+          },
+          {
+            "name": "转基因抗虫植物",
+            "difficulty": 2,
+            "description": "导入抗虫基因后获得抗虫性的植物",
+            "aliases": [],
+            "prerequisites": [
+              "目的基因",
+              "转化"
+            ],
+            "definition": "转基因抗虫植物是导入具有抗虫功能基因并表现抗虫性的植物。",
+            "example": "转基因抗虫棉",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "转基因抗病植物",
+            "difficulty": 2,
+            "description": "导入抗病基因后获得抗病性的植物",
+            "aliases": [],
+            "prerequisites": [
+              "目的基因",
+              "转化"
+            ],
+            "definition": "转基因抗病植物是导入抗病基因并表现抗病性的新植物品种。",
+            "example": "转基因抗病毒番木瓜",
+            "section": "第3节 基因工程的应用"
+          },
+          {
+            "name": "DNA粗提取",
+            "difficulty": 2,
+            "description": "利用DNA性质从材料中初步分离DNA",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "DNA粗提取是利用DNA在酒精和不同浓度氯化钠溶液中溶解度差异进行初步分离的方法。",
+            "example": "从洋葱研磨液中析出白色DNA丝状物",
+            "section": "第1节 重组DNA技术的基本工具"
+          },
+          {
+            "name": "二苯胺鉴定DNA",
+            "difficulty": 2,
+            "description": "利用二苯胺遇DNA呈蓝色鉴定DNA",
+            "aliases": [],
+            "prerequisites": [
+              "DNA粗提取"
+            ],
+            "definition": "二苯胺鉴定DNA是利用DNA与二苯胺试剂反应呈蓝色来确认DNA的方法。",
+            "example": "粗提取物加二苯胺并水浴后呈蓝色"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 重组DNA技术的基本工具",
+            "section_key": "afb78174d4",
+            "page_range": [
+              79,
+              85
+            ]
+          },
+          {
+            "name": "第2节 基因工程的基本操作程序",
+            "section_key": "d02b113265",
+            "page_range": [
+              85,
+              95
+            ]
+          },
+          {
+            "name": "第3节 基因工程的应用",
+            "section_key": "5601664d17",
+            "page_range": [
+              96,
+              101
+            ]
+          },
+          {
+            "name": "第4节 蛋白质工程的原理和应用",
+            "section_key": "edfcc8cb17",
+            "page_range": [
+              102,
+              108
+            ]
+          }
+        ],
+        "chapter_key": "012fa11832",
+        "metadata": {
+          "volume_id": "53e75f5c6120",
+          "file_id": "53e75f5c6120",
+          "volume_title": "高中生物 选择性必修3",
+          "chapter_order": 3,
+          "raw_heading": "第3章 基因工程"
+        }
+      },
+      {
+        "name": "第4章 生物技术的安全性与伦理问题",
+        "concepts": [
+          {
+            "name": "伦理",
+            "difficulty": 1,
+            "description": "人与人之间的道德准则和规则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "伦理是特指人与人之间的道德准则。",
+            "example": "讨论克隆人是否符合伦理"
+          },
+          {
+            "name": "生物技术双刃剑",
+            "difficulty": 2,
+            "description": "生物技术既能造福人类也可能带来危害",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物技术在造福人类的同时，使用不当也可能带来潜在危害。",
+            "example": "转基因技术促进农业生产，也引发安全担忧"
+          },
+          {
+            "name": "转基因技术",
+            "difficulty": 2,
+            "description": "通过基因工程改造生物遗传特征的技术",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "转基因技术是利用基因工程改变生物遗传特征的技术。",
+            "example": "培育抗虫转基因作物"
+          },
+          {
+            "name": "转基因产品",
+            "difficulty": 2,
+            "description": "由转基因生物或其成分形成的产品",
+            "aliases": [
+              "农业转基因生物产品"
+            ],
+            "prerequisites": [
+              "转基因技术"
+            ],
+            "definition": "转基因产品是利用基因工程改变基因组构成并用于生产或加工的生物及其产品。",
+            "example": "转基因棉花和转基因番木瓜"
+          },
+          {
+            "name": "安全性评价",
+            "difficulty": 3,
+            "description": "上市前对转基因产品安全性的系统评估",
+            "aliases": [
+              "转基因安全评价"
+            ],
+            "prerequisites": [
+              "转基因产品"
+            ],
+            "definition": "安全性评价是转基因产品上市前依据相关标准进行的安全评估。",
+            "example": "产品通过安全性评价后才能上市",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "基因污染",
+            "difficulty": 3,
+            "description": "转基因生物的遗传物质扩散造成的影响",
+            "aliases": [],
+            "prerequisites": [
+              "转基因技术"
+            ],
+            "definition": "基因污染是转基因生物的遗传物质向其他生物或环境传播的现象。",
+            "example": "转基因花粉传播到非转基因植物",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "转基因标识",
+            "difficulty": 2,
+            "description": "对转基因产品及其加工品进行信息标注",
+            "aliases": [
+              "标识制度"
+            ],
+            "prerequisites": [
+              "转基因产品"
+            ],
+            "definition": "转基因标识是按规定标注产品是否含有转基因生物或其成分的制度。",
+            "example": "标注“转基因××加工品”",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "理性看待转基因",
+            "difficulty": 3,
+            "description": "依据确凿证据和严谨逻辑分析转基因问题",
+            "aliases": [],
+            "prerequisites": [
+              "转基因技术",
+              "安全性评价"
+            ],
+            "definition": "理性看待转基因要求了解技术原理，依据证据和逻辑思考与讨论。",
+            "example": "区分转基因食品争论中的事实与观点",
+            "section": "第1节 转基因产品的安全性"
+          },
+          {
+            "name": "生殖性克隆",
+            "difficulty": 3,
+            "description": "通过克隆技术产生独立生存的新个体",
+            "aliases": [
+              "生殖性克隆人"
+            ],
+            "prerequisites": [],
+            "definition": "生殖性克隆是通过克隆技术产生独立生存新个体的技术。",
+            "example": "克隆羊多莉属于生殖性克隆"
+          },
+          {
+            "name": "治疗性克隆",
+            "difficulty": 3,
+            "description": "利用克隆产生细胞组织或器官用于治疗",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "治疗性克隆是利用克隆技术产生特定细胞、组织和器官以治疗疾病。",
+            "example": "产生组织修复所需的细胞",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "体细胞核移植",
+            "difficulty": 3,
+            "description": "将体细胞核移入去核卵母细胞形成重构胚",
+            "aliases": [
+              "核移植"
+            ],
+            "prerequisites": [],
+            "definition": "体细胞核移植是将体细胞的细胞核移入去核卵母细胞中的技术。",
+            "example": "克隆羊多莉的培育过程",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "人类尊严",
+            "difficulty": 3,
+            "description": "人的生命价值和人格不可侵犯的伦理原则",
+            "aliases": [],
+            "prerequisites": [
+              "伦理"
+            ],
+            "definition": "人类尊严强调人的生命价值和人格不应受到侵犯。",
+            "example": "将人像产品一样制造被认为侵犯尊严",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "克隆人伦理问题",
+            "difficulty": 3,
+            "description": "生殖性克隆人引发的尊严家庭和安全问题",
+            "aliases": [],
+            "prerequisites": [
+              "生殖性克隆",
+              "伦理",
+              "人类尊严"
+            ],
+            "definition": "克隆人伦理问题是生殖性克隆人对尊严、家庭关系和社会伦理造成的挑战。",
+            "example": "克隆人的家庭地位难以认定"
+          },
+          {
+            "name": "四不原则",
+            "difficulty": 2,
+            "description": "我国对生殖性克隆人实验的明确立场",
+            "aliases": [],
+            "prerequisites": [
+              "生殖性克隆",
+              "伦理"
+            ],
+            "definition": "四不原则是我国对生殖性克隆人实验不赞成、不允许、不支持、不接受。",
+            "example": "我国禁止任何生殖性克隆人实验",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "iPS细胞",
+            "difficulty": 3,
+            "description": "由体细胞诱导形成的多能干细胞",
+            "aliases": [
+              "诱导多能干细胞",
+              "化学诱导多能干细胞"
+            ],
+            "prerequisites": [],
+            "definition": "iPS细胞是由体细胞经诱导转变而来的多能干细胞。",
+            "example": "用小分子化合物诱导小鼠成纤维细胞",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "设计试管婴儿",
+            "difficulty": 3,
+            "description": "植入前对胚胎进行遗传学诊断的生育方式",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "设计试管婴儿是通过植入前遗传学诊断选择适合移植的胚胎。",
+            "example": "选择与患病亲属骨髓配型相合的婴儿",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "伦理委员会",
+            "difficulty": 2,
+            "description": "对涉及人的生物医学研究进行伦理审查的机构",
+            "aliases": [
+              "国家医学伦理专家委员会"
+            ],
+            "prerequisites": [
+              "伦理"
+            ],
+            "definition": "伦理委员会负责保护受试者权益、维护尊严并审查研究伦理。",
+            "example": "审查干细胞临床研究方案",
+            "section": "第2节 关注生殖性克隆人"
+          },
+          {
+            "name": "生物武器",
+            "difficulty": 2,
+            "description": "利用病原体或生化毒剂造成大规模伤害的武器",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物武器包括利用致病菌、病毒和生化毒剂制造的武器。",
+            "example": "炭疽杆菌粉末可被用于制造生物武器",
+            "section": "第3节 禁止生物武器"
+          },
+          {
+            "name": "生物安全",
+            "difficulty": 3,
+            "description": "防范危险生物因子并维护生命与生态安全",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物安全是防范和应对危险生物因子威胁，保障生命健康和生态系统安全。",
+            "example": "加强口岸核生化有害因子防控"
+          },
+          {
+            "name": "禁止生物武器公约",
+            "difficulty": 2,
+            "description": "禁止发展生产储存并要求销毁生物武器的国际公约",
+            "aliases": [
+              "《禁止生物武器公约》"
+            ],
+            "prerequisites": [
+              "生物武器"
+            ],
+            "definition": "禁止生物武器公约要求各方不发展、不生产、不储存并销毁生物武器。",
+            "example": "我国于1984年加入该公约",
+            "section": "第3节 禁止生物武器"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 转基因产品的安全性",
+            "section_key": "df0ed39e6a",
+            "page_range": [
+              110,
+              115
+            ]
+          },
+          {
+            "name": "第2节 关注生殖性克隆人",
+            "section_key": "c12f6a5c46",
+            "page_range": [
+              115,
+              119
+            ]
+          },
+          {
+            "name": "第3节 禁止生物武器",
+            "section_key": "6d2f0e0b37",
+            "page_range": [
+              120,
+              130
+            ]
+          }
+        ],
+        "chapter_key": "2da498e97b",
+        "metadata": {
+          "volume_id": "53e75f5c6120",
+          "file_id": "53e75f5c6120",
+          "volume_title": "高中生物 选择性必修3",
+          "chapter_order": 4,
+          "raw_heading": "第4章 生物技术的安全性与伦理问题"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "ed9657484e": [
+        13,
+        17
+      ],
+      "第1节 传统发酵技术的应用": [
+        13,
+        17
+      ],
+      "bbcdf07f08": [
+        18,
+        31
+      ],
+      "第2节 微生物的培养技术及应用": [
+        18,
+        31
+      ],
+      "ddbf59361f": [
+        31,
+        40
+      ],
+      "第3节 发酵工程及其应用": [
+        31,
+        40
+      ],
+      "e236a66b96": [
+        43,
+        51
+      ],
+      "第1节 植物细胞工程": [
+        43,
+        51
+      ],
+      "fdd075ab3f": [
+        52,
+        65
+      ],
+      "第2节 动物细胞工程": [
+        52,
+        65
+      ],
+      "e03796293f": [
+        65,
+        76
+      ],
+      "第3节 胚胎工程": [
+        65,
+        76
+      ],
+      "afb78174d4": [
+        79,
+        85
+      ],
+      "第1节 重组DNA技术的基本工具": [
+        79,
+        85
+      ],
+      "d02b113265": [
+        85,
+        95
+      ],
+      "第2节 基因工程的基本操作程序": [
+        85,
+        95
+      ],
+      "5601664d17": [
+        96,
+        101
+      ],
+      "第3节 基因工程的应用": [
+        96,
+        101
+      ],
+      "edfcc8cb17": [
+        102,
+        108
+      ],
+      "第4节 蛋白质工程的原理和应用": [
+        102,
+        108
+      ],
+      "df0ed39e6a": [
+        110,
+        115
+      ],
+      "第1节 转基因产品的安全性": [
+        110,
+        115
+      ],
+      "c12f6a5c46": [
+        115,
+        119
+      ],
+      "第2节 关注生殖性克隆人": [
+        115,
+        119
+      ],
+      "6d2f0e0b37": [
+        120,
+        130
+      ],
+      "第3节 禁止生物武器": [
+        120,
+        130
+      ]
+    }
+  }
+}

@@ -1,0 +1,3947 @@
+{
+  "file_id": "dcaff0600ed2",
+  "text_sha256": "20ccbae4d56df873b5413f835a78c2b36bbabf2ce89fbbc645ab905de8f54790",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1 章　动量及其守恒定律",
+        "concepts": [
+          {
+            "name": "动量",
+            "difficulty": 2,
+            "description": "描述物体运动状态且与质量、速度有关的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "质量",
+              "速度"
+            ],
+            "definition": "物体质量与速度的乘积称为物体的动量，公式为p=mv。",
+            "example": "质量越大、速度越大的碰碰车，碰撞效果通常越明显。"
+          },
+          {
+            "name": "动量变化量",
+            "difficulty": 2,
+            "description": "表示物体动量改变的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "动量"
+            ],
+            "definition": "物体动量的变化量等于末动量与初动量的矢量差。",
+            "example": "网球反弹时，速度方向改变使动量发生变化。",
+            "section": "第1 节 动量和动量定理"
+          },
+          {
+            "name": "冲量",
+            "difficulty": 2,
+            "description": "表示力对时间的积累效应",
+            "aliases": [],
+            "prerequisites": [
+              "力",
+              "时间"
+            ],
+            "definition": "力与力的作用时间的乘积称为该力的冲量，公式为I=Ft。",
+            "example": "增大球拍击球的作用时间会改变冲量效果。"
+          },
+          {
+            "name": "动量定理",
+            "difficulty": 3,
+            "description": "建立合外力冲量与动量变化量的关系",
+            "aliases": [],
+            "prerequisites": [
+              "动量变化量",
+              "冲量"
+            ],
+            "definition": "物体所受合外力的冲量等于该物体在此过程中的动量变化量。",
+            "example": "用动量定理可求男孩落地时地面的平均作用力。"
+          },
+          {
+            "name": "平均作用力",
+            "difficulty": 3,
+            "description": "变力在一段作用时间内的等效恒力",
+            "aliases": [],
+            "prerequisites": [
+              "动量定理",
+              "冲量"
+            ],
+            "definition": "变力作用过程中，依据动量定理求得的等效作用力称为平均作用力。",
+            "example": "男孩屈膝延长接触时间，地面的平均作用力较小。"
+          },
+          {
+            "name": "缓冲",
+            "difficulty": 2,
+            "description": "通过延长作用时间减小相互作用力的方法",
+            "aliases": [],
+            "prerequisites": [
+              "动量定理",
+              "平均作用力"
+            ],
+            "definition": "在动量变化量一定时，延长力的作用时间可以减小相互作用力，这种措施称为缓冲。",
+            "example": "汽车安全气囊利用形变延长碰撞作用时间。",
+            "section": "第1 节 动量和动量定理"
+          },
+          {
+            "name": "系统",
+            "difficulty": 2,
+            "description": "研究时选定的相互作用物体整体",
+            "aliases": [],
+            "prerequisites": [
+              "物体"
+            ],
+            "definition": "在物理问题中，把相互作用的若干物体作为整体研究时，这个整体称为系统。",
+            "example": "将碰撞的两辆车选作一个系统。"
+          },
+          {
+            "name": "内力",
+            "difficulty": 2,
+            "description": "系统内物体之间的相互作用力",
+            "aliases": [],
+            "prerequisites": [
+              "系统",
+              "力"
+            ],
+            "definition": "系统内物体之间的相互作用力称为内力。",
+            "example": "两滑块相互推开的作用力属于系统内力。"
+          },
+          {
+            "name": "合外力",
+            "difficulty": 3,
+            "description": "系统或物体所受外力的矢量合力",
+            "aliases": [],
+            "prerequisites": [
+              "力",
+              "系统"
+            ],
+            "definition": "系统所受外部各力的矢量和称为系统所受合外力。",
+            "example": "气垫导轨上滑块系统所受合外力近似为零。"
+          },
+          {
+            "name": "系统总动量",
+            "difficulty": 3,
+            "description": "系统内各物体动量的矢量和",
+            "aliases": [],
+            "prerequisites": [
+              "动量",
+              "系统"
+            ],
+            "definition": "系统内各物体动量的矢量和称为系统的总动量。",
+            "example": "两滑块弹开前后的系统总动量都近似为零。"
+          },
+          {
+            "name": "动量守恒定律",
+            "difficulty": 4,
+            "description": "说明系统总动量保持不变的基本规律",
+            "aliases": [
+              "动量守恒"
+            ],
+            "prerequisites": [
+              "动量",
+              "系统",
+              "内力",
+              "合外力"
+            ],
+            "definition": "一个系统不受外力或所受合外力为零时，系统的总动量保持不变。",
+            "example": "两车追尾的短暂碰撞过程中可近似应用动量守恒定律。"
+          },
+          {
+            "name": "反冲运动",
+            "difficulty": 3,
+            "description": "物体喷出物质后向相反方向运动的现象",
+            "aliases": [
+              "反冲"
+            ],
+            "prerequisites": [
+              "动量守恒定律"
+            ],
+            "definition": "物体向某方向喷出物质后，因动量守恒而向相反方向运动的现象称为反冲运动。",
+            "example": "气球放气时会沿喷气方向的相反方向飞行。",
+            "section": "第2 节 动量守恒定律及其应用"
+          },
+          {
+            "name": "一维碰撞",
+            "difficulty": 2,
+            "description": "碰撞前后速度方向均在同一直线上的碰撞",
+            "aliases": [
+              "正碰",
+              "对心碰撞"
+            ],
+            "prerequisites": [
+              "碰撞"
+            ],
+            "definition": "碰撞前后的速度方向均在同一直线上的碰撞称为一维碰撞。",
+            "example": "两钢球沿同一直线迎面碰撞。"
+          },
+          {
+            "name": "斜碰",
+            "difficulty": 3,
+            "description": "碰撞前后速度方向不在同一直线上的碰撞",
+            "aliases": [],
+            "prerequisites": [
+              "碰撞",
+              "动量守恒定律"
+            ],
+            "definition": "碰撞前后的速度方向不在同一直线上的碰撞称为斜碰。",
+            "example": "台球发生不在同一直线上的碰撞。",
+            "section": "第2 节 动量守恒定律及其应用"
+          },
+          {
+            "name": "弹性碰撞",
+            "difficulty": 4,
+            "description": "碰撞过程中系统机械能守恒的碰撞",
+            "aliases": [
+              "完全弹性碰撞"
+            ],
+            "prerequisites": [
+              "碰撞",
+              "动量守恒定律",
+              "动能"
+            ],
+            "definition": "碰撞过程中系统机械能守恒、碰撞前后总动能相等的碰撞称为弹性碰撞。",
+            "example": "台球碰撞时动能损失很小，可视为弹性碰撞。",
+            "section": "第4 节 弹性碰撞与非弹性碰撞"
+          },
+          {
+            "name": "非弹性碰撞",
+            "difficulty": 3,
+            "description": "碰撞过程中系统机械能有损失的碰撞",
+            "aliases": [],
+            "prerequisites": [
+              "碰撞",
+              "动量守恒定律",
+              "机械能"
+            ],
+            "definition": "碰撞过程中系统机械能不守恒并有部分机械能转化为其他形式能量的碰撞称为非弹性碰撞。",
+            "example": "足球运动员相撞时通常存在机械能损失。",
+            "section": "第4 节 弹性碰撞与非弹性碰撞"
+          },
+          {
+            "name": "完全非弹性碰撞",
+            "difficulty": 4,
+            "description": "碰撞后物体结合并共同运动的碰撞",
+            "aliases": [],
+            "prerequisites": [
+              "非弹性碰撞"
+            ],
+            "definition": "非弹性碰撞中，碰撞后物体结合在一起共同运动且动能损失最大。",
+            "example": "子弹射入木块并嵌在其中后共同运动。",
+            "section": "第4 节 弹性碰撞与非弹性碰撞"
+          },
+          {
+            "name": "验证动量守恒实验",
+            "difficulty": 4,
+            "description": "通过碰撞前后动量数据验证守恒规律的实验",
+            "aliases": [],
+            "prerequisites": [
+              "动量守恒定律",
+              "一维碰撞"
+            ],
+            "definition": "测量碰撞前后物体的质量和速度等数据并比较总动量以验证动量守恒定律。",
+            "example": "用斜槽和小球的平抛射程验证碰撞中的动量守恒。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导　入　从天体到微粒的碰撞",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "第1 节　动量和动量定理",
+            "page_range": [
+              8,
+              15
+            ]
+          },
+          {
+            "name": "第2 节　动量守恒定律及其应用",
+            "page_range": [
+              15,
+              23
+            ]
+          },
+          {
+            "name": "第3 节　科学验证：动量守恒定律",
+            "page_range": [
+              23,
+              25
+            ]
+          },
+          {
+            "name": "第4 节　弹性碰撞与非弹性碰撞",
+            "page_range": [
+              26,
+              37
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2 章　机械振动",
+        "concepts": [
+          {
+            "name": "机械振动",
+            "difficulty": 1,
+            "description": "物体在平衡位置附近的往复运动",
+            "aliases": [
+              "振动"
+            ],
+            "prerequisites": [],
+            "definition": "物体或物体某一部分在某一位置附近的往复运动称为机械振动。",
+            "example": "树枝在微风中来回摇摆。"
+          },
+          {
+            "name": "平衡位置",
+            "difficulty": 1,
+            "description": "振动物体所受回复力为零的位置",
+            "aliases": [],
+            "prerequisites": [
+              "机械振动"
+            ],
+            "definition": "物体所受回复力为零的位置称为平衡位置。",
+            "example": "弹簧振子静止时的位置O。"
+          },
+          {
+            "name": "回复力",
+            "difficulty": 2,
+            "description": "总是指向平衡位置的力",
+            "aliases": [],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置"
+            ],
+            "definition": "物体偏离平衡位置时所受的、总是指向平衡位置的力称为回复力。",
+            "example": "琴弦形变产生的指向平衡位置的弹力。"
+          },
+          {
+            "name": "弹簧振子",
+            "difficulty": 2,
+            "description": "由弹簧和质点构成的理想振动系统",
+            "aliases": [
+              "弹簧振子模型"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置"
+            ],
+            "definition": "弹簧一端固定、另一端连接可视为质点的物体所构成的振动系统称为弹簧振子。",
+            "example": "光滑水平面上的小球连接弹簧振动。"
+          },
+          {
+            "name": "简谐运动",
+            "difficulty": 3,
+            "description": "回复力与位移成正比且方向相反的运动",
+            "aliases": [
+              "简谐振动"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置",
+              "回复力"
+            ],
+            "definition": "物体所受回复力大小与位移大小成正比、方向与位移方向相反的运动称为简谐运动。",
+            "example": "水平弹簧振子的振动。"
+          },
+          {
+            "name": "振幅",
+            "difficulty": 2,
+            "description": "振动物体离开平衡位置的最大距离",
+            "aliases": [
+              "A"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置"
+            ],
+            "definition": "振动物体离开平衡位置的最大距离称为振幅。",
+            "example": "弹簧振子从O到B的距离为振幅。"
+          },
+          {
+            "name": "全振动",
+            "difficulty": 2,
+            "description": "振动物体完成一次完整往复并回到原状态",
+            "aliases": [],
+            "prerequisites": [
+              "机械振动"
+            ],
+            "definition": "振动物体经过一段完整运动后重新回到原来状态的过程称为一次全振动。",
+            "example": "物体从B经O、C再回到B。"
+          },
+          {
+            "name": "周期",
+            "difficulty": 2,
+            "description": "完成一次全振动所经历的时间",
+            "aliases": [
+              "T"
+            ],
+            "prerequisites": [
+              "全振动"
+            ],
+            "definition": "物体完成一次全振动所经历的时间称为周期。",
+            "example": "振子往返一次所用的时间。"
+          },
+          {
+            "name": "频率",
+            "difficulty": 2,
+            "description": "单位时间内完成全振动的次数",
+            "aliases": [
+              "f"
+            ],
+            "prerequisites": [
+              "全振动",
+              "周期"
+            ],
+            "definition": "一段时间内物体完成全振动的次数与这段时间之比称为频率。",
+            "example": "振动频率为2 Hz表示每秒振动2次。"
+          },
+          {
+            "name": "固有周期",
+            "difficulty": 3,
+            "description": "系统仅受回复力振动时的周期",
+            "aliases": [],
+            "prerequisites": [
+              "周期",
+              "回复力"
+            ],
+            "definition": "物体仅在回复力作用下振动时所具有的周期称为固有周期。",
+            "example": "单摆在小振幅下具有确定的固有周期。"
+          },
+          {
+            "name": "固有频率",
+            "difficulty": 3,
+            "description": "由振动系统本身性质决定的频率",
+            "aliases": [],
+            "prerequisites": [
+              "频率",
+              "固有周期"
+            ],
+            "definition": "振动系统本身所具有的、由系统性质决定的频率称为固有频率。",
+            "example": "不同琴弦具有不同的固有频率。"
+          },
+          {
+            "name": "振动图像",
+            "difficulty": 3,
+            "description": "表示位移随时间变化的图像",
+            "aliases": [
+              "位移—时间图像",
+              "x-t图像"
+            ],
+            "prerequisites": [
+              "简谐运动",
+              "位移",
+              "时间"
+            ],
+            "definition": "以时间为横坐标、位移为纵坐标表示位移随时间变化的图像称为振动图像。",
+            "example": "弹簧振子的振动图像是正弦曲线。"
+          },
+          {
+            "name": "简谐位移公式",
+            "difficulty": 3,
+            "description": "用公式表示简谐运动的位移变化",
+            "aliases": [
+              "位移公式"
+            ],
+            "prerequisites": [
+              "简谐运动",
+              "振幅",
+              "周期"
+            ],
+            "definition": "简谐运动的位移与时间关系可表示为x=Asin(ωt+φ₀)。",
+            "example": "用x=Asinωt描述弹簧振子的位移。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "圆频率",
+            "difficulty": 3,
+            "description": "与简谐运动周期相关的角速度量",
+            "aliases": [
+              "ω"
+            ],
+            "prerequisites": [
+              "周期",
+              "简谐位移公式"
+            ],
+            "definition": "简谐运动公式中的角速度ω称为圆频率，且ω=2π/T。",
+            "example": "周期为T的振动圆频率为2π/T。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "相位",
+            "difficulty": 3,
+            "description": "描述简谐运动进行步调的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "简谐位移公式",
+              "圆频率"
+            ],
+            "definition": "简谐运动位移公式中的ωt+φ₀称为相位。",
+            "example": "比较两个振动是否同步时比较相位。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "初相位",
+            "difficulty": 3,
+            "description": "计时开始时简谐运动的相位",
+            "aliases": [
+              "φ₀"
+            ],
+            "prerequisites": [
+              "相位"
+            ],
+            "definition": "简谐运动公式中的φ₀称为初相位。",
+            "example": "不同释放位置会导致不同初相位。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "单摆",
+            "difficulty": 2,
+            "description": "由细线和小球组成的理想摆动模型",
+            "aliases": [
+              "单摆模型"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置",
+              "回复力"
+            ],
+            "definition": "用不可伸长细线悬挂可视为质点的小球构成的装置称为单摆。",
+            "example": "摆钟的摆可近似看作单摆。"
+          },
+          {
+            "name": "单摆周期公式",
+            "difficulty": 3,
+            "description": "给出小振幅单摆周期的计算关系",
+            "aliases": [],
+            "prerequisites": [
+              "单摆",
+              "周期",
+              "简谐运动"
+            ],
+            "definition": "小振幅单摆的周期满足T=2π√(l/g)。",
+            "example": "增大摆长，单摆周期随之增大。",
+            "section": "第3 节 单 摆"
+          },
+          {
+            "name": "自由振动",
+            "difficulty": 2,
+            "description": "振动系统仅在回复力作用下的振动",
+            "aliases": [],
+            "prerequisites": [
+              "回复力",
+              "固有周期"
+            ],
+            "definition": "振动物体偏离平衡位置后仅在回复力作用下进行的振动称为自由振动。",
+            "example": "理想弹簧振子释放后的振动。"
+          },
+          {
+            "name": "阻尼振动",
+            "difficulty": 2,
+            "description": "振幅因阻力作用不断减小的振动",
+            "aliases": [
+              "衰减振动"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "自由振动"
+            ],
+            "definition": "振动过程中振幅不断减小的振动称为阻尼振动。",
+            "example": "物体在水中振动时振幅逐渐减小。"
+          },
+          {
+            "name": "驱动力",
+            "difficulty": 2,
+            "description": "维持受迫振动的周期性外力",
+            "aliases": [
+              "强迫力"
+            ],
+            "prerequisites": [
+              "周期",
+              "自由振动"
+            ],
+            "definition": "施加给振动物体的周期性外力称为驱动力或强迫力。",
+            "example": "摇把对弹簧振子施加周期性驱动力。",
+            "section": "第5 节 生活中的振动"
+          },
+          {
+            "name": "受迫振动",
+            "difficulty": 3,
+            "description": "在周期性外力作用下产生的振动",
+            "aliases": [],
+            "prerequisites": [
+              "驱动力",
+              "阻尼振动"
+            ],
+            "definition": "物体在周期性外力作用下产生的振动称为受迫振动。",
+            "example": "电磁打点计时器振动片的振动。"
+          },
+          {
+            "name": "共振",
+            "difficulty": 3,
+            "description": "驱动频率等于固有频率时振幅最大的现象",
+            "aliases": [
+              "机械共振"
+            ],
+            "prerequisites": [
+              "受迫振动",
+              "驱动力",
+              "固有频率"
+            ],
+            "definition": "驱动力频率与物体固有频率相等时，受迫振动振幅达到最大的现象称为共振。",
+            "example": "秋千按固有频率推动后摆得很高。"
+          },
+          {
+            "name": "共鸣",
+            "difficulty": 3,
+            "description": "声音中的一种共振现象",
+            "aliases": [
+              "声共振"
+            ],
+            "prerequisites": [
+              "共振"
+            ],
+            "definition": "共鸣是一种声共振现象。",
+            "example": "音叉使共鸣箱内空气柱产生共鸣。",
+            "section": "第5 节 生活中的振动"
+          },
+          {
+            "name": "单摆测重力加速度",
+            "difficulty": 3,
+            "description": "利用单摆周期公式测量当地重力加速度",
+            "aliases": [],
+            "prerequisites": [
+              "单摆周期公式",
+              "周期"
+            ],
+            "definition": "测量单摆摆长和周期，并由公式计算当地重力加速度的方法称为单摆测重力加速度。",
+            "example": "测量多次全振动时间后计算g。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导　入　从古代“鱼洗”说起",
+            "page_range": [
+              37,
+              37
+            ]
+          },
+          {
+            "name": "第1 节　简谐运动",
+            "page_range": [
+              38,
+              41
+            ]
+          },
+          {
+            "name": "第2 节　振动的描述",
+            "page_range": [
+              42,
+              47
+            ]
+          },
+          {
+            "name": "第3 节　单　摆",
+            "page_range": [
+              48,
+              51
+            ]
+          },
+          {
+            "name": "第4 节　科学测量：用单摆测量重力加速度",
+            "page_range": [
+              51,
+              55
+            ]
+          },
+          {
+            "name": "第5 节　生活中的振动",
+            "page_range": [
+              55,
+              63
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3 章　机械波",
+        "concepts": [
+          {
+            "name": "机械波",
+            "difficulty": 1,
+            "description": "机械振动在介质中传播形成的波",
+            "aliases": [
+              "波"
+            ],
+            "prerequisites": [
+              "波源",
+              "介质"
+            ],
+            "definition": "机械波是机械振动在介质中传播形成的波。",
+            "example": "绳端振动形成绳波。"
+          },
+          {
+            "name": "波源",
+            "difficulty": 1,
+            "description": "产生机械振动并激发波的物体或位置",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "波源是产生振动并激发机械波的物体或位置。",
+            "example": "振动的声带是声波的波源。"
+          },
+          {
+            "name": "介质",
+            "difficulty": 1,
+            "description": "传播机械波的物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "介质是传播机械波的物质。",
+            "example": "空气可以传播声波。"
+          },
+          {
+            "name": "波的形成",
+            "difficulty": 2,
+            "description": "振动依次带动相邻质点形成波",
+            "aliases": [
+              "波的形成与传播"
+            ],
+            "prerequisites": [
+              "波源",
+              "介质"
+            ],
+            "definition": "介质中各质点依次振动并使振动向远处传播，从而形成波。",
+            "example": "水面一点连续振动形成水波。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "能量传递",
+            "difficulty": 2,
+            "description": "波传播时将波源能量传到介质各处",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波在传递振动的同时，也能把波源的能量传递出去。",
+            "example": "声波把声源能量传到耳边。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "横波",
+            "difficulty": 1,
+            "description": "质点振动方向与传播方向垂直的波",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "横波是质点振动方向与波的传播方向垂直的波。",
+            "example": "绳上形成的波属于横波。"
+          },
+          {
+            "name": "波峰",
+            "difficulty": 1,
+            "description": "横波中凸起的最高处",
+            "aliases": [],
+            "prerequisites": [
+              "横波"
+            ],
+            "definition": "波峰是横波中凸起的最高处。",
+            "example": "绳波凸起处可称为波峰。"
+          },
+          {
+            "name": "波谷",
+            "difficulty": 1,
+            "description": "横波中凹下的最低处",
+            "aliases": [],
+            "prerequisites": [
+              "横波"
+            ],
+            "definition": "波谷是横波中凹下的最低处。",
+            "example": "绳波凹下处可称为波谷。"
+          },
+          {
+            "name": "纵波",
+            "difficulty": 1,
+            "description": "质点振动方向与传播方向同一直线的波",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "纵波是质点振动方向与波的传播方向在同一直线上的波。",
+            "example": "声波属于纵波。"
+          },
+          {
+            "name": "密部",
+            "difficulty": 1,
+            "description": "纵波介质质点分布最密的区域",
+            "aliases": [],
+            "prerequisites": [
+              "纵波"
+            ],
+            "definition": "密部是纵波中介质质点分布最密的部分。",
+            "example": "弹簧被压缩处形成密部。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "疏部",
+            "difficulty": 1,
+            "description": "纵波介质质点分布最疏的区域",
+            "aliases": [],
+            "prerequisites": [
+              "纵波"
+            ],
+            "definition": "疏部是纵波中介质质点分布最疏的部分。",
+            "example": "弹簧被拉开处形成疏部。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "波的图像",
+            "difficulty": 2,
+            "description": "表示某时刻各质点位移的曲线",
+            "aliases": [
+              "波形曲线",
+              "波形"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波的图像用曲线表示某一时刻介质中各质点的位移。",
+            "example": "横坐标表示质点平衡位置，纵坐标表示位移。"
+          },
+          {
+            "name": "简谐波",
+            "difficulty": 2,
+            "description": "波源做简谐运动形成的正弦或余弦波",
+            "aliases": [],
+            "prerequisites": [
+              "波的图像"
+            ],
+            "definition": "简谐波是波源做简谐运动时形成的正弦或余弦曲线波。",
+            "example": "正弦形绳波是简谐波模型。"
+          },
+          {
+            "name": "波的周期",
+            "difficulty": 2,
+            "description": "介质质点完成一次振动所需的时间",
+            "aliases": [
+              "周期"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波的周期是介质质点完成一次周期性振动所需的时间。",
+            "example": "质点每2秒重复一次运动，周期为2秒。"
+          },
+          {
+            "name": "波的频率",
+            "difficulty": 2,
+            "description": "介质质点每秒振动的次数",
+            "aliases": [
+              "频率"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波的频率是介质质点单位时间内振动的次数。",
+            "example": "质点每秒振动20次，频率为20赫兹。"
+          },
+          {
+            "name": "波长",
+            "difficulty": 2,
+            "description": "相邻同相质点间的距离",
+            "aliases": [
+              "λ"
+            ],
+            "prerequisites": [
+              "波的图像",
+              "波的周期"
+            ],
+            "definition": "波长是相邻且振动步调相同的质点间的距离。",
+            "example": "横波相邻波峰间距离等于一个波长。"
+          },
+          {
+            "name": "波速",
+            "difficulty": 2,
+            "description": "振动传播距离与传播时间的比值",
+            "aliases": [
+              "v"
+            ],
+            "prerequisites": [
+              "波长",
+              "波的周期"
+            ],
+            "definition": "波速是振动在介质中的传播距离与传播时间之比。",
+            "example": "波长为2米、频率为3赫兹时波速为6米每秒。"
+          },
+          {
+            "name": "波面",
+            "difficulty": 2,
+            "description": "同一传播时间到达各点组成的面",
+            "aliases": [
+              "波阵面"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波面是波源发出的波经过相同传播时间到达各点所组成的面。",
+            "example": "水波纹的每一道波纹可看作波面。"
+          },
+          {
+            "name": "波线",
+            "difficulty": 2,
+            "description": "表示波传播方向的线",
+            "aliases": [],
+            "prerequisites": [
+              "波面"
+            ],
+            "definition": "波线是用来表示波传播方向的线，并且垂直于波面。",
+            "example": "平面波的波线互相平行。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "波的反射",
+            "difficulty": 2,
+            "description": "波遇到障碍物返回原介质传播的现象",
+            "aliases": [
+              "反射"
+            ],
+            "prerequisites": [
+              "机械波",
+              "波线"
+            ],
+            "definition": "波的反射是波遇到障碍物后返回原来介质传播的现象。",
+            "example": "回音壁利用声波的多次反射。"
+          },
+          {
+            "name": "反射定律",
+            "difficulty": 3,
+            "description": "反射角等于入射角的波反射规律",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射",
+              "入射角",
+              "反射角"
+            ],
+            "definition": "波的反射遵循反射角等于入射角且三线共面的规律。",
+            "example": "水波斜射木板后反射角等于入射角。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "入射角",
+            "difficulty": 2,
+            "description": "入射波波线与法线的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射",
+              "波线"
+            ],
+            "definition": "入射角是入射波波线与反射面法线的夹角。",
+            "example": "水波斜射木板时可测量入射角。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "反射角",
+            "difficulty": 2,
+            "description": "反射波波线与法线的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射",
+              "波线"
+            ],
+            "definition": "反射角是反射波波线与反射面法线的夹角。",
+            "example": "反射波与法线的夹角就是反射角。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "波的折射",
+            "difficulty": 2,
+            "description": "波进入另一介质时传播方向偏折",
+            "aliases": [
+              "折射"
+            ],
+            "prerequisites": [
+              "机械波",
+              "波线"
+            ],
+            "definition": "波的折射是波进入另一种介质时传播方向发生偏折的现象。",
+            "example": "水波由深水区进入浅水区可能发生折射。"
+          },
+          {
+            "name": "惠更斯原理",
+            "difficulty": 3,
+            "description": "波面每一点都可视为新的波源",
+            "aliases": [],
+            "prerequisites": [
+              "波面"
+            ],
+            "definition": "波面上的每一点都可视为新的波源并发出子波。",
+            "example": "用它可以解释波的反射和折射。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "波的叠加原理",
+            "difficulty": 2,
+            "description": "相遇质点位移等于各波位移的矢量和",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "几列波相遇时，质点位移等于各列波单独引起位移的矢量和。",
+            "example": "两列绳波相遇时波形发生叠加。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波的干涉",
+            "difficulty": 3,
+            "description": "加强区和减弱区稳定间隔分布的现象",
+            "aliases": [
+              "干涉"
+            ],
+            "prerequisites": [
+              "波的叠加原理"
+            ],
+            "definition": "波的干涉是频率和振动方向相同的两列波叠加后形成稳定加强、减弱区域的现象。",
+            "example": "两个扬声器使不同位置声音强弱不同。"
+          },
+          {
+            "name": "干涉图样",
+            "difficulty": 3,
+            "description": "波干涉形成的加强区和减弱区图样",
+            "aliases": [],
+            "prerequisites": [
+              "波的干涉"
+            ],
+            "definition": "干涉图样是波干涉时振动加强区与减弱区的稳定分布图样。",
+            "example": "水波槽中出现相间的平静和剧烈振动区域。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "驻波",
+            "difficulty": 3,
+            "description": "两列相反方向传播波叠加形成的波",
+            "aliases": [],
+            "prerequisites": [
+              "波的干涉"
+            ],
+            "definition": "驻波是两个相反方向传播且能产生干涉的波叠加形成的波。",
+            "example": "弦乐器的弦上可以形成驻波。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波节",
+            "difficulty": 2,
+            "description": "驻波上始终不振动的点",
+            "aliases": [],
+            "prerequisites": [
+              "驻波"
+            ],
+            "definition": "波节是驻波上始终不振动的点。",
+            "example": "驻波相邻振幅节点处为波节。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波腹",
+            "difficulty": 2,
+            "description": "驻波上始终振幅最大的点",
+            "aliases": [],
+            "prerequisites": [
+              "驻波"
+            ],
+            "definition": "波腹是驻波上始终振幅最大的点。",
+            "example": "驻波中振动最剧烈的位置为波腹。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波的衍射",
+            "difficulty": 2,
+            "description": "波绕过障碍物或通过孔隙传播的现象",
+            "aliases": [
+              "衍射"
+            ],
+            "prerequisites": [
+              "机械波",
+              "波长"
+            ],
+            "definition": "波的衍射是波绕过障碍物或通过孔隙继续传播的现象。",
+            "example": "水波通过狭缝后向四周扩散。"
+          },
+          {
+            "name": "多普勒效应",
+            "difficulty": 2,
+            "description": "波源与观察者相对运动导致接收频率变化",
+            "aliases": [
+              "多普勒效应及其应用"
+            ],
+            "prerequisites": [
+              "波的频率"
+            ],
+            "definition": "多普勒效应是波源与观察者有相对运动时接收频率发生变化的现象。",
+            "example": "救护车驶近时听到的音调变高。"
+          },
+          {
+            "name": "声呐",
+            "difficulty": 2,
+            "description": "利用声波反射进行导航和测距的系统",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射"
+            ],
+            "definition": "声呐是利用声波反射并测量回波时间进行导航和测距的系统。",
+            "example": "声呐可探测鱼群的位置。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "多普勒测速仪",
+            "difficulty": 3,
+            "description": "利用反射波频率变化测量车辆速度的装置",
+            "aliases": [],
+            "prerequisites": [
+              "多普勒效应"
+            ],
+            "definition": "多普勒测速仪通过分析反射无线电波的频率变化测定车辆速度。",
+            "example": "交通警察用测速仪判断车辆是否超速。",
+            "section": "第4 节 多普勒效应及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导　入　身边的波",
+            "page_range": [
+              63,
+              63
+            ]
+          },
+          {
+            "name": "第1 节　波的形成和描述",
+            "page_range": [
+              64,
+              73
+            ]
+          },
+          {
+            "name": "第2 节　波的反射和折射",
+            "page_range": [
+              74,
+              77
+            ]
+          },
+          {
+            "name": "第3 节　波的干涉和衍射",
+            "page_range": [
+              78,
+              83
+            ]
+          },
+          {
+            "name": "第4 节　多普勒效应及其应用",
+            "page_range": [
+              83,
+              91
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4 章　光的折射和全反射",
+        "concepts": [
+          {
+            "name": "光的折射",
+            "difficulty": 1,
+            "description": "光从一种介质斜射入另一种介质时传播方向改变的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光从一种介质斜射入另一种介质时传播方向发生改变的现象叫光的折射。",
+            "example": "光由空气斜射入水中后传播方向改变。"
+          },
+          {
+            "name": "折射定律",
+            "difficulty": 2,
+            "description": "描述入射角与折射角正弦比值关系的规律",
+            "aliases": [
+              "斯涅耳定律"
+            ],
+            "prerequisites": [
+              "光的折射"
+            ],
+            "definition": "对于确定的两种介质，入射角的正弦与折射角的正弦之比是一个常数。",
+            "example": "光从空气射入玻璃时，sin i与sin r之比保持不变。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "折射率",
+            "difficulty": 2,
+            "description": "反映介质光学性质及使光偏折程度的物理量",
+            "aliases": [
+              "绝对折射率"
+            ],
+            "prerequisites": [
+              "折射定律"
+            ],
+            "definition": "光从真空斜射入介质时入射角正弦与折射角正弦的比值叫该介质的折射率。",
+            "example": "水的折射率约为1.33，玻璃约为1.50。"
+          },
+          {
+            "name": "光路可逆",
+            "difficulty": 2,
+            "description": "光沿原光路反向传播时仍能沿原路径返回的性质",
+            "aliases": [
+              "光路可逆原理"
+            ],
+            "prerequisites": [
+              "光的折射"
+            ],
+            "definition": "光沿某条路径传播时，若反向传播能够沿原路径返回，则称光路可逆。",
+            "example": "光从空气射入玻璃的路径反向时可从玻璃返回空气。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "相对折射率",
+            "difficulty": 3,
+            "description": "光由一种介质进入另一种介质时的折射率",
+            "aliases": [],
+            "prerequisites": [
+              "折射率",
+              "折射定律"
+            ],
+            "definition": "光由介质1进入介质2时，介质2对介质1的折射率称为相对折射率。",
+            "example": "光由空气进入玻璃时，可用两种介质折射率之比表示。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "折射率与速度",
+            "difficulty": 2,
+            "description": "折射率等于真空光速与介质中光速之比",
+            "aliases": [],
+            "prerequisites": [
+              "折射率"
+            ],
+            "definition": "某种介质的折射率等于光在真空中的传播速度与在该介质中传播速度之比。",
+            "example": "介质中光速越小，通常折射率越大。"
+          },
+          {
+            "name": "色散",
+            "difficulty": 3,
+            "description": "白光经三棱镜折射后分解成不同色光的现象",
+            "aliases": [],
+            "prerequisites": [
+              "光的折射",
+              "折射率"
+            ],
+            "definition": "白光中不同色光因折射率不同而发生不同程度偏折并分开的现象叫色散。",
+            "example": "白光通过三棱镜后形成红橙黄绿蓝靛紫光带。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "全反射",
+            "difficulty": 2,
+            "description": "光从光密介质射向光疏介质时完全反射回原介质的现象",
+            "aliases": [
+              "全反射现象"
+            ],
+            "prerequisites": [
+              "光的折射",
+              "折射率"
+            ],
+            "definition": "光由光密介质射入光疏介质且入射角达到一定值时，折射光消失而全部被反射的现象叫全反射。",
+            "example": "光从玻璃以较大入射角射向空气时会发生全反射。"
+          },
+          {
+            "name": "临界角",
+            "difficulty": 3,
+            "description": "刚好发生全反射时的入射角",
+            "aliases": [
+              "全反射临界角"
+            ],
+            "prerequisites": [
+              "全反射"
+            ],
+            "definition": "光从光密介质射向光疏介质时刚好发生全反射的入射角叫临界角。",
+            "example": "玻璃射向空气时，入射角等于临界角，折射角为90°。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "全反射条件",
+            "difficulty": 3,
+            "description": "发生全反射必须满足的介质和角度条件",
+            "aliases": [],
+            "prerequisites": [
+              "全反射",
+              "临界角",
+              "光密介质",
+              "光疏介质"
+            ],
+            "definition": "光由光密介质射入光疏介质且入射角大于或等于临界角时发生全反射。",
+            "example": "水晶射向水且入射角足够大时可能发生全反射。"
+          },
+          {
+            "name": "光密介质",
+            "difficulty": 2,
+            "description": "相对另一介质折射率较大的介质",
+            "aliases": [],
+            "prerequisites": [
+              "折射率"
+            ],
+            "definition": "对两种不同介质而言，折射率较大的介质称为光密介质。",
+            "example": "水晶与水相比，水晶是光密介质。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "光疏介质",
+            "difficulty": 2,
+            "description": "相对另一介质折射率较小的介质",
+            "aliases": [],
+            "prerequisites": [
+              "折射率"
+            ],
+            "definition": "对两种不同介质而言，折射率较小的介质称为光疏介质。",
+            "example": "空气与水相比，空气是光疏介质。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "全反射棱镜",
+            "difficulty": 3,
+            "description": "利用全反射改变光传播方向的棱镜",
+            "aliases": [],
+            "prerequisites": [
+              "全反射",
+              "临界角"
+            ],
+            "definition": "利用棱镜内部全反射使光传播方向发生改变的光学元件叫全反射棱镜。",
+            "example": "等腰直角全反射棱镜可使光线转向90°。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "插针法测折射率",
+            "difficulty": 3,
+            "description": "利用插针确定光路并测量玻璃折射率的实验方法",
+            "aliases": [
+              "玻璃折射率测量"
+            ],
+            "prerequisites": [
+              "折射定律",
+              "折射率"
+            ],
+            "definition": "通过插针确定入射光和出射光方向，测量入射角与折射角以求折射率的方法。",
+            "example": "用玻璃砖和四枚大头针测量玻璃折射率。"
+          },
+          {
+            "name": "光导纤维",
+            "difficulty": 2,
+            "description": "由高折射率内芯和低折射率外层组成的细丝",
+            "aliases": [
+              "光纤"
+            ],
+            "prerequisites": [
+              "全反射",
+              "光密介质",
+              "光疏介质"
+            ],
+            "definition": "由高折射率玻璃内芯和低折射率外层透明介质组成的细丝叫光导纤维。",
+            "example": "光线在光纤内芯与外层界面不断发生全反射。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "光纤通信",
+            "difficulty": 2,
+            "description": "利用光纤传输光信号实现信息通信的技术",
+            "aliases": [],
+            "prerequisites": [
+              "光导纤维",
+              "全反射"
+            ],
+            "definition": "将信息转换为光信号并通过光纤传输，再在接收端还原信息的通信方式。",
+            "example": "光纤可传输电视、电话和计算机数据。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "光纤内窥镜",
+            "difficulty": 3,
+            "description": "利用光纤传递照明光和物体图像的医用仪器",
+            "aliases": [],
+            "prerequisites": [
+              "光导纤维"
+            ],
+            "definition": "利用光纤束传送照明光和物体图像以观察人体内部的仪器叫光纤内窥镜。",
+            "example": "光纤内窥镜可辅助医生观察体腔并进行直视手术。",
+            "section": "第4 节 光导纤维及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导　入　美妙的彩虹",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第1 节　光的折射",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第2 节　科学测量：玻璃的折射率",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第3 节　光的全反射",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第4 节　光导纤维及其应用",
+            "page_range": [
+              91,
+              115
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第5 章　光的干涉、衍射和偏振",
+        "concepts": [
+          {
+            "name": "光波",
+            "difficulty": 1,
+            "description": "具有波动特性的光，可产生干涉、衍射和偏振",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光波是能表现出波动现象的光。",
+            "example": "激光通过双缝后形成干涉条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的干涉",
+            "difficulty": 2,
+            "description": "两列光波叠加形成明暗相间条纹的现象",
+            "aliases": [
+              "干涉现象"
+            ],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "光的干涉是两列光波相遇叠加后出现加强和减弱相间区域的现象。",
+            "example": "激光照射双缝后屏上出现明暗条纹"
+          },
+          {
+            "name": "光的相干条件",
+            "difficulty": 3,
+            "description": "产生稳定光干涉图样所需满足的三个条件",
+            "aliases": [
+              "相干条件"
+            ],
+            "prerequisites": [
+              "光的干涉"
+            ],
+            "definition": "光的相干条件是频率相同、振动方向相同且相位差恒定。",
+            "example": "双缝后的两列光波满足相干条件",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "相干光源",
+            "difficulty": 2,
+            "description": "发出满足相干条件光波的光源",
+            "aliases": [],
+            "prerequisites": [
+              "光的相干条件"
+            ],
+            "definition": "相干光源是发出频率、振动方向相同且相位差恒定光波的光源。",
+            "example": "双缝实验中两个缝可视为相干光源",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "双缝干涉",
+            "difficulty": 2,
+            "description": "利用双缝产生稳定光干涉条纹的实验",
+            "aliases": [
+              "杨氏双缝干涉实验"
+            ],
+            "prerequisites": [
+              "光的干涉",
+              "光的相干条件"
+            ],
+            "definition": "双缝干涉是光波经两个狭缝传播后相遇并形成干涉图样的实验现象。",
+            "example": "杨氏双缝实验观察到明暗相间条纹"
+          },
+          {
+            "name": "干涉加强条件",
+            "difficulty": 3,
+            "description": "路程差为波长整数倍时形成亮条纹",
+            "aliases": [
+              "亮条纹条件"
+            ],
+            "prerequisites": [
+              "双缝干涉"
+            ],
+            "definition": "当两列光波的路程差为波长的整数倍时，光的干涉相互加强。",
+            "example": "路程差为一个波长处出现亮条纹"
+          },
+          {
+            "name": "干涉减弱条件",
+            "difficulty": 3,
+            "description": "路程差为半波长奇数倍时形成暗条纹",
+            "aliases": [
+              "暗条纹条件"
+            ],
+            "prerequisites": [
+              "双缝干涉"
+            ],
+            "definition": "当两列光波的路程差为半个波长的奇数倍时，光的干涉相互减弱。",
+            "example": "路程差为半个波长处出现暗条纹"
+          },
+          {
+            "name": "双缝干涉条纹间距",
+            "difficulty": 3,
+            "description": "相邻亮纹或暗纹中心间的距离",
+            "aliases": [
+              "条纹间距"
+            ],
+            "prerequisites": [
+              "双缝干涉"
+            ],
+            "definition": "双缝干涉条纹间距满足Δy=lλ/d。",
+            "example": "波长增大时条纹间距变大",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的波长测量",
+            "difficulty": 3,
+            "description": "依据双缝干涉条纹间距测定光波波长",
+            "aliases": [
+              "双缝测波长"
+            ],
+            "prerequisites": [
+              "双缝干涉条纹间距"
+            ],
+            "definition": "光的波长测量是通过测量双缝间距、缝屏距离和条纹间距求波长。",
+            "example": "用测量头测量第1至第6条亮纹距离"
+          },
+          {
+            "name": "薄膜干涉",
+            "difficulty": 3,
+            "description": "薄膜两个表面反射光叠加产生的干涉",
+            "aliases": [
+              "膜干涉"
+            ],
+            "prerequisites": [
+              "光的干涉"
+            ],
+            "definition": "薄膜干涉是薄膜前后两个表面的反射光相遇而产生的干涉现象。",
+            "example": "肥皂泡表面出现彩色条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "增透膜",
+            "difficulty": 3,
+            "description": "利用反射光干涉减弱以减少光能损失的薄膜",
+            "aliases": [],
+            "prerequisites": [
+              "薄膜干涉"
+            ],
+            "definition": "增透膜是使两个表面反射光因干涉相消而增强透射光的透明薄膜。",
+            "example": "照相机镜头表面镀氟化镁薄膜",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的衍射",
+            "difficulty": 2,
+            "description": "光绕过障碍物偏离直线传播的现象",
+            "aliases": [
+              "衍射现象"
+            ],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "光的衍射是光绕过障碍物或孔缝边缘传播的现象。",
+            "example": "激光通过小圆孔形成明暗圆环"
+          },
+          {
+            "name": "明显衍射条件",
+            "difficulty": 3,
+            "description": "障碍物或孔缝尺寸接近光波长时衍射明显",
+            "aliases": [],
+            "prerequisites": [
+              "光的衍射"
+            ],
+            "definition": "当障碍物或孔的尺寸接近光的波长时，光的衍射现象明显。",
+            "example": "减小单缝宽度后衍射条纹变宽"
+          },
+          {
+            "name": "单缝衍射",
+            "difficulty": 2,
+            "description": "光通过单缝后形成中央亮纹及明暗条纹",
+            "aliases": [],
+            "prerequisites": [
+              "光的衍射"
+            ],
+            "definition": "单缝衍射是光通过单缝后因衍射形成明暗相间图样的现象。",
+            "example": "红光通过窄单缝形成衍射图样",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "分辨本领",
+            "difficulty": 3,
+            "description": "光学仪器分开相互靠近物体像的能力",
+            "aliases": [
+              "分辨能力"
+            ],
+            "prerequisites": [
+              "光的衍射"
+            ],
+            "definition": "分辨本领是光学仪器把彼此靠近物体的像分离开的能力。",
+            "example": "望远镜口径增大后分辨本领提高",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "衍射光栅",
+            "difficulty": 3,
+            "description": "由大量平行等距狭缝或细槽组成的光学器件",
+            "aliases": [
+              "光栅"
+            ],
+            "prerequisites": [
+              "光的衍射",
+              "光的干涉"
+            ],
+            "definition": "衍射光栅是由许多平行且等距的细缝或细槽组成的光学器件。",
+            "example": "白光经透射光栅形成彩色条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光栅衍射图样",
+            "difficulty": 3,
+            "description": "单缝衍射和多缝干涉共同形成的条纹图样",
+            "aliases": [],
+            "prerequisites": [
+              "衍射光栅"
+            ],
+            "definition": "光栅衍射图样是光栅各狭缝衍射与多缝干涉共同作用的结果。",
+            "example": "背景较暗处出现又细又亮的条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的偏振",
+            "difficulty": 2,
+            "description": "光波振动方向受到限制而呈现特定方向的现象",
+            "aliases": [
+              "偏振现象"
+            ],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "光的偏振是光波只沿某一特定方向振动的现象。",
+            "example": "转动偏振片时透射光强发生变化"
+          },
+          {
+            "name": "自然光",
+            "difficulty": 2,
+            "description": "光振动方向在垂直传播方向平面内分布均匀的光",
+            "aliases": [],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "自然光是光振动可沿垂直传播方向平面内各个方向的光。",
+            "example": "太阳光通常属于自然光",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "偏振光",
+            "difficulty": 2,
+            "description": "振动方向固定的光，也称线偏振光",
+            "aliases": [
+              "线偏振光"
+            ],
+            "prerequisites": [
+              "光的偏振"
+            ],
+            "definition": "偏振光是振动方向沿某一特定方向的光。",
+            "example": "自然光通过偏振片后成为偏振光",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "偏振片",
+            "difficulty": 2,
+            "description": "只允许某一方向振动的光通过的光学元件",
+            "aliases": [
+              "偏振镜"
+            ],
+            "prerequisites": [
+              "偏振光"
+            ],
+            "definition": "偏振片是只让振动方向与透振方向一致的光通过的光学元件。",
+            "example": "两偏振片透振方向垂直时无光通过",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "起偏器与检偏器",
+            "difficulty": 3,
+            "description": "分别用于获得和检验偏振光的偏振片",
+            "aliases": [
+              "起偏器",
+              "检偏器"
+            ],
+            "prerequisites": [
+              "偏振片",
+              "偏振光"
+            ],
+            "definition": "起偏器用于获得偏振光，检偏器用于检查光是否为偏振光。",
+            "example": "旋转检偏器观察透射光强变化",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "偏振现象应用",
+            "difficulty": 2,
+            "description": "偏振光用于立体电影、消除眩光和应力检测",
+            "aliases": [],
+            "prerequisites": [
+              "偏振光",
+              "偏振片"
+            ],
+            "definition": "偏振现象应用是利用偏振光方向特性实现成像、滤光和应力显示。",
+            "example": "偏振镜减少水面反射光干扰"
+          },
+          {
+            "name": "激光",
+            "difficulty": 2,
+            "description": "由原子受激辐射产生的具有优良特性的光",
+            "aliases": [
+              "laser"
+            ],
+            "prerequisites": [
+              "光的相干条件",
+              "偏振光"
+            ],
+            "definition": "激光是原子受激辐射产生的光，具有频率、相位、偏振方向和传播方向一致等特点。",
+            "example": "激光用于条形码扫描和光通信",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "受激辐射跃迁",
+            "difficulty": 4,
+            "description": "外来光子诱导高能态原子发射相同光子的过程",
+            "aliases": [
+              "受激辐射"
+            ],
+            "prerequisites": [
+              "激光"
+            ],
+            "definition": "受激辐射跃迁是高能态原子在外来光子作用下跃迁并发射相同光子的过程。",
+            "example": "诱导光子与发射光子频率相同",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "激光特性",
+            "difficulty": 3,
+            "description": "激光具有单色性好、相干性好、方向性强和亮度高",
+            "aliases": [],
+            "prerequisites": [
+              "激光"
+            ],
+            "definition": "激光特性包括单色性好、相干性好、方向性好和亮度高。",
+            "example": "激光束发散角很小且几乎平行"
+          },
+          {
+            "name": "全息照相",
+            "difficulty": 4,
+            "description": "利用光的干涉记录并再现物体三维信息的方法",
+            "aliases": [
+              "全息摄影"
+            ],
+            "prerequisites": [
+              "光的干涉",
+              "激光"
+            ],
+            "definition": "全息照相是用两束光的干涉条纹记录并再现物体三维图像信息的方法。",
+            "example": "全息照片可从不同角度观察立体图像",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "全息照片",
+            "difficulty": 3,
+            "description": "记录物体三维图像信息并可再现全貌的照片",
+            "aliases": [
+              "全息图"
+            ],
+            "prerequisites": [
+              "全息照相"
+            ],
+            "definition": "全息照片是记录干涉条纹并能再现物体三维图像信息的照片。",
+            "example": "照片局部损坏仍可再现物体全貌",
+            "section": "第5 节 激光与全息照相"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导　入　神奇的光",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第1 节　光的干涉",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第2 节　科学测量：用双缝干涉测光的波长",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第3 节　光的衍射",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第4 节　光的偏振",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第5 节　激光与全息照相",
+            "page_range": [
+              115,
+              146
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "物理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1 章 动量及其守恒定律",
+        "concepts": [
+          {
+            "name": "动量",
+            "difficulty": 2,
+            "description": "描述物体运动状态且与质量、速度有关的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "质量",
+              "速度"
+            ],
+            "definition": "物体质量与速度的乘积称为物体的动量，公式为p=mv。",
+            "example": "质量越大、速度越大的碰碰车，碰撞效果通常越明显。"
+          },
+          {
+            "name": "动量变化量",
+            "difficulty": 2,
+            "description": "表示物体动量改变的矢量",
+            "aliases": [],
+            "prerequisites": [
+              "动量"
+            ],
+            "definition": "物体动量的变化量等于末动量与初动量的矢量差。",
+            "example": "网球反弹时，速度方向改变使动量发生变化。",
+            "section": "第1 节 动量和动量定理"
+          },
+          {
+            "name": "冲量",
+            "difficulty": 2,
+            "description": "表示力对时间的积累效应",
+            "aliases": [],
+            "prerequisites": [
+              "力",
+              "时间"
+            ],
+            "definition": "力与力的作用时间的乘积称为该力的冲量，公式为I=Ft。",
+            "example": "增大球拍击球的作用时间会改变冲量效果。"
+          },
+          {
+            "name": "动量定理",
+            "difficulty": 3,
+            "description": "建立合外力冲量与动量变化量的关系",
+            "aliases": [],
+            "prerequisites": [
+              "动量变化量",
+              "冲量"
+            ],
+            "definition": "物体所受合外力的冲量等于该物体在此过程中的动量变化量。",
+            "example": "用动量定理可求男孩落地时地面的平均作用力。"
+          },
+          {
+            "name": "平均作用力",
+            "difficulty": 3,
+            "description": "变力在一段作用时间内的等效恒力",
+            "aliases": [],
+            "prerequisites": [
+              "动量定理",
+              "冲量"
+            ],
+            "definition": "变力作用过程中，依据动量定理求得的等效作用力称为平均作用力。",
+            "example": "男孩屈膝延长接触时间，地面的平均作用力较小。"
+          },
+          {
+            "name": "缓冲",
+            "difficulty": 2,
+            "description": "通过延长作用时间减小相互作用力的方法",
+            "aliases": [],
+            "prerequisites": [
+              "动量定理",
+              "平均作用力"
+            ],
+            "definition": "在动量变化量一定时，延长力的作用时间可以减小相互作用力，这种措施称为缓冲。",
+            "example": "汽车安全气囊利用形变延长碰撞作用时间。",
+            "section": "第1 节 动量和动量定理"
+          },
+          {
+            "name": "系统",
+            "difficulty": 2,
+            "description": "研究时选定的相互作用物体整体",
+            "aliases": [],
+            "prerequisites": [
+              "物体"
+            ],
+            "definition": "在物理问题中，把相互作用的若干物体作为整体研究时，这个整体称为系统。",
+            "example": "将碰撞的两辆车选作一个系统。"
+          },
+          {
+            "name": "内力",
+            "difficulty": 2,
+            "description": "系统内物体之间的相互作用力",
+            "aliases": [],
+            "prerequisites": [
+              "系统",
+              "力"
+            ],
+            "definition": "系统内物体之间的相互作用力称为内力。",
+            "example": "两滑块相互推开的作用力属于系统内力。"
+          },
+          {
+            "name": "合外力",
+            "difficulty": 3,
+            "description": "系统或物体所受外力的矢量合力",
+            "aliases": [],
+            "prerequisites": [
+              "力",
+              "系统"
+            ],
+            "definition": "系统所受外部各力的矢量和称为系统所受合外力。",
+            "example": "气垫导轨上滑块系统所受合外力近似为零。"
+          },
+          {
+            "name": "系统总动量",
+            "difficulty": 3,
+            "description": "系统内各物体动量的矢量和",
+            "aliases": [],
+            "prerequisites": [
+              "动量",
+              "系统"
+            ],
+            "definition": "系统内各物体动量的矢量和称为系统的总动量。",
+            "example": "两滑块弹开前后的系统总动量都近似为零。"
+          },
+          {
+            "name": "动量守恒定律",
+            "difficulty": 4,
+            "description": "说明系统总动量保持不变的基本规律",
+            "aliases": [
+              "动量守恒"
+            ],
+            "prerequisites": [
+              "动量",
+              "系统",
+              "内力",
+              "合外力"
+            ],
+            "definition": "一个系统不受外力或所受合外力为零时，系统的总动量保持不变。",
+            "example": "两车追尾的短暂碰撞过程中可近似应用动量守恒定律。"
+          },
+          {
+            "name": "反冲运动",
+            "difficulty": 3,
+            "description": "物体喷出物质后向相反方向运动的现象",
+            "aliases": [
+              "反冲"
+            ],
+            "prerequisites": [
+              "动量守恒定律"
+            ],
+            "definition": "物体向某方向喷出物质后，因动量守恒而向相反方向运动的现象称为反冲运动。",
+            "example": "气球放气时会沿喷气方向的相反方向飞行。",
+            "section": "第2 节 动量守恒定律及其应用"
+          },
+          {
+            "name": "一维碰撞",
+            "difficulty": 2,
+            "description": "碰撞前后速度方向均在同一直线上的碰撞",
+            "aliases": [
+              "正碰",
+              "对心碰撞"
+            ],
+            "prerequisites": [
+              "碰撞"
+            ],
+            "definition": "碰撞前后的速度方向均在同一直线上的碰撞称为一维碰撞。",
+            "example": "两钢球沿同一直线迎面碰撞。"
+          },
+          {
+            "name": "斜碰",
+            "difficulty": 3,
+            "description": "碰撞前后速度方向不在同一直线上的碰撞",
+            "aliases": [],
+            "prerequisites": [
+              "碰撞",
+              "动量守恒定律"
+            ],
+            "definition": "碰撞前后的速度方向不在同一直线上的碰撞称为斜碰。",
+            "example": "台球发生不在同一直线上的碰撞。",
+            "section": "第2 节 动量守恒定律及其应用"
+          },
+          {
+            "name": "弹性碰撞",
+            "difficulty": 4,
+            "description": "碰撞过程中系统机械能守恒的碰撞",
+            "aliases": [
+              "完全弹性碰撞"
+            ],
+            "prerequisites": [
+              "碰撞",
+              "动量守恒定律",
+              "动能"
+            ],
+            "definition": "碰撞过程中系统机械能守恒、碰撞前后总动能相等的碰撞称为弹性碰撞。",
+            "example": "台球碰撞时动能损失很小，可视为弹性碰撞。",
+            "section": "第4 节 弹性碰撞与非弹性碰撞"
+          },
+          {
+            "name": "非弹性碰撞",
+            "difficulty": 3,
+            "description": "碰撞过程中系统机械能有损失的碰撞",
+            "aliases": [],
+            "prerequisites": [
+              "碰撞",
+              "动量守恒定律",
+              "机械能"
+            ],
+            "definition": "碰撞过程中系统机械能不守恒并有部分机械能转化为其他形式能量的碰撞称为非弹性碰撞。",
+            "example": "足球运动员相撞时通常存在机械能损失。",
+            "section": "第4 节 弹性碰撞与非弹性碰撞"
+          },
+          {
+            "name": "完全非弹性碰撞",
+            "difficulty": 4,
+            "description": "碰撞后物体结合并共同运动的碰撞",
+            "aliases": [],
+            "prerequisites": [
+              "非弹性碰撞"
+            ],
+            "definition": "非弹性碰撞中，碰撞后物体结合在一起共同运动且动能损失最大。",
+            "example": "子弹射入木块并嵌在其中后共同运动。",
+            "section": "第4 节 弹性碰撞与非弹性碰撞"
+          },
+          {
+            "name": "验证动量守恒实验",
+            "difficulty": 4,
+            "description": "通过碰撞前后动量数据验证守恒规律的实验",
+            "aliases": [],
+            "prerequisites": [
+              "动量守恒定律",
+              "一维碰撞"
+            ],
+            "definition": "测量碰撞前后物体的质量和速度等数据并比较总动量以验证动量守恒定律。",
+            "example": "用斜槽和小球的平抛射程验证碰撞中的动量守恒。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导 入 从天体到微粒的碰撞",
+            "section_key": "a0b358daf8",
+            "page_range": [
+              7,
+              7
+            ]
+          },
+          {
+            "name": "第1 节 动量和动量定理",
+            "section_key": "3fa6ef4cd9",
+            "page_range": [
+              8,
+              15
+            ]
+          },
+          {
+            "name": "第2 节 动量守恒定律及其应用",
+            "section_key": "1bb5c18ab0",
+            "page_range": [
+              15,
+              23
+            ]
+          },
+          {
+            "name": "第3 节 科学验证:动量守恒定律",
+            "section_key": "81e418d582",
+            "page_range": [
+              23,
+              25
+            ]
+          },
+          {
+            "name": "第4 节 弹性碰撞与非弹性碰撞",
+            "section_key": "b23ba2cc3d",
+            "page_range": [
+              26,
+              37
+            ]
+          }
+        ],
+        "chapter_key": "dfd95c655e",
+        "metadata": {
+          "volume_id": "dcaff0600ed2",
+          "file_id": "dcaff0600ed2",
+          "volume_title": "普通高中教科书 物理 选择性必修第一册",
+          "chapter_order": 1,
+          "raw_heading": "第1 章　动量及其守恒定律"
+        }
+      },
+      {
+        "name": "第2 章 机械振动",
+        "concepts": [
+          {
+            "name": "机械振动",
+            "difficulty": 1,
+            "description": "物体在平衡位置附近的往复运动",
+            "aliases": [
+              "振动"
+            ],
+            "prerequisites": [],
+            "definition": "物体或物体某一部分在某一位置附近的往复运动称为机械振动。",
+            "example": "树枝在微风中来回摇摆。"
+          },
+          {
+            "name": "平衡位置",
+            "difficulty": 1,
+            "description": "振动物体所受回复力为零的位置",
+            "aliases": [],
+            "prerequisites": [
+              "机械振动"
+            ],
+            "definition": "物体所受回复力为零的位置称为平衡位置。",
+            "example": "弹簧振子静止时的位置O。"
+          },
+          {
+            "name": "回复力",
+            "difficulty": 2,
+            "description": "总是指向平衡位置的力",
+            "aliases": [],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置"
+            ],
+            "definition": "物体偏离平衡位置时所受的、总是指向平衡位置的力称为回复力。",
+            "example": "琴弦形变产生的指向平衡位置的弹力。"
+          },
+          {
+            "name": "弹簧振子",
+            "difficulty": 2,
+            "description": "由弹簧和质点构成的理想振动系统",
+            "aliases": [
+              "弹簧振子模型"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置"
+            ],
+            "definition": "弹簧一端固定、另一端连接可视为质点的物体所构成的振动系统称为弹簧振子。",
+            "example": "光滑水平面上的小球连接弹簧振动。"
+          },
+          {
+            "name": "简谐运动",
+            "difficulty": 3,
+            "description": "回复力与位移成正比且方向相反的运动",
+            "aliases": [
+              "简谐振动"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置",
+              "回复力"
+            ],
+            "definition": "物体所受回复力大小与位移大小成正比、方向与位移方向相反的运动称为简谐运动。",
+            "example": "水平弹簧振子的振动。"
+          },
+          {
+            "name": "振幅",
+            "difficulty": 2,
+            "description": "振动物体离开平衡位置的最大距离",
+            "aliases": [
+              "A"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置"
+            ],
+            "definition": "振动物体离开平衡位置的最大距离称为振幅。",
+            "example": "弹簧振子从O到B的距离为振幅。"
+          },
+          {
+            "name": "全振动",
+            "difficulty": 2,
+            "description": "振动物体完成一次完整往复并回到原状态",
+            "aliases": [],
+            "prerequisites": [
+              "机械振动"
+            ],
+            "definition": "振动物体经过一段完整运动后重新回到原来状态的过程称为一次全振动。",
+            "example": "物体从B经O、C再回到B。"
+          },
+          {
+            "name": "周期",
+            "difficulty": 2,
+            "description": "完成一次全振动所经历的时间",
+            "aliases": [
+              "T"
+            ],
+            "prerequisites": [
+              "全振动"
+            ],
+            "definition": "物体完成一次全振动所经历的时间称为周期。",
+            "example": "振子往返一次所用的时间。"
+          },
+          {
+            "name": "频率",
+            "difficulty": 2,
+            "description": "单位时间内完成全振动的次数",
+            "aliases": [
+              "f"
+            ],
+            "prerequisites": [
+              "全振动",
+              "周期"
+            ],
+            "definition": "一段时间内物体完成全振动的次数与这段时间之比称为频率。",
+            "example": "振动频率为2 Hz表示每秒振动2次。"
+          },
+          {
+            "name": "固有周期",
+            "difficulty": 3,
+            "description": "系统仅受回复力振动时的周期",
+            "aliases": [],
+            "prerequisites": [
+              "周期",
+              "回复力"
+            ],
+            "definition": "物体仅在回复力作用下振动时所具有的周期称为固有周期。",
+            "example": "单摆在小振幅下具有确定的固有周期。"
+          },
+          {
+            "name": "固有频率",
+            "difficulty": 3,
+            "description": "由振动系统本身性质决定的频率",
+            "aliases": [],
+            "prerequisites": [
+              "频率",
+              "固有周期"
+            ],
+            "definition": "振动系统本身所具有的、由系统性质决定的频率称为固有频率。",
+            "example": "不同琴弦具有不同的固有频率。"
+          },
+          {
+            "name": "振动图像",
+            "difficulty": 3,
+            "description": "表示位移随时间变化的图像",
+            "aliases": [
+              "位移—时间图像",
+              "x-t图像"
+            ],
+            "prerequisites": [
+              "简谐运动",
+              "位移",
+              "时间"
+            ],
+            "definition": "以时间为横坐标、位移为纵坐标表示位移随时间变化的图像称为振动图像。",
+            "example": "弹簧振子的振动图像是正弦曲线。"
+          },
+          {
+            "name": "简谐位移公式",
+            "difficulty": 3,
+            "description": "用公式表示简谐运动的位移变化",
+            "aliases": [
+              "位移公式"
+            ],
+            "prerequisites": [
+              "简谐运动",
+              "振幅",
+              "周期"
+            ],
+            "definition": "简谐运动的位移与时间关系可表示为x=Asin(ωt+φ₀)。",
+            "example": "用x=Asinωt描述弹簧振子的位移。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "圆频率",
+            "difficulty": 3,
+            "description": "与简谐运动周期相关的角速度量",
+            "aliases": [
+              "ω"
+            ],
+            "prerequisites": [
+              "周期",
+              "简谐位移公式"
+            ],
+            "definition": "简谐运动公式中的角速度ω称为圆频率，且ω=2π/T。",
+            "example": "周期为T的振动圆频率为2π/T。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "相位",
+            "difficulty": 3,
+            "description": "描述简谐运动进行步调的物理量",
+            "aliases": [],
+            "prerequisites": [
+              "简谐位移公式",
+              "圆频率"
+            ],
+            "definition": "简谐运动位移公式中的ωt+φ₀称为相位。",
+            "example": "比较两个振动是否同步时比较相位。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "初相位",
+            "difficulty": 3,
+            "description": "计时开始时简谐运动的相位",
+            "aliases": [
+              "φ₀"
+            ],
+            "prerequisites": [
+              "相位"
+            ],
+            "definition": "简谐运动公式中的φ₀称为初相位。",
+            "example": "不同释放位置会导致不同初相位。",
+            "section": "第2 节 振动的描述"
+          },
+          {
+            "name": "单摆",
+            "difficulty": 2,
+            "description": "由细线和小球组成的理想摆动模型",
+            "aliases": [
+              "单摆模型"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "平衡位置",
+              "回复力"
+            ],
+            "definition": "用不可伸长细线悬挂可视为质点的小球构成的装置称为单摆。",
+            "example": "摆钟的摆可近似看作单摆。"
+          },
+          {
+            "name": "单摆周期公式",
+            "difficulty": 3,
+            "description": "给出小振幅单摆周期的计算关系",
+            "aliases": [],
+            "prerequisites": [
+              "单摆",
+              "周期",
+              "简谐运动"
+            ],
+            "definition": "小振幅单摆的周期满足T=2π√(l/g)。",
+            "example": "增大摆长，单摆周期随之增大。",
+            "section": "第3 节 单 摆"
+          },
+          {
+            "name": "自由振动",
+            "difficulty": 2,
+            "description": "振动系统仅在回复力作用下的振动",
+            "aliases": [],
+            "prerequisites": [
+              "回复力",
+              "固有周期"
+            ],
+            "definition": "振动物体偏离平衡位置后仅在回复力作用下进行的振动称为自由振动。",
+            "example": "理想弹簧振子释放后的振动。"
+          },
+          {
+            "name": "阻尼振动",
+            "difficulty": 2,
+            "description": "振幅因阻力作用不断减小的振动",
+            "aliases": [
+              "衰减振动"
+            ],
+            "prerequisites": [
+              "机械振动",
+              "自由振动"
+            ],
+            "definition": "振动过程中振幅不断减小的振动称为阻尼振动。",
+            "example": "物体在水中振动时振幅逐渐减小。"
+          },
+          {
+            "name": "驱动力",
+            "difficulty": 2,
+            "description": "维持受迫振动的周期性外力",
+            "aliases": [
+              "强迫力"
+            ],
+            "prerequisites": [
+              "周期",
+              "自由振动"
+            ],
+            "definition": "施加给振动物体的周期性外力称为驱动力或强迫力。",
+            "example": "摇把对弹簧振子施加周期性驱动力。",
+            "section": "第5 节 生活中的振动"
+          },
+          {
+            "name": "受迫振动",
+            "difficulty": 3,
+            "description": "在周期性外力作用下产生的振动",
+            "aliases": [],
+            "prerequisites": [
+              "驱动力",
+              "阻尼振动"
+            ],
+            "definition": "物体在周期性外力作用下产生的振动称为受迫振动。",
+            "example": "电磁打点计时器振动片的振动。"
+          },
+          {
+            "name": "共振",
+            "difficulty": 3,
+            "description": "驱动频率等于固有频率时振幅最大的现象",
+            "aliases": [
+              "机械共振"
+            ],
+            "prerequisites": [
+              "受迫振动",
+              "驱动力",
+              "固有频率"
+            ],
+            "definition": "驱动力频率与物体固有频率相等时，受迫振动振幅达到最大的现象称为共振。",
+            "example": "秋千按固有频率推动后摆得很高。"
+          },
+          {
+            "name": "共鸣",
+            "difficulty": 3,
+            "description": "声音中的一种共振现象",
+            "aliases": [
+              "声共振"
+            ],
+            "prerequisites": [
+              "共振"
+            ],
+            "definition": "共鸣是一种声共振现象。",
+            "example": "音叉使共鸣箱内空气柱产生共鸣。",
+            "section": "第5 节 生活中的振动"
+          },
+          {
+            "name": "单摆测重力加速度",
+            "difficulty": 3,
+            "description": "利用单摆周期公式测量当地重力加速度",
+            "aliases": [],
+            "prerequisites": [
+              "单摆周期公式",
+              "周期"
+            ],
+            "definition": "测量单摆摆长和周期，并由公式计算当地重力加速度的方法称为单摆测重力加速度。",
+            "example": "测量多次全振动时间后计算g。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导 入 从古代“鱼洗”说起",
+            "section_key": "705649046d",
+            "page_range": [
+              37,
+              37
+            ]
+          },
+          {
+            "name": "第1 节 简谐运动",
+            "section_key": "b97e54b53d",
+            "page_range": [
+              38,
+              41
+            ]
+          },
+          {
+            "name": "第2 节 振动的描述",
+            "section_key": "37cbf5cb0c",
+            "page_range": [
+              42,
+              47
+            ]
+          },
+          {
+            "name": "第3 节 单 摆",
+            "section_key": "d5c7e2cf0e",
+            "page_range": [
+              48,
+              51
+            ]
+          },
+          {
+            "name": "第4 节 科学测量:用单摆测量重力加速度",
+            "section_key": "640393d64e",
+            "page_range": [
+              51,
+              55
+            ]
+          },
+          {
+            "name": "第5 节 生活中的振动",
+            "section_key": "f14bed5f1f",
+            "page_range": [
+              55,
+              63
+            ]
+          }
+        ],
+        "chapter_key": "e9def6649d",
+        "metadata": {
+          "volume_id": "dcaff0600ed2",
+          "file_id": "dcaff0600ed2",
+          "volume_title": "普通高中教科书 物理 选择性必修第一册",
+          "chapter_order": 2,
+          "raw_heading": "第2 章　机械振动"
+        }
+      },
+      {
+        "name": "第3 章 机械波",
+        "concepts": [
+          {
+            "name": "机械波",
+            "difficulty": 1,
+            "description": "机械振动在介质中传播形成的波",
+            "aliases": [
+              "波"
+            ],
+            "prerequisites": [
+              "波源",
+              "介质"
+            ],
+            "definition": "机械波是机械振动在介质中传播形成的波。",
+            "example": "绳端振动形成绳波。"
+          },
+          {
+            "name": "波源",
+            "difficulty": 1,
+            "description": "产生机械振动并激发波的物体或位置",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "波源是产生振动并激发机械波的物体或位置。",
+            "example": "振动的声带是声波的波源。"
+          },
+          {
+            "name": "介质",
+            "difficulty": 1,
+            "description": "传播机械波的物质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "介质是传播机械波的物质。",
+            "example": "空气可以传播声波。"
+          },
+          {
+            "name": "波的形成",
+            "difficulty": 2,
+            "description": "振动依次带动相邻质点形成波",
+            "aliases": [
+              "波的形成与传播"
+            ],
+            "prerequisites": [
+              "波源",
+              "介质"
+            ],
+            "definition": "介质中各质点依次振动并使振动向远处传播，从而形成波。",
+            "example": "水面一点连续振动形成水波。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "能量传递",
+            "difficulty": 2,
+            "description": "波传播时将波源能量传到介质各处",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波在传递振动的同时，也能把波源的能量传递出去。",
+            "example": "声波把声源能量传到耳边。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "横波",
+            "difficulty": 1,
+            "description": "质点振动方向与传播方向垂直的波",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "横波是质点振动方向与波的传播方向垂直的波。",
+            "example": "绳上形成的波属于横波。"
+          },
+          {
+            "name": "波峰",
+            "difficulty": 1,
+            "description": "横波中凸起的最高处",
+            "aliases": [],
+            "prerequisites": [
+              "横波"
+            ],
+            "definition": "波峰是横波中凸起的最高处。",
+            "example": "绳波凸起处可称为波峰。"
+          },
+          {
+            "name": "波谷",
+            "difficulty": 1,
+            "description": "横波中凹下的最低处",
+            "aliases": [],
+            "prerequisites": [
+              "横波"
+            ],
+            "definition": "波谷是横波中凹下的最低处。",
+            "example": "绳波凹下处可称为波谷。"
+          },
+          {
+            "name": "纵波",
+            "difficulty": 1,
+            "description": "质点振动方向与传播方向同一直线的波",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "纵波是质点振动方向与波的传播方向在同一直线上的波。",
+            "example": "声波属于纵波。"
+          },
+          {
+            "name": "密部",
+            "difficulty": 1,
+            "description": "纵波介质质点分布最密的区域",
+            "aliases": [],
+            "prerequisites": [
+              "纵波"
+            ],
+            "definition": "密部是纵波中介质质点分布最密的部分。",
+            "example": "弹簧被压缩处形成密部。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "疏部",
+            "difficulty": 1,
+            "description": "纵波介质质点分布最疏的区域",
+            "aliases": [],
+            "prerequisites": [
+              "纵波"
+            ],
+            "definition": "疏部是纵波中介质质点分布最疏的部分。",
+            "example": "弹簧被拉开处形成疏部。",
+            "section": "第1 节 波的形成和描述"
+          },
+          {
+            "name": "波的图像",
+            "difficulty": 2,
+            "description": "表示某时刻各质点位移的曲线",
+            "aliases": [
+              "波形曲线",
+              "波形"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波的图像用曲线表示某一时刻介质中各质点的位移。",
+            "example": "横坐标表示质点平衡位置，纵坐标表示位移。"
+          },
+          {
+            "name": "简谐波",
+            "difficulty": 2,
+            "description": "波源做简谐运动形成的正弦或余弦波",
+            "aliases": [],
+            "prerequisites": [
+              "波的图像"
+            ],
+            "definition": "简谐波是波源做简谐运动时形成的正弦或余弦曲线波。",
+            "example": "正弦形绳波是简谐波模型。"
+          },
+          {
+            "name": "波的周期",
+            "difficulty": 2,
+            "description": "介质质点完成一次振动所需的时间",
+            "aliases": [
+              "周期"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波的周期是介质质点完成一次周期性振动所需的时间。",
+            "example": "质点每2秒重复一次运动，周期为2秒。"
+          },
+          {
+            "name": "波的频率",
+            "difficulty": 2,
+            "description": "介质质点每秒振动的次数",
+            "aliases": [
+              "频率"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波的频率是介质质点单位时间内振动的次数。",
+            "example": "质点每秒振动20次，频率为20赫兹。"
+          },
+          {
+            "name": "波长",
+            "difficulty": 2,
+            "description": "相邻同相质点间的距离",
+            "aliases": [
+              "λ"
+            ],
+            "prerequisites": [
+              "波的图像",
+              "波的周期"
+            ],
+            "definition": "波长是相邻且振动步调相同的质点间的距离。",
+            "example": "横波相邻波峰间距离等于一个波长。"
+          },
+          {
+            "name": "波速",
+            "difficulty": 2,
+            "description": "振动传播距离与传播时间的比值",
+            "aliases": [
+              "v"
+            ],
+            "prerequisites": [
+              "波长",
+              "波的周期"
+            ],
+            "definition": "波速是振动在介质中的传播距离与传播时间之比。",
+            "example": "波长为2米、频率为3赫兹时波速为6米每秒。"
+          },
+          {
+            "name": "波面",
+            "difficulty": 2,
+            "description": "同一传播时间到达各点组成的面",
+            "aliases": [
+              "波阵面"
+            ],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "波面是波源发出的波经过相同传播时间到达各点所组成的面。",
+            "example": "水波纹的每一道波纹可看作波面。"
+          },
+          {
+            "name": "波线",
+            "difficulty": 2,
+            "description": "表示波传播方向的线",
+            "aliases": [],
+            "prerequisites": [
+              "波面"
+            ],
+            "definition": "波线是用来表示波传播方向的线，并且垂直于波面。",
+            "example": "平面波的波线互相平行。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "波的反射",
+            "difficulty": 2,
+            "description": "波遇到障碍物返回原介质传播的现象",
+            "aliases": [
+              "反射"
+            ],
+            "prerequisites": [
+              "机械波",
+              "波线"
+            ],
+            "definition": "波的反射是波遇到障碍物后返回原来介质传播的现象。",
+            "example": "回音壁利用声波的多次反射。"
+          },
+          {
+            "name": "反射定律",
+            "difficulty": 3,
+            "description": "反射角等于入射角的波反射规律",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射",
+              "入射角",
+              "反射角"
+            ],
+            "definition": "波的反射遵循反射角等于入射角且三线共面的规律。",
+            "example": "水波斜射木板后反射角等于入射角。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "入射角",
+            "difficulty": 2,
+            "description": "入射波波线与法线的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射",
+              "波线"
+            ],
+            "definition": "入射角是入射波波线与反射面法线的夹角。",
+            "example": "水波斜射木板时可测量入射角。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "反射角",
+            "difficulty": 2,
+            "description": "反射波波线与法线的夹角",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射",
+              "波线"
+            ],
+            "definition": "反射角是反射波波线与反射面法线的夹角。",
+            "example": "反射波与法线的夹角就是反射角。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "波的折射",
+            "difficulty": 2,
+            "description": "波进入另一介质时传播方向偏折",
+            "aliases": [
+              "折射"
+            ],
+            "prerequisites": [
+              "机械波",
+              "波线"
+            ],
+            "definition": "波的折射是波进入另一种介质时传播方向发生偏折的现象。",
+            "example": "水波由深水区进入浅水区可能发生折射。"
+          },
+          {
+            "name": "惠更斯原理",
+            "difficulty": 3,
+            "description": "波面每一点都可视为新的波源",
+            "aliases": [],
+            "prerequisites": [
+              "波面"
+            ],
+            "definition": "波面上的每一点都可视为新的波源并发出子波。",
+            "example": "用它可以解释波的反射和折射。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "波的叠加原理",
+            "difficulty": 2,
+            "description": "相遇质点位移等于各波位移的矢量和",
+            "aliases": [],
+            "prerequisites": [
+              "机械波"
+            ],
+            "definition": "几列波相遇时，质点位移等于各列波单独引起位移的矢量和。",
+            "example": "两列绳波相遇时波形发生叠加。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波的干涉",
+            "difficulty": 3,
+            "description": "加强区和减弱区稳定间隔分布的现象",
+            "aliases": [
+              "干涉"
+            ],
+            "prerequisites": [
+              "波的叠加原理"
+            ],
+            "definition": "波的干涉是频率和振动方向相同的两列波叠加后形成稳定加强、减弱区域的现象。",
+            "example": "两个扬声器使不同位置声音强弱不同。"
+          },
+          {
+            "name": "干涉图样",
+            "difficulty": 3,
+            "description": "波干涉形成的加强区和减弱区图样",
+            "aliases": [],
+            "prerequisites": [
+              "波的干涉"
+            ],
+            "definition": "干涉图样是波干涉时振动加强区与减弱区的稳定分布图样。",
+            "example": "水波槽中出现相间的平静和剧烈振动区域。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "驻波",
+            "difficulty": 3,
+            "description": "两列相反方向传播波叠加形成的波",
+            "aliases": [],
+            "prerequisites": [
+              "波的干涉"
+            ],
+            "definition": "驻波是两个相反方向传播且能产生干涉的波叠加形成的波。",
+            "example": "弦乐器的弦上可以形成驻波。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波节",
+            "difficulty": 2,
+            "description": "驻波上始终不振动的点",
+            "aliases": [],
+            "prerequisites": [
+              "驻波"
+            ],
+            "definition": "波节是驻波上始终不振动的点。",
+            "example": "驻波相邻振幅节点处为波节。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波腹",
+            "difficulty": 2,
+            "description": "驻波上始终振幅最大的点",
+            "aliases": [],
+            "prerequisites": [
+              "驻波"
+            ],
+            "definition": "波腹是驻波上始终振幅最大的点。",
+            "example": "驻波中振动最剧烈的位置为波腹。",
+            "section": "第3 节 波的干涉和衍射"
+          },
+          {
+            "name": "波的衍射",
+            "difficulty": 2,
+            "description": "波绕过障碍物或通过孔隙传播的现象",
+            "aliases": [
+              "衍射"
+            ],
+            "prerequisites": [
+              "机械波",
+              "波长"
+            ],
+            "definition": "波的衍射是波绕过障碍物或通过孔隙继续传播的现象。",
+            "example": "水波通过狭缝后向四周扩散。"
+          },
+          {
+            "name": "多普勒效应",
+            "difficulty": 2,
+            "description": "波源与观察者相对运动导致接收频率变化",
+            "aliases": [
+              "多普勒效应及其应用"
+            ],
+            "prerequisites": [
+              "波的频率"
+            ],
+            "definition": "多普勒效应是波源与观察者有相对运动时接收频率发生变化的现象。",
+            "example": "救护车驶近时听到的音调变高。"
+          },
+          {
+            "name": "声呐",
+            "difficulty": 2,
+            "description": "利用声波反射进行导航和测距的系统",
+            "aliases": [],
+            "prerequisites": [
+              "波的反射"
+            ],
+            "definition": "声呐是利用声波反射并测量回波时间进行导航和测距的系统。",
+            "example": "声呐可探测鱼群的位置。",
+            "section": "第2 节 波的反射和折射"
+          },
+          {
+            "name": "多普勒测速仪",
+            "difficulty": 3,
+            "description": "利用反射波频率变化测量车辆速度的装置",
+            "aliases": [],
+            "prerequisites": [
+              "多普勒效应"
+            ],
+            "definition": "多普勒测速仪通过分析反射无线电波的频率变化测定车辆速度。",
+            "example": "交通警察用测速仪判断车辆是否超速。",
+            "section": "第4 节 多普勒效应及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导 入 身边的波",
+            "section_key": "04d86df6c2",
+            "page_range": [
+              63,
+              63
+            ]
+          },
+          {
+            "name": "第1 节 波的形成和描述",
+            "section_key": "dfe1683767",
+            "page_range": [
+              64,
+              73
+            ]
+          },
+          {
+            "name": "第2 节 波的反射和折射",
+            "section_key": "fe7e6565d5",
+            "page_range": [
+              74,
+              77
+            ]
+          },
+          {
+            "name": "第3 节 波的干涉和衍射",
+            "section_key": "317ba363d5",
+            "page_range": [
+              78,
+              83
+            ]
+          },
+          {
+            "name": "第4 节 多普勒效应及其应用",
+            "section_key": "ea60ae7fe3",
+            "page_range": [
+              83,
+              91
+            ]
+          }
+        ],
+        "chapter_key": "2ecf555ab9",
+        "metadata": {
+          "volume_id": "dcaff0600ed2",
+          "file_id": "dcaff0600ed2",
+          "volume_title": "普通高中教科书 物理 选择性必修第一册",
+          "chapter_order": 3,
+          "raw_heading": "第3 章　机械波"
+        }
+      },
+      {
+        "name": "第4 章 光的折射和全反射",
+        "concepts": [
+          {
+            "name": "光的折射",
+            "difficulty": 1,
+            "description": "光从一种介质斜射入另一种介质时传播方向改变的现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光从一种介质斜射入另一种介质时传播方向发生改变的现象叫光的折射。",
+            "example": "光由空气斜射入水中后传播方向改变。"
+          },
+          {
+            "name": "折射定律",
+            "difficulty": 2,
+            "description": "描述入射角与折射角正弦比值关系的规律",
+            "aliases": [
+              "斯涅耳定律"
+            ],
+            "prerequisites": [
+              "光的折射"
+            ],
+            "definition": "对于确定的两种介质，入射角的正弦与折射角的正弦之比是一个常数。",
+            "example": "光从空气射入玻璃时，sin i与sin r之比保持不变。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "折射率",
+            "difficulty": 2,
+            "description": "反映介质光学性质及使光偏折程度的物理量",
+            "aliases": [
+              "绝对折射率"
+            ],
+            "prerequisites": [
+              "折射定律"
+            ],
+            "definition": "光从真空斜射入介质时入射角正弦与折射角正弦的比值叫该介质的折射率。",
+            "example": "水的折射率约为1.33，玻璃约为1.50。"
+          },
+          {
+            "name": "光路可逆",
+            "difficulty": 2,
+            "description": "光沿原光路反向传播时仍能沿原路径返回的性质",
+            "aliases": [
+              "光路可逆原理"
+            ],
+            "prerequisites": [
+              "光的折射"
+            ],
+            "definition": "光沿某条路径传播时，若反向传播能够沿原路径返回，则称光路可逆。",
+            "example": "光从空气射入玻璃的路径反向时可从玻璃返回空气。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "相对折射率",
+            "difficulty": 3,
+            "description": "光由一种介质进入另一种介质时的折射率",
+            "aliases": [],
+            "prerequisites": [
+              "折射率",
+              "折射定律"
+            ],
+            "definition": "光由介质1进入介质2时，介质2对介质1的折射率称为相对折射率。",
+            "example": "光由空气进入玻璃时，可用两种介质折射率之比表示。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "折射率与速度",
+            "difficulty": 2,
+            "description": "折射率等于真空光速与介质中光速之比",
+            "aliases": [],
+            "prerequisites": [
+              "折射率"
+            ],
+            "definition": "某种介质的折射率等于光在真空中的传播速度与在该介质中传播速度之比。",
+            "example": "介质中光速越小，通常折射率越大。"
+          },
+          {
+            "name": "色散",
+            "difficulty": 3,
+            "description": "白光经三棱镜折射后分解成不同色光的现象",
+            "aliases": [],
+            "prerequisites": [
+              "光的折射",
+              "折射率"
+            ],
+            "definition": "白光中不同色光因折射率不同而发生不同程度偏折并分开的现象叫色散。",
+            "example": "白光通过三棱镜后形成红橙黄绿蓝靛紫光带。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "全反射",
+            "difficulty": 2,
+            "description": "光从光密介质射向光疏介质时完全反射回原介质的现象",
+            "aliases": [
+              "全反射现象"
+            ],
+            "prerequisites": [
+              "光的折射",
+              "折射率"
+            ],
+            "definition": "光由光密介质射入光疏介质且入射角达到一定值时，折射光消失而全部被反射的现象叫全反射。",
+            "example": "光从玻璃以较大入射角射向空气时会发生全反射。"
+          },
+          {
+            "name": "临界角",
+            "difficulty": 3,
+            "description": "刚好发生全反射时的入射角",
+            "aliases": [
+              "全反射临界角"
+            ],
+            "prerequisites": [
+              "全反射"
+            ],
+            "definition": "光从光密介质射向光疏介质时刚好发生全反射的入射角叫临界角。",
+            "example": "玻璃射向空气时，入射角等于临界角，折射角为90°。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "全反射条件",
+            "difficulty": 3,
+            "description": "发生全反射必须满足的介质和角度条件",
+            "aliases": [],
+            "prerequisites": [
+              "全反射",
+              "临界角",
+              "光密介质",
+              "光疏介质"
+            ],
+            "definition": "光由光密介质射入光疏介质且入射角大于或等于临界角时发生全反射。",
+            "example": "水晶射向水且入射角足够大时可能发生全反射。"
+          },
+          {
+            "name": "光密介质",
+            "difficulty": 2,
+            "description": "相对另一介质折射率较大的介质",
+            "aliases": [],
+            "prerequisites": [
+              "折射率"
+            ],
+            "definition": "对两种不同介质而言，折射率较大的介质称为光密介质。",
+            "example": "水晶与水相比，水晶是光密介质。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "光疏介质",
+            "difficulty": 2,
+            "description": "相对另一介质折射率较小的介质",
+            "aliases": [],
+            "prerequisites": [
+              "折射率"
+            ],
+            "definition": "对两种不同介质而言，折射率较小的介质称为光疏介质。",
+            "example": "空气与水相比，空气是光疏介质。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "全反射棱镜",
+            "difficulty": 3,
+            "description": "利用全反射改变光传播方向的棱镜",
+            "aliases": [],
+            "prerequisites": [
+              "全反射",
+              "临界角"
+            ],
+            "definition": "利用棱镜内部全反射使光传播方向发生改变的光学元件叫全反射棱镜。",
+            "example": "等腰直角全反射棱镜可使光线转向90°。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "插针法测折射率",
+            "difficulty": 3,
+            "description": "利用插针确定光路并测量玻璃折射率的实验方法",
+            "aliases": [
+              "玻璃折射率测量"
+            ],
+            "prerequisites": [
+              "折射定律",
+              "折射率"
+            ],
+            "definition": "通过插针确定入射光和出射光方向，测量入射角与折射角以求折射率的方法。",
+            "example": "用玻璃砖和四枚大头针测量玻璃折射率。"
+          },
+          {
+            "name": "光导纤维",
+            "difficulty": 2,
+            "description": "由高折射率内芯和低折射率外层组成的细丝",
+            "aliases": [
+              "光纤"
+            ],
+            "prerequisites": [
+              "全反射",
+              "光密介质",
+              "光疏介质"
+            ],
+            "definition": "由高折射率玻璃内芯和低折射率外层透明介质组成的细丝叫光导纤维。",
+            "example": "光线在光纤内芯与外层界面不断发生全反射。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "光纤通信",
+            "difficulty": 2,
+            "description": "利用光纤传输光信号实现信息通信的技术",
+            "aliases": [],
+            "prerequisites": [
+              "光导纤维",
+              "全反射"
+            ],
+            "definition": "将信息转换为光信号并通过光纤传输，再在接收端还原信息的通信方式。",
+            "example": "光纤可传输电视、电话和计算机数据。",
+            "section": "第4 节 光导纤维及其应用"
+          },
+          {
+            "name": "光纤内窥镜",
+            "difficulty": 3,
+            "description": "利用光纤传递照明光和物体图像的医用仪器",
+            "aliases": [],
+            "prerequisites": [
+              "光导纤维"
+            ],
+            "definition": "利用光纤束传送照明光和物体图像以观察人体内部的仪器叫光纤内窥镜。",
+            "example": "光纤内窥镜可辅助医生观察体腔并进行直视手术。",
+            "section": "第4 节 光导纤维及其应用"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导 入 美妙的彩虹",
+            "section_key": "9fc3663e20",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第1 节 光的折射",
+            "section_key": "82f6990647",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第2 节 科学测量:玻璃的折射率",
+            "section_key": "95d6aa9b6d",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第3 节 光的全反射",
+            "section_key": "3a8f8abc73",
+            "page_range": [
+              91,
+              91
+            ]
+          },
+          {
+            "name": "第4 节 光导纤维及其应用",
+            "section_key": "413a4f9114",
+            "page_range": [
+              91,
+              115
+            ]
+          }
+        ],
+        "chapter_key": "7f6878ab35",
+        "metadata": {
+          "volume_id": "dcaff0600ed2",
+          "file_id": "dcaff0600ed2",
+          "volume_title": "普通高中教科书 物理 选择性必修第一册",
+          "chapter_order": 4,
+          "raw_heading": "第4 章　光的折射和全反射"
+        }
+      },
+      {
+        "name": "第5 章 光的干涉、衍射和偏振",
+        "concepts": [
+          {
+            "name": "光波",
+            "difficulty": 1,
+            "description": "具有波动特性的光，可产生干涉、衍射和偏振",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "光波是能表现出波动现象的光。",
+            "example": "激光通过双缝后形成干涉条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的干涉",
+            "difficulty": 2,
+            "description": "两列光波叠加形成明暗相间条纹的现象",
+            "aliases": [
+              "干涉现象"
+            ],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "光的干涉是两列光波相遇叠加后出现加强和减弱相间区域的现象。",
+            "example": "激光照射双缝后屏上出现明暗条纹"
+          },
+          {
+            "name": "光的相干条件",
+            "difficulty": 3,
+            "description": "产生稳定光干涉图样所需满足的三个条件",
+            "aliases": [
+              "相干条件"
+            ],
+            "prerequisites": [
+              "光的干涉"
+            ],
+            "definition": "光的相干条件是频率相同、振动方向相同且相位差恒定。",
+            "example": "双缝后的两列光波满足相干条件",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "相干光源",
+            "difficulty": 2,
+            "description": "发出满足相干条件光波的光源",
+            "aliases": [],
+            "prerequisites": [
+              "光的相干条件"
+            ],
+            "definition": "相干光源是发出频率、振动方向相同且相位差恒定光波的光源。",
+            "example": "双缝实验中两个缝可视为相干光源",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "双缝干涉",
+            "difficulty": 2,
+            "description": "利用双缝产生稳定光干涉条纹的实验",
+            "aliases": [
+              "杨氏双缝干涉实验"
+            ],
+            "prerequisites": [
+              "光的干涉",
+              "光的相干条件"
+            ],
+            "definition": "双缝干涉是光波经两个狭缝传播后相遇并形成干涉图样的实验现象。",
+            "example": "杨氏双缝实验观察到明暗相间条纹"
+          },
+          {
+            "name": "干涉加强条件",
+            "difficulty": 3,
+            "description": "路程差为波长整数倍时形成亮条纹",
+            "aliases": [
+              "亮条纹条件"
+            ],
+            "prerequisites": [
+              "双缝干涉"
+            ],
+            "definition": "当两列光波的路程差为波长的整数倍时，光的干涉相互加强。",
+            "example": "路程差为一个波长处出现亮条纹"
+          },
+          {
+            "name": "干涉减弱条件",
+            "difficulty": 3,
+            "description": "路程差为半波长奇数倍时形成暗条纹",
+            "aliases": [
+              "暗条纹条件"
+            ],
+            "prerequisites": [
+              "双缝干涉"
+            ],
+            "definition": "当两列光波的路程差为半个波长的奇数倍时，光的干涉相互减弱。",
+            "example": "路程差为半个波长处出现暗条纹"
+          },
+          {
+            "name": "双缝干涉条纹间距",
+            "difficulty": 3,
+            "description": "相邻亮纹或暗纹中心间的距离",
+            "aliases": [
+              "条纹间距"
+            ],
+            "prerequisites": [
+              "双缝干涉"
+            ],
+            "definition": "双缝干涉条纹间距满足Δy=lλ/d。",
+            "example": "波长增大时条纹间距变大",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的波长测量",
+            "difficulty": 3,
+            "description": "依据双缝干涉条纹间距测定光波波长",
+            "aliases": [
+              "双缝测波长"
+            ],
+            "prerequisites": [
+              "双缝干涉条纹间距"
+            ],
+            "definition": "光的波长测量是通过测量双缝间距、缝屏距离和条纹间距求波长。",
+            "example": "用测量头测量第1至第6条亮纹距离"
+          },
+          {
+            "name": "薄膜干涉",
+            "difficulty": 3,
+            "description": "薄膜两个表面反射光叠加产生的干涉",
+            "aliases": [
+              "膜干涉"
+            ],
+            "prerequisites": [
+              "光的干涉"
+            ],
+            "definition": "薄膜干涉是薄膜前后两个表面的反射光相遇而产生的干涉现象。",
+            "example": "肥皂泡表面出现彩色条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "增透膜",
+            "difficulty": 3,
+            "description": "利用反射光干涉减弱以减少光能损失的薄膜",
+            "aliases": [],
+            "prerequisites": [
+              "薄膜干涉"
+            ],
+            "definition": "增透膜是使两个表面反射光因干涉相消而增强透射光的透明薄膜。",
+            "example": "照相机镜头表面镀氟化镁薄膜",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的衍射",
+            "difficulty": 2,
+            "description": "光绕过障碍物偏离直线传播的现象",
+            "aliases": [
+              "衍射现象"
+            ],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "光的衍射是光绕过障碍物或孔缝边缘传播的现象。",
+            "example": "激光通过小圆孔形成明暗圆环"
+          },
+          {
+            "name": "明显衍射条件",
+            "difficulty": 3,
+            "description": "障碍物或孔缝尺寸接近光波长时衍射明显",
+            "aliases": [],
+            "prerequisites": [
+              "光的衍射"
+            ],
+            "definition": "当障碍物或孔的尺寸接近光的波长时，光的衍射现象明显。",
+            "example": "减小单缝宽度后衍射条纹变宽"
+          },
+          {
+            "name": "单缝衍射",
+            "difficulty": 2,
+            "description": "光通过单缝后形成中央亮纹及明暗条纹",
+            "aliases": [],
+            "prerequisites": [
+              "光的衍射"
+            ],
+            "definition": "单缝衍射是光通过单缝后因衍射形成明暗相间图样的现象。",
+            "example": "红光通过窄单缝形成衍射图样",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "分辨本领",
+            "difficulty": 3,
+            "description": "光学仪器分开相互靠近物体像的能力",
+            "aliases": [
+              "分辨能力"
+            ],
+            "prerequisites": [
+              "光的衍射"
+            ],
+            "definition": "分辨本领是光学仪器把彼此靠近物体的像分离开的能力。",
+            "example": "望远镜口径增大后分辨本领提高",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "衍射光栅",
+            "difficulty": 3,
+            "description": "由大量平行等距狭缝或细槽组成的光学器件",
+            "aliases": [
+              "光栅"
+            ],
+            "prerequisites": [
+              "光的衍射",
+              "光的干涉"
+            ],
+            "definition": "衍射光栅是由许多平行且等距的细缝或细槽组成的光学器件。",
+            "example": "白光经透射光栅形成彩色条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光栅衍射图样",
+            "difficulty": 3,
+            "description": "单缝衍射和多缝干涉共同形成的条纹图样",
+            "aliases": [],
+            "prerequisites": [
+              "衍射光栅"
+            ],
+            "definition": "光栅衍射图样是光栅各狭缝衍射与多缝干涉共同作用的结果。",
+            "example": "背景较暗处出现又细又亮的条纹",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "光的偏振",
+            "difficulty": 2,
+            "description": "光波振动方向受到限制而呈现特定方向的现象",
+            "aliases": [
+              "偏振现象"
+            ],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "光的偏振是光波只沿某一特定方向振动的现象。",
+            "example": "转动偏振片时透射光强发生变化"
+          },
+          {
+            "name": "自然光",
+            "difficulty": 2,
+            "description": "光振动方向在垂直传播方向平面内分布均匀的光",
+            "aliases": [],
+            "prerequisites": [
+              "光波"
+            ],
+            "definition": "自然光是光振动可沿垂直传播方向平面内各个方向的光。",
+            "example": "太阳光通常属于自然光",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "偏振光",
+            "difficulty": 2,
+            "description": "振动方向固定的光，也称线偏振光",
+            "aliases": [
+              "线偏振光"
+            ],
+            "prerequisites": [
+              "光的偏振"
+            ],
+            "definition": "偏振光是振动方向沿某一特定方向的光。",
+            "example": "自然光通过偏振片后成为偏振光",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "偏振片",
+            "difficulty": 2,
+            "description": "只允许某一方向振动的光通过的光学元件",
+            "aliases": [
+              "偏振镜"
+            ],
+            "prerequisites": [
+              "偏振光"
+            ],
+            "definition": "偏振片是只让振动方向与透振方向一致的光通过的光学元件。",
+            "example": "两偏振片透振方向垂直时无光通过",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "起偏器与检偏器",
+            "difficulty": 3,
+            "description": "分别用于获得和检验偏振光的偏振片",
+            "aliases": [
+              "起偏器",
+              "检偏器"
+            ],
+            "prerequisites": [
+              "偏振片",
+              "偏振光"
+            ],
+            "definition": "起偏器用于获得偏振光，检偏器用于检查光是否为偏振光。",
+            "example": "旋转检偏器观察透射光强变化",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "偏振现象应用",
+            "difficulty": 2,
+            "description": "偏振光用于立体电影、消除眩光和应力检测",
+            "aliases": [],
+            "prerequisites": [
+              "偏振光",
+              "偏振片"
+            ],
+            "definition": "偏振现象应用是利用偏振光方向特性实现成像、滤光和应力显示。",
+            "example": "偏振镜减少水面反射光干扰"
+          },
+          {
+            "name": "激光",
+            "difficulty": 2,
+            "description": "由原子受激辐射产生的具有优良特性的光",
+            "aliases": [
+              "laser"
+            ],
+            "prerequisites": [
+              "光的相干条件",
+              "偏振光"
+            ],
+            "definition": "激光是原子受激辐射产生的光，具有频率、相位、偏振方向和传播方向一致等特点。",
+            "example": "激光用于条形码扫描和光通信",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "受激辐射跃迁",
+            "difficulty": 4,
+            "description": "外来光子诱导高能态原子发射相同光子的过程",
+            "aliases": [
+              "受激辐射"
+            ],
+            "prerequisites": [
+              "激光"
+            ],
+            "definition": "受激辐射跃迁是高能态原子在外来光子作用下跃迁并发射相同光子的过程。",
+            "example": "诱导光子与发射光子频率相同",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "激光特性",
+            "difficulty": 3,
+            "description": "激光具有单色性好、相干性好、方向性强和亮度高",
+            "aliases": [],
+            "prerequisites": [
+              "激光"
+            ],
+            "definition": "激光特性包括单色性好、相干性好、方向性好和亮度高。",
+            "example": "激光束发散角很小且几乎平行"
+          },
+          {
+            "name": "全息照相",
+            "difficulty": 4,
+            "description": "利用光的干涉记录并再现物体三维信息的方法",
+            "aliases": [
+              "全息摄影"
+            ],
+            "prerequisites": [
+              "光的干涉",
+              "激光"
+            ],
+            "definition": "全息照相是用两束光的干涉条纹记录并再现物体三维图像信息的方法。",
+            "example": "全息照片可从不同角度观察立体图像",
+            "section": "第5 节 激光与全息照相"
+          },
+          {
+            "name": "全息照片",
+            "difficulty": 3,
+            "description": "记录物体三维图像信息并可再现全貌的照片",
+            "aliases": [
+              "全息图"
+            ],
+            "prerequisites": [
+              "全息照相"
+            ],
+            "definition": "全息照片是记录干涉条纹并能再现物体三维图像信息的照片。",
+            "example": "照片局部损坏仍可再现物体全貌",
+            "section": "第5 节 激光与全息照相"
+          }
+        ],
+        "sections": [
+          {
+            "name": "导 入 神奇的光",
+            "section_key": "5067433945",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第1 节 光的干涉",
+            "section_key": "5f5d19ceb4",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第2 节 科学测量:用双缝干涉测光的波长",
+            "section_key": "156543c30e",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第3 节 光的衍射",
+            "section_key": "c65dcfbb8f",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第4 节 光的偏振",
+            "section_key": "fdc054ec56",
+            "page_range": [
+              115,
+              115
+            ]
+          },
+          {
+            "name": "第5 节 激光与全息照相",
+            "section_key": "a631d8efce",
+            "page_range": [
+              115,
+              146
+            ]
+          }
+        ],
+        "chapter_key": "ba5ea92f59",
+        "metadata": {
+          "volume_id": "dcaff0600ed2",
+          "file_id": "dcaff0600ed2",
+          "volume_title": "普通高中教科书 物理 选择性必修第一册",
+          "chapter_order": 5,
+          "raw_heading": "第5 章　光的干涉、衍射和偏振"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "a0b358daf8": [
+        7,
+        7
+      ],
+      "导 入 从天体到微粒的碰撞": [
+        7,
+        7
+      ],
+      "3fa6ef4cd9": [
+        8,
+        15
+      ],
+      "第1 节 动量和动量定理": [
+        8,
+        15
+      ],
+      "1bb5c18ab0": [
+        15,
+        23
+      ],
+      "第2 节 动量守恒定律及其应用": [
+        15,
+        23
+      ],
+      "81e418d582": [
+        23,
+        25
+      ],
+      "第3 节 科学验证:动量守恒定律": [
+        23,
+        25
+      ],
+      "b23ba2cc3d": [
+        26,
+        37
+      ],
+      "第4 节 弹性碰撞与非弹性碰撞": [
+        26,
+        37
+      ],
+      "705649046d": [
+        37,
+        37
+      ],
+      "导 入 从古代“鱼洗”说起": [
+        37,
+        37
+      ],
+      "b97e54b53d": [
+        38,
+        41
+      ],
+      "第1 节 简谐运动": [
+        38,
+        41
+      ],
+      "37cbf5cb0c": [
+        42,
+        47
+      ],
+      "第2 节 振动的描述": [
+        42,
+        47
+      ],
+      "d5c7e2cf0e": [
+        48,
+        51
+      ],
+      "第3 节 单 摆": [
+        48,
+        51
+      ],
+      "640393d64e": [
+        51,
+        55
+      ],
+      "第4 节 科学测量:用单摆测量重力加速度": [
+        51,
+        55
+      ],
+      "f14bed5f1f": [
+        55,
+        63
+      ],
+      "第5 节 生活中的振动": [
+        55,
+        63
+      ],
+      "04d86df6c2": [
+        63,
+        63
+      ],
+      "导 入 身边的波": [
+        63,
+        63
+      ],
+      "dfe1683767": [
+        64,
+        73
+      ],
+      "第1 节 波的形成和描述": [
+        64,
+        73
+      ],
+      "fe7e6565d5": [
+        74,
+        77
+      ],
+      "第2 节 波的反射和折射": [
+        74,
+        77
+      ],
+      "317ba363d5": [
+        78,
+        83
+      ],
+      "第3 节 波的干涉和衍射": [
+        78,
+        83
+      ],
+      "ea60ae7fe3": [
+        83,
+        91
+      ],
+      "第4 节 多普勒效应及其应用": [
+        83,
+        91
+      ],
+      "9fc3663e20": [
+        91,
+        91
+      ],
+      "导 入 美妙的彩虹": [
+        91,
+        91
+      ],
+      "82f6990647": [
+        91,
+        91
+      ],
+      "第1 节 光的折射": [
+        91,
+        91
+      ],
+      "95d6aa9b6d": [
+        91,
+        91
+      ],
+      "第2 节 科学测量:玻璃的折射率": [
+        91,
+        91
+      ],
+      "3a8f8abc73": [
+        91,
+        91
+      ],
+      "第3 节 光的全反射": [
+        91,
+        91
+      ],
+      "413a4f9114": [
+        91,
+        115
+      ],
+      "第4 节 光导纤维及其应用": [
+        91,
+        115
+      ],
+      "5067433945": [
+        115,
+        115
+      ],
+      "导 入 神奇的光": [
+        115,
+        115
+      ],
+      "5f5d19ceb4": [
+        115,
+        115
+      ],
+      "第1 节 光的干涉": [
+        115,
+        115
+      ],
+      "156543c30e": [
+        115,
+        115
+      ],
+      "第2 节 科学测量:用双缝干涉测光的波长": [
+        115,
+        115
+      ],
+      "c65dcfbb8f": [
+        115,
+        115
+      ],
+      "第3 节 光的衍射": [
+        115,
+        115
+      ],
+      "fdc054ec56": [
+        115,
+        115
+      ],
+      "第4 节 光的偏振": [
+        115,
+        115
+      ],
+      "a631d8efce": [
+        115,
+        146
+      ],
+      "第5 节 激光与全息照相": [
+        115,
+        146
+      ]
+    }
+  }
+}

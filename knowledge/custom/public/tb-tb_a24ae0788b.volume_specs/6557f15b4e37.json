@@ -1,6 +1,6 @@
 {
   "file_id": "6557f15b4e37",
-  "text_sha256": "029aa151cb985624cfbad7410d5e6976bce62ff738801e513ba1eba5cf569183",
+  "text_sha256": "ebfeb0079ee84b874414ae9728dfa75d21b04ee66bf872e3339405e9bb54783e",
   "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
   "schema_version": "3",
   "chapter_locator_version": "5",
@@ -15,165 +15,160 @@
           {
             "name": "革命文化",
             "difficulty": 2,
-            "description": "在革命历程中形成的精神文化成果",
+            "description": "在革命实践中形成的精神文化成果",
             "aliases": [],
             "prerequisites": [],
-            "definition": "革命文化是中国共产党领导人民进行革命斗争过程中形成的文化。",
-            "example": "作品表现革命者的战斗激情。"
+            "definition": "革命文化是中国共产党领导人民进行革命斗争过程中形成的文化形态。",
+            "example": "作品表现革命豪情和革命人道主义精神",
+            "section": "别了,“不列颠尼亚”"
           },
           {
-            "name": "社会主义先进文化",
+            "name": "演讲词",
             "difficulty": 2,
-            "description": "社会主义建设和发展中形成的先进文化",
-            "aliases": [],
+            "description": "在特定场合发表的口头讲话文稿",
+            "aliases": [
+              "讲话"
+            ],
             "prerequisites": [],
-            "definition": "社会主义先进文化是社会主义建设时期形成并发展的文化形态。",
-            "example": "作品表现党员干部的光辉事迹。"
-          },
-          {
-            "name": "开幕词",
-            "difficulty": 2,
-            "description": "会议开始时由主持者发表的讲话",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "开幕词是会议开幕时说明会议宗旨和安排的讲话。",
-            "example": "会议开幕时宣布会议议程。"
+            "definition": "演讲词是面向特定听众、围绕明确主题进行阐述和号召的讲话文稿。",
+            "example": "会议开幕词回顾革命历程并规划国家发展"
           },
           {
             "name": "历史背景",
             "difficulty": 2,
-            "description": "作品所对应的时代和社会环境",
+            "description": "理解作品内容所需联系的时代环境",
             "aliases": [],
             "prerequisites": [],
-            "definition": "历史背景是理解作品内容和意义所需的时代环境。",
-            "example": "结合中国近代以来的历史阅读讲话。"
+            "definition": "历史背景是作品产生时相关的社会、政治和历史条件。",
+            "example": "结合新中国成立前后的历史理解讲话"
           },
           {
             "name": "回顾展望结构",
             "difficulty": 3,
-            "description": "按过去、现在、未来组织表达内容",
-            "aliases": [],
-            "prerequisites": [
-              "历史背景"
+            "description": "按过去、当下、未来组织表达内容",
+            "aliases": [
+              "回顾过去展望未来"
             ],
-            "definition": "回顾展望结构是先回顾历史、再立足当下并展望未来的行文结构。",
-            "example": "讲话回顾革命胜利，规划国家发展，展望民族复兴。"
+            "prerequisites": [],
+            "definition": "回顾展望结构是先总结历史，再立足现实，最后描绘未来的组织方式。",
+            "example": "先论证革命胜利，再规划建设蓝图"
           },
           {
             "name": "强调词语",
             "difficulty": 2,
-            "description": "用来加强语气和表达态度的词语",
+            "description": "用以突出语气和观点的词语",
             "aliases": [],
             "prerequisites": [],
-            "definition": "强调词语是突出判断、立场或情感力度的词语。",
-            "example": "“决无”“必然”“从来”等词语增强感染力。"
+            "definition": "强调词语是能够加强语意力度、突出态度和立场的词语。",
+            "example": "“决无”“必然”“从来”增强表达的坚定性"
           },
           {
             "name": "判断句",
             "difficulty": 2,
-            "description": "直接作出明确判断的句式",
+            "description": "对事物作出明确判断的句式",
             "aliases": [],
             "prerequisites": [],
-            "definition": "判断句是对事物性质、关系或情况作出明确判断的句子。",
-            "example": "“我们的会议是一个全国人民大团结的会议。”"
-          },
-          {
-            "name": "革命人道主义",
-            "difficulty": 3,
-            "description": "革命斗争中对人的关怀和尊重",
-            "aliases": [],
-            "prerequisites": [
-              "革命文化"
-            ],
-            "definition": "革命人道主义是革命者在斗争中仍关心、救助和尊重他人的精神。",
-            "example": "红军战士救起两个日本小女孩。"
-          },
-          {
-            "name": "长征意义",
-            "difficulty": 3,
-            "description": "长征在革命宣传和历史进程中的作用",
-            "aliases": [],
-            "prerequisites": [
-              "革命文化",
-              "历史背景"
-            ],
-            "definition": "长征意义是长征对革命胜利、政治宣传和群众动员所具有的历史作用。",
-            "example": "长征被概括为宣言书、宣传队、播种机。"
+            "definition": "判断句是对事物性质、范围或关系作出明确判断的句子。",
+            "example": "我们的会议是一个全国人民大团结的会议",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "回忆录",
             "difficulty": 2,
-            "description": "作者回忆亲历事件的纪实性文体",
+            "description": "记录亲历经历和历史见闻的文体",
             "aliases": [],
-            "prerequisites": [
-              "历史背景"
+            "prerequisites": [],
+            "definition": "回忆录是作者依据亲身经历追述人物、事件和历史场景的文章。",
+            "example": "追述红军到达吴起镇及会师的经历"
+          },
+          {
+            "name": "革命人道主义",
+            "difficulty": 3,
+            "description": "革命斗争中尊重和救助人的精神",
+            "aliases": [
+              "革命人道主义精神"
             ],
-            "definition": "回忆录是以亲身经历为基础记述历史事件和人物的文体。",
-            "example": "作者回忆红军到达吴起镇的经历。"
+            "prerequisites": [],
+            "definition": "革命人道主义是在革命立场上关心生命、尊重人格并给予人道救助的精神。",
+            "example": "战士从战火中救起日本小女孩",
+            "section": "长征胜利万岁"
+          },
+          {
+            "name": "长征历史意义",
+            "difficulty": 3,
+            "description": "长征对革命发展和群众觉醒的作用",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长征的历史意义体现在宣示红军力量、宣传革命道路并播撒革命火种。",
+            "example": "长征被概括为宣言书、宣传队、播种机"
           },
           {
             "name": "新闻通讯",
-            "difficulty": 3,
-            "description": "以事实为基础进行较全面报道的新闻文体",
-            "aliases": [],
-            "prerequisites": [
-              "历史背景"
+            "difficulty": 2,
+            "description": "以事实为基础报道重要事件的新闻文体",
+            "aliases": [
+              "通讯"
             ],
-            "definition": "新闻通讯是以事实为基础，对人物或事件作较全面深入报道的文体。",
-            "example": "全面报道抗击新冠肺炎疫情的斗争。"
+            "prerequisites": [],
+            "definition": "新闻通讯是以事实为基础，对人物或事件进行较完整报道的新闻文体。",
+            "example": "全面报道中国抗疫斗争及其意义",
+            "section": "别了,“不列颠尼亚”"
           },
           {
-            "name": "人物通讯",
+            "name": "综合叙述",
             "difficulty": 3,
-            "description": "围绕人物事迹展开的通讯作品",
+            "description": "概述大量人物事件并揭示意义的叙述方式",
+            "aliases": [
+              "综合报道"
+            ],
+            "prerequisites": [],
+            "definition": "综合叙述是沿内在思路概述多方面事实并发掘其意义价值的表达方式。",
+            "example": "从制度、精神、生命和科学等角度报道抗疫",
+            "section": "别了,“不列颠尼亚”"
+          },
+          {
+            "name": "多角度报道",
+            "difficulty": 3,
+            "description": "从不同方面分层呈现同一重大事件",
             "aliases": [],
             "prerequisites": [
               "新闻通讯"
             ],
-            "definition": "人物通讯是以人物为中心报道其事迹、品质和精神的通讯。",
-            "example": "报道县委书记深入兰考抗灾的事迹。"
+            "definition": "多角度报道是围绕同一事件从多个侧面、不同层次展开事实和思考。",
+            "example": "同时呈现抗疫成就、精神力量和治理反思"
           },
           {
-            "name": "调查研究",
-            "difficulty": 3,
-            "description": "通过实地调查掌握情况并作出判断",
+            "name": "人物通讯",
+            "difficulty": 2,
+            "description": "集中报道典型人物事迹和精神品质",
             "aliases": [],
             "prerequisites": [
-              "历史背景"
+              "新闻通讯"
             ],
-            "definition": "调查研究是通过实地了解情况、掌握资料来形成正确判断和部署的方法。",
-            "example": "调查队查清风口、沙丘并绘制排涝图。"
+            "definition": "人物通讯是以典型人物为中心报道其事迹、形象和思想品质的通讯。",
+            "example": "报道焦裕禄带领群众治理兰考灾害",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "典型材料",
             "difficulty": 3,
-            "description": "能突出人物特点和文章主旨的材料",
-            "aliases": [],
-            "prerequisites": [
-              "材料积累"
-            ],
-            "definition": "典型材料是最能表现人物品质、事件特点或文章主旨的具体材料。",
-            "example": "焦裕禄冒雪走访困难群众。"
-          },
-          {
-            "name": "材料积累",
-            "difficulty": 2,
-            "description": "从阅读和生活观察中搜集写作素材",
+            "description": "最能表现人物特点和文章主旨的材料",
             "aliases": [],
             "prerequisites": [],
-            "definition": "材料积累是通过阅读、观察和思考持续搜集写作素材的过程。",
-            "example": "观察普通人的生活并记录独特素材。"
+            "definition": "典型材料是具有代表性、能够突出人物品质或深化主旨的事实材料。",
+            "example": "焦裕禄冒雨查洪水并绘制水流图",
+            "section": "别了,“不列颠尼亚”"
           },
           {
-            "name": "材料真实性",
+            "name": "材料真实可靠",
             "difficulty": 2,
-            "description": "写作材料必须真实可靠、出处明确",
-            "aliases": [],
-            "prerequisites": [
-              "材料积累"
+            "description": "写作材料必须真实并经过核对鉴别",
+            "aliases": [
+              "材料真实性"
             ],
-            "definition": "材料真实性是指写作材料真实可靠并经得起核对鉴别。",
-            "example": "对流传材料核对出处后再使用。"
+            "prerequisites": [],
+            "definition": "材料真实可靠是指写作所用事实有依据、出处清楚且经得起核验。",
+            "example": "引用流传材料前先核对出处"
           },
           {
             "name": "材料恰当使用",
@@ -181,66 +176,102 @@
             "description": "使材料服务于观点和文章主旨",
             "aliases": [],
             "prerequisites": [
-              "典型材料",
-              "材料真实性"
+              "典型材料"
             ],
-            "definition": "材料恰当使用是根据观点和主旨选择、安排并运用材料。",
-            "example": "书信材料提升作品的历史意义和政治高度。"
+            "definition": "材料恰当使用是根据观点和主旨选择、安排并有效运用写作材料。",
+            "example": "收录致日本官兵的信以深化文章主旨"
+          },
+          {
+            "name": "阅读积累",
+            "difficulty": 2,
+            "description": "通过阅读经典作品积累写作素材",
+            "aliases": [
+              "个人阅读积累"
+            ],
+            "prerequisites": [],
+            "definition": "阅读积累是通过持续阅读和思考获得可用于表达与写作的素材和启示。",
+            "example": "从经典作品中获得属于自己的发现",
+            "section": "别了,“不列颠尼亚”"
+          },
+          {
+            "name": "观察生活",
+            "difficulty": 2,
+            "description": "从日常生活中发现并积累独特材料",
+            "aliases": [
+              "生活观察"
+            ],
+            "prerequisites": [],
+            "definition": "观察生活是有意识地从现实人物、事件和社会现象中发现写作材料。",
+            "example": "从平常街道观察普通人的喜怒哀乐"
           },
           {
             "name": "抗疫精神",
             "difficulty": 3,
-            "description": "抗疫斗争中形成的伟大精神财富",
-            "aliases": [],
-            "prerequisites": [
-              "社会主义先进文化"
+            "description": "抗疫斗争中形成的共同精神品格",
+            "aliases": [
+              "伟大抗疫精神"
             ],
-            "definition": "抗疫精神体现自强不息、万众一心、甘于奉献和命运与共等品格。",
-            "example": "全国人民共同支援武汉抗疫。"
-          },
-          {
-            "name": "生命至上",
-            "difficulty": 2,
-            "description": "把人民生命安全和身体健康置于首位",
-            "aliases": [],
-            "prerequisites": [
-              "抗疫精神"
-            ],
-            "definition": "生命至上是抗疫救治中不放弃任何生命的价值取向。",
-            "example": "医务人员全力救治高龄老人和新生婴儿。"
+            "prerequisites": [],
+            "definition": "抗疫精神包括自强不息、万众一心、甘于奉献、守望相助和命运与共等品质。",
+            "example": "全国支援武汉并坚持生命至上",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "科学防治",
-            "difficulty": 3,
+            "difficulty": 2,
             "description": "运用科学研究和方法应对疫情",
             "aliases": [],
-            "prerequisites": [
-              "抗疫精神"
+            "prerequisites": [],
+            "definition": "科学防治是依据科学研究、专业判断和实际情况制定防控措施。",
+            "example": "研究病毒传播机理并研发药品疫苗",
+            "section": "别了,“不列颠尼亚”"
+          },
+          {
+            "name": "人民至上",
+            "difficulty": 2,
+            "description": "把人民生命安全和健康置于首位",
+            "aliases": [
+              "生命至上"
             ],
-            "definition": "科学防治是依据科学研究制定并实施疫情防控策略和措施。",
-            "example": "研究病毒变异并完善防控策略。"
+            "prerequisites": [],
+            "definition": "人民至上是始终把人民利益特别是生命安全和身体健康放在第一位。",
+            "example": "国家全力救治患者并承担救治费用",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "人类命运共同体",
             "difficulty": 3,
-            "description": "各国休戚相关、合作共赢的共同体理念",
-            "aliases": [],
-            "prerequisites": [
-              "抗疫精神"
+            "description": "各国休戚相关、共同应对全球挑战的理念",
+            "aliases": [
+              "命运共同体"
             ],
-            "definition": "人类命运共同体理念强调各国共同担当、团结互助、合作应对全球挑战。",
-            "example": "中国向多个国家提供抗疫物资和专家援助。"
+            "prerequisites": [],
+            "definition": "人类命运共同体理念强调各国命运相连，应团结互助、合作共赢。",
+            "example": "中国向多国提供抗疫物资并分享方案",
+            "section": "别了,“不列颠尼亚”"
+          }
+        ],
+        "sections": [
+          {
+            "name": "中国人民站起来了",
+            "page_range": [
+              7,
+              11
+            ]
           },
           {
-            "name": "综合叙述",
-            "difficulty": 3,
-            "description": "概述大量事实并发掘其意义价值",
-            "aliases": [],
-            "prerequisites": [
-              "新闻通讯"
-            ],
-            "definition": "综合叙述是沿内在思路综合概述人和事并揭示其意义的叙述方式。",
-            "example": "文章把回顾总结、记事思考融为一体。"
+            "name": "长征胜利万岁",
+            "page_range": [
+              11,
+              21
+            ]
+          },
+          {
+            "name": "别了,“不列颠尼亚”",
+            "page_range": [
+              21,
+              45
+            ]
           }
         ]
       },
@@ -250,31 +281,76 @@
           {
             "name": "先秦诸子散文",
             "difficulty": 2,
-            "description": "先秦诸子阐述思想学说的经典散文",
-            "aliases": [],
+            "description": "先秦诸子阐述思想学说的散文",
+            "aliases": [
+              "诸子散文"
+            ],
             "prerequisites": [],
-            "definition": "先秦诸子散文是先秦诸家用于论说思想、洞察社会人生的文章。",
-            "example": "《老子》直接论说道理"
+            "definition": "先秦诸子散文是诸子各家论说思想、洞察社会人生的文章。",
+            "example": "儒家、道家、墨家各有不同论说风格。"
           },
           {
-            "name": "仁义礼",
+            "name": "仁",
             "difficulty": 2,
-            "description": "儒家论说中的核心思想概念",
+            "description": "儒家关于爱人和道德修养的核心观念",
             "aliases": [],
             "prerequisites": [],
-            "definition": "仁、义、礼是儒家阐释立身处世和道德修养的重要思想概念。",
-            "example": "非礼勿视，非礼勿听"
+            "definition": "仁是以爱人、怜悯和道德自觉为基础的品德。",
+            "example": "人而不仁，如礼何？"
           },
           {
-            "name": "君子修身",
+            "name": "义",
+            "difficulty": 2,
+            "description": "儒家所强调的合宜正当的行为准则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "义是辨明并遵循正当原则而非只追求利益。",
+            "example": "君子喻于义，小人喻于利。"
+          },
+          {
+            "name": "礼",
+            "difficulty": 2,
+            "description": "规范言行、维系秩序的行为准则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "礼是约束和规范人的言行以维持社会秩序的制度规范。",
+            "example": "非礼勿视，非礼勿听。"
+          },
+          {
+            "name": "君子之德",
             "difficulty": 3,
-            "description": "儒家关于君子德行与自我修养的观点",
+            "description": "儒家所论君子立身处世的道德品质",
+            "aliases": [
+              "君子"
+            ],
+            "prerequisites": [
+              "仁",
+              "义",
+              "礼"
+            ],
+            "definition": "君子之德包括好学、重义、自省、文质兼备等品格。",
+            "example": "见贤思齐，见不贤而内自省。"
+          },
+          {
+            "name": "文质彬彬",
+            "difficulty": 2,
+            "description": "文采与质朴兼备、配合适当",
             "aliases": [],
             "prerequisites": [
-              "仁义礼"
+              "礼"
             ],
-            "definition": "君子修身强调以仁义礼规范言行并不断反省提升自己。",
-            "example": "见贤思齐，见不贤而内自省"
+            "definition": "文质彬彬是外在文采与内在质朴协调统一的状态。",
+            "example": "文质彬彬，然后君子。",
+            "section": "《论语》十二章"
+          },
+          {
+            "name": "弘毅",
+            "difficulty": 2,
+            "description": "志向远大、意志坚强的精神品质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "弘毅指胸怀远大志向并具有坚强意志。",
+            "example": "士不可以不弘毅，任重而道远。"
           },
           {
             "name": "克己复礼",
@@ -282,184 +358,254 @@
             "description": "约束自我，使言行归复于先王之礼",
             "aliases": [],
             "prerequisites": [
-              "仁义礼"
+              "礼"
             ],
-            "definition": "克己复礼是通过自我约束使言行符合礼的要求。",
-            "example": "非礼勿视，非礼勿听"
+            "definition": "克己复礼是通过自我约束使视听言动合乎礼的要求。",
+            "example": "非礼勿视，非礼勿听，非礼勿言，非礼勿动。",
+            "section": "《论语》十二章"
           },
           {
-            "name": "恕道",
+            "name": "恕",
             "difficulty": 2,
-            "description": "推己及人的待人原则",
-            "aliases": [],
-            "prerequisites": [
-              "仁义礼"
+            "description": "推己及人，不把自己不愿承受的施加给别人",
+            "aliases": [
+              "推己及人"
             ],
-            "definition": "恕道是用自己不愿接受的事情推知他人感受并不施加于人。",
-            "example": "己所不欲，勿施于人"
+            "prerequisites": [
+              "仁"
+            ],
+            "definition": "恕是设身处地体谅他人并尊重他人意愿的原则。",
+            "example": "己所不欲，勿施于人。"
+          },
+          {
+            "name": "诗的社会功能",
+            "difficulty": 3,
+            "description": "《诗》具有兴、观、群、怨等社会作用",
+            "aliases": [
+              "兴观群怨"
+            ],
+            "prerequisites": [],
+            "definition": "诗的社会功能包括激发感情、观察社会、促进交往和讽刺时政。",
+            "example": "《诗》可以兴，可以观，可以群，可以怨。"
           },
           {
             "name": "三纲",
-            "difficulty": 2,
-            "description": "《大学》提出的三项道德修养纲领",
+            "difficulty": 3,
+            "description": "明明德、亲民、止于至善的修养目标",
             "aliases": [],
             "prerequisites": [],
-            "definition": "三纲指明明德、亲民、止于至善。",
-            "example": "在明明德，在亲民，在止于至善"
+            "definition": "三纲是关于彰明美德、亲近民众和达到至善的纲领。",
+            "example": "在明明德，在亲民，在止于至善。",
+            "section": "《论语》十二章"
           },
           {
             "name": "八目",
             "difficulty": 3,
-            "description": "《大学》提出的八个修养和治理步骤",
+            "description": "格物、致知、诚意等八个修养实践步骤",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "八目指格物、致知、诚意、正心、修身、齐家、治国、平天下。",
-            "example": "致知在格物"
+            "prerequisites": [
+              "三纲"
+            ],
+            "definition": "八目是格物、致知、诚意、正心、修身、齐家、治国、平天下。",
+            "example": "格物而后致知，知至而后意诚。",
+            "section": "《论语》十二章"
           },
           {
             "name": "修身为本",
-            "difficulty": 3,
-            "description": "《大学》关于个人修养基础地位的观点",
+            "difficulty": 2,
+            "description": "把个人修养作为齐家治国平天下的根本",
             "aliases": [],
             "prerequisites": [
               "八目"
             ],
-            "definition": "修身为本是指无论治理家庭、国家还是天下，都应以修养自身为根本。",
-            "example": "壹是皆以修身为本"
+            "definition": "修身为本强调个人道德修养是实现社会治理目标的基础。",
+            "example": "自天子以至于庶人，壹是皆以修身为本。",
+            "section": "《论语》十二章"
           },
           {
             "name": "四端",
             "difficulty": 3,
-            "description": "孟子认为人人具有的四种道德萌芽",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "四端指恻隐、羞恶、辞让、是非之心，分别是仁义礼智的发端。",
-            "example": "恻隐之心，仁之端也"
+            "description": "恻隐、羞恶、辞让、是非四种道德萌芽",
+            "aliases": [
+              "四端之心"
+            ],
+            "prerequisites": [
+              "仁",
+              "义",
+              "礼"
+            ],
+            "definition": "四端是人所具有的仁、义、礼、智的道德发端。",
+            "example": "恻隐之心，仁之端也。",
+            "section": "《论语》十二章"
           },
           {
             "name": "不忍人之心",
+            "difficulty": 3,
+            "description": "人面对他人困境时自然产生的怜悯之心",
+            "aliases": [
+              "恻隐之心"
+            ],
+            "prerequisites": [
+              "四端"
+            ],
+            "definition": "不忍人之心是人见他人受难时自然产生的怜悯心理。",
+            "example": "乍见孺子将入于井，皆有怵惕恻隐之心。"
+          },
+          {
+            "name": "有无相生",
+            "difficulty": 3,
+            "description": "有与无相互依存、共同发挥作用",
+            "aliases": [
+              "有无之用"
+            ],
+            "prerequisites": [],
+            "definition": "有无相生指事物的实际功用既依赖其有形部分，也依赖其空无部分。",
+            "example": "车的功用产生于车辐的中空处。"
+          },
+          {
+            "name": "自知自胜",
+            "difficulty": 3,
+            "description": "了解自己并战胜自我是智慧和强大的表现",
+            "aliases": [
+              "自知者明",
+              "自胜者强"
+            ],
+            "prerequisites": [],
+            "definition": "自知自胜强调认识自身和克服自身局限比胜过他人更重要。",
+            "example": "知人者智，自知者明；胜人者有力，自胜者强。"
+          },
+          {
+            "name": "知足",
             "difficulty": 2,
-            "description": "对他人不幸产生怜悯的自然情感",
+            "description": "懂得满足现有所得的生活态度",
             "aliases": [],
             "prerequisites": [],
-            "definition": "不忍人之心是人面对他人危难时自然产生的怜悯之心。",
-            "example": "乍见孺子将入于井"
-          },
-          {
-            "name": "兼爱",
-            "difficulty": 3,
-            "description": "墨家主张不分亲疏厚薄地相互爱护",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "兼爱是主张天下人相互爱护且不分等级亲疏的思想。",
-            "example": "天下兼相爱则治"
-          },
-          {
-            "name": "对待关系",
-            "difficulty": 3,
-            "description": "《老子》从相对两面阐发道理的关系",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "对待关系是指围绕相互对立或关联的两面展开思辨论说。",
-            "example": "有之以为利，无之以为用"
+            "definition": "知足是不过度追逐外在欲望并能安于自身所得。",
+            "example": "知足者富，强行者有志。",
+            "section": "《老子》四章"
           },
           {
             "name": "无为",
             "difficulty": 3,
-            "description": "顺应自然，不强求有所作为",
+            "description": "顺应自然，不强求以人为方式干预",
             "aliases": [],
             "prerequisites": [],
-            "definition": "无为是顺应事物自身规律而不妄加干预的处世思想。",
-            "example": "圣人无为，故无败"
+            "definition": "无为是遵循事物自然规律而不妄加作为。",
+            "example": "圣人无为，故无败；无执，故无失。",
+            "section": "《老子》四章"
           },
           {
-            "name": "慎终如始",
-            "difficulty": 2,
-            "description": "做事到最后仍像开始时一样谨慎",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "慎终如始是要求始终保持谨慎态度以避免事情失败。",
-            "example": "慎终如始，则无败事"
-          },
-          {
-            "name": "大瓠价值",
+            "name": "防微杜渐",
             "difficulty": 3,
-            "description": "从超越日常用途的角度发现事物价值",
-            "aliases": [],
+            "description": "在问题尚未显露或事物细微时及时处理",
+            "aliases": [
+              "为之于未有"
+            ],
             "prerequisites": [],
-            "definition": "大瓠价值强调应突破世俗用途限制，发现事物独特而深层的功用。",
-            "example": "以大樽浮乎江湖"
+            "definition": "防微杜渐是趁问题处于萌芽状态时加以治理以避免失败。",
+            "example": "合抱之木，生于毫末。",
+            "section": "《老子》四章"
           },
           {
             "name": "寓言说理",
             "difficulty": 2,
-            "description": "借助寓言故事委婉阐明抽象道理",
-            "aliases": [],
-            "prerequisites": [
-              "先秦诸子散文"
-            ],
-            "definition": "寓言说理是通过虚构或故事化情节婉曲表达思想观点。",
-            "example": "用大瓠和不龟手之药说理"
-          },
-          {
-            "name": "譬喻对比",
-            "difficulty": 2,
-            "description": "借比喻和对照使论说具体鲜明",
-            "aliases": [],
-            "prerequisites": [
-              "先秦诸子散文"
-            ],
-            "definition": "譬喻对比是借助相似事物或相反情形来阐明道理的方法。",
-            "example": "譬如为山，未成一篑"
-          },
-          {
-            "name": "反复论说",
-            "difficulty": 2,
-            "description": "反复申说同一观点以求清楚明白",
-            "aliases": [],
-            "prerequisites": [
-              "先秦诸子散文"
-            ],
-            "definition": "反复论说是通过重复论证或观点强化表达效果的说理方式。",
-            "example": "多次论说乱起于不相爱"
-          },
-          {
-            "name": "文言虚词",
-            "difficulty": 3,
-            "description": "文言文中具有多种意义和用法的虚词",
+            "description": "借助虚构故事委婉而有趣地阐明道理",
             "aliases": [],
             "prerequisites": [],
-            "definition": "文言虚词是文言句中主要表示语法关系或语气而意义较虚的词。",
-            "example": "之可作代词、结构助词"
+            "definition": "寓言说理是通过故事情节和形象人物间接表达思想观点。",
+            "example": "借大葫芦故事说明应突破功用成见。"
+          },
+          {
+            "name": "兼爱",
+            "difficulty": 3,
+            "description": "主张平等地爱人，不分亲疏厚薄",
+            "aliases": [
+              "兼相爱"
+            ],
+            "prerequisites": [
+              "仁"
+            ],
+            "definition": "兼爱是以爱自己之心爱他人，反对爱有等级差别。",
+            "example": "爱人若爱其身，天下兼相爱则治。",
+            "section": "兼爱"
+          },
+          {
+            "name": "兼爱治乱",
+            "difficulty": 3,
+            "description": "以兼爱消除不相爱造成的社会纷乱",
+            "aliases": [],
+            "prerequisites": [
+              "兼爱"
+            ],
+            "definition": "兼爱治乱认为天下之乱起于不相爱，实行兼爱即可实现天下治理。",
+            "example": "交相恶则乱，兼相爱则治。"
+          },
+          {
+            "name": "类比论证",
+            "difficulty": 3,
+            "description": "用相近事物的道理类比论证中心观点",
+            "aliases": [
+              "譬喻论证"
+            ],
+            "prerequisites": [],
+            "definition": "类比论证是通过比较具有相似关系的事物来说明抽象道理。",
+            "example": "以医生治病类比治理天下。"
           },
           {
             "name": "审题",
             "difficulty": 2,
-            "description": "抓住关键并弄清题目或材料的要求",
+            "description": "抓住题目或材料关键，弄清写作要求",
             "aliases": [],
             "prerequisites": [],
-            "definition": "审题是分析题干或材料信息并把握写作题旨的过程。",
-            "example": "抓住题干中的核心概念"
+            "definition": "审题是筛选关键信息并准确把握题旨和核心概念。",
+            "example": "围绕“千里之行”确定写作范围。",
+            "section": "兼爱"
           },
           {
             "name": "立意",
-            "difficulty": 2,
-            "description": "在题目范围内确立文章中心思想",
+            "difficulty": 3,
+            "description": "在题目或材料范围内确定文章中心",
             "aliases": [],
             "prerequisites": [
               "审题"
             ],
-            "definition": "立意是在准确审题基础上确定具体、明确且有独特性的文章主旨。",
-            "example": "围绕始于足下确定具体角度"
+            "definition": "立意是在准确审题基础上形成具体、明确且有独特性的中心思想。",
+            "example": "从当下具体行动阐释理想实现。",
+            "section": "兼爱"
           },
           {
-            "name": "知行合一",
-            "difficulty": 2,
-            "description": "把学习传统文化落实到实际行动中",
-            "aliases": [],
+            "name": "文言虚词用法",
+            "difficulty": 3,
+            "description": "归纳之、乎、者、也等虚词的意义和作用",
+            "aliases": [
+              "常见文言虚词"
+            ],
             "prerequisites": [],
-            "definition": "知行合一是将对道理的理解落实为现实生活中的实践。",
-            "example": "把立身处世之道用于日常生活"
+            "definition": "文言虚词用法是根据语境辨析虚词在句中的意义和语法功能。",
+            "example": "“之”可作代词，也可作结构助词。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "《论语》十二章",
+            "page_range": [
+              47,
+              51
+            ]
+          },
+          {
+            "name": "《老子》四章",
+            "page_range": [
+              51,
+              54
+            ]
+          },
+          {
+            "name": "兼爱",
+            "page_range": [
+              54,
+              57
+            ]
           }
         ]
       },
@@ -467,138 +613,195 @@
         "name": "第三单元",
         "concepts": [
           {
-            "name": "现实主义小说",
+            "name": "现实主义长篇小说",
             "difficulty": 3,
-            "description": "通过广阔社会生活表现现实矛盾的小说类型",
+            "description": "展现广阔社会生活并表达深刻思考的长篇小说",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "现实主义小说以真实社会生活为基础，表现时代现实与社会问题。",
-            "example": "童工生活展现工业社会的残酷现实"
+            "prerequisites": [],
+            "definition": "现实主义长篇小说以广阔社会生活为表现对象，寄寓作者对现实的深刻思考。",
+            "example": "通过童工生活展现工业革命时期的英国社会。"
           },
           {
             "name": "现代小说",
             "difficulty": 3,
-            "description": "在题材内容和创作手法上具有创新的小说类型",
+            "description": "在题材内容和创作手法上具有创新性的小说",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "现代小说是在题材、内容和创作手法等方面不断创新的小说。",
-            "example": "以独特叙事表现人的生存困境"
+            "prerequisites": [],
+            "definition": "现代小说是在题材内容、创作手法等方面不断创新并拓展小说表现空间的小说。",
+            "example": "以奇异情节表现村庄历史变迁。"
+          },
+          {
+            "name": "人物形象",
+            "difficulty": 2,
+            "description": "小说中具有鲜明性格和独特意义的人物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人物形象是小说通过描写塑造出的具有性格特征和典型意义的人物。",
+            "example": "圣地亚哥表现出坚韧不屈的性格。"
           },
           {
             "name": "心理描写",
-            "difficulty": 2,
-            "description": "通过内心活动刻画人物并推动情节发展的方法",
+            "difficulty": 3,
+            "description": "描写人物内心想法、感受和精神变化的方法",
             "aliases": [],
             "prerequisites": [
-              "小说人物形象"
+              "人物形象"
             ],
-            "definition": "心理描写是直接表现人物思想、感情和心理变化的描写方法。",
-            "example": "人物在善恶选择间反复挣扎"
+            "definition": "心理描写是小说直接呈现人物内心活动和精神变化的塑造人物方法。",
+            "example": "老人反复思考捕鱼是否是一种罪过。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "环境描写",
-            "difficulty": 2,
-            "description": "描写人物活动环境并表现氛围和主题的方法",
+            "difficulty": 3,
+            "description": "描写人物活动环境并发挥多重作用的方法",
             "aliases": [],
             "prerequisites": [
-              "小说"
+              "人物形象"
             ],
-            "definition": "环境描写是对人物活动的自然环境和社会环境进行描写。",
-            "example": "破旧货行烘托童工的悲惨处境"
+            "definition": "环境描写是小说对人物活动的自然环境和社会环境进行描写的方法。",
+            "example": "描写破旧货行以烘托童工的悲惨处境。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "象征意味",
             "difficulty": 4,
-            "description": "借具体形象或情节暗示更深层意义",
+            "description": "具体情节或形象所寄寓的深层意义",
             "aliases": [],
             "prerequisites": [
               "环境描写"
             ],
-            "definition": "象征意味是作品中的具体形象或事件对抽象思想和主题的暗示。",
-            "example": "失眠失忆象征文明冲击下的精神危机"
+            "definition": "象征意味是作品借具体形象或情节暗示更深层社会、人生意义的表达方式。",
+            "example": "失眠症和失忆象征文明冲击下的精神危机。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "魔幻现实主义",
             "difficulty": 4,
-            "description": "融合现实与幻想，营造奇异而真实的世界",
+            "description": "融合真实生活与奇幻因素的小说表现方法",
             "aliases": [],
             "prerequisites": [
-              "小说"
+              "现代小说",
+              "象征意味"
             ],
-            "definition": "魔幻现实主义以现实生活为基础，将幻想性事件当作日常现实来表现。",
-            "example": "全镇人患失眠症并逐渐失去记忆"
+            "definition": "魔幻现实主义是在真实生活叙述中融入奇幻因素并使二者界限消失的表现方法。",
+            "example": "全镇感染失眠症并用标签维系现实。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "小小说",
-            "difficulty": 2,
+            "difficulty": 3,
             "description": "篇幅最短、人物少、场景集中的小说",
             "aliases": [
               "微型小说"
             ],
             "prerequisites": [
-              "小说"
+              "人物形象"
             ],
-            "definition": "小小说是小说中篇幅最短的一种，常以简洁故事表现深刻意义。",
-            "example": "围绕一次意外选择写出人物变化"
+            "definition": "小小说是小说中篇幅最短的一种，通常以简洁叙事表现深刻生活意义。",
+            "example": "围绕一个生活瞬间塑造人物并表达思考。",
+            "section": "百年孤独(节选)"
           },
           {
-            "name": "以小见大",
+            "name": "小小说立意",
             "difficulty": 3,
-            "description": "从小故事或生活片段表现重大意义",
+            "description": "确立小小说所要表达的思想和意义",
             "aliases": [],
             "prerequisites": [
               "小小说"
             ],
-            "definition": "以小见大是通过细小事件、瞬间或局部展现更广阔的生活和思想。",
-            "example": "从一块物品写出一个家庭的困境"
+            "definition": "小小说立意是从故事和生活中提炼并确立作品核心思想的过程。",
+            "example": "借一个普通事件表达对人生的思考。"
           },
           {
-            "name": "明确立意",
-            "difficulty": 2,
-            "description": "确定小小说所要表达的思想和意义",
+            "name": "小小说构思",
+            "difficulty": 4,
+            "description": "精心安排简单情节以形成波澜和悬念",
             "aliases": [],
             "prerequisites": [
-              "小小说"
+              "小小说",
+              "小小说立意"
             ],
-            "definition": "明确立意是围绕核心思想确立作品要表达的意义。",
-            "example": "借一次误会表达对人情冷暖的思考"
-          },
-          {
-            "name": "巧于构思",
-            "difficulty": 3,
-            "description": "精心安排简单情节，形成波澜和悬念",
-            "aliases": [],
-            "prerequisites": [
-              "小小说"
-            ],
-            "definition": "巧于构思是通过灵活安排情节使简单故事产生起伏和意外效果。",
-            "example": "先埋下物件线索，结尾揭示其来历"
+            "definition": "小小说构思是围绕有限篇幅巧妙安排情节、悬念、伏笔和结局的方法。",
+            "example": "利用道具设置悬念，结尾安排意外突转。"
           },
           {
             "name": "突转结尾",
-            "difficulty": 3,
-            "description": "在结尾处实现意外且合乎情理的情节转折",
+            "difficulty": 4,
+            "description": "在结尾设置出乎意料又合乎情理的转折",
             "aliases": [],
             "prerequisites": [
-              "巧于构思"
+              "小小说构思"
             ],
-            "definition": "突转结尾是在故事结束处突然改变情节方向并形成新的意味。",
-            "example": "结尾揭示叙述者其实就是被寻找的人"
+            "definition": "突转结尾是通过结局的突然转折强化故事效果并深化作品意味的写法。",
+            "example": "结尾揭示关键真相，使前文细节获得新解释。"
           },
           {
             "name": "白描手法",
             "difficulty": 3,
-            "description": "用简洁洗练的语言勾勒人物特征",
+            "description": "用简洁洗练的语言勾勒人物轮廓",
             "aliases": [],
             "prerequisites": [
-              "小小说"
+              "人物形象"
             ],
-            "definition": "白描手法是不加繁复修饰，抓住传神之处简洁刻画人物。",
-            "example": "用一个动作写出人物的迟疑和善意"
+            "definition": "白描手法是不加繁饰地抓住传神之处描写人物形象的方法。",
+            "example": "用几句简洁动作描写表现人物的慌乱。",
+            "section": "百年孤独(节选)"
+          },
+          {
+            "name": "小说留白",
+            "difficulty": 3,
+            "description": "删去部分信息，留下想象空间的写法",
+            "aliases": [
+              "留白"
+            ],
+            "prerequisites": [
+              "白描手法"
+            ],
+            "definition": "小说留白是有意省略不必明说的内容，让读者结合文本进行想象和补充。",
+            "example": "不交代人物最终选择，让读者自行揣摩。"
+          },
+          {
+            "name": "以小见大",
+            "difficulty": 3,
+            "description": "通过生活片段表现更广阔的思想意义",
+            "aliases": [],
+            "prerequisites": [
+              "小小说立意"
+            ],
+            "definition": "以小见大是从具体、有限的生活故事中表现深层人生或社会意义的方法。",
+            "example": "通过一家人的疫病经历展现时代变迁。",
+            "section": "百年孤独(节选)"
+          }
+        ],
+        "sections": [
+          {
+            "name": "大卫·科波菲尔(节选)",
+            "page_range": [
+              59,
+              70
+            ]
+          },
+          {
+            "name": "复活(节选)",
+            "page_range": [
+              70,
+              76
+            ]
+          },
+          {
+            "name": "老人与海(节选)",
+            "page_range": [
+              76,
+              87
+            ]
+          },
+          {
+            "name": "百年孤独(节选)",
+            "page_range": [
+              87,
+              95
+            ]
           }
         ]
       },
@@ -608,254 +811,277 @@
           {
             "name": "逻辑",
             "difficulty": 1,
-            "description": "辨析信息、发现谬误并进行合理思考的方法。",
+            "description": "帮助辨识信息、推理判断和构建议论的思维方法",
             "aliases": [],
             "prerequisites": [],
-            "definition": "逻辑是帮助人们辨析事实、严密思考和准确表达的方法。",
-            "example": "由已知事实推断未知情况。"
+            "definition": "逻辑是依据思维和表达规范进行辨析、推理与论证的方法。",
+            "example": "由事实出发判断未知情况。"
           },
           {
             "name": "谬误",
             "difficulty": 2,
-            "description": "具有一定迷惑性的逻辑错误。",
+            "description": "具有迷惑性的逻辑错误",
             "aliases": [],
             "prerequisites": [
               "逻辑"
             ],
-            "definition": "谬误是违反思维和表达基本规范且具有迷惑性的逻辑错误。",
-            "example": "把出生时的天气与人的命运强行联系。"
+            "definition": "谬误是具有一定迷惑性的逻辑错误。",
+            "example": "把无关现象说成因果关系。"
           },
           {
             "name": "逻辑错误",
             "difficulty": 2,
-            "description": "概念、立场、理由或结论等方面的错误。",
+            "description": "违反思维和表达基本规范的错误",
             "aliases": [],
             "prerequisites": [
               "逻辑"
             ],
-            "definition": "逻辑错误是概念不一致、立场矛盾或理由无法推出结论等错误。",
-            "example": "理由站不住脚却贸然得出结论。"
-          },
-          {
-            "name": "划分不当",
-            "difficulty": 2,
-            "description": "分类时各项目标准不一致或范围交叉。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "划分不当是对事物分类时没有遵循同一标准造成的错误。",
-            "example": "把俄罗斯文学、拉美文学、古典文学并列。"
-          },
-          {
-            "name": "自相矛盾",
-            "difficulty": 2,
-            "description": "同一表达中的立场或说法彼此冲突。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "自相矛盾是同一主体对同一问题作出互相冲突的判断。",
-            "example": "说要赴汤蹈火，却因下雨不去排练。"
-          },
-          {
-            "name": "强加因果",
-            "difficulty": 2,
-            "description": "把没有因果关系的现象错误地联系起来。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "强加因果是将同时出现或先后发生的现象错误认定为因果关系。",
-            "example": "因出生时天昏地暗便断定此生不凡。"
-          },
-          {
-            "name": "以偏概全",
-            "difficulty": 2,
-            "description": "用局部或少数情况推断整体情况。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "以偏概全是依据不充分的个别情况得出关于整体的结论。",
-            "example": "以一项有限调查断言大学生普遍缺少热情。"
-          },
-          {
-            "name": "推理",
-            "difficulty": 2,
-            "description": "由已知判断推出未知判断的思维过程。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑"
-            ],
-            "definition": "推理是依据若干已知判断推出另一个判断的思维过程。",
-            "example": "根据黄金重量推断县官收到的不是黄金。"
+            "definition": "逻辑错误是概念、立场、理由或结论等方面不合规范的表达错误。",
+            "example": "理由不足却推出确定结论。"
           },
           {
             "name": "前提",
             "difficulty": 2,
-            "description": "推理或论证中用来支持结论的已知判断。",
+            "description": "推理或论证所依据的判断",
             "aliases": [],
-            "prerequisites": [
-              "推理"
-            ],
-            "definition": "前提是推理或论证中作为依据、用以推出结论的判断。",
+            "prerequisites": [],
+            "definition": "前提是推理或论证中用来支持结论的已知判断。",
             "example": "熊友兰有十五贯钱。"
           },
           {
             "name": "结论",
             "difficulty": 2,
-            "description": "由前提或论据推出的判断。",
+            "description": "由前提推导出的判断",
             "aliases": [],
-            "prerequisites": [
-              "推理",
-              "前提"
-            ],
-            "definition": "结论是推理或论证依据前提、论据所得出的判断。",
-            "example": "熊友兰是杀死尤葫芦的罪犯。"
+            "prerequisites": [],
+            "definition": "结论是推理或论证根据前提所得出的判断。",
+            "example": "因此熊友兰是罪犯。"
           },
           {
-            "name": "推理形式",
-            "difficulty": 3,
-            "description": "前提与结论之间具有一定结构的推理模式。",
+            "name": "推理",
+            "difficulty": 2,
+            "description": "由已知判断推出未知判断的思维过程",
             "aliases": [],
             "prerequisites": [
-              "推理",
               "前提",
               "结论"
             ],
-            "definition": "推理形式是前提与结论之间关系的结构化表达。",
-            "example": "若条件成立则导致结果，事实却否定结果。"
+            "definition": "推理是依据一个或多个前提得出结论的思维过程。",
+            "example": "由搬运人数推断黄金已被调换。"
           },
           {
             "name": "论证",
             "difficulty": 2,
-            "description": "用论据支持或反驳某个观点的逻辑过程。",
+            "description": "用论据支持或反驳论点的逻辑过程",
             "aliases": [],
             "prerequisites": [
-              "推理"
+              "推理",
+              "论点",
+              "论据"
             ],
             "definition": "论证是用某些论据去支持或反驳某个观点的过程。",
-            "example": "用多个理由证明某种做法正确。"
-          },
-          {
-            "name": "论据",
-            "difficulty": 2,
-            "description": "论证中用来支持或反驳观点的依据。",
-            "aliases": [],
-            "prerequisites": [
-              "论证"
-            ],
-            "definition": "论据是论证中用以支持或反驳论点的事实或判断。",
-            "example": "狗没有吠，草料棚的人没有惊醒。"
+            "example": "用事实和分析证明观点正确。"
           },
           {
             "name": "论点",
-            "difficulty": 2,
-            "description": "论证中需要证明或反驳的观点。",
+            "difficulty": 1,
+            "description": "论证中需要证明或反驳的观点",
             "aliases": [],
-            "prerequisites": [
-              "论证"
-            ],
-            "definition": "论点是论证所要证明、支持或反驳的核心观点。",
-            "example": "牵走马的人是狗熟悉的人。"
+            "prerequisites": [],
+            "definition": "论点是议论性表达中需要用论据加以支持或反驳的观点。",
+            "example": "兼听则明。"
+          },
+          {
+            "name": "论据",
+            "difficulty": 1,
+            "description": "论证中用来支持或反驳论点的依据",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "论据是论证中支撑或反驳论点的事实、理由等依据。",
+            "example": "齐王接受多方面劝谏。"
           },
           {
             "name": "隐含前提",
             "difficulty": 3,
-            "description": "论证中未明说但对结论成立十分关键的前提。",
+            "description": "论证中省略但实际发挥作用的前提",
             "aliases": [],
             "prerequisites": [
               "前提",
-              "论证"
-            ],
-            "definition": "隐含前提是论证省略而未直接表达、却支撑结论的判断。",
-            "example": "狗遇到陌生人通常会吠叫。"
-          },
-          {
-            "name": "概念界定",
-            "difficulty": 3,
-            "description": "明确辩题或论证中关键概念的含义和范围。",
-            "aliases": [],
-            "prerequisites": [
+              "论据",
               "论点"
             ],
-            "definition": "概念界定是对论证所用关键概念的内涵和外延作出明确说明。",
-            "example": "将温饱界定为既温且饱。"
+            "definition": "隐含前提是论证中未直接说出却连接论据与论点的前提。",
+            "example": "狗不吠说明来客为狗熟悉的人。"
           },
           {
             "name": "排除法",
-            "difficulty": 3,
-            "description": "排除其他可能后证明剩余选项成立的方法。",
+            "difficulty": 2,
+            "description": "排除其他可能以确定剩余结论的推理方法",
             "aliases": [],
             "prerequisites": [
-              "推理",
-              "论证"
-            ],
-            "definition": "排除法是否定其他可能，从而证明剩余可能正确的论证方法。",
-            "example": "不能闭关、送去或等别人送来，所以只能自己去拿。"
-          },
-          {
-            "name": "间接论证",
-            "difficulty": 3,
-            "description": "不直接证明观点而通过排除或反驳完成证明。",
-            "aliases": [],
-            "prerequisites": [
-              "论证",
               "推理"
             ],
-            "definition": "间接论证是借助排除、反证或归谬等方式证明观点的论证。",
-            "example": "先假设相反观点成立，再推出矛盾。"
+            "definition": "排除法是否定若干错误选项后证明剩余选项正确的方法。",
+            "example": "不能闭关、送去或等来，只能自己去拿。"
           },
           {
             "name": "反证法",
             "difficulty": 3,
-            "description": "假设相反观点成立并推出错误或矛盾。",
+            "description": "假设反面观点成立并推出矛盾的论证方法",
             "aliases": [],
             "prerequisites": [
-              "间接论证",
-              "论证"
+              "间接论证"
             ],
-            "definition": "反证法是先假设与论点相矛盾的观点成立，再推出错误或矛盾。",
+            "definition": "反证法是先假设与论点相矛盾的观点成立，再推出错误或矛盾的方法。",
             "example": "假设故事不在辛亥革命后，便无法解释“旧历”。"
           },
           {
             "name": "归谬法",
             "difficulty": 3,
-            "description": "从某观点推出明显错误或矛盾以证明其错误。",
+            "description": "从某观点推出荒谬结果以证明其错误",
             "aliases": [],
             "prerequisites": [
-              "间接论证",
+              "间接论证"
+            ],
+            "definition": "归谬法是从某一观点推出明显错误或矛盾结果的驳论方法。",
+            "example": "若古语都不能说，今天便只能做半个哑巴。"
+          },
+          {
+            "name": "间接论证",
+            "difficulty": 3,
+            "description": "通过排除、反证或归谬间接证明观点",
+            "aliases": [],
+            "prerequisites": [
               "论证"
             ],
-            "definition": "归谬法是顺着某一观点推演出荒谬结果，从而反驳该观点。",
-            "example": "若古代语言都不能用，今天只好做半个哑巴。"
+            "definition": "间接论证是不直接证明论点而借助排除、反证或归谬完成论证的方法。",
+            "example": "先否定其他做法来证明“拿来主义”。"
           },
           {
             "name": "虚拟论敌",
             "difficulty": 3,
-            "description": "设想的反对者，用来质疑并检验论证。",
+            "description": "论证中设想并回应的假想反驳者",
             "aliases": [],
             "prerequisites": [
-              "论点",
-              "论据",
               "论证"
             ],
-            "definition": "虚拟论敌是论证者设想出的质疑者，用于发现反例和逻辑漏洞。",
-            "example": "“兼听”就一定“明”吗？"
+            "definition": "虚拟论敌是写作者为检验和完善论证而设想的质疑者。",
+            "example": "设想有人质疑“兼听则明”必然成立。"
           },
           {
-            "name": "逻辑链条",
-            "difficulty": 3,
-            "description": "论点由多个判断和推理环节逐步得到证明的过程。",
+            "name": "概念界定",
+            "difficulty": 2,
+            "description": "明确概念的含义和适用范围",
             "aliases": [],
             "prerequisites": [
-              "论点",
-              "论据",
-              "推理"
+              "论点"
             ],
-            "definition": "逻辑链条是论证中各判断和推理环节前后衔接的结构。",
-            "example": "提出观点、分析材料并回应质疑。"
+            "definition": "概念界定是对论证中关键概念的含义及范围作出明确说明。",
+            "example": "说明“兼听”的核心在于听取不同意见。"
+          },
+          {
+            "name": "划分不当",
+            "difficulty": 2,
+            "description": "对事物分类时标准不统一或范围交叉",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "划分不当是对对象分类时所依据的标准或范围不合理。",
+            "example": "把俄罗斯、拉美、古典文学并列划分。"
+          },
+          {
+            "name": "自相矛盾",
+            "difficulty": 2,
+            "description": "同一表达中前后立场或判断互相冲突",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "自相矛盾是同一话语中的判断或立场彼此不能同时成立。",
+            "example": "说赴汤蹈火，却因下雨不去排练。"
+          },
+          {
+            "name": "强加因果",
+            "difficulty": 2,
+            "description": "把没有因果关系的现象说成有因果关系",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "强加因果是缺乏依据地把两个现象之间说成因果关系。",
+            "example": "把出生时的恶劣天气说成命运原因。"
+          },
+          {
+            "name": "以偏概全",
+            "difficulty": 2,
+            "description": "以少数或局部情况推断整体情况",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "以偏概全是根据不充分的局部材料对整体作出普遍判断。",
+            "example": "用一项调查断言大学生普遍缺少热情。"
+          },
+          {
+            "name": "月意象",
+            "difficulty": 2,
+            "description": "诗歌中寄托时间、生命与相思的月亮形象",
+            "aliases": [],
+            "prerequisites": [
+              "意象"
+            ],
+            "definition": "月意象是诗歌借月亮形象表现自然恒久、生命短暂和相思之情。",
+            "example": "月升月落贯串景色、情思与哲思。"
+          },
+          {
+            "name": "意象",
+            "difficulty": 2,
+            "description": "融入诗人情感的具体形象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "意象是文学作品中承载特定情感和意味的形象。",
+            "example": "诗中反复出现的月亮承载离愁。"
+          },
+          {
+            "name": "意境",
+            "difficulty": 2,
+            "description": "由景物、情感和哲思融合形成的艺术境界",
+            "aliases": [],
+            "prerequisites": [
+              "意象"
+            ],
+            "definition": "意境是作品通过形象与情感交融营造出的整体艺术境界。",
+            "example": "春江月夜呈现空灵曼妙的意境。"
+          },
+          {
+            "name": "细节描写",
+            "difficulty": 2,
+            "description": "对人物细微动作、神态或场景进行具体描写",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细节描写是抓住细微处加以具体刻画以表现情感或人物的写法。",
+            "example": "梦中妻子临窗梳妆的场景。"
+          },
+          {
+            "name": "借酒抒情",
+            "difficulty": 2,
+            "description": "借饮酒行为和酒意表达复杂情感",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "借酒抒情是通过饮酒、劝酒等描写抒发胸怀与情感的表达方式。",
+            "example": "借饮酒排遣怀才不遇的愁怀。"
+          },
+          {
+            "name": "情理交融",
+            "difficulty": 2,
+            "description": "把情感抒发与人生哲思自然结合",
+            "aliases": [],
+            "prerequisites": [
+              "意境"
+            ],
+            "definition": "情理交融是作品将情感体验与思考议论融为一体的表达特点。",
+            "example": "由江月恒久写到人生短暂与相思之苦。"
           }
         ]
       }
@@ -876,165 +1102,160 @@
           {
             "name": "革命文化",
             "difficulty": 2,
-            "description": "在革命历程中形成的精神文化成果",
+            "description": "在革命实践中形成的精神文化成果",
             "aliases": [],
             "prerequisites": [],
-            "definition": "革命文化是中国共产党领导人民进行革命斗争过程中形成的文化。",
-            "example": "作品表现革命者的战斗激情。"
+            "definition": "革命文化是中国共产党领导人民进行革命斗争过程中形成的文化形态。",
+            "example": "作品表现革命豪情和革命人道主义精神",
+            "section": "别了,“不列颠尼亚”"
           },
           {
-            "name": "社会主义先进文化",
+            "name": "演讲词",
             "difficulty": 2,
-            "description": "社会主义建设和发展中形成的先进文化",
-            "aliases": [],
+            "description": "在特定场合发表的口头讲话文稿",
+            "aliases": [
+              "讲话"
+            ],
             "prerequisites": [],
-            "definition": "社会主义先进文化是社会主义建设时期形成并发展的文化形态。",
-            "example": "作品表现党员干部的光辉事迹。"
-          },
-          {
-            "name": "开幕词",
-            "difficulty": 2,
-            "description": "会议开始时由主持者发表的讲话",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "开幕词是会议开幕时说明会议宗旨和安排的讲话。",
-            "example": "会议开幕时宣布会议议程。"
+            "definition": "演讲词是面向特定听众、围绕明确主题进行阐述和号召的讲话文稿。",
+            "example": "会议开幕词回顾革命历程并规划国家发展"
           },
           {
             "name": "历史背景",
             "difficulty": 2,
-            "description": "作品所对应的时代和社会环境",
+            "description": "理解作品内容所需联系的时代环境",
             "aliases": [],
             "prerequisites": [],
-            "definition": "历史背景是理解作品内容和意义所需的时代环境。",
-            "example": "结合中国近代以来的历史阅读讲话。"
+            "definition": "历史背景是作品产生时相关的社会、政治和历史条件。",
+            "example": "结合新中国成立前后的历史理解讲话"
           },
           {
             "name": "回顾展望结构",
             "difficulty": 3,
-            "description": "按过去、现在、未来组织表达内容",
-            "aliases": [],
-            "prerequisites": [
-              "历史背景"
+            "description": "按过去、当下、未来组织表达内容",
+            "aliases": [
+              "回顾过去展望未来"
             ],
-            "definition": "回顾展望结构是先回顾历史、再立足当下并展望未来的行文结构。",
-            "example": "讲话回顾革命胜利，规划国家发展，展望民族复兴。"
+            "prerequisites": [],
+            "definition": "回顾展望结构是先总结历史，再立足现实，最后描绘未来的组织方式。",
+            "example": "先论证革命胜利，再规划建设蓝图"
           },
           {
             "name": "强调词语",
             "difficulty": 2,
-            "description": "用来加强语气和表达态度的词语",
+            "description": "用以突出语气和观点的词语",
             "aliases": [],
             "prerequisites": [],
-            "definition": "强调词语是突出判断、立场或情感力度的词语。",
-            "example": "“决无”“必然”“从来”等词语增强感染力。"
+            "definition": "强调词语是能够加强语意力度、突出态度和立场的词语。",
+            "example": "“决无”“必然”“从来”增强表达的坚定性"
           },
           {
             "name": "判断句",
             "difficulty": 2,
-            "description": "直接作出明确判断的句式",
+            "description": "对事物作出明确判断的句式",
             "aliases": [],
             "prerequisites": [],
-            "definition": "判断句是对事物性质、关系或情况作出明确判断的句子。",
-            "example": "“我们的会议是一个全国人民大团结的会议。”"
-          },
-          {
-            "name": "革命人道主义",
-            "difficulty": 3,
-            "description": "革命斗争中对人的关怀和尊重",
-            "aliases": [],
-            "prerequisites": [
-              "革命文化"
-            ],
-            "definition": "革命人道主义是革命者在斗争中仍关心、救助和尊重他人的精神。",
-            "example": "红军战士救起两个日本小女孩。"
-          },
-          {
-            "name": "长征意义",
-            "difficulty": 3,
-            "description": "长征在革命宣传和历史进程中的作用",
-            "aliases": [],
-            "prerequisites": [
-              "革命文化",
-              "历史背景"
-            ],
-            "definition": "长征意义是长征对革命胜利、政治宣传和群众动员所具有的历史作用。",
-            "example": "长征被概括为宣言书、宣传队、播种机。"
+            "definition": "判断句是对事物性质、范围或关系作出明确判断的句子。",
+            "example": "我们的会议是一个全国人民大团结的会议",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "回忆录",
             "difficulty": 2,
-            "description": "作者回忆亲历事件的纪实性文体",
+            "description": "记录亲历经历和历史见闻的文体",
             "aliases": [],
-            "prerequisites": [
-              "历史背景"
+            "prerequisites": [],
+            "definition": "回忆录是作者依据亲身经历追述人物、事件和历史场景的文章。",
+            "example": "追述红军到达吴起镇及会师的经历"
+          },
+          {
+            "name": "革命人道主义",
+            "difficulty": 3,
+            "description": "革命斗争中尊重和救助人的精神",
+            "aliases": [
+              "革命人道主义精神"
             ],
-            "definition": "回忆录是以亲身经历为基础记述历史事件和人物的文体。",
-            "example": "作者回忆红军到达吴起镇的经历。"
+            "prerequisites": [],
+            "definition": "革命人道主义是在革命立场上关心生命、尊重人格并给予人道救助的精神。",
+            "example": "战士从战火中救起日本小女孩",
+            "section": "长征胜利万岁"
+          },
+          {
+            "name": "长征历史意义",
+            "difficulty": 3,
+            "description": "长征对革命发展和群众觉醒的作用",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "长征的历史意义体现在宣示红军力量、宣传革命道路并播撒革命火种。",
+            "example": "长征被概括为宣言书、宣传队、播种机"
           },
           {
             "name": "新闻通讯",
-            "difficulty": 3,
-            "description": "以事实为基础进行较全面报道的新闻文体",
-            "aliases": [],
-            "prerequisites": [
-              "历史背景"
+            "difficulty": 2,
+            "description": "以事实为基础报道重要事件的新闻文体",
+            "aliases": [
+              "通讯"
             ],
-            "definition": "新闻通讯是以事实为基础，对人物或事件作较全面深入报道的文体。",
-            "example": "全面报道抗击新冠肺炎疫情的斗争。"
+            "prerequisites": [],
+            "definition": "新闻通讯是以事实为基础，对人物或事件进行较完整报道的新闻文体。",
+            "example": "全面报道中国抗疫斗争及其意义",
+            "section": "别了,“不列颠尼亚”"
           },
           {
-            "name": "人物通讯",
+            "name": "综合叙述",
             "difficulty": 3,
-            "description": "围绕人物事迹展开的通讯作品",
+            "description": "概述大量人物事件并揭示意义的叙述方式",
+            "aliases": [
+              "综合报道"
+            ],
+            "prerequisites": [],
+            "definition": "综合叙述是沿内在思路概述多方面事实并发掘其意义价值的表达方式。",
+            "example": "从制度、精神、生命和科学等角度报道抗疫",
+            "section": "别了,“不列颠尼亚”"
+          },
+          {
+            "name": "多角度报道",
+            "difficulty": 3,
+            "description": "从不同方面分层呈现同一重大事件",
             "aliases": [],
             "prerequisites": [
               "新闻通讯"
             ],
-            "definition": "人物通讯是以人物为中心报道其事迹、品质和精神的通讯。",
-            "example": "报道县委书记深入兰考抗灾的事迹。"
+            "definition": "多角度报道是围绕同一事件从多个侧面、不同层次展开事实和思考。",
+            "example": "同时呈现抗疫成就、精神力量和治理反思"
           },
           {
-            "name": "调查研究",
-            "difficulty": 3,
-            "description": "通过实地调查掌握情况并作出判断",
+            "name": "人物通讯",
+            "difficulty": 2,
+            "description": "集中报道典型人物事迹和精神品质",
             "aliases": [],
             "prerequisites": [
-              "历史背景"
+              "新闻通讯"
             ],
-            "definition": "调查研究是通过实地了解情况、掌握资料来形成正确判断和部署的方法。",
-            "example": "调查队查清风口、沙丘并绘制排涝图。"
+            "definition": "人物通讯是以典型人物为中心报道其事迹、形象和思想品质的通讯。",
+            "example": "报道焦裕禄带领群众治理兰考灾害",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "典型材料",
             "difficulty": 3,
-            "description": "能突出人物特点和文章主旨的材料",
-            "aliases": [],
-            "prerequisites": [
-              "材料积累"
-            ],
-            "definition": "典型材料是最能表现人物品质、事件特点或文章主旨的具体材料。",
-            "example": "焦裕禄冒雪走访困难群众。"
-          },
-          {
-            "name": "材料积累",
-            "difficulty": 2,
-            "description": "从阅读和生活观察中搜集写作素材",
+            "description": "最能表现人物特点和文章主旨的材料",
             "aliases": [],
             "prerequisites": [],
-            "definition": "材料积累是通过阅读、观察和思考持续搜集写作素材的过程。",
-            "example": "观察普通人的生活并记录独特素材。"
+            "definition": "典型材料是具有代表性、能够突出人物品质或深化主旨的事实材料。",
+            "example": "焦裕禄冒雨查洪水并绘制水流图",
+            "section": "别了,“不列颠尼亚”"
           },
           {
-            "name": "材料真实性",
+            "name": "材料真实可靠",
             "difficulty": 2,
-            "description": "写作材料必须真实可靠、出处明确",
-            "aliases": [],
-            "prerequisites": [
-              "材料积累"
+            "description": "写作材料必须真实并经过核对鉴别",
+            "aliases": [
+              "材料真实性"
             ],
-            "definition": "材料真实性是指写作材料真实可靠并经得起核对鉴别。",
-            "example": "对流传材料核对出处后再使用。"
+            "prerequisites": [],
+            "definition": "材料真实可靠是指写作所用事实有依据、出处清楚且经得起核验。",
+            "example": "引用流传材料前先核对出处"
           },
           {
             "name": "材料恰当使用",
@@ -1042,66 +1263,105 @@
             "description": "使材料服务于观点和文章主旨",
             "aliases": [],
             "prerequisites": [
-              "典型材料",
-              "材料真实性"
+              "典型材料"
             ],
-            "definition": "材料恰当使用是根据观点和主旨选择、安排并运用材料。",
-            "example": "书信材料提升作品的历史意义和政治高度。"
+            "definition": "材料恰当使用是根据观点和主旨选择、安排并有效运用写作材料。",
+            "example": "收录致日本官兵的信以深化文章主旨"
+          },
+          {
+            "name": "阅读积累",
+            "difficulty": 2,
+            "description": "通过阅读经典作品积累写作素材",
+            "aliases": [
+              "个人阅读积累"
+            ],
+            "prerequisites": [],
+            "definition": "阅读积累是通过持续阅读和思考获得可用于表达与写作的素材和启示。",
+            "example": "从经典作品中获得属于自己的发现",
+            "section": "别了,“不列颠尼亚”"
+          },
+          {
+            "name": "观察生活",
+            "difficulty": 2,
+            "description": "从日常生活中发现并积累独特材料",
+            "aliases": [
+              "生活观察"
+            ],
+            "prerequisites": [],
+            "definition": "观察生活是有意识地从现实人物、事件和社会现象中发现写作材料。",
+            "example": "从平常街道观察普通人的喜怒哀乐"
           },
           {
             "name": "抗疫精神",
             "difficulty": 3,
-            "description": "抗疫斗争中形成的伟大精神财富",
-            "aliases": [],
-            "prerequisites": [
-              "社会主义先进文化"
+            "description": "抗疫斗争中形成的共同精神品格",
+            "aliases": [
+              "伟大抗疫精神"
             ],
-            "definition": "抗疫精神体现自强不息、万众一心、甘于奉献和命运与共等品格。",
-            "example": "全国人民共同支援武汉抗疫。"
-          },
-          {
-            "name": "生命至上",
-            "difficulty": 2,
-            "description": "把人民生命安全和身体健康置于首位",
-            "aliases": [],
-            "prerequisites": [
-              "抗疫精神"
-            ],
-            "definition": "生命至上是抗疫救治中不放弃任何生命的价值取向。",
-            "example": "医务人员全力救治高龄老人和新生婴儿。"
+            "prerequisites": [],
+            "definition": "抗疫精神包括自强不息、万众一心、甘于奉献、守望相助和命运与共等品质。",
+            "example": "全国支援武汉并坚持生命至上",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "科学防治",
-            "difficulty": 3,
+            "difficulty": 2,
             "description": "运用科学研究和方法应对疫情",
             "aliases": [],
-            "prerequisites": [
-              "抗疫精神"
+            "prerequisites": [],
+            "definition": "科学防治是依据科学研究、专业判断和实际情况制定防控措施。",
+            "example": "研究病毒传播机理并研发药品疫苗",
+            "section": "别了,“不列颠尼亚”"
+          },
+          {
+            "name": "人民至上",
+            "difficulty": 2,
+            "description": "把人民生命安全和健康置于首位",
+            "aliases": [
+              "生命至上"
             ],
-            "definition": "科学防治是依据科学研究制定并实施疫情防控策略和措施。",
-            "example": "研究病毒变异并完善防控策略。"
+            "prerequisites": [],
+            "definition": "人民至上是始终把人民利益特别是生命安全和身体健康放在第一位。",
+            "example": "国家全力救治患者并承担救治费用",
+            "section": "别了,“不列颠尼亚”"
           },
           {
             "name": "人类命运共同体",
             "difficulty": 3,
-            "description": "各国休戚相关、合作共赢的共同体理念",
-            "aliases": [],
-            "prerequisites": [
-              "抗疫精神"
+            "description": "各国休戚相关、共同应对全球挑战的理念",
+            "aliases": [
+              "命运共同体"
             ],
-            "definition": "人类命运共同体理念强调各国共同担当、团结互助、合作应对全球挑战。",
-            "example": "中国向多个国家提供抗疫物资和专家援助。"
+            "prerequisites": [],
+            "definition": "人类命运共同体理念强调各国命运相连，应团结互助、合作共赢。",
+            "example": "中国向多国提供抗疫物资并分享方案",
+            "section": "别了,“不列颠尼亚”"
+          }
+        ],
+        "sections": [
+          {
+            "name": "中国人民站起来了",
+            "section_key": "db649c11c9",
+            "page_range": [
+              7,
+              11
+            ]
           },
           {
-            "name": "综合叙述",
-            "difficulty": 3,
-            "description": "概述大量事实并发掘其意义价值",
-            "aliases": [],
-            "prerequisites": [
-              "新闻通讯"
-            ],
-            "definition": "综合叙述是沿内在思路综合概述人和事并揭示其意义的叙述方式。",
-            "example": "文章把回顾总结、记事思考融为一体。"
+            "name": "长征胜利万岁",
+            "section_key": "1d193ef9e6",
+            "page_range": [
+              11,
+              21
+            ]
+          },
+          {
+            "name": "别了,“不列颠尼亚”",
+            "section_key": "1ff60cbb43",
+            "page_range": [
+              21,
+              45
+            ]
           }
         ],
         "chapter_key": "b11720c05f",
@@ -1119,31 +1379,76 @@
           {
             "name": "先秦诸子散文",
             "difficulty": 2,
-            "description": "先秦诸子阐述思想学说的经典散文",
-            "aliases": [],
+            "description": "先秦诸子阐述思想学说的散文",
+            "aliases": [
+              "诸子散文"
+            ],
             "prerequisites": [],
-            "definition": "先秦诸子散文是先秦诸家用于论说思想、洞察社会人生的文章。",
-            "example": "《老子》直接论说道理"
+            "definition": "先秦诸子散文是诸子各家论说思想、洞察社会人生的文章。",
+            "example": "儒家、道家、墨家各有不同论说风格。"
           },
           {
-            "name": "仁义礼",
+            "name": "仁",
             "difficulty": 2,
-            "description": "儒家论说中的核心思想概念",
+            "description": "儒家关于爱人和道德修养的核心观念",
             "aliases": [],
             "prerequisites": [],
-            "definition": "仁、义、礼是儒家阐释立身处世和道德修养的重要思想概念。",
-            "example": "非礼勿视，非礼勿听"
+            "definition": "仁是以爱人、怜悯和道德自觉为基础的品德。",
+            "example": "人而不仁，如礼何？"
           },
           {
-            "name": "君子修身",
+            "name": "义",
+            "difficulty": 2,
+            "description": "儒家所强调的合宜正当的行为准则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "义是辨明并遵循正当原则而非只追求利益。",
+            "example": "君子喻于义，小人喻于利。"
+          },
+          {
+            "name": "礼",
+            "difficulty": 2,
+            "description": "规范言行、维系秩序的行为准则",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "礼是约束和规范人的言行以维持社会秩序的制度规范。",
+            "example": "非礼勿视，非礼勿听。"
+          },
+          {
+            "name": "君子之德",
             "difficulty": 3,
-            "description": "儒家关于君子德行与自我修养的观点",
+            "description": "儒家所论君子立身处世的道德品质",
+            "aliases": [
+              "君子"
+            ],
+            "prerequisites": [
+              "仁",
+              "义",
+              "礼"
+            ],
+            "definition": "君子之德包括好学、重义、自省、文质兼备等品格。",
+            "example": "见贤思齐，见不贤而内自省。"
+          },
+          {
+            "name": "文质彬彬",
+            "difficulty": 2,
+            "description": "文采与质朴兼备、配合适当",
             "aliases": [],
             "prerequisites": [
-              "仁义礼"
+              "礼"
             ],
-            "definition": "君子修身强调以仁义礼规范言行并不断反省提升自己。",
-            "example": "见贤思齐，见不贤而内自省"
+            "definition": "文质彬彬是外在文采与内在质朴协调统一的状态。",
+            "example": "文质彬彬，然后君子。",
+            "section": "《论语》十二章"
+          },
+          {
+            "name": "弘毅",
+            "difficulty": 2,
+            "description": "志向远大、意志坚强的精神品质",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "弘毅指胸怀远大志向并具有坚强意志。",
+            "example": "士不可以不弘毅，任重而道远。"
           },
           {
             "name": "克己复礼",
@@ -1151,184 +1456,257 @@
             "description": "约束自我，使言行归复于先王之礼",
             "aliases": [],
             "prerequisites": [
-              "仁义礼"
+              "礼"
             ],
-            "definition": "克己复礼是通过自我约束使言行符合礼的要求。",
-            "example": "非礼勿视，非礼勿听"
+            "definition": "克己复礼是通过自我约束使视听言动合乎礼的要求。",
+            "example": "非礼勿视，非礼勿听，非礼勿言，非礼勿动。",
+            "section": "《论语》十二章"
           },
           {
-            "name": "恕道",
+            "name": "恕",
             "difficulty": 2,
-            "description": "推己及人的待人原则",
-            "aliases": [],
-            "prerequisites": [
-              "仁义礼"
+            "description": "推己及人，不把自己不愿承受的施加给别人",
+            "aliases": [
+              "推己及人"
             ],
-            "definition": "恕道是用自己不愿接受的事情推知他人感受并不施加于人。",
-            "example": "己所不欲，勿施于人"
+            "prerequisites": [
+              "仁"
+            ],
+            "definition": "恕是设身处地体谅他人并尊重他人意愿的原则。",
+            "example": "己所不欲，勿施于人。"
+          },
+          {
+            "name": "诗的社会功能",
+            "difficulty": 3,
+            "description": "《诗》具有兴、观、群、怨等社会作用",
+            "aliases": [
+              "兴观群怨"
+            ],
+            "prerequisites": [],
+            "definition": "诗的社会功能包括激发感情、观察社会、促进交往和讽刺时政。",
+            "example": "《诗》可以兴，可以观，可以群，可以怨。"
           },
           {
             "name": "三纲",
-            "difficulty": 2,
-            "description": "《大学》提出的三项道德修养纲领",
+            "difficulty": 3,
+            "description": "明明德、亲民、止于至善的修养目标",
             "aliases": [],
             "prerequisites": [],
-            "definition": "三纲指明明德、亲民、止于至善。",
-            "example": "在明明德，在亲民，在止于至善"
+            "definition": "三纲是关于彰明美德、亲近民众和达到至善的纲领。",
+            "example": "在明明德，在亲民，在止于至善。",
+            "section": "《论语》十二章"
           },
           {
             "name": "八目",
             "difficulty": 3,
-            "description": "《大学》提出的八个修养和治理步骤",
+            "description": "格物、致知、诚意等八个修养实践步骤",
             "aliases": [],
-            "prerequisites": [],
-            "definition": "八目指格物、致知、诚意、正心、修身、齐家、治国、平天下。",
-            "example": "致知在格物"
+            "prerequisites": [
+              "三纲"
+            ],
+            "definition": "八目是格物、致知、诚意、正心、修身、齐家、治国、平天下。",
+            "example": "格物而后致知，知至而后意诚。",
+            "section": "《论语》十二章"
           },
           {
             "name": "修身为本",
-            "difficulty": 3,
-            "description": "《大学》关于个人修养基础地位的观点",
+            "difficulty": 2,
+            "description": "把个人修养作为齐家治国平天下的根本",
             "aliases": [],
             "prerequisites": [
               "八目"
             ],
-            "definition": "修身为本是指无论治理家庭、国家还是天下，都应以修养自身为根本。",
-            "example": "壹是皆以修身为本"
+            "definition": "修身为本强调个人道德修养是实现社会治理目标的基础。",
+            "example": "自天子以至于庶人，壹是皆以修身为本。",
+            "section": "《论语》十二章"
           },
           {
             "name": "四端",
             "difficulty": 3,
-            "description": "孟子认为人人具有的四种道德萌芽",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "四端指恻隐、羞恶、辞让、是非之心，分别是仁义礼智的发端。",
-            "example": "恻隐之心，仁之端也"
+            "description": "恻隐、羞恶、辞让、是非四种道德萌芽",
+            "aliases": [
+              "四端之心"
+            ],
+            "prerequisites": [
+              "仁",
+              "义",
+              "礼"
+            ],
+            "definition": "四端是人所具有的仁、义、礼、智的道德发端。",
+            "example": "恻隐之心，仁之端也。",
+            "section": "《论语》十二章"
           },
           {
             "name": "不忍人之心",
+            "difficulty": 3,
+            "description": "人面对他人困境时自然产生的怜悯之心",
+            "aliases": [
+              "恻隐之心"
+            ],
+            "prerequisites": [
+              "四端"
+            ],
+            "definition": "不忍人之心是人见他人受难时自然产生的怜悯心理。",
+            "example": "乍见孺子将入于井，皆有怵惕恻隐之心。"
+          },
+          {
+            "name": "有无相生",
+            "difficulty": 3,
+            "description": "有与无相互依存、共同发挥作用",
+            "aliases": [
+              "有无之用"
+            ],
+            "prerequisites": [],
+            "definition": "有无相生指事物的实际功用既依赖其有形部分，也依赖其空无部分。",
+            "example": "车的功用产生于车辐的中空处。"
+          },
+          {
+            "name": "自知自胜",
+            "difficulty": 3,
+            "description": "了解自己并战胜自我是智慧和强大的表现",
+            "aliases": [
+              "自知者明",
+              "自胜者强"
+            ],
+            "prerequisites": [],
+            "definition": "自知自胜强调认识自身和克服自身局限比胜过他人更重要。",
+            "example": "知人者智，自知者明；胜人者有力，自胜者强。"
+          },
+          {
+            "name": "知足",
             "difficulty": 2,
-            "description": "对他人不幸产生怜悯的自然情感",
+            "description": "懂得满足现有所得的生活态度",
             "aliases": [],
             "prerequisites": [],
-            "definition": "不忍人之心是人面对他人危难时自然产生的怜悯之心。",
-            "example": "乍见孺子将入于井"
-          },
-          {
-            "name": "兼爱",
-            "difficulty": 3,
-            "description": "墨家主张不分亲疏厚薄地相互爱护",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "兼爱是主张天下人相互爱护且不分等级亲疏的思想。",
-            "example": "天下兼相爱则治"
-          },
-          {
-            "name": "对待关系",
-            "difficulty": 3,
-            "description": "《老子》从相对两面阐发道理的关系",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "对待关系是指围绕相互对立或关联的两面展开思辨论说。",
-            "example": "有之以为利，无之以为用"
+            "definition": "知足是不过度追逐外在欲望并能安于自身所得。",
+            "example": "知足者富，强行者有志。",
+            "section": "《老子》四章"
           },
           {
             "name": "无为",
             "difficulty": 3,
-            "description": "顺应自然，不强求有所作为",
+            "description": "顺应自然，不强求以人为方式干预",
             "aliases": [],
             "prerequisites": [],
-            "definition": "无为是顺应事物自身规律而不妄加干预的处世思想。",
-            "example": "圣人无为，故无败"
+            "definition": "无为是遵循事物自然规律而不妄加作为。",
+            "example": "圣人无为，故无败；无执，故无失。",
+            "section": "《老子》四章"
           },
           {
-            "name": "慎终如始",
-            "difficulty": 2,
-            "description": "做事到最后仍像开始时一样谨慎",
-            "aliases": [],
-            "prerequisites": [],
-            "definition": "慎终如始是要求始终保持谨慎态度以避免事情失败。",
-            "example": "慎终如始，则无败事"
-          },
-          {
-            "name": "大瓠价值",
+            "name": "防微杜渐",
             "difficulty": 3,
-            "description": "从超越日常用途的角度发现事物价值",
-            "aliases": [],
+            "description": "在问题尚未显露或事物细微时及时处理",
+            "aliases": [
+              "为之于未有"
+            ],
             "prerequisites": [],
-            "definition": "大瓠价值强调应突破世俗用途限制，发现事物独特而深层的功用。",
-            "example": "以大樽浮乎江湖"
+            "definition": "防微杜渐是趁问题处于萌芽状态时加以治理以避免失败。",
+            "example": "合抱之木，生于毫末。",
+            "section": "《老子》四章"
           },
           {
             "name": "寓言说理",
             "difficulty": 2,
-            "description": "借助寓言故事委婉阐明抽象道理",
-            "aliases": [],
-            "prerequisites": [
-              "先秦诸子散文"
-            ],
-            "definition": "寓言说理是通过虚构或故事化情节婉曲表达思想观点。",
-            "example": "用大瓠和不龟手之药说理"
-          },
-          {
-            "name": "譬喻对比",
-            "difficulty": 2,
-            "description": "借比喻和对照使论说具体鲜明",
-            "aliases": [],
-            "prerequisites": [
-              "先秦诸子散文"
-            ],
-            "definition": "譬喻对比是借助相似事物或相反情形来阐明道理的方法。",
-            "example": "譬如为山，未成一篑"
-          },
-          {
-            "name": "反复论说",
-            "difficulty": 2,
-            "description": "反复申说同一观点以求清楚明白",
-            "aliases": [],
-            "prerequisites": [
-              "先秦诸子散文"
-            ],
-            "definition": "反复论说是通过重复论证或观点强化表达效果的说理方式。",
-            "example": "多次论说乱起于不相爱"
-          },
-          {
-            "name": "文言虚词",
-            "difficulty": 3,
-            "description": "文言文中具有多种意义和用法的虚词",
+            "description": "借助虚构故事委婉而有趣地阐明道理",
             "aliases": [],
             "prerequisites": [],
-            "definition": "文言虚词是文言句中主要表示语法关系或语气而意义较虚的词。",
-            "example": "之可作代词、结构助词"
+            "definition": "寓言说理是通过故事情节和形象人物间接表达思想观点。",
+            "example": "借大葫芦故事说明应突破功用成见。"
+          },
+          {
+            "name": "兼爱",
+            "difficulty": 3,
+            "description": "主张平等地爱人，不分亲疏厚薄",
+            "aliases": [
+              "兼相爱"
+            ],
+            "prerequisites": [
+              "仁"
+            ],
+            "definition": "兼爱是以爱自己之心爱他人，反对爱有等级差别。",
+            "example": "爱人若爱其身，天下兼相爱则治。",
+            "section": "兼爱"
+          },
+          {
+            "name": "兼爱治乱",
+            "difficulty": 3,
+            "description": "以兼爱消除不相爱造成的社会纷乱",
+            "aliases": [],
+            "prerequisites": [
+              "兼爱"
+            ],
+            "definition": "兼爱治乱认为天下之乱起于不相爱，实行兼爱即可实现天下治理。",
+            "example": "交相恶则乱，兼相爱则治。"
+          },
+          {
+            "name": "类比论证",
+            "difficulty": 3,
+            "description": "用相近事物的道理类比论证中心观点",
+            "aliases": [
+              "譬喻论证"
+            ],
+            "prerequisites": [],
+            "definition": "类比论证是通过比较具有相似关系的事物来说明抽象道理。",
+            "example": "以医生治病类比治理天下。"
           },
           {
             "name": "审题",
             "difficulty": 2,
-            "description": "抓住关键并弄清题目或材料的要求",
+            "description": "抓住题目或材料关键，弄清写作要求",
             "aliases": [],
             "prerequisites": [],
-            "definition": "审题是分析题干或材料信息并把握写作题旨的过程。",
-            "example": "抓住题干中的核心概念"
+            "definition": "审题是筛选关键信息并准确把握题旨和核心概念。",
+            "example": "围绕“千里之行”确定写作范围。",
+            "section": "兼爱"
           },
           {
             "name": "立意",
-            "difficulty": 2,
-            "description": "在题目范围内确立文章中心思想",
+            "difficulty": 3,
+            "description": "在题目或材料范围内确定文章中心",
             "aliases": [],
             "prerequisites": [
               "审题"
             ],
-            "definition": "立意是在准确审题基础上确定具体、明确且有独特性的文章主旨。",
-            "example": "围绕始于足下确定具体角度"
+            "definition": "立意是在准确审题基础上形成具体、明确且有独特性的中心思想。",
+            "example": "从当下具体行动阐释理想实现。",
+            "section": "兼爱"
           },
           {
-            "name": "知行合一",
-            "difficulty": 2,
-            "description": "把学习传统文化落实到实际行动中",
-            "aliases": [],
+            "name": "文言虚词用法",
+            "difficulty": 3,
+            "description": "归纳之、乎、者、也等虚词的意义和作用",
+            "aliases": [
+              "常见文言虚词"
+            ],
             "prerequisites": [],
-            "definition": "知行合一是将对道理的理解落实为现实生活中的实践。",
-            "example": "把立身处世之道用于日常生活"
+            "definition": "文言虚词用法是根据语境辨析虚词在句中的意义和语法功能。",
+            "example": "“之”可作代词，也可作结构助词。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "《论语》十二章",
+            "section_key": "6a2c3cdba8",
+            "page_range": [
+              47,
+              51
+            ]
+          },
+          {
+            "name": "《老子》四章",
+            "section_key": "b6bce0e479",
+            "page_range": [
+              51,
+              54
+            ]
+          },
+          {
+            "name": "兼爱",
+            "section_key": "af2cc3450c",
+            "page_range": [
+              54,
+              57
+            ]
           }
         ],
         "chapter_key": "9174144d9d",
@@ -1344,138 +1722,199 @@
         "name": "第三单元",
         "concepts": [
           {
-            "name": "现实主义小说",
+            "name": "现实主义长篇小说",
             "difficulty": 3,
-            "description": "通过广阔社会生活表现现实矛盾的小说类型",
+            "description": "展现广阔社会生活并表达深刻思考的长篇小说",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "现实主义小说以真实社会生活为基础，表现时代现实与社会问题。",
-            "example": "童工生活展现工业社会的残酷现实"
+            "prerequisites": [],
+            "definition": "现实主义长篇小说以广阔社会生活为表现对象，寄寓作者对现实的深刻思考。",
+            "example": "通过童工生活展现工业革命时期的英国社会。"
           },
           {
             "name": "现代小说",
             "difficulty": 3,
-            "description": "在题材内容和创作手法上具有创新的小说类型",
+            "description": "在题材内容和创作手法上具有创新性的小说",
             "aliases": [],
-            "prerequisites": [
-              "小说"
-            ],
-            "definition": "现代小说是在题材、内容和创作手法等方面不断创新的小说。",
-            "example": "以独特叙事表现人的生存困境"
+            "prerequisites": [],
+            "definition": "现代小说是在题材内容、创作手法等方面不断创新并拓展小说表现空间的小说。",
+            "example": "以奇异情节表现村庄历史变迁。"
+          },
+          {
+            "name": "人物形象",
+            "difficulty": 2,
+            "description": "小说中具有鲜明性格和独特意义的人物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人物形象是小说通过描写塑造出的具有性格特征和典型意义的人物。",
+            "example": "圣地亚哥表现出坚韧不屈的性格。"
           },
           {
             "name": "心理描写",
-            "difficulty": 2,
-            "description": "通过内心活动刻画人物并推动情节发展的方法",
+            "difficulty": 3,
+            "description": "描写人物内心想法、感受和精神变化的方法",
             "aliases": [],
             "prerequisites": [
-              "小说人物形象"
+              "人物形象"
             ],
-            "definition": "心理描写是直接表现人物思想、感情和心理变化的描写方法。",
-            "example": "人物在善恶选择间反复挣扎"
+            "definition": "心理描写是小说直接呈现人物内心活动和精神变化的塑造人物方法。",
+            "example": "老人反复思考捕鱼是否是一种罪过。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "环境描写",
-            "difficulty": 2,
-            "description": "描写人物活动环境并表现氛围和主题的方法",
+            "difficulty": 3,
+            "description": "描写人物活动环境并发挥多重作用的方法",
             "aliases": [],
             "prerequisites": [
-              "小说"
+              "人物形象"
             ],
-            "definition": "环境描写是对人物活动的自然环境和社会环境进行描写。",
-            "example": "破旧货行烘托童工的悲惨处境"
+            "definition": "环境描写是小说对人物活动的自然环境和社会环境进行描写的方法。",
+            "example": "描写破旧货行以烘托童工的悲惨处境。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "象征意味",
             "difficulty": 4,
-            "description": "借具体形象或情节暗示更深层意义",
+            "description": "具体情节或形象所寄寓的深层意义",
             "aliases": [],
             "prerequisites": [
               "环境描写"
             ],
-            "definition": "象征意味是作品中的具体形象或事件对抽象思想和主题的暗示。",
-            "example": "失眠失忆象征文明冲击下的精神危机"
+            "definition": "象征意味是作品借具体形象或情节暗示更深层社会、人生意义的表达方式。",
+            "example": "失眠症和失忆象征文明冲击下的精神危机。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "魔幻现实主义",
             "difficulty": 4,
-            "description": "融合现实与幻想，营造奇异而真实的世界",
+            "description": "融合真实生活与奇幻因素的小说表现方法",
             "aliases": [],
             "prerequisites": [
-              "小说"
+              "现代小说",
+              "象征意味"
             ],
-            "definition": "魔幻现实主义以现实生活为基础，将幻想性事件当作日常现实来表现。",
-            "example": "全镇人患失眠症并逐渐失去记忆"
+            "definition": "魔幻现实主义是在真实生活叙述中融入奇幻因素并使二者界限消失的表现方法。",
+            "example": "全镇感染失眠症并用标签维系现实。",
+            "section": "百年孤独(节选)"
           },
           {
             "name": "小小说",
-            "difficulty": 2,
+            "difficulty": 3,
             "description": "篇幅最短、人物少、场景集中的小说",
             "aliases": [
               "微型小说"
             ],
             "prerequisites": [
-              "小说"
+              "人物形象"
             ],
-            "definition": "小小说是小说中篇幅最短的一种，常以简洁故事表现深刻意义。",
-            "example": "围绕一次意外选择写出人物变化"
+            "definition": "小小说是小说中篇幅最短的一种，通常以简洁叙事表现深刻生活意义。",
+            "example": "围绕一个生活瞬间塑造人物并表达思考。",
+            "section": "百年孤独(节选)"
           },
           {
-            "name": "以小见大",
+            "name": "小小说立意",
             "difficulty": 3,
-            "description": "从小故事或生活片段表现重大意义",
+            "description": "确立小小说所要表达的思想和意义",
             "aliases": [],
             "prerequisites": [
               "小小说"
             ],
-            "definition": "以小见大是通过细小事件、瞬间或局部展现更广阔的生活和思想。",
-            "example": "从一块物品写出一个家庭的困境"
+            "definition": "小小说立意是从故事和生活中提炼并确立作品核心思想的过程。",
+            "example": "借一个普通事件表达对人生的思考。"
           },
           {
-            "name": "明确立意",
-            "difficulty": 2,
-            "description": "确定小小说所要表达的思想和意义",
+            "name": "小小说构思",
+            "difficulty": 4,
+            "description": "精心安排简单情节以形成波澜和悬念",
             "aliases": [],
             "prerequisites": [
-              "小小说"
+              "小小说",
+              "小小说立意"
             ],
-            "definition": "明确立意是围绕核心思想确立作品要表达的意义。",
-            "example": "借一次误会表达对人情冷暖的思考"
-          },
-          {
-            "name": "巧于构思",
-            "difficulty": 3,
-            "description": "精心安排简单情节，形成波澜和悬念",
-            "aliases": [],
-            "prerequisites": [
-              "小小说"
-            ],
-            "definition": "巧于构思是通过灵活安排情节使简单故事产生起伏和意外效果。",
-            "example": "先埋下物件线索，结尾揭示其来历"
+            "definition": "小小说构思是围绕有限篇幅巧妙安排情节、悬念、伏笔和结局的方法。",
+            "example": "利用道具设置悬念，结尾安排意外突转。"
           },
           {
             "name": "突转结尾",
-            "difficulty": 3,
-            "description": "在结尾处实现意外且合乎情理的情节转折",
+            "difficulty": 4,
+            "description": "在结尾设置出乎意料又合乎情理的转折",
             "aliases": [],
             "prerequisites": [
-              "巧于构思"
+              "小小说构思"
             ],
-            "definition": "突转结尾是在故事结束处突然改变情节方向并形成新的意味。",
-            "example": "结尾揭示叙述者其实就是被寻找的人"
+            "definition": "突转结尾是通过结局的突然转折强化故事效果并深化作品意味的写法。",
+            "example": "结尾揭示关键真相，使前文细节获得新解释。"
           },
           {
             "name": "白描手法",
             "difficulty": 3,
-            "description": "用简洁洗练的语言勾勒人物特征",
+            "description": "用简洁洗练的语言勾勒人物轮廓",
             "aliases": [],
             "prerequisites": [
-              "小小说"
+              "人物形象"
             ],
-            "definition": "白描手法是不加繁复修饰，抓住传神之处简洁刻画人物。",
-            "example": "用一个动作写出人物的迟疑和善意"
+            "definition": "白描手法是不加繁饰地抓住传神之处描写人物形象的方法。",
+            "example": "用几句简洁动作描写表现人物的慌乱。",
+            "section": "百年孤独(节选)"
+          },
+          {
+            "name": "小说留白",
+            "difficulty": 3,
+            "description": "删去部分信息，留下想象空间的写法",
+            "aliases": [
+              "留白"
+            ],
+            "prerequisites": [
+              "白描手法"
+            ],
+            "definition": "小说留白是有意省略不必明说的内容，让读者结合文本进行想象和补充。",
+            "example": "不交代人物最终选择，让读者自行揣摩。"
+          },
+          {
+            "name": "以小见大",
+            "difficulty": 3,
+            "description": "通过生活片段表现更广阔的思想意义",
+            "aliases": [],
+            "prerequisites": [
+              "小小说立意"
+            ],
+            "definition": "以小见大是从具体、有限的生活故事中表现深层人生或社会意义的方法。",
+            "example": "通过一家人的疫病经历展现时代变迁。",
+            "section": "百年孤独(节选)"
+          }
+        ],
+        "sections": [
+          {
+            "name": "大卫·科波菲尔(节选)",
+            "section_key": "a3a65ed931",
+            "page_range": [
+              59,
+              70
+            ]
+          },
+          {
+            "name": "复活(节选)",
+            "section_key": "5e04e99417",
+            "page_range": [
+              70,
+              76
+            ]
+          },
+          {
+            "name": "老人与海(节选)",
+            "section_key": "5660e90e2c",
+            "page_range": [
+              76,
+              87
+            ]
+          },
+          {
+            "name": "百年孤独(节选)",
+            "section_key": "22ac8eee40",
+            "page_range": [
+              87,
+              95
+            ]
           }
         ],
         "chapter_key": "a05101698d",
@@ -1493,254 +1932,277 @@
           {
             "name": "逻辑",
             "difficulty": 1,
-            "description": "辨析信息、发现谬误并进行合理思考的方法。",
+            "description": "帮助辨识信息、推理判断和构建议论的思维方法",
             "aliases": [],
             "prerequisites": [],
-            "definition": "逻辑是帮助人们辨析事实、严密思考和准确表达的方法。",
-            "example": "由已知事实推断未知情况。"
+            "definition": "逻辑是依据思维和表达规范进行辨析、推理与论证的方法。",
+            "example": "由事实出发判断未知情况。"
           },
           {
             "name": "谬误",
             "difficulty": 2,
-            "description": "具有一定迷惑性的逻辑错误。",
+            "description": "具有迷惑性的逻辑错误",
             "aliases": [],
             "prerequisites": [
               "逻辑"
             ],
-            "definition": "谬误是违反思维和表达基本规范且具有迷惑性的逻辑错误。",
-            "example": "把出生时的天气与人的命运强行联系。"
+            "definition": "谬误是具有一定迷惑性的逻辑错误。",
+            "example": "把无关现象说成因果关系。"
           },
           {
             "name": "逻辑错误",
             "difficulty": 2,
-            "description": "概念、立场、理由或结论等方面的错误。",
+            "description": "违反思维和表达基本规范的错误",
             "aliases": [],
             "prerequisites": [
               "逻辑"
             ],
-            "definition": "逻辑错误是概念不一致、立场矛盾或理由无法推出结论等错误。",
-            "example": "理由站不住脚却贸然得出结论。"
-          },
-          {
-            "name": "划分不当",
-            "difficulty": 2,
-            "description": "分类时各项目标准不一致或范围交叉。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "划分不当是对事物分类时没有遵循同一标准造成的错误。",
-            "example": "把俄罗斯文学、拉美文学、古典文学并列。"
-          },
-          {
-            "name": "自相矛盾",
-            "difficulty": 2,
-            "description": "同一表达中的立场或说法彼此冲突。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "自相矛盾是同一主体对同一问题作出互相冲突的判断。",
-            "example": "说要赴汤蹈火，却因下雨不去排练。"
-          },
-          {
-            "name": "强加因果",
-            "difficulty": 2,
-            "description": "把没有因果关系的现象错误地联系起来。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "强加因果是将同时出现或先后发生的现象错误认定为因果关系。",
-            "example": "因出生时天昏地暗便断定此生不凡。"
-          },
-          {
-            "name": "以偏概全",
-            "difficulty": 2,
-            "description": "用局部或少数情况推断整体情况。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑错误"
-            ],
-            "definition": "以偏概全是依据不充分的个别情况得出关于整体的结论。",
-            "example": "以一项有限调查断言大学生普遍缺少热情。"
-          },
-          {
-            "name": "推理",
-            "difficulty": 2,
-            "description": "由已知判断推出未知判断的思维过程。",
-            "aliases": [],
-            "prerequisites": [
-              "逻辑"
-            ],
-            "definition": "推理是依据若干已知判断推出另一个判断的思维过程。",
-            "example": "根据黄金重量推断县官收到的不是黄金。"
+            "definition": "逻辑错误是概念、立场、理由或结论等方面不合规范的表达错误。",
+            "example": "理由不足却推出确定结论。"
           },
           {
             "name": "前提",
             "difficulty": 2,
-            "description": "推理或论证中用来支持结论的已知判断。",
+            "description": "推理或论证所依据的判断",
             "aliases": [],
-            "prerequisites": [
-              "推理"
-            ],
-            "definition": "前提是推理或论证中作为依据、用以推出结论的判断。",
+            "prerequisites": [],
+            "definition": "前提是推理或论证中用来支持结论的已知判断。",
             "example": "熊友兰有十五贯钱。"
           },
           {
             "name": "结论",
             "difficulty": 2,
-            "description": "由前提或论据推出的判断。",
+            "description": "由前提推导出的判断",
             "aliases": [],
-            "prerequisites": [
-              "推理",
-              "前提"
-            ],
-            "definition": "结论是推理或论证依据前提、论据所得出的判断。",
-            "example": "熊友兰是杀死尤葫芦的罪犯。"
+            "prerequisites": [],
+            "definition": "结论是推理或论证根据前提所得出的判断。",
+            "example": "因此熊友兰是罪犯。"
           },
           {
-            "name": "推理形式",
-            "difficulty": 3,
-            "description": "前提与结论之间具有一定结构的推理模式。",
+            "name": "推理",
+            "difficulty": 2,
+            "description": "由已知判断推出未知判断的思维过程",
             "aliases": [],
             "prerequisites": [
-              "推理",
               "前提",
               "结论"
             ],
-            "definition": "推理形式是前提与结论之间关系的结构化表达。",
-            "example": "若条件成立则导致结果，事实却否定结果。"
+            "definition": "推理是依据一个或多个前提得出结论的思维过程。",
+            "example": "由搬运人数推断黄金已被调换。"
           },
           {
             "name": "论证",
             "difficulty": 2,
-            "description": "用论据支持或反驳某个观点的逻辑过程。",
+            "description": "用论据支持或反驳论点的逻辑过程",
             "aliases": [],
             "prerequisites": [
-              "推理"
+              "推理",
+              "论点",
+              "论据"
             ],
             "definition": "论证是用某些论据去支持或反驳某个观点的过程。",
-            "example": "用多个理由证明某种做法正确。"
-          },
-          {
-            "name": "论据",
-            "difficulty": 2,
-            "description": "论证中用来支持或反驳观点的依据。",
-            "aliases": [],
-            "prerequisites": [
-              "论证"
-            ],
-            "definition": "论据是论证中用以支持或反驳论点的事实或判断。",
-            "example": "狗没有吠，草料棚的人没有惊醒。"
+            "example": "用事实和分析证明观点正确。"
           },
           {
             "name": "论点",
-            "difficulty": 2,
-            "description": "论证中需要证明或反驳的观点。",
+            "difficulty": 1,
+            "description": "论证中需要证明或反驳的观点",
             "aliases": [],
-            "prerequisites": [
-              "论证"
-            ],
-            "definition": "论点是论证所要证明、支持或反驳的核心观点。",
-            "example": "牵走马的人是狗熟悉的人。"
+            "prerequisites": [],
+            "definition": "论点是议论性表达中需要用论据加以支持或反驳的观点。",
+            "example": "兼听则明。"
+          },
+          {
+            "name": "论据",
+            "difficulty": 1,
+            "description": "论证中用来支持或反驳论点的依据",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "论据是论证中支撑或反驳论点的事实、理由等依据。",
+            "example": "齐王接受多方面劝谏。"
           },
           {
             "name": "隐含前提",
             "difficulty": 3,
-            "description": "论证中未明说但对结论成立十分关键的前提。",
+            "description": "论证中省略但实际发挥作用的前提",
             "aliases": [],
             "prerequisites": [
               "前提",
-              "论证"
-            ],
-            "definition": "隐含前提是论证省略而未直接表达、却支撑结论的判断。",
-            "example": "狗遇到陌生人通常会吠叫。"
-          },
-          {
-            "name": "概念界定",
-            "difficulty": 3,
-            "description": "明确辩题或论证中关键概念的含义和范围。",
-            "aliases": [],
-            "prerequisites": [
+              "论据",
               "论点"
             ],
-            "definition": "概念界定是对论证所用关键概念的内涵和外延作出明确说明。",
-            "example": "将温饱界定为既温且饱。"
+            "definition": "隐含前提是论证中未直接说出却连接论据与论点的前提。",
+            "example": "狗不吠说明来客为狗熟悉的人。"
           },
           {
             "name": "排除法",
-            "difficulty": 3,
-            "description": "排除其他可能后证明剩余选项成立的方法。",
+            "difficulty": 2,
+            "description": "排除其他可能以确定剩余结论的推理方法",
             "aliases": [],
             "prerequisites": [
-              "推理",
-              "论证"
-            ],
-            "definition": "排除法是否定其他可能，从而证明剩余可能正确的论证方法。",
-            "example": "不能闭关、送去或等别人送来，所以只能自己去拿。"
-          },
-          {
-            "name": "间接论证",
-            "difficulty": 3,
-            "description": "不直接证明观点而通过排除或反驳完成证明。",
-            "aliases": [],
-            "prerequisites": [
-              "论证",
               "推理"
             ],
-            "definition": "间接论证是借助排除、反证或归谬等方式证明观点的论证。",
-            "example": "先假设相反观点成立，再推出矛盾。"
+            "definition": "排除法是否定若干错误选项后证明剩余选项正确的方法。",
+            "example": "不能闭关、送去或等来，只能自己去拿。"
           },
           {
             "name": "反证法",
             "difficulty": 3,
-            "description": "假设相反观点成立并推出错误或矛盾。",
+            "description": "假设反面观点成立并推出矛盾的论证方法",
             "aliases": [],
             "prerequisites": [
-              "间接论证",
-              "论证"
+              "间接论证"
             ],
-            "definition": "反证法是先假设与论点相矛盾的观点成立，再推出错误或矛盾。",
+            "definition": "反证法是先假设与论点相矛盾的观点成立，再推出错误或矛盾的方法。",
             "example": "假设故事不在辛亥革命后，便无法解释“旧历”。"
           },
           {
             "name": "归谬法",
             "difficulty": 3,
-            "description": "从某观点推出明显错误或矛盾以证明其错误。",
+            "description": "从某观点推出荒谬结果以证明其错误",
             "aliases": [],
             "prerequisites": [
-              "间接论证",
+              "间接论证"
+            ],
+            "definition": "归谬法是从某一观点推出明显错误或矛盾结果的驳论方法。",
+            "example": "若古语都不能说，今天便只能做半个哑巴。"
+          },
+          {
+            "name": "间接论证",
+            "difficulty": 3,
+            "description": "通过排除、反证或归谬间接证明观点",
+            "aliases": [],
+            "prerequisites": [
               "论证"
             ],
-            "definition": "归谬法是顺着某一观点推演出荒谬结果，从而反驳该观点。",
-            "example": "若古代语言都不能用，今天只好做半个哑巴。"
+            "definition": "间接论证是不直接证明论点而借助排除、反证或归谬完成论证的方法。",
+            "example": "先否定其他做法来证明“拿来主义”。"
           },
           {
             "name": "虚拟论敌",
             "difficulty": 3,
-            "description": "设想的反对者，用来质疑并检验论证。",
+            "description": "论证中设想并回应的假想反驳者",
             "aliases": [],
             "prerequisites": [
-              "论点",
-              "论据",
               "论证"
             ],
-            "definition": "虚拟论敌是论证者设想出的质疑者，用于发现反例和逻辑漏洞。",
-            "example": "“兼听”就一定“明”吗？"
+            "definition": "虚拟论敌是写作者为检验和完善论证而设想的质疑者。",
+            "example": "设想有人质疑“兼听则明”必然成立。"
           },
           {
-            "name": "逻辑链条",
-            "difficulty": 3,
-            "description": "论点由多个判断和推理环节逐步得到证明的过程。",
+            "name": "概念界定",
+            "difficulty": 2,
+            "description": "明确概念的含义和适用范围",
             "aliases": [],
             "prerequisites": [
-              "论点",
-              "论据",
-              "推理"
+              "论点"
             ],
-            "definition": "逻辑链条是论证中各判断和推理环节前后衔接的结构。",
-            "example": "提出观点、分析材料并回应质疑。"
+            "definition": "概念界定是对论证中关键概念的含义及范围作出明确说明。",
+            "example": "说明“兼听”的核心在于听取不同意见。"
+          },
+          {
+            "name": "划分不当",
+            "difficulty": 2,
+            "description": "对事物分类时标准不统一或范围交叉",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "划分不当是对对象分类时所依据的标准或范围不合理。",
+            "example": "把俄罗斯、拉美、古典文学并列划分。"
+          },
+          {
+            "name": "自相矛盾",
+            "difficulty": 2,
+            "description": "同一表达中前后立场或判断互相冲突",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "自相矛盾是同一话语中的判断或立场彼此不能同时成立。",
+            "example": "说赴汤蹈火，却因下雨不去排练。"
+          },
+          {
+            "name": "强加因果",
+            "difficulty": 2,
+            "description": "把没有因果关系的现象说成有因果关系",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "强加因果是缺乏依据地把两个现象之间说成因果关系。",
+            "example": "把出生时的恶劣天气说成命运原因。"
+          },
+          {
+            "name": "以偏概全",
+            "difficulty": 2,
+            "description": "以少数或局部情况推断整体情况",
+            "aliases": [],
+            "prerequisites": [
+              "逻辑错误"
+            ],
+            "definition": "以偏概全是根据不充分的局部材料对整体作出普遍判断。",
+            "example": "用一项调查断言大学生普遍缺少热情。"
+          },
+          {
+            "name": "月意象",
+            "difficulty": 2,
+            "description": "诗歌中寄托时间、生命与相思的月亮形象",
+            "aliases": [],
+            "prerequisites": [
+              "意象"
+            ],
+            "definition": "月意象是诗歌借月亮形象表现自然恒久、生命短暂和相思之情。",
+            "example": "月升月落贯串景色、情思与哲思。"
+          },
+          {
+            "name": "意象",
+            "difficulty": 2,
+            "description": "融入诗人情感的具体形象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "意象是文学作品中承载特定情感和意味的形象。",
+            "example": "诗中反复出现的月亮承载离愁。"
+          },
+          {
+            "name": "意境",
+            "difficulty": 2,
+            "description": "由景物、情感和哲思融合形成的艺术境界",
+            "aliases": [],
+            "prerequisites": [
+              "意象"
+            ],
+            "definition": "意境是作品通过形象与情感交融营造出的整体艺术境界。",
+            "example": "春江月夜呈现空灵曼妙的意境。"
+          },
+          {
+            "name": "细节描写",
+            "difficulty": 2,
+            "description": "对人物细微动作、神态或场景进行具体描写",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "细节描写是抓住细微处加以具体刻画以表现情感或人物的写法。",
+            "example": "梦中妻子临窗梳妆的场景。"
+          },
+          {
+            "name": "借酒抒情",
+            "difficulty": 2,
+            "description": "借饮酒行为和酒意表达复杂情感",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "借酒抒情是通过饮酒、劝酒等描写抒发胸怀与情感的表达方式。",
+            "example": "借饮酒排遣怀才不遇的愁怀。"
+          },
+          {
+            "name": "情理交融",
+            "difficulty": 2,
+            "description": "把情感抒发与人生哲思自然结合",
+            "aliases": [],
+            "prerequisites": [
+              "意境"
+            ],
+            "definition": "情理交融是作品将情感体验与思考议论融为一体的表达特点。",
+            "example": "由江月恒久写到人生短暂与相思之苦。"
           }
         ],
         "chapter_key": "f71d010d92",
@@ -1758,6 +2220,87 @@
       "degraded": false,
       "reason": ""
     },
-    "section_ranges": {}
+    "section_ranges": {
+      "db649c11c9": [
+        7,
+        11
+      ],
+      "中国人民站起来了": [
+        7,
+        11
+      ],
+      "1d193ef9e6": [
+        11,
+        21
+      ],
+      "长征胜利万岁": [
+        11,
+        21
+      ],
+      "1ff60cbb43": [
+        21,
+        45
+      ],
+      "别了,“不列颠尼亚”": [
+        21,
+        45
+      ],
+      "6a2c3cdba8": [
+        47,
+        51
+      ],
+      "《论语》十二章": [
+        47,
+        51
+      ],
+      "b6bce0e479": [
+        51,
+        54
+      ],
+      "《老子》四章": [
+        51,
+        54
+      ],
+      "af2cc3450c": [
+        54,
+        57
+      ],
+      "兼爱": [
+        54,
+        57
+      ],
+      "a3a65ed931": [
+        59,
+        70
+      ],
+      "大卫·科波菲尔(节选)": [
+        59,
+        70
+      ],
+      "5e04e99417": [
+        70,
+        76
+      ],
+      "复活(节选)": [
+        70,
+        76
+      ],
+      "5660e90e2c": [
+        76,
+        87
+      ],
+      "老人与海(节选)": [
+        76,
+        87
+      ],
+      "22ac8eee40": [
+        87,
+        95
+      ],
+      "百年孤独(节选)": [
+        87,
+        95
+      ]
+    }
   }
 }

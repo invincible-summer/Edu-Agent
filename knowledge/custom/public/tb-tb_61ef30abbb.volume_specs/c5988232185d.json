@@ -1,0 +1,2485 @@
+{
+  "file_id": "c5988232185d",
+  "text_sha256": "07605bc10a7b2e1c50b82b32ac6236f911ec1aaa09bd7d0097f58b7800eea39e",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 探索世界与把握规律",
+        "concepts": [
+          {
+            "name": "哲学",
+            "difficulty": 2,
+            "description": "关于宇宙和人生一般本质与普遍规律的学科",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "哲学是人们通过思考宇宙和人生的一般本质与普遍规律问题而形成的学科。",
+            "example": "思考世界的本原是什么"
+          },
+          {
+            "name": "马克思主义哲学",
+            "difficulty": 3,
+            "description": "辩证唯物主义和历史唯物主义的统一",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "马克思主义哲学是辩证唯物主义和历史唯物主义，是科学的世界观和方法论。",
+            "example": "用科学观点认识世界和人生"
+          },
+          {
+            "name": "辩证唯物主义",
+            "difficulty": 3,
+            "description": "马克思主义哲学的重要组成部分",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "辩证唯物主义是马克思主义哲学的组成部分。",
+            "example": "从联系和发展的角度认识事物"
+          },
+          {
+            "name": "历史唯物主义",
+            "difficulty": 3,
+            "description": "马克思主义哲学的重要组成部分",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "历史唯物主义是马克思主义哲学的组成部分。",
+            "example": "以科学观点认识社会历史"
+          },
+          {
+            "name": "世界观",
+            "difficulty": 2,
+            "description": "人们对世界的总体看法和根本观点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世界观是人们对世界以及人与世界关系的总体看法和根本观点。",
+            "example": "形成正确的世界观"
+          },
+          {
+            "name": "方法论",
+            "difficulty": 2,
+            "description": "认识世界和改造世界的根本方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "方法论是人们认识世界和改造世界的根本原则和方法。",
+            "example": "用科学方法探索世界"
+          },
+          {
+            "name": "科学精神",
+            "difficulty": 2,
+            "description": "在追求真理过程中形成的科学态度",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "科学精神是在探索世界、追求真理的过程中形成的科学态度和精神品质。",
+            "example": "坚持追求真理"
+          }
+        ]
+      },
+      {
+        "name": "第一课",
+        "concepts": [
+          {
+            "name": "哲学的起源",
+            "difficulty": 2,
+            "description": "哲学产生于人们对宇宙、人生的追问和思考",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "哲学起源于人们在生活实践中对宇宙、人生的追问和思考。",
+            "example": "人们思考人生意义并探究世界本质。"
+          },
+          {
+            "name": "哲学",
+            "difficulty": 2,
+            "description": "一门热爱智慧、追求智慧并总体把握人与世界关系的学问",
+            "aliases": [
+              "追求智慧的学问",
+              "智慧之学"
+            ],
+            "prerequisites": [
+              "哲学的起源"
+            ],
+            "definition": "哲学是热爱智慧、追求智慧并致力于从总体上把握人与世界关系的学问。",
+            "example": "用哲学思考人与自然的关系。"
+          },
+          {
+            "name": "哲学智慧",
+            "difficulty": 3,
+            "description": "在认识和改造世界的实践中形成的智慧",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "哲学智慧是在认识世界、改造世界和处理人与外部世界关系的实践中形成发展的。",
+            "example": "依据实践经验找到解决问题的方法。"
+          },
+          {
+            "name": "世界观",
+            "difficulty": 2,
+            "description": "人们对整个世界的总的看法和根本观点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世界观是人们对整个世界的总的看法和根本观点。",
+            "example": "有人认为世界的本质是物质。"
+          },
+          {
+            "name": "哲学与世界观",
+            "difficulty": 3,
+            "description": "哲学把自发、零散的世界观系统化、理论化",
+            "aliases": [
+              "系统化理论化的世界观"
+            ],
+            "prerequisites": [
+              "世界观",
+              "哲学"
+            ],
+            "definition": "哲学是哲学家把不自觉、不系统的世界观加以系统化、理论化形成的思想体系。",
+            "example": "将零散的人生看法概括为系统思想。"
+          },
+          {
+            "name": "方法论",
+            "difficulty": 2,
+            "description": "人们用世界观指导认识世界和改造世界的方法",
+            "aliases": [],
+            "prerequisites": [
+              "世界观"
+            ],
+            "definition": "方法论是人们用关于世界的根本观点指导认识世界和改造世界所形成的方法。",
+            "example": "相信物质决定意识，按客观实际办事。"
+          },
+          {
+            "name": "哲学的统一性",
+            "difficulty": 3,
+            "description": "哲学是世界观和方法论的统一",
+            "aliases": [
+              "世界观和方法论的统一"
+            ],
+            "prerequisites": [
+              "世界观",
+              "方法论"
+            ],
+            "definition": "哲学既是世界观又是方法论，世界观决定方法论，方法论体现世界观。",
+            "example": "不同人生观导致不同处世方式。"
+          },
+          {
+            "name": "具体科学",
+            "difficulty": 2,
+            "description": "揭示自然、社会和思维某一具体领域规律的知识",
+            "aliases": [
+              "具体科学知识"
+            ],
+            "prerequisites": [],
+            "definition": "具体科学是对自然、社会和思维某一具体领域规律的具体把握。",
+            "example": "物理学研究物质运动规律。"
+          },
+          {
+            "name": "哲学与具体科学",
+            "difficulty": 3,
+            "description": "具体科学推动哲学发展，哲学提供世界观和方法论指导",
+            "aliases": [],
+            "prerequisites": [
+              "哲学",
+              "具体科学"
+            ],
+            "definition": "具体科学的进步推动哲学发展，哲学为具体科学研究提供世界观和方法论指导。",
+            "example": "科学发现推动哲学概括，哲学指导科研方向。"
+          },
+          {
+            "name": "哲学的基本问题",
+            "difficulty": 3,
+            "description": "思维和存在的关系问题，即意识和物质的关系问题",
+            "aliases": [
+              "意识和物质的关系问题"
+            ],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "哲学的基本问题是思维和存在的关系问题，包括何者为本原及能否正确认识存在。",
+            "example": "讨论意识能否正确反映客观世界。"
+          },
+          {
+            "name": "思维和存在同一性",
+            "difficulty": 3,
+            "description": "思维能否正确认识存在的问题",
+            "aliases": [
+              "思维和存在有没有同一性"
+            ],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "思维和存在的同一性是指思维能否正确认识现实世界的问题。",
+            "example": "人们通过科学研究认识宇宙规律。"
+          },
+          {
+            "name": "唯物主义",
+            "difficulty": 3,
+            "description": "认为物质是本原，意识是派生物，物质决定意识",
+            "aliases": [],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "唯物主义认为物质是本原，先有物质后有意识，物质决定意识。",
+            "example": "认为客观条件制约人的思想和行动。"
+          },
+          {
+            "name": "唯心主义",
+            "difficulty": 3,
+            "description": "认为意识是本原，物质依赖于意识",
+            "aliases": [],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "唯心主义认为意识是本原，物质依赖于意识，意识决定物质。",
+            "example": "认为人的意志创造了客观世界。"
+          },
+          {
+            "name": "唯物主义基本形态",
+            "difficulty": 4,
+            "description": "唯物主义发展的三种基本形态",
+            "aliases": [],
+            "prerequisites": [
+              "唯物主义"
+            ],
+            "definition": "唯物主义在历史发展中形成古代朴素、近代形而上学和辩证唯物主义三种基本形态。",
+            "example": "把水视为本原属于古代朴素唯物主义。"
+          },
+          {
+            "name": "唯心主义基本形态",
+            "difficulty": 4,
+            "description": "唯心主义发展的主观唯心主义和客观唯心主义",
+            "aliases": [],
+            "prerequisites": [
+              "唯心主义"
+            ],
+            "definition": "唯心主义在历史发展中形成主观唯心主义和客观唯心主义两种基本形态。",
+            "example": "把人的感觉视为世界本原属于主观唯心主义。"
+          },
+          {
+            "name": "二元论",
+            "difficulty": 4,
+            "description": "认为思维与存在平行且都是世界本原的观点",
+            "aliases": [],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "二元论认为思维和存在平行存在，都是世界的本原。",
+            "example": "主张精神和物质彼此独立、同为本原。"
+          },
+          {
+            "name": "马克思主义哲学",
+            "difficulty": 4,
+            "description": "辩证唯物主义和历史唯物主义的统一",
+            "aliases": [
+              "马克思主义哲学"
+            ],
+            "prerequisites": [
+              "唯物主义",
+              "哲学与具体科学"
+            ],
+            "definition": "马克思主义哲学是辩证唯物主义和历史唯物主义。",
+            "example": "用科学世界观指导无产阶级解放实践。"
+          },
+          {
+            "name": "马克思主义哲学产生条件",
+            "difficulty": 4,
+            "description": "无产阶级运动、自然科学和社会科学发展的共同产物",
+            "aliases": [],
+            "prerequisites": [
+              "马克思主义哲学"
+            ],
+            "definition": "马克思主义哲学是在无产阶级运动发展以及自然科学、社会科学进步的条件下产生的。",
+            "example": "工人运动需要科学世界观和方法论指导。"
+          },
+          {
+            "name": "马克思主义哲学历史使命",
+            "difficulty": 4,
+            "description": "实现无产阶级和全人类的解放",
+            "aliases": [],
+            "prerequisites": [
+              "马克思主义哲学"
+            ],
+            "definition": "马克思主义哲学的历史使命是实现无产阶级和全人类的解放。",
+            "example": "为劳动群众争取自由解放提供精神武器。"
+          },
+          {
+            "name": "真正的哲学",
+            "difficulty": 4,
+            "description": "从最一般本质和最普遍规律反映时代要求的哲学",
+            "aliases": [
+              "时代精神的精华"
+            ],
+            "prerequisites": [
+              "哲学",
+              "世界观"
+            ],
+            "definition": "真正的哲学能够把握时代脉搏，概括时代实践经验和认识成果。",
+            "example": "立足社会实践总结时代发展规律。"
+          }
+        ]
+      },
+      {
+        "name": "第二单元 认识社会与价值选择",
+        "concepts": [
+          {
+            "name": "认识",
+            "difficulty": 1,
+            "description": "主体对客体的能动反映。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "认识是主体对客体的能动反映。",
+            "example": "人们认识并改造自然。"
+          },
+          {
+            "name": "感性认识",
+            "difficulty": 2,
+            "description": "对事物现象和外部联系的直接认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "感性认识是人在实践基础上由感觉器官直接感受到的认识。",
+            "example": "看到花朵的颜色和形状。"
+          },
+          {
+            "name": "理性认识",
+            "difficulty": 2,
+            "description": "对事物本质、规律和内部联系的认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "感性认识"
+            ],
+            "definition": "理性认识是借助抽象思维对感性材料概括整理后形成的认识。",
+            "example": "概括植物生长规律。"
+          },
+          {
+            "name": "实践",
+            "difficulty": 1,
+            "description": "人们改造客观世界的物质性活动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "实践是人们改造客观世界的物质性活动。",
+            "example": "农民进行农业生产。"
+          },
+          {
+            "name": "实践的客观物质性",
+            "difficulty": 2,
+            "description": "实践受客观事物及其规律制约。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践的基本要素和过程具有客观性并受客观规律制约。",
+            "example": "工程建设必须遵循自然规律。"
+          },
+          {
+            "name": "实践的主观能动性",
+            "difficulty": 2,
+            "description": "实践是有目的、有意识的活动。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践体现人的目的性和意识性，能够创造新的物质生活资料和社会关系。",
+            "example": "人们设计并建造桥梁。"
+          },
+          {
+            "name": "实践的社会历史性",
+            "difficulty": 2,
+            "description": "实践处于社会关系中并受历史条件制约。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践不是孤立个人的活动，其内容形式和水平随社会历史发展而变化。",
+            "example": "不同历史时期的生产方式不同。"
+          },
+          {
+            "name": "实践是认识的来源",
+            "difficulty": 2,
+            "description": "认识是在实践活动中获得的。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "实践是人们获得对客观事物认识的基础活动。",
+            "example": "品尝西红柿后认识其可食用性。"
+          },
+          {
+            "name": "实践是认识的动力",
+            "difficulty": 2,
+            "description": "实践的需要和发展推动认识进步。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "实践不断提出新问题、提供新工具并提高认识能力，从而推动认识发展。",
+            "example": "技术需求推动科学研究。"
+          },
+          {
+            "name": "实践是认识的目的",
+            "difficulty": 2,
+            "description": "认识最终要回到实践并服务于改造世界。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "认识的目的不是认识本身，而是指导实践、改造世界。",
+            "example": "把养殖技术传给牧民。"
+          },
+          {
+            "name": "实践检验真理",
+            "difficulty": 3,
+            "description": "实践是检验认识真理性的唯一标准。",
+            "aliases": [
+              "实践是检验认识的唯一标准"
+            ],
+            "prerequisites": [
+              "实践",
+              "理性认识"
+            ],
+            "definition": "只有通过实践把主观认识同客观结果相对照，才能检验其是否正确。",
+            "example": "实验结果验证科学假说。"
+          },
+          {
+            "name": "真理",
+            "difficulty": 2,
+            "description": "与客观事物及其规律相符合的认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识"
+            ],
+            "definition": "真理是人们对客观事物及其规律的正确反映。",
+            "example": "符合实际的科学结论。"
+          },
+          {
+            "name": "真理的客观性",
+            "difficulty": 2,
+            "description": "真理的内容不以人的意志为转移。",
+            "aliases": [],
+            "prerequisites": [
+              "真理"
+            ],
+            "definition": "真理最基本的属性是客观性，真理面前人人平等。",
+            "example": "同一条件下真理只有一个。"
+          },
+          {
+            "name": "真理的条件性",
+            "difficulty": 3,
+            "description": "真理有适用的条件和范围。",
+            "aliases": [],
+            "prerequisites": [
+              "真理"
+            ],
+            "definition": "任何真理都有自己适用的条件和范围，超出条件可能转化为谬误。",
+            "example": "欧氏定理不适用于所有曲面。"
+          },
+          {
+            "name": "真理的具体性",
+            "difficulty": 3,
+            "description": "真理是具体历史条件下的主客观统一。",
+            "aliases": [],
+            "prerequisites": [
+              "真理"
+            ],
+            "definition": "任何真理都是相对于特定过程的具体的历史的统一。",
+            "example": "不同空间条件下三角形定理不同。"
+          },
+          {
+            "name": "认识的反复性",
+            "difficulty": 3,
+            "description": "正确认识往往需多次实践和认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "受主客观条件限制，人们对事物的正确认识常需多次反复才能完成。",
+            "example": "科研经历多次实验和失败。"
+          },
+          {
+            "name": "认识的无限性",
+            "difficulty": 3,
+            "description": "人类认识随实践发展而无限发展。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "由于认识对象、主体和基础实践不断发展，人类认识是无限发展的。",
+            "example": "探月工程仍将继续探索。"
+          },
+          {
+            "name": "社会生活的实践本质",
+            "difficulty": 2,
+            "description": "社会生活各领域都由实践生成和推动。",
+            "aliases": [
+              "社会生活在本质上是实践的"
+            ],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践生成社会生活的经济、政治和精神文化领域，形成社会关系并推动社会发展。",
+            "example": "生产实践形成经济生活。"
+          },
+          {
+            "name": "劳动",
+            "difficulty": 1,
+            "description": "人类最基本的实践活动和存在方式。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "劳动创造了人，推动了人类社会的产生和发展。",
+            "example": "劳动使猿转变为人。"
+          },
+          {
+            "name": "社会存在",
+            "difficulty": 2,
+            "description": "社会的物质生活过程及其物质方面。",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活的实践本质"
+            ],
+            "definition": "社会存在主要指物质资料的生产方式，也包括地理环境和人口等。",
+            "example": "一个社会的生产方式。"
+          },
+          {
+            "name": "社会意识",
+            "difficulty": 2,
+            "description": "社会的精神生活过程及其各种形式。",
+            "aliases": [],
+            "prerequisites": [
+              "社会存在"
+            ],
+            "definition": "社会意识包括政治、法律、哲学、道德、艺术、宗教等观点及社会心理。",
+            "example": "社会形成的道德观念。"
+          },
+          {
+            "name": "生产方式",
+            "difficulty": 2,
+            "description": "生产力与生产关系的有机结合和统一。",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "生产方式是生产力和生产关系的有机结合与统一。",
+            "example": "蒸汽磨对应工业社会。"
+          },
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然以满足社会需要的物质力量。",
+            "aliases": [],
+            "prerequisites": [
+              "劳动"
+            ],
+            "definition": "生产力的基本要素包括劳动者、劳动对象和劳动资料。",
+            "example": "劳动者使用机器生产产品。"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "物质资料生产中形成的社会关系。",
+            "aliases": [],
+            "prerequisites": [
+              "生产力"
+            ],
+            "definition": "生产关系包括生产资料所有制、生产中人与人的关系和产品分配关系。",
+            "example": "企业中的所有制和分配关系。"
+          },
+          {
+            "name": "生产关系规律",
+            "difficulty": 3,
+            "description": "生产关系一定要适合生产力状况。",
+            "aliases": [
+              "生产关系一定要适合生产力状况的规律"
+            ],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "生产力决定生产关系，生产关系反作用于生产力并必须适合其状况。",
+            "example": "生产力发展推动生产关系改革。"
+          },
+          {
+            "name": "经济基础",
+            "difficulty": 3,
+            "description": "占统治地位生产关系的总和。",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系"
+            ],
+            "definition": "经济基础是由一定发展阶段生产力决定的占统治地位的生产关系总和。",
+            "example": "社会主要生产关系的总和。"
+          },
+          {
+            "name": "上层建筑",
+            "difficulty": 3,
+            "description": "建立在经济基础上的意识形态及制度设施。",
+            "aliases": [],
+            "prerequisites": [
+              "经济基础",
+              "社会意识"
+            ],
+            "definition": "上层建筑是建立在经济基础之上的意识形态以及相应的制度、组织和设施。",
+            "example": "法律制度和政治组织。"
+          },
+          {
+            "name": "上层建筑规律",
+            "difficulty": 3,
+            "description": "上层建筑一定要适合经济基础状况。",
+            "aliases": [
+              "上层建筑一定要适合经济基础状况的规律"
+            ],
+            "prerequisites": [
+              "经济基础",
+              "上层建筑"
+            ],
+            "definition": "经济基础决定上层建筑，上层建筑反作用于经济基础并必须适合其状况。",
+            "example": "经济体制改革带动制度改革。"
+          },
+          {
+            "name": "社会基本矛盾",
+            "difficulty": 3,
+            "description": "生产力与生产关系、经济基础与上层建筑的矛盾。",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "经济基础",
+              "上层建筑"
+            ],
+            "definition": "社会基本矛盾是贯穿人类社会始终并推动社会发展的两对矛盾。",
+            "example": "生产力发展要求改革生产关系。"
+          },
+          {
+            "name": "社会发展总趋势",
+            "difficulty": 2,
+            "description": "社会发展总趋势前进上升但过程曲折。",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "社会发展的总趋势是前进的、上升的，过程具有曲折性。",
+            "example": "社会形态不断由低级向高级发展。"
+          },
+          {
+            "name": "阶级斗争",
+            "difficulty": 3,
+            "description": "阶级社会解决基本矛盾的直接动力。",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "在阶级社会中，阶级斗争是推动社会发展的直接动力。",
+            "example": "被剥削阶级反对剥削。"
+          },
+          {
+            "name": "改革",
+            "difficulty": 2,
+            "description": "社会主义制度自我完善和发展的直接动力。",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "改革旨在使生产关系适应生产力、上层建筑适应经济基础的发展。",
+            "example": "改革不适应发展的体制机制。"
+          },
+          {
+            "name": "人民群众",
+            "difficulty": 2,
+            "description": "一切对社会历史发展起推动作用的人们。",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活的实践本质"
+            ],
+            "definition": "人民群众包括普通个人和杰出人物，劳动群众是其主体部分。",
+            "example": "参与改革实践的广大人民。"
+          },
+          {
+            "name": "人民群众是历史创造者",
+            "difficulty": 3,
+            "description": "人民群众创造社会财富并推动历史发展。",
+            "aliases": [],
+            "prerequisites": [
+              "人民群众"
+            ],
+            "definition": "人民群众是社会物质财富、精神财富的创造者和社会变革的决定力量。",
+            "example": "人民群众推动改革开放。"
+          },
+          {
+            "name": "群众观点",
+            "difficulty": 2,
+            "description": "无产阶级政党的根本立场和根本观点。",
+            "aliases": [],
+            "prerequisites": [
+              "人民群众"
+            ],
+            "definition": "群众观点包括相信群众、为人民服务、向群众负责并向群众学习。",
+            "example": "虚心听取群众意见。"
+          },
+          {
+            "name": "群众路线",
+            "difficulty": 2,
+            "description": "一切为了群众、依靠群众的工作路线。",
+            "aliases": [],
+            "prerequisites": [
+              "群众观点"
+            ],
+            "definition": "群众路线的基本内容是从群众中来、到群众中去。",
+            "example": "调研民意后制定政策。"
+          },
+          {
+            "name": "价值",
+            "difficulty": 1,
+            "description": "客体对主体具有的积极意义。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "价值是一事物所具有的能够满足主体需要的积极功能和属性。",
+            "example": "水满足人的生存需要。"
+          },
+          {
+            "name": "人的价值",
+            "difficulty": 2,
+            "description": "人在满足社会他人需要中的贡献和自我满足。",
+            "aliases": [],
+            "prerequisites": [
+              "价值"
+            ],
+            "definition": "人的价值在于通过活动满足社会、他人和自己的需要，主要在于对社会的贡献。",
+            "example": "科研成果服务国家发展。"
+          },
+          {
+            "name": "价值观",
+            "difficulty": 2,
+            "description": "对事物价值的总的看法和根本观点。",
+            "aliases": [],
+            "prerequisites": [
+              "价值"
+            ],
+            "definition": "价值观是人们在认识具体事物价值基础上形成的总的看法和根本观点。",
+            "example": "把服务患者置于利润之前。"
+          },
+          {
+            "name": "价值判断",
+            "difficulty": 2,
+            "description": "对事物能否满足需要及程度作出的判断。",
+            "aliases": [],
+            "prerequisites": [
+              "价值",
+              "价值观"
+            ],
+            "definition": "价值判断是人们对事物价值及其满足主体需要程度作出的判断。",
+            "example": "评价某政策是否有利于群众。"
+          }
+        ]
+      },
+      {
+        "name": "第三单元 文化传承与文化创新",
+        "concepts": [
+          {
+            "name": "文化",
+            "difficulty": 1,
+            "description": "人类社会实践的产物，包含精神现象及其成果。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "文化是相对于经济、政治的人类精神现象及其成果。",
+            "example": "京剧艺术体现了特定的思想、价值和审美。"
+          },
+          {
+            "name": "广义文化",
+            "difficulty": 2,
+            "description": "人类认识和改造世界的活动及其物质、精神成果。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "广义文化是人类认识和改造世界的一切活动及其创造的物质成果和精神成果。",
+            "example": "城市建设活动及其创造的物质成果属于广义文化。"
+          },
+          {
+            "name": "狭义文化",
+            "difficulty": 2,
+            "description": "相对于经济、政治的人类全部精神现象。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "狭义文化是相对于经济、政治而言的人类全部精神现象。",
+            "example": "世界观、人生观、价值观和科学技术都属于狭义文化。"
+          },
+          {
+            "name": "文化核心",
+            "difficulty": 2,
+            "description": "支配和影响文化实践与文化生活的观念。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "世界观、人生观和价值观是文化的核心。",
+            "example": "价值观影响人们参与文化活动的选择。"
+          },
+          {
+            "name": "文化相对独立性",
+            "difficulty": 3,
+            "description": "文化发展不必然与经济发展始终同步。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化具有相对独立性，其发展与经济、政治发展并非始终完全同步。",
+            "example": "物质条件改善并不必然带来精神文化同步进步。"
+          },
+          {
+            "name": "文化载体",
+            "difficulty": 2,
+            "description": "记录、传承和表现文化内容的物化形式。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化载体是文化的记录、记载、标识、传承和表现的物化形式。",
+            "example": "器物、行为和制度都是文化载体。"
+          },
+          {
+            "name": "文化功能",
+            "difficulty": 2,
+            "description": "文化具有引领风尚、教育人民等社会作用。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化具有引领风尚、教育人民、服务社会和推动发展的功能。",
+            "example": "文化惠民工程为群众提供丰富的精神食粮。"
+          },
+          {
+            "name": "优秀文化塑造人",
+            "difficulty": 2,
+            "description": "优秀文化丰富精神世界，增强精神力量。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "优秀文化能够丰富人的精神世界、增强人的精神力量并促进人的全面发展。",
+            "example": "参加健康有益的文化活动有助于培养健全人格。"
+          },
+          {
+            "name": "中华传统文化",
+            "difficulty": 2,
+            "description": "中华民族在历史发展中形成的文化。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "中华传统文化是中华民族在长期历史发展中形成的文化。",
+            "example": "中国古代文学、艺术、哲学和科技成就构成传统文化的重要内容。"
+          },
+          {
+            "name": "中华优秀传统文化",
+            "difficulty": 2,
+            "description": "中华传统文化中具有积极价值的精华。",
+            "aliases": [],
+            "prerequisites": [
+              "中华传统文化"
+            ],
+            "definition": "中华优秀传统文化是中华传统文化的精华。",
+            "example": "讲仁爱、重民本、自强不息属于其重要内容。"
+          },
+          {
+            "name": "传统文化当代价值",
+            "difficulty": 3,
+            "description": "优秀传统文化对当代发展具有的积极意义。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "中华优秀传统文化能增强民族认同和文化自信，并为当代发展提供有益借鉴。",
+            "example": "和而不同有助于正确认识和处理国际关系。"
+          },
+          {
+            "name": "取其精华去其糟粕",
+            "difficulty": 3,
+            "description": "批判继承传统文化，保留精华、剔除糟粕。",
+            "aliases": [],
+            "prerequisites": [
+              "中华传统文化"
+            ],
+            "definition": "对传统文化应有鉴别、有批判地继承，保留精华并剔除糟粕。",
+            "example": "继承传统美德，同时摒弃等级意识。"
+          },
+          {
+            "name": "创造性转化",
+            "difficulty": 3,
+            "description": "改造传统内涵和表达形式，使其适应时代。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化",
+              "取其精华去其糟粕"
+            ],
+            "definition": "创造性转化是把传统文化中有借鉴意义的内涵和表达形式改造成符合时代要求的新形式。",
+            "example": "用现代传播方式讲述传统节日故事。"
+          },
+          {
+            "name": "创新性发展",
+            "difficulty": 3,
+            "description": "根据时代实践补充、拓展和完善传统文化内涵。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "创新性发展是根据社会生活和实践进步补充、拓展和完善传统文化内涵。",
+            "example": "赋予传统生态思想新的现代治理意义。"
+          },
+          {
+            "name": "中华民族精神",
+            "difficulty": 2,
+            "description": "中华民族共同的价值追求和精神特征。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "中华民族精神集中体现中华民族的整体风貌、精神特征和共同价值追求。",
+            "example": "抗疫精神体现了民族精神的时代内容。"
+          },
+          {
+            "name": "爱国主义",
+            "difficulty": 2,
+            "description": "中华民族精神的核心和动员奋斗的旗帜。",
+            "aliases": [],
+            "prerequisites": [
+              "中华民族精神"
+            ],
+            "definition": "爱国主义是中华民族精神的核心，贯穿民族精神各个方面。",
+            "example": "五四精神以爱国主义为重要内容。"
+          },
+          {
+            "name": "民族精神时代性",
+            "difficulty": 3,
+            "description": "民族精神随时代变化不断丰富和发展。",
+            "aliases": [],
+            "prerequisites": [
+              "中华民族精神"
+            ],
+            "definition": "民族精神既源于长期历史积淀，又随着时代变化不断丰富。",
+            "example": "改革开放时期形成了特区精神。"
+          },
+          {
+            "name": "革命文化",
+            "difficulty": 2,
+            "description": "党和人民在革命实践中创造的先进文化。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "革命文化是中国共产党领导人民在革命中创造的文化，承载着民族解放和人民幸福的追求。",
+            "example": "井冈山精神是革命文化的重要体现。"
+          },
+          {
+            "name": "社会主义先进文化",
+            "difficulty": 2,
+            "description": "面向现代化、世界和未来的社会主义文化。",
+            "aliases": [],
+            "prerequisites": [
+              "革命文化"
+            ],
+            "definition": "社会主义先进文化是民族的科学的大众的社会主义文化。",
+            "example": "社会主义先进文化为人民提供精神指引。"
+          },
+          {
+            "name": "文化多样性",
+            "difficulty": 2,
+            "description": "不同国家和民族文化存在丰富多样的特色。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化多样性是文化存在丰富程度的表现，源于各民族社会条件和文化传统的差异。",
+            "example": "不同城市设计出各具文化印记的奥运会会徽。"
+          },
+          {
+            "name": "民族文化",
+            "difficulty": 2,
+            "description": "体现民族生活方式、思维方式和价值观的文化。",
+            "aliases": [],
+            "prerequisites": [
+              "文化多样性"
+            ],
+            "definition": "民族文化是一个民族在历史和现实中形成的文化，核心是价值观。",
+            "example": "民族节日和民族服饰体现民族文化特色。"
+          },
+          {
+            "name": "文化交流",
+            "difficulty": 2,
+            "description": "不同民族文化之间相互沟通、借鉴和传播。",
+            "aliases": [],
+            "prerequisites": [
+              "文化多样性"
+            ],
+            "definition": "文化交流是不同民族文化相互沟通、借鉴和传播的过程。",
+            "example": "古丝绸之路促进了中外商品和知识交流。"
+          },
+          {
+            "name": "文化交融",
+            "difficulty": 3,
+            "description": "不同文化相互借鉴融合，形成新的文化成果。",
+            "aliases": [],
+            "prerequisites": [
+              "文化交流"
+            ],
+            "definition": "文化交融是不同民族文化在交流中相互借鉴、融合并推动文化发展的过程。",
+            "example": "沈绣吸收西洋油画的用光、用色技法。"
+          },
+          {
+            "name": "全盘西化论",
+            "difficulty": 2,
+            "description": "主张中国文化彻底西化的错误观点。",
+            "aliases": [],
+            "prerequisites": [
+              "文化多样性"
+            ],
+            "definition": "全盘西化论认为中国文化的出路是彻底照搬和接受西方文化。",
+            "example": "主张以西方文化全面取代中国文化。"
+          },
+          {
+            "name": "文化复古主义",
+            "difficulty": 2,
+            "description": "主张恢复传统文化主导地位的错误观点。",
+            "aliases": [],
+            "prerequisites": [
+              "中华传统文化"
+            ],
+            "definition": "文化复古主义主张重新确立传统文化的主导地位并恢复古代文化秩序。",
+            "example": "认为只要复兴四书五经就能建设文化强国。"
+          },
+          {
+            "name": "洋为中用",
+            "difficulty": 3,
+            "description": "立足中国国情，批判吸收外来文化成果。",
+            "aliases": [],
+            "prerequisites": [
+              "文化交流",
+              "文化交融"
+            ],
+            "definition": "洋为中用是以中国人民实际需要为基础，批判吸收外国文化有益成果。",
+            "example": "借鉴外国管理经验并结合中国实际加以运用。"
+          },
+          {
+            "name": "综合创新",
+            "difficulty": 3,
+            "description": "融通古今中外资源，形成当代中国文化。",
+            "aliases": [],
+            "prerequisites": [
+              "文化交流",
+              "创造性转化",
+              "洋为中用"
+            ],
+            "definition": "综合创新是融通古今中外各种资源并形成民族、科学、大众的社会主义文化。",
+            "example": "将传统艺术与现代技术结合创作文化产品。"
+          },
+          {
+            "name": "中国特色社会主义文化",
+            "difficulty": 3,
+            "description": "源于优秀传统文化，植根中国实践的社会主义文化。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化",
+              "革命文化",
+              "社会主义先进文化"
+            ],
+            "definition": "中国特色社会主义文化源于中华优秀传统文化，熔铸于革命文化和社会主义先进文化，植根中国特色社会主义伟大实践。",
+            "example": "用中国传统艺术表现新时代人民生活。"
+          },
+          {
+            "name": "文化发展道路",
+            "difficulty": 3,
+            "description": "发展中国特色社会主义文化必须坚持的根本道路。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "中国特色社会主义文化发展道路是建设社会主义文化强国的必由之路。",
+            "example": "坚持马克思主义指导并坚守中华文化立场。"
+          },
+          {
+            "name": "以人民为中心",
+            "difficulty": 2,
+            "description": "把人民福祉和人的全面发展作为文化出发点。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "以人民为中心要求把增进人民福祉、促进人的全面发展作为文化发展的出发点和落脚点。",
+            "example": "文化创作贴近人民精神生活，讴歌奋斗人生。"
+          },
+          {
+            "name": "时代精神",
+            "difficulty": 2,
+            "description": "特定时代的精神风貌和价值追求。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "时代精神是特定时代社会生活和实践所呈现的精神风貌。",
+            "example": "优秀作品通过反映时代风貌获得持久魅力。"
+          },
+          {
+            "name": "文化强国",
+            "difficulty": 3,
+            "description": "文化繁荣发展、综合实力和影响力强的国家。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化",
+              "文化自信"
+            ],
+            "definition": "文化强国是社会主义文化事业和文化产业繁荣、文化实力和影响力显著提升的国家。",
+            "example": "提高公共文化服务水平并讲好中国故事。"
+          },
+          {
+            "name": "文化自信",
+            "difficulty": 3,
+            "description": "对中华优秀文化及中国特色社会主义文化的信心。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "文化自信是对中华优秀传统文化、革命文化和社会主义先进文化的自信。",
+            "example": "中华文化走出国门增强了文化自信。"
+          },
+          {
+            "name": "社会主义核心价值观",
+            "difficulty": 3,
+            "description": "凝聚社会共识并引领文化建设的价值观念。",
+            "aliases": [],
+            "prerequisites": [
+              "文化核心",
+              "中国特色社会主义文化"
+            ],
+            "definition": "社会主义核心价值观是引领国民教育和精神文化产品创作传播的价值观念。",
+            "example": "在精神文明创建中培育和践行核心价值观。"
+          },
+          {
+            "name": "文化事业",
+            "difficulty": 2,
+            "description": "面向社会提供公共文化产品和服务的事业。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "文化事业是以社会效益为主要目标、为人民提供公共文化服务的文化建设领域。",
+            "example": "公共图书馆免费开放属于发展文化事业。"
+          },
+          {
+            "name": "文化产业",
+            "difficulty": 2,
+            "description": "以文化产品生产经营为主要内容的产业。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "文化产业是通过文化产品创作、生产和经营推动文化发展的产业领域。",
+            "example": "电影产业的发展提升了文化产品供给能力。"
+          },
+          {
+            "name": "双百方针",
+            "difficulty": 3,
+            "description": "促进艺术发展和科学进步的文化方针。",
+            "aliases": [
+              "百花齐放、百家争鸣"
+            ],
+            "prerequisites": [
+              "社会主义先进文化"
+            ],
+            "definition": "双百方针是艺术上百花齐放、学术上百家争鸣的方针。",
+            "example": "鼓励不同艺术形式和风格自由发展。"
+          },
+          {
+            "name": "道德修养和科学文化修养",
+            "difficulty": 2,
+            "description": "建设文化强国需要提升的两类个人素养。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "道德修养和科学文化修养是提高人民综合素质、建设文化强国的重要内容。",
+            "example": "加强社会公德教育并普及科学知识。"
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "政治",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一单元 探索世界与把握规律",
+        "concepts": [
+          {
+            "name": "哲学",
+            "difficulty": 2,
+            "description": "关于宇宙和人生一般本质与普遍规律的学科",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "哲学是人们通过思考宇宙和人生的一般本质与普遍规律问题而形成的学科。",
+            "example": "思考世界的本原是什么"
+          },
+          {
+            "name": "马克思主义哲学",
+            "difficulty": 3,
+            "description": "辩证唯物主义和历史唯物主义的统一",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "马克思主义哲学是辩证唯物主义和历史唯物主义，是科学的世界观和方法论。",
+            "example": "用科学观点认识世界和人生"
+          },
+          {
+            "name": "辩证唯物主义",
+            "difficulty": 3,
+            "description": "马克思主义哲学的重要组成部分",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "辩证唯物主义是马克思主义哲学的组成部分。",
+            "example": "从联系和发展的角度认识事物"
+          },
+          {
+            "name": "历史唯物主义",
+            "difficulty": 3,
+            "description": "马克思主义哲学的重要组成部分",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "历史唯物主义是马克思主义哲学的组成部分。",
+            "example": "以科学观点认识社会历史"
+          },
+          {
+            "name": "世界观",
+            "difficulty": 2,
+            "description": "人们对世界的总体看法和根本观点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世界观是人们对世界以及人与世界关系的总体看法和根本观点。",
+            "example": "形成正确的世界观"
+          },
+          {
+            "name": "方法论",
+            "difficulty": 2,
+            "description": "认识世界和改造世界的根本方法",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "方法论是人们认识世界和改造世界的根本原则和方法。",
+            "example": "用科学方法探索世界"
+          },
+          {
+            "name": "科学精神",
+            "difficulty": 2,
+            "description": "在追求真理过程中形成的科学态度",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "科学精神是在探索世界、追求真理的过程中形成的科学态度和精神品质。",
+            "example": "坚持追求真理"
+          }
+        ],
+        "chapter_key": "d76f43df81",
+        "metadata": {
+          "volume_id": "c5988232185d",
+          "file_id": "c5988232185d",
+          "volume_title": "高中政治 必修4 哲学与文化",
+          "chapter_order": 1,
+          "raw_heading": "第一单元 探索世界与把握规律"
+        }
+      },
+      {
+        "name": "第一课",
+        "concepts": [
+          {
+            "name": "哲学的起源",
+            "difficulty": 2,
+            "description": "哲学产生于人们对宇宙、人生的追问和思考",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "哲学起源于人们在生活实践中对宇宙、人生的追问和思考。",
+            "example": "人们思考人生意义并探究世界本质。"
+          },
+          {
+            "name": "哲学",
+            "difficulty": 2,
+            "description": "一门热爱智慧、追求智慧并总体把握人与世界关系的学问",
+            "aliases": [
+              "追求智慧的学问",
+              "智慧之学"
+            ],
+            "prerequisites": [
+              "哲学的起源"
+            ],
+            "definition": "哲学是热爱智慧、追求智慧并致力于从总体上把握人与世界关系的学问。",
+            "example": "用哲学思考人与自然的关系。"
+          },
+          {
+            "name": "哲学智慧",
+            "difficulty": 3,
+            "description": "在认识和改造世界的实践中形成的智慧",
+            "aliases": [],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "哲学智慧是在认识世界、改造世界和处理人与外部世界关系的实践中形成发展的。",
+            "example": "依据实践经验找到解决问题的方法。"
+          },
+          {
+            "name": "世界观",
+            "difficulty": 2,
+            "description": "人们对整个世界的总的看法和根本观点",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世界观是人们对整个世界的总的看法和根本观点。",
+            "example": "有人认为世界的本质是物质。"
+          },
+          {
+            "name": "哲学与世界观",
+            "difficulty": 3,
+            "description": "哲学把自发、零散的世界观系统化、理论化",
+            "aliases": [
+              "系统化理论化的世界观"
+            ],
+            "prerequisites": [
+              "世界观",
+              "哲学"
+            ],
+            "definition": "哲学是哲学家把不自觉、不系统的世界观加以系统化、理论化形成的思想体系。",
+            "example": "将零散的人生看法概括为系统思想。"
+          },
+          {
+            "name": "方法论",
+            "difficulty": 2,
+            "description": "人们用世界观指导认识世界和改造世界的方法",
+            "aliases": [],
+            "prerequisites": [
+              "世界观"
+            ],
+            "definition": "方法论是人们用关于世界的根本观点指导认识世界和改造世界所形成的方法。",
+            "example": "相信物质决定意识，按客观实际办事。"
+          },
+          {
+            "name": "哲学的统一性",
+            "difficulty": 3,
+            "description": "哲学是世界观和方法论的统一",
+            "aliases": [
+              "世界观和方法论的统一"
+            ],
+            "prerequisites": [
+              "世界观",
+              "方法论"
+            ],
+            "definition": "哲学既是世界观又是方法论，世界观决定方法论，方法论体现世界观。",
+            "example": "不同人生观导致不同处世方式。"
+          },
+          {
+            "name": "具体科学",
+            "difficulty": 2,
+            "description": "揭示自然、社会和思维某一具体领域规律的知识",
+            "aliases": [
+              "具体科学知识"
+            ],
+            "prerequisites": [],
+            "definition": "具体科学是对自然、社会和思维某一具体领域规律的具体把握。",
+            "example": "物理学研究物质运动规律。"
+          },
+          {
+            "name": "哲学与具体科学",
+            "difficulty": 3,
+            "description": "具体科学推动哲学发展，哲学提供世界观和方法论指导",
+            "aliases": [],
+            "prerequisites": [
+              "哲学",
+              "具体科学"
+            ],
+            "definition": "具体科学的进步推动哲学发展，哲学为具体科学研究提供世界观和方法论指导。",
+            "example": "科学发现推动哲学概括，哲学指导科研方向。"
+          },
+          {
+            "name": "哲学的基本问题",
+            "difficulty": 3,
+            "description": "思维和存在的关系问题，即意识和物质的关系问题",
+            "aliases": [
+              "意识和物质的关系问题"
+            ],
+            "prerequisites": [
+              "哲学"
+            ],
+            "definition": "哲学的基本问题是思维和存在的关系问题，包括何者为本原及能否正确认识存在。",
+            "example": "讨论意识能否正确反映客观世界。"
+          },
+          {
+            "name": "思维和存在同一性",
+            "difficulty": 3,
+            "description": "思维能否正确认识存在的问题",
+            "aliases": [
+              "思维和存在有没有同一性"
+            ],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "思维和存在的同一性是指思维能否正确认识现实世界的问题。",
+            "example": "人们通过科学研究认识宇宙规律。"
+          },
+          {
+            "name": "唯物主义",
+            "difficulty": 3,
+            "description": "认为物质是本原，意识是派生物，物质决定意识",
+            "aliases": [],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "唯物主义认为物质是本原，先有物质后有意识，物质决定意识。",
+            "example": "认为客观条件制约人的思想和行动。"
+          },
+          {
+            "name": "唯心主义",
+            "difficulty": 3,
+            "description": "认为意识是本原，物质依赖于意识",
+            "aliases": [],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "唯心主义认为意识是本原，物质依赖于意识，意识决定物质。",
+            "example": "认为人的意志创造了客观世界。"
+          },
+          {
+            "name": "唯物主义基本形态",
+            "difficulty": 4,
+            "description": "唯物主义发展的三种基本形态",
+            "aliases": [],
+            "prerequisites": [
+              "唯物主义"
+            ],
+            "definition": "唯物主义在历史发展中形成古代朴素、近代形而上学和辩证唯物主义三种基本形态。",
+            "example": "把水视为本原属于古代朴素唯物主义。"
+          },
+          {
+            "name": "唯心主义基本形态",
+            "difficulty": 4,
+            "description": "唯心主义发展的主观唯心主义和客观唯心主义",
+            "aliases": [],
+            "prerequisites": [
+              "唯心主义"
+            ],
+            "definition": "唯心主义在历史发展中形成主观唯心主义和客观唯心主义两种基本形态。",
+            "example": "把人的感觉视为世界本原属于主观唯心主义。"
+          },
+          {
+            "name": "二元论",
+            "difficulty": 4,
+            "description": "认为思维与存在平行且都是世界本原的观点",
+            "aliases": [],
+            "prerequisites": [
+              "哲学的基本问题"
+            ],
+            "definition": "二元论认为思维和存在平行存在，都是世界的本原。",
+            "example": "主张精神和物质彼此独立、同为本原。"
+          },
+          {
+            "name": "马克思主义哲学",
+            "difficulty": 4,
+            "description": "辩证唯物主义和历史唯物主义的统一",
+            "aliases": [
+              "马克思主义哲学"
+            ],
+            "prerequisites": [
+              "唯物主义",
+              "哲学与具体科学"
+            ],
+            "definition": "马克思主义哲学是辩证唯物主义和历史唯物主义。",
+            "example": "用科学世界观指导无产阶级解放实践。"
+          },
+          {
+            "name": "马克思主义哲学产生条件",
+            "difficulty": 4,
+            "description": "无产阶级运动、自然科学和社会科学发展的共同产物",
+            "aliases": [],
+            "prerequisites": [
+              "马克思主义哲学"
+            ],
+            "definition": "马克思主义哲学是在无产阶级运动发展以及自然科学、社会科学进步的条件下产生的。",
+            "example": "工人运动需要科学世界观和方法论指导。"
+          },
+          {
+            "name": "马克思主义哲学历史使命",
+            "difficulty": 4,
+            "description": "实现无产阶级和全人类的解放",
+            "aliases": [],
+            "prerequisites": [
+              "马克思主义哲学"
+            ],
+            "definition": "马克思主义哲学的历史使命是实现无产阶级和全人类的解放。",
+            "example": "为劳动群众争取自由解放提供精神武器。"
+          },
+          {
+            "name": "真正的哲学",
+            "difficulty": 4,
+            "description": "从最一般本质和最普遍规律反映时代要求的哲学",
+            "aliases": [
+              "时代精神的精华"
+            ],
+            "prerequisites": [
+              "哲学",
+              "世界观"
+            ],
+            "definition": "真正的哲学能够把握时代脉搏，概括时代实践经验和认识成果。",
+            "example": "立足社会实践总结时代发展规律。"
+          }
+        ],
+        "chapter_key": "0a9a0e854f",
+        "metadata": {
+          "volume_id": "c5988232185d",
+          "file_id": "c5988232185d",
+          "volume_title": "高中政治 必修4 哲学与文化",
+          "chapter_order": 2,
+          "raw_heading": "第一课"
+        }
+      },
+      {
+        "name": "第二单元 认识社会与价值选择",
+        "concepts": [
+          {
+            "name": "认识",
+            "difficulty": 1,
+            "description": "主体对客体的能动反映。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "认识是主体对客体的能动反映。",
+            "example": "人们认识并改造自然。"
+          },
+          {
+            "name": "感性认识",
+            "difficulty": 2,
+            "description": "对事物现象和外部联系的直接认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "感性认识是人在实践基础上由感觉器官直接感受到的认识。",
+            "example": "看到花朵的颜色和形状。"
+          },
+          {
+            "name": "理性认识",
+            "difficulty": 2,
+            "description": "对事物本质、规律和内部联系的认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "感性认识"
+            ],
+            "definition": "理性认识是借助抽象思维对感性材料概括整理后形成的认识。",
+            "example": "概括植物生长规律。"
+          },
+          {
+            "name": "实践",
+            "difficulty": 1,
+            "description": "人们改造客观世界的物质性活动。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "实践是人们改造客观世界的物质性活动。",
+            "example": "农民进行农业生产。"
+          },
+          {
+            "name": "实践的客观物质性",
+            "difficulty": 2,
+            "description": "实践受客观事物及其规律制约。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践的基本要素和过程具有客观性并受客观规律制约。",
+            "example": "工程建设必须遵循自然规律。"
+          },
+          {
+            "name": "实践的主观能动性",
+            "difficulty": 2,
+            "description": "实践是有目的、有意识的活动。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践体现人的目的性和意识性，能够创造新的物质生活资料和社会关系。",
+            "example": "人们设计并建造桥梁。"
+          },
+          {
+            "name": "实践的社会历史性",
+            "difficulty": 2,
+            "description": "实践处于社会关系中并受历史条件制约。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践不是孤立个人的活动，其内容形式和水平随社会历史发展而变化。",
+            "example": "不同历史时期的生产方式不同。"
+          },
+          {
+            "name": "实践是认识的来源",
+            "difficulty": 2,
+            "description": "认识是在实践活动中获得的。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "实践是人们获得对客观事物认识的基础活动。",
+            "example": "品尝西红柿后认识其可食用性。"
+          },
+          {
+            "name": "实践是认识的动力",
+            "difficulty": 2,
+            "description": "实践的需要和发展推动认识进步。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "实践不断提出新问题、提供新工具并提高认识能力，从而推动认识发展。",
+            "example": "技术需求推动科学研究。"
+          },
+          {
+            "name": "实践是认识的目的",
+            "difficulty": 2,
+            "description": "认识最终要回到实践并服务于改造世界。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "认识的目的不是认识本身，而是指导实践、改造世界。",
+            "example": "把养殖技术传给牧民。"
+          },
+          {
+            "name": "实践检验真理",
+            "difficulty": 3,
+            "description": "实践是检验认识真理性的唯一标准。",
+            "aliases": [
+              "实践是检验认识的唯一标准"
+            ],
+            "prerequisites": [
+              "实践",
+              "理性认识"
+            ],
+            "definition": "只有通过实践把主观认识同客观结果相对照，才能检验其是否正确。",
+            "example": "实验结果验证科学假说。"
+          },
+          {
+            "name": "真理",
+            "difficulty": 2,
+            "description": "与客观事物及其规律相符合的认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识"
+            ],
+            "definition": "真理是人们对客观事物及其规律的正确反映。",
+            "example": "符合实际的科学结论。"
+          },
+          {
+            "name": "真理的客观性",
+            "difficulty": 2,
+            "description": "真理的内容不以人的意志为转移。",
+            "aliases": [],
+            "prerequisites": [
+              "真理"
+            ],
+            "definition": "真理最基本的属性是客观性，真理面前人人平等。",
+            "example": "同一条件下真理只有一个。"
+          },
+          {
+            "name": "真理的条件性",
+            "difficulty": 3,
+            "description": "真理有适用的条件和范围。",
+            "aliases": [],
+            "prerequisites": [
+              "真理"
+            ],
+            "definition": "任何真理都有自己适用的条件和范围，超出条件可能转化为谬误。",
+            "example": "欧氏定理不适用于所有曲面。"
+          },
+          {
+            "name": "真理的具体性",
+            "difficulty": 3,
+            "description": "真理是具体历史条件下的主客观统一。",
+            "aliases": [],
+            "prerequisites": [
+              "真理"
+            ],
+            "definition": "任何真理都是相对于特定过程的具体的历史的统一。",
+            "example": "不同空间条件下三角形定理不同。"
+          },
+          {
+            "name": "认识的反复性",
+            "difficulty": 3,
+            "description": "正确认识往往需多次实践和认识。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "受主客观条件限制，人们对事物的正确认识常需多次反复才能完成。",
+            "example": "科研经历多次实验和失败。"
+          },
+          {
+            "name": "认识的无限性",
+            "difficulty": 3,
+            "description": "人类认识随实践发展而无限发展。",
+            "aliases": [],
+            "prerequisites": [
+              "认识",
+              "实践"
+            ],
+            "definition": "由于认识对象、主体和基础实践不断发展，人类认识是无限发展的。",
+            "example": "探月工程仍将继续探索。"
+          },
+          {
+            "name": "社会生活的实践本质",
+            "difficulty": 2,
+            "description": "社会生活各领域都由实践生成和推动。",
+            "aliases": [
+              "社会生活在本质上是实践的"
+            ],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "实践生成社会生活的经济、政治和精神文化领域，形成社会关系并推动社会发展。",
+            "example": "生产实践形成经济生活。"
+          },
+          {
+            "name": "劳动",
+            "difficulty": 1,
+            "description": "人类最基本的实践活动和存在方式。",
+            "aliases": [],
+            "prerequisites": [
+              "实践"
+            ],
+            "definition": "劳动创造了人，推动了人类社会的产生和发展。",
+            "example": "劳动使猿转变为人。"
+          },
+          {
+            "name": "社会存在",
+            "difficulty": 2,
+            "description": "社会的物质生活过程及其物质方面。",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活的实践本质"
+            ],
+            "definition": "社会存在主要指物质资料的生产方式，也包括地理环境和人口等。",
+            "example": "一个社会的生产方式。"
+          },
+          {
+            "name": "社会意识",
+            "difficulty": 2,
+            "description": "社会的精神生活过程及其各种形式。",
+            "aliases": [],
+            "prerequisites": [
+              "社会存在"
+            ],
+            "definition": "社会意识包括政治、法律、哲学、道德、艺术、宗教等观点及社会心理。",
+            "example": "社会形成的道德观念。"
+          },
+          {
+            "name": "生产方式",
+            "difficulty": 2,
+            "description": "生产力与生产关系的有机结合和统一。",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "生产方式是生产力和生产关系的有机结合与统一。",
+            "example": "蒸汽磨对应工业社会。"
+          },
+          {
+            "name": "生产力",
+            "difficulty": 2,
+            "description": "人类改造自然以满足社会需要的物质力量。",
+            "aliases": [],
+            "prerequisites": [
+              "劳动"
+            ],
+            "definition": "生产力的基本要素包括劳动者、劳动对象和劳动资料。",
+            "example": "劳动者使用机器生产产品。"
+          },
+          {
+            "name": "生产关系",
+            "difficulty": 2,
+            "description": "物质资料生产中形成的社会关系。",
+            "aliases": [],
+            "prerequisites": [
+              "生产力"
+            ],
+            "definition": "生产关系包括生产资料所有制、生产中人与人的关系和产品分配关系。",
+            "example": "企业中的所有制和分配关系。"
+          },
+          {
+            "name": "生产关系规律",
+            "difficulty": 3,
+            "description": "生产关系一定要适合生产力状况。",
+            "aliases": [
+              "生产关系一定要适合生产力状况的规律"
+            ],
+            "prerequisites": [
+              "生产力",
+              "生产关系"
+            ],
+            "definition": "生产力决定生产关系，生产关系反作用于生产力并必须适合其状况。",
+            "example": "生产力发展推动生产关系改革。"
+          },
+          {
+            "name": "经济基础",
+            "difficulty": 3,
+            "description": "占统治地位生产关系的总和。",
+            "aliases": [],
+            "prerequisites": [
+              "生产关系"
+            ],
+            "definition": "经济基础是由一定发展阶段生产力决定的占统治地位的生产关系总和。",
+            "example": "社会主要生产关系的总和。"
+          },
+          {
+            "name": "上层建筑",
+            "difficulty": 3,
+            "description": "建立在经济基础上的意识形态及制度设施。",
+            "aliases": [],
+            "prerequisites": [
+              "经济基础",
+              "社会意识"
+            ],
+            "definition": "上层建筑是建立在经济基础之上的意识形态以及相应的制度、组织和设施。",
+            "example": "法律制度和政治组织。"
+          },
+          {
+            "name": "上层建筑规律",
+            "difficulty": 3,
+            "description": "上层建筑一定要适合经济基础状况。",
+            "aliases": [
+              "上层建筑一定要适合经济基础状况的规律"
+            ],
+            "prerequisites": [
+              "经济基础",
+              "上层建筑"
+            ],
+            "definition": "经济基础决定上层建筑，上层建筑反作用于经济基础并必须适合其状况。",
+            "example": "经济体制改革带动制度改革。"
+          },
+          {
+            "name": "社会基本矛盾",
+            "difficulty": 3,
+            "description": "生产力与生产关系、经济基础与上层建筑的矛盾。",
+            "aliases": [],
+            "prerequisites": [
+              "生产力",
+              "生产关系",
+              "经济基础",
+              "上层建筑"
+            ],
+            "definition": "社会基本矛盾是贯穿人类社会始终并推动社会发展的两对矛盾。",
+            "example": "生产力发展要求改革生产关系。"
+          },
+          {
+            "name": "社会发展总趋势",
+            "difficulty": 2,
+            "description": "社会发展总趋势前进上升但过程曲折。",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "社会发展的总趋势是前进的、上升的，过程具有曲折性。",
+            "example": "社会形态不断由低级向高级发展。"
+          },
+          {
+            "name": "阶级斗争",
+            "difficulty": 3,
+            "description": "阶级社会解决基本矛盾的直接动力。",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "在阶级社会中，阶级斗争是推动社会发展的直接动力。",
+            "example": "被剥削阶级反对剥削。"
+          },
+          {
+            "name": "改革",
+            "difficulty": 2,
+            "description": "社会主义制度自我完善和发展的直接动力。",
+            "aliases": [],
+            "prerequisites": [
+              "社会基本矛盾"
+            ],
+            "definition": "改革旨在使生产关系适应生产力、上层建筑适应经济基础的发展。",
+            "example": "改革不适应发展的体制机制。"
+          },
+          {
+            "name": "人民群众",
+            "difficulty": 2,
+            "description": "一切对社会历史发展起推动作用的人们。",
+            "aliases": [],
+            "prerequisites": [
+              "社会生活的实践本质"
+            ],
+            "definition": "人民群众包括普通个人和杰出人物，劳动群众是其主体部分。",
+            "example": "参与改革实践的广大人民。"
+          },
+          {
+            "name": "人民群众是历史创造者",
+            "difficulty": 3,
+            "description": "人民群众创造社会财富并推动历史发展。",
+            "aliases": [],
+            "prerequisites": [
+              "人民群众"
+            ],
+            "definition": "人民群众是社会物质财富、精神财富的创造者和社会变革的决定力量。",
+            "example": "人民群众推动改革开放。"
+          },
+          {
+            "name": "群众观点",
+            "difficulty": 2,
+            "description": "无产阶级政党的根本立场和根本观点。",
+            "aliases": [],
+            "prerequisites": [
+              "人民群众"
+            ],
+            "definition": "群众观点包括相信群众、为人民服务、向群众负责并向群众学习。",
+            "example": "虚心听取群众意见。"
+          },
+          {
+            "name": "群众路线",
+            "difficulty": 2,
+            "description": "一切为了群众、依靠群众的工作路线。",
+            "aliases": [],
+            "prerequisites": [
+              "群众观点"
+            ],
+            "definition": "群众路线的基本内容是从群众中来、到群众中去。",
+            "example": "调研民意后制定政策。"
+          },
+          {
+            "name": "价值",
+            "difficulty": 1,
+            "description": "客体对主体具有的积极意义。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "价值是一事物所具有的能够满足主体需要的积极功能和属性。",
+            "example": "水满足人的生存需要。"
+          },
+          {
+            "name": "人的价值",
+            "difficulty": 2,
+            "description": "人在满足社会他人需要中的贡献和自我满足。",
+            "aliases": [],
+            "prerequisites": [
+              "价值"
+            ],
+            "definition": "人的价值在于通过活动满足社会、他人和自己的需要，主要在于对社会的贡献。",
+            "example": "科研成果服务国家发展。"
+          },
+          {
+            "name": "价值观",
+            "difficulty": 2,
+            "description": "对事物价值的总的看法和根本观点。",
+            "aliases": [],
+            "prerequisites": [
+              "价值"
+            ],
+            "definition": "价值观是人们在认识具体事物价值基础上形成的总的看法和根本观点。",
+            "example": "把服务患者置于利润之前。"
+          },
+          {
+            "name": "价值判断",
+            "difficulty": 2,
+            "description": "对事物能否满足需要及程度作出的判断。",
+            "aliases": [],
+            "prerequisites": [
+              "价值",
+              "价值观"
+            ],
+            "definition": "价值判断是人们对事物价值及其满足主体需要程度作出的判断。",
+            "example": "评价某政策是否有利于群众。"
+          }
+        ],
+        "chapter_key": "4add97ffe3",
+        "metadata": {
+          "volume_id": "c5988232185d",
+          "file_id": "c5988232185d",
+          "volume_title": "高中政治 必修4 哲学与文化",
+          "chapter_order": 3,
+          "raw_heading": "第二单元 认识社会与价值选择"
+        }
+      },
+      {
+        "name": "第三单元 文化传承与文化创新",
+        "concepts": [
+          {
+            "name": "文化",
+            "difficulty": 1,
+            "description": "人类社会实践的产物，包含精神现象及其成果。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "文化是相对于经济、政治的人类精神现象及其成果。",
+            "example": "京剧艺术体现了特定的思想、价值和审美。"
+          },
+          {
+            "name": "广义文化",
+            "difficulty": 2,
+            "description": "人类认识和改造世界的活动及其物质、精神成果。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "广义文化是人类认识和改造世界的一切活动及其创造的物质成果和精神成果。",
+            "example": "城市建设活动及其创造的物质成果属于广义文化。"
+          },
+          {
+            "name": "狭义文化",
+            "difficulty": 2,
+            "description": "相对于经济、政治的人类全部精神现象。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "狭义文化是相对于经济、政治而言的人类全部精神现象。",
+            "example": "世界观、人生观、价值观和科学技术都属于狭义文化。"
+          },
+          {
+            "name": "文化核心",
+            "difficulty": 2,
+            "description": "支配和影响文化实践与文化生活的观念。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "世界观、人生观和价值观是文化的核心。",
+            "example": "价值观影响人们参与文化活动的选择。"
+          },
+          {
+            "name": "文化相对独立性",
+            "difficulty": 3,
+            "description": "文化发展不必然与经济发展始终同步。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化具有相对独立性，其发展与经济、政治发展并非始终完全同步。",
+            "example": "物质条件改善并不必然带来精神文化同步进步。"
+          },
+          {
+            "name": "文化载体",
+            "difficulty": 2,
+            "description": "记录、传承和表现文化内容的物化形式。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化载体是文化的记录、记载、标识、传承和表现的物化形式。",
+            "example": "器物、行为和制度都是文化载体。"
+          },
+          {
+            "name": "文化功能",
+            "difficulty": 2,
+            "description": "文化具有引领风尚、教育人民等社会作用。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化具有引领风尚、教育人民、服务社会和推动发展的功能。",
+            "example": "文化惠民工程为群众提供丰富的精神食粮。"
+          },
+          {
+            "name": "优秀文化塑造人",
+            "difficulty": 2,
+            "description": "优秀文化丰富精神世界，增强精神力量。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "优秀文化能够丰富人的精神世界、增强人的精神力量并促进人的全面发展。",
+            "example": "参加健康有益的文化活动有助于培养健全人格。"
+          },
+          {
+            "name": "中华传统文化",
+            "difficulty": 2,
+            "description": "中华民族在历史发展中形成的文化。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "中华传统文化是中华民族在长期历史发展中形成的文化。",
+            "example": "中国古代文学、艺术、哲学和科技成就构成传统文化的重要内容。"
+          },
+          {
+            "name": "中华优秀传统文化",
+            "difficulty": 2,
+            "description": "中华传统文化中具有积极价值的精华。",
+            "aliases": [],
+            "prerequisites": [
+              "中华传统文化"
+            ],
+            "definition": "中华优秀传统文化是中华传统文化的精华。",
+            "example": "讲仁爱、重民本、自强不息属于其重要内容。"
+          },
+          {
+            "name": "传统文化当代价值",
+            "difficulty": 3,
+            "description": "优秀传统文化对当代发展具有的积极意义。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "中华优秀传统文化能增强民族认同和文化自信，并为当代发展提供有益借鉴。",
+            "example": "和而不同有助于正确认识和处理国际关系。"
+          },
+          {
+            "name": "取其精华去其糟粕",
+            "difficulty": 3,
+            "description": "批判继承传统文化，保留精华、剔除糟粕。",
+            "aliases": [],
+            "prerequisites": [
+              "中华传统文化"
+            ],
+            "definition": "对传统文化应有鉴别、有批判地继承，保留精华并剔除糟粕。",
+            "example": "继承传统美德，同时摒弃等级意识。"
+          },
+          {
+            "name": "创造性转化",
+            "difficulty": 3,
+            "description": "改造传统内涵和表达形式，使其适应时代。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化",
+              "取其精华去其糟粕"
+            ],
+            "definition": "创造性转化是把传统文化中有借鉴意义的内涵和表达形式改造成符合时代要求的新形式。",
+            "example": "用现代传播方式讲述传统节日故事。"
+          },
+          {
+            "name": "创新性发展",
+            "difficulty": 3,
+            "description": "根据时代实践补充、拓展和完善传统文化内涵。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "创新性发展是根据社会生活和实践进步补充、拓展和完善传统文化内涵。",
+            "example": "赋予传统生态思想新的现代治理意义。"
+          },
+          {
+            "name": "中华民族精神",
+            "difficulty": 2,
+            "description": "中华民族共同的价值追求和精神特征。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "中华民族精神集中体现中华民族的整体风貌、精神特征和共同价值追求。",
+            "example": "抗疫精神体现了民族精神的时代内容。"
+          },
+          {
+            "name": "爱国主义",
+            "difficulty": 2,
+            "description": "中华民族精神的核心和动员奋斗的旗帜。",
+            "aliases": [],
+            "prerequisites": [
+              "中华民族精神"
+            ],
+            "definition": "爱国主义是中华民族精神的核心，贯穿民族精神各个方面。",
+            "example": "五四精神以爱国主义为重要内容。"
+          },
+          {
+            "name": "民族精神时代性",
+            "difficulty": 3,
+            "description": "民族精神随时代变化不断丰富和发展。",
+            "aliases": [],
+            "prerequisites": [
+              "中华民族精神"
+            ],
+            "definition": "民族精神既源于长期历史积淀，又随着时代变化不断丰富。",
+            "example": "改革开放时期形成了特区精神。"
+          },
+          {
+            "name": "革命文化",
+            "difficulty": 2,
+            "description": "党和人民在革命实践中创造的先进文化。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化"
+            ],
+            "definition": "革命文化是中国共产党领导人民在革命中创造的文化，承载着民族解放和人民幸福的追求。",
+            "example": "井冈山精神是革命文化的重要体现。"
+          },
+          {
+            "name": "社会主义先进文化",
+            "difficulty": 2,
+            "description": "面向现代化、世界和未来的社会主义文化。",
+            "aliases": [],
+            "prerequisites": [
+              "革命文化"
+            ],
+            "definition": "社会主义先进文化是民族的科学的大众的社会主义文化。",
+            "example": "社会主义先进文化为人民提供精神指引。"
+          },
+          {
+            "name": "文化多样性",
+            "difficulty": 2,
+            "description": "不同国家和民族文化存在丰富多样的特色。",
+            "aliases": [],
+            "prerequisites": [
+              "文化"
+            ],
+            "definition": "文化多样性是文化存在丰富程度的表现，源于各民族社会条件和文化传统的差异。",
+            "example": "不同城市设计出各具文化印记的奥运会会徽。"
+          },
+          {
+            "name": "民族文化",
+            "difficulty": 2,
+            "description": "体现民族生活方式、思维方式和价值观的文化。",
+            "aliases": [],
+            "prerequisites": [
+              "文化多样性"
+            ],
+            "definition": "民族文化是一个民族在历史和现实中形成的文化，核心是价值观。",
+            "example": "民族节日和民族服饰体现民族文化特色。"
+          },
+          {
+            "name": "文化交流",
+            "difficulty": 2,
+            "description": "不同民族文化之间相互沟通、借鉴和传播。",
+            "aliases": [],
+            "prerequisites": [
+              "文化多样性"
+            ],
+            "definition": "文化交流是不同民族文化相互沟通、借鉴和传播的过程。",
+            "example": "古丝绸之路促进了中外商品和知识交流。"
+          },
+          {
+            "name": "文化交融",
+            "difficulty": 3,
+            "description": "不同文化相互借鉴融合，形成新的文化成果。",
+            "aliases": [],
+            "prerequisites": [
+              "文化交流"
+            ],
+            "definition": "文化交融是不同民族文化在交流中相互借鉴、融合并推动文化发展的过程。",
+            "example": "沈绣吸收西洋油画的用光、用色技法。"
+          },
+          {
+            "name": "全盘西化论",
+            "difficulty": 2,
+            "description": "主张中国文化彻底西化的错误观点。",
+            "aliases": [],
+            "prerequisites": [
+              "文化多样性"
+            ],
+            "definition": "全盘西化论认为中国文化的出路是彻底照搬和接受西方文化。",
+            "example": "主张以西方文化全面取代中国文化。"
+          },
+          {
+            "name": "文化复古主义",
+            "difficulty": 2,
+            "description": "主张恢复传统文化主导地位的错误观点。",
+            "aliases": [],
+            "prerequisites": [
+              "中华传统文化"
+            ],
+            "definition": "文化复古主义主张重新确立传统文化的主导地位并恢复古代文化秩序。",
+            "example": "认为只要复兴四书五经就能建设文化强国。"
+          },
+          {
+            "name": "洋为中用",
+            "difficulty": 3,
+            "description": "立足中国国情，批判吸收外来文化成果。",
+            "aliases": [],
+            "prerequisites": [
+              "文化交流",
+              "文化交融"
+            ],
+            "definition": "洋为中用是以中国人民实际需要为基础，批判吸收外国文化有益成果。",
+            "example": "借鉴外国管理经验并结合中国实际加以运用。"
+          },
+          {
+            "name": "综合创新",
+            "difficulty": 3,
+            "description": "融通古今中外资源，形成当代中国文化。",
+            "aliases": [],
+            "prerequisites": [
+              "文化交流",
+              "创造性转化",
+              "洋为中用"
+            ],
+            "definition": "综合创新是融通古今中外各种资源并形成民族、科学、大众的社会主义文化。",
+            "example": "将传统艺术与现代技术结合创作文化产品。"
+          },
+          {
+            "name": "中国特色社会主义文化",
+            "difficulty": 3,
+            "description": "源于优秀传统文化，植根中国实践的社会主义文化。",
+            "aliases": [],
+            "prerequisites": [
+              "中华优秀传统文化",
+              "革命文化",
+              "社会主义先进文化"
+            ],
+            "definition": "中国特色社会主义文化源于中华优秀传统文化，熔铸于革命文化和社会主义先进文化，植根中国特色社会主义伟大实践。",
+            "example": "用中国传统艺术表现新时代人民生活。"
+          },
+          {
+            "name": "文化发展道路",
+            "difficulty": 3,
+            "description": "发展中国特色社会主义文化必须坚持的根本道路。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "中国特色社会主义文化发展道路是建设社会主义文化强国的必由之路。",
+            "example": "坚持马克思主义指导并坚守中华文化立场。"
+          },
+          {
+            "name": "以人民为中心",
+            "difficulty": 2,
+            "description": "把人民福祉和人的全面发展作为文化出发点。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "以人民为中心要求把增进人民福祉、促进人的全面发展作为文化发展的出发点和落脚点。",
+            "example": "文化创作贴近人民精神生活，讴歌奋斗人生。"
+          },
+          {
+            "name": "时代精神",
+            "difficulty": 2,
+            "description": "特定时代的精神风貌和价值追求。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "时代精神是特定时代社会生活和实践所呈现的精神风貌。",
+            "example": "优秀作品通过反映时代风貌获得持久魅力。"
+          },
+          {
+            "name": "文化强国",
+            "difficulty": 3,
+            "description": "文化繁荣发展、综合实力和影响力强的国家。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化",
+              "文化自信"
+            ],
+            "definition": "文化强国是社会主义文化事业和文化产业繁荣、文化实力和影响力显著提升的国家。",
+            "example": "提高公共文化服务水平并讲好中国故事。"
+          },
+          {
+            "name": "文化自信",
+            "difficulty": 3,
+            "description": "对中华优秀文化及中国特色社会主义文化的信心。",
+            "aliases": [],
+            "prerequisites": [
+              "中国特色社会主义文化"
+            ],
+            "definition": "文化自信是对中华优秀传统文化、革命文化和社会主义先进文化的自信。",
+            "example": "中华文化走出国门增强了文化自信。"
+          },
+          {
+            "name": "社会主义核心价值观",
+            "difficulty": 3,
+            "description": "凝聚社会共识并引领文化建设的价值观念。",
+            "aliases": [],
+            "prerequisites": [
+              "文化核心",
+              "中国特色社会主义文化"
+            ],
+            "definition": "社会主义核心价值观是引领国民教育和精神文化产品创作传播的价值观念。",
+            "example": "在精神文明创建中培育和践行核心价值观。"
+          },
+          {
+            "name": "文化事业",
+            "difficulty": 2,
+            "description": "面向社会提供公共文化产品和服务的事业。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "文化事业是以社会效益为主要目标、为人民提供公共文化服务的文化建设领域。",
+            "example": "公共图书馆免费开放属于发展文化事业。"
+          },
+          {
+            "name": "文化产业",
+            "difficulty": 2,
+            "description": "以文化产品生产经营为主要内容的产业。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "文化产业是通过文化产品创作、生产和经营推动文化发展的产业领域。",
+            "example": "电影产业的发展提升了文化产品供给能力。"
+          },
+          {
+            "name": "双百方针",
+            "difficulty": 3,
+            "description": "促进艺术发展和科学进步的文化方针。",
+            "aliases": [
+              "百花齐放、百家争鸣"
+            ],
+            "prerequisites": [
+              "社会主义先进文化"
+            ],
+            "definition": "双百方针是艺术上百花齐放、学术上百家争鸣的方针。",
+            "example": "鼓励不同艺术形式和风格自由发展。"
+          },
+          {
+            "name": "道德修养和科学文化修养",
+            "difficulty": 2,
+            "description": "建设文化强国需要提升的两类个人素养。",
+            "aliases": [],
+            "prerequisites": [
+              "文化功能"
+            ],
+            "definition": "道德修养和科学文化修养是提高人民综合素质、建设文化强国的重要内容。",
+            "example": "加强社会公德教育并普及科学知识。"
+          }
+        ],
+        "chapter_key": "4bc14e1c6b",
+        "metadata": {
+          "volume_id": "c5988232185d",
+          "file_id": "c5988232185d",
+          "volume_title": "高中政治 必修4 哲学与文化",
+          "chapter_order": 4,
+          "raw_heading": "第三单元 文化传承与文化创新"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {}
+  }
+}

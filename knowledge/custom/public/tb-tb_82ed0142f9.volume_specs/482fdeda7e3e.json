@@ -1,0 +1,3380 @@
+{
+  "file_id": "482fdeda7e3e",
+  "text_sha256": "e4839fdcb8f0398f67c5c2a2f52d32cb61c39c4cab4680720723af3fee3c8e13",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 种群及其动态",
+        "concepts": [
+          {
+            "name": "种群",
+            "difficulty": 1,
+            "description": "一定空间内同种生物所有个体形成的集合",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "种群是一定空间内同种生物所有个体形成的集合。",
+            "example": "长白山北部的东北豹群体"
+          },
+          {
+            "name": "种群数量特征",
+            "difficulty": 2,
+            "description": "描述种群数量及其变化趋势的特征",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "种群数量特征是反映种群数量及其变化趋势的指标。",
+            "example": "东北豹的年龄和性别组成"
+          },
+          {
+            "name": "种群密度",
+            "difficulty": 1,
+            "description": "单位面积或单位体积中的个体数",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "种群密度是种群在单位面积或单位体积中的个体数。",
+            "example": "每平方米草地中的蒲公英数"
+          },
+          {
+            "name": "样方法",
+            "difficulty": 2,
+            "description": "通过随机样方估算种群密度的方法",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度"
+            ],
+            "definition": "样方法是在种群分布范围内随机选取样方并据此估算种群密度的方法。",
+            "example": "调查草地上蒲公英的密度"
+          },
+          {
+            "name": "标记重捕法",
+            "difficulty": 2,
+            "description": "利用标记个体重捕比例估算动物数量",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度"
+            ],
+            "definition": "标记重捕法是根据重捕动物中标记个体的比例估算种群密度的方法。",
+            "example": "调查活动范围大的鼠种群",
+            "section": "第1节 种群的数量特征"
+          },
+          {
+            "name": "出生率",
+            "difficulty": 1,
+            "description": "单位时间内新产生个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "出生率是单位时间内新产生的个体数占种群个体总数的比值。",
+            "example": "某地人口一年出生率为12‰"
+          },
+          {
+            "name": "死亡率",
+            "difficulty": 1,
+            "description": "单位时间内死亡个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "死亡率是单位时间内死亡的个体数占种群个体总数的比值。",
+            "example": "某地区一年死亡人口占比"
+          },
+          {
+            "name": "迁入率",
+            "difficulty": 1,
+            "description": "单位时间内迁入个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "迁入率是单位时间内迁入个体数占种群个体总数的比值。",
+            "example": "东北豹回归保护区"
+          },
+          {
+            "name": "迁出率",
+            "difficulty": 1,
+            "description": "单位时间内迁出个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "迁出率是单位时间内迁出个体数占种群个体总数的比值。",
+            "example": "森林开发导致东北豹迁出"
+          },
+          {
+            "name": "年龄结构",
+            "difficulty": 2,
+            "description": "种群中各年龄期个体数目的比例",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "年龄结构是种群中各年龄期个体数目的比例。",
+            "example": "少年人口比例下降"
+          },
+          {
+            "name": "增长型年龄结构",
+            "difficulty": 2,
+            "description": "幼年个体较多，种群数量有增长趋势",
+            "aliases": [],
+            "prerequisites": [
+              "年龄结构"
+            ],
+            "definition": "增长型年龄结构是幼年个体比例较高且种群数量具有增长趋势的结构。",
+            "example": "幼年个体多的东北豹种群"
+          },
+          {
+            "name": "稳定型年龄结构",
+            "difficulty": 2,
+            "description": "各年龄期个体比例适中，数量相对稳定",
+            "aliases": [],
+            "prerequisites": [
+              "年龄结构"
+            ],
+            "definition": "稳定型年龄结构是各年龄期个体比例适中且种群数量相对稳定的结构。",
+            "example": "各年龄期比例较均衡的种群"
+          },
+          {
+            "name": "衰退型年龄结构",
+            "difficulty": 2,
+            "description": "老年个体较多，种群数量有减少趋势",
+            "aliases": [],
+            "prerequisites": [
+              "年龄结构"
+            ],
+            "definition": "衰退型年龄结构是老年个体比例较高且种群数量具有减少趋势的结构。",
+            "example": "老年人口比例上升"
+          },
+          {
+            "name": "性别比例",
+            "difficulty": 1,
+            "description": "种群中雌雄个体数目的比例",
+            "aliases": [
+              "性比"
+            ],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "性别比例是种群中雌雄个体数目的比例。",
+            "example": "雄性害虫被性引诱剂诱杀"
+          },
+          {
+            "name": "数学模型",
+            "difficulty": 2,
+            "description": "用数学形式描述系统或其性质的模型",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "数学模型是用数学形式描述一个系统或其性质的模型。",
+            "example": "用公式表示细菌数量增长"
+          },
+          {
+            "name": "种群增长模型",
+            "difficulty": 3,
+            "description": "描述、解释和预测种群数量变化的模型",
+            "aliases": [],
+            "prerequisites": [
+              "数学模型",
+              "种群数量特征"
+            ],
+            "definition": "种群增长模型是用于描述、解释和预测种群数量变化的数学模型。",
+            "example": "建立细菌种群增长曲线",
+            "section": "第2节 种群数量的变化"
+          },
+          {
+            "name": "J形增长",
+            "difficulty": 2,
+            "description": "理想条件下种群数量快速增长的形式",
+            "aliases": [],
+            "prerequisites": [
+              "种群增长模型"
+            ],
+            "definition": "J形增长是在资源充足、无天敌等理想条件下种群数量快速增长的形式。",
+            "example": "理想培养条件下细菌增长"
+          },
+          {
+            "name": "S形增长",
+            "difficulty": 2,
+            "description": "种群增长后因资源限制趋于稳定的形式",
+            "aliases": [],
+            "prerequisites": [
+              "种群增长模型"
+            ],
+            "definition": "S形增长是种群增长一定时间后因资源和空间限制而趋于稳定的形式。",
+            "example": "培养液中大草履虫的增长"
+          },
+          {
+            "name": "环境容纳量",
+            "difficulty": 2,
+            "description": "环境所能维持的种群最大数量",
+            "aliases": [
+              "K值"
+            ],
+            "prerequisites": [
+              "S形增长"
+            ],
+            "definition": "环境容纳量是一定环境条件所能维持的种群最大数量。",
+            "example": "大草履虫的K值约为375个"
+          },
+          {
+            "name": "种群数量波动",
+            "difficulty": 2,
+            "description": "种群数量在一定时期内上下变动",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "种群数量波动是种群数量随时间在一定范围内上下变动的现象。",
+            "example": "东亚飞蝗数量多年不规则波动"
+          },
+          {
+            "name": "非生物因素",
+            "difficulty": 1,
+            "description": "阳光、温度、水等非生物环境因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "非生物因素是影响种群数量变化的阳光、温度、水等环境因素。",
+            "example": "干旱使植物死亡率升高",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "生物因素",
+            "difficulty": 1,
+            "description": "种内和种间生物关系等影响因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "生物因素是种群内部及其他生物对种群数量产生影响的因素。",
+            "example": "天敌影响猎物数量",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "种内竞争",
+            "difficulty": 2,
+            "description": "同一种群个体间争夺资源和空间",
+            "aliases": [],
+            "prerequisites": [
+              "生物因素",
+              "种群密度"
+            ],
+            "definition": "种内竞争是同一种群个体因争夺食物、空间等资源而产生的竞争。",
+            "example": "草履虫数量增加后竞争食物"
+          },
+          {
+            "name": "捕食关系",
+            "difficulty": 2,
+            "description": "一种生物捕食另一种生物的关系",
+            "aliases": [],
+            "prerequisites": [
+              "生物因素"
+            ],
+            "definition": "捕食关系是一个种群捕食另一个种群并影响其数量的生物关系。",
+            "example": "猞猁捕食雪兔"
+          },
+          {
+            "name": "密度制约因素",
+            "difficulty": 3,
+            "description": "作用强度随种群密度变化的因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度",
+              "生物因素"
+            ],
+            "definition": "密度制约因素是作用强度与种群密度相关的环境因素。",
+            "example": "高密度种群更易受到食物短缺影响",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "非密度制约因素",
+            "difficulty": 3,
+            "description": "作用强度与种群密度无关的因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度",
+              "非生物因素"
+            ],
+            "definition": "非密度制约因素是作用强度与种群密度无关的环境因素。",
+            "example": "寒流导致昆虫大量死亡",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "种群数量监测",
+            "difficulty": 2,
+            "description": "通过调查获得种群数量及变化信息",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度"
+            ],
+            "definition": "种群数量监测是运用调查方法获取种群数量及其变化信息的过程。",
+            "example": "红外相机监测东北豹"
+          },
+          {
+            "name": "种群数量调控",
+            "difficulty": 3,
+            "description": "依据种群规律保护或防治生物种群",
+            "aliases": [],
+            "prerequisites": [
+              "种群增长模型",
+              "密度制约因素"
+            ],
+            "definition": "种群数量调控是依据种群特征和变化规律保护或控制种群数量的实践。",
+            "example": "保护天敌防治农林害虫"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 种群的数量特征",
+            "page_range": [
+              11,
+              15
+            ]
+          },
+          {
+            "name": "第2节 种群数量的变化",
+            "page_range": [
+              16,
+              21
+            ]
+          },
+          {
+            "name": "第3节 影响种群数量变化的因素",
+            "page_range": [
+              22,
+              30
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第2章 群落及其演替",
+        "concepts": [
+          {
+            "name": "群落",
+            "difficulty": 1,
+            "description": "一定地域内各种生物种群的集合",
+            "aliases": [
+              "生物群落"
+            ],
+            "prerequisites": [],
+            "definition": "群落是相同时间聚集在一定地域中各种生物种群的集合。",
+            "example": "稻田中的水稻、螺类和昆虫共同组成群落"
+          },
+          {
+            "name": "物种组成",
+            "difficulty": 2,
+            "description": "群落中包含的物种及其构成",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "物种组成是群落中所包含物种的构成情况。",
+            "example": "森林和草原的物种组成不同"
+          },
+          {
+            "name": "物种丰富度",
+            "difficulty": 2,
+            "description": "一个群落中的物种数目",
+            "aliases": [],
+            "prerequisites": [
+              "物种组成"
+            ],
+            "definition": "物种丰富度是一个群落中的物种数目。",
+            "example": "热带森林单位面积内物种丰富度较高"
+          },
+          {
+            "name": "占优势物种",
+            "difficulty": 2,
+            "description": "数量多且影响其他物种较大的物种",
+            "aliases": [
+              "优势物种"
+            ],
+            "prerequisites": [
+              "物种组成"
+            ],
+            "definition": "占优势物种是数量较多且对群落中其他物种影响较大的物种。",
+            "example": "草原中的羊草通常占据显著优势"
+          },
+          {
+            "name": "种间关系",
+            "difficulty": 2,
+            "description": "群落中不同物种之间的相互作用",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "种间关系是群落中不同物种之间形成的相互作用关系。",
+            "example": "森林中乔木与草本植物存在竞争"
+          },
+          {
+            "name": "原始合作",
+            "difficulty": 2,
+            "description": "双方受益但分开后仍能独立生活",
+            "aliases": [
+              "互惠"
+            ],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "原始合作是两种生物共同生活时双方受益、分开后仍能独立生活的关系。",
+            "example": "海葵与寄居蟹共同生活"
+          },
+          {
+            "name": "互利共生",
+            "difficulty": 2,
+            "description": "双方长期共同生活并彼此有利",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "互利共生是两种生物长期共同生活、相互依存且彼此有利的关系。",
+            "example": "豆科植物与根瘤菌共生"
+          },
+          {
+            "name": "种间竞争",
+            "difficulty": 2,
+            "description": "共同利用有限资源而相互排斥",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "种间竞争是两种或更多生物共同利用有限资源和空间而产生的相互排斥现象。",
+            "example": "非洲狮和斑鬣狗争夺资源"
+          },
+          {
+            "name": "捕食",
+            "difficulty": 1,
+            "description": "一种生物以另一种生物为食",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "捕食是一种生物以另一种生物为食的现象。",
+            "example": "翠鸟捕鱼"
+          },
+          {
+            "name": "寄生",
+            "difficulty": 2,
+            "description": "从宿主营养并通常危害宿主",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "寄生是一种生物从宿主体液、组织或已消化物质中获取营养并通常危害宿主的现象。",
+            "example": "马蛔虫寄生在马体内"
+          },
+          {
+            "name": "群落空间结构",
+            "difficulty": 2,
+            "description": "种群在群落中占据空间的结构特征",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "群落空间结构是群落中各生物种群在空间上的分布结构。",
+            "example": "森林具有明显的分层现象"
+          },
+          {
+            "name": "垂直结构",
+            "difficulty": 2,
+            "description": "群落在垂直方向上的分层结构",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构"
+            ],
+            "definition": "垂直结构是群落在垂直方向上形成的分层结构。",
+            "example": "森林分为乔木层、灌木层和草本层"
+          },
+          {
+            "name": "水平结构",
+            "difficulty": 2,
+            "description": "群落在水平方向上的分布结构",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构"
+            ],
+            "definition": "水平结构是群落中种群在水平方向上的分布结构。",
+            "example": "草地上的种群常呈镶嵌分布"
+          },
+          {
+            "name": "群落季节性",
+            "difficulty": 2,
+            "description": "群落外貌和结构随季节规律变化",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构"
+            ],
+            "definition": "群落季节性是群落外貌和结构因季节变化而发生的有规律变化。",
+            "example": "候鸟冬季迁往食物充足的地区"
+          },
+          {
+            "name": "生态位",
+            "difficulty": 3,
+            "description": "物种在群落中的地位或作用",
+            "aliases": [],
+            "prerequisites": [
+              "群落",
+              "种间关系"
+            ],
+            "definition": "生态位是物种在群落中的空间位置、资源利用情况及其与其他物种关系的总和。",
+            "example": "四大家鱼在池塘中占据不同生态位"
+          },
+          {
+            "name": "荒漠生物群落",
+            "difficulty": 2,
+            "description": "极度干旱、物种少且结构简单的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "荒漠生物群落是分布于极度干旱区、植被稀疏且结构简单的群落。",
+            "example": "仙人掌和骆驼刺适应荒漠环境"
+          },
+          {
+            "name": "草原生物群落",
+            "difficulty": 2,
+            "description": "半干旱地区以草本植物为主的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "草原生物群落是主要分布于半干旱地区且以草本植物为优势的群落。",
+            "example": "耐寒旱生多年生草本植物占优势"
+          },
+          {
+            "name": "森林生物群落",
+            "difficulty": 2,
+            "description": "湿润地区结构复杂且较稳定的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "森林生物群落是分布于湿润或较湿润地区、结构复杂且相对稳定的群落。",
+            "example": "森林中有乔木、灌木、草本和藤本植物",
+            "section": "第2节 群落的主要类型"
+          },
+          {
+            "name": "湿地生物群落",
+            "difficulty": 2,
+            "description": "兼有水生和陆生生物的丰富群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "湿地生物群落是动植物物种丰富且兼有水生、陆生生物的群落。",
+            "example": "湿地中有芦苇、鱼类和鸟类",
+            "section": "第2节 群落的主要类型"
+          },
+          {
+            "name": "海洋生物群落",
+            "difficulty": 2,
+            "description": "海洋中各种生物共同组成的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "海洋生物群落是海洋中浮游植物、大型藻类及动物共同组成的群落。",
+            "example": "海带、浮游植物和鱼类组成海洋群落",
+            "section": "第2节 群落的主要类型"
+          },
+          {
+            "name": "群落演替",
+            "difficulty": 2,
+            "description": "一个群落被另一个群落代替的过程",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "群落演替是随着时间推移一个群落被另一个群落代替的过程。",
+            "example": "裸岩上逐渐形成森林",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "地衣阶段",
+            "difficulty": 2,
+            "description": "裸岩演替中地衣首先定居的阶段",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "地衣阶段是裸岩演替中地衣首先定居并促进土壤形成的阶段。",
+            "example": "地衣分泌有机酸加速岩石风化",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "苔藓阶段",
+            "difficulty": 2,
+            "description": "地衣开拓后苔藓逐渐扩展的阶段",
+            "aliases": [],
+            "prerequisites": [
+              "地衣阶段"
+            ],
+            "definition": "苔藓阶段是地衣开拓裸岩后苔藓生长扩展并加厚土层的阶段。",
+            "example": "苔藓生长使土壤有机物增多",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "初生演替",
+            "difficulty": 3,
+            "description": "原无植被或植被被彻底消灭处的演替",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "初生演替是在从未被植物覆盖或植被被彻底消灭的地面上发生的演替。",
+            "example": "火山岩上的群落演替",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "次生演替",
+            "difficulty": 3,
+            "description": "原有土壤基本保留处的群落演替",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "次生演替是在原有植被消失但土壤条件基本保留的地方发生的演替。",
+            "example": "弃耕农田上的群落演替",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "人类活动影响演替",
+            "difficulty": 3,
+            "description": "人类活动改变演替方向和速度",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "人类活动能够使群落演替按照不同于自然演替的方向和速度进行。",
+            "example": "过度放牧可使草原演替为荒漠"
+          },
+          {
+            "name": "取样调查",
+            "difficulty": 2,
+            "description": "通过样本推测区域内物种数目的方法",
+            "aliases": [
+              "取样器取样"
+            ],
+            "prerequisites": [
+              "物种丰富度"
+            ],
+            "definition": "取样调查是采集一定样本并据此推测某区域物种数目的方法。",
+            "example": "用取样器调查土壤小动物丰富度",
+            "section": "第1节 群落的结构"
+          },
+          {
+            "name": "记名计算法",
+            "difficulty": 2,
+            "description": "直接数出样地中各个种群个体数",
+            "aliases": [],
+            "prerequisites": [
+              "取样调查"
+            ],
+            "definition": "记名计算法是在一定样地中直接数出各个种群个体数目的方法。",
+            "example": "统计样地内蚯蚓的个体数",
+            "section": "第1节 群落的结构"
+          },
+          {
+            "name": "目测估计法",
+            "difficulty": 2,
+            "description": "按多度等级估计种群数量",
+            "aliases": [],
+            "prerequisites": [
+              "取样调查"
+            ],
+            "definition": "目测估计法是按预先确定的多度等级估计单位面积内种群数量的方法。",
+            "example": "将鼠妇数量评为“较多”",
+            "section": "第1节 群落的结构"
+          },
+          {
+            "name": "立体农业",
+            "difficulty": 3,
+            "description": "利用空间结构和季节性进行复合生产",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构",
+              "群落季节性"
+            ],
+            "definition": "立体农业是充分利用群落空间结构和季节性开展立体种养的生产模式。",
+            "example": "稻—萍—鱼立体种养"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 群落的结构",
+            "page_range": [
+              31,
+              41
+            ]
+          },
+          {
+            "name": "第2节 群落的主要类型",
+            "page_range": [
+              42,
+              47
+            ]
+          },
+          {
+            "name": "第3节 群落的演替",
+            "page_range": [
+              47,
+              56
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第3章 生态系统及其稳定性",
+        "concepts": [
+          {
+            "name": "生物群落",
+            "difficulty": 2,
+            "description": "一定区域内所有生物组成的集合。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物群落是一定区域内所有生物种群的集合。",
+            "example": "大豆田中的大豆、杂草、昆虫和微生物。"
+          },
+          {
+            "name": "非生物环境",
+            "difficulty": 2,
+            "description": "生态系统中生物以外的物质和能量环境。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "非生物环境是生态系统中光、热、水、空气和无机盐等因素的总和。",
+            "example": "池塘中的水、阳光和无机盐。"
+          },
+          {
+            "name": "生态系统",
+            "difficulty": 2,
+            "description": "生物群落与非生物环境相互作用形成的整体。",
+            "aliases": [
+              "ecosystem"
+            ],
+            "prerequisites": [
+              "生物群落",
+              "非生物环境"
+            ],
+            "definition": "生态系统是在一定空间内由生物群落与非生物环境相互作用形成的统一整体。",
+            "example": "一片森林、一个湖泊或一块农田。"
+          },
+          {
+            "name": "生物圈",
+            "difficulty": 2,
+            "description": "地球上最大的生态系统。",
+            "aliases": [
+              "biosphere"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生物圈是地球上全部生物及其非生物环境的总和。",
+            "example": "地球上所有生态系统共同构成生物圈。"
+          },
+          {
+            "name": "生产者",
+            "difficulty": 2,
+            "description": "能制造有机物并固定太阳能的自养生物。",
+            "aliases": [
+              "producer"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生产者是能通过光合作用等制造有机物的自养生物。",
+            "example": "池塘中的水草和栅藻。"
+          },
+          {
+            "name": "消费者",
+            "difficulty": 2,
+            "description": "通过摄食其他生物获取物质和能量的生物。",
+            "aliases": [
+              "consumer"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "消费者是不能自己制造有机物、主要通过摄食获取物质和能量的生物。",
+            "example": "草鱼、青鱼和乌鳢。"
+          },
+          {
+            "name": "分解者",
+            "difficulty": 2,
+            "description": "将遗体和排遗物中的有机物分解为无机物。",
+            "aliases": [
+              "decomposer"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "分解者是能把动植物遗体残骸和排遗物中的有机物分解成无机物的生物。",
+            "example": "土壤中的细菌和真菌。"
+          },
+          {
+            "name": "食物链",
+            "difficulty": 2,
+            "description": "生态系统中生物之间的摄食关系链。",
+            "aliases": [
+              "food chain"
+            ],
+            "prerequisites": [
+              "生产者",
+              "消费者"
+            ],
+            "definition": "食物链是生态系统中各生物之间由于食物关系形成的一种联系。",
+            "example": "玉米→蝗虫→蛙→蛇→鹰。"
+          },
+          {
+            "name": "食物网",
+            "difficulty": 3,
+            "description": "许多食物链彼此交错形成的营养关系。",
+            "aliases": [
+              "food web"
+            ],
+            "prerequisites": [
+              "食物链"
+            ],
+            "definition": "食物网是许多食物链彼此相互交错连接形成的复杂营养关系。",
+            "example": "草原中植物、昆虫、蛙、蛇和鹰的多重食物关系。"
+          },
+          {
+            "name": "营养级",
+            "difficulty": 3,
+            "description": "生物在食物链中所处的营养层次。",
+            "aliases": [],
+            "prerequisites": [
+              "食物链"
+            ],
+            "definition": "营养级是生物在食物链中所处的层次，生产者属于第一营养级。",
+            "example": "蝗虫属于第二营养级，蛙属于第三营养级。"
+          },
+          {
+            "name": "生态系统结构",
+            "difficulty": 3,
+            "description": "生态系统组成成分及其相互关系。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "生产者",
+              "消费者",
+              "分解者"
+            ],
+            "definition": "生态系统结构包括非生物的物质和能量、生产者、消费者和分解者及其联系。",
+            "example": "池塘中水草、鱼类、细菌和水体共同构成结构。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "能量流动",
+            "difficulty": 3,
+            "description": "能量在生态系统中的输入、传递、转化和散失。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "食物链"
+            ],
+            "definition": "能量流动是生态系统中能量的输入、传递、转化和散失过程。",
+            "example": "太阳能经玉米、蝗虫和蛙逐级传递。"
+          },
+          {
+            "name": "能量传递效率",
+            "difficulty": 3,
+            "description": "相邻两个营养级间能量传递的比例。",
+            "aliases": [],
+            "prerequisites": [
+              "能量流动",
+              "营养级"
+            ],
+            "definition": "能量传递效率是输入某一营养级的能量中流入下一营养级的比例。",
+            "example": "相邻营养级间通常只有10%～20%的能量传递。"
+          },
+          {
+            "name": "能量金字塔",
+            "difficulty": 3,
+            "description": "表示各营养级能量关系的金字塔图形。",
+            "aliases": [],
+            "prerequisites": [
+              "能量流动",
+              "营养级"
+            ],
+            "definition": "能量金字塔是按营养级排列各级单位时间能量数值形成的图形。",
+            "example": "湖泊生态系统的能量金字塔通常上窄下宽。"
+          },
+          {
+            "name": "生态金字塔",
+            "difficulty": 3,
+            "description": "能量、生物量和数量金字塔的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "营养级"
+            ],
+            "definition": "生态金字塔是表示各营养级能量、生物量或生物个体数量关系的图形。",
+            "example": "能量金字塔、生物量金字塔和数量金字塔。",
+            "section": "第2节 生态系统的能量流动"
+          },
+          {
+            "name": "物质循环",
+            "difficulty": 3,
+            "description": "元素在非生物环境与生物群落间循环。",
+            "aliases": [
+              "matter cycle"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "物质循环是组成生物体的元素在非生物环境与生物群落之间不断循环的过程。",
+            "example": "碳、氮、磷等元素在生态系统中循环利用。"
+          },
+          {
+            "name": "碳循环",
+            "difficulty": 3,
+            "description": "碳元素在生物群落和非生物环境间的循环。",
+            "aliases": [],
+            "prerequisites": [
+              "物质循环"
+            ],
+            "definition": "碳循环是碳元素主要以二氧化碳形式在生物群落与非生物环境之间循环。",
+            "example": "植物吸收二氧化碳进行光合作用，生物呼吸释放二氧化碳。",
+            "section": "第3节 生态系统的物质循环"
+          },
+          {
+            "name": "生物富集",
+            "difficulty": 3,
+            "description": "生物积蓄难降解物质使体内浓度超过环境浓度。",
+            "aliases": [
+              "bio-concentration"
+            ],
+            "prerequisites": [
+              "物质循环",
+              "食物链"
+            ],
+            "definition": "生物富集是生物从环境吸收并积蓄某些物质，使其体内浓度超过环境浓度的现象。",
+            "example": "铅在生物体内沿食物链不断积累。",
+            "section": "第3节 生态系统的物质循环"
+          },
+          {
+            "name": "信息传递",
+            "difficulty": 3,
+            "description": "生态系统中生物种群间及内部的信息产生与交换。",
+            "aliases": [
+              "information flow"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "信息传递是生态系统中生物种群之间及其内部产生和交换信息的过程。",
+            "example": "蜜蜂通过舞蹈向同伴传递蜜源位置。"
+          },
+          {
+            "name": "物理信息",
+            "difficulty": 2,
+            "description": "通过光、声、温度等物理过程传递的信息。",
+            "aliases": [
+              "physical information"
+            ],
+            "prerequisites": [
+              "信息传递"
+            ],
+            "definition": "物理信息是自然界中的光、声、温度、湿度和磁场等通过物理过程传递的信息。",
+            "example": "蜘蛛网振动频率传递猎物到来的信息。",
+            "section": "第4节 生态系统的信息传递"
+          },
+          {
+            "name": "化学信息",
+            "difficulty": 2,
+            "description": "由生物产生的化学物质传递的信息。",
+            "aliases": [
+              "chemical information"
+            ],
+            "prerequisites": [
+              "信息传递"
+            ],
+            "definition": "化学信息是生物产生的可传递信息的化学物质。",
+            "example": "昆虫释放性外激素吸引同种个体。",
+            "section": "第4节 生态系统的信息传递"
+          },
+          {
+            "name": "行为信息",
+            "difficulty": 2,
+            "description": "动物特殊动作或行为传递的信息。",
+            "aliases": [
+              "behavior information"
+            ],
+            "prerequisites": [
+              "信息传递"
+            ],
+            "definition": "行为信息是生物的特殊行为或动作向同种或异种生物传递的信息。",
+            "example": "孔雀开屏进行求偶。",
+            "section": "第4节 生态系统的信息传递"
+          },
+          {
+            "name": "生态平衡",
+            "difficulty": 3,
+            "description": "生态系统结构和功能处于相对稳定的动态状态。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "自我调节能力"
+            ],
+            "definition": "生态平衡是生态系统结构和功能处于相对稳定的动态平衡状态。",
+            "example": "森林中生产、消费和分解过程保持协调。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "负反馈",
+            "difficulty": 4,
+            "description": "系统效果反过来限制自身变化的调节机制。",
+            "aliases": [
+              "负反馈调节"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "负反馈是系统工作的效果反过来作为信息使该系统工作的效果减弱或受到限制的机制。",
+            "example": "兔数量增加导致食物竞争和捕食增强，数量随后下降。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "自我调节能力",
+            "difficulty": 3,
+            "description": "生态系统维持或恢复自身结构和功能平衡的能力。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "负反馈"
+            ],
+            "definition": "自我调节能力是生态系统维持或恢复自身结构与功能相对平衡状态的能力。",
+            "example": "轻度污染的河流可通过自身净化逐步恢复。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "生态系统稳定性",
+            "difficulty": 3,
+            "description": "生态系统维持生态平衡的能力。",
+            "aliases": [
+              "stability of ecosystem"
+            ],
+            "prerequisites": [
+              "生态平衡",
+              "自我调节能力"
+            ],
+            "definition": "生态系统稳定性是生态系统维持生态平衡的能力。",
+            "example": "食物网复杂的热带雨林稳定性较高。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "抵抗力稳定性",
+            "difficulty": 3,
+            "description": "生态系统抵抗干扰并保持原状的能力。",
+            "aliases": [
+              "resistance stability"
+            ],
+            "prerequisites": [
+              "生态系统稳定性"
+            ],
+            "definition": "抵抗力稳定性是生态系统抵抗外界干扰并使结构与功能保持原状的能力。",
+            "example": "森林干旱时扩展根系以维持正常功能。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "恢复力稳定性",
+            "difficulty": 3,
+            "description": "生态系统受破坏后恢复到原状的能力。",
+            "aliases": [
+              "resilience stability"
+            ],
+            "prerequisites": [
+              "生态系统稳定性"
+            ],
+            "definition": "恢复力稳定性是生态系统受到干扰破坏后恢复到原来状态的能力。",
+            "example": "森林局部火灾后逐步恢复原状。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "人工微生态系统",
+            "difficulty": 3,
+            "description": "在有限空间内按生态系统原理构建的系统。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "生态系统结构"
+            ],
+            "definition": "人工微生态系统是在有限空间内组织生态系统基本成分构建的人工系统。",
+            "example": "由水、土壤、植物和小动物组成的生态缸。",
+            "section": "第5节 生态系统的稳定性"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 生态系统的结构",
+            "page_range": [
+              57,
+              63
+            ]
+          },
+          {
+            "name": "第2节 生态系统的能量流动",
+            "page_range": [
+              63,
+              69
+            ]
+          },
+          {
+            "name": "第3节 生态系统的物质循环",
+            "page_range": [
+              70,
+              77
+            ]
+          },
+          {
+            "name": "第4节 生态系统的信息传递",
+            "page_range": [
+              77,
+              81
+            ]
+          },
+          {
+            "name": "第5节 生态系统的稳定性",
+            "page_range": [
+              82,
+              90
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第4章 人与环境",
+        "concepts": [
+          {
+            "name": "生态系统",
+            "difficulty": 2,
+            "description": "生物与环境相互作用形成的统一整体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生态系统是生物群落与其非生物环境相互作用形成的统一系统。",
+            "example": "森林生态系统包括生物和环境。"
+          },
+          {
+            "name": "生态足迹",
+            "difficulty": 3,
+            "description": "维持人口生存所需资源和吸纳废物的面积",
+            "aliases": [
+              "生态占用"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生态足迹是维持某一人口单位生存所需生产资源和吸纳废物的土地及水域面积。",
+            "example": "开车出行比步行生态足迹大。"
+          },
+          {
+            "name": "碳足迹",
+            "difficulty": 3,
+            "description": "吸收化石燃料排放二氧化碳所需的森林面积",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹"
+            ],
+            "definition": "碳足迹是扣除海洋吸收量后吸收化石燃料燃烧等排放二氧化碳所需的森林面积。",
+            "example": "汽车尾气会增加碳足迹。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态承载力",
+            "difficulty": 3,
+            "description": "地球提供资源的能力",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹"
+            ],
+            "definition": "生态承载力代表地球为人类提供资源的能力。",
+            "example": "农业发展可提高生态承载力。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态超载",
+            "difficulty": 3,
+            "description": "生态足迹超过生态承载力的状态",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹",
+              "生态承载力"
+            ],
+            "definition": "生态超载是人类资源需求超过地球生态承载能力的状态。",
+            "example": "全球自20世纪70年代进入生态超载状态。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态赤字",
+            "difficulty": 3,
+            "description": "生态足迹超过生态承载力形成的差额状态",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹",
+              "生态承载力"
+            ],
+            "definition": "生态赤字是生态足迹总量超过生态承载力总量的状态。",
+            "example": "全球生态足迹增长导致生态赤字。"
+          },
+          {
+            "name": "全球气候变化",
+            "difficulty": 3,
+            "description": "温室气体增加引起的全球气候变化",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "全球气候变化包括温室效应加剧、全球变暖及其引发的一系列气候环境变化。",
+            "example": "全球变暖导致南极冰盖融化。"
+          },
+          {
+            "name": "水资源短缺",
+            "difficulty": 2,
+            "description": "可利用淡水不足且需求不断增加的危机",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "水资源短缺是可供人类直接利用的淡水不足以满足需求的危机。",
+            "example": "人口增长加剧水资源短缺。"
+          },
+          {
+            "name": "土地荒漠化",
+            "difficulty": 3,
+            "description": "干旱半干旱地区土地退化并可能完全荒漠化",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "土地荒漠化是人类活动导致干旱或半干旱地区土地退化甚至完全荒漠化的过程。",
+            "example": "草原过度利用可能造成荒漠化。"
+          },
+          {
+            "name": "臭氧层破坏",
+            "difficulty": 3,
+            "description": "大气臭氧含量下降并形成臭氧层空洞",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "臭氧层破坏是大气臭氧含量持续下降并使地面紫外线增强的现象。",
+            "example": "氟氯烃使用会破坏臭氧层。"
+          },
+          {
+            "name": "环境污染",
+            "difficulty": 2,
+            "description": "大气、水体和土壤受到有害物质影响",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "环境污染是人类活动造成大气、水体或土壤质量恶化的现象。",
+            "example": "工厂排放废气会造成大气污染。"
+          },
+          {
+            "name": "低碳生活",
+            "difficulty": 2,
+            "description": "少消耗能量并减少二氧化碳排放的生活方式",
+            "aliases": [],
+            "prerequisites": [
+              "碳足迹"
+            ],
+            "definition": "低碳生活是生活中尽量少消耗能量、减少二氧化碳排放并保护环境的生活方式。",
+            "example": "绿色出行属于低碳生活。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "满足当代需要而不损害后代发展需要",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹",
+              "全球性生态环境问题"
+            ],
+            "definition": "可持续发展是在不牺牲未来几代人发展需要的情况下满足当代人需要的发展方式。",
+            "example": "经济、社会和生态协调发展。"
+          },
+          {
+            "name": "生物多样性",
+            "difficulty": 3,
+            "description": "基因、物种和生态系统多样性的总称",
+            "aliases": [
+              "生物多样性"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生物多样性是生物圈中全部基因、物种及各种生态系统共同构成的多样性。",
+            "example": "红树林具有丰富的生物多样性。"
+          },
+          {
+            "name": "遗传多样性",
+            "difficulty": 3,
+            "description": "地球上所有生物遗传信息的多样性",
+            "aliases": [
+              "基因多样性"
+            ],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "遗传多样性是地球上所有生物携带的遗传信息的总和及其差异。",
+            "example": "野生稻与栽培稻基因组成不同。"
+          },
+          {
+            "name": "物种多样性",
+            "difficulty": 3,
+            "description": "自然界不同物种及其独特性的多样性",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "物种多样性是自然界中不同物种及其独特性所构成的多样性。",
+            "example": "红树林中有多种鱼类和水鸟。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态系统多样性",
+            "difficulty": 3,
+            "description": "生境、群落和生态系统组成结构功能的多样性",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性",
+              "生态系统"
+            ],
+            "definition": "生态系统多样性是地球上生境、群落和生态系统及其组成结构功能的多样化。",
+            "example": "森林、湿地和草地各具特色。"
+          },
+          {
+            "name": "直接价值",
+            "difficulty": 2,
+            "description": "生物多样性对人类的实用和非实用价值",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "直接价值是生物多样性为人类提供食物、药物、原料及旅游科研等方面的价值。",
+            "example": "黄花蒿可提取青蒿素。"
+          },
+          {
+            "name": "间接价值",
+            "difficulty": 3,
+            "description": "生物多样性调节生态系统功能的价值",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性",
+              "生态系统"
+            ],
+            "definition": "间接价值是生物多样性在调节生态系统功能和维持生态环境质量方面的价值。",
+            "example": "森林具有防风固沙作用。"
+          },
+          {
+            "name": "潜在价值",
+            "difficulty": 3,
+            "description": "目前人类尚不清楚但可能存在的价值",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "潜在价值是生物多样性可能具有但目前人类尚未充分认识的价值。",
+            "example": "某种不知名昆虫可能有未知价值。"
+          },
+          {
+            "name": "外来物种入侵",
+            "difficulty": 3,
+            "description": "外来物种进入并影响当地生态系统",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性",
+              "生态系统"
+            ],
+            "definition": "外来物种入侵是外来物种进入新环境后对当地生物多样性造成不利影响的现象。",
+            "example": "入境货物需接受外来物种检疫。"
+          },
+          {
+            "name": "就地保护",
+            "difficulty": 3,
+            "description": "在物种或生态系统原地建立保护区域",
+            "aliases": [
+              "原地保护"
+            ],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "就地保护是在被保护生态系统或物种原地建立自然保护区、国家公园等进行保护。",
+            "example": "建立长江江豚自然保护区。"
+          },
+          {
+            "name": "易地保护",
+            "difficulty": 3,
+            "description": "将保护对象迁出原地进行专门保护",
+            "aliases": [
+              "迁地保护"
+            ],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "易地保护是把保护对象从原地迁出，在异地进行专门保护。",
+            "example": "在大熊猫繁育基地保护大熊猫。"
+          },
+          {
+            "name": "生态伦理道德",
+            "difficulty": 3,
+            "description": "将道德关系扩展到整个自然界的伦理观念",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "生态伦理道德是把人与人之间的伦理道德关系扩大到人与整个自然界的关系。",
+            "example": "建设野生动物通道体现生态伦理。",
+            "section": "第2节 生物多样性及其保护"
+          },
+          {
+            "name": "人类中心论",
+            "difficulty": 3,
+            "description": "以人类作为价值主体认识和改造自然",
+            "aliases": [],
+            "prerequisites": [
+              "生态伦理道德"
+            ],
+            "definition": "人类中心论是主要依据人类利益和需要认识、评价及改造自然的思想。",
+            "example": "只考虑经济利益而忽视生态影响。",
+            "section": "第2节 生物多样性及其保护"
+          },
+          {
+            "name": "非人类中心论",
+            "difficulty": 3,
+            "description": "重视其他生物生存发展权利的思想",
+            "aliases": [],
+            "prerequisites": [
+              "生态伦理道德"
+            ],
+            "definition": "非人类中心论强调其他生物也具有生存和发展的权利。",
+            "example": "保护珍稀物种及其栖息地。",
+            "section": "第2节 生物多样性及其保护"
+          },
+          {
+            "name": "生态工程",
+            "difficulty": 4,
+            "description": "运用生态和系统原理修复或设计生态系统",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "可持续发展"
+            ],
+            "definition": "生态工程是应用生态学和系统学原理对生态系统进行设计、调控、修复或重建的系统工程。",
+            "example": "奥林匹克森林公园建设。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "自组织",
+            "difficulty": 4,
+            "description": "系统由无序自发发展为有序的过程",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "自组织是系统在没有外界信息指令作用下由无序自发发展为有序的过程。",
+            "example": "自然生态系统的形成具有自组织性。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "自生原理",
+            "difficulty": 4,
+            "description": "利用生物组分自组织和自我调节维持系统",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程",
+              "自组织"
+            ],
+            "definition": "自生原理要求合理选择和布设生物组分，使系统形成自组织、自更新和自我维持能力。",
+            "example": "湿地修复中合理搭配多种水生植物。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "循环原理",
+            "difficulty": 4,
+            "description": "促进物质迁移转化和废物再利用",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程"
+            ],
+            "definition": "循环原理要求促进系统内物质迁移与转化，使前一环节废物尽可能被后一环节利用。",
+            "example": "桑基鱼塘利用蚕沙养鱼。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "协调原理",
+            "difficulty": 4,
+            "description": "使生物与环境、生物与生物相互适应",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程"
+            ],
+            "definition": "协调原理要求生态工程中的生物与环境、生物与生物保持协调和适应。",
+            "example": "西北防护林应选择适应当地环境的树种。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "整体原理",
+            "difficulty": 4,
+            "description": "从自然、社会和经济整体优化生态工程",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程"
+            ],
+            "definition": "整体原理要求遵循自然规律并统筹自然、社会和经济系统的关系。",
+            "example": "造林同时考虑农民生活和收入。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "沼气工程",
+            "difficulty": 3,
+            "description": "利用废弃物发酵产沼气并多级利用",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程",
+              "循环原理"
+            ],
+            "definition": "沼气工程是利用人畜粪便、秸秆等废弃物厌氧发酵生产沼气并综合利用其产物的生态工程。",
+            "example": "沼液可作肥料或养鱼。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "桑基鱼塘",
+            "difficulty": 3,
+            "description": "种桑、养蚕与养鱼结合的循环农业模式",
+            "aliases": [],
+            "prerequisites": [
+              "循环原理",
+              "整体原理"
+            ],
+            "definition": "桑基鱼塘是将种桑养蚕与鱼塘养殖结合并实现物质循环利用的农业模式。",
+            "example": "桑叶养蚕，蚕沙喂鱼，塘泥培桑。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "矿区生态恢复",
+            "difficulty": 4,
+            "description": "通过表土制造和植被恢复修复矿区生态环境",
+            "aliases": [
+              "矿区生态恢复工程"
+            ],
+            "prerequisites": [
+              "生态工程",
+              "协调原理"
+            ],
+            "definition": "矿区生态恢复是通过土地整治、表土制造和植被恢复等措施修复受损矿区生态环境。",
+            "example": "废弃矿区平整土地后植树种草。",
+            "section": "第3节 生态工程"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 人类活动对生态环境的影响",
+            "page_range": [
+              91,
+              99
+            ]
+          },
+          {
+            "name": "第2节 生物多样性及其保护",
+            "page_range": [
+              99,
+              107
+            ]
+          },
+          {
+            "name": "第3节 生态工程",
+            "page_range": [
+              107,
+              126
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "生物",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第1章 种群及其动态",
+        "concepts": [
+          {
+            "name": "种群",
+            "difficulty": 1,
+            "description": "一定空间内同种生物所有个体形成的集合",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "种群是一定空间内同种生物所有个体形成的集合。",
+            "example": "长白山北部的东北豹群体"
+          },
+          {
+            "name": "种群数量特征",
+            "difficulty": 2,
+            "description": "描述种群数量及其变化趋势的特征",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "种群数量特征是反映种群数量及其变化趋势的指标。",
+            "example": "东北豹的年龄和性别组成"
+          },
+          {
+            "name": "种群密度",
+            "difficulty": 1,
+            "description": "单位面积或单位体积中的个体数",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "种群密度是种群在单位面积或单位体积中的个体数。",
+            "example": "每平方米草地中的蒲公英数"
+          },
+          {
+            "name": "样方法",
+            "difficulty": 2,
+            "description": "通过随机样方估算种群密度的方法",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度"
+            ],
+            "definition": "样方法是在种群分布范围内随机选取样方并据此估算种群密度的方法。",
+            "example": "调查草地上蒲公英的密度"
+          },
+          {
+            "name": "标记重捕法",
+            "difficulty": 2,
+            "description": "利用标记个体重捕比例估算动物数量",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度"
+            ],
+            "definition": "标记重捕法是根据重捕动物中标记个体的比例估算种群密度的方法。",
+            "example": "调查活动范围大的鼠种群",
+            "section": "第1节 种群的数量特征"
+          },
+          {
+            "name": "出生率",
+            "difficulty": 1,
+            "description": "单位时间内新产生个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "出生率是单位时间内新产生的个体数占种群个体总数的比值。",
+            "example": "某地人口一年出生率为12‰"
+          },
+          {
+            "name": "死亡率",
+            "difficulty": 1,
+            "description": "单位时间内死亡个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "死亡率是单位时间内死亡的个体数占种群个体总数的比值。",
+            "example": "某地区一年死亡人口占比"
+          },
+          {
+            "name": "迁入率",
+            "difficulty": 1,
+            "description": "单位时间内迁入个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "迁入率是单位时间内迁入个体数占种群个体总数的比值。",
+            "example": "东北豹回归保护区"
+          },
+          {
+            "name": "迁出率",
+            "difficulty": 1,
+            "description": "单位时间内迁出个体数占种群总数的比值",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "迁出率是单位时间内迁出个体数占种群个体总数的比值。",
+            "example": "森林开发导致东北豹迁出"
+          },
+          {
+            "name": "年龄结构",
+            "difficulty": 2,
+            "description": "种群中各年龄期个体数目的比例",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "年龄结构是种群中各年龄期个体数目的比例。",
+            "example": "少年人口比例下降"
+          },
+          {
+            "name": "增长型年龄结构",
+            "difficulty": 2,
+            "description": "幼年个体较多，种群数量有增长趋势",
+            "aliases": [],
+            "prerequisites": [
+              "年龄结构"
+            ],
+            "definition": "增长型年龄结构是幼年个体比例较高且种群数量具有增长趋势的结构。",
+            "example": "幼年个体多的东北豹种群"
+          },
+          {
+            "name": "稳定型年龄结构",
+            "difficulty": 2,
+            "description": "各年龄期个体比例适中，数量相对稳定",
+            "aliases": [],
+            "prerequisites": [
+              "年龄结构"
+            ],
+            "definition": "稳定型年龄结构是各年龄期个体比例适中且种群数量相对稳定的结构。",
+            "example": "各年龄期比例较均衡的种群"
+          },
+          {
+            "name": "衰退型年龄结构",
+            "difficulty": 2,
+            "description": "老年个体较多，种群数量有减少趋势",
+            "aliases": [],
+            "prerequisites": [
+              "年龄结构"
+            ],
+            "definition": "衰退型年龄结构是老年个体比例较高且种群数量具有减少趋势的结构。",
+            "example": "老年人口比例上升"
+          },
+          {
+            "name": "性别比例",
+            "difficulty": 1,
+            "description": "种群中雌雄个体数目的比例",
+            "aliases": [
+              "性比"
+            ],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "性别比例是种群中雌雄个体数目的比例。",
+            "example": "雄性害虫被性引诱剂诱杀"
+          },
+          {
+            "name": "数学模型",
+            "difficulty": 2,
+            "description": "用数学形式描述系统或其性质的模型",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "数学模型是用数学形式描述一个系统或其性质的模型。",
+            "example": "用公式表示细菌数量增长"
+          },
+          {
+            "name": "种群增长模型",
+            "difficulty": 3,
+            "description": "描述、解释和预测种群数量变化的模型",
+            "aliases": [],
+            "prerequisites": [
+              "数学模型",
+              "种群数量特征"
+            ],
+            "definition": "种群增长模型是用于描述、解释和预测种群数量变化的数学模型。",
+            "example": "建立细菌种群增长曲线",
+            "section": "第2节 种群数量的变化"
+          },
+          {
+            "name": "J形增长",
+            "difficulty": 2,
+            "description": "理想条件下种群数量快速增长的形式",
+            "aliases": [],
+            "prerequisites": [
+              "种群增长模型"
+            ],
+            "definition": "J形增长是在资源充足、无天敌等理想条件下种群数量快速增长的形式。",
+            "example": "理想培养条件下细菌增长"
+          },
+          {
+            "name": "S形增长",
+            "difficulty": 2,
+            "description": "种群增长后因资源限制趋于稳定的形式",
+            "aliases": [],
+            "prerequisites": [
+              "种群增长模型"
+            ],
+            "definition": "S形增长是种群增长一定时间后因资源和空间限制而趋于稳定的形式。",
+            "example": "培养液中大草履虫的增长"
+          },
+          {
+            "name": "环境容纳量",
+            "difficulty": 2,
+            "description": "环境所能维持的种群最大数量",
+            "aliases": [
+              "K值"
+            ],
+            "prerequisites": [
+              "S形增长"
+            ],
+            "definition": "环境容纳量是一定环境条件所能维持的种群最大数量。",
+            "example": "大草履虫的K值约为375个"
+          },
+          {
+            "name": "种群数量波动",
+            "difficulty": 2,
+            "description": "种群数量在一定时期内上下变动",
+            "aliases": [],
+            "prerequisites": [
+              "种群数量特征"
+            ],
+            "definition": "种群数量波动是种群数量随时间在一定范围内上下变动的现象。",
+            "example": "东亚飞蝗数量多年不规则波动"
+          },
+          {
+            "name": "非生物因素",
+            "difficulty": 1,
+            "description": "阳光、温度、水等非生物环境因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "非生物因素是影响种群数量变化的阳光、温度、水等环境因素。",
+            "example": "干旱使植物死亡率升高",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "生物因素",
+            "difficulty": 1,
+            "description": "种内和种间生物关系等影响因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群"
+            ],
+            "definition": "生物因素是种群内部及其他生物对种群数量产生影响的因素。",
+            "example": "天敌影响猎物数量",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "种内竞争",
+            "difficulty": 2,
+            "description": "同一种群个体间争夺资源和空间",
+            "aliases": [],
+            "prerequisites": [
+              "生物因素",
+              "种群密度"
+            ],
+            "definition": "种内竞争是同一种群个体因争夺食物、空间等资源而产生的竞争。",
+            "example": "草履虫数量增加后竞争食物"
+          },
+          {
+            "name": "捕食关系",
+            "difficulty": 2,
+            "description": "一种生物捕食另一种生物的关系",
+            "aliases": [],
+            "prerequisites": [
+              "生物因素"
+            ],
+            "definition": "捕食关系是一个种群捕食另一个种群并影响其数量的生物关系。",
+            "example": "猞猁捕食雪兔"
+          },
+          {
+            "name": "密度制约因素",
+            "difficulty": 3,
+            "description": "作用强度随种群密度变化的因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度",
+              "生物因素"
+            ],
+            "definition": "密度制约因素是作用强度与种群密度相关的环境因素。",
+            "example": "高密度种群更易受到食物短缺影响",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "非密度制约因素",
+            "difficulty": 3,
+            "description": "作用强度与种群密度无关的因素",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度",
+              "非生物因素"
+            ],
+            "definition": "非密度制约因素是作用强度与种群密度无关的环境因素。",
+            "example": "寒流导致昆虫大量死亡",
+            "section": "第3节 影响种群数量变化的因素"
+          },
+          {
+            "name": "种群数量监测",
+            "difficulty": 2,
+            "description": "通过调查获得种群数量及变化信息",
+            "aliases": [],
+            "prerequisites": [
+              "种群密度"
+            ],
+            "definition": "种群数量监测是运用调查方法获取种群数量及其变化信息的过程。",
+            "example": "红外相机监测东北豹"
+          },
+          {
+            "name": "种群数量调控",
+            "difficulty": 3,
+            "description": "依据种群规律保护或防治生物种群",
+            "aliases": [],
+            "prerequisites": [
+              "种群增长模型",
+              "密度制约因素"
+            ],
+            "definition": "种群数量调控是依据种群特征和变化规律保护或控制种群数量的实践。",
+            "example": "保护天敌防治农林害虫"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 种群的数量特征",
+            "section_key": "c0ff3ddb13",
+            "page_range": [
+              11,
+              15
+            ]
+          },
+          {
+            "name": "第2节 种群数量的变化",
+            "section_key": "bdd3c45cab",
+            "page_range": [
+              16,
+              21
+            ]
+          },
+          {
+            "name": "第3节 影响种群数量变化的因素",
+            "section_key": "d42d236b0b",
+            "page_range": [
+              22,
+              30
+            ]
+          }
+        ],
+        "chapter_key": "6d37ae4181",
+        "metadata": {
+          "volume_id": "482fdeda7e3e",
+          "file_id": "482fdeda7e3e",
+          "volume_title": "高中生物 选择性必修2",
+          "chapter_order": 1,
+          "raw_heading": "第1章 种群及其动态"
+        }
+      },
+      {
+        "name": "第2章 群落及其演替",
+        "concepts": [
+          {
+            "name": "群落",
+            "difficulty": 1,
+            "description": "一定地域内各种生物种群的集合",
+            "aliases": [
+              "生物群落"
+            ],
+            "prerequisites": [],
+            "definition": "群落是相同时间聚集在一定地域中各种生物种群的集合。",
+            "example": "稻田中的水稻、螺类和昆虫共同组成群落"
+          },
+          {
+            "name": "物种组成",
+            "difficulty": 2,
+            "description": "群落中包含的物种及其构成",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "物种组成是群落中所包含物种的构成情况。",
+            "example": "森林和草原的物种组成不同"
+          },
+          {
+            "name": "物种丰富度",
+            "difficulty": 2,
+            "description": "一个群落中的物种数目",
+            "aliases": [],
+            "prerequisites": [
+              "物种组成"
+            ],
+            "definition": "物种丰富度是一个群落中的物种数目。",
+            "example": "热带森林单位面积内物种丰富度较高"
+          },
+          {
+            "name": "占优势物种",
+            "difficulty": 2,
+            "description": "数量多且影响其他物种较大的物种",
+            "aliases": [
+              "优势物种"
+            ],
+            "prerequisites": [
+              "物种组成"
+            ],
+            "definition": "占优势物种是数量较多且对群落中其他物种影响较大的物种。",
+            "example": "草原中的羊草通常占据显著优势"
+          },
+          {
+            "name": "种间关系",
+            "difficulty": 2,
+            "description": "群落中不同物种之间的相互作用",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "种间关系是群落中不同物种之间形成的相互作用关系。",
+            "example": "森林中乔木与草本植物存在竞争"
+          },
+          {
+            "name": "原始合作",
+            "difficulty": 2,
+            "description": "双方受益但分开后仍能独立生活",
+            "aliases": [
+              "互惠"
+            ],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "原始合作是两种生物共同生活时双方受益、分开后仍能独立生活的关系。",
+            "example": "海葵与寄居蟹共同生活"
+          },
+          {
+            "name": "互利共生",
+            "difficulty": 2,
+            "description": "双方长期共同生活并彼此有利",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "互利共生是两种生物长期共同生活、相互依存且彼此有利的关系。",
+            "example": "豆科植物与根瘤菌共生"
+          },
+          {
+            "name": "种间竞争",
+            "difficulty": 2,
+            "description": "共同利用有限资源而相互排斥",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "种间竞争是两种或更多生物共同利用有限资源和空间而产生的相互排斥现象。",
+            "example": "非洲狮和斑鬣狗争夺资源"
+          },
+          {
+            "name": "捕食",
+            "difficulty": 1,
+            "description": "一种生物以另一种生物为食",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "捕食是一种生物以另一种生物为食的现象。",
+            "example": "翠鸟捕鱼"
+          },
+          {
+            "name": "寄生",
+            "difficulty": 2,
+            "description": "从宿主营养并通常危害宿主",
+            "aliases": [],
+            "prerequisites": [
+              "种间关系"
+            ],
+            "definition": "寄生是一种生物从宿主体液、组织或已消化物质中获取营养并通常危害宿主的现象。",
+            "example": "马蛔虫寄生在马体内"
+          },
+          {
+            "name": "群落空间结构",
+            "difficulty": 2,
+            "description": "种群在群落中占据空间的结构特征",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "群落空间结构是群落中各生物种群在空间上的分布结构。",
+            "example": "森林具有明显的分层现象"
+          },
+          {
+            "name": "垂直结构",
+            "difficulty": 2,
+            "description": "群落在垂直方向上的分层结构",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构"
+            ],
+            "definition": "垂直结构是群落在垂直方向上形成的分层结构。",
+            "example": "森林分为乔木层、灌木层和草本层"
+          },
+          {
+            "name": "水平结构",
+            "difficulty": 2,
+            "description": "群落在水平方向上的分布结构",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构"
+            ],
+            "definition": "水平结构是群落中种群在水平方向上的分布结构。",
+            "example": "草地上的种群常呈镶嵌分布"
+          },
+          {
+            "name": "群落季节性",
+            "difficulty": 2,
+            "description": "群落外貌和结构随季节规律变化",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构"
+            ],
+            "definition": "群落季节性是群落外貌和结构因季节变化而发生的有规律变化。",
+            "example": "候鸟冬季迁往食物充足的地区"
+          },
+          {
+            "name": "生态位",
+            "difficulty": 3,
+            "description": "物种在群落中的地位或作用",
+            "aliases": [],
+            "prerequisites": [
+              "群落",
+              "种间关系"
+            ],
+            "definition": "生态位是物种在群落中的空间位置、资源利用情况及其与其他物种关系的总和。",
+            "example": "四大家鱼在池塘中占据不同生态位"
+          },
+          {
+            "name": "荒漠生物群落",
+            "difficulty": 2,
+            "description": "极度干旱、物种少且结构简单的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "荒漠生物群落是分布于极度干旱区、植被稀疏且结构简单的群落。",
+            "example": "仙人掌和骆驼刺适应荒漠环境"
+          },
+          {
+            "name": "草原生物群落",
+            "difficulty": 2,
+            "description": "半干旱地区以草本植物为主的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "草原生物群落是主要分布于半干旱地区且以草本植物为优势的群落。",
+            "example": "耐寒旱生多年生草本植物占优势"
+          },
+          {
+            "name": "森林生物群落",
+            "difficulty": 2,
+            "description": "湿润地区结构复杂且较稳定的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "森林生物群落是分布于湿润或较湿润地区、结构复杂且相对稳定的群落。",
+            "example": "森林中有乔木、灌木、草本和藤本植物",
+            "section": "第2节 群落的主要类型"
+          },
+          {
+            "name": "湿地生物群落",
+            "difficulty": 2,
+            "description": "兼有水生和陆生生物的丰富群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "湿地生物群落是动植物物种丰富且兼有水生、陆生生物的群落。",
+            "example": "湿地中有芦苇、鱼类和鸟类",
+            "section": "第2节 群落的主要类型"
+          },
+          {
+            "name": "海洋生物群落",
+            "difficulty": 2,
+            "description": "海洋中各种生物共同组成的群落",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "海洋生物群落是海洋中浮游植物、大型藻类及动物共同组成的群落。",
+            "example": "海带、浮游植物和鱼类组成海洋群落",
+            "section": "第2节 群落的主要类型"
+          },
+          {
+            "name": "群落演替",
+            "difficulty": 2,
+            "description": "一个群落被另一个群落代替的过程",
+            "aliases": [],
+            "prerequisites": [
+              "群落"
+            ],
+            "definition": "群落演替是随着时间推移一个群落被另一个群落代替的过程。",
+            "example": "裸岩上逐渐形成森林",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "地衣阶段",
+            "difficulty": 2,
+            "description": "裸岩演替中地衣首先定居的阶段",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "地衣阶段是裸岩演替中地衣首先定居并促进土壤形成的阶段。",
+            "example": "地衣分泌有机酸加速岩石风化",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "苔藓阶段",
+            "difficulty": 2,
+            "description": "地衣开拓后苔藓逐渐扩展的阶段",
+            "aliases": [],
+            "prerequisites": [
+              "地衣阶段"
+            ],
+            "definition": "苔藓阶段是地衣开拓裸岩后苔藓生长扩展并加厚土层的阶段。",
+            "example": "苔藓生长使土壤有机物增多",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "初生演替",
+            "difficulty": 3,
+            "description": "原无植被或植被被彻底消灭处的演替",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "初生演替是在从未被植物覆盖或植被被彻底消灭的地面上发生的演替。",
+            "example": "火山岩上的群落演替",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "次生演替",
+            "difficulty": 3,
+            "description": "原有土壤基本保留处的群落演替",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "次生演替是在原有植被消失但土壤条件基本保留的地方发生的演替。",
+            "example": "弃耕农田上的群落演替",
+            "section": "第3节 群落的演替"
+          },
+          {
+            "name": "人类活动影响演替",
+            "difficulty": 3,
+            "description": "人类活动改变演替方向和速度",
+            "aliases": [],
+            "prerequisites": [
+              "群落演替"
+            ],
+            "definition": "人类活动能够使群落演替按照不同于自然演替的方向和速度进行。",
+            "example": "过度放牧可使草原演替为荒漠"
+          },
+          {
+            "name": "取样调查",
+            "difficulty": 2,
+            "description": "通过样本推测区域内物种数目的方法",
+            "aliases": [
+              "取样器取样"
+            ],
+            "prerequisites": [
+              "物种丰富度"
+            ],
+            "definition": "取样调查是采集一定样本并据此推测某区域物种数目的方法。",
+            "example": "用取样器调查土壤小动物丰富度",
+            "section": "第1节 群落的结构"
+          },
+          {
+            "name": "记名计算法",
+            "difficulty": 2,
+            "description": "直接数出样地中各个种群个体数",
+            "aliases": [],
+            "prerequisites": [
+              "取样调查"
+            ],
+            "definition": "记名计算法是在一定样地中直接数出各个种群个体数目的方法。",
+            "example": "统计样地内蚯蚓的个体数",
+            "section": "第1节 群落的结构"
+          },
+          {
+            "name": "目测估计法",
+            "difficulty": 2,
+            "description": "按多度等级估计种群数量",
+            "aliases": [],
+            "prerequisites": [
+              "取样调查"
+            ],
+            "definition": "目测估计法是按预先确定的多度等级估计单位面积内种群数量的方法。",
+            "example": "将鼠妇数量评为“较多”",
+            "section": "第1节 群落的结构"
+          },
+          {
+            "name": "立体农业",
+            "difficulty": 3,
+            "description": "利用空间结构和季节性进行复合生产",
+            "aliases": [],
+            "prerequisites": [
+              "群落空间结构",
+              "群落季节性"
+            ],
+            "definition": "立体农业是充分利用群落空间结构和季节性开展立体种养的生产模式。",
+            "example": "稻—萍—鱼立体种养"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 群落的结构",
+            "section_key": "c919b061af",
+            "page_range": [
+              31,
+              41
+            ]
+          },
+          {
+            "name": "第2节 群落的主要类型",
+            "section_key": "a969785a42",
+            "page_range": [
+              42,
+              47
+            ]
+          },
+          {
+            "name": "第3节 群落的演替",
+            "section_key": "8f9bb9b923",
+            "page_range": [
+              47,
+              56
+            ]
+          }
+        ],
+        "chapter_key": "1bbf0db434",
+        "metadata": {
+          "volume_id": "482fdeda7e3e",
+          "file_id": "482fdeda7e3e",
+          "volume_title": "高中生物 选择性必修2",
+          "chapter_order": 2,
+          "raw_heading": "第2章 群落及其演替"
+        }
+      },
+      {
+        "name": "第3章 生态系统及其稳定性",
+        "concepts": [
+          {
+            "name": "生物群落",
+            "difficulty": 2,
+            "description": "一定区域内所有生物组成的集合。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生物群落是一定区域内所有生物种群的集合。",
+            "example": "大豆田中的大豆、杂草、昆虫和微生物。"
+          },
+          {
+            "name": "非生物环境",
+            "difficulty": 2,
+            "description": "生态系统中生物以外的物质和能量环境。",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "非生物环境是生态系统中光、热、水、空气和无机盐等因素的总和。",
+            "example": "池塘中的水、阳光和无机盐。"
+          },
+          {
+            "name": "生态系统",
+            "difficulty": 2,
+            "description": "生物群落与非生物环境相互作用形成的整体。",
+            "aliases": [
+              "ecosystem"
+            ],
+            "prerequisites": [
+              "生物群落",
+              "非生物环境"
+            ],
+            "definition": "生态系统是在一定空间内由生物群落与非生物环境相互作用形成的统一整体。",
+            "example": "一片森林、一个湖泊或一块农田。"
+          },
+          {
+            "name": "生物圈",
+            "difficulty": 2,
+            "description": "地球上最大的生态系统。",
+            "aliases": [
+              "biosphere"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生物圈是地球上全部生物及其非生物环境的总和。",
+            "example": "地球上所有生态系统共同构成生物圈。"
+          },
+          {
+            "name": "生产者",
+            "difficulty": 2,
+            "description": "能制造有机物并固定太阳能的自养生物。",
+            "aliases": [
+              "producer"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生产者是能通过光合作用等制造有机物的自养生物。",
+            "example": "池塘中的水草和栅藻。"
+          },
+          {
+            "name": "消费者",
+            "difficulty": 2,
+            "description": "通过摄食其他生物获取物质和能量的生物。",
+            "aliases": [
+              "consumer"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "消费者是不能自己制造有机物、主要通过摄食获取物质和能量的生物。",
+            "example": "草鱼、青鱼和乌鳢。"
+          },
+          {
+            "name": "分解者",
+            "difficulty": 2,
+            "description": "将遗体和排遗物中的有机物分解为无机物。",
+            "aliases": [
+              "decomposer"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "分解者是能把动植物遗体残骸和排遗物中的有机物分解成无机物的生物。",
+            "example": "土壤中的细菌和真菌。"
+          },
+          {
+            "name": "食物链",
+            "difficulty": 2,
+            "description": "生态系统中生物之间的摄食关系链。",
+            "aliases": [
+              "food chain"
+            ],
+            "prerequisites": [
+              "生产者",
+              "消费者"
+            ],
+            "definition": "食物链是生态系统中各生物之间由于食物关系形成的一种联系。",
+            "example": "玉米→蝗虫→蛙→蛇→鹰。"
+          },
+          {
+            "name": "食物网",
+            "difficulty": 3,
+            "description": "许多食物链彼此交错形成的营养关系。",
+            "aliases": [
+              "food web"
+            ],
+            "prerequisites": [
+              "食物链"
+            ],
+            "definition": "食物网是许多食物链彼此相互交错连接形成的复杂营养关系。",
+            "example": "草原中植物、昆虫、蛙、蛇和鹰的多重食物关系。"
+          },
+          {
+            "name": "营养级",
+            "difficulty": 3,
+            "description": "生物在食物链中所处的营养层次。",
+            "aliases": [],
+            "prerequisites": [
+              "食物链"
+            ],
+            "definition": "营养级是生物在食物链中所处的层次，生产者属于第一营养级。",
+            "example": "蝗虫属于第二营养级，蛙属于第三营养级。"
+          },
+          {
+            "name": "生态系统结构",
+            "difficulty": 3,
+            "description": "生态系统组成成分及其相互关系。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "生产者",
+              "消费者",
+              "分解者"
+            ],
+            "definition": "生态系统结构包括非生物的物质和能量、生产者、消费者和分解者及其联系。",
+            "example": "池塘中水草、鱼类、细菌和水体共同构成结构。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "能量流动",
+            "difficulty": 3,
+            "description": "能量在生态系统中的输入、传递、转化和散失。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "食物链"
+            ],
+            "definition": "能量流动是生态系统中能量的输入、传递、转化和散失过程。",
+            "example": "太阳能经玉米、蝗虫和蛙逐级传递。"
+          },
+          {
+            "name": "能量传递效率",
+            "difficulty": 3,
+            "description": "相邻两个营养级间能量传递的比例。",
+            "aliases": [],
+            "prerequisites": [
+              "能量流动",
+              "营养级"
+            ],
+            "definition": "能量传递效率是输入某一营养级的能量中流入下一营养级的比例。",
+            "example": "相邻营养级间通常只有10%～20%的能量传递。"
+          },
+          {
+            "name": "能量金字塔",
+            "difficulty": 3,
+            "description": "表示各营养级能量关系的金字塔图形。",
+            "aliases": [],
+            "prerequisites": [
+              "能量流动",
+              "营养级"
+            ],
+            "definition": "能量金字塔是按营养级排列各级单位时间能量数值形成的图形。",
+            "example": "湖泊生态系统的能量金字塔通常上窄下宽。"
+          },
+          {
+            "name": "生态金字塔",
+            "difficulty": 3,
+            "description": "能量、生物量和数量金字塔的统称。",
+            "aliases": [],
+            "prerequisites": [
+              "营养级"
+            ],
+            "definition": "生态金字塔是表示各营养级能量、生物量或生物个体数量关系的图形。",
+            "example": "能量金字塔、生物量金字塔和数量金字塔。",
+            "section": "第2节 生态系统的能量流动"
+          },
+          {
+            "name": "物质循环",
+            "difficulty": 3,
+            "description": "元素在非生物环境与生物群落间循环。",
+            "aliases": [
+              "matter cycle"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "物质循环是组成生物体的元素在非生物环境与生物群落之间不断循环的过程。",
+            "example": "碳、氮、磷等元素在生态系统中循环利用。"
+          },
+          {
+            "name": "碳循环",
+            "difficulty": 3,
+            "description": "碳元素在生物群落和非生物环境间的循环。",
+            "aliases": [],
+            "prerequisites": [
+              "物质循环"
+            ],
+            "definition": "碳循环是碳元素主要以二氧化碳形式在生物群落与非生物环境之间循环。",
+            "example": "植物吸收二氧化碳进行光合作用，生物呼吸释放二氧化碳。",
+            "section": "第3节 生态系统的物质循环"
+          },
+          {
+            "name": "生物富集",
+            "difficulty": 3,
+            "description": "生物积蓄难降解物质使体内浓度超过环境浓度。",
+            "aliases": [
+              "bio-concentration"
+            ],
+            "prerequisites": [
+              "物质循环",
+              "食物链"
+            ],
+            "definition": "生物富集是生物从环境吸收并积蓄某些物质，使其体内浓度超过环境浓度的现象。",
+            "example": "铅在生物体内沿食物链不断积累。",
+            "section": "第3节 生态系统的物质循环"
+          },
+          {
+            "name": "信息传递",
+            "difficulty": 3,
+            "description": "生态系统中生物种群间及内部的信息产生与交换。",
+            "aliases": [
+              "information flow"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "信息传递是生态系统中生物种群之间及其内部产生和交换信息的过程。",
+            "example": "蜜蜂通过舞蹈向同伴传递蜜源位置。"
+          },
+          {
+            "name": "物理信息",
+            "difficulty": 2,
+            "description": "通过光、声、温度等物理过程传递的信息。",
+            "aliases": [
+              "physical information"
+            ],
+            "prerequisites": [
+              "信息传递"
+            ],
+            "definition": "物理信息是自然界中的光、声、温度、湿度和磁场等通过物理过程传递的信息。",
+            "example": "蜘蛛网振动频率传递猎物到来的信息。",
+            "section": "第4节 生态系统的信息传递"
+          },
+          {
+            "name": "化学信息",
+            "difficulty": 2,
+            "description": "由生物产生的化学物质传递的信息。",
+            "aliases": [
+              "chemical information"
+            ],
+            "prerequisites": [
+              "信息传递"
+            ],
+            "definition": "化学信息是生物产生的可传递信息的化学物质。",
+            "example": "昆虫释放性外激素吸引同种个体。",
+            "section": "第4节 生态系统的信息传递"
+          },
+          {
+            "name": "行为信息",
+            "difficulty": 2,
+            "description": "动物特殊动作或行为传递的信息。",
+            "aliases": [
+              "behavior information"
+            ],
+            "prerequisites": [
+              "信息传递"
+            ],
+            "definition": "行为信息是生物的特殊行为或动作向同种或异种生物传递的信息。",
+            "example": "孔雀开屏进行求偶。",
+            "section": "第4节 生态系统的信息传递"
+          },
+          {
+            "name": "生态平衡",
+            "difficulty": 3,
+            "description": "生态系统结构和功能处于相对稳定的动态状态。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "自我调节能力"
+            ],
+            "definition": "生态平衡是生态系统结构和功能处于相对稳定的动态平衡状态。",
+            "example": "森林中生产、消费和分解过程保持协调。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "负反馈",
+            "difficulty": 4,
+            "description": "系统效果反过来限制自身变化的调节机制。",
+            "aliases": [
+              "负反馈调节"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "负反馈是系统工作的效果反过来作为信息使该系统工作的效果减弱或受到限制的机制。",
+            "example": "兔数量增加导致食物竞争和捕食增强，数量随后下降。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "自我调节能力",
+            "difficulty": 3,
+            "description": "生态系统维持或恢复自身结构和功能平衡的能力。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "负反馈"
+            ],
+            "definition": "自我调节能力是生态系统维持或恢复自身结构与功能相对平衡状态的能力。",
+            "example": "轻度污染的河流可通过自身净化逐步恢复。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "生态系统稳定性",
+            "difficulty": 3,
+            "description": "生态系统维持生态平衡的能力。",
+            "aliases": [
+              "stability of ecosystem"
+            ],
+            "prerequisites": [
+              "生态平衡",
+              "自我调节能力"
+            ],
+            "definition": "生态系统稳定性是生态系统维持生态平衡的能力。",
+            "example": "食物网复杂的热带雨林稳定性较高。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "抵抗力稳定性",
+            "difficulty": 3,
+            "description": "生态系统抵抗干扰并保持原状的能力。",
+            "aliases": [
+              "resistance stability"
+            ],
+            "prerequisites": [
+              "生态系统稳定性"
+            ],
+            "definition": "抵抗力稳定性是生态系统抵抗外界干扰并使结构与功能保持原状的能力。",
+            "example": "森林干旱时扩展根系以维持正常功能。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "恢复力稳定性",
+            "difficulty": 3,
+            "description": "生态系统受破坏后恢复到原状的能力。",
+            "aliases": [
+              "resilience stability"
+            ],
+            "prerequisites": [
+              "生态系统稳定性"
+            ],
+            "definition": "恢复力稳定性是生态系统受到干扰破坏后恢复到原来状态的能力。",
+            "example": "森林局部火灾后逐步恢复原状。",
+            "section": "第5节 生态系统的稳定性"
+          },
+          {
+            "name": "人工微生态系统",
+            "difficulty": 3,
+            "description": "在有限空间内按生态系统原理构建的系统。",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "生态系统结构"
+            ],
+            "definition": "人工微生态系统是在有限空间内组织生态系统基本成分构建的人工系统。",
+            "example": "由水、土壤、植物和小动物组成的生态缸。",
+            "section": "第5节 生态系统的稳定性"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 生态系统的结构",
+            "section_key": "7ea6ec2582",
+            "page_range": [
+              57,
+              63
+            ]
+          },
+          {
+            "name": "第2节 生态系统的能量流动",
+            "section_key": "0916361235",
+            "page_range": [
+              63,
+              69
+            ]
+          },
+          {
+            "name": "第3节 生态系统的物质循环",
+            "section_key": "2563f4907a",
+            "page_range": [
+              70,
+              77
+            ]
+          },
+          {
+            "name": "第4节 生态系统的信息传递",
+            "section_key": "58186c87af",
+            "page_range": [
+              77,
+              81
+            ]
+          },
+          {
+            "name": "第5节 生态系统的稳定性",
+            "section_key": "5d0978eaa7",
+            "page_range": [
+              82,
+              90
+            ]
+          }
+        ],
+        "chapter_key": "747f9f6ff3",
+        "metadata": {
+          "volume_id": "482fdeda7e3e",
+          "file_id": "482fdeda7e3e",
+          "volume_title": "高中生物 选择性必修2",
+          "chapter_order": 3,
+          "raw_heading": "第3章 生态系统及其稳定性"
+        }
+      },
+      {
+        "name": "第4章 人与环境",
+        "concepts": [
+          {
+            "name": "生态系统",
+            "difficulty": 2,
+            "description": "生物与环境相互作用形成的统一整体",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "生态系统是生物群落与其非生物环境相互作用形成的统一系统。",
+            "example": "森林生态系统包括生物和环境。"
+          },
+          {
+            "name": "生态足迹",
+            "difficulty": 3,
+            "description": "维持人口生存所需资源和吸纳废物的面积",
+            "aliases": [
+              "生态占用"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生态足迹是维持某一人口单位生存所需生产资源和吸纳废物的土地及水域面积。",
+            "example": "开车出行比步行生态足迹大。"
+          },
+          {
+            "name": "碳足迹",
+            "difficulty": 3,
+            "description": "吸收化石燃料排放二氧化碳所需的森林面积",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹"
+            ],
+            "definition": "碳足迹是扣除海洋吸收量后吸收化石燃料燃烧等排放二氧化碳所需的森林面积。",
+            "example": "汽车尾气会增加碳足迹。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态承载力",
+            "difficulty": 3,
+            "description": "地球提供资源的能力",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹"
+            ],
+            "definition": "生态承载力代表地球为人类提供资源的能力。",
+            "example": "农业发展可提高生态承载力。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态超载",
+            "difficulty": 3,
+            "description": "生态足迹超过生态承载力的状态",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹",
+              "生态承载力"
+            ],
+            "definition": "生态超载是人类资源需求超过地球生态承载能力的状态。",
+            "example": "全球自20世纪70年代进入生态超载状态。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态赤字",
+            "difficulty": 3,
+            "description": "生态足迹超过生态承载力形成的差额状态",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹",
+              "生态承载力"
+            ],
+            "definition": "生态赤字是生态足迹总量超过生态承载力总量的状态。",
+            "example": "全球生态足迹增长导致生态赤字。"
+          },
+          {
+            "name": "全球气候变化",
+            "difficulty": 3,
+            "description": "温室气体增加引起的全球气候变化",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "全球气候变化包括温室效应加剧、全球变暖及其引发的一系列气候环境变化。",
+            "example": "全球变暖导致南极冰盖融化。"
+          },
+          {
+            "name": "水资源短缺",
+            "difficulty": 2,
+            "description": "可利用淡水不足且需求不断增加的危机",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "水资源短缺是可供人类直接利用的淡水不足以满足需求的危机。",
+            "example": "人口增长加剧水资源短缺。"
+          },
+          {
+            "name": "土地荒漠化",
+            "difficulty": 3,
+            "description": "干旱半干旱地区土地退化并可能完全荒漠化",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "土地荒漠化是人类活动导致干旱或半干旱地区土地退化甚至完全荒漠化的过程。",
+            "example": "草原过度利用可能造成荒漠化。"
+          },
+          {
+            "name": "臭氧层破坏",
+            "difficulty": 3,
+            "description": "大气臭氧含量下降并形成臭氧层空洞",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "臭氧层破坏是大气臭氧含量持续下降并使地面紫外线增强的现象。",
+            "example": "氟氯烃使用会破坏臭氧层。"
+          },
+          {
+            "name": "环境污染",
+            "difficulty": 2,
+            "description": "大气、水体和土壤受到有害物质影响",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "环境污染是人类活动造成大气、水体或土壤质量恶化的现象。",
+            "example": "工厂排放废气会造成大气污染。"
+          },
+          {
+            "name": "低碳生活",
+            "difficulty": 2,
+            "description": "少消耗能量并减少二氧化碳排放的生活方式",
+            "aliases": [],
+            "prerequisites": [
+              "碳足迹"
+            ],
+            "definition": "低碳生活是生活中尽量少消耗能量、减少二氧化碳排放并保护环境的生活方式。",
+            "example": "绿色出行属于低碳生活。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "满足当代需要而不损害后代发展需要",
+            "aliases": [],
+            "prerequisites": [
+              "生态足迹",
+              "全球性生态环境问题"
+            ],
+            "definition": "可持续发展是在不牺牲未来几代人发展需要的情况下满足当代人需要的发展方式。",
+            "example": "经济、社会和生态协调发展。"
+          },
+          {
+            "name": "生物多样性",
+            "difficulty": 3,
+            "description": "基因、物种和生态系统多样性的总称",
+            "aliases": [
+              "生物多样性"
+            ],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "生物多样性是生物圈中全部基因、物种及各种生态系统共同构成的多样性。",
+            "example": "红树林具有丰富的生物多样性。"
+          },
+          {
+            "name": "遗传多样性",
+            "difficulty": 3,
+            "description": "地球上所有生物遗传信息的多样性",
+            "aliases": [
+              "基因多样性"
+            ],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "遗传多样性是地球上所有生物携带的遗传信息的总和及其差异。",
+            "example": "野生稻与栽培稻基因组成不同。"
+          },
+          {
+            "name": "物种多样性",
+            "difficulty": 3,
+            "description": "自然界不同物种及其独特性的多样性",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "物种多样性是自然界中不同物种及其独特性所构成的多样性。",
+            "example": "红树林中有多种鱼类和水鸟。",
+            "section": "第1节 人类活动对生态环境的影响"
+          },
+          {
+            "name": "生态系统多样性",
+            "difficulty": 3,
+            "description": "生境、群落和生态系统组成结构功能的多样性",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性",
+              "生态系统"
+            ],
+            "definition": "生态系统多样性是地球上生境、群落和生态系统及其组成结构功能的多样化。",
+            "example": "森林、湿地和草地各具特色。"
+          },
+          {
+            "name": "直接价值",
+            "difficulty": 2,
+            "description": "生物多样性对人类的实用和非实用价值",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "直接价值是生物多样性为人类提供食物、药物、原料及旅游科研等方面的价值。",
+            "example": "黄花蒿可提取青蒿素。"
+          },
+          {
+            "name": "间接价值",
+            "difficulty": 3,
+            "description": "生物多样性调节生态系统功能的价值",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性",
+              "生态系统"
+            ],
+            "definition": "间接价值是生物多样性在调节生态系统功能和维持生态环境质量方面的价值。",
+            "example": "森林具有防风固沙作用。"
+          },
+          {
+            "name": "潜在价值",
+            "difficulty": 3,
+            "description": "目前人类尚不清楚但可能存在的价值",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "潜在价值是生物多样性可能具有但目前人类尚未充分认识的价值。",
+            "example": "某种不知名昆虫可能有未知价值。"
+          },
+          {
+            "name": "外来物种入侵",
+            "difficulty": 3,
+            "description": "外来物种进入并影响当地生态系统",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性",
+              "生态系统"
+            ],
+            "definition": "外来物种入侵是外来物种进入新环境后对当地生物多样性造成不利影响的现象。",
+            "example": "入境货物需接受外来物种检疫。"
+          },
+          {
+            "name": "就地保护",
+            "difficulty": 3,
+            "description": "在物种或生态系统原地建立保护区域",
+            "aliases": [
+              "原地保护"
+            ],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "就地保护是在被保护生态系统或物种原地建立自然保护区、国家公园等进行保护。",
+            "example": "建立长江江豚自然保护区。"
+          },
+          {
+            "name": "易地保护",
+            "difficulty": 3,
+            "description": "将保护对象迁出原地进行专门保护",
+            "aliases": [
+              "迁地保护"
+            ],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "易地保护是把保护对象从原地迁出，在异地进行专门保护。",
+            "example": "在大熊猫繁育基地保护大熊猫。"
+          },
+          {
+            "name": "生态伦理道德",
+            "difficulty": 3,
+            "description": "将道德关系扩展到整个自然界的伦理观念",
+            "aliases": [],
+            "prerequisites": [
+              "生物多样性"
+            ],
+            "definition": "生态伦理道德是把人与人之间的伦理道德关系扩大到人与整个自然界的关系。",
+            "example": "建设野生动物通道体现生态伦理。",
+            "section": "第2节 生物多样性及其保护"
+          },
+          {
+            "name": "人类中心论",
+            "difficulty": 3,
+            "description": "以人类作为价值主体认识和改造自然",
+            "aliases": [],
+            "prerequisites": [
+              "生态伦理道德"
+            ],
+            "definition": "人类中心论是主要依据人类利益和需要认识、评价及改造自然的思想。",
+            "example": "只考虑经济利益而忽视生态影响。",
+            "section": "第2节 生物多样性及其保护"
+          },
+          {
+            "name": "非人类中心论",
+            "difficulty": 3,
+            "description": "重视其他生物生存发展权利的思想",
+            "aliases": [],
+            "prerequisites": [
+              "生态伦理道德"
+            ],
+            "definition": "非人类中心论强调其他生物也具有生存和发展的权利。",
+            "example": "保护珍稀物种及其栖息地。",
+            "section": "第2节 生物多样性及其保护"
+          },
+          {
+            "name": "生态工程",
+            "difficulty": 4,
+            "description": "运用生态和系统原理修复或设计生态系统",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统",
+              "可持续发展"
+            ],
+            "definition": "生态工程是应用生态学和系统学原理对生态系统进行设计、调控、修复或重建的系统工程。",
+            "example": "奥林匹克森林公园建设。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "自组织",
+            "difficulty": 4,
+            "description": "系统由无序自发发展为有序的过程",
+            "aliases": [],
+            "prerequisites": [
+              "生态系统"
+            ],
+            "definition": "自组织是系统在没有外界信息指令作用下由无序自发发展为有序的过程。",
+            "example": "自然生态系统的形成具有自组织性。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "自生原理",
+            "difficulty": 4,
+            "description": "利用生物组分自组织和自我调节维持系统",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程",
+              "自组织"
+            ],
+            "definition": "自生原理要求合理选择和布设生物组分，使系统形成自组织、自更新和自我维持能力。",
+            "example": "湿地修复中合理搭配多种水生植物。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "循环原理",
+            "difficulty": 4,
+            "description": "促进物质迁移转化和废物再利用",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程"
+            ],
+            "definition": "循环原理要求促进系统内物质迁移与转化，使前一环节废物尽可能被后一环节利用。",
+            "example": "桑基鱼塘利用蚕沙养鱼。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "协调原理",
+            "difficulty": 4,
+            "description": "使生物与环境、生物与生物相互适应",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程"
+            ],
+            "definition": "协调原理要求生态工程中的生物与环境、生物与生物保持协调和适应。",
+            "example": "西北防护林应选择适应当地环境的树种。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "整体原理",
+            "difficulty": 4,
+            "description": "从自然、社会和经济整体优化生态工程",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程"
+            ],
+            "definition": "整体原理要求遵循自然规律并统筹自然、社会和经济系统的关系。",
+            "example": "造林同时考虑农民生活和收入。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "沼气工程",
+            "difficulty": 3,
+            "description": "利用废弃物发酵产沼气并多级利用",
+            "aliases": [],
+            "prerequisites": [
+              "生态工程",
+              "循环原理"
+            ],
+            "definition": "沼气工程是利用人畜粪便、秸秆等废弃物厌氧发酵生产沼气并综合利用其产物的生态工程。",
+            "example": "沼液可作肥料或养鱼。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "桑基鱼塘",
+            "difficulty": 3,
+            "description": "种桑、养蚕与养鱼结合的循环农业模式",
+            "aliases": [],
+            "prerequisites": [
+              "循环原理",
+              "整体原理"
+            ],
+            "definition": "桑基鱼塘是将种桑养蚕与鱼塘养殖结合并实现物质循环利用的农业模式。",
+            "example": "桑叶养蚕，蚕沙喂鱼，塘泥培桑。",
+            "section": "第3节 生态工程"
+          },
+          {
+            "name": "矿区生态恢复",
+            "difficulty": 4,
+            "description": "通过表土制造和植被恢复修复矿区生态环境",
+            "aliases": [
+              "矿区生态恢复工程"
+            ],
+            "prerequisites": [
+              "生态工程",
+              "协调原理"
+            ],
+            "definition": "矿区生态恢复是通过土地整治、表土制造和植被恢复等措施修复受损矿区生态环境。",
+            "example": "废弃矿区平整土地后植树种草。",
+            "section": "第3节 生态工程"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第1节 人类活动对生态环境的影响",
+            "section_key": "9f41554cc2",
+            "page_range": [
+              91,
+              99
+            ]
+          },
+          {
+            "name": "第2节 生物多样性及其保护",
+            "section_key": "10981e9cf8",
+            "page_range": [
+              99,
+              107
+            ]
+          },
+          {
+            "name": "第3节 生态工程",
+            "section_key": "4e428896bf",
+            "page_range": [
+              107,
+              126
+            ]
+          }
+        ],
+        "chapter_key": "8d74583072",
+        "metadata": {
+          "volume_id": "482fdeda7e3e",
+          "file_id": "482fdeda7e3e",
+          "volume_title": "高中生物 选择性必修2",
+          "chapter_order": 4,
+          "raw_heading": "第4章 人与环境"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "c0ff3ddb13": [
+        11,
+        15
+      ],
+      "第1节 种群的数量特征": [
+        11,
+        15
+      ],
+      "bdd3c45cab": [
+        16,
+        21
+      ],
+      "第2节 种群数量的变化": [
+        16,
+        21
+      ],
+      "d42d236b0b": [
+        22,
+        30
+      ],
+      "第3节 影响种群数量变化的因素": [
+        22,
+        30
+      ],
+      "c919b061af": [
+        31,
+        41
+      ],
+      "第1节 群落的结构": [
+        31,
+        41
+      ],
+      "a969785a42": [
+        42,
+        47
+      ],
+      "第2节 群落的主要类型": [
+        42,
+        47
+      ],
+      "8f9bb9b923": [
+        47,
+        56
+      ],
+      "第3节 群落的演替": [
+        47,
+        56
+      ],
+      "7ea6ec2582": [
+        57,
+        63
+      ],
+      "第1节 生态系统的结构": [
+        57,
+        63
+      ],
+      "0916361235": [
+        63,
+        69
+      ],
+      "第2节 生态系统的能量流动": [
+        63,
+        69
+      ],
+      "2563f4907a": [
+        70,
+        77
+      ],
+      "第3节 生态系统的物质循环": [
+        70,
+        77
+      ],
+      "58186c87af": [
+        77,
+        81
+      ],
+      "第4节 生态系统的信息传递": [
+        77,
+        81
+      ],
+      "5d0978eaa7": [
+        82,
+        90
+      ],
+      "第5节 生态系统的稳定性": [
+        82,
+        90
+      ],
+      "9f41554cc2": [
+        91,
+        99
+      ],
+      "第1节 人类活动对生态环境的影响": [
+        91,
+        99
+      ],
+      "10981e9cf8": [
+        99,
+        107
+      ],
+      "第2节 生物多样性及其保护": [
+        99,
+        107
+      ],
+      "4e428896bf": [
+        107,
+        126
+      ],
+      "第3节 生态工程": [
+        107,
+        126
+      ]
+    }
+  }
+}

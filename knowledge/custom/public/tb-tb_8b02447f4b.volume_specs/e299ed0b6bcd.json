@@ -1,0 +1,3845 @@
+{
+  "file_id": "e299ed0b6bcd",
+  "text_sha256": "475fd2290a505a7c1a24ab1b34d3619871ea8835e03be5c22319620762ed6ea5",
+  "prompt_version": "knowledge_graph_build@2.1.0+textbook_toc_extract@2.2.0+textbook_skeleton@2.0.0+textbook_chapter_concepts@2.3.0+textbook_graph_design@1.1.0",
+  "schema_version": "3",
+  "chapter_locator_version": "5",
+  "chapter_excerpt_version": "2",
+  "raw_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 人口",
+        "concepts": [
+          {
+            "name": "世界人口分布特点",
+            "difficulty": 2,
+            "description": "世界人口分布不均，集中于北半球中低纬地区",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世界人口分布具有明显的不均衡性，主要集中在北半球、沿海和低平地区。",
+            "example": "近90%人口居住在北半球。"
+          },
+          {
+            "name": "四大人口稠密区",
+            "difficulty": 2,
+            "description": "世界人口最集中的四个区域",
+            "aliases": [],
+            "prerequisites": [
+              "世界人口分布特点"
+            ],
+            "definition": "东亚、南亚、欧洲西部和北美东部是世界四大人口稠密区。",
+            "example": "东亚包括我国东部、朝鲜半岛和日本中南部。",
+            "section": "第一节 人口分布"
+          },
+          {
+            "name": "自然因素",
+            "difficulty": 2,
+            "description": "气候、地形、水源等影响人口分布的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然因素是自然环境中制约人口分布的条件，主要包括气候、地形和水源等。",
+            "example": "干旱沙漠地区人口稀少。"
+          },
+          {
+            "name": "人文因素",
+            "difficulty": 2,
+            "description": "社会经济、历史等影响人口分布的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人文因素是社会经济条件和发展历史等对人口分布产生影响的因素。",
+            "example": "经济发达地区通常人口稠密。"
+          },
+          {
+            "name": "人口分布影响因素",
+            "difficulty": 3,
+            "description": "自然和人文因素共同制约人口分布",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素",
+              "人文因素"
+            ],
+            "definition": "人口分布是自然因素与人文因素综合作用的结果。",
+            "example": "芬兰人口集中在气候较温和的南部。"
+          },
+          {
+            "name": "人口迁移",
+            "difficulty": 2,
+            "description": "居住地发生长期或永久改变的人口移动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人口迁移是涉及人口居住地长期或永久改变的人口移动。",
+            "example": "农村人口迁往城市定居属于人口迁移。"
+          },
+          {
+            "name": "人口机械增长",
+            "difficulty": 3,
+            "description": "人口迁移造成的区域人口数量变化",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "人口机械增长是人口迁移导致的某一区域人口数量变化。",
+            "example": "人口净迁入使区域人口机械增长为正。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "人口机械增长率",
+            "difficulty": 4,
+            "description": "净迁入人口占总人口的比例",
+            "aliases": [
+              "人口净迁移率"
+            ],
+            "prerequisites": [
+              "人口机械增长"
+            ],
+            "definition": "人口机械增长率是一定时期内净迁入人口占总人口的比例。",
+            "example": "迁入多于迁出时，机械增长率为正。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "推拉理论",
+            "difficulty": 3,
+            "description": "用迁出地推力和迁入地拉力解释迁移",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "推拉理论认为人口迁移动力由迁出地推力与迁入地拉力共同构成。",
+            "example": "贫困是推力，就业机会是拉力。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "迁移障碍",
+            "difficulty": 2,
+            "description": "阻碍人口迁移实现的距离、语言等因素",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "迁移障碍是人口迁移过程中由距离、语言等造成的阻碍因素。",
+            "example": "迁入地与迁出地语言不同可能形成障碍。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "国际人口迁移",
+            "difficulty": 3,
+            "description": "跨越国界的人口迁移",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "国际人口迁移是跨越国家边界的人口迁移。",
+            "example": "墨西哥大量人口移民美国。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "国内人口迁移",
+            "difficulty": 3,
+            "description": "一国境内不同地区之间的人口迁移",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "国内人口迁移是在一个国家内部不同地区之间发生的人口迁移。",
+            "example": "我国农村人口向沿海城镇迁移。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "区域资源环境承载力",
+            "difficulty": 4,
+            "description": "资源环境条件所能承载的人口数量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "区域资源环境承载力是区域在合理利用资源和保护生态环境前提下所能承载的人口数量。",
+            "example": "西北地区常以水资源估算承载力。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "短板效应",
+            "difficulty": 3,
+            "description": "区域承载力受最短缺资源制约",
+            "aliases": [],
+            "prerequisites": [
+              "区域资源环境承载力"
+            ],
+            "definition": "短板效应指区域资源环境承载力由最薄弱或最短缺的资源条件决定。",
+            "example": "水资源短缺限制区域人口承载量。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口合理容量",
+            "difficulty": 4,
+            "description": "保障生活质量且适宜的人口数量",
+            "aliases": [],
+            "prerequisites": [
+              "区域资源环境承载力"
+            ],
+            "definition": "人口合理容量是保障健康生活并不妨碍未来生活质量的最适宜人口数量。",
+            "example": "人口合理容量小于资源环境承载力。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口红利",
+            "difficulty": 3,
+            "description": "劳动力丰富且抚养负担较轻的有利时期",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人口红利是劳动力资源相对丰富、抚养负担较轻并有利于经济增长的时期。",
+            "example": "计划生育政策维持了我国较长人口红利期。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口老龄化",
+            "difficulty": 3,
+            "description": "老年人口比例达到规定标准的社会状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人口老龄化是一个地区老年人口比例达到规定标准并进入老龄化社会的状态。",
+            "example": "65岁及以上人口占比达到7%即进入老龄化社会。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口政策",
+            "difficulty": 2,
+            "description": "国家依据人口形势制定的调控措施",
+            "aliases": [],
+            "prerequisites": [
+              "人口合理容量"
+            ],
+            "definition": "人口政策是国家根据人口与资源、环境、经济、社会形势制定的调控措施。",
+            "example": "我国实施一对夫妻可生育三个子女政策。",
+            "section": "第三节 人口容量"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 人口分布",
+            "page_range": [
+              7,
+              13
+            ]
+          },
+          {
+            "name": "第二节 人口迁移",
+            "page_range": [
+              13,
+              21
+            ]
+          },
+          {
+            "name": "第三节 人口容量",
+            "page_range": [
+              21,
+              26
+            ]
+          },
+          {
+            "name": "问题研究　如何看待农民工现象",
+            "page_range": [
+              26,
+              27
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第二章 乡村和城镇",
+        "concepts": [
+          {
+            "name": "乡村土地利用",
+            "difficulty": 1,
+            "description": "乡村以农业用地和居住为主，农业用地多分布在村落周围",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "乡村土地利用是以农业用地和居住用地为主的土地利用方式。",
+            "example": "川西平原田地紧密围绕村落住宅分布",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "农业用地",
+            "difficulty": 1,
+            "description": "依据农业生产特点划分的耕地、林地、草地和水域等用地",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "农业用地是用于农业生产的土地，包括耕地、林地、草地和水域等类型。",
+            "example": "川西平原村落周围的成片耕地"
+          },
+          {
+            "name": "村落空间结构",
+            "difficulty": 2,
+            "description": "村落内部公共服务设施和住宅等用地的空间组织关系",
+            "aliases": [
+              "村落内部空间结构"
+            ],
+            "prerequisites": [
+              "乡村土地利用"
+            ],
+            "definition": "村落空间结构是村落内部各类土地利用及设施的空间分布和组合。",
+            "example": "诸葛村住宅多沿巷道分布，商业靠近交通便捷处",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "城镇",
+            "difficulty": 1,
+            "description": "以非农业经济活动为主、人口较多且经济活动多样的地区",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "城镇包括城市和镇，是以非农业经济活动为主的地区。",
+            "example": "北京是人口和经济活动高度集中的城市"
+          },
+          {
+            "name": "城镇功能区",
+            "difficulty": 2,
+            "description": "城镇内部按土地利用专业化形成的居住、商业、工业等区域",
+            "aliases": [
+              "功能区"
+            ],
+            "prerequisites": [
+              "城镇"
+            ],
+            "definition": "城镇功能区是城镇内以某一种土地利用方式为主的区域。",
+            "example": "某城镇中心形成商业区，外围分布居住区"
+          },
+          {
+            "name": "居住区",
+            "difficulty": 1,
+            "description": "城镇中以住宅用地为主、广泛分布的一类功能区",
+            "aliases": [],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "居住区是城镇中以居民住宅和生活空间为主的功能区。",
+            "example": "杭州某成片住宅和绿地组成的居住区"
+          },
+          {
+            "name": "商业区",
+            "difficulty": 2,
+            "description": "主要分布在城镇中心、交通干线两侧或街角路口的功能区",
+            "aliases": [],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "商业区是以商业活动和商业用地为主的城镇功能区。",
+            "example": "香港商业中心集中在维多利亚港两岸"
+          },
+          {
+            "name": "工业区",
+            "difficulty": 2,
+            "description": "工业集聚且多靠近交通便捷地带、通常远离城镇中心的区域",
+            "aliases": [],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "工业区是工业企业和工业用地集中分布的城镇功能区。",
+            "example": "苏州工业园靠近交通线路并远离城镇中心"
+          },
+          {
+            "name": "中央商务区",
+            "difficulty": 2,
+            "description": "大城市中心集聚商场、酒店和知名公司总部的商业核心区",
+            "aliases": [
+              "CBD"
+            ],
+            "prerequisites": [
+              "商业区"
+            ],
+            "definition": "中央商务区是大城市中心大型商业和商务活动高度集中的区域。",
+            "example": "北京国贸中央商务区",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "城镇空间结构",
+            "difficulty": 3,
+            "description": "城镇各功能区在空间上的分布及组合关系",
+            "aliases": [
+              "城镇内部空间结构"
+            ],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "城镇空间结构是城镇内部各种功能区空间组合形成的整体格局。",
+            "example": "香港商业区居中、居住区外围、工业区较远"
+          },
+          {
+            "name": "地租",
+            "difficulty": 3,
+            "description": "土地在市场竞争中因位置和利用潜能形成的租金高低",
+            "aliases": [
+              "土地租金"
+            ],
+            "prerequisites": [
+              "城镇空间结构"
+            ],
+            "definition": "地租是土地使用者为获得土地使用权而支付的租金。",
+            "example": "城镇中心和交通干线附近地租较高",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "付租能力",
+            "difficulty": 3,
+            "description": "不同土地利用活动对地租的承受能力及其随距离的变化",
+            "aliases": [],
+            "prerequisites": [
+              "地租"
+            ],
+            "definition": "付租能力是某类土地利用活动愿意为土地支付租金的能力。",
+            "example": "商业用地付租能力随距市中心增加下降较快",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "城镇空间结构形成",
+            "difficulty": 4,
+            "description": "经济、政策、文化、环境和规划等因素共同塑造空间结构",
+            "aliases": [],
+            "prerequisites": [
+              "城镇空间结构",
+              "地租"
+            ],
+            "definition": "城镇空间结构形成是多种因素共同作用并随城镇发展变化的过程。",
+            "example": "京津冀协同发展推动北京部分功能向通州疏解"
+          },
+          {
+            "name": "合理利用城乡空间",
+            "difficulty": 2,
+            "description": "通过规划城乡土地和设施，优化空间结构并促进协调发展",
+            "aliases": [],
+            "prerequisites": [
+              "乡村土地利用",
+              "城镇空间结构"
+            ],
+            "definition": "合理利用城乡空间是依据发展需求科学安排城乡各类土地和设施。",
+            "example": "规划工业区并保留绿地和河湖生态空间"
+          },
+          {
+            "name": "城镇化",
+            "difficulty": 2,
+            "description": "乡村人口向城镇集中及乡村转变为城镇地区的过程",
+            "aliases": [
+              "城市化"
+            ],
+            "prerequisites": [
+              "城镇"
+            ],
+            "definition": "城镇化是乡村人口向城镇地区集中和乡村地区转变为城镇地区的过程。",
+            "example": "长江三角洲城市数量增加、规模扩大"
+          },
+          {
+            "name": "城镇化水平",
+            "difficulty": 2,
+            "description": "以城镇人口占区域总人口的比例为最重要衡量指标",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "城镇化水平是一个地区城镇人口占总人口的比例。",
+            "example": "英国20世纪70年代城镇化水平达到70%",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "工业化",
+            "difficulty": 2,
+            "description": "工业发展推动社会经济发展并与城镇化密切相关的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "工业化是工业不断发展并推动社会经济结构变化的过程。",
+            "example": "工业革命推动英国城镇化迅速发展"
+          },
+          {
+            "name": "城镇化意义",
+            "difficulty": 3,
+            "description": "城镇化可促进经济增长、提高资源利用效率并改善居住环境",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "城镇化意义是城镇化对区域经济、资源利用、环境和社会和谐的积极作用。",
+            "example": "集中建设污水处理厂改善环境质量"
+          },
+          {
+            "name": "世界城镇化进程",
+            "difficulty": 3,
+            "description": "世界城镇化随工业革命加快，不同国家和地区进程存在差异",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化水平",
+              "工业化"
+            ],
+            "definition": "世界城镇化进程是世界各国城镇人口比例随时间变化的发展过程。",
+            "example": "2016年世界城镇人口比例达到54.3%"
+          },
+          {
+            "name": "城镇化区域差异",
+            "difficulty": 3,
+            "description": "发达国家起步早水平高，发展中国家起步晚但发展较快",
+            "aliases": [],
+            "prerequisites": [
+              "世界城镇化进程"
+            ],
+            "definition": "城镇化区域差异是不同国家或地区城镇化起步时间、速度和水平的差别。",
+            "example": "英国城镇化水平高，印度仍不足40%"
+          },
+          {
+            "name": "城镇化问题",
+            "difficulty": 3,
+            "description": "城镇化快速发展可能引发污染、拥堵、住房紧张和贫困等问题",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "城镇化问题是城镇化过程中出现的环境问题和社会问题。",
+            "example": "大城市人口增加导致交通拥堵和住房紧张",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "人口居住郊区化",
+            "difficulty": 3,
+            "description": "大城市人口向乡村居民点和小城镇或郊区迁移的现象",
+            "aliases": [
+              "居住郊区化"
+            ],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "人口居住郊区化是城市居民为改善居住条件而向郊区迁居的现象。",
+            "example": "北京部分居民因追求宽敞环境迁往郊区",
+            "section": "问题研究 从市中心到郊区,你选择住在哪里"
+          },
+          {
+            "name": "地理信息技术",
+            "difficulty": 2,
+            "description": "应用于城市规划、市政建设和公共服务等管理领域的技术",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地理信息技术是用于获取、处理、分析和应用地理空间信息的技术。",
+            "example": "城市管理利用地理信息技术优化设施布局"
+          },
+          {
+            "name": "地理信息系统",
+            "difficulty": 3,
+            "description": "具有空间信息储存、分析、处理、图层分析和制图功能的系统",
+            "aliases": [
+              "GIS"
+            ],
+            "prerequisites": [
+              "地理信息技术"
+            ],
+            "definition": "地理信息系统是对各类空间信息进行储存、分析和处理的系统。",
+            "example": "用GIS优化公共服务设施布局",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "全球卫星导航系统",
+            "difficulty": 2,
+            "description": "利用卫星提供定位和导航功能，为城市生活与管理服务",
+            "aliases": [],
+            "prerequisites": [
+              "地理信息技术"
+            ],
+            "definition": "全球卫星导航系统是利用卫星为目标提供定位和导航服务的系统。",
+            "example": "定位巡警车在城市中的实时位置",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "地域文化",
+            "difficulty": 2,
+            "description": "在特定地域形成的、具有地域性和独特性的文化现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地域文化是在特定地域范围内形成的物质和非物质文化。",
+            "example": "江南文化影响周庄的水乡景观",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "自然景观",
+            "difficulty": 1,
+            "description": "较少受到或未受到人类直接影响的自然地理景象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然景观是自然环境本身形成的景观。",
+            "example": "高山流水属于自然景观",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "文化景观",
+            "difficulty": 2,
+            "description": "人类利用自然物质创造并留在地球表面的文化印记",
+            "aliases": [
+              "人文景观"
+            ],
+            "prerequisites": [
+              "地域文化"
+            ],
+            "definition": "文化景观是人类文化留在地球表面上的印记。",
+            "example": "农田、村落、道路和建筑都是文化景观"
+          },
+          {
+            "name": "城乡景观",
+            "difficulty": 2,
+            "description": "由乡村或城镇聚落及其建筑、道路等共同构成的景观",
+            "aliases": [],
+            "prerequisites": [
+              "文化景观"
+            ],
+            "definition": "城乡景观包括聚落整体以及聚落内部的建筑、道路等景观。",
+            "example": "厦门城乡建筑景观体现城市与乡村差异",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "乡村景观",
+            "difficulty": 2,
+            "description": "乡村生产生活与自然环境相互作用形成的地域景观",
+            "aliases": [],
+            "prerequisites": [
+              "城乡景观"
+            ],
+            "definition": "乡村景观是乡村聚落及其生产生活空间呈现的综合景观。",
+            "example": "红河哈尼梯田体现人地和谐理念"
+          },
+          {
+            "name": "城镇景观",
+            "difficulty": 2,
+            "description": "城镇建筑、道路和空间格局所呈现的地域性景观",
+            "aliases": [],
+            "prerequisites": [
+              "城乡景观"
+            ],
+            "definition": "城镇景观是城镇聚落及其建筑、道路和空间格局形成的景观。",
+            "example": "北京四合院体现古都建筑特点",
+            "section": "第三节 地域文化与城乡景观"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 乡村和城镇空间结构",
+            "page_range": [
+              29,
+              36
+            ]
+          },
+          {
+            "name": "第二节 城镇化",
+            "page_range": [
+              36,
+              47
+            ]
+          },
+          {
+            "name": "第三节 地域文化与城乡景观",
+            "page_range": [
+              47,
+              56
+            ]
+          },
+          {
+            "name": "问题研究　从市中心到郊区，你选择住在哪里",
+            "page_range": [
+              56,
+              57
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第三章 产业区位因素",
+        "concepts": [
+          {
+            "name": "区位",
+            "difficulty": 1,
+            "description": "某事物所占有的场所及其与相关地理因素的关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "区位是指某事物所占有的场所及其与相关地理因素的关系。",
+            "example": "工厂所在的地点及其与交通、市场的关系。"
+          },
+          {
+            "name": "区位因素",
+            "difficulty": 1,
+            "description": "影响某事物区位选择的因素",
+            "aliases": [],
+            "prerequisites": [
+              "区位"
+            ],
+            "definition": "区位因素是影响某事物区位选择的各种因素。",
+            "example": "市场、交通运输和政策法规都是区位因素。"
+          },
+          {
+            "name": "农业生产活动",
+            "difficulty": 1,
+            "description": "利用土地自然生产力栽培植物或饲养动物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "农业生产活动是人们利用土地的自然生产力栽培植物或饲养动物以获取产品。",
+            "example": "种植水稻、饲养绵羊。",
+            "section": "第一节 农业区位因素及其变化"
+          },
+          {
+            "name": "农业地域性",
+            "difficulty": 2,
+            "description": "农业生产因地域条件差异而表现出的地域差异",
+            "aliases": [],
+            "prerequisites": [
+              "农业生产活动"
+            ],
+            "definition": "农业地域性是指农业生产受各地自然、经济技术和文化政策差异影响而呈现地域差异。",
+            "example": "泰国平原种水稻，澳大利亚东南部发展牧羊。"
+          },
+          {
+            "name": "农业季节性",
+            "difficulty": 2,
+            "description": "农业生产需按自然条件变化安排生产活动",
+            "aliases": [],
+            "prerequisites": [
+              "农业生产活动"
+            ],
+            "definition": "农业季节性是指农业生产活动与季节变化密切相关。",
+            "example": "农作物需按播种期和收获期安排生产。"
+          },
+          {
+            "name": "农业区位因素",
+            "difficulty": 2,
+            "description": "影响一定地方农业生产选择的自然和人文因素",
+            "aliases": [],
+            "prerequisites": [
+              "区位因素",
+              "农业生产活动"
+            ],
+            "definition": "农业区位因素是影响一定地方农业生产对象和生产方式选择的因素。",
+            "example": "气候、地形、市场和交通运输共同影响桑蚕业布局。"
+          },
+          {
+            "name": "自然因素",
+            "difficulty": 1,
+            "description": "自然环境中影响产业生产和区位选择的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然因素是自然环境条件中影响经济活动的因素。",
+            "example": "气候、地形、水源和土壤。"
+          },
+          {
+            "name": "人文因素",
+            "difficulty": 1,
+            "description": "社会经济活动中影响产业区位选择的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人文因素是由经济、社会、政策和技术等人类活动形成的影响因素。",
+            "example": "市场、劳动力、交通运输和政策法规。"
+          },
+          {
+            "name": "气候因素",
+            "difficulty": 2,
+            "description": "热量、光照和降水等影响农业生产的条件",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "气候因素是热量、光照、降水等对农业生产产生影响的气候条件。",
+            "example": "柑橘适宜在南方种植，苹果适宜在北方种植。",
+            "section": "第一节 农业区位因素及其变化"
+          },
+          {
+            "name": "地形因素",
+            "difficulty": 2,
+            "description": "地表形态影响农业类型和作物分布",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "地形因素是地形起伏、海拔等条件对农业类型和分布产生的影响。",
+            "example": "平原适宜种植业，山地适宜林业或畜牧业。"
+          },
+          {
+            "name": "水源因素",
+            "difficulty": 2,
+            "description": "河湖、地下水和冰雪融水等供水条件",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "水源因素是可供农业生产灌溉和工业生产使用的水体条件。",
+            "example": "临近河湖的农田便于修渠灌溉。"
+          },
+          {
+            "name": "土壤因素",
+            "difficulty": 2,
+            "description": "土壤类型和肥力对作物生长的影响",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "土壤因素是土壤类型及其性质对农作物生长适宜性的影响。",
+            "example": "东南丘陵红壤适宜种植茶树。"
+          },
+          {
+            "name": "农业市场因素",
+            "difficulty": 2,
+            "description": "农产品需求和价格影响农业类型与生产规模",
+            "aliases": [],
+            "prerequisites": [
+              "农业区位因素"
+            ],
+            "definition": "农业市场因素是农产品需求和价格对农业生产类型、规模及区位选择的影响。",
+            "example": "城市周边因需求大而发展蔬菜、肉蛋奶生产。"
+          },
+          {
+            "name": "农业区位变化",
+            "difficulty": 3,
+            "description": "市场、科技和交通等变化引起农业布局调整",
+            "aliases": [],
+            "prerequisites": [
+              "农业区位因素"
+            ],
+            "definition": "农业区位变化是农业生产人文因素发展变化导致农业区位选择发生调整。",
+            "example": "品种改良使三江平原由种小麦转为种水稻。"
+          },
+          {
+            "name": "反季节供应",
+            "difficulty": 3,
+            "description": "利用地区季节差异供应当地非生产季农产品",
+            "aliases": [],
+            "prerequisites": [
+              "农业市场因素",
+              "交通运输"
+            ],
+            "definition": "反季节供应是利用不同地区自然环境和生长季节差异进行农产品供应。",
+            "example": "冬季北方市场销售海南生产的西瓜。",
+            "section": "第一节 农业区位因素及其变化"
+          },
+          {
+            "name": "工业生产活动",
+            "difficulty": 1,
+            "description": "利用劳动力、动力和设备将原料制成产品",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "工业生产活动是在工厂中利用劳动力、动力和机械设备将原料制成产品。",
+            "example": "汽车生产线将零部件装配成汽车。",
+            "section": "第二节 工业区位因素及其变化"
+          },
+          {
+            "name": "工业区位因素",
+            "difficulty": 2,
+            "description": "影响工厂地点选择的经济、环境和社会因素",
+            "aliases": [],
+            "prerequisites": [
+              "区位因素",
+              "工业生产活动"
+            ],
+            "definition": "工业区位因素是影响工业工厂地点选择的自然和人文因素。",
+            "example": "原料、交通、市场、劳动力和环境共同影响钢铁厂选址。"
+          },
+          {
+            "name": "总成本最低",
+            "difficulty": 3,
+            "description": "工厂综合各种成本后选择成本最低的地点",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "总成本最低是指在市场因素一定时，通过综合比较各项成本选择工厂地点。",
+            "example": "钢铁厂选择临近港口以降低原料运输成本。"
+          },
+          {
+            "name": "工业环境因素",
+            "difficulty": 2,
+            "description": "环境质量和污染治理要求影响工业布局",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业环境因素是环境质量、污染程度及环保要求对工业区位选择的影响。",
+            "example": "造纸厂应远离水源地及河流上游。"
+          },
+          {
+            "name": "工业政策因素",
+            "difficulty": 2,
+            "description": "政府政策、税收和基础设施影响工业布局",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业政策因素是政府通过政策、税收、补贴和基础设施等影响工业布局。",
+            "example": "政策引导棉纺织业向新疆发展。"
+          },
+          {
+            "name": "工业集聚",
+            "difficulty": 3,
+            "description": "具有工业联系的工厂在近距离集中布局",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业集聚是具有工业联系的一些工厂发生近距离集聚的现象。",
+            "example": "顺德集聚家具制造、木工机械和涂料企业。"
+          },
+          {
+            "name": "专业化生产",
+            "difficulty": 3,
+            "description": "不同地区或工厂分工生产相关产品或环节",
+            "aliases": [],
+            "prerequisites": [
+              "工业集聚"
+            ],
+            "definition": "专业化生产是不同地区或工厂围绕产业联系进行明确分工生产。",
+            "example": "顺德不同专业镇分别生产家具、五金和涂料。",
+            "section": "第二节 工业区位因素及其变化"
+          },
+          {
+            "name": "区位比较优势",
+            "difficulty": 3,
+            "description": "某地相对其他地点在部分因素上的优势",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "区位比较优势是某区位在一定范围内少数区位因素上相对占优。",
+            "example": "上高凭借较低劳动力成本吸引制鞋企业。",
+            "section": "第二节 工业区位因素及其变化"
+          },
+          {
+            "name": "工业区位变化",
+            "difficulty": 3,
+            "description": "科技、市场和政策变化引起工业布局调整",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业区位变化是社会发展和科技进步使工业区位因素作用发生改变。",
+            "example": "钢铁工业由靠近原料地转向沿海港口布局。"
+          },
+          {
+            "name": "服务业",
+            "difficulty": 1,
+            "description": "为社会生产和生活提供服务的产业",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "服务业是为社会生产和生活提供服务的产业。",
+            "example": "零售、金融、教育和公共卫生。"
+          },
+          {
+            "name": "商业性服务业",
+            "difficulty": 1,
+            "description": "主要以营利为目的提供服务的产业",
+            "aliases": [],
+            "prerequisites": [
+              "服务业"
+            ],
+            "definition": "商业性服务业是主要以营利为目的的服务业。",
+            "example": "零售、餐饮、住宿和金融。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "非商业性服务业",
+            "difficulty": 1,
+            "description": "不以营利为目的提供公共服务的产业",
+            "aliases": [],
+            "prerequisites": [
+              "服务业"
+            ],
+            "definition": "非商业性服务业是不以营利为目的的服务业。",
+            "example": "教育、公共卫生和社会工作。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "服务业区位因素",
+            "difficulty": 2,
+            "description": "影响服务业地点选择的市场和社会经济因素",
+            "aliases": [],
+            "prerequisites": [
+              "服务业",
+              "区位因素"
+            ],
+            "definition": "服务业区位因素是影响服务业地点选择的自然和人文因素。",
+            "example": "商业网点重点考虑市场、交通和集聚。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "服务业集聚",
+            "difficulty": 2,
+            "description": "多个服务商家在一定区域集中布局",
+            "aliases": [],
+            "prerequisites": [
+              "商业性服务业",
+              "服务业区位因素"
+            ],
+            "definition": "服务业集聚是多个服务商家在一定区域集中布局并共享优势的现象。",
+            "example": "城市形成美食街、服装城和电器城。"
+          },
+          {
+            "name": "均衡化原则",
+            "difficulty": 3,
+            "description": "公共服务业按服务对象需求和分布公平布局",
+            "aliases": [],
+            "prerequisites": [
+              "非商业性服务业"
+            ],
+            "definition": "均衡化原则是非商业性公共服务业进行区位选择时追求服务公平。",
+            "example": "公立学校和医院依据人口分布布局。"
+          },
+          {
+            "name": "网络信息技术",
+            "difficulty": 2,
+            "description": "支撑线上线下融合服务和远程服务的技术",
+            "aliases": [],
+            "prerequisites": [
+              "服务业"
+            ],
+            "definition": "网络信息技术是现代新兴服务业进行联系、交易和配送的重要技术条件。",
+            "example": "网上支付、远程医疗和外卖配送。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "服务业区位变化",
+            "difficulty": 3,
+            "description": "信息技术发展使服务业区位选择更灵活",
+            "aliases": [],
+            "prerequisites": [
+              "服务业区位因素"
+            ],
+            "definition": "服务业区位变化是现代技术和社会发展使服务业布局因素及选择余地发生变化。",
+            "example": "网店依托网络而不必布局在传统商业中心。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 农业区位因素及其变化",
+            "page_range": [
+              59,
+              68
+            ]
+          },
+          {
+            "name": "第二节 工业区位因素及其变化",
+            "page_range": [
+              68,
+              76
+            ]
+          },
+          {
+            "name": "第三节 服务业区位因素及其变化",
+            "page_range": [
+              76,
+              82
+            ]
+          },
+          {
+            "name": "问题研究　实体商店何去何从",
+            "page_range": [
+              82,
+              83
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第四章 交通运输布局与区域发展",
+        "concepts": [
+          {
+            "name": "交通运输布局",
+            "difficulty": 2,
+            "description": "交通线网、场站组织及客货流分配引导的安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "交通运输布局是对区域交通线网、场站及客货流进行组织和分配。",
+            "example": "义乌机场多次扩建完善航空运输布局"
+          },
+          {
+            "name": "运输需求",
+            "difficulty": 2,
+            "description": "区域对客货运输在运距、运时、运量等方面的需要",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "运输需求是区域经济社会发展产生的客货运输需要。",
+            "example": "义乌小商品贸易发展带来航空运输需求"
+          },
+          {
+            "name": "交通运输网",
+            "difficulty": 2,
+            "description": "由多种交通线、站及运输方式组成的网络系统",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局"
+            ],
+            "definition": "交通运输网是由交通线、场站和不同运输方式共同构成的运输系统。",
+            "example": "我国铁路网连接众多城市和交通节点"
+          },
+          {
+            "name": "交通运输布局原则",
+            "difficulty": 2,
+            "description": "指导区域交通线网和场站合理组织的基本要求",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局",
+              "运输需求"
+            ],
+            "definition": "交通运输布局原则是实现区域运输合理化并兼顾综合效益的基本要求。",
+            "example": "布局时综合考虑需求、自然条件和土地占用"
+          },
+          {
+            "name": "依据运输需求",
+            "difficulty": 2,
+            "description": "根据运输需求确定运输方式、线路、站点和标准",
+            "aliases": [],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局原则"
+            ],
+            "definition": "依据运输需求是按照客货运输需要确定交通运输布局内容和建设标准。",
+            "example": "客流量大时建设规模较大的场站"
+          },
+          {
+            "name": "适度超前",
+            "difficulty": 2,
+            "description": "建设标准满足未来一段时期需求但避免标准过高",
+            "aliases": [],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局原则"
+            ],
+            "definition": "适度超前是交通设施设计标准适当满足未来运输需求而不过度建设。",
+            "example": "机场航站楼按未来客流适度扩建"
+          },
+          {
+            "name": "因地制宜",
+            "difficulty": 2,
+            "description": "交通运输布局充分考虑区域自然条件",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局原则"
+            ],
+            "definition": "因地制宜是根据地质、地貌、气候、水文等条件进行交通布局。",
+            "example": "山区铁路采用桥梁和隧道穿越复杂地形"
+          },
+          {
+            "name": "少占土地",
+            "difficulty": 2,
+            "description": "交通线和场站布局尽量节约土地，尤其是耕地",
+            "aliases": [
+              "尽量少占土地"
+            ],
+            "prerequisites": [
+              "交通运输布局原则"
+            ],
+            "definition": "少占土地是交通设施建设尽量减少土地占用并保护耕地。",
+            "example": "线路选址避开集中连片耕地"
+          },
+          {
+            "name": "综合运输优势",
+            "difficulty": 3,
+            "description": "利用不同运输方式优势并加强转运衔接",
+            "aliases": [
+              "发挥综合运输优势"
+            ],
+            "prerequisites": [
+              "交通运输网",
+              "交通运输布局原则"
+            ],
+            "definition": "综合运输优势是通过多种运输方式协同衔接提高运输系统效益。",
+            "example": "虹桥枢纽实现铁路、航空和地铁换乘"
+          },
+          {
+            "name": "交通运输布局变化",
+            "difficulty": 2,
+            "description": "交通线站建设、改扩建、废弃及运输方式衔接的变化",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局"
+            ],
+            "definition": "交通运输布局变化是区域交通设施和运输方式随发展不断调整的过程。",
+            "example": "北京首都机场持续扩建航站楼",
+            "section": "第一节 区域发展对交通运输布局的影响"
+          },
+          {
+            "name": "综合交通枢纽",
+            "difficulty": 3,
+            "description": "多种运输方式集中衔接并实现便捷换乘的场所",
+            "aliases": [
+              "综合性交通运输枢纽"
+            ],
+            "prerequisites": [
+              "交通运输网",
+              "综合运输优势"
+            ],
+            "definition": "综合交通枢纽是多种交通运输方式集中衔接和转运的设施区域。",
+            "example": "上海虹桥枢纽连接高铁、机场和地铁",
+            "section": "第一节 区域发展对交通运输布局的影响"
+          },
+          {
+            "name": "经济发展水平",
+            "difficulty": 2,
+            "description": "区域经济发展程度及其资金、技术等支撑条件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经济发展水平影响区域交通线站的密度、质量和网络完善程度。",
+            "example": "发达地区交通线和站点通常较密集"
+          },
+          {
+            "name": "交通运输滞后",
+            "difficulty": 3,
+            "description": "交通建设不能及时满足区域发展运输需求的状态",
+            "aliases": [
+              "建设滞后"
+            ],
+            "prerequisites": [
+              "运输需求",
+              "经济发展水平"
+            ],
+            "definition": "交通运输滞后是交通设施建设落后于区域发展及运输需求的现象。",
+            "example": "发展中国家工业化初期常出现交通建设滞后"
+          },
+          {
+            "name": "交通运输瓶颈",
+            "difficulty": 3,
+            "description": "交通能力不足而制约区域发展的突出问题",
+            "aliases": [
+              "交通瓶颈"
+            ],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局"
+            ],
+            "definition": "交通运输瓶颈是交通运输不能满足区域需求并阻碍区域发展的状况。",
+            "example": "道路不畅使武功县农产品难以外运",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "促进区域经济发展",
+            "difficulty": 3,
+            "description": "交通运输推动要素流动、产业发展和区域联系",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局",
+              "运输需求"
+            ],
+            "definition": "交通运输通过促进资源、产品、设备和劳动力流动推动区域经济发展。",
+            "example": "沿海地区借助海运发展出口加工业",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "交通运输拉动效应",
+            "difficulty": 3,
+            "description": "交通建设直接带动相关行业发展并增加就业",
+            "aliases": [
+              "经济拉动效应"
+            ],
+            "prerequisites": [
+              "促进区域经济发展"
+            ],
+            "definition": "交通运输拉动效应是交通建设带动原材料、能源、建筑、旅游等行业发展。",
+            "example": "高速铁路建设带动沿线建筑和服务业",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "交通枢纽集聚",
+            "difficulty": 3,
+            "description": "客货集散周转促使服务业和制造业在枢纽集聚",
+            "aliases": [],
+            "prerequisites": [
+              "综合交通枢纽",
+              "促进区域经济发展"
+            ],
+            "definition": "交通枢纽集聚是餐饮、旅馆、装卸及相关制造业在交通枢纽集中。",
+            "example": "石家庄依托铁路枢纽发展成为城市",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "聚落发展",
+            "difficulty": 3,
+            "description": "交通布局及其变化对城市和乡村聚落形成发展的影响",
+            "aliases": [
+              "影响聚落发展"
+            ],
+            "prerequisites": [
+              "交通运输布局",
+              "促进区域经济发展"
+            ],
+            "definition": "聚落发展会受到交通枢纽、运输线路及运输方式变化的显著影响。",
+            "example": "许多沿港口城市因交通便利而兴旺",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "商业中心变化",
+            "difficulty": 3,
+            "description": "运输线路或方式变化引起商业网点和城市中心变化",
+            "aliases": [
+              "商业中心城市变化"
+            ],
+            "prerequisites": [
+              "交通运输布局变化",
+              "聚落发展"
+            ],
+            "definition": "商业中心变化是客货运输方向和集散地改变导致商业空间重组。",
+            "example": "海运兴起后扬州商业地位逐渐下降"
+          },
+          {
+            "name": "城市交通拥堵",
+            "difficulty": 2,
+            "description": "城市交通流量集中导致道路和路口通行不畅",
+            "aliases": [
+              "交通拥堵"
+            ],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局"
+            ],
+            "definition": "城市交通拥堵是城市交通需求集中并超过道路通行能力的现象。",
+            "example": "上下班高峰期主城区道路容易拥堵",
+            "section": "问题研究 城市交通如何疏堵"
+          },
+          {
+            "name": "公交主导",
+            "difficulty": 3,
+            "description": "以公共交通为主要方式缓解城市交通拥堵",
+            "aliases": [],
+            "prerequisites": [
+              "城市交通拥堵",
+              "交通运输网"
+            ],
+            "definition": "公交主导是通过优先发展公共交通分担城市出行交通量。",
+            "example": "设置公交专用道并发展快速公交",
+            "section": "问题研究 城市交通如何疏堵"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 区域发展对交通运输布局的影响",
+            "page_range": [
+              85,
+              92
+            ]
+          },
+          {
+            "name": "第二节 交通运输布局对区域发展的影响",
+            "page_range": [
+              92,
+              98
+            ]
+          },
+          {
+            "name": "问题研究　城市交通如何疏堵",
+            "page_range": [
+              98,
+              99
+            ]
+          }
+        ]
+      },
+      {
+        "name": "第五章 环境与发展",
+        "concepts": [
+          {
+            "name": "环境问题",
+            "difficulty": 2,
+            "description": "人类不恰当、不友好行为导致的环境结果",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "环境问题是人类对环境采取不恰当、不友好态度和做法所导致的结果。",
+            "example": "过度垦荒导致生态破坏和环境恶化"
+          },
+          {
+            "name": "环境承受能力",
+            "difficulty": 2,
+            "description": "自然环境承受人类资源索取的能力",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "环境承受能力是自然环境能够承受人类合理、适度资源索取的限度。",
+            "example": "索取超过承受能力会造成资源枯竭"
+          },
+          {
+            "name": "净化能力",
+            "difficulty": 2,
+            "description": "自然环境容纳、分解和清除废弃物的能力",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "净化能力是自然环境对人类排放废弃物进行容纳、分解和清除的能力。",
+            "example": "排污超过净化能力会造成水污染"
+          },
+          {
+            "name": "自然资源枯竭",
+            "difficulty": 2,
+            "description": "自然资源因过度索取而减少甚至难以恢复",
+            "aliases": [
+              "资源短缺"
+            ],
+            "prerequisites": [
+              "环境承受能力"
+            ],
+            "definition": "自然资源枯竭是人类索取超过环境承受能力而出现的资源减少或耗竭问题。",
+            "example": "森林减少、矿产资源短缺"
+          },
+          {
+            "name": "生态破坏",
+            "difficulty": 2,
+            "description": "人类活动造成生态系统结构和功能受损",
+            "aliases": [
+              "生态环境破坏"
+            ],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "生态破坏是人类活动导致生态系统及其功能受到损害的环境问题。",
+            "example": "过度放牧导致土地荒漠化"
+          },
+          {
+            "name": "环境污染",
+            "difficulty": 2,
+            "description": "废弃物排放超过环境净化能力造成的质量下降",
+            "aliases": [
+              "污染"
+            ],
+            "prerequisites": [
+              "净化能力"
+            ],
+            "definition": "环境污染是人类排放废弃物数量超过环境自身净化能力而导致的环境质量下降。",
+            "example": "工业废气造成大气污染"
+          },
+          {
+            "name": "全球性环境问题",
+            "difficulty": 3,
+            "description": "影响范围超越国界和地域的环境问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "全球性环境问题是影响范围超越国界和地域界线的环境问题。",
+            "example": "全球变暖、酸雨和臭氧层破坏",
+            "section": "第一节 人类面临的主要环境问题"
+          },
+          {
+            "name": "人地协调",
+            "difficulty": 2,
+            "description": "人与自然相互适应、和谐共生的发展关系",
+            "aliases": [
+              "和谐论"
+            ],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "人地协调是人类遵循自然规律并与自然和谐共生的人地关系状态。",
+            "example": "保护生态环境并合理利用资源",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "兼顾当代需求与后代需求能力的发展",
+            "aliases": [],
+            "prerequisites": [
+              "人地协调"
+            ],
+            "definition": "可持续发展是既满足当代人的需求，又不危及后代人满足其需求能力的发展。",
+            "example": "发展经济同时保护资源环境"
+          },
+          {
+            "name": "生态持续发展",
+            "difficulty": 3,
+            "description": "发展与资源环境承载力相协调",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "生态持续发展强调人类发展要与资源环境承载力相协调。",
+            "example": "在生态脆弱区控制开发强度"
+          },
+          {
+            "name": "经济持续发展",
+            "difficulty": 3,
+            "description": "重视增长质量并改变生产消费模式",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "经济持续发展强调发展不仅重视数量增长，还要改善质量并转变生产消费模式。",
+            "example": "提高资源利用效率"
+          },
+          {
+            "name": "社会持续发展",
+            "difficulty": 3,
+            "description": "以改善生活质量和社会进步为发展目的",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "社会持续发展强调发展应改善和提高生活质量并与社会进步相适应。",
+            "example": "消除贫困并发展优质教育"
+          },
+          {
+            "name": "公平性原则",
+            "difficulty": 3,
+            "description": "强调代内、代际及人与其他生物的公平",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "公平性原则要求实现同代人、代际、人与其他生物及不同国家地区之间的公平。",
+            "example": "兼顾当代人与后代人的资源需求",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "持续性原则",
+            "difficulty": 3,
+            "description": "经济社会发展须保持在承载力之内",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "持续性原则要求人类经济活动和社会发展保持在资源环境承载力之内。",
+            "example": "限制高耗能高污染产业发展",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "共同性原则",
+            "difficulty": 3,
+            "description": "各国共同参与全球环境与发展治理",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "共同性原则要求各国共同承担发展经济和保护环境的任务并积极参与。",
+            "example": "各国合作应对全球气候变化",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "消除贫困",
+            "difficulty": 2,
+            "description": "通过减贫缓解环境恶化并促进可持续发展",
+            "aliases": [
+              "减贫"
+            ],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "消除贫困是实现可持续发展的重要目标，也是缓解发展中国家环境恶化的重要途径。",
+            "example": "教育扶贫和发展特色产业"
+          },
+          {
+            "name": "绿色经济",
+            "difficulty": 3,
+            "description": "平衡经济发展、环境保护和社会包容",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "绿色经济追求经济发展、环境保护和社会包容三方面的平衡。",
+            "example": "节能减排并提高资源利用效率"
+          },
+          {
+            "name": "低碳经济",
+            "difficulty": 3,
+            "description": "改善能源结构并减少碳排放的经济模式",
+            "aliases": [],
+            "prerequisites": [
+              "绿色经济"
+            ],
+            "definition": "低碳经济是通过改善能源结构和提高能源利用效率来减少碳排放的经济模式。",
+            "example": "发展风能并减少化石能源使用",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "循环经济",
+            "difficulty": 3,
+            "description": "减少资源消耗并控制污染物排放",
+            "aliases": [],
+            "prerequisites": [
+              "绿色经济"
+            ],
+            "definition": "循环经济强调减少资源消耗、提高资源利用效率并控制污染物排放。",
+            "example": "废旧物品回收再利用",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "可持续消费",
+            "difficulty": 2,
+            "description": "以负责任行为践行简约绿色低碳生活",
+            "aliases": [
+              "绿色消费"
+            ],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "可持续消费旨在通过负责任行为建立简约适度、绿色低碳的生活方式。",
+            "example": "选择本地应季且简易包装的食品"
+          },
+          {
+            "name": "主体功能",
+            "difficulty": 3,
+            "description": "区域最主要、最核心的功能",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "主体功能是一个区域所具有的多种功能中最主要、最核心的功能。",
+            "example": "农产品主产区的主体功能是提供农产品"
+          },
+          {
+            "name": "主体功能区",
+            "difficulty": 3,
+            "description": "依据区域主体功能进行国土开发保护的战略",
+            "aliases": [
+              "发展优先区"
+            ],
+            "prerequisites": [
+              "主体功能"
+            ],
+            "definition": "主体功能区是依据地理国情和国土开发状况划分的国土开发和保护战略区域。",
+            "example": "将区域划为限制开发区域"
+          },
+          {
+            "name": "优化开发区域",
+            "difficulty": 3,
+            "description": "承载力接近饱和、需优化发展的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "优化开发区域是经济发达且资源环境承载能力接近饱和、需要优化发展的区域。",
+            "example": "珠江三角洲地区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "重点开发区域",
+            "difficulty": 3,
+            "description": "开发基础较弱但未来潜力较大的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "重点开发区域是具有一定经济基础且未来开发潜力较大的区域。",
+            "example": "兰州—西宁地区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "限制开发区域",
+            "difficulty": 3,
+            "description": "限制大规模工业化和城镇化开发的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "限制开发区域是限制大规模工业化、城镇化建设而非限制一切开发活动的区域。",
+            "example": "农产品主产区和重点生态功能区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "禁止开发区域",
+            "difficulty": 3,
+            "description": "依法进行自然和文化遗产保护的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "禁止开发区域是以自然或法定边界为单元进行严格保护的区域。",
+            "example": "国家级自然保护区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "长江经济带",
+            "difficulty": 3,
+            "description": "依托长江联系东中西部的区域发展战略",
+            "aliases": [],
+            "prerequisites": [
+              "区域协调发展"
+            ],
+            "definition": "长江经济带是横跨我国东中西三大区域的重要内河经济带和区域发展战略。",
+            "example": "建设沿江绿色生态廊道"
+          },
+          {
+            "name": "区域协调发展",
+            "difficulty": 3,
+            "description": "通过区域合作逐步缩小区域发展差距",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "区域协调发展是通过各有侧重的区域战略和协同合作逐步缩小区域发展差距。",
+            "example": "推动长江上下游协同发展",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "海洋经济",
+            "difficulty": 3,
+            "description": "以海洋资源开发和海洋产业发展为基础的经济",
+            "aliases": [],
+            "prerequisites": [
+              "海洋资源"
+            ],
+            "definition": "海洋经济是围绕海洋资源开发、海洋产业发展和海洋空间利用形成的经济活动。",
+            "example": "发展海洋高新技术产业"
+          },
+          {
+            "name": "蓝色经济空间",
+            "difficulty": 3,
+            "description": "以海洋空间为载体的可持续发展空间",
+            "aliases": [
+              "蓝色空间"
+            ],
+            "prerequisites": [
+              "海洋经济"
+            ],
+            "definition": "蓝色经济空间是立足海洋生态保护、提高海洋空间利用效率的发展空间。",
+            "example": "科学开发海洋资源并保护海洋生态",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "海洋资源",
+            "difficulty": 2,
+            "description": "存在于海洋中的油气、矿产、生物和能源资源",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海洋资源是海洋中可供人类开发利用的油气、矿产、生物和海洋能等资源。",
+            "example": "渔场、海上油气和潮汐能"
+          },
+          {
+            "name": "海洋权益",
+            "difficulty": 3,
+            "description": "国家领土向海洋延伸形成的权利和利益",
+            "aliases": [],
+            "prerequisites": [
+              "海洋资源"
+            ],
+            "definition": "海洋权益是国家领土向海洋延伸形成的一些权利和利益。",
+            "example": "在专属经济区开发海洋资源"
+          },
+          {
+            "name": "内水",
+            "difficulty": 3,
+            "description": "领海基线向陆地一侧的水域",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "内水是领海基线向陆地一侧的水域，包括河口、港口、海湾和海峡等。",
+            "example": "沿海国港口内的水域",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "领海",
+            "difficulty": 3,
+            "description": "邻接陆地领土和内水的一带海域",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "领海是邻接陆地领土和内水、从领海基线量起不超过12海里的海域。",
+            "example": "国家对领海拥有主权",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "毗连区",
+            "difficulty": 3,
+            "description": "领海以外邻接领海的一带海域",
+            "aliases": [],
+            "prerequisites": [
+              "领海"
+            ],
+            "definition": "毗连区是领海以外邻接领海且宽度不超过12海里的海域。",
+            "example": "沿海国在毗连区进行相关管制",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "专属经济区",
+            "difficulty": 4,
+            "description": "领海以外不超过200海里的管辖海域",
+            "aliases": [
+              "专属经济海域"
+            ],
+            "prerequisites": [
+              "领海"
+            ],
+            "definition": "专属经济区是从领海基线量起不超过200海里的领海以外邻接海域。",
+            "example": "沿海国在其中开发渔业资源",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "大陆架",
+            "difficulty": 4,
+            "description": "大陆向海洋自然延伸的海床和底土",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "大陆架是大陆向海洋自然延伸的海床和底土，其外部界限一般不超过350海里。",
+            "example": "在大陆架上勘探海底油气",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "公海",
+            "difficulty": 3,
+            "description": "各国管辖海域以外的全部海域",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "公海是内水、领海、专属经济区或群岛国群岛水域以外的全部海域。",
+            "example": "公海不属于任何国家的领土",
+            "section": "第三节 中国国家发展战略举例"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 人类面临的主要环境问题",
+            "page_range": [
+              101,
+              106
+            ]
+          },
+          {
+            "name": "第二节 走向人地协调——可持续发展",
+            "page_range": [
+              106,
+              114
+            ]
+          },
+          {
+            "name": "第三节 中国国家发展战略举例",
+            "page_range": [
+              114,
+              125
+            ]
+          },
+          {
+            "name": "问题研究　低碳食品知多少",
+            "page_range": [
+              125,
+              134
+            ]
+          }
+        ]
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    }
+  },
+  "normalized_spec": {
+    "subject": "地理",
+    "level": "高中",
+    "chapters": [
+      {
+        "name": "第一章 人口",
+        "concepts": [
+          {
+            "name": "世界人口分布特点",
+            "difficulty": 2,
+            "description": "世界人口分布不均，集中于北半球中低纬地区",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "世界人口分布具有明显的不均衡性，主要集中在北半球、沿海和低平地区。",
+            "example": "近90%人口居住在北半球。"
+          },
+          {
+            "name": "四大人口稠密区",
+            "difficulty": 2,
+            "description": "世界人口最集中的四个区域",
+            "aliases": [],
+            "prerequisites": [
+              "世界人口分布特点"
+            ],
+            "definition": "东亚、南亚、欧洲西部和北美东部是世界四大人口稠密区。",
+            "example": "东亚包括我国东部、朝鲜半岛和日本中南部。",
+            "section": "第一节 人口分布"
+          },
+          {
+            "name": "自然因素",
+            "difficulty": 2,
+            "description": "气候、地形、水源等影响人口分布的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然因素是自然环境中制约人口分布的条件，主要包括气候、地形和水源等。",
+            "example": "干旱沙漠地区人口稀少。"
+          },
+          {
+            "name": "人文因素",
+            "difficulty": 2,
+            "description": "社会经济、历史等影响人口分布的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人文因素是社会经济条件和发展历史等对人口分布产生影响的因素。",
+            "example": "经济发达地区通常人口稠密。"
+          },
+          {
+            "name": "人口分布影响因素",
+            "difficulty": 3,
+            "description": "自然和人文因素共同制约人口分布",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素",
+              "人文因素"
+            ],
+            "definition": "人口分布是自然因素与人文因素综合作用的结果。",
+            "example": "芬兰人口集中在气候较温和的南部。"
+          },
+          {
+            "name": "人口迁移",
+            "difficulty": 2,
+            "description": "居住地发生长期或永久改变的人口移动",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人口迁移是涉及人口居住地长期或永久改变的人口移动。",
+            "example": "农村人口迁往城市定居属于人口迁移。"
+          },
+          {
+            "name": "人口机械增长",
+            "difficulty": 3,
+            "description": "人口迁移造成的区域人口数量变化",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "人口机械增长是人口迁移导致的某一区域人口数量变化。",
+            "example": "人口净迁入使区域人口机械增长为正。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "人口机械增长率",
+            "difficulty": 4,
+            "description": "净迁入人口占总人口的比例",
+            "aliases": [
+              "人口净迁移率"
+            ],
+            "prerequisites": [
+              "人口机械增长"
+            ],
+            "definition": "人口机械增长率是一定时期内净迁入人口占总人口的比例。",
+            "example": "迁入多于迁出时，机械增长率为正。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "推拉理论",
+            "difficulty": 3,
+            "description": "用迁出地推力和迁入地拉力解释迁移",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "推拉理论认为人口迁移动力由迁出地推力与迁入地拉力共同构成。",
+            "example": "贫困是推力，就业机会是拉力。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "迁移障碍",
+            "difficulty": 2,
+            "description": "阻碍人口迁移实现的距离、语言等因素",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "迁移障碍是人口迁移过程中由距离、语言等造成的阻碍因素。",
+            "example": "迁入地与迁出地语言不同可能形成障碍。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "国际人口迁移",
+            "difficulty": 3,
+            "description": "跨越国界的人口迁移",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "国际人口迁移是跨越国家边界的人口迁移。",
+            "example": "墨西哥大量人口移民美国。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "国内人口迁移",
+            "difficulty": 3,
+            "description": "一国境内不同地区之间的人口迁移",
+            "aliases": [],
+            "prerequisites": [
+              "人口迁移"
+            ],
+            "definition": "国内人口迁移是在一个国家内部不同地区之间发生的人口迁移。",
+            "example": "我国农村人口向沿海城镇迁移。",
+            "section": "第二节 人口迁移"
+          },
+          {
+            "name": "区域资源环境承载力",
+            "difficulty": 4,
+            "description": "资源环境条件所能承载的人口数量",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "区域资源环境承载力是区域在合理利用资源和保护生态环境前提下所能承载的人口数量。",
+            "example": "西北地区常以水资源估算承载力。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "短板效应",
+            "difficulty": 3,
+            "description": "区域承载力受最短缺资源制约",
+            "aliases": [],
+            "prerequisites": [
+              "区域资源环境承载力"
+            ],
+            "definition": "短板效应指区域资源环境承载力由最薄弱或最短缺的资源条件决定。",
+            "example": "水资源短缺限制区域人口承载量。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口合理容量",
+            "difficulty": 4,
+            "description": "保障生活质量且适宜的人口数量",
+            "aliases": [],
+            "prerequisites": [
+              "区域资源环境承载力"
+            ],
+            "definition": "人口合理容量是保障健康生活并不妨碍未来生活质量的最适宜人口数量。",
+            "example": "人口合理容量小于资源环境承载力。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口红利",
+            "difficulty": 3,
+            "description": "劳动力丰富且抚养负担较轻的有利时期",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人口红利是劳动力资源相对丰富、抚养负担较轻并有利于经济增长的时期。",
+            "example": "计划生育政策维持了我国较长人口红利期。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口老龄化",
+            "difficulty": 3,
+            "description": "老年人口比例达到规定标准的社会状态",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人口老龄化是一个地区老年人口比例达到规定标准并进入老龄化社会的状态。",
+            "example": "65岁及以上人口占比达到7%即进入老龄化社会。",
+            "section": "第三节 人口容量"
+          },
+          {
+            "name": "人口政策",
+            "difficulty": 2,
+            "description": "国家依据人口形势制定的调控措施",
+            "aliases": [],
+            "prerequisites": [
+              "人口合理容量"
+            ],
+            "definition": "人口政策是国家根据人口与资源、环境、经济、社会形势制定的调控措施。",
+            "example": "我国实施一对夫妻可生育三个子女政策。",
+            "section": "第三节 人口容量"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 人口分布",
+            "section_key": "3992eb0448",
+            "page_range": [
+              7,
+              13
+            ]
+          },
+          {
+            "name": "第二节 人口迁移",
+            "section_key": "0cfb44ab3b",
+            "page_range": [
+              13,
+              21
+            ]
+          },
+          {
+            "name": "第三节 人口容量",
+            "section_key": "f062839208",
+            "page_range": [
+              21,
+              26
+            ]
+          },
+          {
+            "name": "问题研究 如何看待农民工现象",
+            "section_key": "8b24f44ec0",
+            "page_range": [
+              26,
+              27
+            ]
+          }
+        ],
+        "chapter_key": "26152819a9",
+        "metadata": {
+          "volume_id": "e299ed0b6bcd",
+          "file_id": "e299ed0b6bcd",
+          "volume_title": "高中地理 必修第2册",
+          "chapter_order": 1,
+          "raw_heading": "第一章 人口"
+        }
+      },
+      {
+        "name": "第二章 乡村和城镇",
+        "concepts": [
+          {
+            "name": "乡村土地利用",
+            "difficulty": 1,
+            "description": "乡村以农业用地和居住为主，农业用地多分布在村落周围",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "乡村土地利用是以农业用地和居住用地为主的土地利用方式。",
+            "example": "川西平原田地紧密围绕村落住宅分布",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "农业用地",
+            "difficulty": 1,
+            "description": "依据农业生产特点划分的耕地、林地、草地和水域等用地",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "农业用地是用于农业生产的土地，包括耕地、林地、草地和水域等类型。",
+            "example": "川西平原村落周围的成片耕地"
+          },
+          {
+            "name": "村落空间结构",
+            "difficulty": 2,
+            "description": "村落内部公共服务设施和住宅等用地的空间组织关系",
+            "aliases": [
+              "村落内部空间结构"
+            ],
+            "prerequisites": [
+              "乡村土地利用"
+            ],
+            "definition": "村落空间结构是村落内部各类土地利用及设施的空间分布和组合。",
+            "example": "诸葛村住宅多沿巷道分布，商业靠近交通便捷处",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "城镇",
+            "difficulty": 1,
+            "description": "以非农业经济活动为主、人口较多且经济活动多样的地区",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "城镇包括城市和镇，是以非农业经济活动为主的地区。",
+            "example": "北京是人口和经济活动高度集中的城市"
+          },
+          {
+            "name": "城镇功能区",
+            "difficulty": 2,
+            "description": "城镇内部按土地利用专业化形成的居住、商业、工业等区域",
+            "aliases": [
+              "功能区"
+            ],
+            "prerequisites": [
+              "城镇"
+            ],
+            "definition": "城镇功能区是城镇内以某一种土地利用方式为主的区域。",
+            "example": "某城镇中心形成商业区，外围分布居住区"
+          },
+          {
+            "name": "居住区",
+            "difficulty": 1,
+            "description": "城镇中以住宅用地为主、广泛分布的一类功能区",
+            "aliases": [],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "居住区是城镇中以居民住宅和生活空间为主的功能区。",
+            "example": "杭州某成片住宅和绿地组成的居住区"
+          },
+          {
+            "name": "商业区",
+            "difficulty": 2,
+            "description": "主要分布在城镇中心、交通干线两侧或街角路口的功能区",
+            "aliases": [],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "商业区是以商业活动和商业用地为主的城镇功能区。",
+            "example": "香港商业中心集中在维多利亚港两岸"
+          },
+          {
+            "name": "工业区",
+            "difficulty": 2,
+            "description": "工业集聚且多靠近交通便捷地带、通常远离城镇中心的区域",
+            "aliases": [],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "工业区是工业企业和工业用地集中分布的城镇功能区。",
+            "example": "苏州工业园靠近交通线路并远离城镇中心"
+          },
+          {
+            "name": "中央商务区",
+            "difficulty": 2,
+            "description": "大城市中心集聚商场、酒店和知名公司总部的商业核心区",
+            "aliases": [
+              "CBD"
+            ],
+            "prerequisites": [
+              "商业区"
+            ],
+            "definition": "中央商务区是大城市中心大型商业和商务活动高度集中的区域。",
+            "example": "北京国贸中央商务区",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "城镇空间结构",
+            "difficulty": 3,
+            "description": "城镇各功能区在空间上的分布及组合关系",
+            "aliases": [
+              "城镇内部空间结构"
+            ],
+            "prerequisites": [
+              "城镇功能区"
+            ],
+            "definition": "城镇空间结构是城镇内部各种功能区空间组合形成的整体格局。",
+            "example": "香港商业区居中、居住区外围、工业区较远"
+          },
+          {
+            "name": "地租",
+            "difficulty": 3,
+            "description": "土地在市场竞争中因位置和利用潜能形成的租金高低",
+            "aliases": [
+              "土地租金"
+            ],
+            "prerequisites": [
+              "城镇空间结构"
+            ],
+            "definition": "地租是土地使用者为获得土地使用权而支付的租金。",
+            "example": "城镇中心和交通干线附近地租较高",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "付租能力",
+            "difficulty": 3,
+            "description": "不同土地利用活动对地租的承受能力及其随距离的变化",
+            "aliases": [],
+            "prerequisites": [
+              "地租"
+            ],
+            "definition": "付租能力是某类土地利用活动愿意为土地支付租金的能力。",
+            "example": "商业用地付租能力随距市中心增加下降较快",
+            "section": "第一节 乡村和城镇空间结构"
+          },
+          {
+            "name": "城镇空间结构形成",
+            "difficulty": 4,
+            "description": "经济、政策、文化、环境和规划等因素共同塑造空间结构",
+            "aliases": [],
+            "prerequisites": [
+              "城镇空间结构",
+              "地租"
+            ],
+            "definition": "城镇空间结构形成是多种因素共同作用并随城镇发展变化的过程。",
+            "example": "京津冀协同发展推动北京部分功能向通州疏解"
+          },
+          {
+            "name": "合理利用城乡空间",
+            "difficulty": 2,
+            "description": "通过规划城乡土地和设施，优化空间结构并促进协调发展",
+            "aliases": [],
+            "prerequisites": [
+              "乡村土地利用",
+              "城镇空间结构"
+            ],
+            "definition": "合理利用城乡空间是依据发展需求科学安排城乡各类土地和设施。",
+            "example": "规划工业区并保留绿地和河湖生态空间"
+          },
+          {
+            "name": "城镇化",
+            "difficulty": 2,
+            "description": "乡村人口向城镇集中及乡村转变为城镇地区的过程",
+            "aliases": [
+              "城市化"
+            ],
+            "prerequisites": [
+              "城镇"
+            ],
+            "definition": "城镇化是乡村人口向城镇地区集中和乡村地区转变为城镇地区的过程。",
+            "example": "长江三角洲城市数量增加、规模扩大"
+          },
+          {
+            "name": "城镇化水平",
+            "difficulty": 2,
+            "description": "以城镇人口占区域总人口的比例为最重要衡量指标",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "城镇化水平是一个地区城镇人口占总人口的比例。",
+            "example": "英国20世纪70年代城镇化水平达到70%",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "工业化",
+            "difficulty": 2,
+            "description": "工业发展推动社会经济发展并与城镇化密切相关的过程",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "工业化是工业不断发展并推动社会经济结构变化的过程。",
+            "example": "工业革命推动英国城镇化迅速发展"
+          },
+          {
+            "name": "城镇化意义",
+            "difficulty": 3,
+            "description": "城镇化可促进经济增长、提高资源利用效率并改善居住环境",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "城镇化意义是城镇化对区域经济、资源利用、环境和社会和谐的积极作用。",
+            "example": "集中建设污水处理厂改善环境质量"
+          },
+          {
+            "name": "世界城镇化进程",
+            "difficulty": 3,
+            "description": "世界城镇化随工业革命加快，不同国家和地区进程存在差异",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化水平",
+              "工业化"
+            ],
+            "definition": "世界城镇化进程是世界各国城镇人口比例随时间变化的发展过程。",
+            "example": "2016年世界城镇人口比例达到54.3%"
+          },
+          {
+            "name": "城镇化区域差异",
+            "difficulty": 3,
+            "description": "发达国家起步早水平高，发展中国家起步晚但发展较快",
+            "aliases": [],
+            "prerequisites": [
+              "世界城镇化进程"
+            ],
+            "definition": "城镇化区域差异是不同国家或地区城镇化起步时间、速度和水平的差别。",
+            "example": "英国城镇化水平高，印度仍不足40%"
+          },
+          {
+            "name": "城镇化问题",
+            "difficulty": 3,
+            "description": "城镇化快速发展可能引发污染、拥堵、住房紧张和贫困等问题",
+            "aliases": [],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "城镇化问题是城镇化过程中出现的环境问题和社会问题。",
+            "example": "大城市人口增加导致交通拥堵和住房紧张",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "人口居住郊区化",
+            "difficulty": 3,
+            "description": "大城市人口向乡村居民点和小城镇或郊区迁移的现象",
+            "aliases": [
+              "居住郊区化"
+            ],
+            "prerequisites": [
+              "城镇化"
+            ],
+            "definition": "人口居住郊区化是城市居民为改善居住条件而向郊区迁居的现象。",
+            "example": "北京部分居民因追求宽敞环境迁往郊区",
+            "section": "问题研究 从市中心到郊区,你选择住在哪里"
+          },
+          {
+            "name": "地理信息技术",
+            "difficulty": 2,
+            "description": "应用于城市规划、市政建设和公共服务等管理领域的技术",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地理信息技术是用于获取、处理、分析和应用地理空间信息的技术。",
+            "example": "城市管理利用地理信息技术优化设施布局"
+          },
+          {
+            "name": "地理信息系统",
+            "difficulty": 3,
+            "description": "具有空间信息储存、分析、处理、图层分析和制图功能的系统",
+            "aliases": [
+              "GIS"
+            ],
+            "prerequisites": [
+              "地理信息技术"
+            ],
+            "definition": "地理信息系统是对各类空间信息进行储存、分析和处理的系统。",
+            "example": "用GIS优化公共服务设施布局",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "全球卫星导航系统",
+            "difficulty": 2,
+            "description": "利用卫星提供定位和导航功能，为城市生活与管理服务",
+            "aliases": [],
+            "prerequisites": [
+              "地理信息技术"
+            ],
+            "definition": "全球卫星导航系统是利用卫星为目标提供定位和导航服务的系统。",
+            "example": "定位巡警车在城市中的实时位置",
+            "section": "第二节 城镇化"
+          },
+          {
+            "name": "地域文化",
+            "difficulty": 2,
+            "description": "在特定地域形成的、具有地域性和独特性的文化现象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "地域文化是在特定地域范围内形成的物质和非物质文化。",
+            "example": "江南文化影响周庄的水乡景观",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "自然景观",
+            "difficulty": 1,
+            "description": "较少受到或未受到人类直接影响的自然地理景象",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然景观是自然环境本身形成的景观。",
+            "example": "高山流水属于自然景观",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "文化景观",
+            "difficulty": 2,
+            "description": "人类利用自然物质创造并留在地球表面的文化印记",
+            "aliases": [
+              "人文景观"
+            ],
+            "prerequisites": [
+              "地域文化"
+            ],
+            "definition": "文化景观是人类文化留在地球表面上的印记。",
+            "example": "农田、村落、道路和建筑都是文化景观"
+          },
+          {
+            "name": "城乡景观",
+            "difficulty": 2,
+            "description": "由乡村或城镇聚落及其建筑、道路等共同构成的景观",
+            "aliases": [],
+            "prerequisites": [
+              "文化景观"
+            ],
+            "definition": "城乡景观包括聚落整体以及聚落内部的建筑、道路等景观。",
+            "example": "厦门城乡建筑景观体现城市与乡村差异",
+            "section": "第三节 地域文化与城乡景观"
+          },
+          {
+            "name": "乡村景观",
+            "difficulty": 2,
+            "description": "乡村生产生活与自然环境相互作用形成的地域景观",
+            "aliases": [],
+            "prerequisites": [
+              "城乡景观"
+            ],
+            "definition": "乡村景观是乡村聚落及其生产生活空间呈现的综合景观。",
+            "example": "红河哈尼梯田体现人地和谐理念"
+          },
+          {
+            "name": "城镇景观",
+            "difficulty": 2,
+            "description": "城镇建筑、道路和空间格局所呈现的地域性景观",
+            "aliases": [],
+            "prerequisites": [
+              "城乡景观"
+            ],
+            "definition": "城镇景观是城镇聚落及其建筑、道路和空间格局形成的景观。",
+            "example": "北京四合院体现古都建筑特点",
+            "section": "第三节 地域文化与城乡景观"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 乡村和城镇空间结构",
+            "section_key": "b67df90fba",
+            "page_range": [
+              29,
+              36
+            ]
+          },
+          {
+            "name": "第二节 城镇化",
+            "section_key": "e3a87f068a",
+            "page_range": [
+              36,
+              47
+            ]
+          },
+          {
+            "name": "第三节 地域文化与城乡景观",
+            "section_key": "768f29832d",
+            "page_range": [
+              47,
+              56
+            ]
+          },
+          {
+            "name": "问题研究 从市中心到郊区,你选择住在哪里",
+            "section_key": "e4116fadb3",
+            "page_range": [
+              56,
+              57
+            ]
+          }
+        ],
+        "chapter_key": "e12656f4f6",
+        "metadata": {
+          "volume_id": "e299ed0b6bcd",
+          "file_id": "e299ed0b6bcd",
+          "volume_title": "高中地理 必修第2册",
+          "chapter_order": 2,
+          "raw_heading": "第二章 乡村和城镇"
+        }
+      },
+      {
+        "name": "第三章 产业区位因素",
+        "concepts": [
+          {
+            "name": "区位",
+            "difficulty": 1,
+            "description": "某事物所占有的场所及其与相关地理因素的关系",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "区位是指某事物所占有的场所及其与相关地理因素的关系。",
+            "example": "工厂所在的地点及其与交通、市场的关系。"
+          },
+          {
+            "name": "区位因素",
+            "difficulty": 1,
+            "description": "影响某事物区位选择的因素",
+            "aliases": [],
+            "prerequisites": [
+              "区位"
+            ],
+            "definition": "区位因素是影响某事物区位选择的各种因素。",
+            "example": "市场、交通运输和政策法规都是区位因素。"
+          },
+          {
+            "name": "农业生产活动",
+            "difficulty": 1,
+            "description": "利用土地自然生产力栽培植物或饲养动物",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "农业生产活动是人们利用土地的自然生产力栽培植物或饲养动物以获取产品。",
+            "example": "种植水稻、饲养绵羊。",
+            "section": "第一节 农业区位因素及其变化"
+          },
+          {
+            "name": "农业地域性",
+            "difficulty": 2,
+            "description": "农业生产因地域条件差异而表现出的地域差异",
+            "aliases": [],
+            "prerequisites": [
+              "农业生产活动"
+            ],
+            "definition": "农业地域性是指农业生产受各地自然、经济技术和文化政策差异影响而呈现地域差异。",
+            "example": "泰国平原种水稻，澳大利亚东南部发展牧羊。"
+          },
+          {
+            "name": "农业季节性",
+            "difficulty": 2,
+            "description": "农业生产需按自然条件变化安排生产活动",
+            "aliases": [],
+            "prerequisites": [
+              "农业生产活动"
+            ],
+            "definition": "农业季节性是指农业生产活动与季节变化密切相关。",
+            "example": "农作物需按播种期和收获期安排生产。"
+          },
+          {
+            "name": "农业区位因素",
+            "difficulty": 2,
+            "description": "影响一定地方农业生产选择的自然和人文因素",
+            "aliases": [],
+            "prerequisites": [
+              "区位因素",
+              "农业生产活动"
+            ],
+            "definition": "农业区位因素是影响一定地方农业生产对象和生产方式选择的因素。",
+            "example": "气候、地形、市场和交通运输共同影响桑蚕业布局。"
+          },
+          {
+            "name": "自然因素",
+            "difficulty": 1,
+            "description": "自然环境中影响产业生产和区位选择的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "自然因素是自然环境条件中影响经济活动的因素。",
+            "example": "气候、地形、水源和土壤。"
+          },
+          {
+            "name": "人文因素",
+            "difficulty": 1,
+            "description": "社会经济活动中影响产业区位选择的因素",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "人文因素是由经济、社会、政策和技术等人类活动形成的影响因素。",
+            "example": "市场、劳动力、交通运输和政策法规。"
+          },
+          {
+            "name": "气候因素",
+            "difficulty": 2,
+            "description": "热量、光照和降水等影响农业生产的条件",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "气候因素是热量、光照、降水等对农业生产产生影响的气候条件。",
+            "example": "柑橘适宜在南方种植，苹果适宜在北方种植。",
+            "section": "第一节 农业区位因素及其变化"
+          },
+          {
+            "name": "地形因素",
+            "difficulty": 2,
+            "description": "地表形态影响农业类型和作物分布",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "地形因素是地形起伏、海拔等条件对农业类型和分布产生的影响。",
+            "example": "平原适宜种植业，山地适宜林业或畜牧业。"
+          },
+          {
+            "name": "水源因素",
+            "difficulty": 2,
+            "description": "河湖、地下水和冰雪融水等供水条件",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "水源因素是可供农业生产灌溉和工业生产使用的水体条件。",
+            "example": "临近河湖的农田便于修渠灌溉。"
+          },
+          {
+            "name": "土壤因素",
+            "difficulty": 2,
+            "description": "土壤类型和肥力对作物生长的影响",
+            "aliases": [],
+            "prerequisites": [
+              "自然因素"
+            ],
+            "definition": "土壤因素是土壤类型及其性质对农作物生长适宜性的影响。",
+            "example": "东南丘陵红壤适宜种植茶树。"
+          },
+          {
+            "name": "农业市场因素",
+            "difficulty": 2,
+            "description": "农产品需求和价格影响农业类型与生产规模",
+            "aliases": [],
+            "prerequisites": [
+              "农业区位因素"
+            ],
+            "definition": "农业市场因素是农产品需求和价格对农业生产类型、规模及区位选择的影响。",
+            "example": "城市周边因需求大而发展蔬菜、肉蛋奶生产。"
+          },
+          {
+            "name": "农业区位变化",
+            "difficulty": 3,
+            "description": "市场、科技和交通等变化引起农业布局调整",
+            "aliases": [],
+            "prerequisites": [
+              "农业区位因素"
+            ],
+            "definition": "农业区位变化是农业生产人文因素发展变化导致农业区位选择发生调整。",
+            "example": "品种改良使三江平原由种小麦转为种水稻。"
+          },
+          {
+            "name": "反季节供应",
+            "difficulty": 3,
+            "description": "利用地区季节差异供应当地非生产季农产品",
+            "aliases": [],
+            "prerequisites": [
+              "农业市场因素",
+              "交通运输"
+            ],
+            "definition": "反季节供应是利用不同地区自然环境和生长季节差异进行农产品供应。",
+            "example": "冬季北方市场销售海南生产的西瓜。",
+            "section": "第一节 农业区位因素及其变化"
+          },
+          {
+            "name": "工业生产活动",
+            "difficulty": 1,
+            "description": "利用劳动力、动力和设备将原料制成产品",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "工业生产活动是在工厂中利用劳动力、动力和机械设备将原料制成产品。",
+            "example": "汽车生产线将零部件装配成汽车。",
+            "section": "第二节 工业区位因素及其变化"
+          },
+          {
+            "name": "工业区位因素",
+            "difficulty": 2,
+            "description": "影响工厂地点选择的经济、环境和社会因素",
+            "aliases": [],
+            "prerequisites": [
+              "区位因素",
+              "工业生产活动"
+            ],
+            "definition": "工业区位因素是影响工业工厂地点选择的自然和人文因素。",
+            "example": "原料、交通、市场、劳动力和环境共同影响钢铁厂选址。"
+          },
+          {
+            "name": "总成本最低",
+            "difficulty": 3,
+            "description": "工厂综合各种成本后选择成本最低的地点",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "总成本最低是指在市场因素一定时，通过综合比较各项成本选择工厂地点。",
+            "example": "钢铁厂选择临近港口以降低原料运输成本。"
+          },
+          {
+            "name": "工业环境因素",
+            "difficulty": 2,
+            "description": "环境质量和污染治理要求影响工业布局",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业环境因素是环境质量、污染程度及环保要求对工业区位选择的影响。",
+            "example": "造纸厂应远离水源地及河流上游。"
+          },
+          {
+            "name": "工业政策因素",
+            "difficulty": 2,
+            "description": "政府政策、税收和基础设施影响工业布局",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业政策因素是政府通过政策、税收、补贴和基础设施等影响工业布局。",
+            "example": "政策引导棉纺织业向新疆发展。"
+          },
+          {
+            "name": "工业集聚",
+            "difficulty": 3,
+            "description": "具有工业联系的工厂在近距离集中布局",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业集聚是具有工业联系的一些工厂发生近距离集聚的现象。",
+            "example": "顺德集聚家具制造、木工机械和涂料企业。"
+          },
+          {
+            "name": "专业化生产",
+            "difficulty": 3,
+            "description": "不同地区或工厂分工生产相关产品或环节",
+            "aliases": [],
+            "prerequisites": [
+              "工业集聚"
+            ],
+            "definition": "专业化生产是不同地区或工厂围绕产业联系进行明确分工生产。",
+            "example": "顺德不同专业镇分别生产家具、五金和涂料。",
+            "section": "第二节 工业区位因素及其变化"
+          },
+          {
+            "name": "区位比较优势",
+            "difficulty": 3,
+            "description": "某地相对其他地点在部分因素上的优势",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "区位比较优势是某区位在一定范围内少数区位因素上相对占优。",
+            "example": "上高凭借较低劳动力成本吸引制鞋企业。",
+            "section": "第二节 工业区位因素及其变化"
+          },
+          {
+            "name": "工业区位变化",
+            "difficulty": 3,
+            "description": "科技、市场和政策变化引起工业布局调整",
+            "aliases": [],
+            "prerequisites": [
+              "工业区位因素"
+            ],
+            "definition": "工业区位变化是社会发展和科技进步使工业区位因素作用发生改变。",
+            "example": "钢铁工业由靠近原料地转向沿海港口布局。"
+          },
+          {
+            "name": "服务业",
+            "difficulty": 1,
+            "description": "为社会生产和生活提供服务的产业",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "服务业是为社会生产和生活提供服务的产业。",
+            "example": "零售、金融、教育和公共卫生。"
+          },
+          {
+            "name": "商业性服务业",
+            "difficulty": 1,
+            "description": "主要以营利为目的提供服务的产业",
+            "aliases": [],
+            "prerequisites": [
+              "服务业"
+            ],
+            "definition": "商业性服务业是主要以营利为目的的服务业。",
+            "example": "零售、餐饮、住宿和金融。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "非商业性服务业",
+            "difficulty": 1,
+            "description": "不以营利为目的提供公共服务的产业",
+            "aliases": [],
+            "prerequisites": [
+              "服务业"
+            ],
+            "definition": "非商业性服务业是不以营利为目的的服务业。",
+            "example": "教育、公共卫生和社会工作。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "服务业区位因素",
+            "difficulty": 2,
+            "description": "影响服务业地点选择的市场和社会经济因素",
+            "aliases": [],
+            "prerequisites": [
+              "服务业",
+              "区位因素"
+            ],
+            "definition": "服务业区位因素是影响服务业地点选择的自然和人文因素。",
+            "example": "商业网点重点考虑市场、交通和集聚。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "服务业集聚",
+            "difficulty": 2,
+            "description": "多个服务商家在一定区域集中布局",
+            "aliases": [],
+            "prerequisites": [
+              "商业性服务业",
+              "服务业区位因素"
+            ],
+            "definition": "服务业集聚是多个服务商家在一定区域集中布局并共享优势的现象。",
+            "example": "城市形成美食街、服装城和电器城。"
+          },
+          {
+            "name": "均衡化原则",
+            "difficulty": 3,
+            "description": "公共服务业按服务对象需求和分布公平布局",
+            "aliases": [],
+            "prerequisites": [
+              "非商业性服务业"
+            ],
+            "definition": "均衡化原则是非商业性公共服务业进行区位选择时追求服务公平。",
+            "example": "公立学校和医院依据人口分布布局。"
+          },
+          {
+            "name": "网络信息技术",
+            "difficulty": 2,
+            "description": "支撑线上线下融合服务和远程服务的技术",
+            "aliases": [],
+            "prerequisites": [
+              "服务业"
+            ],
+            "definition": "网络信息技术是现代新兴服务业进行联系、交易和配送的重要技术条件。",
+            "example": "网上支付、远程医疗和外卖配送。",
+            "section": "第三节 服务业区位因素及其变化"
+          },
+          {
+            "name": "服务业区位变化",
+            "difficulty": 3,
+            "description": "信息技术发展使服务业区位选择更灵活",
+            "aliases": [],
+            "prerequisites": [
+              "服务业区位因素"
+            ],
+            "definition": "服务业区位变化是现代技术和社会发展使服务业布局因素及选择余地发生变化。",
+            "example": "网店依托网络而不必布局在传统商业中心。"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 农业区位因素及其变化",
+            "section_key": "b3d319df79",
+            "page_range": [
+              59,
+              68
+            ]
+          },
+          {
+            "name": "第二节 工业区位因素及其变化",
+            "section_key": "a11ac9a033",
+            "page_range": [
+              68,
+              76
+            ]
+          },
+          {
+            "name": "第三节 服务业区位因素及其变化",
+            "section_key": "eeec4f6ceb",
+            "page_range": [
+              76,
+              82
+            ]
+          },
+          {
+            "name": "问题研究 实体商店何去何从",
+            "section_key": "c0606e2ab4",
+            "page_range": [
+              82,
+              83
+            ]
+          }
+        ],
+        "chapter_key": "808b24db26",
+        "metadata": {
+          "volume_id": "e299ed0b6bcd",
+          "file_id": "e299ed0b6bcd",
+          "volume_title": "高中地理 必修第2册",
+          "chapter_order": 3,
+          "raw_heading": "第三章 产业区位因素"
+        }
+      },
+      {
+        "name": "第四章 交通运输布局与区域发展",
+        "concepts": [
+          {
+            "name": "交通运输布局",
+            "difficulty": 2,
+            "description": "交通线网、场站组织及客货流分配引导的安排",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "交通运输布局是对区域交通线网、场站及客货流进行组织和分配。",
+            "example": "义乌机场多次扩建完善航空运输布局"
+          },
+          {
+            "name": "运输需求",
+            "difficulty": 2,
+            "description": "区域对客货运输在运距、运时、运量等方面的需要",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "运输需求是区域经济社会发展产生的客货运输需要。",
+            "example": "义乌小商品贸易发展带来航空运输需求"
+          },
+          {
+            "name": "交通运输网",
+            "difficulty": 2,
+            "description": "由多种交通线、站及运输方式组成的网络系统",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局"
+            ],
+            "definition": "交通运输网是由交通线、场站和不同运输方式共同构成的运输系统。",
+            "example": "我国铁路网连接众多城市和交通节点"
+          },
+          {
+            "name": "交通运输布局原则",
+            "difficulty": 2,
+            "description": "指导区域交通线网和场站合理组织的基本要求",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局",
+              "运输需求"
+            ],
+            "definition": "交通运输布局原则是实现区域运输合理化并兼顾综合效益的基本要求。",
+            "example": "布局时综合考虑需求、自然条件和土地占用"
+          },
+          {
+            "name": "依据运输需求",
+            "difficulty": 2,
+            "description": "根据运输需求确定运输方式、线路、站点和标准",
+            "aliases": [],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局原则"
+            ],
+            "definition": "依据运输需求是按照客货运输需要确定交通运输布局内容和建设标准。",
+            "example": "客流量大时建设规模较大的场站"
+          },
+          {
+            "name": "适度超前",
+            "difficulty": 2,
+            "description": "建设标准满足未来一段时期需求但避免标准过高",
+            "aliases": [],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局原则"
+            ],
+            "definition": "适度超前是交通设施设计标准适当满足未来运输需求而不过度建设。",
+            "example": "机场航站楼按未来客流适度扩建"
+          },
+          {
+            "name": "因地制宜",
+            "difficulty": 2,
+            "description": "交通运输布局充分考虑区域自然条件",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局原则"
+            ],
+            "definition": "因地制宜是根据地质、地貌、气候、水文等条件进行交通布局。",
+            "example": "山区铁路采用桥梁和隧道穿越复杂地形"
+          },
+          {
+            "name": "少占土地",
+            "difficulty": 2,
+            "description": "交通线和场站布局尽量节约土地，尤其是耕地",
+            "aliases": [
+              "尽量少占土地"
+            ],
+            "prerequisites": [
+              "交通运输布局原则"
+            ],
+            "definition": "少占土地是交通设施建设尽量减少土地占用并保护耕地。",
+            "example": "线路选址避开集中连片耕地"
+          },
+          {
+            "name": "综合运输优势",
+            "difficulty": 3,
+            "description": "利用不同运输方式优势并加强转运衔接",
+            "aliases": [
+              "发挥综合运输优势"
+            ],
+            "prerequisites": [
+              "交通运输网",
+              "交通运输布局原则"
+            ],
+            "definition": "综合运输优势是通过多种运输方式协同衔接提高运输系统效益。",
+            "example": "虹桥枢纽实现铁路、航空和地铁换乘"
+          },
+          {
+            "name": "交通运输布局变化",
+            "difficulty": 2,
+            "description": "交通线站建设、改扩建、废弃及运输方式衔接的变化",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局"
+            ],
+            "definition": "交通运输布局变化是区域交通设施和运输方式随发展不断调整的过程。",
+            "example": "北京首都机场持续扩建航站楼",
+            "section": "第一节 区域发展对交通运输布局的影响"
+          },
+          {
+            "name": "综合交通枢纽",
+            "difficulty": 3,
+            "description": "多种运输方式集中衔接并实现便捷换乘的场所",
+            "aliases": [
+              "综合性交通运输枢纽"
+            ],
+            "prerequisites": [
+              "交通运输网",
+              "综合运输优势"
+            ],
+            "definition": "综合交通枢纽是多种交通运输方式集中衔接和转运的设施区域。",
+            "example": "上海虹桥枢纽连接高铁、机场和地铁",
+            "section": "第一节 区域发展对交通运输布局的影响"
+          },
+          {
+            "name": "经济发展水平",
+            "difficulty": 2,
+            "description": "区域经济发展程度及其资金、技术等支撑条件",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "经济发展水平影响区域交通线站的密度、质量和网络完善程度。",
+            "example": "发达地区交通线和站点通常较密集"
+          },
+          {
+            "name": "交通运输滞后",
+            "difficulty": 3,
+            "description": "交通建设不能及时满足区域发展运输需求的状态",
+            "aliases": [
+              "建设滞后"
+            ],
+            "prerequisites": [
+              "运输需求",
+              "经济发展水平"
+            ],
+            "definition": "交通运输滞后是交通设施建设落后于区域发展及运输需求的现象。",
+            "example": "发展中国家工业化初期常出现交通建设滞后"
+          },
+          {
+            "name": "交通运输瓶颈",
+            "difficulty": 3,
+            "description": "交通能力不足而制约区域发展的突出问题",
+            "aliases": [
+              "交通瓶颈"
+            ],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局"
+            ],
+            "definition": "交通运输瓶颈是交通运输不能满足区域需求并阻碍区域发展的状况。",
+            "example": "道路不畅使武功县农产品难以外运",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "促进区域经济发展",
+            "difficulty": 3,
+            "description": "交通运输推动要素流动、产业发展和区域联系",
+            "aliases": [],
+            "prerequisites": [
+              "交通运输布局",
+              "运输需求"
+            ],
+            "definition": "交通运输通过促进资源、产品、设备和劳动力流动推动区域经济发展。",
+            "example": "沿海地区借助海运发展出口加工业",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "交通运输拉动效应",
+            "difficulty": 3,
+            "description": "交通建设直接带动相关行业发展并增加就业",
+            "aliases": [
+              "经济拉动效应"
+            ],
+            "prerequisites": [
+              "促进区域经济发展"
+            ],
+            "definition": "交通运输拉动效应是交通建设带动原材料、能源、建筑、旅游等行业发展。",
+            "example": "高速铁路建设带动沿线建筑和服务业",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "交通枢纽集聚",
+            "difficulty": 3,
+            "description": "客货集散周转促使服务业和制造业在枢纽集聚",
+            "aliases": [],
+            "prerequisites": [
+              "综合交通枢纽",
+              "促进区域经济发展"
+            ],
+            "definition": "交通枢纽集聚是餐饮、旅馆、装卸及相关制造业在交通枢纽集中。",
+            "example": "石家庄依托铁路枢纽发展成为城市",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "聚落发展",
+            "difficulty": 3,
+            "description": "交通布局及其变化对城市和乡村聚落形成发展的影响",
+            "aliases": [
+              "影响聚落发展"
+            ],
+            "prerequisites": [
+              "交通运输布局",
+              "促进区域经济发展"
+            ],
+            "definition": "聚落发展会受到交通枢纽、运输线路及运输方式变化的显著影响。",
+            "example": "许多沿港口城市因交通便利而兴旺",
+            "section": "第二节 交通运输布局对区域发展的影响"
+          },
+          {
+            "name": "商业中心变化",
+            "difficulty": 3,
+            "description": "运输线路或方式变化引起商业网点和城市中心变化",
+            "aliases": [
+              "商业中心城市变化"
+            ],
+            "prerequisites": [
+              "交通运输布局变化",
+              "聚落发展"
+            ],
+            "definition": "商业中心变化是客货运输方向和集散地改变导致商业空间重组。",
+            "example": "海运兴起后扬州商业地位逐渐下降"
+          },
+          {
+            "name": "城市交通拥堵",
+            "difficulty": 2,
+            "description": "城市交通流量集中导致道路和路口通行不畅",
+            "aliases": [
+              "交通拥堵"
+            ],
+            "prerequisites": [
+              "运输需求",
+              "交通运输布局"
+            ],
+            "definition": "城市交通拥堵是城市交通需求集中并超过道路通行能力的现象。",
+            "example": "上下班高峰期主城区道路容易拥堵",
+            "section": "问题研究 城市交通如何疏堵"
+          },
+          {
+            "name": "公交主导",
+            "difficulty": 3,
+            "description": "以公共交通为主要方式缓解城市交通拥堵",
+            "aliases": [],
+            "prerequisites": [
+              "城市交通拥堵",
+              "交通运输网"
+            ],
+            "definition": "公交主导是通过优先发展公共交通分担城市出行交通量。",
+            "example": "设置公交专用道并发展快速公交",
+            "section": "问题研究 城市交通如何疏堵"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 区域发展对交通运输布局的影响",
+            "section_key": "e5aa007f9e",
+            "page_range": [
+              85,
+              92
+            ]
+          },
+          {
+            "name": "第二节 交通运输布局对区域发展的影响",
+            "section_key": "c37f10a1fa",
+            "page_range": [
+              92,
+              98
+            ]
+          },
+          {
+            "name": "问题研究 城市交通如何疏堵",
+            "section_key": "b739c1d45b",
+            "page_range": [
+              98,
+              99
+            ]
+          }
+        ],
+        "chapter_key": "8e50d55cc6",
+        "metadata": {
+          "volume_id": "e299ed0b6bcd",
+          "file_id": "e299ed0b6bcd",
+          "volume_title": "高中地理 必修第2册",
+          "chapter_order": 4,
+          "raw_heading": "第四章 交通运输布局与区域发展"
+        }
+      },
+      {
+        "name": "第五章 环境与发展",
+        "concepts": [
+          {
+            "name": "环境问题",
+            "difficulty": 2,
+            "description": "人类不恰当、不友好行为导致的环境结果",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "环境问题是人类对环境采取不恰当、不友好态度和做法所导致的结果。",
+            "example": "过度垦荒导致生态破坏和环境恶化"
+          },
+          {
+            "name": "环境承受能力",
+            "difficulty": 2,
+            "description": "自然环境承受人类资源索取的能力",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "环境承受能力是自然环境能够承受人类合理、适度资源索取的限度。",
+            "example": "索取超过承受能力会造成资源枯竭"
+          },
+          {
+            "name": "净化能力",
+            "difficulty": 2,
+            "description": "自然环境容纳、分解和清除废弃物的能力",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "净化能力是自然环境对人类排放废弃物进行容纳、分解和清除的能力。",
+            "example": "排污超过净化能力会造成水污染"
+          },
+          {
+            "name": "自然资源枯竭",
+            "difficulty": 2,
+            "description": "自然资源因过度索取而减少甚至难以恢复",
+            "aliases": [
+              "资源短缺"
+            ],
+            "prerequisites": [
+              "环境承受能力"
+            ],
+            "definition": "自然资源枯竭是人类索取超过环境承受能力而出现的资源减少或耗竭问题。",
+            "example": "森林减少、矿产资源短缺"
+          },
+          {
+            "name": "生态破坏",
+            "difficulty": 2,
+            "description": "人类活动造成生态系统结构和功能受损",
+            "aliases": [
+              "生态环境破坏"
+            ],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "生态破坏是人类活动导致生态系统及其功能受到损害的环境问题。",
+            "example": "过度放牧导致土地荒漠化"
+          },
+          {
+            "name": "环境污染",
+            "difficulty": 2,
+            "description": "废弃物排放超过环境净化能力造成的质量下降",
+            "aliases": [
+              "污染"
+            ],
+            "prerequisites": [
+              "净化能力"
+            ],
+            "definition": "环境污染是人类排放废弃物数量超过环境自身净化能力而导致的环境质量下降。",
+            "example": "工业废气造成大气污染"
+          },
+          {
+            "name": "全球性环境问题",
+            "difficulty": 3,
+            "description": "影响范围超越国界和地域的环境问题",
+            "aliases": [],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "全球性环境问题是影响范围超越国界和地域界线的环境问题。",
+            "example": "全球变暖、酸雨和臭氧层破坏",
+            "section": "第一节 人类面临的主要环境问题"
+          },
+          {
+            "name": "人地协调",
+            "difficulty": 2,
+            "description": "人与自然相互适应、和谐共生的发展关系",
+            "aliases": [
+              "和谐论"
+            ],
+            "prerequisites": [
+              "环境问题"
+            ],
+            "definition": "人地协调是人类遵循自然规律并与自然和谐共生的人地关系状态。",
+            "example": "保护生态环境并合理利用资源",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "可持续发展",
+            "difficulty": 3,
+            "description": "兼顾当代需求与后代需求能力的发展",
+            "aliases": [],
+            "prerequisites": [
+              "人地协调"
+            ],
+            "definition": "可持续发展是既满足当代人的需求，又不危及后代人满足其需求能力的发展。",
+            "example": "发展经济同时保护资源环境"
+          },
+          {
+            "name": "生态持续发展",
+            "difficulty": 3,
+            "description": "发展与资源环境承载力相协调",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "生态持续发展强调人类发展要与资源环境承载力相协调。",
+            "example": "在生态脆弱区控制开发强度"
+          },
+          {
+            "name": "经济持续发展",
+            "difficulty": 3,
+            "description": "重视增长质量并改变生产消费模式",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "经济持续发展强调发展不仅重视数量增长，还要改善质量并转变生产消费模式。",
+            "example": "提高资源利用效率"
+          },
+          {
+            "name": "社会持续发展",
+            "difficulty": 3,
+            "description": "以改善生活质量和社会进步为发展目的",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "社会持续发展强调发展应改善和提高生活质量并与社会进步相适应。",
+            "example": "消除贫困并发展优质教育"
+          },
+          {
+            "name": "公平性原则",
+            "difficulty": 3,
+            "description": "强调代内、代际及人与其他生物的公平",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "公平性原则要求实现同代人、代际、人与其他生物及不同国家地区之间的公平。",
+            "example": "兼顾当代人与后代人的资源需求",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "持续性原则",
+            "difficulty": 3,
+            "description": "经济社会发展须保持在承载力之内",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "持续性原则要求人类经济活动和社会发展保持在资源环境承载力之内。",
+            "example": "限制高耗能高污染产业发展",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "共同性原则",
+            "difficulty": 3,
+            "description": "各国共同参与全球环境与发展治理",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "共同性原则要求各国共同承担发展经济和保护环境的任务并积极参与。",
+            "example": "各国合作应对全球气候变化",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "消除贫困",
+            "difficulty": 2,
+            "description": "通过减贫缓解环境恶化并促进可持续发展",
+            "aliases": [
+              "减贫"
+            ],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "消除贫困是实现可持续发展的重要目标，也是缓解发展中国家环境恶化的重要途径。",
+            "example": "教育扶贫和发展特色产业"
+          },
+          {
+            "name": "绿色经济",
+            "difficulty": 3,
+            "description": "平衡经济发展、环境保护和社会包容",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "绿色经济追求经济发展、环境保护和社会包容三方面的平衡。",
+            "example": "节能减排并提高资源利用效率"
+          },
+          {
+            "name": "低碳经济",
+            "difficulty": 3,
+            "description": "改善能源结构并减少碳排放的经济模式",
+            "aliases": [],
+            "prerequisites": [
+              "绿色经济"
+            ],
+            "definition": "低碳经济是通过改善能源结构和提高能源利用效率来减少碳排放的经济模式。",
+            "example": "发展风能并减少化石能源使用",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "循环经济",
+            "difficulty": 3,
+            "description": "减少资源消耗并控制污染物排放",
+            "aliases": [],
+            "prerequisites": [
+              "绿色经济"
+            ],
+            "definition": "循环经济强调减少资源消耗、提高资源利用效率并控制污染物排放。",
+            "example": "废旧物品回收再利用",
+            "section": "第二节 走向人地协调——可持续发展"
+          },
+          {
+            "name": "可持续消费",
+            "difficulty": 2,
+            "description": "以负责任行为践行简约绿色低碳生活",
+            "aliases": [
+              "绿色消费"
+            ],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "可持续消费旨在通过负责任行为建立简约适度、绿色低碳的生活方式。",
+            "example": "选择本地应季且简易包装的食品"
+          },
+          {
+            "name": "主体功能",
+            "difficulty": 3,
+            "description": "区域最主要、最核心的功能",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "主体功能是一个区域所具有的多种功能中最主要、最核心的功能。",
+            "example": "农产品主产区的主体功能是提供农产品"
+          },
+          {
+            "name": "主体功能区",
+            "difficulty": 3,
+            "description": "依据区域主体功能进行国土开发保护的战略",
+            "aliases": [
+              "发展优先区"
+            ],
+            "prerequisites": [
+              "主体功能"
+            ],
+            "definition": "主体功能区是依据地理国情和国土开发状况划分的国土开发和保护战略区域。",
+            "example": "将区域划为限制开发区域"
+          },
+          {
+            "name": "优化开发区域",
+            "difficulty": 3,
+            "description": "承载力接近饱和、需优化发展的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "优化开发区域是经济发达且资源环境承载能力接近饱和、需要优化发展的区域。",
+            "example": "珠江三角洲地区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "重点开发区域",
+            "difficulty": 3,
+            "description": "开发基础较弱但未来潜力较大的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "重点开发区域是具有一定经济基础且未来开发潜力较大的区域。",
+            "example": "兰州—西宁地区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "限制开发区域",
+            "difficulty": 3,
+            "description": "限制大规模工业化和城镇化开发的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "限制开发区域是限制大规模工业化、城镇化建设而非限制一切开发活动的区域。",
+            "example": "农产品主产区和重点生态功能区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "禁止开发区域",
+            "difficulty": 3,
+            "description": "依法进行自然和文化遗产保护的区域",
+            "aliases": [],
+            "prerequisites": [
+              "主体功能区"
+            ],
+            "definition": "禁止开发区域是以自然或法定边界为单元进行严格保护的区域。",
+            "example": "国家级自然保护区",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "长江经济带",
+            "difficulty": 3,
+            "description": "依托长江联系东中西部的区域发展战略",
+            "aliases": [],
+            "prerequisites": [
+              "区域协调发展"
+            ],
+            "definition": "长江经济带是横跨我国东中西三大区域的重要内河经济带和区域发展战略。",
+            "example": "建设沿江绿色生态廊道"
+          },
+          {
+            "name": "区域协调发展",
+            "difficulty": 3,
+            "description": "通过区域合作逐步缩小区域发展差距",
+            "aliases": [],
+            "prerequisites": [
+              "可持续发展"
+            ],
+            "definition": "区域协调发展是通过各有侧重的区域战略和协同合作逐步缩小区域发展差距。",
+            "example": "推动长江上下游协同发展",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "海洋经济",
+            "difficulty": 3,
+            "description": "以海洋资源开发和海洋产业发展为基础的经济",
+            "aliases": [],
+            "prerequisites": [
+              "海洋资源"
+            ],
+            "definition": "海洋经济是围绕海洋资源开发、海洋产业发展和海洋空间利用形成的经济活动。",
+            "example": "发展海洋高新技术产业"
+          },
+          {
+            "name": "蓝色经济空间",
+            "difficulty": 3,
+            "description": "以海洋空间为载体的可持续发展空间",
+            "aliases": [
+              "蓝色空间"
+            ],
+            "prerequisites": [
+              "海洋经济"
+            ],
+            "definition": "蓝色经济空间是立足海洋生态保护、提高海洋空间利用效率的发展空间。",
+            "example": "科学开发海洋资源并保护海洋生态",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "海洋资源",
+            "difficulty": 2,
+            "description": "存在于海洋中的油气、矿产、生物和能源资源",
+            "aliases": [],
+            "prerequisites": [],
+            "definition": "海洋资源是海洋中可供人类开发利用的油气、矿产、生物和海洋能等资源。",
+            "example": "渔场、海上油气和潮汐能"
+          },
+          {
+            "name": "海洋权益",
+            "difficulty": 3,
+            "description": "国家领土向海洋延伸形成的权利和利益",
+            "aliases": [],
+            "prerequisites": [
+              "海洋资源"
+            ],
+            "definition": "海洋权益是国家领土向海洋延伸形成的一些权利和利益。",
+            "example": "在专属经济区开发海洋资源"
+          },
+          {
+            "name": "内水",
+            "difficulty": 3,
+            "description": "领海基线向陆地一侧的水域",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "内水是领海基线向陆地一侧的水域，包括河口、港口、海湾和海峡等。",
+            "example": "沿海国港口内的水域",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "领海",
+            "difficulty": 3,
+            "description": "邻接陆地领土和内水的一带海域",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "领海是邻接陆地领土和内水、从领海基线量起不超过12海里的海域。",
+            "example": "国家对领海拥有主权",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "毗连区",
+            "difficulty": 3,
+            "description": "领海以外邻接领海的一带海域",
+            "aliases": [],
+            "prerequisites": [
+              "领海"
+            ],
+            "definition": "毗连区是领海以外邻接领海且宽度不超过12海里的海域。",
+            "example": "沿海国在毗连区进行相关管制",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "专属经济区",
+            "difficulty": 4,
+            "description": "领海以外不超过200海里的管辖海域",
+            "aliases": [
+              "专属经济海域"
+            ],
+            "prerequisites": [
+              "领海"
+            ],
+            "definition": "专属经济区是从领海基线量起不超过200海里的领海以外邻接海域。",
+            "example": "沿海国在其中开发渔业资源",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "大陆架",
+            "difficulty": 4,
+            "description": "大陆向海洋自然延伸的海床和底土",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "大陆架是大陆向海洋自然延伸的海床和底土，其外部界限一般不超过350海里。",
+            "example": "在大陆架上勘探海底油气",
+            "section": "第三节 中国国家发展战略举例"
+          },
+          {
+            "name": "公海",
+            "difficulty": 3,
+            "description": "各国管辖海域以外的全部海域",
+            "aliases": [],
+            "prerequisites": [
+              "海洋权益"
+            ],
+            "definition": "公海是内水、领海、专属经济区或群岛国群岛水域以外的全部海域。",
+            "example": "公海不属于任何国家的领土",
+            "section": "第三节 中国国家发展战略举例"
+          }
+        ],
+        "sections": [
+          {
+            "name": "第一节 人类面临的主要环境问题",
+            "section_key": "ece827d3fa",
+            "page_range": [
+              101,
+              106
+            ]
+          },
+          {
+            "name": "第二节 走向人地协调——可持续发展",
+            "section_key": "0aa6a2bc19",
+            "page_range": [
+              106,
+              114
+            ]
+          },
+          {
+            "name": "第三节 中国国家发展战略举例",
+            "section_key": "66088b75a0",
+            "page_range": [
+              114,
+              125
+            ]
+          },
+          {
+            "name": "问题研究 低碳食品知多少",
+            "section_key": "d94109f063",
+            "page_range": [
+              125,
+              134
+            ]
+          }
+        ],
+        "chapter_key": "72ba780310",
+        "metadata": {
+          "volume_id": "e299ed0b6bcd",
+          "file_id": "e299ed0b6bcd",
+          "volume_title": "高中地理 必修第2册",
+          "chapter_order": 5,
+          "raw_heading": "第五章 环境与发展"
+        }
+      }
+    ],
+    "page_ranges": {},
+    "chapter_detection": {
+      "degraded": false,
+      "reason": ""
+    },
+    "section_ranges": {
+      "3992eb0448": [
+        7,
+        13
+      ],
+      "第一节 人口分布": [
+        7,
+        13
+      ],
+      "0cfb44ab3b": [
+        13,
+        21
+      ],
+      "第二节 人口迁移": [
+        13,
+        21
+      ],
+      "f062839208": [
+        21,
+        26
+      ],
+      "第三节 人口容量": [
+        21,
+        26
+      ],
+      "8b24f44ec0": [
+        26,
+        27
+      ],
+      "问题研究 如何看待农民工现象": [
+        26,
+        27
+      ],
+      "b67df90fba": [
+        29,
+        36
+      ],
+      "第一节 乡村和城镇空间结构": [
+        29,
+        36
+      ],
+      "e3a87f068a": [
+        36,
+        47
+      ],
+      "第二节 城镇化": [
+        36,
+        47
+      ],
+      "768f29832d": [
+        47,
+        56
+      ],
+      "第三节 地域文化与城乡景观": [
+        47,
+        56
+      ],
+      "e4116fadb3": [
+        56,
+        57
+      ],
+      "问题研究 从市中心到郊区,你选择住在哪里": [
+        56,
+        57
+      ],
+      "b3d319df79": [
+        59,
+        68
+      ],
+      "第一节 农业区位因素及其变化": [
+        59,
+        68
+      ],
+      "a11ac9a033": [
+        68,
+        76
+      ],
+      "第二节 工业区位因素及其变化": [
+        68,
+        76
+      ],
+      "eeec4f6ceb": [
+        76,
+        82
+      ],
+      "第三节 服务业区位因素及其变化": [
+        76,
+        82
+      ],
+      "c0606e2ab4": [
+        82,
+        83
+      ],
+      "问题研究 实体商店何去何从": [
+        82,
+        83
+      ],
+      "e5aa007f9e": [
+        85,
+        92
+      ],
+      "第一节 区域发展对交通运输布局的影响": [
+        85,
+        92
+      ],
+      "c37f10a1fa": [
+        92,
+        98
+      ],
+      "第二节 交通运输布局对区域发展的影响": [
+        92,
+        98
+      ],
+      "b739c1d45b": [
+        98,
+        99
+      ],
+      "问题研究 城市交通如何疏堵": [
+        98,
+        99
+      ],
+      "ece827d3fa": [
+        101,
+        106
+      ],
+      "第一节 人类面临的主要环境问题": [
+        101,
+        106
+      ],
+      "0aa6a2bc19": [
+        106,
+        114
+      ],
+      "第二节 走向人地协调——可持续发展": [
+        106,
+        114
+      ],
+      "66088b75a0": [
+        114,
+        125
+      ],
+      "第三节 中国国家发展战略举例": [
+        114,
+        125
+      ],
+      "d94109f063": [
+        125,
+        134
+      ],
+      "问题研究 低碳食品知多少": [
+        125,
+        134
+      ]
+    }
+  }
+}
