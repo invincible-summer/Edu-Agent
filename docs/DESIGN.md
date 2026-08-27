@@ -716,6 +716,7 @@ frontend/src/
 3. **本地一键**：`./start.sh` 先探测后端/前端实际端口，再同步 `NEXT_PUBLIC_BACKEND_URL` 与本地 `CORS_ORIGINS`；子进程统一直连网络，不继承 shell 代理。前端默认生产模式（构建时烤入后端端口并记录于 `.next/edu-build-port`，端口漂移自动重建）。
 
 生产清单（`.env.example` 尾部）：`AUTH_MODE=1` + 替换 `AUTH_JWT_SECRET` + `CORS_ORIGINS` 白名单 + `chmod 600 .env`。Python 生产依赖采用 `backend/requirements.txt` + `backend/constraints.txt` 约束；BM25 基础环境不安装可选向量/本地模型 requirements。**同机生产部署手册**（固定域名/端口、干净克隆、systemd、ACME/HTTPS、同机回归、备份与回滚）见 [`docs/The_Website_deployment_plan.md`](The_Website_deployment_plan.md)。
+生产 systemd 与 Paper Agent 使用同一账号模型：专用系统用户/组 `edu-agent`，home `/var/lib/edu-agent`，shell `/usr/sbin/nologin`；源码位于 `/opt/edu-agent`。后端和前端 unit 均启用 `NoNewPrivileges`、`PrivateTmp`、`ProtectSystem=strict`、`ProtectHome=true`，只通过 `ReadWritePaths` 放行 §22 的运行存储根、前端 `.next` 与 `/var/lib/edu-agent`。`/opt/edu-agent` 可读不代表私人数据可读：`.env`/Deploy Key 为 0600，运行数据目录为 0700。
 
 ### 21.6 OpenAI 兼容门面（第三方平台接入）
 
