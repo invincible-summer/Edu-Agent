@@ -5,8 +5,8 @@ After=network-online.target edu-agent-backend.service
 
 [Service]
 Type=simple
-User=eduagent
-Group=eduagent
+User=ecs-user
+Group=ecs-user
 UMask=0077
 WorkingDirectory=/opt/edu-agent
 Environment=NODE_ENV=production
