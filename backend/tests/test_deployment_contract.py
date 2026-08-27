@@ -34,6 +34,14 @@ class DeploymentContractTests(unittest.TestCase):
         )
         self.assertIn("pnpm exec next start -H 127.0.0.1 -p 3030", manual)
         self.assertNotIn("next start -- -H", manual)
+        self.assertIn(
+            "/var/www/edu-agent-acme/.well-known/acme-challenge/health-check",
+            manual,
+        )
+        self.assertNotIn(
+            "tee /var/www/edu-agent-acme/health-check",
+            manual,
+        )
 
 
 if __name__ == "__main__":
