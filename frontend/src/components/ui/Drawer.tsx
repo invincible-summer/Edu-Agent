@@ -27,11 +27,11 @@ export function Drawer({
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50">
-      <div className="absolute inset-0 bg-black/25" onClick={onClose} />
+      <div className="motion-fade absolute inset-0 bg-black/25" onClick={onClose} />
       <div
         className={cn(
           "absolute right-0 top-0 flex h-full flex-col border-l border-border bg-surface shadow-lg",
-          "page-in",
+          "motion-drawer",
         )}
         style={{ width: `min(${width}px, 92vw)` }}
       >

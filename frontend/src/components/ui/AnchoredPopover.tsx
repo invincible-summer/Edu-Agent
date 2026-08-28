@@ -13,6 +13,7 @@ import {
   type RefObject,
 } from "react";
 import { createPortal } from "react-dom";
+import { cn } from "@/lib/cn";
 
 export type PopoverPlacement = "bottom-start" | "bottom-end" | "top-start" | "top-end";
 
@@ -91,7 +92,7 @@ export function AnchoredPopover({
   return createPortal(
     <div
       ref={popRef}
-      className={className}
+      className={cn("motion-pop", className)}
       style={{
         position: "fixed",
         top: pos?.top ?? 0,

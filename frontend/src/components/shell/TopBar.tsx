@@ -30,13 +30,13 @@ export function TopBar() {
   }, [mounted]);
 
   return (
-    <header className="flex h-14 shrink-0 items-center gap-3 border-b border-border bg-surface px-4">
+    <header className="flex h-14 shrink-0 items-center gap-3 border-b border-border-light bg-surface px-4">
       {item && item.module && <ModuleBadge id={item.module} />}
       <h1 className="font-serif text-[15px] font-semibold tracking-tight text-fg">
         {item ? tr(item.i18nKey) : tr("app.name")}
       </h1>
-      <span className="text-xs text-muted">
-        · {GRADE_LABELS[lang].find((g) => g.token === grade)?.label ?? grade}
+      <span className="rounded-full bg-surface-sunken px-2 py-0.5 text-xs text-muted">
+        {GRADE_LABELS[lang].find((g) => g.token === grade)?.label ?? grade}
       </span>
 
       <div className="ml-auto flex items-center gap-1.5">
@@ -55,7 +55,7 @@ export function TopBar() {
           href="/docs"
           title={tr("docs.entry", "使用文档")}
           aria-label={tr("docs.entry", "使用文档")}
-          className="inline-flex items-center justify-center rounded-[8px] p-1.5 text-fg-tertiary transition-colors hover:bg-surface-hover hover:text-accent"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full text-fg-tertiary transition-colors hover:bg-surface-hover hover:text-accent"
         >
           <BookOpen size={15} />
         </Link>
@@ -69,7 +69,7 @@ export function TopBar() {
             <button
               onClick={logout}
               title={tr("auth.logout", "退出登录")}
-              className="inline-flex items-center justify-center rounded-[8px] p-1.5 text-fg-tertiary transition-colors hover:bg-surface-hover hover:text-danger"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-fg-tertiary transition-colors hover:bg-surface-hover hover:text-danger"
             >
               <LogOut size={14} />
             </button>
@@ -78,7 +78,7 @@ export function TopBar() {
         {!user && (
           <Link
             href={`/login?redirect=${encodeURIComponent(pathname)}`}
-            className="ml-1 inline-flex items-center gap-1.5 rounded-[8px] border border-border px-3 py-1.5 text-xs font-medium text-fg-secondary transition-colors hover:border-accent hover:text-accent"
+            className="ml-1 inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-fg-secondary transition-colors hover:border-accent hover:text-accent"
           >
             <UserIcon size={13} />
             {tr("auth.login", "登录")}

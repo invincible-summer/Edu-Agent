@@ -28,12 +28,12 @@ export function Modal({
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/30" onClick={onClose} />
+      <div className="motion-fade absolute inset-0 bg-black/30 backdrop-blur-[2px]" onClick={onClose} />
       <div
-        className="relative flex max-h-[calc(100vh-2rem)] flex-col rounded-[10px] border border-border bg-surface p-5 shadow-lg page-in"
+        className="motion-modal relative flex max-h-[calc(100vh-2rem)] flex-col rounded-[14px] border border-border bg-surface p-5 shadow-lg"
         style={{ width: `min(${width}px, 94vw)` }}
       >
-        {title && <div className="mb-3 shrink-0 text-sm font-semibold text-fg">{title}</div>}
+        {title && <div className="mb-3 shrink-0 text-[15px] font-semibold text-fg">{title}</div>}
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain text-sm text-fg-secondary">{children}</div>
         {footer && <div className="mt-5 flex shrink-0 justify-end gap-2">{footer}</div>}
       </div>

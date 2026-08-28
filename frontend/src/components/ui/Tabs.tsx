@@ -29,16 +29,22 @@ export function Tabs({
             key={it.key}
             onClick={() => onChange(it.key)}
             className={cn(
-              "relative -mb-px cursor-pointer border-b-2 px-3 pb-2 pt-1 text-sm transition-colors",
-              on
-                ? "border-accent font-semibold text-accent"
-                : "border-transparent text-muted hover:text-fg",
+              "relative -mb-px cursor-pointer px-3 pb-2 pt-1 text-sm transition-colors duration-200",
+              on ? "font-semibold text-accent" : "text-muted hover:text-fg",
             )}
           >
             <span className="inline-flex items-center gap-1.5">
               {it.label}
               {it.badge}
             </span>
+            {/* 激活下划线：scaleX 过渡 */}
+            <span
+              aria-hidden
+              className={cn(
+                "absolute inset-x-3 -bottom-px h-0.5 origin-left rounded-full bg-accent transition-transform duration-300 ease-out",
+                on ? "scale-x-100" : "scale-x-0",
+              )}
+            />
           </button>
         );
       })}

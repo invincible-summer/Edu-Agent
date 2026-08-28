@@ -47,7 +47,7 @@ export function Dropdown({
       open
       onClose={onClose}
       placement="bottom-end"
-      className="z-50 w-44 rounded-lg border border-border bg-surface shadow-lg p-1"
+      className="z-50 w-44 rounded-[10px] border border-border bg-surface p-1 shadow-lg"
     >
       {items.map((item, i) => (
         <div key={i}>

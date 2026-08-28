@@ -18,6 +18,7 @@
   /* 墨色 */
   --fg: 30 30 36;
   --fg-secondary: 82 80 74;
+  --fg-tertiary: 140 137 128;   /* 弱提示（= muted 别名，供 text-fg-tertiary 使用） */
   --muted: 140 137 128;
   /* 黛青（主色） */
   --accent: 37 109 102;
@@ -55,6 +56,7 @@
   --border-light: 36 39 48;
   --fg: 232 230 225;
   --fg-secondary: 192 190 182;
+  --fg-tertiary: 138 141 150;
   --muted: 138 141 150;
   --accent: 86 173 161;
   --accent-strong: 122 199 187;
@@ -84,6 +86,7 @@
   --color-border-light: rgb(var(--border-light));
   --color-fg: rgb(var(--fg));
   --color-fg-secondary: rgb(var(--fg-secondary));
+  --color-fg-tertiary: rgb(var(--fg-tertiary));
   --color-muted: rgb(var(--muted));
   --color-accent: rgb(var(--accent));
   --color-accent-strong: rgb(var(--accent-strong));
@@ -197,6 +200,16 @@ input:focus, textarea:focus, select:focus {
 @keyframes page-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .page-in { animation: page-in 0.25s ease-out both; }
 
+/* 弹层/抽屉进入动效（内页克制版） */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.motion-fade { animation: fade-in 0.2s ease-out both; }
+@keyframes modal-in { from { opacity: 0; transform: scale(0.96) translateY(6px); } to { opacity: 1; transform: none; } }
+.motion-modal { animation: modal-in 0.22s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes drawer-in { from { opacity: 0.4; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+.motion-drawer { animation: drawer-in 0.24s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes pop-in { from { opacity: 0; transform: translateY(-4px) scale(0.98); } to { opacity: 1; transform: none; } }
+.motion-pop { animation: pop-in 0.16s ease-out both; transform-origin: top right; }
+
 /* 落地页装饰光斑的缓慢浮动 */
 @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
 
@@ -251,5 +264,6 @@ input:focus, textarea:focus, select:focus {
   .hero-title-char, .hero-gradient-text { animation: none; }
   .marquee-track { animation: none; }
   .drift-a, .drift-b { animation: none; }
+  .motion-fade, .motion-modal, .motion-drawer, .motion-pop { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }

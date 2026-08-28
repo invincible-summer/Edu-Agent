@@ -5,11 +5,11 @@ import { useEffect, useMemo, useState } from "react";
 import { getKnowledgeCatalog } from "@/lib/api-modules";
 import type { CatalogStage } from "@/lib/types-modules";
 import { cn } from "@/lib/cn";
+import { FIELD_CLS } from "@/components/ui/Input";
 
 type Tr = (key: string, fallback?: string) => string;
 
-const FIELD =
-  "h-9 w-full rounded-[8px] border border-border bg-surface px-2.5 text-sm text-fg outline-none transition-colors focus:border-accent disabled:cursor-not-allowed disabled:opacity-60";
+const FIELD = FIELD_CLS;
 
 export function SubjectSelect({
   tr,

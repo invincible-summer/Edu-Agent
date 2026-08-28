@@ -21,7 +21,7 @@ export function Card({
       className={cn(
         "rounded-[10px] border border-border bg-surface shadow-sm",
         pad && "p-4",
-        hover && "cursor-pointer transition-shadow hover:shadow-md",
+        hover && "cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md",
         onClick && "cursor-pointer",
         className,
       )}    >
