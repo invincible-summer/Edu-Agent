@@ -283,6 +283,7 @@ const ZH: Dict = {
   "auth.brand.f1": "对话式讲解与智能出题",
   "auth.brand.f2": "目标驱动的长期学习编排",
   "auth.brand.f3": "越用越懂你的长期记忆",
+  "auth.brand.vertical": "学而不厌 · 诲人不倦",
 };
 
 const EN: Dict = {
@@ -561,6 +562,7 @@ const EN: Dict = {
   "auth.brand.f1": "Socratic tutoring & smart quizzing",
   "auth.brand.f2": "Goal-driven long-term orchestration",
   "auth.brand.f3": "Long-term memory that knows you",
+  "auth.brand.vertical": "LEARN WITHOUT SATIETY · TEACH WITHOUT WEARINESS",
 };
 
 const DICTS: Record<Lang, Dict> = { zh: ZH, en: EN };

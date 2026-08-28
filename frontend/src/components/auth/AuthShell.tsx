@@ -51,14 +51,35 @@ export function AuthShell({
   return (
     <div className="flex min-h-screen bg-bg">
       {/* 品牌栏（桌面端）。固定深黛青（= 浅色 token --accent-strong），
-          不随深色主题变浅，保证白字对比度。 */}
-      <aside className="hidden w-[420px] shrink-0 flex-col justify-between bg-[#1d5650] p-10 lg:flex">
-        <div className="flex items-center gap-3">{brand}</div>
-        <div>
-          <h2 className="font-serif text-[26px] font-semibold leading-relaxed text-white">
+          不随深色主题变浅，保证白字对比度。光斑/颗粒/竖排装饰对齐落地页 CtaBanner。 */}
+      <aside className="relative hidden w-[420px] shrink-0 flex-col justify-between overflow-hidden bg-[#1d5650] p-10 lg:flex">
+        {/* 漂移光斑 + 纸纹颗粒 */}
+        <div
+          aria-hidden
+          className="drift-a pointer-events-none absolute -top-40 left-1/4 h-96 w-[42rem] rounded-full bg-white/10 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="drift-b pointer-events-none absolute -bottom-36 right-[8%] h-80 w-[30rem] rounded-full bg-white/[0.07] blur-3xl"
+        />
+        <div aria-hidden className="grain pointer-events-none absolute inset-0" />
+        {/* 竖排装饰语 */}
+        <span
+          aria-hidden
+          className="vertical-rl pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 select-none font-serif text-xs tracking-[0.5em] text-white/25"
+        >
+          {tr("auth.brand.vertical")}
+        </span>
+
+        <div className="page-in relative flex items-center gap-3">{brand}</div>
+        <div className="relative">
+          <h2
+            className="page-in font-serif text-[26px] font-semibold leading-relaxed text-white"
+            style={{ animationDelay: "80ms" }}
+          >
             {tr("app.tagline")}
           </h2>
-          <ul className="mt-10 space-y-4">
+          <ul className="page-in mt-10 space-y-4" style={{ animationDelay: "160ms" }}>
             {FEATURES.map((f) => (
               <li key={f.module} className="flex items-center gap-3">
                 <ModuleBadge id={f.module} className="border-white/40 text-white" />
@@ -67,7 +88,9 @@ export function AuthShell({
             ))}
           </ul>
         </div>
-        <p className="text-xs text-white/45">M0 – M9 · {tr("app.role")}</p>
+        <p className="page-in relative text-xs text-white/45" style={{ animationDelay: "240ms" }}>
+          M0 – M9 · {tr("app.role")}
+        </p>
       </aside>
 
       {/* 表单栏 */}
@@ -86,12 +109,26 @@ export function AuthShell({
             </span>
           </div>
 
-          <h1 className="text-center font-serif text-2xl font-bold tracking-tight text-fg lg:text-left">
+          <h1 className="page-in text-center font-serif text-2xl font-bold tracking-tight text-fg lg:text-left">
             {title}
           </h1>
-          <p className="mt-1 text-center text-sm text-fg-secondary lg:text-left">{subtitle}</p>
-          <div className="mt-6">{children}</div>
-          {footer && <div className="mt-6 text-center text-sm text-fg-secondary">{footer}</div>}
+          <p
+            className="page-in mt-1 text-center text-sm text-fg-secondary lg:text-left"
+            style={{ animationDelay: "80ms" }}
+          >
+            {subtitle}
+          </p>
+          <div className="page-in mt-6" style={{ animationDelay: "160ms" }}>
+            {children}
+          </div>
+          {footer && (
+            <div
+              className="page-in mt-6 text-center text-sm text-fg-secondary"
+              style={{ animationDelay: "240ms" }}
+            >
+              {footer}
+            </div>
+          )}
         </div>
       </main>
     </div>

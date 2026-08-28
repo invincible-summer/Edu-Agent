@@ -8,15 +8,12 @@ import { useUIStore } from "@/lib/store";
 import { t } from "@/lib/i18n";
 import { AUTO_GRADE, gradeForApi, type Grade } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
+import { Field, Input } from "@/components/ui/Input";
 import { AuthShell } from "@/components/auth/AuthShell";
 
 // 学段 token 是后端契约（写入 UserProfile 并同步 StudentModel），保持中文不翻译。
 // 「自动」是 P1 默认：后端事实源为空串，提交前经 gradeForApi 转换。
 const GRADES = ["自动", "小学", "初中", "高中", "本科"] as const satisfies readonly Grade[];
-
-const INPUT_CLS =
-  "w-full rounded-[8px] border border-border bg-surface px-3 py-2.5 text-sm text-fg outline-none transition-colors focus:border-accent";
-const LABEL_CLS = "mb-1.5 block text-xs font-medium text-fg-secondary";
 
 function RegisterForm() {
   const router = useRouter();
@@ -79,62 +76,65 @@ function RegisterForm() {
         </>
       }
     >
-      {/* 步骤指示 */}
-      <div className="mb-6 flex items-center justify-center gap-2 text-xs text-fg-tertiary">
-        <span className={step >= 1 ? "font-bold text-accent" : ""}>
-          1. {tr("auth.register.step1")}
+      {/* 步骤指示：胶囊进度（当前 = 实心黛青，已完成 = 浅黛青） */}
+      <div className="mb-6 flex items-center justify-center gap-2.5 text-xs">
+        <span
+          className={`rounded-full px-3 py-1 font-medium transition-colors ${
+            step === 1 ? "bg-accent text-white" : "bg-accent-soft text-accent-strong"
+          }`}
+        >
+          1 · {tr("auth.register.step1")}
         </span>
-        <span>→</span>
-        <span className={step >= 2 ? "font-bold text-accent" : ""}>
-          2. {tr("auth.register.step2")}
+        <span aria-hidden className="h-px w-6 bg-border" />
+        <span
+          className={`rounded-full px-3 py-1 font-medium transition-colors ${
+            step === 2 ? "bg-accent text-white" : "bg-surface-sunken text-fg-tertiary"
+          }`}
+        >
+          2 · {tr("auth.register.step2")}
         </span>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="rounded-[8px] border border-danger/30 bg-danger/5 px-3 py-2 text-sm text-danger">
+          <div className="motion-fade rounded-[8px] border border-danger/30 bg-danger/5 px-3 py-2 text-sm text-danger">
             {error}
           </div>
         )}
 
+        <div key={step} className="motion-fade space-y-4">
         {step === 1 && (
           <>
-            <div>
-              <label className={LABEL_CLS}>{tr("auth.email")}</label>
-              <input
+            <Field label={tr("auth.email")}>
+              <Input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={tr("auth.email.placeholder")}
-                className={INPUT_CLS}
                 autoComplete="email"
               />
-            </div>
-            <div>
-              <label className={LABEL_CLS}>{tr("auth.password.new")}</label>
-              <input
+            </Field>
+            <Field label={tr("auth.password.new")}>
+              <Input
                 type="password"
                 required
                 minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className={INPUT_CLS}
                 autoComplete="new-password"
               />
-            </div>
-            <div>
-              <label className={LABEL_CLS}>{tr("auth.username")}</label>
-              <input
+            </Field>
+            <Field label={tr("auth.username")}>
+              <Input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder={tr("auth.username.placeholder")}
-                className={INPUT_CLS}
                 maxLength={40}
               />
-            </div>
+            </Field>
             <Button
               type="button"
               size="lg"
@@ -149,37 +149,34 @@ function RegisterForm() {
 
         {step === 2 && (
           <>
-            <div>
-              <label className={LABEL_CLS}>{tr("auth.name")}</label>
-              <input
+            <Field label={tr("auth.name")}>
+              <Input
                 type="text"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder={tr("auth.name.placeholder")}
-                className={INPUT_CLS}
                 maxLength={40}
               />
-            </div>
-            <div>
-              <label className={LABEL_CLS}>{tr("auth.grade")}</label>
-              <div className="flex gap-2">
+            </Field>
+            <Field label={tr("auth.grade")}>
+              <div className="flex rounded-full bg-surface-sunken p-1">
                 {GRADES.map((g) => (
                   <button
                     key={g}
                     type="button"
                     onClick={() => setGrade(g)}
-                    className={`flex-1 rounded-[8px] border px-2 py-2 text-sm transition-colors ${
+                    className={`flex-1 rounded-full px-2 py-1.5 text-sm transition-colors ${
                       grade === g
-                        ? "border-accent bg-accent/10 font-medium text-accent"
-                        : "border-border bg-surface text-fg-secondary hover:border-accent"
+                        ? "bg-surface font-medium text-accent shadow-sm"
+                        : "text-muted hover:text-fg"
                     }`}
                   >
                     {g}
                   </button>
                 ))}
               </div>
-            </div>
+            </Field>
             <div className="flex gap-2">
               <Button type="button" variant="outline" size="lg" className="flex-1" onClick={() => setStep(1)}>
                 {tr("auth.back")}
@@ -190,6 +187,7 @@ function RegisterForm() {
             </div>
           </>
         )}
+        </div>
       </form>
     </AuthShell>
   );

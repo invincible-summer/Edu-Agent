@@ -7,11 +7,8 @@ import { useAuthStore } from "@/lib/auth-store";
 import { useUIStore } from "@/lib/store";
 import { t } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
+import { Field, Input } from "@/components/ui/Input";
 import { AuthShell } from "@/components/auth/AuthShell";
-
-const INPUT_CLS =
-  "w-full rounded-[8px] border border-border bg-surface px-3 py-2.5 text-sm text-fg outline-none transition-colors focus:border-accent";
-const LABEL_CLS = "mb-1.5 block text-xs font-medium text-fg-secondary";
 
 function LoginForm() {
   const router = useRouter();
@@ -68,34 +65,30 @@ function LoginForm() {
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="rounded-[8px] border border-danger/30 bg-danger/5 px-3 py-2 text-sm text-danger">
+          <div className="motion-fade rounded-[8px] border border-danger/30 bg-danger/5 px-3 py-2 text-sm text-danger">
             {error}
           </div>
         )}
-        <div>
-          <label className={LABEL_CLS}>{tr("auth.email")}</label>
-          <input
+        <Field label={tr("auth.email")}>
+          <Input
             type="email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={tr("auth.email.placeholder")}
-            className={INPUT_CLS}
             autoComplete="email"
           />
-        </div>
-        <div>
-          <label className={LABEL_CLS}>{tr("auth.password")}</label>
-          <input
+        </Field>
+        <Field label={tr("auth.password")}>
+          <Input
             type="password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="••••••••"
-            className={INPUT_CLS}
             autoComplete="current-password"
           />
-        </div>
+        </Field>
         <Button type="submit" size="lg" className="w-full" disabled={loading}>
           {loading ? tr("auth.submit.logging") : tr("auth.submit.login")}
         </Button>
