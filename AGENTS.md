@@ -17,7 +17,7 @@ The Next.js frontend is in `frontend/src/`: pages under `app/`, reusable UI unde
 
 ## Coding Style & Naming Conventions
 
-Use four-space Python indentation and `snake_case` names. TypeScript uses two spaces, `PascalCase` components, and `camelCase` helpers. Keep changes consistent with adjacent code. Route JSON persistence through `core/atomic.py` and sanitize file keys. Register prompts in `prompts/registry.py`. Frontend requests must use `apiFetch`; list views use the shared `Pager`.
+Use four-space Python indentation and `snake_case` names. TypeScript uses two spaces, `PascalCase` components, and `camelCase` helpers. Keep changes consistent with adjacent code. Route JSON persistence through `core/atomic.py` and sanitize file keys. Register prompts in `prompts/registry.py`. Frontend requests must use `apiFetch`; list views use the shared `Pager`; form controls use the shared `ui/Input.tsx` primitives (`Input`/`Textarea`/`Field`/`FIELD_CLS`) instead of ad-hoc class strings. Overlay entrances use the `motion-modal`/`motion-drawer`/`motion-pop` classes (reduced-motion aware); long forms like textbook upload live in `Modal`, not embedded page cards.
 
 ## Testing Guidelines
 

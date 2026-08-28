@@ -118,8 +118,8 @@ export function TextbookCard({
         </div>
       </div>
 
-      {/* 状态行 */}
-      <div className="flex items-center gap-2">
+      {/* 状态行：徽章/统计整体换行，不在徽章内部断字 */}
+      <div className="flex flex-wrap items-center gap-2">
         {tb.scope === "public" && <Badge tone="accent">{tr("res.tb.public.badge", "公用")}</Badge>}
         {tb.kind === "group" && (
           <Badge tone="outline">
@@ -141,7 +141,7 @@ export function TextbookCard({
         )}
         {tb.status === "failed" && <Badge tone="danger">{tr("res.tb.failed")}</Badge>}
         {tb.status === "ready" && (
-          <span className="tnum text-[11px] text-muted">
+          <span className="tnum whitespace-nowrap text-[11px] text-muted">
             {tb.chapter_count} {tr("res.tb.chapters")} · {tb.concept_count} {tr("res.tb.concepts")}
           </span>
         )}
