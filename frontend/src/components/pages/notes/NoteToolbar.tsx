@@ -36,7 +36,7 @@ export function ViewModeSwitch({
   tr: (k: string, fallback?: string) => string;
 }) {
   return (
-    <div className="flex shrink-0 items-center gap-0.5 rounded-md border border-border bg-bg p-0.5">
+    <div className="flex shrink-0 items-center gap-0.5 rounded-full bg-surface-sunken p-0.5">
       {VIEW_MODES.map(([m, Icon, key]) => (
         <button
           key={m}
@@ -44,10 +44,10 @@ export function ViewModeSwitch({
           title={tr(key)}
           aria-label={tr(key)}
           className={cn(
-            "cursor-pointer rounded p-1 transition-colors",
+            "cursor-pointer rounded-full p-1.5 transition-colors",
             mode === m
-              ? "bg-accent-soft text-accent-strong"
-              : "text-muted hover:bg-surface-hover hover:text-fg",
+              ? "bg-surface text-accent shadow-sm"
+              : "text-muted hover:text-fg",
           )}
         >
           <Icon size={13} />
@@ -182,6 +182,7 @@ export function NoteToolbar({
         <SaveBadge saveState={saveState} tr={tr} />
         <span className="mx-1 h-4 w-px shrink-0 bg-border" />
         <ViewModeSwitch mode={viewMode} onChange={onViewMode} tr={tr} />
+        <span className="mx-1 h-4 w-px shrink-0 bg-border" />
         <button
           onClick={onToggleGraph}
           title={tr("graph.title")}
@@ -203,6 +204,7 @@ export function NoteToolbar({
         >
           <Maximize2 size={15} />
         </button>
+        <span className="mx-1 h-4 w-px shrink-0 bg-border" />
         <div className="relative shrink-0" ref={menuRef}>
           <button
             onClick={() => setMenuOpen((v) => !v)}
@@ -218,7 +220,7 @@ export function NoteToolbar({
             <Settings2 size={15} />
           </button>
           {menuOpen && (
-            <div className="absolute right-0 top-9 z-40 w-72 space-y-2.5 rounded-[10px] border border-border bg-surface p-3 shadow-lg">
+            <div className="motion-pop absolute right-0 top-9 z-40 w-72 space-y-2.5 rounded-[10px] border border-border bg-surface p-3 shadow-lg">
               {/* 文件夹 */}
               <div className="space-y-1">
                 <div className="text-[10px] uppercase tracking-wide text-muted">{tr("tb.folder")}</div>

@@ -13,6 +13,7 @@ import {
   Send, Sparkles, Wrench, X, Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Textarea } from "@/components/ui/Input";
 import { MiniMarkdown } from "@/components/chat/markdown";
 import { useClickOutside } from "@/components/sidebar/Dropdown";
 import { cn } from "@/lib/cn";
@@ -261,26 +262,26 @@ export function AIPanel({
             value={activeThreadId}
             disabled={streaming}
             onChange={(e) => void setActiveThread(e.target.value)}
-            className="min-w-0 flex-1 truncate rounded-md border border-border bg-bg px-2 py-1 text-xs text-fg outline-none focus:border-accent"
+            className="h-7 min-w-0 flex-1 truncate rounded-[8px] border border-border bg-bg px-2 text-xs text-fg outline-none transition-colors hover:border-muted/70 focus:border-accent"
           >
             {threads.map((item) => <option key={item.thread_id} value={item.thread_id}>{item.title}</option>)}
           </select>
-          <button title="新建线程" className="rounded-md p-1.5 text-muted hover:bg-surface-hover hover:text-accent" onClick={() => void createNotesThread().then(({ thread: item }) => loadThreads().then(() => setActiveThread(item.thread_id)))}><MessageSquarePlus size={13} /></button>
-          <button title="重命名线程" className="rounded-md p-1.5 text-muted hover:bg-surface-hover hover:text-accent" onClick={() => { const current = threads.find((item) => item.thread_id === activeThreadId); const title = window.prompt("线程名称", current?.title || ""); if (title?.trim()) void patchNotesThread(activeThreadId, { title }).then(() => loadThreads()); }}><Pencil size={13} /></button>
-          {activeThreadId !== "default" && <button title="删除线程" className="rounded-md p-1.5 text-muted hover:bg-danger/10 hover:text-danger" onClick={() => { if (window.confirm("删除当前线程？正文中的链接会保留并显示失效。")) void deleteNotesThread(activeThreadId).then(() => loadThreads().then(() => setActiveThread("default"))); }}><Trash2 size={13} /></button>}
+          <button title="新建线程" className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent" onClick={() => void createNotesThread().then(({ thread: item }) => loadThreads().then(() => setActiveThread(item.thread_id)))}><MessageSquarePlus size={13} /></button>
+          <button title="重命名线程" className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent" onClick={() => { const current = threads.find((item) => item.thread_id === activeThreadId); const title = window.prompt("线程名称", current?.title || ""); if (title?.trim()) void patchNotesThread(activeThreadId, { title }).then(() => loadThreads()); }}><Pencil size={13} /></button>
+          {activeThreadId !== "default" && <button title="删除线程" className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-danger/10 hover:text-danger" onClick={() => { if (window.confirm("删除当前线程？正文中的链接会保留并显示失效。")) void deleteNotesThread(activeThreadId).then(() => loadThreads().then(() => setActiveThread("default"))); }}><Trash2 size={13} /></button>}
           <button
             onClick={() => { if (window.confirm(tr("ai.clear.confirm"))) void clearNotesThread(activeThreadId).then(() => loadThread(activeThreadId)); }}
             title={tr("ai.clear")} aria-label={tr("ai.clear")}
-            className="rounded-md p-1.5 text-muted hover:bg-danger/10 hover:text-danger"
+            className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-danger/10 hover:text-danger"
           ><Eraser size={13} /></button>
-          <button onClick={toggleAiPanel} title={tr("tb.toggleAi")} className="rounded-md p-1.5 text-muted hover:bg-surface-hover hover:text-accent"><PanelRightClose size={14} /></button>
+          <button onClick={toggleAiPanel} title={tr("tb.toggleAi")} className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent"><PanelRightClose size={14} /></button>
         </div>
-        <div className="mt-1.5 flex min-w-0 flex-wrap items-center gap-1">
-          <span className="flex min-w-0 items-center gap-1 rounded-md bg-accent-soft px-1.5 py-0.5 text-[10px] text-accent-strong">
+        <div className="mt-1.5 flex min-w-0 flex-wrap items-center gap-1.5">
+          <span className="flex min-w-0 items-center gap-1 rounded-full bg-accent-soft px-2 py-0.5 text-[10px] text-accent-strong">
             {currentId ? <FileText size={10} /> : <Sparkles size={10} />}
             <span className="truncate">{currentId ? `${tr("ai.context.note")} · ${detail?.note.title || ""}` : tr("ai.context.vault")}</span>
           </span>
-          <span className="rounded-md bg-surface-hover px-1.5 py-0.5 text-[10px] text-muted">仓库 · {vault?.notes.length || 0} 篇</span>
+          <span className="rounded-full bg-surface-sunken px-2 py-0.5 text-[10px] text-muted">仓库 · {vault?.notes.length || 0} 篇</span>
         </div>
       </div>
 
@@ -294,14 +295,16 @@ export function AIPanel({
         {thread.map((m, i) => (
           <div key={`${m.ts}-${i}`} className={cn("flex", m.role === "user" ? "justify-end" : "justify-start")}>
             <div className={cn(
-              "max-w-[92%] rounded-[10px] px-2.5 py-1.5 text-xs leading-relaxed",
-              m.role === "user" ? "bg-accent-soft text-fg" : "border border-border bg-bg text-fg-secondary",
+              "leading-relaxed",
+              m.role === "user"
+                ? "ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-accent px-3.5 py-2 text-sm text-white"
+                : "mr-auto max-w-[90%] rounded-2xl rounded-bl-md border border-border-light bg-surface px-3.5 py-2 text-sm text-fg-secondary",
             )}>
-              {m.content.length > 1400 ? <details><summary className="cursor-pointer text-[10px] text-muted">展开完整消息</summary><div className="mt-1"><MiniMarkdown>{m.content}</MiniMarkdown></div></details> : <MiniMarkdown>{m.content}</MiniMarkdown>}
+              {m.content.length > 1400 ? <details><summary className="cursor-pointer text-[10px] opacity-70">展开完整消息</summary><div className="mt-1"><MiniMarkdown>{m.content}</MiniMarkdown></div></details> : <MiniMarkdown>{m.content}</MiniMarkdown>}
             </div>
           </div>
         ))}
-        {pendingUser && <div className="flex justify-end"><div className="max-w-[92%] rounded-[10px] bg-accent-soft px-2.5 py-1.5 text-xs text-fg opacity-80"><MiniMarkdown>{pendingUser}</MiniMarkdown></div></div>}
+        {pendingUser && <div className="flex justify-end"><div className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-accent px-3.5 py-2 text-sm text-white opacity-80"><MiniMarkdown>{pendingUser}</MiniMarkdown></div></div>}
         {pendingProposals.map((sg) => (
           <ProposalCard
             key={sg.id}
@@ -315,7 +318,7 @@ export function AIPanel({
         ))}
         {streaming && (
           <div className="flex justify-start">
-            <div className="max-w-[92%] rounded-[10px] border border-border bg-bg px-2.5 py-1.5 text-xs leading-relaxed text-fg-secondary">
+            <div className="mr-auto max-w-[90%] rounded-2xl rounded-bl-md border border-border-light bg-surface px-3.5 py-2 text-sm leading-relaxed text-fg-secondary">
               {streamStep && (
                 <div className="mb-1 flex items-center gap-1 text-[10px] text-muted">
                   <Wrench size={10} className="animate-pulse" /> {streamStep}
@@ -338,7 +341,7 @@ export function AIPanel({
       {/* 输入区：确认中枢 + 模式选择器 */}
       <div className="border-t border-border px-3 py-2">
         {hasPlan && (
-          <div className="mb-2 flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent-soft/60 px-2 py-1.5">
+          <div className="mb-2 flex items-center gap-1.5 rounded-[10px] border border-accent/20 bg-accent-soft/60 px-2.5 py-1.5">
             <ClipboardList size={12} className="shrink-0 text-accent-strong" />
             <span className="min-w-0 flex-1 truncate text-[11px] text-accent-strong">
               {tr("ai.plan.pending")}
@@ -353,8 +356,8 @@ export function AIPanel({
           </div>
         )}
         {agentMode === "collab" && pendingProposals.length > 0 && !streaming && (
-          <div className="mb-2 flex items-center gap-1.5 rounded-md border border-accent2/30 bg-accent2/5 px-2 py-1.5">
-            <span className="min-w-0 flex-1 truncate text-[11px] text-fg-secondary">
+          <div className="mb-2 flex items-center gap-1.5 rounded-[10px] border border-accent/20 bg-accent-soft/60 px-2.5 py-1.5">
+            <span className="min-w-0 flex-1 truncate text-[11px] text-accent-strong">
               {tr("ai.proposal.pendingBar", "待确认修改 {n} 条").replace(
                 "{n}", String(pendingProposals.length))}
             </span>
@@ -374,7 +377,7 @@ export function AIPanel({
             </Button>
           </div>
         )}
-        <textarea
+        <Textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
@@ -385,17 +388,17 @@ export function AIPanel({
           }}
           placeholder={tr("ai.placeholder")}
           rows={2}
-          className="max-h-28 min-h-[2.4rem] w-full resize-none rounded-[8px] border border-border bg-bg px-2.5 py-1.5 text-xs text-fg outline-none focus:border-accent"
+          className="max-h-28 min-h-[2.4rem] resize-none"
         />
         {/* 图片附件：OCR 预览卡 + 附件 chips（随下一条消息一并提交） */}
         {ocrLoading && (
-          <div className="mt-1.5 flex items-center gap-2 rounded-[8px] border border-accent/25 bg-accent-soft/30 px-2.5 py-1.5">
+          <div className="mt-1.5 flex items-center gap-2 rounded-[10px] border border-accent/20 bg-accent-soft/40 px-2.5 py-1.5">
             <Loader2 size={12} className="animate-spin text-accent" />
             <span className="text-[11px] text-fg-secondary">{tr("ai.upload.ocr")}</span>
           </div>
         )}
         {ocrText && !ocrLoading && (
-          <div className="mt-1.5 rounded-[8px] border border-accent/25 bg-accent-soft/30 px-2.5 py-1.5">
+          <div className="mt-1.5 rounded-[10px] border border-accent/20 bg-accent-soft/40 px-2.5 py-1.5">
             <div className="flex items-center gap-1.5">
               <ScanLine size={12} className="shrink-0 text-accent" />
               <span className="flex-1 text-[10px] font-medium text-accent-strong">
@@ -417,7 +420,7 @@ export function AIPanel({
         {imgAttachments.length > 0 && (
           <div className="mt-1.5 flex flex-wrap gap-1.5">
             {imgAttachments.map((a) => (
-              <span key={a.id} className="flex items-center gap-1 rounded-md border border-border bg-bg px-1.5 py-0.5 text-[11px] text-fg-secondary">
+              <span key={a.id} className="flex items-center gap-1 rounded-full bg-surface-sunken px-2.5 py-0.5 text-[11px] text-fg-secondary">
                 <ImagePlus size={11} className="shrink-0 text-accent" />
                 <span className="max-w-36 truncate">{a.filename}</span>
                 <button
@@ -460,7 +463,7 @@ export function AIPanel({
               <ChevronDown size={10} className="text-muted" />
             </button>
             {modeMenuOpen && (
-              <div className="absolute bottom-8 left-0 z-30 w-64 rounded-[10px] border border-border bg-surface p-1 shadow-lg">
+              <div className="motion-pop absolute bottom-8 left-0 z-30 w-64 rounded-[10px] border border-border bg-surface p-1 shadow-lg">
                 {MODES.map((m) => (
                   <button
                     key={m.key}

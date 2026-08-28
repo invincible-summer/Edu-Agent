@@ -228,14 +228,14 @@ export function MarkdownEditor({
             aria-label={title}
             onMouseDown={(e) => e.preventDefault()} // 保持 textarea 焦点
             onClick={() => runAction(action)}
-            className="cursor-pointer rounded-md p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent"
+            className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-[6px] text-muted transition-colors hover:bg-surface-hover hover:text-accent"
           >
             <Icon size={15} />
           </button>
         ))}
-        <button type="button" title="插入资源链接" aria-label="插入资源链接" onMouseDown={(e) => e.preventDefault()} onClick={() => setResourceOpen((open) => !open)} className="ml-1 flex cursor-pointer items-center gap-1 rounded-md border border-border px-1.5 py-1 text-[10px] text-muted hover:border-accent hover:text-accent"><Link2 size={13} />资源</button>
+        <button type="button" title="插入资源链接" aria-label="插入资源链接" onMouseDown={(e) => e.preventDefault()} onClick={() => setResourceOpen((open) => !open)} className="ml-1 flex h-7 cursor-pointer items-center gap-1 rounded-[6px] border border-border px-1.5 text-[10px] text-muted transition-colors hover:border-accent hover:text-accent"><Link2 size={13} />资源</button>
       </div>
-      {resourceOpen && <div className="absolute left-3 top-11 z-30 w-80 rounded-[10px] border border-border bg-surface p-2 shadow-lg">
+      {resourceOpen && <div className="motion-pop absolute left-3 top-11 z-30 w-80 rounded-[10px] border border-border bg-surface p-2 shadow-lg">
         <input autoFocus value={resourceQuery} onChange={(e) => setResourceQuery(e.target.value)} placeholder="搜索笔记或对话" className="mb-1.5 h-8 w-full rounded-md border border-border bg-bg px-2 text-xs outline-none focus:border-accent" />
         <div className="max-h-64 overflow-y-auto">{filteredResources.length ? filteredResources.map((resource) => <button key={resource.url} onMouseDown={(e) => { e.preventDefault(); insertResource(resource); }} className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-xs hover:bg-surface-hover"><span className="rounded bg-accent-soft px-1 py-0.5 text-[9px] text-accent-strong">{resource.kind}</span><span className="truncate">{resource.title}</span></button>) : <div className="px-2 py-3 text-center text-xs text-muted">没有匹配资源</div>}</div>
       </div>}

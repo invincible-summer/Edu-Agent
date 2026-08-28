@@ -97,7 +97,7 @@ export function BacklinksPanel({
               <button
                 key={b.id}
                 onClick={() => onOpenNote(b.id)}
-                className="cursor-pointer rounded-md border border-border bg-surface px-2 py-1 text-fg-secondary transition-colors hover:border-accent hover:text-accent"
+                className="cursor-pointer rounded-full border border-border bg-surface px-2.5 py-1 text-fg-secondary transition-colors hover:border-accent hover:text-accent"
               >
                 {b.title}
               </button>
@@ -128,7 +128,7 @@ export function BacklinksPanel({
               <button
                 key={l.note_id}
                 onClick={() => onOpenNote(l.note_id)}
-                className="cursor-pointer rounded-md border border-border bg-surface px-2 py-1 text-fg-secondary transition-colors hover:border-accent hover:text-accent"
+                className="cursor-pointer rounded-full border border-border bg-surface px-2.5 py-1 text-fg-secondary transition-colors hover:border-accent hover:text-accent"
               >
                 {l.title}
               </button>
@@ -138,7 +138,7 @@ export function BacklinksPanel({
                 key={title}
                 onClick={() => onCreateNote(title)}
                 title="点击创建"
-                className="cursor-pointer rounded-md border border-dashed border-border px-2 py-1 text-muted transition-colors hover:border-accent2 hover:text-accent2"
+                className="cursor-pointer rounded-full border border-dashed border-border px-2.5 py-1 text-muted transition-colors hover:border-accent2 hover:text-accent2"
               >
                 {title} ?
               </button>

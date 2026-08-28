@@ -33,8 +33,8 @@ export function ProposalCard({
 
   return (
     <div className={cn(
-      "rounded-[10px] border bg-surface p-3",
-      decided ? "border-border-light opacity-80" : "border-accent2/30",
+      "rounded-[10px] border border-border border-l-2 bg-surface p-3 shadow-sm",
+      decided ? "border-l-border-light opacity-80" : "border-l-accent",
     )}>
       <div className="mb-1.5 flex items-start justify-between gap-2">
         <div className="min-w-0">

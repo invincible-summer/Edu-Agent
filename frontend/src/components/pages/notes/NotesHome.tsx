@@ -114,7 +114,7 @@ export function NotesHome({
               {stats.unresolved_links.slice(0, 16).map((title) => (
                 <button key={title}
                   onClick={() => onCreateNote(title)}
-                  className="flex cursor-pointer items-center gap-1 rounded-md border border-dashed border-border px-2 py-1 text-xs text-muted transition-colors hover:border-accent2 hover:text-accent2">
+                  className="flex cursor-pointer items-center gap-1 rounded-full border border-dashed border-border px-2.5 py-1 text-xs text-muted transition-colors hover:border-accent2 hover:text-accent2">
                   <Link2 size={11} /> {title}
                 </button>
               ))}
@@ -141,7 +141,7 @@ export function NotesHome({
               {recent.map((n) => (
                 <button key={n.id}
                   onClick={() => onOpenNote(n.id)}
-                  className="group flex w-full cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-left transition-colors hover:bg-surface-hover">
+                  className="group flex w-full cursor-pointer items-center gap-2 rounded-[8px] px-2 py-1.5 text-left transition-colors hover:bg-surface-hover">
                   <FileText size={12} className="shrink-0 text-muted" />
                   <span className="min-w-0 flex-1 truncate text-xs text-fg">{n.title}</span>
                   {n.review.enabled && <NotebookPen size={10} className="shrink-0 text-accent2" />}
@@ -173,7 +173,7 @@ function StatCard({
     muted: "text-muted bg-surface-hover",
   } as const;
   return (
-    <div className="flex items-center gap-3 rounded-[10px] border border-border bg-surface px-3.5 py-3">
+    <div className="flex items-center gap-3 rounded-[10px] border border-border bg-surface px-3.5 py-3 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
       <span className={cn("flex size-8 items-center justify-center rounded-lg", tones[tone])}>
         {icon}
       </span>
