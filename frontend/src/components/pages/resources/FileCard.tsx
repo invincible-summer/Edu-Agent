@@ -55,7 +55,7 @@ export function FileCard({
     "cursor-pointer rounded-[6px] p-1 text-muted opacity-0 transition-opacity group-hover:opacity-100";
 
   return (
-    <Card className="group relative flex h-full flex-col gap-2 p-3.5" pad={false}>
+    <Card className="group relative flex h-full flex-col gap-2 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md" pad={false}>
       <div className="flex items-start gap-2.5">
         <FileTypeIcon filename={file.filename} />
         <div className="min-w-0 flex-1">

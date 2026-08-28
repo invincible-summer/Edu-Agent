@@ -34,8 +34,8 @@ export function UploadZone({
       onDragLeave={() => setDrag(false)}
       onDrop={handleDrop}
       className={cn(
-        "flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-[10px] border border-dashed px-4 py-7 text-center transition-colors",
-        drag ? "border-accent bg-accent-soft/50" : "border-border hover:border-accent/60 hover:bg-surface-hover/40",
+        "group flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-[10px] border border-dashed px-4 py-7 text-center transition-colors",
+        drag ? "border-accent bg-accent-soft/50" : "border-border hover:border-accent/60 hover:bg-accent-soft/20",
         uploading && "cursor-wait opacity-80",
       )}
     >
@@ -46,7 +46,7 @@ export function UploadZone({
         </>
       ) : (
         <>
-          <Upload size={18} className={drag ? "text-accent" : "text-muted"} />
+          <Upload size={18} className={cn("transition-transform group-hover:-translate-y-0.5", drag ? "text-accent" : "text-muted")} />
           <div className="text-sm text-fg-secondary">{tr("res.upload.drop")}</div>
           <div className="text-[11px] text-muted">{tr("res.upload.hint")}</div>
         </>

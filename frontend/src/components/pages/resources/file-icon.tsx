@@ -20,7 +20,7 @@ function extOf(filename: string): string {
 export function FileTypeIcon({ filename, size = 16 }: { filename: string; size?: number }) {
   const { icon: Icon, cls } = TYPE_MAP[extOf(filename)] ?? { icon: File, cls: "bg-surface-hover text-muted" };
   return (
-    <div className={cn("flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px]", cls)}>
+    <div className={cn("flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px]", cls)}>
       <Icon size={size} />
     </div>
   );

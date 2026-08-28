@@ -322,13 +322,13 @@ export function ResourcesView({ tab }: { tab: "files" | "textbooks" }) {
           </header>
 
           {/* P4: 教材库 / 文件库 Tab —— 路由段化（Link 预取，切换零延迟） */}
-          <div className="flex items-center gap-1 rounded-[10px] border border-border bg-surface p-1 w-fit">
+          <div className="flex w-fit items-center gap-1 rounded-full bg-surface-sunken p-1">
             {(["files", "textbooks"] as const).map((t) => (
               <Link
                 key={t}
                 href={`/resources/${t}`}
-                className={`rounded-[8px] px-3 py-1.5 text-xs font-medium transition-colors ${
-                  tab === t ? "bg-accent-soft/60 text-accent" : "text-fg-secondary hover:bg-surface-hover"
+                className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
+                  tab === t ? "bg-surface text-accent shadow-sm" : "text-fg-secondary hover:text-fg"
                 }`}
               >
                 {t === "textbooks" ? tr("res.tab.textbooks") : tr("res.tab.files")}

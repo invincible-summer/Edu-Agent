@@ -58,7 +58,7 @@ export function TextbookCard({
   return (
     <Card
       className={cn(
-        "group relative flex h-full flex-col gap-2 p-3.5",
+        "group relative flex h-full flex-col gap-2 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md",
         selecting && checked && "border-accent ring-1 ring-accent/40",
       )}
       pad={false}
@@ -73,7 +73,7 @@ export function TextbookCard({
             {checked ? <CheckSquare size={16} className="text-accent" /> : <Square size={16} />}
           </button>
         )}
-        <div className="mt-0.5 shrink-0 rounded-[8px] bg-accent-soft/40 p-1.5 text-accent">
+        <div className="mt-0.5 shrink-0 rounded-[10px] bg-accent-soft/60 p-1.5 text-accent">
           <BookOpen size={16} />
         </div>
         <button onClick={onDetail} className="min-w-0 flex-1 text-left">

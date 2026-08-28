@@ -13,7 +13,7 @@ import type { SourceRef } from "./types";
 
 function GroupLabel({ children }: { children: string }) {
   return (
-    <div className="px-1 text-[11px] font-semibold uppercase tracking-wider text-muted">{children}</div>
+    <div className="px-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted/70">{children}</div>
   );
 }
 

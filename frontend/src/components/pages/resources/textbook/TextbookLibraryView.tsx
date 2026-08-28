@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { BookOpen, Globe2, ListChecks, RefreshCw, Square } from "lucide-react";
+import { BookOpen, Globe2, ListChecks, RefreshCw, Square, Upload } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { makePageT } from "@/lib/i18n-page";
 import { STRINGS } from "@/app/(workspace)/resources/strings";
@@ -50,6 +50,7 @@ export function TextbookLibraryView({
   const [textbooks, setTextbooks] = useState<TextbookListItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [uploadOpen, setUploadOpen] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [drawerId, setDrawerId] = useState<string | null>(null);
   // 边栏点卷（focusTextbookId）派生优先；卡片详情点击走本地 drawerId
@@ -137,6 +138,8 @@ export function TextbookLibraryView({
       setUploadError(tr("res.upload.failed"));
     } finally {
       setUploading(false);
+      // 提交完成即收起上传弹窗；逐文件失败提示在页头 ErrorNote 展示
+      setUploadOpen(false);
     }
   };
 
@@ -318,7 +321,18 @@ export function TextbookLibraryView({
 
   return (
     <div className="flex flex-col gap-4">
-      <TextbookUpload uploading={uploading} tr={tr} isAdmin={isAdmin} onFiles={handleUpload} />
+      {/* 页头：标题 + 简介 + 上传入口（表单本体移至弹窗） */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="min-w-0">
+          <h2 className="text-sm font-semibold text-fg">{tr("res.tb.title", "教材库")}</h2>
+          <p className="mt-0.5 max-w-xl text-xs leading-relaxed text-muted">
+            {tr("res.tb.upload.intro", "支持大 PDF 教材（≤256MB），可多卷编组；上传后自动解析并构建知识图谱。")}
+          </p>
+        </div>
+        <Button icon={<Upload size={14} />} onClick={() => setUploadOpen(true)}>
+          {tr("res.tb.upload.open", "上传教材")}
+        </Button>
+      </div>
       {uploadError && <ErrorNote message={uploadError} />}
       {actionError && <ErrorNote message={actionError} />}
       {bulkNote && (
@@ -452,6 +466,16 @@ export function TextbookLibraryView({
         onClose={() => { setDrawerId(null); onClearFocus?.(); }}
         onUpdated={() => void refresh()}
       />
+
+      {/* 上传弹窗：表单 props/回调与原先内嵌时完全一致 */}
+      <Modal
+        open={uploadOpen}
+        onClose={() => setUploadOpen(false)}
+        title={tr("res.tb.upload.open", "上传教材")}
+        width={560}
+      >
+        <TextbookUpload uploading={uploading} tr={tr} isAdmin={isAdmin} onFiles={handleUpload} />
+      </Modal>
 
       <Modal
         open={refreshTarget !== null}

@@ -14,7 +14,7 @@ import type {
 
 function GroupLabel({ children }: { children: string }) {
   return (
-    <div className="px-1 text-[11px] font-semibold uppercase tracking-wider text-muted">{children}</div>
+    <div className="px-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted/70">{children}</div>
   );
 }
 
@@ -119,7 +119,7 @@ export function TextbookSidebar({
                   <div key={subKey} className="flex flex-col gap-1">
                     <div
                       onClick={() => toggle(subKey)}
-                      className={cn(rowCls(false), "ml-3 border-l border-border-light pl-3")}
+                      className={cn(rowCls(false), "ml-3 border-l border-border-light pl-2")}
                     >
                       <span className={textCls(false)}>{sub.name}</span>
                       <Badge tone="muted" className="tnum">{sub.groups.length}</Badge>
@@ -135,7 +135,7 @@ export function TextbookSidebar({
                           <div
                             onClick={() => onSelectGroup(active ? null : g.id)}
                             title={g.note || g.name}
-                            className={cn(rowCls(active), "ml-6 border-l border-border-light pl-3")}
+                            className={cn(rowCls(active), "ml-6 border-l border-border-light pl-2")}
                           >
                             <BookOpen size={14} className={cn("shrink-0", active ? "text-accent" : "text-muted")} />
                             <span className={textCls(active)}>{g.name}</span>
@@ -159,7 +159,7 @@ export function TextbookSidebar({
                                   key={v.file_id}
                                   onClick={() => onOpenTextbook(g.id)}
                                   title={`${v.chapter_count} 章 · ${v.concept_count} 概念${v.error ? ` · ${v.error}` : ""}`}
-                                  className="flex cursor-pointer items-center gap-1.5 rounded-[6px] px-2 py-1 text-left text-xs text-fg-secondary transition-colors hover:bg-surface-hover hover:text-fg"
+                                  className="flex cursor-pointer items-center gap-1.5 rounded-[8px] px-2 py-1 text-left text-xs text-fg-secondary transition-colors hover:bg-surface-hover hover:text-fg"
                                 >
                                   <span className="min-w-0 flex-1 truncate">
                                     {v.name}

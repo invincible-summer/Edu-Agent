@@ -3,6 +3,8 @@ import { useRef, useState, type DragEvent } from "react";
 import { Loader2, BookOpen, Globe2 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useUIStore } from "@/lib/store";
+import { Button } from "@/components/ui/Button";
+import { Input, FIELD_CLS, LABEL_CLS } from "@/components/ui/Input";
 
 /** 教材学段五值（与后端 TEXTBOOK_LEVELS 一致）。 */
 const LEVELS = ["小学", "初中", "高中", "本科", "其他"] as const;
@@ -75,77 +77,82 @@ export function TextbookUpload({
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
-        <span>{tr("res.tb.upload.level", "教材学段：")}</span>
-        <div className="flex gap-1">
-          {LEVELS.map((lv) => (
-            <button
-              key={lv}
-              type="button"
-              onClick={() => setLevel(lv)}
-              className={cn(
-                "h-6 cursor-pointer rounded-full border px-2.5 text-[11px] transition-colors",
-                level === lv
-                  ? "border-accent bg-accent-soft/40 text-accent"
-                  : "border-border bg-surface text-fg-secondary hover:border-accent hover:text-accent",
-              )}
-            >
-              {levelLabel(lv)}
-            </button>
-          ))}
+    <div className="flex flex-col gap-4">
+      {/* 学段胶囊分段选择 +（管理员）公用库开关 */}
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <div className={LABEL_CLS}>{tr("res.tb.upload.level", "教材学段：")}</div>
+          <div className="flex w-fit items-center gap-1 rounded-full bg-surface-sunken p-1">
+            {LEVELS.map((lv) => (
+              <button
+                key={lv}
+                type="button"
+                onClick={() => setLevel(lv)}
+                className={cn(
+                  "h-7 cursor-pointer rounded-full px-3 text-xs transition-colors",
+                  level === lv ? "bg-surface text-accent shadow-sm" : "text-muted hover:text-fg",
+                )}
+              >
+                {levelLabel(lv)}
+              </button>
+            ))}
+          </div>
         </div>
         {isAdmin && (
           <button
             type="button"
             onClick={() => setIsPublic((v) => !v)}
             className={cn(
-              "ml-auto flex h-6 cursor-pointer items-center gap-1 rounded-full border px-2.5 text-[11px] transition-colors",
+              "flex h-7 cursor-pointer items-center gap-1.5 rounded-full border px-3 text-xs transition-colors",
               isPublic
                 ? "border-accent bg-accent-soft/40 text-accent"
                 : "border-border bg-surface text-fg-secondary hover:border-accent hover:text-accent",
             )}
             title={tr("res.tb.upload.publicHint", "公用教材库：所有账号可选用")}
           >
-            <Globe2 size={11} />
+            <Globe2 size={12} />
             {tr("res.tb.upload.public", "上传到公用教材库")}
           </button>
         )}
       </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <input
+
+      <div className="grid gap-3 sm:grid-cols-[150px_1fr]">
+        <Input
           type="text"
           value={subject}
           maxLength={30}
           onChange={(e) => setSubject(e.target.value)}
           placeholder={tr("res.tb.subject", "学科标签（如物理、数学）")}
-          className="h-7 w-full max-w-[180px] rounded-[8px] border border-border bg-surface px-2.5 text-xs text-fg outline-none transition-colors placeholder:text-muted/70 focus:border-accent"
         />
-        <input
+        <Input
           type="text"
           value={group}
           maxLength={60}
           onChange={(e) => setGroup(e.target.value)}
           placeholder={tr("res.tb.upload.group", "教材组名（可选）：多卷 PDF 编为一组，统一构建知识谱系")}
-          className="h-7 w-full max-w-md rounded-[8px] border border-border bg-surface px-2.5 text-xs text-fg outline-none transition-colors placeholder:text-muted/70 focus:border-accent"
-        />
-        <input
-          type="text"
-          value={groupNote}
-          maxLength={500}
-          onChange={(e) => setGroupNote(e.target.value)}
-          placeholder={tr("res.tb.group.note.edit", "教材组备注（可选）")}
-          className="h-7 w-full max-w-md rounded-[8px] border border-border bg-surface px-2.5 text-xs text-fg outline-none transition-colors placeholder:text-muted/70 focus:border-accent"
         />
       </div>
-      <div className="flex flex-wrap items-center gap-2 rounded-[8px] border border-border-light p-2 text-xs">
-        <span className="text-muted">教材组默认容量</span>
-        <input type="number" min={1} value={maxChapters} onChange={(e) => setMaxChapters(e.target.value)} placeholder="章节：不限制"
-          className="h-7 w-32 rounded border border-border bg-surface px-2 text-xs text-fg" />
-        <input type="number" min={1} value={maxConcepts} onChange={(e) => setMaxConcepts(e.target.value)} placeholder="概念：不限制"
-          className="h-7 w-32 rounded border border-border bg-surface px-2 text-xs text-fg" />
+      <Input
+        type="text"
+        value={groupNote}
+        maxLength={500}
+        onChange={(e) => setGroupNote(e.target.value)}
+        placeholder={tr("res.tb.group.note.edit", "教材组备注（可选）")}
+      />
+
+      <div className="flex flex-wrap items-center gap-2.5 rounded-[10px] border border-border-light bg-surface-sunken/40 px-3 py-2.5 text-xs">
+        <span className="font-medium text-fg-secondary">教材组默认容量</span>
+        <div className="w-32">
+          <input type="number" min={1} value={maxChapters} onChange={(e) => setMaxChapters(e.target.value)} placeholder="章节：不限制"
+            className={FIELD_CLS} />
+        </div>
+        <div className="w-32">
+          <input type="number" min={1} value={maxConcepts} onChange={(e) => setMaxConcepts(e.target.value)} placeholder="概念：不限制"
+            className={FIELD_CLS} />
+        </div>
         <span className="text-[11px] text-muted">留空表示不限制；每本教材独立应用，不共享总预算。</span>
       </div>
+
       <div
         onClick={() => !uploading && inputRef.current?.click()}
         onDragOver={(e) => {
@@ -156,7 +163,7 @@ export function TextbookUpload({
         onDrop={handleDrop}
         className={cn(
           "flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-[10px] border border-dashed px-4 py-7 text-center transition-colors",
-          drag ? "border-accent bg-accent-soft/50" : "border-border hover:border-accent/60 hover:bg-surface-hover/40",
+          drag ? "border-accent bg-accent-soft/50" : "border-border hover:border-accent/60 hover:bg-accent-soft/20",
           uploading && "cursor-wait opacity-80",
         )}
       >
@@ -181,26 +188,32 @@ export function TextbookUpload({
         </div>
         <div className="max-w-md text-[11px] leading-relaxed text-muted">{tr("res.tb.upload.hint")}</div>
       </div>
+
       {pendingFiles.length > 0 && (
-        <div className="space-y-2 rounded-[10px] border border-border p-3">
-          <div className="text-xs font-medium text-fg">逐本设置（留空=使用教材组默认）</div>
-          {pendingFiles.map((file, index) => {
-            const value = overrides[String(index)] ?? { max_chapters: "", max_concepts: "" };
-            return <div key={`${file.name}-${index}`} className="grid gap-2 sm:grid-cols-[1fr_120px_120px] sm:items-center">
-              <span className="truncate text-xs text-fg-secondary">{file.name}</span>
-              <input type="number" min={1} value={value.max_chapters} placeholder="章节：继承"
-                onChange={(e) => setOverrides({ ...overrides, [String(index)]: { ...value, max_chapters: e.target.value } })}
-                className="h-7 rounded border border-border bg-surface px-2 text-xs text-fg" />
-              <input type="number" min={1} value={value.max_concepts} placeholder="概念：继承"
-                onChange={(e) => setOverrides({ ...overrides, [String(index)]: { ...value, max_concepts: e.target.value } })}
-                className="h-7 rounded border border-border bg-surface px-2 text-xs text-fg" />
-            </div>;
-          })}
-          <div className="flex justify-end gap-2">
-            <button type="button" onClick={() => { setPendingFiles([]); setOverrides({}); }} className="rounded px-3 py-1.5 text-xs text-muted hover:bg-surface-hover">取消</button>
-            <button type="button" disabled={uploading} onClick={emit} className="rounded bg-accent px-3 py-1.5 text-xs font-medium text-white disabled:opacity-50">开始上传并构建</button>
+        <>
+          {/* 逐卷容量覆盖：细分隔线列表（留空=使用教材组默认） */}
+          <div className="overflow-hidden rounded-[10px] border border-border">
+            <div className="border-b border-border-light bg-surface-sunken/40 px-3 py-2 text-xs font-medium text-fg">逐本设置（留空=使用教材组默认）</div>
+            <div className="divide-y divide-border-light">
+              {pendingFiles.map((file, index) => {
+                const value = overrides[String(index)] ?? { max_chapters: "", max_concepts: "" };
+                return <div key={`${file.name}-${index}`} className="grid gap-2 px-3 py-2.5 sm:grid-cols-[1fr_120px_120px] sm:items-center">
+                  <span className="truncate text-xs text-fg-secondary">{file.name}</span>
+                  <input type="number" min={1} value={value.max_chapters} placeholder="章节：继承"
+                    onChange={(e) => setOverrides({ ...overrides, [String(index)]: { ...value, max_chapters: e.target.value } })}
+                    className={FIELD_CLS} />
+                  <input type="number" min={1} value={value.max_concepts} placeholder="概念：继承"
+                    onChange={(e) => setOverrides({ ...overrides, [String(index)]: { ...value, max_concepts: e.target.value } })}
+                    className={FIELD_CLS} />
+                </div>;
+              })}
+            </div>
           </div>
-        </div>
+          <div className="flex flex-col gap-2">
+            <Button className="w-full" disabled={uploading} onClick={emit}>开始上传并构建</Button>
+            <Button variant="ghost" size="sm" className="self-end" onClick={() => { setPendingFiles([]); setOverrides({}); }}>取消</Button>
+          </div>
+        </>
       )}
     </div>
   );
