@@ -473,30 +473,30 @@ function ChatWorkspace() {
         </button>
         <div ref={scrollRef} className="flex-1 overflow-y-auto">
           {isEmpty ? (
-            <div className="page-in flex min-h-full flex-col items-center justify-center px-6 py-10">
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-accent text-white shadow-md">
+            <div className="flex min-h-full flex-col items-center justify-center px-6 py-10">
+              <div className="page-in mb-5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-accent text-white shadow-md">
                 <GraduationCap className="h-7 w-7" />
               </div>
-              <h1 className="mb-2 font-serif text-[1.6rem] font-bold tracking-tight text-fg">{tr("app.name")}</h1>
-              <p className="mb-6 max-w-md text-center text-[0.85rem] leading-relaxed text-muted">
+              <h1 className="page-in mb-2 font-serif text-[1.6rem] font-bold tracking-tight text-fg" style={{ animationDelay: "90ms" }}>{tr("app.name")}</h1>
+              <p className="page-in mb-6 max-w-md text-center text-[0.85rem] leading-relaxed text-muted" style={{ animationDelay: "90ms" }}>
                 {tr("app.tagline")}
               </p>
               {greeting && (
-                <p className="mb-6 max-w-md rounded-[10px] border border-accent/20 bg-accent-soft/30 px-4 py-2 text-center text-[0.78rem] leading-relaxed text-accent-strong">
+                <p className="page-in mb-6 max-w-md rounded-[10px] border border-accent/20 bg-accent-soft/30 px-4 py-2 text-center text-[0.78rem] leading-relaxed text-accent-strong" style={{ animationDelay: "180ms" }}>
                   {greeting}
                 </p>
               )}
-              <div className="grid w-full max-w-xl grid-cols-1 gap-2.5 sm:grid-cols-2">
+              <div className="page-in grid w-full max-w-xl grid-cols-1 gap-2.5 sm:grid-cols-2" style={{ animationDelay: "270ms" }}>
                 {suggestions.map((s) => (
                   <Card
                     key={s.text}
                     hover
                     onClick={() => handleSend(s.text)}
-                    className="group px-4 py-3 transition-colors hover:border-accent/40"
+                    className="group px-4 py-3 hover:border-accent/40"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-accent-soft">
-                        <s.icon className="h-4 w-4 text-accent-strong" />
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] bg-accent-soft text-accent">
+                        <s.icon className="h-4 w-4" />
                       </div>
                       <div className="min-w-0">
                         <p className="text-[0.8rem] font-medium text-fg">{s.text}</p>

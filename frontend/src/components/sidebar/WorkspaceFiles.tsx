@@ -41,7 +41,7 @@ export function WorkspaceFiles({
 
   return (
     <div className="px-1 py-1">
-      <p className="px-1.5 pb-1 text-[0.65rem] font-semibold uppercase tracking-wide text-muted">
+      <p className="px-1.5 pb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted/70">
         {tr("ws.shared.files")}{files.length > 0 ? ` · ${files.length}` : ""}
       </p>
 
@@ -58,7 +58,7 @@ export function WorkspaceFiles({
         return (
           <div
             key={f.id}
-            className="group flex items-center gap-2 rounded-lg px-1.5 py-1.5 transition-colors hover:bg-surface-hover"
+            className="group flex items-center gap-2 rounded-[10px] px-1.5 py-1.5 transition-colors hover:bg-surface-hover"
           >
             <Icon size={13} className="flex-shrink-0 text-accent/70" />
             <div className="flex-1 min-w-0">

@@ -122,14 +122,14 @@ export function WorkspaceItem({
             />
           </span>
         ) : (
-          <span className="flex-1 truncate text-[0.8rem] font-medium text-fg-secondary">{ws.name}</span>
+          <span className="flex-1 truncate text-[0.8rem] font-medium text-fg-secondary group-hover:text-fg">{ws.name}</span>
         )}
         <span className="tnum text-[0.62rem] text-muted">{ws.session_count}</span>
         {/* Workspace menu */}
         <div className="relative" ref={menuRef}>
           <button
             onClick={(e) => { e.stopPropagation(); setMenuOpen((v) => !v); }}
-            className="opacity-0 group-hover:opacity-100 text-muted hover:text-fg transition-opacity"
+            className="flex items-center rounded-[4px] p-0.5 text-muted opacity-0 transition-opacity hover:text-fg group-hover:opacity-100"
           >
             <MoreHorizontal size={14} />
           </button>

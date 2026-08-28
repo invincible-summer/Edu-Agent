@@ -206,7 +206,7 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
         {speech.error && <p className="mb-1.5 text-[0.72rem] text-danger">{tr("chat.input.voice.unsupported")}</p>}
 
         {/* 悬浮卡片式输入框 */}
-        <div className="rounded-[12px] border border-border bg-surface shadow-md transition-shadow focus-within:border-accent/50">
+        <div className="rounded-[14px] border border-border bg-surface shadow-sm transition-[border-color,box-shadow] duration-200 focus-within:border-accent focus-within:shadow-[0_0_0_3px_rgb(var(--accent)/0.12)]">
           {/* OCR 预览卡：不污染输入框，随消息一并提交 */}
           {ocrLoading && (
             <div className="mx-3 mt-3 flex items-center gap-2 rounded-[8px] border border-accent/25 bg-accent-soft/30 px-3 py-2">
@@ -249,7 +249,7 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
           {pending.length > 0 && (
             <div className="mx-3 mt-3 flex flex-wrap gap-1.5">
               {pending.map((f, i) => (
-                <span key={i} className="flex items-center gap-1.5 rounded-[6px] border border-border-light bg-surface-hover px-2 py-1 text-[0.7rem] text-fg-secondary">
+                <span key={i} className="flex items-center gap-1.5 rounded-full bg-surface-sunken px-2.5 py-1 text-[0.7rem] text-fg-secondary">
                   <FileText size={11} className="text-accent/70" />
                   <span className="max-w-40 truncate">{f.name}</span>
                   <button onClick={() => setPending((p) => p.filter((_, j) => j !== i))} className="text-muted hover:text-danger">
@@ -264,14 +264,14 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
           {(attachedRefs.length > 0 || pendingLibraryRefs.length > 0) && (
             <div className="mx-3 mt-3 flex flex-wrap gap-1.5">
               {attachedRefs.map((f) => (
-                <span key={f.id} className="flex items-center gap-1.5 rounded-[6px] border border-accent/25 bg-accent-soft/30 px-2 py-1 text-[0.7rem] text-fg-secondary">
+                <span key={f.id} className="flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent-soft/30 px-2.5 py-1 text-[0.7rem] text-fg-secondary">
                   <LibraryBig size={11} className="text-accent" />
                   <span className="max-w-40 truncate">{f.filename}</span>
                   <span className="rounded-[4px] bg-accent-soft px-1 text-[0.6rem] text-accent-strong">{tr("chat.libref.tag")}</span>
                 </span>
               ))}
               {pendingLibraryRefs.map((f) => (
-                <span key={f.id} className="flex items-center gap-1.5 rounded-[6px] border border-accent/25 bg-accent-soft/30 px-2 py-1 text-[0.7rem] text-fg-secondary">
+                <span key={f.id} className="flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent-soft/30 px-2.5 py-1 text-[0.7rem] text-fg-secondary">
                   <LibraryBig size={11} className="text-accent" />
                   <span className="max-w-40 truncate">{f.filename}</span>
                   <span className="rounded-[4px] bg-accent-soft px-1 text-[0.6rem] text-accent-strong">{tr("chat.libref.tag")}</span>
@@ -298,8 +298,8 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
           />
 
           {/* 工具行 */}
-          <div className="flex items-center gap-1 px-2 pb-2 pt-1">
-            <div className="flex items-center gap-1 rounded-[8px] bg-surface-hover px-2 py-1">
+          <div className="flex items-center gap-1.5 px-2 pb-2 pt-1">
+            <div className="flex h-8 items-center gap-1 rounded-full bg-surface-hover px-3">
               <GraduationCap size={13} className="text-muted" />
               <select
                 value={grade}
@@ -322,7 +322,7 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
             <button
               onClick={() => fileRef.current?.click()}
               disabled={disabled || uploading}
-              className="flex h-7 w-7 items-center justify-center rounded-[8px] text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
               title={tr("chat.input.upload.title")}
             >
               {uploading ? <Loader2 size={15} className="animate-spin" /> : <Paperclip size={15} />}
@@ -332,7 +332,7 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
             <button
               onClick={() => setLibRefOpen(true)}
               disabled={disabled || attaching}
-              className="flex h-7 w-7 items-center justify-center rounded-[8px] text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
               title={tr("chat.libref.button")}
             >
               {attaching ? <Loader2 size={15} className="animate-spin" /> : <LibraryBig size={15} />}
@@ -340,7 +340,7 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
             <button
               onClick={() => imgRef.current?.click()}
               disabled={disabled || ocrLoading}
-              className="flex h-7 w-7 items-center justify-center rounded-[8px] text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
               title={tr("chat.input.ocr")}
             >
               {ocrLoading ? <Loader2 size={15} className="animate-spin" /> : <ScanLine size={15} />}
@@ -351,7 +351,7 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
               onClick={() => (speech.listening ? speech.stop() : speech.start())}
               disabled={disabled || !speech.supported}
               className={cn(
-                "flex h-7 w-7 items-center justify-center rounded-[8px] transition-colors disabled:opacity-40",
+                "flex h-8 w-8 items-center justify-center rounded-full transition-colors disabled:opacity-40",
                 speech.listening ? "bg-danger/10 text-danger" : "text-muted hover:bg-surface-hover hover:text-accent",
               )}
               title={speech.supported ? tr("chat.input.voice.title") : tr("chat.input.voice.unsupported")}

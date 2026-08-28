@@ -315,8 +315,8 @@ export function Sidebar() {
     )}>
       <div className="flex h-full w-64 flex-col">
         {/* 新对话主按钮 + 新建学习区 */}
-        <div className="space-y-1.5 p-3 pb-2">
-          <div className="flex items-center gap-1.5">
+        <div className="flex flex-col gap-2 p-3 pb-2">
+          <div className="flex items-center gap-2">
             <Button
               className="flex-1"
               icon={<Plus size={15} />}
@@ -339,7 +339,7 @@ export function Sidebar() {
                 onClick={() => (managing ? exitManaging() : setManaging(true))}
                 title={tr("sidebar.manage")}
                 className={cn(
-                  "flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-[8px] transition-colors",
+                  "flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full transition-colors",
                   managing ? "bg-accent-soft text-accent-strong" : "text-muted hover:bg-surface-hover hover:text-fg",
                 )}
               >
@@ -368,7 +368,7 @@ export function Sidebar() {
           {sidebarReady && <>
           {/* Workspaces */}
           {workspaces.length > 0 && (
-            <p className="px-2 pb-1 pt-1.5 text-[0.62rem] font-semibold uppercase tracking-wider text-muted">
+            <p className="px-2.5 pb-1.5 pt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted/70">
               {tr("ws.title")}
             </p>
           )}
@@ -418,7 +418,7 @@ export function Sidebar() {
           {looseSessions.length > 0 && (
             <>
               {workspaces.length > 0 && (
-                <p className="mt-2 px-2 pb-1 pt-1.5 text-[0.62rem] font-semibold uppercase tracking-wider text-muted">
+                <p className="mt-2 px-2.5 pb-1.5 pt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted/70">
                   {tr("ws.loose")}
                 </p>
               )}
@@ -444,8 +444,8 @@ export function Sidebar() {
 
         {/* 批量管理操作条 */}
         {managing && (
-          <div className="border-t border-border p-2.5">
-            <div className="mb-1.5 flex items-center justify-between px-1">
+          <div className="border-t border-border p-3">
+            <div className="mb-2 flex items-center justify-between px-1">
               <span className="tnum text-[0.7rem] text-muted">
                 {tr("sidebar.selected.n").replace("%n", String(selected.size))}
               </span>
@@ -456,7 +456,7 @@ export function Sidebar() {
                 {tr("sidebar.select.all")}
               </button>
             </div>
-            <div className="flex gap-1.5">
+            <div className="flex gap-2">
               <Button
                 variant="danger"
                 size="sm"

@@ -96,7 +96,7 @@ export function SessionRow({
         <span className={cn(
           "min-w-0 flex-1 truncate",
           loose ? "text-[0.8rem]" : "text-[0.75rem]",
-          active ? "font-medium text-accent-strong" : "text-fg-secondary",
+          active ? "font-medium text-accent-strong" : "text-fg-secondary group-hover:text-fg",
         )}>
           {session.title || tr("sidebar.untitled")}
         </span>
