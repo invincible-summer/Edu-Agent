@@ -6,11 +6,13 @@ import { API_BASE } from "@/lib/api";
 import { useAuthStore } from "@/lib/auth-store";
 import { useUIStore } from "@/lib/store";
 import { t } from "@/lib/i18n";
+import { AUTO_GRADE, gradeForApi, type Grade } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
 import { AuthShell } from "@/components/auth/AuthShell";
 
 // 学段 token 是后端契约（写入 UserProfile 并同步 StudentModel），保持中文不翻译。
-const GRADES = ["小学", "初中", "高中", "本科"];
+// 「自动」是 P1 默认：后端事实源为空串，提交前经 gradeForApi 转换。
+const GRADES = ["自动", "小学", "初中", "高中", "本科"] as const satisfies readonly Grade[];
 
 const INPUT_CLS =
   "w-full rounded-[8px] border border-border bg-surface px-3 py-2.5 text-sm text-fg outline-none transition-colors focus:border-accent";
@@ -28,7 +30,7 @@ function RegisterForm() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
-  const [grade, setGrade] = useState("高中");
+  const [grade, setGrade] = useState<Grade>(AUTO_GRADE);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +43,7 @@ function RegisterForm() {
       const res = await fetch(`${API_BASE}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, username, name, grade }),
+        body: JSON.stringify({ email, password, username, name, grade: gradeForApi(grade) }),
       });
       const data = await res.json();
       if (!res.ok) {

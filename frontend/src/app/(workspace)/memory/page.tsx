@@ -406,6 +406,12 @@ export default function MemoryPage() {
 
   const disabledNote = <EmptyState title={tr("mem.disabled")} />;
   const auditCount = episodes.list.length + facts.list.length;
+  // 历史审计只承载旧版系统留存数据：两接口都已加载完且总数为 0 时整块
+  // 隐藏（加载中不算空，避免闪隐）；新用户不再看到空 tab。
+  const auditEmpty =
+    episodes.status === "ok" && facts.status === "ok" && auditCount === 0;
+  // 数据重载后变空时，已停留在 audit 的状态回落到 procedural
+  const activeTab = tab === "audit" && auditEmpty ? "procedural" : tab;
 
   return (
     <div className="h-full overflow-y-auto p-6 page-in">
@@ -438,7 +444,7 @@ export default function MemoryPage() {
             </div>
 
             <Tabs
-              active={tab}
+              active={activeTab}
               onChange={setTab}
               items={[
                 {
@@ -446,15 +452,19 @@ export default function MemoryPage() {
                   label: tr("mem.tab.procedural"),
                   badge: strategies.status === "ok" && <Badge tone="muted">{strategies.list.length}</Badge>,
                 },
-                {
-                  key: "audit",
-                  label: tr("mem.tab.audit"),
-                  badge: auditCount > 0 && <Badge tone="muted">{auditCount}</Badge>,
-                },
+                ...(!auditEmpty
+                  ? [
+                      {
+                        key: "audit",
+                        label: tr("mem.tab.audit"),
+                        badge: <Badge tone="muted">{auditCount}</Badge>,
+                      },
+                    ]
+                  : []),
               ]}
             />
 
-            {tab === "procedural" &&
+            {activeTab === "procedural" &&
               (strategies.status === "disabled" ? (
                 disabledNote
               ) : strategies.status !== "ok" ? (
@@ -465,7 +475,7 @@ export default function MemoryPage() {
                 </Card>
               ))}
 
-            {tab === "audit" && (
+            {activeTab === "audit" && (
               <>
                 <Card className="border-info/30 bg-info/8 py-3">
                   <div className="flex items-start gap-2 text-xs leading-relaxed text-info">

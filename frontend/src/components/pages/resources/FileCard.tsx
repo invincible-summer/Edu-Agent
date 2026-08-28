@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Check, Download, FolderInput, Pencil, Trash2, X } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { AnchoredPopover } from "@/components/ui/AnchoredPopover";
 import { FileTypeIcon } from "./file-icon";
 import type { ResourceFile } from "./types";
 
@@ -41,14 +42,6 @@ export function FileCard({
   const [name, setName] = useState(file.filename);
   const [savingName, setSavingName] = useState(false);
   const moveRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!moveOpen) return;
-    const fn = (e: MouseEvent) => {
-      if (moveRef.current && !moveRef.current.contains(e.target as Node)) setMoveOpen(false);
-    };
-    window.addEventListener("mousedown", fn);
-    return () => window.removeEventListener("mousedown", fn);
-  }, [moveOpen]);
 
   const summary = file.summary && file.summary.length > 150 ? `${file.summary.slice(0, 150)}…` : file.summary;
   const stats = [
@@ -115,7 +108,13 @@ export function FileCard({
                 <FolderInput size={14} />
               </button>
               {moveOpen && (
-                <div className="absolute right-0 top-7 z-20 w-40 rounded-[10px] border border-border bg-surface py-1 shadow-lg">
+                <AnchoredPopover
+                  anchorRef={moveRef}
+                  open
+                  onClose={() => setMoveOpen(false)}
+                  placement="bottom-end"
+                  className="z-20 w-40 rounded-[10px] border border-border bg-surface py-1 shadow-lg"
+                >
                   {moveTargets.map((tgt) => (
                     <button
                       key={tgt.id}
@@ -129,7 +128,7 @@ export function FileCard({
                       <span className="truncate">{tgt.name}</span>
                     </button>
                   ))}
-                </div>
+                </AnchoredPopover>
               )}
             </div>
           )}

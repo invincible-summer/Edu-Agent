@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Search, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { stateColor } from "@/lib/labels";
+import { AnchoredPopover } from "@/components/ui/AnchoredPopover";
 import type { KnowledgeNode, KnowledgeTaxonomyGroup } from "@/lib/types-modules";
 import { SEARCH_RESULT_LIMIT } from "./search";
 
@@ -43,16 +44,6 @@ export function SearchBox({
   // 结果集收窄时游标在渲染期收敛，避免 effect 级联 setState
   const cursor = Math.min(cursorRaw, Math.max(0, visible.length - 1));
   const activeIdx = activeMatchId ? matches.findIndex((n) => n.id === activeMatchId) : -1;
-
-  // 点击组件外部关闭面板（pointerdown 先于 blur，保证行点击不丢）
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e: PointerEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("pointerdown", onDown);
-    return () => document.removeEventListener("pointerdown", onDown);
-  }, [open]);
 
   // 键盘游标行滚动跟随
   useEffect(() => {
@@ -134,9 +125,15 @@ export function SearchBox({
         )}
       </div>
 
-      {/* 结果面板 */}
+      {/* 结果面板：portal 锚定（页面在 overflow 容器内滚动时跟随不被裁剪） */}
       {open && q && (
-        <div className="absolute right-0 top-full z-30 mt-1.5 w-[400px] max-w-[calc(100vw-2.5rem)] overflow-hidden rounded-[10px] border border-border bg-surface shadow-lg">
+        <AnchoredPopover
+          anchorRef={rootRef}
+          open
+          onClose={() => setOpen(false)}
+          placement="bottom-end"
+          className="z-30 w-[400px] max-w-[calc(100vw-2.5rem)] overflow-hidden rounded-[10px] border border-border bg-surface shadow-lg"
+        >
           <div className="border-b border-border-light px-3 py-1.5 text-[10px] text-muted">
             {matches.length > 0
               ? tr("searchResultCount").replace("%n", String(matches.length))
@@ -182,7 +179,7 @@ export function SearchBox({
           <div className="border-t border-border-light px-3 py-1 text-[10px] text-muted">
             {tr("searchScopeHint", "")}
           </div>
-        </div>
+        </AnchoredPopover>
       )}
     </div>
   );

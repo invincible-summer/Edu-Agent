@@ -110,6 +110,23 @@ class DeploymentContractTests(unittest.TestCase):
             manual,
         )
 
+    def test_manual_documents_safe_env_only_updates(self) -> None:
+        manual = (ROOT / "docs" / "The_Website_deployment_plan.md").read_text(
+            encoding="utf-8"
+        )
+        section_start = manual.index("### 13.2 只更新云服务器生产 `.env`")
+        section_end = manual.index("### 13.3 服务器按 commit 精确更新", section_start)
+        section = manual[section_start:section_end]
+        self.assertIn("本地 `.env` 的修改**不会自动同步到生产**", section)
+        self.assertIn("/var/lib/edu-agent/backup/env_", section)
+        self.assertIn("sudoedit /opt/edu-agent/.env", section)
+        self.assertIn("AUTH_JWT_SECRET is non-default", section)
+        self.assertIn("systemctl restart edu-agent-backend.service", section)
+        self.assertIn("using_default_secret=false", section)
+        self.assertNotIn("systemctl restart edu-agent-frontend.service", section)
+        self.assertNotIn("systemctl reload nginx", section)
+        self.assertNotIn("cat /opt/edu-agent/.env", section)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { CheckSquare, ClipboardList, MoreHorizontal, Paperclip, Pencil, Square, Trash2, FolderMinus } from "lucide-react";
 import { useUIStore } from "@/lib/store";
 import { t, type Lang } from "@/lib/i18n";
 import { cn } from "@/lib/cn";
-import { Dropdown, useClickOutside, type DropdownItem } from "./Dropdown";
+import { Dropdown, type DropdownItem } from "./Dropdown";
 import { InlineEdit } from "./InlineEdit";
 import type { SessionItem } from "@/lib/types";
 
@@ -53,7 +53,7 @@ export function SessionRow({
   const tr = (k: string, fb?: string) => t(lang, k, fb);
   const [menuOpen, setMenuOpen] = useState(false);
   const [editing, setEditing] = useState(false);
-  const menuRef = useClickOutside<HTMLDivElement>(() => setMenuOpen(false), menuOpen);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   if (editing) {
     return (
@@ -109,7 +109,7 @@ export function SessionRow({
             >
               <MoreHorizontal size={13} />
             </button>
-            {menuOpen && <Dropdown items={items} onClose={() => setMenuOpen(false)} />}
+            {menuOpen && <Dropdown items={items} onClose={() => setMenuOpen(false)} anchorRef={menuRef} />}
           </div>
         )}
       </div>

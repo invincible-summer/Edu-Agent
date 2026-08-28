@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, Search, X } from "lucide-react";
 import { getKnowledgeGraph, getKnowledgeTaxonomy } from "@/lib/api-modules";
 import type {
@@ -10,6 +10,7 @@ import type {
 } from "@/lib/types-modules";
 import { useUIStore } from "@/lib/store";
 import { cn } from "@/lib/cn";
+import { AnchoredPopover } from "@/components/ui/AnchoredPopover";
 
 /** 选择的概念（图谱 id + 展示名）。 */
 export interface PickedConcept {
@@ -83,6 +84,9 @@ export function GenealogyConceptPicker({
   const [graphError, setGraphError] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  // 搜索命中面板的外点关闭标记：记录被关掉时的搜索词，输入变化即重新弹出
+  const [hitsDismissedFor, setHitsDismissedFor] = useState("");
+  const searchWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let alive = true;
@@ -318,16 +322,23 @@ export function GenealogyConceptPicker({
         <p className="py-1 text-[0.7rem] text-warning">{t("loadFail")}</p>
       ) : (
         <>
-          <div className="relative mb-2">
+          <div className="relative mb-2" ref={searchWrapRef}>
             <Search size={12} className="absolute top-2 left-2 text-muted" />
             <input
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => { setSearch(e.target.value); setHitsDismissedFor(""); }}
               placeholder={t("searchPh")}
               className="h-7 w-full rounded-[8px] border border-border bg-surface pr-2 pl-6 text-xs text-fg outline-none placeholder:text-muted focus:border-accent"
             />
-            {searchHits.length > 0 && (
-              <div className="absolute top-8 left-0 z-10 max-h-44 w-full overflow-y-auto rounded-[8px] border border-border bg-surface px-1 py-1 shadow-md">
+            {searchHits.length > 0 && hitsDismissedFor !== search && (
+              <AnchoredPopover
+                anchorRef={searchWrapRef}
+                open
+                onClose={() => setHitsDismissedFor(search)}
+                placement="bottom-start"
+                matchAnchorWidth
+                className="z-10 max-h-44 overflow-y-auto rounded-[8px] border border-border bg-surface px-1 py-1 shadow-md"
+              >
                 {searchHits.map((n) => (
                   <button
                     key={n.id}
@@ -342,7 +353,7 @@ export function GenealogyConceptPicker({
                     {n.name}
                   </button>
                 ))}
-              </div>
+              </AnchoredPopover>
             )}
           </div>
           {chapters.length === 0 ? (

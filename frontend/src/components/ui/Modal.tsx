@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState, type ReactNode } from "react";
-import { cn } from "@/lib/cn";
 import { Button } from "./Button";
 
 /** 居中确认弹窗。 */
@@ -31,12 +30,12 @@ export function Modal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/30" onClick={onClose} />
       <div
-        className={cn("relative rounded-[10px] border border-border bg-surface p-5 shadow-lg page-in")}
+        className="relative flex max-h-[calc(100vh-2rem)] flex-col rounded-[10px] border border-border bg-surface p-5 shadow-lg page-in"
         style={{ width: `min(${width}px, 94vw)` }}
       >
-        {title && <div className="mb-3 text-sm font-semibold text-fg">{title}</div>}
-        <div className="text-sm text-fg-secondary">{children}</div>
-        {footer && <div className="mt-5 flex justify-end gap-2">{footer}</div>}
+        {title && <div className="mb-3 shrink-0 text-sm font-semibold text-fg">{title}</div>}
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain text-sm text-fg-secondary">{children}</div>
+        {footer && <div className="mt-5 flex shrink-0 justify-end gap-2">{footer}</div>}
       </div>
     </div>
   );

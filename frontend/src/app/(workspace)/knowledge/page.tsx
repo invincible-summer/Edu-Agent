@@ -1,7 +1,7 @@
 "use client";
 // /knowledge 知识图谱页：M5 图谱画布 + M2 掌握度叠加 + M3 学习路径条 +
 // M3 教学计划区（原 /plan 页迁入，C13：/plan 保留 redirect 深链）。
-// 单学段单学科浏览（学段 segmented 单选默认本科；学科必选，与教材组/卷
+// 单学段单学科浏览（学段 segmented 单选默认账户学段，「自动」回落本科；学科必选，与教材组/卷
 // 一样为客户端过滤、切换即时不重拉）；搜索按学段全量穿透，命中后自动把
 // 学科/教材组范围切过去，结果面板 + ‹ i/N › 循环定位（匹配逻辑统一在
 // components/.../search.ts）。
@@ -9,6 +9,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, Suspense } from "rea
 import { ChevronRight, Network, Sparkles } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useUIStore } from "@/lib/store";
+import { useAuthStore } from "@/lib/auth-store";
 import { makePageT } from "@/lib/i18n-page";
 import {
   deleteCustomGraph,
@@ -42,12 +43,18 @@ import { groupOfNode, searchConcepts } from "@/components/pages/knowledge/search
 import { STRINGS } from "./strings";
 
 const CHAPTER_NODE_H = 40;
-/** 默认学段；该学段无数据时回落到 taxonomy 的第一个学段。 */
-const DEFAULT_LEVEL = "本科";
+/** 学段默认回落值：账户学段缺失/为「自动」、或目录里没有该学段时取本科，
+ *  与后端推荐学习路径（`_personalized_next` 自动→本科）口径一致。 */
+const FALLBACK_LEVEL = "本科";
 
 function KnowledgePageInner() {
   const lang = useUIStore((s) => s.lang);
   const tr = useMemo(() => makePageT(lang, STRINGS), [lang]);
+  // 账户学段驱动默认值：空串=「自动」（回落本科）。auth 水合晚于首帧时
+  // profileGrade 变化会再次触发 fetchTaxonomy，校正默认学段/学科。
+  const profileGrade = (useAuthStore((s) => s.user?.profile.grade) ?? "").trim();
+  // 用户是否已手选学段/学科：置位后 taxonomy（重）到达不再改写默认值
+  const stageTouched = useRef(false);
   // URL 深链（?concept=<图谱节点id>）：编排任务/差距行/测评跳转定位用。
   // useSearchParams 要求静态预渲染页包 Suspense（见文件底部导出）。
   const searchParams = useSearchParams();
@@ -113,20 +120,27 @@ function KnowledgePageInner() {
       .then((r) => {
         if (r.status !== "ok") return;
         setTaxonomy(r);
-        // 学段默认值：本科优先，否则首个学段；函数式更新不覆盖用户已选学段
+        // 学段默认值：账户学段优先；自动/缺失/目录没有时回落本科，再没有
+        // 取目录第一个学段。仅未手选时写入（含 auth 晚到后的默认值校正）。
         const names = (r.levels ?? []).map((x) => x.name);
-        const target = names.includes(DEFAULT_LEVEL) ? DEFAULT_LEVEL : (names[0] ?? DEFAULT_LEVEL);
-        setLevel((cur) => cur ?? target);
-        // 学科必选：初始与学段一起落到该学段第一个学科（函数式同样不覆盖已选）
-        const firstSubject = (r.levels ?? []).find((x) => x.name === target)
-          ?.subjects[0]?.name ?? null;
-        setSubject((cur) => cur ?? firstSubject);
+        const target = names.includes(profileGrade)
+          ? profileGrade
+          : names.includes(FALLBACK_LEVEL)
+            ? FALLBACK_LEVEL
+            : (names[0] ?? FALLBACK_LEVEL);
+        if (!stageTouched.current) {
+          setLevel(target);
+          // 学科必选：默认与学段一起落到该学段第一个学科
+          setSubject(
+            (r.levels ?? []).find((x) => x.name === target)?.subjects[0]?.name ?? null,
+          );
+        }
       })
       .catch(() => {
         // 目录拉取失败也要解锁页面：回落默认学段（空图走 EmptyState）
-        setLevel((cur) => cur ?? DEFAULT_LEVEL);
+        setLevel((cur) => cur ?? FALLBACK_LEVEL);
       });
-  }, []);
+  }, [profileGrade]);
 
   const fetchPath = useCallback(() => {
     getLearningPath()
@@ -284,6 +298,7 @@ function KnowledgePageInner() {
 
   const pickLevel = useCallback((lv: string) => {
     if (lv === level) return;
+    stageTouched.current = true;
     resetStageView();
     setLevel(lv);
     setTextbookId(null);
@@ -294,6 +309,7 @@ function KnowledgePageInner() {
   }, [level, resetStageView, taxonomy]);
 
   const pickSubject = useCallback((s: string | null) => {
+    stageTouched.current = true;
     resetView();
     setSubject(s);
     setTextbookId(null);
@@ -412,6 +428,7 @@ function KnowledgePageInner() {
 
   /** 查看：切到该图谱的学段并选中其教材组（学科必选：无学科信息时回落该学段第一个学科） */
   const viewCustom = useCallback((g: CustomGraphMeta) => {
+    stageTouched.current = true;
     resetStageView();
     const lv = g.level || "其他";
     setLevel(lv);

@@ -9,11 +9,13 @@ import { Card } from "@/components/ui/Card";
 import { Modal } from "@/components/ui/Modal";
 import { deleteAccount, updateUserProfile } from "@/lib/api-modules";
 import { useAuthStore } from "@/lib/auth-store";
+import { AUTO_GRADE, gradeForApi, gradeFromApi, type Grade } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
 type Tr = (key: string, fallback?: string) => string;
 
-const GRADES = ["小学", "初中", "高中", "本科"] as const;
+// 含 P1「自动」token；后端空串 = 自动，经 gradeFromApi/gradeForApi 互转。
+const GRADES = ["自动", "小学", "初中", "高中", "本科"] as const satisfies readonly Grade[];
 
 const INPUT =
   "w-full rounded-[8px] border border-border bg-surface px-2.5 py-1.5 text-xs text-fg outline-none transition-colors focus:border-accent";
@@ -28,7 +30,7 @@ export function AccountCard({ tr }: { tr: Tr }) {
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
   const [failed, setFailed] = useState(false);
-  const [form, setForm] = useState({ name: "", grade: "高中", school: "", subjects: "" });
+  const [form, setForm] = useState<{ name: string; grade: Grade; school: string; subjects: string }>({ name: "", grade: AUTO_GRADE, school: "", subjects: "" });
   // 注销流程状态
   const [delOpen, setDelOpen] = useState(false);
   const [delPwd, setDelPwd] = useState("");
@@ -64,7 +66,7 @@ export function AccountCard({ tr }: { tr: Tr }) {
   const startEdit = () => {
     setForm({
       name: p.name || "",
-      grade: p.grade || "高中",
+      grade: gradeFromApi(p.grade),
       school: p.school || "",
       subjects: (p.subjects || []).join(", "),
     });
@@ -78,7 +80,7 @@ export function AccountCard({ tr }: { tr: Tr }) {
     try {
       const profile = await updateUserProfile({
         name: form.name.trim(),
-        grade: form.grade,
+        grade: gradeForApi(form.grade),
         school: form.school.trim(),
         subjects: form.subjects.split(/[,，]/).map((s) => s.trim()).filter(Boolean),
       });
@@ -126,7 +128,7 @@ export function AccountCard({ tr }: { tr: Tr }) {
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-serif text-lg font-semibold text-fg">{p.name || user.username}</span>
-            {p.grade && <Badge tone="accent">{p.grade}</Badge>}
+            <Badge tone="accent">{gradeFromApi(p.grade)}</Badge>
             {(p.subjects || []).map((s) => (
               <Badge key={s} tone="outline">{s}</Badge>
             ))}
@@ -157,7 +159,7 @@ export function AccountCard({ tr }: { tr: Tr }) {
             <label className="block">
               <span className="mb-1 block text-[0.68rem] text-muted">{tr("account.grade")}</span>
               <select className={cn(INPUT, "cursor-pointer")} value={form.grade}
-                onChange={(e) => setForm({ ...form, grade: e.target.value })}>
+                onChange={(e) => setForm({ ...form, grade: e.target.value as Grade })}>
                 {GRADES.map((g) => <option key={g} value={g}>{g}</option>)}
               </select>
             </label>

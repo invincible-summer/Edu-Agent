@@ -41,7 +41,7 @@ export const useUIStore = create<UIState>((set, get) => ({
     set({ outputLanguage: o });
   },
   theme: "light",
-  fontScale: 1.25,
+  fontScale: 1,
   setFontScale: (n) => {
     if (typeof window !== "undefined") {
       localStorage.setItem("edu-agent-fs", String(n));
@@ -64,8 +64,8 @@ export const useUIStore = create<UIState>((set, get) => ({
     const lang = typeof window !== "undefined" ? loadLang() : "zh";
     const ol = (typeof window !== "undefined" ? localStorage.getItem("edu-agent-output-lang") : null) as "auto" | "zh" | "en" | null;
     const theme = typeof window !== "undefined" && document.documentElement.classList.contains("dark") ? "dark" : "light";
-    let fs = 1.25;
-    try { const v = parseFloat(localStorage.getItem("edu-agent-fs") || "1.25"); if (v) fs = v; } catch { /* ignore */ }
+    let fs = 1;
+    try { const v = parseFloat(localStorage.getItem("edu-agent-fs") || "1"); if (v) fs = v; } catch { /* ignore */ }
     if (typeof window !== "undefined") document.documentElement.style.setProperty("--fs-scale", String(fs));
     set({ lang, outputLanguage: ol === "zh" || ol === "en" ? ol : "auto", theme, fontScale: fs, mounted: true });
   },

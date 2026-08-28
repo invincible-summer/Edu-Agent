@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, type RefObject } from "react";
 import type { LucideIcon } from "lucide-react";
+import { AnchoredPopover } from "@/components/ui/AnchoredPopover";
 
 /** Close whatever is open when the user presses outside `ref`. */
 export function useClickOutside<T extends HTMLElement>(
@@ -29,10 +30,25 @@ export interface DropdownItem {
   onClick: () => void;
 }
 
-/** Absolutely-positioned menu panel. Render inside a `relative` wrapper. */
-export function Dropdown({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
+/** 行菜单面板：portal 锚定到 trigger（`anchorRef` 指向其 relative 包裹层），
+ *  滚动/缩放实时跟随、不再被滚动容器裁剪；外点关闭由浮层自理。 */
+export function Dropdown({
+  items,
+  onClose,
+  anchorRef,
+}: {
+  items: DropdownItem[];
+  onClose: () => void;
+  anchorRef: RefObject<HTMLElement | null>;
+}) {
   return (
-    <div className="absolute right-0 top-6 z-50 w-44 rounded-lg border border-border bg-surface shadow-lg p-1">
+    <AnchoredPopover
+      anchorRef={anchorRef}
+      open
+      onClose={onClose}
+      placement="bottom-end"
+      className="z-50 w-44 rounded-lg border border-border bg-surface shadow-lg p-1"
+    >
       {items.map((item, i) => (
         <div key={i}>
           {item.dividerBefore && <div className="border-t border-border-light my-0.5" />}
@@ -51,6 +67,6 @@ export function Dropdown({ items, onClose }: { items: DropdownItem[]; onClose: (
           </button>
         </div>
       ))}
-    </div>
+    </AnchoredPopover>
   );
 }

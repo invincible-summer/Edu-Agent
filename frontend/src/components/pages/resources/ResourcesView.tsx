@@ -323,7 +323,7 @@ export function ResourcesView({ tab }: { tab: "files" | "textbooks" }) {
 
           {/* P4: 教材库 / 文件库 Tab —— 路由段化（Link 预取，切换零延迟） */}
           <div className="flex items-center gap-1 rounded-[10px] border border-border bg-surface p-1 w-fit">
-            {(["textbooks", "files"] as const).map((t) => (
+            {(["files", "textbooks"] as const).map((t) => (
               <Link
                 key={t}
                 href={`/resources/${t}`}

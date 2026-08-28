@@ -42,7 +42,7 @@ export function SettingsGear() {
         <Settings size={18} className={open ? "rotate-90 transition-transform duration-200" : "transition-transform duration-200"} />
       </button>
       {open && (
-        <div className="absolute right-0 top-10 z-50 w-60 rounded-xl border border-border bg-surface shadow-lg shadow-black/5 p-2">
+        <div className="absolute right-0 top-10 z-50 max-h-[calc(100vh-4.5rem)] w-60 overflow-y-auto overscroll-contain rounded-xl border border-border bg-surface shadow-lg shadow-black/5 p-2">
           <p className="px-2 pt-1 pb-1.5 text-[0.7rem] font-semibold uppercase tracking-wide text-muted">
             {tr("settings.title")}
           </p>

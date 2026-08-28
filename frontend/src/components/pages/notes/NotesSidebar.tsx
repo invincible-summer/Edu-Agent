@@ -54,6 +54,8 @@ export function NotesSidebar({
   const [dragOver, setDragOver] = useState<string | null>(null);
   const lastSelected = useRef<number | null>(null);
   const menuRef = useClickOutside<HTMLDivElement>(() => setNewMenu(false), newMenu);
+  // 文件夹菜单（在滚动列表内）的锚点：同一时刻只开一个，条件挂到当前行
+  const folderMenuRef = useRef<HTMLDivElement>(null);
 
   const visible = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -133,9 +135,9 @@ export function NotesSidebar({
           <button onClick={() => { onSelectFolder(folder.id); setPage(0); }} className={cn("flex min-w-0 flex-1 items-center gap-1.5 px-1 py-1.5 text-left text-xs", activeFolder === folder.id ? "font-medium text-accent-strong" : "text-fg-secondary")}>
             <Folder size={13} className="shrink-0" /><span className="truncate">{folder.name}</span><span className="ml-auto tnum text-[10px] text-muted">{folderCounts[folder.id] || 0}</span>
           </button>
-          <div className="relative">
+          <div className="relative" ref={folderMenu === folder.id ? folderMenuRef : undefined}>
             <button onClick={() => setFolderMenu(folderMenu === folder.id ? null : folder.id)} className="p-1 text-muted opacity-0 group-hover:opacity-100"><MoreHorizontal size={13} /></button>
-            {folderMenu === folder.id && <Dropdown items={menuItems} onClose={() => setFolderMenu(null)} />}
+            {folderMenu === folder.id && <Dropdown items={menuItems} onClose={() => setFolderMenu(null)} anchorRef={folderMenuRef} />}
           </div>
         </div>
         {open && renderFolders(folder.id, depth + 1)}

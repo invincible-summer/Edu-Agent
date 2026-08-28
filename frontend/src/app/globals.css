@@ -119,7 +119,7 @@ html, body, * {
 }
 /* Global font scale (S/M/L/XL setting): html font-size drives all rem-based
    Tailwind text classes uniformly while preserving size hierarchy. */
-html { font-size: calc(16px * var(--fs-scale, 1.25)); }
+html { font-size: calc(16px * var(--fs-scale, 1)); }
 ::selection { background: rgb(var(--accent) / 0.22); }
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }

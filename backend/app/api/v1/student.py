@@ -20,7 +20,8 @@ from app.agents import student_model as _sm
 from app.agents import teaching_engine as _te
 from app.agents.student_model import store as _sm_store
 from app.agents.student_model.store import DEFAULT_STUDENT_ID
-from app.identity.deps import resolve_student_id
+from app.identity.deps import optional_user, resolve_student_id
+from app.identity.models import User
 
 router = APIRouter(prefix="/student", tags=["student"])
 
@@ -213,7 +214,8 @@ def student_bloom_profile(student_id: str = Depends(resolve_student_id)) -> dict
 
 
 def _personalized_next(sm: "_sm.StudentModel", student_id: str,
-                       mview: dict[str, Any], *, limit: int = 6
+                       mview: dict[str, Any], *, limit: int = 6,
+                       grade: str | None = None
                        ) -> list[dict[str, Any]]:
     """Constructive, personalized next-step suggestions (replaces the old
     global next_learnable(None) call, which -- over the 1400-node ontology
@@ -257,7 +259,14 @@ def _personalized_next(sm: "_sm.StudentModel", student_id: str,
                     "difficulty": node.difficulty, "reason": reason})
         return True
 
-    grade = (getattr(sm.profile, "grade", "") or "").strip()
+    # 学段优先取调用方传入的账户资料（StudentModel 侧默认高中、空串会被
+    # 持久层 coerce 回高中，注册默认「自动」的用户在 sm.profile 里读不到
+    # 空串）；未传时回落 sm.profile（guest/直接调用）。
+    grade = ((grade if grade is not None else getattr(sm.profile, "grade", "")) or "").strip()
+    # 学段为「自动」（空串）时按本科推荐：与前端知识页默认学段口径一致，
+    # 避免自动学段用户拿到跨学段混杂的推荐条。
+    if not grade:
+        grade = "本科"
 
     # 1. M9 weekly plan (the student's own plan comes first)
     orch_state = None
@@ -319,7 +328,8 @@ def _personalized_next(sm: "_sm.StudentModel", student_id: str,
 
 
 @router.get("/learning-path")
-def student_learning_path(student_id: str = Depends(resolve_student_id)) -> dict:
+def student_learning_path(student_id: str = Depends(resolve_student_id),
+                          user: User | None = Depends(optional_user)) -> dict:
     """The advisory learning path (M3 curriculum + M9 plan/goal + M2 mastery):
     what to learn next (personalized: plan > continue recent > goal subjects
     > stage foundations), what to review (middling mastery, going stale), and
@@ -329,7 +339,10 @@ def student_learning_path(student_id: str = Depends(resolve_student_id)) -> dict
     try:
         sm = _sm.get_student_model(student_id)
         mview = sm.mastery_view()
-        nxt = _personalized_next(sm, student_id, mview, limit=6)
+        # 学段以账户资料为准（登录态）；「自动」（空串）在 _personalized_next
+        # 里按本科回落，与前端知识页默认学段一致。游客沿用 sm.profile。
+        nxt = _personalized_next(sm, student_id, mview, limit=6,
+                                 grade=user.profile.grade if user else None)
         # review candidates: seen skills with middling mastery
         revs: list[dict[str, Any]] = []
         for sid, m in sm.mastery.records.items():

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ChevronDown, ChevronRight, FolderOpen, MoreHorizontal,
   Plus, Pencil, Trash2, Brain, Settings2,
@@ -9,7 +9,7 @@ import { t } from "@/lib/i18n";
 import { cn } from "@/lib/cn";
 import { deleteWorkspaceFile } from "@/lib/api";
 import { notifyWsChanged, useWsSettings } from "@/lib/ws-settings";
-import { Dropdown, useClickOutside, type DropdownItem } from "./Dropdown";
+import { Dropdown, type DropdownItem } from "./Dropdown";
 import { InlineEdit } from "./InlineEdit";
 import { WorkspaceFiles } from "./WorkspaceFiles";
 import { SessionRow } from "./SessionRow";
@@ -71,7 +71,7 @@ export function WorkspaceItem({
   const [menuOpen, setMenuOpen] = useState(false);
   const [editing, setEditing] = useState(false);
   const [memOpen, setMemOpen] = useState(false);
-  const menuRef = useClickOutside<HTMLDivElement>(() => setMenuOpen(false), menuOpen);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onDeleteFile = (file: AttachmentMeta) => {
     askConfirm({
@@ -133,7 +133,7 @@ export function WorkspaceItem({
           >
             <MoreHorizontal size={14} />
           </button>
-          {menuOpen && <Dropdown items={menuItems} onClose={() => setMenuOpen(false)} />}
+          {menuOpen && <Dropdown items={menuItems} onClose={() => setMenuOpen(false)} anchorRef={menuRef} />}
         </div>
       </div>
 

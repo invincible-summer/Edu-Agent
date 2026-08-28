@@ -32,7 +32,7 @@ def _orch(plan=None, subjects=None):
 
 
 def _seed_lp_graph(sid: str) -> None:
-    """高中 数学 函数→导数→积分 链 + 小学 根节点（验证学段过滤）。"""
+    """高中 数学 函数→导数→积分 链 + 小学/本科 根节点（验证学段过滤）。"""
     payload = {
         "topic": "数学教材", "topic_key": "tb-lp", "subject": "数学",
         "level": "高中", "source": "textbook:f-lp",
@@ -45,6 +45,8 @@ def _seed_lp_graph(sid: str) -> None:
              "level": "高中", "difficulty": 4, "kind": "concept"},
             {"id": "lp.primary.add", "name": "加法", "subject": "数学",
              "level": "小学", "difficulty": 1, "kind": "concept"},
+            {"id": "lp.under.la", "name": "线性代数", "subject": "数学",
+             "level": "本科", "difficulty": 2, "kind": "concept"},
         ],
         "edges": [
             {"source": "lp.math.func", "target": "lp.math.deriv",
@@ -111,6 +113,19 @@ class TestPersonalizedNext(unittest.TestCase):
         # the old static behaviour: global difficulty-1 nodes of ANY stage
         self.assertFalse(any(self.sm.graph.nodes[n["skill_id"]].level == "小学"
                              for n in base))
+
+    def test_auto_grade_falls_back_to_undergraduate(self):
+        # 学段「自动」（空串）：按本科过滤——stage 池只含 本科/无学段 节点，
+        # reason 为「本科基础」；高中/小学根只可能以「拓展学习」兜底出现。
+        self.sm.profile.grade = ""
+        out = self._run()
+        base = [n for n in out if n["reason"] == "本科基础"]
+        self.assertTrue(base, "auto grade should recommend 本科 foundations")
+        for n in base:
+            lv = self.sm.graph.nodes[n["skill_id"]].level
+            self.assertIn(lv, ("", "本科"),
+                          f"{n['name']} level {lv} is not 本科-appropriate")
+        self.assertIn("lp.under.la", [n["skill_id"] for n in base])
 
     def test_plan_concepts_come_first(self):
         rid = _root_id(self.sm, level="高中")
