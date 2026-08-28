@@ -196,3 +196,50 @@ input:focus, textarea:focus, select:focus {
 /* 页面进入动效（克制） */
 @keyframes page-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .page-in { animation: page-in 0.25s ease-out both; }
+
+/* 落地页装饰光斑的缓慢浮动 */
+@keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+/* ——— 落地页动效 ——— */
+/* 标题逐字上浮 */
+@keyframes rise-in { from { opacity: 0; transform: translateY(0.55em) rotate(1.5deg); } to { opacity: 1; transform: none; } }
+.hero-title-char { display: inline-block; animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; will-change: transform; }
+
+/* 标题渐变流光（黛青 → 朱砂 → 黛青）：宽渐变 + 慢速，避免单字混色浑浊 */
+@keyframes gradient-x { from { background-position: 0% 50%; } to { background-position: 300% 50%; } }
+.hero-gradient-text {
+  background-image: linear-gradient(100deg, rgb(var(--accent)) 30%, rgb(var(--accent2)) 50%, rgb(var(--accent)) 70%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both, gradient-x 12s linear infinite;
+}
+
+/* 无限滚动 Marquee（悬停暂停） */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 36s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* Hero 底部滚动提示线 */
+@keyframes scroll-line { 0% { transform: scaleY(0); transform-origin: top; } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+/* 滚动显现（配合 Reveal 组件）。仅在 JS 可用时隐藏初始态，
+   否则无 JS / 渲染快照下首屏以下内容将永久不可见。 */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.js .reveal-shown { opacity: 1; transform: none; }
+
+/* 竖排装饰字 */
+.vertical-rl { writing-mode: vertical-rl; }
+
+/* 纸纹颗粒质感（低透明度覆盖全页） */
+.grain {
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-char, .hero-gradient-text { animation: none; }
+  .marquee-track { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

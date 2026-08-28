@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             a light flash. next/script (beforeInteractive) is the sanctioned way
             to inline a pre-hydration script without React's <script> warning. */}
         <Script id="edu-theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{
-          __html: `(function(){try{var p=new URLSearchParams(location.search);var t=p.get('theme');if(!t){t=localStorage.getItem('edu-agent-theme');}if(!t){t='light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}var fs=1;try{var v=parseFloat(localStorage.getItem('edu-agent-fs')||'1');if(v){fs=v;}}catch(e){}try{document.documentElement.style.setProperty('--fs-scale',String(fs));}catch(e){}})()`
+          __html: `(function(){try{var p=new URLSearchParams(location.search);var t=p.get('theme');if(!t){t=localStorage.getItem('edu-agent-theme');}if(!t){t='light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}var fs=1;try{var v=parseFloat(localStorage.getItem('edu-agent-fs')||'1');if(v){fs=v;}}catch(e){}try{document.documentElement.style.setProperty('--fs-scale',String(fs));}catch(e){}document.documentElement.classList.add('js');})()`
         }} />
         {children}
       </body>
