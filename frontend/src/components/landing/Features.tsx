@@ -24,9 +24,16 @@ export function Features({ tr }: { tr: LandingTr }) {
         <div className="mt-16 border-t border-border">
           {FEATURES.map((key, i) => (
             <Reveal key={key} delay={i * 60}>
-              <div className="group grid items-baseline gap-2 border-b border-border py-7 transition-colors duration-300 hover:bg-surface md:grid-cols-[72px_1fr_1.1fr_32px] md:gap-6 md:px-4">
-                <span className="font-mono text-sm text-muted">0{i + 1}</span>
-                <h3 className="font-serif text-xl font-semibold text-fg transition-colors duration-300 group-hover:text-accent md:text-2xl">
+              <div className="group relative grid items-baseline gap-2 border-b border-border py-7 transition-colors duration-300 hover:bg-surface md:grid-cols-[72px_1fr_1.1fr_32px] md:gap-6 md:px-4">
+                {/* 底部黛青发线：hover 时从左扫入 */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100"
+                />
+                <span className="font-mono text-sm text-muted transition-colors duration-300 group-hover:text-accent2">
+                  0{i + 1}
+                </span>
+                <h3 className="font-serif text-xl font-semibold text-fg transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent md:text-2xl">
                   {tr(`landing.features.${key}.title`)}
                 </h3>
                 <p className="text-sm leading-relaxed text-fg-secondary">

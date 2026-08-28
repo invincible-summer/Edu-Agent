@@ -1,35 +1,10 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, type MouseEvent as ReactMouseEvent, type ReactNode } from "react";
+import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { InkCanvas } from "./InkCanvas";
+import { Magnetic } from "./Magnetic";
 import type { LandingTr } from "./LandingNav";
-
-/** 磁吸容器：指针靠近时按钮轻微吸附位移。 */
-function Magnetic({ children }: { children: ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const onMove = (e: ReactMouseEvent) => {
-    const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const r = el.getBoundingClientRect();
-    const dx = e.clientX - (r.left + r.width / 2);
-    const dy = e.clientY - (r.top + r.height / 2);
-    el.style.transform = `translate3d(${(dx * 0.18).toFixed(1)}px, ${(dy * 0.18).toFixed(1)}px, 0)`;
-  };
-  const onLeave = () => {
-    if (ref.current) ref.current.style.transform = "";
-  };
-  return (
-    <div
-      ref={ref}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      className="transition-transform duration-300 ease-out will-change-transform"
-    >
-      {children}
-    </div>
-  );
-}
 
 /** 标题逐字上浮；b 段叠加黛青→朱砂渐变流光。 */
 function StaggeredTitle({ a, b }: { a: string; b: string }) {

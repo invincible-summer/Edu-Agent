@@ -200,6 +200,15 @@ input:focus, textarea:focus, select:focus {
 /* 落地页装饰光斑的缓慢浮动 */
 @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
 
+/* CTA/品牌区光斑的缓慢漂移（比 float-slow 更有机的路径） */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(36px, -22px) scale(1.08); }
+  66% { transform: translate(-24px, 18px) scale(0.94); }
+}
+.drift-a { animation: drift 14s ease-in-out infinite; }
+.drift-b { animation: drift 18s ease-in-out infinite reverse; }
+
 /* ——— 落地页动效 ——— */
 /* 标题逐字上浮 */
 @keyframes rise-in { from { opacity: 0; transform: translateY(0.55em) rotate(1.5deg); } to { opacity: 1; transform: none; } }
@@ -241,5 +250,6 @@ input:focus, textarea:focus, select:focus {
 @media (prefers-reduced-motion: reduce) {
   .hero-title-char, .hero-gradient-text { animation: none; }
   .marquee-track { animation: none; }
+  .drift-a, .drift-b { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }

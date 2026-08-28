@@ -24,10 +24,16 @@ export function Modules({ tr }: { tr: LandingTr }) {
         <div className="mt-16 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {MODULES.map((key, i) => (
             <Reveal key={key} delay={Math.min(i * 40, 320)}>
-              <div className="border-t border-border pt-4">
-                <div className="flex items-center gap-2.5">
+              <div className="group relative pt-4">
+                {/* 顶部发线：hover 时黛青扫入 */}
+                <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-border" />
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100"
+                />
+                <div className="flex items-center gap-2.5 transition-transform duration-300 group-hover:translate-x-1">
                   <ModuleBadge id={key.toUpperCase()} />
-                  <h3 className="text-sm font-semibold text-fg">
+                  <h3 className="text-sm font-semibold text-fg transition-colors duration-300 group-hover:text-accent">
                     {tr(`landing.modules.${key}.name`)}
                   </h3>
                 </div>
