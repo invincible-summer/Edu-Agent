@@ -15,7 +15,7 @@ export const LANDING_STRINGS: PageStrings = {
 
     "landing.hero.kicker": "M0–M10 · 多智能体辅导系统",
     "landing.hero.title.a": "你的私人",
-    "landing.hero.title.b": "AI 教师",
+    "landing.hero.title.b": "学习智能体",
     "landing.hero.subtitle":
       "讲解、出题、答疑，全部基于真实教材。十层智能模块协同编排，记住你学过什么，知道下一步该怎么教。",
     "landing.hero.primary": "免费开始",
@@ -68,7 +68,7 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.modules.m6.name": "记忆智能",
     "landing.modules.m6.desc": "有界画像 + 策略聚合，越用越懂你",
     "landing.modules.m7.name": "评估改进",
-    "landing.modules.m7.desc": "教学自诊断，让 AI 教师越教越好",
+    "landing.modules.m7.desc": "教学自诊断，让学习智能体越教越好",
     "landing.modules.m8.name": "交互体验",
     "landing.modules.m8.desc": "表达方式适配每个学生的偏好",
     "landing.modules.m9.name": "学习编排",
@@ -86,7 +86,7 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.how.s3.desc": "系统追踪你的掌握度，自动安排复习与测评。",
 
     "landing.cta.title": "准备好开始了吗？",
-    "landing.cta.subtitle": "免费创建账号，让 AI 教师为你定制第一课。",
+    "landing.cta.subtitle": "免费创建账号，让学习智能体为你定制第一课。",
     "landing.cta.button": "免费开始",
     "landing.cta.workspace": "进入工作区",
 
@@ -104,7 +104,7 @@ export const LANDING_STRINGS: PageStrings = {
 
     "landing.hero.kicker": "M0–M10 · Multi-agent tutoring",
     "landing.hero.title.a": "Your private",
-    "landing.hero.title.b": "AI tutor",
+    "landing.hero.title.b": "tutor agent",
     "landing.hero.subtitle":
       "Explain, quiz, and Q&A — all grounded in real textbooks. Ten intelligence modules work in concert, remember what you've learned, and know how to teach next.",
     "landing.hero.primary": "Get started free",
@@ -183,7 +183,7 @@ export const LANDING_STRINGS: PageStrings = {
       "The system tracks your mastery and schedules reviews and quizzes automatically.",
 
     "landing.cta.title": "Ready to start?",
-    "landing.cta.subtitle": "Create a free account and let your AI tutor tailor the first lesson.",
+    "landing.cta.subtitle": "Create a free account and let your tutor agent tailor the first lesson.",
     "landing.cta.button": "Get started free",
     "landing.cta.workspace": "Open workspace",
 

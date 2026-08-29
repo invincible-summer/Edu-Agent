@@ -19,7 +19,7 @@ from app.agents.chat_agent import chat_turn
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="AI Tutor OS - CLI")
+    parser = argparse.ArgumentParser(description="Next Tutor Agent - CLI")
     parser.add_argument("--grade", default="", help="学段: 空(自动)/小学/初中/高中/本科")
     parser.add_argument("--once", metavar="MSG", help="run a single turn and exit")
     args = parser.parse_args()

@@ -24,7 +24,7 @@ _MAX_MARKDOWN_CHARS = 200_000
 
 _DEFAULT_MARKDOWN = """# 使用文档
 
-欢迎来到 Edu_Agent —— 教材驱动的 AI 一对一辅导系统。
+欢迎来到 Next Tutor Agent —— 教材驱动的 AI 一对一辅导系统。
 
 ## 快速上手
 1. 在「知识图谱」浏览教材概念，或在对话里直接提问；

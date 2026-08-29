@@ -8,8 +8,8 @@ export const LANGS: { code: Lang; label: string }[] = [
 type Dict = Record<string, string>;
 
 const ZH: Dict = {
-  "app.name": "AI Tutor OS",
-  "app.tagline": "你的私人 AI 教师 · 讲解 · 出题 · 答疑 · 基于教材的 RAG 检索",
+  "app.name": "Next Tutor Agent",
+  "app.tagline": "你的私人学习智能体 · 讲解 · 出题 · 答疑 · 基于教材的 RAG 检索",
   "app.role": "学习工作区",
   "nav.group.learn": "学习",
   "nav.group.archive": "档案",
@@ -32,8 +32,8 @@ const ZH: Dict = {
   "chat.title.new": "新对话",
   "chat.load.earlier": "加载更早消息",
   "chat.load.earlier.loading": "加载中…",
-  "chat.empty.title": "AI Tutor OS",
-  "chat.empty.subtitle": "你的私人 AI 教师 · 讲解 · 出题 · 答疑 · 基于教材的 RAG 检索",
+  "chat.empty.title": "Next Tutor Agent",
+  "chat.empty.subtitle": "你的私人学习智能体 · 讲解 · 出题 · 答疑 · 基于教材的 RAG 检索",
   "chat.input.placeholder": "问我任何学科的问题，或上传教材后让我讲解…",
   "chat.input.ocr": "OCR",
   "chat.input.upload.title": "上传课程资料",
@@ -287,8 +287,8 @@ const ZH: Dict = {
 };
 
 const EN: Dict = {
-  "app.name": "AI Tutor OS",
-  "app.tagline": "Your private AI tutor · explain · quiz · Q&A · textbook RAG",
+  "app.name": "Next Tutor Agent",
+  "app.tagline": "Your private tutor agent · explain · quiz · Q&A · textbook RAG",
   "app.role": "Learning Workspace",
   "nav.group.learn": "Learn",
   "nav.group.archive": "Archive",
@@ -311,8 +311,8 @@ const EN: Dict = {
   "chat.title.new": "New chat",
   "chat.load.earlier": "Load earlier messages",
   "chat.load.earlier.loading": "Loading…",
-  "chat.empty.title": "AI Tutor OS",
-  "chat.empty.subtitle": "Your private AI tutor · explain · quiz · Q&A · textbook RAG",
+  "chat.empty.title": "Next Tutor Agent",
+  "chat.empty.subtitle": "Your private tutor agent · explain · quiz · Q&A · textbook RAG",
   "chat.input.placeholder": "Ask any subject question, or upload a textbook and ask…",
   "chat.input.ocr": "OCR",
   "chat.input.upload.title": "Upload course material",

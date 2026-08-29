@@ -121,7 +121,7 @@ def create_app() -> FastAPI:
     from app.identity.config import ensure_secret_safety
     ensure_secret_safety()
 
-    app = FastAPI(title="AI Tutor OS API", version="0.2.0", lifespan=_lifespan)
+    app = FastAPI(title="Next Tutor Agent API", version="0.2.0", lifespan=_lifespan)
     app.middleware("http")(_process_time_header)
     origins = _cors_origins()
     app.add_middleware(

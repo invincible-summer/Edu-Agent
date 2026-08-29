@@ -10,10 +10,10 @@ export function Footer({ tr }: { tr: LandingTr }) {
   return (
     <footer className="border-t border-border/60">
       {/* 幽灵字标：裁切高度固定，不再被视口底边截出"半行" */}
-      <div aria-hidden className="select-none overflow-hidden pt-14 text-[13vw] leading-none">
+      <div aria-hidden className="select-none overflow-hidden pt-14 text-[9vw] leading-none">
         <div className="h-[0.66em] overflow-hidden">
           <div className="whitespace-nowrap text-center font-serif font-bold leading-[0.85] text-fg/5">
-            AI TUTOR OS
+            NEXT TUTOR AGENT
           </div>
         </div>
       </div>

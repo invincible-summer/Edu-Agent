@@ -4,8 +4,8 @@ import "katex/dist/katex.min.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Tutor OS",
-  description: "智能学习 Agent — 你的私人 AI 教师",
+  title: "Next Tutor Agent",
+  description: "Next Tutor Agent — 你的私人学习智能体",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
