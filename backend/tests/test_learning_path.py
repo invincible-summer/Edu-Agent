@@ -106,9 +106,10 @@ class TestPersonalizedNext(unittest.TestCase):
         self.assertTrue(all("reason" in n and n["reason"] for n in out))
         base = [n for n in out if n["reason"].endswith("基础")]
         self.assertTrue(base, "fallback suggestions should carry 基础 reason")
+        # 默认学段为本科（StudentProfile 缺省）：fallback 池只含 本科/无学段 节点
         for n in base:
             lv = self.sm.graph.nodes[n["skill_id"]].level
-            self.assertIn(lv, ("", "高中"),
+            self.assertIn(lv, ("", "本科"),
                           f"{n['name']} level {lv} is not stage-appropriate")
         # the old static behaviour: global difficulty-1 nodes of ANY stage
         self.assertFalse(any(self.sm.graph.nodes[n["skill_id"]].level == "小学"

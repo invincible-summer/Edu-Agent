@@ -194,7 +194,7 @@ def _build_prompt(node, candidates, grade: str) -> str:
         cand_lines.append(f"  {i}. id={c.id} 名称={c.name} 难度={c.difficulty}/5"
                           + (f" 说明={c.description[:40]}" if c.description else ""))
     return _VALIDATE_PROMPT.format(
-        concept=node.name, subject=node.subject or "未知", grade=grade or "高中",
+        concept=node.name, subject=node.subject or "未知", grade=grade or "本科",
         diff=node.difficulty,
         cand_list="\n".join(cand_lines) or "  （无）")
 

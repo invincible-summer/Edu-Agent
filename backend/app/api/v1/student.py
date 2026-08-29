@@ -286,8 +286,8 @@ def _personalized_next(sm: "_sm.StudentModel", student_id: str,
                     "difficulty": node.difficulty, "reason": reason})
         return True
 
-    # 学段优先取调用方传入的账户资料（StudentModel 侧默认高中、空串会被
-    # 持久层 coerce 回高中，注册默认「自动」的用户在 sm.profile 里读不到
+    # 学段优先取调用方传入的账户资料（StudentModel 侧默认本科、空串会被
+    # 持久层 coerce 回本科，注册默认「自动」的用户在 sm.profile 里读不到
     # 空串）；未传时回落 sm.profile（guest/直接调用）。
     grade = ((grade if grade is not None else getattr(sm.profile, "grade", "")) or "").strip()
     # 学段为「自动」（空串）时按本科推荐：与前端知识页默认学段口径一致，

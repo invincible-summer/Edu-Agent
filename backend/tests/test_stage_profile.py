@@ -16,8 +16,9 @@ class TestStageProfile(unittest.TestCase):
 
     def test_unknown_grade_falls_back(self):
         from app.agents.teaching_engine.stage_profile import stage_profile
-        self.assertEqual(stage_profile("大学"), stage_profile("高中"))
-        self.assertEqual(stage_profile(""), stage_profile("高中"))
+        # 未知学段回退到产品默认学段（本科）。
+        self.assertEqual(stage_profile("大学"), stage_profile("本科"))
+        self.assertEqual(stage_profile(""), stage_profile("本科"))
 
     def test_brief_and_anchor_render(self):
         from app.agents.teaching_engine.stage_profile import (
@@ -43,6 +44,8 @@ class TestGradePreambleInjection(unittest.TestCase):
 class TestQuizPromptAnchor(unittest.TestCase):
     def test_generate_quiz_prompt_has_stage_anchor(self):
         import asyncio
+        from unittest import mock
+        from app.core.config import settings
         from app.tools.quiz import GenerateQuizTool
 
         class LLM:
@@ -52,7 +55,10 @@ class TestQuizPromptAnchor(unittest.TestCase):
                 return ('{"questions": []}', {})
 
         llm = LLM()
-        asyncio.run(GenerateQuizTool(llm).run(topic="浮力", grade="小学"))
+        # single 模式：calls[0] 即生成 prompt（two_pass 下 calls[0] 是蓝图轮，
+        # 蓝图注入的锚点语义由 tests/test_quiz_design.py 覆盖）。
+        with mock.patch.object(settings, "quiz_design_mode", "single"):
+            asyncio.run(GenerateQuizTool(llm).run(topic="浮力", grade="小学"))
         self.assertTrue(llm.calls)
         self.assertIn("难度锚点", llm.calls[0])
         self.assertIn("课内变式", llm.calls[0])      # 小学锚点

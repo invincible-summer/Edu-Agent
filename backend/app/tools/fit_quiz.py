@@ -195,7 +195,8 @@ class FitQuizTool(Tool):
         # independent critic re-solve) before reaching the student.
         questions, verification = await generate_verified_questions(
             self._llm, make_prompt=make_prompt, parse=self._parse,
-            topic=reference[:60], grade=grade, temperature=0.5, max_tokens=8000,
+            topic=reference[:60], grade=grade, difficulty=difficulty,
+            temperature=0.5, max_tokens=8000,
             raw_preview_chars=3000)
         if not questions:
             return partial_result(self.name,

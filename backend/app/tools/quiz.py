@@ -25,6 +25,7 @@ _QUIZ_PROMPT = """你是出题专家。为学段「{grade}」的学生，围绕�
 - hard 挑战：多步推理、变式或含易错陷阱。
 该学段难度锚点（标定 easy/medium/hard 的参照系，必须遵守）：{anchor}
 该学段例题风格：{example_style}
+{blueprint}
 只输出一个 JSON 对象，不要输出任何其它文字、不要 markdown 代码块。
 格式：
 {{
@@ -60,6 +61,7 @@ _QUIZ_PROMPT_AUTO = """你是出题专家。围绕知识点「{topic}」为{grad
 - easy 基础：一步直接应用，识别题型套公式即得。
 - medium 中等：需要一次转化或综合两个知识点，不能照搬例题；有明确的过程分。
 - hard 挑战：多步推理、变式或含易错陷阱。
+{blueprint}
 只输出一个 JSON 对象，不要输出任何其它文字、不要 markdown 代码块。
 格式：
 {{
@@ -132,6 +134,13 @@ class GenerateQuizTool(Tool):
 
         focus = str(kwargs.get("focus", "")).strip()[:60]
 
+        # 两轮出题（QUIZ_DESIGN_MODE=two_pass）：先跑命题蓝图设计轮（考查角度/
+        # 认知层级/陷阱设计），蓝图注入生成 prompt；蓝图轮失败自动回退单轮。
+        from ..core.quiz_design import design_blueprint
+        blueprint, design_status = await design_blueprint(
+            self._llm, topic=topic, grade=grade, difficulty=difficulty,
+            count=count, focus=focus, avoid_stems=self._avoid_stems)
+
         def make_prompt() -> str:
             from ..agents.teaching_engine.stage_profile import (
                 difficulty_anchor, example_style)
@@ -140,13 +149,15 @@ class GenerateQuizTool(Tool):
                 base = _QUIZ_PROMPT_AUTO.format(
                     grade="（学生未指定学段，按知识点本身自适应）",
                     topic=topic, count=count,
-                    difficulty=difficulty, difficulty_zh=_DIFFICULTY_ZH[difficulty])
+                    difficulty=difficulty, difficulty_zh=_DIFFICULTY_ZH[difficulty],
+                    blueprint=blueprint)
             else:
                 base = _QUIZ_PROMPT.format(
                     grade=grade, topic=topic, count=count,
                     difficulty=difficulty, difficulty_zh=_DIFFICULTY_ZH[difficulty],
                     anchor=difficulty_anchor(grade),
                     example_style=example_style(grade),
+                    blueprint=blueprint,
                 )
             extra = ""
             if focus:
@@ -171,7 +182,9 @@ class GenerateQuizTool(Tool):
         # checks + independent critic re-solve) before reaching the student.
         questions, verification = await generate_verified_questions(
             self._llm, make_prompt=make_prompt, parse=self._parse,
-            topic=topic, grade=grade, temperature=0.4, max_tokens=5000)
+            topic=topic, grade=grade, difficulty=difficulty,
+            temperature=0.4, max_tokens=5000)
+        verification["design"] = design_status
         if not questions:
             return partial_result(self.name,
                 {"raw": verification.get("raw", ""), "questions": [],

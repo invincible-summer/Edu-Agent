@@ -198,7 +198,7 @@ class StudentSnapshot:
     they stay empty so behavior degrades to the V2 lightweight view exactly.
     All additions are backward-compatible: from_dict defaults every V3 field.
     """
-    grade: str = "高中"
+    grade: str = "本科"
     has_materials: bool = False
     material_count: int = 0
     material_names: list[str] = field(default_factory=list)
@@ -237,7 +237,7 @@ class StudentSnapshot:
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "StudentSnapshot":
         return cls(
-            grade=d.get("grade", "高中") or "高中",
+            grade=d.get("grade", "本科") or "本科",
             has_materials=bool(d.get("has_materials", False)),
             material_count=int(d.get("material_count", 0)),
             material_names=list(d.get("material_names", []) or []),

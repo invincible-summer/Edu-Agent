@@ -33,7 +33,7 @@ class StartRequest(BaseModel):
     forbidden: list[str] = Field(default_factory=list, description="禁用方法")
     q_type: str = Field("", description="题型，空则自动选")
     bloom_focus: str = Field("", description="布鲁姆层级焦点（空/auto=由出题 LLM 结合认知档案综合判断）")
-    grade: str = Field("高中", description="学段")
+    grade: str = Field("本科", description="学段")
     subject: str = Field("", description="学科")
     difficulty: int = Field(0, description="起始难度 1-5，0=按掌握度推断")
     mastery: float = Field(0.0, description="当前掌握度（caller 从 student_model 填）")

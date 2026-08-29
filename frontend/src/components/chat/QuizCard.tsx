@@ -80,7 +80,7 @@ export function QuizQuestionCard({
         correct_answer: q.answer,
         explanation: q.explanation || "",
         knowledge_point: q.knowledge_point || "",
-        grade: grade || "高中",
+        grade: grade || "本科",
         session_id: sessionId,
         record: false,
       })) {
@@ -104,7 +104,7 @@ export function QuizQuestionCard({
       options: q.options || {},
       explanation: q.explanation || "",
       knowledge_point: q.knowledge_point || "",
-      grade: grade || "高中",
+      grade: grade || "本科",
       session_id: sessionId,
       difficulty: 3,
     })
@@ -132,7 +132,7 @@ export function QuizQuestionCard({
         correct_answer: q.answer,
         explanation: q.explanation || "",
         knowledge_point: q.knowledge_point || "",
-        grade: grade || "高中",
+        grade: grade || "本科",
         session_id: sessionId,
       }, ac.signal)) {
         if (ev.type === "delta") setFeedback((p) => p + ev.content);

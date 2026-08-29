@@ -53,6 +53,16 @@ def _critic_json(pairs) -> str:
     return json.dumps({"verdicts": verdicts}, ensure_ascii=False)
 
 
+def _blueprint_json(n: int = 1) -> str:
+    """Round-1 design-pass response consumed by core.quiz_design."""
+    return json.dumps({
+        "angles_considered": ["概念辨析", "迁移应用"],
+        "blueprint": [{"id": i, "angle": "概念辨析", "bloom": "analyze",
+                       "q_type": "short_answer", "trap": "常见误区",
+                       "idea": f"换情境考查第{i}题"} for i in range(1, n + 1)],
+    }, ensure_ascii=False)
+
+
 class TestWellFormed(unittest.TestCase):
     def test_valid_mc(self):
         from app.core.quiz_verify import is_well_formed
@@ -151,12 +161,14 @@ class TestGenerateVerified(unittest.TestCase):
 class TestToolsEndToEnd(unittest.TestCase):
     def test_avoid_stems_and_focus_enter_prompt(self):
         from app.tools.quiz import GenerateQuizTool
-        llm = QueueLLM([_gen_json([_q(1)]), _critic_json([(1, "correct")])])
+        llm = QueueLLM([_blueprint_json(1), _gen_json([_q(1)]),
+                        _critic_json([(1, "correct")])])
         tool = GenerateQuizTool(llm, avoid_stems=["旧题干：盐酸滴定氢氧化钠"])
-        result = asyncio.run(tool.run(topic="酸碱中和滴定", grade="高中",
-                                      focus="滴定步骤"))
+        with mock.patch.object(settings, "quiz_design_mode", "two_pass"):
+            result = asyncio.run(tool.run(topic="酸碱中和滴定", grade="高中",
+                                          focus="滴定步骤"))
         self.assertEqual(result.status, "success")
-        prompt = llm.calls[0][0]["content"]
+        prompt = llm.calls[1][0]["content"]  # calls[0] 是蓝图轮，calls[1] 才是生成 prompt
         self.assertIn("旧题干：盐酸滴定氢氧化钠", prompt)
         self.assertIn("禁止重复", prompt)
         self.assertIn("滴定步骤", prompt)
@@ -166,10 +178,12 @@ class TestToolsEndToEnd(unittest.TestCase):
         # hard 多步变式），且 count>=2 时套内递进——否则 LLM 一律按课本
         # 例题级理解「基础/中等/挑战」，是学生「全是最基础题」的根源之一。
         from app.tools.quiz import GenerateQuizTool
-        llm = QueueLLM([_gen_json([_q(1)]), _critic_json([(1, "correct")])])
-        asyncio.run(GenerateQuizTool(llm).run(topic="切线放缩", grade="高中",
-                                              difficulty="medium", count=1))
-        prompt = llm.calls[0][0]["content"]
+        llm = QueueLLM([_blueprint_json(1), _gen_json([_q(1)]),
+                        _critic_json([(1, "correct")])])
+        with mock.patch.object(settings, "quiz_design_mode", "two_pass"):
+            asyncio.run(GenerateQuizTool(llm).run(topic="切线放缩", grade="高中",
+                                                  difficulty="medium", count=1))
+        prompt = llm.calls[1][0]["content"]
         self.assertIn("一步直接应用", prompt)
         self.assertIn("一次转化", prompt)
         self.assertIn("多步推理", prompt)
@@ -177,9 +191,10 @@ class TestToolsEndToEnd(unittest.TestCase):
 
     def test_generate_quiz_passes_gate(self):
         from app.tools.quiz import GenerateQuizTool
-        llm = QueueLLM([_gen_json([_q(1), _q(2, answer="E")]),
+        llm = QueueLLM([_blueprint_json(2), _gen_json([_q(1), _q(2, answer="E")]),
                         _critic_json([(1, "correct")])])
-        result = asyncio.run(GenerateQuizTool(llm).run(topic="浮力", grade="初中", count=2))
+        with mock.patch.object(settings, "quiz_design_mode", "two_pass"):
+            result = asyncio.run(GenerateQuizTool(llm).run(topic="浮力", grade="初中", count=2))
         self.assertEqual(result.status, "success")
         self.assertEqual(len(result.data["questions"]), 1)
         self.assertTrue(result.data["answer_verified"])
@@ -187,9 +202,11 @@ class TestToolsEndToEnd(unittest.TestCase):
 
     def test_generate_quiz_partial_when_nothing_survives(self):
         from app.tools.quiz import GenerateQuizTool
-        llm = QueueLLM([_gen_json([_q(1)]), _critic_json([(1, "incorrect")]),
+        llm = QueueLLM([_blueprint_json(1),
+                        _gen_json([_q(1)]), _critic_json([(1, "incorrect")]),
                         _gen_json([_q(1)]), _critic_json([(1, "incorrect")])])
-        result = asyncio.run(GenerateQuizTool(llm).run(topic="浮力", grade="初中"))
+        with mock.patch.object(settings, "quiz_design_mode", "two_pass"):
+            result = asyncio.run(GenerateQuizTool(llm).run(topic="浮力", grade="初中"))
         self.assertEqual(result.status, "partial")
         self.assertEqual(result.data["questions"], [])
 
@@ -207,20 +224,23 @@ class TestAssessmentGenerator(unittest.TestCase):
         from app.agents.assessment.generator import generate_question
         from app.agents.assessment.state import AssessmentContext, AssessmentGoal
         ctx = AssessmentContext(concept="浮力", grade="初中", base_difficulty=2)
-        return asyncio.run(generate_question(
-            AssessmentGoal(purpose="check"), ctx, llm=QueueLLM(responses)))
+        with mock.patch.object(settings, "quiz_design_mode", "two_pass"):
+            return asyncio.run(generate_question(
+                AssessmentGoal(purpose="check"), ctx, llm=QueueLLM(responses)))
 
     def test_critic_ok_returns_question(self):
-        q = self._run([_gen_json([_q(1)]), _critic_json([(1, "correct")])])
+        q = self._run([_blueprint_json(1), _gen_json([_q(1)]),
+                       _critic_json([(1, "correct")])])
         self.assertIsNotNone(q)
         self.assertEqual(q.answer, "B")
 
     def test_critic_flag_returns_none(self):
-        q = self._run([_gen_json([_q(1)]), _critic_json([(1, "incorrect")])])
+        q = self._run([_blueprint_json(1), _gen_json([_q(1)]),
+                       _critic_json([(1, "incorrect")])])
         self.assertIsNone(q)
 
     def test_ill_formed_returns_none_without_critic(self):
-        q = self._run([_gen_json([_q(1, answer="E")])])
+        q = self._run([_blueprint_json(1), _gen_json([_q(1, answer="E")])])
         self.assertIsNone(q)
 
 

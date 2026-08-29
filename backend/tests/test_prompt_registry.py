@@ -53,8 +53,12 @@ class TestPromptRegistry(unittest.TestCase):
         for pid, versions in registry.list_versions().items():
             self.assertIn(av[pid], versions)
         # 显式输出约束优先级与结构化理解字段变更必须可追溯。
-        self.assertEqual(av["tutor_system"], "2.7.0")
+        self.assertEqual(av["tutor_system"], "2.8.0")
         self.assertEqual(av["understand_system"], "1.1.0")
+        # 出题两轮化：蓝图 prompt 已注册（第一轮设计，第二轮生成见 tools/quiz.py）
+        self.assertEqual(av["quiz_blueprint"], "1.0.0")
+        self.assertIn("quiz_blueprint_anchor", av)
+        self.assertIn("quiz_blueprint_anchor_auto", av)
 
     def test_get_unknown_raises(self):
         with self.assertRaises(KeyError):

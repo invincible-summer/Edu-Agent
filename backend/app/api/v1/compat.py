@@ -168,7 +168,7 @@ async def chat_completions(req: ChatCompletionsRequest,
     from app.api.v1.chat import _build_tools
 
     session = load_session(_compat_session_id()) or TutorSession(
-        session_id=_compat_session_id(), grade=settings.compat_grade or "高中")
+        session_id=_compat_session_id(), grade=settings.compat_grade or "本科")
     session.student_id = COMPAT_STUDENT_ID
     tools = _build_tools(session)
     llm = get_llm()

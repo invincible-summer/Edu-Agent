@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import type { ChatMessage, Grade, SessionItem, AttachmentMeta, RetryState } from "./types";
-import { AUTO_GRADE } from "./types";
 import { type Lang, loadLang, saveLang } from "./i18n";
 
 interface UIState {
@@ -23,9 +22,9 @@ interface UIState {
 }
 
 export const useUIStore = create<UIState>((set, get) => ({
-  // P1: 默认「自动」——不预置学段语境，由模型按提问内容自适应。
-  // localStorage 旧值（如「高中」）仍是合法 Grade，水合时兼容保留。
-  grade: AUTO_GRADE,
+  // 默认「本科」：产品默认学段，开箱即用本科提示词（stage_brief/难度锚点）。
+  // 「自动」仍可手动选择（后端空串语义不变）。
+  grade: "本科",
   setGrade: (g) => set({ grade: g }),
   // SSR-safe defaults: do NOT read localStorage in the initializer, or the
   // first client render diverges from server HTML (hydration mismatch).

@@ -71,7 +71,7 @@ class AssessmentContext:
     """
     concept: str = ""
     subject: str = ""
-    grade: str = "高中"
+    grade: str = "本科"
     skill_id: str = ""
     current_mastery: float = 0.0
     target_mastery: float = _MET
@@ -96,7 +96,7 @@ class AssessmentContext:
         return cls(
             concept=str(d.get("concept", "") or ""),
             subject=str(d.get("subject", "") or ""),
-            grade=str(d.get("grade", "高中") or "高中"),
+            grade=str(d.get("grade", "本科") or "本科"),
             skill_id=str(d.get("skill_id", "") or ""),
             current_mastery=float(d.get("current_mastery", 0.0)),
             target_mastery=float(d.get("target_mastery", _MET)),

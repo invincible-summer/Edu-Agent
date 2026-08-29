@@ -37,6 +37,7 @@ _DIFFICULTY_ZH = {1: "入门", 2: "基础", 3: "中等", 4: "进阶", 5: "挑战
 
 _GEN_PROMPT = """你是命题专家。为学段「{grade}」学生，围绕知识点「{concept}」出 1 道检测题，难度：{difficulty_zh}（{difficulty}/5）。
 {constraints}
+{blueprint}
 只输出一个 JSON 对象，不要任何其它文字、不要 markdown 代码块。格式：
 {{
   "questions": [
@@ -63,6 +64,7 @@ _GEN_PROMPT = """你是命题专家。为学段「{grade}」学生，围绕知�
 # 自动学段专用检测题 prompt（P1）：省略学段锚点，难度按知识点本身标定。
 _GEN_PROMPT_AUTO = """你是命题专家。围绕知识点「{concept}」出 1 道检测题，难度：{difficulty_zh}（{difficulty}/5，按知识点本身标定）。
 {constraints}
+{blueprint}
 只输出一个 JSON 对象，不要任何其它文字、不要 markdown 代码块。格式：
 {{
   "questions": [
@@ -175,9 +177,16 @@ async def generate_question(goal: AssessmentGoal, ctx: AssessmentContext,
             bloom_context = bloom_ctx(student_id, concept)
         except Exception:
             bloom_context = ""
+    # 两轮出题（QUIZ_DESIGN_MODE=two_pass）：先跑蓝图设计轮（单题的设计要点：
+    # 深层考点、陷阱、如何体现约束），失败自动回退单轮。focus 用约束子能力。
+    from ...core.quiz_design import design_blueprint
+    blueprint, _design_status = await design_blueprint(
+        llm, topic=concept, grade=grade,
+        difficulty=_difficulty_label(difficulty), count=1,
+        focus="、".join(goal.assesses) if goal.assesses else "")
     prompt = _build_gen_prompt(grade=grade, concept=concept, difficulty=difficulty,
                                goal=goal, q_type=q_type,
-                               bloom_context=bloom_context)
+                               bloom_context=bloom_context, blueprint=blueprint)
     try:
         # Non-streaming call with thinking disabled (same hardening as the
         # quiz tools, DESIGN §21.1): a reasoning model can otherwise burn the
@@ -195,7 +204,8 @@ async def generate_question(goal: AssessmentGoal, ctx: AssessmentContext,
             return None
         if settings.quiz_verify_mode == "critic":
             kept, _bad, critic_ok = await verify_questions(
-                llm, [raw_q], topic=concept, grade=grade)
+                llm, [raw_q], topic=concept, grade=grade,
+                difficulty=_difficulty_label(difficulty))
             if critic_ok and not kept:
                 return None
         q = Question.from_quiz_dict(raw_q, concept=concept, difficulty=difficulty)
@@ -210,11 +220,13 @@ async def generate_question(goal: AssessmentGoal, ctx: AssessmentContext,
 
 def _build_gen_prompt(*, grade: str, concept: str, difficulty: int,
                       goal: "AssessmentGoal", q_type: str,
-                      bloom_context: str = "") -> str:
+                      bloom_context: str = "", blueprint: str = "") -> str:
     """Render the single-question gen prompt, auto-aware (P1).
 
     ``grade`` already normalized ("") = auto; the prompt then drops the
     stage anchor line and frames difficulty relative to the concept itself.
+    ``blueprint`` is the round-1 design block from core.quiz_design ("" when
+    the design pass is off or fell back).
     """
     from ..teaching_engine.stage_profile import is_auto
     if is_auto(grade):
@@ -223,13 +235,15 @@ def _build_gen_prompt(*, grade: str, concept: str, difficulty: int,
             difficulty_zh=_DIFFICULTY_ZH.get(difficulty, "中等"),
             difficulty_label=_difficulty_label(difficulty),
             constraints=_constraint_block(goal, bloom_context=bloom_context),
+            blueprint=blueprint,
             q_type=q_type)
     from ..teaching_engine.stage_profile import difficulty_anchor
     return _GEN_PROMPT.format(
-        grade=grade or "高中", concept=concept,
+        grade=grade or "本科", concept=concept,
         difficulty=difficulty, difficulty_zh=_DIFFICULTY_ZH.get(difficulty, "中等"),
         difficulty_label=_difficulty_label(difficulty),
         constraints=_constraint_block(goal, bloom_context=bloom_context),
+        blueprint=blueprint,
         q_type=q_type,
-        anchor=difficulty_anchor(grade or "高中"),
+        anchor=difficulty_anchor(grade or "本科"),
     )

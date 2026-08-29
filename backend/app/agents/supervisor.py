@@ -480,7 +480,7 @@ def _apply_response_constraints_to_plan(plan: TaskPlan,
 def _enrich_plan_with_strategy_check(plan: TaskPlan, strategy: Any,
                                      understanding: TaskUnderstanding,
                                      tools: list[Any], trace: Trace,
-                                     *, grade: str = "高中",
+                                     *, grade: str = "本科",
                                      focus: str = "",
                                      material_grounding_required: bool = False) -> TaskPlan:
     """Project an actionable TeachingStrategy check into the Skill plan.
@@ -520,7 +520,7 @@ def _enrich_plan_with_strategy_check(plan: TaskPlan, strategy: Any,
     difficulty = getattr(strategy, "suggested_quiz_difficulty", "medium") or "medium"
     quiz_args: dict[str, Any] = {
         "topic": concept,
-        "grade": grade or "高中",
+        "grade": grade or "本科",
         "difficulty": difficulty,
         "count": 1,
     }

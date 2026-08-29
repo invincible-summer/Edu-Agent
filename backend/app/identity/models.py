@@ -24,7 +24,7 @@ class UserProfile:
 
     ``prefs`` 是通用每用户偏好（如 ocr_parallel），dict 形态免 schema 演进。"""
     name: str = ""
-    grade: str = "高中"
+    grade: str = "本科"
     school: str = ""
     subjects: list[str] = field(default_factory=list)
     avatar: str = ""
@@ -40,7 +40,7 @@ class UserProfile:
         d = d or {}
         return cls(
             name=str(d.get("name", "")),
-            grade=str(d.get("grade", "高中")),
+            grade=str(d.get("grade", "本科")),
             school=str(d.get("school", "")),
             subjects=list(d.get("subjects") or []),
             avatar=str(d.get("avatar", "")),

@@ -62,7 +62,7 @@ class TeachingContext:
     concept: str = ""                # the concept being taught this turn
     subject: str = ""                # 物理/数学/...
     task_type: str = "explain"       # TaskType value (explain/practice/...)
-    grade: str = "高中"
+    grade: str = "本科"
     # --- student-state projection (read-only) ---
     mastery: float = 0.0             # P(know) for the target concept
     unmet_prereqs: list[Any] = field(default_factory=list)  # SkillNode-like objs, weakest-first
@@ -107,7 +107,7 @@ class TeachingContext:
             concept=str(d.get("concept", "") or ""),
             subject=str(d.get("subject", "") or ""),
             task_type=str(d.get("task_type", "explain") or "explain"),
-            grade=str(d.get("grade", "高中") or "高中"),
+            grade=str(d.get("grade", "本科") or "本科"),
             mastery=float(d.get("mastery", 0.0)),
             unmet_prereq_names=list(d.get("unmet_prereq_names", []) or []),
             mistakes=list(d.get("mistakes", []) or []),

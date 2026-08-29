@@ -33,7 +33,7 @@ class RegisterRequest(BaseModel):
     password: str = Field(min_length=6, max_length=128)
     username: str = Field(default="", max_length=40)
     name: str = Field(default="", max_length=40)
-    grade: str = Field(default="高中")
+    grade: str = Field(default="本科")
     subjects: list[str] = Field(default_factory=list)
     school: str = Field(default="", max_length=80)
 

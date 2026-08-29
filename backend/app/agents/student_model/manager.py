@@ -224,7 +224,7 @@ class StudentModel:
         decoupled from this package (it just reads the keys).
         """
         self.load()
-        grade = grade or self.profile.grade or "高中"
+        grade = grade or self.profile.grade or "本科"
         weak = self.weak_skills()
         strong = self.strong_skills()
         # map skill ids -> short mastery summaries for the prompt
@@ -274,7 +274,7 @@ class StudentModel:
         return a TeachingStrategy with the same field surface.
         """
         self.load()
-        grade = grade or self.profile.grade or "高中"
+        grade = grade or self.profile.grade or "本科"
         try:
             from ..teaching_engine import is_enabled as te_enabled
             if te_enabled():

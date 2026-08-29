@@ -99,7 +99,7 @@ class StudentProfile:
     the first session; subjects/goals/style/weak/strong evolve as events land.
     """
     id: str = "student_default"
-    grade: str = "高中"
+    grade: str = "本科"
     subjects: list[str] = field(default_factory=list)
     learning_style: LearningStyle = field(default_factory=LearningStyle)
     goals: list[str] = field(default_factory=list)
@@ -131,7 +131,7 @@ class StudentProfile:
         d = d or {}
         return cls(
             id=str(d.get("id", "student_default")) or "student_default",
-            grade=str(d.get("grade", "高中")) or "高中",
+            grade=str(d.get("grade", "本科")) or "本科",
             subjects=list(d.get("subjects", []) or []),
             learning_style=LearningStyle.from_dict(d.get("learning_style")),
             goals=list(d.get("goals", []) or []),

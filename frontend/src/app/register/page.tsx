@@ -6,13 +6,13 @@ import { API_BASE } from "@/lib/api";
 import { useAuthStore } from "@/lib/auth-store";
 import { useUIStore } from "@/lib/store";
 import { t } from "@/lib/i18n";
-import { AUTO_GRADE, gradeForApi, type Grade } from "@/lib/types";
+import { gradeForApi, type Grade } from "@/lib/types";
 import { Button } from "@/components/ui/Button";
 import { Field, Input } from "@/components/ui/Input";
 import { AuthShell } from "@/components/auth/AuthShell";
 
 // 学段 token 是后端契约（写入 UserProfile 并同步 StudentModel），保持中文不翻译。
-// 「自动」是 P1 默认：后端事实源为空串，提交前经 gradeForApi 转换。
+// 默认「本科」：产品默认学段；「自动」（后端事实源为空串）仍可手动选择，提交前经 gradeForApi 转换。
 const GRADES = ["自动", "小学", "初中", "高中", "本科"] as const satisfies readonly Grade[];
 
 function RegisterForm() {
@@ -27,7 +27,7 @@ function RegisterForm() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
-  const [grade, setGrade] = useState<Grade>(AUTO_GRADE);
+  const [grade, setGrade] = useState<Grade>("本科");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 

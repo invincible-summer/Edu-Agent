@@ -80,6 +80,10 @@ class Settings:
     # Post-generation quiz verification: critic = 结构校验 + LLM 独立重解审题,
     # basic = 仅确定性结构校验, off = 旧行为（不校验）。
     quiz_verify_mode: str = os.getenv("QUIZ_VERIFY_MODE", "critic").strip().lower()
+    # 出题两轮化：two_pass = 生成前先做一轮命题蓝图设计（考查角度/认知层级/
+    # 陷阱设计），第二轮按蓝图写题；single = 旧行为（单轮直出）。
+    # 蓝图轮失败时自动回退 single（fail-open，同 quiz_verify 哲学）。
+    quiz_design_mode: str = os.getenv("QUIZ_DESIGN_MODE", "two_pass").strip().lower()
     # 工具步允许保留模型思考（LOW，不下发关闭指令）：预算充足时让推理发生，
     # real_summary 才有真实材料；预算被压缩时 executor 的 budget_forces_direct
     # 仍会强制关思考， starving 时走 incomplete_answer_recovery 兜底。
@@ -98,7 +102,7 @@ class Settings:
     # 空 = 门面关闭（/models、/chat/completions 返回 503）。
     compat_api_key: str = os.getenv("COMPAT_API_KEY", "")
     # 门面会话的默认学段（接入侧没有学段概念，按部署面向的学生群体设定）。
-    compat_grade: str = os.getenv("COMPAT_GRADE", "高中")
+    compat_grade: str = os.getenv("COMPAT_GRADE", "本科")
     llm_temperature: float = float(os.getenv("LLM_TEMPERATURE", "0.3"))
 
     # Multimodal (optional): separate API channel for image understanding.
