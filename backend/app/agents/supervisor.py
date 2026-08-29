@@ -1602,7 +1602,7 @@ async def run(
             evs = _collect_turn_events(understanding, safe_user_message,
                                        safe_final_answer, trace)
             if evs:
-                get_student_model().record_events(evs)
+                get_student_model(sid).record_events(evs)
     except Exception as e:
         trace.log("supervisor_events_record_error", message=str(e))
 
