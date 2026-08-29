@@ -3,7 +3,8 @@
 // 自研零依赖力学模拟：边弹簧力 + 节点斥力 + 文本包围盒碰撞（自动避让）+
 // 每节点随机相位的低频正弦漂浮——收敛后仍缓慢漂移避让，不冻屏。
 // Canvas 2D 渲染：黑字层次（被引多=前景加粗，少=次要灰），常态无光晕 + 设备
-// 像素对齐保证清晰，hover 才轻微发光；连线低透明、缓慢流动；hover 高亮邻居。
+// 像素对齐保证清晰，hover 才轻微发光；连线常态为低透明流动虚线，按住节点
+// 时相连边切换为浅灰细实线聚焦；端点裁剪到包围盒外缘不压字（断链红虚线）。
 // 支持聊天/教材节点开关、平移缩放、节点拖拽与点击跳转；
 // prefers-reduced-motion 退化为一次性静态布局。
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
@@ -94,22 +95,22 @@ function tickSim(sim: Sim, t: number, settle: boolean) {
       let d2 = dx * dx + dy * dy;
       if (d2 < 1) { dx = (i - j) * 0.7 + 0.4; dy = ((i + j) % 5) * 0.3 - 0.6; d2 = dx * dx + dy * dy; }
       const d = Math.sqrt(d2);
-      const f = Math.min(1.1, 2400 / d2);
+          const f = Math.min(2.0, 7200 / d2);
       const fx = (dx / d) * f;
       const fy = (dy / d) * f;
       a.vx -= fx; a.vy -= fy;
       b.vx += fx; b.vy += fy;
     }
   }
-  // 边弹簧：静置长度随两端文本宽度自适应
+  // 边弹簧：静置长度 = 两端文字半宽和 + 80px 可见边段（连线不被标签挤没）
   for (const e of sim.edges) {
     const a = nodes[e.a];
     const b = nodes[e.b];
     const dx = b.x - a.x;
     const dy = b.y - a.y;
     const d = Math.max(1, Math.hypot(dx, dy));
-    const rest = 52 + (a.w + b.w) * 0.42;
-    const f = (d - rest) * 0.011;
+    const rest = (a.w + b.w) / 2 + 80;
+    const f = (d - rest) * 0.016;
     const fx = (dx / d) * f;
     const fy = (dy / d) * f;
     a.vx += fx; a.vy += fy;
@@ -117,8 +118,8 @@ function tickSim(sim: Sim, t: number, settle: boolean) {
   }
   for (const p of nodes) {
     if (p.held) continue;
-    p.vx -= p.x * 0.0016;
-    p.vy -= p.y * 0.0016;
+    p.vx -= p.x * 0.0008;
+    p.vy -= p.y * 0.0008;
     if (!settle) {
       p.vx += Math.cos(t * p.speed + p.phase) * 0.016;
       p.vy += Math.sin(t * p.speed * 0.9 + p.phase * 1.31) * 0.016;
@@ -135,9 +136,9 @@ function tickSim(sim: Sim, t: number, settle: boolean) {
     const a = nodes[i];
     for (let j = i + 1; j < n; j++) {
       const b = nodes[j];
-      const ox = (a.w + b.w) / 2 + 14 - Math.abs(b.x - a.x);
+      const ox = (a.w + b.w) / 2 + 18 - Math.abs(b.x - a.x);
       if (ox <= 0) continue;
-      const oy = (a.h + b.h) / 2 + 10 - Math.abs(b.y - a.y);
+      const oy = (a.h + b.h) / 2 + 12 - Math.abs(b.y - a.y);
       if (oy <= 0) continue;
       const wa = a.held ? 0 : b.held ? 1 : 0.5;
       const wb = 1 - wa;
@@ -152,6 +153,14 @@ function tickSim(sim: Sim, t: number, settle: boolean) {
       }
     }
   }
+}
+
+/** 单位方向 (ux,uy) 从中心穿出半宽 hw/半高 hh 包围盒的距离占全长 d 的比例，clamp [0, 0.5]。 */
+function boxExit(ux: number, uy: number, hw: number, hh: number, d: number) {
+  let dist = Infinity;
+  if (Math.abs(ux) > 1e-6) dist = Math.min(dist, hw / Math.abs(ux));
+  if (Math.abs(uy) > 1e-6) dist = Math.min(dist, hh / Math.abs(uy));
+  return dist === Infinity ? 0.5 : Math.max(0, Math.min(0.5, dist / d));
 }
 
 function drawSim(
@@ -170,20 +179,37 @@ function drawSim(
     dpr * view.scale, 0, 0, dpr * view.scale,
     dpr * (view.x * view.scale + W / 2), dpr * (view.y * view.scale + H / 2),
   );
-  // 边：低透明细线 + 缓慢流动的虚线偏移（无光晕，保持干净）
+  // 边：常态保持原本的低透明流动虚线；按住（点击着）某节点时，与之相连的
+  // 边切换为浅灰细实线，配合 hover 压暗其余边形成聚焦；未解析断链始终红
+  // 色虚线；端点裁剪到文字包围盒外缘（不钻到字底下）。
   const flow = animate ? (t * 9) % 14 : 0;
+  const pressed = sim.nodes.findIndex((p) => p.held);
   for (const e of sim.edges) {
     const a = sim.nodes[e.a];
     const b = sim.nodes[e.b];
     const dim = hover >= 0 && hover !== e.a && hover !== e.b;
-    ctx.globalAlpha = dim ? 0.07 : e.resolved ? 0.42 : 0.38;
-    ctx.strokeStyle = e.resolved ? colors.edge : colors.danger;
-    ctx.lineWidth = e.kind === "note" ? 1.15 : 1;
-    ctx.setLineDash(e.resolved ? [1.6, 9] : [3, 5]);
+    const focus = pressed >= 0 && (e.a === pressed || e.b === pressed);
+    const d = Math.max(1, Math.hypot(b.x - a.x, b.y - a.y));
+    const ux = (b.x - a.x) / d;
+    const uy = (b.y - a.y) / d;
+    const ta = boxExit(ux, uy, a.w / 2 + 6, a.h / 2 + 4, d);
+    const tb = boxExit(-ux, -uy, b.w / 2 + 6, b.h / 2 + 4, d);
+    if (ta + tb >= 1) continue; // 包围盒仍重叠时不画，避免线段穿过文字
+    if (focus) {
+      ctx.globalAlpha = dim ? 0.07 : e.resolved ? 0.8 : 0.55;
+      ctx.strokeStyle = e.resolved ? colors.muted : colors.danger;
+      ctx.lineWidth = e.kind === "note" ? 1.1 : 0.95;
+      ctx.setLineDash(e.resolved ? [] : [3, 5]);
+    } else {
+      ctx.globalAlpha = dim ? 0.07 : e.resolved ? 0.42 : 0.38;
+      ctx.strokeStyle = e.resolved ? colors.edge : colors.danger;
+      ctx.lineWidth = e.kind === "note" ? 1.15 : 1;
+      ctx.setLineDash(e.resolved ? [1.6, 9] : [3, 5]);
+    }
     ctx.lineDashOffset = -flow;
     ctx.beginPath();
-    ctx.moveTo(a.x, a.y);
-    ctx.lineTo(b.x, b.y);
+    ctx.moveTo(a.x + ux * ta * d, a.y + uy * ta * d);
+    ctx.lineTo(b.x - ux * tb * d, b.y - uy * tb * d);
     ctx.stroke();
   }
   ctx.setLineDash([]);
@@ -321,7 +347,7 @@ export function TextForceGraph({
     const H = wrap.clientHeight || 600;
     const bw = Math.max(90, maxX - minX);
     const bh = Math.max(70, maxY - minY);
-    const scale = Math.max(0.3, Math.min(scaleCap, Math.min((W - 90) / bw, (H - 90) / bh)));
+    const scale = Math.max(0.3, Math.min(scaleCap, Math.min((W - 72) / bw, (H - 72) / bh)));
     viewRef.current = { scale, x: -(minX + maxX) / 2, y: -(minY + maxY) / 2 };
   }, []);
 
@@ -364,7 +390,7 @@ export function TextForceGraph({
     const adj = nodes.map(() => new Set<number>());
     edges.forEach((e) => { adj[e.a].add(e.b); adj[e.b].add(e.a); });
     const sim: Sim = { nodes, edges, adj, font };
-    for (let i = 0; i < 140; i++) tickSim(sim, 0, true);
+    for (let i = 0; i < 320; i++) tickSim(sim, 0, true);
     simRef.current = sim;
     hoverRef.current = -1;
     setHoverId(null);
