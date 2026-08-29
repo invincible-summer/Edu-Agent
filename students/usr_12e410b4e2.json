@@ -17,24 +17,95 @@
     "goals": [
       "老师，微积分和大学物理期末考都快到了，我还有四周、每天大概 3 小时，帮我定个复习计划可以吗？"
     ],
-    "weak_points": [],
+    "weak_points": [
+      "子弹打木块模型：动量守恒、完全非弹性碰撞、碰撞生热与滑动摩擦耗能的分阶段区分"
+    ],
     "strong_points": [],
     "created_at": 1787981768.4181182,
-    "updated_at": 1787985840.0511718,
-    "last_active": 1787985840.051155,
-    "events_processed": 131
+    "updated_at": 1787997672.0532622,
+    "last_active": 1787997672.0532336,
+    "events_processed": 137
   },
-  "mastery": {},
+  "mastery": {
+    "custom.tb-tb_137bb032c4.c.e8fa3e97e719b622": {
+      "skill_id": "custom.tb-tb_137bb032c4.c.e8fa3e97e719b622",
+      "p_known": 0.3571,
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997293.892249,
+      "mistakes": [],
+      "params": {
+        "L0": 0.1,
+        "T": 0.1,
+        "S": 0.1,
+        "G": 0.25
+      }
+    },
+    "custom.tb-tb_137bb032c4.c.dbece6536887ec82": {
+      "skill_id": "custom.tb-tb_137bb032c4.c.dbece6536887ec82",
+      "p_known": 0.3571,
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997347.978245,
+      "mistakes": [],
+      "params": {
+        "L0": 0.1,
+        "T": 0.1,
+        "S": 0.1,
+        "G": 0.25
+      }
+    },
+    "custom.tb-tb_137bb032c4.c.9459154c7f046f40": {
+      "skill_id": "custom.tb-tb_137bb032c4.c.9459154c7f046f40",
+      "p_known": 0.3571,
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997400.1248763,
+      "mistakes": [],
+      "params": {
+        "L0": 0.1,
+        "T": 0.1,
+        "S": 0.1,
+        "G": 0.25
+      }
+    },
+    "custom.tb-tb_137bb032c4.c.4ca6ebbb4d5bce43": {
+      "skill_id": "custom.tb-tb_137bb032c4.c.4ca6ebbb4d5bce43",
+      "p_known": 0.3571,
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997426.2307303,
+      "mistakes": [],
+      "params": {
+        "L0": 0.1,
+        "T": 0.1,
+        "S": 0.1,
+        "G": 0.25
+      }
+    },
+    "custom.tb-tb_137bb032c4.c.b82afa748a656ec9": {
+      "skill_id": "custom.tb-tb_137bb032c4.c.b82afa748a656ec9",
+      "p_known": 0.1456,
+      "attempts": 2,
+      "correct": 1,
+      "last_review": 1787997672.0532205,
+      "mistakes": [
+        "嵌入说明碰撞非弹性，不能用动能守恒；应由动量守恒得 $V=4\\,\\mathrm{m/s}$。碰撞生热为 $1584\\,\\"
+      ],
+      "params": {
+        "L0": 0.1,
+        "T": 0.1,
+        "S": 0.1,
+        "G": 0.25
+      }
+    }
+  },
   "memory": {
     "custom.tb-tb_ea0e4cf248.c.7dc35df5627f64b8": {
       "skill_id": "custom.tb-tb_ea0e4cf248.c.7dc35df5627f64b8",
       "concept": "收敛数列",
       "state": "introduced",
-      "evidence": [
-        "已讲解：老师你好，我想问一下：什么数列叫做收敛数列？能用一句大白话解释吗？",
-        "已讲解：老师你好，我想问一下：什么数列叫做收敛数列？能用一句大白话解释吗？",
-        "已讲解：那比如数列 1, 1/2, 1/3, 1/4, … 收敛到 0，我能不能说它“最"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -45,14 +116,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.1832990660bb60c2",
       "concept": "函数极限与可去间断点",
       "state": "introduced",
-      "evidence": [
-        "已讲解：能出一道分段函数判断分段点可导性的题吗？我想检验一下自己。",
-        "已讲解：我检查了先连续（解出 b=2）再看左右导数：左导数 2、右导数 2a，所以 a=",
-        "已讲解：哦，构造辅助函数 F(x) = f(x) − f(a) − [f(b)−f(a)",
-        "已讲解：实际应用题：用 20 米篱笆靠墙围矩形菜园，面积最大是多少？这类题的套路是什么？",
-        "已讲解：幂级数 Σ xⁿ/n! 为什么恰好收敛到 eˣ？收敛半径是怎么算出来的？",
-        "已讲解：泰勒公式到底想干什么？为什么用一个多项式就能逼近 eˣ 这种函数？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -63,14 +127,7 @@
       "skill_id": "custom.tb-tb_ea0e4cf248.c.aaf1b274bd08d191",
       "concept": "极限的概念与极限运算",
       "state": "introduced",
-      "evidence": [
-        "已讲解：第一题我算出极限是 4；第二题 sin x / x 在 x→0 我猜是 1，但不",
-        "已讲解：老师，教材上极限的 ε-δ 定义我看了三遍还是绕不过来，为什么非要引入 ε 和",
-        "已讲解：对 f(x)=2x+1，x→1 极限是 3。如果取 ε=0.1，δ 取多少？是不",
-        "已讲解：我好像有感觉了：ε 是“要求 f(x) 精确到多好”，δ 是“x 要靠到多近”，",
-        "已讲解：能出一道题考考我有没有真懂吗？最好是用定义验证一个具体极限。",
-        "已讲解：谢谢！那 ε-δ 这种严格定义，和我“无限接近”的直观理解矛盾吗？还是说直观只是"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -81,9 +138,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.6ba19124690092fa",
       "concept": "极限与泰勒展开（等价无穷小）",
       "state": "introduced",
-      "evidence": [
-        "已讲解：求 x→0 时 (eˣ − 1 − x)/x² 的极限，我直接把 0 代进去分母"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -94,14 +149,7 @@
       "skill_id": "math.calculus.derivative",
       "concept": "导数的定义与极限的几何、变化率意义",
       "state": "introduced",
-      "evidence": [
-        "已讲解：定积分 ∫₀¹ x² dx = 1/3 这个数几何上就是曲边梯形面积，但它和导数",
-        "已讲解：偏导数 ∂f/∂x 的“偏”字是什么意思？和一元函数的导数本质区别在哪？",
-        "已讲解：就是把另一个变量当常数。那 z = x²y + e^{xy} 的两个偏导怎么求？",
-        "已讲解：我算的 ∂z/∂x = 2xy + y·e^{xy}，∂z/∂y = x² +",
-        "已讲解：那高阶混合偏导 ∂²z/∂x∂y 和 ∂²z/∂y∂x 一定相等吗？我记得要什么",
-        "已讲解：那“导数就是瞬时速度、定积分就是位移”这种对应，历史上是物理推动了微积分的发明吗"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -112,10 +160,7 @@
       "skill_id": "数学.auto.洛必达法则与0_0未定式",
       "concept": "洛必达法则与0/0未定式",
       "state": "introduced",
-      "evidence": [
-        "已讲解：原来是 0/0 未定式啊。那用洛必达：上下求导变 (eˣ−1)/(2x)，还是",
-        "已讲解：明白了，每次用之前要确认仍是未定式。那出两道题练练吧：一道能用的，一道陷阱题。"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -126,9 +171,7 @@
       "skill_id": "数学.auto.可导与连续的关系_连续但不可导的反例",
       "concept": "可导与连续的关系；连续但不可导的反例",
       "state": "introduced",
-      "evidence": [
-        "已讲解：对，左右导数不相等所以不可导。那“可导必连续，连续不一定可导”这半句能举个例子吗"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -139,9 +182,7 @@
       "skill_id": "数学.auto.洛必达法则的使用条件与适用范围",
       "concept": "洛必达法则的使用条件与适用范围",
       "state": "introduced",
-      "evidence": [
-        "已讲解：听说洛必达有使用条件，什么情况下不能乱用？我记得有同学在 x→∞ 的 sin x"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -152,10 +193,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.2331ddc1835f1cdc",
       "concept": "罗尔定理的三个条件及其必要性",
       "state": "introduced",
-      "evidence": [
-        "已讲解：罗尔定理三个条件——连续、可导、端点函数值相等——少一个行不行？感觉好苛刻。",
-        "已讲解：拉格朗日中值定理和罗尔定理什么关系？f(b)−f(a) = f′(ξ)(b−a)"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -166,9 +204,7 @@
       "skill_id": "math.function.monotonicity",
       "concept": "函数单调性与导数符号的关系；导数为零点与单调性的判断",
       "state": "introduced",
-      "evidence": [
-        "已讲解：判断单调性就是看导数符号吗？那 f(x)=x³ 导数在 0 处是 0，它还单调吗"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -179,14 +215,7 @@
       "skill_id": "math.calculus.integral",
       "concept": "不定积分中的积分常数C",
       "state": "introduced",
-      "evidence": [
-        "已讲解：比如一维运动 a = 3t² + 1，初条件 x(0)=2、v(0)=0，我积分",
-        "已讲解：功的定义 W = ∫F·dr，为什么要用点积和积分？高中那个 W=Fs 不够用吗",
-        "已讲解：变力做功：弹簧拉到 x₀ 做功 W = kx₀²/2。为什么不是 F·x₀ =",
-        "已讲解：因为力一直在变要积分。那滑动摩擦生热怎么算？也是对位移积分吗？",
-        "已讲解：老师，我这学期同时在上微积分和大学物理，发现物理课本里全是微积分。这两门课到底应",
-        "已讲解：帮我举两三个“物理概念直接就是微积分概念”的例子吧，我想把两门课串起来记。"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -197,9 +226,7 @@
       "skill_id": "数学.auto.第一类换元法_凑微分",
       "concept": "第一类换元法（凑微分）",
       "state": "introduced",
-      "evidence": [
-        "已讲解：第一类换元（凑微分）我老看不出来怎么凑。比如 ∫ x·e^{x²} dx 是怎么"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -210,9 +237,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.ef52620571743529",
       "concept": "驻点、极值点、拐点的区别及极值的第一、第二充分条件",
       "state": "introduced",
-      "evidence": [
-        "已讲解：驻点、极值点、拐点这三个概念我老混。极值的第一、第二充分条件分别什么时候用哪个？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -223,9 +248,7 @@
       "skill_id": "custom.tb-tb_88a77ed17c.c.7318f84518a3d130",
       "concept": "拉格朗日中值定理证明不等式",
       "state": "introduced",
-      "evidence": [
-        "已讲解：出一道用拉格朗日中值定理证不等式的题吧，比如 x/(1+x) < ln(1+x)"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -236,9 +259,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.9bbe9f3294edc356",
       "concept": "定周长矩形面积最大及边界条件",
       "state": "introduced",
-      "evidence": [
-        "已讲解：懂了，实际问题还要检验边界和实际意义。第二问如果两边都不靠墙，是不是就是标准的周"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -249,9 +270,7 @@
       "skill_id": "custom.tb-tb_7f899fc40a.c.55954c7a163942b0",
       "concept": "拉格朗日中值定理与对数不等式",
       "state": "introduced",
-      "evidence": [
-        "已讲解：我证出来了：设 g(x)=ln(1+x)，在 [0,x] 上用中值定理，g′(ξ"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -262,9 +281,7 @@
       "skill_id": "custom.tb-tb_ea0e4cf248.c.66593fd3c84ae1bd",
       "concept": "链式法则与复合函数求导",
       "state": "introduced",
-      "evidence": [
-        "已讲解：哦，要再乘上上限的导数 2x，本质是链式法则。能出两道混合题吗？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -275,12 +292,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.6385381ca9c17559",
       "concept": "调和级数发散与级数收敛的必要条件",
       "state": "introduced",
-      "evidence": [
-        "已讲解：等比级数 Σ 1/2ⁿ 收敛到 2 我能接受，但调和级数 Σ 1/n 每一项都趋",
-        "已讲解：R=1。端点要单独查：x=1 时 Σ 1/n 发散，x=−1 时 Σ (−1)ⁿ",
-        "已讲解：比较、比值、根值判别法各管一类，交错级数用莱布尼茨判别法。那 Σ (−1)ⁿ/n",
-        "已讲解：取绝对值后是调和级数发散，但原级数由莱布尼茨判别法收敛，所以是条件收敛。出两道题"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -291,9 +303,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.a4610f779a7189e0",
       "concept": "幂级数的收敛半径与收敛域、比值判别法",
       "state": "introduced",
-      "evidence": [
-        "已讲解：用比值判别法，|x| 任意大相邻项比值都趋于 0，所以 R=∞。那 Σ xⁿ/n"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -304,9 +314,7 @@
       "skill_id": "数学.auto.麦克劳林级数与泰勒展开的截断误差",
       "concept": "麦克劳林级数与泰勒展开的截断误差",
       "state": "introduced",
-      "evidence": [
-        "已讲解：麦克劳林公式就是 x₀=0 的特例。那 eˣ = 1 + x + x²/2! +"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -317,10 +325,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.2d1bff2185187f3d",
       "concept": "泰勒公式的拉格朗日余项与误差估计",
       "state": "introduced",
-      "evidence": [
-        "已讲解：拉格朗日余项 Rₙ = f⁽ⁿ⁺¹⁾(ξ)/(n+1)! · xⁿ⁺¹ 怎么用？",
-        "已讲解：那用前 5 项（到 x⁴/4!）算 e 的近似值，误差大概能控制在多少？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -331,9 +336,7 @@
       "skill_id": "custom.tb-tb_56190ee634.c.bfa7135f02dbb9cc",
       "concept": "绝对收敛与条件收敛；交错调和级数Σ(−1)ⁿ⁺¹/n的收敛性",
       "state": "introduced",
-      "evidence": [
-        "已讲解：绝对收敛和条件收敛什么区别？Σ (−1)ⁿ⁺¹/n 是哪一种？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -344,11 +347,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.e383c09fdb78e4c6",
       "concept": "大学物理运动学与高中运动学的差异；矢量与微元法",
       "state": "introduced",
-      "evidence": [
-        "已讲解：老师，大学物理的运动学和高中有什么不一样？为什么一上来就讲矢量和微元法？",
-        "已讲解：抛体运动为什么可以分解成水平匀速 + 竖直匀加速独立处理？用矢量的语言怎么解释？",
-        "已讲解：相位 (ωt+φ) 的物理意义是什么？初相位为什么决定 t=0 的状态？旋转矢量"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -359,10 +358,7 @@
       "skill_id": "physics.dynamics.newton_second",
       "concept": "牛顿第二定律中合外力的含义与受力分析常见错误",
       "state": "introduced",
-      "evidence": [
-        "已讲解：牛顿第二定律 F=ma 里 F 是“合外力”，这句话有什么深意？分析受力最容易犯",
-        "已讲解：动量定理 F = dp/dt 和牛顿第二定律什么关系？碰撞问题为什么都用动量算？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -373,9 +369,7 @@
       "skill_id": "custom.tb-tb_2d35023a6c.c.ae539963d0827dfd",
       "concept": "运动方向与受力方向、单摆最高点的向心力",
       "state": "introduced",
-      "evidence": [
-        "已讲解：我老把“运动方向”当“受力方向”。比如单摆摆到最高点速度为零，那一瞬间是不是就没"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -386,10 +380,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.35e92e44ebf7eb67",
       "concept": "竖直圆周运动绳模型通过最高点的临界条件",
       "state": "introduced",
-      "evidence": [
-        "已讲解：明白了，最高点速度为零但重力沿切向有分量、法向张力为零。那竖直圆周运动“绳模型”",
-        "已讲解：出道题：质量 m 的小球绑在长 L 轻杆上做竖直面圆周运动，“杆模型”能通过最高"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -399,29 +390,21 @@
     "custom.tb-tb_137bb032c4.c.b82afa748a656ec9": {
       "skill_id": "custom.tb-tb_137bb032c4.c.b82afa748a656ec9",
       "concept": "完全非弹性碰撞中的动量守恒与动能损失",
-      "state": "introduced",
-      "evidence": [
-        "已讲解：出道题考考我理解深不深：转台上的人收哑铃，J 从 6 变 3，ω 从 1 变 2",
-        "已讲解：火箭推进也是动量守恒吗？帮我说说喷气为什么能加速。",
-        "已讲解：人收手臂时做了功！所以角动量守恒完全不意味着动能守恒。这个坑我要写进笔记里，太经",
-        "已讲解：老师我一道错题想不通：质量 m 的子弹以速度 v₀ 打入光滑水平面上静止的、质量",
-        "已讲解：哦！我默认了“损失的动能 = 子弹初动能”，忘了碰撞后两者还有共同速度。完全非弹",
-        "已讲解：这类“子弹打木块”是不是固定套路：动量守恒求共同速度，再用动能差算生热？我总结进"
+      "state": "partial",
+      "evidence": [],
+      "misconceptions": [
+        "嵌入说明碰撞非弹性，不能用动能守恒；应由动量守恒得 $V=4\\,\\mathrm{m/s}$。碰撞生热为 $1584\\,\\"
       ],
-      "misconceptions": [],
       "mistake_types": [],
-      "attempts": 0,
-      "correct": 0,
-      "last_review": 1787985839.9951284
+      "attempts": 2,
+      "correct": 1,
+      "last_review": 1787997672.0341508
     },
     "custom.tb-tb_137bb032c4.c.452a9ca30c94de61": {
       "skill_id": "custom.tb-tb_137bb032c4.c.452a9ca30c94de61",
       "concept": "摩擦生热、功能关系与机械能守恒（滑块撞弹簧并滑上斜面）",
       "state": "introduced",
-      "evidence": [
-        "已讲解：摩擦生热 = 摩擦力 × 相对位移。能出一道滑块撞弹簧再滑上斜面的综合题吗？我想",
-        "已讲解：出道综合题：匀质杆从水平位置静止释放绕端点转到竖直，末端最大线速度多少？我用能量"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -432,10 +415,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.55847d2e5bed2ac5",
       "concept": "转动惯量J=∫r²dm中r²的来源及其与质量m的对应关系",
       "state": "introduced",
-      "evidence": [
-        "已讲解：刚体转动里的转动惯量 J 和质点的质量 m 对应，那 J = ∫r²dm 里这个",
-        "已讲解：推出了 v₁′ = [(m₁−m₂)v₁ + 2m₂v₂]/(m₁+m₂)。验算"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -446,11 +426,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.c30426b8ef0a775b",
       "concept": "角动量中叉乘的物理意义及其与点乘的区别",
       "state": "introduced",
-      "evidence": [
-        "已讲解：角动量 L = r×p，这里的叉乘物理意义是什么？为什么定义成叉乘而不是点乘？",
-        "已讲解：我的弱点：微积分的级数判敛每次都犹豫用什么判别法；物理的刚体转动和角动量这两章基",
-        "已讲解：好，那我第一周主攻刚体+角动量，对照教材对应章节；级数判敛每天 3 道小题保持手"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -461,10 +437,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.0ee441a49a965324",
       "concept": "匀质圆盘绕中心轴的转动惯量推导（J=½mR²）",
       "state": "introduced",
-      "evidence": [
-        "已讲解：匀质圆盘绕中心轴 J = ½mR²，这个积分能带我推一遍吗？",
-        "已讲解：转动定律 M = Jα 和 F = ma 完全对应。那匀质杆绕端点和绕中点的转动"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -475,9 +448,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.acfad98b39f58e45",
       "concept": "简谐振动及回复力F=-kx的本质特征",
       "state": "introduced",
-      "evidence": [
-        "已讲解：什么样的运动叫简谐振动？“回复力 F = −kx”的本质特征是什么？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -488,10 +459,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.7b703878bf89b504",
       "concept": "简谐行波方程中各物理量的意义及ωT=kλ=2π的关系",
       "state": "introduced",
-      "evidence": [
-        "已讲解：波动方程 y = A cos(ωt − kx) 里每个字母的物理意义？为什么 ω",
-        "已讲解：驻波和行波的区别是什么？为什么驻波的波腹波节位置固定不动？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -502,10 +470,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.8bc7fbd7eecd54af",
       "concept": "内能、热量、功与温度的关系",
       "state": "introduced",
-      "evidence": [
-        "已讲解：内能、热量、功三个概念什么关系？“热量”和“温度”是一回事吗？",
-        "已讲解：自由膨胀 W=0、Q=0，理想气体内能只与温度有关，所以温度不变！但这个过程不可"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -516,9 +481,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.d98d5f43bf8cb0bb",
       "concept": "波的干涉中加强、减弱条件及相位差与波程差的换算",
       "state": "introduced",
-      "evidence": [
-        "已讲解：干涉的加强减弱条件：波程差是波长整数倍加强、半整数倍减弱？相位差和波程差怎么换算"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -529,9 +492,7 @@
       "skill_id": "custom.tb-tb_c1738c6037.c.2fd7d5b1ead9f562",
       "concept": "单摆小角度近似与简谐振动",
       "state": "introduced",
-      "evidence": [
-        "已讲解：单摆小角度时是简谐振动，周期 2π√(L/g)。为什么一定要求小角度？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -542,9 +503,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.5de380748b5ace31",
       "concept": "热力学第一定律符号约定与等压过程功的计算",
       "state": "introduced",
-      "evidence": [
-        "已讲解：ΔU = Q + W，符号约定好烦。等压过程气体做功 ∫p dV 怎么算？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -555,9 +514,7 @@
       "skill_id": "数学/物理.auto.小角近似与泰勒展开",
       "concept": "小角近似与泰勒展开",
       "state": "introduced",
-      "evidence": [
-        "已讲解：因为 sinθ ≈ θ 的近似！这正是数学里泰勒近似在物理上的应用吧？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -568,9 +525,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.ce35a6cad5a14c57",
       "concept": "机械波的干涉",
       "state": "introduced",
-      "evidence": [
-        "已讲解：出道题：两个相位相同的相干波源，波速 340 m/s、频率 680 Hz，某点到"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -581,9 +536,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.57054db36141ca6f",
       "concept": "理想气体自由膨胀、等温过程与热力学第一定律",
       "state": "introduced",
-      "evidence": [
-        "已讲解：理想气体等温膨胀吸热全部变成对外做功。那“自由膨胀”呢？向真空膨胀不做功，如果又"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -594,9 +547,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.9ce22316bf95f9af",
       "concept": "简谐运动的位移与速度",
       "state": "introduced",
-      "evidence": [
-        "已讲解：出道题：弹簧振子 x = 0.1cos(2πt + π/3)（SI 单位），t"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -607,13 +558,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.a3966d93a46234cd",
       "concept": "电场强度E与电势V的关系；电场概念与超距作用",
       "state": "introduced",
-      "evidence": [
-        "已讲解：电场强度 E 和电势 V 是什么关系？为什么要发明“场”这个概念，直接说超距作用",
-        "已讲解：高斯定理 ∮E·dS = Q内/ε₀ 什么时候好用？是不是要球对称、柱对称、面对",
-        "已讲解：E = −∇V 这个负号和梯度怎么理解？是不是“电势沿电场线方向下降，下降得越快",
-        "已讲解：两个同心带电球壳之间的场怎么算？外壳对内部有贡献吗？",
-        "已讲解：外壳在内腔不贡献（壳内场强为零），只需算内壳。出道题：无限大均匀带电平面附近场强"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -624,9 +569,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.8e76109a39516747",
       "concept": "电势、电势正负与试探电荷",
       "state": "introduced",
-      "evidence": [
-        "已讲解：电势 V = W/q 里“试探电荷”是什么意思？电势为什么有正负？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -636,24 +579,19 @@
     "custom.tb-tb_137bb032c4.c.4ca6ebbb4d5bce43": {
       "skill_id": "custom.tb-tb_137bb032c4.c.4ca6ebbb4d5bce43",
       "concept": "点电荷电势在r→0处的奇异性及等势面与电场线的关系",
-      "state": "introduced",
-      "evidence": [
-        "已讲解：等势面和电场线处处垂直。那点电荷电势 kQ/r 在 r→0 时无穷大，实际怎么处",
-        "已讲解：中垂面上到两点电荷距离相等，电势代数和为零，但场强是矢量和不为零、方向都平行于从"
-      ],
+      "state": "partial",
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
-      "attempts": 0,
-      "correct": 0,
-      "last_review": 1787985539.4251733
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997426.2178466
     },
     "custom.tb-tb_137bb032c4.c.dbd7a1806c972af5": {
       "skill_id": "custom.tb-tb_137bb032c4.c.dbd7a1806c972af5",
       "concept": "单原子理想气体等压过程的热量、内能变化与功",
       "state": "introduced",
-      "evidence": [
-        "已讲解：出道题：1 mol 单原子理想气体等压升温 ΔT，吸收热量、内能变化、对外做功各"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -664,9 +602,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.d45b4fa3a7c814c0",
       "concept": "法拉第电磁感应定律中负号与楞次定律",
       "state": "introduced",
-      "evidence": [
-        "已讲解：法拉第定律 ε = −dΦ/dt 的负号（楞次定律）到底在守卫什么？“感应效果总"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -676,37 +612,30 @@
     "custom.tb-tb_137bb032c4.c.9459154c7f046f40": {
       "skill_id": "custom.tb-tb_137bb032c4.c.9459154c7f046f40",
       "concept": "电偶极子中垂面上的电势与场强",
-      "state": "introduced",
-      "evidence": [
-        "已讲解：出道题：电偶极子（+q 和 −q 相距 2a），中垂面上电势和场强怎么分析？"
-      ],
+      "state": "partial",
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
-      "attempts": 0,
-      "correct": 0,
-      "last_review": 1787985404.2538872
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997400.1147108
     },
     "custom.tb-tb_137bb032c4.c.e8fa3e97e719b622": {
       "skill_id": "custom.tb-tb_137bb032c4.c.e8fa3e97e719b622",
       "concept": "杨氏双缝干涉条纹间距及白光干涉彩色条纹",
-      "state": "introduced",
-      "evidence": [
-        "已讲解：杨氏双缝干涉条纹间距 Δy = λD/d，每个字母什么意思？为什么白光照射会有彩"
-      ],
+      "state": "partial",
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
-      "attempts": 0,
-      "correct": 0,
-      "last_review": 1787985411.1144204
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997293.8789127
     },
     "custom.tb-tb_137bb032c4.c.dd4aa7a8035a3f54": {
       "skill_id": "custom.tb-tb_137bb032c4.c.dd4aa7a8035a3f54",
       "concept": "动生电动势公式 BLv 的推导",
       "state": "introduced",
-      "evidence": [
-        "已讲解：长 L 的导体棒在磁场 B 里垂直于磁场以速度 v 平移，动生电动势 BLv 怎",
-        "已讲解：洛伦兹力充当非静电力，ε = ∫(v×B)·dl = BLv。那回路电阻 R 时"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -717,9 +646,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.d008a984f8725fdf",
       "concept": "半波损失及其在薄膜干涉中的出现条件",
       "state": "introduced",
-      "evidence": [
-        "已讲解：光程差 d·y/D = kλ 是明纹。那“半波损失”是什么时候出现的？"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -730,10 +657,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.b94ce38079c1d423",
       "concept": "单缝衍射中央亮纹宽度为何是其他亮纹的两倍，以及反射相位突变的区别",
       "state": "introduced",
-      "evidence": [
-        "已讲解：光从光疏介质射向光密介质反射时有相位突变 π。那单缝衍射的中央亮纹为什么比其他条",
-        "已讲解：因为暗纹条件 a·sinθ = ±kλ（k=1,2,…），中央两侧第一条暗纹之间"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -744,9 +668,7 @@
       "skill_id": "custom.tb-tb_c1738c6037.c.e90f32923d2bf220",
       "concept": "双缝干涉条纹间距",
       "state": "introduced",
-      "evidence": [
-        "已讲解：出道题：双缝间距 0.2 mm，屏距 1 m，用 600 nm 的光，条纹间距是"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -757,9 +679,7 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.261950b56e94249c",
       "concept": "电磁感应中的电荷量与外力做功",
       "state": "introduced",
-      "evidence": [
-        "已讲解：出道题：把线圈从磁场区分别快拉和慢拉出来，通过导线的电荷量一样吗？外力做功一样吗"
-      ],
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
@@ -769,15 +689,13 @@
     "custom.tb-tb_137bb032c4.c.dbece6536887ec82": {
       "skill_id": "custom.tb-tb_137bb032c4.c.dbece6536887ec82",
       "concept": "电磁感应中感应电荷与速度无关、感应电流和安培阻力随速度增大、焦耳热增加",
-      "state": "introduced",
-      "evidence": [
-        "已讲解：q = ΔΦ/R 和速度无关，电荷量相同；但快拉时感应电流大、安培阻力大，外力做"
-      ],
+      "state": "partial",
+      "evidence": [],
       "misconceptions": [],
       "mistake_types": [],
-      "attempts": 0,
-      "correct": 0,
-      "last_review": 1787985617.323106
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1787997347.9681246
     }
   }
 }

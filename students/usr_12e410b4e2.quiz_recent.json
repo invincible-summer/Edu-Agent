@@ -127,7 +127,8 @@
       "explanation": "本题考查由 $|f(x)-A|$ 与 $|x-a|$ 的乘积关系构造 $\\delta$。先因式分解为 $|x-2||x+2|$，再用 $|x-2|<1$ 得 $|x+2|<5$，于是只需令 $\\delta\\le\\varepsilon/5$。取 $\\delta=\\min\\{1,\\varepsilon/5\\}$ 后即可完成估计。易错点是未先限制邻域就随意放缩，或把不等式方向写反。",
       "verdict": "",
       "student_answer": "",
-      "source_status": "active"
+      "source_status": "deleted",
+      "source_message": "来源对话已删除，无法查看"
     },
     {
       "id": 9,
@@ -445,8 +446,8 @@
       "knowledge_point": "电偶极子中垂面上的电势与场强",
       "correct_answer": "两电荷到点 $P$ 的距离均为 $R$，故电势为 $V(P)=\\frac{kq}{R}+\\frac{k(-q)}{R}=0$。由矢量叠加，$+q$ 产生的电场为 $\\mathbf{E}_+=\\frac{kq}{R^3}(\\boldsymbol{\\rho}-a\\hat{\\mathbf{z}})$，$-q$ 产生的电场为 $\\mathbf{E}_-=\\frac{-kq}{R^3}(\\boldsymbo",
       "explanation": "切入点是电势按标量代数相加，而电场必须按矢量叠加。两电荷到 $P$ 的距离相等，故 $V_++V_-=0$。写出两电场后，沿中垂面的分量方向相反而抵消，沿 $z$ 轴的分量同向，得到 $\\mathbf{E}=-\\frac{2kqa}{R^3}\\hat{\\mathbf{z}}$。因此电势为零不代表电场为零；易错点是把等距误认为电场也完全抵消。",
-      "verdict": "",
-      "student_answer": "",
+      "verdict": "correct",
+      "student_answer": "**1. 电势之和**  \n两电荷到 \\(P\\) 点的距离均为  \n\\[\nR=\\sqrt{x^2+y^2+a^2}\n\\]  \n电势是标量，直接叠加：  \n\\[\nV_P = \\frac{kq}{R} + \\frac{k(-q)}{R}=0\n\\]  \n所以中垂面上任意点的**电势为零**。\n\n---\n\n**2. 电场强度矢量之和**  \n设 \\( \\boldsymbol{\\rho}=x\\,\\hat{\\",
       "source_status": "active"
     },
     {
@@ -461,8 +462,8 @@
       "knowledge_point": "等量异号点电荷中垂面上的电势与电场；电势的标量叠加、电场的矢量叠加；等势面与电场方向；电势差、电场力做功的关系",
       "correct_answer": "（1）由于 $P$ 到两电荷距离均为 $r$，$V(P)=\\frac{kq}{r}-\\frac{kq}{r}=0$。两电荷产生的电场在中垂面内的分量相互抵消，而沿 $\\hat{\\boldsymbol{u}}$ 方向的分量相加，因此 $\\boldsymbol{E}(P)=\\frac{2kqa}{r^3}\\hat{\\boldsymbol{u}}\\neq\\boldsymbol{0}$，方向由 $+q$ ",
       "explanation": "本题关键是区分标量叠加与矢量叠加。两电荷到 $P$ 的距离相等，故 $V=\\frac{kq}{r}-\\frac{kq}{r}=0$。由对称性，电场的面内分量抵消，沿由 $+q$ 指向 $-q$ 的方向相加，得 $\\boldsymbol{E}=\\frac{2kqa}{r^3}\\hat{\\boldsymbol{u}}$。沿中垂面移动时 $dV=-\\boldsymbol{E}\\cdot d\\boldsymbol{l}=0$、电场力不做功；沿法向向 $-q$ 移动时，正试探电荷受力并做正功。易错点是把等势面误认为无电场面。",
-      "verdict": "",
-      "student_answer": "",
+      "verdict": "correct",
+      "student_answer": "**已知：** 两点电荷 \\(+q\\) 与 \\(-q\\) 相距 \\(2a\\)，中点为原点，\\(\\hat u\\) 为从 \\(+q\\) 指向 \\(-q\\) 的单位矢量。中垂面上一点 \\(P\\) 到中点距离为 \\(\\rho\\)，\\(r=\\sqrt{a^2+\\rho^2}\\)，正试探电荷为 \\(q_0\\)。\n\n---\n\n## （1）\\(P\\) 点的电势与电场\n\n取坐标：原点 \\(O\\) 在中点，\\(x\\)",
       "source_status": "active"
     },
     {
@@ -477,8 +478,8 @@
       "knowledge_point": "电磁感应中的电荷量、感应电流、外力做功与焦耳热；法拉第定律、能量守恒及结论的适用条件",
       "correct_answer": "设运动方向上线圈的有效宽度为 $d$，则在线圈部分进入磁场的阶段，磁通量变化满足 $\\Delta\\Phi=-BA$。由 $\\mathcal{E}=-\\frac{d\\Phi}{dt}$、$I=\\frac{\\mathcal{E}}{R}$ 及 $q=\\int I\\,dt$，有 $q=\\frac{|\\Delta\\Phi|}{R}=\\frac{BA}{R}$，故快拉与慢拉的总电荷量相同。若匀速拉出，$|\\",
       "explanation": "本题核心是区分电荷量与电流大小，并用能量守恒判断外力功。由 $q=\\int I\\,dt=|\\Delta\\Phi|/R$，两次磁通量变化相同，故总电荷量相同；但 $I=B\\ell v/R$，快拉电流更大。匀速且始末动能相同，外力功全转化为焦耳热，$W_{\\text{外}}=Q_J\\propto v$。变速时电荷量仍由磁通量决定，而热量依赖 $\\int v^2dt$；自感或速度终态改变会修正相应结论。",
-      "verdict": "",
-      "student_answer": "",
+      "verdict": "correct",
+      "student_answer": "先给出符号说明：令线圈面积为 \\(A\\)，有效边长为 \\(\\ell\\)，总电阻为 \\(R\\)，磁感应强度为 \\(B\\)。设线圈沿运动方向边长为 \\(a\\)，则 \\(A=\\ell a\\)。两次匀速拉出速度分别为 \\(v_1,v_2\\)，且 \\(v_2>v_1\\)。原题忽略自感、辐射、摩擦，初末速度分别等于各自速度（动能不变）。\n\n---\n\n## （1）总电荷量 \\(q\\)\n\n由法拉第定律，感应电动势",
       "source_status": "active"
     },
     {
@@ -493,8 +494,8 @@
       "knowledge_point": "杨氏双缝干涉条纹间距及单位统一",
       "correct_answer": "$d=0.2\\ \\mathrm{mm}=2.0\\times10^{-4}\\ \\mathrm{m}$，$\\lambda=600\\ \\mathrm{nm}=6.0\\times10^{-7}\\ \\mathrm{m}$。因此 $\\Delta y=\\frac{\\lambda D}{d}=\\frac{6.0\\times10^{-7}\\ \\mathrm{m}\\times1\\ \\mathrm{m}}{2.0\\ti",
       "explanation": "本题考查条纹间距公式的迁移应用，关键是先统一单位。先换算：$d=0.2\\ \\mathrm{mm}=2.0\\times10^{-4}\\ \\mathrm{m}$，$\\lambda=600\\ \\mathrm{nm}=6.0\\times10^{-7}\\ \\mathrm{m}$。代入 $\\Delta y=\\frac{\\lambda D}{d}$，得 $\\Delta y=3.0\\times10^{-3}\\ \\mathrm{m}=3.0\\ \\mathrm{mm}$。若只换算一个量，数量级会错 $10^{3}$ 或 $10^{6}$；直接混用数值还会破坏单位一致性。",
-      "verdict": "",
-      "student_answer": "",
+      "verdict": "correct",
+      "student_answer": "先将单位换算为 SI（国际单位制）：\n\n- \\(d = 0.2\\ \\text{mm} = 0.2\\times 10^{-3}\\ \\text{m} = 2.0\\times 10^{-4}\\ \\text{m}\\)\n- \\(\\lambda = 600\\ \\text{nm} = 600\\times 10^{-9}\\ \\text{m} = 6.0\\times 10^{-7}\\ \\text{m}\\)\n- \\(",
       "source_status": "active"
     },
     {
@@ -525,8 +526,8 @@
       "knowledge_point": "完全非弹性碰撞中的二维动量守恒、共同速度判定、实验误差与外力冲量分析、动能损失",
       "correct_answer": "（1）总质量为 $m_1+m_2=2.00\\,\\text{kg}$。碰撞前总动量为 $\\vec p_i=m_1\\vec v_1+m_2\\vec v_2=(0,4.40)\\,\\text{kg}\\cdot\\text{m/s}$，故理论共同速度为 $\\vec v'=\\frac{\\vec p_i}{m_1+m_2}=(0,2.20)\\,\\text{m/s}$。测量值与理论值的差为 $(0.05,-0.05",
       "explanation": "本题的关键是把速度作为二维矢量处理，并区分动量守恒与动能守恒。先按 $\\vec p_i=(0,4.40)\\,\\text{kg}\\cdot\\text{m/s}$ 求得 $\\vec v'=(0,2.20)\\,\\text{m/s}$，测量偏差在不确定度内。测量动量差的大小为 $0.141\\,\\text{N}\\cdot\\text{s}$，小于外力冲量上限，故守恒得到支持。再算得 $K_i=13.0\\,\\text{J}$、$K_f=4.84\\,\\text{J}$，损失 $8.16\\,\\text{J}$。粘连且动能损失才是完全非弹性的特征，不能误判为动能守恒。",
-      "verdict": "",
-      "student_answer": "",
+      "verdict": "correct",
+      "student_answer": "已知数据：\n- \\(m_1=0.80\\,\\text{kg}\\)，\\(\\vec v_1=(3.0,\\;4.0)\\,\\text{m/s}\\)\n- \\(m_2=1.20\\,\\text{kg}\\)，\\(\\vec v_2=(-2.0,\\;1.0)\\,\\text{m/s}\\)\n- 碰撞后粘连，实测共同速度 \\(\\vec v'_{\\text{meas}}=(0.05,\\;2.15)\\,\\text{m/s}\\)，",
       "source_status": "active"
     },
     {
@@ -557,10 +558,10 @@
       "knowledge_point": "子弹打木块模型：动量守恒、完全非弹性碰撞、碰撞生热与滑动摩擦耗能的分阶段区分",
       "correct_answer": "$(1)$ 碰撞阶段动量守恒：$v=\\frac{0.020\\times400}{0.020+1.98}=4.0\\ \\mathrm{m/s}$。$(2)$ 碰撞生热：$Q_{\\text{碰}}=\\frac12(0.020)(400)^2-\\frac12(2.00)(4.0)^2=1584\\ \\mathrm{J}$。$(3)$ 碰撞后由 $v^2=2\\mu gs$ 得 $s=4.0\\ \\mathrm{",
       "explanation": "本题关键是先按物理过程分段：碰撞阶段近似动量守恒，随后滑行阶段动量不守恒。碰撞后速度为 $v=\\frac{0.020\\times400}{2.00}=4.0\\ \\mathrm{m/s}$；碰撞生热为初、末动能差，即 $1584\\ \\mathrm{J}$。滑行距离由 $v^2=2\\mu gs$ 得 $s=4.0\\ \\mathrm{m}$，摩擦生热为 $16\\ \\mathrm{J}$。故全过程损失为 $1600\\ \\mathrm{J}$。易错点是把全过程动能差误称为碰撞生热，或把摩擦阶段也当作动量守恒。",
-      "verdict": "",
-      "student_answer": "",
+      "verdict": "wrong",
+      "student_answer": "（1）碰撞后整体的共同速度\n\n直接用动能守恒（认为碰撞是弹性的）  \n\\[\n\\frac12 m v_0^2 = \\frac12 (M+m)V^2 \\quad\\Rightarrow\\quad V = v_0\\sqrt{\\frac{m}{M+m}} = 400\\sqrt{\\frac{0.02}{2}} = 400\\times 0.1 = 40\\,\\text{m/s}\n\\]  \n**答案：\\(V=40\\",
       "source_status": "active"
     }
   ],
-  "updated_at": 1787985836.7141895
+  "updated_at": 1787997734.889498
 }

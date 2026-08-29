@@ -97,17 +97,17 @@
     "completed_steps": [],
     "remaining_steps": [],
     "active_skill_ids": [],
-    "pending_assessment": true,
-    "unanswered_question_ids": [
-      "1"
+    "pending_assessment": false,
+    "unanswered_question_ids": [],
+    "latest_verdicts": [
+      "1:correct"
     ],
-    "latest_verdicts": [],
     "open_loops": [
       {
         "id": "assessment:双缝干涉条纹间距",
         "kind": "student_response",
         "description": "等待学生完成「双缝干涉条纹间距」检测题并提交作答",
-        "status": "pending",
+        "status": "resolved",
         "source_ref": "",
         "created_turn": 4
       }
@@ -115,7 +115,7 @@
     "source_refs": [
       "quiz_history:1"
     ],
-    "updated_at": 1787985597.0583093
+    "updated_at": 1787997293.9122434
   },
   "messages": [
     {
@@ -6648,7 +6648,11 @@
                   "explanation": "本题考查条纹间距公式的迁移应用，关键是先统一单位。先换算：$d=0.2\\ \\mathrm{mm}=2.0\\times10^{-4}\\ \\mathrm{m}$，$\\lambda=600\\ \\mathrm{nm}=6.0\\times10^{-7}\\ \\mathrm{m}$。代入 $\\Delta y=\\frac{\\lambda D}{d}$，得 $\\Delta y=3.0\\times10^{-3}\\ \\mathrm{m}=3.0\\ \\mathrm{mm}$。若只换算一个量，数量级会错 $10^{3}$ 或 $10^{6}$；直接混用数值还会破坏单位一致性。",
                   "knowledge_point": "杨氏双缝干涉条纹间距及单位统一",
                   "difficulty": "medium",
-                  "bloom_level": "analyze"
+                  "bloom_level": "analyze",
+                  "result": {
+                    "verdict": "correct",
+                    "student_answer": "先将单位换算为 SI（国际单位制）：\n\n- \\(d = 0.2\\ \\text{mm} = 0.2\\times 10^{-3}\\ \\text{m} = 2.0\\times 10^{-4}\\ \\text{m}\\)\n- \\(\\lambda = 600\\ \\text{nm} = 600\\times 10^{-9}\\ \\text{m} = 6.0\\times 10^{-7}\\ \\text{m}\\)\n- \\("
+                  }
                 }
               ],
               "answer_verified": true,
@@ -7760,7 +7764,11 @@
           "explanation": "本题考查条纹间距公式的迁移应用，关键是先统一单位。先换算：$d=0.2\\ \\mathrm{mm}=2.0\\times10^{-4}\\ \\mathrm{m}$，$\\lambda=600\\ \\mathrm{nm}=6.0\\times10^{-7}\\ \\mathrm{m}$。代入 $\\Delta y=\\frac{\\lambda D}{d}$，得 $\\Delta y=3.0\\times10^{-3}\\ \\mathrm{m}=3.0\\ \\mathrm{mm}$。若只换算一个量，数量级会错 $10^{3}$ 或 $10^{6}$；直接混用数值还会破坏单位一致性。",
           "knowledge_point": "杨氏双缝干涉条纹间距及单位统一",
           "difficulty": "medium",
-          "bloom_level": "analyze"
+          "bloom_level": "analyze",
+          "result": {
+            "verdict": "correct",
+            "student_answer": "先将单位换算为 SI（国际单位制）：\n\n- \\(d = 0.2\\ \\text{mm} = 0.2\\times 10^{-3}\\ \\text{m} = 2.0\\times 10^{-4}\\ \\text{m}\\)\n- \\(\\lambda = 600\\ \\text{nm} = 600\\times 10^{-9}\\ \\text{m} = 6.0\\times 10^{-7}\\ \\text{m}\\)\n- \\("
+          }
         }
       ],
       "answer_verified": true,
@@ -7796,6 +7804,6 @@
   "pending_material_file_ids": [],
   "title": "双缝干涉与单缝衍射",
   "created_at": 1787985367.1611342,
-  "updated_at": 1787985597.0625682,
+  "updated_at": 1787997293.9122808,
   "knowledge_files": []
 }

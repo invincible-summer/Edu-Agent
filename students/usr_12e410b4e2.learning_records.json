@@ -160,9 +160,9 @@
       "record_id": "lr_a0b596960f8d47b5",
       "session_id": "chat_20260829_135740_老师教材上极限的_ε-δ_定义我看了三",
       "source_kind": "chat",
-      "source_status": "active",
+      "source_status": "deleted",
       "created_at": 1787983316.9811995,
-      "updated_at": 1787983316.9812,
+      "updated_at": 1787997734.8966408,
       "topic": "用 ε-δ 定义验证具体极限",
       "subject": "",
       "grade": "本科",
@@ -176,7 +176,8 @@
       "explanation": "本题考查由 $|f(x)-A|$ 与 $|x-a|$ 的乘积关系构造 $\\delta$。先因式分解为 $|x-2||x+2|$，再用 $|x-2|<1$ 得 $|x+2|<5$，于是只需令 $\\delta\\le\\varepsilon/5$。取 $\\delta=\\min\\{1,\\varepsilon/5\\}$ 后即可完成估计。易错点是未先限制邻域就随意放缩，或把不等式方向写反。",
       "student_answer": "",
       "verdict": "",
-      "score": null
+      "score": null,
+      "source_message": "来源对话已删除，无法查看"
     },
     {
       "record_id": "lr_efaecb928ac34a1e",
@@ -602,7 +603,7 @@
       "source_kind": "chat",
       "source_status": "active",
       "created_at": 1787985393.613625,
-      "updated_at": 1787985393.6136253,
+      "updated_at": 1787997400.172288,
       "topic": "电偶极子中垂面上的电势与场强",
       "subject": "",
       "grade": "本科",
@@ -614,9 +615,9 @@
       "difficulty": "medium",
       "correct_answer": "两电荷到点 $P$ 的距离均为 $R$，故电势为 $V(P)=\\frac{kq}{R}+\\frac{k(-q)}{R}=0$。由矢量叠加，$+q$ 产生的电场为 $\\mathbf{E}_+=\\frac{kq}{R^3}(\\boldsymbol{\\rho}-a\\hat{\\mathbf{z}})$，$-q$ 产生的电场为 $\\mathbf{E}_-=\\frac{-kq}{R^3}(\\boldsymbol{\\rho}+a\\hat{\\mathbf{z}})$，所以 $\\mathbf{E}=\\mathbf{E}_++\\mathbf{E}_-=-\\frac{2kqa}{R^3}\\hat{\\mathbf{z}}\\neq 0$。电场沿 $-\\hat{\\mathbf{z}}$ 方向，即由正电荷指向负电荷；只有电势的标量值相互抵消，电场的水平分量抵消而垂直分量相加。",
       "explanation": "切入点是电势按标量代数相加，而电场必须按矢量叠加。两电荷到 $P$ 的距离相等，故 $V_++V_-=0$。写出两电场后，沿中垂面的分量方向相反而抵消，沿 $z$ 轴的分量同向，得到 $\\mathbf{E}=-\\frac{2kqa}{R^3}\\hat{\\mathbf{z}}$。因此电势为零不代表电场为零；易错点是把等距误认为电场也完全抵消。",
-      "student_answer": "",
-      "verdict": "",
-      "score": null
+      "student_answer": "**1. 电势之和**  \n两电荷到 \\(P\\) 点的距离均为  \n\\[\nR=\\sqrt{x^2+y^2+a^2}\n\\]  \n电势是标量，直接叠加：  \n\\[\nV_P = \\frac{kq}{R} + \\frac{k(-q)}{R}=0\n\\]  \n所以中垂面上任意点的**电势为零**。\n\n---\n\n**2. 电场强度矢量之和**  \n设 \\( \\boldsymbol{\\rho}=x\\,\\hat{\\mathbf{x}}+y\\,\\hat{\\mathbf{y}}\\)，正电荷在 \\(z=a\\)，负电荷在 \\(z=-a\\)。  \n从正电荷到 \\(P\\) 的矢量：\\(\\boldsymbol{\\rho}-a\\,\\hat{\\mathbf{z}}\\)；从负电荷到 \\(P\\) 的矢量：\\(\\boldsymbol{\\rho}+a\\,\\hat{\\mathbf{z}}\\)。  \n\n正电荷在 \\(P\\) 的场：  \n\\[\n\\mathbf{E}_+ = \\frac{kq}{R^3}(\\boldsymbol{\\rho}-a\\,\\hat{\\mathbf{z}})\n\\]  \n负电荷在 \\(P\\) 的场：  \n\\[\n\\mathbf{E}_- = \\frac{k(-q)}{R^3}(\\boldsymbol{\\rho}+a\\,\\hat{\\mathbf{z}})\n= -\\frac{kq}{R^3}(\\boldsymbol{\\rho}+a\\,\\hat{\\mathbf{z}})\n\\]  \n叠加得：  \n\\[\n\\mathbf{E}_P = \\mathbf{E}_+ + \\mathbf{E}_-\n= \\frac{kq}{R^3}\\left[(\\boldsymbol{\\rho}-a\\,\\hat{\\mathbf{z}}) - (\\boldsymbol{\\rho}+a\\,\\hat{\\mathbf{z}})\\right]\n= -\\frac{2kq a}{R^3}\\,\\hat{\\mathbf{z}}\n\\]  \n因此 **电场强度不为零**，方向沿 \\(-z\\) 轴（即指向负电荷所在的一侧）。\n\n---\n\n**3. 为什么“电势为零”不能推出“电场为零”？**  \n- 电势是标量，只反映各点电势的代数和为零；但电场是矢量，取决于电势的**空间变化率**（梯度）：  \n  \\[\n  \\mathbf{E} = -\\nabla V\n ",
+      "verdict": "correct",
+      "score": 1.0
     },
     {
       "record_id": "lr_667649d9f51841e4",
@@ -624,7 +625,7 @@
       "source_kind": "chat",
       "source_status": "active",
       "created_at": 1787985530.4128206,
-      "updated_at": 1787985530.4128208,
+      "updated_at": 1787997426.288773,
       "topic": "等量异号点电荷中垂面上的电势与电场：电势为零但电场不为零",
       "subject": "",
       "grade": "本科",
@@ -636,9 +637,9 @@
       "difficulty": "medium",
       "correct_answer": "（1）由于 $P$ 到两电荷距离均为 $r$，$V(P)=\\frac{kq}{r}-\\frac{kq}{r}=0$。两电荷产生的电场在中垂面内的分量相互抵消，而沿 $\\hat{\\boldsymbol{u}}$ 方向的分量相加，因此 $\\boldsymbol{E}(P)=\\frac{2kqa}{r^3}\\hat{\\boldsymbol{u}}\\neq\\boldsymbol{0}$，方向由 $+q$ 指向 $-q$。\\n（2）沿中垂面移动时，$dV=-\\boldsymbol{E}\\cdot d\\boldsymbol{l}_{\\parallel}=0$，故 $W_{\\text{电}}=q_0\\boldsymbol{E}\\cdot d\\boldsymbol{l}_{\\parallel}=0$；沿 $\\hat{\\boldsymbol{u}}$ 方向移动时，$dV=-\\frac{2kqa}{r^3}ds<0$，且 $dW_{\\text{电}}=q_0\\frac{2kqa}{r^3}ds>0$。\\n（3）电势是标量代数和，电场是矢量和；等量异号、电荷位置对称且处于静电场时，中垂面为零电势面，但其法向电场仍可非零。",
       "explanation": "本题关键是区分标量叠加与矢量叠加。两电荷到 $P$ 的距离相等，故 $V=\\frac{kq}{r}-\\frac{kq}{r}=0$。由对称性，电场的面内分量抵消，沿由 $+q$ 指向 $-q$ 的方向相加，得 $\\boldsymbol{E}=\\frac{2kqa}{r^3}\\hat{\\boldsymbol{u}}$。沿中垂面移动时 $dV=-\\boldsymbol{E}\\cdot d\\boldsymbol{l}=0$、电场力不做功；沿法向向 $-q$ 移动时，正试探电荷受力并做正功。易错点是把等势面误认为无电场面。",
-      "student_answer": "",
-      "verdict": "",
-      "score": null
+      "student_answer": "**已知：** 两点电荷 \\(+q\\) 与 \\(-q\\) 相距 \\(2a\\)，中点为原点，\\(\\hat u\\) 为从 \\(+q\\) 指向 \\(-q\\) 的单位矢量。中垂面上一点 \\(P\\) 到中点距离为 \\(\\rho\\)，\\(r=\\sqrt{a^2+\\rho^2}\\)，正试探电荷为 \\(q_0\\)。\n\n---\n\n## （1）\\(P\\) 点的电势与电场\n\n取坐标：原点 \\(O\\) 在中点，\\(x\\) 轴沿 \\(\\hat u\\) 方向，则  \n\\[\n+q:\\ x=-a,\\qquad -q:\\ x=+a\n\\]\n中垂面为 \\(x=0\\) 平面，\\(P\\) 点坐标为 \\((0,\\rho)\\)，它到两电荷的距离均为 \\(r\\)。\n\n### 电势\n\n\\[\nV(P)=k\\frac{q}{r}+k\\frac{-q}{r}=0\n\\]\n\n所以  \n\\[\n\\boxed{V(P)=0}\n\\]\n\n### 电场\n\n\\(+q\\) 在 \\(P\\) 点的场强方向从 \\(+q\\) 指向 \\(P\\)，大小为 \\(kq/r^2\\)；  \n\\(-q\\) 在 \\(P\\) 点的场强方向从 \\(P\\) 指向 \\(-q\\)，大小也为 \\(kq/r^2\\)。\n\n沿 \\(\\hat u\\) 方向两场强分量同向叠加，垂直于 \\(\\hat u\\) 方向的分量相互抵消，因此合场强沿 \\(\\hat u\\) 方向，大小为\n\n\\[\nE(P)=2\\frac{kq}{r^2}\\frac{a}{r}\n=\\frac{2kqa}{r^3}\n=\\frac{1}{4\\pi\\varepsilon_0}\\frac{2qa}{(a^2+\\rho^2)^{3/2}}\n\\]\n\n即\n\n\\[\n\\boxed{\\mathbf E(P)=\\frac{1}{4\\pi\\varepsilon_0}\\frac{2qa}{(a^2+\\rho^2)^{3/2}}\\,\\hat u}\n\\]\n\n所以：\n\n\\[\n\\boxed{V(P)=0,\\qquad \\mathbf E(P)\\neq 0}\n\\]\n\n电场方向沿 \\(\\hat u\\)（从 \\(+q\\) 指向 \\(-q\\)），大小如上；其方向与电偶极矩方向相反。\n\n---\n\n## （2）微小位移时的电势变化和电场力做功\n\n设试探电荷 \\(q_0\\) 在中垂面上的位移为 \\(d\\mathbf l_\\parallel\\)，沿 \\(\\hat u\\",
+      "verdict": "correct",
+      "score": 1.0
     },
     {
       "record_id": "lr_a9b441a4f0004641",
@@ -646,7 +647,7 @@
       "source_kind": "chat",
       "source_status": "active",
       "created_at": 1787985578.7778645,
-      "updated_at": 1787985578.7778647,
+      "updated_at": 1787997348.0306964,
       "topic": "电磁感应中的电荷量与外力做功：线圈快拉与慢拉出磁场的比较",
       "subject": "",
       "grade": "本科",
@@ -658,9 +659,9 @@
       "difficulty": "hard",
       "correct_answer": "设运动方向上线圈的有效宽度为 $d$，则在线圈部分进入磁场的阶段，磁通量变化满足 $\\Delta\\Phi=-BA$。由 $\\mathcal{E}=-\\frac{d\\Phi}{dt}$、$I=\\frac{\\mathcal{E}}{R}$ 及 $q=\\int I\\,dt$，有 $q=\\frac{|\\Delta\\Phi|}{R}=\\frac{BA}{R}$，故快拉与慢拉的总电荷量相同。若匀速拉出，$|\\mathcal{E}|=B\\ell v$，故 $I_{\\max}=\\frac{B\\ell v}{R}$，快拉时电流峰值较大。拉出时间为 $d/v$，所以 $Q_J=\\int I^2R\\,dt=\\frac{B^2\\ell^2dv}{R}$，且匀速、始末动能相同，所以 $W_{\\text{外}}=Q_J$，快拉时二者均较大。非匀速但无自感时，$q=BA/R$仍成立，而 $I_{\\max}$及 $Q_J=\\frac{B^2\\ell^2}{R}\\int v^2dt$需重新计算；始末速度不同则 $W_{\\text{外}}=Q_J+\\Delta K$。有明显自感时应使用 $L\\frac{dI}{dt}+RI=-\\frac{d\\Phi}{dt}$，电流峰值、焦耳热及有限过程中电荷量均可能改变；若初末电流均为零，积分后总电荷量仍为 $BA/R$。易错点是混淆瞬时电流与电荷积分，并忽略机械能变化。",
       "explanation": "本题核心是区分电荷量与电流大小，并用能量守恒判断外力功。由 $q=\\int I\\,dt=|\\Delta\\Phi|/R$，两次磁通量变化相同，故总电荷量相同；但 $I=B\\ell v/R$，快拉电流更大。匀速且始末动能相同，外力功全转化为焦耳热，$W_{\\text{外}}=Q_J\\propto v$。变速时电荷量仍由磁通量决定，而热量依赖 $\\int v^2dt$；自感或速度终态改变会修正相应结论。",
-      "student_answer": "",
-      "verdict": "",
-      "score": null
+      "student_answer": "先给出符号说明：令线圈面积为 \\(A\\)，有效边长为 \\(\\ell\\)，总电阻为 \\(R\\)，磁感应强度为 \\(B\\)。设线圈沿运动方向边长为 \\(a\\)，则 \\(A=\\ell a\\)。两次匀速拉出速度分别为 \\(v_1,v_2\\)，且 \\(v_2>v_1\\)。原题忽略自感、辐射、摩擦，初末速度分别等于各自速度（动能不变）。\n\n---\n\n## （1）总电荷量 \\(q\\)\n\n由法拉第定律，感应电动势大小\n\n\\[\n\\varepsilon(t)=\\left|\\frac{d\\Phi}{dt}\\right|\n\\]\n\n欧姆定律\n\n\\[\ni(t)=\\frac{\\varepsilon(t)}{R}\n\\]\n\n通过任一固定截面的电量元\n\n\\[\ndq=i\\,dt=\\frac{1}{R}\\left|\\frac{d\\Phi}{dt}\\right|dt\n\\]\n\n从磁通量 \\(\\Phi_i=BA\\) 到 \\(\\Phi_f=0\\) 积分：\n\n\\[\nq=\\int dq=\\frac{1}{R}\\int_{\\Phi_i}^{\\Phi_f}|d\\Phi|\n=\\frac{BA}{R}\n\\]\n\n因此两次拉出的总电荷量相同：\n\n\\[\n\\boxed{q_1=q_2=\\frac{BA}{R}}\n\\]\n\n结论：总电荷量与速度无关，只由初末磁通变化和回路总电阻决定。\n\n适用条件：回路总电阻 \\(R\\) 恒定；忽略自感或考虑自感时初末电流为零；磁通变化相同。\n\n---\n\n## （2）感应电流峰值及外力功、焦耳热\n\n匀速拉出时，磁通变化率大小为\n\n\\[\n\\left|\\frac{d\\Phi}{dt}\\right|=B\\ell v\n\\]\n\n所以感应电动势峰值\n\n\\[\n\\varepsilon_{\\max}=B\\ell v\n\\]\n\n感应电流峰值\n\n\\[\nI_{\\max}=\\frac{\\varepsilon_{\\max}}{R}=\\frac{B\\ell v}{R}\n\\]\n\n因此\n\n\\[\n\\frac{I_{\\max,2}}{I_{\\max,1}}=\\frac{v_2}{v_1}>1\n\\]\n\n即\n\n\\[\n\\boxed{I_{\\max,2}>I_{\\max,1}}\n\\]\n\n---\n\n外力做功与焦耳热：\n\n拉出过程中，感应电流\n\n\\[\nI=\\frac{B\\ell v}{R}\n\\]\n\n安培力大小\n\n\\[\nF_{\\rm 安}=BI\\ell=\\f",
+      "verdict": "correct",
+      "score": 1.0
     },
     {
       "record_id": "lr_b6f65d7b118f4919",
@@ -668,7 +669,7 @@
       "source_kind": "chat",
       "source_status": "active",
       "created_at": 1787985580.7105448,
-      "updated_at": 1787985580.7105453,
+      "updated_at": 1787997293.9581306,
       "topic": "杨氏双缝干涉条纹间距",
       "subject": "",
       "grade": "本科",
@@ -680,9 +681,9 @@
       "difficulty": "medium",
       "correct_answer": "$d=0.2\\ \\mathrm{mm}=2.0\\times10^{-4}\\ \\mathrm{m}$，$\\lambda=600\\ \\mathrm{nm}=6.0\\times10^{-7}\\ \\mathrm{m}$。因此 $\\Delta y=\\frac{\\lambda D}{d}=\\frac{6.0\\times10^{-7}\\ \\mathrm{m}\\times1\\ \\mathrm{m}}{2.0\\times10^{-4}\\ \\mathrm{m}}=3.0\\times10^{-3}\\ \\mathrm{m}=3.0\\ \\mathrm{mm}$。必须统一单位；若只换算一个量，结果可能相差 $10^{3}$ 或 $10^{6}$；若直接混用给出的数值，所得结果没有正确的物理单位和数量级。",
       "explanation": "本题考查条纹间距公式的迁移应用，关键是先统一单位。先换算：$d=0.2\\ \\mathrm{mm}=2.0\\times10^{-4}\\ \\mathrm{m}$，$\\lambda=600\\ \\mathrm{nm}=6.0\\times10^{-7}\\ \\mathrm{m}$。代入 $\\Delta y=\\frac{\\lambda D}{d}$，得 $\\Delta y=3.0\\times10^{-3}\\ \\mathrm{m}=3.0\\ \\mathrm{mm}$。若只换算一个量，数量级会错 $10^{3}$ 或 $10^{6}$；直接混用数值还会破坏单位一致性。",
-      "student_answer": "",
-      "verdict": "",
-      "score": null
+      "student_answer": "先将单位换算为 SI（国际单位制）：\n\n- \\(d = 0.2\\ \\text{mm} = 0.2\\times 10^{-3}\\ \\text{m} = 2.0\\times 10^{-4}\\ \\text{m}\\)\n- \\(\\lambda = 600\\ \\text{nm} = 600\\times 10^{-9}\\ \\text{m} = 6.0\\times 10^{-7}\\ \\text{m}\\)\n- \\(D = 1\\ \\text{m}\\)\n\n相邻明纹间距：\n\n\\[\n\\Delta y = \\frac{\\lambda D}{d}\n= \\frac{(6.0\\times10^{-7})\\times 1}{2.0\\times10^{-4}}\n= 3.0\\times10^{-3}\\ \\text{m}\n\\]\n\n换算为毫米：\n\n\\[\n3.0\\times10^{-3}\\ \\text{m} = 3.0\\ \\text{mm}\n\\]\n\n所以相邻明纹间距为：\n\n\\[\n\\boxed{3.0\\ \\text{mm}}\n\\]\n\n若未统一单位，例如直接用 \\(d=0.2\\)、\\(\\lambda=600\\) 代入，会得到数值 \\(3000\\)，而没有正确的单位换算。实际上 \\(\\lambda/d\\) 的正确比例应为：\n\n\\[\n\\frac{600\\times10^{-9}}{0.2\\times10^{-3}}=3\\times10^{-3}\n\\]\n\n而不是 \\(3000\\)，两者相差 \\(10^6\\) 倍。因此未统一单位可能导致结果出现 \\(10^3\\sim 10^6\\) 倍的数量级错误，例如可能误算成 \\(3000\\ \\text{mm}\\) 甚至 \\(3000\\ \\text{m}\\)，明显偏离实际值 \\(3\\ \\text{mm}\\)。",
+      "verdict": "correct",
+      "score": 1.0
     },
     {
       "record_id": "lr_e113a1782af74df4",
@@ -712,7 +713,7 @@
       "source_kind": "chat",
       "source_status": "active",
       "created_at": 1787985712.802109,
-      "updated_at": 1787985712.802109,
+      "updated_at": 1787997672.089013,
       "topic": "完全非弹性碰撞中的动量守恒与动能损失",
       "subject": "",
       "grade": "本科",
@@ -724,9 +725,9 @@
       "difficulty": "hard",
       "correct_answer": "（1）总质量为 $m_1+m_2=2.00\\,\\text{kg}$。碰撞前总动量为 $\\vec p_i=m_1\\vec v_1+m_2\\vec v_2=(0,4.40)\\,\\text{kg}\\cdot\\text{m/s}$，故理论共同速度为 $\\vec v'=\\frac{\\vec p_i}{m_1+m_2}=(0,2.20)\\,\\text{m/s}$。测量值与理论值的差为 $(0.05,-0.05)\\,\\text{m/s}$，各分量均在测量不确定度范围内。\\n（2）碰撞后测得总动量为 $\\vec p_{f,\\text{meas}}=(m_1+m_2)\\vec v'_{\\text{meas}}=(0.10,4.30)\\,\\text{kg}\\cdot\\text{m/s}$。故动量差为 $\\Delta\\vec p=(0.10,-0.10)\\,\\text{kg}\\cdot\\text{m/s}$，其大小为 $\\|\\Delta\\vec p\\|=0.141\\,\\text{N}\\cdot\\text{s}<0.15\\,\\text{N}\\cdot\\text{s}$，与允许的外力冲量一致，因此实验支持系统动量守恒。\\n（3）碰撞前总动能为 $K_i=\\frac12m_1|\\vec v_1|^2+\\frac12m_2|\\vec v_2|^2=13.0\\,\\text{J}$；理论碰撞后 $K_f=\\frac12(m_1+m_2)|\\vec v'|^2=4.84\\,\\text{J}$。动能损失为 $\\Delta K=K_i-K_f=8.16\\,\\text{J}$。\\n（4）两车粘连且具有同一速度，符合完全非弹性碰撞定义；动量守恒而动能减少，说明完全非弹性碰撞不满足动能守恒。",
       "explanation": "本题的关键是把速度作为二维矢量处理，并区分动量守恒与动能守恒。先按 $\\vec p_i=(0,4.40)\\,\\text{kg}\\cdot\\text{m/s}$ 求得 $\\vec v'=(0,2.20)\\,\\text{m/s}$，测量偏差在不确定度内。测量动量差的大小为 $0.141\\,\\text{N}\\cdot\\text{s}$，小于外力冲量上限，故守恒得到支持。再算得 $K_i=13.0\\,\\text{J}$、$K_f=4.84\\,\\text{J}$，损失 $8.16\\,\\text{J}$。粘连且动能损失才是完全非弹性的特征，不能误判为动能守恒。",
-      "student_answer": "",
-      "verdict": "",
-      "score": null
+      "student_answer": "已知数据：\n- \\(m_1=0.80\\,\\text{kg}\\)，\\(\\vec v_1=(3.0,\\;4.0)\\,\\text{m/s}\\)\n- \\(m_2=1.20\\,\\text{kg}\\)，\\(\\vec v_2=(-2.0,\\;1.0)\\,\\text{m/s}\\)\n- 碰撞后粘连，实测共同速度 \\(\\vec v'_{\\text{meas}}=(0.05,\\;2.15)\\,\\text{m/s}\\)，各分量不确定度 \\(\\pm 0.05\\,\\text{m/s}\\)\n- 外力冲量上限 \\(\\|\\vec J_{\\text{ext}}\\|\\le 0.15\\,\\text{N·s}\\)\n\n---\n\n### （1）由动量守恒求理论共同速度并与测量值比较\n\n碰撞前总动量：\n\\[\n\\vec P_{\\text{前}}=m_1\\vec v_1+m_2\\vec v_2\n=0.80(3,4)+1.20(-2,1)\n=(2.4,3.2)+(-2.4,1.2)\n=(0,\\;4.4)\\ \\text{kg·m/s}\n\\]\n\n总质量 \\(M=m_1+m_2=2.00\\,\\text{kg}\\)。\n\n若动量守恒，理论共同速度：\n\\[\n\\vec v'=\\frac{\\vec P_{\\text{前}}}{M}\n=\\frac{(0,\\;4.4)}{2.00}\n=(0,\\;2.20)\\ \\text{m/s}\n\\]\n\n**理论值：\\(\\boxed{\\vec v'=(0,\\;2.20)\\,\\text{m/s}}\\)**\n\n与实测值 \\(\\vec v'_{\\text{meas}}=(0.05,\\;2.15)\\) 比较：\n- x分量差：\\(0.05-0=0.05\\le 0.05\\)\n- y分量差：\\(2.15-2.20=-0.05\\le 0.05\\)\n\n均在测量不确定度范围内，因此理论值与测量值在误差允许下一致。\n\n---\n\n### （2）碰撞前、后系统动量分量与外力冲量上限的比较\n\n**碰撞前系统动量**（已算）：\n\\[\n\\vec P_{\\text{前}}=(0,\\;4.4)\\ \\text{kg·m/s}\n\\]\n\n**碰撞后系统动量**（用实测速度）：\n\\[\n\\vec P_{\\text{后}}=M\\,\\vec v'_{\\text{meas}}\n=2.00(0.05,\\;2.15)\n=(0.10,\\;4.30)\\ \\text",
+      "verdict": "correct",
+      "score": 1.0
     },
     {
       "record_id": "lr_1bf2ae5e63ff43e2",
@@ -756,7 +757,7 @@
       "source_kind": "chat",
       "source_status": "active",
       "created_at": 1787985836.7039597,
-      "updated_at": 1787985836.7039604,
+      "updated_at": 1787997617.2921245,
       "topic": "子弹打木块模型：动量守恒、完全非弹性碰撞与动能损失生热",
       "subject": "",
       "grade": "本科",
@@ -768,10 +769,10 @@
       "difficulty": "medium",
       "correct_answer": "$(1)$ 碰撞阶段动量守恒：$v=\\frac{0.020\\times400}{0.020+1.98}=4.0\\ \\mathrm{m/s}$。$(2)$ 碰撞生热：$Q_{\\text{碰}}=\\frac12(0.020)(400)^2-\\frac12(2.00)(4.0)^2=1584\\ \\mathrm{J}$。$(3)$ 碰撞后由 $v^2=2\\mu gs$ 得 $s=4.0\\ \\mathrm{m}$，故摩擦生热 $Q_{\\text{摩}}=\\mu(m+M)gs=16\\ \\mathrm{J}$。$(4)$ 全过程机械能损失为 $Q_{\\text{碰}}+Q_{\\text{摩}}=1600\\ \\mathrm{J}$。动量只在碰撞的短时间内近似守恒；随后粗糙面摩擦力提供外冲量，不能继续使用动量守恒。全过程初、末动能之差包含碰撞生热和摩擦生热，只能表示总机械能损失。",
       "explanation": "本题关键是先按物理过程分段：碰撞阶段近似动量守恒，随后滑行阶段动量不守恒。碰撞后速度为 $v=\\frac{0.020\\times400}{2.00}=4.0\\ \\mathrm{m/s}$；碰撞生热为初、末动能差，即 $1584\\ \\mathrm{J}$。滑行距离由 $v^2=2\\mu gs$ 得 $s=4.0\\ \\mathrm{m}$，摩擦生热为 $16\\ \\mathrm{J}$。故全过程损失为 $1600\\ \\mathrm{J}$。易错点是把全过程动能差误称为碰撞生热，或把摩擦阶段也当作动量守恒。",
-      "student_answer": "",
-      "verdict": "",
-      "score": null
+      "student_answer": "（1）碰撞后整体的共同速度\n\n直接用动能守恒（认为碰撞是弹性的）  \n\\[\n\\frac12 m v_0^2 = \\frac12 (M+m)V^2 \\quad\\Rightarrow\\quad V = v_0\\sqrt{\\frac{m}{M+m}} = 400\\sqrt{\\frac{0.02}{2}} = 400\\times 0.1 = 40\\,\\text{m/s}\n\\]  \n**答案：\\(V=40\\,\\text{m/s}\\)**\n\n---\n\n#### （2）子弹嵌入木块这一碰撞阶段产生的内能\n\\[\nQ = \\frac12 m v_0^2 - \\frac12 M V^2 = 1600 - \\frac12\\times 1.98\\times 40^2 = 1600 - 1584 = 16\\,\\text{J}\n\\]  \n**答案：\\(Q_{\\text{碰撞}}=16\\,\\text{J}\\)**\n\n---\n\n#### （3）碰撞后整体克服滑动摩擦力产生的热量\n\nQ_{\\text{摩擦}} = \\frac12 (M+m)V^2 = \\frac12\\times 2\\times 40^2 = 1600\\,\\text{J}\n\\]  \n**答案：\\(Q_{\\text{摩擦}}=1600\\,\\text{J}\\)**",
+      "verdict": "wrong",
+      "score": 0.0
     }
   ],
-  "updated_at": 1787985836.7039971
+  "updated_at": 1787997734.896697
 }
