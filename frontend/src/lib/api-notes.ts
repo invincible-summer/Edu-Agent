@@ -3,7 +3,6 @@
 import { apiFetch } from "./api-fetch";
 import { API_BASE } from "./api";
 import type {
-  DueReview,
   NoteDetail,
   NoteRevision,
   NoteSuggestion,
@@ -52,10 +51,6 @@ export async function searchNotes(q: string): Promise<{ results: NoteSummary[] }
 
 export async function getNotesGraph(): Promise<NotesGraph> {
   return jsonOrThrow(await apiFetch(`${BASE}/notes/graph`), "Get graph");
-}
-
-export async function getDueReviews(): Promise<{ due: DueReview[] }> {
-  return jsonOrThrow(await apiFetch(`${BASE}/notes/reviews/due`), "Get due reviews");
 }
 
 // --- note crud ----------------------------------------------------------------
@@ -122,19 +117,6 @@ export async function deleteNote(noteId: string): Promise<{ status: string }> {
       method: "DELETE",
     }),
     "Delete note");
-}
-
-export async function submitNoteReview(
-  noteId: string,
-  quality: number,
-): Promise<{ review: NoteSummary["review"]; note: NoteSummary }> {
-  return jsonOrThrow(
-    await apiFetch(`${BASE}/notes/notes/${encodeURIComponent(noteId)}/review`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ quality }),
-    }),
-    "Review note");
 }
 
 // --- folders ----------------------------------------------------------------------

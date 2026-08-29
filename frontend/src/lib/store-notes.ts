@@ -13,11 +13,8 @@ import type {
 
 export type SaveState = "saved" | "dirty" | "saving" | "error" | "conflict";
 
-/** 笔记页侧栏布局：宽度钳制范围与默认值（仅作用于笔记模块内部边栏）。 */
+/** 笔记页布局：AI 面板宽度钳制范围与默认值（仅作用于笔记模块内部）。 */
 export const NOTES_LAYOUT_DEFAULTS = {
-  leftWidth: 240,
-  leftMin: 180,
-  leftMax: 420,
   rightWidth: 352,
   rightMin: 280,
   rightMax: 560,
@@ -30,7 +27,6 @@ function clamp(n: number, min: number, max: number): number {
 }
 
 function persistLayout(patch: Partial<{
-  leftOpen: boolean; leftWidth: number;
   aiPanelOpen: boolean; rightWidth: number;
 }>) {
   if (typeof window === "undefined") return;
@@ -39,13 +35,9 @@ function persistLayout(patch: Partial<{
 }
 
 interface NotesState {
-  // --- layout（笔记页两侧栏：折叠 + 拖宽，localStorage 持久化） ---
-  leftOpen: boolean;
-  leftWidth: number;
+  // --- layout（笔记页 AI 面板：折叠 + 拖宽，localStorage 持久化） ---
   rightWidth: number;
   focusMode: boolean;
-  toggleLeft: () => void;
-  setLeftWidth: (w: number) => void;
   setRightWidth: (w: number) => void;
   hydrateLayout: () => void;
   setFocusMode: (v: boolean) => void;
@@ -110,19 +102,8 @@ const EMPTY_VAULT: VaultSnapshot = {
 };
 
 export const useNotesStore = create<NotesState>((set, get) => ({
-  leftOpen: true,
-  leftWidth: NOTES_LAYOUT_DEFAULTS.leftWidth,
   rightWidth: NOTES_LAYOUT_DEFAULTS.rightWidth,
   focusMode: false,
-  toggleLeft: () => set((s) => {
-    persistLayout({ leftOpen: !s.leftOpen });
-    return { leftOpen: !s.leftOpen };
-  }),
-  setLeftWidth: (w) => {
-    const width = clamp(w, NOTES_LAYOUT_DEFAULTS.leftMin, NOTES_LAYOUT_DEFAULTS.leftMax);
-    persistLayout({ leftWidth: width });
-    set({ leftWidth: width });
-  },
   setRightWidth: (w) => {
     const width = clamp(w, NOTES_LAYOUT_DEFAULTS.rightMin, NOTES_LAYOUT_DEFAULTS.rightMax);
     persistLayout({ rightWidth: width });
@@ -131,16 +112,11 @@ export const useNotesStore = create<NotesState>((set, get) => ({
   hydrateLayout: () => {
     if (typeof window === "undefined") return;
     try {
+      // 旧版本 localStorage 可能残留 leftOpen/leftWidth 字段，读取时自然忽略
       const raw = JSON.parse(localStorage.getItem(LAYOUT_KEY) || "{}") as {
-        leftOpen?: boolean; leftWidth?: number;
         aiPanelOpen?: boolean; rightWidth?: number;
       };
       const patch: Partial<NotesState> = {};
-      if (typeof raw.leftOpen === "boolean") patch.leftOpen = raw.leftOpen;
-      if (typeof raw.leftWidth === "number") {
-        patch.leftWidth = clamp(raw.leftWidth,
-          NOTES_LAYOUT_DEFAULTS.leftMin, NOTES_LAYOUT_DEFAULTS.leftMax);
-      }
       if (typeof raw.aiPanelOpen === "boolean") patch.aiPanelOpen = raw.aiPanelOpen;
       if (typeof raw.rightWidth === "number") {
         patch.rightWidth = clamp(raw.rightWidth,

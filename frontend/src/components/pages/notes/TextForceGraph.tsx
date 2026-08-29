@@ -9,7 +9,7 @@
 // prefers-reduced-motion 退化为一次性静态布局。
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import {
-  BookOpen, Brain, Maximize2, MessageSquareText, Minus, NotebookPen,
+  BookOpen, FolderOpen, Maximize2, MessageSquareText, Minus, NotebookPen,
   Plus, RotateCcw, Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -258,16 +258,16 @@ function drawSim(
 }
 
 export function TextForceGraph({
-  graph, folderNames, tr, home = false, dueCount = 0,
-  onOpenDashboard, onOpenNote, onCreateNote, onOpenSession, onOpenThread,
+  graph, folderNames, tr, home = false, noteCount = 0,
+  onOpenCenter, onOpenNote, onCreateNote, onOpenSession, onOpenThread,
   onOpenTextbook, onGenerate,
 }: {
   graph: NotesGraph | null;
   folderNames: Record<string, string>;
   tr: (k: string, fallback?: string) => string;
   home?: boolean;
-  dueCount?: number;
-  onOpenDashboard?: () => void;
+  noteCount?: number;
+  onOpenCenter?: () => void;
   onOpenNote: (id: string) => void;
   onCreateNote: (title: string) => void;
   onOpenSession?: (id: string) => void;
@@ -598,22 +598,8 @@ export function TextForceGraph({
         />
       </div>
 
-      {/* 右侧控制：温故面板 + 缩放 */}
+      {/* 右侧控制：缩放 */}
       <div className="absolute right-3 top-3 flex items-center gap-1.5">
-        {onOpenDashboard && (
-          <button
-            onClick={onOpenDashboard}
-            className="flex cursor-pointer items-center gap-1.5 rounded-full border border-border bg-surface/85 px-2.5 py-1 text-[11px] text-fg shadow-sm backdrop-blur transition-colors hover:text-accent"
-          >
-            <Brain size={12} className="text-accent2" />
-            {tr("graph.dashboard")}
-            {dueCount > 0 && (
-              <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-accent2 px-1 text-[9px] font-semibold text-white tnum">
-                {dueCount}
-              </span>
-            )}
-          </button>
-        )}
         <div className="flex items-center gap-0.5 rounded-full border border-border bg-surface/85 px-1 py-0.5 text-muted shadow-sm backdrop-blur">
           <CtrlBtn title={tr("graph.zoom.out")} onClick={() => zoomCenter(0.85)}><Minus size={13} /></CtrlBtn>
           <CtrlBtn title={tr("graph.zoom.in")} onClick={() => zoomCenter(1.18)}><Plus size={13} /></CtrlBtn>
@@ -621,6 +607,30 @@ export function TextForceGraph({
           <CtrlBtn title={tr("graph.zoom.reset")} onClick={() => { viewRef.current = { x: 0, y: 0, scale: 1 }; }}><RotateCcw size={13} /></CtrlBtn>
         </div>
       </div>
+
+      {/* 底部居中玻璃 dock：笔记中心入口 + 快速新建 */}
+      {onOpenCenter && (
+        <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full border border-border/60 bg-surface/70 p-1.5 shadow-xl backdrop-blur-md">
+          <button
+            onClick={onOpenCenter}
+            title={tr("center.title")}
+            className="flex cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium text-fg transition-colors hover:bg-surface-hover hover:text-accent"
+          >
+            <FolderOpen size={13} className="text-accent" />
+            {tr("center.title")}
+            {noteCount > 0 && <span className="tnum text-[10px] text-muted">{noteCount}</span>}
+          </button>
+          <div className="h-4 w-px bg-border/60" />
+          <button
+            onClick={() => onCreateNote("")}
+            title={tr("notes.new")}
+            aria-label={tr("notes.new")}
+            className="flex size-7 cursor-pointer items-center justify-center rounded-full text-accent transition-colors hover:bg-accent-soft"
+          >
+            <Plus size={14} />
+          </button>
+        </div>
+      )}
 
       {/* 操作提示 */}
       {!isEmpty && (

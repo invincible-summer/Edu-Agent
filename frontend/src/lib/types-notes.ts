@@ -170,19 +170,6 @@ export interface NotesGraph {
   edges: GraphEdge[];
 }
 
-export interface DueReview {
-  note: NoteSummary;
-  card: {
-    concept_id: string;
-    concept_name: string;
-    easiness: number;
-    interval: number;
-    repetitions: number;
-    next_review: number;
-    last_quality: number;
-  };
-}
-
 /** 笔记助手四模式：plan 只讨论出计划；collab 提案待确认；auto 直接写；ask 仅答疑。 */
 export type AgentMode = "plan" | "collab" | "auto" | "ask";
 

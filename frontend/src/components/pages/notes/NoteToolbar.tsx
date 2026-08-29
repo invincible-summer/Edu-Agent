@@ -5,8 +5,8 @@
 import { useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
-  Check, CloudOff, Columns2, Download, Eye, History, Loader2, Maximize2,
-  Network, PencilLine, RefreshCw, Repeat2, Settings2, Trash2,
+  Check, CloudOff, Columns2, Download, Eye, FolderOpen, History, Loader2, Maximize2,
+  Network, PencilLine, RefreshCw, Settings2, Trash2,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { ConfirmModal } from "@/components/ui/Modal";
@@ -91,13 +91,11 @@ export function NoteToolbar({
   onRename,
   onMove,
   onTags,
-  onToggleReview,
   onHistory,
   onExport,
   onDelete,
-  leftOpen,
+  onOpenCenter,
   rightOpen,
-  onToggleLeft,
   onToggleRight,
   viewMode,
   onViewMode,
@@ -116,13 +114,11 @@ export function NoteToolbar({
   onRename: (title: string) => void;
   onMove: (folderId: string) => void;
   onTags: (tags: string[]) => void;
-  onToggleReview: (enabled: boolean) => void;
   onHistory: () => void;
   onExport: () => void;
   onDelete: () => void;
-  leftOpen: boolean;
+  onOpenCenter: () => void;
   rightOpen: boolean;
-  onToggleLeft: () => void;
   onToggleRight: () => void;
   viewMode: ViewMode;
   onViewMode: (m: ViewMode) => void;
@@ -162,10 +158,14 @@ export function NoteToolbar({
   return (
     <div className="border-b border-border bg-surface">
       <div className="flex items-center gap-1.5 px-2 py-2">
-        <PanelToggleButton
-          side="left" open={leftOpen} onToggle={onToggleLeft}
-          label={tr("tb.toggleSidebar")}
-        />
+        <button
+          onClick={onOpenCenter}
+          title={tr("tb.center")}
+          aria-label={tr("tb.center")}
+          className="shrink-0 cursor-pointer rounded-md p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent"
+        >
+          <FolderOpen size={15} />
+        </button>
         <div className="min-w-0 flex-1">
           <InlineEdit
             initialValue={note.title}
@@ -263,21 +263,6 @@ export function NoteToolbar({
                   />
                 </div>
               </div>
-              {/* 温故开关 */}
-              <button
-                onClick={() => onToggleReview(!note.review.enabled)}
-                title={note.review.enabled ? tr("tb.review.on") : tr("tb.review.off")}
-                className={cn(
-                  "flex w-full cursor-pointer items-center gap-1.5 rounded-md border px-2 py-1.5 text-[11px] transition-colors",
-                  note.review.enabled
-                    ? "border-accent/40 bg-accent-soft text-accent-strong"
-                    : "border-border text-muted hover:border-accent hover:text-accent",
-                )}
-              >
-                <Repeat2 size={12} />
-                {tr("tb.review")}
-                {note.review.enabled && <Check size={12} className="ml-auto" />}
-              </button>
               <div className="border-t border-border pt-1.5">
                 {menuAction(History, tr("tb.history"), onHistory)}
                 {menuAction(Download, tr("tb.export"), onExport)}

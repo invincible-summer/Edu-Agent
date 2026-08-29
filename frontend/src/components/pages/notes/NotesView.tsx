@@ -1,14 +1,13 @@
 "use client";
-// 笔记主视图：三栏（侧栏 | 编辑/预览/图谱 | AI 面板）。
+// 笔记主视图：引力图首页/图谱 + 编辑/预览 + AI 面板。
 // 负责：初始加载、URL 同步（/notes/<id>）、800ms 防抖自动保存 + Ctrl+S、
 // 409 冲突处理、来自 AI 面板的远程热更新、编辑/预览/分屏切换、
-// 两侧栏折叠/拖宽（仅笔记模块内，宽度持久化在 localStorage）。
+// 居中「笔记中心」弹窗（文件夹/标签/列表/新建）、AI 面板折叠/拖宽。
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { listSessions } from "@/lib/api";
-import { Brain, Minimize2, Network, NotebookPen } from "lucide-react";
+import { FolderOpen, Minimize2, Network, NotebookPen } from "lucide-react";
 import { ErrorNote, PageSkeleton } from "@/components/ui/EmptyState";
-import { Drawer } from "@/components/ui/Drawer";
 import { cn } from "@/lib/cn";
 import { makePageT } from "@/lib/i18n-page";
 import { useUIStore } from "@/lib/store";
@@ -23,8 +22,7 @@ import { STRINGS } from "@/app/(workspace)/notes/[[...noteId]]/strings";
 import { MarkdownEditor, makeToolbar } from "./MarkdownEditor";
 import { NotePreview, BacklinksPanel } from "./NotePreview";
 import { NoteToolbar, SaveBadge, ViewModeSwitch, type ViewMode } from "./NoteToolbar";
-import { NotesSidebar } from "./NotesSidebar";
-import { NotesHome } from "./NotesHome";
+import { NotesCenter } from "./NotesCenter";
 import { AIPanel } from "./AIPanel";
 import { GenerateWizard } from "./GenerateWizard";
 import { RevisionDrawer } from "./RevisionDrawer";
@@ -42,19 +40,16 @@ export function NotesView({ noteId }: { noteId?: string }) {
     currentId, detail, content, saveState, saveError, conflictDetail,
     openNote, setContent, saveNow, reloadCurrent,
     setAgentMode, setActiveThread, threads, aiPanelOpen, toggleAiPanel,
-    leftOpen, leftWidth, rightWidth, toggleLeft, setLeftWidth, setRightWidth,
+    rightWidth, setRightWidth,
     hydrateLayout, focusMode, setFocusMode,
   } = useNotesStore();
 
-  const [activeFolder, setActiveFolder] = useState<string | null>(null);
-  const [activeTag, setActiveTag] = useState<string | null>(null);
-  const [search, setSearch] = useState("");
-  const [creatingFolder, setCreatingFolder] = useState(false);
   const [templates, setTemplates] = useState<Awaited<ReturnType<typeof getNoteTemplates>>["templates"]>([]);
   const [viewMode, setViewMode] = useState<ViewMode>("split");
   const [showGraph, setShowGraph] = useState(false);
   const [graph, setGraph] = useState<NotesGraph | null>(null);
-  const [dashboardOpen, setDashboardOpen] = useState(false);
+  const [centerOpen, setCenterOpen] = useState(false);
+  const [centerTag, setCenterTag] = useState<string | null>(null);
   const [wizardOpen, setWizardOpen] = useState(false);
   const [revisionOpen, setRevisionOpen] = useState(false);
   const [scrollRatio, setScrollRatio] = useState(0);
@@ -206,62 +201,18 @@ export function NotesView({ noteId }: { noteId?: string }) {
 
   return (
     <div className="flex h-full min-h-0">
-      {/* 左栏（可折叠 + 边缘拖宽） */}
-      {leftOpen && (
-        <>
-          <div className="hidden shrink-0 md:block" style={{ width: leftWidth }}>
-            <NotesSidebar
-              vault={vault}
-              currentId={currentId}
-              activeFolder={activeFolder}
-              activeTag={activeTag}
-              search={search}
-              creatingFolder={creatingFolder}
-              templates={templates}
-              tr={tr}
-              lang={lang}
-              onSelectFolder={setActiveFolder}
-              onSelectTag={setActiveTag}
-              onSearch={setSearch}
-              onOpenNote={(id) => navigate(id)}
-              onCreateBlank={() => void handleCreate({})}
-              onCreateFromTemplate={(templateId) => void handleCreate({ templateId })}
-              onGenerate={() => setWizardOpen(true)}
-              onCreateFolder={(name, parentId = "") => {
-                if (!name.trim()) { setCreatingFolder(true); return; }
-                void createNotesFolder(name, parentId).then(() => {
-                  setCreatingFolder(false);
-                  void loadVault();
-                });
-              }}
-              onRenameFolder={(fid, name) => void renameNotesFolder(fid, name)
-                .then(() => loadVault())}
-              onDeleteFolder={(fid) => void deleteNotesFolder(fid)
-                .then(() => loadVault())}
-              onExportAll={() => void exportVaultZip()}
-              onExportFolder={(fid) => void exportVaultZip(
-                fid, vault.folders.find((f) => f.id === fid)?.name)}
-              onVaultChanged={loadVault}
-              onCancelCreateFolder={() => setCreatingFolder(false)}
-            />
-          </div>
-          <PanelResizer
-            side="left" width={leftWidth}
-            onResize={setLeftWidth}
-            onReset={() => setLeftWidth(NOTES_LAYOUT_DEFAULTS.leftWidth)}
-            className="hidden md:block"
-          />
-        </>
-      )}
-
       {/* 中栏 */}
       <div className="flex min-w-0 flex-1 flex-col bg-bg">
         {chromeHeader && (
           <div className="flex h-9 shrink-0 items-center gap-1 border-b border-border bg-surface px-1.5">
-            <PanelToggleButton
-              side="left" open={leftOpen} onToggle={toggleLeft}
-              label={tr("tb.toggleSidebar")}
-            />
+            <button
+              onClick={() => setCenterOpen(true)}
+              title={tr("tb.center")}
+              aria-label={tr("tb.center")}
+              className="shrink-0 cursor-pointer rounded-md p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent"
+            >
+              <FolderOpen size={15} />
+            </button>
             {currentId && (
               <button
                 onClick={() => setShowGraph((v) => !v)}
@@ -290,8 +241,8 @@ export function NotesView({ noteId }: { noteId?: string }) {
             folderNames={Object.fromEntries(vault.folders.map((f) => [f.id, f.name]))}
             tr={tr}
             home={!currentId}
-            dueCount={vault.stats.due_review_count}
-            onOpenDashboard={() => setDashboardOpen(true)}
+            noteCount={vault.stats.note_count}
+            onOpenCenter={() => setCenterOpen(true)}
             onOpenNote={(id) => { setShowGraph(false); navigate(id); }}
             onCreateNote={(title) => void handleCreate({ title })}
             onOpenSession={(id) => router.push(`/chat/${encodeURIComponent(id)}`)}
@@ -321,14 +272,11 @@ export function NotesView({ noteId }: { noteId?: string }) {
                 .then(() => { void reloadCurrent(); void loadVault(); })}
               onTags={(tags) => void patchNote(currentId, { tags })
                 .then(() => { void reloadCurrent(); void loadVault(); })}
-              onToggleReview={(enabled) => void patchNote(currentId, { review_enabled: enabled })
-                .then(() => { void reloadCurrent(); void loadVault(); })}
               onHistory={() => setRevisionOpen(true)}
               onExport={() => void exportNoteFile(currentId, detail.note.title)}
               onDelete={() => void handleDelete()}
-              leftOpen={leftOpen}
+              onOpenCenter={() => setCenterOpen(true)}
               rightOpen={aiPanelOpen}
-              onToggleLeft={toggleLeft}
               onToggleRight={toggleAiPanel}
               viewMode={viewMode}
               onViewMode={setViewMode}
@@ -370,7 +318,7 @@ export function NotesView({ noteId }: { noteId?: string }) {
                       if (target) navigate(target.id);
                       else void handleCreate({ title });
                     }}
-                    onTagClick={(tag) => setActiveTag(tag)}
+                    onTagClick={(tag) => { setCenterTag(tag); setCenterOpen(true); }}
                     onResourceLink={(url) => {
                       if (url.startsWith("note://")) navigate(url.slice("note://".length));
                       else if (url.startsWith("conversation://session/")) router.push(`/chat/${encodeURIComponent(url.slice("conversation://session/".length))}`);
@@ -462,7 +410,7 @@ export function NotesView({ noteId }: { noteId?: string }) {
                     if (target) navigate(target.id);
                     else void handleCreate({ title });
                   }}
-                  onTagClick={(tag) => setActiveTag(tag)}
+                  onTagClick={(tag) => { setFocusMode(false); setCenterTag(tag); setCenterOpen(true); }}
                 />
               </div>
             )}
@@ -470,27 +418,35 @@ export function NotesView({ noteId }: { noteId?: string }) {
         </div>
       )}
 
-      {/* 温故面板：原首页仪表盘（统计/今日温故/未解析链接/最近编辑）收入抽屉 */}
-      <Drawer
-        open={dashboardOpen}
-        onClose={() => setDashboardOpen(false)}
-        title={
-          <span className="flex items-center gap-1.5">
-            <Brain size={14} className="text-accent2" /> {tr("graph.dashboard")}
-          </span>
-        }
-        width={520}
-      >
-        <NotesHome
-          vault={vault}
-          tr={tr}
-          lang={lang}
-          onOpenNote={(id) => { setDashboardOpen(false); navigate(id); }}
-          onCreateNote={(title) => { setDashboardOpen(false); void handleCreate({ title }); }}
-          onGenerate={() => { setDashboardOpen(false); setWizardOpen(true); }}
-          onVaultChanged={() => void loadVault()}
-        />
-      </Drawer>
+      {/* 笔记中心：文件夹/标签/搜索/列表/新建 一站式管理弹窗（条件挂载，每次打开状态全新） */}
+      {centerOpen && (
+      <NotesCenter
+        open
+        onClose={() => setCenterOpen(false)}
+        vault={vault}
+        currentId={currentId}
+        initialTag={centerTag}
+        templates={templates}
+        tr={tr}
+        lang={lang}
+        onOpenNote={(id) => { setCenterOpen(false); navigate(id); }}
+        onCreateBlank={() => void handleCreate({})}
+        onCreateFromTemplate={(templateId) => void handleCreate({ templateId })}
+        onGenerate={() => { setCenterOpen(false); setWizardOpen(true); }}
+        onCreateFolder={(name, parentId = "") => {
+          if (!name.trim()) return;
+          void createNotesFolder(name, parentId).then(() => loadVault());
+        }}
+        onRenameFolder={(fid, name) => void renameNotesFolder(fid, name)
+          .then(() => loadVault())}
+        onDeleteFolder={(fid) => void deleteNotesFolder(fid)
+          .then(() => loadVault())}
+        onExportAll={() => void exportVaultZip()}
+        onExportFolder={(fid) => void exportVaultZip(
+          fid, vault.folders.find((f) => f.id === fid)?.name)}
+        onVaultChanged={loadVault}
+      />
+      )}
 
       {/* 向导/抽屉（条件挂载：每次打开都是干净的初始状态） */}
       {wizardOpen && (
