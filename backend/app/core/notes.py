@@ -688,7 +688,12 @@ class NoteVault:
         return dict(sorted(counts.items(), key=lambda kv: -kv[1]))
 
     def link_graph(self) -> dict[str, Any]:
-        """笔记 + 普通会话 + 助手线程的统一资源关系图。"""
+        """笔记关系图：笔记 + 被引用的会话/教材 + 幽灵节点。
+
+        只放「被笔记引用」的外部资源：会话经正文 conversation://session/...
+        资源链接引入，教材经 source.textbook_ids 引入；未被引用的会话/教材
+        以及笔记助手线程不进图。
+        """
         idx = self._title_index()
         folder_names = {str(f.get("id") or ""): str(f.get("name") or "") for f in self.folders}
         nodes: list[dict[str, Any]] = [
@@ -698,30 +703,16 @@ class NoteVault:
              "tags": list(n.get("tags") or []), "ghost": False,
              "status": "resolved", "updated_at": n.get("updated_at") or 0}
             for n in self.notes]
+        # 教材节点：派生自笔记 source.textbook_ids（生成时记录的教材来源），
+        # 教材索引不可用时静默降级——图谱其余部分不受影响。
+        textbooks: dict[str, dict[str, Any]] = {}
         try:
-            from .session import list_sessions
-            for session in list_sessions():
-                if (session.get("student_id") or _default_student_id()) != self.student_id:
-                    continue
-                sid = str(session.get("session_id") or "")
-                if sid:
-                    nodes.append({"id": f"session:{sid}", "resource_id": sid,
-                                  "title": session.get("title") or sid,
-                                  "kind": "session", "folder_id": "",
-                                  "tags": [], "ghost": False, "status": "resolved",
-                                  "message_count": session.get("message_count") or 0,
-                                  "updated_at": session.get("updated_at") or 0})
+            from .textbook import load_textbooks
+            textbooks = {str(t.get("id") or ""): t
+                         for t in load_textbooks(self.student_id)
+                         if str(t.get("id") or "").strip()}
         except Exception:
             pass
-        for thread in list_threads(self.student_id):
-            tid = str(thread.get("thread_id") or "")
-            if tid:
-                nodes.append({"id": f"notes_thread:{tid}", "resource_id": tid,
-                              "title": thread.get("title") or tid,
-                              "kind": "notes_thread", "folder_id": "",
-                              "tags": [], "ghost": False, "status": "resolved",
-                              "message_count": thread.get("message_count") or 0,
-                              "updated_at": thread.get("updated_at") or 0})
         edges: list[dict[str, Any]] = []
         node_ids = {str(n["id"]) for n in nodes}
         ghosts: dict[str, str] = {}
@@ -741,6 +732,8 @@ class NoteVault:
                     edges.append({"source": note["id"], "target": ghosts[title],
                                   "title": title, "resolved": False, "kind": "unresolved"})
             for raw in parse_resource_links(content):
+                if raw["type"] == "notes_thread":
+                    continue  # 助手线程不进关系图
                 resource = self._resource_link(raw)
                 target_id = f"{resource['type']}:{resource['resource_id']}"
                 if resource["type"] == "note" and resource["resolved"]:
@@ -758,6 +751,28 @@ class NoteVault:
                     edges.append({"source": note["id"], "target": target_id,
                                   "title": resource["title"], "resolved": resource["resolved"],
                                   "kind": resource["type"], "status": resource["status"]})
+            source = note.get("source") or {}
+            seen_textbooks: set[str] = set()
+            for raw_tid in source.get("textbook_ids") or []:
+                tid = str(raw_tid).strip()
+                if not tid or tid in seen_textbooks:
+                    continue
+                seen_textbooks.add(tid)
+                record = textbooks.get(tid)
+                tb_title = str((record or {}).get("title") or tid)
+                tb_node_id = f"textbook:{tid}"
+                if tb_node_id not in node_ids:
+                    nodes.append({"id": tb_node_id, "resource_id": tid,
+                                  "title": tb_title, "kind": "textbook",
+                                  "folder_id": "", "tags": [],
+                                  "ghost": record is None,
+                                  "status": "resolved" if record is not None else "missing",
+                                  "updated_at": (record or {}).get("updated_at", 0)})
+                    node_ids.add(tb_node_id)
+                edges.append({"source": note["id"], "target": tb_node_id,
+                              "title": tb_title, "resolved": record is not None,
+                              "kind": "textbook",
+                              "status": "resolved" if record is not None else "missing"})
         return {"nodes": nodes, "edges": edges}
 
     def vault_outline(self, limit: int = 60) -> list[dict[str, Any]]:

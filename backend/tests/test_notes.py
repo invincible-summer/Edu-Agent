@@ -29,6 +29,7 @@ from fastapi.testclient import TestClient  # noqa: E402
 
 from app.main import create_app  # noqa: E402
 from app.core import notes as notes_mod  # noqa: E402
+from app.core import textbook as textbook_mod  # noqa: E402
 from app.core import trash as trash_mod  # noqa: E402
 from app.identity import store as id_store  # noqa: E402
 from app.identity.security import create_token, hash_password  # noqa: E402
@@ -46,6 +47,8 @@ class _TmpDirs:
             patch.object(notes_mod, "_NOTES_DIR", root / "notes"),
             patch.object(trash_mod, "_TRASH_DIR", root / "trash"),
             patch.object(orch_store, "_STUDENTS_DIR", root / "students"),
+            patch.object(textbook_mod, "_LIBRARY_DIR",
+                         root / "chat_history" / "library"),
         ]
         if with_users:
             (root / "users").mkdir()
@@ -183,6 +186,25 @@ class TestNotesVaultApi(unittest.TestCase):
         self.assertEqual(len(ghosts), 1)
         self.assertEqual(ghosts[0]["title"], "不存在")
         self.assertFalse(any(e["resolved"] for e in graph["edges"]))
+
+    def test_graph_includes_textbook_nodes_from_source(self):
+        tb = textbook_mod.create_textbook("student_default", file_id="file-1",
+                                          title="高中物理必修一")
+        note = self._create(title="力学笔记", content="正文")
+        vault = notes_mod.load_vault("student_default")
+        meta = vault.find_note(note["id"])
+        meta.setdefault("source", {})["textbook_ids"] = [tb["id"], "tb_missing"]
+        notes_mod.save_vault(vault)
+        graph = self.client.get("/api/v1/notes/graph").json()
+        tb_nodes = {n["id"]: n for n in graph["nodes"]
+                    if n["kind"] == "textbook"}
+        self.assertEqual(tb_nodes[f"textbook:{tb['id']}"]["title"], "高中物理必修一")
+        self.assertEqual(tb_nodes[f"textbook:{tb['id']}"]["status"], "resolved")
+        self.assertEqual(tb_nodes["textbook:tb_missing"]["status"], "missing")
+        tb_edges = [e for e in graph["edges"] if e["kind"] == "textbook"]
+        self.assertEqual({(e["source"], e["target"]) for e in tb_edges},
+                         {(note["id"], f"textbook:{tb['id']}"),
+                          (note["id"], "textbook:tb_missing")})
 
     # -- 4. search / tags ---------------------------------------------------------
 
@@ -415,8 +437,9 @@ class TestNotesVaultApi(unittest.TestCase):
         links = self.client.get(f"/api/v1/notes/notes/{source['id']}").json()["links"]["resources"]
         self.assertEqual(links[0]["status"], "resolved")
         self.assertEqual(links[1]["status"], "missing")
+        # 助手线程不进关系图
         graph = self.client.get("/api/v1/notes/graph").json()
-        self.assertTrue(any(n.get("kind") == "notes_thread" and n.get("status") == "missing" for n in graph["nodes"]))
+        self.assertFalse(any(n.get("kind") == "notes_thread" for n in graph["nodes"]))
 
 
 if __name__ == "__main__":

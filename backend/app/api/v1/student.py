@@ -42,6 +42,31 @@ def _concept_state_map(sm: "_sm.StudentModel") -> dict[str, Any]:
     return out
 
 
+def _knowledge_names(student_id: str) -> dict[str, str]:
+    """{node/skill id: human concept name} for the learning ledger.
+
+    Ledger knowledge_points may be filed as raw graph node ids (callers pass
+    ctx/goal concept ids); resolve them for display the same way /mastery
+    does. Empty dict on any failure — unresolved values pass through.
+    """
+    names: dict[str, str] = {}
+    try:
+        if not _sm.is_enabled():
+            return names
+        sm = _sm.get_student_model(student_id)
+        for nid, node in sm.graph.nodes.items():
+            if getattr(node, "name", ""):
+                names[nid] = node.name
+        for rec in sm.memory.values():
+            sid = getattr(rec, "skill_id", "")
+            concept = getattr(rec, "concept", "")
+            if sid and concept:
+                names.setdefault(sid, concept)
+    except Exception:
+        pass
+    return names
+
+
 def _current_difficulty(sm: "_sm.StudentModel", mview: dict[str, Any],
                         lp: "_te.LearningPath", student_id: str) -> int:
     """The 1..5 dynamic-difficulty dial for the head of the learning path.
@@ -171,11 +196,13 @@ def student_learning_records(
 
     每条含题干/题型/难度/知识点/作答/判分/时间与来源状态（active/
     independent/deleted——来源对话删除后记录仍保留）。这是"最近作答"
-    与记忆中心学习档案区的数据源。
+    与记忆中心学习档案区的数据源。知识点若以图谱节点 id 入账，此处解析
+    为人读概念名（解析失败时原样返回）。
     """
     try:
         from app.core import learning_records as lr
         records = lr.list_records(student_id)
+        names = _knowledge_names(student_id)
         total = len(records)
         window = records[offset:offset + limit]
         items = [{
@@ -183,7 +210,7 @@ def student_learning_records(
             "session_id": r.get("session_id", ""),
             "source_kind": r.get("source_kind", ""),
             "source_status": r.get("source_status", ""),
-            "knowledge_point": r.get("knowledge_point", ""),
+            "knowledge_point": names.get(r.get("knowledge_point", "")) or r.get("knowledge_point", ""),
             "subject": r.get("subject", ""),
             "bloom_level": r.get("bloom_level", ""),
             "stem": r.get("stem", ""),

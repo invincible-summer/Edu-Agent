@@ -6,8 +6,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { listSessions } from "@/lib/api";
-import { Minimize2, Network, NotebookPen } from "lucide-react";
+import { Brain, Minimize2, Network, NotebookPen } from "lucide-react";
 import { ErrorNote, PageSkeleton } from "@/components/ui/EmptyState";
+import { Drawer } from "@/components/ui/Drawer";
 import { cn } from "@/lib/cn";
 import { makePageT } from "@/lib/i18n-page";
 import { useUIStore } from "@/lib/store";
@@ -27,7 +28,7 @@ import { NotesHome } from "./NotesHome";
 import { AIPanel } from "./AIPanel";
 import { GenerateWizard } from "./GenerateWizard";
 import { RevisionDrawer } from "./RevisionDrawer";
-import { GraphView } from "./GraphView";
+import { TextForceGraph } from "./TextForceGraph";
 import { PanelResizer } from "./PanelResizer";
 import { PanelToggleButton } from "./PanelToggleButton";
 
@@ -53,6 +54,7 @@ export function NotesView({ noteId }: { noteId?: string }) {
   const [viewMode, setViewMode] = useState<ViewMode>("split");
   const [showGraph, setShowGraph] = useState(false);
   const [graph, setGraph] = useState<NotesGraph | null>(null);
+  const [dashboardOpen, setDashboardOpen] = useState(false);
   const [wizardOpen, setWizardOpen] = useState(false);
   const [revisionOpen, setRevisionOpen] = useState(false);
   const [scrollRatio, setScrollRatio] = useState(0);
@@ -123,15 +125,16 @@ export function NotesView({ noteId }: { noteId?: string }) {
     router.replace(id ? `/notes/${encodeURIComponent(id)}` : "/notes");
   }, [router]);
 
+  // 关系图数据：图谱模式或未选笔记（图谱即首页封面）时需要
   useEffect(() => {
-    if (!showGraph) return;
+    if (!showGraph && currentId) return;
     let alive = true;
     import("@/lib/api-notes")
       .then((m) => m.getNotesGraph())
       .then((g) => { if (alive) setGraph(g); })
       .catch(() => { /* keep old graph */ });
     return () => { alive = false; };
-  }, [showGraph, vault]);
+  }, [showGraph, currentId, vault]);
 
   const handleCreate = async (opts: { title?: string; templateId?: string; content?: string }) => {
     try {
@@ -259,19 +262,21 @@ export function NotesView({ noteId }: { noteId?: string }) {
               side="left" open={leftOpen} onToggle={toggleLeft}
               label={tr("tb.toggleSidebar")}
             />
-            <button
-              onClick={() => setShowGraph((v) => !v)}
-              title={tr("graph.title")}
-              aria-label={tr("graph.title")}
-              className={cn(
-                "cursor-pointer rounded-md p-1.5 transition-colors",
-                showGraph
-                  ? "bg-accent-soft text-accent-strong"
-                  : "text-muted hover:bg-surface-hover hover:text-accent",
-              )}
-            >
-              <Network size={15} />
-            </button>
+            {currentId && (
+              <button
+                onClick={() => setShowGraph((v) => !v)}
+                title={tr("graph.title")}
+                aria-label={tr("graph.title")}
+                className={cn(
+                  "cursor-pointer rounded-md p-1.5 transition-colors",
+                  showGraph
+                    ? "bg-accent-soft text-accent-strong"
+                    : "text-muted hover:bg-surface-hover hover:text-accent",
+                )}
+              >
+                <Network size={15} />
+              </button>
+            )}
             <div className="flex-1" />
             <PanelToggleButton
               side="right" open={aiPanelOpen} onToggle={toggleAiPanel}
@@ -279,25 +284,20 @@ export function NotesView({ noteId }: { noteId?: string }) {
             />
           </div>
         )}
-        {showGraph ? (
-          <GraphView
-            graph={graph ?? { nodes: [], edges: [] }}
+        {showGraph || !currentId || !detail ? (
+          <TextForceGraph
+            graph={graph}
             folderNames={Object.fromEntries(vault.folders.map((f) => [f.id, f.name]))}
             tr={tr}
+            home={!currentId}
+            dueCount={vault.stats.due_review_count}
+            onOpenDashboard={() => setDashboardOpen(true)}
             onOpenNote={(id) => { setShowGraph(false); navigate(id); }}
             onCreateNote={(title) => void handleCreate({ title })}
             onOpenSession={(id) => router.push(`/chat/${encodeURIComponent(id)}`)}
             onOpenThread={(id) => { void setActiveThread(id); if (!aiPanelOpen) toggleAiPanel(); }}
-          />
-        ) : !currentId || !detail ? (
-          <NotesHome
-            vault={vault}
-            tr={tr}
-            lang={lang}
-            onOpenNote={navigate}
-            onCreateNote={(title) => void handleCreate({ title })}
+            onOpenTextbook={() => router.push("/resources/textbooks")}
             onGenerate={() => setWizardOpen(true)}
-            onVaultChanged={() => void loadVault()}
           />
         ) : (
           <>
@@ -469,6 +469,28 @@ export function NotesView({ noteId }: { noteId?: string }) {
           </div>
         </div>
       )}
+
+      {/* 温故面板：原首页仪表盘（统计/今日温故/未解析链接/最近编辑）收入抽屉 */}
+      <Drawer
+        open={dashboardOpen}
+        onClose={() => setDashboardOpen(false)}
+        title={
+          <span className="flex items-center gap-1.5">
+            <Brain size={14} className="text-accent2" /> {tr("graph.dashboard")}
+          </span>
+        }
+        width={520}
+      >
+        <NotesHome
+          vault={vault}
+          tr={tr}
+          lang={lang}
+          onOpenNote={(id) => { setDashboardOpen(false); navigate(id); }}
+          onCreateNote={(title) => { setDashboardOpen(false); void handleCreate({ title }); }}
+          onGenerate={() => { setDashboardOpen(false); setWizardOpen(true); }}
+          onVaultChanged={() => void loadVault()}
+        />
+      </Drawer>
 
       {/* 向导/抽屉（条件挂载：每次打开都是干净的初始状态） */}
       {wizardOpen && (

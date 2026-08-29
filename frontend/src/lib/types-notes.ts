@@ -148,7 +148,7 @@ export interface GraphNode {
   folder_id: string;
   tags: string[];
   ghost: boolean;
-  kind: "note" | "session" | "notes_thread" | "ghost";
+  kind: "note" | "session" | "notes_thread" | "textbook" | "ghost";
   status?: "resolved" | "unresolved" | "missing" | "deleted";
   resource_id?: string;
   folder_name?: string;
@@ -161,7 +161,7 @@ export interface GraphEdge {
   target: string;
   title: string;
   resolved: boolean;
-  kind: "note" | "session" | "notes_thread" | "unresolved";
+  kind: "note" | "session" | "notes_thread" | "textbook" | "unresolved";
   status?: string;
 }
 

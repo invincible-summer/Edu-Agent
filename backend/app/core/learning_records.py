@@ -50,6 +50,26 @@ def _save(student_id: str, data: dict[str, Any]) -> None:
     atomic_write_text(_path(student_id), json.dumps(data, ensure_ascii=False, indent=2))
 
 
+def _unique_ids(records: list[dict[str, Any]]) -> bool:
+    """Re-key duplicate/empty record_ids in place; True when anything changed.
+
+    Question ids are per-quiz in-set numbers (each quiz restarts at 1, every
+    CAT question is "1"), so legacy ledgers can hold the same id several
+    times. Nothing joins on record_id — verdicts match by session+stem,
+    trash handlers by session — so re-keying is safe.
+    """
+    seen: set[str] = set()
+    changed = False
+    for item in records:
+        rid = str(item.get("record_id") or "")
+        if rid and rid not in seen:
+            seen.add(rid)
+            continue
+        item["record_id"] = "lr_" + uuid.uuid4().hex[:16]
+        changed = True
+    return changed
+
+
 def record_question(student_id: str, session_id: str, question: dict[str, Any], *,
                     topic: str = "", subject: str = "", grade: str = "",
                     source_kind: str = "chat") -> str:
@@ -63,9 +83,21 @@ def record_question(student_id: str, session_id: str, question: dict[str, Any], 
     path = _path(student_id)
     with file_lock(path):
         data = _load(student_id)
+        healed = _unique_ids(data["records"])
+        stem_key = stem[:100]
         for item in data["records"]:
-            if item.get("record_id") == question_id and item.get("session_id") == session_id:
+            if (item.get("record_id") == question_id
+                    and item.get("session_id") == _safe(session_id)
+                    and str(item.get("stem") or "").strip()[:100] == stem_key):
+                if healed:
+                    _save(student_id, data)
                 return question_id
+        # Any other occurrence of this id — in another session, or earlier in
+        # this one filing a different question — is an in-set numbering
+        # collision, not a replay: give this record a fresh unique id.
+        taken = {str(item.get("record_id") or "") for item in data["records"]}
+        while question_id in taken:
+            question_id = "lr_" + uuid.uuid4().hex[:16]
         data["records"].append({
             "record_id": question_id,
             "session_id": _safe(session_id),
@@ -190,6 +222,10 @@ def mark_source_active(student_id: str, session_id: str) -> int:
 
 def list_records(student_id: str) -> list[dict[str, Any]]:
     try:
-        return list(reversed(_load(student_id).get("records") or []))
+        records = list(reversed(_load(student_id).get("records") or []))
+        # Display-side guard for legacy duplicate ids (persisted heal happens
+        # on the next write via record_question); ids are not persisted here.
+        _unique_ids(records)
+        return records
     except Exception:
         return []
