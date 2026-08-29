@@ -773,6 +773,8 @@ frontend/src/
 
 以上账号/运行数据默认全部由 `.gitignore` 覆盖；公共教材库例外为 `chat_history/library/public*`、`chat_history/library/data/public/` 与 `knowledge/custom/public/`，它们随项目版本发布。共享 Chroma 数据库仍不提交，因为同一数据库可能同时承载公共与私有向量，可由公共教材文本重建。
 
+**演示账号例外**：`example@example.com`（固定 id `usr_12e410b4e2`）的产品示范数据——该账号的会话/工作区/笔记/学生模型文件与 `notes/usr_12e410b4e2/`——经 `.gitignore` 精确否定模式有意纳入版本库，作为产品使用示范；账号记录本身不入库（`users/` 仍忽略，克隆机用 `deploy/seed_demo_account.py` 以同 id 同密码重建账号后即可登录查看）。其余账号数据不受影响，一律保持忽略。
+
 ---
 
 ## 23. API 总表（前缀 `/api/v1`）
