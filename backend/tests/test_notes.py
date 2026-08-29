@@ -441,6 +441,26 @@ class TestNotesVaultApi(unittest.TestCase):
         graph = self.client.get("/api/v1/notes/graph").json()
         self.assertFalse(any(n.get("kind") == "notes_thread" for n in graph["nodes"]))
 
+    def test_resource_links_stop_at_prose_punctuation(self):
+        body = ("与老师的讨论：conversation://session/chat_a、"
+                "conversation://session/chat_b（第一次想明白）。\n"
+                "关联笔记 note://note_123。")
+        links = notes_mod.parse_resource_links(body)
+        self.assertEqual(
+            [(l["type"], l["resource_id"]) for l in links],
+            [("session", "chat_a"), ("session", "chat_b"), ("note", "note_123")])
+
+    def test_unresolved_panel_lists_wikilink_ghosts_only(self):
+        note = self._create(title="孤岛", content=(
+            "链接到 [[不存在]]；来源 conversation://session/no-such-session（旁注）。"))
+        stats = self._vault()["stats"]
+        # 会话资源 ghost 不进「未解析链接」面板（那里点击会直接建笔记）
+        self.assertEqual(stats["unresolved_links"], ["不存在"])
+        resources = self.client.get(
+            f"/api/v1/notes/notes/{note['id']}").json()["links"]["resources"]
+        self.assertEqual(resources[0]["resource_id"], "no-such-session")
+        self.assertEqual(resources[0]["status"], "missing")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -48,8 +48,11 @@ _MAX_PENDING_SUGGESTIONS = 30
 _MAX_CUSTOM_TEMPLATES = 20
 
 _WIKILINK_RE = re.compile(r"\[\[([^\[\]|]+)(?:\|([^\[\]]+))?\]\]")
+# 资源 id 不含标点：遇空白、括号/引号及中英文标点即截断，
+# 防止把正文旁注（如「（第一次想明白了）。」）或「、」分隔的下一条链接吞进 resource_id。
+_RES_STOP = r"\s)\]}>),;:!?\"'、。，；：？！（）《》〈【】〔〕“”‘’…—"
 _RESOURCE_LINK_RE = re.compile(
-    r"(?P<url>(?:note://[^\s)\]>]+|conversation://(?:session|notes)/[^\s)\]>]+))")
+    rf"(?P<url>(?:note://[^{_RES_STOP}]+|conversation://(?:session|notes)/[^{_RES_STOP}]+))")
 _TAG_RE = re.compile(r"(^|\s)#([A-Za-z0-9_\-\u4e00-\u9fff]{1,24})")
 _CODE_FENCE_RE = re.compile(r"```.*?```", re.DOTALL)
 _INLINE_CODE_RE = re.compile(r"`[^`\n]*`")
@@ -897,8 +900,10 @@ def vault_summary(vault: NoteVault) -> dict[str, Any]:
     """GET /notes/vault 的投影。"""
     graph = vault.link_graph()
     link_count = sum(1 for e in graph["edges"] if e.get("resolved"))
+    # 未解析面板的语义是「还没有对应笔记的 wikilink，点击创建」；
+    # 会话/教材等资源 ghost 属于关系图视图，不进该列表。
     unresolved = sorted({e["title"] for e in graph["edges"]
-                         if not e.get("resolved")})
+                         if e.get("kind") == "unresolved"})
     due = [n for n in vault.notes
            if (n.get("review") or {}).get("enabled")
            and 0 < float((n.get("review") or {}).get("next_review_at") or 0) <= _now()]
