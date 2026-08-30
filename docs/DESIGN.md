@@ -769,6 +769,8 @@ frontend/src/
 | `notes/<sid>/vault.json` + `notes/<sid>/notes/*.md` + `revisions/` + `threads/` + `suggestions.json` | M-Notes 笔记仓库（索引/正文/修订/助手线程/建议队列，见文末 M-Notes 章节） | 账号 |
 | `chat_history/settings/ocr_policy.json` | 教材 OCR 运行策略（管理员） | 全局 |
 | `chat_history/settings/usage_docs.json` | /docs 使用文档（管理员编辑、全员读） | 全局 |
+| `backend/models/voice/` | P10 语音本地模型（whisper ggml 权重 + MeloTTS/HF 缓存）。gitignored 部署侧资源，非用户数据：不进 orphan 扫描，也不入测试沙箱清单 | 全局（本地资源） |
+| `backend/vendor/` + `backend/voice_sidecar/.venv/` | P10 语音引擎（whisper.cpp 源码+编译产物、MeloTTS 源码）与 TTS sidecar 独立 venv（CPU torch）。gitignored | 全局（本地资源） |
 
 以上账号/运行数据默认全部由 `.gitignore` 覆盖；公共教材库例外为 `chat_history/library/public*`、`chat_history/library/data/public/` 与 `knowledge/custom/public/`，它们随项目版本发布。共享 Chroma 数据库仍不提交，因为同一数据库可能同时承载公共与私有向量，可由公共教材文本重建。
 
@@ -780,6 +782,7 @@ frontend/src/
 
 - **笔记仓库（M-Notes）**：`GET/notes/{vault,search,graph,reviews/due,thread}`、notes/folders/revisions/templates/suggestions CRUD、`POST /notes/{id}/review`、`GET /notes/{id}/export`、`GET /notes/export`、SSE `POST /notes/{generate,chat/stream}`（详见文末 M-Notes 章节）
 - **健康/模型**：`GET /health`、`GET /model-info`
+- **语音通话（P10，默认 off）**：`GET /voice/status`（provider 可用性）、`POST /voice/ticket`（header JWT 换单次 60s 握手凭证）、`WS /voice/ws?ticket=`（push-to-talk 通话协议，见文末 P10 章节）
 - **认证/账户**：`GET /auth/status`、`POST /auth/register`、`POST /auth/login`、`POST /auth/logout`、`GET /auth/me`、`GET/PUT /user/profile`、`DELETE /user/account`
 - **对话**：`POST /chat/stream`（SSE，`grade` 默认 `""`=自动）、`POST /chat/upload`（`grade` 默认 `""`）、`POST /chat/ocr`、`GET /chat/sessions`、`GET/PATCH/DELETE /chat/sessions/{id}`（PATCH 支持 `{title?, grade?}` 会话内切换学段）、`GET /chat/sessions/{sid}/files/{fid}/download`、`POST /chat/sessions/{sid}/attach_library`（`grade` 默认 `""`）
 - **测评交互**：`POST /quiz/grade`（SSE）、`POST /quiz/record`、`GET /quiz/recent`（跨会话最近习题，上限 100 道）、`POST /assessment/{start,answer,next,abandon}`、`GET /assessment/report`
@@ -1547,3 +1550,105 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
   NOT_FOUND）、我与地坛课文本体 top-1（0.437，旧为活动框 0.602）、
   乱码卷候选被排除计数。词本体/课题合并的完全生效依赖既有卷按
   structured-v2.2+ 重建（lesson 元数据在 v2.1 索引中不存在）。
+
+---
+
+## P10 电话式语音对话：可插拔 STT/TTS（2026-08-30）
+
+### P10.1 形态与边界
+
+- **交互**：push-to-talk。按住说话（AudioWorklet 采集 → mono 16 kHz PCM16 帧上行）、
+  松手成轮；老师回答**按句合成、逐句推送**，首句数秒内开播（2 vCPU 上 MeloTTS
+  RTF≈1–1.5，整段合成会拖到几十秒）。
+- **会话一致性**：语音轮次直接进现有聊天会话——服务端把转写文本喂给
+  `run_turn`（与 `/chat/stream` 同一条 Supervisor 管线），会话盖章/所有权/
+  workspace 绑定语义与 `chat_stream` 完全一致；无会话则新建并回传 `session_bound`。
+  记忆、RAG、教学层对语音轮零特判。
+- **默认全关**：`VOICE_STT_PROVIDER`/`VOICE_TTS_PROVIDER` 默认 off，语音入口
+  隐藏，其余功能零影响（fail-open，同 embedding 轨哲学）。
+- **许可证**：whisper.cpp/Whisper 权重/MeloTTS/MeloTTS-Chinese 全 MIT，中文
+  前端 BERT 为 Apache-2.0；MeloTTS 依赖中的 GPL 系组件经 stub/剔除中和，
+  运行进程内零 copyleft。核实报告与义务清单：`docs/VOICE_LICENSES.md`，
+  许可文本全文：`docs/licenses/`。
+
+### P10.2 插件层（backend/app/voice/）
+
+仿 `core/embedding.py` 的「settings 开关 + 工厂缓存 + 可选 None + fail-open」：
+
+- `base.py`：`STTProvider.transcribe(wav)->text`、`TTSProvider.synthesize(text)->(pcm16, sample_rate)`、
+  `VoiceProviderError(code)`（映射 WS error 事件的 code）。
+- STT 实现：`stt/whisper_cpp.py`（子进程 `whisper-cli -l zh -nt`，进程级
+  asyncio.Semaphore(1) 串行化，2 核保护）、`stt/stub.py`。主 venv 零新增依赖。
+- TTS 实现：`tts/melotts.py`（HTTP 调 sidecar）、`tts/stub.py`（蜂鸣 PCM16）。
+- 文本处理：`sentences.py`（流式取句 `take_complete`：中文终止符无条件断句、
+  ASCII 句点仅在非「数字/字母后」断句，>120 字按标点强制再切）、
+  `speak_text.py`（markdown/LaTeX → 可朗读文本：`\frac{a}{b}`→「b分之a」、
+  `^2`→「的2次方」、代码块→占位话术等）。
+
+### P10.3 WebSocket 端点（api/v1/voice.py）
+
+浏览器 WS 带不了 Authorization 头，而仓库规则是 JWT 不进 query → **单次
+ticket**：`POST /voice/ticket`（带 JWT）→ 内存表 60s 单次票据；WS 握手
+`?ticket=` 校验并消费（非浏览器客户端可直接带 Authorization 头）。
+
+协议（上行 PCM16/16k 二进制帧；下行 JSON 事件 + PCM16/44.1k 二进制帧）：
+
+```
+C→S {"type":"start","session_id","workspace_id","lang"}   S→C session_bound
+C→S <binary 帧>×N + {"type":"utterance_end"}
+S→C stt_start → stt_result{text} → step/tool_* → answer_delta×N
+     → (每凑满一句) tts_start{seq,text,sample_rate} + <binary> + tts_end
+     → turn_end{session_id, tts_ok}
+C→S {"type":"end"} → S→C bye
+```
+
+护栏：每连接同时一轮（busy）、单轮 ≤`VOICE_MAX_AUDIO_SECONDS`（截断+warning）、
+TTS 失败一次即转文字-only（`tts_error`，轮次不废）、thinking 增量**不转发**
+（CoT 不出盒）。error code 语义与前端 i18n key 一一对应。
+
+### P10.4 TTS sidecar（backend/voice_sidecar/，独立 venv）
+
+MeloTTS 没有官方 HTTP 服务（只有 Python 类），sidecar 用 FastAPI 包
+`melo.api.TTS(language="ZH")`（即 ZH_MIX_EN 前端）：`GET /health`、
+`POST /tts {text, speed}` → WAV(44.1k)。要点：
+
+- 独立 venv 装 CPU torch（主 venv 保持零 ML 依赖）；`melo_bootstrap.py`
+  以 sys.path 挂载 `backend/vendor/MeloTTS`（避开其 setup.py 的 unidic 下载
+  钩子），并在导入前 stub 掉 pykakasi(GPLv3)/num2words(LGPL)——它们只在
+  melo 的模块导入期被引用、中文合成永不执行。
+- 运行期 `HF_HUB_OFFLINE=1 + HF_HOME=backend/models/voice/hf`（安装时预热
+  下载 checkpoint.pth + bert-base-multilingual-uncased + 各语言 tokenizer）。
+- `start.sh` 在 `VOICE_TTS_PROVIDER=melo` 时自动拉起（端口 8130/8131/8132
+  回退，PID/端口落 /tmp/edu_voice_*；缺失则警告跳过，主服务照常）。
+  生产可用 `deploy/edu-voice-sidecar.service` 托管。nginx 需为
+  `/api/v1/voice/` 加 Upgrade/Connection 透传（模板已更新）。
+
+### P10.5 前端
+
+- `public/voice-pcm-worklet.js`：AudioWorklet 降采样 mono 16 kHz PCM16
+  （~10ms 批），零依赖静态资源。
+- `lib/voice/useVoiceCall.ts`：ticket→WS→状态机（idle/connecting/ready/
+  recording/recognizing/thinking/speaking/ended）+ 顺序播放队列
+  （AudioBuffer 按事件携带采样率创建，浏览器自动重采样）+ 停止播报。
+- `components/chat/VoiceCallModal.tsx`：motion-modal 通话面板（按住说话大
+  按钮/状态行/实时字幕/挂断）。入口在 `ChatInput` 的电话按钮，依据
+  `GET /voice/status` 显隐；挂断后刷新会话列表，若通话会话=当前会话则重载
+  消息（`loadSession`→`loadFull`）。
+- 已有的 Web Speech 单句麦克风（`useSpeech.ts`）保持不动，二者并存。
+
+### P10.6 资源与部署（2C8G/8GB 盘）
+
+- 磁盘：whisper.cpp+base-q5_1 ≈0.3GB；sidecar venv ≈1.7GB；模型缓存 ≈1GB
+  （checkpoint 0.2GB + multilingual BERT 0.7GB + tokenizers）。全程
+  `--no-cache-dir`，`deploy/install_voice.sh` 幂等可重跑。
+- 内存：主服务 ≈1GB + whisper 转写瞬时 ≈0.4GB + MeloTTS 常驻 ≈1.5–2.5GB。
+- 模型可经 .env 无缝替换（如 small-q5_1 提高中文准确率）；未来 SenseVoice/
+  CosyVoice 等只需实现同一 Provider 接口并注册工厂。
+
+### P10.7 测试（backend/tests/test_voice.py，继承 StorageSandboxTestCase）
+
+切句/朗读清洗/WAV 往返/工厂 fail-open 单测；WS 端到端用 stub providers +
+patch `chat_agent.run_turn` 罐头事件：start→音频→utterance_end→断言
+stt_result/answer_delta/tts 三元组×2/turn_end/会话落盘在沙箱；ticket 单次
+性、坏 ticket 4401、header 直连鉴权、too_short、截断 warning、外来会话
+404 语义、end 优雅关闭。

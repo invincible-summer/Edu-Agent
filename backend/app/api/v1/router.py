@@ -22,6 +22,7 @@ from app.api.v1 import textbook
 from app.api.v1 import trash
 from app.api.v1 import notes
 from app.api.v1 import docs
+from app.api.v1 import voice
 
 api_router = APIRouter(prefix="/api/v1")
 api_router.include_router(health.router)
@@ -46,3 +47,4 @@ api_router.include_router(textbook.router)
 api_router.include_router(trash.router)
 api_router.include_router(notes.router)
 api_router.include_router(docs.router)
+api_router.include_router(voice.router)

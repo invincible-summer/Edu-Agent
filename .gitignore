@@ -59,6 +59,12 @@ chat_history/library/data/*
 *.sqlite
 *.sqlite3
 *.db
+# P10 voice local assets: compiled whisper.cpp / MeloTTS checkouts and
+# downloaded model weights (install via deploy/install_voice.sh). Local
+# build artifacts, not project content and never user data.
+/backend/vendor/
+/backend/models/
+/backend/voice_sidecar/.venv/
 # Runtime per-account state. The demo account's showcase files are re-included
 # in the demo block at the bottom of this file; everything else stays ignored.
 students/*

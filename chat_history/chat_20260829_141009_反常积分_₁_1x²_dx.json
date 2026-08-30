@@ -6,26 +6,31 @@
   "student_id": "usr_12e410b4e2",
   "compaction": null,
   "supervisor_state": {
-    "current_goal": "瑕积分的收敛性",
+    "current_goal": "学习",
     "task_type": "chitchat",
     "plan": {
-      "steps": [],
-      "source": "rule",
+      "steps": [
+        {
+          "agent_role": "teaching",
+          "task": "直接进行低风险讲解，不调用缺少前置条件的工具。",
+          "suggested_tools": [],
+          "skill_ids": [
+            "agent.skill.teaching.direct_explain"
+          ],
+          "optional": false,
+          "tool_args": {},
+          "auto_invoke": false
+        }
+      ],
+      "source": "skill_gated:rule",
       "validated": true,
-      "created_at": 1787984070.5470946
+      "created_at": 1788069869.2254598
     },
-    "completed": [],
+    "completed": [
+      "teaching:直接进行低风险讲解，不调用缺少前置条件的工具。"
+    ],
     "remaining": [],
     "execution_history": [
-      {
-        "ts": 1787983855.7260263,
-        "goal": "理解反常积分与无穷区间面积的有限性",
-        "intent": "explain",
-        "tool_calls": [
-          "knowledge_search"
-        ],
-        "plan_source": "rule"
-      },
       {
         "ts": 1787983915.4015253,
         "goal": "理解反常积分与p-积分的收敛性判别",
@@ -63,28 +68,51 @@
           "knowledge_search"
         ],
         "plan_source": "rule"
+      },
+      {
+        "ts": 1788069861.30628,
+        "goal": "理解反常提问（具体术语不明确，可能指反问、设问等提问手法）",
+        "intent": "explain",
+        "tool_calls": [
+          "knowledge_search"
+        ],
+        "plan_source": "skill_gated:rule"
+      },
+      {
+        "ts": 1788069906.7486827,
+        "goal": "学习",
+        "intent": "chitchat",
+        "tool_calls": [],
+        "plan_source": "skill_gated:rule"
       }
     ],
-    "updated_at": 1787984094.1905627
+    "updated_at": 1788069906.7486851
   },
   "context_card": {
     "version": "1.0",
-    "session_goal": "瑕积分的收敛性",
-    "current_subject": "数学",
+    "session_goal": "学习",
+    "current_subject": "语文",
     "active_concepts": [
       "反常积分与无穷区间面积的有限性",
       "反常积分与p-积分的收敛性判别",
       "p级数与反常积分的收敛性；通项趋于零不保证级数或积分收敛",
       "反常积分的收敛性与计算",
-      "瑕积分的收敛性"
+      "瑕积分的收敛性",
+      "反常提问（具体术语不明确，可能指反问、设问等提问手法）"
     ],
-    "current_mode": "remediation",
-    "explanation_depth": "basic",
-    "recent_mistakes": [],
+    "current_mode": "introduction",
+    "explanation_depth": "adaptive",
+    "recent_mistakes": [
+      "嵌入说明碰撞非弹性，不能用动能守恒；应由动量守恒得 $V=4\\,\\mathrm{m/s}$。碰撞生热为 $1584\\,\\"
+    ],
     "misconceptions": [],
-    "completed_steps": [],
+    "completed_steps": [
+      "teaching:直接进行低风险讲解，不调用缺少前置条件的工具。"
+    ],
     "remaining_steps": [],
-    "active_skill_ids": [],
+    "active_skill_ids": [
+      "agent.skill.teaching.direct_explain"
+    ],
     "pending_assessment": true,
     "unanswered_question_ids": [
       "1"
@@ -103,7 +131,7 @@
     "source_refs": [
       "quiz_history:1"
     ],
-    "updated_at": 1787984094.190704
+    "updated_at": 1788069906.7487504
   },
   "messages": [
     {
@@ -6258,6 +6286,971 @@
           }
         }
       ]
+    },
+    {
+      "role": "user",
+      "content": "给我讲解一下反常提问收连信有什么常用的手法"
+    },
+    {
+      "role": "assistant",
+      "content": "你这里应是问“**反常积分收敛性常用的手法**”。先说明：本次检索到的教材片段主要覆盖反常积分定义，证据置信度较低；关于下述比较判别等细节，教材原文检索证据不足，以下以通用微积分理论补充。\n\n## 1. 先按定义截断\n\n教材将无穷区间积分定义为截断积分的极限。例如：\n\n$$\n\\int_a^{+\\infty}f(x)\\,dx\n:=\n\\lim_{A\\to+\\infty}\\int_a^A f(x)\\,dx.\n$$\n\n若该极限为有限数，则收敛；若极限为无穷或不存在，则发散。（教材第 2 卷，PDF 第 481 页；检索证据置信度较低。）\n\n有限端点有奇点时，例如 $x=0$：\n\n$$\n\\int_0^1 f(x)\\,dx\n:=\n\\lim_{\\varepsilon\\to0^+}\\int_\\varepsilon^1 f(x)\\,dx.\n$$\n\n若两端都异常，必须分别截断、分别判断，不能让正负无穷“相互抵消”。\n\n---\n\n## 2. 直接计算截断积分\n\n若能求出原函数，通常最直接。\n\n例如：\n\n$$\n\\int_1^{+\\infty}\\frac{1}{x^p}\\,dx\n=\n\\lim_{A\\to+\\infty}\\int_1^A x^{-p}\\,dx.\n$$\n\n当 $p\\neq1$ 时，\n\n$$\n\\int_1^A x^{-p}\\,dx\n=\n\\frac{A^{1-p}-1}{1-p}.\n$$\n\n因此：\n\n$$\n\\int_1^{+\\infty}\\frac{1}{x^p}\\,dx\n\\begin{cases}\n\\text{收敛，值为 }\\dfrac{1}{p-1},&p>1,\\\\[2mm]\n\\text{发散},&p\\leq1.\n\\end{cases}\n$$\n\n这是最基本的 **$p$-积分判别法**。\n\n---\n\n## 3. 比较判别法\n\n若在充分大的 $x$ 上有\n\n$$\n0\\leq f(x)\\leq g(x),\n$$\n\n且\n\n$$\n\\int_a^{+\\infty}g(x)\\,dx\n$$\n\n收敛，则\n\n$$\n\\int_a^{+\\infty}f(x)\\,dx\n$$\n\n也收敛。\n\n反过来，若\n\n$$\n0\\leq g(x)\\leq f(x),\n$$\n\n且\n\n$$\n\\int_a^{+\\infty}g(x)\\,dx\n$$\n\n发散，则\n\n$$\n\\int_a^{+\\infty}f(x)\\,dx\n$$\n\n也发散。\n\n例如，对 $x\\geq1$，\n\n$$\n0\\leq\\frac{1}{x^2+1}\\leq\\frac{1}{x^2}.\n$$\n\n由于\n\n$$\n\\int_1^{+\\infty}\\frac{1}{x^2}\\,dx\n$$\n\n收敛，所以\n\n$$\n\\int_1^{+\\infty}\\frac{1}{x^2+1}\\,dx\n$$\n\n收敛。\n\n---\n\n## 4. 极限比较判别法\n\n如果 $f(x),g(x)>0$，且\n\n$$\n\\lim_{x\\to+\\infty}\\frac{f(x)}{g(x)}=c,\n\\qquad 0<c<+\\infty,\n$$\n\n那么二者具有相同的收敛性。\n\n例如：\n\n$$\nf(x)=\\frac{3x+1}{x^3+2}.\n$$\n\n当 $x\\to+\\infty$ 时，\n\n$$\n\\frac{f(x)}{1/x^2}\n=\n\\frac{x^2(3x+1)}{x^3+2}\n\\longrightarrow3.\n$$\n\n因此 $f(x)$ 与 $\\frac1{x^2}$ 同阶，而\n\n$$\n\\int_1^{+\\infty}\\frac1{x^2}\\,dx\n$$\n\n收敛，所以\n\n$$\n\\int_1^{+\\infty}\\frac{3x+1}{x^3+2}\\,dx\n$$\n\n也收敛。\n\n端点 $x\\to0^+$ 附近也同理。例如：\n\n$$\n\\frac{\\ln(1+x)}{x^{1/2}}\n\\sim x^{1/2},\n\\qquad x\\to0^+,\n$$\n\n因为 $\\ln(1+x)\\sim x$，而\n\n$$\n\\int_0^1x^{1/2}\\,dx\n$$\n\n收敛，所以原积分也收敛。\n\n---\n\n## 5. 绝对收敛判别\n\n若\n\n$$\n\\int_a^{+\\infty}|f(x)|\\,dx\n$$\n\n收敛，则\n\n$$\n\\int_a^{+\\infty}f(x)\\,dx\n$$\n\n必然收敛，这称为绝对收敛。\n\n要注意：正负振荡产生的“抵消”不能随意使用。通常先判断\n\n$$\n\\int|f(x)|\\,dx\n$$\n\n是否收敛，再讨论原积分。\n\n---\n\n## 6. 分部积分、换元与等价无穷小\n\n有些积分不能直接套 $p$-积分，但可以通过变形化为熟悉形式：\n\n- 换元，例如令 $t=x^2$；\n- 分部积分；\n- 使用等价无穷小，如\n  $$\n  \\sin x\\sim x,\\qquad \\ln(1+x)\\sim x\n  $$\n  在相应极限下比较；\n- 提取最高次幂，判断无穷远处的主导项。\n\n例如：\n\n$$\n\\frac{x^2+1}{x^4+3x}\n\\sim\\frac1{x^2},\n\\qquad x\\to+\\infty,\n$$\n\n所以其反常积分与 $\\int_1^\\infty x^{-2}\\,dx$ 具有相同收敛性。\n\n---\n\n## 7. 实际判断流程\n\n面对一道反常积分，可以按以下顺序：\n\n1. 找出异常点：无穷端点还是有限端点奇点；\n2. 写出截断极限；\n3. 判断被积函数在异常点附近的主导行为；\n4. 与已知模型比较：\n   $$\n   \\int_1^\\infty\\frac{dx}{x^p}\n   \\quad\\text{或}\\quad\n   \\int_0^1\\frac{dx}{x^p};\n   $$\n5. 若能求原函数，再计算极限；\n6. 若有多个异常点，分别判断，必须全部收敛。\n\n两个基本模型务必区分：\n\n$$\n\\int_1^{+\\infty}\\frac{dx}{x^p}\n\\quad\\text{收敛当且仅当}\\quad p>1,\n$$\n\n而\n\n$$\n\\int_0^1\\frac{dx}{x^p}\n\\quad\\text{收敛当且仅当}\\quad p<1.\n$$\n\n前者考察 $x\\to+\\infty$，后者考察 $x\\to0^+$，所以临界条件相反。\n\n**小结：**最常用的方法是“截断定义 + 直接计算”“比较判别”“极限比较”“绝对收敛判断”，其中 $p$-积分是核心参照模型。",
+      "thinking": "我先确认任务重点：需要围绕「反常提问（具体术语不明确，可能指反问、设问等提问手法）」建立可以迁移应用的理解，而不是只记住一句结论。\n\n接下来的路线是：核对已授权资料中的依据；按当前学段分层讲解。 当前采用 introduction 教学策略，我会据此调整例子、推导深度和检查难度。",
+      "toolCalls": [
+        {
+          "name": "knowledge_search",
+          "result": {
+            "tool": "knowledge_search",
+            "status": "success",
+            "data": {
+              "query": "给我讲解一下反常提问收连信有什么常用的手法",
+              "results": [
+                {
+                  "source": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "filename": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "file_id": "8ad6323bdc9e",
+                  "chunk_id": "8ad6323bdc9e#2048",
+                  "index": 2048,
+                  "score": 0.0243,
+                  "page": 570,
+                  "printed_page": 558,
+                  "noise_flags": [],
+                  "block_types": [
+                    "theorem"
+                  ],
+                  "section_path": [
+                    "第十四章 依赖于参数的积分",
+                    "第一个积分,因为它的积分限是常量,当 $y\\to y_0$ 时按定理 2 趋于"
+                  ],
+                  "lesson": null,
+                  "is_lesson": false,
+                  "bm25_score": 31.083,
+                  "variant_hits": [
+                    "给我讲解一下反常提问收连信有什么常用的手法",
+                    "讲解一下反常提问收连信常用的手法"
+                  ],
+                  "retrieval_strategy": "multi_query_rrf",
+                  "section": "",
+                  "chapter": "",
+                  "source_scope": "workspace_textbook",
+                  "source_visibility": "public",
+                  "location_type": "printed_page",
+                  "location_label": "教材第 558 页（PDF 第 570 页）",
+                  "block_type": "theorem",
+                  "matched_terms": [
+                    "反常",
+                    "有什"
+                  ],
+                  "matched_bigrams": [
+                    "什么",
+                    "反常",
+                    "有什",
+                    "用的"
+                  ],
+                  "matched_phrases": [],
+                  "primary_phrase_coverage": 0.25,
+                  "title_match": 0.0,
+                  "confidence": 0.256,
+                  "signals": {
+                    "lexical": 0.177,
+                    "exact_term_coverage": 0.154,
+                    "primary_phrase_coverage": 0.25,
+                    "title_match": 0.0,
+                    "bm25_raw": 31.083,
+                    "bm25_normalized": 0.9688,
+                    "bm25_relative": 0.8818,
+                    "vector_distance": null,
+                    "vector_calibrated": false,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "concept_bonus": 0
+                  },
+                  "query_intent": "content",
+                  "selection_reason": "professional_bigram",
+                  "confidence_tier": "low",
+                  "partial": true,
+                  "evidence_excerpt": "这样已经证明了我们的公式,因为右面的式子是一个任意小量乘上一个有限常量 $\\int_a^b|g(x)|\\,dx$。 特别,对于以 $n$ 为参数的函数序列 $\\{f_n(x)\\}$ 也有相似的定理。 我们用“无穷级数的说法”来叙述这个结果,因为它是常常在这样的形式中被应用的。 推论 倘使 1)级数 \\sum_{n=1}^{\\infty}u_n(x) 的各项在 $[a,b]$ 上是可积的函数(在通常意义下),并且级数一致收敛,2)$g(x)$ 是在 $[a,b]$ 上绝对可积的函数(甚至于在反常积分的意义下),则级数 \\sum_{n=1}^{\\infty}u_n(x)g(x) 可以逐项积分。 完全同定理2及3一样(但只参考定理1*,而不是定理1)我们可以证明: 定理2* 在定理2的假定下,积分(1*)是 $y$ 在区间 $[c,d]$ 上的连续函数。 定理3* 在定理3的假定下,函数(1*)对于参数是可微的并且有公式:",
+                  "evidence_id": "ev_512fff2aa3b190c0",
+                  "context_hash": "7e7a5e8dd99fc1f6c73e117ee2c74b7b446391688f6a7e7c49a418888a307e94",
+                  "raw_text_sha256": "1df6dee72add0c57f91c5900578ae4b520dd247267e774e3f0618fa94eabd852",
+                  "raw_audit_ref": {
+                    "file_id": "8ad6323bdc9e",
+                    "chunk_id": "8ad6323bdc9e#2048"
+                  }
+                },
+                {
+                  "source": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "filename": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "file_id": "cf08c4260437",
+                  "chunk_id": "cf08c4260437#1425",
+                  "index": 1425,
+                  "score": 0.0209,
+                  "page": 356,
+                  "printed_page": 679,
+                  "noise_flags": [],
+                  "block_types": [
+                    "paragraph"
+                  ],
+                  "section_path": [
+                    "1 如果需要的话,当然不难从这个展开式反过来变成形如(4)的展开式。"
+                  ],
+                  "lesson": null,
+                  "is_lesson": false,
+                  "bm25_score": 35.248,
+                  "variant_hits": [
+                    "给我讲解一下反常提问收连信有什么常用的手法",
+                    "讲解一下反常提问收连信常用的手法"
+                  ],
+                  "retrieval_strategy": "multi_query_rrf",
+                  "section": "",
+                  "chapter": "",
+                  "source_scope": "workspace_textbook",
+                  "source_visibility": "public",
+                  "location_type": "printed_page",
+                  "location_label": "教材第 679 页（PDF 第 356 页）",
+                  "block_type": "paragraph",
+                  "matched_terms": [
+                    "有什"
+                  ],
+                  "matched_bigrams": [
+                    "什么",
+                    "有什"
+                  ],
+                  "matched_phrases": [],
+                  "primary_phrase_coverage": 0.167,
+                  "title_match": 0.0,
+                  "confidence": 0.24,
+                  "signals": {
+                    "lexical": 0.088,
+                    "exact_term_coverage": 0.077,
+                    "primary_phrase_coverage": 0.167,
+                    "title_match": 0.0,
+                    "bm25_raw": 35.248,
+                    "bm25_normalized": 0.9724,
+                    "bm25_relative": 1.0,
+                    "vector_distance": null,
+                    "vector_calibrated": false,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "concept_bonus": 0
+                  },
+                  "query_intent": "content",
+                  "selection_reason": "professional_bigram",
+                  "confidence_tier": "low",
+                  "partial": true,
+                  "evidence_excerpt": "与 $$\\int_{-\\pi}^{\\pi}\\sin^2 mx\\,dx=\\pi. \\tag{14}$$ 公式(7),(11)与(12)称为欧拉—傅里叶公式,用这些公式算出的系数称为已给函数的傅里叶系数,用这些系数作成的三角级数(5)称为已给函数的傅里叶级数。 在本章中我们专门研究傅里叶级数。 现在来看以上的讨论在逻辑上有什么价值。 我们的出发点是假设三角展开式(5)成立,但是这个假设究竟真实与否这一问题自然没有解决。 即令假定展开式(5)为真,我们依欧拉与傅里叶的方法算出了展开式(5)的系数,然而像这样做的理由是否令人信服呢? 我们一再应用过级数的逐项积分法,但是这种运算并不是什么时候都能进行的[434]. 级数的一致收敛性是可以应用这种运算的充分条件。 因此现在只有下列定理能够算作已经严格地证明了:",
+                  "evidence_id": "ev_fa2af974c0df5067",
+                  "context_hash": "05d81ee20627b2ff58031a8a0d45e5a3557c04888078837bb02cbad349216588",
+                  "raw_text_sha256": "479819ffcb630b193f31b78cbd009c15fcdaf56fe6b705fe01fc33999c029323",
+                  "raw_audit_ref": {
+                    "file_id": "cf08c4260437",
+                    "chunk_id": "cf08c4260437#1425"
+                  }
+                },
+                {
+                  "source": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "filename": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "file_id": "cf08c4260437",
+                  "chunk_id": "cf08c4260437#1051",
+                  "index": 1051,
+                  "score": 0.0318,
+                  "page": 268,
+                  "printed_page": 257,
+                  "noise_flags": [],
+                  "block_types": [
+                    "formula"
+                  ],
+                  "section_path": [
+                    "第十八章 三重积分及多重积分",
+                    "为了解答这一问题,将立体 $(V)$ 分成许多小块:",
+                    "如区域 \\((D)\\) 是由两曲线(图100)"
+                  ],
+                  "lesson": null,
+                  "is_lesson": false,
+                  "bm25_score": 32.808,
+                  "variant_hits": [
+                    "给我讲解一下反常提问收连信有什么常用的手法",
+                    "讲解一下反常提问收连信常用的手法"
+                  ],
+                  "retrieval_strategy": "multi_query_rrf",
+                  "section": "",
+                  "chapter": "第十八章 三重积分及多重积分",
+                  "source_scope": "workspace_textbook",
+                  "source_visibility": "public",
+                  "location_type": "printed_page",
+                  "location_label": "教材第 257 页（PDF 第 268 页）",
+                  "block_type": "formula",
+                  "matched_terms": [
+                    "反常"
+                  ],
+                  "matched_bigrams": [
+                    "什么",
+                    "反常"
+                  ],
+                  "matched_phrases": [],
+                  "primary_phrase_coverage": 0.167,
+                  "title_match": 0.0,
+                  "confidence": 0.226,
+                  "signals": {
+                    "lexical": 0.088,
+                    "exact_term_coverage": 0.077,
+                    "primary_phrase_coverage": 0.167,
+                    "title_match": 0.0,
+                    "bm25_raw": 32.808,
+                    "bm25_normalized": 0.9704,
+                    "bm25_relative": 0.9308,
+                    "vector_distance": null,
+                    "vector_calibrated": false,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "concept_bonus": 0
+                  },
+                  "query_intent": "content",
+                  "selection_reason": "professional_bigram",
+                  "confidence_tier": "low",
+                  "partial": true,
+                  "evidence_excerpt": "……y=y_0(x)\\quad\\text{及}\\quad y=Y(x)\\quad (x_0\\leq x\\leq X) 以及两直线 \\(x=x_0,\\ x=X\\) 所围成的曲边梯形,则立体 \\((V)\\) 适合于上所考察的两种样子。\n647.反常三重积分 常积分区域延伸到无穷远或积分号下的函数在一些奇点、线或面附近不为有界时,从常义积分出发,借一个附加的极限过程之助可得到反常三重积分。 多维情况与线性情况相比较的特征已经在研究反常二重积分时讲过了,而现在不要再添加什么。 反常三重积分同样必须是绝对收敛的。 这一情况就将这种积分的存在及计算的全部问题化为正的(非负的)积分号下函数的情形。 在这一假定下,与二重积分情形时一样,也可确立各种样子的三重积分与逐次积分间的联系。 我们不预备讨论这一点了。 648.例 1)计算积分 I=\\iiint\\frac{dx\\,dy\\,dz}{(1+x+y+z)^3}, 它既存在于平面 $x=0,\\ y=0,\\ z=0$ 及 $x+y+z=1$ 所围成的四面体 $(V)$ 上(图101)。\n[图|图100] 图述:图中表示三维坐标系中的立体区域,标有 $(V)$,其底面区域为 $(D)$。立体由坐标面及曲面边界围成,并标出了 $x$、$y$、$z$ 轴以及底面边界曲线。……",
+                  "evidence_id": "ev_7d84e5bd37c052e8",
+                  "context_hash": "fbd951e85076b22f9df3df9dca0a1e0c7a2b08820934f8e3e556bd5bfd48f9a5",
+                  "neighbor_expanded": true,
+                  "raw_text_sha256": "8579b2a487e1014ebd995ec14cca8c0f7e55ef02997c542c5cd5b8457611dec8",
+                  "raw_audit_ref": {
+                    "file_id": "cf08c4260437",
+                    "chunk_id": "cf08c4260437#1051"
+                  }
+                },
+                {
+                  "source": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "filename": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "file_id": "8ad6323bdc9e",
+                  "chunk_id": "8ad6323bdc9e#157",
+                  "index": 157,
+                  "score": 0.0176,
+                  "page": 42,
+                  "printed_page": 276,
+                  "noise_flags": [],
+                  "block_types": [
+                    "paragraph"
+                  ],
+                  "section_path": [
+                    "1 如果把积分了解为确定的原函数〔比较 266 中的附注〕,那么,想要在第二个公式中有与在第一个公式中同样的函数,严格说来,我们还必须在右端加进某一常数。当然,它会把常数 $C$ 与 $C'$ 吸收到最后的表达式里去。",
+                    "I 与 II 类型的分式我们已经会积分了 [267,7)]",
+                    "我们应使这两个系数都等于零,于是,为了确定 \\(M\\) 及 \\(N\\),我们得到线性方程组;它的行列式"
+                  ],
+                  "lesson": null,
+                  "is_lesson": false,
+                  "bm25_score": 26.818,
+                  "variant_hits": [
+                    "给我讲解一下反常提问收连信有什么常用的手法",
+                    "讲解一下反常提问收连信常用的手法"
+                  ],
+                  "retrieval_strategy": "multi_query_rrf",
+                  "section": "",
+                  "chapter": "",
+                  "source_scope": "workspace_textbook",
+                  "source_visibility": "public",
+                  "location_type": "printed_page",
+                  "location_label": "教材第 276 页（PDF 第 42 页）",
+                  "block_type": "paragraph",
+                  "matched_terms": [
+                    "一下",
+                    "有什"
+                  ],
+                  "matched_bigrams": [
+                    "一下",
+                    "什么",
+                    "有什"
+                  ],
+                  "matched_phrases": [],
+                  "primary_phrase_coverage": 0.167,
+                  "title_match": 0.0,
+                  "confidence": 0.224,
+                  "signals": {
+                    "lexical": 0.16,
+                    "exact_term_coverage": 0.154,
+                    "primary_phrase_coverage": 0.167,
+                    "title_match": 0.0,
+                    "bm25_raw": 26.818,
+                    "bm25_normalized": 0.9641,
+                    "bm25_relative": 0.7608,
+                    "vector_distance": null,
+                    "vector_calibrated": false,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "concept_bonus": 0
+                  },
+                  "query_intent": "content",
+                  "selection_reason": "professional_bigram",
+                  "confidence_tier": "low",
+                  "partial": true,
+                  "evidence_excerpt": "276. 分离积分的有理部分 有一个奥斯特洛格拉得斯基(M. B. Остроградский)方法。 利用这个方法可将有理真分式的求积分大大地简化。 这个方法使我们能用纯粹代数的方法来分离积分的有理部分。 我们在【273】中看到,当积分类型 II 与 IV 的部分分式时,在积分中可得到有理项。 在第一种情形,积分函数一下子就可写出 \\int\\frac{A}{(x-a)^k}\\,dx=-\\frac{A}{k-1}\\frac{1}{(x-a)^{k-1}}+C. \\tag{7} 现在我们要来确定:积分 \\int\\frac{Mx+N}{(x^2+px+q)^m}\\,dx \\qquad\\left(m>1,\\ q-\\frac{p^2}{4}>0\\right) 的有理部分有什么样的形状。 采用我们已经熟悉的替换 $x+\\frac p2=t$ 后,利用等式 (1)、(2) 及 271 目中当 $n=m-1$ 时的递推公式 (6),如果回到原变量 $x$,就得到",
+                  "evidence_id": "ev_444a70458ae47364",
+                  "context_hash": "236aa5e7d3da642687c2b9a7cb067d844fc8f0a24213e8575aa0945135fc7ab0",
+                  "raw_text_sha256": "e350b7f1603ef615d9dfd94a50211019ecadce72f4743501c312c80a0e470912",
+                  "raw_audit_ref": {
+                    "file_id": "8ad6323bdc9e",
+                    "chunk_id": "8ad6323bdc9e#157"
+                  }
+                },
+                {
+                  "source": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "filename": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "file_id": "8ad6323bdc9e",
+                  "chunk_id": "8ad6323bdc9e#1729",
+                  "index": 1729,
+                  "score": 0.03,
+                  "page": 481,
+                  "printed_page": null,
+                  "noise_flags": [],
+                  "block_types": [
+                    "paragraph"
+                  ],
+                  "section_path": [
+                    "第十三章 反常积分"
+                  ],
+                  "lesson": null,
+                  "is_lesson": false,
+                  "bm25_score": 26.335,
+                  "variant_hits": [
+                    "给我讲解一下反常提问收连信有什么常用的手法",
+                    "讲解一下反常提问收连信常用的手法"
+                  ],
+                  "retrieval_strategy": "multi_query_rrf",
+                  "section": "",
+                  "chapter": "",
+                  "source_scope": "workspace_textbook",
+                  "source_visibility": "public",
+                  "location_type": "page",
+                  "location_label": "PDF 第 481 页",
+                  "block_type": "paragraph",
+                  "matched_terms": [
+                    "一下",
+                    "反常"
+                  ],
+                  "matched_bigrams": [
+                    "一下",
+                    "反常"
+                  ],
+                  "matched_phrases": [],
+                  "primary_phrase_coverage": 0.083,
+                  "title_match": 0.041,
+                  "confidence": 0.222,
+                  "signals": {
+                    "lexical": 0.144,
+                    "exact_term_coverage": 0.154,
+                    "primary_phrase_coverage": 0.083,
+                    "title_match": 0.041,
+                    "bm25_raw": 26.335,
+                    "bm25_normalized": 0.9634,
+                    "bm25_relative": 0.7471,
+                    "vector_distance": null,
+                    "vector_calibrated": false,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "concept_bonus": 0
+                  },
+                  "query_intent": "content",
+                  "selection_reason": "professional_bigram",
+                  "confidence_tier": "low",
+                  "partial": true,
+                  "evidence_excerpt": "……§1. 积分限为无穷的反常积分 470. 积分限为无穷的反常积分的定义 第九章里所讲的定积分 $\\int_a^b f(x)\\,dx$ 的概念是对于有限区间 $[a,b]$ 与有界函数 $f(x)$ 而说的。 这一章是要把这个概念向各个方向推广。 我们先来看无穷区间上的积分。\n在这种情形下我们说积分(1)存在或收敛,而函数 $f(x)$ 则说是在无穷区间 $[a,+\\infty)$ 上为可积的。 为了要与以前所讲的在通常意义下的积分,即有限积分,有所区别,我们就称刚才所定义的积分为反常积分1。 若极限(1)为无穷或根本不存在,则关于这样的反常积分,我们说它不存在或发散。 但是有时候为了方便也把这无穷极限(在带有定号的时候)看作积分(1)的值。 例题 1)函数 $\\dfrac{1}{1+x^2}$ 在任意有限区间 $[0,A]$($A>0$)上都是可积的,而且我们有 1试回忆一下,我们在第373目中就已经遇到过反常积分的概念了。\n$$\\int_0^A \\frac{dx}{1+x^2}=\\arctg x\\bigg|_0^A=\\arctg A. $$ 因这积分当 $A\\to+\\infty$ 时具有有限极限 $\\frac{\\pi}{2}$,所以由 $0$ 到 $+\\infty$ 的积分收敛而且其值为 $$\\int_0^{+\\infty}\\frac{dx}{1+x^2}=\\lim_{A\\to+\\infty}\\int_0^A=\\fr……",
+                  "evidence_id": "ev_55ff87c062e90d08",
+                  "context_hash": "2342806f6f465b2217e4b767a6dd458c9c02bce1b72a714d0c374508dcc89c15",
+                  "neighbor_expanded": true,
+                  "raw_text_sha256": "3a7217f98792a8c51bf4fb7fbf20c9d153cbf96230939cbab96a60c2bb16490c",
+                  "raw_audit_ref": {
+                    "file_id": "8ad6323bdc9e",
+                    "chunk_id": "8ad6323bdc9e#1729"
+                  }
+                },
+                {
+                  "source": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "filename": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                  "file_id": "cf08c4260437",
+                  "chunk_id": "cf08c4260437#782",
+                  "index": 782,
+                  "score": 0.0283,
+                  "page": 200,
+                  "printed_page": 189,
+                  "noise_flags": [],
+                  "block_types": [
+                    "paragraph"
+                  ],
+                  "section_path": [
+                    "第十六章 二重积分",
+                    "4) 同样,取三角形$AOC$(同一图)作为区域$(D_2)$后,可以证明以$A$及$C$为奇点的积分",
+                    "I="
+                  ],
+                  "lesson": null,
+                  "is_lesson": false,
+                  "bm25_score": 25.531,
+                  "variant_hits": [
+                    "给我讲解一下反常提问收连信有什么常用的手法",
+                    "讲解一下反常提问收连信常用的手法"
+                  ],
+                  "retrieval_strategy": "multi_query_rrf",
+                  "section": "",
+                  "chapter": "第十六章 二重积分",
+                  "source_scope": "workspace_textbook",
+                  "source_visibility": "public",
+                  "location_type": "printed_page",
+                  "location_label": "教材第 189 页（PDF 第 200 页）",
+                  "block_type": "paragraph",
+                  "matched_terms": [
+                    "解一",
+                    "反常"
+                  ],
+                  "matched_bigrams": [
+                    "反常",
+                    "解一"
+                  ],
+                  "matched_phrases": [],
+                  "primary_phrase_coverage": 0.083,
+                  "title_match": 0.0,
+                  "confidence": 0.21,
+                  "signals": {
+                    "lexical": 0.144,
+                    "exact_term_coverage": 0.154,
+                    "primary_phrase_coverage": 0.083,
+                    "title_match": 0.0,
+                    "bm25_raw": 25.531,
+                    "bm25_normalized": 0.9623,
+                    "bm25_relative": 0.7243,
+                    "vector_distance": null,
+                    "vector_calibrated": false,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "concept_bonus": 0
+                  },
+                  "query_intent": "content",
+                  "selection_reason": "professional_bigram",
+                  "confidence_tier": "low",
+                  "partial": true,
+                  "evidence_excerpt": "\\iint_{(D)}\\frac{f(y)\\,dx\\,dy}{\\sqrt{(\\alpha-x)(x-y)}} 用两种方法化为逐次积分以证公式 \\int_0^\\alpha\\frac{dx}{\\sqrt{\\alpha-x}}\\int_0^x\\frac{f(y)\\,dy}{\\sqrt{x-y}} =\\pi\\int_0^\\alpha f(y)\\,dy. \\tag{15} [实际上,这是狄利克雷公式 597,10)的一特殊应用,不过这一次应用到反常积分上罢了;这里的奇线是:$x=\\alpha$ 及 $y=x$。 ] 我们利用公式(15)来解一个属于阿贝尔的有趣问题。 设 $\\varphi(x)$ 是一已给函数,在区间 $[0,a]$ 上它及其导函数皆连续,且 $\\varphi(0)=0$。 要来确定在同一区间上的连续函数 $f(x)$,使对所有的 $x$,下一条件适合: \\varphi(x)=\\int_0^x\\frac{f(y)\\,dy}{\\sqrt{x-y}}.",
+                  "evidence_id": "ev_e4c098722c762845",
+                  "context_hash": "e3f3df936ed355ac49b3dd39b81114d9bb3dff2644faccb3ea27eefd27ba22ec",
+                  "raw_text_sha256": "025a64a9dcd06173d1a623f4203fb21e536ba643ed14a942c05ea887a6abb4fe",
+                  "raw_audit_ref": {
+                    "file_id": "cf08c4260437",
+                    "chunk_id": "cf08c4260437#782"
+                  }
+                }
+              ],
+              "count": 6,
+              "omitted_count": 48,
+              "partial": true,
+              "evidence_bundle": {
+                "query": "给我讲解一下反常提问收连信有什么常用的手法",
+                "selected": [
+                  {
+                    "source": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "filename": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "file_id": "8ad6323bdc9e",
+                    "chunk_id": "8ad6323bdc9e#2048",
+                    "index": 2048,
+                    "score": 0.0243,
+                    "page": 570,
+                    "printed_page": 558,
+                    "noise_flags": [],
+                    "block_types": [
+                      "theorem"
+                    ],
+                    "section_path": [
+                      "第十四章 依赖于参数的积分",
+                      "第一个积分,因为它的积分限是常量,当 $y\\to y_0$ 时按定理 2 趋于"
+                    ],
+                    "lesson": null,
+                    "is_lesson": false,
+                    "bm25_score": 31.083,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "retrieval_strategy": "multi_query_rrf",
+                    "section": "",
+                    "chapter": "",
+                    "source_scope": "workspace_textbook",
+                    "source_visibility": "public",
+                    "location_type": "printed_page",
+                    "location_label": "教材第 558 页（PDF 第 570 页）",
+                    "block_type": "theorem",
+                    "matched_terms": [
+                      "反常",
+                      "有什"
+                    ],
+                    "matched_bigrams": [
+                      "什么",
+                      "反常",
+                      "有什",
+                      "用的"
+                    ],
+                    "matched_phrases": [],
+                    "primary_phrase_coverage": 0.25,
+                    "title_match": 0.0,
+                    "confidence": 0.256,
+                    "signals": {
+                      "lexical": 0.177,
+                      "exact_term_coverage": 0.154,
+                      "primary_phrase_coverage": 0.25,
+                      "title_match": 0.0,
+                      "bm25_raw": 31.083,
+                      "bm25_normalized": 0.9688,
+                      "bm25_relative": 0.8818,
+                      "vector_distance": null,
+                      "vector_calibrated": false,
+                      "variant_hits": [
+                        "给我讲解一下反常提问收连信有什么常用的手法",
+                        "讲解一下反常提问收连信常用的手法"
+                      ],
+                      "concept_bonus": 0
+                    },
+                    "query_intent": "content",
+                    "selection_reason": "professional_bigram",
+                    "confidence_tier": "low",
+                    "partial": true,
+                    "evidence_excerpt": "这样已经证明了我们的公式,因为右面的式子是一个任意小量乘上一个有限常量 $\\int_a^b|g(x)|\\,dx$。 特别,对于以 $n$ 为参数的函数序列 $\\{f_n(x)\\}$ 也有相似的定理。 我们用“无穷级数的说法”来叙述这个结果,因为它是常常在这样的形式中被应用的。 推论 倘使 1)级数 \\sum_{n=1}^{\\infty}u_n(x) 的各项在 $[a,b]$ 上是可积的函数(在通常意义下),并且级数一致收敛,2)$g(x)$ 是在 $[a,b]$ 上绝对可积的函数(甚至于在反常积分的意义下),则级数 \\sum_{n=1}^{\\infty}u_n(x)g(x) 可以逐项积分。 完全同定理2及3一样(但只参考定理1*,而不是定理1)我们可以证明: 定理2* 在定理2的假定下,积分(1*)是 $y$ 在区间 $[c,d]$ 上的连续函数。 定理3* 在定理3的假定下,函数(1*)对于参数是可微的并且有公式:",
+                    "evidence_id": "ev_512fff2aa3b190c0",
+                    "context_hash": "7e7a5e8dd99fc1f6c73e117ee2c74b7b446391688f6a7e7c49a418888a307e94",
+                    "raw_text_sha256": "1df6dee72add0c57f91c5900578ae4b520dd247267e774e3f0618fa94eabd852",
+                    "raw_audit_ref": {
+                      "file_id": "8ad6323bdc9e",
+                      "chunk_id": "8ad6323bdc9e#2048"
+                    }
+                  },
+                  {
+                    "source": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "filename": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "file_id": "cf08c4260437",
+                    "chunk_id": "cf08c4260437#1425",
+                    "index": 1425,
+                    "score": 0.0209,
+                    "page": 356,
+                    "printed_page": 679,
+                    "noise_flags": [],
+                    "block_types": [
+                      "paragraph"
+                    ],
+                    "section_path": [
+                      "1 如果需要的话,当然不难从这个展开式反过来变成形如(4)的展开式。"
+                    ],
+                    "lesson": null,
+                    "is_lesson": false,
+                    "bm25_score": 35.248,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "retrieval_strategy": "multi_query_rrf",
+                    "section": "",
+                    "chapter": "",
+                    "source_scope": "workspace_textbook",
+                    "source_visibility": "public",
+                    "location_type": "printed_page",
+                    "location_label": "教材第 679 页（PDF 第 356 页）",
+                    "block_type": "paragraph",
+                    "matched_terms": [
+                      "有什"
+                    ],
+                    "matched_bigrams": [
+                      "什么",
+                      "有什"
+                    ],
+                    "matched_phrases": [],
+                    "primary_phrase_coverage": 0.167,
+                    "title_match": 0.0,
+                    "confidence": 0.24,
+                    "signals": {
+                      "lexical": 0.088,
+                      "exact_term_coverage": 0.077,
+                      "primary_phrase_coverage": 0.167,
+                      "title_match": 0.0,
+                      "bm25_raw": 35.248,
+                      "bm25_normalized": 0.9724,
+                      "bm25_relative": 1.0,
+                      "vector_distance": null,
+                      "vector_calibrated": false,
+                      "variant_hits": [
+                        "给我讲解一下反常提问收连信有什么常用的手法",
+                        "讲解一下反常提问收连信常用的手法"
+                      ],
+                      "concept_bonus": 0
+                    },
+                    "query_intent": "content",
+                    "selection_reason": "professional_bigram",
+                    "confidence_tier": "low",
+                    "partial": true,
+                    "evidence_excerpt": "与 $$\\int_{-\\pi}^{\\pi}\\sin^2 mx\\,dx=\\pi. \\tag{14}$$ 公式(7),(11)与(12)称为欧拉—傅里叶公式,用这些公式算出的系数称为已给函数的傅里叶系数,用这些系数作成的三角级数(5)称为已给函数的傅里叶级数。 在本章中我们专门研究傅里叶级数。 现在来看以上的讨论在逻辑上有什么价值。 我们的出发点是假设三角展开式(5)成立,但是这个假设究竟真实与否这一问题自然没有解决。 即令假定展开式(5)为真,我们依欧拉与傅里叶的方法算出了展开式(5)的系数,然而像这样做的理由是否令人信服呢? 我们一再应用过级数的逐项积分法,但是这种运算并不是什么时候都能进行的[434]. 级数的一致收敛性是可以应用这种运算的充分条件。 因此现在只有下列定理能够算作已经严格地证明了:",
+                    "evidence_id": "ev_fa2af974c0df5067",
+                    "context_hash": "05d81ee20627b2ff58031a8a0d45e5a3557c04888078837bb02cbad349216588",
+                    "raw_text_sha256": "479819ffcb630b193f31b78cbd009c15fcdaf56fe6b705fe01fc33999c029323",
+                    "raw_audit_ref": {
+                      "file_id": "cf08c4260437",
+                      "chunk_id": "cf08c4260437#1425"
+                    }
+                  },
+                  {
+                    "source": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "filename": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "file_id": "cf08c4260437",
+                    "chunk_id": "cf08c4260437#1051",
+                    "index": 1051,
+                    "score": 0.0318,
+                    "page": 268,
+                    "printed_page": 257,
+                    "noise_flags": [],
+                    "block_types": [
+                      "formula"
+                    ],
+                    "section_path": [
+                      "第十八章 三重积分及多重积分",
+                      "为了解答这一问题,将立体 $(V)$ 分成许多小块:",
+                      "如区域 \\((D)\\) 是由两曲线(图100)"
+                    ],
+                    "lesson": null,
+                    "is_lesson": false,
+                    "bm25_score": 32.808,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "retrieval_strategy": "multi_query_rrf",
+                    "section": "",
+                    "chapter": "第十八章 三重积分及多重积分",
+                    "source_scope": "workspace_textbook",
+                    "source_visibility": "public",
+                    "location_type": "printed_page",
+                    "location_label": "教材第 257 页（PDF 第 268 页）",
+                    "block_type": "formula",
+                    "matched_terms": [
+                      "反常"
+                    ],
+                    "matched_bigrams": [
+                      "什么",
+                      "反常"
+                    ],
+                    "matched_phrases": [],
+                    "primary_phrase_coverage": 0.167,
+                    "title_match": 0.0,
+                    "confidence": 0.226,
+                    "signals": {
+                      "lexical": 0.088,
+                      "exact_term_coverage": 0.077,
+                      "primary_phrase_coverage": 0.167,
+                      "title_match": 0.0,
+                      "bm25_raw": 32.808,
+                      "bm25_normalized": 0.9704,
+                      "bm25_relative": 0.9308,
+                      "vector_distance": null,
+                      "vector_calibrated": false,
+                      "variant_hits": [
+                        "给我讲解一下反常提问收连信有什么常用的手法",
+                        "讲解一下反常提问收连信常用的手法"
+                      ],
+                      "concept_bonus": 0
+                    },
+                    "query_intent": "content",
+                    "selection_reason": "professional_bigram",
+                    "confidence_tier": "low",
+                    "partial": true,
+                    "evidence_excerpt": "……y=y_0(x)\\quad\\text{及}\\quad y=Y(x)\\quad (x_0\\leq x\\leq X) 以及两直线 \\(x=x_0,\\ x=X\\) 所围成的曲边梯形,则立体 \\((V)\\) 适合于上所考察的两种样子。\n647.反常三重积分 常积分区域延伸到无穷远或积分号下的函数在一些奇点、线或面附近不为有界时,从常义积分出发,借一个附加的极限过程之助可得到反常三重积分。 多维情况与线性情况相比较的特征已经在研究反常二重积分时讲过了,而现在不要再添加什么。 反常三重积分同样必须是绝对收敛的。 这一情况就将这种积分的存在及计算的全部问题化为正的(非负的)积分号下函数的情形。 在这一假定下,与二重积分情形时一样,也可确立各种样子的三重积分与逐次积分间的联系。 我们不预备讨论这一点了。 648.例 1)计算积分 I=\\iiint\\frac{dx\\,dy\\,dz}{(1+x+y+z)^3}, 它既存在于平面 $x=0,\\ y=0,\\ z=0$ 及 $x+y+z=1$ 所围成的四面体 $(V)$ 上(图101)。\n[图|图100] 图述:图中表示三维坐标系中的立体区域,标有 $(V)$,其底面区域为 $(D)$。立体由坐标面及曲面边界围成,并标出了 $x$、$y$、$z$ 轴以及底面边界曲线。……",
+                    "evidence_id": "ev_7d84e5bd37c052e8",
+                    "context_hash": "fbd951e85076b22f9df3df9dca0a1e0c7a2b08820934f8e3e556bd5bfd48f9a5",
+                    "neighbor_expanded": true,
+                    "raw_text_sha256": "8579b2a487e1014ebd995ec14cca8c0f7e55ef02997c542c5cd5b8457611dec8",
+                    "raw_audit_ref": {
+                      "file_id": "cf08c4260437",
+                      "chunk_id": "cf08c4260437#1051"
+                    }
+                  },
+                  {
+                    "source": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "filename": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "file_id": "8ad6323bdc9e",
+                    "chunk_id": "8ad6323bdc9e#157",
+                    "index": 157,
+                    "score": 0.0176,
+                    "page": 42,
+                    "printed_page": 276,
+                    "noise_flags": [],
+                    "block_types": [
+                      "paragraph"
+                    ],
+                    "section_path": [
+                      "1 如果把积分了解为确定的原函数〔比较 266 中的附注〕,那么,想要在第二个公式中有与在第一个公式中同样的函数,严格说来,我们还必须在右端加进某一常数。当然,它会把常数 $C$ 与 $C'$ 吸收到最后的表达式里去。",
+                      "I 与 II 类型的分式我们已经会积分了 [267,7)]",
+                      "我们应使这两个系数都等于零,于是,为了确定 \\(M\\) 及 \\(N\\),我们得到线性方程组;它的行列式"
+                    ],
+                    "lesson": null,
+                    "is_lesson": false,
+                    "bm25_score": 26.818,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "retrieval_strategy": "multi_query_rrf",
+                    "section": "",
+                    "chapter": "",
+                    "source_scope": "workspace_textbook",
+                    "source_visibility": "public",
+                    "location_type": "printed_page",
+                    "location_label": "教材第 276 页（PDF 第 42 页）",
+                    "block_type": "paragraph",
+                    "matched_terms": [
+                      "一下",
+                      "有什"
+                    ],
+                    "matched_bigrams": [
+                      "一下",
+                      "什么",
+                      "有什"
+                    ],
+                    "matched_phrases": [],
+                    "primary_phrase_coverage": 0.167,
+                    "title_match": 0.0,
+                    "confidence": 0.224,
+                    "signals": {
+                      "lexical": 0.16,
+                      "exact_term_coverage": 0.154,
+                      "primary_phrase_coverage": 0.167,
+                      "title_match": 0.0,
+                      "bm25_raw": 26.818,
+                      "bm25_normalized": 0.9641,
+                      "bm25_relative": 0.7608,
+                      "vector_distance": null,
+                      "vector_calibrated": false,
+                      "variant_hits": [
+                        "给我讲解一下反常提问收连信有什么常用的手法",
+                        "讲解一下反常提问收连信常用的手法"
+                      ],
+                      "concept_bonus": 0
+                    },
+                    "query_intent": "content",
+                    "selection_reason": "professional_bigram",
+                    "confidence_tier": "low",
+                    "partial": true,
+                    "evidence_excerpt": "276. 分离积分的有理部分 有一个奥斯特洛格拉得斯基(M. B. Остроградский)方法。 利用这个方法可将有理真分式的求积分大大地简化。 这个方法使我们能用纯粹代数的方法来分离积分的有理部分。 我们在【273】中看到,当积分类型 II 与 IV 的部分分式时,在积分中可得到有理项。 在第一种情形,积分函数一下子就可写出 \\int\\frac{A}{(x-a)^k}\\,dx=-\\frac{A}{k-1}\\frac{1}{(x-a)^{k-1}}+C. \\tag{7} 现在我们要来确定:积分 \\int\\frac{Mx+N}{(x^2+px+q)^m}\\,dx \\qquad\\left(m>1,\\ q-\\frac{p^2}{4}>0\\right) 的有理部分有什么样的形状。 采用我们已经熟悉的替换 $x+\\frac p2=t$ 后,利用等式 (1)、(2) 及 271 目中当 $n=m-1$ 时的递推公式 (6),如果回到原变量 $x$,就得到",
+                    "evidence_id": "ev_444a70458ae47364",
+                    "context_hash": "236aa5e7d3da642687c2b9a7cb067d844fc8f0a24213e8575aa0945135fc7ab0",
+                    "raw_text_sha256": "e350b7f1603ef615d9dfd94a50211019ecadce72f4743501c312c80a0e470912",
+                    "raw_audit_ref": {
+                      "file_id": "8ad6323bdc9e",
+                      "chunk_id": "8ad6323bdc9e#157"
+                    }
+                  },
+                  {
+                    "source": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "filename": "微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "file_id": "8ad6323bdc9e",
+                    "chunk_id": "8ad6323bdc9e#1729",
+                    "index": 1729,
+                    "score": 0.03,
+                    "page": 481,
+                    "printed_page": null,
+                    "noise_flags": [],
+                    "block_types": [
+                      "paragraph"
+                    ],
+                    "section_path": [
+                      "第十三章 反常积分"
+                    ],
+                    "lesson": null,
+                    "is_lesson": false,
+                    "bm25_score": 26.335,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "retrieval_strategy": "multi_query_rrf",
+                    "section": "",
+                    "chapter": "",
+                    "source_scope": "workspace_textbook",
+                    "source_visibility": "public",
+                    "location_type": "page",
+                    "location_label": "PDF 第 481 页",
+                    "block_type": "paragraph",
+                    "matched_terms": [
+                      "一下",
+                      "反常"
+                    ],
+                    "matched_bigrams": [
+                      "一下",
+                      "反常"
+                    ],
+                    "matched_phrases": [],
+                    "primary_phrase_coverage": 0.083,
+                    "title_match": 0.041,
+                    "confidence": 0.222,
+                    "signals": {
+                      "lexical": 0.144,
+                      "exact_term_coverage": 0.154,
+                      "primary_phrase_coverage": 0.083,
+                      "title_match": 0.041,
+                      "bm25_raw": 26.335,
+                      "bm25_normalized": 0.9634,
+                      "bm25_relative": 0.7471,
+                      "vector_distance": null,
+                      "vector_calibrated": false,
+                      "variant_hits": [
+                        "给我讲解一下反常提问收连信有什么常用的手法",
+                        "讲解一下反常提问收连信常用的手法"
+                      ],
+                      "concept_bonus": 0
+                    },
+                    "query_intent": "content",
+                    "selection_reason": "professional_bigram",
+                    "confidence_tier": "low",
+                    "partial": true,
+                    "evidence_excerpt": "……§1. 积分限为无穷的反常积分 470. 积分限为无穷的反常积分的定义 第九章里所讲的定积分 $\\int_a^b f(x)\\,dx$ 的概念是对于有限区间 $[a,b]$ 与有界函数 $f(x)$ 而说的。 这一章是要把这个概念向各个方向推广。 我们先来看无穷区间上的积分。\n在这种情形下我们说积分(1)存在或收敛,而函数 $f(x)$ 则说是在无穷区间 $[a,+\\infty)$ 上为可积的。 为了要与以前所讲的在通常意义下的积分,即有限积分,有所区别,我们就称刚才所定义的积分为反常积分1。 若极限(1)为无穷或根本不存在,则关于这样的反常积分,我们说它不存在或发散。 但是有时候为了方便也把这无穷极限(在带有定号的时候)看作积分(1)的值。 例题 1)函数 $\\dfrac{1}{1+x^2}$ 在任意有限区间 $[0,A]$($A>0$)上都是可积的,而且我们有 1试回忆一下,我们在第373目中就已经遇到过反常积分的概念了。\n$$\\int_0^A \\frac{dx}{1+x^2}=\\arctg x\\bigg|_0^A=\\arctg A. $$ 因这积分当 $A\\to+\\infty$ 时具有有限极限 $\\frac{\\pi}{2}$,所以由 $0$ 到 $+\\infty$ 的积分收敛而且其值为 $$\\int_0^{+\\infty}\\frac{dx}{1+x^2}=\\lim_{A\\to+\\infty}\\int_0^A=\\fr……",
+                    "evidence_id": "ev_55ff87c062e90d08",
+                    "context_hash": "2342806f6f465b2217e4b767a6dd458c9c02bce1b72a714d0c374508dcc89c15",
+                    "neighbor_expanded": true,
+                    "raw_text_sha256": "3a7217f98792a8c51bf4fb7fbf20c9d153cbf96230939cbab96a60c2bb16490c",
+                    "raw_audit_ref": {
+                      "file_id": "8ad6323bdc9e",
+                      "chunk_id": "8ad6323bdc9e#1729"
+                    }
+                  },
+                  {
+                    "source": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "filename": "微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf",
+                    "file_id": "cf08c4260437",
+                    "chunk_id": "cf08c4260437#782",
+                    "index": 782,
+                    "score": 0.0283,
+                    "page": 200,
+                    "printed_page": 189,
+                    "noise_flags": [],
+                    "block_types": [
+                      "paragraph"
+                    ],
+                    "section_path": [
+                      "第十六章 二重积分",
+                      "4) 同样,取三角形$AOC$(同一图)作为区域$(D_2)$后,可以证明以$A$及$C$为奇点的积分",
+                      "I="
+                    ],
+                    "lesson": null,
+                    "is_lesson": false,
+                    "bm25_score": 25.531,
+                    "variant_hits": [
+                      "给我讲解一下反常提问收连信有什么常用的手法",
+                      "讲解一下反常提问收连信常用的手法"
+                    ],
+                    "retrieval_strategy": "multi_query_rrf",
+                    "section": "",
+                    "chapter": "第十六章 二重积分",
+                    "source_scope": "workspace_textbook",
+                    "source_visibility": "public",
+                    "location_type": "printed_page",
+                    "location_label": "教材第 189 页（PDF 第 200 页）",
+                    "block_type": "paragraph",
+                    "matched_terms": [
+                      "解一",
+                      "反常"
+                    ],
+                    "matched_bigrams": [
+                      "反常",
+                      "解一"
+                    ],
+                    "matched_phrases": [],
+                    "primary_phrase_coverage": 0.083,
+                    "title_match": 0.0,
+                    "confidence": 0.21,
+                    "signals": {
+                      "lexical": 0.144,
+                      "exact_term_coverage": 0.154,
+                      "primary_phrase_coverage": 0.083,
+                      "title_match": 0.0,
+                      "bm25_raw": 25.531,
+                      "bm25_normalized": 0.9623,
+                      "bm25_relative": 0.7243,
+                      "vector_distance": null,
+                      "vector_calibrated": false,
+                      "variant_hits": [
+                        "给我讲解一下反常提问收连信有什么常用的手法",
+                        "讲解一下反常提问收连信常用的手法"
+                      ],
+                      "concept_bonus": 0
+                    },
+                    "query_intent": "content",
+                    "selection_reason": "professional_bigram",
+                    "confidence_tier": "low",
+                    "partial": true,
+                    "evidence_excerpt": "\\iint_{(D)}\\frac{f(y)\\,dx\\,dy}{\\sqrt{(\\alpha-x)(x-y)}} 用两种方法化为逐次积分以证公式 \\int_0^\\alpha\\frac{dx}{\\sqrt{\\alpha-x}}\\int_0^x\\frac{f(y)\\,dy}{\\sqrt{x-y}} =\\pi\\int_0^\\alpha f(y)\\,dy. \\tag{15} [实际上,这是狄利克雷公式 597,10)的一特殊应用,不过这一次应用到反常积分上罢了;这里的奇线是:$x=\\alpha$ 及 $y=x$。 ] 我们利用公式(15)来解一个属于阿贝尔的有趣问题。 设 $\\varphi(x)$ 是一已给函数,在区间 $[0,a]$ 上它及其导函数皆连续,且 $\\varphi(0)=0$。 要来确定在同一区间上的连续函数 $f(x)$,使对所有的 $x$,下一条件适合: \\varphi(x)=\\int_0^x\\frac{f(y)\\,dy}{\\sqrt{x-y}}.",
+                    "evidence_id": "ev_e4c098722c762845",
+                    "context_hash": "e3f3df936ed355ac49b3dd39b81114d9bb3dff2644faccb3ea27eefd27ba22ec",
+                    "raw_text_sha256": "025a64a9dcd06173d1a623f4203fb21e536ba643ed14a942c05ea887a6abb4fe",
+                    "raw_audit_ref": {
+                      "file_id": "cf08c4260437",
+                      "chunk_id": "cf08c4260437#782"
+                    }
+                  }
+                ],
+                "omitted_count": 48,
+                "no_hit": false,
+                "context_hashes": [
+                  "7e7a5e8dd99fc1f6c73e117ee2c74b7b446391688f6a7e7c49a418888a307e94",
+                  "05d81ee20627b2ff58031a8a0d45e5a3557c04888078837bb02cbad349216588",
+                  "fbd951e85076b22f9df3df9dca0a1e0c7a2b08820934f8e3e556bd5bfd48f9a5",
+                  "236aa5e7d3da642687c2b9a7cb067d844fc8f0a24213e8575aa0945135fc7ab0",
+                  "2342806f6f465b2217e4b767a6dd458c9c02bce1b72a714d0c374508dcc89c15",
+                  "e3f3df936ed355ac49b3dd39b81114d9bb3dff2644faccb3ea27eefd27ba22ec"
+                ]
+              },
+              "telemetry": {
+                "gate_mode": "on",
+                "candidate_count": 48,
+                "selected_count": 6,
+                "omitted_count": 48,
+                "no_hit": false,
+                "tier": "partial",
+                "drop_reasons": {
+                  "weak_term_coverage": 47,
+                  "no_absolute_evidence": 1
+                },
+                "latency_ms": 465.64,
+                "shadow_selected_count": 6,
+                "shadow_no_hit": false,
+                "duplicate_drop_count": 0,
+                "duplicate_rate": 0.0,
+                "candidate_ref_sha256": "b1090958de7bdf4536bcbcdf662b2e928babfe0050892a2cc1ac4056e7db538c",
+                "selected_context_hashes": [
+                  "7e7a5e8dd99fc1f6c73e117ee2c74b7b446391688f6a7e7c49a418888a307e94",
+                  "05d81ee20627b2ff58031a8a0d45e5a3557c04888078837bb02cbad349216588",
+                  "fbd951e85076b22f9df3df9dca0a1e0c7a2b08820934f8e3e556bd5bfd48f9a5",
+                  "236aa5e7d3da642687c2b9a7cb067d844fc8f0a24213e8575aa0945135fc7ab0",
+                  "2342806f6f465b2217e4b767a6dd458c9c02bce1b72a714d0c374508dcc89c15",
+                  "e3f3df936ed355ac49b3dd39b81114d9bb3dff2644faccb3ea27eefd27ba22ec"
+                ]
+              },
+              "file_ids": null
+            },
+            "text": "从课程资料中找到 6 条部分相关证据（低置信，过滤 48 条；引用时须向学生说明依据较弱）：\n\n[来源：微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf · 教材第558页（PDF第570页） · chunk 2048]\n(置信度 0.256·低)\n<material_excerpt>这样已经证明了我们的公式,因为右面的式子是一个任意小量乘上一个有限常量 $\\int_a^b|g(x)|\\,dx$。 特别,对于以 $n$ 为参数的函数序列 $\\{f_n(x)\\}$ 也有相似的定理。 我们用“无穷级数的说法”来叙述这个结果,因为它是常常在这样的形式中被应用的。 推论 倘使 1)级数 \\sum_{n=1}^{\\infty}u_n(x) 的各项在 $[a,b]$ 上是可积的函数(在通常意义下),并且级数一致收敛,2)$g(x)$ 是在 $[a,b]$ 上绝对可积的函数(甚至于在反常积分的意义下),则级数 \\sum_{n=1}^{\\infty}u_n(x)g(x) 可以逐项积分。 完全同定理2及3一样(但只参考定理1*,而不是定理1)我们可以证明: 定理2* 在定理2的假定下,积分(1*)是 $y$ 在区间 $[c,d]$ 上的连续函数。 定理3* 在定理3的假定下,函数(1*)对于参数是可微的并且有公式:</material_excerpt>\n\n[来源：微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf · 教材第679页（PDF第356页） · chunk 1425]\n(置信度 0.24·低)\n<material_excerpt>与 $$\\int_{-\\pi}^{\\pi}\\sin^2 mx\\,dx=\\pi. \\tag{14}$$ 公式(7),(11)与(12)称为欧拉—傅里叶公式,用这些公式算出的系数称为已给函数的傅里叶系数,用这些系数作成的三角级数(5)称为已给函数的傅里叶级数。 在本章中我们专门研究傅里叶级数。 现在来看以上的讨论在逻辑上有什么价值。 我们的出发点是假设三角展开式(5)成立,但是这个假设究竟真实与否这一问题自然没有解决。 即令假定展开式(5)为真,我们依欧拉与傅里叶的方法算出了展开式(5)的系数,然而像这样做的理由是否令人信服呢? 我们一再应用过级数的逐项积分法,但是这种运算并不是什么时候都能进行的[434]. 级数的一致收敛性是可以应用这种运算的充分条件。 因此现在只有下列定理能够算作已经严格地证明了:</material_excerpt>\n\n[来源：微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf · 第十八章 三重积分及多重积分 · 教材第257页（PDF第268页） · chunk 1051]\n(置信度 0.226·低)\n<material_excerpt>……y=y_0(x)\\quad\\text{及}\\quad y=Y(x)\\quad (x_0\\leq x\\leq X) 以及两直线 \\(x=x_0,\\ x=X\\) 所围成的曲边梯形,则立体 \\((V)\\) 适合于上所考察的两种样子。\n647.反常三重积分 常积分区域延伸到无穷远或积分号下的函数在一些奇点、线或面附近不为有界时,从常义积分出发,借一个附加的极限过程之助可得到反常三重积分。 多维情况与线性情况相比较的特征已经在研究反常二重积分时讲过了,而现在不要再添加什么。 反常三重积分同样必须是绝对收敛的。 这一情况就将这种积分的存在及计算的全部问题化为正的(非负的)积分号下函数的情形。 在这一假定下,与二重积分情形时一样,也可确立各种样子的三重积分与逐次积分间的联系。 我们不预备讨论这一点了。 648.例 1)计算积分 I=\\iiint\\frac{dx\\,dy\\,dz}{(1+x+y+z)^3}, 它既存在于平面 $x=0,\\ y=0,\\ z=0$ 及 $x+y+z=1$ 所围成的四面体 $(V)$ 上(图101)。\n[图|图100] 图述:图中表示三维坐标系中的立体区域,标有 $(V)$,其底面区域为 $(D)$。立体由坐标面及曲面边界围成,并标出了 $x$、$y$、$z$ 轴以及底面边界曲线。……</material_excerpt>\n\n[来源：微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf · 教材第276页（PDF第42页） · chunk 157]\n(置信度 0.224·低)\n<material_excerpt>276. 分离积分的有理部分 有一个奥斯特洛格拉得斯基(M. B. Остроградский)方法。 利用这个方法可将有理真分式的求积分大大地简化。 这个方法使我们能用纯粹代数的方法来分离积分的有理部分。 我们在【273】中看到,当积分类型 II 与 IV 的部分分式时,在积分中可得到有理项。 在第一种情形,积分函数一下子就可写出 \\int\\frac{A}{(x-a)^k}\\,dx=-\\frac{A}{k-1}\\frac{1}{(x-a)^{k-1}}+C. \\tag{7} 现在我们要来确定:积分 \\int\\frac{Mx+N}{(x^2+px+q)^m}\\,dx \\qquad\\left(m>1,\\ q-\\frac{p^2}{4}>0\\right) 的有理部分有什么样的形状。 采用我们已经熟悉的替换 $x+\\frac p2=t$ 后,利用等式 (1)、(2) 及 271 目中当 $n=m-1$ 时的递推公式 (6),如果回到原变量 $x$,就得到</material_excerpt>\n\n[来源：微积分学教程（第2卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf · PDF第481页 · chunk 1729]\n(置信度 0.222·低)\n<material_excerpt>……§1. 积分限为无穷的反常积分 470. 积分限为无穷的反常积分的定义 第九章里所讲的定积分 $\\int_a^b f(x)\\,dx$ 的概念是对于有限区间 $[a,b]$ 与有界函数 $f(x)$ 而说的。 这一章是要把这个概念向各个方向推广。 我们先来看无穷区间上的积分。\n在这种情形下我们说积分(1)存在或收敛,而函数 $f(x)$ 则说是在无穷区间 $[a,+\\infty)$ 上为可积的。 为了要与以前所讲的在通常意义下的积分,即有限积分,有所区别,我们就称刚才所定义的积分为反常积分1。 若极限(1)为无穷或根本不存在,则关于这样的反常积分,我们说它不存在或发散。 但是有时候为了方便也把这无穷极限(在带有定号的时候)看作积分(1)的值。 例题 1)函数 $\\dfrac{1}{1+x^2}$ 在任意有限区间 $[0,A]$($A>0$)上都是可积的,而且我们有 1试回忆一下,我们在第373目中就已经遇到过反常积分的概念了。\n$$\\int_0^A \\frac{dx}{1+x^2}=\\arctg x\\bigg|_0^A=\\arctg A. $$ 因这积分当 $A\\to+\\infty$ 时具有有限极限 $\\frac{\\pi}{2}$,所以由 $0$ 到 $+\\infty$ 的积分收敛而且其值为 $$\\int_0^{+\\infty}\\frac{dx}{1+x^2}=\\lim_{A\\to+\\infty}\\int_0^A=\\fr……</material_excerpt>\n\n[来源：微积分学教程（第3卷） (Г.М.菲赫金哥尔茨,ригорийМихайлович Фихтенгольц) .pdf · 第十六章 二重积分 · 教材第189页（PDF第200页） · chunk 782]\n(置信度 0.21·低)\n<material_excerpt>\\iint_{(D)}\\frac{f(y)\\,dx\\,dy}{\\sqrt{(\\alpha-x)(x-y)}} 用两种方法化为逐次积分以证公式 \\int_0^\\alpha\\frac{dx}{\\sqrt{\\alpha-x}}\\int_0^x\\frac{f(y)\\,dy}{\\sqrt{x-y}} =\\pi\\int_0^\\alpha f(y)\\,dy. \\tag{15} [实际上,这是狄利克雷公式 597,10)的一特殊应用,不过这一次应用到反常积分上罢了;这里的奇线是:$x=\\alpha$ 及 $y=x$。 ] 我们利用公式(15)来解一个属于阿贝尔的有趣问题。 设 $\\varphi(x)$ 是一已给函数,在区间 $[0,a]$ 上它及其导函数皆连续,且 $\\varphi(0)=0$。 要来确定在同一区间上的连续函数 $f(x)$,使对所有的 $x$,下一条件适合: \\varphi(x)=\\int_0^x\\frac{f(y)\\,dy}{\\sqrt{x-y}}.</material_excerpt>\n（需要更多上下文时，可用 knowledge_read 按上面的 chunk 指针读取完整原文及相邻片段。）",
+            "error": null,
+            "error_code": null
+          }
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "繼續喔"
+    },
+    {
+      "role": "assistant",
+      "content": "继续补充几个容易混淆、但很常用的判断手法。当前回合没有可调用的教材检索能力，以下按通用微积分理论讲解，未引用教材页码。\n\n## 1. 有多个瑕点时要“分段分别判断”\n\n例如\n\n$$\n\\int_{-1}^{1}\\frac{1}{x^2}\\,dx\n$$\n\n在 $x=0$ 处有奇点，定义为\n\n$$\n\\int_{-1}^{1}\\frac{1}{x^2}\\,dx\n=\n\\int_{-1}^{0}\\frac{1}{x^2}\\,dx\n+\n\\int_{0}^{1}\\frac{1}{x^2}\\,dx.\n$$\n\n这两个积分都发散，因此原积分发散。\n\n不能写成对称截断\n\n$$\n\\lim_{\\varepsilon\\to0^+}\n\\left(\n\\int_{-1}^{-\\varepsilon}\\frac{1}{x^2}\\,dx+\n\\int_{\\varepsilon}^{1}\\frac{1}{x^2}\\,dx\n\\right)\n$$\n\n然后讨论“抵消”。因为被积函数非负，根本不存在正负抵消；即使某些函数形式上出现抵消，也可能只是柯西主值，不是通常意义的反常积分。\n\n---\n\n## 2. 端点附近看“主导阶”\n\n若 $x\\to0^+$ 时\n\n$$\nf(x)\\sim \\frac{C}{x^p},\n\\qquad C>0,\n$$\n\n则 $\\int_0^1 f(x)\\,dx$ 与\n\n$$\n\\int_0^1\\frac{dx}{x^p}\n$$\n\n具有相同的收敛性。因此：\n\n$$\n\\int_0^1 f(x)\\,dx\n\\begin{cases}\n\\text{收敛},&p<1,\\\\\n\\text{发散},&p\\geq1.\n\\end{cases}\n$$\n\n例如，\n\n$$\n\\sin x\\sim x\\qquad(x\\to0),\n$$\n\n所以\n\n$$\n\\frac{\\sin x}{x^{3/2}}\n\\sim \\frac1{\\sqrt{x}}.\n$$\n\n由于\n\n$$\n\\int_0^1\\frac{dx}{\\sqrt{x}}\n$$\n\n收敛，故\n\n$$\n\\int_0^1\\frac{\\sin x}{x^{3/2}}\\,dx\n$$\n\n收敛。\n\n---\n\n## 3. 无穷远处也看主导阶\n\n若 $x\\to+\\infty$ 时\n\n$$\nf(x)\\sim \\frac{C}{x^p},\n$$\n\n则\n\n$$\n\\int_1^{+\\infty}f(x)\\,dx\n$$\n\n的收敛性由 $p$ 决定：\n\n$$\np>1\\Rightarrow\\text{收敛},\\qquad\np\\leq1\\Rightarrow\\text{发散}.\n$$\n\n例如，\n\n$$\n\\frac{2x^3+1}{x^5+x}\n\\sim\\frac{2}{x^2},\n$$\n\n所以对应积分收敛；而\n\n$$\n\\frac{x^2+1}{x^3+x}\n\\sim\\frac1x,\n$$\n\n所以对应积分发散。\n\n---\n\n## 4. 振荡函数要用绝对收敛或专门判别法\n\n被积函数有正负振荡时，比较法不一定直接适用。例如\n\n$$\n\\int_1^{+\\infty}\\frac{\\sin x}{x}\\,dx\n$$\n\n并非绝对收敛，因为\n\n$$\n\\int_1^{+\\infty}\\frac{|\\sin x|}{x}\\,dx\n$$\n\n发散；但原积分通过振荡抵消而收敛，这属于条件收敛。\n\n常用的工具是狄利克雷判别法：若\n\n1. $\\displaystyle F(A)=\\int_a^A g(x)\\,dx$ 有界；\n2. $f(x)$ 单调趋于 $0$；\n\n则\n\n$$\n\\int_a^{+\\infty}f(x)g(x)\\,dx\n$$\n\n收敛。\n\n这里可取 $f(x)=1/x$、$g(x)=\\sin x$，因为\n\n$$\n\\int_1^A\\sin x\\,dx\n$$\n\n始终有界，且 $1/x\\to0$。\n\n---\n\n## 5. 一个重要警告：等价无穷小不能乱用\n\n若\n\n$$\nf(x)\\sim g(x)\n$$\n\n且二者在异常点附近保持同号，通常可以用极限比较判断收敛性；但不能直接断言积分值相等。\n\n例如：\n\n$$\n\\sin x\\sim x\\qquad(x\\to0),\n$$\n\n只能说明\n\n$$\n\\int_0^1\\frac{\\sin x}{x^{1/2}}\\,dx\n$$\n\n与\n\n$$\n\\int_0^1 x^{1/2}\\,dx\n$$\n\n收敛性相同，不能说两者积分值相同。\n\n## 总结\n\n反常积分的基本路线是：\n\n$$\n\\boxed{\n\\text{定位异常点}\n\\longrightarrow\n\\text{截断}\n\\longrightarrow\n\\text{找主导阶}\n\\longrightarrow\n\\text{与 }p\\text{-积分比较}\n}\n$$\n\n其中：\n\n- $x\\to+\\infty$：与 $x^{-p}$ 比，要求 $p>1$；\n- $x\\to0^+$：与 $x^{-p}$ 比，要求 $p<1$；\n- 有多个奇点：必须分别判断；\n- 有振荡：考虑绝对收敛、狄利克雷判别法等。",
+      "thinking": "我正在确认「当前问题」的目标、必要信息和最合适的完成方式。\n\n接下来的路线是：按当前学段分层讲解。 当前采用 introduction 教学策略，我会据此调整例子、推导深度和检查难度。",
+      "toolCalls": []
     }
   ],
   "quiz_history": [
@@ -6304,11 +7297,13 @@
     "6db5279f0b5a",
     "31ee7036b601",
     "5218a7c04e03",
-    "ac9f64dc9848"
+    "ac9f64dc9848",
+    "78d7dc4d77fd",
+    "69abb40dcb75"
   ],
   "pending_material_file_ids": [],
   "title": "反常积分收敛性",
   "created_at": 1787983809.0856774,
-  "updated_at": 1787984094.1944692,
+  "updated_at": 1788069906.7531874,
   "knowledge_files": []
 }

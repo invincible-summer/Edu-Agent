@@ -695,6 +695,18 @@ export async function ocrImage(file: File): Promise<{ text: string; filename?: s
   return res.json();
 }
 
+// --- P10 语音通话（可插拔 STT/TTS，默认关闭） ---
+
+export async function voiceStatus(): Promise<{ enabled: boolean; stt: string | null; tts: string | null }> {
+  return apiFetch(`${BASE}/voice/status`).then((r) => r.json());
+}
+
+export async function voiceTicket(): Promise<{ ticket: string; expires_in: number }> {
+  const res = await apiFetch(`${BASE}/voice/ticket`, { method: "POST" });
+  if (!res.ok) throw new Error(`Voice ticket failed: ${res.status}`);
+  return res.json();
+}
+
 export async function* chatStream(
   body: { message: string; session_id?: string | null; workspace_id?: string | null; grade?: string; lang?: string; output_language?: string | null; attachments?: unknown[] },
   signal?: AbortSignal,

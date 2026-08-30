@@ -31,6 +31,7 @@
 | Auth | JWT（PyJWT）+ bcrypt + resolve_student_id 依赖注入（AUTH_MODE 开关） |
 | Agent | 自研轻量框架：Supervisor + M10 Skill Registry/Decision/Runtime + ReAct function-calling + 统一工具协议 + Trace |
 | 检索 | BM25（常驻）+ 向量（Chroma + 本地 MiniLM/OpenAI 兼容 Embedding，可选），RRF(k=60) 融合 |
+| 语音（P10，可选） | 电话式 WebSocket 语音对话 + 可插拔 STT/TTS（默认 whisper.cpp + MeloTTS-Chinese，均 MIT） |
 | 持久化 | JSON 文件（原子写 + 文件锁）+ 磁盘上传文本/原件 |
 
 ## 快速开始
@@ -88,6 +89,7 @@ cd backend && python cli.py --grade 初中 --once "讲一下惯性"
 - **写操作**：`POST /orchestration/{goal,regenerate,task/{id}/complete}`、`PATCH /evaluation/proposals/{id}`（人工确认）
 - **认证**：`POST /auth/{register,login,logout}`、`GET /auth/{status,me}`、`GET/PUT /user/profile`、`DELETE /user/account`
 - **OpenAI 兼容门面**（第三方平台接入，`COMPAT_API_KEY` Bearer 鉴权，未配置=关闭）：`GET /models`、`POST /chat/completions`
+- **语音通话**（P10，默认关闭）：`GET /voice/status`、`POST /voice/ticket`（换取单次 WebSocket 握手凭证）、`WS /voice/ws`（push-to-talk 通话：上行 16 kHz PCM16 帧，下行逐句语音 + 实时字幕事件；详见 DESIGN.md 语音章节）
 - **其他**：`GET /health`、`GET /model-info`、`GET /trace/{run_id}[/html]`（知识图谱手动构建端点已移除，图谱只来自教材）
 
 完整端点表（含参数与语义）见 DESIGN.md §23。
@@ -134,6 +136,11 @@ cd backend && python cli.py --grade 初中 --once "讲一下惯性"
 | `RAG_HYBRID` / `CHROMA_DIR` | 混合检索开关 / 向量库目录；`EMBEDDING_PROVIDER=off`（默认）时向量轨不激活，实际检索为纯 BM25 | 1 / `knowledge/vector_db` |
 | `CORS_ORIGINS` | 跨域白名单（生产禁 `*`）；start.sh 自动加入实际本地前端端口 | 3000/3001/3030 本地 Origin |
 | `TRACE_DIR` | trace 落盘目录 | `backend/traces` |
+| `VOICE_STT_PROVIDER` | 语音 STT 插件：off/stub/whisper（whisper.cpp 子进程）。未装或配置错误时自动降级为不可用，聊天不受影响 | off |
+| `VOICE_TTS_PROVIDER` | 语音 TTS 插件：off/stub/melo（MeloTTS-Chinese sidecar，`start.sh` 在 melo 时自动拉起） | off |
+| `VOICE_WHISPER_BIN/MODEL/LANG/THREADS` | whisper.cpp 二进制与 ggml 模型路径、语言、线程数（`deploy/install_voice.sh` 一键安装并打印配置） | 空 |
+| `VOICE_TTS_BASE_URL/SPEED` | TTS sidecar 地址与语速 | 127.0.0.1:8130 / 1.0 |
+| `VOICE_MAX_AUDIO_SECONDS` | 单轮语音时长上限（超出截断，保护 2 vCPU 转写延迟） | 30 |
 
 R10 资料定界规则：本轮上传文件/图片、引用资料中心教材，或明确要求根据教材/附件回答时，系统会在回答前强制执行一次 `knowledge_search`；当前轮有明确 file_id 时只检索对应资料。工作区仅存在公共资料时，问候等无关轮次不会强制检索；定义/原理/公式/解释等内容型问题由确定性 grounding contract 强制检索，不再依赖模型自行判断。
 
@@ -178,6 +185,24 @@ Edu_Agent/
 cd backend && python -m unittest discover -s tests   # 当前共 871 个 test 方法
 cd frontend && npx tsc --noEmit && npx next lint     # 前端类型 + 规范
 ```
+
+## 第三方组件与许可证（语音）
+
+语音功能（默认关闭，`deploy/install_voice.sh` 启用）依赖以下开源组件，均已逐项核实
+**代码与模型权重**的许可证，全部为 MIT / Apache-2.0 宽松许可：可免费商用、可用于比赛、
+允许本项目保持闭源。义务仅为保留版权与许可声明（`docs/licenses/` 已存全文）：
+
+| 组件 | 用途 | 代码 | 权重 |
+|------|------|------|------|
+| OpenAI Whisper（ggml 量化权重） | STT 模型 | MIT | MIT |
+| whisper.cpp | STT 推理引擎（CPU） | MIT | 随上游（MIT） |
+| MeloTTS + MeloTTS-Chinese | TTS 引擎与中文声学模型 | MIT | MIT |
+| bert-base-multilingual-uncased | TTS 中文前端 | — | Apache-2.0 |
+
+安装脚本采用「中文合成专用」策略：MeloTTS 依赖中的 GPL 系组件（unidecode、pykakasi、
+num2words、完整 unidic 词典）要么全库零引用不安装，要么由 `melo_bootstrap.py` 在导入期
+以 stub 中和，运行进程内不含任何 copyleft 代码。完整核实报告（含原文引用、来源 URL 与
+商用/比赛合规结论）见 [`docs/VOICE_LICENSES.md`](docs/VOICE_LICENSES.md)。
 
 ## 安全与隐私
 

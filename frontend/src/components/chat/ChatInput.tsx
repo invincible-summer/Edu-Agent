@@ -1,13 +1,16 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { useCallback } from "react";
-import { ArrowUp, Square, Paperclip, X, FileText, Loader2, GraduationCap, ScanLine, Mic, LibraryBig } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowUp, Square, Paperclip, X, FileText, Loader2, GraduationCap, ScanLine, Mic, LibraryBig, Phone } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useUIStore, useChatStore } from "@/lib/store";
 import { t, GRADE_LABELS } from "@/lib/i18n";
-import { uploadFiles, uploadFailures, attachLibraryFiles, patchSession } from "@/lib/api";
+import { uploadFiles, uploadFailures, attachLibraryFiles, patchSession, voiceStatus, listSessions, loadSession } from "@/lib/api";
+import { notifySessionChanged } from "@/lib/ws-settings";
 import { useSpeechRecognition } from "@/lib/useSpeech";
 import { LibraryPickerModal, type LibraryRefItem } from "./LibraryPickerModal";
+import { VoiceCallModal } from "./VoiceCallModal";
 import type { AttachmentMeta } from "@/lib/types";
 import { gradeForApi } from "@/lib/types";
 
@@ -44,6 +47,41 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
     requestAnimationFrame(() => taRef.current?.focus());
   }, []);
   const speech = useSpeechRecognition(lang, onVoiceFinal);
+  const router = useRouter();
+  // P10 语音通话：后端 /voice/status 决定入口显隐（provider off 时整条链路
+  // 不存在，不渲染按钮，保持与禁用智能层「无痕降级」的仓库惯例一致）。
+  const [voiceEnabled, setVoiceEnabled] = useState(false);
+  const [voiceOpen, setVoiceOpen] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    voiceStatus()
+      .then((r) => { if (!cancelled) setVoiceEnabled(!!r.enabled); })
+      .catch(() => { if (!cancelled) setVoiceEnabled(false); });
+    return () => { cancelled = true; };
+  }, []);
+
+  /** 语音通话绑定到（可能新建的）会话：与页面 done 事件的绑定路径一致。 */
+  const handleVoiceSessionBound = useCallback((sid: string) => {
+    useChatStore.getState().setSessionId(sid);
+    router.replace(`/chat/${encodeURIComponent(sid)}`, { scroll: false });
+  }, [router]);
+  /** 挂断后刷新会话列表；若通话的就是当前打开的会话，重载其消息。 */
+  const handleVoiceTurnsDone = useCallback((sid: string | null) => {
+    listSessions()
+      .then((r) => {
+        useChatStore.getState().setSessions(r.sessions);
+        notifySessionChanged();
+      })
+      .catch(() => undefined);
+    if (sid && sid === useChatStore.getState().sessionId) {
+      loadSession(sid, 0)
+        .then((detail) => {
+          useChatStore.getState().loadFull(
+            detail.messages || [], detail.knowledge_files || [], sid);
+        })
+        .catch(() => undefined);
+    }
+  }, []);
 
   useEffect(() => {
     const ta = taRef.current;
@@ -347,6 +385,17 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
             </button>
             <input ref={imgRef} type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff"
               className="hidden" onChange={(e) => { handleImageUpload(e.target.files); e.target.value = ""; }} />
+            {voiceEnabled && (
+              <button
+                onClick={() => setVoiceOpen(true)}
+                disabled={disabled}
+                className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
+                title={tr("chat.voice.call.title")}
+                aria-label={tr("chat.voice.call.title")}
+              >
+                <Phone size={15} />
+              </button>
+            )}
             <button
               onClick={() => (speech.listening ? speech.stop() : speech.start())}
               disabled={disabled || !speech.supported}
@@ -390,6 +439,17 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
         <LibraryPickerModal
           onClose={() => setLibRefOpen(false)}
           onConfirm={handleLibRefConfirm}
+        />
+      )}
+      {voiceOpen && (
+        <VoiceCallModal
+          open
+          onClose={() => setVoiceOpen(false)}
+          lang={lang}
+          sessionId={sessionId}
+          workspaceId={sessionId ? null : sessionStorage.getItem("edu-agent-active-ws")}
+          onSessionBound={handleVoiceSessionBound}
+          onTurnsDone={handleVoiceTurnsDone}
         />
       )}
     </div>

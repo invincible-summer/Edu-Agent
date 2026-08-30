@@ -55,17 +55,18 @@ if [ "${1:-all}" = "dev" ]; then FRONTEND_MODE=dev; fi
 set_runtime_default FRONTEND_MODE prod
 echo "[start.sh] runtime: supervisor=$SUPERVISOR_MODE skill=$SKILL_RUNTIME_MODE llm=$LLM_RUNTIME_MODE tool_context=$TOOL_CONTEXT_PROJECTION_MODE tool_messages=$TOOL_MESSAGE_MODE reasoning_summary=$REASONING_SUMMARY_LEVEL frontend=$FRONTEND_MODE"
 
-BACK_PID=""; FRONT_PID=""; BACK_PORT=""; FRONT_PORT=""
+BACK_PID=""; FRONT_PID=""; VOICE_PID=""; BACK_PORT=""; FRONT_PORT=""; VOICE_PORT=""
 
 cleanup() {
     # Ctrl+C / TERM: kill direct children, then free the ports as a fallback.
     # A plain kill often strands the real servers (uvicorn workers, the
     # next-server process behind `npx next dev`), which then keep holding
     # :8000/:3000 and force the next run onto fallback ports.
-    kill $BACK_PID $FRONT_PID 2>/dev/null || true
+    kill $BACK_PID $FRONT_PID $VOICE_PID 2>/dev/null || true
     sleep 1
     [ -n "$BACK_PORT" ] && fuser -k "$BACK_PORT/tcp" 2>/dev/null || true
     [ -n "$FRONT_PORT" ] && fuser -k "$FRONT_PORT/tcp" 2>/dev/null || true
+    [ -n "$VOICE_PORT" ] && fuser -k "$VOICE_PORT/tcp" 2>/dev/null || true
 }
 # EXIT included so a set -e abort mid-start (e.g. a failed production build in
 # `all` mode) also tears down the already-started backend instead of orphaning
@@ -124,6 +125,43 @@ start_backend() {
     BACK_PORT="$port"
     echo "$port" > /tmp/edu_backend_port
     echo "$BACK_PID" > /tmp/edu_backend_pid
+}
+
+start_voice_sidecar() {
+    # P10 语音：VOICE_TTS_PROVIDER=melo 时拉起 MeloTTS sidecar（自带 venv，
+    # 见 deploy/install_voice.sh）。未安装/未启用时仅提示，主服务照常运行
+    # （fail-open：后端把语音请求报告为 tts 不可用，聊天完全不受影响）。
+    set_runtime_default VOICE_TTS_PROVIDER off
+    if [ "$VOICE_TTS_PROVIDER" != "melo" ]; then
+        return 0
+    fi
+    if [ ! -x "$ROOT/backend/voice_sidecar/.venv/bin/python" ]; then
+        echo "[start.sh] VOICE_TTS_PROVIDER=melo 但 sidecar venv 缺失（bash deploy/install_voice.sh）；语音 TTS 将不可用"
+        return 0
+    fi
+    VOICE_PORT="$(pick_port 8130 8131 8132)"
+    # 显式 VOICE_TTS_BASE_URL（shell/.env）优先，否则指向本次选中的端口。
+    set_runtime_default VOICE_TTS_BASE_URL "http://127.0.0.1:$VOICE_PORT"
+    echo "[start.sh] voice sidecar on :$VOICE_PORT (MeloTTS-Chinese, CPU)"
+    (
+        cd "$ROOT/backend/voice_sidecar"
+        HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+        HF_HOME="$ROOT/backend/models/voice/hf" \
+        OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 \
+        ./.venv/bin/python -m uvicorn app:app --host 127.0.0.1 --port "$VOICE_PORT" &
+        echo $! > /tmp/edu_voice_pid
+    )
+    VOICE_PID="$(cat /tmp/edu_voice_pid 2>/dev/null || true)"
+    echo "$VOICE_PORT" > /tmp/edu_voice_port
+    # 首次加载模型约需 20-60s；不阻塞启动，健康检查在后台确认。
+    (
+        for _ in $(seq 1 90); do
+            curl -fsS -o /dev/null --max-time 2 "http://127.0.0.1:$VOICE_PORT/health" 2>/dev/null && {
+                echo "[start.sh] voice sidecar ready"; exit 0; }
+            sleep 1
+        done
+        echo "[start.sh] voice sidecar 未在 90s 内就绪（首次加载较慢属正常，稍后自动可用）"
+    ) &
 }
 
 # Is a production (re)build required? NEXT_PUBLIC_ vars are inlined at build
@@ -241,7 +279,7 @@ open_browser() {
 
 stop_all() {
     local name pid_file port_file pid port cwd
-    for name in backend frontend; do
+    for name in backend frontend voice; do
         pid_file="/tmp/edu_${name}_pid"; port_file="/tmp/edu_${name}_port"
         pid="$(cat "$pid_file" 2>/dev/null || true)"
         port="$(cat "$port_file" 2>/dev/null || true)"
@@ -272,16 +310,16 @@ stop_all() {
         esac
     done
     sleep 1
-    : > /tmp/edu_backend_pid; : > /tmp/edu_frontend_pid
+    : > /tmp/edu_backend_pid; : > /tmp/edu_frontend_pid; : > /tmp/edu_voice_pid
 }
 
 case "${1:-all}" in
-    backend) start_backend ;;
+    backend) start_voice_sidecar; start_backend ;;
     frontend) start_frontend; open_browser & ;;
     # Explicit dev-mode entry point (same as FRONTEND_MODE=dev, overrides .env):
     # hot-reload dev server, auto-wipes any production build in .next.
-    dev) FRONTEND_MODE=dev; stop_all; prepare_ports; start_backend; sleep 2; start_frontend; open_browser & ;;
-    all) stop_all; prepare_ports; start_backend; sleep 2; start_frontend; open_browser & ;;
+    dev) FRONTEND_MODE=dev; stop_all; prepare_ports; start_voice_sidecar; start_backend; sleep 2; start_frontend; open_browser & ;;
+    all) stop_all; prepare_ports; start_voice_sidecar; start_backend; sleep 2; start_frontend; open_browser & ;;
     stop) stop_all ;;
     *) echo "Usage: $0 [all|backend|frontend|dev|stop]"; echo "  默认（all）生产模式：一次构建 + next start，源码/端口变化自动重建"; echo "  dev 子命令显式覆盖为热重载开发模式（等价 FRONTEND_MODE=dev）"; echo "  REBUILD=1 $0 ...           # 强制重建前端生产包"; exit 1 ;;
 esac
