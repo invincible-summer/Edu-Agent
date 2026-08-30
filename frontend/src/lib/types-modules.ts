@@ -570,6 +570,8 @@ export interface UserProfileData {
 // 时间戳均为 unix float 秒；0 = 未设置。
 
 export interface OrchGoal {
+  /** 稳定 id（g_{n}）：多目标下 API 寻址用。 */
+  id?: string;
   title: string;
   description: string;
   /** exam | ability | interest */
@@ -605,6 +607,8 @@ export interface OrchGoalEstimate {
 }
 
 export interface OrchGoalState {
+  /** 与 goals[].id 配对（多目标）。 */
+  goal_id?: string;
   goal_title: string;
   goal_type: string;
   subject: string;
@@ -677,16 +681,6 @@ export interface OrchWeek {
   tasks: OrchWeekTask[];
 }
 
-/** 长期目标下的常驻任务（如「每天背 20 个单词」），挂 LLM 智能建议。 */
-export interface OrchLongTask {
-  id: string;
-  title: string;
-  source: string;
-  suggestions: string[];
-  active: boolean;
-  created_at: number;
-}
-
 export interface OrchDailyTask {
   id: string;
   /** YYYY-MM-DD */
@@ -715,9 +709,11 @@ export interface OrchDailyTask {
   reason: string;
 }
 
-/** POST/PATCH /orchestration/goal 与 POST /orchestration/regenerate 的响应。 */
+/** POST /orchestration/goal 的响应（新增一个目标后自动重规划 + kickoff）。 */
 export interface OrchGoalResp {
   ok: boolean;
+  /** 新建目标的 id（POST /goal 返回）。 */
+  goal_id?: string;
   weeks: OrchWeek[];
   first_task?: OrchDailyTask | null;
   /** regenerate 结果细分："" 正常 | "no_goal" 未设目标 | "empty_plan" 暂无可安排内容（合法终态，非错误）。 */
@@ -773,15 +769,15 @@ export interface OrchSchedule {
   exam_dates: Record<string, number>;
 }
 
-/** GET /orchestration/plan — 异常兜底时 goal/goal_state/schedule/habit 退化为 {}。 */
+/** GET /orchestration/plan — 异常兜底时 goals/goal_states/schedule/habit 退化为空。 */
 export interface OrchPlanSummary {
   student_id: string;
-  goal: Partial<OrchGoal>;
-  goal_state: Partial<OrchGoalState>;
+  /** 多个长期目标（上限 4），与 goal_states 按 goal_id 一一配对。 */
+  goals: Partial<OrchGoal>[];
+  goal_states: Partial<OrchGoalState>[];
   /** 旧里程碑数据（兼容字段，新架构不再产出）。 */
   milestones: OrchMilestone[];
   weekly_plan: OrchWeek[];
-  long_term_tasks: OrchLongTask[];
   daily_tasks: OrchDailyTask[];
   schedule: Partial<OrchSchedule>;
   habit: Partial<OrchHabit>;

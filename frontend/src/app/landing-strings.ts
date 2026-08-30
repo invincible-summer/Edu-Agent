@@ -75,8 +75,8 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.features.f6.title": "长期学习编排",
     "landing.features.f6.desc": "从学期目标到今日任务，SM-2 间隔重复帮你对抗遗忘。",
     "landing.features.f6.more":
-      "设定学期目标后，M9 编排智能把它分解为长期任务 → 周任务 → 今日任务，并把 SM-2 到期复习织进每日安排；完成情况回流掌握度模型，下一周的计划随之自动调整。",
-    "landing.features.f6.p1": "目标 → 长期 → 周 → 今日，四级任务自动分解",
+      "设定一个或多个学期目标后，M9 编排智能把它们分解为周任务 → 今日任务，并把 SM-2 到期复习织进每日安排；完成情况回流掌握度模型，下一周的计划随之自动调整。",
+    "landing.features.f6.p1": "多目标 → 周 → 今日，任务自动分解",
     "landing.features.f6.p2": "SM-2 间隔重复对抗遗忘，复习自动排期",
     "landing.features.f6.p3": "任务完成回流掌握度，计划动态调整",
 
@@ -102,7 +102,7 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.modules.m8.name": "交互体验",
     "landing.modules.m8.desc": "表达方式适配每个学生的偏好",
     "landing.modules.m9.name": "学习编排",
-    "landing.modules.m9.desc": "目标 → 长期任务 → 周任务 → 今日任务",
+    "landing.modules.m9.desc": "多目标 → 周任务 → 今日任务",
     "landing.modules.m10.name": "能力运行时",
     "landing.modules.m10.desc": "技能调用契约与学习证据门",
 
@@ -200,8 +200,8 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.features.f6.desc":
       "From semester goals down to today's tasks, with SM-2 spaced repetition against forgetting.",
     "landing.features.f6.more":
-      "Set a semester goal and M9 breaks it into long-term → weekly → today's tasks, weaving SM-2 due reviews into each day. Completions flow back into the mastery model and next week's plan adjusts automatically.",
-    "landing.features.f6.p1": "Goals cascade into long-term, weekly and daily tasks",
+      "Set one or more semester goals and M9 breaks them into weekly → today's tasks, weaving SM-2 due reviews into each day. Completions flow back into the mastery model and next week's plan adjusts automatically.",
+    "landing.features.f6.p1": "Multiple goals cascade into weekly and daily tasks",
     "landing.features.f6.p2": "SM-2 spaced repetition schedules reviews automatically",
     "landing.features.f6.p3": "Completions feed mastery; plans adapt dynamically",
 
@@ -227,7 +227,7 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.modules.m8.name": "UX intelligence",
     "landing.modules.m8.desc": "Expression adapted to each student's preferences",
     "landing.modules.m9.name": "Learning orchestration",
-    "landing.modules.m9.desc": "Goals → long-term tasks → weekly tasks → today's tasks",
+    "landing.modules.m9.desc": "Goals → weekly tasks → today's tasks",
     "landing.modules.m10.name": "Skill runtime",
     "landing.modules.m10.desc": "Skill contracts and the learning-evidence gate",
 

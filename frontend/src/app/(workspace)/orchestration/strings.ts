@@ -4,7 +4,7 @@ import type { PageStrings } from "@/lib/i18n-page";
 export const STRINGS = {
   zh: {
     "page.title": "学习编排",
-    "page.desc": "M9 学习编排智能 · 长期目标 → 长期任务 → 周计划 → 今日任务 + 间隔复习",
+    "page.desc": "M9 学习编排智能 · 多长期目标 → 周计划 → 今日任务 + 间隔复习",
     "action.dismiss": "关闭",
 
     "goal.title": "长期目标",
@@ -68,13 +68,11 @@ export const STRINGS = {
     "replan.action": "让教练帮我调整",
     "replan.msg": "我的学习进度落后于原计划，请帮我分析原因，并重新安排后续的学习计划。",
 
-    "lt.title": "长期任务",
-    "lt.desc": "目标下的常驻承诺，重规划不会覆盖",
-    "lt.empty": "还没有长期任务。加一个日常承诺（如「每天背 20 个单词」），智能建议会帮你落地。",
-    "lt.add": "添加",
-    "lt.add.ph": "例如：每天背 20 个单词",
-    "lt.suggest": "智能建议",
-    "lt.suggesting": "生成中…",
+    "goal.add": "添加目标",
+    "goal.add.title": "添加长期目标",
+    "goal.del": "删除目标",
+    "goal.del.confirm.title": "删除目标",
+    "goal.del.confirm.desc": "将删除目标「%t」并重新规划，已生成的每日任务会保留。确定删除？",
 
     "form.title": "设定你的长期学习目标",
     "form.desc": "编排智能会据此倒推周计划与每日任务",
@@ -200,7 +198,7 @@ export const STRINGS = {
   },
   en: {
     "page.title": "Orchestration",
-    "page.desc": "M9 learning orchestration · long-term goal → milestones → weekly plan → daily tasks + spaced review",
+    "page.desc": "M9 learning orchestration · goals → weekly plan → daily tasks + spaced review",
     "action.dismiss": "Dismiss",
 
     "goal.title": "Long-term Goal",
@@ -262,13 +260,11 @@ export const STRINGS = {
     "replan.action": "Ask the coach to adjust",
     "replan.msg": "My progress has fallen behind the plan. Please analyze why and rearrange my upcoming schedule.",
 
-    "lt.title": "Long-term tasks",
-    "lt.desc": "Standing commitments under the goal — never overwritten by replanning",
-    "lt.empty": "No long-term tasks yet. Add a daily commitment (e.g. \"review 20 words a day\") and smart suggestions will help you stick to it.",
-    "lt.add": "Add",
-    "lt.add.ph": "e.g. Review 20 words a day",
-    "lt.suggest": "Smart tips",
-    "lt.suggesting": "Thinking…",
+    "goal.add": "Add goal",
+    "goal.add.title": "Add long-term goal",
+    "goal.del": "Delete goal",
+    "goal.del.confirm.title": "Delete goal",
+    "goal.del.confirm.desc": "Goal \"%t\" will be deleted and the plan regenerated. Already-generated daily tasks are kept. Continue?",
 
     "form.title": "Set your long-term learning goal",
     "form.desc": "Orchestration back-plans weekly plans and daily tasks from it",

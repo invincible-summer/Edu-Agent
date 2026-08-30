@@ -1,17 +1,16 @@
 """Learning Orchestration API (M9 observability + plan management).
 
-Exposes the student's long-term goal, long-term tasks, weekly plan (action
-tasks + subtasks), daily tasks, SRS review queue, and habit stats for human
-inspection and the frontend "Learning Center" page. Mirrors the /evaluation
-and /ux endpoints.
+Exposes the student's long-term goals, weekly plan (action tasks + subtasks),
+daily tasks, SRS review queue, and habit stats for human inspection and the
+frontend "Learning Center" page. Mirrors the /evaluation and /ux endpoints.
 
-Write endpoints: goal set/patch (both trigger the async LLM weekly planning
-+ today's task kickoff), plan regenerate, task CRUD, task complete. LLM
-calls happen ONLY in these API-initiated async paths (weekly planning, daily
-composition), each gated + deterministically backstopped -- never inside
-supervisor hooks. Uses DEFAULT_STUDENT_ID (single-student system, same as
-M2-M8). Never raises into a request (defensive); validation errors surface
-as 400.
+Write endpoints: goal add/patch/delete (the first two trigger the async LLM
+weekly planning + today's task kickoff), plan regenerate, task CRUD, task
+complete. LLM calls happen ONLY in these API-initiated async paths (weekly
+planning, daily composition), each gated + deterministically backstopped --
+never inside supervisor hooks. Uses DEFAULT_STUDENT_ID (single-student
+system, same as M2-M8). Never raises into a request (defensive); validation
+errors surface as 400.
 """
 from __future__ import annotations
 
@@ -82,10 +81,6 @@ class WeekBody(BaseModel):
     week_start: float | None = None
 
 
-class LongTaskBody(BaseModel):
-    title: str
-
-
 class WeekTaskBody(BaseModel):
     title: str
     concept_ids: list[str] = []
@@ -138,45 +133,65 @@ async def orchestration_today(student_id: str = Depends(resolve_student_id)) -> 
 
 
 @router.post("/goal")
-async def orchestration_set_goal(body: GoalBody,
+async def orchestration_add_goal(body: GoalBody,
                                  student_id: str = Depends(resolve_student_id)) -> dict:
-    """Set or replace the long-term learning goal.
+    """Append a long-term learning goal (multi-goal, capped at 4).
 
     Tail: LLM weekly planning (deterministic fallback) + today's task
-    kickoff -- setting a goal immediately produces visible next steps.
+    kickoff -- every goal write immediately produces visible next steps.
+    400 on an empty title or cap overflow.
     """
     svc = get_orchestration_service()
-    ok = svc.set_goal(
-        student_id, title=body.title, description=body.description,
+    try:
+        goal = svc.add_goal(
+            student_id, title=body.title, description=body.description,
+            goal_type=body.goal_type, subjects=body.subjects,
+            target_concept_ids=body.target_concept_ids,
+            deadline=body.deadline)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    await svc.regenerate_plan(student_id)
+    payload = await _kickoff_payload(student_id)
+    return {"ok": True, "goal_id": goal.id, **payload}
+
+
+@router.patch("/goal/{goal_id}")
+async def orchestration_patch_goal(goal_id: str, body: GoalPatchBody,
+                                   student_id: str = Depends(resolve_student_id)) -> dict:
+    """Patch fields of one goal (all optional).
+
+    Re-runs the gap analysis and regenerates the weekly plan; the SRS queue,
+    all historical tasks, and user-created plan entries are preserved.
+    404 when the goal id does not exist.
+    """
+    svc = get_orchestration_service()
+    ok = svc.update_goal(
+        student_id, goal_id, title=body.title, description=body.description,
         goal_type=body.goal_type, subjects=body.subjects,
         target_concept_ids=body.target_concept_ids,
         deadline=body.deadline)
     if not ok:
-        return {"ok": False, "weeks": [], "first_task": None}
+        raise HTTPException(status_code=404, detail="goal not found")
     await svc.regenerate_plan(student_id)
-    await svc.suggest_longtasks_batch(student_id)  # best-effort enrichment
     payload = await _kickoff_payload(student_id)
     return {"ok": True, **payload}
 
 
-@router.patch("/goal")
-async def orchestration_patch_goal(body: GoalPatchBody,
-                                   student_id: str = Depends(resolve_student_id)) -> dict:
-    """Patch fields of the existing goal (all optional).
+@router.delete("/goal/{goal_id}")
+async def orchestration_delete_goal(goal_id: str,
+                                    student_id: str = Depends(resolve_student_id)) -> dict:
+    """Delete one goal and re-plan so its concepts leave the auto plan.
 
-    Re-runs the gap analysis and regenerates the weekly plan; the SRS queue,
-    all historical tasks, and user-created plan entries are preserved.
+    The SRS queue, historical tasks, and user-created plan entries are
+    preserved. 404 when the goal id does not exist.
     """
     svc = get_orchestration_service()
-    ok = svc.update_goal(
-        student_id, title=body.title, description=body.description,
-        goal_type=body.goal_type, subjects=body.subjects,
-        target_concept_ids=body.target_concept_ids,
-        deadline=body.deadline)
+    ok = svc.delete_goal(student_id, goal_id)
     if not ok:
-        return {"ok": False, "weeks": [], "first_task": None}
-    await svc.regenerate_plan(student_id)
-    await svc.suggest_longtasks_batch(student_id)  # best-effort enrichment
+        raise HTTPException(status_code=404, detail="goal not found")
+    if svc.summary(student_id).get("goals"):
+        # remaining goals keep driving the plan; rebuild without the deleted one
+        await svc.regenerate_plan(student_id)
     payload = await _kickoff_payload(student_id)
     return {"ok": True, **payload}
 
@@ -378,41 +393,6 @@ async def orchestration_suggest_subtasks(week_index: int, task_id: str,
         raise HTTPException(status_code=502,
                             detail="suggestion unavailable, please retry")
     return {"ok": True, "task": task.to_dict()}
-
-
-@router.post("/longtask")
-def orchestration_add_longtask(body: LongTaskBody,
-                               student_id: str = Depends(resolve_student_id)) -> dict:
-    """Create a user long-term task under the goal (survives regeneration).
-    400 on empty title or cap."""
-    try:
-        lt = get_orchestration_service().add_longtask(
-            student_id, title=body.title)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    return {"ok": True, "task": lt.to_dict()}
-
-
-@router.delete("/longtask/{task_id}")
-def orchestration_delete_longtask(task_id: str,
-                                  student_id: str = Depends(resolve_student_id)) -> dict:
-    """Delete one long-term task. 404 when not found."""
-    ok = get_orchestration_service().delete_longtask(student_id, task_id)
-    if not ok:
-        raise HTTPException(status_code=404, detail="long-term task not found")
-    return {"ok": True}
-
-
-@router.post("/longtask/{task_id}/suggest")
-async def orchestration_suggest_longtask(task_id: str,
-                                         student_id: str = Depends(resolve_student_id)) -> dict:
-    """(Re)generate the LLM execution suggestions for one long-term task.
-    404 when not found; template fallback when the LLM is unavailable."""
-    lt = await get_orchestration_service().suggest_longtask(
-        student_id, task_id)
-    if lt is None:
-        raise HTTPException(status_code=404, detail="long-term task not found")
-    return {"ok": True, "task": lt.to_dict()}
 
 
 @router.post("/task/{task_id}/complete")

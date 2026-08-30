@@ -107,17 +107,47 @@ class TestSchema(unittest.TestCase):
 
     def test_orchestration_state_roundtrip(self):
         s = OrchestrationState(student_id="s1")
-        s.goal = LearningGoal(title="test goal")
+        s.goals = [LearningGoal(id="g_1", title="test goal"),
+                   LearningGoal(id="g_2", title="second goal")]
+        s.goal_states = [GoalState(goal_id="g_1", goal_title="test goal")]
         s.milestones = [Milestone(id="ms1", title="m1")]
         s.review_queue = {"c1": ReviewItem(concept_id="c1", easiness=2.5)}
         s.habit = HabitStats(current_streak=3, total_active_days=10)
         d = s.to_dict()
         s2 = OrchestrationState.from_dict(d)
         self.assertEqual(s2.student_id, "s1")
-        self.assertEqual(s2.goal.title, "test goal")
+        self.assertEqual([g.id for g in s2.goals], ["g_1", "g_2"])
+        self.assertEqual(s2.goals[1].title, "second goal")
+        self.assertEqual(s2.goal_states[0].goal_id, "g_1")
         self.assertEqual(len(s2.milestones), 1)
         self.assertEqual(s2.review_queue["c1"].easiness, 2.5)
         self.assertEqual(s2.habit.current_streak, 3)
+
+    def test_legacy_single_goal_state_migrates(self):
+        """Old blobs store a scalar `goal`/`goal_state`/`long_term_tasks`;
+        from_dict wraps them into the multi-goal form and drops longtasks."""
+        legacy = {
+            "student_id": "s1",
+            "goal": {"title": "旧目标", "subjects": ["数学"]},
+            "goal_state": {"goal_title": "旧目标", "mastered_ratio": 0.5},
+            "long_term_tasks": [{"id": "lt_1", "title": "每天背单词"}],
+        }
+        s = OrchestrationState.from_dict(legacy)
+        self.assertEqual(len(s.goals), 1)
+        self.assertEqual(s.goals[0].id, "g_1")
+        self.assertEqual(s.goals[0].title, "旧目标")
+        self.assertEqual(len(s.goal_states), 1)
+        self.assertEqual(s.goal_states[0].goal_id, "g_1")
+        self.assertEqual(s.goal_states[0].mastered_ratio, 0.5)
+        # long_term_tasks have no new home: dropped on load
+        d = s.to_dict()
+        self.assertNotIn("long_term_tasks", d)
+        self.assertNotIn("goal", d)
+
+    def test_goal_cap_on_load(self):
+        goals = [{"id": f"g_{i}", "title": f"t{i}"} for i in range(9)]
+        s = OrchestrationState.from_dict({"student_id": "s1", "goals": goals})
+        self.assertEqual(len(s.goals), schema._MAX_GOALS)
 
     def test_orchestration_event_roundtrip(self):
         e = OrchestrationEvent(type="goal_set", payload={"title": "x"})
@@ -144,14 +174,14 @@ class TestStore(unittest.TestCase):
     def test_load_missing_returns_default(self):
         s = store.load_state("nonexistent")
         self.assertEqual(s.student_id, "nonexistent")
-        self.assertEqual(s.goal.title, "")
+        self.assertEqual(s.goals, [])
 
     def test_save_and_load_roundtrip(self):
         s = OrchestrationState(student_id="s1")
-        s.goal = LearningGoal(title="考研")
+        s.goals = [LearningGoal(id="g_1", title="考研")]
         self.assertTrue(store.save_state("s1", s))
         s2 = store.load_state("s1")
-        self.assertEqual(s2.goal.title, "考研")
+        self.assertEqual(s2.goals[0].title, "考研")
 
     def test_path_traversal_guard(self):
         s = store.load_state("../../../etc/passwd")
@@ -163,7 +193,7 @@ class TestStore(unittest.TestCase):
         path.write_text("{bad json", encoding="utf-8")
         s = store.load_state("corrupt")
         self.assertEqual(s.student_id, "corrupt")
-        self.assertEqual(s.goal.title, "")
+        self.assertEqual(s.goals, [])
 
     def test_append_and_read_events(self):
         ev = OrchestrationEvent(type="goal_set", payload={"title": "x"})
@@ -319,12 +349,38 @@ class TestHabitTracker(unittest.TestCase):
 
 class TestGoalManager(unittest.TestCase):
 
-    def test_set_goal(self):
+    def test_add_update_remove_goal(self):
         state = OrchestrationState()
-        goal_manager.set_goal(state, title="考研数学",
-                              goal_type="exam", subjects=["高数"])
-        self.assertEqual(state.goal.title, "考研数学")
-        self.assertEqual(state.goal.goal_type, GoalType.EXAM)
+        g1 = goal_manager.add_goal(state, title="考研数学",
+                                   goal_type="exam", subjects=["高数"])
+        self.assertEqual(g1.id, "g_1")
+        g2 = goal_manager.add_goal(state, title="物理入门")
+        self.assertEqual(g2.id, "g_2")
+        self.assertEqual(state.goals[0].goal_type, GoalType.EXAM)
+        # patch one goal by id; the other is untouched
+        out = goal_manager.update_goal(state, g1.id, title="考研数学（新）",
+                                       deadline=1700000000.0)
+        self.assertIs(out, g1)
+        self.assertEqual(state.goals[0].title, "考研数学（新）")
+        self.assertEqual(state.goals[0].deadline, 1700000000.0)
+        self.assertEqual(state.goals[1].title, "物理入门")
+        self.assertIsNone(goal_manager.update_goal(state, "g_9", title="x"))
+        # remove drops the goal and its state
+        state.goal_states = [GoalState(goal_id="g_1"),
+                             GoalState(goal_id="g_2")]
+        self.assertTrue(goal_manager.remove_goal(state, g1.id))
+        self.assertEqual([g.id for g in state.goals], ["g_2"])
+        self.assertEqual([gs.goal_id for gs in state.goal_states], ["g_2"])
+        self.assertFalse(goal_manager.remove_goal(state, g1.id))
+
+    def test_add_goal_validation_and_cap(self):
+        state = OrchestrationState()
+        with self.assertRaises(ValueError):
+            goal_manager.add_goal(state, title="  ")
+        for i in range(schema._MAX_GOALS):
+            goal_manager.add_goal(state, title=f"t{i}")
+        with self.assertRaises(ValueError):
+            goal_manager.add_goal(state, title="溢出")
 
     def test_overall_progress(self):
         """Progress is computed over weekly-plan concepts (post-milestone)."""
@@ -395,7 +451,7 @@ class TestLearningPlanner(unittest.TestCase):
 
     def test_generate_weekly_plan(self):
         state = OrchestrationState()
-        state.goal = LearningGoal(title="test")
+        state.goals = [LearningGoal(title="test")]
         next_learnable = [
             {"name": "加法", "skill_id": "a", "difficulty": 1},
             {"name": "减法", "skill_id": "b", "difficulty": 2},
@@ -410,7 +466,7 @@ class TestLearningPlanner(unittest.TestCase):
 
     def test_needs_replan_no_plan(self):
         state = OrchestrationState()
-        state.goal = LearningGoal(title="考研数学")
+        state.goals = [LearningGoal(title="考研数学")]
         self.assertTrue(learning_planner.needs_replan(state, {}))
 
     def test_needs_replan_no_goal_never_prompts(self):
@@ -423,7 +479,7 @@ class TestLearningPlanner(unittest.TestCase):
         """An attempted-but-empty plan (all mastered / nothing schedulable)
         is a legitimate end state, not staleness -- no re-prompt loop."""
         state = OrchestrationState()
-        state.goal = LearningGoal(title="考研数学")
+        state.goals = [LearningGoal(title="考研数学")]
         state.last_plan_attempt = time.time()
         self.assertFalse(learning_planner.needs_replan(state, {}))
 
@@ -493,7 +549,7 @@ class TestContextBuilder(unittest.TestCase):
 
     def test_with_goal_renders_block(self):
         state = OrchestrationState()
-        state.goal = LearningGoal(title="考研数学", goal_type=GoalType.EXAM)
+        state.goals = [LearningGoal(title="考研数学", goal_type=GoalType.EXAM)]
         directive = context_builder.build_orchestration_directive(state)
         self.assertIn("[编排智能·长期目标]", directive)
         self.assertIn("考研数学", directive)
@@ -501,7 +557,7 @@ class TestContextBuilder(unittest.TestCase):
     def test_with_tasks_renders_today_block(self):
         now = time.time()
         state = OrchestrationState()
-        state.goal = LearningGoal(title="考研")
+        state.goals = [LearningGoal(title="考研")]
         today_str = time.strftime("%Y-%m-%d", time.localtime(now))
         state.daily_tasks = [DailyTask(id="t1", day=today_str,
             concept_name="导数", kind=TaskKind.STUDY, status=DailyTaskStatus.PENDING)]
@@ -525,11 +581,13 @@ class TestManager(unittest.TestCase):
         store._STUDENTS_DIR = self._orig_dir
         orch_manager._SERVICE = None
 
-    def test_set_and_load_goal(self):
+    def test_add_and_load_goal(self):
         svc = get_orchestration_service()
-        self.assertTrue(svc.set_goal("s1", title="考研数学", goal_type="exam"))
+        goal = svc.add_goal("s1", title="考研数学", goal_type="exam")
+        self.assertEqual(goal.id, "g_1")
         summary = svc.summary("s1")
-        self.assertEqual(summary["goal"]["title"], "考研数学")
+        self.assertEqual(summary["goals"][0]["title"], "考研数学")
+        self.assertEqual(summary["goal_states"][0]["goal_id"], "g_1")
 
     def test_build_directive_no_goal(self):
         svc = get_orchestration_service()
@@ -537,20 +595,20 @@ class TestManager(unittest.TestCase):
 
     def test_build_directive_with_goal(self):
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="考研数学")
+        svc.add_goal("s1", title="考研数学")
         directive = svc.build_directive(student_id="s1")
         self.assertIn("考研数学", directive)
 
     def test_record_turn_creates_srs_card(self):
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="test")
+        svc.add_goal("s1", title="test")
         svc.record_turn(student_id="s1", concept="导数", verdict="correct")
         summary = svc.summary("s1")
         self.assertIn("导数", summary["review_queue"])
 
     def test_record_turn_updates_srs_on_fail(self):
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="test")
+        svc.add_goal("s1", title="test")
         svc.record_turn(student_id="s1", concept="导数", verdict="correct")
         # second turn with a fail
         svc.record_turn(student_id="s1", concept="导数", verdict="wrong")
@@ -560,7 +618,7 @@ class TestManager(unittest.TestCase):
 
     def test_complete_task_via_manager(self):
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="test")
+        svc.add_goal("s1", title="test")
         # manually inject a task
         state = store.load_state("s1")
         state.daily_tasks = [DailyTask(id="t1", day="2026-07-29",
@@ -655,7 +713,7 @@ class TestSingleTruthSourceBoundary(unittest.TestCase):
         """M9 must not call StudentModel record_events or any mutator."""
         with patch("app.agents.student_model.manager.StudentModel") as MockSM:
             svc = get_orchestration_service()
-            svc.set_goal("s1", title="test")
+            svc.add_goal("s1", title="test")
             svc.record_turn(student_id="s1", concept="导数", verdict="correct")
             # verify no M2 mutator was called during record_turn
             # (the mock intercepts the class; if M9 tried to write M2 it
@@ -672,7 +730,7 @@ class TestSingleTruthSourceBoundary(unittest.TestCase):
         in record_turn. So record_turn's own I/O is confined to .orchestration.*.
         """
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="test")
+        svc.add_goal("s1", title="test")
         svc.record_turn(student_id="s1", concept="导数", verdict="correct")
         files = [f.name for f in self.tmp.iterdir()]
         orch_files = [f for f in files if f.startswith("s1.orchestration")]
@@ -685,7 +743,7 @@ class TestSingleTruthSourceBoundary(unittest.TestCase):
         """record_turn returns emitted events (for the supervisor to forward)
         but still writes ONLY .orchestration.* files itself."""
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="test", subjects=["数学"])
+        svc.add_goal("s1", title="test", subjects=["数学"])
         emitted = svc.record_turn(student_id="s1", concept="导数",
                                   verdict="correct")
         self.assertIsInstance(emitted, list)
@@ -720,8 +778,8 @@ class TestGoalAnalyzer(unittest.TestCase):
 
     def test_gap_analysis_identifies_missing_and_weak(self):
         state = OrchestrationState()
-        state.goal = LearningGoal(title="数学", goal_type=GoalType.EXAM,
-                                  subjects=["数学"])
+        state.goals = [LearningGoal(title="数学", goal_type=GoalType.EXAM,
+                                  subjects=["数学"])]
         skills = [{"skill_id": "s1", "name": "极限", "subject": "数学",
                    "difficulty": 3},
                   {"skill_id": "s2", "name": "导数", "subject": "数学",
@@ -729,7 +787,7 @@ class TestGoalAnalyzer(unittest.TestCase):
         mastery = {"s1": {"p_known": 0.9, "attempts": 3},
                    "s2": {"p_known": 0.3, "attempts": 2}}
         gs = goal_analyzer.compute_gap_analysis(
-            state, subject_skills=skills, mastery_view=mastery,
+            state.goals[0], subject_skills=skills, mastery_view=mastery,
             prereq_map={"s2": ["s1"]})
         self.assertEqual(gs.mastered_ratio, 0.5)
         self.assertEqual(len(gs.gaps), 1)
@@ -739,11 +797,11 @@ class TestGoalAnalyzer(unittest.TestCase):
 
     def test_gap_analysis_missing_skill(self):
         state = OrchestrationState()
-        state.goal = LearningGoal(title="数学", subjects=["数学"])
+        state.goals = [LearningGoal(title="数学", subjects=["数学"])]
         skills = [{"skill_id": "s1", "name": "极限", "subject": "数学",
                    "difficulty": 3}]
         gs = goal_analyzer.compute_gap_analysis(
-            state, subject_skills=skills, mastery_view={})
+            state.goals[0], subject_skills=skills, mastery_view={})
         self.assertEqual(gs.gaps[0].status, "missing")
 
     def test_level_mapping(self):
@@ -757,13 +815,13 @@ class TestGoalAnalyzer(unittest.TestCase):
 
     def test_backward_plan_topo_order(self):
         state = OrchestrationState()
-        state.goal = LearningGoal(title="数学", subjects=["数学"])
+        state.goals = [LearningGoal(title="数学", subjects=["数学"])]
         skills = [{"skill_id": "c", "name": "c", "subject": "数学", "difficulty": 3},
                   {"skill_id": "a", "name": "a", "subject": "数学", "difficulty": 1},
                   {"skill_id": "b", "name": "b", "subject": "数学", "difficulty": 2}]
         prereq = {"a": [], "b": ["a"], "c": ["b"]}
         gs = goal_analyzer.compute_gap_analysis(
-            state, subject_skills=skills, mastery_view={},
+            state.goals[0], subject_skills=skills, mastery_view={},
             prereq_map=prereq)
         # a should come before b before c
         self.assertEqual(gs.required_skills, ["a", "b", "c"])
@@ -771,11 +829,11 @@ class TestGoalAnalyzer(unittest.TestCase):
     def test_deadline_urgency(self):
         now = time.time()
         state = OrchestrationState()
-        state.goal = LearningGoal(title="考试", subjects=["数学"],
-                                  deadline=now + 30 * 86400)
+        state.goals = [LearningGoal(title="考试", subjects=["数学"],
+                                  deadline=now + 30 * 86400)]
         skills = [{"skill_id": "s1", "name": "x", "subject": "数学", "difficulty": 3}]
         gs = goal_analyzer.compute_gap_analysis(
-            state, subject_skills=skills, mastery_view={}, now=now)
+            state.goals[0], subject_skills=skills, mastery_view={}, now=now)
         self.assertGreater(gs.urgency, 0.0)
 
     def test_goal_state_roundtrip(self):
@@ -851,14 +909,14 @@ class TestGoalGenealogyBinding(unittest.TestCase):
 
     def test_gap_analysis_chain_mode_echoed(self):
         state = OrchestrationState()
-        state.goal = LearningGoal(title="目标", subjects=["物理"],
-                                  target_concept_ids=["p.t1"])
+        state.goals = [LearningGoal(title="目标", subjects=["物理"],
+                                  target_concept_ids=["p.t1"])]
         skills = [{"skill_id": "p.t1", "name": "T1", "subject": "物理",
                    "difficulty": 3},
                   {"skill_id": "p.pre", "name": "PRE", "subject": "物理",
                    "difficulty": 2}]
         gs = goal_analyzer.compute_gap_analysis(
-            state, subject_skills=skills, mastery_view={},
+            state.goals[0], subject_skills=skills, mastery_view={},
             prereq_map={"p.t1": ["p.pre"]}, chain_mode="concept_chain")
         self.assertEqual(gs.chain_mode, "concept_chain")
         self.assertEqual(gs.target_concept_ids, ["p.t1"])
@@ -866,11 +924,11 @@ class TestGoalGenealogyBinding(unittest.TestCase):
         self.assertEqual(gs.total_skills, 2)
         self.assertEqual(gs.estimate["required_count"], 2)
 
-    def test_analyze_goal_safe_binding_branch(self):
+    def test_analyze_goals_binding_branch(self):
         svc = get_orchestration_service()
         state = OrchestrationState()
-        state.goal = LearningGoal(title="目标", subjects=[""],
-                                  target_concept_ids=["p.t1"])
+        state.goals = [LearningGoal(id="g_1", title="目标", subjects=[""],
+                                  target_concept_ids=["p.t1"])]
         chain_skills = [{"skill_id": "p.t1", "name": "T1", "subject": "物理",
                          "difficulty": 3}]
         with patch.object(svc, "_concept_chain_skills_safe",
@@ -881,23 +939,25 @@ class TestGoalGenealogyBinding(unittest.TestCase):
                           return_value=[{"skill_id": "other",
                                          "name": "X", "subject": "数学",
                                          "difficulty": 3}]) as m_subj:
-            svc._analyze_goal_safe(state, student_id="s1")
+            svc._analyze_goals_safe(state, student_id="s1")
         m_chain.assert_called_once()
         m_subj.assert_not_called()  # 绑定优先，学科兜底不触发
-        self.assertEqual(state.goal_state.chain_mode, "concept_chain")
-        self.assertEqual(state.goal_state.total_skills, 1)
+        self.assertEqual(state.goal_states[0].chain_mode, "concept_chain")
+        self.assertEqual(state.goal_states[0].total_skills, 1)
 
-    def test_analyze_goal_safe_empty_subject_no_longer_full_graph(self):
+    def test_analyze_goals_empty_subject_no_longer_full_graph(self):
         svc = get_orchestration_service()
         state = OrchestrationState()
         # subjects 空 + 标题无学科关键词 + 无概念绑定 -> 不再全图谱分析
-        state.goal = LearningGoal(title="变得更强")
+        state.goals = [LearningGoal(id="g_1", title="变得更强")]
         with patch.object(svc, "_subject_skills_safe",
                           return_value=[{"skill_id": "n1", "name": "任意",
                                          "subject": "数学", "difficulty": 3}]) as m:
-            svc._analyze_goal_safe(state, student_id="s1")
+            svc._analyze_goals_safe(state, student_id="s1")
         m.assert_not_called()
-        self.assertEqual(state.goal_state.total_skills, 0)  # 保持默认 GoalState
+        # 分析不出 -> 带标题的默认 GoalState（可与目标配对）
+        self.assertEqual(state.goal_states[0].total_skills, 0)
+        self.assertEqual(state.goal_states[0].goal_title, "变得更强")
 
 
 # ---------------------------------------------------------------------------
@@ -998,19 +1058,20 @@ class TestManagerEventEmission(unittest.TestCase):
         store._STUDENTS_DIR = self._orig_dir
         orch_manager._SERVICE = None
 
-    def test_set_goal_populates_goal_state(self):
-        """set_goal should run gap analysis (best-effort). With no graph it
-        leaves goal_state as default, never raises."""
+    def test_add_goal_populates_goal_state(self):
+        """add_goal should run gap analysis per goal (best-effort). With no
+        graph it leaves a paired default state, never raises."""
         svc = get_orchestration_service()
-        ok = svc.set_goal("s1", title="考研数学", subjects=["数学"])
-        self.assertTrue(ok)
+        goal = svc.add_goal("s1", title="考研数学", subjects=["数学"])
+        self.assertEqual(goal.id, "g_1")
         summary = svc.summary("s1")
-        self.assertIn("goal_state", summary)
+        self.assertIn("goal_states", summary)
+        self.assertEqual(summary["goal_states"][0]["goal_id"], "g_1")
 
     def test_complete_task_emits_batch_event(self):
         """Completing all of today's tasks emits a task_batch_completed event."""
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="test", subjects=["数学"])
+        svc.add_goal("s1", title="test", subjects=["数学"])
         from app.agents.learning_orchestration.task_executor import _day_str
         d = _day_str(time.time())
         state = store.load_state("s1")
@@ -1026,7 +1087,7 @@ class TestManagerEventEmission(unittest.TestCase):
     def test_record_turn_returns_events_list(self):
         """record_turn returns a list (possibly empty) of emitted events."""
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="test", subjects=["数学"])
+        svc.add_goal("s1", title="test", subjects=["数学"])
         emitted = svc.record_turn(student_id="s1", concept="导数",
                                   verdict="correct")
         self.assertIsInstance(emitted, list)
@@ -1085,7 +1146,7 @@ def _week_plan_state(*, week_start: float, concept_id: str = "c1",
                      name: str = "导数") -> OrchestrationState:
     """A minimal state with a one-concept weekly plan covering week_start."""
     state = OrchestrationState()
-    state.goal = LearningGoal(title="考研数学", subjects=["数学"])
+    state.goals = [LearningGoal(title="考研数学", subjects=["数学"])]
     state.weekly_plan = [WeeklyPlan(week_start=week_start, concepts=[
         PlanConcept(concept_id=concept_id, name=name, difficulty=3)])]
     return state
@@ -1398,10 +1459,11 @@ class TestRegeneratePlanLLM(unittest.TestCase):
     def _seed_goal_state(self, required):
         """Seed a student whose gap analysis already produced required_skills."""
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="考研数学", subjects=["数学"])
+        svc.add_goal("s1", title="考研数学", subjects=["数学"])
         state = store.load_state("s1")
-        state.goal_state = GoalState(goal_title="考研数学", subject="数学",
-                                     required_skills=list(required))
+        state.goal_states = [GoalState(
+            goal_id=state.goals[0].id, goal_title="考研数学",
+            subject="数学", required_skills=list(required))]
         store.save_state("s1", state)
         return svc
 
@@ -1478,6 +1540,46 @@ class TestRegeneratePlanLLM(unittest.TestCase):
         self.assertFalse(ok)
         self.assertEqual(reason, "no_goal")
 
+    def test_regenerate_merges_multiple_goals(self):
+        """Two goals' required chains merge (goal order, deduped) into one
+        shared plan; the prompt carries both goal titles."""
+        import asyncio
+        svc = get_orchestration_service()
+        g1 = svc.add_goal("s1", title="考研数学", subjects=["数学"])
+        g2 = svc.add_goal("s1", title="物理入门", subjects=["物理"])
+        state = store.load_state("s1")
+        state.goal_states = [
+            GoalState(goal_id=g1.id, goal_title="考研数学",
+                      required_skills=["a", "b"]),
+            GoalState(goal_id=g2.id, goal_title="物理入门",
+                      required_skills=["b", "c"])]  # "b" deduped
+        store.save_state("s1", state)
+        seen_goals = {}
+
+        from app.agents.learning_orchestration import weekly_planner_llm as wpl
+        orig_build = wpl.build_weekly_prompt
+
+        def build_spy(goal_title, window, *a, **kw):
+            seen_goals["title"] = goal_title
+            seen_goals["window"] = list(window)
+            return orig_build(goal_title, window, *a, **kw)
+
+        with patch.object(wpl, "build_weekly_prompt", side_effect=build_spy):
+            with patch("app.core.llm_async.get_llm",
+                       return_value=self._mock_llm(
+                           self._weekly_json(["a", "b", "c"]))):
+                ok, reason = asyncio.run(svc.regenerate_plan("s1", now=_DAY1))
+        self.assertTrue(ok)
+        self.assertEqual(reason, "")
+        # both titles in one prompt line; merged window deduped in goal order
+        self.assertIn("考研数学", seen_goals["title"])
+        self.assertIn("物理入门", seen_goals["title"])
+        self.assertEqual(seen_goals["window"], ["a", "b", "c"])
+        summary = svc.summary("s1")
+        covered = sorted(c for w in summary["weekly_plan"]
+                         for c in [pc["concept_id"] for pc in w["concepts"]])
+        self.assertEqual(covered, ["a", "b", "c"])
+
 
 # ---------------------------------------------------------------------------
 # 22. daily composer (pool / gate / LLM + fallback through the manager)
@@ -1490,7 +1592,7 @@ class TestDailyComposer(unittest.TestCase):
         carryover task."""
         now = _DAY1
         state = OrchestrationState()
-        state.goal = LearningGoal(title="考研数学", subjects=["数学"])
+        state.goals = [LearningGoal(title="考研数学", subjects=["数学"])]
         state.review_queue = {"c_srs": ReviewItem(
             concept_id="c_srs", concept_name="极限", next_review=now - 100)}
         state.weekly_plan = [WeeklyPlan(
@@ -1643,7 +1745,7 @@ class TestRecordTurnAutoProgress(unittest.TestCase):
     def _seed_task(self, *, concept_id="c1", concept_name="导数",
                    status=DailyTaskStatus.PENDING):
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="考研数学", subjects=["数学"])
+        svc.add_goal("s1", title="考研数学", subjects=["数学"])
         day = task_executor._day_str(time.time())
         state = store.load_state("s1")
         state.daily_tasks = [DailyTask(
@@ -1709,33 +1811,46 @@ class TestUpdateGoal(unittest.TestCase):
 
     def test_update_goal_preserves_srs_and_history(self):
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="考研数学", subjects=["数学"])
+        goal = svc.add_goal("s1", title="考研数学", subjects=["数学"])
         svc.record_turn(student_id="s1", concept="导数", verdict="correct")
         state = store.load_state("s1")
         state.daily_tasks = [DailyTask(id="2026-07-26_c1_study",
                                        day="2026-07-26", concept_id="c1",
                                        status=DailyTaskStatus.COMPLETED)]
         store.save_state("s1", state)
-        ok = svc.update_goal("s1", title="考研数学（提高目标）",
+        ok = svc.update_goal("s1", goal.id, title="考研数学（提高目标）",
                              deadline=1800000000.0)
         self.assertTrue(ok)
         after = store.load_state("s1")
-        self.assertEqual(after.goal.title, "考研数学（提高目标）")
-        self.assertEqual(after.goal.deadline, 1800000000.0)
+        self.assertEqual(after.goals[0].title, "考研数学（提高目标）")
+        self.assertEqual(after.goals[0].deadline, 1800000000.0)
         self.assertIn("导数", after.review_queue)          # SRS preserved
         self.assertEqual(len(after.daily_tasks), 1)         # history preserved
         self.assertEqual(after.daily_tasks[0].id, "2026-07-26_c1_study")
 
+    def test_delete_goal_removes_goal_and_state(self):
+        svc = get_orchestration_service()
+        g1 = svc.add_goal("s1", title="考研数学", subjects=["数学"])
+        g2 = svc.add_goal("s1", title="物理入门", subjects=["物理"])
+        state = store.load_state("s1")
+        self.assertEqual([gs.goal_id for gs in state.goal_states],
+                         [g1.id, g2.id])
+        self.assertTrue(svc.delete_goal("s1", g1.id))
+        after = store.load_state("s1")
+        self.assertEqual([g.id for g in after.goals], [g2.id])
+        self.assertEqual([gs.goal_id for gs in after.goal_states], [g2.id])
+        self.assertFalse(svc.delete_goal("s1", g1.id))
+
     def test_update_goal_without_goal_returns_false(self):
         svc = get_orchestration_service()
-        self.assertFalse(svc.update_goal("s1", title="x"))
+        self.assertFalse(svc.update_goal("s1", "g_9", title="x"))
 
     def test_summary_contains_needs_replan(self):
         svc = get_orchestration_service()
         summary = svc.summary("s1")
         self.assertIn("needs_replan", summary)
         self.assertFalse(summary["needs_replan"])  # no goal -> never prompt
-        svc.set_goal("s1", title="考研数学", subjects=["数学"])
+        svc.add_goal("s1", title="考研数学", subjects=["数学"])
         self.assertTrue(svc.summary("s1")["needs_replan"])  # goal, never planned
         state = store.load_state("s1")
         state.weekly_plan = [WeeklyPlan(week_start=time.time())]
@@ -1867,17 +1982,18 @@ class TestAPIContracts(unittest.TestCase):
         orch_manager._SERVICE = None
 
     def test_post_goal_response_shape_with_first_task(self):
-        """POST /goal -> {ok, milestones, first_task}; with a weekly plan the
-        kickoff materializes today's tasks so first_task is not null."""
+        """POST /goal -> {ok, goal_id, weeks, first_task}; with a weekly plan
+        the kickoff materializes today's tasks so first_task is not null."""
         import asyncio
-        from app.api.v1.orchestration import GoalBody, orchestration_set_goal
+        from app.api.v1.orchestration import GoalBody, orchestration_add_goal
         store.save_state("s1", _week_plan_state(week_start=_DAY1 - 3600))
         with patch.object(LearningOrchestrationService, "_get_llm",
                           side_effect=RuntimeError("llm down")):
-            resp = asyncio.run(orchestration_set_goal(
+            resp = asyncio.run(orchestration_add_goal(
                 GoalBody(title="考研数学", subjects=["数学"]),
                 student_id="s1"))
         self.assertTrue(resp["ok"])
+        self.assertEqual(resp["goal_id"], "g_1")
         self.assertIsInstance(resp["weeks"], list)
         # deterministic fallback composed today's study task -> kickoff CTA
         self.assertIsNotNone(resp["first_task"])
@@ -1892,20 +2008,88 @@ class TestAPIContracts(unittest.TestCase):
         from app.api.v1.orchestration import (GoalPatchBody,
                                               orchestration_patch_goal)
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="考研数学", subjects=["数学"])
+        goal = svc.add_goal("s1", title="考研数学", subjects=["数学"])
         with patch.object(LearningOrchestrationService, "_get_llm",
                           side_effect=RuntimeError("llm down")):
             resp = asyncio.run(orchestration_patch_goal(
-                GoalPatchBody(title="考研数学（新）"), student_id="s1"))
+                goal.id, GoalPatchBody(title="考研数学（新）"), student_id="s1"))
         self.assertTrue(resp["ok"])
         self.assertIn("weeks", resp)
         self.assertIn("first_task", resp)
+
+    def test_multi_goal_add_patch_delete_endpoints(self):
+        """POST /goal appends (multi-goal); PATCH/DELETE address /goal/{id};
+        cap overflow maps to 400, unknown id to 404; the deleted goal's
+        concepts leave the auto plan via the replan tail."""
+        import asyncio
+        from fastapi import HTTPException
+        from app.api.v1.orchestration import (GoalBody, GoalPatchBody,
+            orchestration_add_goal, orchestration_patch_goal,
+            orchestration_delete_goal)
+        svc = get_orchestration_service()
+        fake_inputs = {"next_learnable": [], "review_candidates": [],
+                       "mastery_view": {}, "prereq_map": {}}
+        with patch.object(LearningOrchestrationService, "_get_llm",
+                          side_effect=RuntimeError("llm down")), \
+                patch.object(LearningOrchestrationService,
+                             "_assemble_plan_inputs",
+                             return_value=fake_inputs):
+            resp1 = asyncio.run(orchestration_add_goal(
+                GoalBody(title="考研数学", subjects=["数学"]), student_id="s1"))
+            resp2 = asyncio.run(orchestration_add_goal(
+                GoalBody(title="物理入门", subjects=["物理"]), student_id="s1"))
+        self.assertTrue(resp1["ok"] and resp2["ok"])
+        summary = svc.summary("s1")
+        self.assertEqual([g["title"] for g in summary["goals"]],
+                         ["考研数学", "物理入门"])
+        # both goals' gap states are paired by id
+        self.assertEqual({gs["goal_id"] for gs in summary["goal_states"]},
+                         {"g_1", "g_2"})
+        with patch.object(LearningOrchestrationService, "_get_llm",
+                          side_effect=RuntimeError("llm down")), \
+                patch.object(LearningOrchestrationService,
+                             "_assemble_plan_inputs",
+                             return_value=fake_inputs):
+            patch_resp = asyncio.run(orchestration_patch_goal(
+                "g_2", GoalPatchBody(title="物理竞赛入门"), student_id="s1"))
+            del_resp = asyncio.run(orchestration_delete_goal(
+                "g_1", student_id="s1"))
+        self.assertTrue(patch_resp["ok"] and del_resp["ok"])
+        summary = svc.summary("s1")
+        self.assertEqual([g["title"] for g in summary["goals"]],
+                         ["物理竞赛入门"])
+        # unknown id -> 404 on both routes
+        with patch.object(LearningOrchestrationService, "_get_llm",
+                          side_effect=RuntimeError("llm down")):
+            with self.assertRaises(HTTPException) as ctx:
+                asyncio.run(orchestration_patch_goal(
+                    "g_9", GoalPatchBody(title="x"), student_id="s1"))
+            self.assertEqual(ctx.exception.status_code, 404)
+            with self.assertRaises(HTTPException) as ctx:
+                asyncio.run(orchestration_delete_goal("g_9", student_id="s1"))
+            self.assertEqual(ctx.exception.status_code, 404)
+        # cap overflow -> 400
+        state = store.load_state("s1")
+        for i in range(schema._MAX_GOALS - 1):
+            goal_manager.add_goal(state, title=f"补{i}")
+        store.save_state("s1", state)
+        with self.assertRaises(HTTPException) as ctx:
+            asyncio.run(orchestration_add_goal(
+                GoalBody(title="溢出"), student_id="s1"))
+        self.assertEqual(ctx.exception.status_code, 400)
+
+    def test_longtask_routes_removed(self):
+        """The long-term task module is gone: no /longtask routes remain."""
+        from app.api.v1 import orchestration as orch_api
+        paths = {getattr(r, "path", "") for r in orch_api.router.routes}
+        self.assertFalse(any("/longtask" in p for p in paths),
+                         f"longtask routes must be removed: {paths}")
 
     def test_regenerate_response_shape(self):
         import asyncio
         from app.api.v1.orchestration import orchestration_regenerate
         svc = get_orchestration_service()
-        svc.set_goal("s1", title="考研数学", subjects=["数学"])
+        svc.add_goal("s1", title="考研数学", subjects=["数学"])
         with patch.object(LearningOrchestrationService, "_get_llm",
                           side_effect=RuntimeError("llm down")):
             resp = asyncio.run(orchestration_regenerate(student_id="s1"))
@@ -2196,7 +2380,7 @@ class TestPlanCRUDAPI(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# P1 schema: SubTask / WeekTask / LongTermTask / plan-hierarchy provenance
+# P1 schema: SubTask / WeekTask / plan-hierarchy provenance
 # ---------------------------------------------------------------------------
 
 class TestPlanHierarchySchema(unittest.TestCase):
@@ -2254,31 +2438,6 @@ class TestPlanHierarchySchema(unittest.TestCase):
         self.assertEqual(w3.origin, "auto")
         self.assertEqual(w3.tasks, [])
 
-    def test_longtermtask_roundtrip_and_cap(self):
-        from app.agents.learning_orchestration.schema import LongTermTask
-        lt = LongTermTask(id="lt_1", title="每天背单词",
-                          suggestions=["利用碎片时间"], active=True)
-        lt2 = LongTermTask.from_dict(lt.to_dict())
-        self.assertEqual(lt2.title, "每天背单词")
-        self.assertEqual(lt2.source, "user")  # default user
-        self.assertEqual(lt2.suggestions, ["利用碎片时间"])
-        self.assertTrue(lt2.active)
-        # suggestions capped to 3, each <= 120 chars
-        lt3 = LongTermTask.from_dict({"suggestions": ["a" * 200] * 5})
-        self.assertEqual(len(lt3.suggestions), 3)
-        self.assertEqual(len(lt3.suggestions[0]), 120)
-
-    def test_state_long_term_tasks_roundtrip(self):
-        from app.agents.learning_orchestration.schema import LongTermTask
-        s = OrchestrationState(student_id="s1")
-        s.long_term_tasks.append(LongTermTask(id="lt_1", title="t"))
-        s2 = OrchestrationState.from_dict(s.to_dict())
-        self.assertEqual(len(s2.long_term_tasks), 1)
-        self.assertEqual(s2.long_term_tasks[0].id, "lt_1")
-        # legacy state without the field
-        s3 = OrchestrationState.from_dict({"student_id": "s1"})
-        self.assertEqual(s3.long_term_tasks, [])
-
     def test_dailytask_source_refs(self):
         t = DailyTask(id="d1", day="2026-08-01", concept_id="c1",
                       week_task_id="wt_0_1", subtask_id="st_1")
@@ -2291,148 +2450,6 @@ class TestPlanHierarchySchema(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# P3. long-term tasks + LLM suggestions
-# ---------------------------------------------------------------------------
-
-class TestLongTaskAdvisor(unittest.TestCase):
-
-    def test_parse_gate(self):
-        from app.agents.learning_orchestration import longtask_advisor as la
-        ok = json.dumps({"suggestions": [
-            {"id": "lt_1", "tips": ["早上做", "和复盘绑定"]}]})
-        out = la.parse_suggest_response(ok, ["lt_1"])
-        self.assertEqual(out, {"lt_1": ["早上做", "和复盘绑定"]})
-        # unknown id rejected
-        bad = json.dumps({"suggestions": [{"id": "lt_9", "tips": ["x"]}]})
-        self.assertIsNone(la.parse_suggest_response(bad, ["lt_1"]))
-        # empty tips rejected
-        empty = json.dumps({"suggestions": [{"id": "lt_1", "tips": []}]})
-        self.assertIsNone(la.parse_suggest_response(empty, ["lt_1"]))
-        # junk rejected; fence tolerated
-        self.assertIsNone(la.parse_suggest_response("junk", ["lt_1"]))
-        fenced = "```json\n" + ok + "\n```"
-        self.assertEqual(la.parse_suggest_response(fenced, ["lt_1"]),
-                         {"lt_1": ["早上做", "和复盘绑定"]})
-
-    def test_fallback_never_empty(self):
-        from app.agents.learning_orchestration import longtask_advisor as la
-        self.assertTrue(la.fallback_suggestions("每天背单词"))
-
-
-class TestLongTasks(unittest.TestCase):
-
-    def setUp(self):
-        self._orig_dir = store._STUDENTS_DIR
-        self.tmp = _temp_students_dir()
-        store._STUDENTS_DIR = self.tmp
-        orch_manager._SERVICE = None
-
-    def tearDown(self):
-        store._STUDENTS_DIR = self._orig_dir
-        orch_manager._SERVICE = None
-
-    def _mock_llm(self, content):
-        from unittest.mock import AsyncMock
-        m = MagicMock()
-        m.complete = AsyncMock(return_value=(content, None))
-        return m
-
-    def test_add_validation_and_cap(self):
-        svc = get_orchestration_service()
-        with self.assertRaises(ValueError):
-            svc.add_longtask("s1", title="  ")
-        lt = svc.add_longtask("s1", title="每天背 20 个单词")
-        self.assertEqual(lt.id, "lt_1")
-        self.assertEqual(lt.source, "user")
-        self.assertTrue(lt.active)
-        from app.agents.learning_orchestration.schema import _MAX_LONGTASKS
-        for i in range(_MAX_LONGTASKS - 1):
-            svc.add_longtask("s1", title=f"t{i}")
-        with self.assertRaises(ValueError):
-            svc.add_longtask("s1", title="溢出")
-
-    def test_delete_404(self):
-        svc = get_orchestration_service()
-        self.assertFalse(svc.delete_longtask("s1", "lt_9"))
-        svc.add_longtask("s1", title="t")
-        self.assertTrue(svc.delete_longtask("s1", "lt_1"))
-        self.assertFalse(svc.delete_longtask("s1", "lt_1"))
-
-    def test_suggest_llm_success(self):
-        import asyncio
-        svc = get_orchestration_service()
-        svc.add_longtask("s1", title="每天背 20 个单词")
-        content = json.dumps({"suggestions": [
-            {"id": "lt_1", "tips": ["早上空腹背", "和每晚复盘绑定"]}]})
-        with patch("app.core.llm_async.get_llm",
-                   return_value=self._mock_llm(content)):
-            lt = asyncio.run(svc.suggest_longtask("s1", "lt_1"))
-        self.assertEqual(lt.suggestions, ["早上空腹背", "和每晚复盘绑定"])
-        # persisted
-        state = store.load_state("s1")
-        self.assertEqual(state.long_term_tasks[0].suggestions[0], "早上空腹背")
-
-    def test_suggest_llm_failure_falls_back_to_templates(self):
-        import asyncio
-        svc = get_orchestration_service()
-        svc.add_longtask("s1", title="每天背 20 个单词")
-        with patch("app.core.llm_async.get_llm",
-                   return_value=self._mock_llm("garbage")):
-            lt = asyncio.run(svc.suggest_longtask("s1", "lt_1"))
-        self.assertTrue(lt.suggestions)  # template suggestions
-        self.assertIsNone(asyncio.run(svc.suggest_longtask("s1", "lt_9")))
-
-    def test_suggest_batch_only_fills_missing(self):
-        import asyncio
-        svc = get_orchestration_service()
-        svc.add_longtask("s1", title="有建议的")
-        state = store.load_state("s1")
-        state.long_term_tasks[0].suggestions = ["已有"]
-        from app.agents.learning_orchestration.schema import LongTermTask
-        state.long_term_tasks.append(LongTermTask(id="lt_2", title="没建议的"))
-        store.save_state("s1", state)
-        content = json.dumps({"suggestions": [
-            {"id": "lt_2", "tips": ["新建议"]}]})
-        with patch("app.core.llm_async.get_llm",
-                   return_value=self._mock_llm(content)):
-            n = asyncio.run(svc.suggest_longtasks_batch("s1"))
-        self.assertEqual(n, 1)
-        state = store.load_state("s1")
-        self.assertEqual(state.long_term_tasks[0].suggestions, ["已有"])
-        self.assertEqual(state.long_term_tasks[1].suggestions, ["新建议"])
-        # nothing missing -> no LLM call, returns 0
-        self.assertEqual(asyncio.run(svc.suggest_longtasks_batch("s1")), 0)
-
-    def test_longtask_endpoints(self):
-        import asyncio
-        from fastapi import HTTPException
-        from unittest.mock import AsyncMock
-        from app.api.v1.orchestration import (LongTaskBody,
-            orchestration_add_longtask, orchestration_delete_longtask,
-            orchestration_suggest_longtask)
-        with self.assertRaises(HTTPException) as ctx:
-            orchestration_add_longtask(LongTaskBody(title=" "), student_id="s1")
-        self.assertEqual(ctx.exception.status_code, 400)
-        resp = orchestration_add_longtask(
-            LongTaskBody(title="每天复习错题"), student_id="s1")
-        self.assertTrue(resp["ok"])
-        self.assertEqual(resp["task"]["id"], "lt_1")
-        m = MagicMock()
-        m.complete = AsyncMock(return_value=(json.dumps(
-            {"suggestions": [{"id": "lt_1", "tips": ["建议"]}]}), None))
-        with patch("app.core.llm_async.get_llm", return_value=m):
-            resp2 = asyncio.run(orchestration_suggest_longtask(
-                "lt_1", student_id="s1"))
-        self.assertEqual(resp2["task"]["suggestions"], ["建议"])
-        with self.assertRaises(HTTPException) as ctx:
-            asyncio.run(orchestration_suggest_longtask("lt_9", student_id="s1"))
-        self.assertEqual(ctx.exception.status_code, 404)
-        self.assertEqual(orchestration_delete_longtask(
-            "lt_1", student_id="s1"), {"ok": True})
-        with self.assertRaises(HTTPException) as ctx:
-            orchestration_delete_longtask("lt_1", student_id="s1")
-        self.assertEqual(ctx.exception.status_code, 404)
-
 
 # ---------------------------------------------------------------------------
 # P4. week tasks + subtasks CRUD / LLM subtask suggest
@@ -2579,17 +2596,18 @@ class TestWeekTaskCRUD(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# P5. daily composer: subtask/longtask pool + completion write-back
+# P5. daily composer: subtask pool + completion write-back
 # ---------------------------------------------------------------------------
 
 class TestComposerPoolExtended(unittest.TestCase):
 
     def _state(self):
         from app.agents.learning_orchestration.schema import (
-            LongTermTask, SubTask, WeekTask)
+            SubTask, WeekTask)
         now = _DAY1
         state = OrchestrationState()
-        state.goal = LearningGoal(title="考研数学", subjects=["数学"])
+        state.goals = [LearningGoal(id="g_1", title="考研数学",
+                                    subjects=["数学"])]
         state.weekly_plan = [WeeklyPlan(
             week_index=0, week_start=now - 3600, focus="基础周",
             concepts=[PlanConcept(concept_id="c1", name="导数")],
@@ -2598,9 +2616,6 @@ class TestComposerPoolExtended(unittest.TestCase):
                             subtasks=[SubTask(id="st_1", title="做 10 道导数题"),
                                       SubTask(id="st_2", title="已完成的",
                                               done=True)])])]
-        state.long_term_tasks = [
-            LongTermTask(id="lt_1", title="每天背单词", active=True),
-            LongTermTask(id="lt_2", title="停用的", active=False)]
         return state, now
 
     def test_subtask_entries_in_pool(self):
@@ -2616,16 +2631,6 @@ class TestComposerPoolExtended(unittest.TestCase):
         self.assertIn("current_week", e["sources"])
         self.assertNotIn("st_2", by_id)  # done subtasks excluded
 
-    def test_longtask_entries_in_pool(self):
-        state, now = self._state()
-        pool = daily_composer.build_candidate_pool(
-            state, mastery_view={}, concept_names={}, now=now)
-        by_id = {e["concept_id"]: e for e in pool}
-        self.assertIn("lt_1", by_id)
-        self.assertEqual(by_id["lt_1"]["longtask_id"], "lt_1")
-        self.assertIn("longtask", by_id["lt_1"]["sources"])
-        self.assertNotIn("lt_2", by_id)  # inactive excluded
-
     def test_picks_materialize_refs(self):
         from app.agents.learning_orchestration.schema import TaskKind as _TK
         state, now = self._state()
@@ -2633,19 +2638,15 @@ class TestComposerPoolExtended(unittest.TestCase):
             state, mastery_view={}, concept_names={}, now=now)
         picks = [{"concept_id": "st_1", "kind": "practice",
                   "phase": "reinforce", "reason": "本周子步骤"},
-                 {"concept_id": "lt_1", "kind": "study",
-                  "phase": "", "reason": "日常承诺"},
                  {"concept_id": "c1", "kind": "study",
                   "phase": "foundation", "reason": "本周概念"}]
         tasks = daily_composer.tasks_from_picks(
-            state, picks, pool, [20, 15, 25], now=now)
-        st_task, lt_task, c_task = tasks
+            state, picks, pool, [20, 25], now=now)
+        st_task, c_task = tasks
         self.assertEqual(st_task.week_task_id, "wt_0_1")
         self.assertEqual(st_task.subtask_id, "st_1")
         self.assertEqual(st_task.concept_id, "c1")  # real concept, not st id
         self.assertEqual(st_task.title, "做 10 道导数题")
-        self.assertEqual(lt_task.concept_id, "")
-        self.assertEqual(lt_task.title, "每天背单词")
         self.assertEqual(c_task.concept_id, "c1")
         self.assertEqual(c_task.title, "")  # plain concept entry: no title
         self.assertEqual(c_task.week_task_id, "")

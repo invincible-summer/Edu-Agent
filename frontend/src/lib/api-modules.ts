@@ -23,7 +23,6 @@ import type {
   OrchDailyTask,
   OrchGoalResp,
   OrchHabit,
-  OrchLongTask,
   OrchPlanSummary,
   OrchReviewItem,
   OrchSubTask,
@@ -260,8 +259,12 @@ async function patch<T>(path: string, body: unknown): Promise<T> {
   return res.json();
 }
 
-export const patchOrchGoal = (body: OrchGoalPayload) =>
-  patch<OrchGoalResp>("/orchestration/goal", body);
+export const patchOrchGoal = (goalId: string, body: OrchGoalPayload) =>
+  patch<OrchGoalResp>(
+    `/orchestration/goal/${encodeURIComponent(goalId)}`, body);
+
+export const deleteOrchGoal = (goalId: string) =>
+  del<{ ok: boolean }>(`/orchestration/goal/${encodeURIComponent(goalId)}`);
 
 export const patchOrchSchedule = (dailyMinutes: number) =>
   patch<{ ok: boolean; schedule: { daily_minutes: number } }>(
@@ -304,16 +307,6 @@ async function del<T>(path: string): Promise<T> {
 }
 
 // --- M9 计划层级增删（周/周内概念/周任务/子任务） ---
-
-export const addOrchLongTask = (title: string) =>
-  post<{ ok: boolean; task: OrchLongTask }>("/orchestration/longtask", { title });
-
-export const deleteOrchLongTask = (id: string) =>
-  del<{ ok: boolean }>(`/orchestration/longtask/${encodeURIComponent(id)}`);
-
-export const suggestOrchLongTask = (id: string) =>
-  post<{ ok: boolean; task: OrchLongTask }>(
-    `/orchestration/longtask/${encodeURIComponent(id)}/suggest`, {});
 
 export interface OrchWeekTaskPayload {
   title: string;

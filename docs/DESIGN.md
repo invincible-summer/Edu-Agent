@@ -24,7 +24,7 @@
 | M6 | 记忆智能 | 有界 prompt 画像 + 策略聚合；旧情景/语义兼容只读 | `app/agents/memory/` |
 | M7 | 评估改进智能 | 教师自己是否越来越好：TurnTrace 诊断 + 改进建议（人工确认） | `app/agents/evaluation/` |
 | M8 | 交互体验智能 | 怎么表达最适合这个学生：UX 画像 + 输出适配（不改内容只改表达） | `app/agents/ux_intelligence/` |
-| M9 | 学习编排智能 | 未来几周到几个月怎么学：目标 → 长期任务 → 周任务 → 今日任务 + SM-2 | `app/agents/learning_orchestration/` |
+| M9 | 学习编排智能 | 未来几周到几个月怎么学：多目标 → 周任务 → 今日任务 + SM-2 | `app/agents/learning_orchestration/` |
 | M10 | 学习能力运行时与证据门 | Agent 能调用什么、为什么调用、契约是否满足、学习证据能否写回 | `app/agents/skill_runtime/` |
 
 层次关系：M5 是横向**输入**基础设施（位于智能层之下，提供知识）；M8 是横向**输出**适配层（位于智能层之上，塑形输出）；M9 是纵向编排层（横跨 M1-M4 做长期规划）；M10 是横向**能力控制层**，统一可执行 Skill 契约、旁路决策与学习证据门。M0 不属于 M1-M10，是所有 Agent 的身份入口。
@@ -566,21 +566,20 @@ per-student 构建锁 + 全局 Semaphore(2) 防 429；任何异常落 `status=gr
 
 回答「未来几周到几个月怎么持续成长」。包：`agents/learning_orchestration/`。纵向编排层：不直接写 M2/M3/M5/M6 存储，但通过 EventEmitter 事件流让 M6 决定是否固化长期记忆。
 
-**计划层级（2026-08 重构，里程碑层已删除）**：`长期目标 → 长期任务（LongTermTask）→ 周计划（多周）→ 周任务（WeekTask）→ 子任务（SubTask）→ 今日任务（DailyTask）`。旧 `Milestone` 类与 `state.milestones` 字段仅为读取旧数据保留，不再产出。
+**计划层级（2026-08 重构，里程碑层与长期任务层已删除）**：`长期目标（多个，上限 4）→ 周计划（多周）→ 周任务（WeekTask）→ 子任务（SubTask）→ 今日任务（DailyTask）`。旧 `Milestone` 类与 `state.milestones` 字段仅为读取旧数据保留，不再产出。多目标：`state.goals`（每目标独立 id `g_{n}` 与差距分析 `goal_states` 1:1 配对），重规划把各目标 required_skills 按目标顺序合并去重后喂入同一份共享周计划；旧单目标 blob 在 `from_dict` 惰性迁移（`goal` → `[goal(id="g_1")]`，`long_term_tasks` 丢弃）。
 
-- **GoalAnalyzer（目标推理）**：gap 分析 + 倒推产出 GoalState（目标概念集/当前掌握差距/周数映射）。
-- **LLM 周规划器（weekly_planner_llm）**：目标设定/编辑/重规划时一次 LLM 调用直接产出 N 周的语义化周计划——每周 focus + 行动级周任务（「学完浮力前两节」）+ 具体子任务（「做 10 道计算题」）。**大考纲窗口**：required_skills 超百时只规划前 `num_weeks×5` 个概念的近端窗口，校验门（ids ⊆ 窗口、窗口全覆盖、非 review/summary 任务无重复概念、任务/子任务数上限、kind 合法）不过则回退确定性 `learning_planner` + `derive_tasks_fallback`（每周一个派生任务）。review/summary 任务允许复用先修概念（复习天性）。周起点按周一对齐取整（防亚秒漂移），id 固定 `wt_{week}_{seq}` / `st_{task}_{seq}`。
-- **人工不可覆盖契约（全层级统一）**：`source="user"` 的周（`origin=user` 整周保留）、周任务、子任务、长期任务，任何重规划管线不触碰；`_merge_user_plan` 按周窗口（7 天 bucket）把 auto 周内的 user 任务并回重建后的计划，week_index 按 week_start 重排。今日任务侧沿用 `custom=true` 不碰 + `materialize_day` gap-fill（任务唯一性铁律不变：落盘即身份稳定，绝不替换删除，未完成任务跨天结转置顶）。
-- **长期任务（LongTermTask）**：目标下的常驻承诺（「每天背 20 个单词」），用户自建为主。`longtask_advisor` 一次 LLM 批量调用为缺建议的条目生成 1-2 条可执行建议（gate：id ⊆ 请求集、1-3 条、≤120 字；回退模板建议），目标设定/编辑后自动批量补一次，也可逐条 ✨ 刷新。
+- **GoalAnalyzer（目标推理）**：按目标逐个 gap 分析 + 倒推产出 GoalState（目标概念集/当前掌握差距/周数映射）。
+- **LLM 周规划器（weekly_planner_llm）**：目标设定/编辑/重规划时一次 LLM 调用直接产出 N 周的语义化周计划——每周 focus + 行动级周任务（「学完浮力前两节」）+ 具体子任务（「做 10 道计算题」）。**大考纲窗口**：required_skills（多目标合并后）超百时只规划前 `num_weeks×5` 个概念的近端窗口，校验门（ids ⊆ 窗口、窗口全覆盖、非 review/summary 任务无重复概念、任务/子任务数上限、kind 合法）不过则回退确定性 `learning_planner` + `derive_tasks_fallback`（每周一个派生任务）。review/summary 任务允许复用先修概念（复习天性）。周起点按周一对齐取整（防亚秒漂移），id 固定 `wt_{week}_{seq}` / `st_{task}_{seq}`。
+- **人工不可覆盖契约（全层级统一）**：`source="user"` 的周（`origin=user` 整周保留）、周任务、子任务，任何重规划管线不触碰；`_merge_user_plan` 按周窗口（7 天 bucket）把 auto 周内的 user 任务并回重建后的计划，week_index 按 week_start 重排。今日任务侧沿用 `custom=true` 不碰 + `materialize_day` gap-fill（任务唯一性铁律不变：落盘即身份稳定，绝不替换删除，未完成任务跨天结转置顶）。
 - **周任务/子任务 CRUD + ✨推荐**：`user_wt_{week}_{seq}` / `{user|auto}_st_{task}_{seq}` id 前缀；`subtask_advisor` 单任务 LLM 拆解（2-4 个可执行子任务，gate 条数/标题/分钟；失败 → 502 前端静默提示）。子任务勾选完成驱动 WeekTask.effective_done。
-- **LLM 每日编排器（daily_composer）**：候选池 = SRS 到期 ∪ 本周未掌握概念 ∪ **本周未完成子任务（行动级，带 week_task_id/subtask_id 引用）** ∪ **active 长期任务** ∪ M2 弱项 ∪ 昨日结转；LLM 挑 ≤ slots 个并产教练批注 reason；校验门（id ∈ 池、kind/phase 合法、去重、≤ slots）失败回退确定性路径。子任务/长期任务物化为带引用的 DailyTask。
+- **LLM 每日编排器（daily_composer）**：候选池 = SRS 到期 ∪ 本周未掌握概念 ∪ **本周未完成子任务（行动级，带 week_task_id/subtask_id 引用）** ∪ M2 弱项 ∪ 昨日结转；LLM 挑 ≤ slots 个并产教练批注 reason；校验门（id ∈ 池、kind/phase 合法、去重、≤ slots）失败回退确定性路径。子任务物化为带引用的 DailyTask。
 - **完成回写**：完成带子任务引用的今日任务 → 对应 SubTask 置 done。**标题守卫**：位置 id 会被重规划复用于新内容，只有标题仍匹配才记功（防旧任务给新内容刷完成）。学习行为反向推进（6g）照旧：讲解轮 in_progress、批改轮 completed。
 - **SM-2 间隔复习（承重件）**：经典 SM-2；`quality_from_verdict()` 是 M4→M9 组合点；SRS 与 M2 BKT 正交。前端并入今日任务「间隔复习」子栏。
 - **进度预测（原成长模拟）**：确定性前向投影 + `headline()` 人话结论（零 LLM 模板：节奏 → 到期完成率 → 风险行动）。**前端已下线该卡片**：抽象投影数字对学生不可行动（真实用户反馈），`GET /orchestration/simulation` 端点保留可用；前端同样移除了手动「重新规划」按钮（确定性重算后页面无可见变化，等同死按钮）——needs_replan banner 改为「让教练帮我调整」对话深链，目标编辑保存仍是自动重规划的入口。
 - **防死循环双守卫**（不变）：无目标永不提示；`last_plan_attempt` 区分「从未规划」与「规划了但无可安排内容」——empty_plan 是合法终态。
 - **EventEmitter**：连击/进度事件白名单 + 去重，由 6g 转发给 M6 consume_turn。
 - **持久化**：`students/<id>.orchestration.json`（工作集）+ `students/<id>.orchestration_events.jsonl`（黑盒）。
-- **API**：`GET /orchestration/{plan,today,habit,review,simulation}` + `POST /orchestration/{goal,regenerate,task,task/{id}/complete,week,week/{i}/concept,week/{i}/task,week/{i}/task/{tid}/subtask,week/{i}/task/{tid}/suggest,longtask,longtask/{id}/suggest}` + `PATCH /orchestration/{goal,task/{id},week/{i}/task/{tid}/subtask/{sid},schedule}` + `DELETE /orchestration/{task/{id},week/{i},week/{i}/concept/{cid},week/{i}/task/{tid},week/{i}/task/{tid}/subtask/{sid},longtask/{id}}`。目标设定/编辑响应带 `weeks` + `first_task`（kickoff CTA）；`POST /regenerate` 响应带 `reason`（`"" | "no_goal" | "empty_plan"`）。
+- **API**：`GET /orchestration/{plan,today,habit,review,simulation}` + `POST /orchestration/{goal,regenerate,task,task/{id}/complete,week,week/{i}/concept,week/{i}/task,week/{i}/task/{tid}/subtask,week/{i}/task/{tid}/suggest}` + `PATCH /orchestration/{goal/{goal_id},task/{id},week/{i}/task/{tid}/subtask/{sid},schedule}` + `DELETE /orchestration/{goal/{goal_id},task/{id},week/{i},week/{i}/concept/{cid},week/{i}/task/{tid},week/{i}/task/{tid}/subtask/{sid}}`。`POST /goal` 为**追加**一个目标（上限 4，超出 400），`PATCH/DELETE /goal/{goal_id}` 按目标 id 寻址（未知 id 404），三者尾部自动重规划；响应带 `weeks` + `first_task`（kickoff CTA）；`POST /regenerate` 响应带 `reason`（`"" | "no_goal" | "empty_plan"`）。
 
 ---
 
@@ -664,7 +663,7 @@ frontend/src/
 | `/dashboard` | 学习总览 | M2（掌握度/近况）+ M9 今日任务联动卡（最近学习/需要关注均分页）|
 | `/knowledge` | 知识图谱 | M5（分层浏览/自定义图谱/个性化路径）|
 | `/plan` | 学习计划 | M3（教学日志/学习路径/动态难度，全列表分页）|
-| `/orchestration` | 学习编排 | M9（目标+长期任务智能建议/周 tabs+周任务子任务✨拆解/今日任务双子栏+间隔复习/全列表分页+数字跳页/needs_replan 教练深链/习惯）|
+| `/orchestration` | 学习编排 | M9（多目标卡+差距分析/周 tabs+周任务子任务✨拆解/今日任务双子栏+间隔复习/全列表分页+数字跳页/needs_replan 教练深链/习惯）|
 | `/assessment` | 测评中心 | M4（CAT 自适应测试/报告/错题本+重练深链/最近习题 100 道上限+近期会话，均分页）|
 | `/memory` | 记忆中心 | M6（情景时间线按日分页/语义事实与策略条形分页）|
 | `/resources/files` `/resources/textbooks`（`/resources` 重定向落点） | 资料中心 | 资料库（教材库/文件库双 Tab 路由段化：教材卡片含构建状态/进度/详情抽屉章节大纲且懒加载分包，文件库=文件夹树/下载/来源选择/会话附件）|
@@ -792,7 +791,7 @@ frontend/src/
 - **评估**：`GET /evaluation/{report,traces,proposals,guidance,context-budget}`、`PATCH /evaluation/proposals/{id}`（applied=部署教学指导）、`DELETE /evaluation/guidance/{id}`（吊销回滚）
 - **UX**：`GET /ux/{profile,engagement,motivation,greeting,activity}`（activity=五源按日活动聚合）
 - **使用文档**：`GET /docs/content`（公开读）、`PUT /docs/content`（require_admin）
-- **编排**：`GET /orchestration/{plan,today,habit,review}`、`POST /orchestration/{goal,regenerate,task,task/{id}/complete,week,week/{i}/concept,week/{i}/task,week/{i}/task/{tid}/subtask,week/{i}/task/{tid}/suggest,longtask,longtask/{id}/suggest}`、`PATCH /orchestration/{goal,task/{id},week/{i}/task/{tid}/subtask/{sid},schedule}`、`DELETE /orchestration/{task/{id},week/{i},week/{i}/concept/{cid},week/{i}/task/{tid},week/{i}/task/{tid}/subtask/{sid},longtask/{id}}`（/simulation 已删除——死端点，见台账 C7）
+- **编排**：`GET /orchestration/{plan,today,habit,review}`、`POST /orchestration/{goal,regenerate,task,task/{id}/complete,week,week/{i}/concept,week/{i}/task,week/{i}/task/{tid}/subtask,week/{i}/task/{tid}/suggest}`、`PATCH /orchestration/{goal/{goal_id},task/{id},week/{i}/task/{tid}/subtask/{sid},schedule}`、`DELETE /orchestration/{goal/{goal_id},task/{id},week/{i},week/{i}/concept/{cid},week/{i}/task/{tid},week/{i}/task/{tid}/subtask/{sid}}`（/simulation 已删除——死端点，见台账 C7；长期任务 /longtask* 端点随长期任务层一并移除）
 - **工作区**：`GET/POST /workspaces`、`GET/PATCH/DELETE /workspaces/{id}`、`POST/DELETE /workspaces/{id}/sessions[/{sid}]`、`POST /workspaces/{id}/upload`、`DELETE /workspaces/{id}/files/{fid}`
 - **资料库**：`GET /library`、`POST /library/folders`、`PATCH/DELETE /library/folders/{id}`、`POST /library/upload`、`POST /library/files/{id}/move`、`DELETE /library/files/{id}`（级联清孤儿 Textbook 记录）、`GET /library/files/{id}/download`
 - **教材库**（P2/P6）：`POST /textbooks/upload`（`level` 学段五选一 + `scope`=private/public，public 仅管理员；`group` 组名成组/`group_id` 追加卷）、`GET /textbooks`（自有+公用合并）、`GET /textbooks/{id}`（含章节大纲）、`GET /textbooks/{id}/download`（原件，公用所有人可下）、`PATCH /textbooks/{id}`（公用仅管理员）、`POST /textbooks/{id}/rebuild_graph`、`DELETE /textbooks/{id}`（级联：图谱+文件+向量+记录）、`DELETE|GET /textbooks/{gid}/volumes/{fid}[/download]`（组卷删除/下载）
@@ -802,7 +801,7 @@ frontend/src/
 
 ## 24. 测试概览
 
-后端 `backend/tests/` 使用 unittest（`python -m unittest discover -s tests`，数量以当前 discovery 为准），覆盖：BKT 数学（单调/钳位/往返）、图谱遍历与环检测、模式状态机、INTRODUCTION 学段三档配方（本科证明结构/高中严谨/小学互动小步）、三级评分与 CAT 停止规则、MC 无 options 判分与 unknown 不落盘、作答写回防覆写 merge、检索器融合（含学段分桶偏好与 _bm25 槽位预算回归）、旧记忆冲突/巩固代码兼容测试（生产调度已停用）+ bounded prompt memory 生命周期/压缩归属/永久遗忘回归、learning_style 推断写入（M8 反馈→M2 翻转+幂等）、精简提示词画像注入、错题本跨会话聚合（verdict 过滤/隔离/去重）、记忆卫生（episodic 归档截断/superseded 审计截断）、难度弱化信号（too_hard 降一档触底不降）、recall_history 跨会话检索（来源标注）、学段画像完整性（四学段七维度）与 prompt 锚点注入、本科种子包校验与图谱可达、软指令仲裁（优先级头/deep×concise 收敛）、redline_tail executor 压尾、出题质量门（结构校验/critic 丢题/重生成重试/三路径端到端/fail-open）、作答三落点（quiz_history 写回 + transcript 出题/作答记录 + 独立 learning_records 账本 + recall_history 可检索 + 「近期作答」含学生答案 + 薄弱点按 verdict 过滤）、跨会话最近习题库（100 上限/verdict 回填/fail-open）、压缩摘要注入出题作答 digest（含头截后拼接不丢）、real_summary reflection 通道（含跨步推理累积进 done）、工具步思考策略开关、M7 诊断瀑布与 A/B、M8 滞后效应与单真相源边界（patch 断言不写 M2）、M9 SM-2/目标倒推/事件发射/任务唯一性契约（gap-fill 不覆盖+跨天结转）/LLM 周规划校验门与窗口/review 复用概念/LLM 每日编排校验门与回退/6g 自动推进/任务 CRUD 上限/needs_replan 防循环双守卫/regenerate reason 三态/人工不可覆盖合并（origin=user 周+source=user 任务按周 bucket 并回）/周任务与子任务 CRUD/长期任务建议门/子任务推荐门/子任务→今日物化引用与完成回写标题守卫/进度预测 headline 与 schedule 调整、Supervisor 全钩子不抛、M10 Registry/决策/前置条件/后置条件/证据门/策略收尾检测对齐/advisory 步骤跳过/必执行 Skill 补调用/推理耗尽续写、动态上下文预算/完整回合压缩/公开 reasoning summary、各层开关契约、workspace/library 隔离与三分支语义、M0 鉴权与限流（含 CAT 端点伪造 student_id 无效回归）、OpenAI 兼容门面（鉴权 401/503/探测快道/帧序/usage/错误帧）、**P1 学段去僵化**（is_auto/normalize_grade、自动 preamble 轻约束 vs 显式细则、旧会话兼容、generate_quiz/fit_quiz 省略 grade 自动出题、M3 学段地板自动 easy 起步、PATCH 切换学段持久化+非法 400+隔离 404）、**P2 教材库**（注册表 CRUD+同 file_id 幂等、spec_to_graph 形参化上限/level、fitz TOC 精确分页/locate/整书回退、构建状态机 building→ready/LLM 故障 graph_failed/开关关闭直接 ready/快速路径单次调用、rebuild 归档+原子替换、DELETE 级联、library 直删孤儿清理、API 隔离 404）、**P3 联动**（preamble [当前教材] 块内容/无教材零变化/教材×自动学段共存、TaskFrame.has_textbook 信号、supervisor/legacy 双路径反查一致性）、**扫描 PDF OCR**（is_scanned_pdf 判定/ocr_pdf_pages 逐页顺序拼接+max_pages 截断+on_progress+单页失败不中断、ocr_page_image 视觉/tesseract 双通道+psm=3、教材库后台 OCR 写回 .txt→图谱 ready/全失败 failed/mode=off 不触发、对话资料库同步 tesseract 回退+ocr_fallback=False 跳过+正常 PDF 不 OCR）、**P5a OCR 修复**（逐页择优：达标页保留文本层/稀疏页才 OCR/混合书双层合并、OCR 合并空页占位页码对齐、locate_chapters 第二次出现规避目录陷阱、reap_stale_builds 启动收割 building→graph_failed、OCR 写回原子化+library 元数据同步、VLM 思考关闭默认下发+400 去参重试、Tier1 书签目录切 OCR 文本+章粒度层级偏好、rebuild 真实派发回归、OCR 覆盖按稠密页推导 rebuild 免重 OCR）、**P6 批次**（考纲 seed 删除后图谱只来自教材、上传必选学段+选择优先、手动构建端点移除、管理员引导/列表/注销与 require_admin、公用教材库上传合并写权限与图谱合并视图、工作区/会话来源只保留教材+公用可解析、教材优先 preamble 与工作区选中教材全链路回归、概念→chunks 预索引与检索加速、跨会话召回仅同工作区+M6 注入门控+off/all 模式、图谱结构与 mastery 变色账号隔离）。前端 `tsc --noEmit` 零错误 + eslint + `next build` 通过。
+后端 `backend/tests/` 使用 unittest（`python -m unittest discover -s tests`，数量以当前 discovery 为准），覆盖：BKT 数学（单调/钳位/往返）、图谱遍历与环检测、模式状态机、INTRODUCTION 学段三档配方（本科证明结构/高中严谨/小学互动小步）、三级评分与 CAT 停止规则、MC 无 options 判分与 unknown 不落盘、作答写回防覆写 merge、检索器融合（含学段分桶偏好与 _bm25 槽位预算回归）、旧记忆冲突/巩固代码兼容测试（生产调度已停用）+ bounded prompt memory 生命周期/压缩归属/永久遗忘回归、learning_style 推断写入（M8 反馈→M2 翻转+幂等）、精简提示词画像注入、错题本跨会话聚合（verdict 过滤/隔离/去重）、记忆卫生（episodic 归档截断/superseded 审计截断）、难度弱化信号（too_hard 降一档触底不降）、recall_history 跨会话检索（来源标注）、学段画像完整性（四学段七维度）与 prompt 锚点注入、本科种子包校验与图谱可达、软指令仲裁（优先级头/deep×concise 收敛）、redline_tail executor 压尾、出题质量门（结构校验/critic 丢题/重生成重试/三路径端到端/fail-open）、作答三落点（quiz_history 写回 + transcript 出题/作答记录 + 独立 learning_records 账本 + recall_history 可检索 + 「近期作答」含学生答案 + 薄弱点按 verdict 过滤）、跨会话最近习题库（100 上限/verdict 回填/fail-open）、压缩摘要注入出题作答 digest（含头截后拼接不丢）、real_summary reflection 通道（含跨步推理累积进 done）、工具步思考策略开关、M7 诊断瀑布与 A/B、M8 滞后效应与单真相源边界（patch 断言不写 M2）、M9 SM-2/多目标管理（增删改+旧单目标迁移）/事件发射/任务唯一性契约（gap-fill 不覆盖+跨天结转）/LLM 周规划校验门与窗口/review 复用概念/LLM 每日编排校验门与回退/6g 自动推进/任务 CRUD 上限/needs_replan 防循环双守卫/regenerate reason 三态/人工不可覆盖合并（origin=user 周+source=user 任务按周 bucket 并回）/周任务与子任务 CRUD/子任务推荐门/子任务→今日物化引用与完成回写标题守卫/进度预测 headline 与 schedule 调整、Supervisor 全钩子不抛、M10 Registry/决策/前置条件/后置条件/证据门/策略收尾检测对齐/advisory 步骤跳过/必执行 Skill 补调用/推理耗尽续写、动态上下文预算/完整回合压缩/公开 reasoning summary、各层开关契约、workspace/library 隔离与三分支语义、M0 鉴权与限流（含 CAT 端点伪造 student_id 无效回归）、OpenAI 兼容门面（鉴权 401/503/探测快道/帧序/usage/错误帧）、**P1 学段去僵化**（is_auto/normalize_grade、自动 preamble 轻约束 vs 显式细则、旧会话兼容、generate_quiz/fit_quiz 省略 grade 自动出题、M3 学段地板自动 easy 起步、PATCH 切换学段持久化+非法 400+隔离 404）、**P2 教材库**（注册表 CRUD+同 file_id 幂等、spec_to_graph 形参化上限/level、fitz TOC 精确分页/locate/整书回退、构建状态机 building→ready/LLM 故障 graph_failed/开关关闭直接 ready/快速路径单次调用、rebuild 归档+原子替换、DELETE 级联、library 直删孤儿清理、API 隔离 404）、**P3 联动**（preamble [当前教材] 块内容/无教材零变化/教材×自动学段共存、TaskFrame.has_textbook 信号、supervisor/legacy 双路径反查一致性）、**扫描 PDF OCR**（is_scanned_pdf 判定/ocr_pdf_pages 逐页顺序拼接+max_pages 截断+on_progress+单页失败不中断、ocr_page_image 视觉/tesseract 双通道+psm=3、教材库后台 OCR 写回 .txt→图谱 ready/全失败 failed/mode=off 不触发、对话资料库同步 tesseract 回退+ocr_fallback=False 跳过+正常 PDF 不 OCR）、**P5a OCR 修复**（逐页择优：达标页保留文本层/稀疏页才 OCR/混合书双层合并、OCR 合并空页占位页码对齐、locate_chapters 第二次出现规避目录陷阱、reap_stale_builds 启动收割 building→graph_failed、OCR 写回原子化+library 元数据同步、VLM 思考关闭默认下发+400 去参重试、Tier1 书签目录切 OCR 文本+章粒度层级偏好、rebuild 真实派发回归、OCR 覆盖按稠密页推导 rebuild 免重 OCR）、**P6 批次**（考纲 seed 删除后图谱只来自教材、上传必选学段+选择优先、手动构建端点移除、管理员引导/列表/注销与 require_admin、公用教材库上传合并写权限与图谱合并视图、工作区/会话来源只保留教材+公用可解析、教材优先 preamble 与工作区选中教材全链路回归、概念→chunks 预索引与检索加速、跨会话召回仅同工作区+M6 注入门控+off/all 模式、图谱结构与 mastery 变色账号隔离）。前端 `tsc --noEmit` 零错误 + eslint + `next build` 通过。
 
 ---
 
@@ -1300,7 +1299,7 @@ InlineEdit、保存状态徽章、视图三态切换、图谱/专注入口、齿
 | 层 | 职责 | 组成 |
 |----|------|------|
 | **L1 统一学习者档案层** | 单一真相源：所有关于「这个学生」的事实只记一遍 | 活动聚合（activity_aggregator）、学习账本（learning_records）、布鲁姆认知档案（bloom_profile）、目标链（orchestration goal + 前置闭包）、M2 画像/掌握度、M8 交互画像、教学日志（teaching_log） |
-| **L2 统一智能决策层** | 所有 LLM 决策读同一档案快照，输出开放文本 | M3 compose、M4 出题/判分、M7 advisor、M9 周规划/日编排/长期任务顾问、对话内出题工具（quiz/fit_quiz）；布鲁姆六层级为共享认知词汇 |
+| **L2 统一智能决策层** | 所有 LLM 决策读同一档案快照，输出开放文本 | M3 compose、M4 出题/判分、M7 advisor、M9 周规划/日编排、对话内出题工具（quiz/fit_quiz）；布鲁姆六层级为共享认知词汇 |
 | **L3 统一呈现层** | 页面按数据归属重组，无重复语义 | /dashboard（总览）、/knowledge（图谱+教学计划，/plan 已并入）、/assessment、/memory（记忆总览+学习账本）、/profile（画像镜像 M9 + 字段级来源）、/insights（M7+教学指导）、/docs（使用文档） |
 
 数据流方向永远单向：**写入只在数据属主模块发生 → L1 聚合器只读 → L2 决策器读快照产 prompt 素材 → L3 页面只读展示**。唯一被批准的跨模块写点是 M7 的部署动作（PATCH applied → teaching_engine/guidance_store，人工发起，见 §16）。
@@ -1333,7 +1332,7 @@ Anderson 修订版六层级（记忆/理解/应用/分析/评价/创造）只作
 | M4 判分（evaluator） | 批改要点末句以自然语言点到作答体现的认知层级（明确要求**不罗列术语贴标签**） | 纯 prompt 措辞，无新字段；LLM 失败走原判分 |
 | M4 报告（adaptive_test.summary） | `bloom` 分桶统计 {层级: {asked, correct, partial, wrong}} | 未标层级的旧题不入桶 |
 | 对话内出题（tools/quiz、fit_quiz） | `guidance_block` 注入同一档案自适应选层；`bloom_level` 经 quiz_verify→record_recent_quiz→学习账本落标（工具层无学生身份，标签由链路自动携带） | 同 M4 |
-| M9 日编排/长期任务 | `context_line`（概念级弱项 + 全局弱项，≤300 字）进 compose/建议 prompt | 档案为空→不注入，行为同旧 |
+| M9 日编排 | `context_line`（概念级弱项 + 全局弱项，≤300 字）进 compose prompt | 档案为空→不注入，行为同旧 |
 | 画像页 | 认知层级弱项徽标行（读同一档案） | 无弱项→整行隐藏 |
 
 数据闭环：出题带标 → 作答评分 → 账本落标（`bloom_level` ≤24 字符）→ 档案聚合 → 下一次决策更准。
@@ -1353,7 +1352,7 @@ Anderson 修订版六层级（记忆/理解/应用/分析/评价/创造）只作
 | /profile | M2 学术 + M8 交互 + 激励 + **M9 目标镜像**（M2 goals 写侧保留属对话冻结区，读侧由 M9 取代——C12） | 每卡「数据从哪来」一行 + 字段级来源标注（M8 反馈推断等） |
 | /insights | M7 评估 + 提案人工门 + 生效指导 | 文案已修：每 15 轮生成 1 条（C11） |
 | /docs | 使用文档（chat_history/settings/usage_docs.json） | 全员读（GET 公开）；管理员页内编辑（textarea+实时预览+PUT require_admin）；TopBar BookOpen 入口 |
-| /orchestration | M9 目标/周计划/长期任务 | 目标链/差距分层/预计行 |
+| /orchestration | M9 多目标/周计划 | 目标链/差距分层/预计行 |
 
 ### G. 遗留物处置台账（C1–C16 终局）
 

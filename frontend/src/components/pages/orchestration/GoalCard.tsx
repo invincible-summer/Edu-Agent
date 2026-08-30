@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { CalendarClock, Flag, Pencil, Plus, Sparkles, Target, Trash2 } from "lucide-react";
+import { CalendarClock, Flag, Pencil, Target, Trash2 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card, CardHeader } from "@/components/ui/Card";
-import { Pager, paged } from "@/components/ui/Pager";
 import { Progress } from "@/components/ui/Progress";
 import { SubjectSelect } from "@/components/ui/SubjectSelect";
 import {
@@ -16,7 +15,7 @@ import {
 import { fmtDate } from "@/lib/format";
 import { masteryColor } from "@/lib/labels";
 import { cn } from "@/lib/cn";
-import type { OrchGap, OrchGoal, OrchGoalState, OrchLongTask } from "@/lib/types-modules";
+import type { OrchGap, OrchGoal, OrchGoalState } from "@/lib/types-modules";
 
 type Tr = (key: string, fallback?: string) => string;
 
@@ -102,113 +101,13 @@ function GapLayers({ gaps, tr }: { gaps: OrchGap[]; tr: Tr }) {
   );
 }
 
-/** 长期任务子区：目标下的常驻任务 + 每条的 LLM 智能建议。 */
-function LongTaskSection({ tasks, tr, onAdd, onDelete, onSuggest }: {
-  tasks: OrchLongTask[];
-  tr: Tr;
-  onAdd: (title: string) => Promise<boolean>;
-  onDelete: (id: string) => Promise<boolean>;
-  onSuggest: (id: string) => Promise<boolean>;
-}) {
-  const [title, setTitle] = useState("");
-  const [page, setPage] = useState(0);
-  const [adding, setAdding] = useState(false);
-  const [suggestingId, setSuggestingId] = useState<string | null>(null);
-
-  const submit = () => {
-    const t = title.trim();
-    if (!t || adding) return;
-    setAdding(true);
-    void onAdd(t).then((ok) => { if (ok) setTitle(""); })
-      .finally(() => setAdding(false));
-  };
-  const suggest = (id: string) => {
-    if (suggestingId) return;
-    setSuggestingId(id);
-    void onSuggest(id).finally(() => setSuggestingId(null));
-  };
-
-  return (
-    <div className="mb-3 rounded-[10px] border border-border-light bg-surface px-3 py-2.5">
-      <p className="mb-1.5 flex items-center justify-between text-[0.72rem] font-medium text-fg-secondary">
-        {tr("lt.title")}
-        <span className="text-[0.66rem] font-normal text-muted">{tr("lt.desc")}</span>
-      </p>
-      {tasks.length === 0 ? (
-        <p className="py-1 text-[0.72rem] text-muted">{tr("lt.empty")}</p>
-      ) : (
-        <div className="divide-y divide-border-light">
-          {paged(tasks, page).map((t) => (
-            <div key={t.id} className="py-2">
-              <div className="flex items-center gap-2">
-                <span className="min-w-0 flex-1 text-[0.78rem] font-medium text-fg">{t.title}</span>
-                <button
-                  type="button"
-                  onClick={() => suggest(t.id)}
-                  disabled={suggestingId !== null}
-                  title={tr("lt.suggest")}
-                  aria-label={tr("lt.suggest")}
-                  className={cn(
-                    "flex shrink-0 cursor-pointer items-center gap-1 rounded-full border border-accent/40 px-2 py-0.5 text-[0.66rem] text-accent-strong transition-colors hover:bg-accent-soft",
-                    suggestingId === t.id && "animate-pulse",
-                    suggestingId !== null && suggestingId !== t.id && "opacity-40",
-                  )}
-                >
-                  <Sparkles size={11} />
-                  {suggestingId === t.id ? tr("lt.suggesting") : tr("lt.suggest")}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => void onDelete(t.id)}
-                  className="shrink-0 cursor-pointer p-0.5 text-muted transition-colors hover:text-danger"
-                  aria-label={tr("today.delete")}
-                >
-                  <Trash2 size={12} />
-                </button>
-              </div>
-              {t.suggestions.length > 0 && (
-                <ul className="mt-1 space-y-0.5 pl-1">
-                  {t.suggestions.map((s, i) => (
-                    <li key={i} className="flex items-start gap-1.5 text-[0.7rem] leading-snug text-muted">
-                      <Sparkles size={10} className="mt-0.5 shrink-0 text-accent/70" />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
-      <Pager page={page} total={tasks.length} onPage={setPage} />
-      <div className="mt-1.5 flex gap-1.5">
-        <input
-          value={title}
-          maxLength={40}
-          onChange={(e) => setTitle(e.target.value)}
-          onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } }}
-          placeholder={tr("lt.add.ph")}
-          className="h-7.5 min-w-0 flex-1 rounded-[8px] border border-border bg-surface px-2 text-[0.72rem] text-fg outline-none placeholder:text-muted focus:border-accent"
-        />
-        <Button size="sm" variant="outline" icon={<Plus size={12} />}
-          disabled={!title.trim() || adding} onClick={submit}>
-          {tr("lt.add")}
-        </Button>
-      </div>
-    </div>
-  );
-}
-
-/** 长期目标卡：目标信息 + GoalAnalyzer 差距分析。 */
-export function GoalCard({ goal, gs, tr, onEdit, longTasks, onAddLongTask, onDeleteLongTask, onSuggestLongTask }: {
+/** 长期目标卡：目标信息 + GoalAnalyzer 差距分析。多目标下每目标一张。 */
+export function GoalCard({ goal, gs, tr, onEdit, onDelete }: {
   goal: Partial<OrchGoal>;
   gs: Partial<OrchGoalState>;
   tr: Tr;
   onEdit?: () => void;
-  longTasks?: OrchLongTask[];
-  onAddLongTask?: (title: string) => Promise<boolean>;
-  onDeleteLongTask?: (id: string) => Promise<boolean>;
-  onSuggestLongTask?: (id: string) => Promise<boolean>;
+  onDelete?: () => void;
 }) {
   const dl = goal.deadline && goal.deadline > 0 ? daysLeft(goal.deadline) : null;
   const ratio = gs.mastered_ratio ?? 0;
@@ -234,6 +133,12 @@ export function GoalCard({ goal, gs, tr, onEdit, longTasks, onAddLongTask, onDel
               </span>
             )}
             <Badge tone="accent">{tr(`goal.type.${goal.goal_type || "ability"}`)}</Badge>
+            {onDelete && (
+              <button onClick={onDelete} title={tr("goal.del")} aria-label={tr("goal.del")}
+                className="cursor-pointer rounded-[6px] p-1 text-muted transition-colors hover:bg-surface-hover hover:text-danger">
+                <Trash2 size={13} />
+              </button>
+            )}
             {onEdit && (
               <button onClick={onEdit} title={tr("goal.edit")} aria-label={tr("goal.edit")}
                 className="cursor-pointer rounded-[6px] p-1 text-muted transition-colors hover:bg-surface-hover hover:text-fg">
@@ -316,16 +221,6 @@ export function GoalCard({ goal, gs, tr, onEdit, longTasks, onAddLongTask, onDel
           <Flag size={11} className="mr-1 inline" />
           {tr(`goal.strategy.${gs.recommended_strategy}`, gs.recommended_strategy)}
         </p>
-      )}
-
-      {longTasks && onAddLongTask && onDeleteLongTask && onSuggestLongTask && (
-        <LongTaskSection
-          tasks={longTasks}
-          tr={tr}
-          onAdd={onAddLongTask}
-          onDelete={onDeleteLongTask}
-          onSuggest={onSuggestLongTask}
-        />
       )}
 
       <div className="border-t border-border-light pt-2">

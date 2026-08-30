@@ -30,14 +30,16 @@ def build_orchestration_directive(state: OrchestrationState, *,
     """
     try:
         now = now if now is not None else time.time()
-        if not state.goal.title:
+        if not state.has_goals:
             return ""
 
         lines: list[str] = []
 
-        # long-term goal + current week (the plan's present focus)
-        lines.append(f"[编排智能·长期目标] 目标：「{state.goal.title}」"
-                     f"（{state.goal.goal_type.value}）")
+        # long-term goals (multi-goal: one joined line) + current week
+        goals_desc = "、".join(
+            f"「{g.title}」（{g.goal_type.value}）"
+            for g in state.goals if g.title)
+        lines.append(f"[编排智能·长期目标] 目标：{goals_desc}")
         from . import weekly_planner_llm
         cur = weekly_planner_llm.current_week(state, now=now)
         if cur:

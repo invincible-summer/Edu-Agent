@@ -406,22 +406,31 @@ function KnowledgePageInner() {
   }, [deepLinkParam, allNodes, taxonomy, pickMatch]);
 
   // 概念抽屉的目标归属（L1 目标链反查）：属于目标链/目标概念时显示
-  // "属于目标《X》· 距目标还差 N 个概念 · 当前第 L 层"。
+  // "属于目标《X》· 距目标还差 N 个概念 · 当前第 L 层"。多目标下逐个
+  // 目标反查，命中第一个包含该概念的目标。
   const drawerGoal = useMemo(() => {
-    const goal = orchPlan?.goal;
-    const gs = orchPlan?.goal_state;
-    if (!selectedId || !goal?.title || !gs) return null;
-    const req = gs.required_skills ?? [];
-    const idx = req.indexOf(selectedId);
-    const gap = (gs.gaps ?? []).find((g) => g.skill_id === selectedId);
-    const isTarget = (goal.target_concept_ids ?? []).includes(selectedId);
-    if (idx === -1 && !gap && !isTarget) return null;
-    return {
-      title: goal.title,
-      layer: gap?.layer ?? 0,
-      remaining: idx >= 0 ? req.length - idx : null,
-      isTarget,
-    };
+    const goals = (orchPlan?.goals ?? []).filter((g) => !!g.title);
+    const states = orchPlan?.goal_states ?? [];
+    if (!selectedId || goals.length === 0) return null;
+    // 命中第一个包含该概念的目标（flatMap 过滤未命中的目标）
+    const hit = goals.flatMap((goal, i) => {
+      // 优先 goal_id 精确配对；无 id 的旧数据按下标对齐
+      const gs = (goal.id
+        ? states.find((s) => s.goal_id === goal.id)
+        : undefined) ?? states[i];
+      const req = gs?.required_skills ?? [];
+      const idx = req.indexOf(selectedId);
+      const gap = (gs?.gaps ?? []).find((g) => g.skill_id === selectedId);
+      const isTarget = (goal.target_concept_ids ?? []).includes(selectedId);
+      if (idx === -1 && !gap && !isTarget) return [];
+      return [{
+        title: goal.title ?? "",
+        layer: gap?.layer ?? 0,
+        remaining: idx >= 0 ? req.length - idx : null,
+        isTarget,
+      }];
+    });
+    return hit[0] ?? null;
   }, [selectedId, orchPlan]);
 
   // --- 自定义图谱管理操作 ---

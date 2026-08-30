@@ -8,8 +8,9 @@ the rest of the app uses. It exposes:
     lo.build_directive(...)      # READ: JIT analysis -> "[编排智能·...]"
     lo.record_turn(...)          # WRITE: capture SRS + habit + milestone updates
                                  #        (+ auto-advance today's tasks, 6g)
-    lo.set_goal(...)             # WRITE: set the long-term goal
-    lo.update_goal(...)          # WRITE: patch the goal (SRS/tasks preserved)
+    lo.add_goal(...)             # WRITE: append a long-term goal (multi-goal)
+    lo.update_goal(...)          # WRITE: patch one goal (SRS/tasks preserved)
+    lo.delete_goal(...)          # WRITE: remove one goal + its gap analysis
     await lo.plan_milestones(...)  # WRITE: LLM milestone decomposition (+ fallback)
     lo.regenerate_plan(...)      # WRITE: re-plan from current state
     await lo.today_tasks(...)    # READ: today's tasks + carryover (LLM compose)
@@ -49,17 +50,15 @@ from typing import Any
 
 from . import (context_builder, daily_composer, event_emitter, goal_analyzer,
                goal_manager, habit_tracker, learning_planner,
-               longtask_advisor,
                schedule_engine,
                spaced_repetition as srs, store, subtask_advisor, task_executor,
                weekly_planner_llm)
-from .schema import (DailyTask, DailyTaskStatus, GoalType,
-                     LongTermTask,
+from .schema import (DailyTask, DailyTaskStatus, GoalState, LearningGoal,
                      OrchestrationEvent,
                      OrchestrationLearningEvent, OrchestrationState, PlanConcept,
                      ReviewItem, SubTask, TASK_PHASES,
                      TaskKind,
-                     WeekTask, WeeklyPlan, _MAX_LONGTASKS, _MAX_SUBTASKS,
+                     WeekTask, WeeklyPlan, _MAX_SUBTASKS,
                      _MAX_TASKS_PER_DAY,
                      _MAX_WEEK_TASKS)
 
@@ -154,7 +153,7 @@ class LearningOrchestrationService:
             habit_tracker.refresh_habit(state, now=now, student_id=student_id)
             changed = True
             # detect a new streak threshold crossing
-            subj = state.goal.subjects[0] if state.goal.subjects else subject
+            subj = state.primary_subject or subject
             streak_ev = event_emitter.emit_for_streak(
                 state.habit.current_streak,
                 last_reported=state.last_streak_reported, subject=subj)
@@ -167,12 +166,12 @@ class LearningOrchestrationService:
 
             # goal-progress checkpoint detect (read-only over M2 mastery)
             mastery_view = self._mastery_view_safe(student_id)
-            if mastery_view and state.goal.title:
+            if mastery_view and state.has_goals:
                 from . import goal_manager as _gm
                 ratio = _gm.overall_progress(state, mastery_view)
                 prog_ev = event_emitter.emit_for_goal_progress(
                     ratio, last_reported=state.last_progress_reported,
-                    subject=state.goal.subjects[0] if state.goal.subjects else subject)
+                    subject=state.primary_subject or subject)
                 if prog_ev:
                     emitted.extend(prog_ev)
                     state.last_progress_reported = max(
@@ -207,71 +206,82 @@ class LearningOrchestrationService:
 
     # --- WRITE SIDE: goal + plan management ------------------------------
 
-    def set_goal(self, student_id: str, *, title: str, description: str = "",
+    def add_goal(self, student_id: str, *, title: str, description: str = "",
                  goal_type: str = "ability", subjects: list[str] | None = None,
                  deadline: float = 0.0,
-                 target_concept_ids: list[str] | None = None) -> bool:
-        """Set or replace the student's long-term learning goal.
+                 target_concept_ids: list[str] | None = None) -> LearningGoal:
+        """Append a long-term learning goal (multi-goal, capped).
 
         After setting the goal intent, runs GoalAnalyzer (modification 3) to
-        populate goal_state -- the gap analysis + backward plan that tells the
-        LearningPlanner *why* the plan looks the way it does. With
-        target_concept_ids the analysis runs over the goal's prerequisite
-        closure instead of a whole subject. The analysis is best-effort
-        (read-only over M2 mastery + M5 graph); a missing graph degrades to
-        an empty GoalState, never breaks the turn.
+        populate the goal's entry in goal_states -- the gap analysis +
+        backward plan that tells the LearningPlanner *why* the plan looks the
+        way it does. With target_concept_ids the analysis runs over the
+        goal's prerequisite closure instead of a whole subject. The analysis
+        is best-effort (read-only over M2 mastery + M5 graph); a missing
+        graph degrades to an empty GoalState, never breaks the turn.
+        Raises ValueError on empty title or cap overflow (API maps to 400).
         """
-        try:
-            state = self._load(student_id)
-            goal_manager.set_goal(state, title=title, description=description,
-                                  goal_type=goal_type, subjects=subjects,
-                                  deadline=deadline,
-                                  target_concept_ids=target_concept_ids)
-            # goal reasoning: gap analysis + backward plan (read-only M2/M5)
-            self._analyze_goal_safe(state, student_id=student_id)
-            self._save(student_id, state,
-                       event=OrchestrationEvent(type="goal_set",
-                           payload={"title": title, "goal_type": goal_type,
-                                    "bound_concepts": len(
-                                        state.goal.target_concept_ids)}))
-            return True
-        except Exception:
-            return False
+        state = self._load(student_id)
+        goal = goal_manager.add_goal(state, title=title,
+                                     description=description,
+                                     goal_type=goal_type, subjects=subjects,
+                                     deadline=deadline,
+                                     target_concept_ids=target_concept_ids)
+        # goal reasoning: gap analysis + backward plan (read-only M2/M5)
+        self._analyze_goals_safe(state, student_id=student_id)
+        self._save(student_id, state,
+                   event=OrchestrationEvent(type="goal_set",
+                       payload={"goal_id": goal.id, "title": goal.title,
+                                "goal_type": goal_type,
+                                "bound_concepts":
+                                    len(goal.target_concept_ids)}))
+        return goal
 
-    def update_goal(self, student_id: str, *, title: str | None = None,
+    def update_goal(self, student_id: str, goal_id: str, *,
+                    title: str | None = None,
                     description: str | None = None,
                     goal_type: str | None = None,
                     subjects: list[str] | None = None,
                     deadline: float | None = None,
                     target_concept_ids: list[str] | None = None) -> bool:
-        """Patch fields of the existing goal (all parameters optional).
+        """Patch fields of one existing goal (all parameters optional).
 
         Re-runs the gap analysis afterwards. The SRS review queue and all
         historical daily tasks are preserved untouched -- only the goal intent
-        and its derived goal_state change. Never raises.
+        and its derived goal_state change. Returns False when the id does not
+        exist. Never raises.
         """
         try:
             state = self._load(student_id)
-            if not state.goal.title:
+            goal = goal_manager.update_goal(
+                state, goal_id, title=title, description=description,
+                goal_type=goal_type, subjects=subjects,
+                deadline=deadline, target_concept_ids=target_concept_ids)
+            if goal is None:
                 return False
-            if title is not None:
-                state.goal.title = title.strip()
-            if description is not None:
-                state.goal.description = description.strip()
-            if goal_type is not None:
-                state.goal.goal_type = GoalType.from_value(goal_type)
-            if subjects is not None:
-                state.goal.subjects = list(subjects)
-            if target_concept_ids is not None:
-                state.goal.target_concept_ids = [
-                    c for c in target_concept_ids if str(c).strip()]
-            if deadline is not None:
-                state.goal.deadline = float(deadline)
-            state.goal.updated_at = time.time()
-            self._analyze_goal_safe(state, student_id=student_id)
+            self._analyze_goals_safe(state, student_id=student_id)
             self._save(student_id, state,
                        event=OrchestrationEvent(type="goal_updated",
-                           payload={"title": state.goal.title}))
+                           payload={"goal_id": goal.id,
+                                    "title": goal.title}))
+            return True
+        except Exception:
+            return False
+
+    def delete_goal(self, student_id: str, goal_id: str) -> bool:
+        """Remove one goal and its gap analysis.
+
+        The SRS queue, daily tasks, and user-created plan entries are
+        preserved; the caller re-plans so the goal's concepts leave the
+        auto plan. Returns False when the id does not exist. Never raises.
+        """
+        try:
+            state = self._load(student_id)
+            if not goal_manager.remove_goal(state, goal_id):
+                return False
+            self._save(student_id, state,
+                       event=OrchestrationEvent(type="goal_deleted",
+                           payload={"goal_id": goal_id}))
             return True
         except Exception:
             return False
@@ -299,7 +309,7 @@ class LearningOrchestrationService:
         try:
             now = now if now is not None else time.time()
             state = self._load(student_id)
-            if not state.goal.title:
+            if not state.has_goals:
                 return False, "no_goal"
 
             weeks: list[WeeklyPlan] | None = None
@@ -307,24 +317,33 @@ class LearningOrchestrationService:
             # Big syllabi (100+ required concepts) are planned in a near-term
             # WINDOW: the gate's full-coverage rule applies to the window,
             # not the whole gap list -- later replans schedule the rest.
+            # Multi-goal: every goal's required chain is merged (goal order,
+            # deduped) into one shared window.
             if is_enabled():
                 try:
-                    if not state.goal_state.required_skills:
-                        self._analyze_goal_safe(state, student_id=student_id)
-                    required = list(state.goal_state.required_skills or [])
+                    if not any(gs.required_skills
+                               for gs in state.goal_states):
+                        self._analyze_goals_safe(state, student_id=student_id)
+                    required: list[str] = []
+                    seen: set[str] = set()
+                    for gs in state.goal_states:
+                        for sid in (gs.required_skills or []):
+                            if sid not in seen:
+                                seen.add(sid)
+                                required.append(sid)
                     window = required[:num_weeks * learning_planner._MAX_CONCEPTS_PER_WEEK]
                     if window:
                         mastery_view = self._mastery_view_safe(student_id)
                         # concept-bound goals span subjects: look names up
-                        # across the whole graph, not just subjects[0]
-                        name_subject = ("" if state.goal.target_concept_ids
-                                        else (state.goal.subjects[0]
-                                              if state.goal.subjects else ""))
+                        # across the whole graph, not just the first subject
+                        name_subject = ("" if any(g.target_concept_ids
+                                                  for g in state.goals)
+                                        else state.primary_subject)
                         names = self._concept_names_safe(
                             name_subject, student_id=student_id)
                         content, _usage = await self._get_llm().complete(
                             weekly_planner_llm.build_weekly_prompt(
-                                state.goal.title, window, names,
+                                state.goals_label, window, names,
                                 mastery_view, num_weeks,
                                 state.schedule.daily_minutes),
                             max_tokens=3000, disable_thinking=True)
@@ -412,9 +431,9 @@ class LearningOrchestrationService:
                 try:
                     mastery_view = await asyncio.to_thread(
                         self._mastery_view_safe, student_id)
-                    name_subject = ("" if state.goal.target_concept_ids
-                                    else (state.goal.subjects[0]
-                                          if state.goal.subjects else ""))
+                    name_subject = ("" if any(g.target_concept_ids
+                                              for g in state.goals)
+                                    else state.primary_subject)
                     names = await asyncio.to_thread(
                         self._concept_names_safe, name_subject, student_id)
                     pool = await asyncio.to_thread(
@@ -425,7 +444,7 @@ class LearningOrchestrationService:
                             self._compose_context_safe, student_id)
                         content, _usage = await self._get_llm().complete(
                             daily_composer.build_compose_prompt(
-                                pool, len(slots), goal_title=state.goal.title,
+                                pool, len(slots), goal_title=state.goals_label,
                                 context=context),
                             max_tokens=1200, disable_thinking=True)
                         picks = daily_composer.parse_compose_response(
@@ -482,7 +501,7 @@ class LearningOrchestrationService:
                         changed = True
             if changed and verdict and todays and all(
                     t.status.value == "completed" for t in todays):
-                subj = state.goal.subjects[0] if state.goal.subjects else ""
+                subj = state.primary_subject
                 emitted.append(event_emitter.task_batch_completed_event(
                     day, len(todays), subject=subj))
             return emitted, changed
@@ -526,7 +545,7 @@ class LearningOrchestrationService:
                 day = task_executor._day_str(now)
                 todays = [t for t in state.daily_tasks if t.day == day]
                 if todays and all(t.status.value == "completed" for t in todays):
-                    subj = state.goal.subjects[0] if state.goal.subjects else ""
+                    subj = state.primary_subject
                     emitted.append(event_emitter.task_batch_completed_event(
                         day, len(todays), subject=subj))
                 self._save(student_id, state,
@@ -931,7 +950,7 @@ class LearningOrchestrationService:
                     [c.name for c in week.concepts][:6]
             content, _usage = await self._get_llm().complete(
                 subtask_advisor.build_subtask_prompt(
-                    state.goal.title, week.focus, task.title, names),
+                    state.goals_label, week.focus, task.title, names),
                 max_tokens=800, disable_thinking=True)
             picks = subtask_advisor.parse_subtask_response(content)
             if not picks:
@@ -958,95 +977,6 @@ class LearningOrchestrationService:
         except Exception:
             return None
 
-    # --- long-term tasks (goal-level standing commitments) ----------------
-    def add_longtask(self, student_id: str, *, title: str) -> LongTermTask:
-        """Create a user long-term task (id ``lt_{seq}``, source=user).
-
-        User long-term tasks are never touched by any regeneration pipeline.
-        Raises ValueError on empty title or cap overflow (API maps to 400).
-        """
-        title = (title or "").strip()
-        if not title:
-            raise ValueError("long-task title required")
-        state = self._load(student_id)
-        if len(state.long_term_tasks) >= _MAX_LONGTASKS:
-            raise ValueError(f"long-task cap ({_MAX_LONGTASKS}) reached")
-        prefix = "lt_"
-        seq = 1 + max(
-            (int(t.id[len(prefix):]) for t in state.long_term_tasks
-             if t.id.startswith(prefix) and t.id[len(prefix):].isdigit()),
-            default=0)
-        lt = LongTermTask(id=f"{prefix}{seq}", title=title, source="user")
-        state.long_term_tasks.append(lt)
-        self._save(student_id, state,
-                   event=OrchestrationEvent(type="longtask_added",
-                                            payload={"id": lt.id}))
-        return lt
-
-    def delete_longtask(self, student_id: str, task_id: str) -> bool:
-        """Delete one long-term task. Returns False when not found."""
-        try:
-            state = self._load(student_id)
-            before = len(state.long_term_tasks)
-            state.long_term_tasks = [t for t in state.long_term_tasks
-                                     if t.id != task_id]
-            if len(state.long_term_tasks) == before:
-                return False
-            self._save(student_id, state,
-                       event=OrchestrationEvent(type="longtask_deleted",
-                                                payload={"id": task_id}))
-            return True
-        except Exception:
-            return False
-
-    async def suggest_longtask(self, student_id: str,
-                               task_id: str) -> LongTermTask | None:
-        """(Re)generate the LLM suggestions for ONE long-term task.
-
-        Falls back to template suggestions when the LLM is unavailable — the
-        entry always ends up with something actionable. Returns the updated
-        task, or None when the id does not exist. Never raises.
-        """
-        try:
-            state = self._load(student_id)
-            lt = next((t for t in state.long_term_tasks if t.id == task_id),
-                      None)
-            if lt is None:
-                return None
-            tips = await self._suggest_batch_llm(state, [lt],
-                                                 student_id=student_id)
-            lt.suggestions = tips.get(lt.id) or \
-                longtask_advisor.fallback_suggestions(lt.title)
-            self._save(student_id, state,
-                       event=OrchestrationEvent(type="longtask_suggested",
-                                                payload={"id": lt.id}))
-            return lt
-        except Exception:
-            return None
-
-    async def suggest_longtasks_batch(self, student_id: str) -> int:
-        """Fill suggestions for every long-term task that has none (one LLM
-        call for the whole batch; goal-time enrichment). Returns the number
-        of entries updated. Never raises."""
-        try:
-            state = self._load(student_id)
-            missing = [t for t in state.long_term_tasks if not t.suggestions]
-            if not missing:
-                return 0
-            tips = await self._suggest_batch_llm(state, missing,
-                                                 student_id=student_id)
-            n = 0
-            for lt in missing:
-                lt.suggestions = tips.get(lt.id) or \
-                    longtask_advisor.fallback_suggestions(lt.title)
-                n += 1
-            self._save(student_id, state,
-                       event=OrchestrationEvent(
-                           type="longtasks_suggested", payload={"count": n}))
-            return n
-        except Exception:
-            return 0
-
     def _bloom_context_safe(self, student_id: str) -> str:
         """布鲁姆认知档案薄弱项（L1 共享档案）→ 一段 prompt 上下文。空串安全。"""
         try:
@@ -1058,76 +988,6 @@ class LearningOrchestrationService:
                 + "；".join(lines)
         except Exception:
             return ""
-
-    def _longtask_context_safe(self, student_id: str,
-                               state: OrchestrationState) -> str:
-        """Grounded context for the long-task advisor LLM call (read-only).
-
-        Goal-chain concepts + recently taught concepts + weak concepts, as a
-        short labeled block. Empty string on any failure (the advisor then
-        falls back to the context-free prompt). Deterministic, zero LLM.
-        """
-        try:
-            names = self._concept_names_safe("", student_id=student_id)
-            parts: list[str] = []
-            chain = [names.get(sid, sid)
-                     for sid in (state.goal_state.required_skills or [])][:8]
-            if chain:
-                parts.append("目标还缺的概念（按依赖顺序）：" + "、".join(chain))
-            try:
-                from ..teaching_engine import teaching_log as tlog
-                best: dict[str, float] = {}
-                for key, entries in tlog.load_teaching_log(student_id).items():
-                    for e in entries or []:
-                        ts = float(getattr(e, "ts", 0) or 0)
-                        if ts > best.get(key, 0.0):
-                            best[key] = ts
-                recent = [names.get(k, k) for k, _ in
-                          sorted(best.items(), key=lambda kv: -kv[1])[:3]]
-                if recent:
-                    parts.append("最近在学：" + "、".join(recent))
-            except Exception:
-                pass
-            mastery_view = self._mastery_view_safe(student_id)
-            weak = []
-            for sid, rec in (mastery_view or {}).items():
-                if not isinstance(rec, dict):
-                    continue
-                p = float(rec.get("p_known", 0) or 0)
-                if 0 < p < 0.6 and int(rec.get("attempts", 0) or 0) > 0:
-                    weak.append((p, names.get(sid, sid)))
-            weak.sort()
-            if weak:
-                parts.append("薄弱概念：" + "、".join(n for _, n in weak[:5]))
-            bloom = self._bloom_context_safe(student_id)
-            if bloom:
-                parts.append(bloom)
-            return "\n".join(parts)[:700]
-        except Exception:
-            return ""
-
-    async def _suggest_batch_llm(self, state: OrchestrationState,
-                                 tasks: list[LongTermTask],
-                                 student_id: str = "") -> dict[str, list[str]]:
-        """One LLM call -> {task_id: tips}; empty dict on any failure."""
-        try:
-            if not is_enabled() or not tasks:
-                return {}
-            level = ""
-            try:
-                level = state.goal_state.current_level.value
-            except Exception:
-                level = ""
-            content, _usage = await self._get_llm().complete(
-                longtask_advisor.build_suggest_prompt(
-                    state.goal.title, level, state.schedule.daily_minutes,
-                    [{"id": t.id, "title": t.title} for t in tasks],
-                    context=self._longtask_context_safe(student_id, state)),
-                max_tokens=800, disable_thinking=True)
-            return longtask_advisor.parse_suggest_response(
-                content, [t.id for t in tasks]) or {}
-        except Exception:
-            return {}
 
     def update_schedule(self, student_id: str, *,
                         daily_minutes: int | None = None) -> dict[str, Any] | None:
@@ -1381,12 +1241,13 @@ class LearningOrchestrationService:
         except Exception:
             return []
 
-    def _analyze_goal_safe(self, state: OrchestrationState,
-                           now: float | None = None,
-                           *, student_id: str = "") -> None:
-        """Run GoalAnalyzer to populate state.goal_state (best-effort, read-only).
+    def _analyze_goals_safe(self, state: OrchestrationState,
+                            now: float | None = None,
+                            *, student_id: str = "") -> None:
+        """Run GoalAnalyzer for EVERY goal, rebuilding state.goal_states (1:1
+        by goal_id; best-effort, read-only over M2/M5). Never raises.
 
-        Two口径, in priority order:
+        Per goal, two口径 in priority order:
           1. concept_chain -- the goal has target_concept_ids bound: gaps and
              progress run over the goal's prerequisite closure (what the
              TARGET actually needs, multi-subject naturally).
@@ -1394,41 +1255,67 @@ class LearningOrchestrationService:
              are bound. Requires a resolvable subject; an empty subject with
              no keyword hit no longer degrades to whole-graph analysis (that
              was a bug: an unfiltered 1400-node "gap" list).
-        A missing graph degrades to an empty GoalState. Never raises.
+        A goal the analyzer cannot resolve keeps its previous state when one
+        exists, otherwise gets a title-carrying default (so the UI can still
+        pair goal ↔ state). A missing graph degrades to defaults.
         """
         try:
             now = now if now is not None else time.time()
             mastery_view = self._mastery_view_safe(student_id)
             prereq_map = self._prereq_map_safe(student_id)
 
-            binding = [c for c in (state.goal.target_concept_ids or []) if c]
+            states: list[GoalState] = []
+            for goal in state.goals:
+                prev = state.goal_state_for(goal.id)
+                gs = self._analyze_one_goal(
+                    state, goal, mastery_view=mastery_view,
+                    prereq_map=prereq_map, now=now, student_id=student_id)
+                if gs is None:
+                    gs = prev or GoalState(
+                        goal_id=goal.id, goal_title=goal.title,
+                        goal_type=goal.goal_type, subject=goal.subjects[0]
+                        if goal.subjects else "",
+                        deadline=goal.deadline,
+                        target_concept_ids=list(goal.target_concept_ids or []))
+                states.append(gs)
+            state.goal_states = states
+        except Exception:
+            pass
+
+    def _analyze_one_goal(self, state: OrchestrationState, goal: LearningGoal,
+                          *, mastery_view: dict[str, Any],
+                          prereq_map: dict[str, list[str]],
+                          now: float, student_id: str = "") -> GoalState | None:
+        """Analyze one goal; None when nothing resolvable (caller keeps the
+        previous/default state). Never raises."""
+        try:
+            binding = [c for c in (goal.target_concept_ids or []) if c]
             if binding:
                 skills = self._concept_chain_skills_safe(
                     binding, student_id=student_id)
                 if skills:
-                    state.goal_state = goal_analyzer.compute_gap_analysis(
-                        state, subject_skills=skills,
+                    return goal_analyzer.compute_gap_analysis(
+                        goal, subject_skills=skills,
                         mastery_view=mastery_view, prereq_map=prereq_map,
                         now=now, chain_mode="concept_chain",
                         weekly_pace=learning_planner._MAX_CONCEPTS_PER_WEEK)
-                    return
                 # bound concepts unresolvable in the graph -> fall through
                 # to subject mode rather than an empty state
 
-            subject = (state.goal.subjects[0] if state.goal.subjects
+            subject = (goal.subjects[0] if goal.subjects
                        else goal_analyzer.parse_goal_text(
-                           state.goal.title).get("subject", ""))
+                           goal.title).get("subject", ""))
             if not subject:
-                return  # no binding + no resolvable subject -> keep default
+                return None  # no binding + no resolvable subject
             skills = self._subject_skills_safe(subject, student_id=student_id)
             if not skills:
-                return  # no graph data -> leave goal_state as default
-            state.goal_state = goal_analyzer.compute_gap_analysis(
-                state, subject_skills=skills, mastery_view=mastery_view,
+                return None  # no graph data
+            return goal_analyzer.compute_gap_analysis(
+                goal, subject_skills=skills, mastery_view=mastery_view,
                 prereq_map=prereq_map, now=now, chain_mode="subject",
                 weekly_pace=learning_planner._MAX_CONCEPTS_PER_WEEK)
         except Exception:
-            pass
+            return None
 
     def _assemble_plan_inputs(self, student_id: str, state: OrchestrationState,
                               now: float) -> dict[str, Any]:
@@ -1449,7 +1336,10 @@ class LearningOrchestrationService:
             from ..student_model.store import DEFAULT_STUDENT_ID
             if is_enabled():
                 sm = get_student_model(student_id or DEFAULT_STUDENT_ID)
-                subject = state.goal.subjects[0] if state.goal.subjects else ""
+                # multi-goal: next-learnable across every goal's subjects;
+                # 0 or 2+ distinct subjects -> whole-graph frontier (None)
+                subjects = {s for g in state.goals for s in g.subjects if s}
+                subject = next(iter(subjects)) if len(subjects) == 1 else ""
                 # next-learnable from the skill graph (read-only)
                 for n in sm.graph.next_learnable(subject or None, mastery_view,
                                                   limit=8):

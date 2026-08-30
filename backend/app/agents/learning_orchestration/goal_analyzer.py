@@ -33,7 +33,7 @@ import time
 from typing import Any
 
 from .schema import (GapItem, GoalAnalysisLevel, GoalState, GoalType,
-                     LearningGoal, OrchestrationState)
+                     LearningGoal)
 
 # --- keyword tables for rule-based goal parsing (zero LLM) ------------------
 
@@ -145,7 +145,7 @@ def estimate_schedule(required_count: int, deadline: float,
             "required_count": int(required_count)}
 
 
-def compute_gap_analysis(state: OrchestrationState, *,
+def compute_gap_analysis(goal: LearningGoal, *,
                          subject_skills: list[dict[str, Any]],
                          mastery_view: dict[str, Any],
                          prereq_map: dict[str, list[str]] | None = None,
@@ -153,7 +153,7 @@ def compute_gap_analysis(state: OrchestrationState, *,
                          now: float | None = None,
                          chain_mode: str = "subject",
                          weekly_pace: int = 5) -> GoalState:
-    """Compute a GoalState from the goal + a read-only mastery/graph projection.
+    """Compute a GoalState from one goal + a read-only mastery/graph projection.
 
     subject_skills: [{skill_id, name, subject, difficulty}] from the M5 graph.
         The caller decides the口径: with a concept-level goal binding this is
@@ -168,7 +168,6 @@ def compute_gap_analysis(state: OrchestrationState, *,
     """
     try:
         now = now if now is not None else time.time()
-        goal = state.goal
         subject = (goal.subjects[0] if goal.subjects
                    else parse_goal_text(goal.title).get("subject", ""))
 
@@ -209,7 +208,8 @@ def compute_gap_analysis(state: OrchestrationState, *,
         urgency = _deadline_urgency(goal.deadline, now)
 
         return GoalState(
-            goal_title=goal.title, goal_type=goal.goal_type, subject=subject,
+            goal_id=goal.id, goal_title=goal.title,
+            goal_type=goal.goal_type, subject=subject,
             deadline=goal.deadline, current_level=current_level,
             target_level=target_level, mastered_ratio=mastered_ratio,
             total_skills=total, mastered_skills=mastered,
@@ -221,8 +221,8 @@ def compute_gap_analysis(state: OrchestrationState, *,
             estimate=estimate_schedule(
                 len(required), goal.deadline, now, weekly_pace=weekly_pace))
     except Exception:
-        return GoalState(goal_title=state.goal.title,
-                         goal_type=state.goal.goal_type)
+        return GoalState(goal_id=goal.id, goal_title=goal.title,
+                         goal_type=goal.goal_type)
 
 
 def _gap_layers(skill_ids: list[str],

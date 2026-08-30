@@ -15,14 +15,15 @@ const KIND_ICON = {
 } as const;
 
 /** M9 今日任务速览：今日待办前 3 条 + 连击，点击进 /orchestration。
- * 未设长期目标时整卡隐藏（无目标即无任务体系）。 */
+ * 未设长期目标时整卡隐藏（无目标即无任务体系）。多目标下展示目标数。 */
 export function TodayTasksCard({ plan, tasks, tr }: {
   plan: OrchPlanSummary | null;
   tasks: OrchDailyTask[];
   tr: Tr;
 }) {
-  if (!plan?.goal?.title) return null;
-  const streak = plan.habit?.current_streak ?? 0;
+  const goals = (plan?.goals ?? []).filter((g) => !!g.title);
+  if (goals.length === 0) return null;
+  const streak = plan?.habit?.current_streak ?? 0;
   const open = tasks.filter((t) => t.status !== "completed").slice(0, 3);
   return (
     <Card>
@@ -34,7 +35,8 @@ export function TodayTasksCard({ plan, tasks, tr }: {
           <div className="min-w-0">
             <p className="text-sm font-semibold text-fg">{tr("orch.title")}</p>
             <p className="truncate text-[0.68rem] text-muted">
-              {tr("orch.goal")}: {plan.goal.title}
+              {tr("orch.goal")}: {goals[0].title}
+              {goals.length > 1 && ` +${goals.length - 1}`}
             </p>
           </div>
         </div>

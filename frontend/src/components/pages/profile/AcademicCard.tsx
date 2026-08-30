@@ -62,10 +62,11 @@ function BloomWeaknessRow({ tr }: { tr: Tr }) {
 /**
  * 学习目标区：镜像 M9 编排目标（单一真相源），替代旧 M2 profile.goals 展示。
  * M2 的 goal_set 写入仍在（对话链路冻结区），只是读侧不再展示双份数据。
+ * 多目标下紧凑展示最多 3 个（各自的差距分析按 goal_id 配对）；
  * 未设目标时引导去 /orchestration 设置；拉取失败静默降级为空态。
  */
 function GoalMirrorSection({ tr, lang }: { tr: Tr; lang: Lang }) {
-  const [goal, setGoal] = useState<{
+  const [goals, setGoals] = useState<{
     title: string;
     goal_type: string;
     deadline: number;
@@ -74,31 +75,36 @@ function GoalMirrorSection({ tr, lang }: { tr: Tr; lang: Lang }) {
     ratio: number;
     gaps: number;
     chain: boolean;
-  } | null | "none">(null);
+  }[] | null>(null);
 
   useEffect(() => {
     let alive = true;
     getOrchPlan()
       .then((r) => {
         if (!alive) return;
-        const g = r.goal;
-        const gs = r.goal_state ?? {};
-        if (!g?.title) {
-          setGoal("none");
-          return;
-        }
-        setGoal({
-          title: g.title,
-          goal_type: g.goal_type ?? "",
-          deadline: g.deadline ?? 0,
-          mastered: gs.mastered_skills ?? 0,
-          total: gs.total_skills ?? 0,
-          ratio: gs.mastered_ratio ?? 0,
-          gaps: (gs.gaps ?? []).length,
-          chain: gs.chain_mode === "concept_chain",
-        });
+        const list = r.goals ?? [];
+        const states = r.goal_states ?? [];
+        setGoals(
+          list
+            .filter((g) => !!g.title)
+            .map((g, i) => {
+              const gs = (g.id
+                ? states.find((s) => s.goal_id === g.id)
+                : undefined) ?? states[i] ?? {};
+              return {
+                title: g.title ?? "",
+                goal_type: g.goal_type ?? "",
+                deadline: g.deadline ?? 0,
+                mastered: gs.mastered_skills ?? 0,
+                total: gs.total_skills ?? 0,
+                ratio: gs.mastered_ratio ?? 0,
+                gaps: (gs.gaps ?? []).length,
+                chain: gs.chain_mode === "concept_chain",
+              };
+            }),
+        );
       })
-      .catch(() => alive && setGoal("none"));
+      .catch(() => alive && setGoals([]));
     return () => {
       alive = false;
     };
@@ -111,8 +117,8 @@ function GoalMirrorSection({ tr, lang }: { tr: Tr; lang: Lang }) {
         {tr("m2.goals")}
         <SourceTag label={tr("src.m9")} />
       </div>
-      {goal === null && <div className="text-xs text-muted">—</div>}
-      {goal === "none" && (
+      {goals === null && <div className="text-xs text-muted">—</div>}
+      {goals !== null && goals.length === 0 && (
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs text-muted">{tr("m2.goals.empty")}</span>
           <Link href="/orchestration">
@@ -122,34 +128,41 @@ function GoalMirrorSection({ tr, lang }: { tr: Tr; lang: Lang }) {
           </Link>
         </div>
       )}
-      {goal && goal !== "none" && (
+      {goals !== null && goals.length > 0 && (
         <div className="flex flex-col gap-2 rounded-[8px] border border-border-light bg-surface-sunken/40 p-3">
-          <div className="flex flex-wrap items-center gap-2">
-            <Goal size={13} className="shrink-0 text-accent" />
-            <span className="text-sm font-medium leading-snug text-fg">{goal.title}</span>
-            <Badge tone="muted">{tr(`m2.goal.type.${goal.goal_type}`, goal.goal_type)}</Badge>
-            {goal.chain && <Badge tone="accent">{tr("m2.goal.chain")}</Badge>}
-            {goal.deadline > 0 && (
-              <span className="tnum ml-auto text-[11px] text-muted">
-                {tr("m2.goal.deadline")} {relTime(goal.deadline, lang)}
-              </span>
-            )}
-          </div>
-          {goal.total > 0 && (
-            <div className="flex items-center gap-2.5">
-              <Progress value={goal.ratio} tone="accent" className="max-w-[180px]" />
-              <span className="tnum text-xs text-fg-secondary">
-                {goal.mastered}/{goal.total}
-              </span>
-              <span className="tnum text-xs text-muted">
-                {Math.round(goal.ratio * 100)}%
-              </span>
-              {goal.gaps > 0 && (
-                <span className="tnum text-xs text-muted">
-                  · {tr("m2.goal.gaps")} {goal.gaps}
-                </span>
+          {goals.slice(0, 3).map((goal) => (
+            <div key={goal.title} className="flex flex-col gap-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <Goal size={13} className="shrink-0 text-accent" />
+                <span className="text-sm font-medium leading-snug text-fg">{goal.title}</span>
+                <Badge tone="muted">{tr(`m2.goal.type.${goal.goal_type}`, goal.goal_type)}</Badge>
+                {goal.chain && <Badge tone="accent">{tr("m2.goal.chain")}</Badge>}
+                {goal.deadline > 0 && (
+                  <span className="tnum ml-auto text-[11px] text-muted">
+                    {tr("m2.goal.deadline")} {relTime(goal.deadline, lang)}
+                  </span>
+                )}
+              </div>
+              {goal.total > 0 && (
+                <div className="flex items-center gap-2.5">
+                  <Progress value={goal.ratio} tone="accent" className="max-w-[180px]" />
+                  <span className="tnum text-xs text-fg-secondary">
+                    {goal.mastered}/{goal.total}
+                  </span>
+                  <span className="tnum text-xs text-muted">
+                    {Math.round(goal.ratio * 100)}%
+                  </span>
+                  {goal.gaps > 0 && (
+                    <span className="tnum text-xs text-muted">
+                      · {tr("m2.goal.gaps")} {goal.gaps}
+                    </span>
+                  )}
+                </div>
               )}
             </div>
+          ))}
+          {goals.length > 3 && (
+            <span className="tnum text-[11px] text-muted">+{goals.length - 3} …</span>
           )}
           <div>
             <Link

@@ -9,7 +9,7 @@ question carried a "bloom_level" tag and was graded contributes:
 
 Consumers all read THIS module — no parallel copies:
   - M4 generator + chat quiz tools: context_line() grounds level choice
-  - M9 daily_composer / longtask advisor: weakness_lines() for grounding
+  - M9 daily_composer: weakness_lines() for grounding
   - profile page: weakness summary line
   - GET /student/bloom-profile: read-only API projection
 

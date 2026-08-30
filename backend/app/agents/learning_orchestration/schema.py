@@ -25,7 +25,7 @@ _MAX_GAPS = 40
 _MAX_PROJECTION_WEEKS = 52
 _MAX_WEEK_TASKS = 12      # per weekly plan
 _MAX_SUBTASKS = 8         # per week task
-_MAX_LONGTASKS = 12       # per student
+_MAX_GOALS = 4            # per student (multi-goal orchestration)
 
 # stage labels a daily task can carry (LLM composer / user-assigned)
 TASK_PHASES = ("foundation", "reinforce", "sprint")
@@ -148,6 +148,9 @@ class TaskKind(str, Enum):
 class LearningGoal:
     """A long-term learning goal (top of the plan hierarchy).
 
+    Multiple goals may coexist (state.goals, capped at _MAX_GOALS); the
+    weekly planner merges every goal's required skills into one shared plan.
+
     Distinct from M2 StudentProfile.goals (a free-text list of stated
     intents). This is the structured, scheduled goal that drives milestone +
     weekly planning.
@@ -159,6 +162,7 @@ class LearningGoal:
     measured against the chain, not the entire syllabus. Empty = legacy
     whole-subject analysis (subject-string matching as fallback).
     """
+    id: str = ""                # stable id "g_{seq}" (API addressing)
     title: str = ""
     description: str = ""
     goal_type: GoalType = GoalType.ABILITY
@@ -169,7 +173,8 @@ class LearningGoal:
     updated_at: float = field(default_factory=time.time)
 
     def to_dict(self) -> dict[str, Any]:
-        return {"title": self.title, "description": self.description,
+        return {"id": self.id, "title": self.title,
+            "description": self.description,
             "goal_type": self.goal_type.value, "subjects": list(self.subjects),
             "target_concept_ids": list(self.target_concept_ids),
             "deadline": self.deadline, "created_at": self.created_at,
@@ -178,7 +183,8 @@ class LearningGoal:
     @classmethod
     def from_dict(cls, d: dict[str, Any] | None) -> "LearningGoal":
         d = d or {}
-        return cls(title=str(d.get("title", "")), description=str(d.get("description", "")),
+        return cls(id=str(d.get("id", "")), title=str(d.get("title", "")),
+            description=str(d.get("description", "")),
             goal_type=GoalType.from_value(d.get("goal_type")),
             subjects=list(d.get("subjects", []) or []),
             target_concept_ids=list(d.get("target_concept_ids", []) or []),
@@ -235,6 +241,7 @@ class GoalState:
     Distinct from LearningGoal (the intent) and WeeklyPlan (the schedule):
     GoalState is the *reasoning layer* between them.
     """
+    goal_id: str = ""            # pairing key into state.goals
     goal_title: str = ""
     goal_type: GoalType = GoalType.ABILITY
     subject: str = ""
@@ -260,7 +267,7 @@ class GoalState:
     estimate: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        return {"goal_title": self.goal_title,
+        return {"goal_id": self.goal_id, "goal_title": self.goal_title,
             "goal_type": self.goal_type.value, "subject": self.subject,
             "deadline": self.deadline,
             "current_level": self.current_level.value,
@@ -280,7 +287,8 @@ class GoalState:
     @classmethod
     def from_dict(cls, d: dict[str, Any] | None) -> "GoalState":
         d = d or {}
-        return cls(goal_title=str(d.get("goal_title", "")),
+        return cls(goal_id=str(d.get("goal_id", "")),
+            goal_title=str(d.get("goal_title", "")),
             goal_type=GoalType.from_value(d.get("goal_type")),
             subject=str(d.get("subject", "")),
             deadline=float(d.get("deadline", 0.0)),
@@ -510,38 +518,6 @@ class DailyTask:
 
 
 @dataclass
-class LongTermTask:
-    """A standing commitment under the long-term goal ("每天背 20 个单词").
-
-    User-defined (source="user", the common case) or LLM-recommended at goal
-    time (source="auto"); user entries survive regeneration. `suggestions`
-    are LLM-generated execution tips attached to the entry (refreshed on
-    demand). Active entries join the daily composition candidate pool.
-    """
-    id: str = ""
-    title: str = ""
-    source: str = "user"          # auto | user (TASK_SOURCES)
-    suggestions: list[str] = field(default_factory=list)
-    active: bool = True
-    created_at: float = field(default_factory=time.time)
-
-    def to_dict(self) -> dict[str, Any]:
-        return {"id": self.id, "title": self.title, "source": self.source,
-            "suggestions": list(self.suggestions), "active": self.active,
-            "created_at": self.created_at}
-
-    @classmethod
-    def from_dict(cls, d: dict[str, Any] | None) -> "LongTermTask":
-        d = d or {}
-        src = str(d.get("source", "user"))
-        return cls(id=str(d.get("id", "")), title=str(d.get("title", "")),
-            source=src if src in TASK_SOURCES else "user",
-            suggestions=[str(s)[:120] for s in (d.get("suggestions") or [])][:3],
-            active=bool(d.get("active", True)),
-            created_at=float(d.get("created_at", time.time())))
-
-
-@dataclass
 class ScheduleConfig:
     """The student's time budget and constraints.
 
@@ -665,16 +641,16 @@ class ReviewItem:
 class OrchestrationState:
     """Top-level working set for one student (the orchestration.json blob).
 
-    Aggregates goal + milestones + weekly plan + daily tasks + schedule config
-    + habit stats + SRS review queue. All purely orchestration-level: no
-    mastery, no concept state, no memory records (those live in M2/M3/M6).
+    Aggregates goals + per-goal gap analysis + weekly plan + daily tasks +
+    schedule config + habit stats + SRS review queue. All purely
+    orchestration-level: no mastery, no concept state, no memory records
+    (those live in M2/M3/M6).
     """
     student_id: str = "student_default"
-    goal: LearningGoal = field(default_factory=LearningGoal)
-    goal_state: GoalState = field(default_factory=GoalState)
+    goals: list[LearningGoal] = field(default_factory=list)   # cap _MAX_GOALS
+    goal_states: list[GoalState] = field(default_factory=list)  # 1:1 by goal_id
     milestones: list[Milestone] = field(default_factory=list)
     weekly_plan: list[WeeklyPlan] = field(default_factory=list)
-    long_term_tasks: list[LongTermTask] = field(default_factory=list)
     daily_tasks: list[DailyTask] = field(default_factory=list)
     schedule: ScheduleConfig = field(default_factory=ScheduleConfig)
     habit: HabitStats = field(default_factory=HabitStats)
@@ -689,12 +665,36 @@ class OrchestrationState:
     # from "planned but nothing to schedule" so needs_replan cannot loop.
     last_plan_attempt: float = 0.0
 
+    # --- multi-goal read helpers (single-goal legacy call sites) ----------
+
+    @property
+    def has_goals(self) -> bool:
+        """True when at least one goal carries a title."""
+        return any(g.title for g in self.goals)
+
+    @property
+    def primary_subject(self) -> str:
+        """First non-empty subject across goals (event/prompt labeling)."""
+        for g in self.goals:
+            if g.subjects:
+                return g.subjects[0]
+        return ""
+
+    @property
+    def goals_label(self) -> str:
+        """All goal titles joined for one prompt line ("A"、"B")."""
+        return "、".join(g.title for g in self.goals if g.title)
+
+    def goal_state_for(self, goal_id: str) -> GoalState | None:
+        return next((gs for gs in self.goal_states
+                     if gs.goal_id == goal_id), None)
+
     def to_dict(self) -> dict[str, Any]:
-        return {"student_id": self.student_id, "goal": self.goal.to_dict(),
-            "goal_state": self.goal_state.to_dict(),
+        return {"student_id": self.student_id,
+            "goals": [g.to_dict() for g in self.goals],
+            "goal_states": [gs.to_dict() for gs in self.goal_states],
             "milestones": [m.to_dict() for m in self.milestones],
             "weekly_plan": [w.to_dict() for w in self.weekly_plan],
-            "long_term_tasks": [t.to_dict() for t in self.long_term_tasks],
             "daily_tasks": [t.to_dict() for t in self.daily_tasks],
             "schedule": self.schedule.to_dict(), "habit": self.habit.to_dict(),
             "review_queue": {k: v.to_dict() for k, v in self.review_queue.items()},
@@ -707,13 +707,24 @@ class OrchestrationState:
     @classmethod
     def from_dict(cls, d: dict[str, Any] | None) -> "OrchestrationState":
         d = d or {}
+        goals = [LearningGoal.from_dict(g)
+                 for g in (d.get("goals") or [])][:_MAX_GOALS]
+        goal_states = [GoalState.from_dict(gs)
+                       for gs in (d.get("goal_states") or [])]
+        # legacy single-goal migration: an old blob stores a scalar `goal`
+        # (+ `goal_state`); wrap it into the list form with a stable id.
+        if not goals:
+            legacy = LearningGoal.from_dict(d.get("goal"))
+            if legacy.title:
+                legacy.id = legacy.id or "g_1"
+                goals = [legacy]
+                legacy_gs = GoalState.from_dict(d.get("goal_state"))
+                legacy_gs.goal_id = legacy_gs.goal_id or legacy.id
+                goal_states = [legacy_gs]
         return cls(student_id=str(d.get("student_id", "student_default")),
-            goal=LearningGoal.from_dict(d.get("goal")),
-            goal_state=GoalState.from_dict(d.get("goal_state")),
+            goals=goals, goal_states=goal_states,
             milestones=[Milestone.from_dict(m) for m in (d.get("milestones") or [])],
             weekly_plan=[WeeklyPlan.from_dict(w) for w in (d.get("weekly_plan") or [])],
-            long_term_tasks=[LongTermTask.from_dict(t)
-                             for t in (d.get("long_term_tasks") or [])][:_MAX_LONGTASKS],
             daily_tasks=[DailyTask.from_dict(t) for t in (d.get("daily_tasks") or [])][:_MAX_TASKS_PER_DAY * 7],
             schedule=ScheduleConfig.from_dict(d.get("schedule")),
             habit=HabitStats.from_dict(d.get("habit")),

@@ -126,11 +126,10 @@ def state_summary(student_id: str) -> dict[str, Any]:
                             if t.status.value == "pending")
         return {
             "student_id": student_id,
-            "goal": state.goal.to_dict(),
-            "goal_state": state.goal_state.to_dict(),
+            "goals": [g.to_dict() for g in state.goals],
+            "goal_states": [gs.to_dict() for gs in state.goal_states],
             "milestones": [m.to_dict() for m in state.milestones],
             "weekly_plan": [w.to_dict() for w in state.weekly_plan],
-            "long_term_tasks": [t.to_dict() for t in state.long_term_tasks],
             "daily_tasks": [t.to_dict() for t in state.daily_tasks],
             "schedule": state.schedule.to_dict(),
             "habit": state.habit.to_dict(),
@@ -143,9 +142,9 @@ def state_summary(student_id: str) -> dict[str, Any]:
             "events_processed": state.events_processed,
         }
     except Exception:
-        return {"student_id": student_id, "goal": {}, "goal_state": {},
+        return {"student_id": student_id, "goals": [], "goal_states": [],
                 "milestones": [],
-                "weekly_plan": [], "long_term_tasks": [], "daily_tasks": [],
+                "weekly_plan": [], "daily_tasks": [],
                 "schedule": {},
                 "habit": {}, "review_queue": {}, "srs_due_count": 0,
                 "pending_today": 0, "event_count": 0,

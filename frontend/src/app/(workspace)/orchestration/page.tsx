@@ -2,18 +2,17 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, MessagesSquare, Play, Target, X } from "lucide-react";
+import { AlertTriangle, MessagesSquare, Play, Plus, Target, X } from "lucide-react";
 import { useUIStore } from "@/lib/store";
 import { makePageT } from "@/lib/i18n-page";
 import {
-  addOrchLongTask,
   addOrchSubtask,
   addOrchTask,
   addOrchWeek,
   addOrchWeekConcept,
   addOrchWeekTask,
   completeOrchTask,
-  deleteOrchLongTask,
+  deleteOrchGoal,
   deleteOrchSubtask,
   deleteOrchTask,
   deleteOrchWeek,
@@ -23,7 +22,6 @@ import {
   patchOrchGoal,
   removeOrchWeekConcept,
   setOrchGoal,
-  suggestOrchLongTask,
   suggestOrchSubtasks,
   toggleOrchSubtask,
   updateOrchTask,
@@ -36,12 +34,13 @@ import {
 } from "@/lib/api-modules";
 import type {
   OrchDailyTask,
+  OrchGoal,
   OrchPlanSummary,
   OrchWeek,
 } from "@/lib/types-modules";
 import { Card } from "@/components/ui/Card";
 import { ModuleBadge } from "@/components/ui/Badge";
-import { Modal } from "@/components/ui/Modal";
+import { ConfirmModal, Modal } from "@/components/ui/Modal";
 import { EmptyState, ErrorNote, PageSkeleton } from "@/components/ui/EmptyState";
 import { GoalCard, GoalForm } from "@/components/pages/orchestration/GoalCard";
 import { TodayCard } from "@/components/pages/orchestration/TodayCard";
@@ -51,6 +50,9 @@ import { taskChatHref } from "@/components/pages/orchestration/task-link";
 import { STRINGS } from "./strings";
 
 type LoadState = "loading" | "ok" | "error";
+
+/** 与后端 _MAX_GOALS 一致：达到上限后隐藏「添加目标」入口。 */
+const MAX_GOALS = 4;
 
 type GoalPayload = {
   title: string;
@@ -79,7 +81,10 @@ export default function OrchestrationPage() {
   const [formFailed, setFormFailed] = useState(false);
   const [completingId, setCompletingId] = useState<string | null>(null);
   const [kickoff, setKickoff] = useState<Kickoff | null>(null);
-  const [goalEditOpen, setGoalEditOpen] = useState(false);
+  // 多目标：新增与编辑分别记录打开状态 / 正在编辑的目标
+  const [goalAddOpen, setGoalAddOpen] = useState(false);
+  const [editingGoal, setEditingGoal] = useState<Partial<OrchGoal> | null>(null);
+  const [deletingGoal, setDeletingGoal] = useState<Partial<OrchGoal> | null>(null);
   // 渲染期不取当前时间（react-hooks/purity）：随每次数据回源一起刷新。
   const [nowTs, setNowTs] = useState(0);
 
@@ -130,26 +135,45 @@ export default function OrchestrationPage() {
       setFormFailed(false);
       setOrchGoal(payload)
         .then(afterGoalSaved)
+        .then(() => setGoalAddOpen(false))
         .catch(() => setFormFailed(true))
         .finally(() => setSubmitting(false));
     },
-    [afterGoalSaved],
+    [afterGoalSaved, setGoalAddOpen],
   );
 
   const handlePatchGoal = useCallback(
     (payload: GoalPayload) => {
+      if (!editingGoal) return;
+      const goalId = editingGoal.id ?? "";
       setSubmitting(true);
       setFormFailed(false);
-      patchOrchGoal(payload)
+      patchOrchGoal(goalId, payload)
         .then(async (r) => {
           await afterGoalSaved(r);
-          setGoalEditOpen(false);
+          setEditingGoal(null);
         })
         .catch(() => setFormFailed(true))
         .finally(() => setSubmitting(false));
     },
-    [afterGoalSaved, setGoalEditOpen],
+    [afterGoalSaved, editingGoal, setEditingGoal],
   );
+
+  const confirmDeleteGoal = useCallback(async () => {
+    const goal = deletingGoal;
+    if (!goal) return;
+    setSubmitting(true);
+    try {
+      await deleteOrchGoal(goal.id ?? "");
+      setKickoff(null);
+      await fetchData();
+      setDeletingGoal(null);
+    } catch {
+      setFormFailed(true);
+    } finally {
+      setSubmitting(false);
+    }
+  }, [deletingGoal, fetchData, setDeletingGoal, setFormFailed, setKickoff, setSubmitting]);
 
   const handleComplete = useCallback(
     (taskId: string) => {
@@ -228,18 +252,6 @@ export default function OrchestrationPage() {
     (p: OrchWeekPayload) => mutatePlan(() => addOrchWeek(p)),
     [mutatePlan],
   );
-  const handleAddLongTask = useCallback(
-    (title: string) => mutatePlan(() => addOrchLongTask(title)),
-    [mutatePlan],
-  );
-  const handleDeleteLongTask = useCallback(
-    (id: string) => mutatePlan(() => deleteOrchLongTask(id)),
-    [mutatePlan],
-  );
-  const handleSuggestLongTask = useCallback(
-    (id: string) => mutatePlan(() => suggestOrchLongTask(id)),
-    [mutatePlan],
-  );
   const handleDeleteWeek = useCallback(
     (i: number) => mutatePlan(() => deleteOrchWeek(i)),
     [mutatePlan],
@@ -277,7 +289,22 @@ export default function OrchestrationPage() {
     [mutatePlan],
   );
 
-  const hasGoal = !!plan?.goal?.title;
+  const goals = useMemo(
+    () => (plan?.goals ?? []).filter((g) => !!g.title),
+    [plan],
+  );
+  const hasGoal = goals.length > 0;
+
+  // 目标 ↔ 差距分析配对：优先 goal_id 精确匹配，旧数据按下标对齐。
+  const statesByGoal = useMemo(() => {
+    const states = plan?.goal_states ?? [];
+    return goals.map(
+      (g, i) =>
+        (g.id ? states.find((s) => s.goal_id === g.id) : undefined) ??
+        states[i] ??
+        {},
+    );
+  }, [goals, plan]);
 
   // 周计划概念 → 阶段徽标（取该概念最近一次物化任务的 phase）。
   const phaseByConcept = useMemo(() => {
@@ -399,13 +426,24 @@ export default function OrchestrationPage() {
             )}
 
             <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
-              <GoalCard goal={plan!.goal} gs={plan!.goal_state} tr={tr}
-                onEdit={() => { setFormFailed(false); setGoalEditOpen(true); }}
-                longTasks={plan!.long_term_tasks ?? []}
-                onAddLongTask={handleAddLongTask}
-                onDeleteLongTask={handleDeleteLongTask}
-                onSuggestLongTask={handleSuggestLongTask}
-              />
+              <div className="flex min-w-0 flex-col gap-4">
+                {goals.map((g, i) => (
+                  <GoalCard key={g.id ?? i} goal={g} gs={statesByGoal[i]} tr={tr}
+                    onEdit={() => { setFormFailed(false); setEditingGoal(g); }}
+                    onDelete={() => { setFormFailed(false); setDeletingGoal(g); }}
+                  />
+                ))}
+                {goals.length < MAX_GOALS && (
+                  <button
+                    type="button"
+                    onClick={() => { setFormFailed(false); setGoalAddOpen(true); }}
+                    className="flex cursor-pointer items-center justify-center gap-1.5 rounded-[10px] border border-dashed border-border py-2.5 text-xs text-muted transition-colors hover:border-accent hover:text-accent"
+                  >
+                    <Plus size={13} />
+                    {tr("goal.add")}
+                  </button>
+                )}
+              </div>
               <TodayCard
                 tasks={today}
                 pendingCount={plan!.pending_today ?? today.filter((t) => t.status === "pending").length}
@@ -440,16 +478,37 @@ export default function OrchestrationPage() {
         )}
       </div>
 
-      <Modal open={goalEditOpen} onClose={() => setGoalEditOpen(false)} title={tr("goal.edit.title")} width={460}>
+      {/* 多目标：新增目标（未达上限时）与按 id 编辑各一个弹窗 */}
+      <Modal open={goalAddOpen} onClose={() => setGoalAddOpen(false)} title={tr("goal.add.title")} width={460}>
         <GoalForm
           tr={tr}
           submitting={submitting}
           failed={formFailed}
-          initial={plan?.goal}
-          submitLabel={tr("form.update")}
-          onSubmit={handlePatchGoal}
+          submitLabel={tr("form.submit")}
+          onSubmit={handleSetGoal}
         />
       </Modal>
+      <Modal open={!!editingGoal} onClose={() => setEditingGoal(null)} title={tr("goal.edit.title")} width={460}>
+        {editingGoal && (
+          <GoalForm
+            tr={tr}
+            submitting={submitting}
+            failed={formFailed}
+            initial={editingGoal}
+            submitLabel={tr("form.update")}
+            onSubmit={handlePatchGoal}
+          />
+        )}
+      </Modal>
+      <ConfirmModal
+        open={!!deletingGoal}
+        onClose={() => setDeletingGoal(null)}
+        onConfirm={() => void confirmDeleteGoal()}
+        title={tr("goal.del.confirm.title")}
+        desc={tr("goal.del.confirm.desc").replace("%t", deletingGoal?.title ?? "")}
+        confirmText={tr("goal.del")}
+        cancelText={tr("common.cancel")}
+      />
     </div>
   );
 }

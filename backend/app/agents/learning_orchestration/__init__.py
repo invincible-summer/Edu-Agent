@@ -8,7 +8,7 @@ express it", this module answers the longitudinal question:
     "how should the student continue to grow over weeks and months?"
 
 It is a VERTICAL ORCHESTRATION layer sitting above the M1-M4 pipeline: it owns
-ONLY long-term plans (goal -> long-term tasks + weekly tasks -> daily tasks),
+ONLY long-term plans (goals -> weekly tasks -> daily tasks),
 the spaced-repetition review schedule, and study-habit statistics. It reads
 M2 mastery, M3 curriculum, M5 knowledge graph, and M6 episodes as READ-ONLY
 projections and never writes them back.
@@ -29,7 +29,7 @@ Design contract (must hold to protect M1-M8):
 from __future__ import annotations
 
 from .schema import (DailyTask, DailyTaskStatus, GapItem, GoalAnalysisLevel,
-                     GoalState, HabitStats, LearningGoal, LongTermTask,
+                     GoalState, HabitStats, LearningGoal,
                      Milestone,
                      MilestoneStatus, OrchestrationLearningEvent,
                      OrchestrationState, PlanConcept,
@@ -49,7 +49,6 @@ __all__ = [
     "GoalState",
     "HabitStats",
     "LearningGoal",
-    "LongTermTask",
     "Milestone",
     "MilestoneStatus",
     "OrchestrationLearningEvent",

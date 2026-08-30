@@ -152,7 +152,7 @@ def needs_replan(state: OrchestrationState, mastery_view: dict[str, Any],
     """
     try:
         now = now if now is not None else time.time()
-        if not state.goal.title:
+        if not state.has_goals:
             return False
         if not state.weekly_plan:
             return state.last_plan_attempt == 0.0

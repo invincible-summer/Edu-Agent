@@ -70,7 +70,7 @@ def build_candidate_pool(state: OrchestrationState, *,
                      "milestone_id": "", "sources": [],
                      # action-level refs (empty for plain concept entries)
                      "real_concept_id": "", "week_task_id": "",
-                     "subtask_id": "", "longtask_id": ""}
+                     "subtask_id": ""}
                 e.update({k: v for k, v in extra.items() if v})
                 pool[cid] = e
             return e
@@ -111,15 +111,7 @@ def build_candidate_pool(state: OrchestrationState, *,
                     if "current_week" not in e["sources"]:
                         e["sources"].append("current_week")
 
-        # 3. active long-term tasks (standing commitments under the goal)
-        for lt in state.long_term_tasks:
-            if not lt.active:
-                continue
-            e = _entry(lt.id, lt.title, longtask_id=lt.id)
-            if "longtask" not in e["sources"]:
-                e["sources"].append("longtask")
-
-        # 4. M2 weak concepts (seen but p < 0.6)
+        # 3. M2 weak concepts (seen but p < 0.6)
         for sid, rec in (mastery_view or {}).items():
             if not isinstance(rec, dict):
                 continue
@@ -129,7 +121,7 @@ def build_candidate_pool(state: OrchestrationState, *,
                 if "weak" not in e["sources"]:
                     e["sources"].append("weak")
 
-        # 5. yesterday (and earlier) carryover tasks
+        # 4. yesterday (and earlier) carryover tasks
         for t in state.daily_tasks:
             if t.day < today and t.status.value in (
                     "pending", "in_progress", "overdue") and t.concept_id:
@@ -193,8 +185,6 @@ def build_compose_prompt(pool: list[dict[str, Any]], slots: int,
         src = "/".join(e.get("sources", []))
         if e.get("subtask_id"):
             kind_label = "本周任务子步骤"
-        elif e.get("longtask_id"):
-            kind_label = "长期任务"
         else:
             kind_label = "概念"
         lines.append(
@@ -204,7 +194,7 @@ def build_compose_prompt(pool: list[dict[str, Any]], slots: int,
     system = (
         "你是一名学习教练，为学生挑选今天最值得做的学习任务并写一句简短的"
         "「为什么今天学这个」批注。只输出 JSON，不要输出任何其他内容。")
-    user = f"""{f"学习目标：{goal_title}" if goal_title else ""}{context_block}候选池（只能从中挑选，concept_id 必须原样使用池中的 id；「本周任务子步骤」来自周计划，「长期任务」是学生自己的日常承诺，优先让它们出现在今天的安排里）：
+    user = f"""{f"学习目标：{goal_title}" if goal_title else ""}{context_block}候选池（只能从中挑选，concept_id 必须原样使用池中的 id；「本周任务子步骤」来自周计划，优先让它们出现在今天的安排里）：
 {chr(10).join(lines)}
 
 请挑选最多 {slots} 个今天最值得做的任务。每个任务给出：
@@ -300,11 +290,10 @@ def tasks_from_picks(state: OrchestrationState, picks: list[dict[str, Any]],
         for i, pick in enumerate(picks):
             e = pool_by_id.get(pick["concept_id"], {})
             minutes = slots_minutes[i] if i < len(slots_minutes) else 15
-            # action-level entries (week subtasks / long-term tasks) carry
-            # refs; plain concept entries keep the concept identity.
+            # action-level entries (week subtasks) carry refs; plain concept
+            # entries keep the concept identity.
             real_concept = str(e.get("real_concept_id") or "") or (
-                "" if (e.get("subtask_id") or e.get("longtask_id"))
-                else pick["concept_id"])
+                "" if e.get("subtask_id") else pick["concept_id"])
             out.append(DailyTask(
                 id=task_executor._task_id(day, pick["concept_id"], pick["kind"]),
                 day=day, concept_id=real_concept,
@@ -315,8 +304,7 @@ def tasks_from_picks(state: OrchestrationState, picks: list[dict[str, Any]],
                 milestone_id=str(e.get("milestone_id", "")),
                 week_task_id=str(e.get("week_task_id", "")),
                 subtask_id=str(e.get("subtask_id", "")),
-                title=str(e.get("name", "")) if (
-                    e.get("subtask_id") or e.get("longtask_id")) else "",
+                title=str(e.get("name", "")) if e.get("subtask_id") else "",
                 phase=pick.get("phase", ""), reason=pick.get("reason", "")))
         return out
     except Exception:
