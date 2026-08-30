@@ -1617,7 +1617,7 @@ MeloTTS 源码和模型缓存，并执行一次中文 warmup。`melo_bootstrap.p
 法/西/日/韩模型。主服务在
 `VOICE_TTS_PROVIDER=melo` 时自动拉起 sidecar；主服务本身不包含 ML/STT 依赖。
 安装和许可证边界分别见 `backend/voice_sidecar/requirements.txt` 与
-`docs/licenses/VOICE_THIRD_PARTY_NOTICES.md`。
+根目录 `THIRD-PARTY-NOTICES.md`（许可全文在 `licenses/`）。
 
 ### P10.5 前端
 

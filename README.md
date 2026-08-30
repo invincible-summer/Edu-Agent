@@ -147,7 +147,7 @@ MeloTTS 播报；电话 PCM 不上传到后端。Chrome/Edge 是主要支持目�
 运行 `deploy/install_voice.sh` 只准备 MeloTTS sidecar 和中文模型，不安装或下载
 任何服务器端 STT 组件。语音组件的逐项许可证、模型权重边界和发布义务见
 [`docs/VOICE_LICENSES.md`](docs/VOICE_LICENSES.md) 及
-[`docs/licenses/VOICE_THIRD_PARTY_NOTICES.md`](docs/licenses/VOICE_THIRD_PARTY_NOTICES.md)。
+[`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md)（许可全文归档于 [`licenses/`](licenses/)）。
 
 R10 资料定界规则：本轮上传文件/图片、引用资料中心教材，或明确要求根据教材/附件回答时，系统会在回答前强制执行一次 `knowledge_search`；当前轮有明确 file_id 时只检索对应资料。工作区仅存在公共资料时，问候等无关轮次不会强制检索；定义/原理/公式/解释等内容型问题由确定性 grounding contract 强制检索，不再依赖模型自行判断。
 
@@ -222,7 +222,7 @@ MeloTTS 源码是 MIT；当前模型与依赖还包含 Apache-2.0、BSD、ISC、
 多许可证二进制边界，不能把整条语音链路统称为 MIT。固定 revision、逐项来源、
 Git 审计方法与发布清单见 [`docs/VOICE_LICENSES.md`](docs/VOICE_LICENSES.md)；简明
 第三方声明见
-[`docs/licenses/VOICE_THIRD_PARTY_NOTICES.md`](docs/licenses/VOICE_THIRD_PARTY_NOTICES.md)。
+[`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md)（许可全文归档于 [`licenses/`](licenses/)）。
 
 ## 安全与隐私
 

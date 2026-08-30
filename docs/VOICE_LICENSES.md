@@ -64,7 +64,7 @@ MeloTTS 等开源代码的宽松许可证通常允许商业使用，但前提是
 
 | 组件 | 用途 | 固定 revision | 核查结果与义务 |
 |---|---|---|---|
-| [MeloTTS](https://github.com/myshell-ai/MeloTTS) | TTS 推理源码 | `209145371cff8fc3bd60d7be902ea69cbdb7965a` | 上游 LICENSE 为 MIT；允许使用、修改和销售副本，但分发源码/实质部分时保留版权与许可全文。仓库保留 `docs/licenses/melotts-MIT.txt` |
+| [MeloTTS](https://github.com/myshell-ai/MeloTTS) | TTS 推理源码 | `209145371cff8fc3bd60d7be902ea69cbdb7965a` | 上游 LICENSE 为 MIT；允许使用、修改和销售副本，但分发源码/实质部分时保留版权与许可全文。仓库保留 `licenses/melotts-MIT.txt` |
 | [MeloTTS-Chinese](https://huggingface.co/myshell-ai/MeloTTS-Chinese) | `checkpoint.pth` 与配置 | `af5d207a364ea4208c6f589c89f57f88414bdd16` | 该 revision 的 HF metadata/model card 标示 `license: mit`；分发权重时保留模型卡、README、许可、revision/hash。该标签不自动证明训练数据、第三方内容或商标权利 |
 | [`bert-base-multilingual-uncased`](https://huggingface.co/google-bert/bert-base-multilingual-uncased) | 中文/英文特征模型和 tokenizer | `7cbf9a625e29989f6b9c6c2fa68234c304f7e38f` | 模型卡标示 Apache-2.0；保留 Apache 条款、版权、模型卡和 NOTICE（如有） |
 | [`bert-base-uncased`](https://huggingface.co/google-bert/bert-base-uncased) | 嵌入英文所需 tokenizer | `86b5e0934494bd15c9632b12f734a8a67f723594` | 模型卡标示 Apache-2.0；当前只下载 tokenizer 文件，仍保留来源、模型卡和许可 |
@@ -152,5 +152,5 @@ git check-ignore -v backend/models/voice/example.safetensors \
    商业条款审查；不将其描述为本项目提供的 MIT 或永久免费服务。
 5. 任何模型、版本、语言、浏览器目标或打包方式变化后重新核查。
 
-简明 GitHub 风格声明见
-[`docs/licenses/VOICE_THIRD_PARTY_NOTICES.md`](licenses/VOICE_THIRD_PARTY_NOTICES.md)。
+统一第三方声明（GitHub 风格 THIRD-PARTY-NOTICES.md，许可全文在根 `licenses/`）见
+[`../THIRD-PARTY-NOTICES.md`](../THIRD-PARTY-NOTICES.md)。
