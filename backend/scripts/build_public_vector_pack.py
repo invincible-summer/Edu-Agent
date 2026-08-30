@@ -14,7 +14,7 @@ from app.core.public_vector_artifact import DEFAULT_OUTPUT_DIR, build_public_vec
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build verified public textbook MiniLM vectors")
+    parser = argparse.ArgumentParser(description="Build verified public textbook vectors with the configured embedding model")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--shard-size", type=int, default=8192)
     args = parser.parse_args()

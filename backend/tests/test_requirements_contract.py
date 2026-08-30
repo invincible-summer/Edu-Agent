@@ -35,13 +35,14 @@ class RequirementsContractTest(unittest.TestCase):
 
     def test_optional_files_own_vector_and_local_model_dependencies(self):
         self.assertTrue({"chromadb", "numpy"} <= _requirement_names("requirements-vector.txt"))
-        self.assertIn(
-            "sentence-transformers",
-            _requirement_names("requirements-local-rag.txt"),
-        )
-        cpu = (BACKEND / "requirements-cpu.txt").read_text(encoding="utf-8")
-        self.assertIn("download.pytorch.org/whl/cpu", cpu)
-        self.assertIn("torch==2.13.0+cpu", cpu)
+        # The bundled local RAG embedding-model runtime was removed: only the
+        # model-agnostic interface remains, so no requirement file may (re)pin
+        # sentence-transformers, transformers, scikit-learn, or torch.
+        self.assertFalse((BACKEND / "requirements-local-rag.txt").exists())
+        self.assertFalse((BACKEND / "requirements-cpu.txt").exists())
+        constraints = (BACKEND / "constraints.txt").read_text(encoding="utf-8")
+        for banned in ("sentence-transformers==", "transformers==", "scikit-learn==", "torch=="):
+            self.assertNotIn(banned, constraints)
         test_requirements = (BACKEND / "requirements-test.txt").read_text(encoding="utf-8")
         self.assertIn("-r requirements-vector.txt", test_requirements)
 

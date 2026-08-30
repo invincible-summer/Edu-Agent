@@ -1,4 +1,8 @@
-"""Local embedding, model-isolated Chroma, and public vector pack regressions."""
+"""Local embedding interface, model-isolated Chroma, and vector pack regressions.
+
+The local provider is model-agnostic: these tests mock the inference runtime,
+so no real local embedding model is required or downloaded.
+"""
 from __future__ import annotations
 import asyncio
 import hashlib
@@ -23,7 +27,7 @@ from tests.storage_sandbox import StorageSandboxTestCase
 class NormalizedFakeEmbed:
     normalize_embeddings = True
 
-    def __init__(self, model="fake-minilm", dimension=4):
+    def __init__(self, model="fake-local-embed", dimension=4):
         self.model = self.model_identifier = model
         self.dimension = dimension
         self.calls = 0
@@ -47,14 +51,21 @@ class TestEmbeddingProviders(StorageSandboxTestCase):
     def test_provider_selection(self):
         with mock.patch.object(settings, "embedding_provider", "off"):
             reset_embedding_client(); self.assertIsNone(get_embedding_client())
+        # No default local model ships with the repository: the local lane
+        # stays disabled until an operator names their own model explicitly.
         with mock.patch.object(settings, "embedding_provider", "local"):
-            reset_embedding_client(); self.assertIsInstance(get_embedding_client(), LocalEmbeddingClient)
+            with mock.patch.object(settings, "embedding_model", ""):
+                with mock.patch.object(settings, "embedding_model_path", ""):
+                    reset_embedding_client(); self.assertIsNone(get_embedding_client())
+        with mock.patch.object(settings, "embedding_provider", "local"):
+            with mock.patch.object(settings, "embedding_model", "operator-supplied-model"):
+                reset_embedding_client(); self.assertIsInstance(get_embedding_client(), LocalEmbeddingClient)
         with mock.patch.object(settings, "embedding_provider", "openai"), \
              mock.patch.object(settings, "embedding_api_key", ""):
             reset_embedding_client(); self.assertIsNone(get_embedding_client())
 
     def test_local_path_priority_offline_and_normalized(self):
-        model_dir = self.root / "shared-cache" / "minilm"
+        model_dir = self.root / "shared-cache" / "local-model"
         model_dir.mkdir(parents=True)
         captured = {}
 

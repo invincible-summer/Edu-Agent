@@ -1,11 +1,14 @@
 """Embedding providers for the optional RAG vector lane.
 
-Providers are explicit: ``off`` (default), ``local`` (offline
-sentence-transformers), or ``openai`` (OpenAI-compatible Embeddings API).
-The public ``embed(texts)`` coroutine is stable across providers.  Local model
-loading and encoding run on Edu_Agent's single-slot CPU executor, so FastAPI's
-event loop never performs ML work and a missing/incompatible model only makes
-the caller fall back to BM25.
+Providers are explicit: ``off`` (default), ``local`` (offline, bring-your-own
+embedding model), or ``openai`` (OpenAI-compatible Embeddings API). The
+``local`` provider is a generic interface: Edu_Agent bundles, pins, or
+defaults to no specific local model — the operator supplies the model files
+and their inference runtime explicitly via EMBEDDING_MODEL /
+EMBEDDING_MODEL_PATH. The public ``embed(texts)`` coroutine is stable across
+providers.  Local model loading and encoding run on Edu_Agent's single-slot
+CPU executor, so FastAPI's event loop never performs ML work and a
+missing/unconfigured model only makes the caller fall back to BM25.
 """
 from __future__ import annotations
 
@@ -157,7 +160,12 @@ EmbeddingClient = OpenAIEmbeddingClient
 
 
 class LocalEmbeddingClient:
-    """Lazy, offline-only sentence-transformers embedding provider."""
+    """Lazy, offline-only provider for an operator-supplied embedding model.
+
+    Model-agnostic: whatever SentenceTransformer-compatible source the
+    operator configures loads here; no model is shipped, pinned, or defaulted
+    by this repository.
+    """
 
     normalize_embeddings = True
 
@@ -300,6 +308,12 @@ def get_embedding_client() -> Any | None:
         return _INSTANCE
     try:
         if provider == "local":
+            if not (settings.embedding_model or settings.embedding_model_path):
+                log.warning(
+                    "EMBEDDING_PROVIDER=local but neither EMBEDDING_MODEL nor "
+                    "EMBEDDING_MODEL_PATH is set; this repository ships no "
+                    "default local embedding model, so the vector track is disabled")
+                return None
             client: Any = LocalEmbeddingClient()
         elif provider == "openai":
             if not settings.embedding_api_key:

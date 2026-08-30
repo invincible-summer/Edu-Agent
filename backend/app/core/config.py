@@ -120,7 +120,9 @@ class Settings:
     multimodal_ocr_retries: int = int(os.getenv("MULTIMODAL_OCR_RETRIES", "3"))
 
     # Embedding (optional): explicit provider keeps old deployments off by
-    # default. ``local`` uses an offline sentence-transformers model; ``openai``
+    # default. ``local`` is a generic bring-your-own interface for offline
+    # embedding models — no default model is shipped or pinned, the operator
+    # must set EMBEDDING_MODEL/EMBEDDING_MODEL_PATH explicitly. ``openai``
     # keeps the existing OpenAI-compatible endpoint. Any failure degrades to
     # the deterministic BM25 lane.
     embedding_provider: str = (os.getenv("EMBEDDING_PROVIDER", "off").strip().lower()
@@ -128,8 +130,7 @@ class Settings:
                                in {"off", "local", "openai"} else "off")
     embedding_base_url: str = os.getenv("EMBEDDING_BASE_URL") or ""
     embedding_api_key: str = os.getenv("EMBEDDING_API_KEY") or ""
-    embedding_model: str = (os.getenv("EMBEDDING_MODEL") or
-                            "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+    embedding_model: str = os.getenv("EMBEDDING_MODEL") or ""
     embedding_model_path: str = os.getenv("EMBEDDING_MODEL_PATH") or ""
     embedding_cache_dir: str = os.getenv("EMBEDDING_CACHE_DIR") or ""
     embedding_device: str = os.getenv("EMBEDDING_DEVICE", "cpu").strip().lower() or "cpu"
