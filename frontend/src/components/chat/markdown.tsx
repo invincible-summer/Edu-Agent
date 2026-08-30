@@ -1,9 +1,10 @@
 "use client";
-import { memo, type ComponentProps } from "react";
+import { memo, type ComponentProps, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { slugifyHeading } from "@/lib/markdown-toc";
 
 type RehypeNode = {
   type?: string;
@@ -360,12 +361,44 @@ const MARKDOWN_COMPONENTS: ComponentProps<typeof ReactMarkdown>["components"] = 
   },
 };
 
-function ParsedMarkdown({ children }: { children: string }) {
+/* ---- Docs 标题锚点 ----
+ * anchorHeadings=true 时给 h1–h3 注入与 lib/markdown-toc.ts 一致的 slug id，
+ * 供 /docs 目录跳转。仅文档页启用，chat/notes 渲染路径零影响。 */
+function reactNodeText(node: ReactNode): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(reactNodeText).join("");
+  if (typeof node === "object" && "props" in node) {
+    return reactNodeText((node as { props?: { children?: ReactNode } }).props?.children);
+  }
+  return "";
+}
+
+function anchorHeading(tag: "h1" | "h2" | "h3") {
+  const Tag = tag;
+  return function RenderHeading({ node, children, ...props }: { node?: unknown } & ComponentProps<"h1">) {
+    void node;
+    return (
+      <Tag id={slugifyHeading(reactNodeText(children))} className="scroll-mt-6" {...props}>
+        {children}
+      </Tag>
+    );
+  };
+}
+
+const ANCHOR_MARKDOWN_COMPONENTS: ComponentProps<typeof ReactMarkdown>["components"] = {
+  ...MARKDOWN_COMPONENTS,
+  h1: anchorHeading("h1"),
+  h2: anchorHeading("h2"),
+  h3: anchorHeading("h3"),
+};
+
+function ParsedMarkdown({ children, anchorHeadings }: { children: string; anchorHeadings?: boolean }) {
   return (
     <ReactMarkdown
       remarkPlugins={REMARK_PLUGINS}
       rehypePlugins={REHYPE_PLUGINS}
-      components={MARKDOWN_COMPONENTS}
+      components={anchorHeadings ? ANCHOR_MARKDOWN_COMPONENTS : MARKDOWN_COMPONENTS}
     >
       {normalizeMath(children || "")}
     </ReactMarkdown>
@@ -375,10 +408,10 @@ function ParsedMarkdown({ children }: { children: string }) {
 /** Full markdown body for assistant prose (chat-prose styling).
  * Memoized: the remark+KaTeX parse is expensive, so identical children
  * (e.g. parent re-renders on heartbeat during streaming) skip re-parsing. */
-export const Markdown = memo(function Markdown({ children, className }: { children: string; className?: string }) {
+export const Markdown = memo(function Markdown({ children, className, anchorHeadings }: { children: string; className?: string; anchorHeadings?: boolean }) {
   return (
     <div className={className ?? "chat-prose"}>
-      <ParsedMarkdown>{children}</ParsedMarkdown>
+      <ParsedMarkdown anchorHeadings={anchorHeadings}>{children}</ParsedMarkdown>
     </div>
   );
 });

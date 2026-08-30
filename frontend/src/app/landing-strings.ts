@@ -39,16 +39,46 @@ export const LANDING_STRINGS: PageStrings = {
       "不只是聊天机器人——每一轮对话背后，都有教学策略、掌握度追踪与教材依据。",
     "landing.features.f1.title": "苏格拉底式讲解",
     "landing.features.f1.desc": "循循善诱的对话式讲解，引导你自己想明白，而不是直接给出答案。",
+    "landing.features.f1.more":
+      "六模式教学引擎（M3）会根据你的基础与当前状态，在讲解、引导、追问、纠错等模式间切换。苏格拉底模式下，它用一连串递进的小问题带你推出答案，卡住时给分级提示——先思路、再关键步骤、最后才是结论。",
+    "landing.features.f1.p1": "六模式状态机 + 跨轮教学记忆，教学策略随对话推进",
+    "landing.features.f1.p2": "分级提示：先给思路，再给关键步骤，最后才是答案",
+    "landing.features.f1.p3": "每轮讲解自动关联教材概念，出处可溯源",
     "landing.features.f2.title": "智能出题测评",
     "landing.features.f2.desc": "约束出题、三级评分与 CAT 自适应测试，真实检验「学会了没有」。",
+    "landing.features.f2.more":
+      "M4 测评智能在出题时施加教材与知识点约束，杜绝超纲题；作答按三级评分精细判定；CAT 自适应测试根据你的作答实时调整下一题难度，用更少的题精确定位真实水平，结果直接回写掌握度模型。",
+    "landing.features.f2.p1": "约束出题：题目严格限定在所选教材与知识点内",
+    "landing.features.f2.p2": "三级评分：完全正确 / 部分正确 / 错误，精细回写掌握度",
+    "landing.features.f2.p3": "CAT 自适应：难度随作答动态调整，短测验也有高信度",
     "landing.features.f3.title": "教材 RAG 检索",
     "landing.features.f3.desc": "回答基于你选用的教材内容，概念出处可溯源，拒绝凭空发挥。",
+    "landing.features.f3.more":
+      "每轮回答前，系统先从你关联的教材中检索最相关的片段（检索增强生成），再基于检索结果组织作答，从机制上抑制凭空发挥；概念与出处随回答呈现，可随时回到教材原文核对。",
+    "landing.features.f3.p1": "上传教材自动解析、分块与向量化入库",
+    "landing.features.f3.p2": "回答附带教材出处，概念可溯源",
+    "landing.features.f3.p3": "公共教材全员可读，私有上传仅自己可见",
     "landing.features.f4.title": "学习笔记",
     "landing.features.f4.desc": "边学边记，笔记与对话联动，把知识沉淀成你自己的资料库。",
+    "landing.features.f4.more":
+      "笔记仓库是一个 Obsidian 式双链知识库：[[双链]] 把概念连成网络，AI 可以从辅导对话、教材或错题本一键生成笔记；开启 SM-2 温故后，到期笔记自动进入复习安排，配合关系图总览全局。",
+    "landing.features.f4.p1": "[[双链]] + 标签 + 文件夹，未解析链接一键成篇",
+    "landing.features.f4.p2": "AI 从对话 / 教材 / 错题生成：总结、修正、温故",
+    "landing.features.f4.p3": "SM-2 间隔复习 + 力导向关系图，笔记与对话联动",
     "landing.features.f5.title": "学情画像",
     "landing.features.f5.desc": "BKT 掌握度追踪与知识图谱可视化，强项弱项一目了然。",
+    "landing.features.f5.more":
+      "M2 学生模型用 BKT（贝叶斯知识追踪）从你的作答序列持续估计每个概念的掌握概率；学习总览与我的画像把掌握度、概念状态与学习风格画成可读的图谱与曲线，强项弱项一目了然。",
+    "landing.features.f5.p1": "BKT 按概念估计掌握概率，作答越多越准",
+    "landing.features.f5.p2": "教材知识图谱叠加掌握度着色，弱项一眼可见",
+    "landing.features.f5.p3": "画像透明可查：系统对你的理解全部展示",
     "landing.features.f6.title": "长期学习编排",
     "landing.features.f6.desc": "从学期目标到今日任务，SM-2 间隔重复帮你对抗遗忘。",
+    "landing.features.f6.more":
+      "设定学期目标后，M9 编排智能把它分解为长期任务 → 周任务 → 今日任务，并把 SM-2 到期复习织进每日安排；完成情况回流掌握度模型，下一周的计划随之自动调整。",
+    "landing.features.f6.p1": "目标 → 长期 → 周 → 今日，四级任务自动分解",
+    "landing.features.f6.p2": "SM-2 间隔重复对抗遗忘，复习自动排期",
+    "landing.features.f6.p3": "任务完成回流掌握度，计划动态调整",
 
     "landing.modules.kicker": "架构 / Architecture",
     "landing.modules.title": "M0–M10 · 十层智能模块",
@@ -129,21 +159,51 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.features.f1.title": "Socratic explaining",
     "landing.features.f1.desc":
       "Guided dialogue that helps you figure things out yourself instead of handing you answers.",
+    "landing.features.f1.more":
+      "A six-mode teaching engine (M3) switches between explaining, guiding, probing and correcting based on your state. In Socratic mode it walks you through progressive questions with tiered hints — approach first, key steps next, the answer last.",
+    "landing.features.f1.p1": "Six-mode state machine with cross-turn teaching memory",
+    "landing.features.f1.p2": "Tiered hints: approach first, key steps next, answer last",
+    "landing.features.f1.p3": "Every explanation links back to textbook concepts",
     "landing.features.f2.title": "Smart assessment",
     "landing.features.f2.desc":
       "Constrained quiz generation, three-level grading, and CAT adaptive testing that verify real mastery.",
+    "landing.features.f2.more":
+      "M4 constrains question generation to your chosen textbooks and topics — no out-of-scope items. Answers are graded on three levels, and CAT adaptive testing adjusts difficulty after every answer to pinpoint your level with fewer questions, writing results straight into the mastery model.",
+    "landing.features.f2.p1": "Constrained generation — strictly within selected textbooks and topics",
+    "landing.features.f2.p2": "Three-level grading writes fine-grained mastery updates",
+    "landing.features.f2.p3": "CAT adapts difficulty live for precise, shorter tests",
     "landing.features.f3.title": "Textbook RAG",
     "landing.features.f3.desc":
       "Answers grounded in your chosen textbooks, with traceable concept sources — no hallucinated facts.",
+    "landing.features.f3.more":
+      "Before every answer the system retrieves the most relevant passages from your textbooks (retrieval-augmented generation) and grounds the response in them — hallucination is suppressed by design. Sources are shown alongside so you can verify against the original text.",
+    "landing.features.f3.p1": "Uploads are parsed, chunked and vectorized automatically",
+    "landing.features.f3.p2": "Answers carry textbook sources — traceable concepts",
+    "landing.features.f3.p3": "Public textbooks for everyone; private uploads stay private",
     "landing.features.f4.title": "Study notes",
     "landing.features.f4.desc":
       "Take notes as you learn, linked to your conversations, building your own knowledge base.",
+    "landing.features.f4.more":
+      "The notes vault is an Obsidian-style linked knowledge base: [[wikilinks]] connect concepts, AI drafts notes from conversations, textbooks or your error notebook, and SM-2 spaced review brings due notes back on schedule — with a force-directed graph for the big picture.",
+    "landing.features.f4.p1": "[[Wikilinks]], tags and folders; unresolved links create notes in one click",
+    "landing.features.f4.p2": "AI generates summaries, corrections and reviews from your sources",
+    "landing.features.f4.p3": "SM-2 spaced repetition plus a live relationship graph",
     "landing.features.f5.title": "Mastery profile",
     "landing.features.f5.desc":
       "BKT mastery tracking and knowledge-graph visualization make strengths and gaps obvious.",
+    "landing.features.f5.more":
+      "The M2 student model runs BKT (Bayesian Knowledge Tracing) over your answer history to estimate mastery per concept. The dashboard and profile turn mastery, concept states and learning style into readable graphs — strengths and gaps at a glance.",
+    "landing.features.f5.p1": "BKT estimates mastery per concept, sharpening with every answer",
+    "landing.features.f5.p2": "Knowledge graph colored by mastery makes weak spots obvious",
+    "landing.features.f5.p3": "The profile is transparent — see everything the system knows",
     "landing.features.f6.title": "Long-term planning",
     "landing.features.f6.desc":
       "From semester goals down to today's tasks, with SM-2 spaced repetition against forgetting.",
+    "landing.features.f6.more":
+      "Set a semester goal and M9 breaks it into long-term → weekly → today's tasks, weaving SM-2 due reviews into each day. Completions flow back into the mastery model and next week's plan adjusts automatically.",
+    "landing.features.f6.p1": "Goals cascade into long-term, weekly and daily tasks",
+    "landing.features.f6.p2": "SM-2 spaced repetition schedules reviews automatically",
+    "landing.features.f6.p3": "Completions feed mastery; plans adapt dynamically",
 
     "landing.modules.kicker": "Architecture",
     "landing.modules.title": "M0–M10 · Ten intelligence modules",

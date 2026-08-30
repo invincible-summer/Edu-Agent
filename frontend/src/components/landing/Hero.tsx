@@ -72,6 +72,73 @@ export function Hero({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean }) {
     };
   }, []);
 
+  // 轻滚翻页：Hero 大部分仍在视口内时，一次向下的滚动意图（滚轮累计约
+  // 40px 或触摸上滑约 48px）即平滑滑到功能区，呈现"翻到下一页"的手感。
+  // 不 preventDefault、不劫持向上滚动与其余页面；翻页中的新滚动意图会
+  // 立即中断动画交还原生滚动（忽略触控板惯性衰减的小增量）；
+  // prefers-reduced-motion 下退化为原生滚动。
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const st = { locked: false, lockTimer: 0, wheelTimer: 0, accum: 0, glideAt: 0, touchY: 0 };
+    const heroVisible = () => el.getBoundingClientRect().bottom > window.innerHeight * 0.4;
+    const glide = () => {
+      st.locked = true;
+      st.glideAt = Date.now();
+      document.getElementById("features")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      st.lockTimer = window.setTimeout(() => {
+        st.locked = false;
+      }, 900);
+    };
+    const cancelGlide = () => {
+      window.clearTimeout(st.lockTimer);
+      // 以瞬时定位打断进行中的平滑滚动，立刻交还原生滚动。
+      window.scrollTo({ top: window.scrollY, behavior: "auto" });
+      st.locked = false;
+    };
+    const onWheel = (e: WheelEvent) => {
+      if (st.locked) {
+        if (Date.now() - st.glideAt > 400 || Math.abs(e.deltaY) > 80) cancelGlide();
+        return;
+      }
+      window.clearTimeout(st.wheelTimer);
+      st.wheelTimer = window.setTimeout(() => {
+        st.accum = 0;
+      }, 180);
+      if (e.deltaY <= 0 || !heroVisible()) {
+        st.accum = 0;
+        return;
+      }
+      st.accum += e.deltaY;
+      if (st.accum >= 40) {
+        st.accum = 0;
+        glide();
+      }
+    };
+    const onTouchStart = (e: TouchEvent) => {
+      st.touchY = e.touches[0]?.clientY ?? 0;
+      if (st.locked) cancelGlide();
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (st.locked) return;
+      const y = e.touches[0]?.clientY ?? 0;
+      if (st.touchY - y >= 48 && heroVisible()) {
+        st.touchY = y;
+        glide();
+      }
+    };
+    window.addEventListener("wheel", onWheel, { passive: true });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.clearTimeout(st.lockTimer);
+      window.clearTimeout(st.wheelTimer);
+    };
+  }, []);
+
   return (
     <section ref={ref} className="relative flex min-h-svh flex-col overflow-hidden">
       {/* 粒子网络背景 */}
@@ -152,15 +219,23 @@ export function Hero({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean }) {
         </div>
       </div>
 
-      {/* 滚动提示 */}
-      <div className="relative flex flex-col items-center gap-2 pb-8">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+      {/* 滚动提示：宋体文案 + 黛青动线；点击或轻滚即翻页到功能区 */}
+      <a
+        href="#features"
+        aria-label={tr("landing.hero.scroll")}
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById("features")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
+        className="group relative flex flex-col items-center gap-2 pb-8 outline-none"
+      >
+        <span className="font-serif text-xs tracking-[0.4em] text-fg-secondary transition-colors group-hover:text-accent">
           {tr("landing.hero.scroll")}
         </span>
-        <span className="block h-10 w-px overflow-hidden bg-border/60">
+        <span className="block h-12 w-px overflow-hidden bg-border">
           <span className="block h-full w-full bg-accent animate-[scroll-line_1.8s_ease-in-out_infinite]" />
         </span>
-      </div>
+      </a>
     </section>
   );
 }

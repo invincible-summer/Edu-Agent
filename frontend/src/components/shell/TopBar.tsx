@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Flame } from "lucide-react";
-import { BookOpen, LogOut, User as UserIcon } from "lucide-react";
+import { BookOpen, LayoutDashboard, LogOut, User as UserIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navItemByPath } from "@/lib/nav";
 import { useUIStore } from "@/lib/store";
@@ -49,6 +49,17 @@ export function TopBar() {
             <Flame size={13} />
             <span className="tnum">{streak}</span>
             <span className="hidden sm:inline">{tr("ux.streak.days")}</span>
+          </Link>
+        )}
+        {/* 总览快捷入口：已在 /dashboard 时隐藏，避免冗余 */}
+        {!pathname.startsWith("/dashboard") && (
+          <Link
+            href="/dashboard"
+            title={tr("nav.dashboard")}
+            aria-label={tr("nav.dashboard")}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-fg-tertiary transition-colors hover:bg-surface-hover hover:text-accent"
+          >
+            <LayoutDashboard size={15} />
           </Link>
         )}
         <Link

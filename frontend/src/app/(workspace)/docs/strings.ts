@@ -5,6 +5,7 @@ export const STRINGS = {
   zh: {
     "docs.title": "使用文档",
     "docs.desc": "系统使用说明 · 由管理员维护，支持 Markdown",
+    "docs.toc": "目录",
     "docs.edit": "编辑",
     "docs.preview": "预览",
     "docs.source": "编辑源码",
@@ -22,6 +23,7 @@ export const STRINGS = {
   en: {
     "docs.title": "Usage Docs",
     "docs.desc": "System guide · maintained by admins, Markdown supported",
+    "docs.toc": "Contents",
     "docs.edit": "Edit",
     "docs.preview": "Preview",
     "docs.source": "Edit source",

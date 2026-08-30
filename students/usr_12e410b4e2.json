@@ -22,9 +22,9 @@
     ],
     "strong_points": [],
     "created_at": 1787981768.4181182,
-    "updated_at": 1787997672.0532622,
-    "last_active": 1787997672.0532336,
-    "events_processed": 137
+    "updated_at": 1788058024.6209211,
+    "last_active": 1788058024.6208942,
+    "events_processed": 139
   },
   "mastery": {
     "custom.tb-tb_137bb032c4.c.e8fa3e97e719b622": {
@@ -92,6 +92,20 @@
       "mistakes": [
         "嵌入说明碰撞非弹性，不能用动能守恒；应由动量守恒得 $V=4\\,\\mathrm{m/s}$。碰撞生热为 $1584\\,\\"
       ],
+      "params": {
+        "L0": 0.1,
+        "T": 0.1,
+        "S": 0.1,
+        "G": 0.25
+      }
+    },
+    "custom.tb-tb_137bb032c4.c.1cc64ffb180d818e": {
+      "skill_id": "custom.tb-tb_137bb032c4.c.1cc64ffb180d818e",
+      "p_known": 0.3571,
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1788058024.62088,
+      "mistakes": [],
       "params": {
         "L0": 0.1,
         "T": 0.1,
@@ -392,9 +406,7 @@
       "concept": "完全非弹性碰撞中的动量守恒与动能损失",
       "state": "partial",
       "evidence": [],
-      "misconceptions": [
-        "嵌入说明碰撞非弹性，不能用动能守恒；应由动量守恒得 $V=4\\,\\mathrm{m/s}$。碰撞生热为 $1584\\,\\"
-      ],
+      "misconceptions": [],
       "mistake_types": [],
       "attempts": 2,
       "correct": 1,
@@ -547,12 +559,14 @@
       "skill_id": "custom.tb-tb_137bb032c4.c.9ce22316bf95f9af",
       "concept": "简谐运动的位移与速度",
       "state": "introduced",
-      "evidence": [],
+      "evidence": [
+        "已讲解：讲一下「区分位移、速度、加速度，并整理三者关系」，请系统地讲一讲"
+      ],
       "misconceptions": [],
       "mistake_types": [],
       "attempts": 0,
       "correct": 0,
-      "last_review": 1787985199.563947
+      "last_review": 1788057963.6087976
     },
     "custom.tb-tb_137bb032c4.c.a3966d93a46234cd": {
       "skill_id": "custom.tb-tb_137bb032c4.c.a3966d93a46234cd",
@@ -696,6 +710,17 @@
       "attempts": 1,
       "correct": 1,
       "last_review": 1787997347.9681246
+    },
+    "custom.tb-tb_137bb032c4.c.1cc64ffb180d818e": {
+      "skill_id": "custom.tb-tb_137bb032c4.c.1cc64ffb180d818e",
+      "concept": "位移、速度、加速度及三者关系；位置—时间图像斜率；速度—时间图像面积与斜率；位移与路程的区别；瞬时速度为零时加速度的判断",
+      "state": "partial",
+      "evidence": [],
+      "misconceptions": [],
+      "mistake_types": [],
+      "attempts": 1,
+      "correct": 1,
+      "last_review": 1788058024.6087508
     }
   }
 }
