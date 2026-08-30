@@ -1,47 +1,37 @@
-# MeloTTS sidecar 的「中文合成专用」依赖（install_voice.sh 安装；
-# 许可证依据见 docs/VOICE_LICENSES.md）。
+# Direct/runtime dependencies for the local Chinese MeloTTS sidecar.
+# MeloTTS is mounted from backend/vendor/MeloTTS at a pinned revision instead
+# of installed as a package, so its setup.py post-install hook is not run.
+# That avoids downloading the optional Japanese unidic dictionary.
 #
-# 默认不安装：unidecode (GPL-2.0+)、pykakasi (GPLv3+)、num2words
-# (LGPL)、完整 unidic 词典（约 1 GB 磁盘）和 eng_to_ipa（本方案未确认
-# 许可依据）。pykakasi/num2words 虽被上游非中文模块在导入期引用，但由
-# melo_bootstrap.py 提供最小 stub；中文路径不执行其日/韩逻辑。
-#
-# 但 melo/text/cleaner.py 在 import 期加载全部语言模块，因此必须装以下
-# 「导入期需要、中文合成不执行」的宽松许可包：mecab-python3/unidic-lite
-# （日语 MeCab 模块级初始化需要；unidic-lite 仅约 15 MB、BSD/MIT 数据，
-# 不是 1 GB 的完整 unidic）、anyascii、jamo（韩语导入期需要，MIT/BSD）。
-# 发布 sidecar venv 时仍应按实际安装文件生成 SBOM；复用旧环境不能仅凭
-# 本 requirements 文件推断其许可证集合。
-#
-# torch/torchaudio 必须先单独安装 CPU 版（install_voice.sh 处理）：
-#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-# 直接 `pip install -r` 会从 PyPI 拉 CUDA 版 torch（约 3-4 GB）。
-#
-# MeloTTS 本体不 pip 安装：由 app.py 以 sys.path 挂载
-# backend/vendor/MeloTTS（规避 setup.py 的 unidic 下载钩子）。
+# melo/text/cleaner.py imports all language modules at module import time.
+# melo_bootstrap.py supplies fail-loud stubs for the unused Japanese/Korean
+# imports, so this file contains only dependencies used by the sidecar and
+# the active ZH/ZH_MIX_EN import/inference path.  Do not infer a complete
+# license list from this file alone: audit the resolved wheel metadata/SBOM
+# whenever distributing a virtualenv or image.
+
+# Sidecar HTTP service
 fastapi
 uvicorn
 pydantic
+
+# MeloTTS inference and model loading
+# torch/torchaudio are installed first from the CPU-only PyTorch index by
+# deploy/install_voice.sh.
+torch
+torchaudio
 transformers==4.27.4
 numpy==1.26.4
+scipy
 soundfile
 librosa
+cached-path
+huggingface_hub
+tqdm
+
+# Chinese and mixed Chinese/English text processing
 jieba
 pypinyin
 cn2an
 g2p_en
-cached-path
-huggingface_hub
-sentencepiece
-mecab-python3
-unidic-lite
-anyascii
-jamo
-fugashi
-gruut
-gruut_ipa
-# 不锁版本；NLTK >= 3.9 的 pos_tag 需要 taggers/averaged_perceptron_tagger_eng
-# （新命名，JSON 版），< 3.9 用旧名 averaged_perceptron_tagger——两个资源
-# 都由 install_voice.sh 下载到 .venv/nltk_data/，缺 _eng 时中英混排句
-# （含英文字母/单词）合成会 500。
 nltk

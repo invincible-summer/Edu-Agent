@@ -59,9 +59,9 @@ chat_history/library/data/*
 *.sqlite
 *.sqlite3
 *.db
-# P10 voice local assets: compiled whisper.cpp / MeloTTS checkouts and
-# downloaded model weights (install via deploy/install_voice.sh). Local
-# build artifacts, not project content and never user data.
+# P10 voice local assets: MeloTTS checkout and downloaded model weights
+# (install via deploy/install_voice.sh). Local build artifacts, not project
+# content and never user data.
 /backend/vendor/
 /backend/models/
 /backend/voice_sidecar/.venv/

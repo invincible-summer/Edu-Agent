@@ -1,26 +1,9 @@
-"""Minimal WAV helpers for the voice path (stdlib only).
-
-The WebSocket protocol carries raw 16 kHz mono PCM16 frames from the
-browser; whisper.cpp wants a RIFF/WAV file, and the MeloTTS sidecar
-answers WAV which we strip back to PCM for the wire. These helpers do
-exactly that without pulling numpy/scipy into the backend venv.
-"""
+"""Decode MeloTTS sidecar WAV replies to raw PCM16 (stdlib only)."""
 from __future__ import annotations
 
 import io
 import struct
 import wave
-
-
-def pcm16_to_wav(pcm16: bytes, sample_rate: int = 16000, channels: int = 1) -> bytes:
-    """Wrap raw little-endian int16 frames in a RIFF/WAV container."""
-    buf = io.BytesIO()
-    with wave.open(buf, "wb") as w:
-        w.setnchannels(channels)
-        w.setsampwidth(2)
-        w.setframerate(sample_rate)
-        w.writeframes(pcm16)
-    return buf.getvalue()
 
 
 def wav_to_pcm16(data: bytes) -> tuple[bytes, int]:

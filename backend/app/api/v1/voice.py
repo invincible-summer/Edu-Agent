@@ -6,9 +6,9 @@ the header-authed identity for a single-use 60 s ticket (POST /voice/ticket)
 which the WS connect then spends; non-browser clients may simply send the
 Authorization header directly.
 
-Wire protocol (client PCM16 mono 16 kHz binary frames):
+Wire protocol (browser Speech Recognition text only):
   C->S {"type":"start","session_id":sid|null,"workspace_id":ws|null}
-  C->S <binary audio frames> ... {"type":"utterance_end"}   (one push-to-talk)
+  C->S {"type":"utterance_end","text":"..."} (one push-to-talk turn)
   S->C {"type":"session_bound","session_id"} / {"type":"stt_start"}
        {"type":"stt_result","text"} / step/tool_* status events /
        {"type":"answer_delta","content"} per LLM delta /
@@ -19,8 +19,9 @@ Wire protocol (client PCM16 mono 16 kHz binary frames):
 
 The transcript runs through the normal chat pipeline (run_turn + the
 session persistence inside it), so voice turns land in the same session
-history, memory and RAG as typed turns. STT/TTS are plugins (app/voice)
-selected by VOICE_* settings and default to off.
+history, memory and RAG as typed turns. Speech-to-text is performed only by
+SpeechRecognition/webkitSpeechRecognition in the browser; the backend receives
+final text and uses the configured TTS provider for spoken replies.
 """
 from __future__ import annotations
 
@@ -32,25 +33,18 @@ import time
 
 from fastapi import APIRouter, Depends, WebSocket
 
-from app.core.config import settings
 from app.core.ratelimit import rate_limit
 from app.identity.deps import resolve_student_id, _try_user_from_header
 from app.voice.base import VoiceProviderError
-from app.voice.stt import get_stt_provider
 from app.voice.tts import get_tts_provider
 from app.voice.sentences import take_complete
 from app.voice.speak_text import to_speakable
 from app.voice.loudness import normalize_pcm16
-from app.voice.wav import pcm16_to_wav
 
 log = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/voice", tags=["voice"])
 
-# 16 kHz mono 16-bit frames from the browser.
-_SAMPLE_RATE = 16000
-_FRAME_BYTES = _SAMPLE_RATE * 2  # bytes per second of audio
-_MIN_AUDIO_BYTES = _FRAME_BYTES // 10  # 0.1 s
 _TICKET_TTL = 60.0
 # One failed TTS synthesis per turn is reported and the rest of the turn
 # continues text-only; retrying every sentence against a dead sidecar
@@ -89,11 +83,10 @@ def _consume_ticket(token: str) -> str | None:
 @router.get("/status")
 def voice_status(student_id: str = Depends(resolve_student_id)):
     """Provider availability for the frontend's call-button visibility."""
-    stt = get_stt_provider()
     tts = get_tts_provider()
     return {
-        "enabled": stt is not None and tts is not None,
-        "stt": stt.name if stt else None,
+        "enabled": tts is not None,
+        "stt": "browser",
         "tts": tts.name if tts else None,
     }
 
@@ -127,21 +120,16 @@ async def voice_ws(websocket: WebSocket):
 class _VoiceCall:
     """State machine for a single voice call connection.
 
-    ``_turn_task`` guards the one-turn-at-a-time rule: audio arriving
-    while a turn is running is discarded (with a busy notice) so the
-    CPU-constrained target never queues transcriptions behind each other.
+    ``turn_task`` guards the one-turn-at-a-time rule so repeated browser
+    transcripts cannot queue multiple LLM/TTS turns on the same connection.
     """
 
     def __init__(self, websocket: WebSocket, student_id: str):
         self.ws = websocket
         self.student_id = student_id
-        self.stt = get_stt_provider()
         self.tts = get_tts_provider()
         self.session = None  # TutorSession, bound by start/first turn
         self.lang = "zh"
-        self.audio = bytearray()
-        self.audio_cap = _FRAME_BYTES * settings.voice_max_audio_seconds
-        self.truncated = False
         self.turn_task: asyncio.Task | None = None
         # progress_cb fires inside run_turn's own control flow; events are
         # collected here and drained around each yielded event (single loop).
@@ -155,9 +143,9 @@ class _VoiceCall:
                 msg = await self.ws.receive()
                 if msg["type"] == "websocket.disconnect":
                     return
-                data = msg.get("bytes")
-                if data is not None:
-                    self._feed_audio(data)
+                if msg.get("bytes") is not None:
+                    await self._send({"type": "error",
+                                      "code": "binary_audio_unsupported"})
                     continue
                 text = msg.get("text")
                 if not text:
@@ -189,13 +177,13 @@ class _VoiceCall:
         if kind == "start":
             await self._on_start(event)
         elif kind == "utterance_end":
-            await self._on_utterance_end()
+            text = event.get("text")
+            await self._on_utterance_end(text if isinstance(text, str) else None)
         elif kind == "ping":
             await self._send({"type": "pong"})
         elif kind == "end":
             await self._send({"type": "bye"})
             raise _CallEnded()
-        # Audio-flush shorthand: an empty text frame is ignored above.
 
     # -- session binding (mirrors chat_stream semantics) --------------------
 
@@ -244,40 +232,18 @@ class _VoiceCall:
         self.session = session
         return session
 
-    # -- audio ---------------------------------------------------------------
+    # -- one push-to-talk turn ---------------------------------------------
 
-    def _feed_audio(self, data: bytes) -> None:
-        room = self.audio_cap - len(self.audio)
-        if room <= 0:
-            self.truncated = True
-            return
-        if len(data) > room:
-            self.audio.extend(data[:room])
-            self.truncated = True
-        else:
-            self.audio.extend(data)
-
-    async def _on_utterance_end(self) -> None:
-        audio = bytes(self.audio)
-        truncated = self.truncated
-        self.audio.clear()
-        self.truncated = False
+    async def _on_utterance_end(self, browser_text: str | None = None) -> None:
         if self.turn_task is not None and not self.turn_task.done():
             await self._send({"type": "error", "code": "busy"})
             return
-        if len(audio) < _MIN_AUDIO_BYTES:
-            await self._send({"type": "error", "code": "too_short"})
-            return
-        if self.stt is None or self.tts is None:
+        if self.tts is None:
             await self._send({"type": "error", "code": "voice_disabled"})
             return
         session = self._ensure_session()
-        if truncated:
-            await self._send({"type": "warning", "code": "audio_truncated",
-                              "max_seconds": settings.voice_max_audio_seconds})
         self.turn_task = asyncio.create_task(
-            self._run_turn(audio, session))
-        # Report turn completion/failure to the loop (never crash it).
+            self._run_turn(browser_text, session))
         self.turn_task.add_done_callback(self._turn_done)
 
     def _turn_done(self, task: asyncio.Task) -> None:
@@ -287,21 +253,11 @@ class _VoiceCall:
         if exc is not None:
             log.warning("voice turn failed: %s", exc)
 
-    # -- one push-to-talk turn ------------------------------------------------
-
-    async def _run_turn(self, audio: bytes, session) -> None:
+    async def _run_turn(self, browser_text: str | None, session) -> None:
         await self._send({"type": "stt_start"})
-        try:
-            result = await self.stt.transcribe(pcm16_to_wav(audio, _SAMPLE_RATE))
-        except VoiceProviderError as exc:
-            await self._send({"type": "error", "code": exc.code,
-                              "message": str(exc)})
-            return
-        except Exception as exc:  # engine crash must not kill the call
-            log.warning("voice stt crashed: %s", exc)
-            await self._send({"type": "error", "code": "stt_unavailable"})
-            return
-        text = (result.text or "").strip()
+        # Browser recognition is the sole STT path. Empty/invalid text never
+        # triggers a server-side audio provider or fallback.
+        text = (browser_text or "").strip()
         if not text:
             await self._send({"type": "error", "code": "empty_transcript"})
             return
@@ -342,7 +298,14 @@ class _VoiceCall:
                 return
             # Sentences synthesize independently and vary several dB in
             # loudness; level each clip so playback stays 忽大忽小-free.
-            pcm = normalize_pcm16(result_tts.pcm16, result_tts.sample_rate)
+            try:
+                pcm = normalize_pcm16(result_tts.pcm16, result_tts.sample_rate)
+            except Exception as exc:
+                tts_failures += 1
+                tts_ok = False
+                log.warning("voice tts post-processing failed: %s", exc)
+                await self._send({"type": "tts_error", "code": "tts_unavailable"})
+                return
             await self._send({"type": "tts_start", "seq": seq,
                               "text": sentence,
                               "sample_rate": result_tts.sample_rate})

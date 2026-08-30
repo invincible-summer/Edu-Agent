@@ -2,8 +2,8 @@
 /**
  * 语音通话 hook：push-to-talk 状态机 + 语音 WebSocket 协议客户端。
  *
- * 服务端协议见 backend/app/api/v1/voice.py：JSON 控制/事件帧 + 二进制帧
- * （上行 16 kHz 单声道 PCM16，由 public/voice-pcm-worklet.js 产生；下行
+ * 服务端协议见 backend/app/api/v1/voice.py：JSON 控制/事件帧 + 下行二进制帧
+ * （输入侧只发送最终识别文本；下行
  * 每句一个 tts_start 元事件 + 44.1 kHz PCM16 帧 + tts_end）。播放端按到达
  * 顺序入队，AudioBuffer 按元事件携带的采样率创建（浏览器自动重采样到
  * 输出设备速率）。
@@ -19,11 +19,67 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { API_BASE, voiceTicket } from "@/lib/api";
 import type { Lang } from "@/lib/i18n";
 
+type SpeechRecognitionAlternativeLike = { transcript: string };
+type SpeechRecognitionResultLike = {
+  isFinal: boolean;
+  length: number;
+  [index: number]: SpeechRecognitionAlternativeLike;
+};
+type SpeechRecognitionResultListLike = {
+  length: number;
+  [index: number]: SpeechRecognitionResultLike;
+};
+type SpeechRecognitionEventLike = Event & {
+  resultIndex: number;
+  results: SpeechRecognitionResultListLike;
+};
+type SpeechRecognitionErrorEventLike = Event & {
+  error: string;
+  message?: string;
+};
+type BrowserSpeechRecognition = {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  maxAlternatives: number;
+  start: () => void;
+  stop: () => void;
+  abort: () => void;
+  onresult: ((event: SpeechRecognitionEventLike) => void) | null;
+  onerror: ((event: SpeechRecognitionErrorEventLike) => void) | null;
+  onend: (() => void) | null;
+};
+type BrowserSpeechRecognitionConstructor = new () => BrowserSpeechRecognition;
+
+declare global {
+  interface Window {
+    SpeechRecognition?: BrowserSpeechRecognitionConstructor;
+    webkitSpeechRecognition?: BrowserSpeechRecognitionConstructor;
+  }
+}
+
+function browserSpeechErrorCode(error: string): string | null {
+  switch (error) {
+    case "aborted":
+      return null;
+    case "not-allowed":
+    case "audio-capture":
+      return "voice_permission_denied";
+    case "service-not-allowed":
+    case "network":
+      return "voice_service_unavailable";
+    case "no-speech":
+      return "empty_transcript";
+    default:
+      return "voice_service_unavailable";
+  }
+}
+
 export type VoicePhase =
   | "idle" | "connecting" | "ready" | "recording"
   | "recognizing" | "thinking" | "speaking" | "ended";
 
-/** error 为后端 error 事件 code 或客户端本地码（network/mic）。 */
+/** error 为后端 error 事件 code 或浏览器语音 API 的本地错误码。 */
 export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError }: {
   lang: Lang;
   onSessionBound?: (sessionId: string) => void;
@@ -33,7 +89,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   onAnswerDelta?: (content: string) => void;
   /** 一轮结束（文本流完成，音频可能仍在播放）。 */
   onTurnEnd?: (sessionId: string | null) => void;
-  /** 一轮中途失败（agent_error / stt 崩溃等会中断在途轮次）。 */
+  /** 一轮中途失败（agent_error 或浏览器/协议错误会中断在途轮次）。 */
   onTurnError?: (code: string) => void;
 }) {
   const [phase, setPhase] = useState<VoicePhase>("idle");
@@ -44,9 +100,6 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
 
   const phaseRef = useRef<VoicePhase>("idle");
   const wsRef = useRef<WebSocket | null>(null);
-  const streamRef = useRef<MediaStream | null>(null);
-  const ctxRef = useRef<AudioContext | null>(null);
-  const nodeRef = useRef<AudioWorkletNode | null>(null);
   const playCtxRef = useRef<AudioContext | null>(null);
   const playChainRef = useRef<AudioNode | null>(null);
   const playSrcRef = useRef<AudioBufferSourceNode | null>(null);
@@ -56,6 +109,15 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   const endedByUserRef = useRef(false);
   const sessionIdRef = useRef<string | null>(null);
   const startedAtRef = useRef<number | null>(null);
+  const recognitionRef = useRef<BrowserSpeechRecognition | null>(null);
+  const recognitionGenerationRef = useRef(0);
+  const recognitionFinalTextRef = useRef("");
+  const recognitionSubmittedRef = useRef(false);
+  const recognitionHoldingRef = useRef(false);
+  const recognitionStopRequestedRef = useRef(false);
+  const recognitionFailedRef = useRef(false);
+  const recognitionRestartTimerRef = useRef<number | null>(null);
+  const startRecognitionRef = useRef<(generation: number) => void>(() => undefined);
   const cbRef = useRef({ onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError });
   useEffect(() => {
     cbRef.current = { onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError };
@@ -65,6 +127,134 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
     phaseRef.current = p;
     setPhase(p);
   }, []);
+
+  // ---- browser Speech Recognition -----------------------------------------
+
+  const submitRecognition = useCallback((generation: number, recognition?: BrowserSpeechRecognition) => {
+    if (generation !== recognitionGenerationRef.current || recognitionSubmittedRef.current) return;
+    if (recognition && recognitionRef.current && recognitionRef.current !== recognition) return;
+    recognitionSubmittedRef.current = true;
+    const current = recognitionRef.current;
+    if (current) {
+      current.onresult = null;
+      current.onerror = null;
+      current.onend = null;
+    }
+    recognitionRef.current = null;
+    const text = recognitionFinalTextRef.current.trim();
+    const ws = wsRef.current;
+    if (!ws || ws.readyState !== WebSocket.OPEN) {
+      setError("network");
+      goto("ended");
+      return;
+    }
+    try {
+      ws.send(JSON.stringify({ type: "utterance_end", text }));
+    } catch {
+      setError("network");
+      goto("ended");
+      return;
+    }
+    goto("recognizing");
+  }, [goto]);
+
+  const startRecognition = useCallback((generation: number) => {
+    if (generation !== recognitionGenerationRef.current
+        || !recognitionHoldingRef.current
+        || recognitionFailedRef.current
+        || endedByUserRef.current) return;
+    const Recognition = window.SpeechRecognition ?? window.webkitSpeechRecognition;
+    if (!Recognition) {
+      recognitionFailedRef.current = true;
+      recognitionHoldingRef.current = false;
+      setError("voice_not_supported");
+      goto("ready");
+      return;
+    }
+
+    let recognition: BrowserSpeechRecognition;
+    try {
+      recognition = new Recognition();
+    } catch {
+      recognitionFailedRef.current = true;
+      recognitionHoldingRef.current = false;
+      setError("voice_service_unavailable");
+      goto("ready");
+      return;
+    }
+    recognition.lang = lang === "zh" ? "zh-CN" : "en-US";
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+    const finalizedIndexes = new Set<number>();
+    recognition.onresult = (event) => {
+      if (generation !== recognitionGenerationRef.current || recognitionRef.current !== recognition) return;
+      const startIndex = Math.max(0, event.resultIndex || 0);
+      for (let i = startIndex; i < event.results.length; i++) {
+        const result = event.results[i];
+        if (!result?.isFinal || finalizedIndexes.has(i)) continue;
+        finalizedIndexes.add(i);
+        const transcript = result[0]?.transcript;
+        if (transcript) recognitionFinalTextRef.current += transcript;
+      }
+    };
+    recognition.onerror = (event) => {
+      if (generation !== recognitionGenerationRef.current || recognitionRef.current !== recognition) return;
+      const code = browserSpeechErrorCode(event.error);
+      if (!code) return;
+      recognitionFailedRef.current = true;
+      recognitionHoldingRef.current = false;
+      recognitionStopRequestedRef.current = true;
+      if (recognitionRestartTimerRef.current !== null) {
+        window.clearTimeout(recognitionRestartTimerRef.current);
+        recognitionRestartTimerRef.current = null;
+      }
+      setError(code);
+      if (phaseRef.current === "recording") goto("ready");
+      recognition.onresult = null;
+      recognition.onerror = null;
+      recognition.onend = null;
+      recognitionRef.current = null;
+      try { recognition.abort(); } catch { /* noop */ }
+    };
+    recognition.onend = () => {
+      if (generation !== recognitionGenerationRef.current || recognitionRef.current !== recognition) return;
+      recognitionRef.current = null;
+      recognition.onresult = null;
+      recognition.onerror = null;
+      recognition.onend = null;
+      if (recognitionHoldingRef.current && !recognitionFailedRef.current
+          && !recognitionStopRequestedRef.current && !endedByUserRef.current) {
+        // Chrome/Edge may end a continuous session while the pointer is still
+        // down.  Recreate it asynchronously and retain finalTextRef.
+        if (recognitionRestartTimerRef.current === null) {
+          recognitionRestartTimerRef.current = window.setTimeout(() => {
+            recognitionRestartTimerRef.current = null;
+            startRecognitionRef.current(generation);
+          }, 0);
+        }
+        return;
+      }
+      submitRecognition(generation, recognition);
+    };
+    recognitionRef.current = recognition;
+    try {
+      recognition.start();
+    } catch {
+      recognitionFailedRef.current = true;
+      recognitionHoldingRef.current = false;
+      recognitionRef.current = null;
+      recognition.onresult = null;
+      recognition.onerror = null;
+      recognition.onend = null;
+      setError("voice_service_unavailable");
+      goto("ready");
+    }
+  }, [goto, lang, submitRecognition]);
+
+  useEffect(() => {
+    startRecognitionRef.current = startRecognition;
+  }, [startRecognition]);
 
   // ---- playback queue ------------------------------------------------------
 
@@ -178,9 +368,6 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
       case "tts_error":
         setStatusKey("tts_err");
         break;
-      case "warning":
-        setStatusKey("truncated");
-        break;
       case "turn_end":
         setSpeakingSentence(null);
         if (phaseRef.current !== "speaking" && !playingRef.current) goto("ready");
@@ -195,8 +382,8 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
         if (code === "voice_disabled" || code === "session_not_found") {
           goto("ended");
         } else {
-          // 在途轮次被中断（agent_error / stt 崩溃）需要宿主收尾；
-          // 轮前错误（busy/too_short…）不动聊天流。
+          // In-flight agent/TTS failures need host cleanup; pre-turn protocol
+          // errors such as busy or empty_transcript leave the chat stream alone.
           if (phaseRef.current === "recognizing" || phaseRef.current === "thinking"
               || phaseRef.current === "speaking") {
             cbRef.current.onTurnError?.(code);
@@ -212,20 +399,36 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
 
   // ---- lifecycle -------------------------------------------------------------
 
+  const teardownRecognition = useCallback(() => {
+    recognitionGenerationRef.current += 1;
+    recognitionHoldingRef.current = false;
+    recognitionStopRequestedRef.current = true;
+    recognitionFailedRef.current = true;
+    recognitionSubmittedRef.current = true;
+    if (recognitionRestartTimerRef.current !== null) {
+      window.clearTimeout(recognitionRestartTimerRef.current);
+      recognitionRestartTimerRef.current = null;
+    }
+    const recognition = recognitionRef.current;
+    recognitionRef.current = null;
+    if (recognition) {
+      recognition.onresult = null;
+      recognition.onerror = null;
+      recognition.onend = null;
+      try { recognition.abort(); } catch { /* noop */ }
+    }
+    recognitionFinalTextRef.current = "";
+  }, []);
+
   const teardownTransport = useCallback(() => {
-    streamRef.current?.getTracks().forEach((t) => t.stop());
-    streamRef.current = null;
-    try { nodeRef.current?.disconnect(); } catch { /* noop */ }
-    nodeRef.current = null;
-    void ctxRef.current?.close().catch(() => undefined);
-    ctxRef.current = null;
+    teardownRecognition();
     const ws = wsRef.current;
     wsRef.current = null;
     if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
       ws.onclose = null;
       ws.close();
     }
-  }, []);
+  }, [teardownRecognition]);
 
   const hangUp = useCallback(() => {
     endedByUserRef.current = true;
@@ -240,6 +443,8 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
 
   const start = useCallback(async (sessionId: string | null, workspaceId: string | null) => {
     if (phaseRef.current !== "idle") return; // dev StrictMode 双挂载只允许一条连接
+    recognitionFinalTextRef.current = "";
+    recognitionSubmittedRef.current = false;
     setError(null); setStatusKey(null); setSpeakingSentence(null);
     setCallSeconds(0);
     startedAtRef.current = Date.now();
@@ -298,50 +503,58 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
 
   // ---- push-to-talk -----------------------------------------------------------
 
-  const beginTalk = useCallback(async () => {
+  const beginTalk = useCallback(() => {
     if (phaseRef.current !== "ready") return;
     setError(null);
     setStatusKey(null);
+    recognitionGenerationRef.current += 1;
+    const generation = recognitionGenerationRef.current;
+    recognitionFinalTextRef.current = "";
+    recognitionSubmittedRef.current = false;
+    recognitionHoldingRef.current = true;
+    recognitionStopRequestedRef.current = false;
+    recognitionFailedRef.current = false;
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
-      });
-      streamRef.current = stream;
-      const ctx = new AudioContext();
-      ctxRef.current = ctx;
-      await ctx.audioWorklet.addModule("/voice-pcm-worklet.js");
-      const src = ctx.createMediaStreamSource(stream);
-      const node = new AudioWorkletNode(ctx, "voice-pcm");
-      nodeRef.current = node;
-      node.port.onmessage = (e: MessageEvent<Int16Array>) => {
-        const ws = wsRef.current;
-        if (ws && ws.readyState === WebSocket.OPEN && e.data?.buffer) ws.send(e.data);
-      };
-      // Worklet nodes are pulled only when connected to a destination; a
-      // zero-gain sink keeps the graph live without echoing the mic.
-      const sink = ctx.createGain();
-      sink.gain.value = 0;
-      src.connect(node);
-      node.connect(sink);
-      sink.connect(ctx.destination);
+      const Recognition = window.SpeechRecognition ?? window.webkitSpeechRecognition;
+      if (!Recognition) {
+        recognitionHoldingRef.current = false;
+        recognitionFailedRef.current = true;
+        setError("voice_not_supported");
+        goto("ready");
+        return;
+      }
       ensurePlayCtx(); // resume playback ctx inside the user gesture
-      goto("recording");
+      startRecognition(generation);
+      if (recognitionRef.current) goto("recording");
     } catch {
-      setError("mic");
+      recognitionHoldingRef.current = false;
+      recognitionFailedRef.current = true;
+      setError("voice_service_unavailable");
+      goto("ready");
     }
-  }, [ensurePlayCtx, goto]);
+  }, [ensurePlayCtx, goto, startRecognition]);
 
   const endTalk = useCallback(() => {
     if (phaseRef.current !== "recording") return;
-    streamRef.current?.getTracks().forEach((t) => t.stop());
-    streamRef.current = null;
-    try { nodeRef.current?.disconnect(); } catch { /* noop */ }
-    nodeRef.current = null;
-    void ctxRef.current?.close().catch(() => undefined);
-    ctxRef.current = null;
-    try { wsRef.current?.send(JSON.stringify({ type: "utterance_end" })); } catch { /* noop */ }
+    recognitionHoldingRef.current = false;
+    recognitionStopRequestedRef.current = true;
+    if (recognitionRestartTimerRef.current !== null) {
+      window.clearTimeout(recognitionRestartTimerRef.current);
+      recognitionRestartTimerRef.current = null;
+    }
+    const generation = recognitionGenerationRef.current;
+    const recognition = recognitionRef.current;
+    if (recognition) {
+      try {
+        recognition.stop();
+      } catch {
+        submitRecognition(generation, recognition);
+      }
+    } else {
+      submitRecognition(generation);
+    }
     goto("recognizing");
-  }, [goto]);
+  }, [goto, submitRecognition]);
 
   useEffect(() => () => {
     endedByUserRef.current = true;

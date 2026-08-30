@@ -1,4 +1,4 @@
-"""Voice provider contracts shared by STT and TTS plugins."""
+"""Voice provider contracts for spoken-reply TTS plugins."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -19,17 +19,8 @@ class VoiceProviderError(RuntimeError):
             self.code = code
 
 
-class STTUnavailable(VoiceProviderError):
-    code = "stt_unavailable"
-
-
 class TTSUnavailable(VoiceProviderError):
     code = "tts_unavailable"
-
-
-@dataclass
-class STTResult:
-    text: str
 
 
 @dataclass
@@ -39,15 +30,6 @@ class TTSResult:
     # AudioBuffer at the right rate.
     pcm16: bytes
     sample_rate: int
-
-
-class STTProvider:
-    """Speech to text. Input is a 16 kHz mono 16-bit WAV payload."""
-
-    name = "stt"
-
-    async def transcribe(self, wav: bytes) -> STTResult:
-        raise NotImplementedError
 
 
 class TTSProvider:

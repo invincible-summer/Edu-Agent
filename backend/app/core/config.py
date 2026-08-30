@@ -203,26 +203,13 @@ class Settings:
     # Traces
     trace_dir: str = _resolve_trace_dir()
 
-    # Voice (电话式语音对话): pluggable STT/TTS plugin layer (app/voice).
-    # Defaults are off so existing deployments keep their exact behavior;
-    # the voice endpoints then report unavailable and chat is unaffected.
-    # STT: off | stub | whisper (whisper.cpp subprocess).
-    voice_stt_provider: str = os.getenv("VOICE_STT_PROVIDER", "off").strip().lower()
+    # Voice call: browser SpeechRecognition input + pluggable TTS output.
+    # STT is always performed in the browser; the backend receives final text.
     # TTS: off | stub | melo (MeloTTS sidecar, see backend/voice_sidecar).
     voice_tts_provider: str = os.getenv("VOICE_TTS_PROVIDER", "off").strip().lower()
-    # whisper.cpp binary + ggml model paths (installed by deploy/install_voice.sh).
-    voice_whisper_bin: str = os.getenv("VOICE_WHISPER_BIN", "")
-    voice_whisper_model: str = os.getenv("VOICE_WHISPER_MODEL", "")
-    voice_whisper_lang: str = os.getenv("VOICE_WHISPER_LANG", "zh")
-    voice_whisper_threads: int = max(1, int(os.getenv("VOICE_WHISPER_THREADS", "2")))
-    # 转写初始提示（简体偏置）：whisper 的 zh 解码经常漂到繁体，除 prompt
-    # 偏置外，转写结果还会经 app/voice/zh_simplify.py 的 OpenCC T2S 表兜底。
-    voice_whisper_prompt: str = os.getenv("VOICE_WHISPER_PROMPT", "以下是普通话的句子。")
     # MeloTTS sidecar base URL (localhost only; started by start.sh).
     voice_tts_base_url: str = os.getenv("VOICE_TTS_BASE_URL", "http://127.0.0.1:8130")
     voice_tts_speed: float = float(os.getenv("VOICE_TTS_SPEED", "1.0"))
-    # 单轮语音时长上限（秒），超出截断：保护 4 vCPU 服务器的转写延迟。
-    voice_max_audio_seconds: int = max(5, int(os.getenv("VOICE_MAX_AUDIO_SECONDS", "30")))
 
     # Server
     api_host: str = os.getenv("API_HOST", "127.0.0.1")

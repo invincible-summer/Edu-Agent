@@ -769,8 +769,8 @@ frontend/src/
 | `notes/<sid>/vault.json` + `notes/<sid>/notes/*.md` + `revisions/` + `threads/` + `suggestions.json` | M-Notes 笔记仓库（索引/正文/修订/助手线程/建议队列，见文末 M-Notes 章节） | 账号 |
 | `chat_history/settings/ocr_policy.json` | 教材 OCR 运行策略（管理员） | 全局 |
 | `chat_history/settings/usage_docs.json` | /docs 使用文档（管理员编辑、全员读） | 全局 |
-| `backend/models/voice/` | P10 语音本地模型（whisper ggml 权重 + MeloTTS/HF 缓存）。gitignored 部署侧资源，非用户数据：不进 orphan 扫描，也不入测试沙箱清单 | 全局（本地资源） |
-| `backend/vendor/` + `backend/voice_sidecar/.venv/` | P10 语音引擎（whisper.cpp 源码+编译产物、MeloTTS 源码）与 TTS sidecar 独立 venv（CPU torch）。gitignored | 全局（本地资源） |
+| `backend/models/voice/` | P10 MeloTTS/HF 模型缓存。gitignored 部署侧资源，非用户数据：不进 orphan 扫描，也不入测试沙箱清单 | 全局（本地资源） |
+| `backend/vendor/` + `backend/voice_sidecar/.venv/` | P10 MeloTTS 源码与独立 TTS sidecar venv（CPU torch）。gitignored | 全局（本地资源） |
 
 以上账号/运行数据默认全部由 `.gitignore` 覆盖；公共教材库例外为 `chat_history/library/public*`、`chat_history/library/data/public/` 与 `knowledge/custom/public/`，它们随项目版本发布。共享 Chroma 数据库仍不提交，因为同一数据库可能同时承载公共与私有向量，可由公共教材文本重建。
 
@@ -1553,138 +1553,105 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 
 ---
 
-## P10 电话式语音对话：可插拔 STT/TTS（2026-08-30）
+## P10 电话式语音对话：浏览器 Speech Recognition + MeloTTS（2026-08-30）
 
 ### P10.1 形态与边界
 
-- **交互**：push-to-talk。按住说话（AudioWorklet 采集 → mono 16 kHz PCM16 帧上行）、
-  松手成轮；老师回答**按句合成、逐句推送**。目标环境为 4 vCPU / 8 GB RAM；
-  首句延迟和 RTF 需在部署 CPU 上实测，整段合成不作为单次阻塞任务。
-- **会话一致性**：语音轮次直接进现有聊天会话——服务端把转写文本喂给
-  `run_turn`（与 `/chat/stream` 同一条 Supervisor 管线），会话盖章/所有权/
-  workspace 绑定语义与 `chat_stream` 完全一致；无会话则新建并回传 `session_bound`。
-  记忆、RAG、教学层对语音轮零特判。
-- **默认全关**：`VOICE_STT_PROVIDER`/`VOICE_TTS_PROVIDER` 默认 off，语音入口
-  隐藏，其余功能零影响（fail-open，同 embedding 轨哲学）。
-- **许可证**：provider 接口与制品许可证是两个独立层次。当前默认的
-  `whisper.cpp`/ggml/Whisper `ggml-small-q5_1.bin`、MeloTTS 代码与
-  MeloTTS-Chinese 权重按已核查的 MIT 信息管理；中文前端 BERT 与 vendored
-  OpenCC 转换词典按 Apache-2.0 管理。MIT/Apache-2.0 通常允许商业使用、修改、
-  再分发和闭源集成，但分发时仍需保留版权/许可证，Apache-2.0 还要处理 NOTICE、
-  修改声明和专利条款。代码仓库许可不能替代模型权重核查；完整记录、revision、
-  实际文件名和发布清单见 `docs/VOICE_LICENSES.md`，许可文本见 `docs/licenses/`。
+- **唯一输入路径**：push-to-talk 按住时由浏览器原生
+  `SpeechRecognition` / `webkitSpeechRecognition` 识别，松手后只发送最终文本；
+  浏览器不支持该 API 时显示明确错误，不启动服务器识别回退。
+- **后端边界**：后端不接收电话输入 PCM，不安装、不加载、不启动任何 STT 引擎；
+  WebSocket 只接收 `utterance_end.text`。语音文本进入现有 `run_turn`，与普通聊天
+  共用会话、记忆、RAG、工具和持久化逻辑。
+- **输出路径**：回答按句切分，MeloTTS sidecar 逐句合成 WAV，后端转为 PCM16
+  下发；前端按 `tts_start` 携带的采样率顺序播放，并保留停止播报能力。
+- **隐私/许可边界**：浏览器识别可能调用浏览器厂商在线服务。该平台 API 和厂商
+  服务不是 Edu_Agent 的 MIT 发行物，商业、隐私、地域和可用性条款由实际浏览器
+  厂商决定；详细组件许可证见 `docs/VOICE_LICENSES.md`。
 
-### P10.2 插件层（backend/app/voice/）
+### P10.2 后端语音模块
 
-仿 `core/embedding.py` 的「settings 开关 + 工厂缓存 + 可选 None + fail-open」：
+- `backend/app/api/v1/voice.py`：一次性 ticket、WebSocket 会话绑定、浏览器最终文本
+  事件、`stt_start` / `stt_result` / `answer_delta` / 工具进度 / TTS / `turn_end`。
+  二进制上行帧返回 `binary_audio_unsupported`，不会缓存、转码或触发 STT。
+- `backend/app/voice/base.py`：仅保留 TTS provider contract、`VoiceProviderError`
+  和 `TTSResult`。
+- `backend/app/voice/tts/`：`stub` 用于回归测试，`melo` 通过 localhost HTTP
+  调用 sidecar；`sentences.py`、`speak_text.py`、`loudness.py` 和 `wav.py` 分别负责
+  流式切句、Markdown/LaTeX 朗读清洗、响度归一和 sidecar WAV 解码。
+- 服务器端语音识别包、输入 PCM 缓冲和旧繁简转换数据均已移除。
 
-- `base.py`：`STTProvider.transcribe(wav)->text`、`TTSProvider.synthesize(text)->(pcm16, sample_rate)`、
-  `VoiceProviderError(code)`（映射 WS error 事件的 code）。
-- STT 实现：`stt/whisper_cpp.py`（子进程 `whisper-cli -l zh -nt`，默认
-  `VOICE_WHISPER_THREADS=2`，进程级 `asyncio.Semaphore(1)` 串行化，在 4 vCPU
-  目标机上按延迟/内存实测调至 3–4）、`stt/stub.py`。主 venv 零新增依赖。
-  简体偏置：`--prompt` 携带 `VOICE_WHISPER_PROMPT`（默认「以下是普通话的句子。」），
-  转写结果再经 `zh_simplify.py`（vendored OpenCC T2S 词典，词组最长匹配优先——
-  乾淨→干净而乾隆→乾隆——再单字兜底）重写为简体；whisper zh 解码漂繁体的问题
-  双层修复。
-- TTS 实现：`tts/melotts.py`（HTTP 调 sidecar）、`tts/stub.py`（蜂鸣 PCM16）。
-- 文本处理：`sentences.py`（流式取句 `take_complete`：中文终止符无条件断句、
-  ASCII 句点仅在非「数字/字母后」断句，>120 字按标点强制再切）、
-  `speak_text.py`（markdown/LaTeX → 可朗读文本：`\frac{a}{b}`→「b分之a」、
-  `^2`→「的2次方」、代码块→占位话术等。改版后按语义分阶段：带参命令
-  `\frac/\sqrt[n]/\binom/\bar/\vec` 等用嵌套花括号感知的正则在不动点循环里
-  由内向外坍缩；`^\circ`→「度」、`50\%`→「百分之50」先于通用上标规则；
-  `\sum_{i=1}^{n}`→「求和，从i等于1到n」；三角/对数函数与集合论符号映射
-  中文读法；希腊字母读中文名（阿尔法/贝塔…）；未知 `\command` 保留字母而非
-  删除）。
-- 响度归一：`loudness.py`——MeloTTS 逐句独立合成、句间响度可差数 dB，每句
-  PCM 下发前统一校准到共用 RMS 目标（≈-16.5 dBFS，增益上限 +12 dB 防止把
-  气声放大成噪音），峰值超 ceiling 整体回拉防削波，句首尾 8 ms 线性淡入淡出
-  消边界爆音；前端播放链再串 DynamicsCompressor + makeup gain 实时抹平。
+### P10.3 WebSocket 契约
 
-### P10.3 WebSocket 端点（api/v1/voice.py）
+浏览器先调用 `POST /api/v1/voice/ticket`，再用单次 `?ticket=` 建立 WebSocket；
+非浏览器客户端也可以直接带 Authorization header。协议如下：
 
-浏览器 WS 带不了 Authorization 头，而仓库规则是 JWT 不进 query → **单次
-ticket**：`POST /voice/ticket`（带 JWT）→ 内存表 60s 单次票据；WS 握手
-`?ticket=` 校验并消费（非浏览器客户端可直接带 Authorization 头）。
-
-协议（上行 PCM16/16k 二进制帧；下行 JSON 事件 + PCM16/44.1k 二进制帧）：
-
-```
-C→S {"type":"start","session_id","workspace_id","lang"}   S→C session_bound
-C→S <binary 帧>×N + {"type":"utterance_end"}
-S→C stt_start → stt_result{text} → step/tool_* → answer_delta×N
-     → (每凑满一句) tts_start{seq,text,sample_rate} + <binary> + tts_end
-     → turn_end{session_id, tts_ok}
-C→S {"type":"end"} → S→C bye
+```text
+C→S {"type":"start","session_id":string|null,"workspace_id":string|null,"lang":string}
+S→C {"type":"session_bound","session_id":string}
+C→S {"type":"utterance_end","text":string}
+S→C {"type":"stt_start"}
+S→C {"type":"stt_result","text":string}
+S→C step/tool_* / {"type":"answer_delta","content":string}
+S→C {"type":"tts_start","seq":number,"text":string,"sample_rate":number}
+S→C <binary PCM16> / {"type":"tts_end","seq":number}
+S→C {"type":"turn_end","session_id":string,"tts_ok":boolean}
+C→S {"type":"end"}  S→C {"type":"bye"}
 ```
 
-护栏：每连接同时一轮（busy）、单轮 ≤`VOICE_MAX_AUDIO_SECONDS`（截断+warning）、
-TTS 失败一次即转文字-only（`tts_error`，轮次不废）、thinking 增量**不转发**
-（CoT 不出盒）。error code 语义与前端 i18n key 一一对应。
+同一连接只允许一轮并行执行；重复提交返回 `busy`，空文本返回
+`empty_transcript`，TTS sidecar 失败时保留文字回答并发送 `tts_error`。思考内容
+不通过电话协议输出。
 
-### P10.4 TTS sidecar（backend/voice_sidecar/，独立 venv）
+### P10.4 MeloTTS sidecar
 
-MeloTTS 没有官方 HTTP 服务（只有 Python 类），sidecar 用 FastAPI 包
-`melo.api.TTS(language="ZH")`（即 ZH_MIX_EN 前端）：`GET /health`、
-`POST /tts {text, speed}` → WAV(44.1k)。要点：
+`backend/voice_sidecar/` 是独立 FastAPI 进程，挂载固定 revision 的
+`backend/vendor/MeloTTS`，调用 `TTS(language="ZH", device="cpu")`。接口为：
 
-- 独立 venv 装 CPU torch（主 venv 保持零 ML 依赖）；`melo_bootstrap.py`
-  以 sys.path 挂载 `backend/vendor/MeloTTS`（避开其 setup.py 的 unidic 下载
-  钩子），并在导入前 stub 掉 pykakasi(GPLv3)/num2words(LGPL)——它们只在
-  melo 的模块导入期被引用、中文合成永不执行。
-- 运行期 `HF_HUB_OFFLINE=1 + HF_HOME=backend/models/voice/hf`（安装时预热
-  下载 checkpoint.pth + bert-base-multilingual-uncased + 各语言 tokenizer）。
-- `start.sh` 在 `VOICE_TTS_PROVIDER=melo` 时自动拉起（端口 8130/8131/8132
-  回退，PID/端口落 /tmp/edu_voice_*；缺失则警告跳过，主服务照常）。
-  生产可用 `deploy/edu-voice-sidecar.service` 托管。nginx 需为
-  `/api/v1/voice/` 加 Upgrade/Connection 透传（模板已更新）。
+- `GET /health`：sidecar 健康检查；
+- `POST /tts`，请求 `{ "text": string, "speed": number }`，返回 WAV(44.1 kHz)。
+
+`deploy/install_voice.sh` 只准备 CPU-only PyTorch、当前中文 MeloTTS 直接运行依赖、
+MeloTTS 源码和模型缓存，并执行一次中文 warmup。`melo_bootstrap.py` 对未启用的
+非中文 cleaner/BERT backend 使用 fail-loud stubs，避免安装日/韩语言包和下载
+法/西/日/韩模型。主服务在
+`VOICE_TTS_PROVIDER=melo` 时自动拉起 sidecar；主服务本身不包含 ML/STT 依赖。
+安装和许可证边界分别见 `backend/voice_sidecar/requirements.txt` 与
+`docs/licenses/VOICE_THIRD_PARTY_NOTICES.md`。
 
 ### P10.5 前端
 
-- `public/voice-pcm-worklet.js`：AudioWorklet 降采样 mono 16 kHz PCM16
-  （~10ms 批），零依赖静态资源。
-- `lib/voice/useVoiceCall.ts`：ticket→WS→状态机（idle/connecting/ready/
-  recording/recognizing/thinking/speaking/ended）+ 顺序播放队列
-  （AudioBuffer 按事件携带采样率创建，浏览器自动重采样；播放链串
-  DynamicsCompressor+makeup gain）+ 停止播报 + 通话时长计时。沉浸式改版后
-  不再持有对话文本：`stt_result/answer_delta/turn_end/轮内 error` 以回调
-  （`onTurnBegin/onAnswerDelta/onTurnEnd/onTurnError`）交给宿主写入聊天
-  store；`tts_start` 的原始句子暴露为 `speakingSentence` 供板书渲染。
-- `components/chat/VoiceCallLayer.tsx`：沉浸式通话层（替代原 VoiceCallModal
-  弹窗）——左上角「小手机」指示器（迷你手机+声波+时长，AnchoredPopover
-  内停止播报/挂断）、中上部虚化「板书」小黑板（`tts_start` 句子含公式时以
-  KaTeX 渲染，讲完延迟淡出）、底部控制条（按住说话/停止播报/挂断）。语音轮
-  经回调写入 `useChatStore`（世代守卫 + 50ms 节流，与 handleSend 同构），
-  页面消息流照常显示；入口在 chat 页右上角电话按钮，依据 `GET /voice/status`
-  显隐；通话期间输入框只隐藏不卸载（草稿保留）；挂断后刷新会话列表，若通话
-  会话=当前会话则重载消息（`loadSession`→`loadFull`）。
-- 原 Web Speech 单句麦克风（`useSpeech.ts`）已移除：语音能力统一收敛到电话
-  模式，避免两套 STT 入口并存的权限/语言偏好不一致。
+`lib/voice/useVoiceCall.ts` 维护
+`idle/connecting/ready/recording/recognizing/thinking/speaking/ended` 状态机：
 
-### P10.6 资源与部署（4 vCPU / 8 GB RAM / 8 GB 盘）
+- 识别参数固定为 `continuous=true`、`interimResults=true`、`maxAlternatives=1`，
+  语言使用 `zh-CN` 或 `en-US`；只累积 `isFinal` 结果；
+- 浏览器提前结束连续识别时，在按钮仍按住的情况下异步重启并保留已累积文本；
+- 松手、识别错误、权限拒绝、空文本、重复 `onend`、挂断和组件卸载均幂等处理；
+- 输入侧不创建服务器输入音频采集链；播放侧仍
+  使用 AudioContext 播放下行 TTS PCM；
+- `VoiceCallLayer.tsx` 将转写和回答增量写入现有 chat store，板书只消费
+  `tts_start` 的原始句子，通话结束后刷新会话。
 
-- 默认安装模型：`ggml-small-q5_1.bin`，约 180–190 MiB；whisper.cpp 源码/构建
-  加模型约 0.5GB。sidecar venv 约 1.7–2GB，HF 模型缓存约 0.8–1.0GB；全程
-  `--no-cache-dir`，`deploy/install_voice.sh` 幂等可重跑，系统盘仍需为项目、临时
-  文件和编译缓存留余量。
-- 内存：主服务约 1GB；small 量化 STT 按 0.6–1.0GB 峰值预留；MeloTTS 常驻约
-  1.5–2.5GB。4 vCPU / 8GB RAM 适合低并发，实际峰值需在目标机器实测。
-- STT 默认 `VOICE_WHISPER_THREADS=2`，可在 4 vCPU 机器按延迟/内存实测调至 3–4；
-  `whisper_cpp.py` 仍以 `asyncio.Semaphore(1)` 串行化 STT 进程。TTS sidecar
-  默认 `OMP_NUM_THREADS=2`、`MKL_NUM_THREADS=2`，按句合成、逐句推送，避免同时
-  运行多条模型推理。
-- 模型路径和名称可经 `.env` 覆盖，但切换 ASR 模型、量化文件或 TTS 权重时必须
-  重新核查权重许可证并更新 `docs/VOICE_LICENSES.md`；实现同一 Provider 接口不
-  会自动继承 Whisper 的模型许可。SenseVoice/Paraformer 等替代方案须先完成
-  独立核查，不能仅凭代码仓库公开就作为默认模型。
+### P10.6 资源与部署
 
-### P10.7 测试（backend/tests/test_voice.py，继承 StorageSandboxTestCase）
+- 浏览器 STT 不占用服务器语音识别模型内存，也不需要服务器录音缓存；部署侧仅需
+  MeloTTS sidecar 的 CPU venv 与 Hugging Face 模型缓存。
+- `backend/models/voice/` 只作为 MeloTTS/HF 部署缓存，`backend/vendor/` 中只保留
+  MeloTTS 源码；这些资源均 gitignored，不属于用户运行数据。
+- `start.sh` 在 `VOICE_TTS_PROVIDER=melo` 时自动拉起 sidecar，并为端口回退、PID
+  和健康检查保留现有逻辑；nginx 仍需为 `/api/v1/voice/` 透传 WebSocket Upgrade。
+- 变更 MeloTTS revision、模型、语言或 sidecar 依赖时，必须同步更新许可证审计、
+  模型来源/revision/hash 和实际发布 SBOM。
 
-切句/朗读清洗（含度数/函数名/嵌套分数/`\mathbb`/百分号/n 次根号/`\text` 保内容/
-无穷/求和边界/向量与拔帽）/WAV 往返/工厂 fail-open/繁→简（词组歧义 乾隆 vs 乾淨）/
-响度归一（大小声句同 RMS、增益上限、首尾淡出为零、静音不动）单测；WS 端到端用
-stub providers + patch `chat_agent.run_turn` 罐头事件：start→音频→utterance_end→
-断言 stt_result/answer_delta/tts 三元组×2/turn_end/会话落盘在沙箱；ticket 单次
-性、坏 ticket 4401、header 直连鉴权、too_short、截断 warning、外来会话
-404 语义、end 优雅关闭。
+### P10.7 测试
+
+`backend/tests/test_voice.py` 覆盖切句、朗读清洗、TTS WAV 解码、响度归一、ticket、
+鉴权、会话所有权、会话持久化和 TTS fail-open；WebSocket 回归使用 stub TTS 与
+canned `run_turn`，验证：
+
+- status 固定返回 `stt=browser`；
+- 无 PCM 的 `utterance_end.text` 能完成 `stt_result`、回答增量、TTS 和 `turn_end`；
+- 空文本返回 `empty_transcript`；
+- 二进制上行返回 `binary_audio_unsupported` 且不触发 STT；
+- 重复轮次返回 `busy`，坏 ticket、header 直连鉴权、外来会话和 `end` 语义不变。

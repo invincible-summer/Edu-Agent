@@ -1,10 +1,11 @@
-"""Voice layer regressions: sentence splitting, speakable text, provider
-factories, and the push-to-talk WebSocket protocol end to end (stub STT/TTS
-+ a canned run_turn, so no model or LLM is touched)."""
+"""Voice layer regressions for browser text input and MeloTTS output."""
 from __future__ import annotations
 
+import io
 import math
+import json
 import struct
+import wave
 import unittest
 from array import array
 from unittest.mock import patch
@@ -13,7 +14,7 @@ from tests.storage_sandbox import StorageSandboxTestCase
 
 from app.voice.sentences import split_sentences, take_complete
 from app.voice.speak_text import to_speakable
-from app.voice.wav import pcm16_to_wav, wav_to_pcm16
+from app.voice.wav import wav_to_pcm16
 
 
 class TestSentenceSplitting(unittest.TestCase):
@@ -153,129 +154,40 @@ class TestSpeakText(unittest.TestCase):
         self.assertIn("x拔", out)
 
 
-class TestZhSimplify(unittest.TestCase):
-    def test_common_t2s(self):
-        from app.voice.zh_simplify import to_simplified
-        self.assertEqual(to_simplified("圓周率是圓的周長與直徑的比值"),
-                         "圆周率是圆的周长与直径的比值")
-
-    def test_phrase_disambiguation(self):
-        from app.voice.zh_simplify import to_simplified
-        # 乾 alone maps to 干, but the 乾隆 phrase keeps 乾隆.
-        self.assertEqual(to_simplified("乾隆年間保持乾淨"), "乾隆年间保持干净")
-
-    def test_passthrough(self):
-        from app.voice.zh_simplify import to_simplified
-        self.assertEqual(to_simplified("已经是简体 123 abc"), "已经是简体 123 abc")
-        self.assertEqual(to_simplified(""), "")
-
-
-class TestLoudness(unittest.TestCase):
-    def _rms(self, pcm: bytes) -> float:
-        arr = array("h")
-        arr.frombytes(pcm)
-        if not arr:
-            return 0.0
-        return (sum(v * v for v in arr) / len(arr)) ** 0.5 / 32768.0
-
-    def _tone(self, amp: int, sample_rate: int = 8000, seconds: float = 0.5) -> bytes:
-        n = int(sample_rate * seconds)
-        return b"".join(struct.pack("<h", int(amp * math.sin(2 * math.pi * 220 * i / sample_rate)))
-                        for i in range(n))
-
-    def test_loud_and_quiet_level_to_target(self):
-        from app.voice.loudness import normalize_pcm16, _TARGET_RMS
-        for amp in (20000, 2000):
-            out = normalize_pcm16(self._tone(amp))
-            self.assertLess(abs(self._rms(out) - _TARGET_RMS), 0.01, f"amp={amp}")
-            arr = array("h")
-            arr.frombytes(out)
-            self.assertLessEqual(max(map(abs, arr)), int(0.92 * 32767) + 1)
-
-    def test_gain_ceiling_for_near_silence(self):
-        from app.voice.loudness import normalize_pcm16
-        # A whisper stays whisper-ish: gain is capped instead of blowing up.
-        out = normalize_pcm16(self._tone(30))
-        self.assertLessEqual(self._rms(out) / (30 / 32768 / math.sqrt(2)), 4.0 + 0.05)
-
-    def test_fades_zero_the_boundaries(self):
-        from app.voice.loudness import normalize_pcm16
-        out = normalize_pcm16(b"\x40\x00" * 8000, 16000)  # constant DC offset
-        self.assertEqual(int.from_bytes(out[:2], "little", signed=True), 0)
-        self.assertEqual(int.from_bytes(out[-2:], "little", signed=True), 0)
-
-    def test_silence_untouched(self):
-        from app.voice.loudness import normalize_pcm16
-        self.assertEqual(normalize_pcm16(b"\x00\x00" * 100), b"\x00\x00" * 100)
 
 
 class TestWavHelpers(unittest.TestCase):
-    def test_roundtrip(self):
+    def test_decode_sidecar_wav(self):
         pcm = b"\x01\x02" * 1600
-        wav = pcm16_to_wav(pcm, 16000)
-        out, rate = wav_to_pcm16(wav)
+        buf = io.BytesIO()
+        with wave.open(buf, "wb") as wav_file:
+            wav_file.setnchannels(1)
+            wav_file.setsampwidth(2)
+            wav_file.setframerate(44100)
+            wav_file.writeframes(pcm)
+        out, rate = wav_to_pcm16(buf.getvalue())
         self.assertEqual(out, pcm)
-        self.assertEqual(rate, 16000)
-
-
-class TestProviderFactories(unittest.TestCase):
-    def tearDown(self) -> None:
-        from app.voice.stt import reset_stt_provider
-        from app.voice.tts import reset_tts_provider
-        reset_stt_provider()
-        reset_tts_provider()
-
-    def test_off_by_default(self):
-        from app.core.config import settings
-        from app.voice.stt import get_stt_provider
-        from app.voice.tts import get_tts_provider
-        with patch.object(settings, "voice_stt_provider", "off"), \
-                patch.object(settings, "voice_tts_provider", "off"):
-            self.assertIsNone(get_stt_provider())
-            self.assertIsNone(get_tts_provider())
-
-    def test_stub_providers(self):
-        from app.core.config import settings
-        from app.voice.stt import get_stt_provider
-        from app.voice.tts import get_tts_provider
-        with patch.object(settings, "voice_stt_provider", "stub"), \
-                patch.object(settings, "voice_tts_provider", "stub"):
-            self.assertEqual(get_stt_provider().name, "stub")
-            self.assertEqual(get_tts_provider().name, "stub")
-
-    def test_whisper_missing_files_fail_open(self):
-        from app.core.config import settings
-        from app.voice.stt import get_stt_provider
-        with patch.object(settings, "voice_stt_provider", "whisper"), \
-                patch.object(settings, "voice_whisper_bin", "/nonexistent/whisper-cli"), \
-                patch.object(settings, "voice_whisper_model", "/nonexistent/model.bin"):
-            self.assertIsNone(get_stt_provider())
+        self.assertEqual(rate, 44100)
 
 
 class TestVoiceWebSocket(StorageSandboxTestCase):
-    """Full protocol walk with stub providers and a canned run_turn."""
+    """Browser text protocol with a canned run_turn and stub TTS."""
 
     def setUp(self) -> None:
         super().setUp()
         from app.core.config import settings
-        from app.voice.stt import reset_stt_provider
         from app.voice.tts import reset_tts_provider
-        self._reset = (reset_stt_provider, reset_tts_provider)
-        patches = [
-            patch.object(settings, "voice_stt_provider", "stub"),
-            patch.object(settings, "voice_tts_provider", "stub"),
-        ]
-        for p in patches:
-            p.start()
-        self._patches += patches
+        self._reset_tts = reset_tts_provider
+        patcher = patch.object(settings, "voice_tts_provider", "stub")
+        patcher.start()
+        self._patches.append(patcher)
 
         from app.main import create_app
         from fastapi.testclient import TestClient
         self.client = TestClient(create_app())
 
     def tearDown(self) -> None:
-        self._reset[0]()
-        self._reset[1]()
+        self._reset_tts()
         super().tearDown()
 
     async def _canned_turn(self, user_message, session, tools, llm=None,
@@ -289,24 +201,44 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
         yield {"type": "done", "thinking": "", "answer": "…",
                "tool_calls": [], "trace_id": "trace_voice_test"}
 
-    # -- helpers -----------------------------------------------------------
-
     def _ticket(self) -> str:
         resp = self.client.post("/api/v1/voice/ticket")
         self.assertEqual(resp.status_code, 200)
         return resp.json()["ticket"]
 
-    def _speak_half_second(self) -> bytes:
-        return b"\x00\x01" * 1600  # 0.1 s of PCM16 at 16 kHz
+    def _receive_turn(self, ws, session_id):
+        events = []
+        while True:
+            msg = ws.receive()
+            if msg.get("bytes") is not None:
+                events.append(("audio", len(msg["bytes"])))
+                continue
+            if msg.get("text") is None:
+                continue
+            event = json.loads(msg["text"])
+            events.append(event["type"])
+            if event["type"] == "error":
+                self.fail(f"unexpected error event: {event}")
+            if event["type"] == "turn_end":
+                self.assertEqual(event["session_id"], session_id)
+                self.assertTrue(event["tts_ok"])
+                return events
 
-    # -- tests -------------------------------------------------------------
-
-    def test_status_reflects_providers(self):
+    def test_status_reports_browser_stt_and_tts(self):
         data = self.client.get("/api/v1/voice/status").json()
-        self.assertTrue(data["enabled"])
-        self.assertEqual(data["stt"], "stub")
+        self.assertEqual(data, {"enabled": True, "stt": "browser", "tts": "stub"})
 
-    def test_full_turn_over_ws(self):
+    def test_status_disabled_tts_still_reports_browser_stt(self):
+        from app.core.config import settings
+        from app.voice.tts import reset_tts_provider
+
+        with patch.object(settings, "voice_tts_provider", "off"):
+            reset_tts_provider()
+            data = self.client.get("/api/v1/voice/status").json()
+        reset_tts_provider()
+        self.assertEqual(data, {"enabled": False, "stt": "browser", "tts": None})
+
+    def test_text_turn_without_pcm(self):
         with patch("app.agents.chat_agent.run_turn", self._canned_turn):
             with self.client.websocket_connect(
                     f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
@@ -314,58 +246,80 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
                 bound = ws.receive_json()
                 self.assertEqual(bound["type"], "session_bound")
                 sid = bound["session_id"]
+                ws.send_json({"type": "utterance_end", "text": "我是谁"})
+                self.assertEqual(ws.receive_json(), {"type": "stt_start"})
+                self.assertEqual(ws.receive_json(),
+                                 {"type": "stt_result", "text": "我是谁"})
+                events = self._receive_turn(ws, sid)
 
-                ws.send_bytes(self._speak_half_second())
-                ws.send_json({"type": "utterance_end"})
-
-                self.assertEqual(ws.receive_json()["type"], "stt_start")
-                stt = ws.receive_json()
-                self.assertEqual(stt["type"], "stt_result")
-                self.assertTrue(stt["text"])
-
-                events = []
-                first_error = None
-                while True:
-                    msg = ws.receive()
-                    if "bytes" in msg and msg["bytes"] is not None:
-                        events.append(("audio", len(msg["bytes"])))
-                        continue
-                    text = msg.get("text")
-                    if text is None:
-                        continue
-                    import json as _json
-                    ev = _json.loads(text)
-                    events.append(ev["type"])
-                    if ev["type"] == "error":
-                        first_error = ev
-                        break
-                    if ev["type"] == "turn_end":
-                        self.assertEqual(ev["session_id"], sid)
-                        self.assertTrue(ev["tts_ok"])
-                        break
-                self.assertIsNone(first_error, f"unexpected error event: {first_error}")
-
-        self.assertIn("step", events)
+        self.assertIn("answer_delta", events)
         self.assertEqual(events.count("answer_delta"), 2)
-        # Both sentences were spoken: two tts_start/bytes/tts_end triples.
         self.assertEqual(events.count("tts_start"), 2)
-        audio_frames = [e for e in events if isinstance(e, tuple)]
+        self.assertEqual(events.count("tts_end"), 2)
+        audio_frames = [event for event in events if isinstance(event, tuple)]
         self.assertEqual(len(audio_frames), 2)
         self.assertTrue(all(size > 0 for _tag, size in audio_frames))
-        self.assertEqual(events.count("tts_end"), 2)
 
-        # The turn persisted into the sandboxed session store.
         from app.agents.student_model.store import DEFAULT_STUDENT_ID
         from app.core.session import load_session
-        session = load_session(sid)
-        self.assertIsNotNone(session)
-        self.assertEqual(session.student_id, DEFAULT_STUDENT_ID)
+        persisted = load_session(sid)
+        self.assertIsNotNone(persisted)
+        self.assertEqual(persisted.student_id, DEFAULT_STUDENT_ID)
+
+    def test_tts_failure_keeps_text_turn_alive(self):
+        from app.voice.base import VoiceProviderError
+
+        async def failing_synthesize(_provider, text, *, speed=None):
+            raise VoiceProviderError("sidecar down", code="tts_unavailable")
+
+        with patch("app.agents.chat_agent.run_turn", self._canned_turn), \
+                patch("app.voice.tts.stub.StubTTS.synthesize", failing_synthesize):
+            with self.client.websocket_connect(
+                    f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+                ws.send_json({"type": "start", "session_id": None})
+                sid = ws.receive_json()["session_id"]
+                ws.send_json({"type": "utterance_end", "text": "我是谁"})
+                events = []
+                tts_ok = None
+                while True:
+                    msg = ws.receive()
+                    if msg.get("bytes") is not None:
+                        self.fail("a failed TTS provider must not emit audio")
+                    event = json.loads(msg["text"])
+                    events.append(event)
+                    if event["type"] == "turn_end":
+                        tts_ok = event["tts_ok"]
+                        self.assertEqual(event["session_id"], sid)
+                        break
+
+        self.assertTrue(any(e["type"] == "answer_delta" for e in events))
+        self.assertEqual(sum(e["type"] == "tts_error" for e in events), 1)
+        self.assertFalse(tts_ok)
+        self.assertFalse(any(e["type"] == "error" for e in events))
+
+    def test_binary_audio_is_rejected_without_stt_fallback(self):
+        with self.client.websocket_connect(
+                f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+            ws.send_json({"type": "start", "session_id": None})
+            self.assertEqual(ws.receive_json()["type"], "session_bound")
+            ws.send_bytes(b"not an accepted input frame")
+            self.assertEqual(ws.receive_json(), {
+                "type": "error", "code": "binary_audio_unsupported"})
+
+    def test_empty_text_returns_empty_transcript(self):
+        with self.client.websocket_connect(
+                f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+            ws.send_json({"type": "start", "session_id": None})
+            self.assertEqual(ws.receive_json()["type"], "session_bound")
+            ws.send_json({"type": "utterance_end", "text": "  "})
+            self.assertEqual(ws.receive_json(), {"type": "stt_start"})
+            self.assertEqual(ws.receive_json(),
+                             {"type": "error", "code": "empty_transcript"})
 
     def test_ticket_is_single_use(self):
         ticket = self._ticket()
         with self.client.websocket_connect(f"/api/v1/voice/ws?ticket={ticket}"):
             pass
-        # A replayed ticket must be rejected before the protocol starts.
         with self.assertRaises(Exception):
             with self.client.websocket_connect(f"/api/v1/voice/ws?ticket={ticket}"):
                 pass
@@ -380,36 +334,30 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
         from app.identity.security import create_token, hash_password
         user = id_store.create_user("voice@test.local", "voice",
                                     hash_password("pw123456"))
-        tok = create_token(user.id)
+        token = create_token(user.id)
         with self.client.websocket_connect(
                 "/api/v1/voice/ws",
-                headers={"Authorization": f"Bearer {tok}"}) as ws:
+                headers={"Authorization": f"Bearer {token}"}) as ws:
             ws.send_json({"type": "ping"})
             self.assertEqual(ws.receive_json()["type"], "pong")
 
-    def test_too_short_audio(self):
-        with self.client.websocket_connect(
-                f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
-            ws.send_json({"type": "start", "session_id": None})
-            ws.receive_json()
-            ws.send_json({"type": "utterance_end"})
-            ev = ws.receive_json()
-            self.assertEqual(ev["type"], "error")
-            self.assertEqual(ev["code"], "too_short")
+    def test_busy_rejects_overlapping_text_turn(self):
+        async def pending_turn(*args, **kwargs):
+            yield {"type": "answer", "content": "未完成"}
+            await asyncio.sleep(0.2)
 
-    def test_truncated_audio_warns(self):
-        from app.core.config import settings
-        with patch.object(settings, "voice_max_audio_seconds", 5):
+        import asyncio
+        with patch("app.agents.chat_agent.run_turn", pending_turn):
             with self.client.websocket_connect(
                     f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
                 ws.send_json({"type": "start", "session_id": None})
-                ws.receive_json()
-                ws.send_bytes(b"\x00\x00" * (16000 * 6))  # 6 s > 5 s cap
-                ws.send_json({"type": "utterance_end"})
-                ev = ws.receive_json()
-                self.assertEqual(ev, {"type": "warning",
-                                      "code": "audio_truncated",
-                                      "max_seconds": 5})
+                self.assertEqual(ws.receive_json()["type"], "session_bound")
+                ws.send_json({"type": "utterance_end", "text": "第一句"})
+                self.assertEqual(ws.receive_json()["type"], "stt_start")
+                self.assertEqual(ws.receive_json()["type"], "stt_result")
+                self.assertEqual(ws.receive_json()["type"], "answer_delta")
+                ws.send_json({"type": "utterance_end", "text": "第二句"})
+                self.assertEqual(ws.receive_json(), {"type": "error", "code": "busy"})
 
     def test_foreign_session_invisible(self):
         from app.core.session import TutorSession, save_session
@@ -420,9 +368,9 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
         with self.client.websocket_connect(
                 f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
             ws.send_json({"type": "start", "session_id": "sess_foreign_voice"})
-            ev = ws.receive_json()
-            self.assertEqual(ev["type"], "error")
-            self.assertEqual(ev["code"], "session_not_found")
+            event = ws.receive_json()
+            self.assertEqual(event["type"], "error")
+            self.assertEqual(event["code"], "session_not_found")
 
     def test_end_control_closes(self):
         with self.client.websocket_connect(

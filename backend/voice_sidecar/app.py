@@ -11,7 +11,7 @@ app/voice/tts/melotts.py over localhost HTTP).
 The MeloTTS repo is used from backend/vendor/MeloTTS via sys.path instead
 of `pip install`: its setup.py post-install hook would download the 1 GB
 unidic dictionary (Japanese-only and outside the default install scope; see
-docs/VOICE_LICENSES.md §4.2).
+docs/VOICE_LICENSES.md §4).
 
 Run (start.sh does this automatically when VOICE_TTS_PROVIDER=melo):
   cd backend/voice_sidecar && HF_HUB_OFFLINE=1 \
@@ -24,8 +24,8 @@ import sys
 import tempfile
 from pathlib import Path
 
-# 挂载 backend/vendor/MeloTTS 并中和导入期的 GPL/LGPL 依赖（见
-# melo_bootstrap.py 模块注释与 docs/VOICE_LICENSES.md §4.2）。
+# 挂载 backend/vendor/MeloTTS，并为未启用的非中文 cleaner 安装 fail-loud
+# import stubs（见 melo_bootstrap.py 与 docs/VOICE_LICENSES.md §4）。
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from melo_bootstrap import bootstrap as _melo_bootstrap  # noqa: E402
 

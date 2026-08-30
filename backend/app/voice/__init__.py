@@ -1,9 +1,6 @@
-"""Pluggable voice layer (P10 电话式语音对话).
+"""Voice call support: browser Speech Recognition input and TTS output.
 
-The agent core only sees the STTProvider/TTSProvider contracts in
-``base.py``. Concrete engines live behind provider factories and are
-selected by VOICE_* settings — mirroring the embedding lane's
-"explicit provider + fail-open" pattern: anything off or misconfigured
-resolves to None and the voice endpoint degrades gracefully. Chat is
-never affected. Licenses: docs/VOICE_LICENSES.md.
+The browser performs speech recognition and sends only final text to the
+backend. Concrete spoken-reply engines live behind the TTS provider factory;
+see ``docs/VOICE_LICENSES.md`` for the active dependency notices.
 """

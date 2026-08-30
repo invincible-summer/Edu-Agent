@@ -252,6 +252,9 @@ export function CallBar({ lang, voice, onHangUp }: {
       <p className="mt-1.5 text-center text-[0.65rem] text-muted/70">
         {voice.phase === "recording" ? tr("chat.voice.call.release") : tr("chat.voice.call.desc.short")}
       </p>
+      <p className="mx-auto mt-1 max-w-[760px] text-center text-[0.58rem] leading-relaxed text-muted/60">
+        {tr("chat.voice.call.browserNote")}
+      </p>
     </div>
   );
 }
