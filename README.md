@@ -138,7 +138,7 @@ cd backend && python cli.py --grade 初中 --once "讲一下惯性"
 | `TRACE_DIR` | trace 落盘目录 | `backend/traces` |
 | `VOICE_STT_PROVIDER` | 语音 STT 插件：off/stub/whisper（whisper.cpp 子进程）。未装或配置错误时自动降级为不可用，聊天不受影响 | off |
 | `VOICE_TTS_PROVIDER` | 语音 TTS 插件：off/stub/melo（MeloTTS-Chinese sidecar，`start.sh` 在 melo 时自动拉起） | off |
-| `VOICE_WHISPER_BIN/MODEL/LANG/THREADS` | whisper.cpp 二进制与 ggml 模型路径、语言、线程数（`deploy/install_voice.sh` 一键安装并打印配置） | 空 |
+| `VOICE_WHISPER_BIN/MODEL/LANG/THREADS/PROMPT` | whisper.cpp 二进制与 ggml 模型路径、语言、线程数、简体偏置初始提示（转写还会经内置 OpenCC 繁→简词典兜底） | 空 |
 | `VOICE_TTS_BASE_URL/SPEED` | TTS sidecar 地址与语速 | 127.0.0.1:8130 / 1.0 |
 | `VOICE_MAX_AUDIO_SECONDS` | 单轮语音时长上限（超出截断，保护 2 vCPU 转写延迟） | 30 |
 

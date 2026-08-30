@@ -30,12 +30,15 @@ class WhisperCppSTT(STTProvider):
     name = "whisper"
 
     def __init__(self, bin_path: str, model_path: str, *, language: str = "zh",
-                 threads: int = 2, timeout: float = 120.0):
+                 threads: int = 2, timeout: float = 120.0, prompt: str = ""):
         self.bin_path = bin_path
         self.model_path = model_path
         self.language = language
         self.threads = max(1, int(threads))
         self.timeout = timeout
+        # Simplified-biased initial prompt: whisper's zh decoding otherwise
+        # drifts into Traditional characters far more often than not.
+        self.prompt = (prompt or "").strip()
 
     async def transcribe(self, wav: bytes) -> STTResult:
         with tempfile.TemporaryDirectory(prefix="edu-voice-stt-") as tmp:
@@ -43,6 +46,8 @@ class WhisperCppSTT(STTProvider):
             audio.write_bytes(wav)
             cmd = [self.bin_path, "-m", self.model_path, "-f", str(audio),
                    "-l", self.language, "-t", str(self.threads), "-np", "-nt"]
+            if self.prompt:
+                cmd += ["--prompt", self.prompt]
             async with _slot():
                 proc = await asyncio.create_subprocess_exec(
                     *cmd, stdout=asyncio.subprocess.PIPE,
@@ -57,6 +62,11 @@ class WhisperCppSTT(STTProvider):
             detail = err.decode(errors="replace")[-300:] if err else ""
             raise STTUnavailable(f"whisper-cli 退出码 {proc.returncode}: {detail}")
         text = _clean_output(out.decode(errors="replace"))
+        if self.language.startswith("zh"):
+            # Prompt biasing cannot fully suppress Traditional output, so the
+            # transcript is additionally rewritten via the OpenCC T2S tables.
+            from ..zh_simplify import to_simplified
+            text = to_simplified(text)
         return STTResult(text=text)
 
 

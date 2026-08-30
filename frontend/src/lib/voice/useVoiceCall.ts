@@ -7,6 +7,13 @@
  * 每句一个 tts_start 元事件 + 44.1 kHz PCM16 帧 + tts_end）。播放端按到达
  * 顺序入队，AudioBuffer 按元事件携带的采样率创建（浏览器自动重采样到
  * 输出设备速率）。
+ *
+ * 沉浸式改版：本 hook 不再持有对话文本（旧版把字幕攒在弹窗里），而是把
+ * 转写/回答增量通过回调交给宿主组件写入聊天 store——通话期间 chat 页面
+ * 照常流式显示。tts_start 携带的原始句子（含 markdown 公式）暴露为
+ * speakingSentence，供「板书」浮窗渲染 KaTeX。播放链路串了
+ * DynamicsCompressor + makeup gain，与后端的逐句响度归一化（loudness.py）
+ * 叠加，进一步抹平句间/句内音量起伏。
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { API_BASE, voiceTicket } from "@/lib/api";
@@ -17,16 +24,23 @@ export type VoicePhase =
   | "recognizing" | "thinking" | "speaking" | "ended";
 
 /** error 为后端 error 事件 code 或客户端本地码（network/mic）。 */
-export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
+export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError }: {
   lang: Lang;
   onSessionBound?: (sessionId: string) => void;
+  /** 一轮开始（STT 结果就绪）：宿主把用户消息落进聊天流并置 streaming。 */
+  onTurnBegin?: (userText: string) => void;
+  /** 回答增量：宿主节流写入 pendingAnswer，页面正常流式渲染。 */
+  onAnswerDelta?: (content: string) => void;
+  /** 一轮结束（文本流完成，音频可能仍在播放）。 */
   onTurnEnd?: (sessionId: string | null) => void;
+  /** 一轮中途失败（agent_error / stt 崩溃等会中断在途轮次）。 */
+  onTurnError?: (code: string) => void;
 }) {
   const [phase, setPhase] = useState<VoicePhase>("idle");
   const [error, setError] = useState<string | null>(null);
-  const [userText, setUserText] = useState("");
-  const [assistantText, setAssistantText] = useState("");
   const [statusKey, setStatusKey] = useState<string | null>(null);
+  const [speakingSentence, setSpeakingSentence] = useState<string | null>(null);
+  const [callSeconds, setCallSeconds] = useState(0);
 
   const phaseRef = useRef<VoicePhase>("idle");
   const wsRef = useRef<WebSocket | null>(null);
@@ -34,14 +48,18 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
   const ctxRef = useRef<AudioContext | null>(null);
   const nodeRef = useRef<AudioWorkletNode | null>(null);
   const playCtxRef = useRef<AudioContext | null>(null);
+  const playChainRef = useRef<AudioNode | null>(null);
   const playSrcRef = useRef<AudioBufferSourceNode | null>(null);
   const queueRef = useRef<AudioBuffer[]>([]);
   const playingRef = useRef(false);
   const pendingTtsRateRef = useRef<number>(16000);
   const endedByUserRef = useRef(false);
   const sessionIdRef = useRef<string | null>(null);
-  const cbRef = useRef({ onSessionBound, onTurnEnd });
-  useEffect(() => { cbRef.current = { onSessionBound, onTurnEnd }; }, [onSessionBound, onTurnEnd]);
+  const startedAtRef = useRef<number | null>(null);
+  const cbRef = useRef({ onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError });
+  useEffect(() => {
+    cbRef.current = { onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError };
+  }, [onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError]);
 
   const goto = useCallback((p: VoicePhase) => {
     phaseRef.current = p;
@@ -51,7 +69,23 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
   // ---- playback queue ------------------------------------------------------
 
   const ensurePlayCtx = useCallback(() => {
-    if (!playCtxRef.current) playCtxRef.current = new AudioContext();
+    if (!playCtxRef.current) {
+      const ctx = new AudioContext();
+      // 压缩器把句内/句间的响度差再抹平一层（后端已做逐句 RMS 归一化）：
+      // threshold/knee/ratio 取广播级语音参数，makeup gain 补回损耗。
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -22;
+      comp.knee.value = 24;
+      comp.ratio.value = 5;
+      comp.attack.value = 0.004;
+      comp.release.value = 0.22;
+      const gain = ctx.createGain();
+      gain.gain.value = 1.2;
+      comp.connect(gain);
+      gain.connect(ctx.destination);
+      playCtxRef.current = ctx;
+      playChainRef.current = comp;
+    }
     if (playCtxRef.current.state === "suspended") void playCtxRef.current.resume();
     return playCtxRef.current;
   }, []);
@@ -69,7 +103,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
     const ctx = ensurePlayCtx();
     const node = ctx.createBufferSource();
     node.buffer = buf;
-    node.connect(ctx.destination);
+    node.connect(playChainRef.current ?? ctx.destination);
     playingRef.current = true;
     playSrcRef.current = node;
     node.onended = () => {
@@ -86,6 +120,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
     playingRef.current = false;
     try { playSrcRef.current?.stop(); } catch { /* already ended */ }
     playSrcRef.current = null;
+    setSpeakingSentence(null);
     if (phaseRef.current === "speaking") goto("ready");
   }, [goto]);
 
@@ -115,8 +150,8 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
         goto("recognizing");
         break;
       case "stt_result":
-        setUserText(String(ev.text || ""));
-        setAssistantText("");
+        setSpeakingSentence(null);
+        cbRef.current.onTurnBegin?.(String(ev.text || ""));
         goto("thinking");
         break;
       case "step":
@@ -129,11 +164,13 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
         setStatusKey("retry");
         break;
       case "answer_delta":
-        setAssistantText((prev) => prev + String(ev.content || ""));
+        cbRef.current.onAnswerDelta?.(String(ev.content || ""));
         if (phaseRef.current === "thinking") setStatusKey(null);
         break;
       case "tts_start":
         pendingTtsRateRef.current = Number(ev.sample_rate) || 16000;
+        // 板书素材：tts_start 携带该句的原始 markdown（公式未清洗）。
+        setSpeakingSentence(String(ev.text || "") || null);
         goto("speaking");
         break;
       case "tts_end":
@@ -145,6 +182,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
         setStatusKey("truncated");
         break;
       case "turn_end":
+        setSpeakingSentence(null);
         if (phaseRef.current !== "speaking" && !playingRef.current) goto("ready");
         cbRef.current.onTurnEnd?.((ev.session_id as string) || sessionIdRef.current);
         break;
@@ -154,8 +192,17 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
       case "error": {
         const code = String(ev.code || "agent");
         setError(code);
-        if (code === "voice_disabled" || code === "session_not_found") goto("ended");
-        else if (phaseRef.current !== "ready") goto("ready");
+        if (code === "voice_disabled" || code === "session_not_found") {
+          goto("ended");
+        } else {
+          // 在途轮次被中断（agent_error / stt 崩溃）需要宿主收尾；
+          // 轮前错误（busy/too_short…）不动聊天流。
+          if (phaseRef.current === "recognizing" || phaseRef.current === "thinking"
+              || phaseRef.current === "speaking") {
+            cbRef.current.onTurnError?.(code);
+          }
+          if (phaseRef.current !== "ready") goto("ready");
+        }
         break;
       }
       default:
@@ -187,17 +234,21 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
     teardownTransport();
     void playCtxRef.current?.close().catch(() => undefined);
     playCtxRef.current = null;
+    playChainRef.current = null;
     goto("ended");
   }, [goto, stopSpeaking, teardownTransport]);
 
   const start = useCallback(async (sessionId: string | null, workspaceId: string | null) => {
     if (phaseRef.current !== "idle") return; // dev StrictMode 双挂载只允许一条连接
-    setUserText(""); setAssistantText(""); setError(null); setStatusKey(null);
-    sessionIdRef.current = sessionId;
-    endedByUserRef.current = false;
+    setError(null); setStatusKey(null); setSpeakingSentence(null);
+    setCallSeconds(0);
+    startedAtRef.current = Date.now();
     goto("connecting");
     try {
       const { ticket } = await voiceTicket();
+      // 票据到手后再复位：StrictMode 双效应的 cleanup 会在 start() 的
+      // await 间隙把它置 true，太早复位会被它盖掉。
+      endedByUserRef.current = false;
       // 后端 WS 路由是 /api/v1/voice/ws：基址必须保留 API_BASE 的 /api/v1
       // 前缀，直连分支只换协议（http→ws、https→wss），同源分支拼当前 host
       // （生产同源走 nginx 的 WS 升级 location，不能依赖 next rewrite）。
@@ -233,6 +284,17 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
       goto("ended");
     }
   }, [enqueuePcm, goto, handleEvent, lang]);
+
+  // 通话时长（指示器上的 mm:ss）：从 start 起计时，ended 停止。
+  useEffect(() => {
+    if (phase === "idle" || phase === "ended" || startedAtRef.current === null) return;
+    const id = window.setInterval(() => {
+      if (startedAtRef.current !== null) {
+        setCallSeconds(Math.floor((Date.now() - startedAtRef.current) / 1000));
+      }
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, [phase]);
 
   // ---- push-to-talk -----------------------------------------------------------
 
@@ -289,7 +351,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnEnd }: {
   }, [stopSpeaking, teardownTransport]);
 
   return {
-    phase, error, userText, assistantText, statusKey,
+    phase, error, statusKey, speakingSentence, callSeconds,
     start, hangUp, beginTalk, endTalk, stopSpeaking,
   };
 }

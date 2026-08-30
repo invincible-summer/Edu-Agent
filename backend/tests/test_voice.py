@@ -3,7 +3,10 @@ factories, and the push-to-talk WebSocket protocol end to end (stub STT/TTS
 + a canned run_turn, so no model or LLM is touched)."""
 from __future__ import annotations
 
+import math
+import struct
 import unittest
+from array import array
 from unittest.mock import patch
 
 from tests.storage_sandbox import StorageSandboxTestCase
@@ -99,6 +102,111 @@ class TestSpeakText(unittest.TestCase):
     def test_bare_subscript_reading(self):
         out = to_speakable("当 $x_1$ 增大时")
         self.assertIn("x下标1", out)
+
+    def test_math_degree_not_power(self):
+        out = to_speakable("角 $30^\\circ$ 是锐角")
+        self.assertIn("30度", out)
+        self.assertNotIn("次方", out)
+
+    def test_math_function_names(self):
+        out = to_speakable("$\\sin x + \\cos x$")
+        self.assertIn("正弦", out)
+        self.assertIn("余弦", out)
+        self.assertNotIn("sin", out)
+        self.assertNotIn("\\", out)
+
+    def test_nested_frac_reads_inside_out(self):
+        out = to_speakable("$\\frac{\\sqrt{2}}{2}$")
+        self.assertIn("2分之根号2", out)
+
+    def test_mathbb_set_names(self):
+        out = to_speakable("$x \\in \\mathbb{R}$")
+        self.assertIn("属于", out)
+        self.assertIn("实数集", out)
+
+    def test_percent_reading(self):
+        out = to_speakable("增长 $50\\%$")
+        self.assertIn("百分之50", out)
+
+    def test_nth_root_reading(self):
+        out = to_speakable("$\\sqrt[3]{8}$")
+        self.assertIn("3次根号8", out)
+
+    def test_text_group_keeps_content(self):
+        out = to_speakable("$\\text{当 } x > 0 \\text{ 时递增}$")
+        self.assertIn("当", out)
+        self.assertIn("时递增", out)
+        self.assertNotIn("text", out)
+
+    def test_infty_and_tendency(self):
+        out = to_speakable("$x \\to \\infty$")
+        self.assertIn("趋于", out)
+        self.assertIn("无穷", out)
+
+    def test_combined_sum_bounds(self):
+        out = to_speakable("$\\sum_{i=1}^{n} i$")
+        self.assertIn("求和，从i等于1到n", out)
+
+    def test_vec_and_bar_readings(self):
+        out = to_speakable("$\\vec{a}$、$\\bar{x}$")
+        self.assertIn("向量a", out)
+        self.assertIn("x拔", out)
+
+
+class TestZhSimplify(unittest.TestCase):
+    def test_common_t2s(self):
+        from app.voice.zh_simplify import to_simplified
+        self.assertEqual(to_simplified("圓周率是圓的周長與直徑的比值"),
+                         "圆周率是圆的周长与直径的比值")
+
+    def test_phrase_disambiguation(self):
+        from app.voice.zh_simplify import to_simplified
+        # 乾 alone maps to 干, but the 乾隆 phrase keeps 乾隆.
+        self.assertEqual(to_simplified("乾隆年間保持乾淨"), "乾隆年间保持干净")
+
+    def test_passthrough(self):
+        from app.voice.zh_simplify import to_simplified
+        self.assertEqual(to_simplified("已经是简体 123 abc"), "已经是简体 123 abc")
+        self.assertEqual(to_simplified(""), "")
+
+
+class TestLoudness(unittest.TestCase):
+    def _rms(self, pcm: bytes) -> float:
+        arr = array("h")
+        arr.frombytes(pcm)
+        if not arr:
+            return 0.0
+        return (sum(v * v for v in arr) / len(arr)) ** 0.5 / 32768.0
+
+    def _tone(self, amp: int, sample_rate: int = 8000, seconds: float = 0.5) -> bytes:
+        n = int(sample_rate * seconds)
+        return b"".join(struct.pack("<h", int(amp * math.sin(2 * math.pi * 220 * i / sample_rate)))
+                        for i in range(n))
+
+    def test_loud_and_quiet_level_to_target(self):
+        from app.voice.loudness import normalize_pcm16, _TARGET_RMS
+        for amp in (20000, 2000):
+            out = normalize_pcm16(self._tone(amp))
+            self.assertLess(abs(self._rms(out) - _TARGET_RMS), 0.01, f"amp={amp}")
+            arr = array("h")
+            arr.frombytes(out)
+            self.assertLessEqual(max(map(abs, arr)), int(0.92 * 32767) + 1)
+
+    def test_gain_ceiling_for_near_silence(self):
+        from app.voice.loudness import normalize_pcm16
+        # A whisper stays whisper-ish: gain is capped instead of blowing up.
+        out = normalize_pcm16(self._tone(30))
+        self.assertLessEqual(self._rms(out) / (30 / 32768 / math.sqrt(2)), 4.0 + 0.05)
+
+    def test_fades_zero_the_boundaries(self):
+        from app.voice.loudness import normalize_pcm16
+        out = normalize_pcm16(b"\x40\x00" * 8000, 16000)  # constant DC offset
+        self.assertEqual(int.from_bytes(out[:2], "little", signed=True), 0)
+        self.assertEqual(int.from_bytes(out[-2:], "little", signed=True), 0)
+
+    def test_silence_untouched(self):
+        from app.voice.loudness import normalize_pcm16
+        self.assertEqual(normalize_pcm16(b"\x00\x00" * 100), b"\x00\x00" * 100)
 
 
 class TestWavHelpers(unittest.TestCase):

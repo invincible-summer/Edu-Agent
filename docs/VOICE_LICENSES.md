@@ -22,6 +22,7 @@
 | MeloTTS-Chinese（checkpoint.pth ≈208 MB） | TTS 中文声学模型 | — | **MIT**（HF 卡 `license: mit`） | ✅ | ✅ |
 | bert-base-multilingual-uncased | MeloTTS 中文前端 BERT | — | **Apache-2.0** | ✅ | ✅ |
 | torch / transformers / jieba / pypinyin / cn2an / g2p_en 等 | 运行时依赖 | BSD / Apache-2.0 / MIT | — | ✅ | ✅ |
+| OpenCC（TSCharacters/TSPhrases 词典） | STT 转写繁→简兜底（vendored 于 `backend/app/voice/zh_t2s_*.txt`） | **Apache-2.0**（词典数据随库同证） | — | ✅ | ✅ |
 
 ## 2. 关键原文引用（核实于 2026-08-30）
 

@@ -1,17 +1,18 @@
 "use client";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import { Menu, ArrowRight, Search, BookOpen, GraduationCap, ClipboardList, Target, MessageSquareOff, Plus, PanelRight } from "lucide-react";
+import { Menu, ArrowRight, Search, BookOpen, GraduationCap, ClipboardList, Target, MessageSquareOff, Plus, PanelRight, Phone } from "lucide-react";
 import { useUIStore, useChatStore } from "@/lib/store";
 import { t, type Lang } from "@/lib/i18n";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 import { ChatMessage, StreamingMessage } from "@/components/chat/ChatMessage";
 import { ChatInput } from "@/components/chat/ChatInput";
+import { VoiceCallLayer } from "@/components/chat/VoiceCallLayer";
 import { ChatMaterialsPanel } from "@/components/chat/ChatMaterialsPanel";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { chatStream, listSessions, loadSession, getUxGreeting, attachLibraryFiles, getWorkspace } from "@/lib/api";
+import { chatStream, listSessions, loadSession, getUxGreeting, attachLibraryFiles, getWorkspace, voiceStatus } from "@/lib/api";
 import type { AttachmentMeta, MaterialSource } from "@/lib/types";
 import { gradeFromApi, gradeForApi } from "@/lib/types";
 import { containsMathMarkdown } from "@/components/chat/markdown";
@@ -37,6 +38,17 @@ function ChatWorkspace() {
   const [greeting, setGreeting] = useState("");
   const [workspaceSources, setWorkspaceSources] = useState<MaterialSource[]>([]);
   const [materialsOpen, setMaterialsOpen] = useState(true);
+  // P10 语音通话：后端 /voice/status 决定入口显隐（provider off 时整条链路
+  // 不存在，不渲染按钮，保持与禁用智能层「无痕降级」的仓库惯例一致）。
+  const [voiceEnabled, setVoiceEnabled] = useState(false);
+  const [voiceOpen, setVoiceOpen] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    voiceStatus()
+      .then((r) => { if (!cancelled) setVoiceEnabled(!!r.enabled); })
+      .catch(() => { if (!cancelled) setVoiceEnabled(false); });
+    return () => { cancelled = true; };
+  }, []);
 
   // URL structure: /chat = new chat, /chat/<sessionId> = existing session.
   // Both are the SAME optional-catch-all route, so router.replace() between
@@ -471,6 +483,30 @@ function ChatWorkspace() {
         >
           <Menu size={16} />
         </button>
+        {/* 右上角工具组：资料栏开关 + 电话（语音通话）。电话占最右侧，
+            通话中由左上角「小手机」指示器 + 底部控制条接管。 */}
+        <div className="absolute right-3 top-2 z-10 flex items-center gap-1">
+          {!materialsOpen && (
+            <button
+              onClick={() => setMaterialsOpen(true)}
+              aria-label={tr("chat.materials.open", "打开资料栏")}
+              className="flex h-7 w-7 items-center justify-center rounded-[8px] text-muted transition-colors hover:bg-surface-hover hover:text-fg"
+            >
+              <PanelRight size={16} />
+            </button>
+          )}
+          {voiceEnabled && (
+            <button
+              onClick={() => setVoiceOpen(true)}
+              disabled={chat.streaming || voiceOpen}
+              title={tr("chat.voice.call.title")}
+              aria-label={tr("chat.voice.call.title")}
+              className="group flex h-7 w-7 items-center justify-center rounded-[8px] border border-accent/25 bg-accent-soft/40 text-accent-strong shadow-sm transition-all hover:border-accent/50 hover:bg-accent-soft disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <Phone size={15} className="transition-transform duration-200 group-hover:-rotate-12" />
+            </button>
+          )}
+        </div>
         <div ref={scrollRef} className="flex-1 overflow-y-auto">
           {isEmpty ? (
             <div className="flex min-h-full flex-col items-center justify-center px-6 py-10">
@@ -547,19 +583,23 @@ function ChatWorkspace() {
           )}
         </div>
 
-        <ChatInput onSend={handleSend} disabled={chat.streaming} onStop={handleStop}
-          prefill={deepSend === "1" && !urlSession ? null : deepPrefill} />
+        {/* 通话期间输入框只隐藏不卸载（草稿保留），由 VoiceCallLayer 的
+            控制条占住底部插槽；语音轮次直接写入上面的消息流。 */}
+        <div className={voiceOpen ? "hidden" : undefined}>
+          <ChatInput onSend={handleSend} disabled={chat.streaming || voiceOpen} onStop={handleStop}
+            prefill={deepSend === "1" && !urlSession ? null : deepPrefill} />
+        </div>
+        {voiceOpen && (
+          <VoiceCallLayer
+            lang={lang}
+            sessionId={chat.sessionId}
+            workspaceId={chat.sessionId ? null : sessionStorage.getItem("edu-agent-active-ws")}
+            onClose={() => setVoiceOpen(false)}
+          />
+        )}
       </div>
-      {materialsOpen ? (
+      {materialsOpen && (
         <ChatMaterialsPanel sources={materialSources} open onClose={() => setMaterialsOpen(false)} />
-      ) : (
-        <button
-          onClick={() => setMaterialsOpen(true)}
-          aria-label={tr("chat.materials.open", "打开资料栏")}
-          className="absolute right-3 top-2 z-10 rounded-[8px] p-1.5 text-muted hover:bg-surface-hover hover:text-fg"
-        >
-          <PanelRight size={16} />
-        </button>
       )}
     </div>
   );

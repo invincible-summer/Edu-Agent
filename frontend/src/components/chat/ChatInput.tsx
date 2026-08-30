@@ -1,16 +1,10 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-import { useCallback } from "react";
-import { useRouter } from "next/navigation";
-import { ArrowUp, Square, Paperclip, X, FileText, Loader2, GraduationCap, ScanLine, Mic, LibraryBig, Phone } from "lucide-react";
-import { cn } from "@/lib/cn";
+import { ArrowUp, Square, Paperclip, X, FileText, Loader2, GraduationCap, ScanLine, LibraryBig } from "lucide-react";
 import { useUIStore, useChatStore } from "@/lib/store";
 import { t, GRADE_LABELS } from "@/lib/i18n";
-import { uploadFiles, uploadFailures, attachLibraryFiles, patchSession, voiceStatus, listSessions, loadSession } from "@/lib/api";
-import { notifySessionChanged } from "@/lib/ws-settings";
-import { useSpeechRecognition } from "@/lib/useSpeech";
+import { uploadFiles, uploadFailures, attachLibraryFiles, patchSession } from "@/lib/api";
 import { LibraryPickerModal, type LibraryRefItem } from "./LibraryPickerModal";
-import { VoiceCallModal } from "./VoiceCallModal";
 import type { AttachmentMeta } from "@/lib/types";
 import { gradeForApi } from "@/lib/types";
 
@@ -40,48 +34,6 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
   const { sessionId, pendingLibraryRefs, setPendingLibraryRefs } = useChatStore();
   const tr = (k: string, fb?: string) => t(lang, k, fb);
   const grades = GRADE_LABELS[lang];
-  // Voice input: final transcript appends to the textarea; interim
-  // streams into a live preview line so the user sees recognition.
-  const onVoiceFinal = useCallback((text: string) => {
-    setText((prev) => (prev.trim() ? prev.replace(/\s+$/, "") + " " + text : text));
-    requestAnimationFrame(() => taRef.current?.focus());
-  }, []);
-  const speech = useSpeechRecognition(lang, onVoiceFinal);
-  const router = useRouter();
-  // P10 语音通话：后端 /voice/status 决定入口显隐（provider off 时整条链路
-  // 不存在，不渲染按钮，保持与禁用智能层「无痕降级」的仓库惯例一致）。
-  const [voiceEnabled, setVoiceEnabled] = useState(false);
-  const [voiceOpen, setVoiceOpen] = useState(false);
-  useEffect(() => {
-    let cancelled = false;
-    voiceStatus()
-      .then((r) => { if (!cancelled) setVoiceEnabled(!!r.enabled); })
-      .catch(() => { if (!cancelled) setVoiceEnabled(false); });
-    return () => { cancelled = true; };
-  }, []);
-
-  /** 语音通话绑定到（可能新建的）会话：与页面 done 事件的绑定路径一致。 */
-  const handleVoiceSessionBound = useCallback((sid: string) => {
-    useChatStore.getState().setSessionId(sid);
-    router.replace(`/chat/${encodeURIComponent(sid)}`, { scroll: false });
-  }, [router]);
-  /** 挂断后刷新会话列表；若通话的就是当前打开的会话，重载其消息。 */
-  const handleVoiceTurnsDone = useCallback((sid: string | null) => {
-    listSessions()
-      .then((r) => {
-        useChatStore.getState().setSessions(r.sessions);
-        notifySessionChanged();
-      })
-      .catch(() => undefined);
-    if (sid && sid === useChatStore.getState().sessionId) {
-      loadSession(sid, 0)
-        .then((detail) => {
-          useChatStore.getState().loadFull(
-            detail.messages || [], detail.knowledge_files || [], sid);
-        })
-        .catch(() => undefined);
-    }
-  }, []);
 
   useEffect(() => {
     const ta = taRef.current;
@@ -241,7 +193,6 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
     <div className="px-4 pb-3 pt-1">
       <div className="mx-auto max-w-[820px]">
         {uploadError && <p className="mb-1.5 text-[0.72rem] text-danger">{uploadError}</p>}
-        {speech.error && <p className="mb-1.5 text-[0.72rem] text-danger">{tr("chat.input.voice.unsupported")}</p>}
 
         {/* 悬浮卡片式输入框 */}
         <div className="rounded-[14px] border border-border bg-surface shadow-sm transition-[border-color,box-shadow] duration-200 focus-within:border-accent focus-within:shadow-[0_0_0_3px_rgb(var(--accent)/0.12)]">
@@ -268,18 +219,6 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
               <p className="mt-1 max-h-20 overflow-y-auto whitespace-pre-wrap text-[0.72rem] leading-relaxed text-fg-secondary">
                 {ocrText}
               </p>
-            </div>
-          )}
-
-          {/* 聆听中：红色脉冲 */}
-          {speech.listening && (
-            <div className="mx-3 mt-3 flex items-center gap-2 rounded-[8px] border border-danger/25 bg-danger/5 px-3 py-2">
-              <span className="relative flex h-2 w-2 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-danger opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-danger" />
-              </span>
-              <span className="text-[0.72rem] text-fg-secondary">{tr("chat.input.voice.listening")}</span>
-              {speech.interim && <span className="min-w-0 flex-1 truncate text-[0.72rem] text-muted">{speech.interim}</span>}
             </div>
           )}
 
@@ -385,29 +324,6 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
             </button>
             <input ref={imgRef} type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff"
               className="hidden" onChange={(e) => { handleImageUpload(e.target.files); e.target.value = ""; }} />
-            {voiceEnabled && (
-              <button
-                onClick={() => setVoiceOpen(true)}
-                disabled={disabled}
-                className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-surface-hover hover:text-accent disabled:opacity-40"
-                title={tr("chat.voice.call.title")}
-                aria-label={tr("chat.voice.call.title")}
-              >
-                <Phone size={15} />
-              </button>
-            )}
-            <button
-              onClick={() => (speech.listening ? speech.stop() : speech.start())}
-              disabled={disabled || !speech.supported}
-              className={cn(
-                "flex h-8 w-8 items-center justify-center rounded-full transition-colors disabled:opacity-40",
-                speech.listening ? "bg-danger/10 text-danger" : "text-muted hover:bg-surface-hover hover:text-accent",
-              )}
-              title={speech.supported ? tr("chat.input.voice.title") : tr("chat.input.voice.unsupported")}
-              aria-label={tr("chat.input.voice.title")}
-            >
-              <Mic size={15} className={speech.listening ? "animate-pulse" : ""} />
-            </button>
 
             <div className="ml-auto">
               {disabled && onStop ? (
@@ -439,17 +355,6 @@ export function ChatInput({ onSend, disabled, onStop, prefill }: {
         <LibraryPickerModal
           onClose={() => setLibRefOpen(false)}
           onConfirm={handleLibRefConfirm}
-        />
-      )}
-      {voiceOpen && (
-        <VoiceCallModal
-          open
-          onClose={() => setVoiceOpen(false)}
-          lang={lang}
-          sessionId={sessionId}
-          workspaceId={sessionId ? null : sessionStorage.getItem("edu-agent-active-ws")}
-          onSessionBound={handleVoiceSessionBound}
-          onTurnsDone={handleVoiceTurnsDone}
         />
       )}
     </div>

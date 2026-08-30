@@ -215,6 +215,9 @@ class Settings:
     voice_whisper_model: str = os.getenv("VOICE_WHISPER_MODEL", "")
     voice_whisper_lang: str = os.getenv("VOICE_WHISPER_LANG", "zh")
     voice_whisper_threads: int = max(1, int(os.getenv("VOICE_WHISPER_THREADS", "2")))
+    # 转写初始提示（简体偏置）：whisper 的 zh 解码经常漂到繁体，除 prompt
+    # 偏置外，转写结果还会经 app/voice/zh_simplify.py 的 OpenCC T2S 表兜底。
+    voice_whisper_prompt: str = os.getenv("VOICE_WHISPER_PROMPT", "以下是普通话的句子。")
     # MeloTTS sidecar base URL (localhost only; started by start.sh).
     voice_tts_base_url: str = os.getenv("VOICE_TTS_BASE_URL", "http://127.0.0.1:8130")
     voice_tts_speed: float = float(os.getenv("VOICE_TTS_SPEED", "1.0"))

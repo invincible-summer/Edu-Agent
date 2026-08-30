@@ -645,7 +645,7 @@ frontend/src/
 │   ├── workspace/       # 工作区设置弹窗等
 │   └── pages/           # 各模块页组装
 └── lib/                 # api(SSE) / api-modules(投影客户端) / store(zustand) /
-                         #   types / i18n(-page) / labels / format / nav / useSpeech
+                         #   types / i18n(-page) / labels / format / nav
 ```
 
 ### 20.2 「纸墨书院」设计体系
@@ -659,7 +659,7 @@ frontend/src/
 
 | 路由 | 页面 | 体现模块 |
 |------|------|---------|
-| `/chat/[[...sessionId]]` | 对话工作台 | M1 + 工具卡片 + 文件/图片上传 + 引用资料 + 语音输入 + 当前资料右侧栏 |
+| `/chat/[[...sessionId]]` | 对话工作台 | M1 + 工具卡片 + 文件/图片上传 + 引用资料 + 语音通话（沉浸式电话模式） + 当前资料右侧栏 |
 | `/dashboard` | 学习总览 | M2（掌握度/近况）+ M9 今日任务联动卡（最近学习/需要关注均分页）|
 | `/knowledge` | 知识图谱 | M5（分层浏览/自定义图谱/个性化路径）|
 | `/plan` | 学习计划 | M3（教学日志/学习路径/动态难度，全列表分页）|
@@ -682,7 +682,7 @@ frontend/src/
 - **chat URL 唯一事实源**：`/chat/[[...sessionId]]` catch-all，世代号防串会话（切换会话时丢弃迟到的上一会话流）。
 - **流式渲染**：§5.3（本地累积 + 50ms 节流 + React.memo + pinned 滚动）。
 - **资料右侧栏**：桌面固定/可折叠、窄屏抽屉；按“工作区公共资料 / 本对话引用教材 / 本对话上传文件”分组，仅消费后端 `material_sources`/workspace detail 的结构化元数据。`knowledge_search` 工具卡片先渲染结构化命中来源（文件、页码/slide、章节、相关度），再展示片段，不从模型文本猜来源。
-- **语音输入**：浏览器原生 Web Speech API（Chrome/Edge），locale 跟随界面语言，零后端依赖。
+- **语音通话（沉浸式电话模式，P10）**：chat 页唯一的语音入口是右上角电话按钮（`GET /voice/status` 决定显隐）；通话**不弹对话卡**——页面照常显示，语音轮次实时写入消息流（转写即用户消息、`answer_delta` 节流进 `pendingAnswer`、`turn_end` 落定，与文字轮共用 `StreamingMessage` 渲染路径与会话世代守卫）。通话期间：左上角「小手机」指示器（迷你手机造型 + 声波 + 时长，点开可停止播报/挂断）、底部控制条（按住说话/停止播报/挂断）临时替换输入框（输入框只隐藏不卸载，草稿保留）；老师朗读到含公式的句子时，页面中上部浮出虚化「板书」小黑板（KaTeX 渲染该句原文，讲完自动淡出）。原浏览器 Web Speech 单句听写已随本改版移除。
 - **图谱页交互**：学段 × 学科 chips 两级筛选；章节总览 → 点击下钻章内 DAG，面包屑返回；搜索命中自动定位；pointerup 命中测试（规避 setPointerCapture 吞 click）。概念抽屉双 CTA（「在对话中学这个」/「出几道题考我」）与个性化路径点击均经深链直达对话。
 - **对话深链契约（`?q=&send=1`）**：`/chat?q=<问题>` 预填输入框（不发送）；追加 `&send=1` 则进入新会话时自动发送该问题（ref 防重 + `history.replaceState` 清参数防刷新重发，StrictMode 安全）。知识图谱节点/推荐路径、编排任务行动按钮、本周复盘全部经此契约跳转，消息携带概念上下文（名称/学科/难度/掌握状态/推荐理由）。
 - **加载性能架构**：`start.sh` 默认 `FRONTEND_MODE=prod`（按需 `next build --webpack` → `next start`；源码/后端端口变化自动重建，`REBUILD=1` 强制，`./start.sh dev` 子命令显式回热重载）——dev 服务器按路由现场编译、无 Link 预取，是本地“首开卡顿”的主因。路由级分包：教材库等重页面 `next/dynamic` 懒加载 + `(workspace)/loading.tsx` 统一 PageSkeleton。鉴权水合并行（`/auth/status` 与 `/auth/me` 并发，authRequired 结果 sessionStorage 缓存 5 分钟；`statusLoaded` 与 token 校验双双落定才渲染，未登录不闪屏）。数据层（P0-P4）：`GET /sidebar` 组合快照（会话+工作区+详情一次取齐，ETag/304；替代侧边栏三级 N+1 瀑布）；`GET /chat/sessions/{id}?tail=N` 渐进加载（首屏最近 40 条 + “加载更早”按钮，`.msg-cv` content-visibility 跳过视口外渲染）；教材库空闲零轮询（building 2s / ocr_waiting 15s 条件轮询 + 焦点/WS_CHANGED_EVENT 驱动刷新）；`apiFetch` 幂等 GET 30s 超时护栏（SSE/上传不受影响）；后端每个响应带 `X-Process-Time` 头 + >1s 终端告警。知识图谱冷构建索引化（§14.7）：公共教材图谱合并（~16K 节点/30K 边）从 O(E²) 去重 + 全量扫边改为 O(1)/邻接索引，冷合并分钟级 → ~0.75s；`graph_for` 每学生构建锁 + 启动后台预热默认学生模型；async 读端点的同步重活一律 `asyncio.to_thread`；`GET /orchestration/today` 确定性优先（LLM 组合只在显式写动作）。
@@ -1579,11 +1579,24 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
   `VoiceProviderError(code)`（映射 WS error 事件的 code）。
 - STT 实现：`stt/whisper_cpp.py`（子进程 `whisper-cli -l zh -nt`，进程级
   asyncio.Semaphore(1) 串行化，2 核保护）、`stt/stub.py`。主 venv 零新增依赖。
+  简体偏置：`--prompt` 携带 `VOICE_WHISPER_PROMPT`（默认「以下是普通话的句子。」），
+  转写结果再经 `zh_simplify.py`（vendored OpenCC T2S 词典，词组最长匹配优先——
+  乾淨→干净而乾隆→乾隆——再单字兜底）重写为简体；whisper zh 解码漂繁体的问题
+  双层修复。
 - TTS 实现：`tts/melotts.py`（HTTP 调 sidecar）、`tts/stub.py`（蜂鸣 PCM16）。
 - 文本处理：`sentences.py`（流式取句 `take_complete`：中文终止符无条件断句、
   ASCII 句点仅在非「数字/字母后」断句，>120 字按标点强制再切）、
   `speak_text.py`（markdown/LaTeX → 可朗读文本：`\frac{a}{b}`→「b分之a」、
-  `^2`→「的2次方」、代码块→占位话术等）。
+  `^2`→「的2次方」、代码块→占位话术等。改版后按语义分阶段：带参命令
+  `\frac/\sqrt[n]/\binom/\bar/\vec` 等用嵌套花括号感知的正则在不动点循环里
+  由内向外坍缩；`^\circ`→「度」、`50\%`→「百分之50」先于通用上标规则；
+  `\sum_{i=1}^{n}`→「求和，从i等于1到n」；三角/对数函数与集合论符号映射
+  中文读法；希腊字母读中文名（阿尔法/贝塔…）；未知 `\command` 保留字母而非
+  删除）。
+- 响度归一：`loudness.py`——MeloTTS 逐句独立合成、句间响度可差数 dB，每句
+  PCM 下发前统一校准到共用 RMS 目标（≈-16.5 dBFS，增益上限 +12 dB 防止把
+  气声放大成噪音），峰值超 ceiling 整体回拉防削波，句首尾 8 ms 线性淡入淡出
+  消边界爆音；前端播放链再串 DynamicsCompressor + makeup gain 实时抹平。
 
 ### P10.3 WebSocket 端点（api/v1/voice.py）
 
@@ -1629,12 +1642,21 @@ MeloTTS 没有官方 HTTP 服务（只有 Python 类），sidecar 用 FastAPI �
   （~10ms 批），零依赖静态资源。
 - `lib/voice/useVoiceCall.ts`：ticket→WS→状态机（idle/connecting/ready/
   recording/recognizing/thinking/speaking/ended）+ 顺序播放队列
-  （AudioBuffer 按事件携带采样率创建，浏览器自动重采样）+ 停止播报。
-- `components/chat/VoiceCallModal.tsx`：motion-modal 通话面板（按住说话大
-  按钮/状态行/实时字幕/挂断）。入口在 `ChatInput` 的电话按钮，依据
-  `GET /voice/status` 显隐；挂断后刷新会话列表，若通话会话=当前会话则重载
-  消息（`loadSession`→`loadFull`）。
-- 已有的 Web Speech 单句麦克风（`useSpeech.ts`）保持不动，二者并存。
+  （AudioBuffer 按事件携带采样率创建，浏览器自动重采样；播放链串
+  DynamicsCompressor+makeup gain）+ 停止播报 + 通话时长计时。沉浸式改版后
+  不再持有对话文本：`stt_result/answer_delta/turn_end/轮内 error` 以回调
+  （`onTurnBegin/onAnswerDelta/onTurnEnd/onTurnError`）交给宿主写入聊天
+  store；`tts_start` 的原始句子暴露为 `speakingSentence` 供板书渲染。
+- `components/chat/VoiceCallLayer.tsx`：沉浸式通话层（替代原 VoiceCallModal
+  弹窗）——左上角「小手机」指示器（迷你手机+声波+时长，AnchoredPopover
+  内停止播报/挂断）、中上部虚化「板书」小黑板（`tts_start` 句子含公式时以
+  KaTeX 渲染，讲完延迟淡出）、底部控制条（按住说话/停止播报/挂断）。语音轮
+  经回调写入 `useChatStore`（世代守卫 + 50ms 节流，与 handleSend 同构），
+  页面消息流照常显示；入口在 chat 页右上角电话按钮，依据 `GET /voice/status`
+  显隐；通话期间输入框只隐藏不卸载（草稿保留）；挂断后刷新会话列表，若通话
+  会话=当前会话则重载消息（`loadSession`→`loadFull`）。
+- 原 Web Speech 单句麦克风（`useSpeech.ts`）已移除：语音能力统一收敛到电话
+  模式，避免两套 STT 入口并存的权限/语言偏好不一致。
 
 ### P10.6 资源与部署（2C8G/8GB 盘）
 
@@ -1647,8 +1669,10 @@ MeloTTS 没有官方 HTTP 服务（只有 Python 类），sidecar 用 FastAPI �
 
 ### P10.7 测试（backend/tests/test_voice.py，继承 StorageSandboxTestCase）
 
-切句/朗读清洗/WAV 往返/工厂 fail-open 单测；WS 端到端用 stub providers +
-patch `chat_agent.run_turn` 罐头事件：start→音频→utterance_end→断言
-stt_result/answer_delta/tts 三元组×2/turn_end/会话落盘在沙箱；ticket 单次
+切句/朗读清洗（含度数/函数名/嵌套分数/`\mathbb`/百分号/n 次根号/`\text` 保内容/
+无穷/求和边界/向量与拔帽）/WAV 往返/工厂 fail-open/繁→简（词组歧义 乾隆 vs 乾淨）/
+响度归一（大小声句同 RMS、增益上限、首尾淡出为零、静音不动）单测；WS 端到端用
+stub providers + patch `chat_agent.run_turn` 罐头事件：start→音频→utterance_end→
+断言 stt_result/answer_delta/tts 三元组×2/turn_end/会话落盘在沙箱；ticket 单次
 性、坏 ticket 4401、header 直连鉴权、too_short、截断 warning、外来会话
 404 语义、end 优雅关闭。

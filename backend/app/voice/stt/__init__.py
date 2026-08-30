@@ -23,7 +23,7 @@ def _provider_key() -> tuple:
     from app.core.config import settings
     return (settings.voice_stt_provider, settings.voice_whisper_bin,
             settings.voice_whisper_model, settings.voice_whisper_lang,
-            settings.voice_whisper_threads)
+            settings.voice_whisper_prompt, settings.voice_whisper_threads)
 
 
 def reset_stt_provider() -> None:
@@ -55,6 +55,7 @@ def get_stt_provider() -> STTProvider | None:
             from .whisper_cpp import WhisperCppSTT
             client = WhisperCppSTT(bin_path, model_path,
                                    language=settings.voice_whisper_lang or "zh",
+                                   prompt=settings.voice_whisper_prompt,
                                    threads=settings.voice_whisper_threads)
         else:
             log.warning("未知 VOICE_STT_PROVIDER=%r，语音 STT 关闭", provider)

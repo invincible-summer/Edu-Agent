@@ -40,6 +40,7 @@ from app.voice.stt import get_stt_provider
 from app.voice.tts import get_tts_provider
 from app.voice.sentences import take_complete
 from app.voice.speak_text import to_speakable
+from app.voice.loudness import normalize_pcm16
 from app.voice.wav import pcm16_to_wav
 
 log = logging.getLogger(__name__)
@@ -339,10 +340,13 @@ class _VoiceCall:
                 log.warning("voice tts crashed: %s", exc)
                 await self._send({"type": "tts_error", "code": "tts_unavailable"})
                 return
+            # Sentences synthesize independently and vary several dB in
+            # loudness; level each clip so playback stays 忽大忽小-free.
+            pcm = normalize_pcm16(result_tts.pcm16, result_tts.sample_rate)
             await self._send({"type": "tts_start", "seq": seq,
                               "text": sentence,
                               "sample_rate": result_tts.sample_rate})
-            await self.ws.send_bytes(result_tts.pcm16)
+            await self.ws.send_bytes(pcm)
             await self._send({"type": "tts_end", "seq": seq})
             seq += 1
 
