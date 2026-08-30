@@ -106,13 +106,20 @@ out/
 
 # --- Demo account showcase data (example@example.com / usr_12e410b4e2) -----
 # Deliberately versioned as product-demo content (see AGENTS.md / DESIGN.md).
-# Exact-file negations only: patterns like chat_20260829_* would also match
-# other accounts' sessions. Transcript sidecars (*.transcript.jsonl) and
-# backend traces stay ignored -- no chain-of-thought goes into VCS.
+# Zones whose path carries the account id are whitelisted as a whole below
+# (notes vault, students/* state, per-account library files/uploads), so any
+# future file for this account is tracked automatically. Chats and workspaces
+# CANNOT be wildcarded: their filenames carry only timestamp+title (the
+# account id lives inside the JSON), so a glob there would also commit other
+# users' private sessions -- they stay exact-file negations.
+# Transcript sidecars (*.transcript.jsonl) and backend traces stay ignored
+# for every other account -- no chain-of-thought goes into VCS.
 # On fresh clones run:  python deploy/seed_demo_account.py
 !/notes/usr_12e410b4e2/
-!students/usr_12e410b4e2.*
-!chat_history/library/usr_12e410b4e2.json
+!students/usr_12e410b4e2*
+!chat_history/library/usr_12e410b4e2*.json
+!chat_history/library/data/usr_12e410b4e2/
+!chat_history/library/data/usr_12e410b4e2/**
 !chat_history/workspaces/
 chat_history/workspaces/*
 !chat_history/workspaces/ws_20260829_134755_高等数学.json
