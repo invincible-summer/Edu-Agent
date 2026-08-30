@@ -1637,12 +1637,18 @@ MeloTTS 源码和模型缓存，并执行一次中文 warmup。`melo_bootstrap.p
 
 - 浏览器 STT 不占用服务器语音识别模型内存，也不需要服务器录音缓存；部署侧仅需
   MeloTTS sidecar 的 CPU venv 与 Hugging Face 模型缓存。
-- `backend/models/voice/` 只作为 MeloTTS/HF 部署缓存，`backend/vendor/` 中只保留
-  MeloTTS 源码；这些资源均 gitignored，不属于用户运行数据。
+- 仓库只提交 sidecar 集成代码、固定依赖和许可证声明。`deploy/install_voice.sh`
+  在部署时把固定 revision 的 MeloTTS 源码放入 `backend/vendor/`，把
+  MeloTTS-Chinese/BERT 权重与 tokenizer 放入 `backend/models/voice/`，并把 venv
+  放入 `backend/voice_sidecar/.venv/`；三者均 gitignored，不属于用户运行数据。
+- 安装脚本预取已审计 revision 后切换 HF/Transformers offline 执行 warmup，避免模型
+  `main` 漂移。部署时下载仅避免 Git 仓库直接携带模型；容器、VM 或离线包若包含
+  下载结果，仍须保留模型卡、LICENSE/NOTICE 和实际 SBOM。
 - `start.sh` 在 `VOICE_TTS_PROVIDER=melo` 时自动拉起 sidecar，并为端口回退、PID
   和健康检查保留现有逻辑；nginx 仍需为 `/api/v1/voice/` 透传 WebSocket Upgrade。
-- 变更 MeloTTS revision、模型、语言或 sidecar 依赖时，必须同步更新许可证审计、
-  模型来源/revision/hash 和实际发布 SBOM。
+- 浏览器 `SpeechRecognition` 是厂商平台/服务边界，不是本项目 MIT 依赖；不能承诺
+  永久免费或无条件商用。变更浏览器目标、MeloTTS revision、模型、语言、sidecar
+  依赖或发布形态时，必须重做服务条款/许可证审计和发布 SBOM。
 
 ### P10.7 测试
 

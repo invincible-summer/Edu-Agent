@@ -19,7 +19,16 @@ VENDOR="$BACKEND/vendor"
 MODELS="$BACKEND/models/voice"
 SIDECAR="$BACKEND/voice_sidecar"
 MELO_REF="${VOICE_MELO_REF:-209145371cff8fc3bd60d7be902ea69cbdb7965a}"
-PY="${PYTHON_BIN:-python3}"
+MELO_MODEL_REF="${VOICE_MELO_MODEL_REF:-af5d207a364ea4208c6f589c89f57f88414bdd16}"
+BERT_MULTI_REF="${VOICE_BERT_MULTI_REF:-7cbf9a625e29989f6b9c6c2fa68234c304f7e38f}"
+BERT_TOKENIZER_REF="${VOICE_BERT_TOKENIZER_REF:-86b5e0934494bd15c9632b12f734a8a67f723594}"
+if [ -n "${PYTHON_BIN:-}" ]; then
+    PY="$PYTHON_BIN"
+elif command -v python3.11 >/dev/null 2>&1; then
+    PY="$(command -v python3.11)"
+else
+    PY="$(command -v python3)"
+fi
 
 log() { echo "[install_voice] $*"; }
 
@@ -61,17 +70,15 @@ done
 
 # --------------------------------------------------------------------------
 log "步骤 2/4：sidecar venv（CPU-only torch + 已审计中文依赖）"
-if [ ! -x "$SIDECAR/.venv/bin/python" ]; then
-    "$PY" -m venv "$SIDECAR/.venv"
-fi
+# Recreate instead of reusing the venv: a compliance-sensitive install must not
+# retain packages from an older all-language MeloTTS deployment. Model caches
+# live outside the venv and are not removed.
+"$PY" -m venv --clear "$SIDECAR/.venv"
 PIP=("$SIDECAR/.venv/bin/python" -m pip install --no-cache-dir)
 "${PIP[@]}" --upgrade pip -q
-"${PIP[@]}" torch torchaudio --index-url https://download.pytorch.org/whl/cpu -q
+"${PIP[@]}" torch==2.11.0+cpu torchaudio==2.11.0+cpu \
+    --index-url https://download.pytorch.org/whl/cpu -q
 "${PIP[@]}" -r "$SIDECAR/requirements.txt" -q
-# These packages belong only to unused non-Chinese MeloTTS language paths.
-# melo_bootstrap supplies fail-loud stubs for the Chinese-only service, so
-# reused virtualenvs do not accidentally retain those language packages.
-"$SIDECAR/.venv/bin/python" -m pip uninstall --yes num2words pykakasi mecab-python3 unidic-lite anyascii jamo gruut gruut-ipa g2pkk eng_to_ipa unidecode -q 2>/dev/null || true
 log "sidecar venv 就绪 ($(du -sh "$SIDECAR/.venv" | cut -f1))"
 
 # --------------------------------------------------------------------------
@@ -97,9 +104,56 @@ NLTK_BASE="https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages"
 
 cd "$SIDECAR"
 MELO_ROOT="$VENDOR/MeloTTS" HF_HOME="$MODELS/hf" \
+MELO_MODEL_REF="$MELO_MODEL_REF" BERT_MULTI_REF="$BERT_MULTI_REF" \
+BERT_TOKENIZER_REF="$BERT_TOKENIZER_REF" \
     ./.venv/bin/python - <<'PYEOF'
 import os
 import sys
+from pathlib import Path
+from huggingface_hub import snapshot_download
+
+
+def pin_snapshot(repo_id: str, revision: str, allow_patterns: list[str]) -> str:
+    """Download an audited revision and make offline no-revision calls use it."""
+    snapshot = Path(snapshot_download(
+        repo_id=repo_id,
+        revision=revision,
+        allow_patterns=allow_patterns,
+    ))
+    # Hugging Face caches snapshots under <repo>/snapshots/<sha>.  MeloTTS and
+    # transformers later call from_pretrained()/hf_hub_download() without a
+    # revision, so pin that local cache's main ref before enabling offline mode.
+    refs = snapshot.parents[1] / "refs"
+    refs.mkdir(parents=True, exist_ok=True)
+    (refs / "main").write_text(revision, encoding="utf-8")
+    return str(snapshot)
+
+
+pin_snapshot(
+    repo_id="myshell-ai/MeloTTS-Chinese",
+    revision=os.environ["MELO_MODEL_REF"],
+    allow_patterns=["config.json", "checkpoint.pth", "README.md", "LICENSE*"],
+)
+pin_snapshot(
+    repo_id="bert-base-multilingual-uncased",
+    revision=os.environ["BERT_MULTI_REF"],
+    allow_patterns=[
+        "config.json", "pytorch_model.bin", "model.safetensors", "README.md",
+        "LICENSE*", "NOTICE*", "tokenizer.json", "tokenizer_config.json",
+        "vocab.txt", "special_tokens_map.json",
+    ],
+)
+pin_snapshot(
+    repo_id="bert-base-uncased",
+    revision=os.environ["BERT_TOKENIZER_REF"],
+    allow_patterns=[
+        "README.md", "LICENSE*", "NOTICE*", "tokenizer.json",
+        "tokenizer_config.json", "vocab.txt", "special_tokens_map.json",
+    ],
+)
+
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
 sys.path.insert(0, os.path.dirname(os.path.abspath("app.py")))
 from melo_bootstrap import bootstrap
 bootstrap()
@@ -114,6 +168,9 @@ tts.tts_to_file(
 )
 print("[install_voice] warmup synthesis OK")
 PYEOF
+log "MeloTTS-Chinese revision: $MELO_MODEL_REF"
+log "bert-base-multilingual-uncased revision: $BERT_MULTI_REF"
+log "bert-base-uncased tokenizer revision: $BERT_TOKENIZER_REF"
 log "TTS 模型缓存: $MODELS/hf ($(du -sh "$MODELS/hf" | cut -f1))"
 
 # --------------------------------------------------------------------------
@@ -124,4 +181,6 @@ cat <<ENV
 VOICE_TTS_PROVIDER=melo
 VOICE_TTS_BASE_URL=http://127.0.0.1:8130
 ENV
+log "源码、模型和 venv 均位于 .gitignore 排除目录，不得提交到仓库。"
+log "部署/镜像再分发前请阅读 docs/VOICE_LICENSES.md，并保留实际 LICENSE/NOTICE/SBOM。"
 log "然后 ./start.sh 正常启动（sidecar 会自动拉起）。"

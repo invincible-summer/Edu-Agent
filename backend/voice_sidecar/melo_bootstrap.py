@@ -1,12 +1,11 @@
 """Mount MeloTTS while keeping unused language paths out of the sidecar.
 
-The pinned MeloTTS release imports every language cleaner from
+The pinned MeloTTS release imports every language module from
 ``melo.text.cleaner`` even though this service selects only ``ZH`` (the
-Chinese/English mixed frontend).  Japanese and Korean modules therefore have
-import-time references to optional language packages that are never executed
-by this sidecar.  Install small, fail-loud stubs for those references before
-MeloTTS is imported instead of installing their language dictionaries or
-copyleft packages.
+Chinese/English mixed frontend). This sidecar never executes the other
+language paths, so it installs small, fail-loud modules before MeloTTS is
+imported instead of installing their language dictionaries, phonemizers,
+tokenizers, or unrelated model-download dependency trees.
 
 If a future change selects a non-Chinese language, the relevant package must
 be added deliberately and its license/data terms must be audited again.
@@ -64,6 +63,12 @@ def _unavailable_gruut(*args, **kwargs):
     raise _UnavailableLanguagePath("Non-Chinese phonemization is not installed")
 
 
+def _unavailable_cached_path(*args, **kwargs):
+    raise _UnavailableLanguagePath(
+        "MeloTTS non-Hugging-Face model download path is not enabled"
+    )
+
+
 class _UnavailableIPA:
     @staticmethod
     def without_stress(*args, **kwargs):
@@ -84,9 +89,24 @@ def _make_language_module(name: str) -> types.ModuleType:
     return module
 
 
+def _make_japanese_module() -> types.ModuleType:
+    """Stub Japanese imports while retaining English's phone distribution helper."""
+    module = _make_language_module("japanese")
+
+    def distribute_phone(n_phone: int, n_word: int) -> list[int]:
+        phones_per_word = [0] * n_word
+        for _ in range(n_phone):
+            index = phones_per_word.index(min(phones_per_word))
+            phones_per_word[index] += 1
+        return phones_per_word
+
+    module.distribute_phone = distribute_phone
+    return module
+
+
 def _install_stubs() -> None:
-    # These modules are only imported at module load by Japanese/Korean
-    # cleaners.  Do not import installed copies from a reused virtualenv.
+    # These names are referenced by excluded Japanese/Korean cleaners.
+    # Do not import installed copies even if a caller contaminated the venv.
     pykakasi = types.ModuleType("pykakasi")
     pykakasi.kakasi = _KakasiStub
     sys.modules["pykakasi"] = pykakasi
@@ -118,12 +138,20 @@ def _install_stubs() -> None:
     gruut_ipa.IPA = _UnavailableIPA
     sys.modules["gruut_ipa"] = gruut_ipa
 
+    # The active ZH path always downloads from Hugging Face. Upstream imports
+    # cached_path only for its alternative S3/non-HF path; stub it so that the
+    # unused Google Cloud/Boto dependency tree is not installed accidentally.
+    cached_path = types.ModuleType("cached_path")
+    cached_path.cached_path = _unavailable_cached_path
+    sys.modules["cached_path"] = cached_path
+
     # get_bert() imports every language backend, and the upstream French,
     # Spanish and Korean modules construct tokenizers at import time.  Only
     # Chinese mixed English is supported here; pre-installing these modules
     # avoids downloading unrelated language models while retaining a loud
     # failure if a caller selects one accidentally.
     importlib.import_module("melo.text")
+    sys.modules["melo.text.japanese"] = _make_japanese_module()
     for name in ("korean", "french", "spanish", "english_bert",
                  "japanese_bert", "french_bert", "spanish_bert"):
         sys.modules[f"melo.text.{name}"] = _make_language_module(name)

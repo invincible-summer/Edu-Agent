@@ -59,12 +59,31 @@ chat_history/library/data/*
 *.sqlite
 *.sqlite3
 *.db
-# P10 voice local assets: MeloTTS checkout and downloaded model weights
-# (install via deploy/install_voice.sh). Local build artifacts, not project
-# content and never user data.
+# P10 voice local assets: MeloTTS checkout, model weights, and runtime caches.
+# (install via deploy/install_voice.sh). These are deployment-local artifacts,
+# not project content and never user data. The parent-directory rules are the
+# primary guard; the extension rules are defense in depth if a cache is moved
+# below either deployment-only root.
 /backend/vendor/
 /backend/models/
 /backend/voice_sidecar/.venv/
+/backend/.cache/
+/backend/.huggingface/
+# Weight-specific formats are never repository source. Keep generic *.bin
+# scoped to the deployment roots above because unrelated fixtures may use it.
+*.ckpt
+*.gguf
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.tflite
+*.mlmodel
+*.mlpackage
+*.params
+*.weights
+/backend/vendor/**/*.bin
+/backend/models/**/*.bin
 # Runtime per-account state. The demo account's showcase files are re-included
 # in the demo block at the bottom of this file; everything else stays ignored.
 students/*

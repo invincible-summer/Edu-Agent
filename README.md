@@ -195,25 +195,35 @@ cd backend && python -m unittest discover -s tests
 cd frontend && pnpm exec tsc --noEmit && pnpm exec eslint src/ && pnpm exec next build --webpack
 ```
 
-## 第三方组件与许可证（语音）
+## 语音依赖、模型与许可证
 
-当前电话链路不是“全链路 MIT”：
+电话输入只调用浏览器的 `SpeechRecognition` / `webkitSpeechRecognition`，后端只
+接收最终文本；它是浏览器平台接口，不是随本仓库分发的 MIT 组件。本项目不会把
+电话输入 PCM 发送到 Edu_Agent 后端，但 Chrome/Edge 等浏览器可能把音频交给厂商
+在线服务。是否可用、收费、允许特定商业用途以及音频如何处理，应以部署时实际
+浏览器、地区、账号和厂商条款为准；本项目不作“永久免费/无条件商用”承诺。
 
-| 组件 | 当前用途 | 许可证/条款 |
-|---|---|---|
-| 浏览器 `SpeechRecognition` / `webkitSpeechRecognition` | 唯一语音识别输入 | 浏览器平台 API，不是本项目分发的 MIT 依赖；Chrome/Edge 及可能使用的在线服务按厂商条款执行 |
-| MeloTTS 源码 | 本地中文 TTS 推理 | MIT；分发源码时保留版权和 [`docs/licenses/melotts-MIT.txt`](docs/licenses/melotts-MIT.txt) |
-| MeloTTS-Chinese 模型 | 中文/中英混排 TTS 权重 | 模型卡标示 MIT；分发权重时保留模型卡、README、许可证、revision/hash |
-| BERT 文本前端模型 | MeloTTS 中文特征 | Apache-2.0；不得误列为 MIT |
-| MeloTTS sidecar 及其依赖 | 推理、文本、HTTP、音频 | 各包及 wheel/native library 自有许可证；以实际 `LICENSE`/`COPYING`/`NOTICE` 和 SBOM 为准 |
+回答播报使用可选的本地 MeloTTS sidecar。仓库只提交集成代码、依赖清单和第三方
+声明；`deploy/install_voice.sh` 在部署机器上下载固定 revision 的 MeloTTS 源码、
+MeloTTS-Chinese 权重和 BERT 资源到 gitignored 目录：
 
-MIT、Apache-2.0、BSD、ISC 等许可证通常可在履行各自版权、许可证和 NOTICE 义务
-后进行商业使用；MPL、PyTorch 组合许可证、模型权重、native library 和浏览器
-服务仍须分别核查。项目不宣称浏览器识别服务永久免费、离线可用或无条件适合
-商业部署，也不把电话输入 PCM 上传到后端。
+```text
+backend/vendor/           # 上游源码 checkout
+backend/models/voice/     # 模型/Hugging Face 缓存
+backend/voice_sidecar/.venv/
+```
 
-固定 revision、逐项依赖来源、模型边界和发布清单见
-[`docs/VOICE_LICENSES.md`](docs/VOICE_LICENSES.md)；GitHub 风格的第三方声明见
+截至 **2026-08-30** 的审计中，当前 Git 跟踪树/index、本地所有可达 Git refs 和 GitHub 远端
+`main` 均没有语音/LLM/TTS/STT 模型权重扩展名；远端存在的 `.npz` 是
+`knowledge/public_vector_artifacts/` 下的公开教材检索向量，不是语音模型。历史提交
+曾包含已删除的 Whisper 集成源码和许可文本，但未发现 Whisper 模型参数。
+
+部署时下载能避免本仓库直接再分发大模型文件，**不能消除**上游源码、模型卡、
+训练数据、Python wheel、native library、NOTICE、商标、隐私或服务条款义务。
+MeloTTS 源码是 MIT；当前模型与依赖还包含 Apache-2.0、BSD、ISC、MPL/LGPL 和
+多许可证二进制边界，不能把整条语音链路统称为 MIT。固定 revision、逐项来源、
+Git 审计方法与发布清单见 [`docs/VOICE_LICENSES.md`](docs/VOICE_LICENSES.md)；简明
+第三方声明见
 [`docs/licenses/VOICE_THIRD_PARTY_NOTICES.md`](docs/licenses/VOICE_THIRD_PARTY_NOTICES.md)。
 
 ## 安全与隐私

@@ -3,35 +3,30 @@
 # of installed as a package, so its setup.py post-install hook is not run.
 # That avoids downloading the optional Japanese unidic dictionary.
 #
-# melo/text/cleaner.py imports all language modules at module import time.
-# melo_bootstrap.py supplies fail-loud stubs for the unused Japanese/Korean
-# imports, so this file contains only dependencies used by the sidecar and
-# the active ZH/ZH_MIX_EN import/inference path.  Do not infer a complete
-# license list from this file alone: audit the resolved wheel metadata/SBOM
-# whenever distributing a virtualenv or image.
+# These are the direct Python package versions audited on 2026-08-30.
+# torch/torchaudio are intentionally installed separately from the CPU-only
+# PyTorch index by install_voice.sh; do not install generic PyPI torch wheels.
+# A released image/venv must still preserve the resolved transitive wheels'
+# LICENSE/COPYING/NOTICE files and a versioned SBOM.
 
 # Sidecar HTTP service
-fastapi
-uvicorn
-pydantic
+fastapi==0.141.1
+uvicorn==0.52.4
+pydantic==2.13.5
 
 # MeloTTS inference and model loading
-# torch/torchaudio are installed first from the CPU-only PyTorch index by
-# deploy/install_voice.sh.
-torch
-torchaudio
+# torch==2.11.0+cpu and torchaudio==2.11.0+cpu are installed by the script.
 transformers==4.27.4
 numpy==1.26.4
-scipy
-soundfile
-librosa
-cached-path
-huggingface_hub
-tqdm
+scipy==1.17.1
+soundfile==0.14.0
+librosa==0.11.0
+huggingface_hub==0.36.2
+tqdm==4.70.0
 
 # Chinese and mixed Chinese/English text processing
-jieba
-pypinyin
-cn2an
-g2p_en
-nltk
+jieba==0.42.1
+pypinyin==0.55.0
+cn2an==0.5.24
+g2p_en==2.1.0
+nltk==3.10.3
