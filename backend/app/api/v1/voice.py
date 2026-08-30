@@ -128,8 +128,8 @@ class _VoiceCall:
     """State machine for a single voice call connection.
 
     ``_turn_task`` guards the one-turn-at-a-time rule: audio arriving
-    while a turn is running is discarded (with a busy notice) so a 2-vCPU
-    server never queues transcriptions behind each other.
+    while a turn is running is discarded (with a busy notice) so the
+    CPU-constrained target never queues transcriptions behind each other.
     """
 
     def __init__(self, websocket: WebSocket, student_id: str):

@@ -1558,18 +1558,21 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 ### P10.1 形态与边界
 
 - **交互**：push-to-talk。按住说话（AudioWorklet 采集 → mono 16 kHz PCM16 帧上行）、
-  松手成轮；老师回答**按句合成、逐句推送**，首句数秒内开播（2 vCPU 上 MeloTTS
-  RTF≈1–1.5，整段合成会拖到几十秒）。
+  松手成轮；老师回答**按句合成、逐句推送**。目标环境为 4 vCPU / 8 GB RAM；
+  首句延迟和 RTF 需在部署 CPU 上实测，整段合成不作为单次阻塞任务。
 - **会话一致性**：语音轮次直接进现有聊天会话——服务端把转写文本喂给
   `run_turn`（与 `/chat/stream` 同一条 Supervisor 管线），会话盖章/所有权/
   workspace 绑定语义与 `chat_stream` 完全一致；无会话则新建并回传 `session_bound`。
   记忆、RAG、教学层对语音轮零特判。
 - **默认全关**：`VOICE_STT_PROVIDER`/`VOICE_TTS_PROVIDER` 默认 off，语音入口
   隐藏，其余功能零影响（fail-open，同 embedding 轨哲学）。
-- **许可证**：whisper.cpp/Whisper 权重/MeloTTS/MeloTTS-Chinese 全 MIT，中文
-  前端 BERT 为 Apache-2.0；MeloTTS 依赖中的 GPL 系组件经 stub/剔除中和，
-  运行进程内零 copyleft。核实报告与义务清单：`docs/VOICE_LICENSES.md`，
-  许可文本全文：`docs/licenses/`。
+- **许可证**：provider 接口与制品许可证是两个独立层次。当前默认的
+  `whisper.cpp`/ggml/Whisper `ggml-small-q5_1.bin`、MeloTTS 代码与
+  MeloTTS-Chinese 权重按已核查的 MIT 信息管理；中文前端 BERT 与 vendored
+  OpenCC 转换词典按 Apache-2.0 管理。MIT/Apache-2.0 通常允许商业使用、修改、
+  再分发和闭源集成，但分发时仍需保留版权/许可证，Apache-2.0 还要处理 NOTICE、
+  修改声明和专利条款。代码仓库许可不能替代模型权重核查；完整记录、revision、
+  实际文件名和发布清单见 `docs/VOICE_LICENSES.md`，许可文本见 `docs/licenses/`。
 
 ### P10.2 插件层（backend/app/voice/）
 
@@ -1577,8 +1580,9 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 
 - `base.py`：`STTProvider.transcribe(wav)->text`、`TTSProvider.synthesize(text)->(pcm16, sample_rate)`、
   `VoiceProviderError(code)`（映射 WS error 事件的 code）。
-- STT 实现：`stt/whisper_cpp.py`（子进程 `whisper-cli -l zh -nt`，进程级
-  asyncio.Semaphore(1) 串行化，2 核保护）、`stt/stub.py`。主 venv 零新增依赖。
+- STT 实现：`stt/whisper_cpp.py`（子进程 `whisper-cli -l zh -nt`，默认
+  `VOICE_WHISPER_THREADS=2`，进程级 `asyncio.Semaphore(1)` 串行化，在 4 vCPU
+  目标机上按延迟/内存实测调至 3–4）、`stt/stub.py`。主 venv 零新增依赖。
   简体偏置：`--prompt` 携带 `VOICE_WHISPER_PROMPT`（默认「以下是普通话的句子。」），
   转写结果再经 `zh_simplify.py`（vendored OpenCC T2S 词典，词组最长匹配优先——
   乾淨→干净而乾隆→乾隆——再单字兜底）重写为简体；whisper zh 解码漂繁体的问题
@@ -1658,14 +1662,22 @@ MeloTTS 没有官方 HTTP 服务（只有 Python 类），sidecar 用 FastAPI �
 - 原 Web Speech 单句麦克风（`useSpeech.ts`）已移除：语音能力统一收敛到电话
   模式，避免两套 STT 入口并存的权限/语言偏好不一致。
 
-### P10.6 资源与部署（2C8G/8GB 盘）
+### P10.6 资源与部署（4 vCPU / 8 GB RAM / 8 GB 盘）
 
-- 磁盘：whisper.cpp+base-q5_1 ≈0.3GB；sidecar venv ≈1.7GB；模型缓存 ≈1GB
-  （checkpoint 0.2GB + multilingual BERT 0.7GB + tokenizers）。全程
-  `--no-cache-dir`，`deploy/install_voice.sh` 幂等可重跑。
-- 内存：主服务 ≈1GB + whisper 转写瞬时 ≈0.4GB + MeloTTS 常驻 ≈1.5–2.5GB。
-- 模型可经 .env 无缝替换（如 small-q5_1 提高中文准确率）；未来 SenseVoice/
-  CosyVoice 等只需实现同一 Provider 接口并注册工厂。
+- 默认安装模型：`ggml-small-q5_1.bin`，约 180–190 MiB；whisper.cpp 源码/构建
+  加模型约 0.5GB。sidecar venv 约 1.7–2GB，HF 模型缓存约 0.8–1.0GB；全程
+  `--no-cache-dir`，`deploy/install_voice.sh` 幂等可重跑，系统盘仍需为项目、临时
+  文件和编译缓存留余量。
+- 内存：主服务约 1GB；small 量化 STT 按 0.6–1.0GB 峰值预留；MeloTTS 常驻约
+  1.5–2.5GB。4 vCPU / 8GB RAM 适合低并发，实际峰值需在目标机器实测。
+- STT 默认 `VOICE_WHISPER_THREADS=2`，可在 4 vCPU 机器按延迟/内存实测调至 3–4；
+  `whisper_cpp.py` 仍以 `asyncio.Semaphore(1)` 串行化 STT 进程。TTS sidecar
+  默认 `OMP_NUM_THREADS=2`、`MKL_NUM_THREADS=2`，按句合成、逐句推送，避免同时
+  运行多条模型推理。
+- 模型路径和名称可经 `.env` 覆盖，但切换 ASR 模型、量化文件或 TTS 权重时必须
+  重新核查权重许可证并更新 `docs/VOICE_LICENSES.md`；实现同一 Provider 接口不
+  会自动继承 Whisper 的模型许可。SenseVoice/Paraformer 等替代方案须先完成
+  独立核查，不能仅凭代码仓库公开就作为默认模型。
 
 ### P10.7 测试（backend/tests/test_voice.py，继承 StorageSandboxTestCase）
 

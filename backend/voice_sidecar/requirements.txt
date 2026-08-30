@@ -1,15 +1,17 @@
 # MeloTTS sidecar 的「中文合成专用」依赖（install_voice.sh 安装；
 # 许可证依据见 docs/VOICE_LICENSES.md）。
 #
-# 刻意排除且全库零 import：unidecode (GPL-2.0+)、pykakasi (GPLv3+)、
-# unidic 完整词典（约 1 GB 磁盘）、eng_to_ipa（无许可声明）。
+# 默认不安装：unidecode (GPL-2.0+)、pykakasi (GPLv3+)、num2words
+# (LGPL)、完整 unidic 词典（约 1 GB 磁盘）和 eng_to_ipa（本方案未确认
+# 许可依据）。pykakasi/num2words 虽被上游非中文模块在导入期引用，但由
+# melo_bootstrap.py 提供最小 stub；中文路径不执行其日/韩逻辑。
 #
 # 但 melo/text/cleaner.py 在 import 期加载全部语言模块，因此必须装以下
 # 「导入期需要、中文合成不执行」的宽松许可包：mecab-python3/unidic-lite
 # （日语 MeCab 模块级初始化需要；unidic-lite 仅约 15 MB、BSD/MIT 数据，
 # 不是 1 GB 的完整 unidic）、anyascii、jamo（韩语导入期需要，MIT/BSD）。
-# GPLv3 的 pykakasi 与 LGPL 的 num2words 同为导入期引用，但由
-# melo_bootstrap.py 以 stub 中和——不安装、不进入进程。
+# 发布 sidecar venv 时仍应按实际安装文件生成 SBOM；复用旧环境不能仅凭
+# 本 requirements 文件推断其许可证集合。
 #
 # torch/torchaudio 必须先单独安装 CPU 版（install_voice.sh 处理）：
 #   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu

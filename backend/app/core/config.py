@@ -221,7 +221,7 @@ class Settings:
     # MeloTTS sidecar base URL (localhost only; started by start.sh).
     voice_tts_base_url: str = os.getenv("VOICE_TTS_BASE_URL", "http://127.0.0.1:8130")
     voice_tts_speed: float = float(os.getenv("VOICE_TTS_SPEED", "1.0"))
-    # 单轮语音时长上限（秒），超出截断：保护 2 vCPU 服务器的转写延迟。
+    # 单轮语音时长上限（秒），超出截断：保护 4 vCPU 服务器的转写延迟。
     voice_max_audio_seconds: int = max(5, int(os.getenv("VOICE_MAX_AUDIO_SECONDS", "30")))
 
     # Server

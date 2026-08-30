@@ -31,7 +31,7 @@
 | Auth | JWT（PyJWT）+ bcrypt + resolve_student_id 依赖注入（AUTH_MODE 开关） |
 | Agent | 自研轻量框架：Supervisor + M10 Skill Registry/Decision/Runtime + ReAct function-calling + 统一工具协议 + Trace |
 | 检索 | BM25（常驻）+ 向量（Chroma + 本地 MiniLM/OpenAI 兼容 Embedding，可选），RRF(k=60) 融合 |
-| 语音（P10，可选） | 电话式 WebSocket 语音对话 + 可插拔 STT/TTS（默认 whisper.cpp + MeloTTS-Chinese，均 MIT） |
+| 语音（P10，可选） | 电话式 WebSocket 语音对话 + 可插拔 STT/TTS（默认 `whisper.cpp` + `ggml-small-q5_1.bin` + MeloTTS-Chinese；许可证审计见 `docs/VOICE_LICENSES.md`） |
 | 持久化 | JSON 文件（原子写 + 文件锁）+ 磁盘上传文本/原件 |
 
 ## 快速开始
@@ -139,8 +139,10 @@ cd backend && python cli.py --grade 初中 --once "讲一下惯性"
 | `VOICE_STT_PROVIDER` | 语音 STT 插件：off/stub/whisper（whisper.cpp 子进程）。未装或配置错误时自动降级为不可用，聊天不受影响 | off |
 | `VOICE_TTS_PROVIDER` | 语音 TTS 插件：off/stub/melo（MeloTTS-Chinese sidecar，`start.sh` 在 melo 时自动拉起） | off |
 | `VOICE_WHISPER_BIN/MODEL/LANG/THREADS/PROMPT` | whisper.cpp 二进制与 ggml 模型路径、语言、线程数、简体偏置初始提示（转写还会经内置 OpenCC 繁→简词典兜底） | 空 |
+| `VOICE_WHISPER_SIZE`（安装脚本） | 安装脚本下载的 GGML 模型尺寸；默认使用 `small-q5_1`，可显式改为其他已支持尺寸 | small-q5_1 |
+| `VOICE_WHISPER_CPP_REF/MODEL_REF/MELO_REF`（安装脚本） | 可复现的 whisper.cpp、GGML 模型仓库和 MeloTTS revision；覆盖后同步更新许可证审计 | 文档中的核查 revision |
 | `VOICE_TTS_BASE_URL/SPEED` | TTS sidecar 地址与语速 | 127.0.0.1:8130 / 1.0 |
-| `VOICE_MAX_AUDIO_SECONDS` | 单轮语音时长上限（超出截断，保护 2 vCPU 转写延迟） | 30 |
+| `VOICE_MAX_AUDIO_SECONDS` | 单轮语音时长上限（超出截断，保护 CPU 转写延迟） | 30 |
 
 R10 资料定界规则：本轮上传文件/图片、引用资料中心教材，或明确要求根据教材/附件回答时，系统会在回答前强制执行一次 `knowledge_search`；当前轮有明确 file_id 时只检索对应资料。工作区仅存在公共资料时，问候等无关轮次不会强制检索；定义/原理/公式/解释等内容型问题由确定性 grounding contract 强制检索，不再依赖模型自行判断。
 
@@ -188,21 +190,56 @@ cd frontend && npx tsc --noEmit && npx next lint     # 前端类型 + 规范
 
 ## 第三方组件与许可证（语音）
 
-语音功能（默认关闭，`deploy/install_voice.sh` 启用）依赖以下开源组件，均已逐项核实
-**代码与模型权重**的许可证，全部为 MIT / Apache-2.0 宽松许可：可免费商用、可用于比赛、
-允许本项目保持闭源。义务仅为保留版权与许可声明（`docs/licenses/` 已存全文）：
+语音功能默认关闭；运行 `deploy/install_voice.sh` 后，再按输出设置 `VOICE_*` 才会启用。
+本节只概括当前默认链路，完整的核查日期、上游 revision、实际文件名、模型权重边界和发布
+义务见 [`docs/VOICE_LICENSES.md`](docs/VOICE_LICENSES.md) 及
+[`docs/licenses/VOICE_THIRD_PARTY_NOTICES.md`](docs/licenses/VOICE_THIRD_PARTY_NOTICES.md)。
 
-| 组件 | 用途 | 代码 | 权重 |
-|------|------|------|------|
-| OpenAI Whisper（ggml 量化权重） | STT 模型 | MIT | MIT |
-| whisper.cpp | STT 推理引擎（CPU） | MIT | 随上游（MIT） |
-| MeloTTS + MeloTTS-Chinese | TTS 引擎与中文声学模型 | MIT | MIT |
-| bert-base-multilingual-uncased | TTS 中文前端 | — | Apache-2.0 |
+### 许可证总览
 
-安装脚本采用「中文合成专用」策略：MeloTTS 依赖中的 GPL 系组件（unidecode、pykakasi、
-num2words、完整 unidic 词典）要么全库零引用不安装，要么由 `melo_bootstrap.py` 在导入期
-以 stub 中和，运行进程内不含任何 copyleft 代码。完整核实报告（含原文引用、来源 URL 与
-商用/比赛合规结论）见 [`docs/VOICE_LICENSES.md`](docs/VOICE_LICENSES.md)。
+| 组件/制品 | 用途 | 代码许可证 | 模型/数据许可证 | 可商业使用 | 可闭源集成 | 分发时义务 |
+|---|---|---|---|---|---|---|
+| OpenAI Whisper 代码 | STT 参考实现和权利来源 | MIT | — | 是 | 是 | 保留 MIT 版权声明和全文 |
+| OpenAI Whisper 官方模型权重 | STT 模型权重 | — | MIT | 是 | 是 | 保留模型来源、版权和许可声明 |
+| `ggml-small-q5_1.bin` | 当前默认 STT 量化权重 | — | 以 Whisper 权重 MIT 为基础；模型仓库元数据为 MIT | 是 | 是 | 记录文件名、来源 revision/hash，并随发布物带声明 |
+| `whisper.cpp` | CPU STT 推理引擎 | MIT | — | 是 | 是 | 保留 MIT 版权声明和全文 |
+| `ggml` | whisper.cpp 底层张量库 | MIT | — | 是 | 是 | 保留 ggml 版权声明和 MIT 全文 |
+| `MeloTTS` | TTS 推理代码 | MIT | — | 是 | 是 | 保留 MIT 版权声明和全文 |
+| `MeloTTS-Chinese` `checkpoint.pth` | 中文 TTS 声学模型 | — | MIT（模型卡） | 是 | 是 | 不删除模型卡/README/许可信息，记录 revision |
+| `bert-base-multilingual-uncased` | MeloTTS 中文前端 BERT | — | Apache-2.0 | 是 | 是 | 保留许可证、版权/归属、修改声明；如有 NOTICE 一并保留 |
+| OpenCC `TSCharacters` / `TSPhrases` | STT 结果繁→简的 vendored 转换数据 | — | Apache-2.0 | 是 | 是 | 保留 Apache-2.0 和来源/归属说明 |
+| sidecar 中已核实的直接依赖 | TTS 导入期和中文合成 | 各包自己的 Apache-2.0、BSD/ISC、MIT 等许可证 | — | 按各包许可 | 通常可以，需逐包确认 | 分发 venv/镜像时带版本化 SBOM 与各包 license/NOTICE |
+
+### MIT/Apache-2.0 能做什么
+
+在遵守通知义务的前提下，MIT/Apache-2.0 允许将这些组件用于商业产品、教育平台、SaaS
+服务、比赛作品、内部系统和闭源软件：可以免费使用、复制、修改、合并、发布、再分发和
+销售包含它们的产品，不要求支付授权费或版税，也不要求公开 Edu_Agent 自身源代码。
+
+- **MIT 义务与限制**：分发软件或模型文件时保留原版权声明和 MIT 全文；修改代码时建议
+  标明修改内容；许可证不授予商标或背书权，不提供质量、适用性或不侵权保证，上游通常不
+  承担使用组件造成的损失责任。
+- **Apache-2.0 额外事项**：保留许可证、版权/归属和修改声明；上游有 `NOTICE` 时一并
+  保留；该许可证包含一定范围的专利授权及专利诉讼终止条款，但不授予商标权，也不提供
+  质量、适用性或不侵权保证。
+- **代码不等于权重**：开源代码仓库的许可证不能自动证明模型权重可商用。Whisper、
+  GGML 量化文件、MeloTTS-Chinese、BERT 和 OpenCC 数据均在本表中分开核查。
+- **合规边界**：许可证只覆盖软件、模型或数据制品本身，不自动覆盖用户录音、转写文本、
+  训练数据、生成内容、个人信息处理或商标使用；商业部署仍需遵守适用法律和用户授权。
+
+### 分发检查清单
+
+1. 保留 `docs/licenses/` 下与实际发布物对应的许可证全文和第三方声明。
+2. 发布 Docker 镜像、安装包、sidecar venv 或模型包时，同时携带版权、许可证和 NOTICE（如有）。
+3. 不删除模型文件内或模型仓库附带的许可证、README、模型卡和归属信息。
+4. 记录实际模型名称、量化格式、来源仓库、revision/commit 和文件 hash。
+5. 检查新增 Python 包、系统库、编解码器、加速后端和模型依赖的许可证，并生成版本化 SBOM。
+6. 不将用户录音、转写文本或私有模型缓存提交到仓库。
+7. 如果替换成其他中文 ASR/TTS 模型，重新核查权重和再分发权限，不能只检查代码许可证。
+
+安装脚本不主动安装 `unidecode`、`pykakasi`、`num2words` 和完整 `unidic`；其中部分 MeloTTS
+模块的导入期符号由 `melo_bootstrap.py` 提供 stub。复用旧 venv、启用其他语言或可选后端时，
+必须重新扫描实际文件，不能把默认中文路径的核查结果套用到整个环境。许可证核查不替代法律意见。
 
 ## 安全与隐私
 

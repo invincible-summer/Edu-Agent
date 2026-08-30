@@ -2,7 +2,7 @@
 
 Runs the prebuilt ``whisper-cli`` binary as a subprocess on a temporary
 WAV file, so no ML dependency enters the main backend venv. Transcription
-is CPU-bound and serialized process-wide: a 2-vCPU server must never run
+is CPU-bound and serialized process-wide so the 4-vCPU target does not run
 two whisper processes at once.
 """
 from __future__ import annotations

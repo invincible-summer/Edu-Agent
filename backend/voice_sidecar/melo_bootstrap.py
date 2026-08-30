@@ -7,10 +7,10 @@ japanese.py / korean.py 顶层导入：
   - num2words（LGPL）：仅导入符号，函数内才调用
 
 两者在中文（ZH/ZH_MIX_EN）合成路径上永远不会执行。这里在导入 melo 之前
-向 sys.modules 注入行为安全的 stub，使 GPL/LGPL 代码完全不进入本进程，
-仓库与部署物也就无需携带任何 copyleft 组件（docs/VOICE_LICENSES.md §3）。
-真实安装的 mecab-python3 / unidic-lite / anyascii / jamo 均为宽松许可
-（BSD/MIT），保留真实包。
+向 sys.modules 注入最小 stub；默认安装脚本不安装这两个包，中文路径也不
+执行其日/韩处理逻辑。复用旧 venv 或改变导入顺序时仍需扫描实际环境，不能把
+该处理写成任意部署的绝对结论（docs/VOICE_LICENSES.md §4.2）。默认安装中的
+mecab-python3 / unidic-lite / anyascii / jamo 仍按各自许可证记录。
 """
 from __future__ import annotations
 

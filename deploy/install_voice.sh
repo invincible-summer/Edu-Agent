@@ -9,12 +9,17 @@
 #   6. 打印启用的 .env 片段
 #
 # 用法：
-#   bash deploy/install_voice.sh                     # 默认 ggml-base-q5_1
-#   VOICE_WHISPER_SIZE=small-q5_1 bash deploy/install_voice.sh
+#   bash deploy/install_voice.sh                     # 默认 ggml-small-q5_1
+#   VOICE_WHISPER_SIZE=base-q5_1 bash deploy/install_voice.sh
 #
-# 磁盘预算（2C8G/8GB 系统盘适用）：whisper.cpp+base-q5_1 约 0.3 GB；
-# sidecar venv 约 1.5-2 GB；MeloTTS-Chinese + bert-base-multilingual-uncased
-# 约 0.9 GB。全程 --no-cache-dir，不安装 unidic（省 1 GB，见许可证文档 §3）。
+# 默认核查快照（可用 *_REF 环境变量显式覆盖，覆盖后请更新 docs/VOICE_LICENSES.md）：
+#   whisper.cpp: c4ac0012a8f5a2082dfca6aad4ddfd8b2c02b337
+#   MeloTTS:     209145371cff8fc3bd60d7be902ea69cbdb7965a
+#   GGML 模型仓库 revision: 5359861c739e955e79d9a303bcbc70fb988958b1
+#
+# 磁盘预算（4 vCPU / 8 GB RAM / 8 GB 系统盘）：whisper.cpp+small-q5_1 约 0.5 GB；
+# sidecar venv 约 1.7-2 GB；MeloTTS-Chinese + bert-base-multilingual-uncased
+# 约 0.9 GB。全程 --no-cache-dir，不安装完整 unidic（见许可证文档 §4）。
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -22,9 +27,12 @@ BACKEND="$ROOT/backend"
 VENDOR="$BACKEND/vendor"
 MODELS="$BACKEND/models/voice"
 SIDECAR="$BACKEND/voice_sidecar"
-WHISPER_SIZE="${VOICE_WHISPER_SIZE:-base-q5_1}"
+WHISPER_SIZE="${VOICE_WHISPER_SIZE:-small-q5_1}"
+WHISPER_CPP_REF="${VOICE_WHISPER_CPP_REF:-c4ac0012a8f5a2082dfca6aad4ddfd8b2c02b337}"
+WHISPER_MODEL_REF="${VOICE_WHISPER_MODEL_REF:-5359861c739e955e79d9a303bcbc70fb988958b1}"
+MELO_REF="${VOICE_MELO_REF:-209145371cff8fc3bd60d7be902ea69cbdb7965a}"
 PY="${PYTHON_BIN:-python3}"
-JOBS="${JOBS:-2}"
+JOBS="${JOBS:-4}"
 
 log() { echo "[install_voice] $*"; }
 
@@ -32,18 +40,36 @@ need_cmd() {
     command -v "$1" &>/dev/null || { echo "缺少 $1，请先安装（apt install $2）" >&2; exit 1; }
 }
 
+checkout_revision() {
+    local url="$1" repo="$2" revision="$3"
+    if [ ! -d "$repo/.git" ]; then
+        git clone --filter=blob:none --no-checkout "$url" "$repo"
+    fi
+    # Fetching the exact commit makes the downloaded source auditable. For a
+    # deliberate upgrade, set the corresponding *_REF environment variable
+    # and update docs/VOICE_LICENSES.md in the same change.
+    if ! git -C "$repo" cat-file -e "$revision^{commit}" 2>/dev/null; then
+        git -C "$repo" fetch --depth=1 origin "$revision"
+    fi
+    git -C "$repo" checkout --force --detach "$revision"
+}
+
 # --------------------------------------------------------------------------
 log "步骤 0/5：检查工具链"
 need_cmd git "git"
+need_cmd curl "curl"
+need_cmd sha256sum "coreutils"
 need_cmd "$PY" "python3 python3.11-venv"
+mkdir -p "$VENDOR"
 if command -v cmake &>/dev/null; then BUILD_TOOL="cmake"; else BUILD_TOOL="make"; fi
 log "构建工具：$BUILD_TOOL"
 
 # --------------------------------------------------------------------------
 log "步骤 1/5：编译 whisper.cpp (MIT)"
-if [ ! -d "$VENDOR/whisper.cpp/.git" ]; then
-    git clone --depth 1 https://github.com/ggml-org/whisper.cpp "$VENDOR/whisper.cpp"
-fi
+checkout_revision \
+    https://github.com/ggml-org/whisper.cpp \
+    "$VENDOR/whisper.cpp" "$WHISPER_CPP_REF"
+log "whisper.cpp revision: $(git -C "$VENDOR/whisper.cpp" rev-parse HEAD)"
 (
     cd "$VENDOR/whisper.cpp"
     if [ "$BUILD_TOOL" = "cmake" ]; then
@@ -66,10 +92,22 @@ log "步骤 2/5：下载 Whisper 模型 ggml-$WHISPER_SIZE.bin (MIT)"
 mkdir -p "$MODELS/whisper"
 MODEL_FILE="$MODELS/whisper/ggml-$WHISPER_SIZE.bin"
 if [ ! -f "$MODEL_FILE" ]; then
-    (cd "$VENDOR/whisper.cpp" && bash ./models/download-ggml-model.sh "$WHISPER_SIZE")
-    mv "$VENDOR/whisper.cpp/models/ggml-$WHISPER_SIZE.bin" "$MODEL_FILE"
+    MODEL_PART="$MODEL_FILE.part"
+    DOWNLOAD=(curl -L --fail --retry 5 --retry-delay 5 --retry-all-errors
+        --retry-connrefused --output "$MODEL_PART"
+        "https://huggingface.co/ggerganov/whisper.cpp/resolve/$WHISPER_MODEL_REF/ggml-$WHISPER_SIZE.bin")
+    if [ -n "${HF_TOKEN:-}" ]; then
+        DOWNLOAD=(curl -L --fail --retry 5 --retry-delay 5 --retry-all-errors
+            --retry-connrefused --header "Authorization: Bearer $HF_TOKEN"
+            --output "$MODEL_PART"
+            "https://huggingface.co/ggerganov/whisper.cpp/resolve/$WHISPER_MODEL_REF/ggml-$WHISPER_SIZE.bin")
+    fi
+    rm -f "$MODEL_PART"
+    "${DOWNLOAD[@]}"
+    mv "$MODEL_PART" "$MODEL_FILE"
 fi
 log "模型: $MODEL_FILE ($(du -h "$MODEL_FILE" | cut -f1))"
+log "模型 SHA-256: $(sha256sum "$MODEL_FILE" | cut -d' ' -f1)"
 
 # --------------------------------------------------------------------------
 log "步骤 3/5：sidecar venv（CPU-only torch + 中文精简依赖）"
@@ -85,9 +123,10 @@ log "sidecar venv 就绪 ($(du -sh "$SIDECAR/.venv" | cut -f1))"
 
 # --------------------------------------------------------------------------
 log "步骤 4/5：克隆 MeloTTS 源码并预下载中文模型 (MIT)"
-if [ ! -d "$VENDOR/MeloTTS/.git" ]; then
-    git clone --depth 1 https://github.com/myshell-ai/MeloTTS "$VENDOR/MeloTTS"
-fi
+checkout_revision \
+    https://github.com/myshell-ai/MeloTTS \
+    "$VENDOR/MeloTTS" "$MELO_REF"
+log "MeloTTS revision: $(git -C "$VENDOR/MeloTTS" rev-parse HEAD)"
 mkdir -p "$MODELS/hf"
 # g2p_en（英文单词音素化，ZH_MIX_EN 嵌英需要）在 import 期加载 NLTK 语料。
 # nltk.download 走的 raw.githubusercontent 在部分网络下被代理拦截，curl
@@ -133,6 +172,8 @@ VOICE_STT_PROVIDER=whisper
 VOICE_WHISPER_BIN=$WHISPER_BIN
 VOICE_WHISPER_MODEL=$MODEL_FILE
 VOICE_WHISPER_LANG=zh
+VOICE_WHISPER_THREADS=2
+# 模型仓库 revision（当前默认 small-q5_1）：$WHISPER_MODEL_REF
 # 简体偏置初始提示（可选）：whisper zh 解码易漂繁体，配合内置 OpenCC T2S 兜底
 # VOICE_WHISPER_PROMPT=以下是普通话的句子。
 VOICE_TTS_PROVIDER=melo
