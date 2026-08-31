@@ -13,7 +13,7 @@ Wire protocol (browser Speech Recognition text only):
        {"type":"stt_result","text"} / step/tool_* status events /
        {"type":"answer_delta","content"} per LLM delta /
        {"type":"tts_start","seq","text","sample_rate"} + <binary PCM16> +
-       {"type":"tts_end","seq"} per spoken sentence /
+       {"type":"tts_end","seq"} per spoken clause (speech cut) /
        {"type":"turn_end","session_id","tts_ok"}
   C->S {"type":"end"} closes the call.
 
@@ -22,6 +22,16 @@ session persistence inside it), so voice turns land in the same session
 history, memory and RAG as typed turns. Speech-to-text is performed only by
 SpeechRecognition/webkitSpeechRecognition in the browser; the backend receives
 final text and uses the configured TTS provider for spoken replies.
+
+TTS runs as a pipeline, not inline awaits: the turn loop only enqueues
+clause-level speech cuts (bounded queue) and keeps consuming the LLM
+generator, while one worker task synthesizes and sends audio clips. The
+client's FIFO playback queue absorbs clips that arrive early, so playback
+of clip N overlaps synthesis of clip N+1 instead of pausing between
+sentences. turn_end still follows the last audio frame (the producer joins
+the worker before sending it), and a single worker keeps at most one
+in-flight sidecar request per turn — the sidecar model is not
+concurrency-guarded.
 """
 from __future__ import annotations
 
@@ -37,7 +47,7 @@ from app.core.ratelimit import rate_limit
 from app.identity.deps import resolve_student_id, _try_user_from_header
 from app.voice.base import VoiceProviderError
 from app.voice.tts import get_tts_provider
-from app.voice.sentences import take_complete
+from app.voice.sentences import take_speech_cuts
 from app.voice.speak_text import to_speakable
 from app.voice.loudness import normalize_pcm16
 
@@ -50,6 +60,10 @@ _TICKET_TTL = 60.0
 # continues text-only; retrying every sentence against a dead sidecar
 # would stall the call for minutes.
 _TTS_FAILURE_LIMIT = 1
+# Speech cuts waiting for synthesis. When full, the turn loop briefly parks
+# (the client is still playing several clips of buffered audio, so playback
+# never starves) which caps how far synthesis can run ahead of the socket.
+_TTS_QUEUE_MAX = 8
 
 # The MeloTTS sidecar rejects requests beyond 400 chars; speakable text is
 # chunked well under that at punctuation boundaries so long derivations
@@ -158,6 +172,11 @@ class _VoiceCall:
         # progress_cb fires inside run_turn's own control flow; events are
         # collected here and drained around each yielded event (single loop).
         self._outstanding: list[dict] = []
+        # The turn loop and the TTS worker both send frames; the lock keeps
+        # each tts_start + binary + tts_end trio atomic (no answer_delta or
+        # turn_end may slip between a tts_start and its audio) and
+        # serializes concurrent socket writes.
+        self._send_lock = asyncio.Lock()
 
     # -- lifecycle ---------------------------------------------------------
 
@@ -296,51 +315,74 @@ class _VoiceCall:
         tts_ok = True
         tts_failures = 0
         seq = 0
+        tts_q: asyncio.Queue = asyncio.Queue(maxsize=_TTS_QUEUE_MAX)
 
         def progress_cb(msg: str):
             self._outstanding.append({"type": "tool_progress", "message": msg})
 
-        async def speak(sentence: str) -> None:
-            nonlocal tts_ok, tts_failures, seq
-            if not tts_ok or tts_failures >= _TTS_FAILURE_LIMIT:
-                return
-            speakable = to_speakable(sentence)
-            if not speakable:
-                return
-            for i, chunk in enumerate(_speakable_chunks(speakable)):
-                try:
-                    result_tts = await self.tts.synthesize(chunk)
-                except VoiceProviderError as exc:
-                    tts_failures += 1
-                    tts_ok = tts_failures < _TTS_FAILURE_LIMIT
-                    await self._send({"type": "tts_error", "code": exc.code})
-                    return
-                except Exception as exc:
-                    tts_failures += 1
-                    tts_ok = False
-                    log.warning("voice tts crashed: %s", exc)
-                    await self._send({"type": "tts_error", "code": "tts_unavailable"})
-                    return
-                # Sentences synthesize independently and vary several dB in
-                # loudness; level each clip so playback stays 忽大忽小-free.
-                try:
-                    pcm = normalize_pcm16(result_tts.pcm16, result_tts.sample_rate)
-                except Exception as exc:
-                    tts_failures += 1
-                    tts_ok = False
-                    log.warning("voice tts post-processing failed: %s", exc)
-                    await self._send({"type": "tts_error", "code": "tts_unavailable"})
-                    return
-                # Only the first chunk carries the raw sentence: the frontend
-                # blackboard renders formulas from tts_start.text and skips
-                # empty text, so continuations never duplicate the board.
-                await self._send({"type": "tts_start", "seq": seq,
-                                  "text": sentence if i == 0 else "",
-                                  "sample_rate": result_tts.sample_rate})
-                await self.ws.send_bytes(pcm)
-                await self._send({"type": "tts_end", "seq": seq})
-                seq += 1
+        async def speak_worker() -> None:
+            """Synthesize and send queued cuts; one clip in flight at a time.
 
+            Keeps draining after a failure (sentences are consumed and
+            dropped) so the bounded queue can never wedge the producer.
+            """
+            nonlocal tts_ok, tts_failures, seq
+            while True:
+                sentence = await tts_q.get()
+                if sentence is None:
+                    return
+                if not tts_ok or tts_failures >= _TTS_FAILURE_LIMIT:
+                    continue
+                try:
+                    speakable = to_speakable(sentence)
+                    if not speakable:
+                        continue
+                    for i, chunk in enumerate(_speakable_chunks(speakable)):
+                        try:
+                            result_tts = await self.tts.synthesize(chunk)
+                        except VoiceProviderError as exc:
+                            tts_failures += 1
+                            tts_ok = tts_failures < _TTS_FAILURE_LIMIT
+                            await self._send({"type": "tts_error", "code": exc.code})
+                            break
+                        except Exception as exc:
+                            tts_failures += 1
+                            tts_ok = False
+                            log.warning("voice tts crashed: %s", exc)
+                            await self._send({"type": "tts_error",
+                                              "code": "tts_unavailable"})
+                            break
+                        # Sentences synthesize independently and vary several
+                        # dB in loudness; level each clip so playback stays
+                        # 忽大忽小-free.
+                        try:
+                            pcm = normalize_pcm16(result_tts.pcm16,
+                                                  result_tts.sample_rate)
+                        except Exception as exc:
+                            tts_failures += 1
+                            tts_ok = False
+                            log.warning("voice tts post-processing failed: %s", exc)
+                            await self._send({"type": "tts_error",
+                                              "code": "tts_unavailable"})
+                            break
+                        # Only the first chunk carries the raw sentence: the
+                        # frontend blackboard renders formulas from
+                        # tts_start.text and skips empty text, so
+                        # continuations never duplicate the board.
+                        async with self._send_lock:
+                            await self._send_text(
+                                {"type": "tts_start", "seq": seq,
+                                 "text": sentence if i == 0 else "",
+                                 "sample_rate": result_tts.sample_rate})
+                            await self.ws.send_bytes(pcm)
+                            await self._send_text({"type": "tts_end", "seq": seq})
+                        seq += 1
+                except Exception as exc:
+                    # Dead socket and friends: stop speaking, keep draining.
+                    tts_ok = False
+                    log.warning("voice tts worker send failed: %s", exc)
+
+        worker = asyncio.create_task(speak_worker())
         try:
             async for ev in run_turn(text, session, tools,
                                      progress_cb=progress_cb, lang=self.lang,
@@ -350,11 +392,11 @@ class _VoiceCall:
                 etype = ev.get("type")
                 if etype == "answer":
                     pending += ev.get("content") or ""
-                    complete, pending = take_complete(pending)
+                    complete, pending = take_speech_cuts(pending)
                     await self._send({"type": "answer_delta",
                                       "content": ev.get("content") or ""})
                     for sentence in complete:
-                        await speak(sentence)
+                        await tts_q.put(sentence)
                 elif etype == "step":
                     await self._send({"type": "step", "step": ev.get("step")})
                 elif etype == "tool_start":
@@ -372,7 +414,7 @@ class _VoiceCall:
                             session.trace_ids.append(ev["trace_id"])
                             add_trace_id(session.session_id, ev["trace_id"])
                     if pending.strip():
-                        await speak(pending.strip())
+                        await tts_q.put(pending.strip())
                         pending = ""
                 elif etype == "error":
                     await self._send({"type": "error", "code": "agent_error",
@@ -382,6 +424,10 @@ class _VoiceCall:
                 # call has no place to show them and CoT never leaves the box.
             while self._outstanding:
                 await self._send(self._outstanding.pop(0))
+            # Flush sentinel, then wait for the worker to finish sending the
+            # queued audio so turn_end still follows the last audio frame.
+            await tts_q.put(None)
+            await worker
         except asyncio.CancelledError:
             raise
         except Exception as exc:
@@ -389,8 +435,17 @@ class _VoiceCall:
             await self._send({"type": "error", "code": "agent_error",
                               "message": str(exc)})
             return
+        finally:
+            # Early returns and cancellation must not leak a live worker.
+            if not worker.done():
+                worker.cancel()
+            await asyncio.gather(worker, return_exceptions=True)
         await self._send({"type": "turn_end", "session_id": session.session_id,
                           "tts_ok": tts_ok})
 
-    async def _send(self, event: dict) -> None:
+    async def _send_text(self, event: dict) -> None:
         await self.ws.send_text(json.dumps(event, ensure_ascii=False, default=str))
+
+    async def _send(self, event: dict) -> None:
+        async with self._send_lock:
+            await self._send_text(event)
