@@ -1628,7 +1628,10 @@ C→S {"type":"end"}  S→C {"type":"bye"}
 `deploy/install_voice.sh` 只准备 CPU-only PyTorch、当前中文 MeloTTS 直接运行依赖、
 MeloTTS 源码和模型缓存，并执行一次中文 warmup。`melo_bootstrap.py` 对未启用的
 非中文 cleaner/BERT backend 使用 fail-loud stubs，避免安装日/韩语言包和下载
-法/西/日/韩模型。主服务在
+法/西/日/韩模型；并按消息定向屏蔽固定版本依赖栈必发的两条 FutureWarning
+（`resume_download`、`torch.nn.utils.weight_norm`）——它们恰在模型加载时打出，
+会混进 start.sh 并行进行的前端构建输出、被误读成构建报错（非按类别一刀切，
+新的弃用告警仍会正常出现）。主服务在
 `VOICE_TTS_PROVIDER=melo` 时自动拉起 sidecar；主服务本身不包含 ML/STT 依赖。
 安装和许可证边界分别见 `backend/voice_sidecar/requirements.txt` 与
 根目录 `THIRD-PARTY-NOTICES.md`（许可全文在 `licenses/`）。

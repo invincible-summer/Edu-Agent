@@ -16,10 +16,28 @@ import importlib
 import os
 import sys
 import types
+import warnings
 
 _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 MELO_ROOT = os.environ.get("MELO_ROOT") or os.path.abspath(
     os.path.join(_THIS_DIR, "..", "vendor", "MeloTTS"))
+
+
+def _silence_upstream_deprecation_noise() -> None:
+    """Silence the two FutureWarnings the pinned MeloTTS stack always emits.
+
+    Vendored MeloTTS calls ``hf_hub_download(..., resume_download=...)`` and
+    builds its modules with ``torch.nn.utils.weight_norm``; the pinned
+    huggingface_hub/torch versions deprecation-warn both. The warnings fire
+    during model load — exactly when start.sh is printing the frontend
+    build output — and read like build errors. Filtered by message (not
+    blanket-ignored) so genuinely new deprecations still surface.
+    """
+    warnings.filterwarnings(
+        "ignore", message="`resume_download` is deprecated", category=FutureWarning)
+    warnings.filterwarnings(
+        "ignore", message="`torch.nn.utils.weight_norm` is deprecated",
+        category=FutureWarning)
 
 
 class _UnavailableLanguagePath(RuntimeError):
@@ -159,6 +177,7 @@ def _install_stubs() -> None:
 
 def bootstrap() -> str:
     """Put the pinned MeloTTS source on ``sys.path`` and install stubs."""
+    _silence_upstream_deprecation_noise()
     if os.path.isdir(MELO_ROOT) and MELO_ROOT not in sys.path:
         sys.path.insert(0, MELO_ROOT)
     _install_stubs()
