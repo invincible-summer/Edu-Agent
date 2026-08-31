@@ -6,15 +6,15 @@
  *
  *   1. 左上角「小手机」指示器：迷你手机造型 + 声波 + 通话时长，点开
  *      可停止播报/挂断；
- *   2. 顶部「板书」浮窗：老师正在朗读的句子含公式时，原文以 KaTeX
- *      渲染在虚化小黑板上（听公式的同时能看清楚它长什么样）；
+ *   2. 顶部「板书」黑板：接通即常驻、挂断才收起；上下双面板只记老师
+ *      讲到的公式句（KaTeX 原文渲染），写满后擦掉更久的那块再写新的；
  *   3. 底部控制条：按住说话 / 停止播报 / 挂断，替代被临时收起的输入框
  *      （输入框只是隐藏不卸载，草稿不丢）。
  *
  * 采集/协议/播放全在 useVoiceCall；会话写入与 store 的世代守卫和
  * handleSend（chat 页文字流）同构，语音轮与文字轮共享同一套渲染路径。
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Mic, PhoneOff, Presentation, Smartphone, VolumeX } from "lucide-react";
 import { AnchoredPopover } from "@/components/ui/AnchoredPopover";
@@ -34,33 +34,80 @@ function fmtDuration(total: number): string {
   return `${mm}:${ss}`;
 }
 
-/* ---- 板书：正在朗读的句子含公式 → 虚化小黑板渲染原文 ------------------ */
+/* ---- 板书：上下双面板只记公式句，接通常驻、挂断才关 --------------------- */
 
-export function FormulaBoard({ lang, sentence }: { lang: Lang; sentence: string | null }) {
-  const [recent, setRecent] = useState<string | null>(null);
+type BoardSlot = { key: number; text: string } | null;
+
+/** 擦除动画时长（ms）：与 globals.css 的 panel-erase 时长保持一致。 */
+const BOARD_ERASE_MS = 450;
+
+export function FormulaBoard({ lang, sentence, active }: {
+  lang: Lang;
+  sentence: string | null;
+  /** 已接通（ready 起至通话结束）：黑板常驻，挂断随通话层卸载才消失。 */
+  active: boolean;
+}) {
+  const [slots, setSlots] = useState<[BoardSlot, BoardSlot]>([null, null]);
+  const [erasing, setErasing] = useState<0 | 1 | null>(null);
+  const lastWrittenRef = useRef<0 | 1 | null>(null);
+  const lastTextRef = useRef<string | null>(null);
+  const keyRef = useRef(0);
+
   useEffect(() => {
-    // setState 经 rAF/timeout 延迟触发（react-hooks/set-state-in-effect）。
-    if (sentence && containsMathMarkdown(sentence)) {
-      const raf = requestAnimationFrame(() => setRecent(sentence));
+    if (!sentence || !containsMathMarkdown(sentence)) return;
+    if (sentence === lastTextRef.current) return; // 同句重播不重复上板
+    lastTextRef.current = sentence;
+    // 先写上面、再写下面；两块都满时擦掉「更久没写」的那块（保留最近写的）。
+    const target: 0 | 1 = slots[0] === null
+      ? 0
+      : slots[1] === null
+        ? 1
+        : lastWrittenRef.current === 0 ? 1 : 0;
+    const write = () => {
+      keyRef.current += 1;
+      const key = keyRef.current;
+      lastWrittenRef.current = target;
+      setSlots((prev) => {
+        const next: [BoardSlot, BoardSlot] = [prev[0], prev[1]];
+        next[target] = { key, text: sentence };
+        return next;
+      });
+      setErasing(null);
+    };
+    if (slots[target] === null) {
+      // setState 经 rAF 延迟触发（react-hooks/set-state-in-effect）。
+      const raf = requestAnimationFrame(write);
       return () => cancelAnimationFrame(raf);
     }
-    // 朗读结束/换到纯文字句：多亮一会儿，读公式需要回看时间。
-    const delay = sentence === null ? 2600 : 450;
-    const timer = window.setTimeout(() => setRecent(null), delay);
+    setErasing(target);
+    const timer = window.setTimeout(write, BOARD_ERASE_MS);
     return () => window.clearTimeout(timer);
-  }, [sentence]);
+  }, [sentence, slots]);
 
-  if (!recent) return null;
+  if (!active) return null;
   return (
     <div className="pointer-events-none absolute inset-x-0 top-10 z-10 flex justify-center px-4">
-      <div className="voice-board board-in pointer-events-auto flex max-h-[42vh] w-full max-w-[min(94%,620px)] flex-col overflow-hidden">
+      <div className="voice-board board-in pointer-events-auto flex max-h-[46vh] w-full max-w-[min(94%,620px)] flex-col overflow-hidden">
         <div className="flex items-center gap-1.5 px-3.5 pb-1 pt-2.5">
           <Presentation size={12} className="shrink-0" />
           <span className="text-[0.66rem] font-medium tracking-wide">{t(lang, "chat.voice.call.board.title")}</span>
           <span className="board-chalk-dash mx-1.5 flex-1" aria-hidden />
         </div>
-        <div className="voice-board-body">
-          <Markdown className="chat-prose">{recent}</Markdown>
+        <div className="voice-board-body flex flex-col">
+          {slots.map((slot, i) => (
+            <Fragment key={i}>
+              {i === 1 && <div className="voice-board-divider" aria-hidden />}
+              <div className="voice-board-panel">
+                {slot ? (
+                  <div key={slot.key} className={erasing === i ? "panel-erase" : "panel-write"}>
+                    <Markdown className="chat-prose">{slot.text}</Markdown>
+                  </div>
+                ) : i === 0 ? (
+                  <p className="text-[0.72rem] text-white/55">{t(lang, "chat.voice.call.board.empty")}</p>
+                ) : null}
+              </div>
+            </Fragment>
+          ))}
         </div>
       </div>
     </div>
@@ -387,10 +434,14 @@ export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose }: {
     }
   }, [flushNow, onClose, refreshSessions, reloadBoundSession, router, voice]);
 
+  // 接通（ready 起）板书常驻；connecting/ended 不算接通。
+  const boardActive = voice.phase === "ready" || voice.phase === "recording"
+    || voice.phase === "recognizing" || voice.phase === "thinking" || voice.phase === "speaking";
+
   return (
     <>
       <CallBadge lang={lang} voice={voice} onHangUp={handleHangUp} />
-      <FormulaBoard lang={lang} sentence={voice.speakingSentence} />
+      <FormulaBoard lang={lang} sentence={voice.speakingSentence} active={boardActive} />
       <CallBar lang={lang} voice={voice} onHangUp={handleHangUp} />
     </>
   );

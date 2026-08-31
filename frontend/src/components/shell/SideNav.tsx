@@ -23,9 +23,9 @@ export function SideNav() {
         navCollapsed ? "w-[60px]" : "w-[224px]",
       )}
     >
-      {/* 品牌 */}
+      {/* 品牌：点击回首页 */}
       <Link
-        href="/chat"
+        href="/"
         className={cn(
           "flex h-14 shrink-0 items-center gap-2.5 border-b border-border-light px-3",
           navCollapsed && "justify-center px-0",

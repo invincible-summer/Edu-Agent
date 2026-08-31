@@ -501,9 +501,12 @@ function ChatWorkspace() {
               disabled={chat.streaming || voiceOpen}
               title={tr("chat.voice.call.title")}
               aria-label={tr("chat.voice.call.title")}
-              className="group flex h-7 w-7 items-center justify-center rounded-[8px] border border-accent/25 bg-accent-soft/40 text-accent-strong shadow-sm transition-all hover:border-accent/50 hover:bg-accent-soft disabled:cursor-not-allowed disabled:opacity-40"
+              className="group flex w-16 shrink-0 flex-col items-center gap-0.5 rounded-[10px] border border-accent/25 bg-accent-soft/40 px-1 pb-1 pt-1.5 text-accent-strong shadow-sm transition-all hover:border-accent/50 hover:bg-accent-soft disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <Phone size={15} className="transition-transform duration-200 group-hover:-rotate-12" />
+              <Phone size={19} className="transition-transform duration-200 group-hover:-rotate-12" />
+              <span className="text-center text-[0.55rem] font-medium leading-tight tracking-tight">
+                {tr("chat.voice.call.cta")}
+              </span>
             </button>
           )}
         </div>

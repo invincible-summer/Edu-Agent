@@ -72,8 +72,10 @@ export function Hero({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean }) {
     };
   }, []);
 
-  // 轻滚翻页：Hero 大部分仍在视口内时，一次向下的滚动意图（滚轮累计约
-  // 40px 或触摸上滑约 48px）即平滑滑到功能区，呈现"翻到下一页"的手感。
+  // 轻滚翻页：仅当 Hero 几乎占满视口（仍在页面顶部）时，一次明确向下
+  // 的翻页意图（滚轮累计约 160px 或触摸上滑约 110px）才平滑滑到功能区，
+  // 呈现"翻到下一页"的手感。触发条件刻意放宽——普通浏览、中途滚动、
+  // 触控板小增量都不会被劫持，滚动保持原生手感。
   // 不 preventDefault、不劫持向上滚动与其余页面；翻页中的新滚动意图会
   // 立即中断动画交还原生滚动（忽略触控板惯性衰减的小增量）；
   // prefers-reduced-motion 下退化为原生滚动。
@@ -81,14 +83,14 @@ export function Hero({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean }) {
     const el = ref.current;
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const st = { locked: false, lockTimer: 0, wheelTimer: 0, accum: 0, glideAt: 0, touchY: 0 };
-    const heroVisible = () => el.getBoundingClientRect().bottom > window.innerHeight * 0.4;
+    const heroVisible = () => el.getBoundingClientRect().bottom > window.innerHeight * 0.85;
     const glide = () => {
       st.locked = true;
       st.glideAt = Date.now();
       document.getElementById("features")?.scrollIntoView({ behavior: "smooth", block: "start" });
       st.lockTimer = window.setTimeout(() => {
         st.locked = false;
-      }, 900);
+      }, 700);
     };
     const cancelGlide = () => {
       window.clearTimeout(st.lockTimer);
@@ -104,13 +106,13 @@ export function Hero({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean }) {
       window.clearTimeout(st.wheelTimer);
       st.wheelTimer = window.setTimeout(() => {
         st.accum = 0;
-      }, 180);
+      }, 200);
       if (e.deltaY <= 0 || !heroVisible()) {
         st.accum = 0;
         return;
       }
       st.accum += e.deltaY;
-      if (st.accum >= 40) {
+      if (st.accum >= 160) {
         st.accum = 0;
         glide();
       }
@@ -122,7 +124,7 @@ export function Hero({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean }) {
     const onTouchMove = (e: TouchEvent) => {
       if (st.locked) return;
       const y = e.touches[0]?.clientY ?? 0;
-      if (st.touchY - y >= 48 && heroVisible()) {
+      if (st.touchY - y >= 110 && heroVisible()) {
         st.touchY = y;
         glide();
       }

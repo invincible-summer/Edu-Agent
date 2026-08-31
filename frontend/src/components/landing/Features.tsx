@@ -4,7 +4,7 @@ import { Plus } from "lucide-react";
 import { Reveal } from "./Reveal";
 import type { LandingTr } from "./LandingNav";
 
-const FEATURES = ["f1", "f2", "f3", "f4", "f5", "f6"] as const;
+const FEATURES = ["f1", "f2", "f3", "f4", "f5", "f6", "f7"] as const;
 const POINTS = ["p1", "p2", "p3"] as const;
 
 /**

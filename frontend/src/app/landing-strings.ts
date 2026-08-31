@@ -79,6 +79,13 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.features.f6.p1": "多目标 → 周 → 今日，任务自动分解",
     "landing.features.f6.p2": "SM-2 间隔重复对抗遗忘，复习自动排期",
     "landing.features.f6.p3": "任务完成回流掌握度，计划动态调整",
+    "landing.features.f7.title": "语音通话讲解",
+    "landing.features.f7.desc": "像打电话一样开口提问，公式也能听得懂、看得清。",
+    "landing.features.f7.more":
+      "打开语音通话，说题即答，回答逐句转成语音播报。回答里的分数、根号、上下标、求和与积分会自动转成自然的中文口语读法，不再是念不出来的符号串；同时板书区把正在讲解的公式实时写成排版好的 LaTeX，听不清时抬眼就能对照。",
+    "landing.features.f7.p1": "实时语音对话：说题即答，适合口算演练与长题推导",
+    "landing.features.f7.p2": "公式朗读：分数、根号、上下标、积分求和自动转中文读法",
+    "landing.features.f7.p3": "板书同步：讲到哪个公式，黑板就实时写出哪个公式",
 
     "landing.modules.kicker": "架构 / Architecture",
     "landing.modules.title": "M0–M10 · 十层智能模块",
@@ -204,6 +211,13 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.features.f6.p1": "Multiple goals cascade into weekly and daily tasks",
     "landing.features.f6.p2": "SM-2 spaced repetition schedules reviews automatically",
     "landing.features.f6.p3": "Completions feed mastery; plans adapt dynamically",
+    "landing.features.f7.title": "Voice call tutoring",
+    "landing.features.f7.desc": "Ask out loud like a phone call — formulas you can both hear and see.",
+    "landing.features.f7.more":
+      "Start a voice call and get spoken answers sentence by sentence. Fractions, roots, subscripts, superscripts, sums and integrals in the answer are automatically converted into natural spoken readings instead of unreadable symbol strings, while the blackboard renders each formula as typeset LaTeX in sync with the speech — look up whenever you miss a word.",
+    "landing.features.f7.p1": "Real-time voice conversation — ask out loud, answers stream back as speech",
+    "landing.features.f7.p2": "Formula read-aloud: fractions, roots, subscripts and integrals become natural spoken Chinese",
+    "landing.features.f7.p3": "Synced blackboard: every spoken formula is written live in typeset LaTeX",
 
     "landing.modules.kicker": "Architecture",
     "landing.modules.title": "M0–M10 · Ten intelligence modules",

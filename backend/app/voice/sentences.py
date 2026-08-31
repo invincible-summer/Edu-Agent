@@ -9,11 +9,22 @@ one when it is NOT glued to an alphanumeric neighbour (so "3.14" and
 $...$ / $$...$$ math spans never split: display formulas wrap lines and
 would be cut open mid-span, leaving unbalanced delimiters that downstream
 to_speakable can no longer recognize (raw LaTeX read aloud).
+
+The model also writes \\(...\\) / \\[...\\] math; :func:`take_complete`
+normalizes those delimiters on its (cumulative, re-scanned) buffer first,
+so they enjoy the same no-split protection as dollar spans. Oversized
+sentences are force-split by :func:`_force_split`, which never cuts inside
+a math span unless the span alone exceeds ``_HARD_MAX`` — the MeloTTS
+sidecar rejects requests beyond 400 chars, so an unbreakable formula may
+stretch a chunk but never past that ceiling.
 """
 from __future__ import annotations
 
+from app.voice.speak_text import normalize_math_delimiters
+
 _SENTENCE_END = "。！？!?…；;"
 _MAX_CHARS = 120
+_HARD_MAX = 280
 _MIN_CUT_RATIO = 0.5
 _CUT_PUNCTS = ("，", "、", "：", ",", ":", " ")
 
@@ -33,6 +44,7 @@ def take_complete(text: str) -> tuple[list[str], str]:
     deltas arrive (the endpoint flushes it on done). An unclosed $ holds
     the buffer — the math span is still streaming in.
     """
+    text = normalize_math_delimiters(text)
     sentences: list[str] = []
     buf = ""
     n = len(text)
@@ -78,12 +90,75 @@ def _force_split(sentence: str) -> list[str]:
     parts: list[str] = []
     rest = sentence
     while len(rest) > _MAX_CHARS:
-        window = rest[:_MAX_CHARS + 1]
-        idx = max(window.rfind(p) for p in _CUT_PUNCTS)
-        if idx < _MAX_CHARS * _MIN_CUT_RATIO:
-            idx = _MAX_CHARS - 1
-        parts.append(rest[:idx + 1].strip())
-        rest = rest[idx + 1:]
+        cut = _next_cut(rest)
+        parts.append(rest[:cut].strip())
+        rest = rest[cut:]
     if rest.strip():
         parts.append(rest.strip())
     return [p for p in parts if p]
+
+
+def _next_cut(text: str) -> int:
+    """Characters to keep from the head of ``text``.
+
+    Prefer a weak punctuation outside $-math spans; a long formula pushes
+    the cut to just after the span closes (capped at _HARD_MAX) instead of
+    slicing LaTeX mid-command. Pure prose without any punctuation falls
+    back to the plain _MAX_CHARS cut.
+    """
+    outside = _cut_positions(text, _MAX_CHARS + 1)
+    idx = outside[-1] if outside else -1
+    if idx >= _MAX_CHARS * _MIN_CUT_RATIO:
+        return idx + 1
+    outside = _cut_positions(text, _HARD_MAX + 1)
+    if outside:
+        return outside[-1] + 1
+    if "$" not in text[:_HARD_MAX]:
+        return _MAX_CHARS
+    # The window is (mostly) one math span: cut right after it closes, or
+    # at a space inside it as a last resort — never past the sidecar cap.
+    closed = _math_close(text, _HARD_MAX + 1)
+    if closed:
+        return closed
+    space = text.rfind(" ", 0, _HARD_MAX)
+    comma = max(text.rfind("，", 0, _HARD_MAX), text.rfind(",", 0, _HARD_MAX))
+    idx = max(space, comma)
+    if idx >= _MAX_CHARS * _MIN_CUT_RATIO:
+        return idx + 1
+    return _HARD_MAX
+
+
+def _cut_positions(text: str, limit: int) -> list[int]:
+    """Indices of weak punctuation that sit outside $-math spans."""
+    positions: list[int] = []
+    in_math = False
+    i = 0
+    n = min(len(text), limit)
+    while i < n:
+        ch = text[i]
+        if ch == "$":
+            step = 2 if text.startswith("$$", i) else 1
+            in_math = not in_math
+            i += step
+            continue
+        if not in_math and ch in _CUT_PUNCTS:
+            positions.append(i)
+        i += 1
+    return positions
+
+
+def _math_close(text: str, limit: int) -> int:
+    """Index just past the first math-span close, 0 when none closes."""
+    in_math = False
+    i = 0
+    n = min(len(text), limit)
+    while i < n:
+        if text[i] == "$":
+            step = 2 if text.startswith("$$", i) else 1
+            in_math = not in_math
+            i += step
+            if not in_math:
+                return i
+            continue
+        i += 1
+    return 0

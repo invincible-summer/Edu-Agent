@@ -51,6 +51,30 @@ _TICKET_TTL = 60.0
 # would stall the call for minutes.
 _TTS_FAILURE_LIMIT = 1
 
+# The MeloTTS sidecar rejects requests beyond 400 chars; speakable text is
+# chunked well under that at punctuation boundaries so long derivations
+# never kill the audio.
+_SPEAK_CHUNK_MAX = 240
+_SPEAK_CUTS = "，。；、！？, "
+
+
+def _speakable_chunks(text: str) -> list[str]:
+    if len(text) <= _SPEAK_CHUNK_MAX:
+        return [text]
+    chunks: list[str] = []
+    start = 0
+    n = len(text)
+    while n - start > _SPEAK_CHUNK_MAX:
+        window = text[start:start + _SPEAK_CHUNK_MAX + 1]
+        idx = max(window.rfind(p) for p in _SPEAK_CUTS)
+        if idx < _SPEAK_CHUNK_MAX // 2:
+            idx = _SPEAK_CHUNK_MAX - 1
+        chunks.append(text[start:start + idx + 1])
+        start += idx + 1
+    if start < n:
+        chunks.append(text[start:])
+    return [chunk for chunk in chunks if chunk]
+
 
 class _CallEnded(Exception):
     """Client said end: drain the loop and close gracefully."""
@@ -283,35 +307,39 @@ class _VoiceCall:
             speakable = to_speakable(sentence)
             if not speakable:
                 return
-            try:
-                result_tts = await self.tts.synthesize(speakable)
-            except VoiceProviderError as exc:
-                tts_failures += 1
-                tts_ok = tts_failures < _TTS_FAILURE_LIMIT
-                await self._send({"type": "tts_error", "code": exc.code})
-                return
-            except Exception as exc:
-                tts_failures += 1
-                tts_ok = False
-                log.warning("voice tts crashed: %s", exc)
-                await self._send({"type": "tts_error", "code": "tts_unavailable"})
-                return
-            # Sentences synthesize independently and vary several dB in
-            # loudness; level each clip so playback stays 忽大忽小-free.
-            try:
-                pcm = normalize_pcm16(result_tts.pcm16, result_tts.sample_rate)
-            except Exception as exc:
-                tts_failures += 1
-                tts_ok = False
-                log.warning("voice tts post-processing failed: %s", exc)
-                await self._send({"type": "tts_error", "code": "tts_unavailable"})
-                return
-            await self._send({"type": "tts_start", "seq": seq,
-                              "text": sentence,
-                              "sample_rate": result_tts.sample_rate})
-            await self.ws.send_bytes(pcm)
-            await self._send({"type": "tts_end", "seq": seq})
-            seq += 1
+            for i, chunk in enumerate(_speakable_chunks(speakable)):
+                try:
+                    result_tts = await self.tts.synthesize(chunk)
+                except VoiceProviderError as exc:
+                    tts_failures += 1
+                    tts_ok = tts_failures < _TTS_FAILURE_LIMIT
+                    await self._send({"type": "tts_error", "code": exc.code})
+                    return
+                except Exception as exc:
+                    tts_failures += 1
+                    tts_ok = False
+                    log.warning("voice tts crashed: %s", exc)
+                    await self._send({"type": "tts_error", "code": "tts_unavailable"})
+                    return
+                # Sentences synthesize independently and vary several dB in
+                # loudness; level each clip so playback stays 忽大忽小-free.
+                try:
+                    pcm = normalize_pcm16(result_tts.pcm16, result_tts.sample_rate)
+                except Exception as exc:
+                    tts_failures += 1
+                    tts_ok = False
+                    log.warning("voice tts post-processing failed: %s", exc)
+                    await self._send({"type": "tts_error", "code": "tts_unavailable"})
+                    return
+                # Only the first chunk carries the raw sentence: the frontend
+                # blackboard renders formulas from tts_start.text and skips
+                # empty text, so continuations never duplicate the board.
+                await self._send({"type": "tts_start", "seq": seq,
+                                  "text": sentence if i == 0 else "",
+                                  "sample_rate": result_tts.sample_rate})
+                await self.ws.send_bytes(pcm)
+                await self._send({"type": "tts_end", "seq": seq})
+                seq += 1
 
         try:
             async for ev in run_turn(text, session, tools,

@@ -1579,6 +1579,20 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 - `backend/app/voice/tts/`：`stub` 用于回归测试，`melo` 通过 localhost HTTP
   调用 sidecar；`sentences.py`、`speak_text.py`、`loudness.py` 和 `wav.py` 分别负责
   流式切句、Markdown/LaTeX 朗读清洗、响度归一和 sidecar WAV 解码。
+- **公式朗读链路**（`speak_text.py` / `sentences.py` 协同）：
+  `normalize_math_delimiters` 先把 `\(...\)` / `\[...\]` 统一折成 `$` / `$$`
+  （与前端 markdown 管线对齐；流式增量中"开符号已到、闭符号未到"时同样折算，
+  使未闭合公式像未闭合 `$$` 一样锁住切句缓冲，`\\[2mm]` 行距命令有反斜杠守卫
+  不会被误认成开符号）；`_read_math` 分级映射——数集、SI 单位（`\text{m/s}` →
+  米每秒、`\mathrm{kg}` → 千克）、无花括号形式（`\frac12`、`\vec L`、`\mathrm dt`）、
+  `\frac`/`\sqrt`/`\boxed`/偏导数等带参结构（定点循环由内向外折叠）、区间/绝对值/
+  ASCII 比较（`[-1,1]` → 闭区间、`\left|x\right|` → 绝对值、`\varepsilon>0` → 大于）、
+  正负号上下标（`0^+`/`f'_+` → 正）、二元/一元负号（`x^2-9` 减、`=-1` 负），最后
+  未知命令保留字母念英文、已知命令在参数被截断时丢弃命令名；`_force_split`
+  数学感知（不在 `$` 段内部下刀，硬上限 280 字兜住 sidecar 400 字限制），
+  `voice.py` 的 `speak()` 再把超 240 字的朗读文本按标点分块顺序合成（首块
+  `tts_start.text` 带原句供板书，后续块传空串不重复上板）。规则以真实会话语料
+  回归（`test_voice.py`）。
 - 服务器端语音识别包、输入 PCM 缓冲和旧繁简转换数据均已移除。
 
 ### P10.3 WebSocket 契约

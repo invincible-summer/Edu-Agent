@@ -55,6 +55,39 @@ class TestSentenceSplitting(unittest.TestCase):
         self.assertEqual(complete, [])
         self.assertIn("$x^2", rest)
 
+    def test_bracket_display_math_holds_buffer(self):
+        # \[ opener arrived, \] still streaming: the buffer must hold like
+        # an unclosed $$ (terminators inside are protected).
+        complete, rest = take_complete("定义为\n\\[\\left|a_n-0\\right| =\\frac{1}{n}. 还没闭合")
+        self.assertEqual(complete, [])
+        self.assertIn("$$", rest)
+
+    def test_bracket_display_no_split_inside(self):
+        # The trailing period sits inside \[...\]: it must not end the
+        # sentence (a cut-open span would read raw LaTeX downstream). The
+        # sentence completes only at the real terminator after the span.
+        text = "严格含义是：\n\\[\n\\left|a_n-0\\right|\n=\\frac{1}{n}\n<\\varepsilon.\n\\]\n下一段说明。"
+        complete, rest = take_complete(text)
+        self.assertEqual(complete, ["严格含义是：\n$$\n\\left|a_n-0\\right|\n=\\frac{1}{n}"
+                                    "\n<\\varepsilon.\n$$\n下一段说明。"])
+        self.assertEqual(rest, "")
+
+    def test_row_break_spacing_not_display_opener(self):
+        # \\[2mm] is a row break with spacing, not an opener: pairing must
+        # survive (a misread here inverts every following math span).
+        text = "因此：\n$$\na=1,\\\\[2mm]\nb=2.\n$$\n完毕。"
+        complete, rest = take_complete(text)
+        self.assertEqual(complete, [text])
+        self.assertEqual(rest, "")
+
+    def test_force_split_keeps_math_span_whole(self):
+        formula = "$$" + "\\frac{x+1}{x-2}+y" * 12 + "$$"
+        sentence = "结论是" + formula + "，然后解释。"
+        parts = split_sentences("字" * 20 + sentence)
+        for part in parts:
+            self.assertEqual(part.count("$$") % 2, 0,
+                             f"formula sliced open: {part[:60]}")
+
 
 class TestSpeakText(unittest.TestCase):
     def test_markdown_stripped(self):
@@ -153,7 +186,128 @@ class TestSpeakText(unittest.TestCase):
         self.assertIn("向量a", out)
         self.assertIn("x拔", out)
 
+    def test_paren_and_bracket_display_delimiters(self):
+        out = to_speakable(r"\[\gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\]")
+        self.assertNotIn("\\", out)
+        self.assertNotIn("$", out)
+        self.assertIn("分之", out)
+        self.assertIn("根号", out)
 
+    def test_inline_paren_delimiters(self):
+        out = to_speakable(r"函数 \(y=a^x\)（其中 \(a>0\)）递增")
+        self.assertIn("y等于a的x次方", out)
+        self.assertIn("a大于0", out)
+        self.assertNotIn("\\", out)
+
+    def test_braceless_frac_sqrt_vec(self):
+        out = to_speakable(r"$\frac12 e^{x^2}$ 与 $\frac1{\sqrt x}$ 与 $\vec L$")
+        self.assertIn("2分之1", out)
+        self.assertIn("根号x分之1", out)
+        self.assertIn("向量L", out)
+        self.assertNotIn("frac", out)
+
+    def test_mathrm_bare_differential(self):
+        out = to_speakable(r"$\vec v=\frac{\mathrm d \vec r}{\mathrm dt}$")
+        self.assertIn("dt分之d", out)
+        self.assertNotIn("mathrm", out)
+
+    def test_boxed_keeps_inner_only(self):
+        out = to_speakable(r"最优面积是 $$\boxed{50\ \text{m}^2}$$")
+        self.assertIn("50 平方米", out)
+        self.assertNotIn("boxed", out)
+
+    def test_unit_readings(self):
+        self.assertIn("米每秒", to_speakable(r"$c\approx 3.0\times 10^8\ \text{m/s}$"))
+        self.assertIn("米每平方秒", to_speakable(r"$a=9.8\ \mathrm{m/s^2}$"))
+        self.assertIn("千克", to_speakable(r"质量 $m$ 的单位是 $\mathrm{kg}$"))
+        self.assertIn("平方米", to_speakable(r"$S=5\times 10\ \text{m}^2$"))
+        self.assertIn("千赫兹", to_speakable(r"频率 $\mathrm{kHz}$"))
+
+    def test_text_words_not_units(self):
+        # \text{收敛} is a Chinese word, not a unit expression.
+        out = to_speakable(r"$p>1\Rightarrow\text{收敛}$")
+        self.assertIn("收敛", out)
+        self.assertNotIn("每", out)
+
+    def test_ascii_comparisons(self):
+        out = to_speakable(r"当 $\varepsilon>0$ 且 $n>=N$ 时")
+        self.assertIn("艾普西隆大于0", out)
+        self.assertIn("n大于等于N", out)
+
+    def test_absolute_value_reading(self):
+        out = to_speakable(r"$\left|a_n-0\right|=\left|\frac{1}{n}\right|$")
+        self.assertIn("a下标n减0的绝对值", out)
+        self.assertIn("n分之1的绝对值", out)
+        self.assertNotIn("|", out)
+
+    def test_bracket_interval_reading(self):
+        out = to_speakable("在区间 $[-1,1]$ 上定义")
+        self.assertIn("从负1到1的闭区间", out)
+
+    def test_table_separator_row_silent(self):
+        out = to_speakable("| 物理量 | 单位 |\n|---|---|\n| 力 | $\\mathrm{N}$ |")
+        self.assertIn("物理量", out)
+        self.assertIn("力", out)
+        self.assertIn("牛", out)
+        self.assertNotIn("-", out)
+
+    def test_signed_superscript_and_factorial(self):
+        out = to_speakable(r"右导数 $h\to0^+$，$f'_+(0)=1$，Taylor 项 $1-\frac{1}{2!}$")
+        self.assertIn("0正", out)
+        self.assertIn("f撇正括号0括号等于1", out)
+        self.assertIn("2的阶乘分之1", out)
+
+    def test_mixed_second_partial(self):
+        out = to_speakable(r"记 $\frac{\partial^2 z}{\partial x\partial y}$")
+        self.assertIn("z对x、y的2阶偏导数", out)
+        self.assertNotIn("frac", out)
+
+    def test_binary_vs_unary_minus(self):
+        out = to_speakable("$x^2-9=(x-3)(x+3)$ 且 $a=-1$")
+        self.assertIn("x的2次方减9", out)
+        self.assertIn("x减3", out)
+        self.assertIn("a等于负1", out)
+
+    def test_nested_power_wording(self):
+        out = to_speakable(r"$\int x e^{x^2}dx$")
+        self.assertIn("e的x平方次方", out)
+
+    def test_cut_formula_drops_known_command_names(self):
+        # A message truncated mid-formula: the bare \frac name must not be
+        # read as the English word "frac".
+        out = to_speakable("对 x 求偏导：\n\n$$\n\\frac{\\partial")
+        self.assertNotIn("frac", out)
+        self.assertNotIn("\\", out)
+
+    def test_prose_english_dash_survives_math_rules(self):
+        out = to_speakable("well-known method 在 $b-a$ 里读减")
+        self.assertIn("well-known", out)
+        self.assertIn("b减a", out)
+
+
+
+
+class TestSpeakableChunks(unittest.TestCase):
+    def test_short_text_single_chunk(self):
+        from app.api.v1.voice import _speakable_chunks
+        self.assertEqual(_speakable_chunks("短句。"), ["短句。"])
+
+    def test_long_text_chunks_at_punctuation(self):
+        from app.api.v1.voice import _speakable_chunks
+        text = "这一句用来填充长度，" * 40  # 520 chars, cut points everywhere
+        chunks = _speakable_chunks(text)
+        self.assertGreater(len(chunks), 1)
+        for chunk in chunks:
+            self.assertLessEqual(len(chunk), 240)
+        self.assertEqual("".join(chunks), text)
+
+    def test_unpunctuated_text_hard_split_under_sidecar_cap(self):
+        from app.api.v1.voice import _speakable_chunks
+        text = "字" * 600
+        chunks = _speakable_chunks(text)
+        for chunk in chunks:
+            self.assertLessEqual(len(chunk), 240)
+        self.assertEqual("".join(chunks), text)
 
 
 class TestWavHelpers(unittest.TestCase):
