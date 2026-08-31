@@ -953,10 +953,17 @@ token 护栏）时，tutor LLM 从主模型切换到 **MULTIMODAL 通道**
 - **trace 可诊断性**：`tool_result` 事件补记 `error_code`/`error_message`/
   `gate_drop_reasons`（本次排障只能看到 status=error 的缺口）。
 - **伪工具标签护栏**（`agents/pseudo_tool_guard.py`）：弱模型在正文里"叙述"
-  `<knowledge_search>` 假标签而非发起 function call（该对话 turn 6/8 实锤）。
-  流式输出时标签一旦形成即停流（半截前缀持有），前导正文照常流出；两条
-  ReAct 环路（executor/chat_agent）据此执行**真实**检索、注入结果并继续
-  环路让模型基于真结果续写（每轮一次，trace 记 `pseudo_tool_guard`）。
+  工具调用而非发起 function call。已观测两种格式（2026-08-15 假
+  `<knowledge_search>` 标签；2026-08-31 `<tool_call><function=…>
+  <parameter=keywords>…` XML 叙述——deepseek-v4-flash 把整段标记流进正文
+  并被 TTS 原样朗读），护栏按标签集 `<knowledge_search` / `<tool_call` /
+  `<function=` 匹配：流式输出时任一标签形成即停流（半截前缀持有），前导
+  正文照常流出；两条 ReAct 环路（executor/chat_agent）据此执行**真实**
+  检索、注入结果并继续环路让模型基于真结果续写（每轮一次，trace 记
+  `pseudo_tool_guard`），检索词优先取 `<parameter=keywords>` 参数；护栏
+  检出后 `answer_buf` 统一回退为实际放行的 `emitted`，标记绝不进入最终
+  答案与会话历史；`to_speakable` 另有一层标记剥除兜底，任何漏网路径都
+  不会被朗读。
 - **NOT_FOUND 语义细分**：可见教材仍在 building/ocr_waiting 时提示
   「教材仍在后台解析中，完成后即可检索」。
 
@@ -1563,9 +1570,9 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 - **后端边界**：后端不接收电话输入 PCM，不安装、不加载、不启动任何 STT 引擎；
   WebSocket 只接收 `utterance_end.text`。语音文本进入现有 `run_turn`，与普通聊天
   共用会话、记忆、RAG、工具和持久化逻辑。
-- **输出路径**：回答按句切分，MeloTTS sidecar 逐句合成 WAV，后端转 PCM16 流水线
-  下发；前端按 `tts_start` 携带的采样率顺序播放（FIFO 队列吸收提前到达的音频段），
-  并保留停止播报能力。
+- **输出路径**：回答按子句级切片（`take_speech_cuts`），MeloTTS sidecar 逐片合成
+  WAV，后端转 PCM16 流水线下发；前端按 `tts_start` 携带的采样率顺序播放（FIFO
+  队列吸收提前到达的音频段），并保留停止播报能力。
 - **隐私/许可边界**：浏览器识别可能调用浏览器厂商在线服务。该平台 API 和厂商
   服务不是 Edu_Agent 的 MIT 发行物，商业、隐私、地域和可用性条款由实际浏览器
   厂商决定；详细组件许可证见 `docs/VOICE_LICENSES.md`。
@@ -1575,16 +1582,21 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 - `backend/app/api/v1/voice.py`：一次性 ticket、WebSocket 会话绑定、浏览器最终文本
   事件、`stt_start` / `stt_result` / `answer_delta` / 工具进度 / TTS / `turn_end`。
   二进制上行帧返回 `binary_audio_unsupported`，不会缓存、转码或触发 STT。
-- **合成流水线**（`voice.py` `_run_turn`）：切出的句子只进入有界队列
-  （`_TTS_QUEUE_MAX=8`），轮次循环持续消费 LLM 生成器、`answer_delta` 实时下发，
-  不再内联等待合成；单个 worker 任务从队列取句子、合成并在 `_send_lock` 保护下
-  原子发送 `tts_start` + 二进制 + `tts_end` 三帧（`answer_delta`/`turn_end` 不会
-  插进三帧之间）。客户端播放第 N 句时 worker 已在合成第 N+1 句，句间不再有
-  等合成的空隙；队列满时生产者短暂停靠（客户端仍在播放多句缓冲音频，不构成
-  卡顿）。单 worker 保证每轮同时最多一个在途 sidecar 请求（sidecar 模型无并发
-  保护）、`seq` 严格递增；`turn_end` 仍在最后一帧音频之后（done 后入队 sentinel
-  并 join worker）。失败策略不变：一次合成失败发送 `tts_error`，本轮其余句子
-  跳过合成仅保留文字，worker 继续排水防止有界队列卡死生产者。
+- **合成流水线**（`voice.py` `_run_turn`）：切出的子句进入**无界**队列，轮次
+  循环持续消费 LLM 生成器、`answer_delta` 实时下发，不再内联等待合成。队列
+  刻意不做上界：曾有界队列（8 句）在慢 CPU 上把文字流和合成速率耦合，第 8 句
+  之后 `answer_delta` 按单片合成时长成批冻结（实测整句切片时 ~30 s 一档），
+  比串行版更卡；队列内容只有句子文本（受回答 max_tokens 封顶，几 KB），
+  PCM 从不入队。单个 worker 任务从队列取子句、合成并顺序发送 `tts_start` +
+  二进制 + `tts_end` 三帧；客户端播放第 N 片时 worker 已在合成第 N+1 片，
+  片间不再有等合成的空隙。每片的纯 Python 后处理（WAV 解码、响度归一，
+  数十万采样级）经 `asyncio.to_thread` 移出事件循环——否则每片都会把整个
+  后端（所有用户的流）停摆数百毫秒。跨帧不加发送锁：uvicorn/websockets
+  sans-io 栈上每次 send 是单事件循环步写完整帧（帧级并发安全），前端
+  `tts_end` 本就是 no-op，`turn_end` 顺序由 done 后入队 sentinel 并 join
+  worker 保证。单 worker 保证每轮同时最多一个在途 sidecar 请求（sidecar
+  模型无并发保护）、`seq` 严格递增。失败策略不变：一次合成失败发送
+  `tts_error`，本轮其余子句跳过合成仅保留文字，worker 继续排水清空队列。
 - `backend/app/voice/base.py`：仅保留 TTS provider contract、`VoiceProviderError`
   和 `TTSResult`。
 - `backend/app/voice/tts/`：`stub` 用于回归测试，`melo` 通过 localhost HTTP
@@ -1601,9 +1613,10 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
   正负号上下标（`0^+`/`f'_+` → 正）、二元/一元负号（`x^2-9` 减、`=-1` 负），最后
   未知命令保留字母念英文、已知命令在参数被截断时丢弃命令名；`_force_split`
   数学感知（不在 `$` 段内部下刀，硬上限 280 字兜住 sidecar 400 字限制），
-  `voice.py` 的 speak worker 再把超 240 字的朗读文本按标点分块顺序合成（首块
-  `tts_start.text` 带原句供板书，后续块传空串不重复上板）。规则以真实会话语料
-  回归（`test_voice.py`）。
+  语音流水线用子句级 `take_speech_cuts`（弱标点 ≥24 字即切、无标点硬上限
+  120 字），`voice.py` 的 speak worker 再把超 240 字的朗读文本按标点分块顺序
+  合成（首块 `tts_start.text` 带原句供板书，后续块传空串不重复上板）。规则以
+  真实会话语料回归（`test_voice.py`）。
 - 服务器端语音识别包、输入 PCM 缓冲和旧繁简转换数据均已移除。
 
 ### P10.3 WebSocket 契约
@@ -1626,9 +1639,10 @@ C→S {"type":"end"}  S→C {"type":"bye"}
 
 同一连接只允许一轮并行执行；重复提交返回 `busy`，空文本返回
 `empty_transcript`，TTS sidecar 失败时保留文字回答并发送 `tts_error`。思考内容
-不通过电话协议输出。`tts_start` / 二进制 / `tts_end` 按句成组下发，三帧
-保持连续；文字流（`answer_delta`）与音频流相互独立，可能交错但不会插入任何
-一组的内部。
+不通过电话协议输出。每次 `send` 写一个完整帧（uvicorn/websockets sans-io
+单事件循环步），文字流（`answer_delta`）与音频流（`tts_start`/二进制/
+`tts_end`）相互独立、可能交错，但帧本身永不撕裂；前端 `tts_end` 为 no-op、
+按到达顺序消费音频，`turn_end` 仍在最后一帧音频之后。
 
 ### P10.4 MeloTTS sidecar
 

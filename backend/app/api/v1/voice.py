@@ -13,7 +13,7 @@ Wire protocol (browser Speech Recognition text only):
        {"type":"stt_result","text"} / step/tool_* status events /
        {"type":"answer_delta","content"} per LLM delta /
        {"type":"tts_start","seq","text","sample_rate"} + <binary PCM16> +
-       {"type":"tts_end","seq"} per spoken sentence /
+       {"type":"tts_end","seq"} per spoken clause (speech cut) /
        {"type":"turn_end","session_id","tts_ok"}
   C->S {"type":"end"} closes the call.
 
@@ -24,14 +24,23 @@ SpeechRecognition/webkitSpeechRecognition in the browser; the backend receives
 final text and uses the configured TTS provider for spoken replies.
 
 TTS runs as a pipeline, not inline awaits: the turn loop only enqueues
-completed sentences (bounded queue) and keeps consuming the LLM
-generator, while one worker task synthesizes and sends audio clips. The
-client's FIFO playback queue absorbs clips that arrive early, so playback
-of clip N overlaps synthesis of clip N+1 instead of pausing between
-sentences. turn_end still follows the last audio frame (the producer joins
-the worker before sending it), and a single worker keeps at most one
-in-flight sidecar request per turn — the sidecar model is not
-concurrency-guarded.
+clause-level speech cuts (unbounded queue — the loop must never park
+behind synthesis, or the text stream would freeze in whole-sentence
+bursts on a slow CPU) and keeps consuming the LLM generator, while one
+worker task synthesizes and sends audio clips. Per-clip post-processing
+(loudness normalization, WAV decode) runs in a thread so the event loop
+keeps serving every other request. The client's FIFO playback queue
+absorbs clips that arrive early, so playback of clip N overlaps
+synthesis of clip N+1 instead of pausing between sentences. turn_end
+still follows the last audio frame (the producer joins the worker before
+sending it), and a single worker keeps at most one in-flight sidecar
+request per turn — the sidecar model is not concurrency-guarded.
+
+Concurrent socket writes are frame-safe on the uvicorn/websockets
+sans-io stack (each send is one event-loop step writing a complete
+frame), so no cross-frame lock is held: the frontend treats tts_end as
+a no-op and turn_end ordering is guaranteed by the worker join, not by
+a lock.
 """
 from __future__ import annotations
 
@@ -47,7 +56,7 @@ from app.core.ratelimit import rate_limit
 from app.identity.deps import resolve_student_id, _try_user_from_header
 from app.voice.base import VoiceProviderError
 from app.voice.tts import get_tts_provider
-from app.voice.sentences import take_complete
+from app.voice.sentences import take_speech_cuts
 from app.voice.speak_text import to_speakable
 from app.voice.loudness import normalize_pcm16
 
@@ -60,10 +69,12 @@ _TICKET_TTL = 60.0
 # continues text-only; retrying every sentence against a dead sidecar
 # would stall the call for minutes.
 _TTS_FAILURE_LIMIT = 1
-# Speech cuts waiting for synthesis. When full, the turn loop briefly parks
-# (the client is still playing several clips of buffered audio, so playback
-# never starves) which caps how far synthesis can run ahead of the socket.
-_TTS_QUEUE_MAX = 8
+# The synthesis queue is deliberately unbounded: blocking the turn loop on
+# a full queue couples text streaming to the synthesis rate, and on a slow
+# CPU (long clips) that froze answer_delta in whole-sentence bursts. The
+# queue only ever holds sentence text — bounded by the answer's own
+# max_tokens (a few KB); synthesized PCM never queues (the worker holds
+# one clip at a time).
 
 # The MeloTTS sidecar rejects requests beyond 400 chars; speakable text is
 # chunked well under that at punctuation boundaries so long derivations
@@ -172,11 +183,6 @@ class _VoiceCall:
         # progress_cb fires inside run_turn's own control flow; events are
         # collected here and drained around each yielded event (single loop).
         self._outstanding: list[dict] = []
-        # The turn loop and the TTS worker both send frames; the lock keeps
-        # each tts_start + binary + tts_end trio atomic (no answer_delta or
-        # turn_end may slip between a tts_start and its audio) and
-        # serializes concurrent socket writes.
-        self._send_lock = asyncio.Lock()
 
     # -- lifecycle ---------------------------------------------------------
 
@@ -315,7 +321,7 @@ class _VoiceCall:
         tts_ok = True
         tts_failures = 0
         seq = 0
-        tts_q: asyncio.Queue = asyncio.Queue(maxsize=_TTS_QUEUE_MAX)
+        tts_q: asyncio.Queue = asyncio.Queue()
 
         def progress_cb(msg: str):
             self._outstanding.append({"type": "tool_progress", "message": msg})
@@ -354,10 +360,14 @@ class _VoiceCall:
                             break
                         # Sentences synthesize independently and vary several
                         # dB in loudness; level each clip so playback stays
-                        # 忽大忽小-free.
+                        # 忽大忽小-free. Pure-Python sample loops over a
+                        # ~250k-sample clip block the event loop for hundreds
+                        # of milliseconds — run them in a worker thread so
+                        # streaming and every other request keep flowing.
                         try:
-                            pcm = normalize_pcm16(result_tts.pcm16,
-                                                  result_tts.sample_rate)
+                            pcm = await asyncio.to_thread(
+                                normalize_pcm16, result_tts.pcm16,
+                                result_tts.sample_rate)
                         except Exception as exc:
                             tts_failures += 1
                             tts_ok = False
@@ -369,13 +379,12 @@ class _VoiceCall:
                         # frontend blackboard renders formulas from
                         # tts_start.text and skips empty text, so
                         # continuations never duplicate the board.
-                        async with self._send_lock:
-                            await self._send_text(
-                                {"type": "tts_start", "seq": seq,
-                                 "text": sentence if i == 0 else "",
-                                 "sample_rate": result_tts.sample_rate})
-                            await self.ws.send_bytes(pcm)
-                            await self._send_text({"type": "tts_end", "seq": seq})
+                        await self._send_text(
+                            {"type": "tts_start", "seq": seq,
+                             "text": sentence if i == 0 else "",
+                             "sample_rate": result_tts.sample_rate})
+                        await self.ws.send_bytes(pcm)
+                        await self._send_text({"type": "tts_end", "seq": seq})
                         seq += 1
                 except Exception as exc:
                     # Dead socket and friends: stop speaking, keep draining.
@@ -392,7 +401,7 @@ class _VoiceCall:
                 etype = ev.get("type")
                 if etype == "answer":
                     pending += ev.get("content") or ""
-                    complete, pending = take_complete(pending)
+                    complete, pending = take_speech_cuts(pending)
                     await self._send({"type": "answer_delta",
                                       "content": ev.get("content") or ""})
                     for sentence in complete:
@@ -447,5 +456,9 @@ class _VoiceCall:
         await self.ws.send_text(json.dumps(event, ensure_ascii=False, default=str))
 
     async def _send(self, event: dict) -> None:
-        async with self._send_lock:
-            await self._send_text(event)
+        # No cross-frame lock: every send writes one complete frame in a
+        # single event-loop step (uvicorn/websockets sans-io), so concurrent
+        # writers can only interleave frame ORDER — and each consumer treats
+        # the streams independently (tts_end is a no-op client-side; turn_end
+        # ordering is guaranteed by the worker join in _run_turn).
+        await self._send_text(event)

@@ -774,6 +774,12 @@ async def execute(
             yield {"type": "error", "message": f"LLM 错误: {e}"}
             return
 
+        # 伪标签检出后 answer_buf 仍是含标记的原始累计（feed 只对放行文本
+        # 转发）；此后所有落盘/续写判定一律基于实际放行的 emitted，杜绝
+        # 标记进入最终答案、续写前缀与会话历史。
+        if pseudo_guard is not None and pseudo_guard.detected:
+            answer_buf = pseudo_guard.emitted
+
         if empty_answer_retries and answer_buf:
             visible_prefix = "".join(visible_answer_parts)
             answer_buf = _continuation_suffix(visible_prefix, answer_buf)

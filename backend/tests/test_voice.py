@@ -12,7 +12,7 @@ from unittest.mock import patch
 
 from tests.storage_sandbox import StorageSandboxTestCase
 
-from app.voice.sentences import split_sentences, take_complete
+from app.voice.sentences import split_sentences, take_complete, take_speech_cuts
 from app.voice.speak_text import to_speakable
 from app.voice.wav import wav_to_pcm16
 
@@ -87,6 +87,80 @@ class TestSentenceSplitting(unittest.TestCase):
         for part in parts:
             self.assertEqual(part.count("$$") % 2, 0,
                              f"formula sliced open: {part[:60]}")
+
+
+class TestSpeechCuts(unittest.TestCase):
+    """Clause-level streaming cuts feeding the synthesis pipeline."""
+
+    def test_weak_punct_cuts_only_after_min_length(self):
+        # The first ， sits below _SPEECH_MIN_CHARS and must hold; the second
+        # one (buffer >= 24 chars) ends the clip without waiting for a full
+        # sentence terminator.
+        cuts, rest = take_speech_cuts(
+            "我们首先来看这个函数的定义域，它必须满足分母不为零，同时分子也要有意义。")
+        self.assertEqual(cuts, ["我们首先来看这个函数的定义域，它必须满足分母不为零，",
+                                "同时分子也要有意义。"])
+        self.assertEqual(rest, "")
+
+    def test_short_strong_sentence_still_cuts(self):
+        cuts, rest = take_speech_cuts("短句。下一句是完整的。")
+        self.assertEqual(cuts, ["短句。", "下一句是完整的。"])
+        self.assertEqual(rest, "")
+
+    def test_streaming_remainder_carries_over(self):
+        cuts, rest = take_speech_cuts("这一小段还不够长，没有到最小切分长度")
+        self.assertEqual(cuts, [])
+        self.assertTrue(rest)
+        cuts, rest = take_speech_cuts(rest + "所以继续等待。")
+        self.assertEqual(cuts, ["这一小段还不够长，没有到最小切分长度所以继续等待。"])
+        self.assertEqual(rest, "")
+
+    def test_math_span_blocks_weak_cut(self):
+        # Weak punctuation and length inside $$...$$ never cut; the clip
+        # ends at the ，after the span closes, formula intact.
+        text = "考虑函数 $$f(x)=x^2, x \\in [0,1]$$ 的性质，它在此区间上递增。"
+        cuts, rest = take_speech_cuts(text)
+        self.assertEqual(len(cuts), 2)
+        self.assertEqual(cuts[0].count("$$"), 2)
+        self.assertIn("f(x)=x^2", cuts[0])
+        # The post-span tail is under the min length, so its ，holds and the
+        # clip completes at the sentence terminator instead.
+        self.assertEqual(cuts[1], "的性质，它在此区间上递增。")
+        self.assertEqual(rest, "")
+
+    def test_unclosed_math_holds(self):
+        cuts, rest = take_speech_cuts("例如 $x^2, 还没闭合")
+        self.assertEqual(cuts, [])
+        self.assertIn("$x^2", rest)
+
+    def test_fence_is_no_cut_zone(self):
+        # Commas inside a code fence must not cut: the fence collapses to a
+        # placeholder in to_speakable only when it survives as one piece.
+        text = "看下面的实现，\n```python\nprint(a, b)\n```\n然后继续说明。"
+        cuts, rest = take_speech_cuts(text)
+        self.assertEqual(rest, "")
+        for cut in cuts:
+            self.assertEqual(cut.count("```") % 2, 0,
+                             f"fence sliced open: {cut[:60]}")
+        self.assertIn("print(a, b)", "".join(cuts))
+
+    def test_unclosed_fence_holds(self):
+        cuts, rest = take_speech_cuts("看代码：```python\nprint(1)")
+        self.assertEqual(cuts, [])
+        self.assertIn("```", rest)
+
+    def test_punctuation_free_run_hard_capped(self):
+        cuts, rest = take_speech_cuts("字" * 300)
+        self.assertTrue(cuts)
+        self.assertTrue(all(len(c) <= 120 for c in cuts))
+        self.assertEqual(sum(len(c) for c in cuts) + len(rest), 300)
+
+    def test_first_cut_dispatches_early(self):
+        # 23 chars + ，: the cut fires exactly at min length, so the first
+        # clip leaves long before any sentence terminator exists.
+        cuts, rest = take_speech_cuts("前" * 23 + "，后面还有很多内容没有结束")
+        self.assertEqual(cuts, ["前" * 23 + "，"])
+        self.assertEqual(rest, "后面还有很多内容没有结束")
 
 
 class TestSpeakText(unittest.TestCase):
@@ -284,7 +358,33 @@ class TestSpeakText(unittest.TestCase):
         self.assertIn("well-known", out)
         self.assertIn("b减a", out)
 
+    def test_tool_call_markup_not_spoken(self):
+        # 2026-08-31 回归：模型把工具调用叙述成 XML 正文。护栏在上游拦截，
+        # to_speakable 兜底保证任何漏网标记都不会被朗读。
+        text = ("我先查一下教材。<tool_call>\n<function=knowledge_search>\n"
+                '<parameter=keywords>角动量守恒定律 合外力矩为零</parameter>\n'
+                '<parameter=content_types>["textbook"]</parameter>\n'
+                "<parameter=max_results>5</parameter>\n</function>\n</tool_call>"
+                "根据资料，角动量守恒的条件是合外力矩为零。")
+        out = to_speakable(text)
+        self.assertNotIn("tool_call", out)
+        self.assertNotIn("knowledge_search", out)
+        self.assertNotIn("parameter", out)
+        self.assertIn("我先查一下教材", out)
+        self.assertIn("角动量守恒的条件是合外力矩为零", out)
 
+    def test_unclosed_tool_call_tail_not_spoken(self):
+        # 流式截断可能留下未闭合的 <tool_call> 尾块：整块静默。
+        out = to_speakable("讲解开始。<tool_call><function=knowledge_search>角动量")
+        self.assertEqual(out, "讲解开始。")
+
+    def test_stray_tool_tag_shells_stripped(self):
+        # 只有闭合壳残留（块正则没吃到）时，壳本身也剥掉。
+        out = to_speakable("结论如下。</function></tool_call>完毕。")
+        self.assertNotIn("function", out)
+        self.assertNotIn("tool_call", out)
+        self.assertIn("结论如下", out)
+        self.assertIn("完毕", out)
 
 
 class TestSpeakableChunks(unittest.TestCase):
@@ -533,6 +633,75 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
         self.assertEqual(starts[0]["text"], "最后一段没有句号")
         self.assertEqual(len(audio), 1)
         self.assertEqual(events[-1]["type"], "turn_end")
+
+    def test_text_stream_never_parks_behind_stalled_synthesis(self):
+        """合成队列绝不能把文字流和音频耦合：第一片合成挂起、12 句全部
+        入队时，LLM 生成器仍被完整消费（旧的有界队列在第 8 句后就把
+        生产者连同 answer_delta 一起冻结）。"""
+        import asyncio
+        import threading
+        from app.voice.tts.stub import StubTTS
+
+        original = StubTTS.synthesize
+        release = threading.Event()
+        generator_done = threading.Event()
+
+        async def gated_synthesize(provider, text, *, speed=None):
+            while not release.is_set():
+                await asyncio.sleep(0.02)
+            return await original(provider, text, speed=speed)
+
+        async def twelve_sentence_turn(user_message, session, tools, llm=None,
+                                       progress_cb=None, lang="zh",
+                                       output_language=None, attachments=None,
+                                       student_id=""):
+            for i in range(12):
+                yield {"type": "answer", "content": f"第{i}个要点讲解完毕。",
+                       "is_delta": True}
+            generator_done.set()
+            yield {"type": "done", "thinking": "", "answer": "…",
+                   "tool_calls": [], "trace_id": "trace_voice_unbounded"}
+
+        try:
+            with patch("app.agents.chat_agent.run_turn", twelve_sentence_turn), \
+                    patch.object(StubTTS, "synthesize", gated_synthesize):
+                with self.client.websocket_connect(
+                        f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+                    ws.send_json({"type": "start", "session_id": None})
+                    ws.receive_json()["session_id"]
+                    ws.send_json({"type": "utterance_end", "text": "讲十二个要点"})
+                    # 合成仍挂起时，整个生成器必须已被消费完（5 秒远高于
+                    # 逐 delta 循环成本；有界队列会在这里永远停车）。
+                    self.assertTrue(generator_done.wait(timeout=5),
+                                    "producer parked behind stalled synthesis")
+                    release.set()
+                    frames = []
+                    while True:
+                        msg = ws.receive()
+                        if msg.get("bytes") is not None:
+                            frames.append(("audio", len(msg["bytes"])))
+                            continue
+                        if msg.get("text") is None:
+                            continue
+                        event = json.loads(msg["text"])
+                        self.assertNotEqual(event["type"], "error")
+                        frames.append(("text", event))
+                        if event["type"] == "turn_end":
+                            self.assertTrue(event["tts_ok"])
+                            break
+        finally:
+            release.set()
+
+        deltas = [i for i, f in enumerate(frames)
+                  if f[0] == "text" and f[1]["type"] == "answer_delta"]
+        starts = [i for i, f in enumerate(frames)
+                  if f[0] == "text" and f[1]["type"] == "tts_start"]
+        self.assertEqual(len(deltas), 12)
+        self.assertEqual(len(starts), 12)
+        # 生成器在第一片合成完成前就跑完了：全部文字先于全部音频。
+        self.assertLess(max(deltas), min(starts))
+        self.assertEqual(sum(1 for f in frames if f[0] == "audio"), 12)
+        self.assertEqual(frames[-1][1]["type"], "turn_end")
 
     def test_tts_failure_keeps_text_turn_alive(self):
         from app.voice.base import VoiceProviderError

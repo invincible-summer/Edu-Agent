@@ -641,6 +641,12 @@ async def chat_turn(
             yield {"type": "error", "message": f"LLM 错误: {e}"}
             return
 
+        # 伪标签检出后 answer_buf 仍是含标记的原始累计（feed 只对放行文本
+        # 转发）；此后所有落盘/续写一律基于实际放行的 emitted，杜绝标记
+        # 进入最终答案与会话历史。
+        if pseudo_guard is not None and pseudo_guard.detected:
+            answer_buf = pseudo_guard.emitted
+
         trace.decision(step, thinking_buf,
                         tool_calls_raw[0]["name"] if tool_calls_raw else None,
                         bool(tool_calls_raw), finish_reason)

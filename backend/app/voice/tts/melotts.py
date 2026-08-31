@@ -8,6 +8,7 @@ WebSocket wire format.
 """
 from __future__ import annotations
 
+import asyncio
 import logging
 
 import httpx
@@ -39,7 +40,10 @@ class MeloTTS(TTSProvider):
             raise TTSUnavailable(
                 f"TTS sidecar 错误 {resp.status_code}: {resp.text[:200]}")
         try:
-            pcm, rate = wav_to_pcm16(resp.content)
+            # Whole-clip stdlib WAV decode is pure-Python sample work; on the
+            # event loop it stalls every concurrent stream for the length of
+            # the decode, so hand it to a worker thread.
+            pcm, rate = await asyncio.to_thread(wav_to_pcm16, resp.content)
         except Exception as exc:
             raise TTSUnavailable(f"TTS sidecar 返回非 WAV 内容: {exc}") from exc
         return TTSResult(pcm16=pcm, sample_rate=rate)

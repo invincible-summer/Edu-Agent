@@ -28,6 +28,18 @@ import re
 
 _CODE_FENCE = re.compile(r"```.*?```", re.S)
 _CODE_INLINE = re.compile(r"`([^`\n]+)`")
+# Tool-call markup a weak model sometimes narrates into the answer instead
+# of using native function calling (<tool_call><function=…><parameter=…>…).
+# PseudoToolGuard stops it at the chat layer; this strip is the TTS-side
+# backstop so a leak through any other path is never read aloud. Blocks
+# remove with their content (unclosed tail included); leftover tag shells
+# remove alone.
+_TOOL_BLOCK = re.compile(
+    r"<(?:tool_call|knowledge_search)[^>]*>.*?(?:</(?:tool_call|knowledge_search)>|$)",
+    re.S | re.I)
+_TOOL_SHELL = re.compile(
+    r"</?(?:tool_call|knowledge_search|function|parameter)(?:=[^<>\s]*)?[^<>]*>",
+    re.I)
 _IMAGE = re.compile(r"!\[[^\]]*\]\([^)]*\)")
 _LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 _MATH_DISPLAY = re.compile(r"\$\$(.+?)\$\$", re.S)
@@ -482,7 +494,9 @@ _SYMBOL_READINGS: tuple[tuple[re.Pattern, str], ...] = (
 )
 
 def to_speakable(text: str) -> str:
-    s = normalize_math_delimiters(text)
+    s = _TOOL_BLOCK.sub("", text)
+    s = _TOOL_SHELL.sub("", s)
+    s = normalize_math_delimiters(s)
     s = _CODE_FENCE.sub("（这段是代码，具体请看屏幕）", s)
     s = _CODE_INLINE.sub(r"\1", s)
     s = _IMAGE.sub("", s)
