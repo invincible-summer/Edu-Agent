@@ -24,7 +24,7 @@ export function Features({ tr }: { tr: LandingTr }) {
   }, []);
 
   return (
-    <section id="features" className="scroll-mt-24">
+    <section id="features" data-landing-snap className="scroll-mt-24">
       <div className="mx-auto max-w-6xl px-4 py-24 md:py-36">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">

@@ -4,11 +4,15 @@
  * 显示，语音轮次实时写入消息流（转写即用户消息、answer_delta 节流进
  * pendingAnswer、turn_end 落定），本层只补三件「电话感」：
  *
- *   1. 左上角「小手机」指示器：迷你手机造型 + 声波 + 通话时长，点开
- *      可停止播报/挂断；
- *   2. 顶部「板书」黑板：接通即常驻、挂断才收起；上下双面板只记老师
- *      讲到的公式句（KaTeX 原文渲染），写满后擦掉更久的那块再写新的；
- *   3. 底部控制条：按住说话 / 停止播报 / 挂断，渲染在原输入框上方——
+ *   1. 右上角「手机模拟」（原联系老师入口的位置，不与黑板同行、不挤
+ *      黑板宽度）：虚拟空白头像 + 通话计时 + 声波状态，底部一排装饰
+ *      导航图标（返回/主页/多任务，无真实功能）；挂断与停止播报都在
+ *      底部控制条，窄屏隐藏手机只留黑板；
+ *   2. 顶部「板书」黑板：接通即常驻、挂断才收起；三块等分黑板只记老师
+ *      讲到的公式句（KaTeX 原文渲染），从上往下写空板、三块都满时擦掉
+ *      写得最早的那块再写新的；表格不逐格朗读——整块 markdown 即时整版
+ *      驻留至少 7 秒（board_table），之后直到新公式/新表格需要板面才清空；
+ *   3. 底部控制条：按住说话 / 停止播报 / 挂断，紧贴输入框上方——
  *      通话期间输入框保持可用，打字消息经同一条 WS 发出（sendText），
  *      老师的回复仍走 TTS 语音通道；浏览器不支持语音识别时可纯打字通话。
  *
@@ -17,8 +21,7 @@
  */
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2, Mic, PhoneOff, Presentation, Smartphone, VolumeX } from "lucide-react";
-import { AnchoredPopover } from "@/components/ui/AnchoredPopover";
+import { ChevronLeft, Home, Loader2, Mic, PhoneOff, Presentation, Square, UserRound, VolumeX } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { t, type Lang } from "@/lib/i18n";
 import { listSessions, loadSession } from "@/lib/api";
@@ -35,41 +38,67 @@ function fmtDuration(total: number): string {
   return `${mm}:${ss}`;
 }
 
-/* ---- 板书：上下双面板只记公式句，接通常驻、挂断才关 --------------------- */
+/* ---- 板书：三块等分黑板只记公式句，接通常驻、挂断才关 -------------------- */
 
 type BoardSlot = { key: number; text: string } | null;
 
 /** 擦除动画时长（ms）：与 globals.css 的 panel-erase 时长保持一致。 */
 const BOARD_ERASE_MS = 450;
 
-export function FormulaBoard({ lang, sentence, active }: {
+export function FormulaBoard({ lang, sentence, table, active, onClearTable }: {
   lang: Lang;
   sentence: string | null;
+  /** 表格整版驻留（board_table 事件）：独占整个板面至少 hold 窗口；
+   *  窗口过后继续驻留，直到下一个新公式（或新表格）需要板面才被清空。 */
+  table: { markdown: string; until: number } | null;
   /** 已接通（ready 起至通话结束）：黑板常驻，挂断随通话层卸载才消失。 */
   active: boolean;
+  /** 表格窗口过后由新公式清空整版表格（boardTable 状态在 useVoiceCall）。 */
+  onClearTable: () => void;
 }) {
-  const [slots, setSlots] = useState<[BoardSlot, BoardSlot]>([null, null]);
-  const [erasing, setErasing] = useState<0 | 1 | null>(null);
-  const lastWrittenRef = useRef<0 | 1 | null>(null);
+  const [slots, setSlots] = useState<[BoardSlot, BoardSlot, BoardSlot]>([null, null, null]);
+  const [erasing, setErasing] = useState<0 | 1 | 2 | null>(null);
   const lastTextRef = useRef<string | null>(null);
   const keyRef = useRef(0);
+
+  // 表格上板 = 三块黑板内容全部作废：表格清掉后新公式从第一块重新写起。
+  useEffect(() => {
+    if (!table) return;
+    // setState 经 rAF 延迟触发（react-hooks/set-state-in-effect）。
+    const raf = requestAnimationFrame(() => {
+      setSlots([null, null, null]);
+      lastTextRef.current = null;
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [table]);
 
   useEffect(() => {
     if (!sentence || !containsMathMarkdown(sentence)) return;
     if (sentence === lastTextRef.current) return; // 同句重播不重复上板
+    if (table) {
+      // 表格驻留窗口内新公式不上板（音频播报不受影响）；窗口过后第一个
+      // 新公式清空整版表格接管板面——table→null 后本 effect 重跑完成写入。
+      // 表格不会到点自动消失，非公式句子也永不清板。
+      if (Date.now() < table.until) return;
+      onClearTable();
+      return;
+    }
     lastTextRef.current = sentence;
-    // 先写上面、再写下面；两块都满时擦掉「更久没写」的那块（保留最近写的）。
-    const target: 0 | 1 = slots[0] === null
+    // 从上到下写第一块空板；三块都满时擦掉写得最早的那块（key 即写入序）。
+    let target: 0 | 1 | 2 = slots[0] === null
       ? 0
       : slots[1] === null
         ? 1
-        : lastWrittenRef.current === 0 ? 1 : 0;
+        : slots[2] === null ? 2 : 0;
+    if (slots[0] !== null && slots[1] !== null && slots[2] !== null) {
+      const keys = slots.map((s) => (s ? s.key : Infinity));
+      target = keys.indexOf(Math.min(...keys)) as 0 | 1 | 2;
+    }
     const write = () => {
       keyRef.current += 1;
       const key = keyRef.current;
-      lastWrittenRef.current = target;
       setSlots((prev) => {
-        const next: [BoardSlot, BoardSlot] = [prev[0], prev[1]];
+        const next: [BoardSlot, BoardSlot, BoardSlot] = [prev[0], prev[1], prev[2]];
         next[target] = { key, text: sentence };
         return next;
       });
@@ -80,52 +109,69 @@ export function FormulaBoard({ lang, sentence, active }: {
       const raf = requestAnimationFrame(write);
       return () => cancelAnimationFrame(raf);
     }
-    setErasing(target);
+    // setState 经 rAF 延迟触发（react-hooks/set-state-in-effect）：先挂
+    // 擦除动画类，450ms 后再写入新内容。
+    const raf = requestAnimationFrame(() => setErasing(target));
     const timer = window.setTimeout(write, BOARD_ERASE_MS);
-    return () => window.clearTimeout(timer);
-  }, [sentence, slots]);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(timer);
+    };
+  }, [sentence, slots, table, onClearTable]);
 
   if (!active) return null;
   return (
+    /* 黑板严格左右居中（无右侧预留，窄窗口下手机可能贴住板书右缘——已
+       确认接受），固定占 3/7 页面高度（页面根为 h-screen）。等分的关键在
+       两层都要 flex-1 min-h-0：外层 body 填满固定高板面（否则按内容自
+       高，三块面板在内容高容器里 flex-1 各归各的内容高度——旧版不均匀
+       的根因），内层三块面板再 flex-1 min-h-0 严格三等分，超出各自滚动。 */
     <div className="pointer-events-none absolute inset-x-0 top-10 z-10 flex justify-center px-4">
-      <div className="voice-board board-in pointer-events-auto flex max-h-[46vh] w-full max-w-[min(94%,620px)] flex-col overflow-hidden">
+      <div className="voice-board board-in pointer-events-auto flex h-[calc(100vh*3/7)] w-full max-w-[min(94%,760px)] flex-col overflow-hidden">
         <div className="flex items-center gap-1.5 px-3.5 pb-1 pt-2.5">
           <Presentation size={12} className="shrink-0" />
           <span className="text-[0.66rem] font-medium tracking-wide">{t(lang, "chat.voice.call.board.title")}</span>
           <span className="board-chalk-dash mx-1.5 flex-1" aria-hidden />
         </div>
-        <div className="voice-board-body flex flex-col">
-          {slots.map((slot, i) => (
-            <Fragment key={i}>
-              {i === 1 && <div className="voice-board-divider" aria-hidden />}
-              <div className="voice-board-panel">
-                {slot ? (
-                  <div key={slot.key} className={erasing === i ? "panel-erase" : "panel-write"}>
-                    <Markdown className="chat-prose">{slot.text}</Markdown>
-                  </div>
-                ) : i === 0 ? (
-                  <p className="text-[0.72rem] text-white/55">{t(lang, "chat.voice.call.board.empty")}</p>
-                ) : null}
-              </div>
-            </Fragment>
-          ))}
-        </div>
+        {table ? (
+          // 表格整版：整块 markdown 即时完整呈现（刻意无书写动画，不逐行
+          // 画出），独占整个板面（超出滚动），驻留期间三块黑板隐藏；音频
+          // 口播只有一句引导语，流水线不停。
+          <div className="voice-board-body min-h-0 flex-1">
+            <div className="voice-board-panel min-h-0 flex-1">
+              <Markdown className="chat-prose">{table.markdown}</Markdown>
+            </div>
+          </div>
+        ) : (
+          <div className="voice-board-body flex min-h-0 flex-1 flex-col">
+            {slots.map((slot, i) => (
+              <Fragment key={i}>
+                {i > 0 && <div className="voice-board-divider" aria-hidden />}
+                <div className="voice-board-panel min-h-0 flex-1 overflow-y-auto">
+                  {slot ? (
+                    <div key={slot.key} className={erasing === i ? "panel-erase" : "panel-write"}>
+                      <Markdown className="chat-prose">{slot.text}</Markdown>
+                    </div>
+                  ) : i === 0 ? (
+                    <p className="text-[0.72rem] text-white/55">{t(lang, "chat.voice.call.board.empty")}</p>
+                  ) : null}
+                </div>
+              </Fragment>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-/* ---- 左上角小手机指示器 --------------------------------------------------- */
+/* ---- 右上角的手机模拟（原联系老师入口位置）：空白头像 + 计时 + 装饰导航 -- */
 
-export function CallBadge({ lang, voice, onHangUp }: {
+export function PhoneMockup({ lang, voice }: {
   lang: Lang;
   voice: ReturnType<typeof useVoiceCall>;
-  onHangUp: () => void;
 }) {
   const tr = (k: string, fb?: string) => t(lang, k, fb);
-  const [open, setOpen] = useState(false);
-  const anchorRef = useRef<HTMLButtonElement>(null);
-
   const dotCls = voice.error
     ? "bg-danger"
     : voice.phase === "ready"
@@ -136,60 +182,48 @@ export function CallBadge({ lang, voice, onHangUp }: {
   const waving = voice.phase === "speaking" || voice.phase === "recording";
 
   return (
-    <div className="absolute left-10 top-2 z-20">
-      <button
-        ref={anchorRef}
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        title={tr("chat.voice.call.inCall")}
-        aria-label={tr("chat.voice.call.inCall")}
-        aria-expanded={open}
-        className="flex h-7 cursor-pointer items-center gap-2 rounded-full border border-accent/30 bg-surface/90 py-0.5 pl-1 pr-2.5 shadow-sm backdrop-blur transition-colors hover:border-accent/50"
-      >
-        {/* 迷你手机机身：渐变屏幕 + 听筒点，读作「正在通话的小手机」 */}
-        <span className="relative flex h-5 w-5 shrink-0 items-center justify-center rounded-[5px] bg-gradient-to-b from-accent to-accent-strong text-white shadow-inner">
-          <Smartphone size={11} strokeWidth={2.4} />
-        </span>
-        {/* 声波：老师说话/我说话时跳动 */}
-        <span className="flex h-3.5 items-end gap-[2px]" aria-hidden>
-          {[5, 9, 6, 10, 7].map((h, i) => (
-            <span
-              key={i}
-              style={{ height: `${h}px`, animationDelay: `${i * 0.13}s` }}
-              className={cn("w-[2px] rounded-full bg-accent/75", waving && "call-wave-bar")}
-            />
-          ))}
-        </span>
-        <span className="tnum text-[0.68rem] font-medium text-fg-secondary">{fmtDuration(voice.callSeconds)}</span>
-        <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", dotCls)} />
-      </button>
-
-      <AnchoredPopover anchorRef={anchorRef} open={open} onClose={() => setOpen(false)} placement="bottom-start">
-        <div className="w-44 rounded-[10px] border border-border bg-surface p-1.5 shadow-lg">
-          <p className="px-2 pb-1 pt-0.5 text-[0.64rem] text-muted">{tr("chat.voice.call.controls")}</p>
-          {voice.phase === "speaking" && (
-            <button
-              type="button"
-              onClick={() => voice.stopSpeaking()}
-              className="flex w-full items-center gap-2 rounded-[7px] px-2 py-1.5 text-[0.75rem] text-fg-secondary transition-colors hover:bg-surface-hover"
-            >
-              <VolumeX size={13} /> {tr("chat.voice.call.stopAudio")}
-            </button>
-          )}
-          <button
-            type="button"
-            onClick={onHangUp}
-            className="flex w-full items-center gap-2 rounded-[7px] px-2 py-1.5 text-[0.75rem] font-medium text-danger transition-colors hover:bg-danger/10"
-          >
-            <PhoneOff size={13} /> {tr("chat.voice.call.hangup")}
-          </button>
-        </div>
-      </AnchoredPopover>
+    <div
+      title={tr("chat.voice.call.inCall")}
+      aria-label={tr("chat.voice.call.inCall")}
+      className="voice-phone board-in pointer-events-none hidden flex-col items-center md:flex"
+    >
+      {/* 听筒 + 状态点：错误红 / 录音红闪 / 待机绿 / 工作蓝闪 */}
+      <div className="flex w-full items-center justify-center gap-1.5 pt-2.5" aria-hidden>
+        <span className={cn("h-1 w-1 shrink-0 rounded-full", dotCls)} />
+        <span className="h-1 w-10 rounded-full bg-white/25" />
+      </div>
+      {/* 虚拟空白头像：老师的占位形象，说话时外圈涟漪 */}
+      <div className="relative mt-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/10">
+        <UserRound size={30} className="text-white/70" />
+        {waving && (
+          <span className="call-pulse-ring absolute inset-0 rounded-full border border-white/40" aria-hidden />
+        )}
+      </div>
+      {/* 通话计时 */}
+      <span className="tnum mt-2.5 text-[0.72rem] font-medium tracking-wide text-white/90">
+        {fmtDuration(voice.callSeconds)}
+      </span>
+      {/* 声波：老师说话/我说话时跳动 */}
+      <span className="mt-1.5 flex h-4 items-end gap-[3px]" aria-hidden>
+        {[7, 11, 9, 11, 7].map((h, i) => (
+          <span
+            key={i}
+            style={{ height: `${h}px`, animationDelay: `${i * 0.13}s` }}
+            className={cn("w-[2.5px] rounded-full bg-white/70", waving && "call-wave-bar")}
+          />
+        ))}
+      </span>
+      {/* 装饰导航栏：手机常见的返回上一页/返回首页/多任务，无真实用途 */}
+      <div className="mt-auto flex w-full items-center justify-center gap-4 pb-2.5 pt-2.5" aria-hidden>
+        <ChevronLeft size={14} className="text-white/45" />
+        <Home size={13} className="text-white/45" />
+        <Square size={10} className="text-white/45" />
+      </div>
     </div>
   );
 }
 
-/* ---- 底部控制条（位于输入框上方，打字消息走同一条语音 WS） ---------------- */
+/* ---- 底部控制条（紧贴输入框上方，打字消息走同一条语音 WS） ---------------- */
 
 function statusLineFor(lang: Lang, phase: VoicePhase, error: string | null): string {
   const tr = (k: string, fb?: string) => t(lang, k, fb);
@@ -219,7 +253,7 @@ export function CallBar({ lang, voice, onHangUp }: {
     : null;
 
   return (
-    <div className="px-4 pb-1.5 pt-1">
+    <div className="px-4 pb-1 pt-0.5">
       <div className="mx-auto flex max-w-[820px] items-center gap-2.5 rounded-[14px] border border-border bg-surface p-2.5 shadow-md">
         {/* 状态区 */}
         <div className="flex min-w-0 flex-1 items-center gap-2.5 px-1.5">
@@ -297,16 +331,6 @@ export function CallBar({ lang, voice, onHangUp }: {
           <span className="hidden sm:inline">{tr("chat.voice.call.hangup")}</span>
         </button>
       </div>
-      <p className="mt-1.5 text-center text-[0.65rem] text-muted/70">
-        {voice.error === "voice_not_supported"
-          ? tr("chat.voice.call.textNote")
-          : voice.phase === "recording"
-            ? tr("chat.voice.call.release")
-            : tr("chat.voice.call.desc.short")}
-      </p>
-      <p className="mx-auto mt-1 max-w-[760px] text-center text-[0.58rem] leading-relaxed text-muted/60">
-        {tr("chat.voice.call.browserNote")}
-      </p>
     </div>
   );
 }
@@ -334,13 +358,20 @@ export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose, onRegist
   const genRef = useRef<number | null>(null);
   const answerAccumRef = useRef("");
   const flushTimerRef = useRef<number | null>(null);
+  // 挂断收尾：轮次在途时挂断不立刻卸载本层——通话 UI 隐藏，文字写完
+  // （或中止提交半截）后再 onClose。ref 供回调同步读取，state 只管渲染。
+  const [finishing, setFinishing] = useState(false);
+  const finishingRef = useRef(false);
 
   const flushNow = useCallback(() => {
     if (flushTimerRef.current !== null) {
       window.clearTimeout(flushTimerRef.current);
       flushTimerRef.current = null;
     }
-    useChatStore.getState().flushPending("", answerAccumRef.current);
+    const st = useChatStore.getState();
+    if (genRef.current === null || st.generation === genRef.current) {
+      st.flushPending("", answerAccumRef.current);
+    }
   }, []);
 
   const refreshSessions = useCallback(() => {
@@ -362,6 +393,25 @@ export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose, onRegist
       })
       .catch(() => undefined);
   }, []);
+
+  /** 轮次终局的统一收尾：落定半截/完整回答、清 streaming 与 retry；
+   *  挂断收尾（finishing）时最后收起通话层。世代不匹配（用户已切走
+   *  会话）则一个字都不写——loadFull/newChat 已把 store 重置干净。 */
+  const finalizeTurn = useCallback(() => {
+    flushNow();
+    const st = useChatStore.getState();
+    if (genRef.current === null || st.generation === genRef.current) {
+      if (st.pendingAnswer || st.pendingThinking || st.pendingToolCalls.length > 0) st.commitAssistant();
+      st.setStreaming(false);
+      st.setRetry(null);
+    }
+    refreshSessions();
+    if (finishingRef.current) {
+      finishingRef.current = false;
+      setFinishing(false);
+      onClose();
+    }
+  }, [flushNow, onClose, refreshSessions]);
 
   const voice = useVoiceCall({
     lang,
@@ -385,33 +435,37 @@ export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose, onRegist
       if (flushTimerRef.current === null) {
         flushTimerRef.current = window.setTimeout(() => {
           flushTimerRef.current = null;
-          useChatStore.getState().flushPending("", answerAccumRef.current);
+          const st = useChatStore.getState();
+          if (genRef.current === null || st.generation === genRef.current) {
+            st.flushPending("", answerAccumRef.current);
+          }
         }, 50);
       }
+    },
+    onToolStart: (name) => {
+      const st = useChatStore.getState();
+      if (!name || (genRef.current !== null && st.generation !== genRef.current)) return;
+      st.addToolStart(name);
+    },
+    onToolResult: (result) => {
+      const st = useChatStore.getState();
+      if (genRef.current !== null && st.generation !== genRef.current) return;
+      st.setToolResult(result);
     },
     onTurnEnd: (sid) => {
       if (sid) boundSidRef.current = sid;
       turnsRef.current += 1;
-      flushNow();
-      const st = useChatStore.getState();
-      if (genRef.current === null || st.generation === genRef.current) {
-        if (st.pendingAnswer || st.pendingThinking || st.pendingToolCalls.length > 0) st.commitAssistant();
-        st.setStreaming(false);
-        st.setRetry(null);
-      }
-      refreshSessions();
+      finalizeTurn();
     },
     onTurnError: () => {
-      // 中断的轮次以服务端落盘为准：重载替换本地半截流，避免不一致。
-      flushNow();
-      const st = useChatStore.getState();
-      const sid = boundSidRef.current;
-      if (sid && sid === st.sessionId) {
-        reloadBoundSession(sid);
-      } else {
-        st.setStreaming(false);
-        st.resetPending();
-      }
+      // agent_error 杀死在途轮次：提交半截回答（与打字流中断一致）并立即
+      // 解卡；服务端不落盘半截，重载反而会把它闪没。
+      finalizeTurn();
+    },
+    onTurnAborted: () => {
+      // 在途轮次再也无法完成（收尾超时/断网/服务端提前收线/卸载）：
+      // 同样提交半截并解卡，聊天不允许悬空在流式态。
+      finalizeTurn();
     },
   });
 
@@ -433,35 +487,54 @@ export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose, onRegist
   const handleHangUp = useCallback(() => {
     const hadTurns = turnsRef.current > 0;
     const sid = boundSidRef.current;
-    voice.hangUp();
-    flushNow();
     const st = useChatStore.getState();
     // 完成过轮次、或挂断时仍有轮次在途：以服务端落盘为准重载对齐，
     // 本地半截流/悬空的用户消息都会被替换掉。
     const turnInFlight = st.streaming;
-    if (sid && sid === st.sessionId && (hadTurns || turnInFlight)) {
+    voice.hangUp();
+    if (turnInFlight) {
+      // 挂断收尾：通话 UI 随本层隐藏，聊天流继续把回答写完，由
+      // onTurnEnd/onTurnAborted 落定后再 onClose 收起本层。
+      finishingRef.current = true;
+      setFinishing(true);
+      if (sid) router.replace(`/chat/${encodeURIComponent(sid)}`, { scroll: false });
+      return;
+    }
+    flushNow();
+    st.setStreaming(false);
+    if (sid && sid === st.sessionId && hadTurns) {
       reloadBoundSession(sid);
-    } else if (st.streaming) {
-      st.setStreaming(false);
+    } else {
       st.resetPending();
     }
     refreshSessions();
     onClose();
     // 通话期间刻意没有 router.replace（见 onSessionBound 注释）；挂断后
     // 再把 URL 对齐到本次通话绑定的会话，深链/刷新语义与文字轮一致。
-    if (sid && (hadTurns || turnInFlight)) {
+    if (sid && hadTurns) {
       router.replace(`/chat/${encodeURIComponent(sid)}`, { scroll: false });
     }
   }, [flushNow, onClose, refreshSessions, reloadBoundSession, router, voice]);
 
-  // 接通（ready 起）板书常驻；connecting/ended 不算接通。
-  const boardActive = voice.phase === "ready" || voice.phase === "recording"
-    || voice.phase === "recognizing" || voice.phase === "thinking" || voice.phase === "speaking";
+  // 接通（ready 起）板书常驻；connecting/ended 不算接通；挂断收尾全部隐藏。
+  const boardActive = !finishing && (voice.phase === "ready" || voice.phase === "recording"
+    || voice.phase === "recognizing" || voice.phase === "thinking" || voice.phase === "speaking");
+
+  // 收尾期间本层只保留挂载（WS 与回调还在工作），不再渲染任何通话 UI。
+  if (finishing) return null;
 
   return (
     <>
-      <CallBadge lang={lang} voice={voice} onHangUp={handleHangUp} />
-      <FormulaBoard lang={lang} sentence={voice.speakingSentence} active={boardActive} />
+      <FormulaBoard
+        lang={lang}
+        sentence={voice.speakingSentence}
+        table={voice.boardTable}
+        active={boardActive}
+        onClearTable={voice.clearBoardTable}
+      />
+      {/* 手机模拟独立于黑板条之外（absolute 定位在 .voice-phone），
+          不挤占黑板宽度；与黑板同在接通（ready 起）后才出现。 */}
+      {boardActive && <PhoneMockup lang={lang} voice={voice} />}
       <CallBar lang={lang} voice={voice} onHangUp={handleHangUp} />
     </>
   );

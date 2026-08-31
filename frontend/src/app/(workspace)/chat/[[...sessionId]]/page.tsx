@@ -498,8 +498,9 @@ function ChatWorkspace() {
         >
           <Menu size={16} />
         </button>
-        {/* 右上角工具组：资料栏开关 + 电话（语音通话）。电话占最右侧，
-            通话中由左上角「小手机」指示器 + 底部控制条接管。 */}
+        {/* 右上角工具组：资料栏开关 + 电话（语音通话）。电话占最右侧；
+            通话中入口隐藏，由本角落（按钮行正下方）放大的手机模拟指示
+            通话状态，黑板不再与其同行。 */}
         <div className="absolute right-3 top-2 z-10 flex items-center gap-1">
           {!materialsOpen && (
             <button
@@ -510,10 +511,10 @@ function ChatWorkspace() {
               <PanelRight size={16} />
             </button>
           )}
-          {voiceEnabled && (
+          {voiceEnabled && !voiceOpen && (
             <button
               onClick={() => setVoiceOpen(true)}
-              disabled={chat.streaming || voiceOpen}
+              disabled={chat.streaming}
               title={tr("chat.voice.call.title")}
               aria-label={tr("chat.voice.call.title")}
               className="group flex w-16 shrink-0 flex-col items-center gap-0.5 rounded-[10px] border border-accent/25 bg-accent-soft/40 px-1 pb-1 pt-1.5 text-accent-strong shadow-sm transition-all hover:border-accent/50 hover:bg-accent-soft disabled:cursor-not-allowed disabled:opacity-40"

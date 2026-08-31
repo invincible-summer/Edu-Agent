@@ -162,6 +162,49 @@ class TestSpeechCuts(unittest.TestCase):
         self.assertEqual(cuts, ["前" * 23 + "，"])
         self.assertEqual(rest, "后面还有很多内容没有结束")
 
+    def test_table_block_is_single_cut(self):
+        # 表格是不可切区：前导正文单独成句，整块表格作为一个 cut 交给
+        # worker（换成口播引导语 + 上黑板），表格后的正文照常切分。
+        text = ("总结如下：\n| 物理量 | 单位 |\n|---|---|\n"
+                "| 力 | 牛 |\n| 功 | 焦 |\n接下来看例题。")
+        cuts, rest = take_speech_cuts(text)
+        self.assertEqual(cuts[0], "总结如下：")
+        self.assertTrue(cuts[1].startswith("| 物理量"))
+        self.assertIn("| 力 | 牛 |", cuts[1])
+        self.assertEqual(cuts[1].count("\n"), 3)
+        self.assertEqual(cuts[2], "接下来看例题。")
+        self.assertEqual(rest, "")
+
+    def test_unclosed_table_holds(self):
+        cuts, rest = take_speech_cuts("| a | b |\n|---|---|\n| 1")
+        self.assertEqual(cuts, [])
+        self.assertTrue(rest.startswith("| a | b |"))
+
+    def test_long_table_not_hard_capped(self):
+        # 长表不被 120 硬上限劈开：未闭合时整块留在 pending，补上表格后
+        # 的正文行后一次性成 cut。
+        rows = ("| 量 | 值 |\n|---|---|\n"
+                + "".join(f"| 项目{i} | 数字{i} |\n" for i in range(30)))
+        cuts, rest = take_speech_cuts(rows)
+        self.assertEqual(cuts, [])
+        self.assertGreater(len(rest), 120)
+        cuts2, rest2 = take_speech_cuts(rows + "好。")
+        self.assertEqual(len(cuts2), 2)
+        self.assertTrue(cuts2[0].startswith("| 量 |"))
+        self.assertGreater(len(cuts2[0]), 120)
+        self.assertEqual(cuts2[1], "好。")
+        self.assertEqual(rest2, "")
+
+    def test_table_cell_math_does_not_toggle_math_pairing(self):
+        # 表内 $ 公式不翻转数学配对状态：表格结束后正文的未闭合公式照常
+        # hold，不会被当成"已闭合"而提前下刀。
+        text = ("| 力 | $F$ |\n|---|---|\n| 1 | 2 |\n"
+                "再看 $x^2, 未闭合")
+        cuts, rest = take_speech_cuts(text)
+        self.assertEqual(len(cuts), 1)
+        self.assertTrue(cuts[0].startswith("| 力 |"))
+        self.assertIn("$x^2", rest)
+
 
 class TestSpeakText(unittest.TestCase):
     def test_markdown_stripped(self):
@@ -209,7 +252,27 @@ class TestSpeakText(unittest.TestCase):
 
     def test_bare_subscript_reading(self):
         out = to_speakable("当 $x_1$ 增大时")
-        self.assertIn("x下标1", out)
+        self.assertIn("x1", out)
+
+    def test_subscript_concatenated_not_worded(self):
+        # 2026-08-31 反馈："W下标0" 的读法生硬——下标与底数直接连读。
+        out = to_speakable("当 $W_{0}$ 与 $W_0$ 增大时")
+        self.assertIn("W0", out)
+        self.assertNotIn("下标", out)
+        self.assertNotIn("_", out)
+
+    def test_prose_bare_subscript_reads_concatenated(self):
+        # 正文裸下标（不在 $...$ 里）与数学段同读法；残余下划线静默删除。
+        out = to_speakable("W_{0} 是初角速度，W_0 也一样，$T_{max}$ 是上限")
+        self.assertIn("W0 是初角速度", out)
+        self.assertIn("Tmax", out)
+        self.assertNotIn("_", out)
+        self.assertNotIn("下标", out)
+
+    def test_subscript_in_expression_keeps_operators(self):
+        out = to_speakable("$x_{i-1}$ 表示前一时刻")
+        self.assertIn("i减1", out)
+        self.assertNotIn("下标", out)
 
     def test_math_degree_not_power(self):
         out = to_speakable("角 $30^\\circ$ 是锐角")
@@ -310,9 +373,10 @@ class TestSpeakText(unittest.TestCase):
 
     def test_absolute_value_reading(self):
         out = to_speakable(r"$\left|a_n-0\right|=\left|\frac{1}{n}\right|$")
-        self.assertIn("a下标n减0的绝对值", out)
+        self.assertIn("an减0的绝对值", out)
         self.assertIn("n分之1的绝对值", out)
         self.assertNotIn("|", out)
+        self.assertNotIn("下标", out)
 
     def test_bracket_interval_reading(self):
         out = to_speakable("在区间 $[-1,1]$ 上定义")
@@ -478,6 +542,23 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
                 self.assertTrue(event["tts_ok"])
                 return events
 
+    def _receive_until(self, ws, stop_type):
+        """Collect raw events (dicts + audio tuples) until `stop_type` arrives."""
+        events = []
+        while True:
+            msg = ws.receive()
+            if msg.get("bytes") is not None:
+                events.append(("audio", len(msg["bytes"])))
+                continue
+            if msg.get("text") is None:
+                continue
+            event = json.loads(msg["text"])
+            self.assertNotEqual(event["type"], "error",
+                                f"unexpected error event: {event}")
+            events.append(event)
+            if event["type"] == stop_type:
+                return events
+
     def test_status_reports_browser_stt_and_tts(self):
         data = self.client.get("/api/v1/voice/status").json()
         self.assertEqual(data, {"enabled": True, "stt": "browser", "tts": "stub"})
@@ -633,6 +714,69 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
         self.assertEqual(starts[0]["text"], "最后一段没有句号")
         self.assertEqual(len(audio), 1)
         self.assertEqual(events[-1]["type"], "turn_end")
+
+    def test_table_turn_speaks_cue_and_pins_board(self):
+        """表格不逐格朗读：整块 markdown 走 board_table 事件，口播一句固定
+        引导语，后续句子照常合成（流水线不停顿），answer_delta 原样透传。"""
+        from app.voice.tts.stub import StubTTS
+
+        table = ("| 物理量 | 单位 |\n|---|---|\n"
+                 "| 力 | 牛 |\n| 功 | 焦 |\n")
+
+        async def table_turn(user_message, session, tools, llm=None,
+                             progress_cb=None, lang="zh", output_language=None,
+                             attachments=None, student_id=""):
+            yield {"type": "answer", "content": "对比表如下：\n",
+                   "is_delta": True}
+            yield {"type": "answer", "content": table, "is_delta": True}
+            yield {"type": "answer", "content": "下一句继续讲解。",
+                   "is_delta": True}
+            yield {"type": "done", "thinking": "", "answer": "…",
+                   "tool_calls": [], "trace_id": "trace_voice_table"}
+
+        speeds = []
+        original = StubTTS.synthesize
+
+        async def recording_synthesize(provider, text, *, speed=None):
+            speeds.append(speed)
+            return await original(provider, text, speed=speed)
+
+        with patch("app.agents.chat_agent.run_turn", table_turn), \
+                patch.object(StubTTS, "synthesize", recording_synthesize), \
+                patch("app.api.v1.voice._resolve_tts_speed", return_value=0.75):
+            with self.client.websocket_connect(
+                    f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+                ws.send_json({"type": "start", "session_id": None})
+                ws.receive_json()["session_id"]
+                ws.send_json({"type": "utterance_end", "text": "讲对比表"})
+                events = []
+                while True:
+                    msg = ws.receive()
+                    if msg.get("bytes") is not None:
+                        events.append(("audio", len(msg["bytes"])))
+                        continue
+                    event = json.loads(msg["text"])
+                    self.assertNotEqual(event["type"], "error")
+                    events.append(event)
+                    if event["type"] == "turn_end":
+                        self.assertTrue(event["tts_ok"])
+                        break
+
+        boards = [e for e in events if isinstance(e, dict)
+                  and e["type"] == "board_table"]
+        self.assertEqual(len(boards), 1)
+        self.assertTrue(boards[0]["markdown"].startswith("| 物理量"))
+        self.assertIn("| 力 | 牛 |", boards[0]["markdown"])
+        self.assertEqual(boards[0]["hold_ms"], 7000)
+        # 口播顺序：前导正文 → 引导语（表格被换掉）→ 表格后正文。
+        starts = [e for e in events if isinstance(e, dict)
+                  and e["type"] == "tts_start"]
+        self.assertEqual([s["text"] for s in starts],
+                         ["对比表如下：", "请看这个表格。", "下一句继续讲解。"])
+        self.assertEqual(sum(1 for e in events if isinstance(e, tuple)), 3)
+        self.assertEqual(events[-1]["type"], "turn_end")
+        # 每用户语速逐片传给 provider。
+        self.assertEqual(speeds, [0.75, 0.75, 0.75])
 
     def test_text_stream_never_parks_behind_stalled_synthesis(self):
         """合成队列绝不能把文字流和音频耦合：第一片合成挂起、12 句全部
@@ -813,9 +957,191 @@ class TestVoiceWebSocket(StorageSandboxTestCase):
         with self.client.websocket_connect(
                 f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
             ws.send_json({"type": "start", "session_id": None})
-            ws.receive_json()
+            ws.receive()
             ws.send_json({"type": "end"})
             self.assertEqual(ws.receive_json()["type"], "bye")
+
+    def test_tool_events_carry_card_payloads(self):
+        """tool_result 必须完整透传：通话中的题目卡/知识检索卡依赖载荷，
+        只有 thinking 允许留在服务端。"""
+        knowledge_payload = {"status": "ok", "data": {
+            "query": "勾股定理", "count": 1, "omitted_count": 0,
+            "results": [{"file_id": "f1", "filename": "教材.pdf", "page": 3,
+                         "excerpt": "勾股定理：a²+b²=c²"}]}}
+        quiz_payload = {"status": "ok", "data": {"questions": [
+            {"id": "q1", "type": "single", "stem": "1+1=?", "options": ["1", "2"]}]}}
+
+        async def tool_turn(user_message, session, tools, llm=None,
+                            progress_cb=None, lang="zh", output_language=None,
+                            attachments=None, student_id=""):
+            yield {"type": "tool_start", "name": "knowledge_search",
+                   "args": {"query": "勾股定理"}}
+            yield {"type": "tool_result", "result": knowledge_payload}
+            yield {"type": "answer", "content": "查到了。", "is_delta": True}
+            yield {"type": "tool_start", "name": "generate_quiz", "args": {}}
+            yield {"type": "tool_result", "result": quiz_payload}
+            yield {"type": "done", "thinking": "", "answer": "…",
+                   "tool_calls": [], "trace_id": "trace_voice_cards"}
+
+        with patch("app.agents.chat_agent.run_turn", tool_turn):
+            with self.client.websocket_connect(
+                    f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+                ws.send_json({"type": "start", "session_id": None})
+                ws.receive_json()
+                ws.send_json({"type": "utterance_end", "text": "出题"})
+                events = self._receive_until(ws, "turn_end")
+
+        starts = [e["name"] for e in events if isinstance(e, dict)
+                  and e["type"] == "tool_start"]
+        self.assertEqual(starts, ["knowledge_search", "generate_quiz"])
+        results = [e["result"] for e in events if isinstance(e, dict)
+                   and e["type"] == "tool_result"]
+        self.assertEqual(results, [knowledge_payload, quiz_payload])
+
+    def test_retry_event_matches_sse_naming(self):
+        """retry 状态帧与 SSE 命名对齐：前端只监听 type=="retry"。"""
+
+        async def retry_turn(user_message, session, tools, llm=None,
+                             progress_cb=None, lang="zh", output_language=None,
+                             attachments=None, student_id=""):
+            yield {"type": "retry", "attempt": 1, "reason": "timeout"}
+            yield {"type": "answer", "content": "好了。", "is_delta": True}
+            yield {"type": "done", "thinking": "", "answer": "…",
+                   "tool_calls": [], "trace_id": "trace_voice_retry"}
+
+        with patch("app.agents.chat_agent.run_turn", retry_turn):
+            with self.client.websocket_connect(
+                    f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+                ws.send_json({"type": "start", "session_id": None})
+                ws.receive_json()
+                ws.send_json({"type": "utterance_end", "text": "重试"})
+                events = self._receive_until(ws, "turn_end")
+
+        self.assertEqual([e for e in events if isinstance(e, dict)
+                          and e["type"] == "retry"],
+                         [{"type": "retry", "attempt": 1}])
+        self.assertFalse(any(isinstance(e, dict) and e["type"] == "status"
+                             for e in events))
+
+    def test_end_during_turn_finishes_text_and_closes(self):
+        """轮次在途时挂断（end）：音频立即停（end 后入队的句子不再合成），
+        文字流跑完并落盘，客户端依次收到剩余 answer_delta → turn_end →
+        bye，随后连接以 1000 关闭——聊天不会悬空在流式态。"""
+        import asyncio
+        import threading
+        from app.voice.tts.stub import StubTTS
+
+        release = threading.Event()
+        original = StubTTS.synthesize
+
+        async def gated_synthesize(provider, text, *, speed=None):
+            while not release.is_set():
+                await asyncio.sleep(0.02)
+            return await original(provider, text, speed=speed)
+
+        async def gated_turn(user_message, session, tools, llm=None,
+                             progress_cb=None, lang="zh", output_language=None,
+                             attachments=None, student_id=""):
+            yield {"type": "answer", "content": "第一句讲完了。", "is_delta": True}
+            # 文字流先到、合成仍挂起：此时客户端挂断。
+            while not release.is_set():
+                await asyncio.sleep(0.02)
+            yield {"type": "answer", "content": "后面还有。", "is_delta": True}
+            from app.core.session import save_session
+            session.messages.append({"role": "user", "content": user_message})
+            session.messages.append({"role": "assistant",
+                                     "content": "第一句讲完了。后面还有。"})
+            save_session(session)
+            yield {"type": "done", "thinking": "", "answer": "…",
+                   "tool_calls": [], "trace_id": "trace_voice_drain"}
+
+        try:
+            with patch("app.agents.chat_agent.run_turn", gated_turn), \
+                    patch.object(StubTTS, "synthesize", gated_synthesize):
+                with self.client.websocket_connect(
+                        f"/api/v1/voice/ws?ticket={self._ticket()}") as ws:
+                    ws.send_json({"type": "start", "session_id": None})
+                    sid = ws.receive_json()["session_id"]
+                    ws.send_json({"type": "utterance_end", "text": "讲两句"})
+                    frames = []
+                    while True:
+                        msg = ws.receive()
+                        if msg.get("bytes") is not None:
+                            frames.append(("audio", len(msg["bytes"])))
+                            continue
+                        if msg.get("text") is None:
+                            continue
+                        event = json.loads(msg["text"])
+                        self.assertNotEqual(event["type"], "error")
+                        frames.append(("text", event))
+                        if event["type"] == "answer_delta":
+                            # 第一个增量已落账（文字先于挂起的音频）：挂断。
+                            ws.send_json({"type": "end"})
+                            release.set()
+                        if event["type"] == "bye":
+                            break
+                    # 挂断后服务端仍写完文字并优雅收线，最后关闭连接。
+                    close = ws.receive()
+                    self.assertEqual(close.get("type"), "websocket.close")
+                    self.assertEqual(close.get("code"), 1000)
+        finally:
+            release.set()
+
+        def texts(etype):
+            return [f[1] for f in frames if f[0] == "text"
+                    and f[1]["type"] == etype]
+        def positions(etype):
+            return [i for i, f in enumerate(frames)
+                    if f[0] == "text" and f[1]["type"] == etype]
+
+        self.assertEqual(len(texts("answer_delta")), 2)
+        # 只有挂断前入队的第一句合成过；end 后入队的句子被排水丢弃。
+        self.assertEqual([s["text"] for s in texts("tts_start")], ["第一句讲完了。"])
+        self.assertEqual(sum(1 for f in frames if f[0] == "audio"), 1)
+        self.assertLess(max(positions("answer_delta")), positions("bye")[-1])
+        self.assertLess(positions("turn_end")[0], positions("bye")[0])
+        # 轮次完整落盘：刷新/重载后文字与卡片都在。
+        from app.core.session import load_session
+        persisted = load_session(sid)
+        self.assertIsNotNone(persisted)
+        assistant = [m for m in persisted.messages if m.get("role") == "assistant"]
+        self.assertTrue(assistant)
+        self.assertEqual(assistant[-1]["content"], "第一句讲完了。后面还有。")
+
+
+class TestTtsSpeed(unittest.TestCase):
+    """默认语速略慢 + 每用户 prefs.tts_speed 夹取（不触真实 users/）。"""
+
+    def test_default_speed_slightly_slow(self):
+        from app.core.config import settings
+        self.assertEqual(settings.voice_tts_speed, 0.9)
+
+    def test_resolve_tts_speed_clamps_and_falls_back(self):
+        from types import SimpleNamespace
+        from app.api.v1.voice import _resolve_tts_speed
+        from app.core.config import settings
+
+        def user_with(pref):
+            return SimpleNamespace(
+                profile=SimpleNamespace(prefs={"tts_speed": pref}))
+
+        with patch("app.identity.store.get_by_id",
+                   return_value=user_with(1.3)):
+            self.assertEqual(_resolve_tts_speed("usr_x"), 1.3)
+        with patch("app.identity.store.get_by_id", return_value=user_with(9)):
+            self.assertEqual(_resolve_tts_speed("usr_x"), 2.0)
+        with patch("app.identity.store.get_by_id",
+                   return_value=user_with(0.1)):
+            self.assertEqual(_resolve_tts_speed("usr_x"), 0.5)
+        # 字符串 / True 等非法值与游客（无账号）都回落实例默认。
+        for bad in ("fast", True, None):
+            with patch("app.identity.store.get_by_id",
+                       return_value=user_with(bad)):
+                self.assertEqual(_resolve_tts_speed("usr_x"),
+                                 settings.voice_tts_speed)
+        with patch("app.identity.store.get_by_id", return_value=None):
+            self.assertEqual(_resolve_tts_speed("student_default"),
+                             settings.voice_tts_speed)
 
 
 if __name__ == "__main__":

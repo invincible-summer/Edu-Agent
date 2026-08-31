@@ -40,6 +40,10 @@ export function AccountCard({ tr }: { tr: Tr }) {
   // OCR 并行偏好开关
   const [ocrBusy, setOcrBusy] = useState(false);
   const [ocrFailed, setOcrFailed] = useState(false);
+  // 朗读语速偏好（语音通话 TTS）：拖动是本地草稿，抬手才提交。
+  const [speedDraft, setSpeedDraft] = useState<number | null>(null);
+  const [speedBusy, setSpeedBusy] = useState(false);
+  const [speedFailed, setSpeedFailed] = useState(false);
 
   if (!user) return null;
   const p = user.profile;
@@ -48,6 +52,27 @@ export function AccountCard({ tr }: { tr: Tr }) {
   const canDelete = delPwd.length > 0 && delPhrase === phrase && !delBusy;
   // 未显式设置时与后端实例默认（PDF_OCR_CONCURRENCY>1）一致：视为开。
   const ocrParallel = p.prefs?.ocr_parallel ?? true;
+  // 未显式设置时与后端实例默认（VOICE_TTS_SPEED=0.9）一致：视为 0.9。
+  const ttsSpeed = speedDraft ?? p.prefs?.tts_speed ?? 0.9;
+
+  const commitTtsSpeed = async (next: number) => {
+    setSpeedBusy(true);
+    setSpeedFailed(false);
+    try {
+      const profile = await updateUserProfile({ prefs: { tts_speed: next } });
+      useAuthStore.setState({ user: { ...user, profile } });
+      setSpeedDraft(null);
+    } catch {
+      setSpeedFailed(true);
+    } finally {
+      setSpeedBusy(false);
+    }
+  };
+
+  const releaseTtsSpeed = () => {
+    if (speedDraft === null || speedDraft === p.prefs?.tts_speed) return;
+    void commitTtsSpeed(speedDraft);
+  };
 
   const toggleOcrParallel = async () => {
     const next = !ocrParallel;
@@ -216,6 +241,37 @@ export function AccountCard({ tr }: { tr: Tr }) {
             )}
           />
         </button>
+      </div>
+
+      {/* 偏好区：朗读语速（语音通话，服务端按账号生效） */}
+      <div className="mt-3 flex items-center justify-between gap-4 border-t border-border-light pt-3">
+        <div className="min-w-0">
+          <div className="text-xs font-medium text-fg">{tr("account.ttsSpeed")}</div>
+          <div className="mt-0.5 text-[0.68rem] leading-relaxed text-muted">
+            {tr("account.ttsSpeed.desc")}
+            {speedFailed && <span className="ml-1 text-danger">{tr("account.ttsSpeed.failed")}</span>}
+          </div>
+        </div>
+        <div className="flex shrink-0 items-center gap-2.5">
+          <span className="tnum w-9 text-right text-[0.7rem] text-muted">
+            {Math.round(ttsSpeed * 100)}%
+          </span>
+          <input
+            type="range"
+            min={0.5}
+            max={1.5}
+            step={0.05}
+            value={ttsSpeed}
+            disabled={speedBusy}
+            aria-label={tr("account.ttsSpeed")}
+            onChange={(e) => setSpeedDraft(Number(e.target.value))}
+            onPointerUp={releaseTtsSpeed}
+            onKeyUp={(e) => {
+              if (e.key === "ArrowLeft" || e.key === "ArrowRight") releaseTtsSpeed();
+            }}
+            className="h-1.5 w-32 cursor-pointer accent-[rgb(var(--accent))] disabled:cursor-not-allowed disabled:opacity-50 sm:w-40"
+          />
+        </div>
       </div>
 
       {/* 危险区：自助注销账号（特别确认） */}

@@ -210,7 +210,9 @@ class Settings:
     voice_tts_provider: str = os.getenv("VOICE_TTS_PROVIDER", "off").strip().lower()
     # MeloTTS sidecar base URL (localhost only; started by start.sh).
     voice_tts_base_url: str = os.getenv("VOICE_TTS_BASE_URL", "http://127.0.0.1:8130")
-    voice_tts_speed: float = float(os.getenv("VOICE_TTS_SPEED", "1.0"))
+    # 0.9：默认略慢于原速（2026-08-31 用户反馈），个人可在设置页
+    # user.profile.prefs.tts_speed 覆盖（有效区间与 sidecar 一致 0.5–2.0）。
+    voice_tts_speed: float = float(os.getenv("VOICE_TTS_SPEED", "0.9"))
 
     # Server
     api_host: str = os.getenv("API_HOST", "127.0.0.1")

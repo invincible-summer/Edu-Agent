@@ -26,16 +26,15 @@ function clamp(n: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, Math.round(n)));
 }
 
-function persistLayout(patch: Partial<{
-  aiPanelOpen: boolean; rightWidth: number;
-}>) {
+function persistLayout(patch: Partial<{ rightWidth: number }>) {
   if (typeof window === "undefined") return;
   const prev = JSON.parse(localStorage.getItem(LAYOUT_KEY) || "{}") as Record<string, unknown>;
   localStorage.setItem(LAYOUT_KEY, JSON.stringify({ ...prev, ...patch }));
 }
 
 interface NotesState {
-  // --- layout（笔记页 AI 面板：折叠 + 拖宽，localStorage 持久化） ---
+  // --- layout（笔记页 AI 面板：每次进页默认打开、会话内可折叠，开合不
+  //     持久化；只记住拖宽后的右栏宽度） ---
   rightWidth: number;
   focusMode: boolean;
   setRightWidth: (w: number) => void;
@@ -112,12 +111,12 @@ export const useNotesStore = create<NotesState>((set, get) => ({
   hydrateLayout: () => {
     if (typeof window === "undefined") return;
     try {
-      // 旧版本 localStorage 可能残留 leftOpen/leftWidth 字段，读取时自然忽略
+      // 旧版本 localStorage 可能残留 leftOpen/leftWidth/aiPanelOpen 字段，
+      // 读取时自然忽略（AI 面板开合已改为每次进页默认打开）
       const raw = JSON.parse(localStorage.getItem(LAYOUT_KEY) || "{}") as {
-        aiPanelOpen?: boolean; rightWidth?: number;
+        rightWidth?: number;
       };
       const patch: Partial<NotesState> = {};
-      if (typeof raw.aiPanelOpen === "boolean") patch.aiPanelOpen = raw.aiPanelOpen;
       if (typeof raw.rightWidth === "number") {
         patch.rightWidth = clamp(raw.rightWidth,
           NOTES_LAYOUT_DEFAULTS.rightMin, NOTES_LAYOUT_DEFAULTS.rightMax);
@@ -226,10 +225,7 @@ export const useNotesStore = create<NotesState>((set, get) => ({
     void import("./api-notes").then((api) => api.patchNotesThread(get().activeThreadId, { mode: m })).catch(() => undefined);
   },
   aiPanelOpen: true,
-  toggleAiPanel: () => set((s) => {
-    persistLayout({ aiPanelOpen: !s.aiPanelOpen });
-    return { aiPanelOpen: !s.aiPanelOpen };
-  }),
+  toggleAiPanel: () => set((s) => ({ aiPanelOpen: !s.aiPanelOpen })),
   threads: [],
   activeThreadId: typeof window !== "undefined"
     ? localStorage.getItem("edu-agent-notes-thread") || "default"

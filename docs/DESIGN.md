@@ -674,7 +674,7 @@ frontend/src/
 
 ### 20.4 关键机制
 
-- **AppShell**：SideNav（工作区树 + 会话列表 + 批量管理）+ TopBar（设置齿轮：中英双语 / 回答语言 auto-zh-en / 主题 / 学段 / 字号；模型信息；登录入口）。
+- **AppShell**：SideNav（工作区树 + 会话列表 + 批量管理）+ TopBar（设置齿轮：中英双语 / 回答语言 auto-zh-en / 主题 / 学段 / 字号；模型信息；登录入口）。左侧模块导航每次进入站点默认收起为图标轨（开合不持久化，仅会话内手动展开）。
 - **状态**：zustand 双 store（chat-store / auth-store）+ SSR 水合安全；localStorage 持久化偏好与 token。
 - **i18n 双层**：`i18n.ts` 全局词条 + `strings.ts` `makePageT` 页面级词条，zh/en 全覆盖。
 - **列表分页约定**：所有条目列表统一走 `ui/Pager`（客户端切片 `paged()`，默认 5 条/页，密行/表格 8-10 条/页）；页码为可输入框，直接输数字跳页（Enter/失焦提交、自动钳位、Esc 取消）；回源后条数变少时组件先钳位页码再切片，不停留在空白页。情景记忆时间线按日分组、一页一天，「加载更多」继续向服务器取更早分组。
@@ -682,7 +682,7 @@ frontend/src/
 - **chat URL 唯一事实源**：`/chat/[[...sessionId]]` catch-all，世代号防串会话（切换会话时丢弃迟到的上一会话流）。
 - **流式渲染**：§5.3（本地累积 + 50ms 节流 + React.memo + pinned 滚动）。
 - **资料右侧栏**：桌面固定/可折叠、窄屏抽屉；按“工作区公共资料 / 本对话引用教材 / 本对话上传文件”分组，仅消费后端 `material_sources`/workspace detail 的结构化元数据。`knowledge_search` 工具卡片先渲染结构化命中来源（文件、页码/slide、章节、相关度），再展示片段，不从模型文本猜来源。
-- **语音通话（沉浸式电话模式，P10）**：chat 页唯一的语音入口是右上角电话按钮（`GET /voice/status` 决定显隐）；通话**不弹对话卡**——页面照常显示，语音轮次实时写入消息流（转写即用户消息、`answer_delta` 节流进 `pendingAnswer`、`turn_end` 落定，与文字轮共用 `StreamingMessage` 渲染路径与会话世代守卫）。通话期间：左上角「小手机」指示器（迷你手机造型 + 声波 + 时长，点开可停止播报/挂断）、底部控制条（按住说话/停止播报/挂断）临时替换输入框（输入框只隐藏不卸载，草稿保留）；老师朗读到含公式的句子时，页面中上部浮出虚化「板书」小黑板（KaTeX 渲染该句原文，讲完自动淡出）。原浏览器 Web Speech 单句听写已随本改版移除。
+- **语音通话（沉浸式电话模式，P10）**：chat 页唯一的语音入口是右上角电话按钮（`GET /voice/status` 决定显隐，通话中隐藏、由同角落的手机模拟接管状态）；通话**不弹对话卡**——页面照常显示，语音轮次实时写入消息流（转写即用户消息、`answer_delta` 节流进 `pendingAnswer`、`turn_end` 落定，与文字轮共用 `StreamingMessage` 渲染路径与会话世代守卫）。通话期间：页面中上部浮出虚化「板书」黑板，严格左右居中（max-w 760px，接近下方输入栏宽度）、固定占据 3/7 页面高度；板面**三块严格等分**（`flex-1 min-h-0` + 各自滚动，内容多的一块不会挤占邻板），公式句从上往下写空板，三块都满时擦掉写得最早的那块再写新的。右上角（原电话入口位置、按钮行正下方）挂一台「手机模拟」（约 6.72rem × 14.4rem，等比 0.8×：虚拟空白头像 + 通话计时 + 声波状态，底部返回/主页/多任务为纯装饰图标，无真实功能；窄屏隐藏；黑板严格居中不预留，窄窗口下手机可能贴住板书右缘——已确认接受）。底部控制条（按住说话/停止播报/挂断）紧贴输入框上方（输入框保持可用，草稿保留；控制条下方不再常驻浏览器识别/隐私说明文案，未支持浏览器的错误码自带打字回退提示）。表格不逐格朗读：口播一句「请看这个表格」，整块 markdown 经 `board_table` 事件**即时完整**呈现（无书写动画）并整版驻留至少 7 秒，之后继续驻留，直到下一个新公式/新表格需要板面才被清空，语音流水线不停顿。原浏览器 Web Speech 单句听写已随本改版移除。
 - **图谱页交互**：学段 × 学科 chips 两级筛选；章节总览 → 点击下钻章内 DAG，面包屑返回；搜索命中自动定位；pointerup 命中测试（规避 setPointerCapture 吞 click）。概念抽屉双 CTA（「在对话中学这个」/「出几道题考我」）与个性化路径点击均经深链直达对话。
 - **对话深链契约（`?q=&send=1`）**：`/chat?q=<问题>` 预填输入框（不发送）；追加 `&send=1` 则进入新会话时自动发送该问题（ref 防重 + `history.replaceState` 清参数防刷新重发，StrictMode 安全）。知识图谱节点/推荐路径、编排任务行动按钮、本周复盘全部经此契约跳转，消息携带概念上下文（名称/学科/难度/掌握状态/推荐理由）。
 - **加载性能架构**：`start.sh` 默认 `FRONTEND_MODE=prod`（按需 `next build --webpack` → `next start`；源码/后端端口变化自动重建，`REBUILD=1` 强制，`./start.sh dev` 子命令显式回热重载）——dev 服务器按路由现场编译、无 Link 预取，是本地“首开卡顿”的主因。路由级分包：教材库等重页面 `next/dynamic` 懒加载 + `(workspace)/loading.tsx` 统一 PageSkeleton。鉴权水合并行（`/auth/status` 与 `/auth/me` 并发，authRequired 结果 sessionStorage 缓存 5 分钟；`statusLoaded` 与 token 校验双双落定才渲染，未登录不闪屏）。数据层（P0-P4）：`GET /sidebar` 组合快照（会话+工作区+详情一次取齐，ETag/304；替代侧边栏三级 N+1 瀑布）；`GET /chat/sessions/{id}?tail=N` 渐进加载（首屏最近 40 条 + “加载更早”按钮，`.msg-cv` content-visibility 跳过视口外渲染）；教材库空闲零轮询（building 2s / ocr_waiting 15s 条件轮询 + 焦点/WS_CHANGED_EVENT 驱动刷新）；`apiFetch` 幂等 GET 30s 超时护栏（SSE/上传不受影响）；后端每个响应带 `X-Process-Time` 头 + >1s 终端告警。知识图谱冷构建索引化（§14.7）：公共教材图谱合并（~16K 节点/30K 边）从 O(E²) 去重 + 全量扫边改为 O(1)/邻接索引，冷合并分钟级 → ~0.75s；`graph_for` 每学生构建锁 + 启动后台预热默认学生模型；async 读端点的同步重活一律 `asyncio.to_thread`；`GET /orchestration/today` 确定性优先（LLM 组合只在显式写动作）。
@@ -1273,7 +1273,8 @@ folders（含 parent_id、安全上移删除、循环校验）/templates/suggest
 
 **前端（`/notes/[[...noteId]]`）**：三栏布局，两侧栏（笔记栏/AI 面板）均可折叠
 （PanelToggleButton 嵌中栏头部 + 面板自带 chevron，无浮动按钮）且边缘可拖宽
-（PanelResizer，宽度钳制并持久化 localStorage）。左栏递归文件夹树（折叠、子文件夹、笔记拖拽目标高亮）/标签/搜索/多选列表（Shift 连选、当前节点全选、批量移动/回收站删除，Pager
+（PanelResizer，宽度钳制并持久化 localStorage；AI 面板开合不持久化——每次进页
+默认打开，仅会话内手动折叠）。左栏递归文件夹树（折叠、子文件夹、笔记拖拽目标高亮）/标签/搜索/多选列表（Shift 连选、当前节点全选、批量移动/回收站删除，Pager
 8/页）/新建下拉（空白+模板）/AI 生成/导出；中栏 NoteToolbar **单行**（标题
 InlineEdit、保存状态徽章、视图三态切换、图谱/专注入口、齿轮设置菜单收纳文件夹/标签/
 温故/历史/导出/删除）+ 编辑器（**自研 textarea**：19 键工具栏、Ctrl+B/I/K/S、`[[`
@@ -1572,7 +1573,10 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
   共用会话、记忆、RAG、工具和持久化逻辑。
 - **输出路径**：回答按子句级切片（`take_speech_cuts`），MeloTTS sidecar 逐片合成
   WAV，后端转 PCM16 流水线下发；前端按 `tts_start` 携带的采样率顺序播放（FIFO
-  队列吸收提前到达的音频段），并保留停止播报能力。
+  队列吸收提前到达的音频段），并保留停止播报能力。表格不逐格朗读：口播一句
+  引导语，整块 markdown 经 `board_table` 即时完整呈现在黑板整版驻留至少 7 秒
+  （之后继续驻留，直到新公式/新表格需要板面才清空），语音合成流水线
+  不停顿（见 P10.2）。语速默认 0.9，个人可在设置页调整（见 P10.2）。
 - **隐私/许可边界**：浏览器识别可能调用浏览器厂商在线服务。该平台 API 和厂商
   服务不是 Edu_Agent 的 MIT 发行物，商业、隐私、地域和可用性条款由实际浏览器
   厂商决定；详细组件许可证见 `docs/VOICE_LICENSES.md`。
@@ -1582,6 +1586,20 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 - `backend/app/api/v1/voice.py`：一次性 ticket、WebSocket 会话绑定、浏览器最终文本
   事件、`stt_start` / `stt_result` / `answer_delta` / 工具进度 / TTS / `turn_end`。
   二进制上行帧返回 `binary_audio_unsupported`，不会缓存、转码或触发 STT。
+- **朗读语速**（2026-08-31）：实例默认 `VOICE_TTS_SPEED=0.9`（略慢于原速）；个人
+  可在设置页（profile 页 AccountCard 滑杆，0.5–1.5）调整 `user.profile.prefs.
+  tts_speed`，经既有 `PUT /user/profile` 浅合并落盘。WS 建连时按身份查
+  `identity.store.get_by_id` 解析（`_resolve_tts_speed`：夹取到 sidecar 合法区间
+  0.5–2.0，非法值/游客回落实例默认），逐片 `synthesize(chunk, speed=…)` 覆盖；
+  修改后下次拨号生效（每连接解析一次）。
+- **表格改上黑板**（2026-08-31）：`take_speech_cuts` 把 markdown 表格当不可切区
+  （行首 `|` 进入表格模式，首个非 `|` 起始行结束整块；前导正文独立成句，120
+  硬上限不适用，表内 `$` 不翻转数学配对）。worker 取到表格块时先发
+  `{"type":"board_table","markdown":…,"hold_ms":7000}`，再把口播替换为固定引导语
+  （zh「请看这个表格。」/ en 英文句）走正常合成，随后继续消费队列——语音流水线
+  不停顿，`answer_delta` 原样透传（聊天记录仍是完整表格）。该判断在合成失败
+  熔断之前：sidecar 挂了黑板照常显示表格。`hold_ms` 是表格独占板面的驻留下限，
+  窗口过后何时清空由前端决定（见 P10.5）。
 - **合成流水线**（`voice.py` `_run_turn`）：切出的子句进入**无界**队列，轮次
   循环持续消费 LLM 生成器、`answer_delta` 实时下发，不再内联等待合成。队列
   刻意不做上界：曾有界队列（8 句）在慢 CPU 上把文字流和合成速率耦合，第 8 句
@@ -1610,7 +1628,9 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
   米每秒、`\mathrm{kg}` → 千克）、无花括号形式（`\frac12`、`\vec L`、`\mathrm dt`）、
   `\frac`/`\sqrt`/`\boxed`/偏导数等带参结构（定点循环由内向外折叠）、区间/绝对值/
   ASCII 比较（`[-1,1]` → 闭区间、`\left|x\right|` → 绝对值、`\varepsilon>0` → 大于）、
-  正负号上下标（`0^+`/`f'_+` → 正）、二元/一元负号（`x^2-9` 减、`=-1` 负），最后
+  正负号上下标（`0^+`/`f'_+` → 正）、下标与底数直接连读（`W_0`/`W_{max}` →
+  W0/Wmax，不读「下标」二字；正文裸下标同规则，残余孤立 `_` 静默删除；`\lim_`/
+  `\sum_`/`\log_` 等结构化上下标仍走各自口语化规则）、二元/一元负号（`x^2-9` 减、`=-1` 负），最后
   未知命令保留字母念英文、已知命令在参数被截断时丢弃命令名；`_force_split`
   数学感知（不在 `$` 段内部下刀，硬上限 280 字兜住 sidecar 400 字限制），
   语音流水线用子句级 `take_speech_cuts`（弱标点 ≥24 字即切、无标点硬上限
@@ -1630,19 +1650,35 @@ S→C {"type":"session_bound","session_id":string}
 C→S {"type":"utterance_end","text":string}
 S→C {"type":"stt_start"}
 S→C {"type":"stt_result","text":string}
-S→C step/tool_* / {"type":"answer_delta","content":string}
+S→C step / {"type":"tool_start","name":string} / {"type":"tool_result","result":object}
+S→C {"type":"answer_delta","content":string} / {"type":"retry","attempt":number}
 S→C {"type":"tts_start","seq":number,"text":string,"sample_rate":number}
 S→C <binary PCM16> / {"type":"tts_end","seq":number}
+S→C {"type":"board_table","markdown":string,"hold_ms":number}（表格不朗读时）
 S→C {"type":"turn_end","session_id":string,"tts_ok":boolean}
 C→S {"type":"end"}  S→C {"type":"bye"}
 ```
 
 同一连接只允许一轮并行执行；重复提交返回 `busy`，空文本返回
 `empty_transcript`，TTS sidecar 失败时保留文字回答并发送 `tts_error`。思考内容
-不通过电话协议输出。每次 `send` 写一个完整帧（uvicorn/websockets sans-io
+不通过电话协议输出；`tool_start`/`tool_result` 完整透传（仅 name + 结果载荷），
+通话中的消息流与文字轮一样渲染题目卡与知识检索命中来源卡。每次 `send` 写一个
+完整帧（uvicorn/websockets sans-io
 单事件循环步），文字流（`answer_delta`）与音频流（`tts_start`/二进制/
 `tts_end`）相互独立、可能交错，但帧本身永不撕裂；前端 `tts_end` 为 no-op、
-按到达顺序消费音频，`turn_end` 仍在最后一帧音频之后。
+按到达顺序消费音频，`turn_end` 仍在最后一帧音频之后。`board_table` 独立于
+音频流：前端收到后黑板进入整版表格模式（表格**即时完整渲染**，无书写动画），
+驻留 `hold_ms`（下限 7 s）期间句子上板被抑制、音频播报照常；窗口过后表格
+继续驻留、不会到点自动消失，只有当新公式需要板面（或新表格替换）时才清空，
+板面随即交还给三块公式黑板。
+
+**轮次在途时 `end` 走「静默写完」（drain）**：服务端立即停止合成（`audio_off`
+后入队的句子只排水不合成、不发音频），但 LLM 文字流跑到自然完成并照常落盘，
+客户端继续收 `answer_delta` 直到 `turn_end`，随后收尾协程发 `bye` 并以 1000
+关闭连接；重复 `end` 幂等忽略。前端对应保持 WS 存活、隐藏通话 UI，把回答写完
+再收起通话层；超时（90 s）/断网/服务端提前收线则兜底**提交半截回答**并解除
+`streaming`——任何路径下聊天都不允许悬空在流式态（旧的立即取消行为曾把
+`chat.streaming` 永久锁死为 true，输入框与电话按钮随之永久禁用）。
 
 ### P10.4 MeloTTS sidecar
 
@@ -1672,10 +1708,24 @@ MeloTTS 源码和模型缓存，并执行一次中文 warmup。`melo_bootstrap.p
   语言使用 `zh-CN` 或 `en-US`；只累积 `isFinal` 结果；
 - 浏览器提前结束连续识别时，在按钮仍按住的情况下异步重启并保留已累积文本；
 - 松手、识别错误、权限拒绝、空文本、重复 `onend`、挂断和组件卸载均幂等处理；
+- 轮次在途时挂断进入收尾（drain）：音频立即停、通话 UI 隐藏但 WS 存活，
+  `answer_delta` 继续写完；`turn_end` 落定后拆线，超时/断网/提前收线由
+  `onTurnAborted` 兜底提交半截回答，`chat.streaming` 任何路径都会被清除；
 - 输入侧不创建服务器输入音频采集链；播放侧仍
   使用 AudioContext 播放下行 TTS PCM；
 - `VoiceCallLayer.tsx` 将转写和回答增量写入现有 chat store，板书只消费
-  `tts_start` 的原始句子，通话结束后刷新会话。
+  `tts_start` 的原始句子：黑板严格左右居中（max-w 760px）、固定占 3/7 页面
+  高度，**三块等分黑板**（`flex-1 min-h-0` + 板内各自滚动——flex 子项默认
+  `min-height:auto` 会让内容高的板挤占邻板，故 CSS 侧不再设 min-height），
+  公式句从上往下写第一块空板，三块都满时擦掉写得最早的那块（key 即写入序）
+  再写新的；`board_table` 到达时三块黑板全部作废、整版表格**即时完整渲染**
+  （GFM 表格、无书写动画），驻留 `hold_ms`（下限 7 s）内新公式不上板，窗口
+  过后表格继续驻留，直到下一个新公式（`clearBoardTable` 清空、effect 重跑
+  完成写入）或新表格（直接替换并重置窗口）才让出板面；右上角（原电话入口
+  位置）挂「手机模拟」（约 6.72rem × 14.4rem、等比 0.8×：空白头像 + 通话
+  计时 + 声波状态 + 纯装饰导航图标，窄屏隐藏；黑板严格居中不预留，窄窗口
+  下手机可能贴住板书右缘——已确认接受；挂断/停止播报在底部控制条），控制条
+  紧贴输入框、下方无常驻说明文案；通话结束后刷新会话。
 
 ### P10.6 资源与部署
 

@@ -1,5 +1,7 @@
 "use client";
 import { useEffect } from "react";
+// 落地页英文品牌行的自托管展示衬线（.hero-en-title，globals.css）
+import "@fontsource/playfair-display/700.css";
 import { useUIStore } from "@/lib/store";
 import { useAuthStore, hydrateAuth } from "@/lib/auth-store";
 import { makePageT } from "@/lib/i18n-page";
@@ -12,6 +14,7 @@ import { Modules } from "@/components/landing/Modules";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { CtaBanner } from "@/components/landing/CtaBanner";
 import { Footer } from "@/components/landing/Footer";
+import { useLandingSnap } from "@/components/landing/useLandingSnap";
 
 /**
  * 项目主页面（/）：介绍 + 开始使用 + 登录/注册入口。
@@ -31,6 +34,7 @@ export default function Home() {
   }, [mounted, hydrateClient]);
 
   const tr = makePageT(lang, LANDING_STRINGS);
+  useLandingSnap();
 
   return (
     <div className="min-h-screen bg-bg text-fg">

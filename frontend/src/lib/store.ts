@@ -70,13 +70,11 @@ export const useUIStore = create<UIState>((set, get) => ({
   },
   sidebarOpen: true,
   toggleSidebar: () => set((s) => ({ sidebarOpen: !s.sidebarOpen })),
-  navCollapsed: typeof window !== "undefined" && localStorage.getItem("edu-agent-nav") === "1",
-  toggleNav: () =>
-    set((s) => {
-      const next = !s.navCollapsed;
-      if (typeof window !== "undefined") localStorage.setItem("edu-agent-nav", next ? "1" : "0");
-      return { navCollapsed: next };
-    }),
+  // 主边栏刻意不持久化：每次进入站点默认收起（图标轨），仅本次会话内
+  // 手动展开；常量初始化也顺带消除了旧版 initializer 读 localStorage
+  // 与服务端 HTML 不一致的 hydration 隐患。
+  navCollapsed: true,
+  toggleNav: () => set((s) => ({ navCollapsed: !s.navCollapsed })),
 }));
 
 interface ChatState {
@@ -199,15 +197,19 @@ export const useChatStore = create<ChatState>((set) => ({
   setSessions: (s) => set({ sessions: s }),
   loadFull: (messages, files, sessionId) => set((s) => ({
     messages, files, sessionId,
+    // 会话整体替换必须连同流式态一起复位：语音轮挂断/出错后走重载路径，
+    // streaming 悬空 true 曾把输入框与电话按钮永久锁死。
+    streaming: false, retry: null,
     pendingThinking: "", pendingAnswer: "", pendingToolCalls: [],
-    activeTool: null, toolProgress: [], currentStep: null, heartbeatElapsed: 0, retry: null,
+    activeTool: null, toolProgress: [], currentStep: null, heartbeatElapsed: 0,
     pendingLibraryRefs: [],
     generation: s.generation + 1,
   })),
   newChat: () => set((s) => ({
     sessionId: null, messages: [], files: [],
+    streaming: false, retry: null,
     pendingThinking: "", pendingAnswer: "", pendingToolCalls: [],
-    activeTool: null, toolProgress: [], currentStep: null, heartbeatElapsed: 0, retry: null,
+    activeTool: null, toolProgress: [], currentStep: null, heartbeatElapsed: 0,
     pendingLibraryRefs: [],
     generation: s.generation + 1,
   })),

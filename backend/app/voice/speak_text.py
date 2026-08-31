@@ -431,8 +431,11 @@ _MATH_READINGS: tuple[tuple[re.Pattern, str], ...] = (
     (re.compile(r"(?<![A-Za-z0-9\}\)\]])-(?=[A-Za-z0-9(\\])"), "负"),
     (re.compile(r"\^\s*\{([^{}]+)\}"), _power_sub),
     (re.compile(r"\^\s*(\w)"), r"的\1次方"),
-    (re.compile(r"_\s*\{([^{}]+)\}"), r"下标\1"),
-    (re.compile(r"_\s*(\w)"), r"下标\1"),
+    # Subscripts concatenate with their base instead of reading the word
+    # 下标: W_0 / W_{max} read as W0 / Wmax (2026-08-31 feedback —
+    # "W下标0" sounded robotic).
+    (re.compile(r"_\s*\{([^{}]+)\}"), r"\1"),
+    (re.compile(r"_\s*(\w)"), r"\1"),
     # Simple inline ratio after units are gone: 3/2 -> 2分之3, 1/n -> n分之1.
     (re.compile(r"([0-9A-Za-z]+)\s*/\s*([0-9A-Za-z]+)"), r"\2分之\1"),
     # Structured commands whose arguments never arrived (cut messages):
@@ -449,6 +452,10 @@ _SYMBOL_READINGS: tuple[tuple[re.Pattern, str], ...] = (
     # Glue spaced "+" to its operands FIRST so the alnum rule below then
     # turns "a + b" into "a加b" (math fragments keep operator spacing).
     (re.compile(r"\s*\+\s*"), "+"),
+    # Bare subscripts in prose (W_{0} / W_0 -> W0), same reading as the
+    # math segment; __ emphasis pairs were already stripped by _EMPH.
+    (re.compile(r"_\s*\{([^{}]+)\}"), r"\1"),
+    (re.compile(r"_\s*(\w)"), r"\1"),
     # A hyphen reads as 减 only when a digit/CJK is on either side, so
     # "x-1" -> "x减1" while the compound-word hyphen in "well-known"
     # survives; "+" between alnum/CJK always reads 加.
@@ -521,6 +528,10 @@ def to_speakable(text: str) -> str:
     s = _TABLE_PIPE.sub("，", s)
     for pattern, reading in _SYMBOL_READINGS:
         s = pattern.sub(reading, s)
+    # A leftover underscore is unmatched scaffolding (emphasis tail cut
+    # mid-stream, brace pair that never closed); reading "下划线" aloud is
+    # worse than dropping it — same philosophy as the math-side cleanup.
+    s = s.replace("_", "")
     s = re.sub(r"[ \t]+", " ", s)
     s = re.sub(r"\s*\n\s*", "，", s)
     s = re.sub(r"，{2,}", "，", s)

@@ -25,6 +25,10 @@ dispatched after ~24 chars (a second or two of speech) and every clip is
 short enough to synthesize well inside the previous clip's playback time.
 ``` code fences join math spans as no-cut zones — the splitter runs on raw
 markdown, before :func:`to_speakable` collapses fences to placeholders.
+Markdown tables are no-cut units too: every row starts with ``|``, and the
+block ends at the first following line that does not; the voice worker
+replaces the whole block with a spoken cue + blackboard event, so slicing
+it mid-row would leak half a table into TTS.
 """
 from __future__ import annotations
 
@@ -101,8 +105,9 @@ def take_speech_cuts(text: str) -> tuple[list[str], str]:
     until more deltas arrive. Strong terminators end a cut unconditionally;
     a weak punctuation (，、：, : space) ends one once the buffer holds
     ``_SPEECH_MIN_CHARS`` chars, so the pipeline dispatches short clips
-    instead of waiting for a full sentence. Unclosed ``$`` spans and
-    ``` fences hold the buffer like an unclosed sentence.
+    instead of waiting for a full sentence. Unclosed ``$`` spans,
+    ``` fences and markdown tables hold the buffer like an unclosed
+    sentence.
     """
     text = normalize_math_delimiters(text)
     cuts: list[str] = []
@@ -110,9 +115,33 @@ def take_speech_cuts(text: str) -> tuple[list[str], str]:
     n = len(text)
     in_math = False
     in_fence = False
+    in_table = False
     i = 0
     while i < n:
         ch = text[i]
+        # Markdown table rows start with '|' at line start: the whole block
+        # is one no-cut unit (the voice worker swaps it for a spoken cue +
+        # blackboard event), so it must never be sliced mid-row. Any prose
+        # buffered before the table is flushed as its own cut first.
+        if not in_math and not in_fence and not in_table and ch == "|" \
+                and (buf == "" or buf.endswith("\n")):
+            if buf.strip():
+                cuts.append(buf)
+            buf = ""
+            in_table = True
+        if in_table:
+            buf += ch
+            # The table ends at the first newline whose next line does not
+            # start another '|' row; at a streaming boundary (no next char
+            # yet) the block stays buffered and is re-scanned next delta.
+            if ch == "\n":
+                nxt = text[i + 1] if i + 1 < n else None
+                if nxt is not None and nxt != "|":
+                    cuts.append(buf)
+                    buf = ""
+                    in_table = False
+            i += 1
+            continue
         # Fences win inside themselves (their closer must still toggle) but
         # are ignored inside math spans; $ toggling is ignored inside fences
         # so shell-style dollars in code cannot corrupt the math pairing.

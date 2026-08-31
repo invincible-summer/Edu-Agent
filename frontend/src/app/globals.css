@@ -226,6 +226,9 @@ input:focus, textarea:focus, select:focus {
 /* 标题逐字上浮 */
 @keyframes rise-in { from { opacity: 0; transform: translateY(0.55em) rotate(1.5deg); } to { opacity: 1; transform: none; } }
 .hero-title-char { display: inline-block; animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; will-change: transform; }
+/* 英文品牌行专用展示衬线（@fontsource/playfair-display，落地页 page.tsx 引入；
+   拉丁字形优雅于宋体栈的英文回退，中文行仍用全局 --font-serif） */
+.hero-en-title { font-family: "Playfair Display", Georgia, "Times New Roman", serif; }
 
 /* 标题渐变流光（黛青 → 朱砂 → 黛青）：宽渐变 + 慢速，避免单字混色浑浊 */
 @keyframes gradient-x { from { background-position: 0% 50%; } to { background-position: 300% 50%; } }
@@ -261,7 +264,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* ==========================================================================
-   语音通话（沉浸式电话模式）：小手机指示器声波 / 按住说话脉冲 / 虚化板书
+   语音通话（沉浸式电话模式）：右上角手机模拟 / 按住说话脉冲 / 虚化板书
    ========================================================================== */
 /* 声波条：老师说话/我说话时上下跳动（transform 动画不触发布局） */
 @keyframes call-wave { 0%, 100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
@@ -301,9 +304,40 @@ input:focus, textarea:focus, select:focus {
 /* 板书浮现：自上而下轻落 */
 @keyframes board-in { from { opacity: 0; transform: translateY(-10px) scale(0.97); } to { opacity: 1; transform: none; } }
 .board-in { animation: board-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both; transform-origin: top center; }
-/* 上下双面板：先写上面、再写下面；min-height 让空面板不塌陷、黑板不跳动 */
-.voice-board-panel { min-height: 2.6rem; }
-.voice-board-panel + .voice-board-panel { margin-top: 0.15rem; }
+/* 表格整版模式：粉笔白表格线，占据整个板面（.chat-prose 表格样式覆盖） */
+.voice-board .chat-prose table { margin: 0.35em 0; font-size: 0.78rem; }
+.voice-board .chat-prose th, .voice-board .chat-prose td {
+  border-color: rgb(255 255 255 / 0.35);
+}
+.voice-board .chat-prose th { background: rgb(255 255 255 / 0.08); color: rgb(255 255 255); }
+.voice-board .chat-prose td { color: rgb(255 255 255 / 0.92); }
+/* 右上角手机模拟（原联系老师入口位置、按钮行正下方）：深色机身 + 白色
+   屏显（计时/声波/装饰导航），纯展示，约 6.72rem × 14.4rem（等比 0.8×，
+   长宽比不变）。定位必须写在 CSS——Tailwind v4 里本文件的无层规则优先级
+   高于 utilities 层，JSX 的 absolute 类盖不过这里的 position。黑板严格
+   居中无预留，窄窗口下手机可能贴住板书右缘（已确认接受）。 */
+.voice-phone {
+  position: absolute;
+  top: 2.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  min-height: 14.4rem;
+  width: 6.72rem;
+  border: 1px solid rgb(14 26 22 / 0.55);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 140% at 20% 0%, rgb(46 74 63 / 0.35), transparent 55%),
+    linear-gradient(165deg, rgb(31 51 43 / 0.92), rgb(22 38 32 / 0.94));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgb(255 255 255 / 0.07);
+  color: rgb(255 255 255);
+}
+/* 三块黑板：等分要在 JSX 上做满两层——外层 voice-board-body 先 flex-1
+   min-h-0 填满固定高度（3/7 页高）的板面，内层三块面板再 flex-1 min-h-0
+   overflow-y-auto 严格三等分。这里刻意不设 min-height：无层 CSS 会盖过
+   utilities 层的 min-h-0，min-height:auto/固定值都会让内容高的板挤占邻板
+   （旧版上下两块不平均的根因）。 */
 .voice-board-divider { border-top: 1px dashed rgb(255 255 255 / 0.24); margin: 0.3rem 0 0.45rem; }
 /* 书写进场：新内容像粉笔落板般浮现 */
 @keyframes panel-write { from { opacity: 0; transform: translateY(4px); filter: blur(2px); } to { opacity: 1; transform: none; filter: blur(0); } }

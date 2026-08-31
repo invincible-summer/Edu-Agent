@@ -10,12 +10,21 @@ Wire protocol (browser Speech Recognition text only):
   C->S {"type":"start","session_id":sid|null,"workspace_id":ws|null}
   C->S {"type":"utterance_end","text":"..."} (one push-to-talk turn)
   S->C {"type":"session_bound","session_id"} / {"type":"stt_start"}
-       {"type":"stt_result","text"} / step/tool_* status events /
-       {"type":"answer_delta","content"} per LLM delta /
-       {"type":"tts_start","seq","text","sample_rate"} + <binary PCM16> +
-       {"type":"tts_end","seq"} per spoken clause (speech cut) /
+       {"type":"stt_result","text"} / step/tool_start/tool_result events
+       (tool payloads carry quiz questions and retrieval hits so the chat
+       transcript renders the same cards as a typed turn; only thinking
+       stays server-side) / {"type":"answer_delta","content"} per LLM
+       delta / {"type":"tts_start","seq","text","sample_rate"} +
+       <binary PCM16> + {"type":"tts_end","seq"} per spoken clause
+       (speech cut) / {"type":"board_table","markdown","hold_ms"} when a
+       markdown table is swapped for a spoken cue line (the frontend pins
+       the table on its blackboard) /
        {"type":"turn_end","session_id","tts_ok"}
-  C->S {"type":"end"} closes the call.
+  C->S {"type":"end"} closes the call. With a turn still in flight the
+       socket does NOT close immediately: audio synthesis stops at once
+       while the text stream runs to completion and persists, so the
+       client can keep rendering answer_delta until turn_end; "bye" and
+       the close frame follow the turn's own completion.
 
 The transcript runs through the normal chat pipeline (run_turn + the
 session persistence inside it), so voice turns land in the same session
@@ -47,11 +56,13 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import re
 import secrets
 import time
 
 from fastapi import APIRouter, Depends, WebSocket
 
+from app.core.config import settings
 from app.core.ratelimit import rate_limit
 from app.identity.deps import resolve_student_id, _try_user_from_header
 from app.voice.base import VoiceProviderError
@@ -81,6 +92,36 @@ _TTS_FAILURE_LIMIT = 1
 # never kill the audio.
 _SPEAK_CHUNK_MAX = 240
 _SPEAK_CUTS = "，。；、！？, "
+
+# Markdown tables are not read cell by cell: the whole block goes to the
+# frontend blackboard as one board_table event. hold_ms is the floor for how
+# long the table owns the board; after the window the frontend keeps it
+# pinned until the next formula (or a newer table) needs the board — there
+# is no auto-expiry. Speech says a single cue line; synthesis of later
+# sentences keeps flowing through the same worker loop.
+_TABLE_CUT_RE = re.compile(r"^\s*\|")
+_TABLE_HOLD_MS = 7000
+_TABLE_SPOKEN = {
+    "zh": "请看这个表格。",
+    "en": "Please look at this table on the board.",
+}
+
+
+def _resolve_tts_speed(student_id: str) -> float:
+    """Per-user speech rate: user.profile.prefs["tts_speed"] clamped to the
+    sidecar's 0.5–2.0 window; guests / missing / garbage values fall back to
+    the instance default instead of 400ing every clip."""
+    raw = None
+    try:
+        from app.identity.store import get_by_id
+        user = get_by_id(student_id)
+        if user is not None:
+            raw = user.profile.prefs.get("tts_speed")
+    except Exception:
+        raw = None
+    if isinstance(raw, (int, float)) and not isinstance(raw, bool):
+        return min(2.0, max(0.5, float(raw)))
+    return settings.voice_tts_speed
 
 
 def _speakable_chunks(text: str) -> list[str]:
@@ -177,9 +218,16 @@ class _VoiceCall:
         self.ws = websocket
         self.student_id = student_id
         self.tts = get_tts_provider()
+        # Resolved once per call (the frontend notes "applies on next call").
+        self.tts_speed = _resolve_tts_speed(student_id)
         self.session = None  # TutorSession, bound by start/first turn
         self.lang = "zh"
         self.turn_task: asyncio.Task | None = None
+        # Drain mode (client said end while a turn was running): synthesis
+        # stops immediately, but the text stream finishes and persists.
+        self.ending = False
+        self.audio_off = False
+        self.closer: asyncio.Task | None = None
         # progress_cb fires inside run_turn's own control flow; events are
         # collected here and drained around each yielded event (single loop).
         self._outstanding: list[dict] = []
@@ -214,6 +262,13 @@ class _VoiceCall:
             return
 
     async def shutdown(self) -> None:
+        if self.closer is not None and not self.closer.done():
+            self.closer.cancel()
+            try:
+                await self.closer
+            except (asyncio.CancelledError, Exception):
+                pass
+            self.closer = None
         if self.turn_task and not self.turn_task.done():
             self.turn_task.cancel()
             try:
@@ -231,8 +286,35 @@ class _VoiceCall:
         elif kind == "ping":
             await self._send({"type": "pong"})
         elif kind == "end":
+            await self._on_end()
+
+    async def _on_end(self) -> None:
+        """Client hang-up. Idle call: bye + close at once. Turn in flight:
+        switch to drain mode — audio stops now, the text stream finishes
+        (and persists), then the closer task sends bye and closes."""
+        if self.ending:
+            return  # repeated end: the closer task owns bye from here on
+        if self.turn_task is not None and not self.turn_task.done():
+            self.ending = True
+            self.audio_off = True
+            self.closer = asyncio.create_task(self._close_after_turn())
+            return
+        await self._send({"type": "bye"})
+        raise _CallEnded()
+
+    async def _close_after_turn(self) -> None:
+        """Wait out the drained turn, then say bye and close (idempotent —
+        shutdown() may cancel this task on socket-level disconnect)."""
+        try:
+            await self.turn_task
+        except (asyncio.CancelledError, Exception):
+            pass
+        self.turn_task = None
+        try:
             await self._send({"type": "bye"})
-            raise _CallEnded()
+            await self.ws.close(code=1000)
+        except Exception:
+            pass
 
     # -- session binding (mirrors chat_stream semantics) --------------------
 
@@ -337,15 +419,31 @@ class _VoiceCall:
                 sentence = await tts_q.get()
                 if sentence is None:
                     return
-                if not tts_ok or tts_failures >= _TTS_FAILURE_LIMIT:
+                # Drain mode (client hung up mid-turn): keep consuming so the
+                # producer never parks, but synthesize and send nothing.
+                if self.audio_off:
                     continue
                 try:
+                    # Tables are not read cell by cell: the raw markdown
+                    # block goes to the blackboard as one board_table event
+                    # (the frontend pins it) and speech is a single cue
+                    # line. Sent ahead of the tts_ok gate so a dead sidecar
+                    # still shows the table.
+                    if _TABLE_CUT_RE.match(sentence):
+                        await self._send_text(
+                            {"type": "board_table", "markdown": sentence,
+                             "hold_ms": _TABLE_HOLD_MS})
+                        sentence = _TABLE_SPOKEN.get(self.lang,
+                                                     _TABLE_SPOKEN["zh"])
+                    if not tts_ok or tts_failures >= _TTS_FAILURE_LIMIT:
+                        continue
                     speakable = to_speakable(sentence)
                     if not speakable:
                         continue
                     for i, chunk in enumerate(_speakable_chunks(speakable)):
                         try:
-                            result_tts = await self.tts.synthesize(chunk)
+                            result_tts = await self.tts.synthesize(
+                                chunk, speed=self.tts_speed)
                         except VoiceProviderError as exc:
                             tts_failures += 1
                             tts_ok = tts_failures < _TTS_FAILURE_LIMIT
@@ -410,11 +508,17 @@ class _VoiceCall:
                     await self._send({"type": "step", "step": ev.get("step")})
                 elif etype == "tool_start":
                     await self._send({"type": "tool_start", "name": ev.get("name")})
+                elif etype == "tool_result":
+                    # Quiz questions and retrieval hits ride along so the
+                    # live chat transcript renders the same interactive cards
+                    # as a typed turn; only thinking stays server-side.
+                    await self._send({"type": "tool_result",
+                                      "result": ev.get("result")})
                 elif etype == "tool_warning":
                     await self._send({"type": "tool_warning",
                                       "warning": ev.get("warning")})
                 elif etype == "retry":
-                    await self._send({"type": "status", "stage": "retry",
+                    await self._send({"type": "retry",
                                       "attempt": ev.get("attempt")})
                 elif etype == "done":
                     if ev.get("trace_id"):
@@ -429,8 +533,7 @@ class _VoiceCall:
                     await self._send({"type": "error", "code": "agent_error",
                                       "message": ev.get("message")})
                     return
-                # thinking/tool_result payloads stay server-side: a phone
-                # call has no place to show them and CoT never leaves the box.
+                # thinking payloads stay server-side: CoT never leaves the box.
             while self._outstanding:
                 await self._send(self._outstanding.pop(0))
             # Flush sentinel, then wait for the worker to finish sending the

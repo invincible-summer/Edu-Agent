@@ -562,8 +562,8 @@ export interface UserProfileData {
   school: string;
   subjects: string[];
   avatar: string;
-  /** 通用每用户偏好（如 ocr_parallel 教材 OCR 并行加速）。 */
-  prefs?: { ocr_parallel?: boolean };
+  /** 通用每用户偏好（ocr_parallel OCR 并行、tts_speed 朗读语速）。 */
+  prefs?: { ocr_parallel?: boolean; tts_speed?: number };
 }
 
 // --- M9 学习编排（/orchestration/* · 无 status 信封，空态靠空字段/空数组表达） ---

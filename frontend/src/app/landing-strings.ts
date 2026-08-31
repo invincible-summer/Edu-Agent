@@ -8,14 +8,15 @@ export const LANDING_STRINGS: PageStrings = {
   zh: {
     "landing.nav.features": "功能",
     "landing.nav.modules": "模块",
-    "landing.nav.how": "如何使用",
+    "landing.nav.how": "如何开始",
+    "landing.nav.docs": "使用文档",
     "landing.nav.login": "登录",
-    "landing.nav.start": "免费开始",
+    "landing.nav.start": "注册",
     "landing.nav.workspace": "进入工作区",
 
     "landing.hero.kicker": "M0–M10 · 多智能体辅导系统",
-    "landing.hero.title.a": "你的私人",
-    "landing.hero.title.b": "学习智能体",
+    "landing.hero.title.a": "Next Tutor Agent",
+    "landing.hero.title.b": "你的专属教育智能体",
     "landing.hero.subtitle":
       "讲解、出题、答疑，全部基于真实教材。十层智能模块协同编排，记住你学过什么，知道下一步该怎么教。",
     "landing.hero.primary": "免费开始",
@@ -135,13 +136,14 @@ export const LANDING_STRINGS: PageStrings = {
     "landing.nav.features": "Features",
     "landing.nav.modules": "Modules",
     "landing.nav.how": "How it works",
+    "landing.nav.docs": "Usage docs",
     "landing.nav.login": "Sign in",
-    "landing.nav.start": "Get started",
+    "landing.nav.start": "Sign up",
     "landing.nav.workspace": "Open workspace",
 
     "landing.hero.kicker": "M0–M10 · Multi-agent tutoring",
-    "landing.hero.title.a": "Your private",
-    "landing.hero.title.b": "tutor agent",
+    "landing.hero.title.a": "Next Tutor Agent",
+    "landing.hero.title.b": "Your personal tutor agent",
     "landing.hero.subtitle":
       "Explain, quiz, and Q&A — all grounded in real textbooks. Ten intelligence modules work in concert, remember what you've learned, and know how to teach next.",
     "landing.hero.primary": "Get started free",

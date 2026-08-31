@@ -6,12 +6,14 @@ import { InkCanvas } from "./InkCanvas";
 import { Magnetic } from "./Magnetic";
 import type { LandingTr } from "./LandingNav";
 
-/** 标题逐字上浮；b 段叠加黛青→朱砂渐变流光。 */
+/** 标题逐字上浮：a 段英文品牌行用 Playfair Display 展示衬线；b 段缩小
+ *  （0.65em）叠加黛青→朱砂渐变流光。空格以不换行空格渲染——逐字 span
+ *  是 inline-block，普通空格会被折叠为零宽。 */
 function StaggeredTitle({ a, b }: { a: string; b: string }) {
   let i = 0;
   const renderChars = (s: string, gradient: boolean) =>
     Array.from(s).map((ch) => {
-      const delay = 120 + i++ * 55;
+      const delay = 120 + i++ * 40;
       return (
         <span
           key={`${gradient ? "b" : "a"}-${i}`}
@@ -19,17 +21,17 @@ function StaggeredTitle({ a, b }: { a: string; b: string }) {
           className={gradient ? "hero-gradient-text" : "hero-title-char"}
           style={{ animationDelay: `${delay}ms` }}
         >
-          {ch === " " ? " " : ch}
+          {ch === " " ? "\u00A0" : ch}
         </span>
       );
     });
   return (
     <h1
       aria-label={`${a} ${b}`}
-      className="mt-8 font-serif text-[clamp(2.75rem,13vw,7.5rem)] font-bold leading-[1.08] tracking-tight text-fg"
+      className="mt-8 font-serif text-[clamp(1.75rem,9vw,6.25rem)] font-bold leading-[1.08] tracking-tight text-fg"
     >
-      <span className="block">{renderChars(a, false)}</span>
-      <span className="block">{renderChars(b, true)}</span>
+      <span className="block hero-en-title">{renderChars(a, false)}</span>
+      <span className="block text-[0.65em]">{renderChars(b, true)}</span>
     </h1>
   );
 }
@@ -72,76 +74,8 @@ export function Hero({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean }) {
     };
   }, []);
 
-  // 轻滚翻页：Hero 仍有可见部分留在视口内（底部 ≥20%）时，一次向下的
-  // 轻滚意图（滚轮累计约 40px 或触摸上滑约 48px）即平滑滑到功能区，
-  // 呈现"轻轻一滚即翻页"的动态手感。
-  // 不 preventDefault、不劫持向上滚动与其余页面；翻页中的新滚动意图会
-  // 立即中断动画交还原生滚动（忽略触控板惯性衰减的小增量）；
-  // prefers-reduced-motion 下退化为原生滚动。
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const st = { locked: false, lockTimer: 0, wheelTimer: 0, accum: 0, glideAt: 0, touchY: 0 };
-    const heroVisible = () => el.getBoundingClientRect().bottom > window.innerHeight * 0.2;
-    const glide = () => {
-      st.locked = true;
-      st.glideAt = Date.now();
-      document.getElementById("features")?.scrollIntoView({ behavior: "smooth", block: "start" });
-      st.lockTimer = window.setTimeout(() => {
-        st.locked = false;
-      }, 800);
-    };
-    const cancelGlide = () => {
-      window.clearTimeout(st.lockTimer);
-      // 以瞬时定位打断进行中的平滑滚动，立刻交还原生滚动。
-      window.scrollTo({ top: window.scrollY, behavior: "auto" });
-      st.locked = false;
-    };
-    const onWheel = (e: WheelEvent) => {
-      if (st.locked) {
-        if (Date.now() - st.glideAt > 400 || Math.abs(e.deltaY) > 80) cancelGlide();
-        return;
-      }
-      window.clearTimeout(st.wheelTimer);
-      st.wheelTimer = window.setTimeout(() => {
-        st.accum = 0;
-      }, 180);
-      if (e.deltaY <= 0 || !heroVisible()) {
-        st.accum = 0;
-        return;
-      }
-      st.accum += e.deltaY;
-      if (st.accum >= 40) {
-        st.accum = 0;
-        glide();
-      }
-    };
-    const onTouchStart = (e: TouchEvent) => {
-      st.touchY = e.touches[0]?.clientY ?? 0;
-      if (st.locked) cancelGlide();
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (st.locked) return;
-      const y = e.touches[0]?.clientY ?? 0;
-      if (st.touchY - y >= 48 && heroVisible()) {
-        st.touchY = y;
-        glide();
-      }
-    };
-    window.addEventListener("wheel", onWheel, { passive: true });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: true });
-    return () => {
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.clearTimeout(st.lockTimer);
-      window.clearTimeout(st.wheelTimer);
-    };
-  }, []);
-
   return (
-    <section ref={ref} className="relative flex min-h-svh flex-col overflow-hidden">
+    <section ref={ref} data-landing-snap className="relative flex min-h-svh flex-col overflow-hidden">
       {/* 粒子网络背景 */}
       <InkCanvas className="pointer-events-none absolute inset-0 h-full w-full opacity-60" />
 

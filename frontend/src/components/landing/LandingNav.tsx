@@ -41,6 +41,13 @@ export function LandingNav({ tr, loggedIn }: { tr: LandingTr; loggedIn: boolean 
               {tr(a.key)}
             </a>
           ))}
+          {/* 使用文档：工作区路由（匿名可读），与页内锚点同款样式 */}
+          <Link
+            href="/docs"
+            className="rounded-full px-3 py-1.5 text-[13px] text-fg-secondary transition-colors hover:bg-surface-hover hover:text-fg"
+          >
+            {tr("landing.nav.docs")}
+          </Link>
         </nav>
 
         <span className="mx-2 hidden h-4 w-px bg-border sm:block" />

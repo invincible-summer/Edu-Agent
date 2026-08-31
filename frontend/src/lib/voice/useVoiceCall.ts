@@ -14,6 +14,12 @@
  * speakingSentence，供「板书」浮窗渲染 KaTeX。播放链路串了
  * DynamicsCompressor + makeup gain，与后端的逐句响度归一化（loudness.py）
  * 叠加，进一步抹平句间/句内音量起伏。
+ *
+ * 轮次在途时挂断进入「收尾」（drain）：音频立即停止，WS 保持存活继续把
+ * answer_delta 写进聊天流直到 turn_end（服务端同样跑完并落盘）；超时/
+ * 断网/服务端提前收线则兜底提交半截回答——聊天流在任何路径下都不允许
+ * 悬空卡死。tool_start/tool_result 同样透传给宿主，通话中实时渲染
+ * 题目卡与知识检索卡。
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { API_BASE, voiceTicket } from "@/lib/api";
@@ -79,8 +85,11 @@ export type VoicePhase =
   | "idle" | "connecting" | "ready" | "recording"
   | "recognizing" | "thinking" | "speaking" | "ended";
 
+/** 挂断收尾兜底：turn_end 迟迟不来（服务端卡死/断网）就提交半截回答。 */
+const DRAIN_TIMEOUT_MS = 90_000;
+
 /** error 为后端 error 事件 code 或浏览器语音 API 的本地错误码。 */
-export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError }: {
+export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError, onToolStart, onToolResult, onTurnAborted }: {
   lang: Lang;
   onSessionBound?: (sessionId: string) => void;
   /** 一轮开始（STT 结果就绪）：宿主把用户消息落进聊天流并置 streaming。 */
@@ -89,13 +98,21 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   onAnswerDelta?: (content: string) => void;
   /** 一轮结束（文本流完成，音频可能仍在播放）。 */
   onTurnEnd?: (sessionId: string | null) => void;
-  /** 一轮中途失败（agent_error 或浏览器/协议错误会中断在途轮次）。 */
+  /** 一轮中途失败（agent_error 杀死在途轮次）：宿主提交半截并解卡。 */
   onTurnError?: (code: string) => void;
+  /** 工具调用开始/结果：宿主写入 pendingToolCalls，通话中同样渲染
+   *  题目卡/知识检索卡（与打字流共用一套卡片渲染路径）。 */
+  onToolStart?: (name: string) => void;
+  onToolResult?: (result: unknown) => void;
+  /** 在途轮次再也无法完成（挂断收尾超时/断网/服务端提前关闭/组件卸载）：
+   *  宿主提交半截回答、清 streaming，聊天不允许永久卡在流式态。 */
+  onTurnAborted?: () => void;
 }) {
   const [phase, setPhase] = useState<VoicePhase>("idle");
   const [error, setError] = useState<string | null>(null);
   const [statusKey, setStatusKey] = useState<string | null>(null);
   const [speakingSentence, setSpeakingSentence] = useState<string | null>(null);
+  const [boardTable, setBoardTable] = useState<{ markdown: string; until: number } | null>(null);
   const [callSeconds, setCallSeconds] = useState(0);
 
   const phaseRef = useRef<VoicePhase>("idle");
@@ -107,6 +124,11 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   const playingRef = useRef(false);
   const pendingTtsRateRef = useRef<number>(16000);
   const endedByUserRef = useRef(false);
+  // 挂断收尾（drain）：音频立即停，WS 保持存活把 answer_delta 写完。
+  const drainingRef = useRef(false);
+  const drainTimerRef = useRef<number | null>(null);
+  // stt_result 已到、turn_end 未到：期间传输断掉必须通知宿主解卡。
+  const turnInFlightRef = useRef(false);
   const sessionIdRef = useRef<string | null>(null);
   const startedAtRef = useRef<number | null>(null);
   const recognitionRef = useRef<BrowserSpeechRecognition | null>(null);
@@ -118,10 +140,10 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   const recognitionFailedRef = useRef(false);
   const recognitionRestartTimerRef = useRef<number | null>(null);
   const startRecognitionRef = useRef<(generation: number) => void>(() => undefined);
-  const cbRef = useRef({ onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError });
+  const cbRef = useRef({ onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError, onToolStart, onToolResult, onTurnAborted });
   useEffect(() => {
-    cbRef.current = { onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError };
-  }, [onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError]);
+    cbRef.current = { onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError, onToolStart, onToolResult, onTurnAborted };
+  }, [onSessionBound, onTurnBegin, onAnswerDelta, onTurnEnd, onTurnError, onToolStart, onToolResult, onTurnAborted]);
 
   const goto = useCallback((p: VoicePhase) => {
     phaseRef.current = p;
@@ -256,6 +278,68 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
     startRecognitionRef.current = startRecognition;
   }, [startRecognition]);
 
+  // ---- transport teardown（drain 辅助与 stopSpeaking 都依赖，故前置） --------
+
+  const teardownRecognition = useCallback(() => {
+    recognitionGenerationRef.current += 1;
+    recognitionHoldingRef.current = false;
+    recognitionStopRequestedRef.current = true;
+    recognitionFailedRef.current = true;
+    recognitionSubmittedRef.current = true;
+    if (recognitionRestartTimerRef.current !== null) {
+      window.clearTimeout(recognitionRestartTimerRef.current);
+      recognitionRestartTimerRef.current = null;
+    }
+    const recognition = recognitionRef.current;
+    recognitionRef.current = null;
+    if (recognition) {
+      recognition.onresult = null;
+      recognition.onerror = null;
+      recognition.onend = null;
+      try { recognition.abort(); } catch { /* noop */ }
+    }
+    recognitionFinalTextRef.current = "";
+  }, []);
+
+  const teardownTransport = useCallback(() => {
+    teardownRecognition();
+    const ws = wsRef.current;
+    wsRef.current = null;
+    if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
+      ws.onclose = null;
+      ws.onmessage = null;
+      ws.close();
+    }
+  }, [teardownRecognition]);
+
+  // ---- 挂断收尾（drain）------------------------------------------------------
+
+  const clearDrainTimer = useCallback(() => {
+    if (drainTimerRef.current !== null) {
+      window.clearTimeout(drainTimerRef.current);
+      drainTimerRef.current = null;
+    }
+  }, []);
+
+  /** turn_end 已到（收尾成功）：拆传输即可，通话保持 ended 不复活 UI。 */
+  const finishDrain = useCallback(() => {
+    clearDrainTimer();
+    drainingRef.current = false;
+    teardownTransport();
+  }, [clearDrainTimer, teardownTransport]);
+
+  /** 收尾失败（超时/断网/服务端提前关闭）：放弃等待，通知宿主提交半截回答。 */
+  const abortDrain = useCallback(() => {
+    clearDrainTimer();
+    drainingRef.current = false;
+    teardownTransport();
+    goto("ended");
+    if (turnInFlightRef.current) {
+      turnInFlightRef.current = false;
+      cbRef.current.onTurnAborted?.();
+    }
+  }, [clearDrainTimer, goto, teardownTransport]);
+
   // ---- playback queue ------------------------------------------------------
 
   const ensurePlayCtx = useCallback(() => {
@@ -306,13 +390,18 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   useEffect(() => { drainRef.current = drainQueue; }, [drainQueue]);
 
   const stopSpeaking = useCallback(() => {
+    // 挂断收尾期间「停止播报」按钮/输入框停止键 = 放弃等剩余文字，提交半截。
+    if (drainingRef.current) {
+      abortDrain();
+      return;
+    }
     queueRef.current.length = 0;
     playingRef.current = false;
     try { playSrcRef.current?.stop(); } catch { /* already ended */ }
     playSrcRef.current = null;
     setSpeakingSentence(null);
     if (phaseRef.current === "speaking") goto("ready");
-  }, [goto]);
+  }, [abortDrain, goto]);
 
   const enqueuePcm = useCallback((pcm: ArrayBuffer, sampleRate: number) => {
     const ctx = ensurePlayCtx();
@@ -341,14 +430,23 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
         break;
       case "stt_result":
         setSpeakingSentence(null);
+        turnInFlightRef.current = true;
         cbRef.current.onTurnBegin?.(String(ev.text || ""));
         goto("thinking");
         break;
       case "step":
-      case "tool_start":
       case "tool_progress":
       case "tool_warning":
         setStatusKey("tool");
+        break;
+      case "tool_start":
+        setStatusKey("tool");
+        cbRef.current.onToolStart?.(String(ev.name || ""));
+        break;
+      case "tool_result":
+        // 题目/检索载荷：与打字流同构地写进 pendingToolCalls，
+        // commitAssistant 落定后通话中也能渲染答题卡与命中来源卡。
+        cbRef.current.onToolResult?.(ev.result);
         break;
       case "retry":
         setStatusKey("retry");
@@ -358,10 +456,22 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
         if (phaseRef.current === "thinking") setStatusKey(null);
         break;
       case "tts_start":
+        // 挂断收尾：音频已停，迟到的 tts_start 不得把通话 UI 复活。
+        if (drainingRef.current) break;
         pendingTtsRateRef.current = Number(ev.sample_rate) || 16000;
         // 板书素材：tts_start 携带该句的原始 markdown（公式未清洗）。
         setSpeakingSentence(String(ev.text || "") || null);
         goto("speaking");
+        break;
+      case "board_table":
+        // 表格不逐格朗读：整块 markdown 上黑板整版驻留至少 hold 窗口
+        // （后端下发，下限 7s）。没有到点自动消失——表格驻留到窗口结束
+        // 之后，直到黑板层收到下一个新公式（经 clearBoardTable 清空）
+        // 或新表格（直接替换并重置窗口）为止。
+        setBoardTable({
+          markdown: String(ev.markdown || ""),
+          until: Date.now() + Math.max(7000, Number(ev.hold_ms) || 7000),
+        });
         break;
       case "tts_end":
         break;
@@ -370,22 +480,38 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
         break;
       case "turn_end":
         setSpeakingSentence(null);
-        if (phaseRef.current !== "speaking" && !playingRef.current) goto("ready");
+        turnInFlightRef.current = false;
+        if (drainingRef.current) {
+          finishDrain();
+        } else if (phaseRef.current !== "speaking" && !playingRef.current) {
+          goto("ready");
+        }
         cbRef.current.onTurnEnd?.((ev.session_id as string) || sessionIdRef.current);
         break;
       case "bye":
+        // 收尾期间 bye 必须跟在 turn_end 之后；先到说明服务端提前收线，
+        // 在途轮次交给宿主提交半截，绝不能让聊天卡在流式态。
+        if (drainingRef.current) {
+          if (turnInFlightRef.current) abortDrain();
+          else finishDrain();
+        }
         goto("ended");
         break;
       case "error": {
         const code = String(ev.code || "agent");
+        if (drainingRef.current) {
+          if (turnInFlightRef.current) abortDrain();
+          else finishDrain();
+          break;
+        }
         setError(code);
         if (code === "voice_disabled" || code === "session_not_found") {
           goto("ended");
         } else {
-          // In-flight agent/TTS failures need host cleanup; pre-turn protocol
-          // errors such as busy or empty_transcript leave the chat stream alone.
-          if (phaseRef.current === "recognizing" || phaseRef.current === "thinking"
-              || phaseRef.current === "speaking") {
+          // 只有 agent_error 真正杀死在途轮次；busy / empty_transcript
+          // 不动聊天流，原轮自己的 turn_end 会来做清理。
+          if (code === "agent_error" && turnInFlightRef.current) {
+            turnInFlightRef.current = false;
             cbRef.current.onTurnError?.(code);
           }
           if (phaseRef.current !== "ready") goto("ready");
@@ -395,51 +521,34 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
       default:
         break;
     }
-  }, [goto]);
+  }, [abortDrain, finishDrain, goto]);
 
   // ---- lifecycle -------------------------------------------------------------
 
-  const teardownRecognition = useCallback(() => {
-    recognitionGenerationRef.current += 1;
-    recognitionHoldingRef.current = false;
-    recognitionStopRequestedRef.current = true;
-    recognitionFailedRef.current = true;
-    recognitionSubmittedRef.current = true;
-    if (recognitionRestartTimerRef.current !== null) {
-      window.clearTimeout(recognitionRestartTimerRef.current);
-      recognitionRestartTimerRef.current = null;
-    }
-    const recognition = recognitionRef.current;
-    recognitionRef.current = null;
-    if (recognition) {
-      recognition.onresult = null;
-      recognition.onerror = null;
-      recognition.onend = null;
-      try { recognition.abort(); } catch { /* noop */ }
-    }
-    recognitionFinalTextRef.current = "";
-  }, []);
-
-  const teardownTransport = useCallback(() => {
-    teardownRecognition();
-    const ws = wsRef.current;
-    wsRef.current = null;
-    if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
-      ws.onclose = null;
-      ws.close();
-    }
-  }, [teardownRecognition]);
-
   const hangUp = useCallback(() => {
+    if (drainingRef.current) return; // 二次挂断不得把收尾中断成「提交半截」
+    // 以 turnInFlight 为准（而非 phase）：音频队列放完会把相位拨回
+    // ready，但文字流可能仍在跑；它与宿主的 chat.streaming 严格同源。
+    const turnActive = turnInFlightRef.current;
     endedByUserRef.current = true;
-    try { wsRef.current?.send(JSON.stringify({ type: "end" })); } catch { /* noop */ }
     stopSpeaking();
-    teardownTransport();
     void playCtxRef.current?.close().catch(() => undefined);
     playCtxRef.current = null;
     playChainRef.current = null;
+    try { wsRef.current?.send(JSON.stringify({ type: "end" })); } catch { /* noop */ }
     goto("ended");
-  }, [goto, stopSpeaking, teardownTransport]);
+    // 轮次在途：音频已停，WS 保持存活进入收尾——answer_delta 继续把
+    // 文字写进聊天流直到 turn_end（服务端同样跑完并落盘），超时或断线
+    // 由 abortDrain 兜底提交半截。无在途轮次则立即拆线。
+    if (!turnActive) {
+      teardownTransport();
+      return;
+    }
+    drainingRef.current = true;
+    drainTimerRef.current = window.setTimeout(() => {
+      if (drainingRef.current) abortDrain();
+    }, DRAIN_TIMEOUT_MS);
+  }, [abortDrain, goto, stopSpeaking, teardownTransport]);
 
   const start = useCallback(async (sessionId: string | null, workspaceId: string | null) => {
     if (phaseRef.current !== "idle") return; // dev StrictMode 双挂载只允许一条连接
@@ -474,21 +583,33 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
       ws.onmessage = (ev) => {
         if (typeof ev.data === "string") {
           try { handleEvent(JSON.parse(ev.data)); } catch { /* skip malformed */ }
-        } else {
+        } else if (!drainingRef.current) {
+          // 收尾期间迟到的音频帧直接丢弃（AudioContext 已关，不再重建）。
           enqueuePcm(ev.data as ArrayBuffer, pendingTtsRateRef.current);
         }
       };
       ws.onclose = () => {
+        if (drainingRef.current) {
+          // 服务端在 turn_end 之前收线（或收尾已被 finishDrain 拆线）。
+          if (turnInFlightRef.current) abortDrain();
+          else finishDrain();
+          return;
+        }
         if (!endedByUserRef.current) {
           setError("network");
           goto("ended");
+          // 断网杀死在途轮次时 turn_end 永远不会来：通知宿主提交半截并解卡。
+          if (turnInFlightRef.current) {
+            turnInFlightRef.current = false;
+            cbRef.current.onTurnAborted?.();
+          }
         }
       };
     } catch {
       setError("network");
       goto("ended");
     }
-  }, [enqueuePcm, goto, handleEvent, lang]);
+  }, [abortDrain, enqueuePcm, finishDrain, goto, handleEvent, lang]);
 
   // 通话时长（指示器上的 mm:ss）：从 start 起计时，ended 停止。
   useEffect(() => {
@@ -582,15 +703,24 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
     goto("recognizing");
   }, [goto, submitRecognition]);
 
+  // 表格驻留窗口过后，黑板层遇到新公式时用它清空整版表格（板面交还）。
+  const clearBoardTable = useCallback(() => setBoardTable(null), []);
+
   useEffect(() => () => {
     endedByUserRef.current = true;
+    const hadTurn = turnInFlightRef.current;
+    turnInFlightRef.current = false;
+    clearDrainTimer();
+    drainingRef.current = false;
     stopSpeaking();
     teardownTransport();
     void playCtxRef.current?.close().catch(() => undefined);
-  }, [stopSpeaking, teardownTransport]);
+    // 卸载（切页/路由变化）打断在途轮次：宿主必须提交半截并解卡。
+    if (hadTurn) cbRef.current.onTurnAborted?.();
+  }, [clearDrainTimer, stopSpeaking, teardownTransport]);
 
   return {
-    phase, error, statusKey, speakingSentence, callSeconds,
-    start, hangUp, beginTalk, endTalk, sendText, stopSpeaking,
+    phase, error, statusKey, speakingSentence, boardTable, callSeconds,
+    start, hangUp, beginTalk, endTalk, sendText, stopSpeaking, clearBoardTable,
   };
 }
