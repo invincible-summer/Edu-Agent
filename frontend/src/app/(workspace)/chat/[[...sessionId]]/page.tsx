@@ -7,7 +7,7 @@ import { t, type Lang } from "@/lib/i18n";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 import { ChatMessage, StreamingMessage } from "@/components/chat/ChatMessage";
 import { ChatInput } from "@/components/chat/ChatInput";
-import { VoiceCallLayer } from "@/components/chat/VoiceCallLayer";
+import { VoiceCallLayer, type VoiceTextController } from "@/components/chat/VoiceCallLayer";
 import { ChatMaterialsPanel } from "@/components/chat/ChatMaterialsPanel";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -42,6 +42,9 @@ function ChatWorkspace() {
   // 不存在，不渲染按钮，保持与禁用智能层「无痕降级」的仓库惯例一致）。
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [voiceOpen, setVoiceOpen] = useState(false);
+  // 通话期间由 VoiceCallLayer 注册：打字消息改走语音 WS（回复仍 TTS 播报），
+  // 停止按钮在语音轮里对应打断播报。挂断/卸载时置 null，回落文字流路径。
+  const voiceCtlRef = useRef<VoiceTextController | null>(null);
   useEffect(() => {
     let cancelled = false;
     voiceStatus()
@@ -231,6 +234,13 @@ function ChatWorkspace() {
   }, [chat.messages, chat.pendingAnswer, chat.pendingThinking, chat.activeTool, chat.toolProgress, chat.retry]);
 
   const handleSend = useCallback(async (message: string, attachments?: AttachmentMeta[]) => {
+    // 通话中的打字轮次走语音 WS：用户消息由 stt_result 回显（onTurnBegin）
+    // 写入消息流，回复经 answer_delta/turn_end 落定——与按住说话完全同构。
+    if (voiceOpen && voiceCtlRef.current && !chat.streaming) {
+      pinnedRef.current = true;
+      voiceCtlRef.current.sendText(message);
+      return;
+    }
     chat.setStreaming(true);
     chat.resetPending();
     // Read messages fresh from the store (not the render closure): the
@@ -402,7 +412,7 @@ function ChatWorkspace() {
       chat.setRetry(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chat.messages, chat.sessionId, grade]);
+  }, [chat.messages, chat.sessionId, grade, voiceOpen]);
 
   // Auto-send deep link (?q=...&send=1 on bare /chat): fire the message
   // straight away, then strip the params with history.replaceState (NOT
@@ -420,6 +430,11 @@ function ChatWorkspace() {
   }, [deepSend, deepPrefill, urlSession, invalidPath, handleSend]);
 
   const handleStop = () => {
+    // 语音轮次没有 aborter：停止按钮对应打断 TTS 播报（barge-in）。
+    if (voiceOpen && voiceCtlRef.current && !useChatStore.getState().aborter) {
+      voiceCtlRef.current.stopSpeaking();
+      return;
+    }
     useChatStore.getState().aborter?.abort();
   };
 
@@ -586,20 +601,19 @@ function ChatWorkspace() {
           )}
         </div>
 
-        {/* 通话期间输入框只隐藏不卸载（草稿保留），由 VoiceCallLayer 的
-            控制条占住底部插槽；语音轮次直接写入上面的消息流。 */}
-        <div className={voiceOpen ? "hidden" : undefined}>
-          <ChatInput onSend={handleSend} disabled={chat.streaming || voiceOpen} onStop={handleStop}
-            prefill={deepSend === "1" && !urlSession ? null : deepPrefill} />
-        </div>
+        {/* 通话期间输入框保持可用（草稿、附件逻辑不变）：控制条渲染在其
+            上方，打字消息经语音 WS 发出，老师的回复仍以 TTS 播报。 */}
         {voiceOpen && (
           <VoiceCallLayer
             lang={lang}
             sessionId={chat.sessionId}
             workspaceId={chat.sessionId ? null : sessionStorage.getItem("edu-agent-active-ws")}
             onClose={() => setVoiceOpen(false)}
+            onRegisterController={(ctl) => { voiceCtlRef.current = ctl; }}
           />
         )}
+        <ChatInput onSend={handleSend} disabled={chat.streaming} onStop={handleStop}
+          prefill={deepSend === "1" && !urlSession ? null : deepPrefill} />
       </div>
       {materialsOpen && (
         <ChatMaterialsPanel sources={materialSources} open onClose={() => setMaterialsOpen(false)} />

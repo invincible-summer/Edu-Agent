@@ -534,6 +534,32 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
     }
   }, [ensurePlayCtx, goto, startRecognition]);
 
+  /** 文本兜底输入：跳过浏览器 STT，直接把打好的文本当本轮转写发上
+   *  同一条 WS——回复仍走 TTS 语音通道。正在播报时先打断（barge-in）。 */
+  const sendText = useCallback((raw: string) => {
+    const text = raw.trim();
+    if (!text) return;
+    if (phaseRef.current !== "ready" && phaseRef.current !== "speaking") return;
+    const ws = wsRef.current;
+    if (!ws || ws.readyState !== WebSocket.OPEN) {
+      setError("network");
+      goto("ended");
+      return;
+    }
+    if (phaseRef.current === "speaking") stopSpeaking();
+    setError(null);
+    setStatusKey(null);
+    ensurePlayCtx(); // 文本回复的 TTS 播放也依赖用户手势解锁的 AudioContext
+    try {
+      ws.send(JSON.stringify({ type: "utterance_end", text }));
+    } catch {
+      setError("network");
+      goto("ended");
+      return;
+    }
+    goto("recognizing");
+  }, [ensurePlayCtx, goto, stopSpeaking]);
+
   const endTalk = useCallback(() => {
     if (phaseRef.current !== "recording") return;
     recognitionHoldingRef.current = false;
@@ -565,6 +591,6 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
 
   return {
     phase, error, statusKey, speakingSentence, callSeconds,
-    start, hangUp, beginTalk, endTalk, stopSpeaking,
+    start, hangUp, beginTalk, endTalk, sendText, stopSpeaking,
   };
 }

@@ -8,8 +8,9 @@
  *      可停止播报/挂断；
  *   2. 顶部「板书」黑板：接通即常驻、挂断才收起；上下双面板只记老师
  *      讲到的公式句（KaTeX 原文渲染），写满后擦掉更久的那块再写新的；
- *   3. 底部控制条：按住说话 / 停止播报 / 挂断，替代被临时收起的输入框
- *      （输入框只是隐藏不卸载，草稿不丢）。
+ *   3. 底部控制条：按住说话 / 停止播报 / 挂断，渲染在原输入框上方——
+ *      通话期间输入框保持可用，打字消息经同一条 WS 发出（sendText），
+ *      老师的回复仍走 TTS 语音通道；浏览器不支持语音识别时可纯打字通话。
  *
  * 采集/协议/播放全在 useVoiceCall；会话写入与 store 的世代守卫和
  * handleSend（chat 页文字流）同构，语音轮与文字轮共享同一套渲染路径。
@@ -188,7 +189,7 @@ export function CallBadge({ lang, voice, onHangUp }: {
   );
 }
 
-/* ---- 底部控制条（通话期间替代输入框） ------------------------------------ */
+/* ---- 底部控制条（位于输入框上方，打字消息走同一条语音 WS） ---------------- */
 
 function statusLineFor(lang: Lang, phase: VoicePhase, error: string | null): string {
   const tr = (k: string, fb?: string) => t(lang, k, fb);
@@ -218,7 +219,7 @@ export function CallBar({ lang, voice, onHangUp }: {
     : null;
 
   return (
-    <div className="px-4 pb-3 pt-1">
+    <div className="px-4 pb-1.5 pt-1">
       <div className="mx-auto flex max-w-[820px] items-center gap-2.5 rounded-[14px] border border-border bg-surface p-2.5 shadow-md">
         {/* 状态区 */}
         <div className="flex min-w-0 flex-1 items-center gap-2.5 px-1.5">
@@ -297,7 +298,11 @@ export function CallBar({ lang, voice, onHangUp }: {
         </button>
       </div>
       <p className="mt-1.5 text-center text-[0.65rem] text-muted/70">
-        {voice.phase === "recording" ? tr("chat.voice.call.release") : tr("chat.voice.call.desc.short")}
+        {voice.error === "voice_not_supported"
+          ? tr("chat.voice.call.textNote")
+          : voice.phase === "recording"
+            ? tr("chat.voice.call.release")
+            : tr("chat.voice.call.desc.short")}
       </p>
       <p className="mx-auto mt-1 max-w-[760px] text-center text-[0.58rem] leading-relaxed text-muted/60">
         {tr("chat.voice.call.browserNote")}
@@ -308,11 +313,19 @@ export function CallBar({ lang, voice, onHangUp }: {
 
 /* ---- 通话层本体 ------------------------------------------------------------ */
 
-export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose }: {
+/** 通话期间暴露给宿主页面的文本通道：打字消息改走语音 WS（回复仍 TTS 播报），
+ *  停止按钮在语音轮次里对应打断播报。 */
+export type VoiceTextController = {
+  sendText: (text: string) => void;
+  stopSpeaking: () => void;
+};
+
+export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose, onRegisterController }: {
   lang: Lang;
   sessionId: string | null;
   workspaceId: string | null;
   onClose: () => void;
+  onRegisterController?: (ctl: VoiceTextController | null) => void;
 }) {
   const router = useRouter();
   const turnsRef = useRef(0);
@@ -407,6 +420,13 @@ export function VoiceCallLayer({ lang, sessionId, workspaceId, onClose }: {
     turnsRef.current = 0;
     boundSidRef.current = sessionId;
     void voice.start(sessionId, workspaceId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // 把文本通道注册给宿主页面；卸载时置空，输入框回落到文字流路径。
+  useEffect(() => {
+    onRegisterController?.({ sendText: voice.sendText, stopSpeaking: voice.stopSpeaking });
+    return () => onRegisterController?.(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
