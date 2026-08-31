@@ -1563,9 +1563,9 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 - **后端边界**：后端不接收电话输入 PCM，不安装、不加载、不启动任何 STT 引擎；
   WebSocket 只接收 `utterance_end.text`。语音文本进入现有 `run_turn`，与普通聊天
   共用会话、记忆、RAG、工具和持久化逻辑。
-- **输出路径**：回答按子句切分（`take_speech_cuts`，弱标点累计 24 字即切），MeloTTS
-  sidecar 逐段合成 WAV，后端转 PCM16 流水线下发；前端按 `tts_start` 携带的采样率
-  顺序播放（FIFO 队列吸收提前到达的音频段），并保留停止播报能力。
+- **输出路径**：回答按句切分，MeloTTS sidecar 逐句合成 WAV，后端转 PCM16 流水线
+  下发；前端按 `tts_start` 携带的采样率顺序播放（FIFO 队列吸收提前到达的音频段），
+  并保留停止播报能力。
 - **隐私/许可边界**：浏览器识别可能调用浏览器厂商在线服务。该平台 API 和厂商
   服务不是 Edu_Agent 的 MIT 发行物，商业、隐私、地域和可用性条款由实际浏览器
   厂商决定；详细组件许可证见 `docs/VOICE_LICENSES.md`。
@@ -1575,15 +1575,15 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
 - `backend/app/api/v1/voice.py`：一次性 ticket、WebSocket 会话绑定、浏览器最终文本
   事件、`stt_start` / `stt_result` / `answer_delta` / 工具进度 / TTS / `turn_end`。
   二进制上行帧返回 `binary_audio_unsupported`，不会缓存、转码或触发 STT。
-- **合成流水线**（`voice.py` `_run_turn`）：切出的子句只进入有界队列
+- **合成流水线**（`voice.py` `_run_turn`）：切出的句子只进入有界队列
   （`_TTS_QUEUE_MAX=8`），轮次循环持续消费 LLM 生成器、`answer_delta` 实时下发，
-  不再内联等待合成；单个 worker 任务从队列取子句、合成并在 `_send_lock` 保护下
+  不再内联等待合成；单个 worker 任务从队列取句子、合成并在 `_send_lock` 保护下
   原子发送 `tts_start` + 二进制 + `tts_end` 三帧（`answer_delta`/`turn_end` 不会
-  插进三帧之间）。客户端播放第 N 段时 worker 已在合成第 N+1 段，句间不再有
-  等合成的空隙；队列满时生产者短暂停靠（客户端仍在播放多段缓冲音频，不构成
+  插进三帧之间）。客户端播放第 N 句时 worker 已在合成第 N+1 句，句间不再有
+  等合成的空隙；队列满时生产者短暂停靠（客户端仍在播放多句缓冲音频，不构成
   卡顿）。单 worker 保证每轮同时最多一个在途 sidecar 请求（sidecar 模型无并发
   保护）、`seq` 严格递增；`turn_end` 仍在最后一帧音频之后（done 后入队 sentinel
-  并 join worker）。失败策略不变：一次合成失败发送 `tts_error`，本轮其余子句
+  并 join worker）。失败策略不变：一次合成失败发送 `tts_error`，本轮其余句子
   跳过合成仅保留文字，worker 继续排水防止有界队列卡死生产者。
 - `backend/app/voice/base.py`：仅保留 TTS provider contract、`VoiceProviderError`
   和 `TTSResult`。
@@ -1600,12 +1600,10 @@ chat_agent intent 分类同源。M5 知识指令旁路（ContentResolver 直消�
   ASCII 比较（`[-1,1]` → 闭区间、`\left|x\right|` → 绝对值、`\varepsilon>0` → 大于）、
   正负号上下标（`0^+`/`f'_+` → 正）、二元/一元负号（`x^2-9` 减、`=-1` 负），最后
   未知命令保留字母念英文、已知命令在参数被截断时丢弃命令名；`_force_split`
-  数学感知（不在 `$` 段内部下刀，硬上限 280 字兜住 sidecar 400 字限制）。语音端点
-  改用 `take_speech_cuts` 子句级切分（强终结符照切，弱标点累计 24 字即切、120 字
-  硬切，``` 代码栅栏与数学 span 同为禁切区且未闭合时锁住缓冲——首段音频在约
-  24 字时即可下发，不必等整句）；`voice.py` 的 speak worker 再把超 240 字的朗读
-  文本按标点分块顺序合成（首块 `tts_start.text` 带原子句供板书，后续块传空串
-  不重复上板）。规则以真实会话语料回归（`test_voice.py`）。
+  数学感知（不在 `$` 段内部下刀，硬上限 280 字兜住 sidecar 400 字限制），
+  `voice.py` 的 speak worker 再把超 240 字的朗读文本按标点分块顺序合成（首块
+  `tts_start.text` 带原句供板书，后续块传空串不重复上板）。规则以真实会话语料
+  回归（`test_voice.py`）。
 - 服务器端语音识别包、输入 PCM 缓冲和旧繁简转换数据均已移除。
 
 ### P10.3 WebSocket 契约
@@ -1628,7 +1626,7 @@ C→S {"type":"end"}  S→C {"type":"bye"}
 
 同一连接只允许一轮并行执行；重复提交返回 `busy`，空文本返回
 `empty_transcript`，TTS sidecar 失败时保留文字回答并发送 `tts_error`。思考内容
-不通过电话协议输出。`tts_start` / 二进制 / `tts_end` 按子句粒度成组下发，三帧
+不通过电话协议输出。`tts_start` / 二进制 / `tts_end` 按句成组下发，三帧
 保持连续；文字流（`answer_delta`）与音频流相互独立，可能交错但不会插入任何
 一组的内部。
 

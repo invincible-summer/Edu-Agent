@@ -17,14 +17,6 @@ sentences are force-split by :func:`_force_split`, which never cuts inside
 a math span unless the span alone exceeds ``_HARD_MAX`` — the MeloTTS
 sidecar rejects requests beyond 400 chars, so an unbreakable formula may
 stretch a chunk but never past that ceiling.
-
-:func:`take_speech_cuts` is the clause-level variant the voice endpoint
-feeds its synthesis pipeline: a weak punctuation also ends a cut once the
-buffer holds ``_SPEECH_MIN_CHARS`` chars, so the first audio clip is
-dispatched after ~24 chars (a second or two of speech) and every clip is
-short enough to synthesize well inside the previous clip's playback time.
-``` code fences join math spans as no-cut zones — the splitter runs on raw
-markdown, before :func:`to_speakable` collapses fences to placeholders.
 """
 from __future__ import annotations
 
@@ -35,14 +27,6 @@ _MAX_CHARS = 120
 _HARD_MAX = 280
 _MIN_CUT_RATIO = 0.5
 _CUT_PUNCTS = ("，", "、", "：", ",", ":", " ")
-
-# Speech-cut granularity: cut at the first weak punctuation once the buffer
-# reaches _SPEECH_MIN_CHARS; past _SPEECH_HARD_MAX even a punctuation-free
-# run is cut (mid-word for unbroken prose, never inside a math/fence span)
-# so no clip can stretch synthesis into an audible gap.
-_SPEECH_WEAK = ("，", "、", "：", ",", ":", " ")
-_SPEECH_MIN_CHARS = 24
-_SPEECH_HARD_MAX = 120
 
 
 def split_sentences(text: str) -> list[str]:
@@ -90,63 +74,6 @@ def take_complete(text: str) -> tuple[list[str], str]:
                     buf = ""
         i += 1
     out = [s.strip() for s in sentences if s.strip()]
-    return out, buf
-
-
-def take_speech_cuts(text: str) -> tuple[list[str], str]:
-    """Clause-level streaming variant for the synthesis pipeline.
-
-    Same cumulative re-scan contract as :func:`take_complete`: returns
-    (complete cuts, trailing remainder) and the remainder stays buffered
-    until more deltas arrive. Strong terminators end a cut unconditionally;
-    a weak punctuation (，、：, : space) ends one once the buffer holds
-    ``_SPEECH_MIN_CHARS`` chars, so the pipeline dispatches short clips
-    instead of waiting for a full sentence. Unclosed ``$`` spans and
-    ``` fences hold the buffer like an unclosed sentence.
-    """
-    text = normalize_math_delimiters(text)
-    cuts: list[str] = []
-    buf = ""
-    n = len(text)
-    in_math = False
-    in_fence = False
-    i = 0
-    while i < n:
-        ch = text[i]
-        # Fences win inside themselves (their closer must still toggle) but
-        # are ignored inside math spans; $ toggling is ignored inside fences
-        # so shell-style dollars in code cannot corrupt the math pairing.
-        if not in_math and text.startswith("```", i):
-            buf += "```"
-            i += 3
-            in_fence = not in_fence
-            continue
-        buf += ch
-        if not in_fence and ch == "$":
-            if text.startswith("$$", i):
-                buf += "$"
-                i += 2
-            else:
-                i += 1
-            in_math = not in_math
-            continue
-        if not in_math and not in_fence:
-            if ch in _SENTENCE_END:
-                cuts.append(buf)
-                buf = ""
-            elif ch == ".":
-                nxt = text[i + 1] if i + 1 < n else ""
-                if not (nxt and nxt.isalnum()):
-                    cuts.append(buf)
-                    buf = ""
-            elif ch in _SPEECH_WEAK and len(buf) >= _SPEECH_MIN_CHARS:
-                cuts.append(buf)
-                buf = ""
-            elif len(buf) >= _SPEECH_HARD_MAX:
-                cuts.append(buf)
-                buf = ""
-        i += 1
-    out = [s.strip() for s in cuts if s.strip()]
     return out, buf
 
 

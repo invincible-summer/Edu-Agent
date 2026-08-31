@@ -12,7 +12,7 @@ from unittest.mock import patch
 
 from tests.storage_sandbox import StorageSandboxTestCase
 
-from app.voice.sentences import split_sentences, take_complete, take_speech_cuts
+from app.voice.sentences import split_sentences, take_complete
 from app.voice.speak_text import to_speakable
 from app.voice.wav import wav_to_pcm16
 
@@ -87,80 +87,6 @@ class TestSentenceSplitting(unittest.TestCase):
         for part in parts:
             self.assertEqual(part.count("$$") % 2, 0,
                              f"formula sliced open: {part[:60]}")
-
-
-class TestSpeechCuts(unittest.TestCase):
-    """Clause-level streaming cuts feeding the synthesis pipeline."""
-
-    def test_weak_punct_cuts_only_after_min_length(self):
-        # The first ， sits below _SPEECH_MIN_CHARS and must hold; the second
-        # one (buffer >= 24 chars) ends the clip without waiting for a full
-        # sentence terminator.
-        cuts, rest = take_speech_cuts(
-            "我们首先来看这个函数的定义域，它必须满足分母不为零，同时分子也要有意义。")
-        self.assertEqual(cuts, ["我们首先来看这个函数的定义域，它必须满足分母不为零，",
-                                "同时分子也要有意义。"])
-        self.assertEqual(rest, "")
-
-    def test_short_strong_sentence_still_cuts(self):
-        cuts, rest = take_speech_cuts("短句。下一句是完整的。")
-        self.assertEqual(cuts, ["短句。", "下一句是完整的。"])
-        self.assertEqual(rest, "")
-
-    def test_streaming_remainder_carries_over(self):
-        cuts, rest = take_speech_cuts("这一小段还不够长，没有到最小切分长度")
-        self.assertEqual(cuts, [])
-        self.assertTrue(rest)
-        cuts, rest = take_speech_cuts(rest + "所以继续等待。")
-        self.assertEqual(cuts, ["这一小段还不够长，没有到最小切分长度所以继续等待。"])
-        self.assertEqual(rest, "")
-
-    def test_math_span_blocks_weak_cut(self):
-        # Weak punctuation and length inside $$...$$ never cut; the clip
-        # ends at the ，after the span closes, formula intact.
-        text = "考虑函数 $$f(x)=x^2, x \\in [0,1]$$ 的性质，它在此区间上递增。"
-        cuts, rest = take_speech_cuts(text)
-        self.assertEqual(len(cuts), 2)
-        self.assertEqual(cuts[0].count("$$"), 2)
-        self.assertIn("f(x)=x^2", cuts[0])
-        # The post-span tail is under the min length, so its ，holds and the
-        # clip completes at the sentence terminator instead.
-        self.assertEqual(cuts[1], "的性质，它在此区间上递增。")
-        self.assertEqual(rest, "")
-
-    def test_unclosed_math_holds(self):
-        cuts, rest = take_speech_cuts("例如 $x^2, 还没闭合")
-        self.assertEqual(cuts, [])
-        self.assertIn("$x^2", rest)
-
-    def test_fence_is_no_cut_zone(self):
-        # Commas inside a code fence must not cut: the fence collapses to a
-        # placeholder in to_speakable only when it survives as one piece.
-        text = "看下面的实现，\n```python\nprint(a, b)\n```\n然后继续说明。"
-        cuts, rest = take_speech_cuts(text)
-        self.assertEqual(rest, "")
-        for cut in cuts:
-            self.assertEqual(cut.count("```") % 2, 0,
-                             f"fence sliced open: {cut[:60]}")
-        self.assertIn("print(a, b)", "".join(cuts))
-
-    def test_unclosed_fence_holds(self):
-        cuts, rest = take_speech_cuts("看代码：```python\nprint(1)")
-        self.assertEqual(cuts, [])
-        self.assertIn("```", rest)
-
-    def test_punctuation_free_run_hard_capped(self):
-        cuts, rest = take_speech_cuts("字" * 300)
-        self.assertTrue(cuts)
-        self.assertTrue(all(len(c) <= 120 for c in cuts))
-        self.assertEqual(sum(len(c) for c in cuts) + len(rest), 300)
-
-    def test_first_cut_dispatches_early(self):
-        # 23 chars + ，: the cut fires exactly at min length, so the first
-        # clip leaves long before any sentence terminator exists.
-        cuts, rest = take_speech_cuts("前" * 23 + "，后面还有很多内容没有结束")
-        self.assertEqual(cuts, ["前" * 23 + "，"])
-        self.assertEqual(rest, "后面还有很多内容没有结束")
 
 
 class TestSpeakText(unittest.TestCase):

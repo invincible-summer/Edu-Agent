@@ -13,7 +13,7 @@ Wire protocol (browser Speech Recognition text only):
        {"type":"stt_result","text"} / step/tool_* status events /
        {"type":"answer_delta","content"} per LLM delta /
        {"type":"tts_start","seq","text","sample_rate"} + <binary PCM16> +
-       {"type":"tts_end","seq"} per spoken clause (speech cut) /
+       {"type":"tts_end","seq"} per spoken sentence /
        {"type":"turn_end","session_id","tts_ok"}
   C->S {"type":"end"} closes the call.
 
@@ -24,7 +24,7 @@ SpeechRecognition/webkitSpeechRecognition in the browser; the backend receives
 final text and uses the configured TTS provider for spoken replies.
 
 TTS runs as a pipeline, not inline awaits: the turn loop only enqueues
-clause-level speech cuts (bounded queue) and keeps consuming the LLM
+completed sentences (bounded queue) and keeps consuming the LLM
 generator, while one worker task synthesizes and sends audio clips. The
 client's FIFO playback queue absorbs clips that arrive early, so playback
 of clip N overlaps synthesis of clip N+1 instead of pausing between
@@ -47,7 +47,7 @@ from app.core.ratelimit import rate_limit
 from app.identity.deps import resolve_student_id, _try_user_from_header
 from app.voice.base import VoiceProviderError
 from app.voice.tts import get_tts_provider
-from app.voice.sentences import take_speech_cuts
+from app.voice.sentences import take_complete
 from app.voice.speak_text import to_speakable
 from app.voice.loudness import normalize_pcm16
 
@@ -392,7 +392,7 @@ class _VoiceCall:
                 etype = ev.get("type")
                 if etype == "answer":
                     pending += ev.get("content") or ""
-                    complete, pending = take_speech_cuts(pending)
+                    complete, pending = take_complete(pending)
                     await self._send({"type": "answer_delta",
                                       "content": ev.get("content") or ""})
                     for sentence in complete:
