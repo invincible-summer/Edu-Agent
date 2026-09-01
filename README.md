@@ -5,7 +5,7 @@
 > 「学习目标 → 知识理解 → 练习训练 → 能力评估 → 策略调整」完整闭环的
 > 长期陪伴式私人学习空间。
 
-[English](#english) · 架构主文档 [docs/DESIGN.md](docs/DESIGN.md) · 部署手册 [docs/The_Website_deployment_plan.md](docs/The_Website_deployment_plan.md)
+[English](#english) · 架构主文档 [docs/DESIGN.md](docs/DESIGN.md) 
 
 ---
 
