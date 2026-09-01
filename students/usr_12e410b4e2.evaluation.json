@@ -5,16 +5,16 @@
       "subject": "数学",
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
-      "sample_size": 14,
-      "last_updated": 1788083900.6319752
+      "sample_size": 16,
+      "last_updated": 1788235212.7450902
     },
     {
       "strategy": "remediation",
       "subject": "数学",
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
-      "sample_size": 57,
-      "last_updated": 1788083900.6320138
+      "sample_size": 59,
+      "last_updated": 1788235212.7451239
     },
     {
       "strategy": "practice",
@@ -22,7 +22,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 3,
-      "last_updated": 1788083900.6320183
+      "last_updated": 1788235212.7451277
     },
     {
       "strategy": "introduction",
@@ -30,7 +30,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 6,
-      "last_updated": 1788083900.6320217
+      "last_updated": 1788235212.745131
     },
     {
       "strategy": "remediation",
@@ -38,7 +38,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 67,
-      "last_updated": 1788083900.6320581
+      "last_updated": 1788235212.7451441
     },
     {
       "strategy": "review",
@@ -46,7 +46,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 5,
-      "last_updated": 1788083900.632065
+      "last_updated": 1788235212.745148
     },
     {
       "strategy": "introduction",
@@ -54,7 +54,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 1,
-      "last_updated": 1788083900.632068
+      "last_updated": 1788235212.74515
     },
     {
       "strategy": "remediation",
@@ -62,7 +62,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 1,
-      "last_updated": 1788083900.63207
+      "last_updated": 1788235212.7451518
     },
     {
       "strategy": "introduction",
@@ -70,7 +70,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 1,
-      "last_updated": 1788083900.632073
+      "last_updated": 1788235212.7451532
     },
     {
       "strategy": "remediation",
@@ -78,7 +78,7 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 1,
-      "last_updated": 1788083900.632075
+      "last_updated": 1788235212.7451553
     },
     {
       "strategy": "remediation",
@@ -86,15 +86,15 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 1,
-      "last_updated": 1788083900.632077
+      "last_updated": 1788235212.745157
     },
     {
       "strategy": "introduction",
       "subject": "",
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
-      "sample_size": 3,
-      "last_updated": 1788083900.6320794
+      "sample_size": 6,
+      "last_updated": 1788235212.7451596
     },
     {
       "strategy": "introduction",
@@ -102,7 +102,31 @@
       "avg_gain": 0.0,
       "avg_success_rate": 1.0,
       "sample_size": 1,
-      "last_updated": 1788083900.6321025
+      "last_updated": 1788235212.7451618
+    },
+    {
+      "strategy": "challenge",
+      "subject": "物理",
+      "avg_gain": 0.0,
+      "avg_success_rate": 1.0,
+      "sample_size": 1,
+      "last_updated": 1788235212.7451632
+    },
+    {
+      "strategy": "practice",
+      "subject": "",
+      "avg_gain": 0.0,
+      "avg_success_rate": 1.0,
+      "sample_size": 3,
+      "last_updated": 1788235212.7451653
+    },
+    {
+      "strategy": "review",
+      "subject": "数学",
+      "avg_gain": 0.0,
+      "avg_success_rate": 1.0,
+      "sample_size": 1,
+      "last_updated": 1788235212.7451668
     }
   ],
   "proposals": [
@@ -378,11 +402,32 @@
       ],
       "status": "approved",
       "applied_ts": 0.0
+    },
+    {
+      "id": "op_1788228659806_a4c9f9",
+      "ts": 1788228659.8061755,
+      "title": "优先补充学习评估，再据此调整教学",
+      "applicability": "",
+      "guidance": "在每轮教学后加入可观察、可评分的理解检查，例如要求学生独立作答、解释思路或完成迁移题，并记录正确性与错误类型。只有在获得评估证据后，才决定继续讲解、补救、练习或进入挑战；不要将当前各模式的“成功”记录直接视为学习增益。",
+      "cautions": [
+        "当前165轮均标记为no_assessment，无法可靠判断学生真实掌握程度，因此先将评估作为数据质量改进措施，而非据此断言某种教学模式无效。",
+        "评估应短小且与本轮目标直接对应，避免仅凭学生是否完成任务或是否表示理解来判定成功。"
+      ],
+      "target": "",
+      "change": "优先补充学习评估，再据此调整教学",
+      "rationale": "",
+      "confidence": 0.99,
+      "evidence": [
+        "failure_distribution={'no_assessment': 165}",
+        "total_turns=169"
+      ],
+      "status": "proposed",
+      "applied_ts": 0.0
     }
   ],
   "advisor": {
-    "traces_since_last": 11,
-    "last_ts": 1787985747.364467
+    "traces_since_last": 4,
+    "last_ts": 1788228659.8233607
   },
-  "updated_at": 1788136141.201994
+  "updated_at": 1788235212.8979123
 }

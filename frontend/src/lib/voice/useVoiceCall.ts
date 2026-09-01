@@ -123,6 +123,12 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   const queueRef = useRef<AudioBuffer[]>([]);
   const playingRef = useRef(false);
   const pendingTtsRateRef = useRef<number>(16000);
+  // 板书素材与播放同步：tts_start 只登记句子原文，随每帧 PCM 一起进播放
+  // 队列（pcmMetaRef 与 queueRef 严格平行）；drainQueue 出队——那一帧真正
+  // 开始发声——才 setSpeakingSentence。后端流水线刻意提前合成若干句，
+  // tts_start 到达 ≠ 正在播报，直接挂板会比声音早好几句。
+  const pendingTtsTextRef = useRef("");
+  const pcmMetaRef = useRef<{ text: string }[]>([]);
   const endedByUserRef = useRef(false);
   // 挂断收尾（drain）：音频立即停，WS 保持存活把 answer_delta 写完。
   const drainingRef = useRef(false);
@@ -370,6 +376,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
   const drainQueue = useCallback(() => {
     if (playingRef.current) return;
     const buf = queueRef.current.shift();
+    const meta = pcmMetaRef.current.shift();
     if (!buf) {
       if (phaseRef.current === "speaking") goto("ready");
       return;
@@ -380,6 +387,9 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
     node.connect(playChainRef.current ?? ctx.destination);
     playingRef.current = true;
     playSrcRef.current = node;
+    // 这一帧音频此刻真正开始发声：所属句子此刻才暴露给黑板——语音没播
+    // 到的部分不会提前上板（tts_start 提前到达只是入队登记）。
+    setSpeakingSentence(meta?.text || null);
     node.onended = () => {
       playingRef.current = false;
       playSrcRef.current = null;
@@ -396,6 +406,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
       return;
     }
     queueRef.current.length = 0;
+    pcmMetaRef.current.length = 0;
     playingRef.current = false;
     try { playSrcRef.current?.stop(); } catch { /* already ended */ }
     playSrcRef.current = null;
@@ -412,6 +423,7 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
     const buf = ctx.createBuffer(1, floats.length, sampleRate);
     buf.copyToChannel(floats, 0);
     queueRef.current.push(buf);
+    pcmMetaRef.current.push({ text: pendingTtsTextRef.current });
     drainQueue();
   }, [drainQueue, ensurePlayCtx]);
 
@@ -459,8 +471,10 @@ export function useVoiceCall({ lang, onSessionBound, onTurnBegin, onAnswerDelta,
         // 挂断收尾：音频已停，迟到的 tts_start 不得把通话 UI 复活。
         if (drainingRef.current) break;
         pendingTtsRateRef.current = Number(ev.sample_rate) || 16000;
-        // 板书素材：tts_start 携带该句的原始 markdown（公式未清洗）。
-        setSpeakingSentence(String(ev.text || "") || null);
+        // 板书素材只在此登记：本句原始 markdown（公式未清洗）随它的 PCM
+        // 一起入队，真正开始发声（drainQueue 出队）才暴露给黑板。空 text
+        // 是超长句的续片（后端只给首片带句子），属同一句、不覆盖。
+        if (ev.text) pendingTtsTextRef.current = String(ev.text);
         goto("speaking");
         break;
       case "board_table":

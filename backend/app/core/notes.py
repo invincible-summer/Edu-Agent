@@ -7,17 +7,22 @@ guarded student keys):
   notes/<student_key>/vault.json                      仓库索引（全量重写）
   notes/<student_key>/notes/<note_id>.md              笔记正文（纯内容）
   notes/<student_key>/revisions/<note_id>/<file>      版本快照（每笔记上限 20）
-  notes/<student_key>/threads/index.json              笔记助手线程索引
-  notes/<student_key>/threads/<thread_id>.json        独立笔记助手线程
-  notes/<student_key>/suggestions.json                Agent 建议队列
+  notes/<student_key>/agent/<note_id>.json            每笔记专属智能体状态
+                                                      （模式 / 对话历史 / 计划批复）
+  notes/<student_key>/threads/                        （遗留）旧线程模型；
+                                                      首次加载某笔记历史时按
+                                                      context.note_id 一次性迁入
+  notes/<student_key>/uploads/                        笔记页上传附件（文本+原件）
 
 设计要点：
   - 元数据（标题/文件夹/标签/来源/复习状态）只存索引；.md 文件是纯正文，
     导出时再拼 YAML frontmatter（Obsidian 可直接导入）。
   - wiki 链接 ``[[标题]]`` / ``[[标题|别名]]`` 按标题解析（重名取最近更新），
     解析不到的是"未解析链接"（图上的幽灵节点，可一键建笔记）。
-  - 每次写入（用户保存 / Agent 直写 / 建议应用 / 版本恢复）都追加修订快照，
+  - 每次写入（用户保存 / Agent 直写 / 版本恢复）都追加修订快照，
     revision 号即乐观并发版本：base_revision 不匹配抛 StaleRevisionError。
+  - 笔记智能体按笔记隔离：agent/<note_id>.json 各自独立（模式、对话历史、
+    待批复计划），note_id 为空的仓库级对话存 agent/_vault.json。
 """
 from __future__ import annotations
 
@@ -43,8 +48,7 @@ _MAX_TAGS = 12
 _MAX_TAG_LEN = 24
 _MAX_CONTENT_CHARS = 400_000          # ~一本小册子的容量上限，防滥用
 _MAX_REVISIONS = 20
-_MAX_THREAD_MESSAGES = 200
-_MAX_PENDING_SUGGESTIONS = 30
+_MAX_AGENT_MESSAGES = 200             # 每笔记智能体历史上限，超出截头
 _MAX_CUSTOM_TEMPLATES = 20
 
 _WIKILINK_RE = re.compile(r"\[\[([^\[\]|]+)(?:\|([^\[\]]+))?\]\]")
@@ -502,7 +506,7 @@ class NoteVault:
         return self.note_summary(meta)
 
     def remove_note(self, note_id: str) -> bool:
-        """彻底移除（正文 + 修订 + 元数据）。归档请走 trash.archive_note。"""
+        """彻底移除（正文 + 修订 + 元数据 + 专属智能体状态）。归档请走 trash.archive_note。"""
         meta = self.find_note(note_id)
         if meta is None:
             return False
@@ -513,6 +517,7 @@ class NoteVault:
         except OSError:
             pass
         shutil.rmtree(_revisions_dir(self.student_id, note_id), ignore_errors=True)
+        delete_agent_history(self.student_id, note_id)
         return True
 
     # --- revisions ---
@@ -616,18 +621,9 @@ class NoteVault:
             except Exception:
                 pass
         else:
-            thread = _read_thread_file(self.student_id, rid)
-            if thread is not None:
-                base.update({"status": "resolved", "resolved": True,
-                             "title": thread.get("title") or rid,
-                             "message_count": len(thread.get("messages") or []),
-                             "updated_at": thread.get("updated_at") or 0})
-            elif thread_was_deleted(self.student_id, rid):
-                base["status"] = "deleted"
-                tombstone = next((item for item in _load_thread_tombstones(self.student_id)
-                                  if str(item.get("thread_id") or "") == rid), None)
-                if tombstone:
-                    base["title"] = tombstone.get("title") or rid
+            # 旧线程模型已下线（2026-09 每笔记专属智能体重构）；
+            # conversation://notes/<id> 链接不再可解析，按缺失展示。
+            pass
         if not base["resolved"]:
             try:
                 from .trash import list_items
@@ -925,312 +921,217 @@ def vault_summary(vault: NoteVault) -> dict[str, Any]:
     }
 
 
-# --- 助手聊天线程 ------------------------------------------------------------
+# --- 笔记智能体（每笔记专属） ----------------------------------------------------
+# 2026-09 重构：对话历史从「线程模型」改为「每笔记一份专属状态」——每个笔记
+# 拥有独立的模式（ask/plan/authorize）、对话历史与待批复计划（一次性批复
+# 状态机 pending→approved→executed / rejected），智能体只能写当前绑定的笔记。
+# 旧线程文件（threads/*.json）在首次加载某笔记历史时按 context.note_id
+# 一次性迁入，之后只读不再写入；建议队列（suggestions.json，协作模式）已
+# 随协作模式一并移除。
+
+AGENT_MODES = ("ask", "plan", "authorize")
+_LEGACY_AGENT_MODES = {"suggest": "plan", "collab": "plan",
+                       "cowrite": "authorize", "auto": "authorize"}
+PLAN_STATUSES = ("pending", "approved", "rejected", "executed")
 
 
-def _new_thread_record(student_id: str, thread_id: str, title: str = "") -> dict[str, Any]:
+def normalize_agent_mode(mode: str) -> str:
+    """归一化智能体模式；旧四模式值映射到语义最近的新三模式，未知回落 ask。"""
+    value = str(mode or "").strip().lower()
+    value = _LEGACY_AGENT_MODES.get(value, value)
+    return value if value in AGENT_MODES else "ask"
+
+
+def _agent_dir(student_id: str) -> Path:
+    return _vault_dir(student_id) / "agent"
+
+
+def _agent_state_path(student_id: str, note_id: str) -> Path:
+    # note_id 为空 = 仓库级对话（未打开具体笔记时的助手）。笔记 id 均为
+    # note_<stamp>_<slug> 形态，_vault 前缀不会与之冲突。
+    safe = Path(note_id or "").name or "_vault"
+    return _agent_dir(student_id) / f"{safe}.json"
+
+
+def _idle_working() -> dict[str, Any]:
+    return {"stage": "idle", "tool": "", "started_at": 0, "can_stop": False}
+
+
+def _new_agent_state(student_id: str, note_id: str) -> dict[str, Any]:
     now = _now()
-    return {"student_id": student_id, "thread_id": thread_id,
-            "title": title.strip()[:_MAX_TITLE] or "新线程",
-            "created_at": now, "updated_at": now, "messages": [],
-            "mode": "collab", "working": {"stage": "idle", "tool": "", "started_at": 0, "can_stop": False}}
+    return {"student_id": student_id, "note_id": note_id, "mode": "ask",
+            "messages": [], "pending_plan": None,
+            "working": _idle_working(),
+            "created_at": now, "updated_at": now}
 
 
-def _read_thread_file(student_id: str, thread_id: str) -> dict[str, Any] | None:
-    path = _thread_path(student_id, thread_id)
-    try:
-        if path.exists():
-            raw = json.loads(path.read_text(encoding="utf-8"))
-            if isinstance(raw, dict):
-                raw.setdefault("thread_id", thread_id)
-                raw.setdefault("title", "新线程" if thread_id != "default" else "默认线程")
-                raw.setdefault("messages", [])
-                raw.setdefault("mode", "collab")
-                return raw
-    except Exception:
-        pass
-    return None
+def _legacy_thread_messages_for_note(student_id: str,
+                                     note_id: str) -> list[dict[str, Any]]:
+    """从旧线程文件收集归属于该笔记的消息（一次性迁移读取）。
 
-
-def _write_thread(student_id: str, thread: dict[str, Any]) -> None:
-    thread_id = Path(str(thread.get("thread_id") or "default")).name or "default"
-    thread["thread_id"] = thread_id
-    thread["updated_at"] = _now()
-    path = _thread_path(student_id, thread_id)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with file_lock(path):
-        atomic_write_text(path, json.dumps(thread, ensure_ascii=False))
-
-
-def _save_thread_index(student_id: str, records: list[dict[str, Any]]) -> None:
-    path = _thread_index_path(student_id)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with file_lock(path):
-        atomic_write_text(path, json.dumps({"student_id": student_id,
-                                            "threads": records,
-                                            "updated_at": _now()}, ensure_ascii=False))
-
-
-def _index_records(student_id: str) -> list[dict[str, Any]]:
-    """Load/create the thread index and migrate the old agent.json once."""
-    path = _thread_index_path(student_id)
-    records: list[dict[str, Any]] = []
-    try:
-        if path.exists():
-            raw = json.loads(path.read_text(encoding="utf-8"))
-            if isinstance(raw, dict):
-                records = [dict(x) for x in (raw.get("threads") or []) if isinstance(x, dict)]
-    except Exception:
-        records = []
-    legacy = _legacy_thread_path(student_id)
-    if not records and legacy.exists():
-        try:
-            raw = json.loads(legacy.read_text(encoding="utf-8"))
-        except Exception:
-            raw = {}
-        if not isinstance(raw, dict):
-            raw = {}
-        migrated = _new_thread_record(student_id, "default", "默认线程")
-        migrated.update({k: raw[k] for k in ("messages", "updated_at", "mode", "working") if k in raw})
-        _write_thread(student_id, migrated)
-        records = [{k: migrated.get(k) for k in ("thread_id", "title", "created_at", "updated_at", "mode")}]
-    if not records:
-        default = _new_thread_record(student_id, "default", "默认线程")
-        _write_thread(student_id, default)
-        records = [{k: default.get(k) for k in ("thread_id", "title", "created_at", "updated_at", "mode")}]
-    # Repair index entries from the actual thread files and ensure default exists.
-    by_id = {str(r.get("thread_id") or ""): r for r in records}
-    if "default" not in by_id:
-        default = _new_thread_record(student_id, "default", "默认线程")
-        _write_thread(student_id, default)
-        by_id["default"] = {k: default.get(k) for k in ("thread_id", "title", "created_at", "updated_at", "mode")}
-    records = list(by_id.values())
-    _save_thread_index(student_id, records)
-    return records
-
-
-def load_thread(student_id: str, thread_id: str = "default") -> dict[str, Any]:
-    requested = Path(str(thread_id or "default")).name or "default"
-    _index_records(student_id)
-    thread = _read_thread_file(student_id, requested)
-    if thread is not None:
-        return thread
-    return _read_thread_file(student_id, "default") or _new_thread_record(student_id, "default", "默认线程")
-
-
-def save_thread(student_id: str, thread: dict[str, Any], thread_id: str | None = None) -> None:
-    if thread_id:
-        thread["thread_id"] = Path(thread_id).name
-    _write_thread(student_id, thread)
-    records = _index_records(student_id)
-    tid = str(thread.get("thread_id") or "default")
-    summary = {k: thread.get(k) for k in ("thread_id", "title", "created_at", "updated_at", "mode")}
-    found = False
-    for i, record in enumerate(records):
-        if str(record.get("thread_id") or "") == tid:
-            records[i] = summary
-            found = True
-            break
-    if not found:
-        records.append(summary)
-    _save_thread_index(student_id, records)
-
-
-def list_threads(student_id: str) -> list[dict[str, Any]]:
-    records = _index_records(student_id)
+    旧模型里 note_id 只是消息 context 元数据、线程与笔记是 N:N；新模型里
+    每笔记的智能体专有历史，因此按 context.note_id 过滤、按 ts 排序合并。
+    scope=vault 的无主消息不迁移（不属于任何笔记的专属智能体）。
+    """
     out: list[dict[str, Any]] = []
-    for record in records:
-        tid = str(record.get("thread_id") or "default")
-        thread = load_thread(student_id, tid)
-        messages = thread.get("messages") or []
-        out.append({**record, "thread_id": tid, "title": thread.get("title") or record.get("title") or "新线程",
-                    "created_at": thread.get("created_at") or record.get("created_at") or 0,
-                    "updated_at": thread.get("updated_at") or record.get("updated_at") or 0,
-                    "mode": thread.get("mode") or record.get("mode") or "collab",
-                    "message_count": len(messages),
-                    "last_message": messages[-1] if messages else None})
-    out.sort(key=lambda x: float(x.get("updated_at") or 0), reverse=True)
+    if not note_id:
+        return out
+    tdir = _threads_dir(student_id)
+    if not tdir.is_dir():
+        return out
+    for path in sorted(tdir.glob("*.json")):
+        if path.name in {"index.json", "deleted.json"}:
+            continue
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if not isinstance(raw, dict):
+            continue
+        for m in raw.get("messages") or []:
+            if not isinstance(m, dict):
+                continue
+            ctx = m.get("context") or {}
+            if str(ctx.get("note_id") or "") != note_id:
+                continue
+            out.append({
+                "role": m.get("role") if m.get("role") in ("user", "assistant") else "user",
+                "content": str(m.get("content") or ""),
+                "context": dict(ctx), "ts": float(m.get("ts") or 0),
+            })
+    out.sort(key=lambda m: m["ts"])
     return out
 
 
-def create_thread(student_id: str, title: str = "") -> dict[str, Any]:
-    _index_records(student_id)
-    tid = "thread_" + uuid.uuid4().hex[:16]
-    thread = _new_thread_record(student_id, tid, title or "新线程")
-    save_thread(student_id, thread)
-    return thread_view(student_id, tid)
-
-
-def update_thread(student_id: str, thread_id: str, *, title: str | None = None,
-                  mode: str | None = None) -> dict[str, Any] | None:
-    thread = _read_thread_file(student_id, Path(thread_id).name)
-    if thread is None:
-        return None
-    if title is not None:
-        thread["title"] = title.strip()[:_MAX_TITLE] or thread.get("title") or "新线程"
-    if mode is not None:
-        thread["mode"] = str(mode)
-    save_thread(student_id, thread)
-    return thread_view(student_id, str(thread.get("thread_id") or thread_id))
-
-
-def _load_thread_tombstones(student_id: str) -> list[dict[str, Any]]:
-    try:
-        raw = json.loads(_thread_tombstones_path(student_id).read_text(encoding="utf-8"))
-        return [dict(x) for x in raw if isinstance(x, dict)] if isinstance(raw, list) else []
-    except Exception:
-        return []
-
-
-def _save_thread_tombstones(student_id: str, items: list[dict[str, Any]]) -> None:
-    path = _thread_tombstones_path(student_id)
+def _write_agent_state(student_id: str, state: dict[str, Any]) -> None:
+    state["updated_at"] = _now()
+    path = _agent_state_path(student_id, str(state.get("note_id") or ""))
     path.parent.mkdir(parents=True, exist_ok=True)
     with file_lock(path):
-        atomic_write_text(path, json.dumps(items[-500:], ensure_ascii=False))
+        atomic_write_text(path, json.dumps(state, ensure_ascii=False))
 
 
-def thread_was_deleted(student_id: str, thread_id: str) -> bool:
-    return any(str(item.get("thread_id") or "") == thread_id
-               for item in _load_thread_tombstones(student_id))
-
-
-def set_thread_working(student_id: str, thread_id: str, *, stage: str,
-                       tool: str = "", can_stop: bool = False,
-                       run_id: str = "") -> None:
-    thread = load_thread(student_id, thread_id)
-    thread["working"] = {"stage": stage, "tool": tool,
-                         "started_at": (_now() if stage != "idle" else 0),
-                         "can_stop": bool(can_stop), "run_id": run_id}
-    save_thread(student_id, thread)
-
-
-def delete_thread(student_id: str, thread_id: str) -> bool:
-    tid = Path(str(thread_id or "")).name
-    if tid in ("", "default"):
-        return False
-    thread = _read_thread_file(student_id, tid)
-    if thread is None:
-        return False
-    tombstones = [item for item in _load_thread_tombstones(student_id)
-                  if str(item.get("thread_id") or "") != tid]
-    tombstones.append({"thread_id": tid, "title": thread.get("title") or tid,
-                       "deleted_at": _now()})
-    _save_thread_tombstones(student_id, tombstones)
+def load_agent_history(student_id: str, note_id: str = "") -> dict[str, Any]:
+    """读取某笔记的专属智能体状态；文件不存在时建新并懒迁移旧线程。"""
+    note_id = str(note_id or "").strip()
+    state: dict[str, Any] | None = None
+    path = _agent_state_path(student_id, note_id)
     try:
-        _thread_path(student_id, tid).unlink(missing_ok=True)
-    except OSError:
-        pass
-    _save_thread_index(student_id, [r for r in _index_records(student_id)
-                                    if str(r.get("thread_id") or "") != tid])
-    return True
+        if path.exists():
+            raw = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(raw, dict):
+                state = raw
+    except Exception:
+        state = None
+    if state is None:
+        state = _new_agent_state(student_id, note_id)
+        migrated = _legacy_thread_messages_for_note(student_id, note_id)
+        if migrated:
+            state["messages"] = migrated[-_MAX_AGENT_MESSAGES:]
+            last_mode = next(
+                (str((m.get("context") or {}).get("mode") or "")
+                 for m in reversed(migrated)
+                 if (m.get("context") or {}).get("mode")), "")
+            state["mode"] = normalize_agent_mode(last_mode)
+            _write_agent_state(student_id, state)  # 落盘即完成迁移标记
+    state.setdefault("note_id", note_id)
+    state["mode"] = normalize_agent_mode(str(state.get("mode") or ""))
+    state.setdefault("messages", [])
+    state["messages"] = state["messages"][-_MAX_AGENT_MESSAGES:]
+    state.setdefault("pending_plan", None)
+    state.setdefault("working", _idle_working())
+    return state
 
 
-def append_thread_message(student_id: str, role: str, content: str,
-                          context: dict[str, Any] | None = None,
-                          thread_id: str = "default") -> dict[str, Any]:
-    """追加一条线程消息（上限 _MAX_THREAD_MESSAGES，超出截断头部）。"""
-    thread = load_thread(student_id, thread_id)
-    thread.setdefault("messages", []).append({
+def agent_history_view(student_id: str, note_id: str = "") -> dict[str, Any]:
+    state = load_agent_history(student_id, note_id)
+    return {"note_id": state.get("note_id") or str(note_id or ""),
+            "mode": state.get("mode") or "ask",
+            "messages": state.get("messages") or [],
+            "pending_plan": state.get("pending_plan"),
+            "working": state.get("working") or {},
+            "created_at": state.get("created_at") or 0,
+            "updated_at": state.get("updated_at") or 0}
+
+
+def append_agent_message(student_id: str, note_id: str, role: str,
+                         content: str, context: dict[str, Any] | None = None
+                         ) -> dict[str, Any]:
+    """追加一条该笔记智能体的消息（上限 _MAX_AGENT_MESSAGES，超出截头）。"""
+    state = load_agent_history(student_id, note_id)
+    state["messages"].append({
         "role": role if role in ("user", "assistant") else "user",
-        "content": str(content or ""), "context": dict(context or {}), "ts": _now(),
+        "content": str(content or ""), "context": dict(context or {}),
+        "ts": _now(),
     })
-    thread["messages"] = thread["messages"][-_MAX_THREAD_MESSAGES:]
-    if thread.get("title") in ("新线程", "默认线程") and role == "user" and content.strip():
-        thread["title"] = str(content).strip().splitlines()[0][:40]
-    save_thread(student_id, thread)
-    return thread
+    state["messages"] = state["messages"][-_MAX_AGENT_MESSAGES:]
+    _write_agent_state(student_id, state)
+    return state
 
 
-def thread_view(student_id: str, thread_id: str = "default") -> dict[str, Any]:
-    thread = load_thread(student_id, thread_id)
-    return {"thread_id": thread.get("thread_id") or thread_id,
-            "title": thread.get("title") or "新线程",
-            "mode": thread.get("mode") or "collab",
-            "messages": thread.get("messages") or [],
-            "working": thread.get("working") or {},
-            "created_at": thread.get("created_at") or 0,
-            "updated_at": thread.get("updated_at") or 0}
+def set_agent_working(student_id: str, note_id: str, *, stage: str,
+                      tool: str = "", can_stop: bool = False,
+                      run_id: str = "") -> None:
+    state = load_agent_history(student_id, note_id)
+    state["working"] = {"stage": stage, "tool": tool,
+                        "started_at": (_now() if stage != "idle" else 0),
+                        "can_stop": bool(can_stop), "run_id": run_id}
+    _write_agent_state(student_id, state)
 
 
-def clear_thread(student_id: str, thread_id: str = "default") -> None:
-    thread = load_thread(student_id, thread_id)
-    thread["messages"] = []
-    thread["working"] = {"stage": "idle", "tool": "", "started_at": 0, "can_stop": False}
-    save_thread(student_id, thread)
+def set_agent_mode(student_id: str, note_id: str, mode: str) -> dict[str, Any]:
+    """设置该笔记智能体的模式（服务端枚举校验，堵客户端自报越权）。"""
+    state = load_agent_history(student_id, note_id)
+    state["mode"] = normalize_agent_mode(mode)
+    _write_agent_state(student_id, state)
+    return state
 
 
-# --- Agent 建议 --------------------------------------------------------------
+def set_pending_plan(student_id: str, note_id: str,
+                     plan: dict[str, Any] | None) -> dict[str, Any]:
+    """写入/覆盖该笔记的待批复计划（plan 模式解析出计划卡后调用）。"""
+    state = load_agent_history(student_id, note_id)
+    state["pending_plan"] = plan
+    _write_agent_state(student_id, state)
+    return state
 
 
-def load_suggestions(student_id: str) -> list[dict[str, Any]]:
-    try:
-        if _suggestions_path(student_id).exists():
-            raw = json.loads(_suggestions_path(student_id).read_text(
-                encoding="utf-8"))
-            if isinstance(raw, list):
-                return raw
-    except Exception:
-        pass
-    return []
-
-
-def save_suggestions(student_id: str,
-                     items: list[dict[str, Any]]) -> None:
-    path = _suggestions_path(student_id)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with file_lock(path):
-        atomic_write_text(path, json.dumps(items, ensure_ascii=False))
-
-
-def add_suggestion(student_id: str, note_id: str, kind: str,
-                   proposed_content: str, summary: str) -> dict[str, Any]:
-    """入队一条建议；pending 超限时丢弃最旧的 pending。"""
-    path = _suggestions_path(student_id)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with file_lock(path):
-        items = load_suggestions(student_id)
-        item = {
-            "id": "sg_" + uuid.uuid4().hex[:10],
-            "note_id": note_id,
-            "kind": kind if kind in ("replace", "append") else "replace",
-            "proposed_content": str(proposed_content or "")[:_MAX_CONTENT_CHARS],
-            "summary": (summary or "").strip()[:240],
-            "status": "pending",
-            "created_at": _now(),
-        }
-        items.append(item)
-        pending = [i for i in items if i.get("status") == "pending"]
-        if len(pending) > _MAX_PENDING_SUGGESTIONS:
-            drop_ids = {i["id"] for i in pending[:-_MAX_PENDING_SUGGESTIONS]}
-            items = [i for i in items if i["id"] not in drop_ids]
-        atomic_write_text(path, json.dumps(items, ensure_ascii=False))
-        return item
-
-
-def find_suggestion(student_id: str, suggestion_id: str) -> dict[str, Any] | None:
-    return next((i for i in load_suggestions(student_id)
-                 if i.get("id") == suggestion_id), None)
-
-
-def set_suggestion_status(student_id: str, suggestion_id: str,
-                          status: str) -> dict[str, Any] | None:
-    if status not in ("applied", "dismissed"):
+def update_pending_plan_status(student_id: str, note_id: str, status: str,
+                               **extra: Any) -> dict[str, Any] | None:
+    """推进计划批复状态机（pending→approved→executed / rejected）。"""
+    if status not in PLAN_STATUSES:
         return None
-    path = _suggestions_path(student_id)
-    with file_lock(path):
-        items = load_suggestions(student_id)
-        item = next((i for i in items if i.get("id") == suggestion_id), None)
-        if item is None:
-            return None
-        item["status"] = status
-        item["updated_at"] = _now()
-        atomic_write_text(path, json.dumps(items, ensure_ascii=False))
-        return item
+    state = load_agent_history(student_id, note_id)
+    plan = state.get("pending_plan")
+    if not isinstance(plan, dict):
+        return None
+    plan["status"] = status
+    for key, value in extra.items():
+        if value is not None:
+            plan[key] = value
+    _write_agent_state(student_id, state)
+    return plan
 
 
-def pending_suggestion_count(student_id: str) -> int:
-    return sum(1 for i in load_suggestions(student_id)
-               if i.get("status") == "pending")
+def clear_agent_history(student_id: str, note_id: str = "") -> None:
+    """清空该笔记智能体的对话历史与待批复计划（保留模式选择）。"""
+    state = load_agent_history(student_id, note_id)
+    state["messages"] = []
+    state["pending_plan"] = None
+    state["working"] = _idle_working()
+    _write_agent_state(student_id, state)
+
+
+def delete_agent_history(student_id: str, note_id: str) -> bool:
+    """笔记被删除/归档时清理其专属智能体状态。"""
+    if not note_id:
+        return False
+    try:
+        _agent_state_path(student_id, note_id).unlink(missing_ok=True)
+        return True
+    except OSError:
+        return False
+
 
 
 # --- 助手附件（笔记页上传的资料/图片） ------------------------------------------

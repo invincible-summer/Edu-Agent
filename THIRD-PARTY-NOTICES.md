@@ -2,7 +2,8 @@
 
 This project uses the following third-party software:
 
-完整许可证原文保存在 [`licenses/`](licenses/) 目录，仅作整理归档，未改动任何原文。
+The original text of the complete license is kept in the [`licenses/`](licenses/) directory, only for filing, and no original text has been changed.
+
 This is a consolidated reorganization of the project's third-party license and
 copyright declarations; the authoritative audit procedure, pinned sources,
 revision history and release checklist remain in

@@ -643,9 +643,8 @@ def archive_note(owner_id: str, note_id: str) -> dict[str, Any]:
                     owner_id, concept_id=f"note:{note_id}")
             except Exception:
                 pass
-        for item in notes_store.load_suggestions(owner_id):
-            if item.get("note_id") == note_id and item.get("status") == "pending":
-                notes_store.set_suggestion_status(owner_id, item["id"], "dismissed")
+        # 归档即清理该笔记的专属智能体状态（remove_note 内统一处理）；
+        # 旧建议队列已随协作模式一并移除（2026-09 每笔记专属智能体重构）。
         return _public_manifest(manifest, _item_dir(owner_id, item_id))
     except Exception:
         _abort_bundle(staging)

@@ -533,7 +533,10 @@ class _VoiceCall:
                     await self._send({"type": "error", "code": "agent_error",
                                       "message": ev.get("message")})
                     return
-                # thinking payloads stay server-side: CoT never leaves the box.
+                # thinking events are dropped here on purpose: live reasoning
+                # may now stream to the chat UI (REASONING_LIVE_MAX_CHARS), but
+                # it never enters the voice WS and is never synthesized — the
+                # deep-thinking panel is not expanded and not spoken.
             while self._outstanding:
                 await self._send(self._outstanding.pop(0))
             # Flush sentinel, then wait for the worker to finish sending the

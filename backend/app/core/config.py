@@ -95,8 +95,11 @@ class Settings:
     # 次 prompt+completion，比放大信封贵得多。窗口富余时放宽到 6000 反而
     # 省 token；窗口紧张的部署可用 env 调回。
     executor_tool_max_output_tokens: int = int(os.getenv("EXECUTOR_TOOL_MAX_OUTPUT_TOKENS", "6000"))
-    # Provider reasoning_content is hidden CoT and is never forwarded to the
-    # browser. Kept only for backwards-compatible environment parsing.
+    # Live thinking stream gate (agents/reasoning_live.py): -1 (default)
+    # streams provider reasoning_content deltas to the browser as thinking
+    # events (display-only); 0 restores the hidden-CoT behavior (template
+    # summaries only + grounding turns force-disable thinking); >0 caps the
+    # total streamed chars per turn. Raw CoT is still never persisted or TTS'd.
     reasoning_live_max_chars: int = int(os.getenv("REASONING_LIVE_MAX_CHARS", "-1"))
     # OpenAI 兼容门面（清小搭广场类平台接入）：部署方签发的接入凭证。
     # 空 = 门面关闭（/models、/chat/completions 返回 503）。

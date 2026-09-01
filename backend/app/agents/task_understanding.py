@@ -207,6 +207,33 @@ def _extract_json(text: str) -> dict[str, Any] | None:
     return None
 
 
+def _clean_search_queries(raw: Any) -> list[str]:
+    """Normalize the LLM's search_queries into a bounded, safe variant list.
+
+    Accepts only a JSON array of short strings; each entry is stripped,
+    de-duplicated, capped at 3 items and 20 chars (the prompt contract).
+    Anything else (missing / wrong type / junk) yields [] so pre-retrieval
+    keeps its raw-message fallback instead of searching garbage.
+    """
+    if not isinstance(raw, list):
+        return []
+    out: list[str] = []
+    for item in raw:
+        if not isinstance(item, str):
+            continue
+        term = str(item).strip()
+        term = term.strip("，。、,.?？！！；;：: \"'`“”‘’\t\n")
+        # A "query" longer than a locator term is a sentence -> drop, the
+        # deterministic compact variant of the raw message already covers it.
+        if not term or len(term) > 20:
+            continue
+        if term not in out:
+            out.append(term)
+        if len(out) >= 3:
+            break
+    return out
+
+
 async def llm_understand(msg: str, llm: AsyncLLMClient) -> TaskUnderstanding | None:
     """LLM structured-output path. Returns None on any failure so the caller
     can fall back to rules (never raises into the turn)."""
@@ -215,7 +242,7 @@ async def llm_understand(msg: str, llm: AsyncLLMClient) -> TaskUnderstanding | N
             [{"role": "system", "content": _UNDERSTAND_SYSTEM},
              {"role": "user", "content": msg}],
             temperature=0.1,
-            max_tokens=300,
+            max_tokens=400,
             disable_thinking=True,  # JSON extraction: reasoning would starve the budget
         )
     except Exception:
@@ -241,6 +268,7 @@ async def llm_understand(msg: str, llm: AsyncLLMClient) -> TaskUnderstanding | N
         requires_tools=requires,
         response_format=str(obj.get("response_format", "") or ""),
         allow_followup_assessment=bool(obj.get("allow_followup_assessment", True)),
+        search_queries=_clean_search_queries(obj.get("search_queries")),
         confidence=0.8,
         source="llm",
     )

@@ -1519,12 +1519,14 @@ async def run(
     raw_thinking = ""
     final_tool_calls: list[dict[str, Any]] = []
     executor_done = False
+    live_thinking_chars = 0  # live-display reasoning streamed this turn (non-summary)
     # Reconstruct V1's [{name, result}] tool-call list by pairing tool_start
     # with the tool_result that immediately follows it. executor emits them
     # strictly interleaved (start -> result -> start -> result ...), so the
     # last appended entry is always the one a tool_result belongs to. This
     # preserves quiz payloads in session.messages for history reload (V1 parity).
-    async for ev in execute(messages, session, tools, plan, llm, trace, progress_cb):
+    async for ev in execute(messages, session, tools, plan, llm, trace, progress_cb,
+                            search_queries=understanding.search_queries):
         if ev["type"] == "done":
             executor_done = True
             final_answer = ev.get("answer", "")
@@ -1539,6 +1541,8 @@ async def run(
         elif ev["type"] == "tool_result":
             if final_tool_calls:
                 final_tool_calls[-1]["result"] = ev.get("result")
+        elif ev["type"] == "thinking" and not ev.get("summary"):
+            live_thinking_chars += len(ev.get("content") or "")
         yield ev
 
     if not executor_done:
@@ -1549,7 +1553,10 @@ async def run(
     # Template narration (understanding/planning) stays; this adds one bounded
     # LLM pass that compresses the raw reasoning into 3-5 readable sentences.
     # Gated to non-chitchat turns with real reasoning content; fail-open.
+    # Skipped when live streaming already showed the full reasoning this turn
+    # (REASONING_LIVE_MAX_CHARS>=0-on) — a second digest would duplicate it.
     if (executor_done and settings.reasoning_summary_level == "real_summary"
+            and live_thinking_chars == 0
             and len(raw_thinking.strip()) >= 200
             and (not understanding.intent
                  or understanding.intent.value != "chitchat")):

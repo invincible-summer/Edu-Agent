@@ -3,14 +3,13 @@
 import { apiFetch } from "./api-fetch";
 import { API_BASE } from "./api";
 import type {
+  AgentHistory,
+  AgentMode,
   NoteDetail,
   NoteRevision,
-  NoteSuggestion,
   NoteSummary,
   NotesGraph,
   NotesSSEEvent,
-  NotesThread,
-  NotesThreadMessage,
   NoteTemplate,
   VaultSnapshot,
 } from "./types-notes";
@@ -207,53 +206,35 @@ export async function deleteCustomTemplate(templateId: string): Promise<void> {
     "Delete template");
 }
 
-// --- suggestions ---------------------------------------------------------------------------
+// --- 每笔记专属智能体（2026-09 重构：替代旧 threads/suggestions） --------------------
 
-export async function getSuggestions(status?: string): Promise<{ suggestions: NoteSuggestion[] }> {
-  const q = status ? `?status=${encodeURIComponent(status)}` : "";
-  return jsonOrThrow(await apiFetch(`${BASE}/notes/suggestions${q}`), "Get suggestions");
+/** 仓库级对话（未打开具体笔记时）在后端的存储键。 */
+export const VAULT_AGENT_KEY = "_vault";
+
+function agentBase(noteKey: string): string {
+  return `${BASE}/notes/notes/${encodeURIComponent(noteKey || VAULT_AGENT_KEY)}/agent`;
 }
 
-export async function applySuggestion(id: string): Promise<{ note: NoteSummary; content: string }> {
+export async function getNoteAgent(noteKey: string): Promise<AgentHistory> {
+  return jsonOrThrow(await apiFetch(agentBase(noteKey)), "Get note agent");
+}
+
+export async function patchNoteAgent(
+  noteKey: string, mode: AgentMode,
+): Promise<{ note_id: string; mode: AgentMode }> {
   return jsonOrThrow(
-    await apiFetch(`${BASE}/notes/suggestions/${encodeURIComponent(id)}/apply`, {
-      method: "POST",
+    await apiFetch(agentBase(noteKey), {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode }),
     }),
-    "Apply suggestion");
+    "Update note agent");
 }
 
-export async function dismissSuggestion(id: string): Promise<void> {
+export async function clearNoteAgent(noteKey: string): Promise<void> {
   await jsonOrThrow(
-    await apiFetch(`${BASE}/notes/suggestions/${encodeURIComponent(id)}/dismiss`, {
-      method: "POST",
-    }),
-    "Dismiss suggestion");
-}
-
-// --- thread ---------------------------------------------------------------------------------
-
-export async function getNotesThreads(): Promise<{ threads: NotesThread[] }> {
-  return jsonOrThrow(await apiFetch(`${BASE}/notes/threads`), "Get threads");
-}
-
-export async function createNotesThread(title = ""): Promise<{ thread: NotesThread & { messages: NotesThreadMessage[] } }> {
-  return jsonOrThrow(await apiFetch(`${BASE}/notes/threads`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ title }) }), "Create thread");
-}
-
-export async function getNotesThread(threadId = "default"): Promise<{ thread_id: string; title: string; mode: string; messages: NotesThreadMessage[] }> {
-  return jsonOrThrow(await apiFetch(`${BASE}/notes/threads/${encodeURIComponent(threadId)}`), "Get thread");
-}
-
-export async function patchNotesThread(threadId: string, body: { title?: string; mode?: string }): Promise<void> {
-  await jsonOrThrow(await apiFetch(`${BASE}/notes/threads/${encodeURIComponent(threadId)}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }), "Update thread");
-}
-
-export async function deleteNotesThread(threadId: string): Promise<void> {
-  await jsonOrThrow(await apiFetch(`${BASE}/notes/threads/${encodeURIComponent(threadId)}`, { method: "DELETE" }), "Delete thread");
-}
-
-export async function clearNotesThread(threadId = "default"): Promise<void> {
-  await jsonOrThrow(await apiFetch(`${BASE}/notes/threads/${encodeURIComponent(threadId)}/messages`, { method: "DELETE" }), "Clear thread");
+    await apiFetch(agentBase(noteKey), { method: "DELETE" }),
+    "Clear note agent");
 }
 
 // --- export -----------------------------------------------------------------------------------
@@ -351,13 +332,14 @@ export function notesGenerateStream(
 export function notesChatStream(
   body: {
     message: string;
+    /** note_id 为空 = 仓库级对话（智能体只读） */
     context?: { note_id?: string; scope?: string };
+    /** 三模式 ask/plan/authorize（旧值由后端映射） */
     mode?: string;
-    /** approve_plan = 批复线程中最后一条助手消息为计划并自动执行 */
-    action?: string;
+    /** approve_plan = 批复待批复计划（仅一次）并自动切入授权执行；reject_plan = 驳回 */
+    action?: "" | "approve_plan" | "reject_plan";
     /** /notes/upload 返回的图片附件 {id, filename}（多模态通道） */
     attachments?: { id: string; filename: string }[];
-    thread_id?: string;
   },
   signal?: AbortSignal,
 ): AsyncGenerator<NotesSSEEvent> {

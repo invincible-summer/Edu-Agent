@@ -1,15 +1,16 @@
-// M-Notes 页面状态：仓库快照 + 当前笔记 + 脏态自动保存 + AI 线程。
+// M-Notes 页面状态：仓库快照 + 当前笔记 + 脏态自动保存 + 每笔记专属智能体。
 // 约定与 useChatStore 一致：SSR 安全（不在 initializer 读 localStorage）、
 // 流式增量在本地累积、AbortController 挂在 store 上。
 import { create } from "zustand";
 import type {
+  AgentHistory,
+  AgentMessage,
   AgentMode,
   NoteDetail,
   NoteSummary,
-  NotesThread,
-  NotesThreadMessage,
   VaultSnapshot,
 } from "./types-notes";
+import { normalizeAgentMode } from "./types-notes";
 
 export type SaveState = "saved" | "dirty" | "saving" | "error" | "conflict";
 
@@ -61,24 +62,31 @@ interface NotesState {
   reloadCurrent: () => Promise<void>;
   closeNote: () => void;
 
-  // --- ai panel ---
+  // --- ai panel（每笔记专属智能体：2026-09 重构，无线程概念） ---
   agentMode: AgentMode;
   setAgentMode: (m: AgentMode) => void;
+  /** 服务端 mode_changed 事件同步（不回写 PATCH，避免循环） */
+  applyModeFromServer: (m: string) => void;
   aiPanelOpen: boolean;
   toggleAiPanel: () => void;
-  threads: NotesThread[];
-  activeThreadId: string;
-  thread: NotesThreadMessage[];
-  loadThreads: () => Promise<void>;
-  loadThread: (threadId?: string) => Promise<void>;
-  setActiveThread: (threadId: string) => Promise<void>;
+  agent: AgentHistory | null;
+  agentMessages: AgentMessage[];
+  /** 当前智能体对应的存储键：笔记 id，或仓库级 "_vault" */
+  agentKey: string;
+  loadAgent: (noteKey?: string) => Promise<void>;
+  setAgentPlan: (plan: AgentHistory["pending_plan"]) => void;
+  clearAgentChat: () => Promise<void>;
   aiStreaming: boolean;
   pendingAnswer: string;
   aiError: string;
   aborter: AbortController | null;
 
   // --- live updates from agent (SSE) ---
-  applyRemoteUpdate: (noteId: string, content: string, revision: number) => void;
+  /** 编辑器脏态时收到的助手更新：置横幅由用户决断，而不是静默跳过/覆盖 */
+  pendingRemoteRefresh: { noteId: string; title: string } | null;
+  dismissPendingRemoteRefresh: () => void;
+  acceptPendingRemoteRefresh: () => Promise<void>;
+  applyRemoteUpdate: (noteId: string, content: string, revision: number, title?: string) => void;
 
   // --- selectors helpers ---
   noteById: (id: string) => NoteSummary | undefined;
@@ -96,7 +104,6 @@ const EMPTY_VAULT: VaultSnapshot = {
     unresolved_links: [],
     due_review_count: 0,
     due_review_ids: [],
-    pending_suggestions: 0,
   },
 };
 
@@ -156,9 +163,13 @@ export const useNotesStore = create<NotesState>((set, get) => ({
     try {
       const { getNote } = await import("./api-notes");
       const detail = await getNote(noteId);
-      // 切换前若正在编辑旧笔记，先尽力保存一次
+      // 切到「另一篇」笔记前若正在编辑，先尽力保存一次。同 id 重开
+      // （远程更新/载入最新）绝不自动保存——旧缓冲的 base_revision 已过期，
+      // 保存必 409，还会把助手刚写入的内容顶掉。
       const prev = get().detail;
-      if (prev && get().saveState === "dirty") await get().saveNow();
+      if (prev && prev.note.id !== noteId && get().saveState === "dirty") {
+        await get().saveNow();
+      }
       set({ currentId: noteId, detail, content: detail.content,
             saveState: "saved", saveError: "", conflictDetail: null });
     } catch (e) {
@@ -216,63 +227,90 @@ export const useNotesStore = create<NotesState>((set, get) => ({
     get().openNote(null);
   },
 
-  agentMode: "collab",
+  agentMode: "ask",
   setAgentMode: (m) => {
+    const mode = normalizeAgentMode(m);
     if (typeof window !== "undefined") {
-      localStorage.setItem("edu-agent-notes-mode", m);
+      localStorage.setItem("edu-agent-notes-mode", mode);
     }
-    set({ agentMode: m });
-    void import("./api-notes").then((api) => api.patchNotesThread(get().activeThreadId, { mode: m })).catch(() => undefined);
+    set({ agentMode: mode });
+    // 模式是每笔记智能体的持久状态（服务端枚举校验）
+    const key = get().agentKey;
+    if (key) {
+      void import("./api-notes").then((api) => api.patchNoteAgent(key, mode))
+        .catch(() => undefined);
+    }
+  },
+  applyModeFromServer: (m) => {
+    const mode = normalizeAgentMode(m);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("edu-agent-notes-mode", mode);
+    }
+    const agent = get().agent;
+    set({ agentMode: mode,
+          agent: agent ? { ...agent, mode } : agent });
   },
   aiPanelOpen: true,
   toggleAiPanel: () => set((s) => ({ aiPanelOpen: !s.aiPanelOpen })),
-  threads: [],
-  activeThreadId: typeof window !== "undefined"
-    ? localStorage.getItem("edu-agent-notes-thread") || "default"
-    : "default",
-  thread: [],
-  loadThreads: async () => {
+  agent: null,
+  agentMessages: [],
+  agentKey: "",
+  loadAgent: async (noteKey) => {
+    const key = noteKey ?? get().agentKey;
+    if (!key) return;
+    set({ agentKey: key });
     try {
-      const { getNotesThreads } = await import("./api-notes");
-      const { threads } = await getNotesThreads();
-      set({ threads });
-      if (!threads.some((t) => t.thread_id === get().activeThreadId)) {
-        await get().setActiveThread(threads[0]?.thread_id || "default");
-      }
+      const { getNoteAgent } = await import("./api-notes");
+      const agent = await getNoteAgent(key);
+      set({ agent, agentMessages: agent.messages || [],
+            agentMode: normalizeAgentMode(String(agent.mode || "ask")) });
     } catch {
-      set({ threads: [] });
+      // 笔记不存在等场景：保持空历史，不阻塞页面
+      set({ agent: null, agentMessages: [] });
     }
   },
-  loadThread: async (threadId) => {
-    const id = threadId || get().activeThreadId;
-    try {
-      const { getNotesThread } = await import("./api-notes");
-      const result = await getNotesThread(id);
-      set({ thread: result.messages, activeThreadId: result.thread_id,
-            agentMode: (result.mode || "collab") as AgentMode });
-    } catch {
-      set({ thread: [] });
-    }
+  setAgentPlan: (plan) => {
+    const agent = get().agent;
+    if (agent) set({ agent: { ...agent, pending_plan: plan } });
   },
-  setActiveThread: async (threadId) => {
-    if (typeof window !== "undefined") localStorage.setItem("edu-agent-notes-thread", threadId);
-    set({ activeThreadId: threadId, thread: [] });
-    await get().loadThread(threadId);
+  clearAgentChat: async () => {
+    const key = get().agentKey;
+    if (!key) return;
+    try {
+      const { clearNoteAgent } = await import("./api-notes");
+      await clearNoteAgent(key);
+      await get().loadAgent(key);
+    } catch { /* keep old */ }
   },
   aiStreaming: false,
   pendingAnswer: "",
   aiError: "",
   aborter: null,
 
-  applyRemoteUpdate: (noteId, content, revision) => {
+  pendingRemoteRefresh: null,
+  dismissPendingRemoteRefresh: () => set({ pendingRemoteRefresh: null }),
+  acceptPendingRemoteRefresh: async () => {
+    const pending = get().pendingRemoteRefresh;
+    set({ pendingRemoteRefresh: null });
+    if (pending && pending.noteId === get().currentId) {
+      await get().reloadCurrent();
+    }
+  },
+
+  applyRemoteUpdate: (noteId, content, revision, title) => {
     const state = get();
-    // 用户没在改这份笔记时，热更新编辑器缓冲；否则只提示（避免踩掉输入）
-    if (state.currentId === noteId && state.saveState !== "dirty") {
-      set({ content, saveState: "saved",
-            detail: state.detail
-              ? { ...state.detail, content,
-                  note: { ...state.detail.note, revision } }
-              : null });
+    if (state.currentId === noteId) {
+      if (state.saveState === "dirty") {
+        // 用户正在编辑：不踩输入，也不静默丢弃——置横幅由用户决断
+        set({ pendingRemoteRefresh: { noteId, title: title || "" } });
+      } else {
+        set({ content, saveState: "saved",
+              detail: state.detail
+                ? { ...state.detail, content,
+                    note: { ...state.detail.note, revision } }
+                : null,
+              pendingRemoteRefresh: null });
+      }
     }
     void state.loadVault();
   },

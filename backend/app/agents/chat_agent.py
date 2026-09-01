@@ -27,7 +27,7 @@ from ..core.session import TutorSession, save_session
 from ..core.tool_base import Tool
 from ..core.tool_protocol import ErrorCode, ToolResult, err, ok
 from ..core.trace import Trace
-from ..core.config import trace_dir_path
+from ..core.config import settings, trace_dir_path
 from ..core.validator import validate_tool_args
 from ..prompts.tutor import TUTOR_SYSTEM, grade_preamble
 from ..prompts.tutor import error_recovery_hint
@@ -555,9 +555,11 @@ async def chat_turn(
     except Exception:
         mm_images = []
 
-    # Provider reasoning_content is hidden CoT and must never be forwarded to
-    # the browser.  Public thinking comes from Supervisor reasoning summaries.
-    live_remaining = 0
+    # Live thinking stream (display-only), same gate contract as executor:
+    # -1 streams reasoning_content deltas to the browser, 0 keeps the legacy
+    # hidden-CoT behavior, >0 caps chars. Never persisted, never TTS'd.
+    from .reasoning_live import LiveThinkingGate
+    live_gate = LiveThinkingGate(settings.reasoning_live_max_chars)
 
     if intent == "direct":
         yield {"type": "step", "step": "thinking"}
@@ -574,8 +576,10 @@ async def chat_turn(
                 elif ev["kind"] == "done":
                     trace.llm_call(None, ev.get("usage"))
                 elif ev["kind"] == "thinking":
-                    # Hidden provider reasoning is intentionally not streamed.
-                    pass
+                    live_delta = live_gate.take(ev["delta"])
+                    if live_delta:
+                        yield {"type": "thinking", "content": live_delta,
+                               "is_delta": True, "summary": False}
                 elif ev["kind"] == "retry":
                     trace.log("retry", branch="direct", attempt=ev.get("attempt"),
                                reason=ev.get("reason"))
@@ -618,6 +622,10 @@ async def chat_turn(
             async for ev in llm.stream(context, tools=tool_schemas):
                 if ev["kind"] == "thinking":
                     thinking_buf += ev["delta"]
+                    live_delta = live_gate.take(ev["delta"])
+                    if live_delta:
+                        yield {"type": "thinking", "content": live_delta,
+                               "is_delta": True, "summary": False}
                 elif ev["kind"] == "answer":
                     answer_buf += ev["delta"]
                     # 伪工具标签护栏：标签形成即停流，改走真实检索（见下方分支）

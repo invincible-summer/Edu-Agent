@@ -360,12 +360,19 @@ async def execute(
     llm: AsyncLLMClient,
     trace: Trace,
     progress_cb: Callable[[str], Any] | None = None,
+    *,
+    search_queries: list[str] | None = None,
 ) -> AsyncGenerator[dict[str, Any], None]:
     """Run the turn's ReAct loop (or direct answer), yielding SSE events.
 
     `messages` is the already-assembled context (L1+L2+L3+current user), ready
     to feed the LLM. `plan` narrows the visible tools and injects a recap.
     An empty plan -> direct, no-tool answer (chitchat path).
+
+    `search_queries` carries the LLM-refined retrieval terms produced by task
+    understanding (R11). When the deterministic pre-retrieval below fires, the
+    first term becomes the primary query instead of the raw spoken sentence;
+    empty/None keeps the raw-message fallback (build_query).
     """
     gated = settings.skill_runtime_mode == "gated" and plan is not None
     plan_step_index = 0
@@ -425,14 +432,16 @@ async def execute(
     # Raw reasoning accumulated across ReAct steps.  Each step resets its own
     # thinking_buf, so without this the done event only carries the FINAL
     # step's reasoning and the supervisor's real_summary digest loses the
-    # main explanation step's material.  Never streamed directly (hidden CoT).
+    # main explanation step's material.
     thinking_parts: list[str] = []
-    # Provider reasoning_content is hidden CoT.  Keep it internal for bounded
-    # telemetry/optional end-of-turn summarization; never stream it to SSE.
-    # The old REASONING_LIVE_MAX_CHARS preview leaked arbitrary internal
-    # deliberation and also made the UI look like it was answering while it was
-    # only narrating, so it is intentionally ignored for serving safety.
-    live_remaining = 0
+    # Live thinking stream (display-only): REASONING_LIVE_MAX_CHARS=-1 streams
+    # provider reasoning_content deltas to the browser as thinking events
+    # (summary=False) so the student watches the deep-thinking process; 0
+    # restores the hidden-CoT behavior; >0 caps total streamed chars. The
+    # internal accumulation above (telemetry/real_summary material, done
+    # tail-cap 6000) is unchanged, and raw CoT is still never persisted.
+    from .reasoning_live import LiveThinkingGate
+    live_gate = LiveThinkingGate(settings.reasoning_live_max_chars)
     empty_answer_retries = 0
     active_tool_message_mode = (settings.tool_message_mode
                                 if settings.tool_message_mode in {"legacy", "shadow", "native"}
@@ -474,8 +483,16 @@ async def execute(
         except Exception:
             merged_files = []
         if merged_files:
-            pre_args = {"query": build_query(user_msg, grounding, merged_files),
+            # 预检索查询精炼：task understanding 阶段 LLM 预分析的精炼检索词
+            # （概念/篇目/课文名）优先，口语整句只作兜底——原句直查 BM25 的
+            # 词面稀释是预检索失配的主因。
+            focus = [str(q).strip() for q in (search_queries or [])
+                     if str(q).strip()][:3]
+            pre_args = {"query": (focus[0] if focus
+                                  else build_query(user_msg, grounding, merged_files)),
                         "top_k": 6}
+            if len(focus) > 1:
+                pre_args["focus_queries"] = focus
             if grounding.file_ids:
                 pre_args["file_ids"] = list(grounding.file_ids)
             yield {"type": "tool_start", "name": "knowledge_search", "args": pre_args, "auto": True}
@@ -487,6 +504,8 @@ async def execute(
                       status=pre_result.status, reason="auto_preresearch",
                       grounding_reason=grounding.trace_reason,
                       grounding_file_ids=list(grounding.file_ids),
+                      query_source=("llm_focus" if focus else "raw_message"),
+                      focus_variants=len(focus),
                       error_code=pre_result.error_code or "",
                       error_message=(pre_result.text or "")[:160],
                       gate_drop_reasons=(((pre_result.data or {}).get("telemetry")
@@ -552,12 +571,17 @@ async def execute(
     # Once deterministic grounding has supplied the evidence, spending the
     # remaining tool-call budget on hidden provider reasoning is counterproductive:
     # it was the source of long "thinking" stalls and empty/partial answers.
-    # Keep internal reasoning available for telemetry, but reserve the next
-    # completion for the student-visible grounded answer.
-    if grounding.required:
+    # That clamp stays in force only while live thinking streaming is OFF —
+    # with REASONING_LIVE_MAX_CHARS>=0-off restored there is nothing to show
+    # for the spent budget. When live streaming is ON the grounded answer runs
+    # with thinking visible: budget_forces_direct and
+    # incomplete_answer_recovery remain the guards against stalls.
+    if grounding.required and not live_gate.enabled:
         force_disable_thinking = True
         trace.log("reasoning_policy_override", reason="mandatory_material_grounding",
                   disable_thinking=True)
+    trace.log("reasoning_live_gate", mode=live_gate.remaining_hint,
+              grounding_required=grounding.required)
 
     # --- B4 多模态路由：本轮含图（图片附件 + 预检索图表页快照）→ tutor 切
     # MULTIMODAL 通道；多模态轮开启思考推理（覆盖 grounding 的关思考覆盖），
@@ -637,6 +661,10 @@ async def execute(
                         trace.llm_call(None, ev.get("usage"))
                     elif ev["kind"] == "thinking":
                         thinking_attempt += ev["delta"]
+                        live_delta = live_gate.take(ev["delta"])
+                        if live_delta:
+                            yield {"type": "thinking", "content": live_delta,
+                                   "is_delta": True, "summary": False}
                     elif ev["kind"] == "capability_fallback":
                         trace.log("provider_capability_fallback", step=0,
                                   reason=ev.get("reason", "provider_rejected_optional_controls"))
@@ -735,8 +763,12 @@ async def execute(
             async for ev in stream:
                 if ev["kind"] == "thinking":
                     thinking_buf += ev["delta"]
-                    # Accumulate provider reasoning internally only; never
-                    # forward raw reasoning_content to the student.
+                    # Live stream (display-only) when the gate allows it; the
+                    # internal accumulation above feeds telemetry/real_summary.
+                    live_delta = live_gate.take(ev["delta"])
+                    if live_delta:
+                        yield {"type": "thinking", "content": live_delta,
+                               "is_delta": True, "summary": False}
                 elif ev["kind"] == "answer":
                     answer_buf += ev["delta"]
                     # 伪工具标签护栏：假 <knowledge_search> 标签形成即停流转发，

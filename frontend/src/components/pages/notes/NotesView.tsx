@@ -6,16 +6,18 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { listSessions } from "@/lib/api";
-import { FolderOpen, Minimize2, Network, NotebookPen } from "lucide-react";
+import { FolderOpen, Minimize2, Network, NotebookPen, Sparkles, X } from "lucide-react";
 import { ErrorNote, PageSkeleton } from "@/components/ui/EmptyState";
 import { cn } from "@/lib/cn";
 import { makePageT } from "@/lib/i18n-page";
 import { useUIStore } from "@/lib/store";
 import { NOTES_LAYOUT_DEFAULTS, useNotesStore } from "@/lib/store-notes";
+import { VAULT_AGENT_KEY } from "@/lib/api-notes";
 import {
   createNote, deleteNote, exportNoteFile, exportVaultZip, getNoteTemplates,
   patchNote, createNotesFolder, renameNotesFolder, deleteNotesFolder,
 } from "@/lib/api-notes";
+import { normalizeAgentMode } from "@/lib/types-notes";
 import type { NotesGraph } from "@/lib/types-notes";
 import type { SessionItem } from "@/lib/types";
 import { STRINGS } from "@/app/(workspace)/notes/[[...noteId]]/strings";
@@ -39,7 +41,9 @@ export function NotesView({ noteId }: { noteId?: string }) {
     vault, vaultError, vaultLoading, loadVault,
     currentId, detail, content, saveState, saveError, conflictDetail,
     openNote, setContent, saveNow, reloadCurrent,
-    setAgentMode, setActiveThread, threads, aiPanelOpen, toggleAiPanel,
+    setAgentMode, loadAgent, pendingRemoteRefresh,
+    acceptPendingRemoteRefresh, dismissPendingRemoteRefresh,
+    aiPanelOpen, toggleAiPanel,
     rightWidth, setRightWidth,
     hydrateLayout, focusMode, setFocusMode,
   } = useNotesStore();
@@ -54,16 +58,15 @@ export function NotesView({ noteId }: { noteId?: string }) {
   const [revisionOpen, setRevisionOpen] = useState(false);
   const [scrollRatio, setScrollRatio] = useState(0);
   const [sessions, setSessions] = useState<SessionItem[]>([]);
+  const [aiDrawerOpen, setAiDrawerOpen] = useState(false);
   const toolbar = useMemo(() => makeToolbar(tr), [tr]);
 
-  // agentMode 从 localStorage 水合（旧值 suggest→collab、cowrite→auto）
+  // agentMode 从 localStorage 水合（旧四模式值迁移：suggest/collab→plan、
+  // cowrite/auto→authorize；真实模式以每笔记智能体状态为准，loadAgent 会覆盖）
   useEffect(() => {
     const saved = localStorage.getItem("edu-agent-notes-mode");
-    const legacy: Record<string, string> = { suggest: "collab", cowrite: "auto" };
-    const mode = legacy[saved ?? ""] ?? saved;
-    if (mode === "plan" || mode === "collab" || mode === "auto" || mode === "ask") {
-      setAgentMode(mode);
-    }
+    const mode = normalizeAgentMode(saved);
+    setAgentMode(mode);
   }, [setAgentMode]);
 
   // 初始加载
@@ -72,13 +75,15 @@ export function NotesView({ noteId }: { noteId?: string }) {
     hydrateLayout();
     void getNoteTemplates().then((r) => setTemplates(r.templates)).catch(() => {});
     void listSessions().then((r) => setSessions(r.sessions)).catch(() => {});
-    void useNotesStore.getState().loadThreads();
-    void useNotesStore.getState().loadThread();
   }, [loadVault, hydrateLayout]);
   useEffect(() => {
     if (noteId !== currentId) void openNote(noteId ?? null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noteId]);
+  // 切换笔记 = 切换其专属智能体（历史/模式/待批复计划）
+  useEffect(() => {
+    void loadAgent(currentId || VAULT_AGENT_KEY);
+  }, [currentId, loadAgent]);
 
   // 自动保存：dirty 后 800ms
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -173,16 +178,26 @@ export function NotesView({ noteId }: { noteId?: string }) {
   const resourceLinks = useMemo(() => [
     ...(vault?.notes ?? []).map((note) => ({ id: note.id, title: note.title, url: `note://${note.id}`, kind: "note" as const })),
     ...sessions.map((session) => ({ id: session.session_id, title: session.title, url: `conversation://session/${session.session_id}`, kind: "session" as const })),
-    ...threads.map((thread) => ({ id: thread.thread_id, title: thread.title, url: `conversation://notes/${thread.thread_id}`, kind: "notes_thread" as const })),
-  ], [vault?.notes, sessions, threads]);
+  ], [vault?.notes, sessions]);
 
+  // 助手写入后的自动刷新：干净态直接热替换 + 重开详情（含反向链接）；
+  // 脏态由 store 置横幅（ai.remote.banner），绝不静默跳过或覆盖用户输入。
   const remoteUpdate = (noteId_: string, content_: string, revision: number, title: string) => {
     if (!noteId_) return;
-    useNotesStore.getState().applyRemoteUpdate(noteId_, content_, revision);
-    if (noteId_ === currentId) {
-      void openNote(noteId_); // 已打开则刷新详情（含反向链接）
-    } else if (title) {
-      // 其他笔记被更新：轻提示由 AI 面板承担，这里仅刷新列表
+    const st = useNotesStore.getState();
+    st.applyRemoteUpdate(noteId_, content_, revision, title);
+    if (noteId_ === st.currentId && useNotesStore.getState().saveState !== "dirty") {
+      void st.reloadCurrent();
+    }
+  };
+
+  // 窄屏（<lg）AI 面板不可内联：悬浮按钮 + motion-drawer 抽屉承接
+  const openAiSurface = () => {
+    if (typeof window !== "undefined"
+        && window.matchMedia("(min-width: 1024px)").matches) {
+      toggleAiPanel();
+    } else {
+      setAiDrawerOpen(true);
     }
   };
 
@@ -230,7 +245,7 @@ export function NotesView({ noteId }: { noteId?: string }) {
             )}
             <div className="flex-1" />
             <PanelToggleButton
-              side="right" open={aiPanelOpen} onToggle={toggleAiPanel}
+              side="right" open={aiPanelOpen} onToggle={openAiSurface}
               label={tr("tb.toggleAi")}
             />
           </div>
@@ -246,7 +261,6 @@ export function NotesView({ noteId }: { noteId?: string }) {
             onOpenNote={(id) => { setShowGraph(false); navigate(id); }}
             onCreateNote={(title) => void handleCreate({ title })}
             onOpenSession={(id) => router.push(`/chat/${encodeURIComponent(id)}`)}
-            onOpenThread={(id) => { void setActiveThread(id); if (!aiPanelOpen) toggleAiPanel(); }}
             onOpenTextbook={() => router.push("/resources/textbooks")}
             onGenerate={() => setWizardOpen(true)}
           />
@@ -277,7 +291,7 @@ export function NotesView({ noteId }: { noteId?: string }) {
               onDelete={() => void handleDelete()}
               onOpenCenter={() => setCenterOpen(true)}
               rightOpen={aiPanelOpen}
-              onToggleRight={toggleAiPanel}
+              onToggleRight={openAiSurface}
               viewMode={viewMode}
               onViewMode={setViewMode}
               graphOn={showGraph}
@@ -287,6 +301,26 @@ export function NotesView({ noteId }: { noteId?: string }) {
             />
             {saveError && saveState !== "conflict" && (
               <div className="px-4 py-1 text-[11px] text-danger">{saveError}</div>
+            )}
+            {/* 助手更新 × 本地脏态：横幅由用户决断（载入最新 / 保留我的） */}
+            {pendingRemoteRefresh && pendingRemoteRefresh.noteId === currentId && (
+              <div className="flex items-center gap-2 border-b border-accent/25 bg-accent-soft/50 px-4 py-1.5 text-[11px] text-accent-strong">
+                <Sparkles size={12} className="shrink-0" />
+                <span className="min-w-0 flex-1 truncate">{tr("ai.remote.banner")}</span>
+                <button
+                  onClick={() => void acceptPendingRemoteRefresh()}
+                  className="shrink-0 cursor-pointer rounded-md border border-accent/40 px-2 py-0.5 font-medium transition-colors hover:bg-accent-soft"
+                >
+                  {tr("ai.remote.loadLatest")}
+                </button>
+                <button
+                  onClick={dismissPendingRemoteRefresh}
+                  aria-label={tr("ai.remote.keepMine")}
+                  className="shrink-0 cursor-pointer rounded-md p-1 text-muted transition-colors hover:bg-surface-hover hover:text-fg"
+                >
+                  <X size={12} />
+                </button>
+              </div>
             )}
             {/* 编辑/预览 */}
             <div className="flex min-h-0 flex-1">
@@ -322,7 +356,6 @@ export function NotesView({ noteId }: { noteId?: string }) {
                     onResourceLink={(url) => {
                       if (url.startsWith("note://")) navigate(url.slice("note://".length));
                       else if (url.startsWith("conversation://session/")) router.push(`/chat/${encodeURIComponent(url.slice("conversation://session/".length))}`);
-                      else if (url.startsWith("conversation://notes/")) void setActiveThread(url.slice("conversation://notes/".length));
                     }}
                   />
                   <BacklinksPanel
@@ -332,7 +365,6 @@ export function NotesView({ noteId }: { noteId?: string }) {
                     onOpenResource={(url) => {
                       if (url.startsWith("note://")) navigate(url.slice("note://".length));
                       else if (url.startsWith("conversation://session/")) router.push(`/chat/${encodeURIComponent(url.slice("conversation://session/".length))}`);
-                      else if (url.startsWith("conversation://notes/")) void setActiveThread(url.slice("conversation://notes/".length));
                     }}
                   />
                 </div>
@@ -342,7 +374,7 @@ export function NotesView({ noteId }: { noteId?: string }) {
         )}
       </div>
 
-      {/* 右栏：AI 面板（可折叠 + 边缘拖宽） */}
+      {/* 右栏：AI 面板（lg+ 内联可拖宽；<lg 由悬浮按钮 + 抽屉承接） */}
       {aiPanelOpen && (
         <>
           <PanelResizer
@@ -359,6 +391,33 @@ export function NotesView({ noteId }: { noteId?: string }) {
             />
           </div>
         </>
+      )}
+      {!aiPanelOpen && (
+        <button
+          onClick={openAiSurface}
+          title={tr("tb.toggleAi")}
+          aria-label={tr("tb.toggleAi")}
+          className="fixed bottom-5 right-4 z-40 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-border bg-surface text-accent shadow-lg transition-colors hover:bg-accent-soft lg:hidden"
+        >
+          <Sparkles size={16} />
+        </button>
+      )}
+      {aiDrawerOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          <div
+            className="absolute inset-0 bg-black/30"
+            onClick={() => setAiDrawerOpen(false)}
+            aria-hidden
+          />
+          <div className="motion-drawer absolute right-0 top-0 h-full w-[min(24rem,92vw)] bg-surface shadow-2xl">
+            <AIPanel
+              tr={tr}
+              onRemoteUpdate={remoteUpdate}
+              onVaultChanged={() => void loadVault()}
+              onClose={() => setAiDrawerOpen(false)}
+            />
+          </div>
+        </div>
       )}
 
       {/* 专注模式：覆盖整个应用的编辑覆盖层，Esc 退出 */}

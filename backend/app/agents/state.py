@@ -67,6 +67,11 @@ class TaskUnderstanding:
     # are control-plane facts, not a second teaching strategy.
     response_format: str = ""  # one_sentence | concise | table | steps | ""
     allow_followup_assessment: bool = True
+    # LLM-refined retrieval terms for the turn (concept/lesson/chapter names).
+    # Empty on the rule path -> pre-retrieval falls back to the raw message.
+    # Bounded to 3 by task_understanding; each entry is a short search term,
+    # never the full sentence (see preresearch R10 contract).
+    search_queries: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -80,6 +85,7 @@ class TaskUnderstanding:
             "source": self.source,
             "response_format": self.response_format,
             "allow_followup_assessment": self.allow_followup_assessment,
+            "search_queries": list(self.search_queries),
         }
 
     @classmethod
@@ -95,6 +101,8 @@ class TaskUnderstanding:
             source=d.get("source", "rule") or "rule",
             response_format=str(d.get("response_format", "") or ""),
             allow_followup_assessment=bool(d.get("allow_followup_assessment", True)),
+            search_queries=[str(q).strip() for q in (d.get("search_queries") or [])
+                            if str(q).strip()][:3],
         )
 
 

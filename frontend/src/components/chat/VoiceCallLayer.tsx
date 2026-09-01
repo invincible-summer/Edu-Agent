@@ -8,10 +8,13 @@
  *      黑板宽度）：虚拟空白头像 + 通话计时 + 声波状态，底部一排装饰
  *      导航图标（返回/主页/多任务，无真实功能）；挂断与停止播报都在
  *      底部控制条，窄屏隐藏手机只留黑板；
- *   2. 顶部「板书」黑板：接通即常驻、挂断才收起；三块等分黑板只记老师
- *      讲到的公式句（KaTeX 原文渲染），从上往下写空板、三块都满时擦掉
- *      写得最早的那块再写新的；表格不逐格朗读——整块 markdown 即时整版
- *      驻留至少 7 秒（board_table），之后直到新公式/新表格需要板面才清空；
+ *   2. 顶部「板书」黑板：接通即常驻、挂断才收起；三块等分黑板只记**块状
+ *      公式段**（$$…$$ 本身——行内 $…$ 不上板、也不触发换板），且与实际
+ *      播放同步：句子随其音频出队发声那一刻才挂板（useVoiceCall 的
+ *      speakingSentence 已改为随播放队列更新）；从上往下写空板、三块都满
+ *      时擦掉写得最早的那块再写新的；表格不逐格朗读——整块 markdown 即
+ *      时整版驻留至少 7 秒（board_table），之后直到新公式/新表格需要板面
+ *      才清空；
  *   3. 底部控制条：按住说话 / 停止播报 / 挂断，紧贴输入框上方——
  *      通话期间输入框保持可用，打字消息经同一条 WS 发出（sendText），
  *      老师的回复仍走 TTS 语音通道；浏览器不支持语音识别时可纯打字通话。
@@ -27,7 +30,7 @@ import { t, type Lang } from "@/lib/i18n";
 import { listSessions, loadSession } from "@/lib/api";
 import { useChatStore } from "@/lib/store";
 import { notifySessionChanged } from "@/lib/ws-settings";
-import { Markdown, containsMathMarkdown } from "@/components/chat/markdown";
+import { Markdown, displayMathSegments } from "@/components/chat/markdown";
 import { useVoiceCall, type VoicePhase } from "@/lib/voice/useVoiceCall";
 
 const MINUTE = 60;
@@ -73,8 +76,12 @@ export function FormulaBoard({ lang, sentence, table, active, onClearTable }: {
   }, [table]);
 
   useEffect(() => {
-    if (!sentence || !containsMathMarkdown(sentence)) return;
-    if (sentence === lastTextRef.current) return; // 同句重播不重复上板
+    if (!sentence) return;
+    // 只上板块状公式段（$$…$$ / \[…\]，含定界符）：行内 $…$ 的普通讲解句
+    // 不上板、也不触发换板/擦板；同句多段块式拼成一次板书写入同一块板。
+    const boardText = displayMathSegments(sentence).join("\n\n");
+    if (!boardText) return;
+    if (boardText === lastTextRef.current) return; // 同句重播不重复上板
     if (table) {
       // 表格驻留窗口内新公式不上板（音频播报不受影响）；窗口过后第一个
       // 新公式清空整版表格接管板面——table→null 后本 effect 重跑完成写入。
@@ -83,7 +90,7 @@ export function FormulaBoard({ lang, sentence, table, active, onClearTable }: {
       onClearTable();
       return;
     }
-    lastTextRef.current = sentence;
+    lastTextRef.current = boardText;
     // 从上到下写第一块空板；三块都满时擦掉写得最早的那块（key 即写入序）。
     let target: 0 | 1 | 2 = slots[0] === null
       ? 0
@@ -99,7 +106,7 @@ export function FormulaBoard({ lang, sentence, table, active, onClearTable }: {
       const key = keyRef.current;
       setSlots((prev) => {
         const next: [BoardSlot, BoardSlot, BoardSlot] = [prev[0], prev[1], prev[2]];
-        next[target] = { key, text: sentence };
+        next[target] = { key, text: boardText };
         return next;
       });
       setErasing(null);

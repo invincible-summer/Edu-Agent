@@ -40,16 +40,15 @@ _MAX_FALLBACK_TEXTBOOK_FILES = 12
 _IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tiff", ".tif")
 _MAX_CONTEXT_IMAGES = 3
 
-# 四模式：plan 只讨论出计划；collab 提案待确认；auto 直接写；ask 仅答疑。
-# 旧值（suggest/cowrite）映射到语义最近的新模式，保证老客户端平滑过渡。
-_MODES = ("plan", "collab", "auto", "ask")
-_LEGACY_MODES = {"suggest": "collab", "cowrite": "auto"}
+# 三模式（2026-09 重构）：ask 只问答；plan 只产计划卡（不写入）；authorize
+# 直接修改**当前笔记**（不能新建、不能改其他笔记）。旧四模式值映射：
+# suggest/collab→plan、cowrite/auto→authorize，保证老客户端平滑过渡。
+_MODES = notes_store.AGENT_MODES
+_LEGACY_MODES = dict(notes_store._LEGACY_AGENT_MODES)
 
 
 def normalize_mode(mode: str) -> str:
-    mode = str(mode or "").strip().lower()
-    mode = _LEGACY_MODES.get(mode, mode)
-    return mode if mode in _MODES else "collab"
+    return notes_store.normalize_agent_mode(mode)
 
 
 def is_enabled() -> bool:
@@ -745,48 +744,34 @@ class NotesReadTool(_VaultTool):
                   text=f"已读取《{meta.get('title')}》")
 
 
-class NotesProposeTool(_VaultTool):
-    name = "notes_propose"
-    description = ("提交一条笔记修改提案（协作模式）。kind=replace 时 content "
-                   "给出整篇修订稿；kind=append 时 content 给出要追加的片段。"
-                   "提案会显示在对话中，学生确认后自动应用；一次聚焦一条最重"
-                   "要的修改。")
-    parameters = {
-        "type": "object",
-        "properties": {
-            "note_id": {"type": "string", "description": "目标笔记 id"},
-            "kind": {"type": "string", "enum": ["replace", "append"]},
-            "content": {"type": "string", "description": "建议内容"},
-            "summary": {"type": "string", "description": "一句话说明改了什么、为什么"},
-        },
-        "required": ["note_id", "kind", "content", "summary"],
-    }
-
-    async def run(self, note_id: str = "", kind: str = "replace",
-                  content: str = "", summary: str = "") -> Any:
-        vault = notes_store.load_vault(self.student_id)
-        if vault.find_note(note_id) is None:
-            return err(self.name, ErrorCode.NOT_FOUND, "笔记不存在")
-        item = notes_store.add_suggestion(
-            self.student_id, note_id, kind, content, summary)
-        return ok(self.name, data={"suggestion": item},
-                  text=f"已提交提案：{summary[:80]}")
-
-
 class NotesWriteTool(_VaultTool):
+    """授权模式的写入工具：只允许修改绑定的那一篇笔记。
+
+    安全约束（2026-09 每笔记专属智能体重构）：
+      - note_id 必须等于绑定的 allowed_note_id，改其他笔记直接拒绝；
+      - 携带轮首快照的 base_revision 做乐观并发，学生在智能体运行期间
+        保存的编辑不会被静默覆盖——冲突返回可重试错误，模型重读后重试；
+      - 写入成功后推进期望版本号，同一轮内的连续写入链式生效。
+    """
+
     name = "notes_write"
-    description = ("直接修改一篇笔记的正文（仅完全授权模式或已批复的计划执行"
-                   "可用；协作模式请改用 notes_propose）。必须给出完整的新正"
-                   "文，不是增量片段。")
+    description = ("修改当前笔记的正文（仅授权模式可用，且只能修改当前打开"
+                   "的这一篇笔记）。必须给出完整的新正文，不是增量片段。")
     parameters = {
         "type": "object",
         "properties": {
-            "note_id": {"type": "string", "description": "目标笔记 id"},
+            "note_id": {"type": "string", "description": "目标笔记 id（必须是当前笔记）"},
             "content": {"type": "string", "description": "完整的新正文"},
             "summary": {"type": "string", "description": "本次修改说明"},
         },
         "required": ["note_id", "content", "summary"],
     }
+
+    def __init__(self, student_id: str, allowed_note_id: str,
+                 expected_revision: int | None = None) -> None:
+        super().__init__(student_id)
+        self.allowed_note_id = str(allowed_note_id or "")
+        self.expected_revision = expected_revision
 
     async def run(self, note_id: str = "", content: str = "",
                   summary: str = "") -> Any:
@@ -794,8 +779,23 @@ class NotesWriteTool(_VaultTool):
         meta = vault.find_note(note_id)
         if meta is None:
             return err(self.name, ErrorCode.NOT_FOUND, "笔记不存在")
-        meta = vault.write_note(note_id, content, author="agent",
-                                summary=summary or "助手修改")
+        if note_id != self.allowed_note_id:
+            bound = vault.find_note(self.allowed_note_id)
+            return err(self.name, ErrorCode.NO_TOOL,
+                       "授权范围仅限当前笔记"
+                       f"《{(bound or {}).get('title') or self.allowed_note_id}》；"
+                       "不能修改其他笔记，也不能新建笔记。"
+                       "如需改动其他笔记，请先与学生讨论，由学生自行操作。")
+        try:
+            meta = vault.write_note(note_id, content, author="agent",
+                                    base_revision=self.expected_revision,
+                                    summary=summary or "助手修改")
+        except notes_store.StaleRevisionError:
+            self.expected_revision = int(meta.get("revision") or 1)  # 对齐最新版本
+            return err(self.name, ErrorCode.TOOL_ERROR,
+                       "笔记刚被学生编辑过，本次写入未生效。请先 notes_read 重读"
+                       "最新内容，在其基础上合并你的修改后重试一次。")
+        self.expected_revision = int(meta.get("revision") or 1)
         notes_store.save_vault(vault)
         return ok(self.name,
                   data={"updated_note": vault.note_summary(meta),
@@ -803,47 +803,58 @@ class NotesWriteTool(_VaultTool):
                   text=f"已修改《{meta.get('title')}》")
 
 
-class NotesCreateTool(_VaultTool):
-    name = "notes_create"
-    description = ("新建一篇笔记（仅完全授权模式或已批复的计划执行可用）。适"
-                   "合把对话中讨论出的新主题落成独立笔记并用 [[链接]] 挂进仓"
-                   "库。")
-    parameters = {
-        "type": "object",
-        "properties": {
-            "title": {"type": "string", "description": "笔记标题"},
-            "content": {"type": "string", "description": "笔记正文"},
-            "folder_id": {"type": "string", "description": "归入的文件夹 id（可空）"},
-        },
-        "required": ["title", "content"],
-    }
-
-    async def run(self, title: str = "", content: str = "",
-                  folder_id: str = "") -> Any:
-        vault = notes_store.load_vault(self.student_id)
-        meta = vault.create_note(title=title, content=content,
-                                 folder_id=folder_id, author="agent")
-        notes_store.save_vault(vault)
-        return ok(self.name, data={"updated_note": vault.note_summary(meta)},
-                  text=f"已创建《{meta.get('title')}》")
-
-
 # --- 对话循环 ----------------------------------------------------------------------
 
 _MODE_DIRECTIVES = {
-    "plan": ("plan（计划模式）：只与学生讨论并敲定笔记内容，输出可执行的结构"
-             "化修改计划（逐条列出：新建/修改哪篇笔记、目标、要点）。本模式绝"
-             "不直接修改笔记，也不调用任何写入工具；学生「批复」后才会切换到"
-             "执行。"),
-    "collab": ("collab（协作模式）：对笔记的任何修改都必须通过 notes_propose "
-               "提交提案（附 summary 与完整内容），由学生在对话中确认后自动"
-               "应用；不要直接写入。"),
-    "auto": ("auto（完全授权模式）：学生已完全授权，可用 notes_write / "
-             "notes_create 直接修改与新建笔记，无需逐步确认；但每次写入都要"
-             "在回复里说明改了什么、为什么。"),
-    "ask": ("ask（聊天问答模式）：只回答知识点细节与学习问题；不修改笔记，"
-            "也不要提出修改笔记的建议。"),
+    "ask": ("ask（问答模式）：只回答与当前笔记、仓库和学习相关的问题；可读取"
+            "当前笔记、其他笔记（notes_search / notes_read）与教材资料"
+            "（knowledge_search）；不修改任何笔记，也不主动提出修改建议。"),
+    "plan": ("plan（计划模式）：只讨论并产出针对**当前笔记**的结构化修改计划；"
+             "可读取其他笔记与对话历史作参考，但绝不修改任何笔记（不调用任何"
+             "写入工具），也不建议新建笔记。计划确定后按系统要求的 JSON 计划卡"
+             "格式输出，等待学生批复。"),
+    "authorize": ("authorize（授权模式）：学生已授权你直接修改**当前笔记**"
+                  "（notes_write，且只能改这一篇）；不能新建笔记，不能修改其他"
+                  "笔记。每次写入后在回复里说明改了什么、为什么。"),
 }
+
+# 计划卡 JSON 契约：plan 模式的回复在计划敲定时必须以一个 ```json 围栏块
+# 结尾，内容为 {"title": str, "steps": [{"title": str, "detail": str}, ...]}。
+_PLAN_JSON_RE = re.compile(r"```json\s*(\{.*?\})\s*```", re.DOTALL)
+_MAX_PLAN_STEPS = 12
+_MAX_PLAN_TITLE = 120
+_MAX_PLAN_STEP_TEXT = 400
+
+
+def _parse_plan_card(text: str) -> dict[str, Any] | None:
+    """从 plan 模式回复里解析计划卡；解析失败视为普通问答（返回 None）。
+
+    只认**最后一个** json 围栏块（多轮讨论中可能出现过示例块）；steps 必须
+    非空且每步有 title。宽容清洗：去首尾空白、截断超长字段、丢弃非 dict 步骤。
+    """
+    blocks = _PLAN_JSON_RE.findall(str(text or ""))
+    if not blocks:
+        return None
+    try:
+        obj = json.loads(blocks[-1])
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(obj, dict):
+        return None
+    title = str(obj.get("title") or "").strip()[:_MAX_PLAN_TITLE]
+    steps: list[dict[str, str]] = []
+    for raw in obj.get("steps") or []:
+        if not isinstance(raw, dict):
+            continue
+        step_title = str(raw.get("title") or "").strip()[:_MAX_PLAN_TITLE]
+        detail = str(raw.get("detail") or "").strip()[:_MAX_PLAN_STEP_TEXT]
+        if step_title:
+            steps.append({"title": step_title, "detail": detail})
+        if len(steps) >= _MAX_PLAN_STEPS:
+            break
+    if not steps:
+        return None
+    return {"title": title or "笔记修改计划", "steps": steps}
 
 
 def _build_knowledge_search_tool(student_id: str,
@@ -882,8 +893,8 @@ def _build_knowledge_search_tool(student_id: str,
 def _context_system_tail(student_id: str, context: dict[str, Any],
                          mode: str, *, executing_plan: str = "") -> str:
     vault = notes_store.load_vault(student_id)
-    # 计划批复后的执行期：按完全授权执行，且严格圈定在已批复的计划内
-    directive_mode = "auto" if executing_plan else mode
+    # 计划批复后的执行期：按授权模式执行，且严格圈定在已批复的计划内
+    directive_mode = "authorize" if executing_plan else mode
     parts = [f"\n\n[当前模式] {_MODE_DIRECTIVES[directive_mode]}"]
     if executing_plan:
         parts.append("学生已批复以下计划，严格按计划执行，不越界、不加戏：\n"
@@ -966,69 +977,118 @@ def _attachment_meta(attachments: list[dict[str, Any]] | None) -> list[dict[str,
 
 async def run_notes_chat(student_id: str, *, message: str,
                          context: dict[str, Any] | None = None,
-                         mode: str = "collab",
+                         mode: str = "ask",
                          action: str = "",
                          attachments: list[dict[str, Any]] | None = None,
-                         thread_id: str = "default",
                          ) -> AsyncGenerator[dict, None]:
-    """笔记助手对话（SSE 事件流）。
+    """笔记助手对话（SSE 事件流，每笔记专属智能体）。
 
-    事件：step / answer{is_delta} / tool_start / tool_result /
-    note_updated{note_id, content, revision, summary} /
-    note_suggestion{suggestion} / done / error。
+    事件：run_start / step / thinking{is_delta,summary:false}（live 思考直播）/
+    answer{is_delta} / tool_start / tool_result /
+    note_updated{note_id, title, revision, content, summary} /
+    mode_changed{mode} / plan_card{plan} / retry / error / run_end / done。
 
-    四模式（mode）：plan 只讨论出计划；collab 经 notes_propose 提案待学生
-    确认；auto 直接写入；ask 仅答疑。action="approve_plan" 时取线程中最后
-    一条助手消息为已批复计划，切到执行（写入工具组）跑完整个计划。
-    knowledge_search（教材/资料 RAG）四模式统一装配（只读）；attachments
+    三模式（mode）：ask 仅问答；plan 只产计划卡（绝不写入）；authorize 直接
+    修改**当前笔记**（不能新建、不能改其他笔记）。对话历史按笔记隔离存储
+    （agent/<note_id>.json，首载时从旧线程按 context.note_id 懒迁移）。
+    action：approve_plan = 批复 pending 计划（状态机保证仅一次）并自动切入
+    authorize 执行；reject_plan = 驳回计划，停留在 plan 模式。
+    context.note_id 为空 = 仓库级对话（无绑定笔记，任何模式都只读）。
+    knowledge_search（教材/资料 RAG）三模式统一装配（只读）；attachments
     为笔记页上传的图片附件 id 列表，MULTIMODAL 配置时注入视觉通道。
     """
     context = context or {}
-    thread_id = str(thread_id or "default")
+    note_id = str(context.get("note_id") or "").strip()
     mode = normalize_mode(mode)
     action = str(action or "").strip()
 
-    read_tools: list[Tool] = [NotesSearchTool(student_id),
-                              NotesReadTool(student_id)]
-    ks_tool = _build_knowledge_search_tool(student_id, context)
-    if ks_tool is not None:
-        read_tools.append(ks_tool)
-    write_tools: list[Tool] = [NotesWriteTool(student_id),
-                               NotesCreateTool(student_id)]
-    if mode == "collab":
-        tools = read_tools + [NotesProposeTool(student_id)]
-    elif mode == "auto":
-        tools = read_tools + write_tools
-    else:  # plan / ask：只读
-        tools = list(read_tools)
-    tool_map = {t.name: t for t in tools}
+    vault = notes_store.load_vault(student_id)
+    bound_meta = vault.find_note(note_id) if note_id else None
+    if note_id and bound_meta is None:
+        yield {"type": "error", "message": "笔记不存在或已删除，无法对话"}
+        return
 
-    thread = notes_store.load_thread(student_id, thread_id)
-    history = [{"role": m.get("role", "user"),
-                "content": str(m.get("content") or "")}
-               for m in (thread.get("messages") or [])[-_CHAT_HISTORY_MESSAGES:]]
+    state = notes_store.load_agent_history(student_id, note_id)
+    stored_mode = str(state.get("mode") or "ask")
 
+    # --- 计划批复状态机（结构性消灭重复批复） -------------------------------
     executing_plan = ""
-    if action == "approve_plan":
-        plan = next((str(m.get("content") or "").strip()
-                     for m in reversed(thread.get("messages") or [])
-                     if m.get("role") == "assistant"
-                     and str(m.get("content") or "").strip()), "")
-        if not plan:
-            yield {"type": "error",
-                   "message": "没有可批复的计划：请先在计划模式下让助手给出计划"}
+    approved_execution = False
+    if action == "reject_plan":
+        plan = state.get("pending_plan")
+        if not isinstance(plan, dict) or plan.get("status") != "pending":
+            yield {"type": "error", "message": "没有待批复的计划"}
             return
-        executing_plan = plan
-        tools = read_tools + write_tools
-        tool_map = {t.name: t for t in tools}
+        notes_store.update_pending_plan_status(student_id, note_id, "rejected",
+                                               decided_at=time.time())
+        yield {"type": "plan_card", "plan": {**plan, "status": "rejected"}}
+        notes_store.append_agent_message(
+            student_id, note_id, "user", "（驳回计划）",
+            {"note_id": note_id, "mode": "plan", "action": "reject_plan"})
+        notes_store.append_agent_message(
+            student_id, note_id, "assistant",
+            "计划已驳回。我们可以继续讨论，调整出新的方案后再批复。",
+            {"note_id": note_id, "mode": "plan"})
+        yield {"type": "run_end", "status": "completed", "can_stop": False}
+        yield {"type": "done", "answer": "计划已驳回。", "mode": "plan",
+               "note_id": note_id}
+        return
+    if action == "approve_plan":
+        plan = state.get("pending_plan")
+        if not isinstance(plan, dict):
+            yield {"type": "error",
+                   "message": "没有待批复的计划：请先在计划模式下让助手给出计划"}
+            return
+        if plan.get("status") != "pending":
+            yield {"type": "error",
+                   "message": "该计划已批复过，不能重复批复；如需继续修改请直接授权或重新出计划"}
+            return
+        if not note_id:
+            yield {"type": "error",
+                   "message": "仓库级对话没有绑定笔记，无法执行计划；请先打开一篇笔记"}
+            return
+        notes_store.update_pending_plan_status(student_id, note_id, "approved",
+                                               decided_at=time.time())
+        notes_store.set_agent_mode(student_id, note_id, "authorize")
+        mode = "authorize"
+        yield {"type": "mode_changed", "mode": "authorize", "note_id": note_id}
+        executing_plan = str(plan.get("plan_text") or plan.get("title") or "")
+        approved_execution = True
         extra = message.strip()
         user_content = ("<user_input>\n（学生已批复上述计划，开始执行"
                         + (f"；补充要求：{extra}" if extra else "")
                         + "）\n</user_input>")
         record_user = ("（批复计划，开始执行）" + extra).strip()
+    elif action:
+        yield {"type": "error", "message": f"未知操作：{action}"}
+        return
     else:
+        # 普通消息：请求模式与该笔记持久模式不一致时以请求为准并落盘
+        # （兼容未走 PATCH 的客户端）。
+        if mode != stored_mode:
+            notes_store.set_agent_mode(student_id, note_id, mode)
         user_content = f"<user_input>\n{message}\n</user_input>"
         record_user = message
+
+    # --- 工具装配（三模式边界） ----------------------------------------------
+    read_tools: list[Tool] = [NotesSearchTool(student_id),
+                              NotesReadTool(student_id)]
+    ks_tool = _build_knowledge_search_tool(student_id, context)
+    if ks_tool is not None:
+        read_tools.append(ks_tool)
+    if note_id and (mode == "authorize" or executing_plan):
+        # 授权写入：绑定当前笔记 + 轮首版本快照做乐观并发
+        write_tool = NotesWriteTool(
+            student_id, note_id,
+            expected_revision=int((bound_meta or {}).get("revision") or 1))
+        tools = read_tools + [write_tool]
+    else:
+        tools = list(read_tools)
+    tool_map = {t.name: t for t in tools}
+
+    history = [{"role": m.get("role", "user"),
+                "content": str(m.get("content") or "")}
+               for m in (state.get("messages") or [])[-_CHAT_HISTORY_MESSAGES:]]
 
     messages: list[dict[str, Any]] = [
         {"role": "system",
@@ -1071,11 +1131,15 @@ async def run_notes_chat(student_id: str, *, message: str,
         images = []
 
     run_id = f"run_{int(time.time() * 1000)}"
-    notes_store.set_thread_working(student_id, thread_id, stage="analyzing",
-                                   can_stop=True, run_id=run_id)
+    notes_store.set_agent_working(student_id, note_id, stage="analyzing",
+                                  can_stop=True, run_id=run_id)
     yield {"type": "run_start", "run_id": run_id, "stage": "analyzing", "status": "running", "can_stop": True}
     yield {"type": "step", "stage": "thinking", "status": "running", "run_id": run_id}
     llm = mm_llm or get_llm()
+    # live 思考直播（与主对话链路同一门控；显示流不落盘、不进 TTS）
+    from ..core.config import settings as _settings
+    from .reasoning_live import LiveThinkingGate
+    live_gate = LiveThinkingGate(_settings.reasoning_live_max_chars)
     final_answer = ""
     live_answer = ""
     evidence_cards: list[dict[str, str]] = []
@@ -1094,6 +1158,11 @@ async def run_notes_chat(student_id: str, *, message: str,
                     answer_buf += delta
                     live_answer += delta
                     yield {"type": "answer", "content": delta, "is_delta": True}
+                elif ev.get("kind") == "thinking":
+                    live_delta = live_gate.take(ev.get("delta", ""))
+                    if live_delta:
+                        yield {"type": "thinking", "content": live_delta,
+                               "is_delta": True, "summary": False}
                 elif ev.get("kind") == "retry":
                     yield {"type": "retry", "attempt": ev.get("attempt"),
                            "reason": ev.get("reason")}
@@ -1106,10 +1175,10 @@ async def run_notes_chat(student_id: str, *, message: str,
             for tc in tool_calls_raw[:3]:
                 tool_name = str(tc.get("name") or "")
                 tool_args = dict(tc.get("args") or {})
-                if tool_name in {"notes_write", "notes_create", "notes_propose"} and evidence_cards:
+                if tool_name == "notes_write" and evidence_cards:
                     tool_args["content"] = _with_knowledge_cards(str(tool_args.get("content") or ""), evidence_cards)
-                notes_store.set_thread_working(student_id, thread_id, stage="tool",
-                                               tool=tool_name, can_stop=True, run_id=run_id)
+                notes_store.set_agent_working(student_id, note_id, stage="tool",
+                                              tool=tool_name, can_stop=True, run_id=run_id)
                 public_args = {k: v for k, v in tool_args.items() if k != "content"}
                 yield {"type": "tool_start", "name": tool_name, "args": public_args, "stage": "tool", "status": "running", "can_stop": True, "run_id": run_id}
                 tool = tool_map.get(tool_name)
@@ -1154,8 +1223,6 @@ async def run_notes_chat(student_id: str, *, message: str,
                            "revision": updated.get("revision"),
                            "content": content,
                            "summary": tool_args.get("summary", "")}
-                if "suggestion" in data:
-                    yield {"type": "note_suggestion", **data}
                 messages.extend(build_openai_tool_messages(
                     answer_buf, call_id=str(tc.get("id", "")),
                     tool_name=tool_name, args=tool_args,
@@ -1164,41 +1231,56 @@ async def run_notes_chat(student_id: str, *, message: str,
                              "content": "（工具已执行，请基于结果继续；"
                                         "如无更多操作请给出面向学生的总结回复）"})
     except (GeneratorExit, asyncio.CancelledError):
-        notes_store.set_thread_working(student_id, thread_id, stage="idle")
-        notes_store.append_thread_message(student_id, "user", record_user,
-                                          {"scope": context.get("scope", "vault"),
-                                           "note_id": context.get("note_id", ""),
-                                           "thread_id": thread_id, "stopped": True,
-                                           "attachments": _attachment_meta(attachments)}, thread_id=thread_id)
-        notes_store.append_thread_message(student_id, "assistant",
-                                          live_answer or "（本次运行已停止）",
-                                          {"scope": context.get("scope", "vault"),
-                                           "note_id": context.get("note_id", ""),
-                                           "mode": mode, "thread_id": thread_id,
-                                           "stopped": True}, thread_id=thread_id)
+        notes_store.set_agent_working(student_id, note_id, stage="idle")
+        notes_store.append_agent_message(student_id, note_id, "user", record_user,
+                                         {"note_id": note_id, "stopped": True,
+                                          "attachments": _attachment_meta(attachments)})
+        notes_store.append_agent_message(student_id, note_id, "assistant",
+                                         live_answer or "（本次运行已停止）",
+                                         {"note_id": note_id, "mode": mode,
+                                          "stopped": True})
         raise
     except Exception as exc:
-        notes_store.set_thread_working(student_id, thread_id, stage="idle")
+        # 异常也完整收尾：写留痕 + run_end/done，前端 finally 统一刷新
+        notes_store.set_agent_working(student_id, note_id, stage="idle")
         yield {"type": "error", "message": f"笔记助手出错：{exc}", "status": "error", "run_id": run_id}
-        notes_store.append_thread_message(student_id, "user", record_user,
-                                          {"scope": context.get("scope", "vault"),
-                                           "note_id": context.get("note_id", ""),
-                                           "thread_id": thread_id,
-                                           "attachments": _attachment_meta(attachments)}, thread_id=thread_id)
+        notes_store.append_agent_message(student_id, note_id, "user", record_user,
+                                         {"note_id": note_id,
+                                          "attachments": _attachment_meta(attachments)})
+        notes_store.append_agent_message(student_id, note_id, "assistant",
+                                         f"（本次运行出错：{exc}）",
+                                         {"note_id": note_id, "mode": mode,
+                                          "error": True})
+        if approved_execution:
+            notes_store.update_pending_plan_status(student_id, note_id, "executed",
+                                                   executed_at=time.time())
+        yield {"type": "run_end", "status": "error", "can_stop": False, "run_id": run_id}
+        yield {"type": "done", "answer": f"笔记助手出错：{exc}", "mode": mode,
+               "note_id": note_id}
         return
 
     if not final_answer:
         final_answer = "（本次没有生成文字回复，请重试）"
-    notes_store.append_thread_message(student_id, "user", record_user,
-                                      {"scope": context.get("scope", "vault"),
-                                       "note_id": context.get("note_id", ""),
-                                       "thread_id": thread_id,
-                                       "attachments": _attachment_meta(attachments)}, thread_id=thread_id)
-    notes_store.append_thread_message(student_id, "assistant", final_answer,
-                                      {"scope": context.get("scope", "vault"),
-                                       "note_id": context.get("note_id", ""),
-                                       "mode": mode, "thread_id": thread_id,
-                                       "tools": tool_records}, thread_id=thread_id)
-    notes_store.set_thread_working(student_id, thread_id, stage="idle")
+
+    # plan 模式：回复尾部的 JSON 计划卡 → 待批复状态 + plan_card 事件。
+    # 解析不出（澄清问答/继续讨论）不设 pending，批复条不出现。
+    if mode == "plan" and not executing_plan and final_answer:
+        card = _parse_plan_card(final_answer)
+        if card is not None:
+            pending = {"status": "pending", **card, "plan_text": final_answer,
+                       "created_at": time.time()}
+            notes_store.set_pending_plan(student_id, note_id, pending)
+            yield {"type": "plan_card", "plan": pending}
+
+    notes_store.append_agent_message(student_id, note_id, "user", record_user,
+                                     {"note_id": note_id,
+                                      "attachments": _attachment_meta(attachments)})
+    notes_store.append_agent_message(student_id, note_id, "assistant", final_answer,
+                                     {"note_id": note_id, "mode": mode,
+                                      "tools": tool_records})
+    if approved_execution:
+        notes_store.update_pending_plan_status(student_id, note_id, "executed",
+                                               executed_at=time.time())
+    notes_store.set_agent_working(student_id, note_id, stage="idle")
     yield {"type": "run_end", "status": "completed", "can_stop": False, "run_id": run_id}
-    yield {"type": "done", "answer": final_answer, "mode": mode, "thread_id": thread_id}
+    yield {"type": "done", "answer": final_answer, "mode": mode, "note_id": note_id}

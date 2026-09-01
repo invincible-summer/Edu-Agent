@@ -54,7 +54,8 @@ class TestPromptRegistry(unittest.TestCase):
             self.assertIn(av[pid], versions)
         # 品牌改名触及 tutor_system 文本，bump 至 2.9.0。
         self.assertEqual(av["tutor_system"], "2.9.0")
-        self.assertEqual(av["understand_system"], "1.1.0")
+        # understand_system 增补 search_queries 字段（预检索查询精炼），bump 至 1.2.0。
+        self.assertEqual(av["understand_system"], "1.2.0")
         # 出题两轮化：蓝图 prompt 已注册（第一轮设计，第二轮生成见 tools/quiz.py）
         self.assertEqual(av["quiz_blueprint"], "1.0.0")
         self.assertIn("quiz_blueprint_anchor", av)

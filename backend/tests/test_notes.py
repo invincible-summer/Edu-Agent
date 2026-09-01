@@ -242,41 +242,31 @@ class TestNotesVaultApi(unittest.TestCase):
         self.assertEqual(len(names), 2)
         self.assertTrue(all(n.endswith(".md") for n in names))
 
-    # -- 6. suggestions ------------------------------------------------------------
+    # -- 6. per-note agent history（2026-09 重构：建议队列/线程已移除） ----------
 
-    def test_suggestion_apply_append_and_replace(self):
-        note = self._create(title="建议目标", content="原文")
-        sg = notes_mod.add_suggestion(
-            "student_default", note["id"], "append", "## 补充\n新段", "补一段")
-        r = self.client.post(f"/api/v1/notes/suggestions/{sg['id']}/apply")
-        self.assertEqual(r.status_code, 200)
-        self.assertIn("原文", r.json()["content"])
-        self.assertIn("新段", r.json()["content"])
-        r = self.client.post(f"/api/v1/notes/suggestions/{sg['id']}/apply")
-        self.assertEqual(r.status_code, 400)  # already applied
-        sg2 = notes_mod.add_suggestion(
-            "student_default", note["id"], "replace", "整篇替换", "重写")
-        r = self.client.post(f"/api/v1/notes/suggestions/{sg2['id']}/apply")
-        self.assertEqual(r.json()["content"], "整篇替换")
-        # applied as agent revision
-        revisions = self.client.get(
-            f"/api/v1/notes/notes/{note['id']}/revisions").json()["revisions"]
-        self.assertTrue(any(x["author"] == "agent" for x in revisions))
-        # application leaves a trace in the assistant thread
-        thread = notes_mod.thread_view("student_default")
-        self.assertTrue(any(m["role"] == "assistant" and "已应用修改" in m["content"]
-                            for m in thread["messages"]))
-
-    def test_suggestion_dismiss(self):
-        note = self._create(title="驳回", content="x")
-        sg = notes_mod.add_suggestion(
-            "student_default", note["id"], "replace", "y", "z")
-        r = self.client.post(
-            f"/api/v1/notes/suggestions/{sg['id']}/dismiss")
-        self.assertEqual(r.status_code, 200)
+    def test_agent_history_endpoints_and_mode_validation(self):
+        note = self._create(title="智能体", content="x")
+        base = f"/api/v1/notes/notes/{note['id']}/agent"
+        view = self.client.get(base).json()
+        self.assertEqual(view["mode"], "ask")
+        self.assertEqual(view["messages"], [])
+        self.assertIsNone(view["pending_plan"])
+        self.client.patch(base, json={"mode": "authorize"})
+        self.assertEqual(self.client.get(base).json()["mode"], "authorize")
+        # 未知模式 422；旧值映射
         self.assertEqual(
-            self.client.get(
-                f"/api/v1/notes/notes/{note['id']}").json()["content"], "x")
+            self.client.patch(base, json={"mode": "junk"}).status_code, 422)
+        self.assertEqual(
+            self.client.patch(base, json={"mode": "auto"}).json()["mode"],
+            "authorize")
+        # 旧线程/建议路由已下线
+        self.assertEqual(
+            self.client.get("/api/v1/notes/threads").status_code, 404)
+        self.assertEqual(
+            self.client.get("/api/v1/notes/suggestions").status_code, 404)
+        # vault 统计不再包含建议计数
+        stats = self.client.get("/api/v1/notes/vault").json()["stats"]
+        self.assertNotIn("pending_suggestions", stats)
 
     # -- 7. trash lifecycle -----------------------------------------------------
 

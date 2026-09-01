@@ -1,67 +1,71 @@
 "use client";
-// 笔记助手面板（VSCode Copilot 式）：对话线程（SSE 流式）+ 内联修改提案卡
-// （协作模式）+ 计划批复条（计划模式）。确认动作集中在输入框区域（ZCode 式），
-// 模式选择器在输入框左下角：计划 / 协作 / 完全授权 / 聊天问答。
-// 支持图片附件：上传（/notes/upload，OCR 预览）→ 发送时包 <ocr_material>
-// 前缀 + attachments（MULTIMODAL 配置时走视觉通道）。
+// 笔记助手面板（2026-09 重构：每笔记专属智能体）。
+// - 消息观感对齐原生 chat：复用 ChatMessage（用户 accent-soft 气泡 / 助手
+//   accent 左竖线 + chat-prose 排版 + hover 复制），流式块用 ThinkingBlock
+//   （深度思考实时展开）+ ActiveToolCard/NotesToolCard + StreamingMarkdown
+//   + streaming-cursor，公式在流式期间也有保护。
+// - 每篇笔记一个智能体：历史/模式/待批复计划各自独立（切换笔记即切换
+//   对话），无线程概念；plan 模式产出计划卡（服务端 pending_plan 状态机），
+//   pending 时输入框上方出现一次批复条，批准后 mode_changed 自动切授权。
+// - 图片附件：上传（/notes/upload，OCR 预览）→ 发送时 <ocr_material> 前缀
+//   + attachments（MULTIMODAL 配置时走视觉通道）。
 import { useEffect, useRef, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   Bot, Check, ChevronDown, CircleStop, ClipboardList, Eraser, FileText,
-  MessageSquarePlus, Pencil, Trash2,
-  HelpCircle, ImagePlus, Loader2, PanelRightClose, PencilLine, ScanLine,
-  Send, Sparkles, Wrench, X, Zap,
+  HelpCircle, ImagePlus, Loader2, PanelRightClose, ScanLine,
+  Send, ShieldCheck, Sparkles, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Textarea } from "@/components/ui/Input";
-import { MiniMarkdown } from "@/components/chat/markdown";
+import { StreamingMarkdown } from "@/components/chat/markdown";
+import { ChatMessage } from "@/components/chat/ChatMessage";
+import { ThinkingBlock } from "@/components/chat/ThinkingBlock";
+import { ActiveToolCard } from "@/components/chat/ToolCallCard";
 import { useClickOutside } from "@/components/sidebar/Dropdown";
 import { cn } from "@/lib/cn";
-import {
-  applySuggestion, clearNotesThread, createNotesThread, deleteNotesThread,
-  dismissSuggestion, getSuggestions, notesChatStream, notesUpload, patchNotesThread,
-} from "@/lib/api-notes";
+import { VAULT_AGENT_KEY, notesChatStream, notesUpload } from "@/lib/api-notes";
 import { useNotesStore } from "@/lib/store-notes";
-import type { AgentMode, NoteSuggestion } from "@/lib/types-notes";
-import { ProposalCard } from "./ProposalCard";
+import type { AgentMode } from "@/lib/types-notes";
+import { NotesToolCard, toolDisplayName } from "./NotesToolCard";
+import { PlanCard, stripPlanCardJson } from "./PlanCard";
 
 const MODES: { key: AgentMode; icon: LucideIcon; labelKey: string; descKey: string }[] = [
-  { key: "plan", icon: ClipboardList, labelKey: "ai.mode.plan", descKey: "ai.mode.plan.desc" },
-  { key: "collab", icon: PencilLine, labelKey: "ai.mode.collab", descKey: "ai.mode.collab.desc" },
-  { key: "auto", icon: Zap, labelKey: "ai.mode.auto", descKey: "ai.mode.auto.desc" },
   { key: "ask", icon: HelpCircle, labelKey: "ai.mode.ask", descKey: "ai.mode.ask.desc" },
+  { key: "plan", icon: ClipboardList, labelKey: "ai.mode.plan", descKey: "ai.mode.plan.desc" },
+  { key: "authorize", icon: ShieldCheck, labelKey: "ai.mode.authorize", descKey: "ai.mode.authorize.desc" },
 ];
 
-function stageLabel(stage: string): string {
-  return ({ thinking: "正在分析", analyzing: "正在分析", retrieving: "正在检索教材",
-    collecting: "正在整理上下文", drafting: "正在生成修改提案", writing: "正在写入笔记" } as Record<string, string>)[stage] || stage;
-}
-
-function toolLabel(name: string): string {
-  return ({ knowledge_search: "正在检索教材", notes_read: "正在读取笔记",
-    notes_search: "正在检索笔记仓库", notes_propose: "正在生成修改提案",
-    notes_write: "正在写入笔记", notes_create: "正在创建笔记" } as Record<string, string>)[name] || `正在执行 ${name}`;
+interface ToolActivity {
+  name: string;
+  status: string;
+  text: string;
 }
 
 export function AIPanel({
   tr,
   onRemoteUpdate,
   onVaultChanged,
+  onClose,
 }: {
   tr: (k: string, fallback?: string) => string;
   onRemoteUpdate: (noteId: string, content: string, revision: number, title: string) => void;
   onVaultChanged: () => void;
+  /** 抽屉场景传入（关闭抽屉）；内联场景缺省 = 折叠面板 */
+  onClose?: () => void;
 }) {
   const {
-    currentId, detail, agentMode, setAgentMode, thread, loadThread, loadThreads,
-    threads, activeThreadId, setActiveThread, vault, toggleAiPanel,
+    currentId, detail, agentMode, setAgentMode, applyModeFromServer,
+    agent, agentMessages, loadAgent, setAgentPlan, clearAgentChat,
+    vault, toggleAiPanel,
   } = useNotesStore();
   const [input, setInput] = useState("");
-  const [proposals, setProposals] = useState<NoteSuggestion[]>([]);
   const [streaming, setStreaming] = useState(false);
   const [streamAnswer, setStreamAnswer] = useState("");
+  const [streamThinking, setStreamThinking] = useState("");
   const [pendingUser, setPendingUser] = useState("");
-  const [streamStep, setStreamStep] = useState("");
+  const [activeTool, setActiveTool] = useState("");
+  const [doneTools, setDoneTools] = useState<ToolActivity[]>([]);
   const [error, setError] = useState("");
   const [toast, setToast] = useState("");
   const [modeMenuOpen, setModeMenuOpen] = useState(false);
@@ -75,24 +79,14 @@ export function AIPanel({
   const abortRef = useRef<AbortController | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
-  const pendingProposals = proposals.filter((p) => p.status === "pending");
-  const lastMsg = thread[thread.length - 1];
-  const hasPlan = agentMode === "plan" && !streaming
-    && lastMsg?.role === "assistant" && Boolean(lastMsg.content.trim());
-  const activeMode = MODES.find((m) => m.key === agentMode) ?? MODES[1];
-
-  useEffect(() => { void loadThreads().then(() => loadThread()); }, [loadThread, loadThreads]);
-  useEffect(() => {
-    let alive = true;
-    getSuggestions("pending")
-      .then((r) => { if (alive) setProposals(r.suggestions); })
-      .catch(() => { /* keep old */ });
-    return () => { alive = false; };
-  }, []);
+  const pendingPlan = agent?.pending_plan ?? null;
+  const showPlanBar = pendingPlan?.status === "pending" && !streaming;
+  const activeMode = MODES.find((m) => m.key === agentMode) ?? MODES[0];
+  const agentKey = currentId || VAULT_AGENT_KEY;
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
-  }, [thread.length, streamAnswer, proposals.length]);
+  }, [agentMessages.length, streamAnswer, streamThinking, doneTools.length]);
 
   const handleImage = async (files: FileList | null) => {
     if (!files || files.length === 0) return;
@@ -129,7 +123,12 @@ export function AIPanel({
     }
   };
 
-  const send = async (action = "") => {
+  const flashToast = (msg: string) => {
+    setToast(msg);
+    setTimeout(() => setToast(""), 4000);
+  };
+
+  const send = async (action: "" | "approve_plan" | "reject_plan" = "") => {
     if (streaming) return;
     const trimmed = input.trim();
     const ocr = ocrText.trim();
@@ -144,46 +143,67 @@ export function AIPanel({
     setImgError("");
     setError("");
     setStreamAnswer("");
+    setStreamThinking("");
+    setDoneTools([]);
+    setActiveTool("");
     setStreaming(true);
     const controller = new AbortController();
     abortRef.current = controller;
     useNotesStore.setState({ aiStreaming: true });
     let completed = false;
     try {
-      const context = currentId
-        ? { note_id: currentId, scope: "note" }
-        : { scope: "vault" };
       for await (const ev of notesChatStream(
         {
-          message, context, mode: agentMode, action,
+          message, mode: agentMode, action,
+          context: currentId
+            ? { note_id: currentId, scope: "note" }
+            : { scope: "vault" },
           attachments: attachments.length > 0 ? attachments : undefined,
-          thread_id: activeThreadId,
         }, controller.signal)) {
         switch (ev.type) {
           case "run_start":
             setInput("");
             setPendingUser(message);
-            setStreamStep(tr("ai.analyzing", "正在分析"));
             break;
           case "answer":
             if (ev.is_delta) setStreamAnswer((prev) => prev + String(ev.content ?? ""));
             break;
+          case "thinking":
+            if (ev.is_delta) setStreamThinking((prev) => prev + String(ev.content ?? ""));
+            break;
           case "step":
-            setStreamStep(stageLabel(String(ev.stage ?? "")));
             break;
           case "tool_start":
-            setStreamStep(toolLabel(String(ev.name ?? "")));
+            setActiveTool(String(ev.name ?? ""));
             break;
+          case "tool_result": {
+            const result = (ev.result ?? {}) as { tool?: string; status?: string; text?: string };
+            setActiveTool("");
+            setDoneTools((prev) => [...prev, {
+              name: String(result.tool ?? ev.name ?? ""),
+              status: String(result.status ?? "success"),
+              text: String(result.text ?? ""),
+            }]);
+            break;
+          }
           case "note_updated":
             onRemoteUpdate(String(ev.note_id ?? ""), String(ev.content ?? ""),
               Number(ev.revision ?? 0), String(ev.title ?? ""));
-            setToast(tr("ai.updated", "助手已更新《{title}》").replace("{title}", String(ev.title ?? "")));
-            setTimeout(() => setToast(""), 4000);
+            flashToast(tr("ai.updated", "助手已更新《{title}》")
+              .replace("{title}", String(ev.title ?? "")));
             break;
-          case "note_suggestion": {
-            const sg = ev.suggestion as NoteSuggestion | undefined;
-            if (sg) setProposals((prev) => [sg, ...prev]);
-            onVaultChanged();
+          case "mode_changed":
+            // 批复后服务端持久切到授权模式：同步选择器（不再回写 PATCH）
+            applyModeFromServer(String(ev.mode ?? "authorize"));
+            break;
+          case "plan_card": {
+            const plan = ev.plan as typeof pendingPlan;
+            if (plan) {
+              setAgentPlan(plan);
+              flashToast(plan.status === "rejected"
+                ? tr("ai.plan.rejected.toast")
+                : tr("ai.plan.pending"));
+            }
             break;
           }
           case "error":
@@ -214,166 +234,122 @@ export function AIPanel({
         setImgAttachments((current) => current.length > 0 ? current : draft.attachments);
       }
       setStreaming(false);
-      setStreamStep("");
+      setActiveTool("");
       abortRef.current = null;
       useNotesStore.setState({ aiStreaming: false, pendingAnswer: "" });
-      void loadThread(activeThreadId).finally(() => setPendingUser(""));
-      void loadThreads();
+      // 统一收尾：重拉该笔记的智能体状态（消息/计划/模式）与仓库列表
+      void loadAgent(agentKey).finally(() => setPendingUser(""));
+      onVaultChanged();
     }
   };
 
-  const setProposalStatus = (id: string, status: NoteSuggestion["status"]) => {
-    setProposals((prev) => prev.map((p) => (p.id === id ? { ...p, status } : p)));
-  };
-
-  const applyOne = async (id: string) => {
-    try {
-      const r = await applySuggestion(id);
-      setProposalStatus(id, "applied");
-      onVaultChanged();
-      void loadThread();
-      onRemoteUpdate(r.note.id, r.content, r.note.revision, r.note.title);
-    } catch { /* inline degrade */ }
-  };
-
-  const dismissOne = async (id: string) => {
-    try {
-      await dismissSuggestion(id);
-      setProposalStatus(id, "dismissed");
-      onVaultChanged();
-      void loadThread();
-    } catch { /* ignore */ }
-  };
-
-  const applyAll = async () => {
-    for (const p of pendingProposals) await applyOne(p.id);
-  };
-
-  const noteTitle = (id: string) =>
-    vault?.notes.find((n) => n.id === id)?.title ?? detail?.note.title;
+  const noteTitle = currentId
+    ? detail?.note.title || tr("ai.context.note")
+    : tr("ai.context.vault");
 
   return (
     <div className="flex h-full w-full flex-col border-l border-border bg-surface">
-      {/* 头部：线程 + 当前上下文 + 面板动作 */}
+      {/* 头部：专属智能体标题 + 清空 + 面板动作（无线程下拉） */}
       <div className="border-b border-border px-3 py-2">
         <div className="flex items-center gap-1.5">
           <Bot size={14} className="shrink-0 text-accent" />
-          <select
-            value={activeThreadId}
-            disabled={streaming}
-            onChange={(e) => void setActiveThread(e.target.value)}
-            className="h-7 min-w-0 flex-1 truncate rounded-[8px] border border-border bg-bg px-2 text-xs text-fg outline-none transition-colors hover:border-muted/70 focus:border-accent"
-          >
-            {threads.map((item) => <option key={item.thread_id} value={item.thread_id}>{item.title}</option>)}
-          </select>
-          <button title="新建线程" className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent" onClick={() => void createNotesThread().then(({ thread: item }) => loadThreads().then(() => setActiveThread(item.thread_id)))}><MessageSquarePlus size={13} /></button>
-          <button title="重命名线程" className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent" onClick={() => { const current = threads.find((item) => item.thread_id === activeThreadId); const title = window.prompt("线程名称", current?.title || ""); if (title?.trim()) void patchNotesThread(activeThreadId, { title }).then(() => loadThreads()); }}><Pencil size={13} /></button>
-          {activeThreadId !== "default" && <button title="删除线程" className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-danger/10 hover:text-danger" onClick={() => { if (window.confirm("删除当前线程？正文中的链接会保留并显示失效。")) void deleteNotesThread(activeThreadId).then(() => loadThreads().then(() => setActiveThread("default"))); }}><Trash2 size={13} /></button>}
+          <span className="min-w-0 flex-1 truncate text-xs font-medium text-fg">
+            {noteTitle}
+          </span>
           <button
-            onClick={() => { if (window.confirm(tr("ai.clear.confirm"))) void clearNotesThread(activeThreadId).then(() => loadThread(activeThreadId)); }}
+            onClick={() => { if (window.confirm(tr("ai.clear.confirm"))) void clearAgentChat(); }}
             title={tr("ai.clear")} aria-label={tr("ai.clear")}
-            className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-danger/10 hover:text-danger"
+            disabled={streaming || agentMessages.length === 0}
+            className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-danger/10 hover:text-danger disabled:opacity-40"
           ><Eraser size={13} /></button>
-          <button onClick={toggleAiPanel} title={tr("tb.toggleAi")} className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent"><PanelRightClose size={14} /></button>
+          <button
+            onClick={onClose ?? toggleAiPanel}
+            title={tr("tb.toggleAi")}
+            className="rounded-[6px] p-1.5 text-muted transition-colors hover:bg-surface-hover hover:text-accent"
+          ><PanelRightClose size={14} /></button>
         </div>
         <div className="mt-1.5 flex min-w-0 flex-wrap items-center gap-1.5">
           <span className="flex min-w-0 items-center gap-1 rounded-full bg-accent-soft px-2 py-0.5 text-[10px] text-accent-strong">
             {currentId ? <FileText size={10} /> : <Sparkles size={10} />}
-            <span className="truncate">{currentId ? `${tr("ai.context.note")} · ${detail?.note.title || ""}` : tr("ai.context.vault")}</span>
+            <span className="truncate">{currentId ? tr("ai.context.note") : tr("ai.context.vault")}</span>
           </span>
           <span className="rounded-full bg-surface-sunken px-2 py-0.5 text-[10px] text-muted">仓库 · {vault?.notes.length || 0} 篇</span>
         </div>
       </div>
 
-      {/* 对话线程 */}
-      <div className="min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-3">
-        {thread.length === 0 && !streaming && (
-          <div className="py-8 text-center text-xs text-muted">
-            {tr("ai.placeholder")}
+      {/* 对话区：原生 chat 观感（ChatMessage 复用） */}
+      <div className="min-h-0 flex-1 overflow-y-auto px-2 py-2">
+        {agentMessages.length === 0 && !streaming && !pendingUser && (
+          <div className="px-2 py-8 text-center text-xs leading-relaxed text-muted">
+            {tr("ai.empty")}
           </div>
         )}
-        {thread.map((m, i) => (
-          <div key={`${m.ts}-${i}`} className={cn("flex", m.role === "user" ? "justify-end" : "justify-start")}>
-            <div className={cn(
-              "leading-relaxed",
-              m.role === "user"
-                ? "ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-accent px-3.5 py-2 text-sm text-white"
-                : "mr-auto max-w-[90%] rounded-2xl rounded-bl-md border border-border-light bg-surface px-3.5 py-2 text-sm text-fg-secondary",
-            )}>
-              {m.content.length > 1400 ? <details><summary className="cursor-pointer text-[10px] opacity-70">展开完整消息</summary><div className="mt-1"><MiniMarkdown>{m.content}</MiniMarkdown></div></details> : <MiniMarkdown>{m.content}</MiniMarkdown>}
-            </div>
-          </div>
-        ))}
-        {pendingUser && <div className="flex justify-end"><div className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-accent px-3.5 py-2 text-sm text-white opacity-80"><MiniMarkdown>{pendingUser}</MiniMarkdown></div></div>}
-        {pendingProposals.map((sg) => (
-          <ProposalCard
-            key={sg.id}
-            proposal={sg}
-            currentContent={sg.note_id === currentId ? (detail?.content ?? "") : ""}
-            noteTitle={noteTitle(sg.note_id)}
-            tr={tr}
-            onApply={applyOne}
-            onDismiss={dismissOne}
+        {agentMessages.map((m, i) => (
+          <ChatMessage
+            key={`${m.ts}-${i}`}
+            msg={{
+              role: m.role,
+              // 计划 JSON 围栏由 PlanCard 结构化呈现，消息正文剥掉原始 JSON
+              content: m.role === "assistant" ? stripPlanCardJson(m.content) : m.content,
+            }}
           />
         ))}
+        {/* 计划卡：跟在消息流后，状态徽标随批复流转 */}
+        {pendingPlan && !streaming && <PlanCard plan={pendingPlan} tr={tr} />}
+        {pendingUser && (
+          <ChatMessage msg={{ role: "user", content: pendingUser }} />
+        )}
         {streaming && (
-          <div className="flex justify-start">
-            <div className="mr-auto max-w-[90%] rounded-2xl rounded-bl-md border border-border-light bg-surface px-3.5 py-2 text-sm leading-relaxed text-fg-secondary">
-              {streamStep && (
-                <div className="mb-1 flex items-center gap-1 text-[10px] text-muted">
-                  <Wrench size={10} className="animate-pulse" /> {streamStep}
+          <div className="px-1 py-3">
+            <div className="border-l-2 border-accent/35 pl-4">
+              {streamThinking && (
+                <ThinkingBlock text={streamThinking} isStreaming />
+              )}
+              {doneTools.map((t, i) => (
+                <NotesToolCard key={`${t.name}-${i}`} name={t.name} status={t.status} text={t.text} />
+              ))}
+              {activeTool && (
+                <div className="mb-2">
+                  <ActiveToolCard name={activeTool} progress={[toolDisplayName(activeTool)]} heartbeatElapsed={0} />
                 </div>
               )}
-              {streamAnswer ? <MiniMarkdown>{streamAnswer}</MiniMarkdown>
-                : <span className="dot-loader" />}
+              {streamAnswer ? (
+                <div className="py-0.5">
+                  <StreamingMarkdown>{stripPlanCardJson(streamAnswer)}</StreamingMarkdown>
+                  <span className="streaming-cursor" />
+                </div>
+              ) : (!activeTool && !streamThinking && <span className="dot-loader" />)}
             </div>
           </div>
         )}
-        {error && <div className="text-xs text-danger">{error}</div>}
+        {error && <div className="px-2 py-1 text-xs text-danger">{error}</div>}
         {toast && (
-          <div className="rounded-md bg-success/10 px-2 py-1 text-[11px] text-success">
+          <div className="mx-1 my-1 rounded-md bg-success/10 px-2 py-1 text-[11px] text-success">
             {toast}
           </div>
         )}
         <div ref={bottomRef} />
       </div>
 
-      {/* 输入区：确认中枢 + 模式选择器 */}
+      {/* 输入区：批复条 + 图片附件 + 模式选择器（VSCode 式左下角） */}
       <div className="border-t border-border px-3 py-2">
-        {hasPlan && (
+        {showPlanBar && (
           <div className="mb-2 flex items-center gap-1.5 rounded-[10px] border border-accent/20 bg-accent-soft/60 px-2.5 py-1.5">
             <ClipboardList size={12} className="shrink-0 text-accent-strong" />
             <span className="min-w-0 flex-1 truncate text-[11px] text-accent-strong">
               {tr("ai.plan.pending")}
             </span>
             <Button
+              variant="ghost" size="sm" icon={<X size={12} />}
+              onClick={() => void send("reject_plan")}
+            >
+              {tr("ai.plan.reject")}
+            </Button>
+            <Button
               variant="primary" size="sm" icon={<Check size={12} />}
-              disabled={streaming}
               onClick={() => void send("approve_plan")}
             >
               {tr("ai.plan.approve")}
-            </Button>
-          </div>
-        )}
-        {agentMode === "collab" && pendingProposals.length > 0 && !streaming && (
-          <div className="mb-2 flex items-center gap-1.5 rounded-[10px] border border-accent/20 bg-accent-soft/60 px-2.5 py-1.5">
-            <span className="min-w-0 flex-1 truncate text-[11px] text-accent-strong">
-              {tr("ai.proposal.pendingBar", "待确认修改 {n} 条").replace(
-                "{n}", String(pendingProposals.length))}
-            </span>
-            <Button
-              variant="ghost" size="sm" icon={<X size={12} />}
-              onClick={() => {
-                for (const p of pendingProposals) void dismissOne(p.id);
-              }}
-            >
-              {tr("ai.proposal.dismissAll")}
-            </Button>
-            <Button
-              variant="primary" size="sm" icon={<Check size={12} />}
-              onClick={() => void applyAll()}
-            >
-              {tr("ai.proposal.applyAll")}
             </Button>
           </div>
         )}
@@ -501,7 +477,7 @@ export function AIPanel({
               </Button>
             ) : (
               <Button variant="primary" size="sm" icon={<Send size={13} />}
-                disabled={!input.trim() && !ocrText.trim() && imgAttachments.length === 0}
+                disabled={!input.trim() && !ocrText.trim() && imgAttachments.length === 0 && !(pendingPlan?.status === "pending")}
                 onClick={() => void send()}>
                 {tr("ai.send")}
               </Button>

@@ -78,13 +78,9 @@ class BulkDelete(BaseModel):
     note_ids: list[str] = Field(default_factory=list, max_length=200)
 
 
-class ThreadCreate(BaseModel):
-    title: str = Field(default="", max_length=120)
-
-
-class ThreadPatch(BaseModel):
-    title: str | None = Field(default=None, max_length=120)
-    mode: str | None = Field(default=None, max_length=16)
+class AgentPatch(BaseModel):
+    # 三模式：ask 问答 / plan 计划 / authorize 授权（旧值由 store 归一化）
+    mode: str = Field(..., max_length=16)
 
 
 class TemplateCreate(BaseModel):
@@ -159,10 +155,7 @@ def _content_disposition(filename: str) -> str:
 @router.get("/vault")
 def get_vault(student_id: str = Depends(resolve_student_id)) -> dict:
     vault = _load_vault(student_id)
-    summary = notes_store.vault_summary(vault)
-    summary["stats"]["pending_suggestions"] = \
-        notes_store.pending_suggestion_count(student_id)
-    return summary
+    return notes_store.vault_summary(vault)
 
 
 @router.get("/search")
@@ -434,117 +427,53 @@ def delete_custom_template(template_id: str,
     return {"status": "ok"}
 
 
-# --- agent thread view ----------------------------------------------------------------
+# --- 笔记智能体（每笔记专属） ------------------------------------------------------
 
 
-@router.get("/thread")
-def get_thread(student_id: str = Depends(resolve_student_id)) -> dict:
-    """兼容旧客户端：默认线程。"""
-    return notes_store.thread_view(student_id, "default")
+def _agent_note_key(note_id: str) -> str:
+    """agent 历史的存储键：笔记 id；空串 = 仓库级对话。"""
+    return Path(note_id or "").name
 
 
-@router.delete("/thread")
-def reset_thread(student_id: str = Depends(resolve_student_id)) -> dict:
-    notes_store.clear_thread(student_id, "default")
-    return {"status": "ok"}
-
-
-@router.get("/threads")
-def get_threads(student_id: str = Depends(resolve_student_id)) -> dict:
-    return {"threads": notes_store.list_threads(student_id)}
-
-
-@router.post("/threads")
-def post_thread(req: ThreadCreate, student_id: str = Depends(resolve_student_id)) -> dict:
-    return {"thread": notes_store.create_thread(student_id, req.title)}
-
-
-@router.get("/threads/{thread_id}")
-def get_thread_by_id(thread_id: str, student_id: str = Depends(resolve_student_id)) -> dict:
-    thread = notes_store._read_thread_file(student_id, Path(thread_id).name)
-    if thread is None:
-        raise HTTPException(404, "线程不存在")
-    return notes_store.thread_view(student_id, thread_id)
-
-
-@router.patch("/threads/{thread_id}")
-def patch_thread(thread_id: str, req: ThreadPatch, student_id: str = Depends(resolve_student_id)) -> dict:
-    thread = notes_store.update_thread(student_id, thread_id, title=req.title, mode=req.mode)
-    if thread is None:
-        raise HTTPException(404, "线程不存在")
-    return {"thread": thread}
-
-
-@router.delete("/threads/{thread_id}/messages")
-def delete_thread_messages(thread_id: str, student_id: str = Depends(resolve_student_id)) -> dict:
-    if notes_store._read_thread_file(student_id, Path(thread_id).name) is None:
-        raise HTTPException(404, "线程不存在")
-    notes_store.clear_thread(student_id, thread_id)
-    return {"status": "ok"}
-
-
-@router.delete("/threads/{thread_id}")
-def remove_thread(thread_id: str, student_id: str = Depends(resolve_student_id)) -> dict:
-    if thread_id == "default":
-        raise HTTPException(400, "默认线程不能删除，可清空消息")
-    if not notes_store.delete_thread(student_id, thread_id):
-        raise HTTPException(404, "线程不存在")
-    return {"status": "deleted"}
-
-
-# --- suggestions ------------------------------------------------------------------------
-
-
-@router.get("/suggestions")
-def list_suggestions(status: str = Query(""),
-                     student_id: str = Depends(resolve_student_id)) -> dict:
-    items = notes_store.load_suggestions(student_id)
-    if status:
-        items = [i for i in items if i.get("status") == status]
-    items = sorted(items, key=lambda i: float(i.get("created_at") or 0),
-                   reverse=True)
-    return {"suggestions": items[:100]}
-
-
-@router.post("/suggestions/{suggestion_id}/apply")
-def apply_suggestion(suggestion_id: str,
-                     student_id: str = Depends(resolve_student_id)) -> dict:
-    item = notes_store.find_suggestion(student_id, suggestion_id)
-    if item is None:
-        raise HTTPException(404, "建议不存在")
-    if item.get("status") != "pending":
-        raise HTTPException(400, "建议已处理")
+@router.get("/notes/{note_id}/agent")
+def get_note_agent(note_id: str,
+                   student_id: str = Depends(resolve_student_id)) -> dict:
+    """某笔记专属智能体的模式 / 对话历史 / 待批复计划 / 工作态。"""
     vault = _load_vault(student_id)
-    meta = vault.find_note(str(item.get("note_id") or ""))
-    if meta is None:
-        notes_store.set_suggestion_status(student_id, suggestion_id, "dismissed")
-        raise HTTPException(404, "建议指向的笔记不存在")
-    current = vault.read_note(meta["id"])
-    proposed = str(item.get("proposed_content") or "")
-    merged = proposed if item.get("kind") == "replace" \
-        else (current.rstrip() + "\n\n" + proposed.lstrip())
-    merged = notes_store.dedupe_knowledge_cards(merged)
-    meta = vault.write_note(meta["id"], merged, author="agent",
-                            summary=f"应用建议：{item.get('summary', '')}")
-    notes_store.set_suggestion_status(student_id, suggestion_id, "applied")
-    notes_store.save_vault(vault)
-    # 对话线程同步留痕：学生确认的提案应用后可在助手里追溯
-    notes_store.append_thread_message(
-        student_id, "assistant",
-        f"已应用修改：《{meta.get('title') or meta['id']}》— "
-        f"{str(item.get('summary') or '').strip()}",
-        {"scope": "note", "note_id": meta["id"], "mode": "collab"})
-    return {"note": vault.note_summary(meta),
-            "content": vault.read_note(meta["id"])}
+    key = _agent_note_key(note_id)
+    if key and key != "_vault" and vault.find_note(key) is None:
+        raise HTTPException(404, "笔记不存在")
+    view = notes_store.agent_history_view(student_id, key)
+    view["modes"] = list(notes_store.AGENT_MODES)
+    return view
 
 
-@router.post("/suggestions/{suggestion_id}/dismiss")
-def dismiss_suggestion(suggestion_id: str,
-                       student_id: str = Depends(resolve_student_id)) -> dict:
-    item = notes_store.set_suggestion_status(student_id, suggestion_id, "dismissed")
-    if item is None:
-        raise HTTPException(404, "建议不存在")
-    return {"status": "dismissed"}
+@router.patch("/notes/{note_id}/agent")
+def patch_note_agent(note_id: str, req: AgentPatch,
+                     student_id: str = Depends(resolve_student_id)) -> dict:
+    """切换该笔记智能体的模式（服务端枚举校验，堵客户端自报越权）。"""
+    vault = _load_vault(student_id)
+    key = _agent_note_key(note_id)
+    if key and key != "_vault" and vault.find_note(key) is None:
+        raise HTTPException(404, "笔记不存在")
+    raw = req.mode.strip().lower()
+    if raw not in notes_store.AGENT_MODES and raw not in notes_store._LEGACY_AGENT_MODES:
+        raise HTTPException(422, f"未知模式：{req.mode}（可选 {'/'.join(notes_store.AGENT_MODES)}）")
+    notes_store.set_agent_mode(student_id, key, raw)
+    return {"note_id": key,
+            "mode": notes_store.normalize_agent_mode(raw)}
+
+
+@router.delete("/notes/{note_id}/agent")
+def clear_note_agent(note_id: str,
+                     student_id: str = Depends(resolve_student_id)) -> dict:
+    """清空该笔记智能体的对话历史与待批复计划（保留模式选择）。"""
+    vault = _load_vault(student_id)
+    key = _agent_note_key(note_id)
+    if key and key != "_vault" and vault.find_note(key) is None:
+        raise HTTPException(404, "笔记不存在")
+    notes_store.clear_agent_history(student_id, key)
+    return {"status": "ok"}
 
 
 # --- review (M9 同步) ----------------------------------------------------------------------
@@ -644,14 +573,18 @@ class GenerateRequest(BaseModel):
 class NotesChatRequest(BaseModel):
     message: str = Field(..., max_length=8000)
     context: dict[str, Any] = Field(default_factory=dict)
-    # 四模式：plan / collab / auto / ask（旧值 suggest/cowrite 由智能体归一化）
-    mode: str = Field("collab", max_length=16)
-    # 动作：approve_plan = 批复线程中最后一条助手消息为计划并自动执行
+    # 三模式：ask / plan / authorize（旧值 suggest/collab→plan、
+    # cowrite/auto→authorize，由 store 归一化；未知值 422 拒绝）
+    mode: str = Field("ask", max_length=16)
+    # 动作：approve_plan = 批复待批复计划（仅一次）并自动切入授权执行；
+    # reject_plan = 驳回计划。空串 = 普通消息。
     action: str = Field("", max_length=32)
     # 图片附件（/notes/upload 返回的 {id, filename}）；MULTIMODAL 配置时
     # 注入视觉通道，未配置时降级用消息内的 <ocr_material> OCR 文本
     attachments: list[dict[str, Any]] = Field(default_factory=list, max_length=3)
-    thread_id: str = Field(default="default", max_length=64)
+
+
+_CHAT_ACTIONS = ("", "approve_plan", "reject_plan")
 
 
 _SSE_HEADERS = {
@@ -758,6 +691,14 @@ async def notes_chat_stream(req: NotesChatRequest,
     from fastapi.responses import StreamingResponse
     from app.agents import notes_agent
 
+    raw_mode = req.mode.strip().lower()
+    if (raw_mode not in notes_store.AGENT_MODES
+            and raw_mode not in notes_store._LEGACY_AGENT_MODES):
+        raise HTTPException(422, f"未知模式：{req.mode}"
+                                  f"（可选 {'/'.join(notes_store.AGENT_MODES)}）")
+    if req.action.strip() not in _CHAT_ACTIONS:
+        raise HTTPException(422, f"未知操作：{req.action}")
+
     async def event_stream():
         if not notes_agent.is_enabled():
             yield _sse({"type": "error",
@@ -765,8 +706,8 @@ async def notes_chat_stream(req: NotesChatRequest,
             return
         async for event in notes_agent.run_notes_chat(
                 student_id, message=req.message, context=req.context,
-                mode=req.mode, action=req.action, attachments=req.attachments,
-                thread_id=req.thread_id):
+                mode=raw_mode, action=req.action.strip(),
+                attachments=req.attachments):
             yield _sse(event)
 
     return StreamingResponse(event_stream(), media_type="text/event-stream",

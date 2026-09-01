@@ -161,10 +161,16 @@ class KnowledgeSearchTool(Tool):
         raw_file_ids = kwargs.get("file_ids")
         file_ids = ({str(fid) for fid in raw_file_ids if str(fid).strip()}
                     if isinstance(raw_file_ids, (list, tuple, set)) else None)
+        # focus_queries：内部参数（executor 预检索传入，不在 LLM 工具 schema 中）
+        # ——task_understanding 让 LLM 预先分析的精炼检索词，优先占据变体槽位。
+        raw_focus = kwargs.get("focus_queries")
+        focus_queries = ([str(q).strip() for q in raw_focus if str(q).strip()][:3]
+                         if isinstance(raw_focus, (list, tuple)) else None)
         # Recall broadly; Evidence Gate decides whether a candidate is safe to
         # show or inject. RRF rank itself is never treated as relevance proof.
         candidates = await self._multi_search(query, max(top_k * 8, 24),
-                                              file_ids=file_ids)
+                                              file_ids=file_ids,
+                                              focus=focus_queries)
         if candidates:
             candidates = self._concept_boost(
                 query, candidates, max(top_k * 8, 24), file_ids=file_ids)
@@ -320,9 +326,10 @@ class KnowledgeSearchTool(Tool):
         return self._store.search(query, top_k=top_k, file_ids=file_ids)
 
     async def _multi_search(self, query: str, top_k: int,
-                            *, file_ids: set[str] | None = None) -> list[dict[str, Any]]:
+                            *, file_ids: set[str] | None = None,
+                            focus: list[str] | None = None) -> list[dict[str, Any]]:
         """Bounded deterministic multi-query recall + cross-file coverage."""
-        variants = self._query_variants(query)
+        variants = self._query_variants(query, focus)
         by_id: dict[str, dict[str, Any]] = {}
         rrf: dict[str, float] = {}
         for variant in variants:
@@ -349,35 +356,75 @@ class KnowledgeSearchTool(Tool):
             ranked.append(item)
         return self._diversify_files(ranked, top_k)
 
+    # Deterministic bilingual aliases for common textbook terminology.
+    _ALIASES = {
+        "洛伦兹变化": "洛伦兹变换 Lorentz transformation",
+        "洛伦兹变换": "Lorentz transformation",
+        "牛顿第二定律": "Newton second law",
+        "动量守恒": "conservation of momentum",
+        "能量守恒": "conservation of energy",
+        "电磁感应": "electromagnetic induction Faraday",
+        "导数": "derivative",
+        "积分": "integral",
+    }
+
     @staticmethod
-    def _query_variants(query: str) -> list[str]:
-        variants = [query.strip()]
+    def _compact_variant(query: str) -> str:
+        """Polite/punctuation-stripped compact variant; "" when nothing is left."""
         compact = re.sub(
             r"(?:请|帮我|能否|可以|结合|根据|关于|讲一下|解释一下|分析一下|这份|该份|附件|教材|资料|文件)",
             " ", query, flags=re.IGNORECASE)
         compact = re.sub(r"[，。！？,.!?：:；;（）()\[\]{}]+", " ", compact)
         compact = " ".join(part for part in compact.split() if part).strip()
-        if compact and compact != variants[0] and len(compact) >= 2:
-            variants.append(compact)
+        return compact if compact and len(compact) >= 2 else ""
+
+    @staticmethod
+    def _question_core_variant(query: str) -> str:
+        """Content-word core of a natural-language question; "" for non-questions."""
         # 自然语言问句：内容词核变体（剥疑问尾巴/学段词，证据门同源逻辑），
         # 让 BM25 对口语问句直接按内容词召回，而非被疑问词稀释。
         from ..core.evidence_gate import is_natural_question, question_core
-        if is_natural_question(query):
-            core_q = re.sub(r"\s+", " ", question_core(query)).strip()
-            if len(core_q.replace(" ", "")) >= 2 and core_q not in variants:
-                variants.append(core_q)
-        # Deterministic bilingual aliases for common textbook terminology.
-        aliases = {
-            "洛伦兹变化": "洛伦兹变换 Lorentz transformation",
-            "洛伦兹变换": "Lorentz transformation",
-            "牛顿第二定律": "Newton second law",
-            "动量守恒": "conservation of momentum",
-            "能量守恒": "conservation of energy",
-            "电磁感应": "electromagnetic induction Faraday",
-            "导数": "derivative",
-            "积分": "integral",
-        }
-        for zh, en in aliases.items():
+        if not is_natural_question(query):
+            return ""
+        core_q = re.sub(r"\s+", " ", question_core(query)).strip()
+        return core_q if len(core_q.replace(" ", "")) >= 2 else ""
+
+    @classmethod
+    def _query_variants(cls, query: str, focus: list[str] | None = None) -> list[str]:
+        """Variant set (max 3) for multi-query recall.
+
+        `focus` carries the LLM-refined search terms the executor's
+        pre-retrieval got from task_understanding. When present they take the
+        variant slots first — a spoken full sentence is a poor BM25 query and
+        a top reason pre-retrieval misses — while the deterministic
+        compact/question-core variants of the original message keep recall
+        breadth in any remaining slot.
+        """
+        focus_terms = [str(v).strip() for v in (focus or []) if str(v).strip()]
+        if focus_terms:
+            variants = list(dict.fromkeys(focus_terms))[:3]
+            for extra in (cls._compact_variant(query),
+                          cls._question_core_variant(query)):
+                if len(variants) >= 3:
+                    break
+                if extra and extra not in variants:
+                    variants.append(extra)
+            for zh, en in cls._ALIASES.items():
+                if len(variants) >= 3:
+                    break
+                if any(zh in term for term in focus_terms):
+                    expansion = f"{zh} {en}"
+                    if expansion not in variants:
+                        variants.append(expansion)
+            return [v for v in variants if v][:3]
+        variants = [query.strip()]
+        compact = cls._compact_variant(query)
+        if compact and compact != variants[0]:
+            variants.append(compact)
+        core_q = cls._question_core_variant(query)
+        if core_q and core_q not in variants:
+            variants.append(core_q)
+        for zh, en in cls._ALIASES.items():
             if zh in query:
                 variants.append(f"{zh} {en}")
         if re.search(r"作者|谁写|编者", query):

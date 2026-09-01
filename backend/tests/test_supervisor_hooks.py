@@ -101,7 +101,11 @@ class ThinkingLLM:
 
 
 class TestRealSummaryReflection(StorageSandboxTestCase):
-    """REASONING_SUMMARY_LEVEL=real_summary：真实推理经二次提炼进入 thinking 通道。"""
+    """REASONING_SUMMARY_LEVEL=real_summary：真实推理经二次提炼进入 thinking 通道。
+
+    live thinking 流（REASONING_LIVE_MAX_CHARS=-1 默认开）已把真实推理直播给
+    前端时，real_summary 会被跳过（见 test_reasoning_live_stream）；本套测试
+    钉在 live=0 的隐藏 CoT 模式下验证二次提炼通道本身。"""
 
     def _run_turn(self, level: str):
         from app.agents.supervisor import run
@@ -117,7 +121,8 @@ class TestRealSummaryReflection(StorageSandboxTestCase):
                                 lang="zh", output_language=None,
                                 student_id="rs_" + os.urandom(3).hex()):
                 events.append(ev)
-        with patch.object(settings, "reasoning_summary_level", level):
+        with patch.object(settings, "reasoning_summary_level", level), \
+                patch.object(settings, "reasoning_live_max_chars", 0):
             asyncio.run(go())
         return events
 

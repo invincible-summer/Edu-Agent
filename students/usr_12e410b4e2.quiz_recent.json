@@ -577,7 +577,23 @@
       "verdict": "correct",
       "student_answer": "\\[\nx(t) = t^3 - 3t^2,\\quad 0 \\le t \\le 4 \\ \\text{s}\n\\]  \n单位为米。\n\n---\n\n### **（1）速度与加速度，运动方向及速率表达式**\n\n#### 速度  \n速度是位置对时间的一阶导数：\n\n\\[\nv(t) = \\frac{dx}{dt} = 3t^2 - 6t = 3t(t - 2)\n\\]\n\n#### 加速度  \n加速度是速度对时间的一阶",
       "source_status": "active"
+    },
+    {
+      "id": 37,
+      "ts": 1788233970.0692153,
+      "session_id": "chat_20260901_113617_傅里叶变化有什么知识点以及应用_总结一下",
+      "topic": "傅里叶变换及其应用",
+      "grade": "本科",
+      "type": "short_answer",
+      "difficulty": "hard",
+      "stem": "某风电齿轮箱在线监测系统以采样率 $f_s=2000\\ \\mathrm{Hz}$ 采集振动信号 $N=4096$ 点，观测时长为 $T=2.048\\ \\mathrm{s}$。记录期间转轴转频由 $24\\ \\mathrm{Hz}$ 线性升至 $30\\ \\mathrm{Hz}$。已知现场存在稳定的工频干扰 $50\\ \\ma",
+      "knowledge_point": "傅里叶变换、离散 FFT 频率分辨率、频谱泄漏、窗函数与幅值修正、奈奎斯特采样定理与混叠、数字滤波、陷波与带通滤波、变速",
+      "correct_answer": "（1）频率分辨率为 $\\Delta f=f_s/N=2000/4096=0.4883\\ \\mathrm{Hz}$。转频随时间由 $24\\sim30\\ \\mathrm{Hz}$ 变化，对应 bin 范围约为 $24/0.4883\\sim30/0.4883=49\\sim61$；$2$ 倍频范围为 $48\\sim60\\ \\mathrm{Hz}$，对应 bin $98\\sim123$。轴承冲击重复频率为 ",
+      "explanation": "本题核心是把变速、有限记录、混叠和滤波效应分开判断。先由 $\\Delta f=f_s/N$ 算 bin，再用 $f_{\\mathrm{alias}}=|f-mf_s|$ 识别 $970\\ \\mathrm{Hz}$ 混叠。变速会形成频率 ridge，非整 bin 工频产生泄漏；单边谱还需乘 $2$ 并除以窗相干增益。最后须用阶次一致性、共振包络和滤波器敏感性共同验证冲击，不能把振铃直接当故障。",
+      "verdict": "",
+      "student_answer": "",
+      "source_status": "active"
     }
   ],
-  "updated_at": 1788058024.6559818
+  "updated_at": 1788233970.0800352
 }

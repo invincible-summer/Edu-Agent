@@ -52,10 +52,13 @@ const REHYPE_PLUGINS: ComponentProps<typeof ReactMarkdown>["rehypePlugins"] =
   [[rehypeKatex, { output: "htmlAndMathml", strict: false, throwOnError: false }], rehypeStyleObjects];
 
 type MathKind = "inline-dollar" | "display-dollar" | "paren" | "bracket";
+type MathSpan = { kind: MathKind; start: number; end: number };
 type MathScan = {
   hasMath: boolean;
   unclosedStart: number | null;
   unclosedKind: MathKind | null;
+  /** 全部完整数学区间（含定界符），按出现顺序。 */
+  spans: MathSpan[];
 };
 
 function isEscaped(source: string, index: number): boolean {
@@ -83,6 +86,7 @@ function scanMath(source: string): MathScan {
   let mathKind: MathKind | null = null;
   let mathStart = -1;
   let hasMath = false;
+  const spans: MathSpan[] = [];
 
   for (let i = 0; i < source.length;) {
     if (codeFenceLength > 0) {
@@ -123,7 +127,9 @@ function scanMath(source: string): MathScan {
         (mathKind === "bracket" && source.startsWith("\\]", i));
       if (closes && !isEscaped(source, i)) {
         hasMath = true;
-        i += mathKind === "display-dollar" ? 2 : mathKind === "inline-dollar" ? 1 : 2;
+        const delimLen = mathKind === "inline-dollar" ? 1 : 2;
+        spans.push({ kind: mathKind, start: mathStart, end: i + delimLen });
+        i += delimLen;
         mathKind = null;
         mathStart = -1;
         continue;
@@ -177,6 +183,7 @@ function scanMath(source: string): MathScan {
     hasMath,
     unclosedStart: mathKind ? mathStart : null,
     unclosedKind: mathKind,
+    spans,
   };
 }
 
@@ -184,6 +191,14 @@ function scanMath(source: string): MathScan {
 export function containsMathMarkdown(source: string): boolean {
   const scan = scanMath(source);
   return scan.hasMath || scan.unclosedStart !== null;
+}
+
+/** 句中全部块状公式段（`$$…$$` 与 `\[…\]`，含定界符，按出现顺序）。
+ *  语音黑板只挂块式：行内 `$…$`/`\(…\)` 不上板、也不触发换板。 */
+export function displayMathSegments(source: string): string[] {
+  return scanMath(source).spans
+    .filter((s) => s.kind === "display-dollar" || s.kind === "bracket")
+    .map((s) => source.slice(s.start, s.end));
 }
 
 /**

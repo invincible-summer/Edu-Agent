@@ -158,6 +158,7 @@ M10 Registry 将 Agent Skill 投影为能力 → 工具子集，收窄 LLM 每�
 - **策略—Skill 对齐与必执行兜底**：`PlanStep` 可携带 `tool_args/auto_invoke`。只有教学策略明确要求、参数已由系统确定且工具在当前会话真实安装时才启用；模型正常函数调用优先，若只用文字模拟收尾题而漏调工具，Executor 发出 `skill_plan_auto_invoke` 并按授权参数补执行。普通 generate/fit 歧义计划不自动调用，仍由 Agent 决策。
 - **推理预算防饿死**：`EXECUTOR_TOOL_THINKING=1`（默认）时工具步保留模型 LOW 思考（预算充足时提升工具使用质量并为 real_summary 提供真实推理材料）；`budget_forces_direct` 在输出预算被压到答案保留区以下时仍强制关闭 thinking；若 provider 以 `finish_reason=length` 返回空或半截答案，执行器记录 `incomplete_answer_recovery`，保留已流式输出的前缀并用关闭 thinking 的第二次调用续写——续写指令显式禁止复述此前轮次内容（思考型模型会把整轮预算耗在隐藏推理后，于重试时复读上一轮答案）；最终回答与工具前讲解会合并写入会话历史，不再只显示深度思考或丢失前半段。工具步输出信封由 `EXECUTOR_TOOL_MAX_OUTPUT_TOKENS` 控制（默认 6000，旧硬顶 4000 常被思考吃光触发恢复，重试本身比放大信封更费 token）。`=0` 回到旧行为（有可见工具即关闭执行阶段 thinking）。
 - **R10 确定性预检索（反幻觉关键）**：`agents/preresearch.py` 是 legacy/Executor 两条路径的统一判定源。**本轮上传文件/图片、引用资料中心教材，或明确说“根据教材/附件/这份资料”时必须在回答前检索**；工作区仅仅存在资料不会让问候等无关轮次强制检索，内容型问题仍可由 Planner/M10 自主安排。Executor 用完整工具表查找 `knowledge_search`（不受 router 收窄影响），当前轮附件携带 file_id 时只检索这些文件，避免引用 A 却命中 B；结果命中则注入“严格基于原文”，未命中则注入“如实告知、禁止凭文件名编造”。Trace 记录 `grounding_reason/grounding_file_ids`。
+- **R10 预检索查询精炼（search_queries）**：understand_system（v1.2.0）让任务分析 LLM 同轮产出 `search_queries`（1–3 条概念/篇目/课文名精炼检索词，`task_understanding._clean_search_queries` 清洗：仅短字符串、≤20 字、≤3 条，整句口语丢弃）。Executor 预检索以 `search_queries[0]` 为主查询、其余经内部参数 `focus_queries`（不在 LLM 工具 schema 中）传给 `KnowledgeSearchTool._query_variants(focus=...)`：精炼词优先占据变体槽位，原句的确定性压缩词核/问句词核兜底占用剩余槽位保持召回广度。`search_queries` 为空（规则路径/LLM 失败）时保持旧的原句直查回落。Trace 在 `tool_result(reason=auto_preresearch)` 上记录 `query_source=llm_focus|raw_message`。V1 legacy 路径不接入（降级链路保持原行为）。
 
 ### 3.6 智能层读写钩子（集成点总表）
 
@@ -199,7 +200,7 @@ M10 Registry 将 Agent Skill 投影为能力 → 工具子集，收窄 LLM 每�
 - `estimate_tokens` 仍作为快速估算（CJK 1 字≈1 token，拉丁 4 字符≈1 token），但 `core/context_budget.py` 按完整协议消息估算 system/preamble/history/directives/Skill Card/tool schema，以及原生 Tool Message 的 call id/参数/result；每次 Provider 调用前重新核算，而不是只在回合开始估一次。
 - `LLM_CONTEXT_WINDOW`、`LLM_MAX_OUTPUT_TOKENS`、`LLM_CONTEXT_SAFETY_MARGIN` 和软/硬比例共同计算输入预算；默认按 64K 平衡档、8000 输出上限、2500 安全区、0.72/0.88 阈值规划，L3 历史默认封顶 24000（兼顾长周期辅导/多资料 RAG 的深度与单轮输入 token 成本，窗口更大的模型不必再调高）。若工具结果加入后可用输出空间缩小，单次 `max_tokens` 会自动下调；当下调侵占答案保留区时优先关闭 thinking，避免用硬窗口换取不可见思考。
 - 压缩按完整 user-assistant 回合保留最近 `CONTEXT_RECENT_FULL_TURNS`，切点始终位于保留区首个 user 之前，不产生孤立 assistant/tool 结果；LLM 压缩调用显式 `disable_thinking=True`。二次压缩会把既有结构化摘要作为输入合并，避免旧信息被静默删除；若摘要 answer 为空则保留全部原始历史、不执行裁剪。压缩输入在对话原文前注入 `quiz_digest_for_session` 确定性出题/作答摘要（题目 payload 从不进入消息文本，「练习与错题」字段此前无米下锅），且在 20000 字头截之后才拼接，保证结构化作答事实永不丢失。压缩状态持久化 `session.compaction`，完整 transcript 仍可由 `recall_history` JIT 找回。
-- Supervisor 发出适度详细的公开 `reasoning_summary`（任务重点、执行步骤、教学策略和检测安排）；Executor 不把 Provider 原始 `reasoning_content` 直接流给前端或持久化，但跨 ReAct 步骤累积进 done 事件（尾部 6000 字封顶）作为内部材料。流式期间 Executor 不把 Provider 原始 `reasoning_content` 转发到 thinking 通道（隐藏 CoT 安全边界）；`REASONING_SUMMARY_LEVEL=real_summary`（显式开启时），Supervisor 在轮末用一次小调用（`reasoning_summarizer.py`，`disable_thinking=True`）把真实推理提炼成学生可读的 3-5 句 reflection 阶段摘要，经既有 thinking SSE 通道追加展示；提炼失败或无真实推理（<200 字/闲聊轮）自动回退纯模板。原始 CoT 全文绝不持久化。
+- Supervisor 发出适度详细的公开 `reasoning_summary`（任务重点、执行步骤、教学策略和检测安排）；Executor 跨 ReAct 步骤累积 Provider 原始 `reasoning_content` 进 done 事件（尾部 6000 字封顶）作为内部材料。**实时思考流（2026-09 起）**：`REASONING_LIVE_MAX_CHARS`（`agents/reasoning_live.py` 的 `LiveThinkingGate`，executor 与 V1 chat_agent 共用）默认 `-1` = 把 `reasoning_content` 逐段以 `thinking` 事件（`is_delta: true, summary: false`）实时流给前端「深度思考」区——显示流不进入 LLM 上下文、不写会话历史、不进语音 TTS；`0` = 恢复旧的隐藏 CoT 行为（仅模板摘要，且资料轮恢复强制关思考）；`>0` = 只实时展示前 N 字。live 开启时资料轮不再强制关思考（`budget_forces_direct` 与 `incomplete_answer_recovery` 仍是护栏），`real_summary` 仅在本轮没有任何 live 思考时触发（避免二次提炼与直播重复）。**持久化边界不变**：session.messages 与 done.thinking 仍存公开摘要（模板 + 可选 reflection），原始 CoT 全文绝不持久化、绝不进语音链路（voice WS 无 thinking 分支，显式丢弃）。
 - `core/llm_runtime/` 提供无密钥的 `ProviderCapabilities` 与阶段化 `ReasoningPolicy`：工具阶段 LOW（`EXECUTOR_TOOL_THINKING=1` 默认保留模型思考，预算守卫与续写兜底 starving；`=0` 回到旧的 NONE 硬关闭）、普通讲解 LOW、复杂任务 MEDIUM；`adapter` 只在能力档案明确支持时下发 `reasoning_effort` 或 reasoning budget，Provider 拒绝可选字段时去参重试并写 `provider_capability_fallback`。多数兼容端点仍把 reasoning 与 answer 计入同一个 completion envelope，因此 Executor 同时记录两个通道的实际/估算 token；出现 `finish_reason=length` 或 answer 为空时，第二次调用关闭 thinking 并从可见前缀继续，确保学生最终拿到答案。`shadow` 只观测策略，不实际下发控制字段。
 - `agents/reasoning_narrator.py` 将过程体验升级为多阶段摘要：understanding 说明任务判断，planning 说明 Skill 路线与教学策略，tool_result 说明结果整合或安全降级；`adaptive` 对 solve/diagnose/plan 使用 detailed，其余使用 standard。`response_format` 与 `allow_followup_assessment` 作为独立控制平面在 plan gate 后再校验一次，并在 Prompt 尾部重申，避免 M3 remediation/next_check 覆盖学生的“一句话/不要出题”要求。
 - `core/session_learning_card.py` 提供 SessionLearningCard/OpenLoop：只投影当前目标、知识点、教学模式、当前 Skill、未完成检测、问题 ID 和最近 verdict；真相仍在 M2/M4/M6/M9、quiz_history 与 transcript。卡片在回合前注入有界只读摘要，回合后按计划与 ToolResult 增量更新；答题卡评分写回时立即关闭已完成 OpenLoop。
@@ -226,7 +227,7 @@ M10 Registry 将 Agent Skill 投影为能力 → 工具子集，收窄 LLM 每�
 | 事件 | 时机 | 载荷要点 |
 |------|------|---------|
 | `step` | 管线阶段推进 | planning / executing 等 |
-| `thinking` | 过程摘要增量 | reasoning summary delta；Provider 原始 reasoning_content 仅内部统计，不直接展示 |
+| `thinking` | 过程思考增量 | `summary:true` = 模板/工具过程摘要；`summary:false` = Provider `reasoning_content` 实时直播（`REASONING_LIVE_MAX_CHARS` 门控，显示流不落盘不 TTS） |
 | `answer` | 回答增量 | token delta |
 | `tool_start` / `tool_result` | 工具调用与返回 | name / result（quiz payload 在此） |
 | `tool_warning` | 反射器/熔断告警 | message |
@@ -682,7 +683,7 @@ frontend/src/
 - **chat URL 唯一事实源**：`/chat/[[...sessionId]]` catch-all，世代号防串会话（切换会话时丢弃迟到的上一会话流）。
 - **流式渲染**：§5.3（本地累积 + 50ms 节流 + React.memo + pinned 滚动）。
 - **资料右侧栏**：桌面固定/可折叠、窄屏抽屉；按“工作区公共资料 / 本对话引用教材 / 本对话上传文件”分组，仅消费后端 `material_sources`/workspace detail 的结构化元数据。`knowledge_search` 工具卡片先渲染结构化命中来源（文件、页码/slide、章节、相关度），再展示片段，不从模型文本猜来源。
-- **语音通话（沉浸式电话模式，P10）**：chat 页唯一的语音入口是右上角电话按钮（`GET /voice/status` 决定显隐，通话中隐藏、由同角落的手机模拟接管状态）；通话**不弹对话卡**——页面照常显示，语音轮次实时写入消息流（转写即用户消息、`answer_delta` 节流进 `pendingAnswer`、`turn_end` 落定，与文字轮共用 `StreamingMessage` 渲染路径与会话世代守卫）。通话期间：页面中上部浮出虚化「板书」黑板，严格左右居中（max-w 760px，接近下方输入栏宽度）、固定占据 3/7 页面高度；板面**三块严格等分**（`flex-1 min-h-0` + 各自滚动，内容多的一块不会挤占邻板），公式句从上往下写空板，三块都满时擦掉写得最早的那块再写新的。右上角（原电话入口位置、按钮行正下方）挂一台「手机模拟」（约 6.72rem × 14.4rem，等比 0.8×：虚拟空白头像 + 通话计时 + 声波状态，底部返回/主页/多任务为纯装饰图标，无真实功能；窄屏隐藏；黑板严格居中不预留，窄窗口下手机可能贴住板书右缘——已确认接受）。底部控制条（按住说话/停止播报/挂断）紧贴输入框上方（输入框保持可用，草稿保留；控制条下方不再常驻浏览器识别/隐私说明文案，未支持浏览器的错误码自带打字回退提示）。表格不逐格朗读：口播一句「请看这个表格」，整块 markdown 经 `board_table` 事件**即时完整**呈现（无书写动画）并整版驻留至少 7 秒，之后继续驻留，直到下一个新公式/新表格需要板面才被清空，语音流水线不停顿。原浏览器 Web Speech 单句听写已随本改版移除。
+- **语音通话（沉浸式电话模式，P10）**：chat 页唯一的语音入口是右上角电话按钮（`GET /voice/status` 决定显隐，通话中隐藏、由同角落的手机模拟接管状态）；通话**不弹对话卡**——页面照常显示，语音轮次实时写入消息流（转写即用户消息、`answer_delta` 节流进 `pendingAnswer`、`turn_end` 落定，与文字轮共用 `StreamingMessage` 渲染路径与会话世代守卫）。通话期间：页面中上部浮出虚化「板书」黑板，严格左右居中（max-w 760px，接近下方输入栏宽度）、固定占据 3/7 页面高度；板面**三块严格等分**（`flex-1 min-h-0` + 各自滚动，内容多的一块不会挤占邻板），只记**块状公式段**（`$$…$$` 段本身，行内 `$…$` 不上板也不触发换板），且**与实际播放同步**——句子音频从播放队列出队开始发声那一刻才挂板（`tts_start` 提前到达只是入队登记，语音没播到的公式不会提前出现），块式段从上往下写空板，三块都满时擦掉写得最早的那块再写新的。右上角（原电话入口位置、按钮行正下方）挂一台「手机模拟」（约 6.72rem × 14.4rem，等比 0.8×：虚拟空白头像 + 通话计时 + 声波状态，底部返回/主页/多任务为纯装饰图标，无真实功能；窄屏隐藏；黑板严格居中不预留，窄窗口下手机可能贴住板书右缘——已确认接受）。底部控制条（按住说话/停止播报/挂断）紧贴输入框上方（输入框保持可用，草稿保留；控制条下方不再常驻浏览器识别/隐私说明文案，未支持浏览器的错误码自带打字回退提示）。表格不逐格朗读：口播一句「请看这个表格」，整块 markdown 经 `board_table` 事件**即时完整**呈现（无书写动画）并整版驻留至少 7 秒，之后继续驻留，直到下一个新公式/新表格需要板面才被清空，语音流水线不停顿。原浏览器 Web Speech 单句听写已随本改版移除。
 - **图谱页交互**：学段 × 学科 chips 两级筛选；章节总览 → 点击下钻章内 DAG，面包屑返回；搜索命中自动定位；pointerup 命中测试（规避 setPointerCapture 吞 click）。概念抽屉双 CTA（「在对话中学这个」/「出几道题考我」）与个性化路径点击均经深链直达对话。
 - **对话深链契约（`?q=&send=1`）**：`/chat?q=<问题>` 预填输入框（不发送）；追加 `&send=1` 则进入新会话时自动发送该问题（ref 防重 + `history.replaceState` 清参数防刷新重发，StrictMode 安全）。知识图谱节点/推荐路径、编排任务行动按钮、本周复盘全部经此契约跳转，消息携带概念上下文（名称/学科/难度/掌握状态/推荐理由）。
 - **加载性能架构**：`start.sh` 默认 `FRONTEND_MODE=prod`（按需 `next build --webpack` → `next start`；源码/后端端口变化自动重建，`REBUILD=1` 强制，`./start.sh dev` 子命令显式回热重载）——dev 服务器按路由现场编译、无 Link 预取，是本地“首开卡顿”的主因。路由级分包：教材库等重页面 `next/dynamic` 懒加载 + `(workspace)/loading.tsx` 统一 PageSkeleton。鉴权水合并行（`/auth/status` 与 `/auth/me` 并发，authRequired 结果 sessionStorage 缓存 5 分钟；`statusLoaded` 与 token 校验双双落定才渲染，未登录不闪屏）。数据层（P0-P4）：`GET /sidebar` 组合快照（会话+工作区+详情一次取齐，ETag/304；替代侧边栏三级 N+1 瀑布）；`GET /chat/sessions/{id}?tail=N` 渐进加载（首屏最近 40 条 + “加载更早”按钮，`.msg-cv` content-visibility 跳过视口外渲染）；教材库空闲零轮询（building 2s / ocr_waiting 15s 条件轮询 + 焦点/WS_CHANGED_EVENT 驱动刷新）；`apiFetch` 幂等 GET 30s 超时护栏（SSE/上传不受影响）；后端每个响应带 `X-Process-Time` 头 + >1s 终端告警。知识图谱冷构建索引化（§14.7）：公共教材图谱合并（~16K 节点/30K 边）从 O(E²) 去重 + 全量扫边改为 O(1)/邻接索引，冷合并分钟级 → ~0.75s；`graph_for` 每学生构建锁 + 启动后台预热默认学生模型；async 读端点的同步重活一律 `asyncio.to_thread`；`GET /orchestration/today` 确定性优先（LLM 组合只在显式写动作）。
@@ -766,7 +767,7 @@ frontend/src/
 | `knowledge/vector_db/` | Chroma 向量索引 | 全局 |
 | `backend/uploads/` | 会话上传解析文本（`<id>.txt`）+ 原件 | 会话 |
 | `backend/traces/` | 每轮 trace | 全局 |
-| `notes/<sid>/vault.json` + `notes/<sid>/notes/*.md` + `revisions/` + `threads/` + `suggestions.json` | M-Notes 笔记仓库（索引/正文/修订/助手线程/建议队列，见文末 M-Notes 章节） | 账号 |
+| `notes/<sid>/vault.json` + `notes/<sid>/notes/*.md` + `revisions/` + `agent/*.json` + `uploads/` | M-Notes 笔记仓库（索引/正文/修订/每笔记专属智能体/附件，见文末 M-Notes 章节） | 账号 |
 | `chat_history/settings/ocr_policy.json` | 教材 OCR 运行策略（管理员） | 全局 |
 | `chat_history/settings/usage_docs.json` | /docs 使用文档（管理员编辑、全员读） | 全局 |
 | `backend/models/voice/` | P10 MeloTTS/HF 模型缓存。gitignored 部署侧资源，非用户数据：不进 orphan 扫描，也不入测试沙箱清单 | 全局（本地资源） |
@@ -780,7 +781,7 @@ frontend/src/
 
 ## 23. API 总表（前缀 `/api/v1`）
 
-- **笔记仓库（M-Notes）**：`GET/notes/{vault,search,graph,reviews/due,thread}`、notes/folders/revisions/templates/suggestions CRUD、`POST /notes/{id}/review`、`GET /notes/{id}/export`、`GET /notes/export`、SSE `POST /notes/{generate,chat/stream}`（详见文末 M-Notes 章节）
+- **笔记仓库（M-Notes）**：`GET/notes/{vault,search,graph,reviews/due}`、notes/folders/revisions/templates CRUD、每笔记智能体 `GET/PATCH/DELETE /notes/{id}/agent`、`POST /notes/{id}/review`、`GET /notes/{id}/export`、`GET /notes/export`、SSE `POST /notes/{generate,chat/stream}`（详见文末 M-Notes 章节）
 - **健康/模型**：`GET /health`、`GET /model-info`
 - **语音通话（P10，默认 off）**：`GET /voice/status`（provider 可用性）、`POST /voice/ticket`（header JWT 换单次 60s 握手凭证）、`WS /voice/ws?ticket=`（push-to-talk 通话协议，见文末 P10 章节）
 - **认证/账户**：`GET /auth/status`、`POST /auth/register`、`POST /auth/login`、`POST /auth/logout`、`GET /auth/me`、`GET/PUT /user/profile`、`DELETE /user/account`
@@ -1169,14 +1170,14 @@ PyMuPDF 非线程安全（MuPDF 共享全局上下文）：教材 OCR 并发调�
   生效、在途调用按旧限额跑完）负责——取代原模块级
   `asyncio.Semaphore(2)`。
 
-## M-Notes 笔记仓库与笔记智能体（2026-08-19）
+## M-Notes 笔记仓库与笔记智能体（2026-08-19；2026-09-01 每笔记专属智能体重构）
 
 回答「学习痕迹如何沉淀为可长期温习的个人知识库」。独立子系统（不进 M1 Supervisor
-链路、不复用 chat 页面与提示词）：每用户一个 Obsidian 式 Markdown 仓库 + 独立笔记
-智能体（计划/协作/完全授权/聊天问答四模式）。包：`core/notes.py`（存储）、
-`core/notes_templates.py`（模板）、`agents/notes_agent.py`（智能体）、
-`api/v1/notes.py`（路由）；前端 `/notes`（三栏：侧栏 | 编辑/预览/图谱 | AI 面板，
-两侧栏可折叠、边缘拖宽，宽度持久化）。
+链路、不复用 chat 页面与提示词）：每用户一个 Obsidian 式 Markdown 仓库 + **每笔记
+专属**笔记智能体（问答/计划/授权三模式，2026-09 起协作模式与建议队列移除）。包：
+`core/notes.py`（存储）、`core/notes_templates.py`（模板）、`agents/notes_agent.py`
+（智能体）、`api/v1/notes.py`（路由）；前端 `/notes`（三栏：侧栏 | 编辑/预览/图谱 |
+AI 面板，两侧栏可折叠、边缘拖宽，宽度持久化）。
 
 **存储布局**（根目录 `notes/<safe_sid>/`，`.gitignore` 以 `/notes/` 根锚定，
 避免误伤 `frontend/src/components/pages/notes/`）：
@@ -1187,11 +1188,17 @@ PyMuPDF 非线程安全（MuPDF 共享全局上下文）：教材 OCR 并发调�
 - `notes/<note_id>.md`：笔记正文（纯内容）。导出时拼 YAML frontmatter（Obsidian 可
   直接导入）。`note_<YYYYmmdd_HHMMSS>_<slug>` id，`Path(name).name` 防穿越。
 - `revisions/<note_id>/`：修订快照（`{rev:04d}_{ts}_{author}.md`，每笔记上限 20）。
-  每次写入（用户保存/Agent 直写/建议应用/版本恢复）都追加快照；author 区分
+  每次写入（用户保存/Agent 直写/版本恢复）都追加快照；author 区分
   user/agent。
-- `threads/index.json` + `threads/<thread_id>.json`：多线程笔记助手工作区（标题、模式、创建/更新时间、消息与工作状态按线程隔离，上限 200）；旧 `threads/agent.json` 自动迁移为 `default` 线程。`deleted.json` 只保存删除墓碑，供历史资源链接显示失效。
-- `suggestions.json`：Agent 修改提案队列（replace/append 两类、pending 上限 30，
-  协作模式确认机制的存储层）。
+- `agent/<note_id>.json`：**每笔记专属智能体状态**（2026-09-01 重构）：mode
+  （ask/plan/authorize）、messages 对话历史（上限 200 截头）、pending_plan 待批复
+  计划（状态机 pending→approved→executed / rejected + plan_text 全文）、working
+  工作态。`note_id` 为空的仓库级对话存 `agent/_vault.json`。删除/归档笔记时同步
+  清理（`delete_agent_history`）。
+- `threads/`（遗留只读）：旧线程模型。首次加载某笔记历史时按消息
+  `context.note_id` 一次性懒迁移进 `agent/<note_id>.json`（scope=vault 的无主消息
+  不迁移，旧模式值经 `normalize_agent_mode` 映射），之后不再写入；
+  `conversation://notes/<id>` 旧链接按缺失展示。
 
 **写入契约**：乐观并发——`PUT /notes/{id}` 携带 `base_revision`，不匹配返回 409 +
 服务器最新内容（前端弹「载入最新 / 覆盖保存」）。`write_note` 在 `file_lock` 内完成
@@ -1213,7 +1220,10 @@ outline 来源）、对话总结。模板骨架注入 `notes_generator_system`�
 
 **笔记智能体（`agents/notes_agent.py`）**：`NOTES_AGENT_MODE` 开关（默认开；off 时
 CRUD/导出不受影响，SSE 返回降级错误事件）。两条 SSE 管线（事件词汇表沿用 chat 惯例：
-run_start/step/answer{is_delta}/retry/tool_start/tool_result/run_end/error/done，事件只暴露阶段和工具摘要，不保存原始思维链）：
+run_start/step/thinking{is_delta,summary:false}/answer{is_delta}/retry/tool_start/
+tool_result/note_updated/mode_changed/plan_card/run_end/error/done；事件只暴露阶段和
+工具摘要，**原始思维链不落盘**——live 思考直播（`REASONING_LIVE_MAX_CHARS` 门控）
+仅作为显示流发给前端，不进对话历史）：
 
 - `POST /notes/generate`：**来源三形态**（`sources.source_mode`，缺省按旧字段推断）——
   sessions（教材/文件经 `material_sources` 从所选对话自动推导，无需另选工作区/教材）、
@@ -1230,27 +1240,38 @@ run_start/step/answer{is_delta}/retry/tool_start/tool_result/run_end/error/done�
   视觉通道，未配置静默降级纯文本）→ 剥开场白/代码围栏 → 存为 draft 笔记（source
   记录 source_mode/material_file_ids 溯源，供助手后续检索圈定范围、温故模板
   注册 M9 卡片）→ `note_created`/`done`。`sources_summary` 含 retrieved 计数。
-- `POST /notes/chat/stream`：ReAct-lite（≤4 步），四模式工具矩阵——ask/plan 只读；
-  collab 另有 `notes_propose`（修改提案落 suggestions.json 并 emit
-  `note_suggestion`，学生在对话输入框确认后应用）；auto 另有
-  `notes_write/notes_create`（直写落 agent 修订并 emit `note_updated{note_id,
-  content, revision}`，前端非脏态热更新编辑器，脏态则等用户保存时 409）。
-  **knowledge_search 四模式统一装配**（只读，不改变模式边界）：语料 = 当前笔记
-  source（生成时溯源）+ 笔记页上传附件（`notes/<sid>/uploads/`，向量 scope
-  `notes:<sid>`），两者皆空时回退学生可选教材（封顶 12 个文件防大库拖慢）。
-  越权调用返回 error ToolResult。`action="approve_plan"`：取线程最后一条助手消息
-  为已批复计划，切写入工具组严格按计划执行。旧值 suggest/cowrite 由
-  `normalize_mode` 映射为 collab/auto。线程历史注入最近 12 条；用户消息
-  `<user_input>` 定界；提案 apply 后追加「已应用修改」线程消息留痕。
-  `knowledge_search` 一旦参与新建/修改/提案，会把证据标准化为去重的简短 `> [知识卡]`（来源位置 + 1–2 句摘要 + 隐藏指纹元数据），禁止将完整 RAG 原文写入正文。
+- `POST /notes/chat/stream`：ReAct-lite（≤4 步），**每笔记专属 + 三模式工具矩阵**
+  ——ask/plan 只读（notes_search/notes_read/knowledge_search，plan 也不能修改任何
+  笔记、只能产出计划卡）；authorize 另有 `notes_write`，且工具实例绑定当前笔记
+  （`allowed_note_id` 不匹配直接拒绝——不能新建笔记、不能修改其他笔记），并携带
+  轮首版本快照 `base_revision` 做乐观并发：学生在智能体运行期间保存的编辑触发
+  `StaleRevisionError` → 返回「先 notes_read 重读再重试」错误而不是静默覆盖。
+  写入成功 emit `note_updated{note_id,title,content,revision,summary}`（前端热更新
+  编辑器）。**knowledge_search 三模式统一装配**（只读，不改变模式边界）：语料 =
+  当前笔记 source（生成时溯源）+ 笔记页上传附件（`notes/<sid>/uploads/`，向量
+  scope `notes:<sid>`），两者皆空时回退学生可选教材（封顶 12 个文件防大库拖慢）。
+  越权调用返回 error ToolResult。**计划批复状态机**（结构性消灭重复批复）：plan
+  模式回复尾部的 ```json 计划卡（`{"title","steps":[{title,detail}]}`，解析失败
+  视为普通问答、不设 pending）→ `set_pending_plan(pending)` + `plan_card` 事件 →
+  `action="approve_plan"` 仅当 status==pending 才放行：置 approved、**持久切换该笔记
+  mode 为 authorize**（emit `mode_changed`）、按 `<approved_plan>` 圈定执行、完成后置
+  executed；重复批复/无计划/驳回后批复均返回明确 error。`action="reject_plan"` 置
+  rejected 并停留在 plan 模式（不发 LLM 请求）。对话历史按笔记隔离
+  （`agent/<note_id>.json` 注入最近 12 条）；用户消息 `<user_input>` 定界；异常分支
+  也完整收尾（error + 留痕 + run_end/done，前端 finally 统一刷新）。旧值
+  suggest/collab/cowrite/auto 由 `normalize_agent_mode` 映射为 plan/plan/authorize/
+  authorize；API 层枚举校验未知值 422（堵客户端自报 mode 越权）。
+  `knowledge_search` 一旦参与修改，会把证据标准化为去重的简短 `> [知识卡]`（来源
+  位置 + 1–2 句摘要 + 隐藏指纹元数据），禁止将完整 RAG 原文写入正文。
   **图片附件**：`POST /notes/upload`（图片 OCR/文档提取，存 notes 侧 uploads），
-  请求带 `attachments` 时配置 MULTIMODAL 则切视觉通道（线程持久化仍纯文本，
+  请求带 `attachments` 时配置 MULTIMODAL 则切视觉通道（历史持久化仍纯文本，
   附件只记 id/filename 元数据），未配置降级用消息内 `<ocr_material>` OCR 文本。
 
-提示词注册：`notes_assistant_system@1.2.0`（仓库管家行为契约 + 四模式边界 +
-knowledge_search/图片附件说明 + 防注入定界条款）、`notes_generator_system@1.1.0`
-（生成规则 + 检索片段/图片同为事实依据）、`notes_retrieval_queries@1.0.0`
-（检索查询规划器：输入模板/要求/材料名 → JSON 查询数组），文本改动需 bump 版本。
+提示词注册：`notes_assistant_system@1.3.0`（当前笔记专属助手契约 + 三模式边界 +
+计划卡 JSON 格式 + knowledge_search/图片附件说明 + 防注入定界条款）、
+`notes_generator_system@1.1.0`（生成规则 + 检索片段/图片同为事实依据）、
+`notes_retrieval_queries@1.0.0`（检索查询规划器：输入模板/要求/材料名 → JSON 查询
+数组），文本改动需 bump 版本。
 
 **M9 深度同步（学习温故）**：`LearningOrchestrationService` 新增
 `upsert_review_card`（幂等、重命名只更新 concept_name 不重置调度）/
@@ -1262,14 +1283,17 @@ knowledge_search/图片附件说明 + 防注入定界条款）、`notes_generato
 只回 `note:` 前缀到期卡并 join 笔记元数据。删除（trash 归档）摘卡、恢复重注册。
 
 **回收站**：`notes_note` bundle（`archive_note`：note.json + content.md + revisions/
-快照，温故卡与 pending 建议随归档摘除；restore 反向重建；purge 残留清理幂等）。
+快照，温故卡与该笔记专属智能体状态随归档摘除；restore 反向重建；purge 残留清理幂等）。
 
-**API**（`/api/v1/notes`）：`GET /vault`（含 stats：链接数/未解析/到期温故/待处理建议）、
-`/search`、`/graph`、`/reviews/due`、兼容 `/thread`（GET/DELETE）与 `/threads` 多线程 CRUD/清空消息；notes CRUD（PUT 409 契约、
+**API**（`/api/v1/notes`）：`GET /vault`（含 stats：链接数/未解析/到期温故）、
+`/search`、`/graph`、`/reviews/due`；**每笔记智能体** `GET/PATCH/DELETE
+/{id}/agent`（模式/历史/待批复计划，PATCH 枚举校验 422）；notes CRUD（PUT 409 契约、
 PATCH 改名/移动/标签/温故开关、DELETE 经 trash）；`/{id}/revisions`（列表/读取/恢复）；
 `/{id}/review`；`/{id}/export`（.md frontmatter）与 `/export?folder_id=`（zip）；
-folders（含 parent_id、安全上移删除、循环校验）/templates/suggestions（apply=agent 修订 / dismiss）CRUD；`/bulk/move`、`/bulk/delete`（统一进回收站）；`/generate`、
-`/chat/stream` 两个 SSE。身份一律 `resolve_student_id`，越权 404。
+folders（含 parent_id、安全上移删除、循环校验）/templates CRUD；`/bulk/move`、
+`/bulk/delete`（统一进回收站）；`/generate`、`/chat/stream` 两个 SSE（mode/action
+枚举校验，旧值映射放行）。旧 `/thread*`、`/suggestions*` 路由已随协作模式移除。
+身份一律 `resolve_student_id`，越权 404。
 
 **前端（`/notes/[[...noteId]]`）**：三栏布局，两侧栏（笔记栏/AI 面板）均可折叠
 （PanelToggleButton 嵌中栏头部 + 面板自带 chevron，无浮动按钮）且边缘可拖宽
@@ -1277,27 +1301,39 @@ folders（含 parent_id、安全上移删除、循环校验）/templates/suggest
 默认打开，仅会话内手动折叠）。左栏递归文件夹树（折叠、子文件夹、笔记拖拽目标高亮）/标签/搜索/多选列表（Shift 连选、当前节点全选、批量移动/回收站删除，Pager
 8/页）/新建下拉（空白+模板）/AI 生成/导出；中栏 NoteToolbar **单行**（标题
 InlineEdit、保存状态徽章、视图三态切换、图谱/专注入口、齿轮设置菜单收纳文件夹/标签/
-温故/历史/导出/删除）+ 编辑器（**自研 textarea**：19 键工具栏、Ctrl+B/I/K/S、`[[`
+温故/历史/导出/删除）+ 编辑器（**自研 textarea**：19 键工具栏、Ctrl+B/I/K/S、`[[
 标题自动补全（无匹配可新建）、execCommand 差分插入保 undo 栈、编辑/预览/分屏三态+
 滚动同步；**编辑模式单栏满宽**，与预览模式一致不分屏）+ 预览（复用 chat Markdown
 渲染器，GFM+KaTeX；wikilink/`#标签` 预处理为 note:// 内部链接，反向链接/出链面板）+
-专注模式（fixed 覆盖层全屏编辑，Esc 退出）；编辑器另有统一资源搜索选择器。右栏 AI 面板（VSCode Copilot 式：上下文
-芯片、多线程新建/切换/重命名/删除/服务端清空、线程流式、阶段与工具活动；切换笔记只更新当前笔记 chip，不切换线程；请求建立后才清空输入，失败/停止恢复草稿；协作模式提案以内联 LCS diff 卡片呈现、输入框上方
-「全部应用/全部拒绝」确认；计划模式输入框上方「批复并执行」；模式选择器在输入框
-左下角，四模式持久化，旧值 suggest/cowrite 迁移为 collab/auto；**图片上传**（扫图
-按钮 → /notes/upload → OCR 预览卡，发送时 `<ocr_material>` 前缀 + attachments 视觉
-通道，≤3 张））。生成向导**来源三形态**（从对话生成/从工作区生成——工作区单选 +
-可选限定子集对话，不选=整区/从教材生成 三张类型卡，错题本为附加项，确认步展示
-检索提示）。未选笔记时中栏为 NotesHome（统计卡/今日到期温故三档反馈/未解析
-链接/最近编辑）+ 微型头部图谱切换（统一展示笔记/普通对话/助手线程/失效与幽灵节点；SVG 支持拖拽平移、滚轮/按钮缩放、重置/适应、悬停详情和资源点击跳转，适配深浅色）。自动
-保存 dirty 后 800ms 防抖 + Ctrl+S；`notes:` 前缀的所有请求经 `apiFetch`。导航：学习组
-`/notes`（`nav.notes`，NotebookPen 图标，模块徽章 MN）。
+专注模式（fixed 覆盖层全屏编辑，Esc 退出）；编辑器另有统一资源搜索选择器。右栏 AI
+面板（2026-09-01 重构为**每笔记专属助手**：复用原生 chat 消息组件——用户气泡
+`bg-accent-soft`、助手左竖线无气泡 + chat-prose 排版 + StreamingMarkdown 流式光标 +
+ThinkingBlock 深度思考折叠（live 思考直播实时展开）+ NotesToolCard 工具活动卡 + hover
+复制；**切换笔记即切换智能体**（历史/模式/待批复计划各自独立，从旧线程一次性懒迁移），
+无线程下拉；头部为当前笔记标题 + 三模式选择器（问答/计划/授权，PATCH /{id}/agent
+持久化，旧值自动映射）+ 清空对话；**计划卡**（PlanCard：标题 + 编号步骤 + 状态徽标
+待批复/已执行/已驳回，数据来自服务端 pending_plan 而非启发式猜测）pending 时输入框
+上方出现一次「批准并执行 / 拒绝」批复条，批准后服务端 mode_changed 自动把选择器切到
+授权模式并流式执行，结构性消灭重复批复；**note_updated 自动刷新**：编辑器非脏态热
+替换，脏态改为顶部横幅「助手已更新本笔记 · 载入最新/保留我的」由用户决断，修复旧版
+静默跳过 + 随后 409 冲突的问题；**图片上传**（扫图按钮 → /notes/upload → OCR 预览
+卡，发送时 `<ocr_material>` 前缀 + attachments 视觉通道，≤3 张））。生成向导**来源
+三形态**（从对话生成/从工作区生成——工作区单选 + 可选限定子集对话，不选=整区/从教材
+生成 三张类型卡，错题本为附加项，确认步展示检索提示）。未选笔记时中栏为 NotesHome
+（统计卡/今日到期温故三档反馈/未解析链接/最近编辑）+ 微型头部图谱切换（统一展示
+笔记/普通对话/失效与幽灵节点；SVG 支持拖拽平移、滚轮/按钮缩放、重置/适应、悬停详情
+和资源点击跳转，适配深浅色）。自动保存 dirty 后 800ms 防抖 + Ctrl+S；`notes:` 前缀的
+所有请求经 `apiFetch`。导航：学习组 `/notes`（`nav.notes`，NotebookPen 图标，模块徽章
+MN）。
 
-**测试**：`test_notes.py`（CRUD/并发 409/修订/wikilink 改写/图/导出/建议 apply 线程
-留痕/trash 往返/双用户隔离/路径穿越/附件上传路由）、`test_notes_agent.py`（fake LLM：
-生成管线/三形态来源与真实 RAG 命中/检索查询降级/工作区整区展开/四模式工具循环与
-越权拒绝/knowledge_search 在 ask 模式可用/附件降级/计划批复执行/旧值归一化/线程/
-降级 SSE/API 面）、`test_notes_m9_sync.py`（upsert 幂等/SM-2 规则/生命周期/到期 join）。
+**测试**：`test_notes.py`（CRUD/并发 409/修订/wikilink 改写/图/导出/每笔记智能体端点
+与模式校验/trash 往返/双用户隔离/路径穿越/附件上传路由）、`test_notes_agent.py`
+（fake LLM：生成管线/三形态来源与真实 RAG 命中/检索查询降级/工作区整区展开/三模式
+工具循环与越权拒绝——authorize 跨笔记与新建拒绝/计划卡解析与 pending 状态机/批复
+仅一次 + mode_changed 自动切授权/驳回路径/重复批复拒绝/每笔记历史隔离/旧线程懒迁移/
+写入冲突重试提示/live 思考不落盘/异常分支完整收尾/knowledge_search 在 ask 模式可用/
+附件降级/旧值归一化/降级 SSE/API 面）、`test_notes_m9_sync.py`（upsert 幂等/SM-2
+规则/生命周期/到期 join）。
 
 ---
 
@@ -1714,11 +1750,17 @@ MeloTTS 源码和模型缓存，并执行一次中文 warmup。`melo_bootstrap.p
 - 输入侧不创建服务器输入音频采集链；播放侧仍
   使用 AudioContext 播放下行 TTS PCM；
 - `VoiceCallLayer.tsx` 将转写和回答增量写入现有 chat store，板书只消费
-  `tts_start` 的原始句子：黑板严格左右居中（max-w 760px）、固定占 3/7 页面
-  高度，**三块等分黑板**（`flex-1 min-h-0` + 板内各自滚动——flex 子项默认
-  `min-height:auto` 会让内容高的板挤占邻板，故 CSS 侧不再设 min-height），
-  公式句从上往下写第一块空板，三块都满时擦掉写得最早的那块（key 即写入序）
-  再写新的；`board_table` 到达时三块黑板全部作废、整版表格**即时完整渲染**
+  **块状公式段**：`markdown.tsx` 的 `displayMathSegments` 从句子原文提取
+  `$$…$$`/`\[…\]` 完整段（含定界符），行内 `$…$`/`\(…\)` 不上板也不触发
+  换板；句子文本随每帧 PCM 一起进播放 FIFO（`pcmMetaRef` 与音频队列严格
+  平行，`tts_start` 到达只登记原文、不直接挂板——后端流水线刻意提前合成
+  若干句，直接上板会比声音早好几句），`drainQueue` 出队、那一帧**真正
+  开始发声**时才把所属句子暴露给黑板。黑板严格左右居中（max-w 760px）、
+  固定占 3/7 页面高度，**三块等分黑板**（`flex-1 min-h-0` + 板内各自滚动
+  ——flex 子项默认 `min-height:auto` 会让内容高的板挤占邻板，故 CSS 侧
+  不再设 min-height），块式段从上往下写第一块空板，三块都满时擦掉写得
+  最早的那块（key 即写入序）再写新的；`board_table` 到达时三块黑板全部
+  作废、整版表格**即时完整渲染**
   （GFM 表格、无书写动画），驻留 `hold_ms`（下限 7 s）内新公式不上板，窗口
   过后表格继续驻留，直到下一个新公式（`clearBoardTable` 清空、effect 重跑
   完成写入）或新表格（直接替换并重置窗口）才让出板面；右上角（原电话入口
